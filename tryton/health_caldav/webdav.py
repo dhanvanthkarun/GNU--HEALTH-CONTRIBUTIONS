@@ -601,7 +601,7 @@ class Collection(metaclass=PoolMeta):
             if (len(res) > 0):
                 patient = res[0]
             else:
-                logger.error ("Patient %s not found", patient_id)
+                logger.error ("The patient with PUID '%s' is not found.", patient_id)
 
         # If the ID is associated to a patient
         # create the appointment related to her / him
