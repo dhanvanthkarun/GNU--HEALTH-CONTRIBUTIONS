@@ -160,10 +160,7 @@ class TrytonDAVInterface(iface.dav_interface):
     @staticmethod
     def get_dburi(uri):
         # URI format : http[s]://<servername>:8080/<dbname>/Calendars/<CalendarName>
-        if isinstance(uri[2], str):
-            uri = urllib.parse.urlsplit(uri)[2]
-        else:
-            uri = urllib.parse.urlsplit(uri)[2].decode()
+        uri = urllib.parse.urlsplit(uri)[2]
         
         if uri and uri[0] == '/':
             uri = uri[1:]
@@ -194,14 +191,6 @@ class TrytonDAVInterface(iface.dav_interface):
             scheme, netloc, path, params, query, fragment = \
                 urllib.parse.urlparse(uri)
 
-            if not isinstance(uri, str):
-                scheme = scheme.decode()
-                netloc = netloc.decode()
-                path = path.decode()
-                params = params.decode()
-                query = query.decode()
-                fragment = fragment.decode()
-
             if path[-1:] != '/':
                 path = path + '/'
             for child in Collection.get_childs(dburi, filter=filter,
@@ -223,8 +212,6 @@ class TrytonDAVInterface(iface.dav_interface):
         return res
 
     def get_data(self, uri, range=None):
-
-        uri = uri.decode()
 
         dbname, dburi = self._get_dburi(uri)
         if not dbname or (self.exists(uri) and self.is_collection(uri)):
@@ -307,7 +294,7 @@ class TrytonDAVInterface(iface.dav_interface):
             raise DAV_Error(500)
         if res:
             uparts = list(urllib.parse.urlsplit(uri))
-            uparts[2] = res.encode()
+            uparts[2] = res
             res = urllib.parse.urlunsplit(uparts)
         return res
 
@@ -349,7 +336,7 @@ class TrytonDAVInterface(iface.dav_interface):
     def _get_dav_displayname(self, uri):
         dbname, dburi = self._get_dburi(uri)
         if not dbname or not dburi:
-            return uri.decode().split('/')[-1]
+            return uri.split('/')[-1]
         pool = Pool(Transaction().database.name)
         try:
             Collection = pool.get('webdav.collection')
