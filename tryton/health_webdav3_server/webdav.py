@@ -12,6 +12,7 @@ import urllib.error
 import encodings
 import uuid
 import datetime
+import socket
 from ast import literal_eval
 
 from dateutil.relativedelta import relativedelta
