@@ -1320,7 +1320,7 @@ class AttendeeMixin:
         if hasattr(attendee, 'partstat_param'):
             if attendee.partstat_param.lower() in dict(cls.status.selection):
                 res['status'] = attendee.partstat_param.lower()
-        res['attendee'] = attendee.serialize()
+        res['attendee'] = attendee.serialize().encode('utf-8')
         return res
 
     def attendee2attendee(self):
@@ -1330,7 +1330,7 @@ class AttendeeMixin:
         res = None
         if self.attendee:
             res = vobject.base.textLineToContentLine(
-                    str(self.attendee).decode('utf-8').replace('\r\n ', ''))
+                    self.attendee.decode('utf-8').replace('\r\n ', ''))
         else:
             res = vobject.base.ContentLine('ATTENDEE', [], '')
 
