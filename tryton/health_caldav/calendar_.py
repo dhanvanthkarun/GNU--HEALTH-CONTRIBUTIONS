@@ -407,7 +407,7 @@ class Location(ModelSQL, ModelView):
 class Event(ModelSQL, ModelView):
     "Event"
     __name__ = 'calendar.event'
-    _rec_name = 'uuid'
+    _rec_name = 'summary'
     uuid = fields.Char(
         'UUID', required=True,
         help='Universally Unique Identifier', select=True)
