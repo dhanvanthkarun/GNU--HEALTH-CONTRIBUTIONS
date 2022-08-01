@@ -1055,7 +1055,7 @@ class Event(ModelSQL, ModelView):
                 vals['uuid'] = res['uuid']
             res.setdefault('occurences', [])
             if event_id:
-                res['occurences'].append(('write', event_id, vals))
+                res['occurences'].append(('write', [event_id], vals))
             else:
                 to_create.append(vals)
         if to_create:
