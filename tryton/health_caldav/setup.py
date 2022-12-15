@@ -38,7 +38,8 @@ for dep in info.get('depends', []):
                     minor_version + 1))
 
 
-requires = ['PyWebDAV3-GNUHealth >= 0.10.1', 'gnuhealth_webdav3_server']
+requires = ['PyWebDAV3-GNUHealth >= 0.10.1',
+            'gnuhealth_webdav3_server', 'vobject']
 
 
 setup(
