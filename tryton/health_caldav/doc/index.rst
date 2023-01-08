@@ -1,5 +1,5 @@
-.. SPDX-FileCopyrightText: 2016-2022 GNU Solidario <health@gnusolidario.org>
-.. SPDX-FileCopyrightText: 2016-2022 Luis Falcon <falcon@gnuhealth.org
+.. SPDX-FileCopyrightText: 2016-2023 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2016-2023 Luis Falcon <falcon@gnuhealth.org
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
