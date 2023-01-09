@@ -52,5 +52,7 @@ UPDATE account_invoice_line SET party = (SELECT party FROM account_invoice WHERE
 -- [SQL] before update, add access on field
 ALTER TABLE ir_model_field ADD COLUMN "access" BOOLEAN;
 
+-- Remove views from obsolete calendar module
+delete from ir_ui_view where module='calendar';
 -- Update / cast Domiciliary Unit field from INT to VARCHAR to meet openstreetmap requirements
 alter table gnuhealth_du alter column "address_street_number" SET DATA type varchar using address_street_number::varchar;
