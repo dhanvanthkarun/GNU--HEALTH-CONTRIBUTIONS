@@ -1,6 +1,49 @@
-changeset:   5171:bb424fd550fd
+changeset:   5594:2f0343925bec
 branch:      stable
 tag:         tip
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 22 11:03:05 2022 +0000
+summary:     health_crypto: Fix bug #63558: Fault: 'NoneType' object has no attribute 'name'
+
+changeset:   5593:53b1239f910f
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:34:30 2023 +0000
+summary:     Fix bug #63557: Missing view architecture for ('calendar.category', None, 'tree')
+
+changeset:   5592:6e963547d29a
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Dec 16 19:27:54 2022 +0000
+summary:     Fix bug #63533: Model 'gnuhealth.pol' is missing a default access
+
+changeset:   5591:61d154cf31d7
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 15 20:41:27 2022 +0000
+summary:     Fix bug #63532: health_caldav misses requiremnt vobject in setup.py
+
+changeset:   5590:fd746872ba25
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:23:00 2023 +0000
+summary:     bug #63517: Fault: 'webdav' is not in list
+
+changeset:   5589:fa5d5a50751c
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Jul 16 18:40:45 2022 +0100
+summary:     Fix bug #62777: The term health prof used for both initiating and signing professional in patient evaluation
+
+changeset:   5588:937dbbe0708a
+branch:      stable
+parent:      5173:0bf1d6fbe0cd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:02:44 2023 +0000
+summary:     Fix bug #62634, Missing Spanish Translations
+
+changeset:   5171:bb424fd550fd
+branch:      stable
 user:        Luis Falcon <falcon@gnuhealth.org>
 date:        Wed Jun 08 18:54:46 2022 +0100
 summary:     health_insurance: Fix bug #62598: Payment term search stops in party
