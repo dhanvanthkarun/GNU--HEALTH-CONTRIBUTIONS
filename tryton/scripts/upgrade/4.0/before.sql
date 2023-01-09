@@ -56,3 +56,7 @@ ALTER TABLE ir_model_field ADD COLUMN "access" BOOLEAN;
 delete from ir_ui_view where module='calendar';
 -- Update / cast Domiciliary Unit field from INT to VARCHAR to meet openstreetmap requirements
 alter table gnuhealth_du alter column "address_street_number" SET DATA type varchar using address_street_number::varchar;
+
+-- Update views from old webdav module to health_webdav3_server package
+update ir_ui_view set module='health_webdav3_server' where module='webdav';
+
