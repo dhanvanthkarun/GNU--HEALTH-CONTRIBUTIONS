@@ -8,7 +8,7 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                       HEALTH CALENDAR PACKAGE                         # 
+#                       HEALTH CALENDAR PACKAGE                         #
 #                health_calendar.py: Main calendar module               #
 #########################################################################
 from trytond.model import fields
