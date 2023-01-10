@@ -819,7 +819,7 @@ class Party(metaclass=PoolMeta):
         if (self.is_healthprof or self.is_patient or self.is_person):
             return True
 
-    @fields.depends('du')
+    @fields.depends('du', '_parent_du.name')
     def on_change_with_du_address(self):
         if (self.du):
             return self.get_du_address(name=None)
@@ -3526,7 +3526,7 @@ class Appointment(ModelSQL, ModelView):
     def default_institution():
         return get_institution()
 
-    @fields.depends('patient')
+    @fields.depends('patient','_parent_patient.name')
     def on_change_patient(self):
         if self.patient:
             self.state = 'confirmed'
