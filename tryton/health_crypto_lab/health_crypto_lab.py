@@ -12,9 +12,9 @@
 #                health_crypto_lab.py: main module                      #
 #########################################################################
 from datetime import datetime
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, fields
 from trytond.rpc import RPC
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool, Equal
 import hashlib
 import json
@@ -24,8 +24,7 @@ from trytond.modules.health.core import get_health_professional
 __all__ = ['LabTest']
 
 
-class LabTest(ModelSQL, ModelView):
-    'Lab Test'
+class LabTest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.lab'
 
     STATES = {'readonly': Eval('state') == 'validated'}

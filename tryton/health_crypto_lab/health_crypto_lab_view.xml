@@ -25,6 +25,25 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_lab_tree</field>
         </record>
 
+    <!-- Register Buttons -->
+
+        <record model="ir.model.button" id="labtest_setdraft_button">
+            <field name="name">set_to_draft</field>
+            <field name="string">Draft</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
+        </record>
+
+        <record model="ir.model.button" id="labtest_generate_button">
+            <field name="name">generate_document</field>
+            <field name="string">Done</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
+        </record>
+
+        <record model="ir.model.button" id="labtest_sign_button">
+            <field name="name">sign_document</field>
+            <field name="string">Validate</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
+        </record>
 
     </data>
 </tryton>
