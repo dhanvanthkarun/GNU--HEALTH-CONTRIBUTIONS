@@ -5,12 +5,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, fields
+from trytond.pool import PoolMeta
 from trytond.rpc import RPC
 from trytond.pyson import Eval, Not, Bool, Equal, Or
 import hashlib
 import json
-
 
 __all__ = ['HealthCrypto', 'PatientPrescriptionOrder',
            'BirthCertificate', 'DeathCertificate', 'PatientEvaluation']
@@ -30,10 +30,8 @@ class HealthCrypto:
         return str(hashlib.sha512(serialized_doc.encode('utf-8')).hexdigest())
 
 
-class PatientPrescriptionOrder(ModelSQL, ModelView):
-    """ Add the serialized and hash fields to the
-    prescription order document"""
-
+class PatientPrescriptionOrder(metaclass=PoolMeta):
+    """Add the serialized and hash fields to the prescription order document"""
     __name__ = 'gnuhealth.prescription.order'
 
     serializer = fields.Text('Doc String', readonly=True)
@@ -172,8 +170,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
                 })]
 
 
-class BirthCertificate(ModelSQL, ModelView):
-
+class BirthCertificate(metaclass=PoolMeta):
     __name__ = 'gnuhealth.birth_certificate'
 
     serializer = fields.Text('Doc String', readonly=True)
@@ -297,7 +294,7 @@ class BirthCertificate(ModelSQL, ModelView):
                 })]
 
 
-class DeathCertificate(ModelSQL, ModelView):
+class DeathCertificate(metaclass=PoolMeta):
 
     __name__ = 'gnuhealth.death_certificate'
 
@@ -433,7 +430,7 @@ class DeathCertificate(ModelSQL, ModelView):
                 })]
 
 
-class PatientEvaluation(ModelSQL, ModelView):
+class PatientEvaluation(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.evaluation'
 
     serializer = fields.Text('Doc String', readonly=True)
