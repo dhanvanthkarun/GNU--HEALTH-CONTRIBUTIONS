@@ -420,11 +420,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_inpatient_meal_order_item_tree</field>
         </record>
 
-
-
-
-
-
 <!-- Bed transfer history -->
 
         <record id="gnuhealth_bed_transfer_form" model="ir.ui.view">
@@ -439,6 +434,56 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_bed_transfer_tree</field>
         </record>
 
+<!-- Button registration -->
+
+        <record model="ir.model.button" id="registration_cancel_button">
+            <field name="name">cancel</field>
+            <field name="string">Cancel</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.registration')]"/>
+        </record>
+
+        <record model="ir.model.button" id="registration_admission_button">
+            <field name="name">admission</field>
+            <field name="string">Admission</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.registration')]"/>
+        </record>
+
+        <record model="ir.model.button" id="registration_confirmed_button">
+            <field name="name">confirmed</field>
+            <field name="string">Confirm</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.registration')]"/>
+        </record>
+
+        <record model="ir.model.button" id="registration_discharge_button">
+            <field name="name">discharge</field>
+            <field name="string">Discharge</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.registration')]"/>
+        </record>
+
+        <record model="ir.model.button" id="registration_bedclean_button">
+            <field name="name">bedclean</field>
+            <field name="string">Clean Bed</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.registration')]"/>
+        </record>
+
+    <!-- Meal order -->
+        <record model="ir.model.button" id="meal_cancel_button">
+            <field name="name">cancel</field>
+            <field name="string">Cancel</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.meal.order')]"/>
+        </record>
+
+        <record model="ir.model.button" id="meal_generate_button">
+            <field name="name">generate</field>
+            <field name="string">Generate</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.meal.order')]"/>
+        </record>
+
+        <record model="ir.model.button" id="meal_done_button">
+            <field name="name">done</field>
+            <field name="string">Done</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.inpatient.meal.order')]"/>
+        </record>
 
     </data>
 </tryton>
