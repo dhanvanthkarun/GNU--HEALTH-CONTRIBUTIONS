@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from test_health_contact_tracing import suite
+from .test_health_contact_tracing import suite

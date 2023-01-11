@@ -18,5 +18,5 @@ class HealthContactTracingTestCase(ModuleTestCase):
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        HealthiContactTracingTestCase))
+        HealthContactTracingTestCase))
     return suite
