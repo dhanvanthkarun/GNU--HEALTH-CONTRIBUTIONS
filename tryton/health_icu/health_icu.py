@@ -18,6 +18,7 @@
 from trytond.model import ModelView, ModelSQL, fields
 from datetime import datetime
 from trytond.transaction import Transaction
+from trytond.pool import PoolMeta
 from trytond.pyson import Eval, Not, Bool, Equal
 from .exceptions import PatientAlreadyInICU, PatientAlreadyOnMV
 from trytond.i18n import gettext
@@ -28,8 +29,7 @@ __all__ = ['InpatientRegistration', 'InpatientIcu', 'Glasgow', 'ApacheII',
            'PatientRounding']
 
 
-class InpatientRegistration(ModelSQL, ModelView):
-    'Patient admission History'
+class InpatientRegistration(metaclass=PoolMeta):
     __name__ = 'gnuhealth.inpatient.registration'
     icu = fields.Boolean(
         'ICU', help='Shows if patient was admitted to'
@@ -515,7 +515,7 @@ class ChestDrainageAssessment(ModelSQL, ModelView):
     remarks = fields.Char('Remarks')
 
 
-class PatientRounding(ModelSQL, ModelView):
+class PatientRounding(metaclass=PoolMeta):
     # Nursing Rounding for ICU
     # Inherit and append to the existing model the new functionality for ICU
 
