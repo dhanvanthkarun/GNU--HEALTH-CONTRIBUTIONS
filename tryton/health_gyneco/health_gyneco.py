@@ -202,7 +202,7 @@ class PatientPregnancy(ModelSQL, ModelView):
             return self.name.hb
 
     # Show the values from patient upon entering the history
-    @fields.depends('name')
+    @fields.depends('name','_parent_name.name')
     def on_change_name(self):
         # Obsterics info
         self.gravidae = self.name.gravida
