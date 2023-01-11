@@ -18,12 +18,12 @@ from trytond.tools.multivalue import migrate_property
 ambulatory_care_sequence = fields.Many2One(
     'ir.sequence', 'Ambulatory Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_ambulatory_care'))])
+        'health_nursing', 'seq_type_gnuhealth_ambulatory_care'))])
 
 patient_rounding_sequence = fields.Many2One(
     'ir.sequence', 'Patient Rounding Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_patient_rounding'))])
+        'health_nursing', 'seq_type_gnuhealth_patient_rounding'))])
 
 
 
