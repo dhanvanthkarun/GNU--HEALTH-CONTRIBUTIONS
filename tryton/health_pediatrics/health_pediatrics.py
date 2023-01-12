@@ -13,7 +13,7 @@
 
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.transaction import Transaction
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from datetime import datetime
 from trytond.pyson import Eval, Not, Equal
 from trytond.modules.health.core import get_health_professional
@@ -341,16 +341,14 @@ class NeonatalApgar(ModelSQL, ModelView):
 
 
 # Deprecated in 3.0 - Use the main patient form
-class NeonatalMedication(ModelSQL, ModelView):
-    'Neonatal Medication. Inherit and Add field to Medication model'
+class NeonatalMedication(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.medication'
 
     newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
 
 
 # Deprecated in 3.0  - Use main patient form
-class NeonatalCongenitalDiseases(ModelSQL, ModelView):
-    'Congenital Diseases. Inherit Disease object for use in neonatology'
+class NeonatalCongenitalDiseases(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.disease'
 
     newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
