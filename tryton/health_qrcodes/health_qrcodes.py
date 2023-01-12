@@ -13,7 +13,8 @@
 import qrcode
 import barcode
 import io
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import fields
+from trytond.pool import PoolMeta
 
 
 __all__ = ['Patient', 'Appointment', 'Newborn', 'LabTest']
@@ -21,8 +22,7 @@ __all__ = ['Patient', 'Appointment', 'Newborn', 'LabTest']
 
 # Add the QR field and QR image in the patient model
 
-class Patient(ModelSQL, ModelView):
-    'Patient'
+class Patient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     # Add the QR Code to the Patient
@@ -60,7 +60,7 @@ class Patient(ModelSQL, ModelView):
 
 # Add the QR field and QR image in the appointment model
 
-class Appointment(ModelSQL, ModelView):
+class Appointment(metaclass=PoolMeta):
     __name__ = 'gnuhealth.appointment'
 
     # Add the QR Code to the Appointment
@@ -111,7 +111,7 @@ class Appointment(ModelSQL, ModelView):
         return bytearray(qr_png)
 
 
-class Newborn(ModelSQL, ModelView):
+class Newborn(metaclass=PoolMeta):
     'NewBorn'
     __name__ = 'gnuhealth.newborn'
 
@@ -160,7 +160,7 @@ class Newborn(ModelSQL, ModelView):
         return bytearray(qr_png)
 
 
-class LabTest(ModelSQL, ModelView):
+class LabTest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.lab'
 
     # Add the QR Code to the Lab Test
