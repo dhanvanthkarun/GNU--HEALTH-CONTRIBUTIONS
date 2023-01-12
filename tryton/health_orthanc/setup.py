@@ -66,14 +66,15 @@ setup(
     package_dir={'trytond.modules.health_orthanc': '.'},
     packages=[
         'trytond.modules.health_orthanc',
+        'trytond.modules.health_orthanc.tests',
         'trytond.modules.health_orthanc.wizard',
         ],
 
     package_data={
-        'trytond.modules.health_orthanc': info.get('xml', []) \
-            + info.get('translation', []) \
-            + ['tryton.cfg', 'view/*.xml', 'doc/*.rst', 'locale/*.po',
-               'report/*.fodt', 'icons/*.svg'],
+        'trytond.modules.health_orthanc': info.get('xml', [])
+        + info.get('translation', [])
+        + ['tryton.cfg', 'view/*.xml', 'doc/*.rst', 'locale/*.po',
+           'report/*.fodt', 'icons/*.svg'],
         },
 
     classifiers=[
@@ -97,4 +98,7 @@ setup(
     [trytond.modules]
     health_orthanc = trytond.modules.health_orthanc
     """,
+    test_suite='tests',
+    test_loader='trytond.test_loader:Loader',
+
     )

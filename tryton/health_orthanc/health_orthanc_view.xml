@@ -115,5 +115,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="wiz_name">gnuhealth.orthanc.wizard.full_sync</field>
         </record>
         <menuitem parent="orthanc_config_menu" action="orthanc_add_server_init" id="orthanc_add_server_menu" sequence="10" icon="gnuhealth-execute"/>
+
+        <!-- Buttons -->
+        <record model="ir.model.button" id="server_sync_button">
+            <field name="name">do_sync</field>
+            <field name="string">Sync</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
+        </record>
+
     </data>
 </tryton>
