@@ -15,7 +15,7 @@
 #########################################################################
 from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
 from trytond.modules.health.core import get_health_professional
 
@@ -25,8 +25,7 @@ __all__ = [
     'GnuHealthPatientLabTest', 'PatientHealthCondition']
 
 
-class PatientData(ModelSQL, ModelView):
-    'Patient lab tests'
+class PatientData(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     lab_test_ids = fields.One2Many(
@@ -346,8 +345,7 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
             tests, default=default)
 
 
-class PatientHealthCondition(ModelSQL, ModelView):
-    'Patient Conditions History'
+class PatientHealthCondition(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.disease'
 
     # Adds lab confirmed and the link to the test to the

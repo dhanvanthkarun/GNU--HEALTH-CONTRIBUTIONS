@@ -1,4 +1,4 @@
-<?xml version="1"?>
+<?xml version="1.0"?>
 
 <!--
 SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
@@ -120,39 +120,39 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <!-- Link products with template -->
 
         <record id="product_product_semenanalysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_semenanalysischarges0"/>
+            <field name="template" ref="product_template_semenanalysischarges0"/>
         </record>
 
         <record id="product_product_bloodcounttestcharges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_bloodcounttestcharges0"/>
+            <field name="template" ref="product_template_bloodcounttestcharges0"/>
         </record>
 
         <record id="product_product_liverfunctiontestcharges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_liverfunctiontestcharges0"/>
+            <field name="template" ref="product_template_liverfunctiontestcharges0"/>
         </record>
 
         <record id="product_product_stoolexaminationcharges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_stoolexaminationcharges0"/>
+            <field name="template" ref="product_template_stoolexaminationcharges0"/>
         </record>
 
         <record id="product_product_renalfunctiontestcharges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_renalfunctiontestcharges0"/>
+            <field name="template" ref="product_template_renalfunctiontestcharges0"/>
         </record>
 
         <record id="product_product_haematologycharges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_haematologycharges0"/>
+            <field name="template" ref="product_template_haematologycharges0"/>
         </record>
 
         <record id="product_product_peripheralsmearexaminationcharges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_peripheralsmearexaminationcharges0"/>
+            <field name="template" ref="product_template_peripheralsmearexaminationcharges0"/>
         </record>
 
         <record id="product_product_urineanalysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_urineanalysischarges0"/>
+            <field name="template" ref="product_template_urineanalysischarges0"/>
         </record>
 
         <record id="product_product_endocrinology0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_endocrinology0"/>
+            <field name="template" ref="product_template_endocrinology0"/>
         </record>
 
         <record id="gnuhealth_test_semenanalysis0" model="gnuhealth.lab.test_type">
