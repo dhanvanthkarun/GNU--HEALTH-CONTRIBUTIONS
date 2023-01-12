@@ -50,23 +50,23 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record id="product_product_ultrasoundcharges" model="product.product">
-            <field name="template" model="product.template" ref="product_template_ultrasoundcharges"/>
+            <field name="template" ref="product_template_ultrasoundcharges"/>
         </record>
 
         <record id="product_product_mricharges" model="product.product">
-            <field name="template" model="product.template" ref="product_template_mricharges"/>
+            <field name="template" ref="product_template_mricharges"/>
         </record>
 
         <record id="product_product_xraycharges" model="product.product">
-            <field name="template" model="product.template" ref="product_template_xraycharges"/>
+            <field name="template" ref="product_template_xraycharges"/>
         </record>
 
         <record id="product_product_ctscancharges" model="product.product">
-            <field name="template" model="product.template" ref="product_template_ctscancharges"/>
+            <field name="template" ref="product_template_ctscancharges"/>
         </record>
 
         <record id="product_product_petscancharges" model="product.product">
-            <field name="template" model="product.template" ref="product_template_petscancharges"/>
+            <field name="template" ref="product_template_petscancharges"/>
         </record>
 
         <record id="gnuhealth_test_type_ultrasound" model="gnuhealth.imaging.test.type">
