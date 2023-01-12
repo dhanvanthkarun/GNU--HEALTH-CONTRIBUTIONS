@@ -85,5 +85,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
    		<menuitem name="Ophthalmologic evaluations" parent="health.gnuhealth_reporting_menu" id="gnuhealth_ophthalmology_evaluation_menu" action="act_ophthal_form" icon="gnuhealth-list"/>
 
+    <!-- Buttons -->
+        <record model="ir.model.button" id="ophthalmoeval_end_button">
+            <field name="name">end_evaluation</field>
+            <field name="string">Done</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.ophthalmology.evaluation')]"/>
+        </record>
+
 	</data>
 </tryton>
