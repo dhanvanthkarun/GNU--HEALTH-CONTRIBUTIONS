@@ -15,6 +15,7 @@
 #########################################################################
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from datetime import datetime
+from trytond.pool import PoolMeta
 
 __all__ = ['VegetarianTypes', 'DietBelief', 'DrugsRecreational',
            'PatientRecreationalDrugs', 'PatientCAGE', 'MedicalPatient']
@@ -296,7 +297,7 @@ class PatientCAGE(ModelSQL, ModelView):
         return 0
 
 
-class MedicalPatient(ModelSQL, ModelView):
+class MedicalPatient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     exercise = fields.Boolean('Exercise')
