@@ -1,4 +1,4 @@
-<?xml version="1"?>
+<?xml version="1.0"?>
 
 <!--
 SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
@@ -28,7 +28,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <!-- Link products with template -->
 
         <record id="product_product_medical_evaluation" model="product.product">
-            <field name="template" model="product.template" ref="product_template_medical_services"/>
+            <field name="template" ref="product_template_medical_services"/>
         </record>
 
     </data>

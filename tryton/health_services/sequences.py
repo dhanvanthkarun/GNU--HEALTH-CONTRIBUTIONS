@@ -17,7 +17,7 @@ from trytond.tools.multivalue import migrate_property
 health_service_sequence = fields.Many2One(
     'ir.sequence', 'Health service sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_health_service'))])
+        'health_services', 'seq_type_gnuhealth_health_service'))])
 
 
 # GNU HEALTH SEQUENCES
