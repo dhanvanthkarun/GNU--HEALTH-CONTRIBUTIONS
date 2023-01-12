@@ -15,7 +15,7 @@ import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, Equal
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
 from trytond.modules.health.core import get_institution
 
@@ -165,8 +165,7 @@ class HealthServiceLine(ModelSQL, ModelView):
 
 
 # Add Prescription order charges to service model
-class PatientPrescriptionOrder(ModelSQL, ModelView):
-    'Prescription Order'
+class PatientPrescriptionOrder(metaclass=PoolMeta):
     __name__ = 'gnuhealth.prescription.order'
 
     service = fields.Many2One(
@@ -221,8 +220,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
 
 
 # Include  Patient Evaluation service
-class PatientEvaluation(ModelSQL, ModelView):
-    'Patient Evaluation'
+class PatientEvaluation(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.evaluation'
 
     service = fields.Many2One(
