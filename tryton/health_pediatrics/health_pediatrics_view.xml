@@ -139,5 +139,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="act_newborn_form1"/>
         </record>
 
+    <!-- Buttons -->
+        <record model="ir.model.button" id="newborn_sign_button">
+            <field name="name">sign_newborn</field>
+            <field name="string">Sign</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.newborn')]"/>
+        </record>
+
     </data>
 </tryton>
