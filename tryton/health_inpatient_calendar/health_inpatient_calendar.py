@@ -12,22 +12,20 @@
 #             health_inpatient_calendar.py: main module                 #
 #########################################################################
 
-from trytond.model import ModelView, ModelSQL, fields
-from trytond.pool import Pool
+from trytond.model import fields
+from trytond.pool import Pool, PoolMeta
 
 
 __all__ = ['HospitalBed', 'InpatientRegistration']
 
 
-class HospitalBed(ModelSQL, ModelView):
-    "Add Calendar to Hospital Bed"
+class HospitalBed(metaclass=PoolMeta):
     __name__ = "gnuhealth.hospital.bed"
 
     calendar = fields.Many2One('calendar.calendar', 'Calendar')
 
 
-class InpatientRegistration(ModelSQL, ModelView):
-    'Add Calendar to the Inpatient Registration'
+class InpatientRegistration(metaclass=PoolMeta):
     __name__ = 'gnuhealth.inpatient.registration'
 
     event = fields.Many2One(

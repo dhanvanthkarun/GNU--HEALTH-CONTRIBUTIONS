@@ -11,4 +11,4 @@
 #                   HEALTH INPATIENT CALENDAR package                   #
 #               __init__.py test initialization                         #
 #########################################################################
-from test_health_inpatient_calendar import suite
+from .test_health_inpatient_calendar import suite
