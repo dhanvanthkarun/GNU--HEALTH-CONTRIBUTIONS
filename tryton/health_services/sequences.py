@@ -7,11 +7,10 @@
 
 # GNU Health HMIS sequences for this package
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
@@ -20,14 +19,14 @@ health_service_sequence = fields.Many2One(
     domain=[('sequence_type', '=', Id(
         'health', 'seq_type_gnuhealth_health_service'))])
 
+
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 
     health_service_sequence = fields.MultiValue(
         health_service_sequence)
-
 
     @classmethod
     def default_health_service_sequence(cls, **pattern):
@@ -38,6 +37,7 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
                                     'seq_gnuhealth_health_service')
         except KeyError:
             return None
+
 
 class _ConfigurationValue(ModelSQL):
 
@@ -70,4 +70,3 @@ class HealthServiceSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     @classmethod
     def check_xml_record(cls, records, values):
         return True
-
