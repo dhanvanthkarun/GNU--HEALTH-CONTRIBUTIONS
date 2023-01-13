@@ -15,12 +15,13 @@ from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval, Equal
+from trytond.pool import PoolMeta
 from trytond.modules.health.core import get_health_professional
 
 __all__ = ['Party', 'PatientSESAssessment', 'GnuHealthPatient']
 
 
-class Party (ModelSQL, ModelView):
+class Party (metaclass=PoolMeta):
     __name__ = 'party.party'
 
     occupation = fields.Many2One('gnuhealth.occupation', 'Occupation')
@@ -203,7 +204,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient')
+    @fields.depends('patient', '_parent_patient.name')
     def on_change_patient(self):
         self.gender = self.patient.gender
         self.computed_age = self.patient.age
