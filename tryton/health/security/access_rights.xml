@@ -693,6 +693,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">Health Front Desk</field>
             <field name="login">demo_frontdesk</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Front Desk group -->
@@ -790,6 +791,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">Health Doctor</field>
             <field name="login">demo_doctor</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Health Doctor group -->
@@ -999,6 +1001,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">Health Social Worker</field>
             <field name="login">demo_social_worker</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Social Worker group -->
@@ -1071,6 +1074,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">Health Back Office</field>
             <field name="login">demo_back_office</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Back Office group -->
