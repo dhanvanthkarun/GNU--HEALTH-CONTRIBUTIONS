@@ -304,6 +304,7 @@ class Surgery(ModelSQL, ModelView):
     preop_assessment = fields.Many2One(
         'gnuhealth.preoperative_assessment', 'Preop assessment',
         domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'],
         help="Preoperative assessment associated to this surgery")
 
     preop_oximeter = fields.Boolean(
@@ -482,9 +483,7 @@ class Surgery(ModelSQL, ModelView):
         help="Post-operative diagnosis")
 
     # Deprecated since 4.2. Now use "Surgical intervention"
-    main_procedure = fields.Many2One(
-        'gnuhealth.procedure', 'Main Procedure',
-        domain=[('name', '=', Eval('active_id'))],)
+    main_procedure = fields.Many2One('gnuhealth.procedure', 'Main Procedure')
 
     surgical_intervention = fields.Many2One(
         'gnuhealth.procedure', 'Surgical Intervention',
@@ -541,7 +540,7 @@ class Surgery(ModelSQL, ModelView):
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient')
+    @fields.depends('patient', '_parent_patient.name')
     def on_change_patient(self):
         self.gender = self.patient.gender
         self.computed_age = self.patient.age
@@ -852,6 +851,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     surgery = fields.Many2One(
         'gnuhealth.surgery', 'Surgery',
+        depends=['patient'],
         domain=[('patient', '=', Eval('patient'))],)
 
     specialty = fields.Many2One('gnuhealth.specialty', 'Specialty')
@@ -859,6 +859,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
         domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'],
         help="Related encounter")
 
     assessment_date = fields.Date(
@@ -931,18 +932,21 @@ class PreOperativeAssessment(ModelSQL, ModelView):
     ecg = fields.Many2One(
         'gnuhealth.patient.ecg', 'ECG',
         domain=[('name', '=', Eval('patient'))],
+        depends=['patient'],
         help='Link to the associated electrocardiogram')
 
     # Include link to patient Imaging test (eg, Xray)
     imaging_test = fields.Many2One(
         'gnuhealth.imaging.test.result', 'Imaging',
         domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'],
         help='Link to the associated Dx imaging test')
 
     # Include link to patient lab test (eg, CBC)
     lab_test = fields.Many2One(
         'gnuhealth.lab', 'Lab',
         domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'],
         help='Link to the associated lab test')
 
     surgical_decision = fields.Selection([

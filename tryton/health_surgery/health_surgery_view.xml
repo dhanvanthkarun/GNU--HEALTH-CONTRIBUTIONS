@@ -326,5 +326,36 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="act_preoperative_assessment_form1"/>
         </record>
 
+    <!-- Buttons -->
+        <record model="ir.model.button" id="surgery_confirm_button">
+            <field name="name">confirmed</field>
+            <field name="string">Confirm</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+        </record>
+
+        <record model="ir.model.button" id="surgery_start_button">
+            <field name="name">start</field>
+            <field name="string">Start</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+        </record>
+
+        <record model="ir.model.button" id="surgery_done_button">
+            <field name="name">done</field>
+            <field name="string">Finnish</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+        </record>
+
+        <record model="ir.model.button" id="surgery_cancel_button">
+            <field name="name">cancel</field>
+            <field name="string">Cancel</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+        </record>
+
+        <record model="ir.model.button" id="surgery_sign_button">
+            <field name="name">signsurgery</field>
+            <field name="string">Sign</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+        </record>
+
     </data>
 </tryton>
