@@ -11,7 +11,7 @@
 #                       HEALTH SERVICES LAB PACKAGE                     #
 #                     health_services.py: Main module                   #
 #########################################################################
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, fields
 from trytond.pyson import Eval, Equal
 from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
