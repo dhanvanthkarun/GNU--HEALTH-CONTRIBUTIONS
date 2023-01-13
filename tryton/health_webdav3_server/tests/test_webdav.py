@@ -13,7 +13,7 @@ from trytond.tests.test_tryton import ModuleTestCase
 
 class WebdavTestCase(ModuleTestCase):
     'Test Webdav module'
-    module = 'webdav'
+    module = 'health_webdav3_server'
 
 
 def suite():
