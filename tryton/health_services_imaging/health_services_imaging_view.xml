@@ -25,5 +25,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_imaging_start_request</field>
         </record> 
 
+    <!-- Buttons -->
+        <record model="ir.model.button" id="srvimg_update_button">
+            <field name="name">update_service</field>
+            <field name="string">Update Services</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.request')]"/>
+        </record>
+
     </data>
 </tryton>
