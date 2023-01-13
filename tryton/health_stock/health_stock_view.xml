@@ -159,5 +159,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">vaccination_form</field>
         </record>
 
+    <!-- Buttons -->
+        <record model="ir.model.button" id="rounding_end_button">
+            <field name="name">done</field>
+            <field name="string">End Rounding</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.rounding')]"/>
+        </record>
+
+        <record model="ir.model.button" id="ambcaresess_end_button">
+            <field name="name">done</field>
+            <field name="string">End Session</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.ambulatory_care')]"/>
+        </record>
+
     </data>
 </tryton>

@@ -71,7 +71,7 @@ class Move(metaclass=PoolMeta):
             ]
 
 
-class PatientAmbulatoryCare(Workflow, ModelSQL, ModelView):
+class PatientAmbulatoryCare(Workflow, metaclass=PoolMeta):
     'Patient Ambulatory Care'
     __name__ = 'gnuhealth.patient.ambulatory_care'
 
