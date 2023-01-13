@@ -1,32 +1,30 @@
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # GNU Health HMIS sequences for this package
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
 support_request_code_sequence = fields.Many2One(
     'ir.sequence', 'Support Request sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_support_request_code'))])
+        'health_ems', 'seq_type_gnuhealth_support_request_code'))])
 
 
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 
     support_request_code_sequence = fields.MultiValue(
         support_request_code_sequence)
-
 
     @classmethod
     def default_support_request_code_sequence(cls, **pattern):
@@ -37,6 +35,7 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
                                     'seq_gnuhealth_surgery_code')
         except KeyError:
             return None
+
 
 class _ConfigurationValue(ModelSQL):
 
@@ -69,4 +68,3 @@ class SupportRequestSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     @classmethod
     def check_xml_record(cls, records, values):
         return True
-

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -8,12 +8,14 @@
 #                   https://www.gnuhealth.org                           #
 #########################################################################
 #                      HEALTH INSURANCE package                         #
-#              health_insurance.py: main module                         #
+#                  health_insurance.py: main module                     #
 #########################################################################
 
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval
 from trytond.i18n import gettext
+from trytond.pool import PoolMeta
+
 
 from .exceptions import (DiscountPctOutOfRange, NeedAPolicy,
                          DiscountWithoutElement)
@@ -67,16 +69,15 @@ class InsurancePlanProductPolicy(ModelSQL, ModelView):
                 )
 
 
-class InsurancePlan(ModelSQL, ModelView):
+class InsurancePlan(metaclass=PoolMeta):
     __name__ = "gnuhealth.insurance.plan"
-    _rec_name = 'name'
 
     product_policy = fields.One2Many(
         'gnuhealth.insurance.plan.product.policy',
         'plan', 'Policy')
 
 
-class HealthService(ModelSQL, ModelView):
+class HealthService(metaclass=PoolMeta):
     __name__ = 'gnuhealth.health_service'
 
     insurance_holder = fields.Many2One(

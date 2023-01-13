@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# SPDX-FileCopyrightText: 2017-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2017-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2017-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2017-2023 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2012-2017 Cédric Krier <cedric.krier@b2ck.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later

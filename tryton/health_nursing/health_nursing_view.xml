@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -120,6 +120,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="menu_gnuhealth_patient_ambulatory_care_list" icon="gnuhealth-list"
             parent="gnuhealth_nursing_menu"/>
 
+    <!-- Button registration -->
+        <record model="ir.model.button" id="rounding_end_button">
+            <field name="name">end_rounding</field>
+            <field name="string">End rounding</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.rounding')]"/>
+        </record>
+
+    <!-- Ambulatory care -->
+        <record model="ir.model.button" id="session_end_button">
+            <field name="name">end_session</field>
+            <field name="string">End session</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.ambulatory_care')]"/>
+        </record>
 
     </data>
 </tryton>

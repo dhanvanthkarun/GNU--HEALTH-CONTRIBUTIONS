@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -137,6 +137,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="keyword">form_relate</field>
             <field name="model">gnuhealth.patient,-1</field>
             <field name="action" ref="act_newborn_form1"/>
+        </record>
+
+    <!-- Buttons -->
+        <record model="ir.model.button" id="newborn_sign_button">
+            <field name="name">sign_newborn</field>
+            <field name="string">Sign</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.newborn')]"/>
         </record>
 
     </data>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -201,6 +201,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="keyword">form_relate</field>
             <field name="model">gnuhealth.patient,-1</field>
             <field name="action" ref="patient_imaging_test_request"/>
+        </record>
+
+    <!-- Buttons -->
+        <record model="ir.model.button" id="image_request_button">
+            <field name="name">requested</field>
+            <field name="string">Request</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.request')]"/>
+        </record>
+
+        <record model="ir.model.button" id="image_generateresults_button">
+            <field name="name">generate_results</field>
+            <field name="string">Generate Results</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.request')]"/>
         </record>
 
     </data>

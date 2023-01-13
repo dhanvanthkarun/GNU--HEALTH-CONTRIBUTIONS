@@ -1,15 +1,14 @@
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # GNU Health HMIS Lab sequences for this package
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
@@ -24,14 +23,14 @@ lab_test_sequence = fields.Many2One(
     domain=[('sequence_type', '=', Id(
         'health_lab', 'seq_type_gnuhealth_lab_test'))])
 
+
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 
     lab_request_sequence = fields.MultiValue(
         lab_request_sequence)
-
 
     lab_test_sequence = fields.MultiValue(
         lab_test_sequence)
@@ -55,6 +54,7 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
                                     'seq_gnuhealth_lab_test')
         except KeyError:
             return None
+
 
 class _ConfigurationValue(ModelSQL):
 

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -11,4 +11,4 @@
 #                   HEALTH INPATIENT CALENDAR package                   #
 #               __init__.py test initialization                         #
 #########################################################################
-from test_health_inpatient_calendar import suite
+from .test_health_inpatient_calendar import suite

@@ -1,4 +1,4 @@
-.. SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 

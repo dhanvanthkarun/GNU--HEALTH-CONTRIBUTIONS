@@ -1,17 +1,16 @@
-# Copyright (C) 2008-2022 Luis Falcon <falcon@gnuhealth.org>
-# Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2023 Luis Falcon <falcon@gnuhealth.org>
+# Copyright (C) 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # GNU Health HMIS sequences for this package
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
@@ -21,16 +20,13 @@ dengue_du_survey_sequence = fields.Many2One(
         'health_ntd_dengue', 'seq_type_gnuhealth_dengue_du_survey'))])
 
 
-
-
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 
     dengue_du_survey_sequence = fields.MultiValue(
         dengue_du_survey_sequence)
-
 
     @classmethod
     def default_dengue_du_survey_sequence(cls, **pattern):

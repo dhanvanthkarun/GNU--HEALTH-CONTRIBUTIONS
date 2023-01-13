@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -15,6 +15,7 @@
 #########################################################################
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from datetime import datetime
+from trytond.pool import PoolMeta
 
 __all__ = ['VegetarianTypes', 'DietBelief', 'DrugsRecreational',
            'PatientRecreationalDrugs', 'PatientCAGE', 'MedicalPatient']
@@ -296,7 +297,7 @@ class PatientCAGE(ModelSQL, ModelView):
         return 0
 
 
-class MedicalPatient(ModelSQL, ModelView):
+class MedicalPatient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     exercise = fields.Boolean('Exercise')

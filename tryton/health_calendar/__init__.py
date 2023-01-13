@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -12,16 +12,16 @@
 #########################################################################
 
 from trytond.pool import Pool
-from .health_calendar import *
-from .wizard import *
+from . import health_calendar
+from . import wizard
 
 
 def register():
     Pool.register(
-        User,
-        Appointment,
-        CreateAppointmentStart,
+        health_calendar.User,
+        health_calendar.Appointment,
+        wizard.CreateAppointmentStart,
         module='health_calendar', type_='model')
     Pool.register(
-        CreateAppointment,
+        wizard.CreateAppointment,
         module='health_calendar', type_='wizard')

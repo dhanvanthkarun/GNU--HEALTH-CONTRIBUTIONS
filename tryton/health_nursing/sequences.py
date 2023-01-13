@@ -1,34 +1,32 @@
-# Copyright (C) 2008-2022 Luis Falcon <falcon@gnuhealth.org>
-# Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2023 Luis Falcon <falcon@gnuhealth.org>
+# Copyright (C) 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # GNU Health HMIS sequences for this package
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
 ambulatory_care_sequence = fields.Many2One(
     'ir.sequence', 'Ambulatory Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_ambulatory_care'))])
+        'health_nursing', 'seq_type_gnuhealth_ambulatory_care'))])
 
 patient_rounding_sequence = fields.Many2One(
     'ir.sequence', 'Patient Rounding Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_patient_rounding'))])
-
+        'health_nursing', 'seq_type_gnuhealth_patient_rounding'))])
 
 
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 
@@ -37,7 +35,6 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
 
     patient_rounding_sequence = fields.MultiValue(
         patient_rounding_sequence)
-
 
     @classmethod
     def default_ambulatory_care_sequence(cls, **pattern):
@@ -58,6 +55,7 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
                                     'seq_gnuhealth_patient_rounding')
         except KeyError:
             return None
+
 
 class _ConfigurationValue(ModelSQL):
 

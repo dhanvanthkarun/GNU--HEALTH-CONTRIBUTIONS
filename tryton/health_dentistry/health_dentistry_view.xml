@@ -4,8 +4,8 @@
 
 SPDX-FileCopyrightText: 2020-2021 National University of Entre Rios (UNER) 
 SPDX-FileCopyrightText: 2020-2020 Mario Puntin <mario@silix.com.ar> 
-SPDX-FileCopyrightText: 2020-2022 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2020-2022 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2020-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2020-2023 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -97,6 +97,28 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model">gnuhealth.dentistry.treatment.procedure</field>
             <field name="type">tree</field>
             <field name="name">gnuhealth_dentistry_treatment_procedure_tree</field>
+        </record>
+
+    <!-- Button registration -->
+    
+        <!--Treatment-->
+
+        <record model="ir.model.button" id="treatment_setodontogram_button">
+            <field name="name">set_odontogram</field>
+            <field name="string">Set Odontogram</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.dentistry.treatment')]"/>
+        </record>
+
+        <record model="ir.model.button" id="treatment_loadprocedure_button">
+            <field name="name">load_procedure</field>
+            <field name="string">Load Procedure</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.dentistry.treatment')]"/>
+        </record>
+
+        <record model="ir.model.button" id="treatment_endtreatment_button">
+            <field name="name">end_treatment</field>
+            <field name="string">End Treatment</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.dentistry.treatment')]"/>
         </record>
 
     </data>

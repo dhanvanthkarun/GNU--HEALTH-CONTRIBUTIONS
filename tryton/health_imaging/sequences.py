@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2020 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -11,11 +11,10 @@
 #              sequences.py: Sequences for this package                 #
 #########################################################################
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
@@ -33,7 +32,7 @@ imaging_test_sequence = fields.MultiValue(
 
 
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 

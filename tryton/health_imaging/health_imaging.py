@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2013 Sebastián Marró <smarro@thymbra.com>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -117,13 +117,11 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         if sequence:
             return sequence.get()
 
-
     @classmethod
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
             if not values.get('request'):
-                config = Config(1)
                 values['request'] = cls.generate_code()
         return super(ImagingTestRequest, cls).create(vlist)
 
@@ -167,9 +165,11 @@ class ImagingTestResult(ModelSQL, ModelView):
     request = fields.Many2One(
         'gnuhealth.imaging.test.request', 'Request',
         readonly=True)
-    order = fields.Char('Order',
-                        help="The order ID containing this particular imaging study")
-    doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof', required=True)
+    order = fields.Char(
+        'Order',
+        help="The order ID containing this particular imaging study")
+    doctor = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Health prof', required=True)
     comment = fields.Text('Additional Information')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
@@ -186,8 +186,8 @@ class ImagingTestResult(ModelSQL, ModelView):
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
-            if not values.get('name'):
-                 values['number'] = cls.generate_code()
+            if not values.get('number'):
+                values['number'] = cls.generate_code()
         return super(ImagingTestResult, cls).create(vlist)
 
     @classmethod
@@ -196,7 +196,8 @@ class ImagingTestResult(ModelSQL, ModelView):
             bool_op = 'AND'
         else:
             bool_op = 'OR'
-        return [bool_op,
+        return [
+            bool_op,
             ('patient',) + tuple(clause[1:]),
             ('number',) + tuple(clause[1:]),
             ]

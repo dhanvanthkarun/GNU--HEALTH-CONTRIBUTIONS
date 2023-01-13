@@ -2,8 +2,8 @@
 # SPDX-FileCopyrightText: 2009-2016 B2CK
 # SPDX-FileCopyrightText: 2009-2016 Cédric Krier
 # SPDX-FileCopyrightText: 2009-2016 Tryton Foundation <info@tryton.org>
-# SPDX-FileCopyrightText: 2016-2022 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2016-2022 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2016-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2016-2023 Luis Falcón <falcon@gnuhealth.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -1504,7 +1504,12 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
 
 
 class DateMixin:
-    _rec_name = 'datetime'
+    # _rec_name = 'datetime'
+    # _rec_name needs to be char or  txt
+    def get_rec_name(self, name):
+        if self.datetime:
+            return str(self.datetime)
+
     date = fields.Boolean(
         'Is Date',
         help='Ignore time of field "Date", but handle as date only.')
@@ -1548,7 +1553,12 @@ class DateMixin:
 class EventRDate(DateMixin, ModelSQL, ModelView):
     'Recurrence Date'
     __name__ = 'calendar.event.rdate'
-    _rec_name = 'datetime'
+    # _rec_name = 'datetime'
+
+    def get_rec_name(self, name):
+        if self.datetime:
+            return str(self.datetime)
+
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
         select=True, required=True)
@@ -1598,7 +1608,11 @@ class EventExDate(EventRDate):
 
 
 class RRuleMixin(Model):
-    _rec_name = 'freq'
+    # _rec_name = 'freq'
+    def get_rec_name(self, name):
+        if self.freq:
+            return str(self.freq)
+
     freq = fields.Selection([
         ('secondly', 'Secondly'),
         ('minutely', 'Minutely'),

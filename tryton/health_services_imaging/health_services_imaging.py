@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -11,9 +11,9 @@
 #                 Health_services_imaging.py: Main module               #
 #########################################################################
 
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, fields
 from trytond.pyson import Eval, Equal
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from .exceptions import (NoServiceAssociated)
 from trytond.i18n import gettext
 
@@ -23,8 +23,7 @@ __all__ = ['ImagingTestRequest']
 """ Add Imaging order charges to service model """
 
 
-class ImagingTestRequest(ModelSQL, ModelView):
-    'Imaging Order'
+class ImagingTestRequest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.imaging.test.request'
 
     service = fields.Many2One(

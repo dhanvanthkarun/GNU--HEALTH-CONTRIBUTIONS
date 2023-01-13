@@ -1,7 +1,7 @@
-# Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnuhealth.org>
+# Copyright (C) 2008-2023 Luis Falcon <lfalcon@gnuhealth.org>
 # Copyright (C) 2013  Sebastián Marro <smarro@thymbra.com>
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
