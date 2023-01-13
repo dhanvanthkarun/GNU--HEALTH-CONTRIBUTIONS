@@ -13,7 +13,7 @@
 #########################################################################
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval, Equal
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
 
 from .exceptions import (NoServiceAssociated)
@@ -24,14 +24,14 @@ __all__ = ['PatientLabTestRequest']
 """ Add Lab order charges to service model """
 
 
-class PatientLabTestRequest(ModelSQL, ModelView):
+class PatientLabTestRequest(metaclass=PoolMeta):
     'Lab Order'
     __name__ = 'gnuhealth.patient.lab.test'
 
     service = fields.Many2One(
         'gnuhealth.health_service', 'Service',
         domain=[('patient', '=', Eval('patient_id'))],
-        depends=['patient'],
+        depends=['patient_id'],
         states={'readonly': Equal(Eval('state'), 'done')},
         help="Service document associated to this Lab Request")
 
