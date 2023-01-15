@@ -10,6 +10,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <label name="patient"/>
     <field name="patient"/>
+    <label name="computed_age"/>
+    <field name="computed_age"/>
     <label name="number"/>
     <field name="number"/>
     <label name="date"/>
@@ -22,8 +24,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <field name="doctor"/>
     <label name="order"/>
     <field name="order"/>
+    <newline/>
     <label name="request"/>
-    <field name="request"/>
+    <field name="request" colspan="3"/>
     <notebook>
         <page string="Images" id="images_page">
             <field name="images" colspan="4"/>

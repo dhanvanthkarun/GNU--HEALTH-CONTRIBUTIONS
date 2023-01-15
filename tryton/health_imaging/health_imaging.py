@@ -19,7 +19,8 @@ from trytond.model import Workflow, ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval
 from trytond.pool import Pool
 
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (
+    get_health_professional, compute_age_from_dates)
 
 __all__ = [
     'ImagingTestType',
@@ -55,6 +56,16 @@ class ImagingTest(ModelSQL, ModelView):
 class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     'Imaging Test Request'
     __name__ = 'gnuhealth.imaging.test.request'
+
+    def get_rec_name(self, name):
+        res = ''
+        if self.urgent:
+            res = '**Urgent**'
+        if self.doctor:
+            res = f'{res} ({self.doctor.rec_name}) //'
+        if self.context:
+            res = f'{res} CONTEXT: {self.context.rec_name}'
+        return res
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     date = fields.DateTime('Date', required=True)
@@ -155,6 +166,12 @@ class ImagingTestResult(ModelSQL, ModelView):
     'Imaging Test Result'
     __name__ = 'gnuhealth.imaging.test.result'
 
+    def patient_age_at_evaluation(self, name):
+        if (self.patient.name.dob and self.date):
+            return compute_age_from_dates(
+                self.patient.name.dob, None, None, None, 'age',
+                self.date.date())
+
     patient = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True)
     number = fields.Char('Number', readonly=True)
     date = fields.DateTime('Date', required=True)
@@ -163,13 +180,19 @@ class ImagingTestResult(ModelSQL, ModelView):
         'gnuhealth.imaging.test', 'Test',
         required=True)
     request = fields.Many2One(
-        'gnuhealth.imaging.test.request', 'Request',
+        'gnuhealth.imaging.test.request', 'Request Info',
         readonly=True)
     order = fields.Char(
         'Order', readonly=True,
         help="The order ID containing this particular imaging study")
     doctor = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof', required=True)
+        'gnuhealth.healthprofessional', 'Evaluated by', required=True)
+
+    computed_age = fields.Function(fields.Char(
+            'Age',
+            help="Computed patient age at the moment of the evaluation"),
+            'patient_age_at_evaluation')
+
     comment = fields.Text('Additional Information')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
