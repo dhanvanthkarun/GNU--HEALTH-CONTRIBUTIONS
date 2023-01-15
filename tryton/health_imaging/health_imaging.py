@@ -166,7 +166,7 @@ class ImagingTestResult(ModelSQL, ModelView):
         'gnuhealth.imaging.test.request', 'Request',
         readonly=True)
     order = fields.Char(
-        'Order',
+        'Order', readonly=True,
         help="The order ID containing this particular imaging study")
     doctor = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof', required=True)
