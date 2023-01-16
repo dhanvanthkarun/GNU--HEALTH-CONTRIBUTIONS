@@ -123,5 +123,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="report_patient_evaluation_brief"/>
         </record>
 
+        <record model="ir.action.report" id="report_birth_certificate">
+            <field name="name">Birth Certificate</field>
+            <field name="model">gnuhealth.birth_certificate</field>
+            <field name="report_name">gnuhealth.birth_certificate</field>
+            <field name="report">health/report/birth_certificate.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record model="ir.action.keyword" id="birth_certificate_report">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.birth_certificate,-1</field>
+            <field name="action" ref="report_birth_certificate"/>
+        </record>
+
     </data>
 </tryton>
