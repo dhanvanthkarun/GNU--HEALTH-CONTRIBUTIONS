@@ -136,5 +136,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="report_birth_certificate"/>
         </record>
 
+        <record model="ir.action.report" id="report_death_certificate">
+            <field name="name">Death Certificate</field>
+            <field name="model">gnuhealth.death_certificate</field>
+            <field name="report_name">gnuhealth.death_certificate</field>
+            <field name="report">health/report/death_certificate.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record model="ir.action.keyword" id="death_certificate_report">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.death_certificate,-1</field>
+            <field name="action" ref="report_death_certificate"/>
+        </record>
+
     </data>
 </tryton>
