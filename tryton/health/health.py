@@ -402,6 +402,8 @@ class Party(metaclass=PoolMeta):
         ('u', 'Unknown')
         ], 'Gender', states={'required': Bool(Eval('is_person'))})
 
+    gender_str = gender.translated('gender')
+
     photo = fields.Binary('Picture')
     ethnic_group = fields.Many2One('gnuhealth.ethnicity', 'Ethnicity')
 
@@ -414,6 +416,8 @@ class Party(metaclass=PoolMeta):
         ('d', 'Divorced'),
         ('x', 'Separated'),
         ], 'Marital Status', sort=False)
+
+    marital_status_str = marital_status.translated('marital_status')
 
     citizenship = fields.Many2One(
         'country.country', 'Citizenship', help='Country of Citizenship')
@@ -2764,6 +2768,8 @@ class DeathCertificate (ModelSQL, ModelView):
         ], 'Type of death', required=True, sort=False,
         states=STATES)
 
+    type_of_death_str = type_of_death.translated('type_of_death')
+
     place_of_death = fields.Selection(
         [
             (None, ''),
@@ -2773,6 +2779,8 @@ class DeathCertificate (ModelSQL, ModelView):
             ('health_center', 'Health Center'),
         ], 'Place', required=True, sort=False,
         states=STATES)
+
+    place_of_death_str = place_of_death.translated('place_of_death')
 
     operational_sector = fields.Many2One(
         'gnuhealth.operational_sector', 'Op. Sector',
