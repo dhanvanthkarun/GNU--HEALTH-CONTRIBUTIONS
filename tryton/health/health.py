@@ -3534,7 +3534,7 @@ class Appointment(ModelSQL, ModelView):
     def default_institution():
         return get_institution()
 
-    @fields.depends('patient','_parent_patient.name')
+    @fields.depends('patient', '_parent_patient.name')
     def on_change_patient(self):
         if self.patient:
             self.state = 'confirmed'
