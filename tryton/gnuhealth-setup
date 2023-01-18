@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# SPDX-FileCopyrightText: 2008-2022 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2022 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2014 Bruno M. Villasanti <bvillasanti@thymbra.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -20,7 +20,7 @@
 
 #GNU Health HMIS installer version
 
-VERSION="4.0.2"
+VERSION="4.0.3"
 
 # Colors constants
 NONE="$(tput sgr0)"
@@ -35,7 +35,7 @@ GNUHEALTH_INST_DIR="$PWD"
 GNUHEALTH_VERSION=$(cat version)
 TRYTON_VERSION="6.0"
 
-TRYTON_BASE_URL="https://downloads-cdn.tryton.org"
+TRYTON_BASE_URL="https://downloads.tryton.org"
 
 GNUHEALTH_URL="https://ftp.gnu.org/gnu/health"
 TRANSLATE_URL="http://translate.gnusolidario.org"
