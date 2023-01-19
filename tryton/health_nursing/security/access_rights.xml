@@ -88,6 +88,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">Health Nurse</field>
             <field name="login">demo_nurse</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Health Nursing group -->
@@ -134,7 +135,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_nursing_inpatient_registration_nursing">
