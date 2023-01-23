@@ -51,17 +51,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <!-- END OF DEFAULT ACCESS RIGHTS -->
 
-<!-- BEGIN imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+<!-- Create the Health imaging group -->
+        <record model="res.group" id="group_health_imaging">
+            <field name="name">Health Imaging</field>
+        </record>
 
 <!-- Create the Health imaging Administration group -->
         <record model="res.group" id="group_health_imaging_admin">
-            <field name="name">Health imaging Administration</field>
+            <field name="name">Health Imaging Administration</field>
         </record>
 
-<!-- Create the Health imaging group -->
-        <record model="res.group" id="group_health_imaging">
-            <field name="name">Health imaging</field>
-        </record>
+<!-- BEGIN imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+
 
 <!-- Assign the Group to the "admin" user -->
 
@@ -121,22 +122,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
 
+<!-- END imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+
 <!-- BEGIN imaging USER GROUP ACCESS RIGHTS -->
 
 <!-- Create the demo_imaging user -->
         <record model="res.user" id="user_demo_imaging">
-            <field name="name">Health imaging</field>
+            <field name="name">Health Imaging</field>
             <field name="login">demo_imaging</field>
             <field name="password">gnusolidario</field>
             <field name="active" eval="False"></field>
         </record>
 
-<!-- Assign the Group to the "admin" user -->
-
-        <record model="res.user-res.group" id="user_admin_group_health_imaging_admin">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_health_imaging_admin"/>
-        </record>
 
 <!-- Assign the Admin group to the "demo_imaging" user -->
 
@@ -189,6 +186,44 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.model.access" id="access_health_imaging_test_type_doctor">
             <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.type')]"/>
             <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+<!-- Generic Medical Imaging access -->
+
+        <record model="ir.model.access" id="access_health_imaging_test_request_imaging">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.request')]"/>
+            <field name="group" ref="group_health_imaging"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_imaging_result_imaging">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.result')]"/>
+            <field name="group" ref="group_health_imaging"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_imaging_test_imaging">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test')]"/>
+            <field name="group" ref="group_health_imaging"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_imaging_test_type_imaging">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.type')]"/>
+            <field name="group" ref="group_health_imaging"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
