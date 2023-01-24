@@ -28,7 +28,7 @@ __all__ = [
 
 
 class ImagingTestType(ModelSQL, ModelView):
-    'Imaging Test Type'
+    'Medical Imaging Study Type'
     __name__ = 'gnuhealth.imaging.test.type'
 
     code = fields.Char('Code', required=True)
@@ -36,7 +36,7 @@ class ImagingTestType(ModelSQL, ModelView):
 
 
 class ImagingTest(ModelSQL, ModelView):
-    'Imaging Test'
+    'Medical Imaging Study'
     __name__ = 'gnuhealth.imaging.test'
 
     code = fields.Char('Code', required=True)
@@ -54,7 +54,7 @@ class ImagingTest(ModelSQL, ModelView):
 
 
 class ImagingTestRequest(Workflow, ModelSQL, ModelView):
-    'Imaging Test Request'
+    'Medical Imaging Study Request'
     __name__ = 'gnuhealth.imaging.test.request'
 
     def get_rec_name(self, name):
@@ -70,7 +70,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     date = fields.DateTime('Date', required=True)
     requested_test = fields.Many2One(
-        'gnuhealth.imaging.test', 'Test',
+        'gnuhealth.imaging.test', 'Study',
         required=True)
     doctor = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof', required=True)
@@ -163,7 +163,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
 
 
 class ImagingTestResult(ModelSQL, ModelView):
-    'Imaging Test Result'
+    'Medical Imaging Study Result'
     __name__ = 'gnuhealth.imaging.test.result'
 
     def patient_age_at_evaluation(self, name):
@@ -177,7 +177,7 @@ class ImagingTestResult(ModelSQL, ModelView):
     date = fields.DateTime('Date', required=True)
     request_date = fields.DateTime('Requested Date', readonly=True)
     requested_test = fields.Many2One(
-        'gnuhealth.imaging.test', 'Test',
+        'gnuhealth.imaging.test', 'Study',
         required=True)
     request = fields.Many2One(
         'gnuhealth.imaging.test.request', 'Request Info',
@@ -231,7 +231,7 @@ class ImagingTestResult(ModelSQL, ModelView):
         t = cls.__table__()
         cls._sql_constraints = [
             ('number_uniq', Unique(t, t.number),
-             'The test ID code must be unique')
+             'The study ID code must be unique')
         ]
         cls._order.insert(0, ('date', 'DESC'))
 

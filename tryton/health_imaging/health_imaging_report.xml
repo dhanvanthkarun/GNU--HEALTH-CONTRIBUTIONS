@@ -10,7 +10,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <tryton>
     <data>
         <record model="ir.action.report" id="imaging_result_report">
-            <field name="name">Imaging study</field>
+            <field name="name">Medical Imaging Study</field>
             <field name="model">gnuhealth.imaging.test.result</field>
             <field name="report_name">patient.imaging_report_results</field>
             <field name="report">health_imaging/report/imaging_study_report.fodt</field>

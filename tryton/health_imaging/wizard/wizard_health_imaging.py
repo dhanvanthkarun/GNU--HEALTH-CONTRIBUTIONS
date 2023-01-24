@@ -58,7 +58,7 @@ class RequestImagingTest(ModelView):
 
     request = fields.Many2One('gnuhealth.patient.imaging.test.request.start',
         'Request', required=True)
-    test = fields.Many2One('gnuhealth.imaging.test', 'Test', required=True)
+    test = fields.Many2One('gnuhealth.imaging.test', 'Study', required=True)
 
 
 class RequestPatientImagingTestStart(ModelView):
@@ -68,7 +68,7 @@ class RequestPatientImagingTestStart(ModelView):
     date = fields.DateTime('Date')
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof',
-        required=True, help="Health professionalwho requests the lab tests.")
+        required=True, help="Health professionalwho requests the study.")
     context = fields.Many2One('gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
              " existing health condition, a regular health checkup, ...",

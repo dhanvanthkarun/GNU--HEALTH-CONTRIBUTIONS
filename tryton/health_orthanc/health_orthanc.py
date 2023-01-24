@@ -349,7 +349,7 @@ class OrthancStudy(ModelSQL, ModelView):
         fields.Char(
             "URL", help="Link to study in Orthanc Explorer"), "get_link")
 
-    imaging_test = fields.Many2One("gnuhealth.imaging.test.result", "Test")
+    imaging_test = fields.Many2One("gnuhealth.imaging.test.result", "Study")
 
     def get_link(self, name):
         pre = "".join([self.server.domain.rstrip("/"), "/"])

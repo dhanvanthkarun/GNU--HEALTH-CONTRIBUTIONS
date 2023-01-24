@@ -20,7 +20,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/execute_icon.svg</field>
         </record>
 
-        <menuitem name="Dx Imaging" parent="health.gnuhealth_conf_menu"
+        <menuitem name="Medical Imaging" parent="health.gnuhealth_conf_menu"
             id="menu_imaging_test_parent" icon="gnuhealth.imaging"/>
 
         <record model="ir.ui.view" id="view_imaging_test_type_form">
@@ -36,7 +36,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record model="ir.action.act_window" id="act_imaging_test_type_view">
-            <field name="name">Dx Imaging Test Types</field>
+            <field name="name">Medical Imaging Types</field>
             <field name="res_model">gnuhealth.imaging.test.type</field>
         </record>
 
@@ -57,7 +57,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record model="ir.action.act_window" id="act_imaging_test_view">
-            <field name="name">Dx Imaging Tests</field>
+            <field name="name">Medical Imaging Studies</field>
             <field name="res_model">gnuhealth.imaging.test</field>
         </record>
 
@@ -66,7 +66,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="menu_imaging_test_view" icon="gnuhealth-list"/>
 
        <record model="ir.action.wizard" id="wizard_generate_result">
-           <field name="name">Dx Imaging - Generate Result</field>
+           <field name="name">Medical Imaging - Generate Result</field>
            <field name="wiz_name">wizard.generate.result</field>
            <field name="model">gnuhealth.imaging.test.request</field>
        </record>
@@ -88,7 +88,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record model="ir.action.act_window" id="act_imaging_test_request_view">
-            <field name="name">Dx Imaging Requests</field>
+            <field name="name">Medical Imaging Requests</field>
             <field name="res_model">gnuhealth.imaging.test.request</field>
         </record>
         <record model="ir.action.act_window.view" id="act_imaging_test_request_view_tree">
@@ -128,7 +128,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         
         <!-- Place it under Lab menu if the module is loaded -->
 
-        <menuitem name="Imaging" parent="health.gnuhealth_menu"
+        <menuitem name="Medical Imaging" parent="health.gnuhealth_menu"
             id="menu_imaging" sequence="41" icon="gnuhealth.imaging"/>
 
         <menuitem parent="menu_imaging"
@@ -149,7 +149,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record model="ir.action.act_window" id="act_imaging_test_result_view">
-            <field name="name">Dx Imaging - Results</field>
+            <field name="name">Medical Imaging - Results</field>
             <field name="res_model">gnuhealth.imaging.test.result</field>
         </record>
 
@@ -159,7 +159,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             sequence="30"/>
 
         <record model="ir.action.act_window" id="act_imaging_test_request_view2">
-            <field name="name">Dx Imaging Requests</field>
+            <field name="name">Medical Imaging Requests</field>
             <field name="res_model">gnuhealth.imaging.test.request</field>
             <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
         </record>
@@ -170,7 +170,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record model="ir.action.act_window" id="act_imaging_test_result_view2">
-            <field name="name">Dx Imaging Results</field>
+            <field name="name">Medical Imaging Results</field>
             <field name="res_model">gnuhealth.imaging.test.result</field>
             <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
         </record>
@@ -187,7 +187,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">patient_imaging_test_request_start_form</field>
         </record>
         <record model="ir.action.wizard" id="patient_imaging_test_request">
-            <field name="name">Dx Imaging - New order</field>
+            <field name="name">Medical Imaging - New order</field>
             <field name="wiz_name">gnuhealth.patient.imaging.test.request</field>
         </record>
 
