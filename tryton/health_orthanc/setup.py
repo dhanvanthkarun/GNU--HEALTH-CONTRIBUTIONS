@@ -34,7 +34,8 @@ for key in ('depends', 'extras_depend', 'xml'):
         info[key] = info[key].strip().splitlines()
 major_version, minor_version = 6, 0
 
-requires = []
+# Initial packages required specifically for health_orthanc
+requires = ['pendulum', 'beren == 0.7.0']
 
 for dep in info.get('depends', []):
     if (dep == 'health'):
