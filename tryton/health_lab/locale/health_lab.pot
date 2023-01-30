@@ -2,28 +2,8 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:gnuhealth.lab.test.units:"
-msgid "The Unit name must be unique"
-msgstr ""
-
-msgctxt "error:gnuhealth.lab.test_type:"
-msgid "The Lab Test code must be unique"
-msgstr ""
-
-msgctxt "error:gnuhealth.lab:"
-msgid "The test ID code must be unique"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,create_uid:"
-msgid "Create User"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,critearea:"
@@ -42,10 +22,6 @@ msgctxt "field:gnuhealth.lab,diagnosis:"
 msgid "Diagnosis"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
 msgstr ""
@@ -54,20 +30,20 @@ msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr ""
 
+msgctxt "field:gnuhealth.lab,pathology:"
+msgid "Pathology"
+msgstr ""
+
 msgctxt "field:gnuhealth.lab,patient:"
 msgid "Patient"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab,rec_name:"
-msgid "Record Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab,request_order:"
-msgid "Request"
+msgid "Order"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,requestor:"
-msgid "Physician"
+msgid "Health prof"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,results:"
@@ -78,36 +54,12 @@ msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.create.init,id:"
-msgid "ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,create_uid:"
-msgid "Create User"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab.test.critearea,excluded:"
 msgid "Excluded"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,gnuhealth_lab_id:"
 msgid "Test Cases"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,id:"
-msgid "ID"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,lab_warning_icon:"
@@ -124,10 +76,6 @@ msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,normal_range:"
 msgid "Reference"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,rec_name:"
-msgid "Record Name"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,remarks:"
@@ -162,44 +110,12 @@ msgctxt "field:gnuhealth.lab.test.critearea,warning:"
 msgid "Warn"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab.test.critearea,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,write_uid:"
-msgid "Write User"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab.test.units,code:"
 msgid "Code"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab.test.units,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab.test.units,name:"
 msgid "Unit"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,rec_name:"
-msgid "Record Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,write_uid:"
-msgid "Write User"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab.test_type,active:"
@@ -210,20 +126,8 @@ msgctxt "field:gnuhealth.lab.test_type,code:"
 msgid "Code"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab.test_type,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,create_uid:"
-msgid "Create User"
-msgstr ""
-
 msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,id:"
-msgid "ID"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab.test_type,info:"
@@ -238,28 +142,20 @@ msgctxt "field:gnuhealth.lab.test_type,product_id:"
 msgid "Service"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab.test_type,rec_name:"
-msgid "Record Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,write_uid:"
-msgid "Write User"
-msgstr ""
-
 msgctxt "field:gnuhealth.patient,lab_test_ids:"
 msgid "Lab Tests Required"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,create_date:"
-msgid "Create Date"
+msgctxt "field:gnuhealth.patient.disease,lab_confirmed:"
+msgid "Lab Confirmed"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,create_uid:"
-msgid "Create User"
+msgctxt "field:gnuhealth.patient.disease,lab_test:"
+msgid "Lab Test"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.lab.test,context:"
+msgid "Context"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,date:"
@@ -267,11 +163,7 @@ msgid "Date"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Doctor"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test,id:"
-msgid "ID"
+msgid "Health prof."
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,name:"
@@ -280,10 +172,6 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test,rec_name:"
-msgid "Record Name"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,request:"
@@ -298,12 +186,8 @@ msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test,write_uid:"
-msgid "Write User"
+msgctxt "field:gnuhealth.patient.lab.test.request.start,context:"
+msgid "Context"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,date:"
@@ -311,11 +195,7 @@ msgid "Date"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Doctor"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test.request.start,id:"
-msgid "ID"
+msgid "Health prof"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
@@ -330,10 +210,6 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,urgent:"
 msgid "Urgent"
 msgstr ""
 
-msgctxt "field:gnuhealth.request-test,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.request-test,request:"
 msgid "Request"
 msgstr ""
@@ -342,20 +218,20 @@ msgctxt "field:gnuhealth.request-test,test:"
 msgid "Test"
 msgstr ""
 
-msgctxt "field:gnuhealth.sequence.setup,lab_request_sequence:"
-msgid "Lab Request Sequence"
-msgstr ""
-
-msgctxt "field:gnuhealth.sequence.setup,lab_sequence:"
-msgid "Lab Result Sequence"
-msgstr ""
-
 msgctxt "field:gnuhealth.sequences,lab_request_sequence:"
-msgid "Patient Lab Request Sequence"
+msgid "Lab request sequence"
 msgstr ""
 
-msgctxt "field:gnuhealth.sequences,lab_sequence:"
-msgid "Lab Sequence"
+msgctxt "field:gnuhealth.sequences,lab_test_sequence:"
+msgid "Lab test sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences.lab_request_sequence,lab_request_sequence:"
+msgid "Lab request sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
+msgid "Lab test sequence"
 msgstr ""
 
 msgctxt "help:gnuhealth.lab,name:"
@@ -364,6 +240,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab,pathology:"
+msgid "Pathology confirmed / associated to this lab test."
 msgstr ""
 
 msgctxt "help:gnuhealth.lab,patient:"
@@ -402,12 +282,32 @@ msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.disease,lab_confirmed:"
+msgid "Confirmed by laboratory test"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.disease,lab_test:"
+msgid "Lab test that confirmed the condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,context:"
+msgid ""
+"Health context for this order. It can be a suspected or existing health "
+"condition, a regular health checkup, ..."
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Doctor who Request the lab test."
+msgid "Health professional who requests the lab test."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
+msgid ""
+"Health context for this order. It can be a suspected or existing health "
+"condition, a regular health checkup, ..."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Doctor who Request the lab tests."
+msgid "Health professional who ordered the lab tests."
 msgstr ""
 
 msgctxt "model:gnuhealth.lab,name:"
@@ -956,7 +856,7 @@ msgid "URINE ANALYSIS"
 msgstr ""
 
 msgctxt "model:gnuhealth.patient.lab.test,name:"
-msgid "Patient Lab Test"
+msgid "Lab Test Request"
 msgstr ""
 
 msgctxt "model:gnuhealth.patient.lab.test.request.start,name:"
@@ -967,12 +867,20 @@ msgctxt "model:gnuhealth.request-test,name:"
 msgid "Request - Test"
 msgstr ""
 
+msgctxt "model:gnuhealth.sequences.lab_request_sequence,name:"
+msgid "Lab Request Sequence setup"
+msgstr ""
+
+msgctxt "model:gnuhealth.sequences.lab_test_sequence,name:"
+msgid "Lab Test Sequence setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_create_lab_test"
 msgid "Lab: Create test"
 msgstr ""
 
 msgctxt "model:ir.action,name:act_patient_lab_history_form1"
-msgid "Lab: Reports"
+msgid "Lab: Results"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_lab_test_request"
@@ -988,11 +896,11 @@ msgid "Lab Test Types"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_tree_lab"
-msgid "Lab Tests Results"
+msgid "Lab Results"
 msgstr ""
 
 msgctxt "model:ir.action,name:patient_lab_test_request"
-msgid "Lab: Request new order"
+msgid "Lab: New order"
 msgstr ""
 
 msgctxt "model:ir.action,name:report_patient_labtest_report"
@@ -1016,7 +924,7 @@ msgid "Lab Test"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_action_lab_tree"
-msgid "Lab Tests Results"
+msgid "Lab Results"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_laboratory"
@@ -1040,7 +948,7 @@ msgid "Lab Test Types"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_patient_lab_test_request"
-msgid "Lab: Request new order"
+msgid "Lab: New order"
 msgstr ""
 
 msgctxt "model:product.category,name:product_category_labservices0"
@@ -1100,7 +1008,7 @@ msgid "*"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
-msgid ","
+msgid ":"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1120,7 +1028,7 @@ msgid "Diagnosis"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
+msgid "Doctor"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1241,6 +1149,10 @@ msgstr ""
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Notes"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.disease:"
+msgid "Laboratory"
 msgstr ""
 
 msgctxt "wizard_button:gnuhealth.lab.test.create,start,create_lab_test:"

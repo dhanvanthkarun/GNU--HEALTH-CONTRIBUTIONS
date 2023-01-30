@@ -2,6 +2,22 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:gnuhealth.epidemics.report.open.start,demographics:"
+msgid "Demographics"
+msgstr ""
+
+msgctxt "field:gnuhealth.epidemics.report.open.start,end_date:"
+msgid "End"
+msgstr ""
+
+msgctxt "field:gnuhealth.epidemics.report.open.start,health_condition:"
+msgid "Condition"
+msgstr ""
+
+msgctxt "field:gnuhealth.epidemics.report.open.start,start_date:"
+msgid "Start"
+msgstr ""
+
 msgctxt "field:gnuhealth.evaluations.open.start,end_date:"
 msgid "End Date"
 msgstr ""
@@ -10,20 +26,8 @@ msgctxt "field:gnuhealth.evaluations.open.start,group_by:"
 msgid "Group By"
 msgstr ""
 
-msgctxt "field:gnuhealth.evaluations.open.start,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.evaluations.open.start,start_date:"
 msgid "Start Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_doctor,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_doctor,create_uid:"
-msgid "Create User"
 msgstr ""
 
 msgctxt "field:gnuhealth.evaluations_doctor,doctor:"
@@ -34,84 +38,20 @@ msgctxt "field:gnuhealth.evaluations_doctor,evaluations:"
 msgid "Evaluations"
 msgstr ""
 
-msgctxt "field:gnuhealth.evaluations_doctor,id:"
-msgid "ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_doctor,rec_name:"
-msgid "Record Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_doctor,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_doctor,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_sector,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_sector,create_uid:"
-msgid "Create User"
-msgstr ""
-
 msgctxt "field:gnuhealth.evaluations_sector,evaluations:"
 msgid "Evaluations"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_sector,id:"
-msgid "ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_sector,rec_name:"
-msgid "Record Name"
 msgstr ""
 
 msgctxt "field:gnuhealth.evaluations_sector,sector:"
 msgid "Sector"
 msgstr ""
 
-msgctxt "field:gnuhealth.evaluations_sector,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_sector,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_specialty,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_specialty,create_uid:"
-msgid "Create User"
-msgstr ""
-
 msgctxt "field:gnuhealth.evaluations_specialty,evaluations:"
 msgid "Evaluations"
 msgstr ""
 
-msgctxt "field:gnuhealth.evaluations_specialty,id:"
-msgid "ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_specialty,rec_name:"
-msgid "Record Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.evaluations_specialty,specialty:"
 msgid "Specialty"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_specialty,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.evaluations_specialty,write_uid:"
-msgid "Write User"
 msgstr ""
 
 msgctxt "field:gnuhealth.summary.report.open.start,demographics:"
@@ -120,10 +60,6 @@ msgstr ""
 
 msgctxt "field:gnuhealth.summary.report.open.start,end_date:"
 msgid "End"
-msgstr ""
-
-msgctxt "field:gnuhealth.summary.report.open.start,id:"
-msgid "ID"
 msgstr ""
 
 msgctxt "field:gnuhealth.summary.report.open.start,institution:"
@@ -142,32 +78,8 @@ msgctxt "field:gnuhealth.top_diseases,cases:"
 msgid "Cases"
 msgstr ""
 
-msgctxt "field:gnuhealth.top_diseases,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.top_diseases,create_uid:"
-msgid "Create User"
-msgstr ""
-
 msgctxt "field:gnuhealth.top_diseases,disease:"
 msgid "Disease"
-msgstr ""
-
-msgctxt "field:gnuhealth.top_diseases,id:"
-msgid "ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.top_diseases,rec_name:"
-msgid "Record Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.top_diseases,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.top_diseases,write_uid:"
-msgid "Write User"
 msgstr ""
 
 msgctxt "field:gnuhealth.top_diseases.open.start,end_date:"
@@ -178,16 +90,16 @@ msgctxt "field:gnuhealth.top_diseases.open.start,group:"
 msgid "Disease Group"
 msgstr ""
 
-msgctxt "field:gnuhealth.top_diseases.open.start,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.top_diseases.open.start,number_records:"
 msgid "Number of Records"
 msgstr ""
 
 msgctxt "field:gnuhealth.top_diseases.open.start,start_date:"
 msgid "Start Date"
+msgstr ""
+
+msgctxt "model:gnuhealth.epidemics.report.open.start,name:"
+msgid "Epidemics Report Start"
 msgstr ""
 
 msgctxt "model:gnuhealth.evaluations.open.start,name:"
@@ -242,8 +154,16 @@ msgctxt "model:ir.action,name:act_top_diseases_open"
 msgid "Top Diseases"
 msgstr ""
 
+msgctxt "model:ir.action,name:act_wizard_epidemics_report"
+msgid "Epidemiological Surveillance"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_wizard_summary_report"
 msgid "Summary Report"
+msgstr ""
+
+msgctxt "model:ir.action,name:report_epidemics_information"
+msgid "Epidemiological Surveillance"
 msgstr ""
 
 msgctxt "model:ir.action,name:report_summary_information"
@@ -254,12 +174,172 @@ msgctxt "model:ir.ui.menu,name:menu_evaluations_open"
 msgid "Evaluations Report"
 msgstr ""
 
+msgctxt "model:ir.ui.menu,name:menu_institution_epidemics_report"
+msgid "Epidemiological Surveillance"
+msgstr ""
+
 msgctxt "model:ir.ui.menu,name:menu_institution_summary_report"
 msgid "Summary Report"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_top_diseases_open"
 msgid "Top Diseases"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "-"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "0"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "15 – 45"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "15-44"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "45 – 60"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "45-60"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "5 – 14"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "5-14"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "< 5"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "<5"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "> 6"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid ">60"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Age group"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Birth"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Confirmed cases"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Death"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Deaths"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Distribution by"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Distribution by Socioeconomic Status"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Epidemiolog"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Ethnic group"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Female"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "In health system"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "In t"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Living Population"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Male"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "No Age"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "No DoB"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Period"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Print Date:"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Registrations"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Surveillance"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Total"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "at"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "certs"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "his period"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "ical"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "to"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Σ"
 msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
@@ -506,6 +586,14 @@ msgctxt "selection:gnuhealth.evaluations.open.start,group_by:"
 msgid "Specialty"
 msgstr ""
 
+msgctxt "view:gnuhealth.epidemics.report.open.start:"
+msgid "Main"
+msgstr ""
+
+msgctxt "view:gnuhealth.epidemics.report.open.start:"
+msgid "Sections"
+msgstr ""
+
 msgctxt "view:gnuhealth.evaluations_doctor:"
 msgid "Evaluations"
 msgstr ""
@@ -528,6 +616,14 @@ msgstr ""
 
 msgctxt "view:gnuhealth.top_diseases:"
 msgid "Cases"
+msgstr ""
+
+msgctxt "wizard_button:gnuhealth.epidemics.report.open,start,end:"
+msgid "Cancel"
+msgstr ""
+
+msgctxt "wizard_button:gnuhealth.epidemics.report.open,start,open_:"
+msgid "Open"
 msgstr ""
 
 msgctxt "wizard_button:gnuhealth.evaluations.open,start,end:"
