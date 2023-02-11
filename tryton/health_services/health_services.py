@@ -1,30 +1,21 @@
-##############################################################################
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011  Adrián Bernardi, Mario Puntin (health_invoice)
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
-#    GNU Health: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnusolidario.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#
-#    Copyright (C) 2011  Adrián Bernardi, Mario Puntin (health_invoice)
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                         HEALTH SERVICES PACKAGE                       #
+#                     health_services.py: Main module                   #
+#########################################################################
 import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, Equal
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
 from trytond.modules.health.core import get_institution
 
@@ -172,9 +163,9 @@ class HealthServiceLine(ModelSQL, ModelView):
         if self.name:
             return f'{self.desc} ({self.name.name})'
 
+
 # Add Prescription order charges to service model
-class PatientPrescriptionOrder(ModelSQL, ModelView):
-    'Prescription Order'
+class PatientPrescriptionOrder(metaclass=PoolMeta):
     __name__ = 'gnuhealth.prescription.order'
 
     service = fields.Many2One(
@@ -229,8 +220,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
 
 
 # Include  Patient Evaluation service
-class PatientEvaluation(ModelSQL, ModelView):
-    'Patient Evaluation'
+class PatientEvaluation(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.evaluation'
 
     service = fields.Many2One(

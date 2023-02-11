@@ -1,28 +1,20 @@
-##############################################################################
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
-#    GNU Health: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnusolidario.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                         HEALTH QR_CODES PACKAGE                       #
+#                      health_qrcodes.py: Main module                   #
+#########################################################################
 import qrcode
 import barcode
 import io
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import fields
+from trytond.pool import PoolMeta
 
 
 __all__ = ['Patient', 'Appointment', 'Newborn', 'LabTest']
@@ -30,8 +22,7 @@ __all__ = ['Patient', 'Appointment', 'Newborn', 'LabTest']
 
 # Add the QR field and QR image in the patient model
 
-class Patient(ModelSQL, ModelView):
-    'Patient'
+class Patient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     # Add the QR Code to the Patient
@@ -41,15 +32,13 @@ class Patient(ModelSQL, ModelView):
         # Create the QR code
 
         patient_puid = self.puid or ''
-
         patient_blood_type = self.blood_type or ''
-
         patient_rh = self.rh or ''
-
         patient_gender = self.gender or ''
+        patient_dob = ''
 
         if (self.dob):
-            patient_dob = str(self.dob) or ''
+            patient_dob = str(self.dob)
 
         qr_string = f'{patient_puid}\n' \
             f'Name: {self.name.rec_name}\n' \
@@ -71,7 +60,7 @@ class Patient(ModelSQL, ModelView):
 
 # Add the QR field and QR image in the appointment model
 
-class Appointment(ModelSQL, ModelView):
+class Appointment(metaclass=PoolMeta):
     __name__ = 'gnuhealth.appointment'
 
     # Add the QR Code to the Appointment
@@ -122,7 +111,7 @@ class Appointment(ModelSQL, ModelView):
         return bytearray(qr_png)
 
 
-class Newborn(ModelSQL, ModelView):
+class Newborn(metaclass=PoolMeta):
     'NewBorn'
     __name__ = 'gnuhealth.newborn'
 
@@ -171,7 +160,7 @@ class Newborn(ModelSQL, ModelView):
         return bytearray(qr_png)
 
 
-class LabTest(ModelSQL, ModelView):
+class LabTest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.lab'
 
     # Add the QR Code to the Lab Test

@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+# SPDX-FileCopyrightText: 2009-2013 Bertrand Chenal
+# SPDX-FileCopyrightText: 2009-2016 B2CK
+# SPDX-FileCopyrightText: 2009-2016 Cédric Krier
+# SPDX-FileCopyrightText: 2009-2016 Tryton Foundation <info@tryton.org>
+# SPDX-FileCopyrightText: 2016-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2016-2023 Luis Falcón <falcon@gnuhealth.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 from setuptools import setup
 import re
 import os
@@ -46,7 +55,7 @@ setup(
     name='gnuhealth_caldav',
     version=info.get('version', '0.0.1'),
     description='CalDAV package for GNU Health and Python3',
-    long_description=read('README'),
+    long_description=read('README.rst'),
     author='GNU Solidario',
     author_email='health@gnusolidario.org',
     url='https://www.gnuhealth.org',

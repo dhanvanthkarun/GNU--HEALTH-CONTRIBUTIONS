@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <form>
     <group string="Header" colspan="4" col="16" id="evaluation_header">
         <label name="patient"/>
@@ -143,13 +151,15 @@
                 <field name="praxis"/>
             </group>
         </page>
-        <page string="Dx and Procedures" id="page_patient_evaluation_extra_info">
+        <page string="Info Dx" id="page_patient_evaluation_extra_info">
             <separator string="Information on Diagnosis" colspan="2" id="separator_evaluation_diagnosis_1"/>
             <newline/>
             <field name="info_diagnosis" colspan="4"/>
             <newline/>
             <field name="secondary_conditions" colspan="2"/>
             <field name="diagnostic_hypothesis" colspan="2"/>
+        </page>
+        <page string="Procedures" id="page_patient_evaluation_procedures">
             <field name="actions" colspan="4"/>
         </page>
         <page string="Administrative" id="page_patient_evaluation_administrative">

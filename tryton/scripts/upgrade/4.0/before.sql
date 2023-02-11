@@ -1,3 +1,8 @@
+-- SPDX-FileCopyrightText: 2021 Luis Falcón <falcon@gnuhealth.org>
+-- SPDX-FileCopyrightText: 2021 Tryton Foundation <info@tryton.org>
+--
+-- SPDX-License-Identifier: GPL-3.0-or-later
+
 -- Rename webdav to health_webdav3_server
 update ir_module set name='health_webdav3_server' where name='webdav';
 
@@ -47,11 +52,11 @@ UPDATE account_invoice_line SET party = (SELECT party FROM account_invoice WHERE
 -- [SQL] before update, add access on field
 ALTER TABLE ir_model_field ADD COLUMN "access" BOOLEAN;
 
+-- Remove views from obsolete calendar module
+delete from ir_ui_view where module='calendar';
 -- Update / cast Domiciliary Unit field from INT to VARCHAR to meet openstreetmap requirements
 alter table gnuhealth_du alter column "address_street_number" SET DATA type varchar using address_street_number::varchar;
 
 -- Update views from old webdav module to health_webdav3_server package
 update ir_ui_view set module='health_webdav3_server' where module='webdav';
 
--- Remove views from obsolete calendar module
-delete from ir_ui_view where module='calendar';

@@ -1,30 +1,16 @@
-##############################################################################
+# Copyright (C) 2008-2023 Luis Falcon <lfalcon@gnusolidario.org>
+# Copyright (C) 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
-#    GNU Health: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnusolidario.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-from trytond.model import ModelView, ModelSQL, fields
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+from trytond.model import ModelView, fields
+from trytond.pool import PoolMeta
 from trytond.rpc import RPC
 from trytond.pyson import Eval, Not, Bool, Equal, Or
 import hashlib
 import json
-
 
 __all__ = ['HealthCrypto', 'PatientPrescriptionOrder',
            'BirthCertificate', 'DeathCertificate', 'PatientEvaluation']
@@ -44,10 +30,8 @@ class HealthCrypto:
         return str(hashlib.sha512(serialized_doc.encode('utf-8')).hexdigest())
 
 
-class PatientPrescriptionOrder(ModelSQL, ModelView):
-    """ Add the serialized and hash fields to the
-    prescription order document"""
-
+class PatientPrescriptionOrder(metaclass=PoolMeta):
+    """Add the serialized and hash fields to the prescription order document"""
     __name__ = 'gnuhealth.prescription.order'
 
     serializer = fields.Text('Doc String', readonly=True)
@@ -186,8 +170,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
                 })]
 
 
-class BirthCertificate(ModelSQL, ModelView):
-
+class BirthCertificate(metaclass=PoolMeta):
     __name__ = 'gnuhealth.birth_certificate'
 
     serializer = fields.Text('Doc String', readonly=True)
@@ -311,7 +294,7 @@ class BirthCertificate(ModelSQL, ModelView):
                 })]
 
 
-class DeathCertificate(ModelSQL, ModelView):
+class DeathCertificate(metaclass=PoolMeta):
 
     __name__ = 'gnuhealth.death_certificate'
 
@@ -447,7 +430,7 @@ class DeathCertificate(ModelSQL, ModelView):
                 })]
 
 
-class PatientEvaluation(ModelSQL, ModelView):
+class PatientEvaluation(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.evaluation'
 
     serializer = fields.Text('Doc String', readonly=True)

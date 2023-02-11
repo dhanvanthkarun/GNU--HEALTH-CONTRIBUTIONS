@@ -1,5 +1,9 @@
-# This file is part of GNU Health.  The COPYRIGHT file at the top level of
-# this repository contains the full copyright notices and license terms.
+# SPDX-FileCopyrightText: 2012-2017 Cédric Krier
+# SPDX-FileCopyrightText: 2017-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2017-2023 Luis Falcon <falcon@gnuhealth.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 import socketserver
 import socket
 import http.server
@@ -7,6 +11,7 @@ import urllib.parse
 import time
 import urllib.request, urllib.parse, urllib.error
 import logging
+import os
 from threading import local, Thread
 import xml.dom.minidom
 from base64 import decodebytes
@@ -555,9 +560,10 @@ class WebDAVAuthRequestHandler(WebDAVServer.DAVRequestHandler):
             return
         dbname = Transaction().database.name
         Transaction().__exit__(None, None, None)
-        if dbname:
-            with Transaction().start(dbname, 0):
-                Cache.resets(dbname)
+        # TODO: Check if vanished method below has to be replaced
+        # if dbname:
+        #     with Transaction().start(dbname, 0):
+        #         Cache.resets(dbname)
 
     def parse_request(self):
         if not http.server.BaseHTTPRequestHandler.parse_request(self):
@@ -618,7 +624,8 @@ class WebDAVAuthRequestHandler(WebDAVServer.DAVRequestHandler):
         Transaction().start(dbname, user, context={
                 '_check_access': True,
                 }, autocommit=True)
-        Cache.clean(dbname)
+        # TODO: Check if vanished method below has to be replaced
+        # Cache.clean(dbname)
         return user
 
 

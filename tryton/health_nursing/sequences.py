@@ -1,51 +1,32 @@
-##############################################################################
+# Copyright (C) 2008-2023 Luis Falcon <falcon@gnuhealth.org>
+# Copyright (C) 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
-#    GNU Health HMIS: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <falcon@gnuhealth.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#
-#    The GNU Health HMIS component is part of the GNU Health project
-#    www.gnuhealth.org
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 # GNU Health HMIS sequences for this package
 
-from trytond.model import (ModelView, ModelSingleton, ModelSQL,
-                           ValueMixin, MultiValueMixin, fields)
+from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.tools.multivalue import migrate_property
 
 # Sequences
 ambulatory_care_sequence = fields.Many2One(
     'ir.sequence', 'Ambulatory Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_ambulatory_care'))])
+        'health_nursing', 'seq_type_gnuhealth_ambulatory_care'))])
 
 patient_rounding_sequence = fields.Many2One(
     'ir.sequence', 'Patient Rounding Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health', 'seq_type_gnuhealth_patient_rounding'))])
-
+        'health_nursing', 'seq_type_gnuhealth_patient_rounding'))])
 
 
 # GNU HEALTH SEQUENCES
-class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
+class GnuHealthSequences(metaclass=PoolMeta):
     'Standard Sequences for GNU Health'
     __name__ = 'gnuhealth.sequences'
 
@@ -54,7 +35,6 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
 
     patient_rounding_sequence = fields.MultiValue(
         patient_rounding_sequence)
-
 
     @classmethod
     def default_ambulatory_care_sequence(cls, **pattern):
@@ -75,6 +55,7 @@ class GnuHealthSequences(ModelSingleton, ModelSQL, ModelView, MultiValueMixin):
                                     'seq_gnuhealth_patient_rounding')
         except KeyError:
             return None
+
 
 class _ConfigurationValue(ModelSQL):
 

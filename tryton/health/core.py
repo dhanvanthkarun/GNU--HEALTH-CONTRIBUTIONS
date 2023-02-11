@@ -1,28 +1,17 @@
-##############################################################################
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
-#    GNU Health HMIS: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <falcon@gnuhealth.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#
-#    The GNU Health HMIS component is part of the GNU Health project
-#    www.gnuhealth.org
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
 
-# Core, commonly used ojects
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                           HEALTH package                              #
+#               core.py: commonly used ojects and methods               #
+#########################################################################
+
 import pytz
 
 from dateutil.relativedelta import relativedelta
@@ -56,6 +45,18 @@ def convert_date_timezone(sdate, target):
         # Convert from UTC to institution local timezone
         res = pytz.utc.localize(sdate).astimezone(institution_timezone)
     return res
+
+
+def estimated_date_from_years(years_old):
+    """ returns a date of substracting the
+        referred number of years from today's date
+        It can be used in different context, such as to estimate
+        the date of birth from a referred age in years
+    """
+
+    today = datetime.today().date()
+    est_dob = today - relativedelta(years=years_old)
+    return est_dob
 
 
 def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
@@ -111,19 +112,22 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 def get_institution():
     # Retrieve the institution associated to this GNU Health instance
     # That is associated to the Company.
-    company = Transaction().context.get('company')
+    pool = Pool()
+    Company = pool.get('company.company')
+    Institution = pool.get('gnuhealth.institution')
+    company = Company.__table__()
+    institution = Institution.__table__()
+
+    company_id = Transaction().context.get('company')
 
     cursor = Transaction().connection.cursor()
-    cursor.execute('SELECT party FROM company_company WHERE id=%s \
-        LIMIT 1', (company,))
-    party_id = cursor.fetchone()
-    if party_id:
-        cursor = Transaction().connection.cursor()
-        cursor.execute('SELECT id FROM gnuhealth_institution WHERE \
-            name = %s LIMIT 1', (party_id[0],))
-        institution_id = cursor.fetchone()
-        if (institution_id):
-            return int(institution_id[0])
+    cursor.execute(*company.join(institution, condition=(
+                institution.name == company.party)).select(
+            institution.id,
+            where=(company.id == company_id)))
+    institution_id = cursor.fetchone()
+    if institution_id:
+        return int(institution_id[0])
 
 
 def get_health_professional(required=True):
@@ -132,20 +136,23 @@ def get_health_professional(required=True):
     # If the method is called with the arg "required" as False, then
     # the error message won't be shown in the case of not finding
     # the corresponding healthprof (eg, creating a new appointment)
+    pool = Pool()
+    Party = pool.get('party.party')
+    Professional = pool.get('gnuhealth.healthprofessional')
+    party = Party.__table__()
+    professional = Professional.__table__()
+
     cursor = Transaction().connection.cursor()
-    User = Pool().get('res.user')
-    user = User(Transaction().user)
-    login_user_id = int(user.id)
-    cursor.execute('SELECT id FROM party_party WHERE is_healthprof=True \
-        AND internal_user = %s LIMIT 1', (login_user_id,))
-    partner_id = cursor.fetchone()
-    if partner_id:
-        cursor = Transaction().connection.cursor()
-        cursor.execute('SELECT id FROM gnuhealth_healthprofessional WHERE \
-            name = %s LIMIT 1', (partner_id[0],))
-        healthprof_id = cursor.fetchone()
-        if (healthprof_id):
-            return int(healthprof_id[0])
+    cursor.execute(
+        *party.join(professional,
+                    condition=(professional.name == party.id)).select(
+            professional.id,
+            where=(
+                (party.is_healthprof)
+                & (party.internal_user == Transaction().user))))
+    healthprof_id = cursor.fetchone()
+    if healthprof_id:
+        return int(healthprof_id[0])
     else:
         if required:
             raise NoAssociatedHealthProfessional(gettext(

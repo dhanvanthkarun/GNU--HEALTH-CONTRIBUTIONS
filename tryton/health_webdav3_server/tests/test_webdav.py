@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2012-2017 Cédric Krier
+# SPDX-FileCopyrightText: 2017-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2017-2023 Luis Falcon <falcon@gnuhealth.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # This file is part of Tryton.  The COPYRIGHT file at the top level of
 # this repository contains the full copyright notices and license terms.
 import unittest
@@ -7,7 +13,7 @@ from trytond.tests.test_tryton import ModuleTestCase
 
 class WebdavTestCase(ModuleTestCase):
     'Test Webdav module'
-    module = 'webdav'
+    module = 'health_webdav3_server'
 
 
 def suite():

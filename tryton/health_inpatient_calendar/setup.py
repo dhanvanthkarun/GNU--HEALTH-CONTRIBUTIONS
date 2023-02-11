@@ -1,20 +1,18 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#    Copyright (C) 2011-2022 Luis Falcon <falcon@gnuhealth.org>
-#    Copyright (C) 2011 Cédric Krier
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011 Cédric Krier <cedric.krier@b2ck.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
 
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                    HEALTH INPATIENT CALENDAR package                  #
+#                      setup.py: Setuptools file                        #
+#########################################################################
 
 from setuptools import setup
 import re
@@ -52,7 +50,7 @@ for dep in info.get('depends', []):
 setup(name='gnuhealth_inpatient_calendar',
     version=info.get('version', '0.0.1'),
     description=info.get('description', 'GNU Health package for hospitalization calendar functionality'),
-    long_description=read('README'),
+    long_description=read('README.rst'),
     author='GNU Solidario',
     author_email='health@gnusolidario.org',
     url='https://www.gnuhealth.org',

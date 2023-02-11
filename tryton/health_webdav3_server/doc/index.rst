@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2017-2023 GNU Solidario <health@gnusolidario.org>
+..
+.. SPDX-License-Identifier: CC-BY-SA-4.0
+
 WebDAV Module
 =============
 

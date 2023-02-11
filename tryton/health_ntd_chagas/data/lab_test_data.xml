@@ -1,6 +1,14 @@
-<?xml version="1"?>
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <tryton>
-    <data skiptest="1">
+    <data>
 
 
 <!-- BEGIN OF XENODIAGNOSIS TEST -->
@@ -17,7 +25,7 @@
 <!-- PRODUCTS DEFINITION-->
 
         <record id="product_product_chagas_xenodiagnosis_analysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_chagas_xenodiagnosis_analysischarges0"/>
+            <field name="template" ref="product_template_chagas_xenodiagnosis_analysischarges0"/>
         </record>
 
 <!-- TEST TYPES DEFINITIONS -->
@@ -56,7 +64,7 @@
 <!-- PRODUCTS DEFINITION-->
 
         <record id="product_product_chagas_strout_analysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_chagas_strout_analysischarges0"/>
+            <field name="template" ref="product_template_chagas_strout_analysischarges0"/>
         </record>
 
 <!-- TEST TYPES DEFINITIONS -->
@@ -95,7 +103,7 @@
 <!-- PRODUCTS DEFINITION-->
 
         <record id="product_product_chagas_bsmear_analysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_chagas_bsmear_analysischarges0"/>
+            <field name="template" ref="product_template_chagas_bsmear_analysischarges0"/>
         </record>
 
 <!-- TEST TYPES DEFINITIONS -->
@@ -133,7 +141,7 @@
 <!-- PRODUCTS DEFINITION-->
 
         <record id="product_product_chagas_elisa_analysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_chagas_elisa_analysischarges0"/>
+            <field name="template" ref="product_template_chagas_elisa_analysischarges0"/>
         </record>
 
 <!-- TEST TYPES DEFINITIONS -->
@@ -173,7 +181,7 @@
 <!-- PRODUCTS DEFINITION-->
 
         <record id="product_product_chagas_ifa_analysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_chagas_ifa_analysischarges0"/>
+            <field name="template" ref="product_template_chagas_ifa_analysischarges0"/>
         </record>
 
 <!-- TEST TYPES DEFINITIONS -->
@@ -213,7 +221,7 @@
 <!-- PRODUCTS DEFINITION-->
 
         <record id="product_product_chagas_pcr_analysischarges0" model="product.product">
-            <field name="template" model="product.template" ref="product_template_chagas_pcr_analysischarges0"/>
+            <field name="template" ref="product_template_chagas_pcr_analysischarges0"/>
         </record>
 
 <!-- TEST TYPES DEFINITIONS -->

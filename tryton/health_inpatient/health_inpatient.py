@@ -1,24 +1,18 @@
-##############################################################################
-#
-#    GNU Health: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnusolidario.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                     HEALTH INPATIENT package                          #
+#                 health_inpatient.py: Main module                      #
+#########################################################################
 from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.transaction import Transaction
@@ -219,33 +213,42 @@ class InpatientRegistration(ModelSQL, ModelView):
     @classmethod
     @ModelView.button
     def confirmed(cls, registrations):
-        registration_id = registrations[0]
-        Bed = Pool().get('gnuhealth.hospital.bed')
+        pool = Pool()
+        Bed = pool.get('gnuhealth.hospital.bed')
         cursor = Transaction().connection.cursor()
-        bed_id = registration_id.bed.id
-        cursor.execute(
-            "SELECT COUNT(*) \
-            FROM gnuhealth_inpatient_registration \
-            WHERE (hospitalization_date::timestamp,discharge_date::timestamp) \
-                OVERLAPS (timestamp %s, timestamp %s) \
-              AND (state = %s or state = %s or state = %s) \
-              AND bed = CAST(%s AS INTEGER) ",
-            (registration_id.hospitalization_date,
-                registration_id.discharge_date,
-                'confirmed', 'hospitalized', 'done', str(bed_id)))
+        table = cls.__table__()
 
-        res = cursor.fetchone()
-        if (registration_id.discharge_date.date() <
-                registration_id.hospitalization_date.date()):
-            raise DischargeBeforeAdmission(
-                gettext('health_inpatient.msg_discharge_befor_admission'))
+        beds = []
+        for registration in registrations:
+            if (registration.discharge_date.date() <
+                    registration.hospitalization_date.date()):
+                raise DischargeBeforeAdmission(
+                    gettext('health_inpatient.msg_discharge_befor_admission'))
+            cursor.execute(*table.select(
+                    table.id,
+                    where=((
+                            (table.hospitalization_date <=
+                             registration.hospitalization_date) &
+                            (table.discharge_date >=
+                             registration.hospitalization_date)
+                            ) |
+                           ((table.hospitalization_date
+                            <= registration.discharge_date)
+                            & (table.discharge_date
+                                >= registration.discharge_date)) |
+                           ((table.hospitalization_date
+                            >= registration.hospitalization_date)
+                            & (table.discharge_date
+                                <= registration.discharge_date)))
+                    & table.state.in_(['confirmed', 'hospitalized', 'done'])
+                    & (table.bed == registration.bed.id)))
 
-        if res[0] > 0:
-            raise BedIsNotAvailable(
-                gettext('health_inpatient.msg_bed_is_not_available'))
-        else:
-            cls.write(registrations, {'state': 'confirmed'})
-            Bed.write([registration_id.bed], {'state': 'reserved'})
+            if cursor.fetchone():
+                raise BedIsNotAvailable(
+                    gettext('health_inpatient.msg_bed_is_not_available'))
+            beds.append(registration.bed)
+        cls.write(registrations, {'state': 'confirmed'})
+        Bed.write(beds, {'state': 'reserved'})
 
     @classmethod
     @ModelView.button

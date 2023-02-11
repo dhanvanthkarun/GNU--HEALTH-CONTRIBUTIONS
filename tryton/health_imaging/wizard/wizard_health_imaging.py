@@ -1,24 +1,10 @@
-# -*- coding: utf-8 -*-
-##############################################################################
+# Copyright (C) 2008-2023 Luis Falcon <lfalcon@gnuhealth.org>
+# Copyright (C) 2013  Sebastián Marro <smarro@thymbra.com>
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
-#    GNU Health: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnuhealth.org>
-#    Copyright (C) 2013  Sebastián Marro <smarro@thymbra.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 from datetime import datetime
 from trytond.model import ModelView, fields
 from trytond.wizard import Wizard, StateAction, StateTransition, StateView, \
@@ -72,7 +58,7 @@ class RequestImagingTest(ModelView):
 
     request = fields.Many2One('gnuhealth.patient.imaging.test.request.start',
         'Request', required=True)
-    test = fields.Many2One('gnuhealth.imaging.test', 'Test', required=True)
+    test = fields.Many2One('gnuhealth.imaging.test', 'Study', required=True)
 
 
 class RequestPatientImagingTestStart(ModelView):
@@ -82,7 +68,7 @@ class RequestPatientImagingTestStart(ModelView):
     date = fields.DateTime('Date')
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof',
-        required=True, help="Health professionalwho requests the lab tests.")
+        required=True, help="Health professionalwho requests the study.")
     context = fields.Many2One('gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
              " existing health condition, a regular health checkup, ...",

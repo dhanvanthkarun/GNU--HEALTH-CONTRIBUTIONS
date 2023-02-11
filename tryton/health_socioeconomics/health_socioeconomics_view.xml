@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <tryton>
     <data>
 
@@ -65,6 +73,13 @@
         </record>
 
    		<menuitem name="Socioeconomic Assessments" parent="health.gnuhealth_reporting_menu" id="gnuhealth_ses_assessment_menu" action="act_ses_family_assessment" icon="gnuhealth-list"/>
+
+    <!-- Buttons -->
+        <record model="ir.model.button" id="sesassmt_end_button">
+            <field name="name">end_assessment</field>
+            <field name="string">Done</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.ses.assessment')]"/>
+        </record>
 
     </data>
 </tryton>

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <!-- This file is part of GNU Health. GPL v3+ -->
 <!-- Luis Falcon . GNU Solidario -->
 <!-- Default template for permission groups -->
@@ -301,7 +309,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_patient_medication_admin">
@@ -685,6 +693,7 @@
             <field name="name">Health Front Desk</field>
             <field name="login">demo_frontdesk</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Front Desk group -->
@@ -769,7 +778,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
 <!-- END OF FRONT DESK GROUP ACCESS RIGHTS -->
@@ -782,6 +791,7 @@
             <field name="name">Health Doctor</field>
             <field name="login">demo_doctor</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Health Doctor group -->
@@ -871,7 +881,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_family_member_doctor">
@@ -898,7 +908,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_patient_disease_doctor">
@@ -916,7 +926,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_patient_medication_doctor">
@@ -943,7 +953,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_procedure_doctor">
@@ -961,7 +971,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_hospital_bed_doctor">
@@ -991,6 +1001,7 @@
             <field name="name">Health Social Worker</field>
             <field name="login">demo_social_worker</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Social Worker group -->
@@ -1041,7 +1052,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_health_patient_social_worker">
@@ -1050,7 +1061,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
 <!-- END OF SOCIAL WORKER GROUP ACCESS RIGHTS -->
@@ -1063,6 +1074,7 @@
             <field name="name">Health Back Office</field>
             <field name="login">demo_back_office</field>
             <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
         </record>
 
 <!-- Create the Back Office group -->
@@ -1164,7 +1176,7 @@
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
 <!-- END OF BACK OFFICE GROUP ACCESS RIGHTS -->

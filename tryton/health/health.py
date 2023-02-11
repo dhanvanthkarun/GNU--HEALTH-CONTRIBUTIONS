@@ -1,28 +1,18 @@
-##############################################################################
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2015 Cédric Krier <cedric.krier@b2ck.com>
+# SPDX-FileCopyrightText: 2014-2015 Chris Zimmerman <siv@riseup.net>
 #
-#    GNU Health HMIS: The Free Health and Hospital Information System
-#    Copyright (C) 2008-2022 Luis Falcon <falcon@gnuhealth.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#    Copyright (C) 2015 Cédric Krier
-#    Copyright (C) 2014-2015 Chris Zimmerman <siv@riseup.net>
-#
-#    The GNU Health HMIS component is part of the GNU Health project
-#    www.gnuhealth.org
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                           HEALTH package                              #
+#                       health.py: main module                          #
+#########################################################################
 
 import platform
 import os
@@ -45,7 +35,7 @@ from trytond.model import (ModelView, ModelSingleton, ModelSQL,
 from trytond.wizard import Wizard, StateAction, StateView, Button
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, Not, Bool, PYSONEncoder, Equal, And, Or
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.rpc import RPC
 from trytond.i18n import gettext
 
@@ -59,6 +49,7 @@ from .exceptions import (
     )
 
 from .core import (get_institution, compute_age_from_dates,
+                   estimated_date_from_years,
                    get_health_professional)
 
 
@@ -142,7 +133,7 @@ class DomiciliaryUnit(ModelSQL, ModelView):
 
     address_municipality = fields.Char(
         'Municipality', help="Municipality, Township, county ..")
-    address_city = fields.Char('City', help="City / Municipality")
+    address_city = fields.Char('City', help="City")
     address_zip = fields.Char('Zip')
     address_country = fields.Many2One(
         'country.country', 'Country', help='Country')
@@ -284,7 +275,8 @@ class DomiciliaryUnit(ModelSQL, ModelView):
 
     # Show the resulting Address representation in realtime
     @fields.depends(
-        'address_street', 'address_subdivision',
+        'address_street', 'address_subdivision', 'address_city',
+        'address_zip',
         'address_street_number', 'address_country')
     def on_change_with_address_repr(self):
         return self.get_du_address(name=None)
@@ -327,7 +319,7 @@ class FederationCountryConfig(ModelSingleton, ModelSQL, ModelView):
         return self.country.code3
 
 
-class Party(ModelSQL, ModelView):
+class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
     def person_age(self, name):
@@ -395,6 +387,8 @@ class Party(ModelSQL, ModelView):
         'Family names', help='Family or last names',
         states={'invisible': Not(Bool(Eval('is_person')))})
     dob = fields.Date('DoB', help='Date of Birth')
+    est_dob = fields.Boolean('Est', help="Estimated from referred years")
+    est_years = fields.Integer('Years', help="Referred years")
 
     age = fields.Function(fields.Char('Age'), 'person_age')
 
@@ -408,6 +402,8 @@ class Party(ModelSQL, ModelView):
         ('u', 'Unknown')
         ], 'Gender', states={'required': Bool(Eval('is_person'))})
 
+    gender_str = gender.translated('gender')
+
     photo = fields.Binary('Picture')
     ethnic_group = fields.Many2One('gnuhealth.ethnicity', 'Ethnicity')
 
@@ -420,6 +416,8 @@ class Party(ModelSQL, ModelView):
         ('d', 'Divorced'),
         ('x', 'Separated'),
         ], 'Marital Status', sort=False)
+
+    marital_status_str = marital_status.translated('marital_status')
 
     citizenship = fields.Many2One(
         'country.country', 'Citizenship', help='Country of Citizenship')
@@ -726,6 +724,15 @@ class Party(ModelSQL, ModelView):
         return super(Party, cls).create(vlist)
 
     @classmethod
+    def copy(cls, parties, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default.setdefault('ref', None)
+        return super().copy(parties, default=default)
+
+    @classmethod
     def __setup__(cls):
         super(Party, cls).__setup__()
         t = cls.__table__()
@@ -816,10 +823,28 @@ class Party(ModelSQL, ModelView):
         if (self.is_healthprof or self.is_patient or self.is_person):
             return True
 
-    @fields.depends('du')
+    @fields.depends('du', '_parent_du.name')
     def on_change_with_du_address(self):
         if (self.du):
             return self.get_du_address(name=None)
+
+    @fields.depends('est_years', 'dob', 'deceased', 'dod', 'gender')
+    def on_change_est_years(self):
+        if (self.est_years):
+            self.dob = estimated_date_from_years(self.est_years)
+            self.est_dob = True
+            self.age = self.person_age(name='age')
+            # Resets the referred age in years to None after it computes
+            # the age, so the form won't confuse the reader.
+            self.est_years = None
+
+    @fields.depends('dob', 'deceased', 'dod', 'gender')
+    def on_change_dob(self):
+        """ Automatically show the age in Y-M-D format upon
+            entering the date of birth
+        """
+        self.age = self.person_age(name='age')
+        self.est_years = None
 
     @classmethod
     def validate(cls, parties):
@@ -1090,7 +1115,7 @@ class PageOfLife(ModelSQL, ModelView):
         cls._order.insert(0, ('page_date', 'DESC'))
 
 
-class ContactMechanism(ModelSQL, ModelView):
+class ContactMechanism(metaclass=PoolMeta):
     __name__ = 'party.contact_mechanism'
 
     emergency = fields.Boolean('Emergency', select=True)
@@ -1140,8 +1165,7 @@ class PersonName(ModelSQL, ModelView):
     date_to = fields.Date('To')
 
 
-class PartyAddress(ModelSQL, ModelView):
-    'Party Address'
+class PartyAddress(metaclass=PoolMeta):
     __name__ = 'party.address'
 
     relationship = fields.Char(
@@ -2547,7 +2571,6 @@ class InsurancePlan(ModelSQL, ModelView):
     'Insurance Plan'
 
     __name__ = 'gnuhealth.insurance.plan'
-    _rec_name = 'company'
 
     name = fields.Many2One(
         'product.product', 'Plan', required=True,
@@ -2745,6 +2768,8 @@ class DeathCertificate (ModelSQL, ModelView):
         ], 'Type of death', required=True, sort=False,
         states=STATES)
 
+    type_of_death_str = type_of_death.translated('type_of_death')
+
     place_of_death = fields.Selection(
         [
             (None, ''),
@@ -2754,6 +2779,8 @@ class DeathCertificate (ModelSQL, ModelView):
             ('health_center', 'Health Center'),
         ], 'Place', required=True, sort=False,
         states=STATES)
+
+    place_of_death_str = place_of_death.translated('place_of_death')
 
     operational_sector = fields.Many2One(
         'gnuhealth.operational_sector', 'Op. Sector',
@@ -3030,6 +3057,33 @@ class PatientData(ModelSQL, ModelView):
         'gnuhealth.appointment', 'patient', 'Appointments')
 
     active = fields.Boolean('Active', select=True)
+
+    # General key information about the patient, independent
+    # from coding systems
+    crit_allergic = fields.Boolean(
+        'Allergic',
+        help="Known serious allergic reactions")
+    crit_dbt = fields.Boolean('DBT', help="Diabetes")
+    crit_hbp = fields.Boolean(
+        'HBP',
+        help="High blood pressure (hypertension)")
+    crit_cardio = fields.Boolean(
+        'Cardiovascular',
+        help="Cardiovascular disease, excluding HBP, that has "
+             " its own field.")
+    crit_nutrition = fields.Boolean(
+        'Nutrition', help="Issues on nutrition, malnourhisment."
+        " Including obesity, famine and eating disorders")
+    crit_cancer = fields.Boolean('Cancer', help="Cancer")
+    crit_immuno = fields.Boolean(
+        'Immunity', help="Immunocompromised or autoimmune disorders")
+    crit_cognitive = fields.Boolean(
+        'Cognitive', help="Cognitive issues")
+    crit_social = fields.Boolean(
+        'Social',
+        help="There are serious socio-familiar issues, such as"
+             " physical and social barriers, drug addiction, violence "
+             " and education")
 
     @staticmethod
     def default_active():
@@ -3480,7 +3534,7 @@ class Appointment(ModelSQL, ModelView):
     def default_institution():
         return get_institution()
 
-    @fields.depends('patient')
+    @fields.depends('patient', '_parent_patient.name')
     def on_change_patient(self):
         if self.patient:
             self.state = 'confirmed'
@@ -4856,6 +4910,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         states={'invisible': Equal(Eval('state'), 'in_progress'),
                 'readonly': Eval('state') == 'signed'},
         help="Reason for patient discharge")
+    discharge_reason_str = discharge_reason.translated('discharge_reason')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution',
                                   states=STATES)
@@ -5357,7 +5412,7 @@ class PatientECG(ModelSQL, ModelView):
                 ]
 
 
-class ProductTemplate(ModelSQL, ModelView):
+class ProductTemplate(metaclass=PoolMeta):
     __name__ = 'product.template'
     """
     Allow to change the values from the product templates
@@ -5414,7 +5469,7 @@ class Commands(ModelSQL, ModelView):
                 })
 
 
-class Modules(ModelSQL, ModelView):
+class Modules(metaclass=PoolMeta):
     __name__ = 'ir.module'
 
     # Add the module description field

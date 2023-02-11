@@ -1,3 +1,8 @@
+.. SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+..
+.. SPDX-License-Identifier: CC-BY-SA-4.0
+
 GNU Health : The Free / Libre Health and Hospital Information System
 ====================================================================
  
@@ -91,8 +96,8 @@ License:
 --------
 GNU Health is licensed under GPL v3+
 
-Copyright (C) 2008-2022 Luis Falcon <falcon@gnuhealth.org>
-Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
+Copyright (C) 2008-2023 Luis Falcon <falcon@gnuhealth.org>
+Copyright (C) 2011-2023 GNU Solidario <health@gnusolidario.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

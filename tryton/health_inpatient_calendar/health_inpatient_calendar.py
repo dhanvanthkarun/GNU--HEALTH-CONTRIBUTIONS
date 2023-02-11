@@ -1,42 +1,31 @@
-# -*- coding: utf-8 -*-
-##############################################################################
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2012 Sebastian Marro <smarro@thymbra.com>
 #
-#    GNU Health: The Free Health and Hospital Information System
-#    # Package : Health Inpatient Calendar
-#    Copyright (C) 2008-2022  Luis Falcon <falcon@gnuhealth.org>
-#    Copyright (C) 2011-2012  Sebastián Marró <smarro@thymbra.com>
-#    Copyright (C) 2008-2022  GNU Solidario <health@gnusolidario.org>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-from trytond.model import ModelView, ModelSQL, fields
-from trytond.pool import Pool
+# SPDX-License-Identifier: GPL-3.0-or-later
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                  HEALTH INPATIENT CALENDAR PACKAGE                    #
+#             health_inpatient_calendar.py: main module                 #
+#########################################################################
+
+from trytond.model import fields
+from trytond.pool import Pool, PoolMeta
 
 
 __all__ = ['HospitalBed', 'InpatientRegistration']
 
 
-class HospitalBed(ModelSQL, ModelView):
-    "Add Calendar to Hospital Bed"
+class HospitalBed(metaclass=PoolMeta):
     __name__ = "gnuhealth.hospital.bed"
 
     calendar = fields.Many2One('calendar.calendar', 'Calendar')
 
 
-class InpatientRegistration(ModelSQL, ModelView):
-    'Add Calendar to the Inpatient Registration'
+class InpatientRegistration(metaclass=PoolMeta):
     __name__ = 'gnuhealth.inpatient.registration'
 
     event = fields.Many2One(

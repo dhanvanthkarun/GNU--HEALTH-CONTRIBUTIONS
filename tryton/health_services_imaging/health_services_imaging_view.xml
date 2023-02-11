@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <tryton>
     <data>
 
@@ -16,6 +24,13 @@
             <field name="inherit" ref="health_imaging.patient_imaging_test_request_start_view_form" />
             <field name="name">gnuhealth_imaging_start_request</field>
         </record> 
+
+    <!-- Buttons -->
+        <record model="ir.model.button" id="srvimg_update_button">
+            <field name="name">update_service</field>
+            <field name="string">Update Services</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging.test.request')]"/>
+        </record>
 
     </data>
 </tryton>

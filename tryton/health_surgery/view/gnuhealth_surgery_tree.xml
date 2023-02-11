@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <tree>
     <field name="patient"/>
     <field name="description" expand="1"/>
@@ -6,7 +14,7 @@
     <field name="classification"/>
     <field name="surgery_date" widget="date"/>
     <field name="surgery_date" string="Time" widget="time"/>
-    <field name="main_procedure" expand="1"/>
+    <field name="surgical_intervention" expand="1"/>
     <field name="state"/>
     <field name="surgery_length"/>
     <field name="operating_room"/>

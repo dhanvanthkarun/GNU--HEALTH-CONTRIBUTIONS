@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <tryton>
     <data>
 
@@ -149,6 +157,19 @@
             <field name="model">gnuhealth.vaccination</field>
             <field name="inherit" ref="health.gnuhealth_vaccination_form"/>
             <field name="name">vaccination_form</field>
+        </record>
+
+    <!-- Buttons -->
+        <record model="ir.model.button" id="rounding_end_button">
+            <field name="name">done</field>
+            <field name="string">End Rounding</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.rounding')]"/>
+        </record>
+
+        <record model="ir.model.button" id="ambcaresess_end_button">
+            <field name="name">done</field>
+            <field name="string">End Session</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.ambulatory_care')]"/>
         </record>
 
     </data>

@@ -1,36 +1,26 @@
-# -*- coding: utf-8 -*-
-##############################################################################
-#
-#    GNU Health: The Free Health and Hospital Information System
-#    MODULE : Diagnostic Imaging
-#
-#    Copyright (C) 2008-2022 Luis Falcon <lfalcon@gnuhealth.org>
-#    Copyright (C) 2011-2022 GNU Solidario <health@gnusolidario.org>
-#    Copyright (C) 2013  Sebastián Marro <smarro@thymbra.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2013 Sebastián Marró <smarro@thymbra.com>
+
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+#########################################################################
+#   Hospital Management Information System (HMIS) component of the      #
+#                       GNU Health project                              #
+#                   https://www.gnuhealth.org                           #
+#########################################################################
+#                     HEALTH IMAGING package                            #
+#                 health_imaging.pu: Main module                        #
+#########################################################################
 from datetime import datetime
-from trytond.model import Workflow, ModelView, ModelSingleton, ModelSQL, \
-    fields, Unique, ValueMixin
+from trytond.model import Workflow, ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval
 from trytond.pool import Pool
-from trytond import backend
-from trytond.tools.multivalue import migrate_property
 
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (
+    get_health_professional, compute_age_from_dates)
 
 __all__ = [
     'ImagingTestType',
@@ -38,7 +28,7 @@ __all__ = [
 
 
 class ImagingTestType(ModelSQL, ModelView):
-    'Imaging Test Type'
+    'Medical Imaging Study Type'
     __name__ = 'gnuhealth.imaging.test.type'
 
     code = fields.Char('Code', required=True)
@@ -46,7 +36,7 @@ class ImagingTestType(ModelSQL, ModelView):
 
 
 class ImagingTest(ModelSQL, ModelView):
-    'Imaging Test'
+    'Medical Imaging Study'
     __name__ = 'gnuhealth.imaging.test'
 
     code = fields.Char('Code', required=True)
@@ -62,23 +52,36 @@ class ImagingTest(ModelSQL, ModelView):
     def default_active():
         return True
 
+
 class ImagingTestRequest(Workflow, ModelSQL, ModelView):
-    'Imaging Test Request'
+    'Medical Imaging Study Request'
     __name__ = 'gnuhealth.imaging.test.request'
+
+    def get_rec_name(self, name):
+        res = ''
+        if self.urgent:
+            res = '**Urgent**'
+        if self.doctor:
+            res = f'{res} ({self.doctor.rec_name}) //'
+        if self.context:
+            res = f'{res} CONTEXT: {self.context.rec_name}'
+        return res
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     date = fields.DateTime('Date', required=True)
     requested_test = fields.Many2One(
-        'gnuhealth.imaging.test', 'Test',
+        'gnuhealth.imaging.test', 'Study',
         required=True)
-    doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof', required=True)
+    doctor = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Health prof', required=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('requested', 'Requested'),
         ('done', 'Done'),
         ], 'State', readonly=True)
 
-    context = fields.Many2One('gnuhealth.pathology', 'Context',
+    context = fields.Many2One(
+        'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
              " existing health condition, a regular health checkup, ...",
              select=True)
@@ -125,13 +128,11 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         if sequence:
             return sequence.get()
 
-
     @classmethod
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
             if not values.get('request'):
-                config = Config(1)
                 values['request'] = cls.generate_code()
         return super(ImagingTestRequest, cls).create(vlist)
 
@@ -162,22 +163,36 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
 
 
 class ImagingTestResult(ModelSQL, ModelView):
-    'Imaging Test Result'
+    'Medical Imaging Study Result'
     __name__ = 'gnuhealth.imaging.test.result'
+
+    def patient_age_at_evaluation(self, name):
+        if (self.patient.name.dob and self.date):
+            return compute_age_from_dates(
+                self.patient.name.dob, None, None, None, 'age',
+                self.date.date())
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True)
     number = fields.Char('Number', readonly=True)
     date = fields.DateTime('Date', required=True)
     request_date = fields.DateTime('Requested Date', readonly=True)
     requested_test = fields.Many2One(
-        'gnuhealth.imaging.test', 'Test',
+        'gnuhealth.imaging.test', 'Study',
         required=True)
     request = fields.Many2One(
-        'gnuhealth.imaging.test.request', 'Request',
+        'gnuhealth.imaging.test.request', 'Request Info',
         readonly=True)
-    order = fields.Char('Order',
-                        help="The order ID containing this particular imaging study")
-    doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof', required=True)
+    order = fields.Char(
+        'Order', readonly=True,
+        help="The order ID containing this particular imaging study")
+    doctor = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Evaluated by', required=True)
+
+    computed_age = fields.Function(fields.Char(
+            'Age',
+            help="Computed patient age at the moment of the evaluation"),
+            'patient_age_at_evaluation')
+
     comment = fields.Text('Additional Information')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
@@ -194,8 +209,8 @@ class ImagingTestResult(ModelSQL, ModelView):
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
-            if not values.get('name'):
-                 values['number'] = cls.generate_code()
+            if not values.get('number'):
+                values['number'] = cls.generate_code()
         return super(ImagingTestResult, cls).create(vlist)
 
     @classmethod
@@ -204,7 +219,8 @@ class ImagingTestResult(ModelSQL, ModelView):
             bool_op = 'AND'
         else:
             bool_op = 'OR'
-        return [bool_op,
+        return [
+            bool_op,
             ('patient',) + tuple(clause[1:]),
             ('number',) + tuple(clause[1:]),
             ]
@@ -215,6 +231,10 @@ class ImagingTestResult(ModelSQL, ModelView):
         t = cls.__table__()
         cls._sql_constraints = [
             ('number_uniq', Unique(t, t.number),
-             'The test ID code must be unique')
+             'The study ID code must be unique')
         ]
         cls._order.insert(0, ('date', 'DESC'))
+
+    def get_rec_name(self, name):
+        res = f'{self.number} ({self.requested_test.name})'
+        return res

@@ -26,6 +26,10 @@ msgctxt "field:gnuhealth.lab,done_date:"
 msgid "Finished on"
 msgstr ""
 
+msgctxt "field:gnuhealth.lab,historize:"
+msgid "Historize"
+msgstr ""
+
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
 msgstr ""
@@ -60,8 +64,28 @@ msgctxt "help:gnuhealth.lab,done_by:"
 msgid "Professional who processes this lab test"
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,historize:"
+msgid ""
+"If this flag is set the a new health condition will be added to the patient "
+"history. Unset it if this lab test is in the context of a pre-existing "
+"condition of the patient. The condition will be created when the lab test is"
+" confirmed and validated"
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,validated_by:"
 msgid "Professional who validates this lab test"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:labtest_generate_button"
+msgid "Done"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:labtest_setdraft_button"
+msgid "Draft"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:labtest_sign_button"
+msgid "Validate"
 msgstr ""
 
 msgctxt "selection:gnuhealth.lab,state:"
