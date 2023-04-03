@@ -1,3 +1,1673 @@
+changeset:   5715:fc4dfa7cc65f
+branch:      stable
+parent:      5669:f48b5c39209b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Feb 11 13:36:53 2023 +0000
+summary:     Sync stable with default branch for upcoming 4.2.0
+
+changeset:   5714:519e702a8d4f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Feb 11 12:53:58 2023 +0000
+summary:     Update tryton.cfg and control center to 4.2.0
+
+changeset:   5679:3a5efd124edb
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Feb 01 13:22:39 2023 +0000
+summary:     Complete task #16338: Make the study interpretation field always visible
+
+changeset:   5678:807eff833a66
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 31 12:29:11 2023 +0000
+summary:     Added tag 4.2rc2 for changeset 6ac2f8e5499d
+
+changeset:   5677:6ac2f8e5499d
+tag:         4.2rc2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 31 11:05:07 2023 +0000
+summary:     Update to 4.2RC2
+
+changeset:   5676:52ad080ba5b7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 30 16:58:49 2023 +0000
+summary:     Update message strings template - pot - files for 4.2
+
+changeset:   5675:629a4231a96d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 27 11:48:58 2023 +0000
+summary:     health_orthanc: Include beren and pendulum requirements in setup.py
+
+changeset:   5674:70a208965e12
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 24 20:16:38 2023 +0000
+summary:     bug #63687: Access rights for Imaging: Remove dash from Medical Imaging - Results to make it consistant with the relate action in patient
+
+changeset:   5673:f2b60a1c520d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 24 11:45:26 2023 +0000
+summary:     health_who_essential_medicines: Remove grouped attribute from WHO products datafile to avoid reference error when loading
+
+changeset:   5672:61b602852d0a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 24 11:33:42 2023 +0000
+summary:     bug #63687: Access rights for Imaging. Update Menuentries and fields with Medical Imaging and Studies
+
+changeset:   5671:1d51f3d84276
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 23 19:36:38 2023 +0000
+summary:     bug #63687: Access rights for Imaging. Add access rights to group_health_imaging
+
+changeset:   5670:09fc3263a131
+parent:      5668:8bdc4bef1724
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 19 11:45:45 2023 +0000
+summary:     task #16294: Harden access control to key patient models. Deactivate default demo_nursing user // Harden access rights profile on the nursing group
+
+changeset:   5669:f48b5c39209b
+branch:      stable
+parent:      5598:687a042fca62
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 18 16:32:09 2023 +0000
+summary:     Update to GNUHealth control center and GH setup 4.0.3
+
+changeset:   5668:8bdc4bef1724
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 18 16:09:42 2023 +0000
+summary:     Fix bug #63680: Tryton removes CDN URL / download directory
+
+changeset:   5667:4885f33995e8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 18 00:15:48 2023 +0000
+summary:     task #14726: Include template for person birth and death certificates. Complete death certificate template
+
+changeset:   5666:7489e8bf7ffd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 17 20:11:23 2023 +0000
+summary:     task #14726: Include template for person birth and death certificates. Complete initial birth certificate report
+
+changeset:   5665:77a9dec4d180
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 17 13:39:35 2023 +0000
+summary:     task #14726: Include template for person birth and death certificates. Initial model structure for death certificate
+
+changeset:   5664:be65102e31b2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 17 13:38:47 2023 +0000
+summary:     health: Use string contents from Selection fields in person and death certificates
+
+changeset:   5663:835b4e0ddee4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 17 11:46:32 2023 +0000
+summary:     task #14726: Include template for person birth and death certificates. Improve formatting
+
+changeset:   5662:d5ff6d0b1e98
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 16 22:34:19 2023 +0000
+summary:     task #14726: Include template for person birth and death certificates. Initial report draft for Birth Certificate
+
+changeset:   5661:c8ee4b9d57f7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 16 21:03:10 2023 +0000
+summary:     Added tag 4.2rc1 for changeset dcd3f5817f73
+
+changeset:   5660:360840a088a9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 15 20:14:12 2023 +0000
+summary:     health_imaging: Merge cells in Imaging test results interpretation
+
+changeset:   5659:884b63b2060a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:23:00 2023 +0000
+summary:     bug #63517: Fault: 'webdav' is not in list
+
+changeset:   5658:0b0c662f4e2d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:34:30 2023 +0000
+summary:     Fix bug #63557: Missing view architecture for ('calendar.category', None, 'tree')
+
+changeset:   5657:dcd3f5817f73
+tag:         4.2rc1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 15 18:43:29 2023 +0000
+summary:     Update to 42RC1
+
+changeset:   5656:e8e09f114875
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 15 17:28:22 2023 +0000
+summary:     task #16294: Harden access control to key patient models. Add default access to health_imaging models
+
+changeset:   5655:351b2695d905
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 15 16:21:51 2023 +0000
+summary:     task #16207: Create imaging report. Create report
+
+changeset:   5654:f1cd2b798db7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 15 13:11:49 2023 +0000
+summary:     task #16207: Create imaging report. Improve view. Include patient age at evaluation time and request extra info
+
+changeset:   5653:c36e43a61465
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 15 11:48:52 2023 +0000
+summary:     health_imaging: Show study interpretation on same page. Make readonly order field
+
+changeset:   5652:d0f40c1bf732
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 22:08:22 2023 +0000
+summary:     task #16294: Harden access control to key patient models. Deactivate demo users
+
+changeset:   5651:022d2b5d15da
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 16:33:12 2023 +0000
+summary:     task #16230: Use grouped attribute for large datafiles: health_who_essential_medicines
+
+changeset:   5650:5b507c585efd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 16:31:24 2023 +0000
+summary:     task #16230: Use grouped attribute for large datafiles: icd10pcs // icd11 // icd9procs
+
+changeset:   5649:341451333b0c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 16:29:32 2023 +0000
+summary:     health_uniprot: Use noupdate=1 in datafile
+
+changeset:   5648:1ba521b79ccb
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 16:28:29 2023 +0000
+summary:     task #16296: Unit testing. health_icd11. Make start dir importable
+
+changeset:   5647:1305ea9d848a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 16:21:32 2023 +0000
+summary:     task #16296: Unit testing. health_icd10. Make start dir importable
+
+changeset:   5646:fcefea6a7af5
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 16:17:05 2023 +0000
+summary:     task #16296: Unit testing. health_who_essential_medicines. Remove unnecessary model attribute in xml data files. Fix typo in record
+
+changeset:   5645:cf4fd147e1fc
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 13:43:19 2023 +0000
+summary:     task #16296: Unit testing. health_webdav3_server. Fix module name in test file
+
+changeset:   5644:e16a4468867d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 13:38:02 2023 +0000
+summary:     task #16296: Unit testing. health_surgery. Register buttons // Include missing depends on M2O // fix sequence reference // add _parent_patient on depends
+
+changeset:   5643:e5f8265c270c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 13:00:08 2023 +0000
+summary:     task #16296: Unit testing. health_socioeconomics. Register buttons // Use PoolMeta for extended classes
+
+changeset:   5642:65747c5a3b84
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 12:40:53 2023 +0000
+summary:     task #16296: Unit testing. health_socioeconomics. Register buttons // Fix _parent on depends // Use PoolMeta for extended classes
+
+changeset:   5641:317693d40f5a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 12:27:40 2023 +0000
+summary:     health_services_lab: Remove unused ModelSQL import
+
+changeset:   5640:e8bec0f17112
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 12:25:43 2023 +0000
+summary:     task #16296: Unit testing. health_services_lab. Fix depends // Register buttons // Use PoolMeta for extended classes
+
+changeset:   5639:a853920c9fe8
+parent:      5634:6403caedd871
+parent:      5638:27b9d1eb5a16
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 12:11:14 2023 +0000
+summary:     Merge
+
+changeset:   5634:6403caedd871
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Jan 13 12:10:31 2023 +0000
+summary:     task #16296: Unit testing. health_services_imaging. Register buttons
+
+changeset:   5633:e61536239faa
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 23:41:11 2023 +0000
+summary:     health_service_imaging: Use PoolMeta for extended classes
+
+changeset:   5632:3135ddf50577
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 23:40:23 2023 +0000
+summary:     task #16296: Unit testing. health_services. Register buttons // remove obsolete model attribute // fix sequence reference
+
+changeset:   5631:31207fb067bc
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 23:00:41 2023 +0000
+summary:     task #16296: Unit testing. health_qrcodes. Add missing lab QRCODES on lab test form
+
+changeset:   5630:9152417c439c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 22:59:02 2023 +0000
+summary:     health_qrcodes. Use PoolMeta for extended classess
+
+changeset:   5629:b096a93275fa
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 22:52:20 2023 +0000
+summary:     health_services. Use PoolMeta for extended classess
+
+changeset:   5628:545ab243f410
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:56:16 2023 +0000
+summary:     health_pediatrics. Use PoolMeta for extended classess
+
+changeset:   5627:988c18eba4da
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:55:37 2023 +0000
+summary:     task #16296: Unit testing. health_pediatrics. Register buttons
+
+changeset:   5626:f9fbb3710642
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:44:42 2023 +0000
+summary:     task #16296: Unit testing. health_orthanc. Create test dir and suite // Register buttons
+
+changeset:   5625:b35b6e59daec
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:26:34 2023 +0000
+summary:     task #16296: Unit testing. health_ophthalmology. Register buttons
+
+changeset:   5624:76482e10a0f9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:11:29 2023 +0000
+summary:     task #16296: Unit testing. health_ntd_dengue. Fix XML version and remove obsolete model attribute.
+
+changeset:   5623:f72056850daa
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:11:12 2023 +0000
+summary:     task #16296: Unit testing. health_ntd_chagas. Fix XML version and remove obsolete model attribute.
+
+changeset:   5622:35c248aa8c49
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 21:03:34 2023 +0000
+summary:     health_lifestyle: Use PoolMeta for extended classes
+
+changeset:   5621:267f31d7c49b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 20:58:50 2023 +0000
+summary:     task #16296: Unit testing. health_lab. Fix XML version and remove obsolete model attribute. Use PoolMeta in extended classes
+
+changeset:   5620:4aa82f2861ea
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 20:48:20 2023 +0000
+summary:     task #16296: Unit testing. health_mdg6. Fix XML version and remove obsolete model attribute
+
+changeset:   5619:c5c9d053ea0e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 20:27:11 2023 +0000
+summary:     health_insurance: Use PoolMeta for extended classes
+
+changeset:   5618:e0bf81effdfc
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 20:21:46 2023 +0000
+summary:     health_inpatient_calendar: Use PoolMeta for extended classes
+
+changeset:   5617:59d6aea092fc
+parent:      5616:eb4fe09779e7
+parent:      5615:abd0e9167741
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 20:10:45 2023 +0000
+summary:     Merge
+
+changeset:   5616:eb4fe09779e7
+parent:      5614:4a0f010a9465
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 20:09:28 2023 +0000
+summary:     task #16296: Unit testing. health_imaging. Register buttons // fix vars
+
+changeset:   5615:abd0e9167741
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 18:00:22 2023 +0000
+summary:     health_imaging: Remove unused vars. Fix default next sequence number on imaging test. lint
+
+changeset:   5614:4a0f010a9465
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jan 12 17:56:40 2023 +0000
+summary:     All: use PoolMeta metaclass on packages extending gnuhealth.sequences
+
+changeset:   5613:558bb5ed5098
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 21:45:56 2023 +0000
+summary:     task #16296: Unit testing. health_nursing. Register buttons // Fix sequences
+
+changeset:   5612:89f34a492ad0
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 21:28:09 2023 +0000
+summary:     task #16296: Unit testing. health_inpatient. Register buttons
+
+changeset:   5611:c88f9f889824
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 20:49:45 2023 +0000
+summary:     health_icu: Use PoolMeta for extended classes
+
+changeset:   5610:0569bc8143c8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 18:09:53 2023 +0000
+summary:     task #16296: Unit testing. health_gyneco. Include _parent_name on depends
+
+changeset:   5609:94e691220589
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 18:06:43 2023 +0000
+summary:     health_gyneco: PEP8 // Use PoolMeta for extended classes
+
+changeset:   5608:057215411e40
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 16:41:20 2023 +0000
+summary:     task #16296: Unit testing. health_dentistry. Register buttons
+
+changeset:   5607:2cf1544136a3
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 16:02:43 2023 +0000
+summary:     task #16296: Unit testing. health_crypto_lab. Register buttons
+
+changeset:   5606:4345426d56c7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 13:55:24 2023 +0000
+summary:     task #16296: Unit testing. health_crypto. Register buttons
+
+changeset:   5605:23199bb94e36
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 13:18:54 2023 +0000
+summary:     health_crypto: Use PoolMeta for inherited classes
+
+changeset:   5604:25871546990a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 12:56:22 2023 +0000
+summary:     task #16296: Unit testing. health_crypto. Make the start directory importable // Remove obsolete python versions from setup.py
+
+changeset:   5603:c0efed2235d7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 12:55:15 2023 +0000
+summary:     task #16296: Unit testing. health_contact_tracing. Make the start directory importable // Fix typo on HealthContactTracingTestCase
+
+changeset:   5602:d96619eb1193
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jan 11 11:14:23 2023 +0000
+summary:     health_calendar: __init__.py PEP8
+
+changeset:   5601:8fe7c24101b8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 10 22:47:35 2023 +0000
+summary:     Task task #16296: Unit testing. health_caldav: _rec_name must be text or char, not datetime or selection
+
+changeset:   5600:654914740cf6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 10 22:45:10 2023 +0000
+summary:     health_calendar: PEP8
+
+changeset:   5599:134a599d8182
+parent:      5587:cd7cf27cbf18
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jan 10 22:41:53 2023 +0000
+summary:     Task task #16296: Unit testing. health: Add missing _parent fields on depends
+
+changeset:   5598:687a042fca62
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 17:46:57 2023 +0000
+summary:     Remove lingering swp file
+
+changeset:   5597:a6c0a30553fe
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 17:34:15 2023 +0000
+summary:     Added tag 4.0.5 for changeset cb9af0572f5a
+
+changeset:   5596:cb9af0572f5a
+branch:      stable
+tag:         4.0.5
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 15:22:33 2023 +0000
+summary:     Update to patchset 4.0.5
+
+changeset:   5595:9c3dcbcac35f
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 15:16:15 2023 +0000
+summary:     Update Changelog and version to 4.0.5
+
+changeset:   5594:2f0343925bec
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 22 11:03:05 2022 +0000
+summary:     health_crypto: Fix bug #63558: Fault: 'NoneType' object has no attribute 'name'
+
+changeset:   5593:53b1239f910f
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:34:30 2023 +0000
+summary:     Fix bug #63557: Missing view architecture for ('calendar.category', None, 'tree')
+
+changeset:   5592:6e963547d29a
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Dec 16 19:27:54 2022 +0000
+summary:     Fix bug #63533: Model 'gnuhealth.pol' is missing a default access
+
+changeset:   5591:61d154cf31d7
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 15 20:41:27 2022 +0000
+summary:     Fix bug #63532: health_caldav misses requiremnt vobject in setup.py
+
+changeset:   5590:fd746872ba25
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:23:00 2023 +0000
+summary:     bug #63517: Fault: 'webdav' is not in list
+
+changeset:   5589:fa5d5a50751c
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Jul 16 18:40:45 2022 +0100
+summary:     Fix bug #62777: The term health prof used for both initiating and signing professional in patient evaluation
+
+changeset:   5588:937dbbe0708a
+branch:      stable
+parent:      5173:0bf1d6fbe0cd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jan 09 12:02:44 2023 +0000
+summary:     Fix bug #62634, Missing Spanish Translations
+
+changeset:   5587:cd7cf27cbf18
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 08 18:16:20 2023 +0000
+summary:     Update copyright year
+
+changeset:   5586:79023807caac
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 08 17:28:20 2023 +0000
+summary:     Update copyright year on dep5
+
+changeset:   5585:0a0b99f04d53
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Jan 08 17:25:18 2023 +0000
+summary:     Remove out-of-place licenses file
+
+changeset:   5576:429f9d25eb96
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 22 11:03:05 2022 +0000
+summary:     health_crypto: Fix bug #63558: Fault: 'NoneType' object has no attribute 'name'
+
+changeset:   5575:3279b74cccd7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 18:51:04 2022 +0000
+summary:     task #16296: Unit testing: Include missing attributes in on_change_with_address_repr method
+
+changeset:   5574:98c5d00069d2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 16:51:50 2022 +0000
+summary:     task #16296: Unit testing: Fix Wrong 'many2one' type for _rec_name of gnuhealth.insurance.plan'
+
+changeset:   5573:87ccd6b6ab10
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 16:38:35 2022 +0000
+summary:     task #16296: Unit testing: Use metaclass=Poolmeta when extending models in core package
+
+changeset:   5572:189cf8b4c765
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 16:32:29 2022 +0000
+summary:     Fix typo introduced in changeset 5571:13632a4bdacc
+
+changeset:   5571:13632a4bdacc
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 16:28:34 2022 +0000
+summary:     task #16296: Unit testing: Use metaclass=Poolmeta when extending models in core package
+
+changeset:   5570:cb0129e3cfd8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 15:54:30 2022 +0000
+summary:     task #16296: Unit testing. Register buttons from health core package
+
+changeset:   5569:7908aa4e6ea6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 15:53:01 2022 +0000
+summary:     health: include municipality field in DU view
+
+changeset:   5568:7ef1d98c877c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 15:51:57 2022 +0000
+summary:     health: Update the city tooltip
+
+changeset:   5567:b632f0b8bd07
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 12:21:29 2022 +0000
+summary:     Task task #16296: Unit testing: Fix malformed declaration on xml version
+
+changeset:   5566:d321410abab4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Dec 20 11:18:04 2022 +0000
+summary:     task #16294: Harden access control to key patient models
+
+changeset:   5565:282a407d01c5
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Dec 18 20:50:26 2022 +0000
+summary:     task #16294: Harden access control to key patient models
+
+changeset:   5564:80a402aa5108
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Dec 16 19:27:54 2022 +0000
+summary:     Fix bug #63533: Model 'gnuhealth.pol' is missing a default access
+
+changeset:   5563:fa16c2fce24d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 15 20:41:27 2022 +0000
+summary:     Fix bug #63532: health_caldav misses requiremnt vobject in setup.py
+
+changeset:   5562:b17db385e951
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Dec 11 20:08:21 2022 +0000
+summary:     Include support for ZSH
+
+changeset:   5561:e37ff08b5fe5
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Dec 11 16:29:21 2022 +0000
+summary:     health_surgery: Fix bug #63496: GH 4.1: error when activating health_surgery
+
+changeset:   5560:3d67a9a2f6f0
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 08 16:45:24 2022 +0000
+summary:     Update dev version to 4.1
+
+changeset:   5553:15417659c11b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 08 13:22:32 2022 +0000
+summary:     all: Update setup long_description param value from README to README.rst
+
+changeset:   5552:9dba627fd793
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 08 13:17:28 2022 +0000
+summary:     install_demo_database: Fix tab on description
+
+changeset:   5551:6583b5cc9dd2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Dec 07 13:44:15 2022 +0000
+summary:     health: remove dup shebang on demodb downloader
+
+changeset:   5550:2a19375c1a29
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Dec 07 13:42:30 2022 +0000
+summary:     Update ThalamusConnection type message
+
+changeset:   5549:410173cd6e16
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Dec 01 18:54:44 2022 +0000
+summary:     Fix bug #63456: Traceback on summary report due to typo
+
+changeset:   5548:e9ffae75dfc4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Nov 28 23:05:11 2022 +0000
+summary:     Update gnuhealth-setup with README.rst
+
+changeset:   5522:d090b62de1db
+parent:      5521:0779d5eee75f
+parent:      5518:ec425a6c552d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Oct 31 19:31:46 2022 +0000
+summary:     Merge
+
+changeset:   5521:0779d5eee75f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Oct 31 19:31:05 2022 +0000
+summary:     Update documentation license to CC-BY-SA-40
+
+changeset:   5520:bf7bb8603daf
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Oct 31 19:30:16 2022 +0000
+summary:     Merge italian translation from weblate
+
+changeset:   5519:c66038fb75a3
+parent:      5516:0ba7fecd2748
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Oct 31 19:18:21 2022 +0000
+summary:     task #16232: Implement REUSE Initiative on health_who_essential_medicines
+
+changeset:   5516:0ba7fecd2748
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:45:55 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_surgery
+
+changeset:   5515:2e4859a8d2b1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:33:25 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_surgery
+
+changeset:   5514:f9d409654a27
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:25:01 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_stock
+
+changeset:   5513:87c886f23f2e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:24:42 2022 +0000
+summary:     health_orthanc: Remove obsolete README file
+
+changeset:   5512:a1d0ccfc5dc2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:13:00 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_socioeconomics
+
+changeset:   5511:1dc5c2d8f6b8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:03:13 2022 +0000
+summary:     health_services_imaging: PEP8
+
+changeset:   5510:4c3103e9aab8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 15:00:55 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_services_lab
+
+changeset:   5509:917645a51000
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 14:54:08 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_services_imaging
+
+changeset:   5508:e1b1ba658a34
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 14:46:33 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_services
+
+changeset:   5507:c9db5ea19924
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 14:31:51 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_reporting
+
+changeset:   5506:8d0af5f73c78
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 14:19:53 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_qrcodes
+
+changeset:   5505:2363c6642ee1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 14:13:34 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_profile
+
+changeset:   5504:0173797e0ed9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 14:10:19 2022 +0000
+summary:     Fix typo on health_ophthalmology init package header
+
+changeset:   5503:7b56a72e6ec2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 13:19:17 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_pediatrics_growth_charts_who
+
+changeset:   5502:60f0fd55249e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:57:59 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_pediatrics_growth_charts
+
+changeset:   5501:12aede007dd4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:50:50 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_pediatrics
+
+changeset:   5500:caf4faf5733e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:42:40 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_orthanc
+
+changeset:   5499:c12496442b17
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:27:39 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_ophthalmology
+
+changeset:   5498:b3f7914b97e0
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:14:16 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_nursing
+
+changeset:   5497:93c032a3eba6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:04:06 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_dengue
+
+changeset:   5496:3a233c939466
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 12:03:33 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_chagas
+
+changeset:   5495:f71bf412191b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 11:53:19 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_chagas
+
+changeset:   5494:3de1ade696a1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 30 11:20:24 2022 +0000
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_ntd
+
+changeset:   5493:ef7596c6cd61
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 20:09:01 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_mdg6. PEP8
+
+changeset:   5492:c5891554d7c2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 16:54:37 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_lifestyle package. PEP8
+
+changeset:   5491:663fa9758c94
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 16:23:49 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_lab package
+
+changeset:   5490:3f744cfbed6a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 16:07:42 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_iss package
+
+changeset:   5489:fa2ea6f02099
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 15:53:44 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icd10 package
+
+changeset:   5488:5d0dd7ee1392
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 15:49:27 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_insurance package
+
+changeset:   5487:97ed61d17fc6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 15:37:21 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_inpatient package
+
+changeset:   5486:08e892b3e238
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 14:57:46 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_imaging package
+
+changeset:   5485:a8970ae0739d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 14:24:49 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icu - Add README.rst
+
+changeset:   5484:bb3ac8c0e387
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 14:24:24 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icu
+
+changeset:   5483:44db0babb3bc
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 12:18:06 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icpm
+
+changeset:   5482:d50d87c14b37
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 12:09:11 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icd11
+
+changeset:   5481:79e72ae1e1f6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 11:46:18 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icd10pcs package
+
+changeset:   5480:f9e75fa08be0
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 11:37:08 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icd10 package
+
+changeset:   5479:ce4d36d70282
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 11:27:02 2022 +0100
+summary:     health_history: PEP8
+
+changeset:   5478:f8ad133d4ad3
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 11:24:14 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_icd9prcs
+
+changeset:   5477:e61992df990e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 10:53:52 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_history
+
+changeset:   5476:c93bf679614b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 29 10:49:15 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_gyneco
+
+changeset:   5475:fce9bdccc892
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 22:09:55 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_genetics_uniprot
+
+changeset:   5474:210fe3669c23
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 21:30:33 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_genetics README.rst
+
+changeset:   5473:d240e0bc9ff7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 21:30:07 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_genetics
+
+changeset:   5472:d57d98d67127
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 21:13:42 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_federation
+
+changeset:   5471:e4e2b03c36a9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 20:23:00 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for health_ems package. PEP8
+
+changeset:   5470:6facca602410
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 18:08:21 2022 +0100
+summary:     health_disability: PEP8 on setup.py
+
+changeset:   5469:4ae7d2412c1b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 18:03:00 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_disability package
+
+changeset:   5468:95d9c39f845d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 17:38:49 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_dentistry main module
+
+changeset:   5467:4ffaa051b9be
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 17:36:49 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_dentistry package
+
+changeset:   5466:cf381dfe52dd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 16:22:50 2022 +0100
+summary:     task #16232: Implement REUSE Initiative.  doc files to CC-BY-SA-40
+
+changeset:   5465:e698c47508c2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 16:22:14 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_crypto_lab package
+
+changeset:   5464:09666a19204d
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 15:57:23 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_crypto package
+
+changeset:   5463:8bb4acb7440e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 15:46:23 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_contact_tracing README.rst
+
+changeset:   5462:8ff35d5912ee
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 15:44:39 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_contact_tracing init file
+
+changeset:   5461:4b2447b918cd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 15:40:25 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_contact_tracing
+
+changeset:   5451:db081860acdb
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Oct 28 14:55:58 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_inpatient_calendar
+
+changeset:   5426:0272bc9d5205
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 27 12:45:10 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_calendar package
+
+changeset:   5425:847fdd6eea45
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 27 12:14:17 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers setup.py. PEP8
+
+changeset:   5424:b2a428fc8029
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 27 11:21:13 2022 +0100
+summary:     Fix bug #63275: Patient w/o DoB throws error message
+
+changeset:   5423:21b580ac16fe
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 27 11:02:24 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_webdav3_server header
+
+changeset:   5396:5a97fade4ed1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 26 12:22:29 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_webdav3_server
+
+changeset:   5395:1e65c817d639
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 26 10:55:49 2022 +0100
+summary:     Update tests on health_caldav to gnuhealth naming convention
+
+changeset:   5394:e79d37c26841
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 26 10:53:18 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_caldav
+
+changeset:   5393:2baafcd46c0c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Oct 24 16:05:00 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health_archives to be REUSE compliant
+
+changeset:   5392:04d203ed3c2a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 23 11:25:27 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers and dep5 for common files
+
+changeset:   5391:a2f0629dd455
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 13:08:34 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Include header on sample demographics script README file
+
+changeset:   5390:3ab9cb54baca
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 13:07:48 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Fix dep5 typo
+
+changeset:   5389:bd2aa0a8e95c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 12:59:48 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update doc headers and banners info
+
+changeset:   5388:751afe5bc755
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 12:37:21 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Fix license header on startup README.rst
+
+changeset:   5387:4782a4c969f0
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 12:32:29 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for documentation sample files / scripts
+
+changeset:   5386:7184ee022d1e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 12:12:03 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for upgrade scripts
+
+changeset:   5385:71fac33ba8ac
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 11:59:14 2022 +0100
+summary:     Remove old GH 3.6 upgrade scripts
+
+changeset:   5384:0530fd64fdd4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 11:56:37 2022 +0100
+summary:     Remove old upgrade scripts, previous to GH 3.6
+
+changeset:   5383:e9d2f66ebc3f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 11:55:55 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Move startup README to README.rst and add header
+
+changeset:   5382:050b3b1fd5c4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 11:45:10 2022 +0100
+summary:     remove old 3.6 series demodb script
+
+changeset:   5381:912a22d8deb2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 11:43:43 2022 +0100
+summary:     Remove old security patch from trytond 4.6 series
+
+changeset:   5380:884a7907ca67
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Oct 22 11:40:13 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update gnuhealthrc
+
+changeset:   5379:a862f223198c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 20 19:56:06 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update health/README.rst
+
+changeset:   5378:96e511a96ce4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 20 19:51:58 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update dep5 and README.rst
+
+changeset:   5377:794a9ded920a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 20 19:26:33 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers gnuhealth-setup script
+
+changeset:   5376:a991537fdab8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Oct 20 19:23:00 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for startup, control center and setup scripts
+
+changeset:   5373:23fe6785f715
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Oct 18 12:57:15 2022 +0100
+summary:     remove fhir resources, since they are now in health-fhir repository
+
+changeset:   5372:a4d084b9287a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Oct 18 12:30:08 2022 +0100
+summary:     health: PEP8 on report
+
+changeset:   5371:1a445d459e6c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Oct 18 12:23:32 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update dep5 report and documentation files on health package
+
+changeset:   5359:db8726ecf2d6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 16 13:06:48 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers for XML files
+
+changeset:   5358:c2edf3394716
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Oct 16 11:56:53 2022 +0100
+summary:     health: PEP8
+
+changeset:   5357:278bb4339547
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 17:05:53 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers on wizard py files
+
+changeset:   5356:5208f0f13e7e
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 14:04:16 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Fix copyright date on setup.py file
+
+changeset:   5355:fe9ec676155f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 14:03:00 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update headers on health package py files
+
+changeset:   5354:b72e6dd1567a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 13:01:19 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Improve header notice on main module
+
+changeset:   5353:78281c08989c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 12:59:48 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Update SPDX on health.py
+
+changeset:   5352:cc75a7088ac0
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 11:55:59 2022 +0100
+summary:     update man page
+
+changeset:   5351:7b144b0d386a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 11:30:44 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Place COPYING and README.rst on root dir
+
+changeset:   5350:6d78642eeeb2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Oct 12 11:08:46 2022 +0100
+summary:     Move to root directory REUSE init and LICENSES files
+
+changeset:   5349:009c41fafced
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Oct 11 18:53:43 2022 +0100
+summary:     task #16232: Implement REUSE Initiative. Init reuse and add main licenses
+
+changeset:   5348:14f096ec6c32
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Oct 11 18:50:53 2022 +0100
+summary:     health: Update svg icons by Leo D'Acchille
+
+changeset:   5344:38a887e1798c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 22:29:32 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Show labels for RCRI and ECG in preop assessment report
+
+changeset:   5343:1150943dfdab
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 22:24:43 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Fix Preop assessment report
+
+changeset:   5342:50c4b6cad8de
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 21:27:50 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Use only the patient domain preop_assesment field from surgery model to allow surgeries that have not been defined
+
+changeset:   5337:08acaf673950
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 14:04:39 2022 +0100
+summary:     Update surgery Spanish translation
+
+changeset:   5336:a5def5877fc6
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 10:04:57 2022 +0200
+summary:     Translated using Weblate (Spanish)
+
+changeset:   5335:a8afb78c0456
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 09:47:16 2022 +0100
+summary:     Update French and Spanish translation files for surgery module
+
+changeset:   5334:82844c133814
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 21 09:44:42 2022 +0100
+summary:     Remove grouped option from disease_categories
+
+changeset:   5333:1a762c5608a7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 20 20:03:08 2022 +0100
+summary:     task #16266: Summarized version of patient evaluation. Complete task
+
+changeset:   5332:ab391d335b74
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 20 12:01:49 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add preoperative assessment report
+
+changeset:   5331:17fa006f99b1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Sep 19 16:27:41 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add thyroid assessment in patient evaluation
+
+changeset:   5330:8256c0fe2a25
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Sep 19 13:35:50 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add hernia information to surgical context in patient evaluation
+
+changeset:   5329:e15a8ac6a4f4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 18 23:22:43 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include main group of surgical relevant information on patient evaluation
+
+changeset:   5328:734ab338c11f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 18 22:56:12 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Addition of surgical decision on preoperative assessment
+
+changeset:   5327:8bfca4b12a24
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 18 22:48:58 2022 +0100
+summary:     task #16265: Improve Patient evaluation form. Complete task
+
+changeset:   5326:86802b750586
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 18 20:17:37 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Inital addition of surgical context in patient evaluation model
+
+changeset:   5325:3eadc4f23264
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 18 18:26:58 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Improve complications section in surgery report with severity strings
+
+changeset:   5324:40117da5a98f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 17 11:17:41 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include surgery complications in report
+
+changeset:   5323:6ae12a9370f9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Sep 16 12:33:55 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include domains on some M2O
+
+changeset:   5322:42d96e3306be
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Sep 16 12:05:11 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add main intervention on protocol and surgery model
+
+changeset:   5321:3c8227ff0970
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Sep 16 11:39:07 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Use surgical intervention to replace main procedure. Update surgery report
+
+changeset:   5320:10fd89bd4fda
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Sep 16 10:35:53 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Use surgical intervention to replace main procedure. Improve report and view
+
+changeset:   5319:863ce188e76c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Sep 16 09:39:49 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add optional manually included ellapsed time in minutes
+
+changeset:   5318:e70ca5cae10a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Sep 15 13:39:59 2022 +0100
+summary:     task #16261: Implement estimated date of birth. Completed
+
+changeset:   5317:7154827f915f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 14 10:17:12 2022 +0100
+summary:     task #16230: Use grouped attribute for large datafiles. Implement it on Genetics and Uniprot
+
+changeset:   5316:1c9d314c2820
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 14 09:55:34 2022 +0100
+summary:     task #16230: Use grouped attribute for large datafiles. Implement it on ICD10 package
+
+changeset:   5315:b7546e8dd172
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 13 11:14:56 2022 +0100
+summary:     health_surgery: Fix view validation error
+
+changeset:   5314:3835321d3f6f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 13 10:14:45 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add Outpatient discharge surgery report
+
+changeset:   5313:7fe9f1464e70
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 13 10:13:34 2022 +0100
+summary:     task #16255: Section on key patient health indicators. Add allergic reactions
+
+changeset:   5312:0e1624bcf7e8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 11 10:52:18 2022 +0100
+summary:     task #16255: Section on key patient health indicators. Improve tooltips
+
+changeset:   5311:23c7f82d88da
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 16:31:42 2022 +0100
+summary:     task #16255: Section on key patient health indicators. Add main indicators on patient form
+
+changeset:   5310:f07c8188b95a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 13:30:23 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include default values on patient critical info at the moment of the preoperative assessment
+
+changeset:   5309:7559587174e8
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 13:03:44 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include related patient encounter (evaluation) on preoperative assessment
+
+changeset:   5308:c56051196ad5
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 13:02:18 2022 +0100
+summary:     health_imaging: Include the test type in the record name description
+
+changeset:   5307:b6717840dc19
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 11:39:12 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include lab test and medical specialty in preop assessment
+
+changeset:   5306:86bc4aeb5354
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 11:01:13 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add Dx imaging test to preoperative assessment. Force patient domain
+
+changeset:   5305:89afb1eb0122
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 10 10:26:58 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include surgical drains views
+
+changeset:   5304:3d6e096cb5e2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Sep 08 16:21:21 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include surgical drains and approaches
+
+changeset:   5303:979244e21fe2
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 07 16:41:08 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include postoperative and discharge directions
+
+changeset:   5302:b20b38f4676f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Sep 07 10:57:23 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include base health condition, urgency, anesthesia type and patient positioning to protocol and surgery model
+
+changeset:   5301:dd2738c6c1a3
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 06 17:30:54 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include patient positioning
+
+changeset:   5300:c463dc437d17
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Sep 06 16:35:07 2022 +0100
+summary:     Health core. PEP8
+
+changeset:   5299:d821a287f8bf
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Sep 05 17:58:00 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include initial Surgery protocol model // PEP 8
+
+changeset:   5297:15092833198c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 04 20:06:50 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include ECG and clavien-dindo classification
+
+changeset:   5296:a4ae223c6c85
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 04 16:25:46 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Include preoperative blood ordering and exclusion from anesthesia
+
+changeset:   5295:22a2fafb0f1c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Sep 03 09:38:24 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Broad the domain to include medical supplies, vaccines and other drugs in the surgery
+
+changeset:   5294:99463d53e83f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Fri Sep 02 16:40:40 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add anesthesia types and surgery complications
+
+changeset:   5293:a9fb2bcc6e8f
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Sep 01 09:53:28 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add type of anesthesia
+
+changeset:   5292:1e74952fa66c
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Aug 31 16:31:39 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Use current date as default in assessment // rec_name as surgery code + description
+
+changeset:   5291:d4a656445dc1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Aug 31 15:34:27 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Move risk assessment page and group from surgery to pre-operative assessment
+
+changeset:   5290:0445ee301a24
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Aug 31 15:02:30 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. PEP8
+
+changeset:   5289:887060c8ebf3
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Aug 28 16:51:57 2022 +0100
+summary:     task #16247: Enhancements on Surgery package. Add initial models, menus and links to Preoperative Assessment
+
+changeset:   5286:cb32dbee05dc
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Aug 06 12:42:22 2022 +0100
+summary:     Update lab interface sample to GH 4.0
+
+changeset:   5285:d1068365d9bd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Aug 06 11:58:57 2022 +0100
+summary:     Remove icd10pcs chinese translation
+
+changeset:   5200:bd882b15f7ec
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Jul 16 18:40:45 2022 +0100
+summary:     Fix bug #62777: The term health prof used for both initiating and signing professional in patient evaluation
+
+changeset:   5185:777ced06c1ba
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Jul 16 11:20:25 2022 +0100
+summary:     Update Chinese translations - thank you Tumashu
+
+changeset:   5182:225561f04133
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jul 14 16:26:03 2022 +0100
+summary:     Fix bug #62634, Missing Spanish Translations
+
+changeset:   5175:3692b5c97824
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jul 11 13:04:41 2022 +0100
+summary:     Update / Sync Spanish translation on health core package
+
+changeset:   5173:0bf1d6fbe0cd
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jun 16 18:37:01 2022 +0100
+summary:     Added tag 4.0.4 for changeset 9863e04708ef
+
+changeset:   5172:9863e04708ef
+branch:      stable
+tag:         4.0.4
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Jun 16 12:25:54 2022 +0100
+summary:     Update Changelog and version to 4.0.4
+
+changeset:   5171:bb424fd550fd
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 18:54:46 2022 +0100
+summary:     health_insurance: Fix bug #62598: Payment term search stops in party
+
+changeset:   5170:17ca0fa711f0
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 18:54:20 2022 +0100
+summary:     health_: Fix bug #62598: Payment term search stops in party
+
+changeset:   5169:b90b3f96d8e1
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 12:51:49 2022 +0100
+summary:     health_services: Fix bug #62596: Traceback if there is no Account Receivable defined neither on party or default acct config
+
+changeset:   5168:3c4e88e11bce
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jun 14 13:13:25 2022 +0100
+summary:     Apply saved rejects from https://hg.savannah.gnu.org/hgweb/health/rev/d35dc2652483
+
+changeset:   5167:29c26a5d36da
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Jun 14 13:07:12 2022 +0100
+summary:     Include round_price method manually due to save rejects on patch https://hg.savannah.gnu.org/hgweb/health/rev/180cc7a9d84b
+
+changeset:   5166:7b9d2322d993
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 01 12:12:37 2022 +0100
+summary:     Fix bug #62555: Too many decimals error when generating the invoice with certain discounts
+
+changeset:   5165:c686110942c3
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jun 06 16:55:26 2022 +0100
+summary:     Fix bug #62517: Dependency bug on PyPI for gnuhealth-dentistry
+
+changeset:   5164:eb7d995fb6c5
+branch:      stable
+parent:      5140:11536e760a71
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed May 11 12:58:24 2022 +0100
+summary:     Fix bug #62439: Error in sequence when generating Dx Imaging order
+
+changeset:   5163:2120f026ab26
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 18:59:35 2022 +0100
+summary:     Update fix bug #62427: Typo in health_services exceptions
+
+changeset:   5162:caa01afaaaeb
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 18:54:46 2022 +0100
+summary:     health_insurance: Fix bug #62598: Payment term search stops in party
+
+changeset:   5161:227cc26317f7
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 18:54:20 2022 +0100
+summary:     health_: Fix bug #62598: Payment term search stops in party
+
+changeset:   5160:180cc7a9d84b
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 17:12:32 2022 +0100
+summary:     bug #62555. Use product price_decimal value from system configuration
+
+changeset:   5159:d35dc2652483
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 12:52:34 2022 +0100
+summary:     health_insurance: Fix bug #62596: Traceback if there is no Account Receivable defined neither on party or default acct config
+
+changeset:   5158:5a01f3ef2acd
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 08 12:51:49 2022 +0100
+summary:     health_services: Fix bug #62596: Traceback if there is no Account Receivable defined neither on party or default acct config
+
+changeset:   5157:91632c9719bc
+parent:      5156:31ceaaddc3ab
+parent:      5155:e32aa03723b3
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jun 06 16:56:46 2022 +0100
+summary:     Merge
+
+changeset:   5156:31ceaaddc3ab
+parent:      5153:7139fadf96fe
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Jun 06 16:55:26 2022 +0100
+summary:     Fix bug #62517: Dependency bug on PyPI for gnuhealth-dentistry
+
+changeset:   5153:7139fadf96fe
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 01 21:07:05 2022 +0100
+summary:     Complete task #16213: Add a fix price in the options of the insurance policy plan line
+
+changeset:   5152:ceddfbb042af
+parent:      5151:754d911a0ebf
+parent:      5150:41e437803720
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 01 12:13:30 2022 +0100
+summary:     Merge
+
+changeset:   5151:754d911a0ebf
+parent:      5147:dddacbe73a88
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Jun 01 12:12:37 2022 +0100
+summary:     Fix bug #62555: Too many decimals error when generating the invoice with certain discounts
+
+changeset:   5147:dddacbe73a88
+parent:      5146:bfafb37a7063
+parent:      5145:a787c13f3717
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 16 18:30:56 2022 +0100
+summary:     Solve task #16194: Include a list in the insurance Plan Product policies
+
+changeset:   5146:bfafb37a7063
+parent:      5143:626f36f83990
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 16 18:30:20 2022 +0100
+summary:     Solve task #16194: Include a list in the insurance Plan Product policies
+
+changeset:   5143:626f36f83990
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed May 11 17:28:14 2022 +0100
+summary:     health_services_imaging: New functionality to include directly the Dx imaing tests on the health service document
+
+changeset:   5142:b44efd712deb
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed May 11 12:58:24 2022 +0100
+summary:     Fix bug #62439: Error in sequence when generating Dx Imaging order
+
+changeset:   5141:02401b033f18
+parent:      5139:74fd1ef8db89
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue May 10 18:53:55 2022 +0100
+summary:     health_services: New functionality. Group all tests within a lab order in a single health service document
+
+changeset:   5140:11536e760a71
+branch:      stable
+parent:      5136:632e2c1b13f5
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 09 09:37:13 2022 +0100
+summary:     Fixed bug #62427: Typo in health_services exceptions
+
+changeset:   5139:74fd1ef8db89
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 09 09:37:13 2022 +0100
+summary:     Fixed bug #62427: Typo in health_services exceptions
+
+changeset:   5138:a7fc6f86a4b4
+parent:      5137:d93052938fae
+parent:      5135:b5c1171c4309
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 09 09:26:24 2022 +0100
+summary:     merge
+
+changeset:   5137:d93052938fae
+parent:      5120:8cf9a7181be9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 09 09:25:14 2022 +0100
+summary:     Fix bug #62428: complete blood count report takes two pages
+
+changeset:   5136:632e2c1b13f5
+branch:      stable
+parent:      5124:e4613a729777
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon May 09 09:15:34 2022 +0100
+summary:     Fix bug #62428: complete blood count report takes two pages
+
+changeset:   5124:e4613a729777
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Apr 02 12:57:56 2022 +0100
+summary:     Added tag 4.0.3 for changeset 6db73bd0d85b
+
+changeset:   5123:6db73bd0d85b
+branch:      stable
+tag:         4.0.3
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Apr 02 12:49:42 2022 +0100
+summary:     Update Changelog to v 4.0.3
+
+changeset:   5122:6019cf10a447
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Apr 02 12:17:43 2022 +0100
+summary:     Remove pinning from vobject library version
+
+changeset:   5121:d4a05c89a8f5
+branch:      stable
+parent:      5105:fabe18e3e0ef
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Mar 30 18:23:36 2022 +0100
+summary:     fix bug #62235: Traceback on default health professional
+
+changeset:   5120:8cf9a7181be9
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Apr 02 12:17:43 2022 +0100
+summary:     Remove pinning from vobject library version
+
+changeset:   5119:7bb74e161e37
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Wed Mar 30 18:23:36 2022 +0100
+summary:     fix bug #62235: Traceback on default health professional
+
+changeset:   5105:fabe18e3e0ef
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Mar 21 15:28:13 2022 +0000
+summary:     Update version to 4.0.2
+
+changeset:   5104:26045795e8a7
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Mon Mar 21 15:26:01 2022 +0000
+summary:     Update Changelog
+
+changeset:   5097:4f825c4f4a41
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Mar 08 19:54:31 2022 +0000
+summary:     Sync default branch with latest stable 4.0.1
+
+changeset:   5096:ae618ba823ba
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Mar 05 19:25:22 2022 +0000
+summary:     Update Changelog
+
+changeset:   5095:2dbf16ce37cb
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Mar 08 14:50:19 2022 +0000
+summary:     Update gnuhealth control center and gnuhealth setup, pinning specific python libraries versions
+
+changeset:   5094:bffcddabb097
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Mar 05 23:08:35 2022 +0000
+summary:     Allow Python minor versions > 10 (ej Python 3.10.2)
+
+changeset:   5093:0374d4cd5cfe
+parent:      5080:b17506441d9a
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sat Mar 05 21:22:44 2022 +0000
+summary:     Force Beren library to 0.7.0 to make it compatible with Python 3.6
+
+changeset:   5092:106851d74198
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Mar 08 15:59:49 2022 +0000
+summary:     Added tag 4.0.1 for changeset ecd416f9b767
+
+changeset:   5091:ecd416f9b767
+branch:      stable
+tag:         4.0.1
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Tue Mar 08 15:10:39 2022 +0000
+summary:     Update Changelog
+
 changeset:   5090:f0c7ce55027b
 branch:      stable
 user:        Luis Falcon <falcon@gnuhealth.org>
