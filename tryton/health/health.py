@@ -2949,6 +2949,10 @@ class PatientData(ModelSQL, ModelView):
         (None, ''),
         ('m', 'Male'),
         ('f', 'Female'),
+        ('nb', 'Non-binary'),
+        ('other', 'Other'),
+        ('nd', 'Non disclosed'),
+        ('u', 'Unknown'),
         ('f-m', 'Female -> Male'),
         ('m-f', 'Male -> Female'),
         ], 'Gender'), 'get_patient_gender')
@@ -3105,7 +3109,7 @@ class PatientData(ModelSQL, ModelView):
         gender = self.name.gender
         sex = self.biological_sex
         if sex:
-            if (gender != sex):
+            if (gender != sex and (gender in ['f','m'])):
                 res = sex + '-' + gender
             else:
                 res = gender
@@ -4607,6 +4611,10 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         (None, ''),
         ('m', 'Male'),
         ('f', 'Female'),
+        ('nb', 'Non-binary'),
+        ('other', 'Other'),
+        ('nd', 'Non disclosed'),
+        ('u', 'Unknown'),
         ('f-m', 'Female -> Male'),
         ('m-f', 'Male -> Female'),
         ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
@@ -5017,6 +5025,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     @fields.depends('patient')
     def on_change_patient(self):
         self.computed_age = self.patient.age
+        self.gender = self.patient.gender
 
     @staticmethod
     def default_information_source():

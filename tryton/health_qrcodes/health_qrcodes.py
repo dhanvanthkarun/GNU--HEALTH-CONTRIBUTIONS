@@ -34,7 +34,7 @@ class Patient(metaclass=PoolMeta):
         patient_puid = self.puid or ''
         patient_blood_type = self.blood_type or ''
         patient_rh = self.rh or ''
-        patient_gender = self.gender or ''
+        patient_gender = self.name.gender_str or ''
         patient_dob = ''
 
         if (self.dob):
