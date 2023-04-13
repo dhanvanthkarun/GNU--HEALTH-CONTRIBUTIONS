@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from sql import Literal, Join
+from sql import Literal, Join, Null
 from sql.aggregate import Max, Count
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.wizard import Wizard, StateView, StateAction, StateTransition, \
@@ -93,14 +93,14 @@ class EvaluationsDoctor(ModelSQL, ModelView):
         Evaluation = pool.get('gnuhealth.patient.evaluation')
         evaluation = Evaluation.__table__()
         where = Literal(True)
-        if Transaction().context.get('start_date'):
-            where &= evaluation.evaluation_start >= \
-                Transaction().context['start_date']
-        if Transaction().context.get('end_date'):
-            where &= evaluation.evaluation_start <= \
-                Transaction().context['end_date']
+        period_start = Transaction().context['start_date']
+        period_end = Transaction().context['end_date']
+        if period_start:
+            where &= evaluation.evaluation_start >= period_start
+        if period_end:
+            where &= evaluation.evaluation_start <= period_end
 
-        return evaluation.select(
+        sql_statement = evaluation.select(
             evaluation.healthprof.as_('id'),
             Max(evaluation.create_uid).as_('create_uid'),
             Max(evaluation.create_date).as_('create_date'),
@@ -110,6 +110,8 @@ class EvaluationsDoctor(ModelSQL, ModelView):
             Count(evaluation.id).as_('evaluations'),
             where=where,
             group_by=evaluation.healthprof)
+
+        return sql_statement
 
 
 class EvaluationsSpecialty(ModelSQL, ModelView):
@@ -124,13 +126,14 @@ class EvaluationsSpecialty(ModelSQL, ModelView):
         pool = Pool()
         Evaluation = pool.get('gnuhealth.patient.evaluation')
         evaluation = Evaluation.__table__()
-        where = evaluation.specialty is not None
-        if Transaction().context.get('start_date'):
-            where &= evaluation.evaluation_start >= \
-                Transaction().context['start_date']
-        if Transaction().context.get('end_date'):
-            where &= evaluation.evaluation_start <= \
-                Transaction().context['end_date']
+        where = (evaluation.specialty != Null)
+        period_start = Transaction().context['start_date']
+        period_end = Transaction().context['end_date']
+
+        if period_start:
+            where &= evaluation.evaluation_start >= period_start
+        if period_end:
+            where &= evaluation.evaluation_start <= period_end
 
         return evaluation.select(
             evaluation.specialty.as_('id'),
@@ -168,12 +171,13 @@ class EvaluationsSector(ModelSQL, ModelView):
         join4 = Join(join3, sector)
         join4.condition = join4.right.id == join3.right.operational_sector
         where = Literal(True)
-        if Transaction().context.get('start_date'):
-            where &= evaluation.evaluation_start >= \
-                Transaction().context['start_date']
-        if Transaction().context.get('end_date'):
-            where &= evaluation.evaluation_start <= \
-                Transaction().context['end_date']
+        period_start = Transaction().context['start_date']
+        period_end = Transaction().context['end_date']
+
+        if period_start:
+            where &= evaluation.evaluation_start >= period_start
+        if period_end:
+            where &= evaluation.evaluation_start <= period_end
 
         return join4.select(
             join4.right.id,
