@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2022-07-17 08:30+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_services/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:account.invoice,health_service:"
 msgid "Health Service"
@@ -132,8 +123,7 @@ msgctxt "help:gnuhealth.health_service.line,action_required:"
 msgid ""
 "This optional field is used in the context of validation on the service "
 "line. Mark it if there is any administrative or other type that needs action"
-msgstr "此可选字段用于服务明细验证相关内容，如果需要有任何管理或其他类型的动作，请标"
-"记它"
+msgstr "此可选字段用于服务明细验证相关内容，如果需要有任何管理或其他类型的动作，请标记它"
 
 msgctxt "help:gnuhealth.health_service.line,appointment:"
 msgid ""
@@ -226,6 +216,21 @@ msgstr "需要关联到某个服务"
 msgctxt "model:ir.message,text:msg_service_already_invoiced"
 msgid "This service has been invoiced. You can no longer modify service lines"
 msgstr "此服务已开凭证，不允许再更改服务明细"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:service_draft_button"
+msgid "Set to Draft"
+msgstr "设为草案"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:serviceevaluation_update_button"
+msgid "Update Services"
+msgstr "依照处方更新服务"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:servicepresc_update_button"
+msgid "Update Services"
+msgstr "依照处方更新服务"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_health_service"
 msgid "Health Service"
