@@ -1,6 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2023-05-07 05:49+0000\n"
+"Last-Translator: Feng Shu <tumashu@163.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"gnu-health/health/zh_Hans/>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.18-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Date and Time"
@@ -1201,40 +1210,36 @@ msgstr "死因"
 
 msgctxt "field:gnuhealth.patient,crit_allergic:"
 msgid "Allergic"
-msgstr ""
+msgstr "过敏"
 
 msgctxt "field:gnuhealth.patient,crit_cancer:"
 msgid "Cancer"
-msgstr ""
+msgstr "癌症"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,crit_cardio:"
 msgid "Cardiovascular"
-msgstr "心血管相关"
+msgstr "心血管疾病"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,crit_cognitive:"
 msgid "Cognitive"
-msgstr "认知能力"
+msgstr "认知问题"
 
 msgctxt "field:gnuhealth.patient,crit_dbt:"
 msgid "DBT"
-msgstr ""
+msgstr "糖尿病"
 
 msgctxt "field:gnuhealth.patient,crit_hbp:"
 msgid "HBP"
-msgstr ""
+msgstr "高血压"
 
 msgctxt "field:gnuhealth.patient,crit_immuno:"
 msgid "Immunity"
-msgstr ""
+msgstr "免疫问题"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,crit_nutrition:"
 msgid "Nutrition"
-msgstr "营养"
+msgstr "营养问题"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,crit_social:"
 msgid "Social"
 msgstr "社会环境"
@@ -1599,7 +1604,6 @@ msgctxt "field:gnuhealth.patient.evaluation,head_circumference:"
 msgid "Head"
 msgstr "头围"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,healthprof:"
 msgid "Initiated by"
 msgstr "发起人"
@@ -1728,7 +1732,6 @@ msgctxt "field:gnuhealth.patient.evaluation,secondary_conditions:"
 msgid "Other Conditions"
 msgstr "其它诊断"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,signed_by:"
 msgid "Signed by"
 msgstr "签署人"
@@ -2442,9 +2445,8 @@ msgstr "常用地址"
 
 msgctxt "field:party.party,est_dob:"
 msgid "Est"
-msgstr ""
+msgstr "估计"
 
-#, fuzzy
 msgctxt "field:party.party,est_years:"
 msgid "Years"
 msgstr "年"
@@ -2631,7 +2633,6 @@ msgctxt "help:gnuhealth.drug.route,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr "请使用大写字母，不要带空格"
 
-#, fuzzy
 msgctxt "help:gnuhealth.du,address_city:"
 msgid "City"
 msgstr "城市"
@@ -3034,44 +3035,43 @@ msgstr "生物学性别，默认从新生儿信息中获取"
 
 msgctxt "help:gnuhealth.patient,crit_allergic:"
 msgid "Known serious allergic reactions"
-msgstr ""
+msgstr "已知存在严重过敏反应"
 
 msgctxt "help:gnuhealth.patient,crit_cancer:"
 msgid "Cancer"
-msgstr ""
+msgstr "癌症"
 
 msgctxt "help:gnuhealth.patient,crit_cardio:"
 msgid "Cardiovascular disease, excluding HBP, that has  its own field."
-msgstr ""
+msgstr "心血管疾病，不包括高血压，高血压有单独字段。"
 
 msgctxt "help:gnuhealth.patient,crit_cognitive:"
 msgid "Cognitive issues"
-msgstr ""
+msgstr "认知问题"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient,crit_dbt:"
 msgid "Diabetes"
 msgstr "糖尿病"
 
 msgctxt "help:gnuhealth.patient,crit_hbp:"
 msgid "High blood pressure (hypertension)"
-msgstr ""
+msgstr "高血压"
 
 msgctxt "help:gnuhealth.patient,crit_immuno:"
 msgid "Immunocompromised or autoimmune disorders"
-msgstr ""
+msgstr "免疫受损或自身免疫障碍"
 
 msgctxt "help:gnuhealth.patient,crit_nutrition:"
 msgid ""
 "Issues on nutrition, malnourhisment. Including obesity, famine and eating "
 "disorders"
-msgstr ""
+msgstr "营养问题，营养不良。包括肥胖、饥荒和饮食失调"
 
 msgctxt "help:gnuhealth.patient,crit_social:"
 msgid ""
 "There are serious socio-familiar issues, such as physical and social "
 "barriers, drug addiction, violence  and education"
-msgstr ""
+msgstr "存在严重的社会-家庭问题，如身体和社会障碍、吸毒、暴力和教育"
 
 msgctxt "help:gnuhealth.patient,critical_info:"
 msgid ""
@@ -3775,11 +3775,11 @@ msgstr "主要地址，基于现住址"
 
 msgctxt "help:party.party,est_dob:"
 msgid "Estimated from referred years"
-msgstr ""
+msgstr "根据参考年份估计"
 
 msgctxt "help:party.party,est_years:"
 msgid "Referred years"
-msgstr ""
+msgstr "参考年份"
 
 msgctxt "help:party.party,father:"
 msgid "Father from the Birth Certificate"
@@ -8044,12 +8044,10 @@ msgctxt "model:ir.action,name:report_appointment_receipt"
 msgid "Appointment Receipt"
 msgstr "预约凭证"
 
-#, fuzzy
 msgctxt "model:ir.action,name:report_birth_certificate"
 msgid "Birth Certificate"
 msgstr "出生证明"
 
-#, fuzzy
 msgctxt "model:ir.action,name:report_death_certificate"
 msgid "Death Certificate"
 msgstr "死亡证明"
@@ -8066,14 +8064,13 @@ msgctxt "model:ir.action,name:report_patient_disease"
 msgid "Health Conditions"
 msgstr "健康状况"
 
-#, fuzzy
 msgctxt "model:ir.action,name:report_patient_evaluation"
 msgid "Patient Evaluation"
-msgstr "患者评估总结"
+msgstr "患者评估"
 
 msgctxt "model:ir.action,name:report_patient_evaluation_brief"
 msgid "Evaluation Report (brief)"
-msgstr ""
+msgstr "患者评估报告(简要)"
 
 msgctxt "model:ir.action,name:report_patient_medication"
 msgid "Medications"
@@ -8186,39 +8183,35 @@ msgstr "SM-CORE-0001: 对活人来说，这个出生日期不对"
 
 msgctxt "model:ir.model.button,string:appoinntment_checked_in"
 msgid "Check In"
-msgstr ""
+msgstr "已签到"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:appoinntment_no_show"
 msgid "No show"
 msgstr "已爽约"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
 msgid "Sign"
-msgstr "已签署"
+msgstr "签署"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:deathcert_sign_button"
 msgid "Sign"
-msgstr "已签署"
+msgstr "签署"
 
 msgctxt "model:ir.model.button,string:hospital_bed_fix"
 msgid "Fix bed"
-msgstr ""
+msgstr "固定床位"
 
 msgctxt "model:ir.model.button,string:patient_evaluation_end"
 msgid "End evaluation"
-msgstr ""
+msgstr "结束评估"
 
 msgctxt "model:ir.model.button,string:prescription_create"
 msgid "Create Prescription"
-msgstr ""
+msgstr "创建处方"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:vaccination_sign"
 msgid "Sign"
-msgstr "已签署"
+msgstr "签署"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_appointment"
 msgid "Appointment"
@@ -8564,61 +8557,54 @@ msgctxt "report:appointment.receipt:"
 msgid "You must present this receipt and your"
 msgstr "就诊时必须出示此预约凭证和本人"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid ","
 msgstr ","
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "BIRTH CERTIFICATE"
-msgstr ""
+msgstr "出生证明"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Certificate number:"
-msgstr ""
+msgstr "出生证号:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Date of Birth"
 msgstr "出生日期"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Date:"
 msgstr "日期:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Father"
 msgstr "父亲"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "I"
 msgstr "I"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Issued on"
-msgstr ""
+msgstr "发布日期"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Medical officer"
-msgstr ""
+msgstr "卫生人员"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Mother"
 msgstr "母亲"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Place of Birth"
-msgstr ""
+msgstr "出生地"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Printed"
-msgstr ""
+msgstr "已打印"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Sex"
 msgstr "性别"
@@ -8635,141 +8621,125 @@ msgctxt "report:gnuhealth.birth_certificate:"
 msgid "nstitution"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid ","
 msgstr ","
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid ":"
 msgstr "："
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Age"
 msgstr "年龄"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Autopsy:"
-msgstr ""
+msgstr "验尸:"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certificate number:"
-msgstr ""
+msgstr "死亡证号:"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certificate of Death"
-msgstr ""
+msgstr "死亡证明"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certification Date"
-msgstr ""
+msgstr "认证日期"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Citizenship"
-msgstr "国籍"
+msgstr "公民身份"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Conditions chronologically ordered leading to the cause of death"
-msgstr ""
+msgstr "按时间顺序排列的死亡原因"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Country"
 msgstr "国家"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "D"
 msgstr "D"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Date / Time of Death"
-msgstr ""
+msgstr "死亡日期/时间"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Date:"
 msgstr "日期:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Domiciliary Unit"
-msgstr "现住住址"
+msgstr "现住址"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Father"
 msgstr "父亲"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Immediate Cause"
-msgstr ""
+msgstr "直接原因"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Institution"
-msgstr "Orthanc 检查机构"
+msgstr "机构"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Location details"
-msgstr ""
+msgstr "位置详细信息"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Marital Status"
 msgstr "婚姻状态"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Medical officer"
-msgstr ""
+msgstr "卫生人员"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Mother"
 msgstr "母亲"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Name of decedent:"
-msgstr ""
+msgstr "被继承人姓名:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Occupation"
 msgstr "职业"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Place of Death"
-msgstr ""
+msgstr "死亡地点"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Print"
-msgstr "打印处方"
+msgstr "打印"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Residence Country"
-msgstr ""
+msgstr "居住国"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Sex"
 msgstr "性别"
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Subdivision"
 msgstr "行政区划"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Type of Death"
-msgstr ""
+msgstr "死亡类型"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Usual Address"
-msgstr ""
+msgstr "常用地址"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "ate of birth"
@@ -9056,87 +9026,70 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "rocedures"
 msgstr "处理措施"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid ","
 msgstr ","
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid ":"
 msgstr "："
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Allergies and other relevant information"
 msgstr "过敏及其他相关信息"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Chief Complaint"
 msgstr "主诉"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Clinical and Physical examination"
 msgstr "临床和体检"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Code :"
 msgstr "代码:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "D"
 msgstr "D"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Discharge Reason"
 msgstr "患者离院原因"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "History of Present Illness"
 msgstr "既往病史"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "ID:"
 msgstr "ID："
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Initiated by"
 msgstr "发起人"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Main Condition :"
 msgstr "主要诊断:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Patient :"
 msgstr "患者："
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Plan"
 msgstr "计划"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Signed by"
 msgstr "签署人"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Treatment"
 msgstr "治疗"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "ate:"
 msgstr "日期："
@@ -9361,7 +9314,6 @@ msgctxt "report:patient.vaccination:"
 msgid "Dose"
 msgstr "剂量"
 
-#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Gender"
 msgstr "性别"
@@ -10086,22 +10038,18 @@ msgctxt "selection:gnuhealth.patient,gender:"
 msgid "Male -> Female"
 msgstr "男 -> 女"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient,gender:"
 msgid "Non disclosed"
 msgstr "未披露"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient,gender:"
 msgid "Non-binary"
 msgstr "非二元性别"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient,gender:"
 msgid "Other"
 msgstr "其它"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient,gender:"
 msgid "Unknown"
 msgstr "未知"
@@ -10354,22 +10302,18 @@ msgctxt "selection:gnuhealth.patient.evaluation,gender:"
 msgid "Male -> Female"
 msgstr "男 -> 女"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,gender:"
 msgid "Non disclosed"
 msgstr "未披露"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,gender:"
 msgid "Non-binary"
 msgstr "非二元性别"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,gender:"
 msgid "Other"
 msgstr "其它"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,gender:"
 msgid "Unknown"
 msgstr "未知"
@@ -11281,7 +11225,7 @@ msgstr "页首信息"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
-msgstr ""
+msgstr "诊断信息"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Information on Diagnosis"
@@ -11315,7 +11259,6 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
 msgstr "现病史"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Procedures"
 msgstr "医学操作"
@@ -11394,7 +11337,7 @@ msgstr "关键信息"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"
-msgstr ""
+msgstr "关注"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "General Info"
