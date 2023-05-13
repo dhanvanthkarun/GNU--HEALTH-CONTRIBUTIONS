@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 # SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 #
@@ -14,33 +14,27 @@
 #########################################################################
 
 # Requirements
-# Proteus version : 5.0.x 
-# pip3 install --upgrade --user "proteus>=5.0,<5.1"
+# Proteus version : 6.0.x
+# pip3 install --upgrade --user "proteus>=6.0,<6.1"
 
 # ##### Usage ########
-# python3 ./gnuhealth_product_uploader.py products_file_name.csv
+# product_uploader.py <csv_file> <hostname> <port> <user> <password> <dbname>
 
 # Product CSV Format
 # Name,List Price,Cost Price,Type,UOM
 # Sample csv content
 # "Rapid urease test",15,12,"service","Unit"
 
-from proteus import config, Model
+
+from proteus import Model
+from proteus import config as pconfig
+
 import csv
 import sys
 
 from decimal import Decimal
 
-dbname = 'health37dev'
-user = 'admin'
-password = 'gnusolidario'
-hostname = 'localhost'
-port = '8000'
 
-health_server = \
-    'http://'+user+':'+password+'@'+hostname+':'+port+'/'+dbname+'/'
-
-            
 def input_results():
     ProductInfo = Model.get('product.template')
     ProductUOM = Model.get('product.uom')
@@ -49,25 +43,37 @@ def input_results():
         name = line[0]
         list_price = line[1]
         cost_price = line[2]
-        product_type = line[3]
         uom = line[4]
         # Update the model with the result values
-        product = ProductInfo ()
+        product = ProductInfo()
         product.name = name
         product.list_price = Decimal(list_price)
         product.cost_price = Decimal(cost_price)
-        uom_val, = ProductUOM.find([('name','=',uom)])
+        uom_val, = ProductUOM.find([('name', '=', uom)])
         product.default_uom = uom_val
-        
+
         product.save()
 
-if (len(sys.argv) < 2):
-    exit ("You need to specify a CSV file with the product list")
-    
-print ("Connecting to GNU Health Server ...")
-conf = config.set_xmlrpc(health_server)
-print ("Connected !")
 
-print ("Updating products from batch file ...")
+if (len(sys.argv) < 2):
+    exit("Usage: product_uploader.py <csv_file> <hostname> <port> "
+         "<user> <password> <dbname>")
+
+# Set the connection params
+print(sys.argv)
+
+hostname = sys.argv[2]
+port = sys.argv[3]
+user = sys.argv[4]
+passwd = sys.argv[5]
+dbname = sys.argv[6]
+
+health_server = f'http://{user}:{passwd}@{hostname}:{port}/{dbname}/'
+
+print(f"Connecting to GNU Health Server {health_server}")
+conf = pconfig.set_xmlrpc(health_server)
+print("Connected !")
+
+print("Updating products from batch file ...")
 input_results()
-print ("Done !")
+print("Done !")
