@@ -64,7 +64,7 @@ def input_results():
         product.consumable = True
         product.purchasable = True
         product.list_price = Decimal(list_price)
-        uom_val, = ProductUOM.find([('name', '=', uom)])
+        uom_val, = ProductUOM.find([('symbol', '=', uom)])
         dose_unit, = DoseUnit.find([('name', '=', dose_uom)])
         product.default_uom = uom_val
         product.type = prd_type
