@@ -43,14 +43,17 @@ def input_results():
         name = line[0]
         list_price = line[1]
         cost_price = line[2]
+        prd_type = line[3]
         uom = line[4]
         # Update the model with the result values
+        print("Uploading product", line)
         product = ProductInfo()
         product.name = name
         product.list_price = Decimal(list_price)
         product.cost_price = Decimal(cost_price)
-        uom_val, = ProductUOM.find([('name', '=', uom)])
+        uom_val, = ProductUOM.find([('symbol', '=', uom)])
         product.default_uom = uom_val
+        product.type = prd_type
 
         product.save()
 
