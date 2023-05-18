@@ -1,7 +1,7 @@
 # Anonymous Pootle User, 2016.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-30 13:47+0000\n"
+"PO-Revision-Date: 2023-05-19 11:50+0000\n"
 "Last-Translator: Alessandro Fanna <alex@rospus.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gnu-health/"
 "health/it/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-POOTLE-MTIME: 1452251637.0\n"
 
 msgctxt "error:gnuhealth.birth_certificate:"
@@ -1121,7 +1121,7 @@ msgstr "Prinipale specializzazione"
 
 msgctxt "field:gnuhealth.healthprofessional,name:"
 msgid "Health Professional"
-msgstr "Professionista medico"
+msgstr "Paramedico"
 
 msgctxt "field:gnuhealth.healthprofessional,puid:"
 msgid "PUID"
@@ -1437,7 +1437,7 @@ msgstr "ID"
 
 msgctxt "field:gnuhealth.hp_specialty,name:"
 msgid "Health Professional"
-msgstr "Professionista medico"
+msgstr "Paramedico"
 
 msgctxt "field:gnuhealth.hp_specialty,rec_name:"
 msgid "Name"
@@ -3822,7 +3822,7 @@ msgstr "Servizi di consulenza"
 
 msgctxt "help:gnuhealth.appointment,healthprof:"
 msgid "Health Professional"
-msgstr "Professionista medico"
+msgstr "Paramedico"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
@@ -4350,7 +4350,7 @@ msgstr "Data fine del trattaento"
 
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
 msgid "Health Professional"
-msgstr ""
+msgstr "Paramedico"
 
 msgctxt "help:gnuhealth.patient.disease,is_infectious:"
 msgid "Check if the patient has an infectious / transmissible disease"
@@ -4375,7 +4375,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Professional who performed the ECG"
-msgstr ""
+msgstr "Paramedico che ha eseguito l'ECG"
 
 msgctxt "help:gnuhealth.patient.ecg,pr:"
 msgid "Duration of PR interval in milliseconds"
@@ -4389,9 +4389,10 @@ msgctxt "help:gnuhealth.patient.ecg,qt:"
 msgid "Duration of QT interval in milliseconds"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,abdominal_circ:"
 msgid "Waist circumference in centimeters"
-msgstr ""
+msgstr "Circonferenza vita in centimetri"
 
 msgctxt "help:gnuhealth.patient.evaluation,abstraction:"
 msgid ""
@@ -4408,10 +4409,12 @@ msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
 "Enter or select the date / ID of the appointment related to this evaluation"
 msgstr ""
+"Inserire o selezionare la data/ID dell'appuntamento relativo a questa "
+"valutazione"
 
 msgctxt "help:gnuhealth.patient.evaluation,bmi:"
 msgid "Body mass index"
-msgstr ""
+msgstr "Indice massa corporea"
 
 msgctxt "help:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart rate expressed in beats per minute"
@@ -4435,7 +4438,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,code:"
 msgid "Unique code that         identifies the evaluation"
-msgstr ""
+msgstr "Codice univoco         che identifica la valutazione"
 
 msgctxt "help:gnuhealth.patient.evaluation,computed_age:"
 msgid "Computed patient age at the moment of the evaluation"
@@ -4453,11 +4456,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,derived_from:"
 msgid "Health Professional who derived the case"
-msgstr ""
+msgstr "Paramedico che ha derivato il caso"
 
 msgctxt "help:gnuhealth.patient.evaluation,derived_to:"
 msgid "Health Professional to derive the case"
-msgstr ""
+msgstr "Paramedico per derivare il caso"
 
 msgctxt "help:gnuhealth.patient.evaluation,diagnosis:"
 msgid ""
@@ -4477,11 +4480,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Reason for patient discharge"
-msgstr ""
+msgstr "Motivo della dimissione del paziente"
 
 msgctxt "help:gnuhealth.patient.evaluation,evaluation_length:"
 msgid "Duration of the evaluation"
-msgstr ""
+msgstr "Durata della valutazione"
 
 msgctxt "help:gnuhealth.patient.evaluation,glycemia:"
 msgid ""
@@ -4501,7 +4504,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,head_circumference:"
 msgid "Head circumference in centimeters"
-msgstr ""
+msgstr "Circonferenza cranica in centimetri"
 
 msgctxt "help:gnuhealth.patient.evaluation,healthprof:"
 msgid ""
@@ -4516,11 +4519,12 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,height:"
 msgid "Height in centimeters"
-msgstr ""
+msgstr "Altezza in centimetri"
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
-msgstr ""
+msgstr "Circonferenza fianchi in centimetri"
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source ofInformation, eg : Self, relative, friend ..."
@@ -4584,7 +4588,7 @@ msgstr "Selezionare se il paziente è disorientato in tempo e/o spazio"
 
 msgctxt "help:gnuhealth.patient.evaluation,osat:"
 msgid "Arterial oxygen saturation expressed as a percentage"
-msgstr ""
+msgstr "Saturazione arteriosa dell'ossigeno espressa in percentuale"
 
 msgctxt "help:gnuhealth.patient.evaluation,praxis:"
 msgid "Check this box if the patient is unable to make voluntarymovements"
@@ -5778,7 +5782,7 @@ msgstr "Membro familiare"
 
 msgctxt "model:gnuhealth.healthprofessional,name:"
 msgid "Health Professional"
-msgstr "Professionista medico"
+msgstr "Paramedico"
 
 msgctxt "model:gnuhealth.hospital.bed,name:"
 msgid "Hospital Bed"
@@ -10213,7 +10217,7 @@ msgstr "Formulario"
 
 msgctxt "report:prescription.order:"
 msgid "Health Professional"
-msgstr "Professionista medico"
+msgstr "Paramedico"
 
 msgctxt "report:prescription.order:"
 msgid "Indication"
