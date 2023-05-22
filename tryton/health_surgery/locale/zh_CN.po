@@ -1,15 +1,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-19 11:50+0000\n"
+"PO-Revision-Date: 2023-05-22 04:15+0000\n"
 "Last-Translator: Feng Shu <tumashu@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "gnu-health/health_surgery/zh_Hans/>\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.18-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.operation,name:"
 msgid "Surgery"
@@ -29,11 +29,11 @@ msgstr "手术"
 
 msgctxt "field:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Disfunctionality level"
-msgstr "功能障碍程度"
+msgstr "功能障碍"
 
 msgctxt "field:gnuhealth.patient.evaluation,hernia_ehs:"
 msgid "EHS"
-msgstr "EHS"
+msgstr "EHS 疝分型"
 
 msgctxt "field:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Localization"
@@ -45,11 +45,11 @@ msgstr "一侧"
 
 msgctxt "field:gnuhealth.patient.evaluation,hernia_time:"
 msgid "Evolution time"
-msgstr "评估时间"
+msgstr "进展时间"
 
 msgctxt "field:gnuhealth.patient.evaluation,hernia_type:"
 msgid "Type"
-msgstr "类型"
+msgstr "疝型"
 
 msgctxt "field:gnuhealth.patient.evaluation,surgical_context:"
 msgid "Context"
@@ -57,11 +57,11 @@ msgstr "相关信息"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_clinical:"
 msgid "Clinical"
-msgstr "临床"
+msgstr "临床表现"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_exploration:"
 msgid "Exploration"
-msgstr "甲状腺探查"
+msgstr "甲状腺探测"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_goiter:"
 msgid "Goiter"
@@ -69,7 +69,7 @@ msgstr "甲状腺肿"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "Goiter classification"
-msgstr "甲状腺肿分类"
+msgstr "甲状腺肿分级"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_side:"
 msgid "Side"
@@ -77,7 +77,7 @@ msgstr "一侧"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_tirads:"
 msgid "TI-RADS"
-msgstr "甲状腺结节TI-RADS分级"
+msgstr "TI-RADS 分级"
 
 msgctxt "field:gnuhealth.patient.evaluation,thyroid_tvol:"
 msgid "TVol (mL)"
@@ -93,7 +93,7 @@ msgstr "关键信息"
 
 msgctxt "field:gnuhealth.preoperative_assessment,ecg:"
 msgid "ECG"
-msgstr "ECG"
+msgstr "心电图"
 
 msgctxt "field:gnuhealth.preoperative_assessment,evaluation:"
 msgid "Evaluation"
@@ -113,11 +113,11 @@ msgstr "实验室检验"
 
 msgctxt "field:gnuhealth.preoperative_assessment,needs_blood_reserve:"
 msgid "Needs blood reservation"
-msgstr "需要血液储备"
+msgstr "需要备血"
 
 msgctxt "field:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "Do NOT use anesthesia"
-msgstr "请勿使用麻醉"
+msgstr "请勿麻醉"
 
 msgctxt "field:gnuhealth.preoperative_assessment,patient:"
 msgid "Patient"
@@ -125,7 +125,7 @@ msgstr "患者"
 
 msgctxt "field:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA PS"
-msgstr "ASA分级"
+msgstr "ASA-PS 分级"
 
 msgctxt "field:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid "Risk of Massive bleeding"
@@ -242,7 +242,7 @@ msgstr "紧急程度"
 
 msgctxt "field:gnuhealth.surgery,clavien_dindo:"
 msgid "Clavien-Dindo"
-msgstr "Clavien-Dindo分级"
+msgstr "Clavien-Dindo 分级"
 
 msgctxt "field:gnuhealth.surgery,code:"
 msgid "Code"
@@ -266,7 +266,7 @@ msgstr "出院指导"
 
 msgctxt "field:gnuhealth.surgery,drains:"
 msgid "Drains"
-msgstr "排液管"
+msgstr "引流管"
 
 msgctxt "field:gnuhealth.surgery,ellapsed_time:"
 msgid "Ellapsed time"
@@ -306,7 +306,7 @@ msgstr "患者"
 
 msgctxt "field:gnuhealth.surgery,patient_positioning:"
 msgid "Patient Positioning"
-msgstr "患者定位"
+msgstr "患者手术体位"
 
 msgctxt "field:gnuhealth.surgery,postoperative_dx:"
 msgid "Post-op dx"
@@ -322,7 +322,7 @@ msgstr "已使用预防性抗生素"
 
 msgctxt "field:gnuhealth.surgery,preop_asa:"
 msgid "ASA PS"
-msgstr "ASA分级"
+msgstr "ASA-PS 分级"
 
 msgctxt "field:gnuhealth.surgery,preop_assessment:"
 msgid "Preop assessment"
@@ -334,7 +334,7 @@ msgstr "有大出血风险"
 
 msgctxt "field:gnuhealth.surgery,preop_mallampati:"
 msgid "Mallampati Score"
-msgstr "气道分级"
+msgstr "马氏评分"
 
 msgctxt "field:gnuhealth.surgery,preop_oximeter:"
 msgid "Pulse Oximeter in place"
@@ -358,7 +358,7 @@ msgstr "手术"
 
 msgctxt "field:gnuhealth.surgery,protocol:"
 msgid "Protocol"
-msgstr "手术协议"
+msgstr "手术方案"
 
 msgctxt "field:gnuhealth.surgery,report_surgery_date:"
 msgid "Surgery Date"
@@ -450,7 +450,7 @@ msgstr "手术入路"
 
 msgctxt "field:gnuhealth.surgery.protocol,classification:"
 msgid "Urgency"
-msgstr "紧急"
+msgstr "紧急程度"
 
 msgctxt "field:gnuhealth.surgery.protocol,description:"
 msgid "Description"
@@ -466,11 +466,11 @@ msgstr "一般信息"
 
 msgctxt "field:gnuhealth.surgery.protocol,laterality:"
 msgid "Laterality"
-msgstr "左右两侧"
+msgstr "偏侧"
 
 msgctxt "field:gnuhealth.surgery.protocol,name:"
 msgid "Name"
-msgstr "名称"
+msgstr "方案名称"
 
 msgctxt "field:gnuhealth.surgery.protocol,pathology:"
 msgid "Health Condition"
@@ -478,7 +478,7 @@ msgstr "健康状况"
 
 msgctxt "field:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Patient Positioning"
-msgstr "患者定位"
+msgstr "患者手术体位"
 
 msgctxt "field:gnuhealth.surgery.protocol,postoperative_guidelines:"
 msgid "Postoperative guidelines"
@@ -530,7 +530,7 @@ msgstr "手术或操作代码，例如 ICD-10-PC 或者 ICPM"
 
 msgctxt "help:gnuhealth.patient.evaluation,thyroid_tvol:"
 msgid "Volume in mL"
-msgstr "体积（mL）"
+msgstr "容积(mL)"
 
 msgctxt "help:gnuhealth.preoperative_assessment,assessment_date:"
 msgid "Date of the assessment"
@@ -562,7 +562,7 @@ msgstr "连接到相关的实验室检验项目"
 
 msgctxt "help:gnuhealth.preoperative_assessment,needs_blood_reserve:"
 msgid "The surgery requires preoperative blood ordering"
-msgstr "手术需要术前预订血液"
+msgstr "此手术需要术前备血"
 
 msgctxt "help:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "The patient is not eligible to be anesthetized"
@@ -1061,7 +1061,7 @@ msgstr "名称"
 
 msgctxt "report:preoperative_assessment:"
 msgid "Needs blood reserve"
-msgstr "需要血液储备"
+msgstr "需要备血"
 
 msgctxt "report:preoperative_assessment:"
 msgid "Notes"
@@ -1169,7 +1169,7 @@ msgstr "Ellapsed"
 
 msgctxt "report:surgery:"
 msgid "Emergency"
-msgstr "情况紧急"
+msgstr "急诊"
 
 msgctxt "report:surgery:"
 msgid "Female"
@@ -1237,7 +1237,7 @@ msgstr "使用数量"
 
 msgctxt "report:surgery:"
 msgid "Required"
-msgstr "必须的"
+msgstr "必须"
 
 msgctxt "report:surgery:"
 msgid "Role"
@@ -1273,7 +1273,7 @@ msgstr "时间"
 
 msgctxt "report:surgery:"
 msgid "Urgent"
-msgstr "患者着急"
+msgstr "紧急"
 
 msgctxt "report:surgery:"
 msgid "at surgery"
@@ -1345,11 +1345,11 @@ msgstr "手术干预"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"
-msgstr "丢弃"
+msgstr "致残"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Limited daily activities"
-msgstr "有限的日常活动"
+msgstr "日常活动受限"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "No disfunction"
@@ -1357,35 +1357,35 @@ msgstr "无功能障碍"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_ehs:"
 msgid "Femoral"
-msgstr "股骨"
+msgstr "股疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_ehs:"
 msgid "Lateral (indirect)"
-msgstr "横向（间接）"
+msgstr "外侧疝(斜疝)"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_ehs:"
 msgid "Medial (direct)"
-msgstr "中间（直接）"
+msgstr "内侧疝(直疝)"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_ehs:"
 msgid "Sliding"
-msgstr "疝滑动"
+msgstr "滑动疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Crural"
-msgstr "小腿"
+msgstr "小腿疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Eventration"
-msgstr "膈肌膨出"
+msgstr "活动性疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Inguinal"
-msgstr "腹股沟"
+msgstr "腹股沟疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Lumbar"
-msgstr "腰部"
+msgstr "腰疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Obturator"
@@ -1397,7 +1397,7 @@ msgstr "半月线疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Umbilical"
-msgstr "脐部"
+msgstr "脐疝"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_side:"
 msgid "Left"
@@ -1409,7 +1409,7 @@ msgstr "右侧"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_side:"
 msgid "bilateral"
-msgstr "两侧的"
+msgstr "两侧"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_time:"
 msgid "1 - 5 years"
@@ -1425,41 +1425,41 @@ msgstr "> 5 年"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H1 - Reduces spontaneously when patient is lying"
-msgstr "H1-患者躺着时自发减少"
+msgstr "H1 - 未降入阴囊，平卧自行回纳"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H2 - Groin only, reduces completely with gentle manual pressure"
-msgstr "H2-仅Groin，通过温和的手动压力完全降低"
+msgstr "H2 - 未降入阴囊，平卧轻度按压能完全回纳"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid ""
 "H3a - Inguino-scrotal reductible with manual manipulation. Component ing-"
 "scrot<10cm"
-msgstr "H3a-腹股沟阴囊可通过手动操作复位。阴囊组件<10cm"
+msgstr "H3a - 降入阴囊，手法按压能回纳，Component ing-scrot < 10cm"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid ""
 "H3b - Inguino-scrotal reductible with manual manipulation. Component ing-"
 "scrot 10-20 cm"
-msgstr "H3b-腹股沟阴囊可通过手动操作复位。阴囊组件10-20厘米"
+msgstr "H3b - 降入阴囊，手法按压能回纳，Component ing-scrot 10-20 cm"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid ""
 "H3c - Inguino-scrotal reductible with manual manipulation. Component ing-"
 "scrot>20cm"
-msgstr "H3c-腹股沟阴囊可通过手动操作复位。阴囊组件>20cm"
+msgstr "H3c - 降入阴囊，手法按压能回纳，Component ing-scrot > 20 cm"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H4a - Irreducible. Component ing-scrot<10cm"
-msgstr "H4a-不可还原。阴囊组件<10cm"
+msgstr "H4a - 不可还原。Component ing-scrot <10 厘米"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H4b - Irreducible. Component ing-scrot 10-20 cm"
-msgstr "H4b-不可还原。阴囊组件10-20厘米"
+msgstr "H4b - 无法回纳, Component ing-scrot 10-20 厘米"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H4c - Irreducible. Component ing-scrot >20 cm"
-msgstr "H4c-不可还原。阴囊组件>20厘米"
+msgstr "H4c - 无法回纳, Component ing-scrot > 20厘米"
 
 msgctxt "selection:gnuhealth.patient.evaluation,surgical_context:"
 msgid "Hernia"
@@ -1475,7 +1475,7 @@ msgstr "咳嗽"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_clinical:"
 msgid "Hoarseness"
-msgstr "声嘶"
+msgstr "嘶哑"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_clinical:"
 msgid "Other"
@@ -1487,7 +1487,7 @@ msgstr "甲状腺肿"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_exploration:"
 msgid "Nodule"
-msgstr "结节"
+msgstr "甲状腺结节"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_exploration:"
 msgid "Normal"
@@ -1495,19 +1495,19 @@ msgstr "正常"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter:"
 msgid "Difuse"
-msgstr "弥漫"
+msgstr "弥漫性甲状腺肿"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter:"
 msgid "Intrathoracic"
-msgstr "胸内"
+msgstr "胸内甲状腺肿"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter:"
 msgid "Multinodular"
-msgstr "多结节"
+msgstr "甲状腺多结节"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter:"
 msgid "Solitary nodule"
-msgstr "孤立性结节"
+msgstr "孤立性甲状腺结节"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "0"
@@ -1619,7 +1619,7 @@ msgstr "第四类：只有硬腭可见"
 
 msgctxt "selection:gnuhealth.preoperative_assessment,surgical_decision:"
 msgid "Discharge"
-msgstr "评估结束或患者离院"
+msgstr "出院"
 
 msgctxt "selection:gnuhealth.preoperative_assessment,surgical_decision:"
 msgid "Needs surgery"
@@ -1735,7 +1735,7 @@ msgstr "其它"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Emergency"
-msgstr "情况紧急"
+msgstr "急诊"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Optional"
@@ -1747,7 +1747,7 @@ msgstr "必须"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Urgent"
-msgstr "患者着急"
+msgstr "紧急"
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade I"
@@ -2063,7 +2063,7 @@ msgstr "其它"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Emergency"
-msgstr "突发事件"
+msgstr "急诊"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Optional"
@@ -2071,7 +2071,7 @@ msgstr "可选"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Required"
-msgstr "必须的"
+msgstr "必须"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Urgent"
@@ -2195,7 +2195,7 @@ msgstr "页首信息"
 
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Patient positioning"
-msgstr "患者定位"
+msgstr "患者手术体位"
 
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Postoperative guidelines"
@@ -2243,7 +2243,7 @@ msgstr "细节"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Discharge"
-msgstr "评估结束或患者离院"
+msgstr "出院"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Discharge instructions"
@@ -2275,7 +2275,7 @@ msgstr "患者"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Patient positioning"
-msgstr "患者定位"
+msgstr "患者手术体位"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Postoperative"
