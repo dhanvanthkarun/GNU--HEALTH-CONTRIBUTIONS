@@ -9,9 +9,9 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                     gh_sync_orthanc_server.py                         #
+#                     sync_orthanc_server.py                            #
 #  Pulls the studies from a Orthanc DICOM server to the GNU Health HMIS #
-#         Includes studies and patients from the DICOM server
+#         Includes studies and patients from the DICOM server           #
 #                                                                       #
 #                   Return codes (rc):                                  #
 #                    0 : No errors                                      #
@@ -22,7 +22,7 @@
 from proteus import Model, config as pconfig
 import sys
 
-usage = "Usage : gh_queue_manager <hostname> <port> <user> <password> " \
+usage = "Usage : sync_orthanc_server <hostname> <port> <user> <password> " \
         "<dbname> <orthanc_server_label>"
 
 
