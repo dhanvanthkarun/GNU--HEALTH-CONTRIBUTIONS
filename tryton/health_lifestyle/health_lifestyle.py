@@ -32,7 +32,7 @@ class VegetarianTypes(ModelSQL, ModelView):
         'Code', required=True,
         help="Short description")
     desc = fields.Char(
-        'Description', required=True,
+        'Description', translate=True, required=True,
         help="Short description")
 
 
