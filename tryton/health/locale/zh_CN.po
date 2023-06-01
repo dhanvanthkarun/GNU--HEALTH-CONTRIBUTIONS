@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-23 01:47+0000\n"
+"PO-Revision-Date: 2023-06-01 05:01+0000\n"
 "Last-Translator: Feng Shu <tumashu@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "gnu-health/health/zh_Hans/>\n"
@@ -101,7 +101,7 @@ msgstr "患者"
 
 msgctxt "field:gnuhealth.appointment.report,ref:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "field:gnuhealth.appointment.report.open.start,date_end:"
 msgid "Date End"
@@ -550,7 +550,7 @@ msgstr "医务人员"
 
 msgctxt "field:gnuhealth.healthprofessional,puid:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "field:gnuhealth.healthprofessional,specialties:"
 msgid "Specialties"
@@ -1318,7 +1318,7 @@ msgstr "家庭医生"
 
 msgctxt "field:gnuhealth.patient,puid:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "field:gnuhealth.patient,rh:"
 msgid "Rh"
@@ -1915,15 +1915,15 @@ msgstr "开始"
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
 msgid "ID type"
-msgstr "ID类型"
+msgstr "证件类型"
 
 msgctxt "field:gnuhealth.person_alternative_identification,code:"
 msgid "Code"
-msgstr "代码"
+msgstr "证件号码"
 
 msgctxt "field:gnuhealth.person_alternative_identification,comments:"
 msgid "Comments"
-msgstr "说明"
+msgstr "备注"
 
 msgctxt "field:gnuhealth.person_alternative_identification,expiration_date:"
 msgid "Expiration date"
@@ -1931,7 +1931,7 @@ msgstr "过期日期"
 
 msgctxt "field:gnuhealth.person_alternative_identification,name:"
 msgid "Party"
-msgstr "成员"
+msgstr "参与者"
 
 msgctxt "field:gnuhealth.person_name,date_from:"
 msgid "From"
@@ -2405,11 +2405,11 @@ msgstr "年龄"
 
 msgctxt "field:party.party,alternative_identification:"
 msgid "Alternative IDs"
-msgstr "备选ID"
+msgstr "其它证件号码"
 
 msgctxt "field:party.party,alternative_ids:"
 msgid "Alternative IDs"
-msgstr "备选ID"
+msgstr "其它证件号码"
 
 msgctxt "field:party.party,birth_certificate:"
 msgid "Birth Certificate"
@@ -2537,7 +2537,7 @@ msgstr "图片"
 
 msgctxt "field:party.party,ref:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "field:party.party,residence:"
 msgid "Residence"
@@ -3751,7 +3751,7 @@ msgctxt "help:party.party,alternative_identification:"
 msgid ""
 "Other types of identification, not the official PUID . Examples : Passport, "
 "foreign ID,.."
-msgstr "其他类型的身份证明，不是本地正式的身份证号。比如： 护照，外国身份证 ..."
+msgstr "其他类型的证件号码，不是身份证号。比如： 护照，外国身份证 ..."
 
 msgctxt "help:party.party,citizenship:"
 msgid "Country of Citizenship"
@@ -3846,7 +3846,7 @@ msgstr "出生证明上的母亲记录"
 
 msgctxt "help:party.party,ref:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，身份证号"
+msgstr "个人唯一标识，身份证证件号码"
 
 msgctxt "help:party.party,residence:"
 msgid "Country of Residence"
@@ -7430,7 +7430,7 @@ msgstr "患者用药"
 
 msgctxt "model:gnuhealth.person_alternative_identification,name:"
 msgid "Alternative person ID"
-msgstr "备选个人身份ID"
+msgstr "其它证件号码"
 
 msgctxt "model:gnuhealth.person_name,name:"
 msgid "Person Name"
@@ -8543,7 +8543,7 @@ msgstr "说明/备注："
 
 msgctxt "report:appointment.receipt:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "report:appointment.receipt:"
 msgid "Patient"
@@ -8790,7 +8790,7 @@ msgstr "重要说明"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Patient"
@@ -8976,7 +8976,7 @@ msgstr "患者"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "PUID"
-msgstr "身份证号"
+msgstr "证件号码"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient :"
@@ -9456,7 +9456,7 @@ msgstr "注意事项"
 
 msgctxt "report:prescription.order:"
 msgid "PUID :"
-msgstr "身份证号："
+msgstr "证件号码："
 
 msgctxt "report:prescription.order:"
 msgid "Patient :"
@@ -10509,7 +10509,7 @@ msgstr "毫升/小时"
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
 msgid "Country of origin ID"
-msgstr "原籍国ID"
+msgstr "原籍国身份证号"
 
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
