@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-06-02 03:31+0000\n"
+"PO-Revision-Date: 2023-06-02 03:38+0000\n"
 "Last-Translator: Feng Shu <tumashu@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "gnu-health/health/zh_Hans/>\n"
@@ -898,7 +898,7 @@ msgstr "专业"
 
 msgctxt "field:gnuhealth.insurance,category:"
 msgid "Category"
-msgstr "类别"
+msgstr "保险分类"
 
 msgctxt "field:gnuhealth.insurance,company:"
 msgid "Insurance Company"
@@ -926,11 +926,11 @@ msgstr "其它信息"
 
 msgctxt "field:gnuhealth.insurance,number:"
 msgid "Number"
-msgstr "编号"
+msgstr "保险编号"
 
 msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
-msgstr "计划"
+msgstr "保险计划"
 
 msgctxt "field:gnuhealth.insurance.plan,company:"
 msgid "Insurance Company"
@@ -938,11 +938,11 @@ msgstr "保险公司"
 
 msgctxt "field:gnuhealth.insurance.plan,is_default:"
 msgid "Default plan"
-msgstr "默认计划"
+msgstr "默认保险计划"
 
 msgctxt "field:gnuhealth.insurance.plan,name:"
 msgid "Plan"
-msgstr "计划"
+msgstr "保险计划"
 
 msgctxt "field:gnuhealth.insurance.plan,notes:"
 msgid "Extra info"
@@ -2849,7 +2849,7 @@ msgctxt "help:gnuhealth.insurance.plan,is_default:"
 msgid ""
 "Check if this is the default plan when assigning this insurance company to a"
 " patient"
-msgstr "将此保险公司对应到患者时，检查此计划是否为默认计划"
+msgstr "将此保险公司对应到患者时，检查此计划是否为默认保险计划"
 
 msgctxt "help:gnuhealth.insurance.plan,name:"
 msgid "Insurance company plan"
@@ -3824,7 +3824,7 @@ msgstr "如果此 party 代表一个医疗机构，就勾选此框"
 
 msgctxt "help:party.party,is_insurance_company:"
 msgid "Check if the party is an Insurance Company"
-msgstr "如果此 party 代表一个保险公司，就勾选此框"
+msgstr "如果当前参与者代表一个保险公司，就勾选此框"
 
 msgctxt "help:party.party,is_patient:"
 msgid "Check if the party is a patient"
@@ -3864,7 +3864,7 @@ msgstr "如果此产品是医疗中心的一个床位，就选中此项"
 
 msgctxt "help:product.product,is_insurance_plan:"
 msgid "Check if the product is an insurance plan"
-msgstr "如果此产品是保险计划，就选中此项"
+msgstr "如果当前产品是保险计划，就选中此项"
 
 msgctxt "help:product.product,is_medical_supply:"
 msgid "Check if the product is a medical supply"
