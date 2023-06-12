@@ -5024,8 +5024,12 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     # These two are function fields (don't exist at DB level)
     @fields.depends('patient')
     def on_change_patient(self):
-        self.computed_age = self.patient.age
-        self.gender = self.patient.gender
+        if self.patient:
+            self.computed_age = self.patient.age
+            self.gender = self.patient.gender
+        else:
+            self.computed_age = None
+            self.gender = None
 
     @staticmethod
     def default_information_source():
