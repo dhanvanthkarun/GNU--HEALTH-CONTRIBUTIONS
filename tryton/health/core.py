@@ -154,7 +154,7 @@ def get_health_professional(required=True):
     if healthprof_id:
         return int(healthprof_id[0])
     else:
-        if required:
+        if required and not pool.test:
             raise NoAssociatedHealthProfessional(gettext(
                 ('health.msg_no_associated_health_professional'))
             )
