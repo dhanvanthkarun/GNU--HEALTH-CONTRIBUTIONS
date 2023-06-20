@@ -2957,6 +2957,8 @@ class PatientData(ModelSQL, ModelView):
         ('m-f', 'Male -> Female'),
         ], 'Gender'), 'get_patient_gender')
 
+    gender_str = gender.translated('gender')
+
     biological_sex = fields.Selection([
         (None, ''),
         ('m', 'Male'),
@@ -3203,6 +3205,8 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('3_sv', 'Severe'),
         ], 'Severity', select=True, sort=False)
 
+    disease_severity_str = disease_severity.translated('disease_severity')
+
     is_on_treatment = fields.Boolean('Currently on Treatment')
     is_infectious = fields.Boolean(
         'Infectious Disease',
@@ -3251,6 +3255,9 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('i', 'improving'),
         ('w', 'worsening'),
         ], 'Status', select=True, sort=False)
+
+    status_str = status.translated('status')
+
     extra_info = fields.Text('Extra Info')
 
     healthprof = fields.Many2One(
@@ -4409,6 +4416,8 @@ class PrescriptionLine(ModelSQL, ModelView):
         help='Period that the patient must take the medication in minutes,'
         ' hours, days, months, years or indefinately')
 
+    duration_period_str = duration_period.translated('duration_period')
+
     infusion = fields.Boolean(
         'Infusion',
         help='Mark if the medication is in the form of infusion'
@@ -5298,6 +5307,8 @@ class SignsAndSymptoms(ModelSQL, ModelView):
         ('sign', 'Sign'),
         ('symptom', 'Symptom')],
         'Subjective / Objective', required=True)
+
+    sign_or_symptom_str = sign_or_symptom.translated('sign_or_symptom')
 
     clinical = fields.Many2One(
         'gnuhealth.pathology', 'Sign or Symptom',

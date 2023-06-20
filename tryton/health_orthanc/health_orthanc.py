@@ -169,15 +169,14 @@ class OrthancServerConfig(ModelSQL, ModelView):
             server.last = curr
             server.sync_time = datetime.now()
             logger.info(
-                "<{}> sync complete: {} new patients, {} \
-                update patients, {} new studies, {} updated studies".format(
-                    server.label,
-                    len(new_patients),
-                    len(update_patients),
-                    len(new_studies),
-                    len(update_studies),
-                )
-            )
+                f"\n\nOrthanc server synchronization summary "
+                f"from {server.label} :\n"
+                f"Patients: New: {len(new_patients)} | "
+                f"Updated: {len(update_patients)}\n"
+                f"Studies: New: {len(new_studies)} |"
+                f"Updated: {len(update_studies)}\n"
+                 )
+            
         cls.save(servers)
 
     @staticmethod

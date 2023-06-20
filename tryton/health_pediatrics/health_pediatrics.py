@@ -50,6 +50,8 @@ class Newborn(ModelSQL, ModelView):
         help="Sex at birth. It might differ from the current patient"
         " gender. This is the biological sex.", states=STATES)
 
+    sex_str = sex.translated('sex')
+
     state = fields.Selection([
         (None, ''),
         ('draft', 'draft'),
