@@ -77,6 +77,8 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ], 'Socioeconomics', help="SES - Socioeconomic Status", sort=False,
             states=STATES)
 
+    ses_str = ses.translated('ses')
+
     housing = fields.Selection([
         (None, ''),
         ('0', 'Shanty, deficient sanitary conditions'),
@@ -297,6 +299,8 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ], 'Education Level', help="Education Level", sort=False),
         'get_patient_education')
 
+    education_str = education.translated('education')
+
     housing = fields.Function(fields.Selection([
         (None, ''),
         ('0', 'Shanty, deficient sanitary conditions'),
@@ -306,6 +310,8 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ('4', 'Luxury and excellent sanitary conditions'),
         ], 'Housing conditions', help="Housing and sanitary living conditions",
         sort=False), 'get_patient_housing')
+
+    housing_str = housing.translated('housing')
 
     ses = fields.Function(fields.Selection([
         (None, ''),

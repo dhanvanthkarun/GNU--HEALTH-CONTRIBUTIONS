@@ -227,6 +227,9 @@ class Surgery(ModelSQL, ModelView):
         ('u', 'Urgent'),
         ('e', 'Emergency'),
         ], 'Urgency', help="Urgency level for this surgery", sort=False)
+
+    classification_str = classification.translated('classification')
+
     surgeon = fields.Many2One(
         'gnuhealth.healthprofessional', 'Surgeon',
         help="Surgeon who did the procedure")

@@ -373,6 +373,8 @@ class FamilyDiseases(ModelSQL, ModelView):
         ('s', 'Sibling'),
         ], 'Maternal or Paternal', select=True)
 
+    xory_str = xory.translated('xory')
+
     relative = fields.Selection([
         ('mother', 'Mother'),
         ('father', 'Father'),

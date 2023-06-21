@@ -127,6 +127,9 @@ class PatientRounding(ModelSQL, ModelView):
             ('w', 'Worsening'),
         ], 'Evolution', help="Check your judgement of current "
         "patient condition", sort=False, states=STATES)
+
+    evolution_str = evolution.translated('evolution')
+
     round_summary = fields.Text('Round Summary', states=STATES)
 
     signed_by = fields.Many2One(

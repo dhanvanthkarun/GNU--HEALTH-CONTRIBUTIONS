@@ -405,17 +405,23 @@ class MedicalPatient(metaclass=PoolMeta):
         ('t', 'Transexual'),
         ], 'Sexual Preferences', sort=False)
 
+    sexual_preferences_str = sexual_preferences.translated('sexual_preferences')
+
     sexual_practices = fields.Selection([
         (None, ''),
         ('s', 'Safe / Protected sex'),
         ('r', 'Risky / Unprotected sex'),
         ], 'Sexual Practices', sort=False)
 
+    sexual_practices_str = sexual_practices.translated('sexual_practices')
+
     sexual_partners = fields.Selection([
         (None, ''),
         ('m', 'Monogamous'),
         ('t', 'Polygamous'),
         ], 'Sexual Partners', sort=False)
+    
+    sexual_partners_str = sexual_partners.translated('sexual_partners')
 
     sexual_partners_number = fields.Integer('Number of sexual partners')
 
