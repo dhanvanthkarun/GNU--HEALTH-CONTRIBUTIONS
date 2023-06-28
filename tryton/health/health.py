@@ -2891,7 +2891,7 @@ class PatientData(ModelSQL, ModelView):
                     other_conditions = f"{other_conditions} " \
                                        f"{disease.pathology.rec_name}\n"
 
-        return allergies + other_conditions
+        return (allergies + other_conditions).strip("\n")
 
     name = fields.Many2One(
         'party.party', 'Patient', required=True,
