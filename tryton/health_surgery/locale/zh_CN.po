@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-06-06 01:53+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_surgery/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.operation,name:"
 msgid "Surgery"
@@ -576,8 +567,7 @@ msgctxt "help:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid ""
 "Patient has a risk of losing more than 500 ml in adults of over 7ml/kg in "
 "infants. If so, make sure that intravenous access and fluids are available"
-msgstr "如果当前成人患者有失血超过500毫升的风险（儿童患者7毫升/公斤）就要保证静脉注射"
-"和液体及时可用"
+msgstr "如果当前成人患者有失血超过500毫升的风险（儿童患者7毫升/公斤）就要保证静脉注射和液体及时可用"
 
 msgctxt "help:gnuhealth.preoperative_assessment,preop_rcri:"
 msgid ""
@@ -691,8 +681,7 @@ msgid ""
 "Time in minutes of the surgery process. This value is optional and is used "
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
-msgstr "手术过程对应的时间（分钟）。该值是可选的，自动计算的手术长度不能反映实际时间"
-"时或者事后记录时使用该值。"
+msgstr "手术过程对应的时间（分钟）。该值是可选的，自动计算的手术长度不能反映实际时间时或者事后记录时使用该值。"
 
 msgctxt "help:gnuhealth.surgery,pathology:"
 msgid "Base Condition / Reason"
@@ -1000,28 +989,24 @@ msgid ","
 msgstr ","
 
 msgctxt "report:preoperative_assessment:"
-msgid ":"
-msgstr "："
-
-msgctxt "report:preoperative_assessment:"
-msgid "A"
-msgstr "A"
-
-msgctxt "report:preoperative_assessment:"
 msgid "ALLERGIC"
 msgstr "过敏性疾病"
+
+msgctxt "report:preoperative_assessment:"
+msgid "ASA:"
+msgstr ""
 
 msgctxt "report:preoperative_assessment:"
 msgid "Age"
 msgstr "年龄"
 
 msgctxt "report:preoperative_assessment:"
-msgid "Base Condition:"
-msgstr "基本状况:"
+msgid "Assessment date:"
+msgstr ""
 
 msgctxt "report:preoperative_assessment:"
-msgid "CG interpretation:"
-msgstr "CG解释："
+msgid "Base Condition"
+msgstr ""
 
 msgctxt "report:preoperative_assessment:"
 msgid "Chief complaint"
@@ -1036,8 +1021,8 @@ msgid "Decision"
 msgstr "决定"
 
 msgctxt "report:preoperative_assessment:"
-msgid "E"
-msgstr "E"
+msgid "ECG interpretation"
+msgstr ""
 
 msgctxt "report:preoperative_assessment:"
 msgid "Health Professional"
@@ -1052,8 +1037,8 @@ msgid "ID"
 msgstr "ID"
 
 msgctxt "report:preoperative_assessment:"
-msgid "Mallampati :"
-msgstr "气道情况:"
+msgid "Mallampati:"
+msgstr ""
 
 msgctxt "report:preoperative_assessment:"
 msgid "Name"
@@ -1076,68 +1061,36 @@ msgid "Patient directions"
 msgstr "患者指示"
 
 msgctxt "report:preoperative_assessment:"
-msgid "Print Date"
-msgstr "打印日期"
+msgid "Printed Date:"
+msgstr ""
 
 msgctxt "report:preoperative_assessment:"
-msgid "RCRI"
-msgstr "RCRI"
-
-msgctxt "report:preoperative_assessment:"
-msgid "SA:"
-msgstr "SA:"
-
-msgctxt "report:preoperative_assessment:"
-msgid "date"
-msgstr "日期"
-
-msgctxt "report:preoperative_assessment:"
-msgid "essment"
-msgstr "essment"
-
-msgctxt "report:preoperative_assessment:"
-msgid "s"
-msgstr "s"
-
-msgctxt "report:surgery:"
-msgid "(ID"
-msgstr "(ID"
-
-msgctxt "report:surgery:"
-msgid ")"
-msgstr ")"
+msgid "RCRI:"
+msgstr ""
 
 msgctxt "report:surgery:"
 msgid ","
 msgstr ","
 
 msgctxt "report:surgery:"
-msgid ":"
-msgstr "："
-
-msgctxt "report:surgery:"
-msgid "Age"
-msgstr "年龄"
+msgid "Age at surgery:"
+msgstr ""
 
 msgctxt "report:surgery:"
 msgid "Anesthesia Report"
 msgstr "麻醉报告"
 
 msgctxt "report:surgery:"
-msgid "Anesthetist"
-msgstr "麻醉师"
+msgid "Anesthetist:"
+msgstr ""
 
 msgctxt "report:surgery:"
-msgid "Base Condition"
-msgstr "基本情况"
+msgid "Base Condition:"
+msgstr ""
 
 msgctxt "report:surgery:"
-msgid "C"
-msgstr "C"
-
-msgctxt "report:surgery:"
-msgid "Classification"
-msgstr "分级"
+msgid "Classification:"
+msgstr ""
 
 msgctxt "report:surgery:"
 msgid "Comments"
@@ -1147,53 +1100,48 @@ msgctxt "report:surgery:"
 msgid "Complication"
 msgstr "并发症"
 
+#, fuzzy
 msgctxt "report:surgery:"
-msgid "Date"
-msgstr "日期"
+msgid "Complications"
+msgstr "并发症"
+
+#, fuzzy
+msgctxt "report:surgery:"
+msgid "Date:"
+msgstr "日期:"
 
 msgctxt "report:surgery:"
 msgid "Description"
 msgstr "描述"
 
+#, fuzzy
 msgctxt "report:surgery:"
-msgid "Details"
-msgstr "细节"
+msgid "Description:"
+msgstr "描述:"
 
 msgctxt "report:surgery:"
 msgid "Discharge instructions"
 msgstr "出院指导"
 
 msgctxt "report:surgery:"
-msgid "Ellapsed"
-msgstr "Ellapsed"
-
-msgctxt "report:surgery:"
-msgid "Emergency"
-msgstr "急诊"
-
-msgctxt "report:surgery:"
-msgid "Female"
-msgstr "女"
+msgid "Ellapsed Time:"
+msgstr ""
 
 msgctxt "report:surgery:"
 msgid "History of present illness"
 msgstr "现病史"
 
 msgctxt "report:surgery:"
-msgid "I"
-msgstr "I"
+msgid "Institution:"
+msgstr ""
 
 msgctxt "report:surgery:"
-msgid "Institution"
-msgstr "医疗机构"
+msgid "Intervention:"
+msgstr ""
 
 msgctxt "report:surgery:"
-msgid "Main Surgeon"
-msgstr "主刀医师"
-
-msgctxt "report:surgery:"
-msgid "Male"
-msgstr "男"
+msgid "Main Surgeon:"
+msgstr ""
 
 msgctxt "report:surgery:"
 msgid "Member"
@@ -1204,24 +1152,31 @@ msgid "Notes"
 msgstr "说明"
 
 msgctxt "report:surgery:"
-msgid "Operating Room"
-msgstr "手术室"
+msgid "Operating Room:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:surgery:"
+msgid "PUID:"
+msgstr "证件号码："
+
+#, fuzzy
+msgctxt "report:surgery:"
+msgid "Patient:"
+msgstr "患者："
 
 msgctxt "report:surgery:"
-msgid "Optional"
-msgstr "可选"
+msgid "Post-Op. Dx:"
+msgstr ""
 
 msgctxt "report:surgery:"
-msgid "Patient"
-msgstr "患者"
+msgid "Printed Date:"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:surgery:"
-msgid "Post-operative Diagnosis"
-msgstr "术后诊断"
-
-msgctxt "report:surgery:"
-msgid "Print Date"
-msgstr "打印日期"
+msgid "Procedure"
+msgstr "医学操作"
 
 msgctxt "report:surgery:"
 msgid "Procedure Code"
@@ -1236,10 +1191,6 @@ msgid "Qty used"
 msgstr "使用数量"
 
 msgctxt "report:surgery:"
-msgid "Required"
-msgstr "必须"
-
-msgctxt "report:surgery:"
 msgid "Role"
 msgstr "角色"
 
@@ -1248,52 +1199,33 @@ msgid "Severity"
 msgstr "严重程度"
 
 msgctxt "report:surgery:"
-msgid "Sex"
-msgstr "性别"
+msgid "Sex:"
+msgstr ""
 
 msgctxt "report:surgery:"
 msgid "Supply"
 msgstr "外科用品"
 
 msgctxt "report:surgery:"
-msgid "Surgery"
-msgstr "手术"
+msgid "Surgery Details"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:surgery:"
+msgid "Surgery Report"
+msgstr "手术报告"
 
 msgctxt "report:surgery:"
-msgid "Surgery Report :"
-msgstr "手术报告："
+msgid "Surgery Team"
+msgstr ""
 
 msgctxt "report:surgery:"
-msgid "Surgery Time"
-msgstr "手术时间"
-
-msgctxt "report:surgery:"
-msgid "Time"
-msgstr "时间"
-
-msgctxt "report:surgery:"
-msgid "Urgent"
-msgstr "紧急"
-
-msgctxt "report:surgery:"
-msgid "at surgery"
-msgstr "正在手术"
-
-msgctxt "report:surgery:"
-msgid "ntervention:"
-msgstr "ntervention:"
-
-msgctxt "report:surgery:"
-msgid "omplications"
-msgstr "omplications"
+msgid "Surgery Time:"
+msgstr ""
 
 msgctxt "report:surgery_outpatient:"
 msgid ","
 msgstr ","
-
-msgctxt "report:surgery_outpatient:"
-msgid ":"
-msgstr "："
 
 msgctxt "report:surgery_outpatient:"
 msgid "Age"
@@ -1336,12 +1268,17 @@ msgid "Outpatient Surgery: Discharge report"
 msgstr "门诊外科手术: 出院报告"
 
 msgctxt "report:surgery_outpatient:"
-msgid "Print Date"
-msgstr "打印日期"
+msgid "Printed Date:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:surgery_outpatient:"
+msgid "Surgery"
+msgstr "手术"
 
 msgctxt "report:surgery_outpatient:"
-msgid "Surgical Intervention"
-msgstr "手术干预"
+msgid "Surgical Intervention:"
+msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"

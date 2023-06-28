@@ -208,8 +208,6 @@ class InstitutionEpidemicsReport(Report):
 
         fig = plt.figure(figsize=(6, 3))
         cases_by_day = fig.add_subplot(1, 1, 1)
-        title = 'New cases by day: ' + hc.rec_name
-        cases_by_day.set_title(title)
         cases_by_day.bar(days, cases_day)
         cases_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
         fig.autofmt_xdate()
@@ -238,10 +236,8 @@ class InstitutionEpidemicsReport(Report):
             # Death certificates as an underlying cause
             certs_uc_day.append(day['certs_day_uc'])
 
-        title = "New deaths by day: " + hc.rec_name
         fig = plt.figure(figsize=(6, 3))
         deaths_by_day = fig.add_subplot(1, 1, 1)
-        deaths_by_day.set_title(title)
         deaths_by_day.plot(days, certs_ic_day, label="immediate cause")
         deaths_by_day.plot(days, certs_uc_day, label="underlying condition")
         deaths_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
@@ -264,10 +260,8 @@ class InstitutionEpidemicsReport(Report):
                 # Remove ethnicities with zero cases from the plot
                 del(ethnic_count[k])
 
-        title = "Cases by ethnic group: " + hc.rec_name
         fig = plt.figure(figsize=(6, 3))
         cases_by_ethnicity = fig.add_subplot(1, 1, 1)
-        cases_by_ethnicity.set_title(title)
         cases_by_ethnicity.pie(ethnic_count.values(),
                                autopct='%1.1f%%',
                                labels=ethnic_count.keys())
@@ -299,10 +293,8 @@ class InstitutionEpidemicsReport(Report):
                 # Remove socioeconomic groups with zero cases from the plot
                 del(ses_count[k])
 
-        title = "Cases by Socioeconomic groups: " + hc.rec_name
         fig = plt.figure(figsize=(6, 3))
         cases_by_socioeconomics = fig.add_subplot(1, 1, 1)
-        cases_by_socioeconomics.set_title(title)
         cases_by_socioeconomics.pie(ses_count.values(),
                                     autopct='%1,1f%%',
                                     labels=ses_count.keys())

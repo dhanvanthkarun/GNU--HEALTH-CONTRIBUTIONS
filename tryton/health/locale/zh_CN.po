@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-06-21 00:18+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.1\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Date and Time"
@@ -3486,8 +3477,7 @@ msgctxt "help:gnuhealth.patient.medication,frequency:"
 msgid ""
 "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
 "put here 8 and select \"hours\" in the unit field"
-msgstr "用药间隔时间，患者在服用一次药后需等待的时间（比如： "
-"8小时1片，就在这里填写8，并选择单位：\"小时\"）"
+msgstr "用药间隔时间，患者在服用一次药后需等待的时间（比如： 8小时1片，就在这里填写8，并选择单位：\"小时\"）"
 
 msgctxt "help:gnuhealth.patient.medication,frequency_prn:"
 msgid "Use it as needed, pro re nata"
@@ -3628,8 +3618,7 @@ msgctxt "help:gnuhealth.prescription.line,frequency:"
 msgid ""
 "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
 "put here 8 and select \"hours\" in the unit field"
-msgstr "用药间隔时间，患者在服用一次药后需等待的时间（比如： "
-"8小时1片，就在这里填写8，并选择单位：\"小时\"）"
+msgstr "用药间隔时间，患者在服用一次药后需等待的时间（比如： 8小时1片，就在这里填写8，并选择单位：\"小时\"）"
 
 msgctxt "help:gnuhealth.prescription.line,frequency_prn:"
 msgid "Use it as needed, pro re nata"
@@ -8511,53 +8500,49 @@ msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
 msgstr "Health 社会工作者"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
-msgid "#"
-msgstr "#"
+msgid "Appointment Receipt"
+msgstr "预约凭证"
 
 msgctxt "report:appointment.receipt:"
-msgid ","
-msgstr ","
+msgid "Apporintment #"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
-msgid ":"
-msgstr ":"
-
-msgctxt "report:appointment.receipt:"
-msgid "Appointment"
-msgstr "预约"
-
-msgctxt "report:appointment.receipt:"
-msgid "Date :"
+msgid "Date:"
 msgstr "日期:"
 
 msgctxt "report:appointment.receipt:"
-msgid "Health Professional :"
-msgstr "医务人员:"
+msgid "Health Professional:"
+msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Institution"
-msgstr "医疗机构"
+msgid "Institution:"
+msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Instructions / Notes :"
-msgstr "说明/备注："
+msgid "Instructions / Notes:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:appointment.receipt:"
+msgid "PUID:"
+msgstr "证件号码："
+
+#, fuzzy
+msgctxt "report:appointment.receipt:"
+msgid "Patient:"
+msgstr "患者："
 
 msgctxt "report:appointment.receipt:"
-msgid "PUID"
-msgstr "证件号码"
+msgid "Specialty:"
+msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Patient"
-msgstr "患者"
-
-msgctxt "report:appointment.receipt:"
-msgid "Specialty"
-msgstr "专业"
-
-msgctxt "report:appointment.receipt:"
-msgid "You must present this receipt and your"
-msgstr "就诊时必须出示此预约凭证和本人"
+msgid "You must present this receipt and your PUID"
+msgstr ""
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid ","
@@ -8568,24 +8553,21 @@ msgid "BIRTH CERTIFICATE"
 msgstr "出生证明"
 
 msgctxt "report:gnuhealth.birth_certificate:"
-msgid "Certificate number:"
-msgstr "出生证号:"
+msgid "Certificate number"
+msgstr ""
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Date of Birth"
 msgstr "出生日期"
 
 msgctxt "report:gnuhealth.birth_certificate:"
-msgid "Date:"
-msgstr "日期:"
-
-msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Father"
 msgstr "父亲"
 
+#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
-msgid "I"
-msgstr "I"
+msgid "Institution"
+msgstr "Orthanc 检查机构"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Issued on"
@@ -8600,36 +8582,24 @@ msgid "Mother"
 msgstr "母亲"
 
 msgctxt "report:gnuhealth.birth_certificate:"
+msgid "Name of Birth"
+msgstr ""
+
+msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Place of Birth"
 msgstr "出生地"
 
 msgctxt "report:gnuhealth.birth_certificate:"
-msgid "Printed"
-msgstr "已打印"
+msgid "Printed Date:"
+msgstr ""
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Sex"
 msgstr "性别"
 
-msgctxt "report:gnuhealth.birth_certificate:"
-msgid "This certifies that"
-msgstr "This certifies that"
-
-msgctxt "report:gnuhealth.birth_certificate:"
-msgid "Was born to"
-msgstr "Was born to"
-
-msgctxt "report:gnuhealth.birth_certificate:"
-msgid "nstitution"
-msgstr "nstitution"
-
 msgctxt "report:gnuhealth.death_certificate:"
 msgid ","
 msgstr ","
-
-msgctxt "report:gnuhealth.death_certificate:"
-msgid ":"
-msgstr "："
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Age"
@@ -8640,8 +8610,8 @@ msgid "Autopsy:"
 msgstr "尸检:"
 
 msgctxt "report:gnuhealth.death_certificate:"
-msgid "Certificate number:"
-msgstr "死亡证号:"
+msgid "Certificate number"
+msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certificate of Death"
@@ -8655,6 +8625,11 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Citizenship"
 msgstr "公民身份"
 
+#, fuzzy
+msgctxt "report:gnuhealth.death_certificate:"
+msgid "Condition"
+msgstr "状况"
+
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Conditions chronologically ordered leading to the cause of death"
 msgstr "按时间顺序排列的死亡原因"
@@ -8664,16 +8639,12 @@ msgid "Country"
 msgstr "国家"
 
 msgctxt "report:gnuhealth.death_certificate:"
-msgid "D"
-msgstr "D"
-
-msgctxt "report:gnuhealth.death_certificate:"
 msgid "Date / Time of Death"
 msgstr "死亡日期/时间"
 
 msgctxt "report:gnuhealth.death_certificate:"
-msgid "Date:"
-msgstr "日期:"
+msgid "Date of birth"
+msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Domiciliary Unit"
@@ -8690,6 +8661,11 @@ msgstr "直接原因"
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Institution"
 msgstr "医疗机构"
+
+#, fuzzy
+msgctxt "report:gnuhealth.death_certificate:"
+msgid "Interval"
+msgstr "时间间隔"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Location details"
@@ -8708,8 +8684,8 @@ msgid "Mother"
 msgstr "母亲"
 
 msgctxt "report:gnuhealth.death_certificate:"
-msgid "Name of decedent:"
-msgstr "死者姓名:"
+msgid "Name of decedent"
+msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Occupation"
@@ -8720,8 +8696,8 @@ msgid "Place of Death"
 msgstr "死亡地点"
 
 msgctxt "report:gnuhealth.death_certificate:"
-msgid "Print"
-msgstr "打印"
+msgid "Printed Date:"
+msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Residence Country"
@@ -8739,32 +8715,37 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Type of Death"
 msgstr "死亡类型"
 
+#, fuzzy
+msgctxt "report:gnuhealth.death_certificate:"
+msgid "Unit"
+msgstr "科室或病区"
+
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Usual Address"
 msgstr "常用地址"
-
-msgctxt "report:gnuhealth.death_certificate:"
-msgid "ate of birth"
-msgstr "ate of birth"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "(Complete Listing)"
 msgstr "(完整列表)"
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid ":"
-msgstr ":"
-
-msgctxt "report:gnuhealth.immunization_status_report:"
-msgid ""
-": This automatically generated report is a tool to assist, but never to "
-"replace the criteria of the health professional. Always verify the person "
-"vaccination cards."
-msgstr ": 这份自动生成的报告只是辅助工具，绝不能替代医务人员的标准，请务必核实个人疫苗接种卡。"
+msgid ","
+msgstr ","
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Age"
 msgstr "年龄"
+
+#, fuzzy
+msgctxt "report:gnuhealth.immunization_status_report:"
+msgid "Age:"
+msgstr "年龄："
+
+#, fuzzy
+msgctxt "report:gnuhealth.immunization_status_report:"
+msgid "Description:"
+msgstr "描述:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Dose"
@@ -8775,40 +8756,45 @@ msgid "Dose #"
 msgstr "剂次 #"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "FOR SCHEDULE"
-msgstr "时间表"
+msgid "Gender:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:gnuhealth.immunization_status_report:"
+msgid "Immunization Status Report"
+msgstr "免疫状况报告"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "G"
-msgstr "G"
+msgid "Important notice:"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "IMMUNIZATION STATUS"
-msgstr "免疫状况"
+msgid "PUID:"
+msgstr "证件号码："
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "Important notice"
-msgstr "重要说明"
+msgid "Patient:"
+msgstr "患者："
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "PUID"
-msgstr "证件号码"
-
-msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "Patient"
-msgstr "患者"
-
-msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "Patient age"
-msgstr "患者年龄"
-
-msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "Print Date"
-msgstr "打印日期"
+msgid "Print Date:"
+msgstr "打印日期："
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Remarks"
 msgstr "备注"
+
+msgctxt "report:gnuhealth.immunization_status_report:"
+msgid "Schedule:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:gnuhealth.immunization_status_report:"
+msgid "Scope"
+msgstr "范围"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid ""
@@ -8821,12 +8807,29 @@ msgid "Status"
 msgstr "状态"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
+msgid ""
+"This automatically generated report is a tool to assist, but never to "
+"replace the criteria of the health professional. Always verify the person "
+"vaccination cards."
+msgstr ""
+
+msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Vaccine"
 msgstr "疫苗"
 
-msgctxt "report:gnuhealth.immunization_status_report:"
-msgid "ender:"
-msgstr "ender:"
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "("
+msgstr "("
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "(Sys / dias)"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid ")"
+msgstr ")"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid ","
@@ -8836,41 +8839,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "/"
 msgstr "/"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "/ Reliability :"
-msgstr "/ 可靠性："
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "15"
-msgstr "15"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ":"
-msgstr ":"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ": Female"
-msgstr ": 女"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ": Male"
-msgstr ": 男"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ": Married"
-msgstr ": 已婚"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ": Separated"
-msgstr ": 分居"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ": Single"
-msgstr ": 单身"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid ": Widow"
-msgstr ": 丧偶"
+msgid "/ 15"
+msgstr "/ 15"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Allergies and other relevant information"
@@ -8880,9 +8852,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BMI"
 msgstr "体质指数(BMI)"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "BP : (Sys / dias)"
-msgstr "血压: (收缩压 / 舒张压)"
+msgid "BP"
+msgstr "BP"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Chief Complaint"
@@ -8897,16 +8870,17 @@ msgid "Clinical finding"
 msgstr "临床发现"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Code :"
-msgstr "代码:"
+msgid "Code:"
+msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Comments"
 msgstr "说明"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "D"
-msgstr "D"
+msgid "Date:"
+msgstr "日期:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Differential Diagnoses"
@@ -8937,6 +8911,10 @@ msgid "GCS"
 msgstr "格拉斯哥评分"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Gender:"
+msgstr ""
+
+msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Heart Rate"
 msgstr "心率"
 
@@ -8949,39 +8927,42 @@ msgid "Information Source:"
 msgstr "信息来源:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Initiated by"
-msgstr "发起人"
+msgid "Initiated by:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Main Condition"
+msgstr "主要诊断"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Main Condition :"
-msgstr "主要诊断:"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Marital Status"
-msgstr "婚姻状态"
+msgid "Marital Status:"
+msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "OSAT"
 msgstr "血氧饱和度"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Occupation :"
-msgstr "职业："
+msgid "Occupation:"
+msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Other Conditions"
 msgstr "其它诊断"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "P"
-msgstr "患者"
+msgid "PUID:"
+msgstr "证件号码："
 
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "PUID"
-msgstr "证件号码"
+msgid "Patient Evaluation Report"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Patient :"
+msgid "Patient:"
 msgstr "患者："
 
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -8989,20 +8970,21 @@ msgid "Phone:"
 msgstr "电话："
 
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Plan"
-msgstr "计划"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Print Date:"
 msgstr "打印日期:"
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Procedures"
+msgstr "医学操作"
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Reliability:"
+msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Resp Rate"
 msgstr "呼吸频率"
-
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Sex"
-msgstr "性别"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Signs and Symptoms"
@@ -9012,33 +8994,28 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Temperature"
 msgstr "体温"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "Treatment"
-msgstr "治疗"
+msgid "Treatment Plan"
+msgstr "治疗方案"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Type"
 msgstr "患者类型"
 
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "ate:"
-msgstr "日期："
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation_brief:"
+msgid "("
+msgstr "("
 
-msgctxt "report:gnuhealth.patient_evaluation:"
-msgid "rocedures"
-msgstr "处理措施"
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation_brief:"
+msgid ")"
+msgstr ")"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid ","
 msgstr ","
-
-msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid ":"
-msgstr "："
-
-msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Allergies and other relevant information"
-msgstr "过敏及其他相关信息"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Chief Complaint"
@@ -9049,80 +9026,96 @@ msgid "Clinical and Physical examination"
 msgstr "临床和体检"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Code :"
-msgstr "代码:"
+msgid "Code:"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "D"
-msgstr "D"
+msgid "Date:"
+msgstr "日期:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Discharge Reason"
 msgstr "离院方式"
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation_brief:"
+msgid "DoB:"
+msgstr "出生日期："
+
+msgctxt "report:gnuhealth.patient_evaluation_brief:"
+msgid "Gender:"
+msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "History of Present Illness"
 msgstr "现病史"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "ID:"
-msgstr "ID："
+msgid "Initiated by:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation_brief:"
+msgid "Main Condition"
+msgstr "主要诊断"
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation_brief:"
+msgid "PUID:"
+msgstr "证件号码："
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Initiated by"
-msgstr "发起人"
+msgid "Patient Evaluation Brief Report"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Main Condition :"
-msgstr "主要诊断:"
-
-msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Patient :"
+msgid "Patient:"
 msgstr "患者："
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Plan"
-msgstr "计划"
+msgid "Print Date:"
+msgstr "打印日期："
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Signed by"
-msgstr "签署人"
+msgid "Sign by"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "Treatment"
-msgstr "治疗"
-
-msgctxt "report:gnuhealth.patient_evaluation_brief:"
-msgid "ate:"
-msgstr "日期："
+msgid "Treatment Plan"
+msgstr "治疗方案"
 
 msgctxt "report:patient.card:"
-msgid "Blood type :"
-msgstr "血型:"
+msgid "Blood Type:"
+msgstr ""
 
 msgctxt "report:patient.card:"
 msgid "DoB:"
 msgstr "出生日期:"
 
 msgctxt "report:patient.card:"
-msgid "ID:"
-msgstr "ID:"
+msgid "Gender:"
+msgstr ""
 
 msgctxt "report:patient.card:"
 msgid "Name:"
 msgstr "名称:"
 
+#, fuzzy
+msgctxt "report:patient.card:"
+msgid "PUID:"
+msgstr "证件号码："
+
+msgctxt "report:patient.card:"
+msgid "photo"
+msgstr ""
+
 msgctxt "report:patient.conditions_history:"
 msgid "*"
 msgstr "*"
-
-msgctxt "report:patient.conditions_history:"
-msgid ","
-msgstr ","
-
-msgctxt "report:patient.conditions_history:"
-msgid ":"
-msgstr ":"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Active"
@@ -9137,52 +9130,47 @@ msgid "Annotations about the patient"
 msgstr "患者情况说明"
 
 msgctxt "report:patient.conditions_history:"
-msgid "Automated"
-msgstr "（自动生成）"
+msgid "Automated info about this patient relevant conditions"
+msgstr ""
 
 msgctxt "report:patient.conditions_history:"
 msgid "Diagnosed"
 msgstr "已诊断"
 
 msgctxt "report:patient.conditions_history:"
-msgid "HEALTH CONDITIONS"
-msgstr "健康状况"
+msgid "Gender:"
+msgstr ""
 
 msgctxt "report:patient.conditions_history:"
 msgid "Health Condition"
 msgstr "健康状况"
 
 msgctxt "report:patient.conditions_history:"
-msgid "ID"
-msgstr "ID"
-
-msgctxt "report:patient.conditions_history:"
 msgid "Infectious"
 msgstr "感染"
 
+#, fuzzy
 msgctxt "report:patient.conditions_history:"
-msgid "Name"
-msgstr "名称"
+msgid "Name:"
+msgstr "名称:"
 
 msgctxt "report:patient.conditions_history:"
-msgid "PATIENT"
-msgstr "患者"
+msgid "PATIENT HEALTH CONDITIONS SUMMARY"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.conditions_history:"
-msgid "PU"
-msgstr "PU"
+msgid "PUID:"
+msgstr "证件号码："
 
+#, fuzzy
 msgctxt "report:patient.conditions_history:"
-msgid "Print Date :"
+msgid "Print Date:"
 msgstr "打印日期："
 
 msgctxt "report:patient.conditions_history:"
 msgid "Remarks"
 msgstr "备注"
-
-msgctxt "report:patient.conditions_history:"
-msgid "SUMMARY"
-msgstr "总结"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Severity"
@@ -9192,56 +9180,17 @@ msgctxt "report:patient.conditions_history:"
 msgid "Status"
 msgstr "治疗转归"
 
-msgctxt "report:patient.conditions_history:"
-msgid "chronic"
-msgstr "慢性"
-
-msgctxt "report:patient.conditions_history:"
-msgid "healed"
-msgstr "治愈"
-
-msgctxt "report:patient.conditions_history:"
-msgid "improving"
-msgstr "好转"
-
-msgctxt "report:patient.conditions_history:"
-msgid "info about this patient relevant conditions"
-msgstr "患者患病情况的相关信息"
-
-msgctxt "report:patient.conditions_history:"
-msgid "mild"
-msgstr "温和"
-
-msgctxt "report:patient.conditions_history:"
-msgid "moderate"
-msgstr "中度"
-
-msgctxt "report:patient.conditions_history:"
-msgid "severe"
-msgstr "严重"
-
-msgctxt "report:patient.conditions_history:"
-msgid "unchanged"
-msgstr "未愈"
-
-msgctxt "report:patient.conditions_history:"
-msgid "worsening"
-msgstr "恶化"
-
 msgctxt "report:patient.medication:"
 msgid ","
 msgstr ","
 
 msgctxt "report:patient.medication:"
-msgid ":"
-msgstr ":"
-
-msgctxt "report:patient.medication:"
 msgid "Active"
 msgstr "启用"
 
+#, fuzzy
 msgctxt "report:patient.medication:"
-msgid "Age :"
+msgid "Age:"
 msgstr "年龄："
 
 msgctxt "report:patient.medication:"
@@ -9253,8 +9202,8 @@ msgid "End"
 msgstr "结束"
 
 msgctxt "report:patient.medication:"
-msgid "ID :"
-msgstr "ID :"
+msgid "Gender:"
+msgstr ""
 
 msgctxt "report:patient.medication:"
 msgid "Indication"
@@ -9268,12 +9217,14 @@ msgctxt "report:patient.medication:"
 msgid "PATIENT MEDICATION HISTORY"
 msgstr "患者用药史"
 
+#, fuzzy
 msgctxt "report:patient.medication:"
-msgid "PU"
-msgstr "PU"
+msgid "PUID:"
+msgstr "证件号码："
 
+#, fuzzy
 msgctxt "report:patient.medication:"
-msgid "Patient :"
+msgid "Patient:"
 msgstr "患者："
 
 msgctxt "report:patient.medication:"
@@ -9284,9 +9235,10 @@ msgctxt "report:patient.medication:"
 msgid "Prescribed by"
 msgstr "处方医师"
 
+#, fuzzy
 msgctxt "report:patient.medication:"
-msgid "Print Date"
-msgstr "打印日期"
+msgid "Print Date:"
+msgstr "打印日期："
 
 msgctxt "report:patient.medication:"
 msgid "Start"
@@ -9296,12 +9248,9 @@ msgctxt "report:patient.vaccination:"
 msgid ","
 msgstr ","
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
-msgid ":"
-msgstr ":"
-
-msgctxt "report:patient.vaccination:"
-msgid "Age :"
+msgid "Age:"
 msgstr "年龄："
 
 msgctxt "report:patient.vaccination:"
@@ -9309,24 +9258,12 @@ msgid "Date"
 msgstr "日期"
 
 msgctxt "report:patient.vaccination:"
-msgid "Date :"
-msgstr "日期："
-
-msgctxt "report:patient.vaccination:"
 msgid "Dose"
 msgstr "剂次"
 
 msgctxt "report:patient.vaccination:"
-msgid "Gender"
-msgstr "性别"
-
-msgctxt "report:patient.vaccination:"
-msgid "HISTORY"
-msgstr "史"
-
-msgctxt "report:patient.vaccination:"
-msgid "ID"
-msgstr "ID"
+msgid "Gender:"
+msgstr ""
 
 msgctxt "report:patient.vaccination:"
 msgid "Next Dose"
@@ -9337,24 +9274,23 @@ msgid "Observations"
 msgstr "观察结果"
 
 msgctxt "report:patient.vaccination:"
-msgid "PATIENT"
-msgstr "患者"
+msgid "PATIENT VACCINATION HISTORY"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
-msgid "PU"
-msgstr "PU"
+msgid "PUID:"
+msgstr "证件号码："
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
-msgid "Patient"
-msgstr "患者"
+msgid "Patient:"
+msgstr "患者："
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
-msgid "Print"
-msgstr "打印处方"
-
-msgctxt "report:patient.vaccination:"
-msgid "VACCINATION"
-msgstr "疫苗接种史"
+msgid "Print Date:"
+msgstr "打印日期："
 
 msgctxt "report:patient.vaccination:"
 msgid "Vaccine"
@@ -9373,31 +9309,20 @@ msgid ","
 msgstr ","
 
 msgctxt "report:prescription.order:"
-msgid "-"
-msgstr "-"
-
-msgctxt "report:prescription.order:"
 msgid "//"
 msgstr "//"
 
 msgctxt "report:prescription.order:"
-msgid ":"
-msgstr ":"
+msgid "Allowed"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Address"
-msgstr "地址"
+msgid "Directions:"
+msgstr ""
 
+#, fuzzy
 msgctxt "report:prescription.order:"
-msgid "Days"
-msgstr "天"
-
-msgctxt "report:prescription.order:"
-msgid "Directions"
-msgstr "用法说明书"
-
-msgctxt "report:prescription.order:"
-msgid "DoB :"
+msgid "DoB:"
 msgstr "出生日期："
 
 msgctxt "report:prescription.order:"
@@ -9405,8 +9330,12 @@ msgid "Dose"
 msgstr "剂量"
 
 msgctxt "report:prescription.order:"
-msgid "Duration"
-msgstr "持续时间"
+msgid "Duration:"
+msgstr ""
+
+msgctxt "report:prescription.order:"
+msgid "E-mail:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "End:"
@@ -9417,128 +9346,99 @@ msgid "Every"
 msgstr "每"
 
 msgctxt "report:prescription.order:"
-msgid "Form"
-msgstr "剂型"
+msgid "Form:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Health Professional"
-msgstr "医务人员"
+msgid "Health Professional Signature"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Hours"
-msgstr "小时"
+msgid "Indication:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Indefinite"
-msgstr "不确定"
-
-msgctxt "report:prescription.order:"
-msgid "Indication"
-msgstr "适应症"
-
-msgctxt "report:prescription.order:"
-msgid "Insurance :"
-msgstr "保险："
+msgid "Insurance:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Medicament"
 msgstr "药品"
 
 msgctxt "report:prescription.order:"
-msgid "Minutes"
-msgstr "分"
-
-msgctxt "report:prescription.order:"
-msgid "Months"
-msgstr "月"
-
-msgctxt "report:prescription.order:"
 msgid "Notes"
 msgstr "注意事项"
 
+#, fuzzy
 msgctxt "report:prescription.order:"
-msgid "PUID :"
+msgid "PUID:"
 msgstr "证件号码："
 
 msgctxt "report:prescription.order:"
-msgid "Patient :"
+msgid "Patient Address:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:prescription.order:"
+msgid "Patient:"
 msgstr "患者："
 
 msgctxt "report:prescription.order:"
-msgid "Patient Contact Information"
-msgstr "病人相关信息"
+msgid "Prescribed by:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:prescription.order:"
+msgid "Prescription"
+msgstr "处方"
 
 msgctxt "report:prescription.order:"
-msgid "Prescribed by"
-msgstr "处方医师"
+msgid "Prescription ID:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Prescription ID :"
-msgstr "处方编号："
+msgid "Prescription date:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Prescription date :"
-msgstr "处方日期："
+msgid "Qty:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Qty"
-msgstr "数量"
+msgid "Refills:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Refills"
-msgstr "续方次数"
+msgid "Remarks:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Remarks"
-msgstr "备注"
+msgid "Review:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Review"
-msgstr "审核"
+msgid "Route:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Route"
-msgstr "用药途径"
+msgid "Start:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Signature"
-msgstr "签名"
+msgid "Substitution:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Start"
-msgstr "开始"
-
-msgctxt "report:prescription.order:"
-msgid "Substitution Allowed"
-msgstr "允许替换"
-
-msgctxt "report:prescription.order:"
-msgid "Tel"
-msgstr "电话"
+msgid "Tel:"
+msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Unit"
 msgstr "单位"
 
 msgctxt "report:prescription.order:"
-msgid "Years"
-msgstr "年"
-
-msgctxt "report:prescription.order:"
 msgid "as needed"
 msgstr "需要时使用"
-
-msgctxt "report:prescription.order:"
-msgid "e"
-msgstr "e"
-
-msgctxt "report:prescription.order:"
-msgid "mail"
-msgstr "mail"
-
-msgctxt "report:prescription.order:"
-msgid "s"
-msgstr "s"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Inpatient"

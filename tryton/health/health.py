@@ -4397,6 +4397,8 @@ class PrescriptionLine(ModelSQL, ModelView):
         ('wr', 'when required'),
         ], 'unit', select=True, sort=False)
 
+    frequency_unit_str = frequency_unit.translated('frequency_unit')
+
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
     duration = fields.Integer(

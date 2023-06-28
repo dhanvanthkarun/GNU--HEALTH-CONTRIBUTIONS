@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-06-05 06:34+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_reporting/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.epidemics.report.open.start,demographics:"
 msgid "Demographics"
@@ -195,13 +186,19 @@ msgctxt "model:ir.ui.menu,name:menu_top_diseases_open"
 msgid "Top Diseases"
 msgstr "疾病排行榜"
 
+#, fuzzy
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "("
+msgstr "("
+
+#, fuzzy
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid ")"
+msgstr ")"
+
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "-"
 msgstr "-"
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "0"
-msgstr "0"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "15 – 45"
@@ -236,8 +233,8 @@ msgid "<5"
 msgstr "<5"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "> 6"
-msgstr "> 6"
+msgid "> 60"
+msgstr ""
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid ">60"
@@ -248,36 +245,45 @@ msgid "Age group"
 msgstr "年龄组"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Birth"
-msgstr "出生日期"
+msgid "Birth certs"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Cases by age group"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Cases by ethnic group:"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Cases by socioeconomic group:"
+msgstr ""
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Confirmed cases"
 msgstr "确诊病例"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Death"
-msgstr "死亡"
+msgid "Death certs"
+msgstr ""
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Deaths"
 msgstr "死亡"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Distribution by"
+msgid "Distribution by Ethnic group"
 msgstr ""
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Distribution by Socioeconomic Status"
 msgstr "按社会经济地位划分的分布"
 
+#, fuzzy
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Epidemiolog"
-msgstr "流行病学"
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Ethnic group"
-msgstr "少数民族"
+msgid "Epidemiological Surveillance"
+msgstr "流行病学监测"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Female"
@@ -288,7 +294,7 @@ msgid "In health system"
 msgstr "新注册患者"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "In t"
+msgid "In this period"
 msgstr ""
 
 msgctxt "report:gnuhealth.epidemics.report:"
@@ -300,6 +306,14 @@ msgid "Male"
 msgstr "男性"
 
 msgctxt "report:gnuhealth.epidemics.report:"
+msgid "New cases by days:"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
+msgid "New deaths by day:"
+msgstr ""
+
+msgctxt "report:gnuhealth.epidemics.report:"
 msgid "No Age"
 msgstr "无年龄"
 
@@ -308,56 +322,40 @@ msgid "No DoB"
 msgstr "无出生日期"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Period"
-msgstr "周期"
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Print Date:"
-msgstr "打印日期："
-
-msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Registrations"
 msgstr "新注册人员"
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Surveillance"
-msgstr "监控"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Total"
 msgstr "合计"
 
+#, fuzzy
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "at"
-msgstr "在"
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "certs"
-msgstr ""
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "his period"
-msgstr ""
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "ical"
-msgstr ""
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "to"
-msgstr ""
+msgid "chart"
+msgstr "图表"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Σ"
 msgstr "Σ"
 
+#, fuzzy
+msgctxt "report:gnuhealth.summary.report:"
+msgid "("
+msgstr "("
+
+#, fuzzy
+msgctxt "report:gnuhealth.summary.report:"
+msgid ")"
+msgstr ")"
+
+#, fuzzy
+msgctxt "report:gnuhealth.summary.report:"
+msgid ","
+msgstr ","
+
 msgctxt "report:gnuhealth.summary.report:"
 msgid "-"
 msgstr "-"
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "0"
-msgstr "0"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "0-4"
@@ -368,12 +366,8 @@ msgid "10-14"
 msgstr "10-14"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "100"
-msgstr "100"
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "104"
-msgstr "104"
+msgid "100-104"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "105+ years old"
@@ -460,44 +454,36 @@ msgid "90-94"
 msgstr "90-94"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "95-"
-msgstr "95-"
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "99"
-msgstr "99"
+msgid "95-99"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "< 5"
 msgstr "< 5"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "> 6"
-msgstr "> 6"
+msgid "> 60"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Age range"
 msgstr "年龄区间"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "Birth"
-msgstr "出生"
+msgid "Birth certs"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "Death"
-msgstr "死亡"
+msgid "Death certs"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Diagnostics"
 msgstr "诊断"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "Dx"
-msgstr "诊断"
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "Evaluations"
-msgstr "患者评估人次"
+msgid "Evaluations Diagnostics"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Female"
@@ -512,7 +498,7 @@ msgid "In health system"
 msgstr "新注册患者"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "In t"
+msgid "In this period"
 msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
@@ -528,6 +514,10 @@ msgid "Male stacked"
 msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
+msgid "New"
+msgstr ""
+
+msgctxt "report:gnuhealth.summary.report:"
 msgid "No Age"
 msgstr "无年龄"
 
@@ -540,45 +530,20 @@ msgid "Non-Dx"
 msgstr "无诊断信息"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "Period"
-msgstr "期间"
-
-msgctxt "report:gnuhealth.summary.report:"
 msgid "Population Pyramid"
 msgstr "人口金字塔"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "Print Date:"
-msgstr "打印日期："
+msgid "Printed Date:"
+msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Registrations"
 msgstr "新注册人员"
 
-#, fuzzy
-msgctxt "report:gnuhealth.summary.report:"
-msgid "at"
-msgstr "在"
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "certs"
-msgstr ""
-
 msgctxt "report:gnuhealth.summary.report:"
 msgid "chart"
 msgstr "图表"
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "his period"
-msgstr ""
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "new"
-msgstr ""
-
-msgctxt "report:gnuhealth.summary.report:"
-msgid "to"
-msgstr ""
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Σ"
