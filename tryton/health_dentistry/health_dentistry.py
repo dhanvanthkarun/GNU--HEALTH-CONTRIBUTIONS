@@ -268,9 +268,8 @@ class DentistryProcedure(ModelSQL, ModelView):
     __name__ = 'gnuhealth.dentistry.procedure'
 
     name = fields.Char('Procedure', required=True, translate=True)
-    code = fields.Char(
-        'Code', required=True, translate=True,
-        help='Please use CAPITAL LETTERS and no spaces')
+    code = fields.Char('Code', required=True,
+                       help='Please use CAPITAL LETTERS and no spaces')
 
     @classmethod
     def __setup__(cls):

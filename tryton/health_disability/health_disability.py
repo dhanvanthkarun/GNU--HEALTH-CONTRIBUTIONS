@@ -68,7 +68,7 @@ class BodyFunctionCategory(ModelSQL, ModelView):
     'Body Function Category'
     __name__ = 'gnuhealth.body_function.category'
 
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('code', required=True)
 
     @classmethod
@@ -85,7 +85,7 @@ class BodyFunction(ModelSQL, ModelView):
     'Body Functions'
     __name__ = 'gnuhealth.body_function'
 
-    name = fields.Char('Function', required=True)
+    name = fields.Char('Function', required=True, translate=True)
     code = fields.Char('code', required=True)
     category = fields.Many2One('gnuhealth.body_function.category', 'Category')
 
@@ -103,7 +103,7 @@ class BodyStructureCategory(ModelSQL, ModelView):
     'Body Structure Category'
     __name__ = 'gnuhealth.body_structure.category'
 
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('code', required=True)
 
     @classmethod
@@ -120,7 +120,7 @@ class BodyStructure(ModelSQL, ModelView):
     'Body Functions'
     __name__ = 'gnuhealth.body_structure'
 
-    name = fields.Char('Structure', required=True)
+    name = fields.Char('Structure', required=True, translate=True)
     code = fields.Char('code', required=True)
     category = fields.Many2One('gnuhealth.body_structure.category', 'Category')
 
@@ -138,7 +138,7 @@ class ActivityAndParticipationCategory(ModelSQL, ModelView):
     'Activity and Participation Category'
     __name__ = 'gnuhealth.activity_and_participation.category'
 
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('code', required=True)
 
     @classmethod
@@ -155,7 +155,7 @@ class ActivityAndParticipation(ModelSQL, ModelView):
     'Activity limitations and participation restrictions'
     __name__ = 'gnuhealth.activity_and_participation'
 
-    name = fields.Char('A & P', required=True)
+    name = fields.Char('A & P', required=True, translate=True)
     code = fields.Char('code', required=True)
     category = fields.Many2One(
         'gnuhealth.activity_and_participation.category', 'Category')
@@ -174,7 +174,7 @@ class EnvironmentalFactorCategory(ModelSQL, ModelView):
     'Environmental Factor Category'
     __name__ = 'gnuhealth.environmental_factor.category'
 
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('code', required=True)
 
     @classmethod
@@ -191,7 +191,7 @@ class EnvironmentalFactor(ModelSQL, ModelView):
     'Environmental factors restrictions'
     __name__ = 'gnuhealth.environmental_factor'
 
-    name = fields.Char('Environment', required=True)
+    name = fields.Char('Environment', required=True, translate=True)
     code = fields.Char('code', required=True)
     category = fields.Many2One(
         'gnuhealth.environmental_factor.category', 'Category')
