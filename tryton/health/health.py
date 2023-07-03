@@ -2151,6 +2151,8 @@ class ImmunizationScheduleDose(ModelSQL, ModelView):
         ('years', 'years'),
         ], 'Time Unit', required=True)
 
+    age_unit_str = age_unit.translated('age_unit')
+
     remarks = fields.Char('Remarks')
 
     sched = fields.Function(
@@ -2198,6 +2200,8 @@ class ImmunizationScheduleLine(ModelSQL, ModelView):
         ('recommended', 'Recommended'),
         ('highrisk', 'Risk groups'),
         ], 'Scope', sort=False)
+
+    scope_str = scope.translated('scope')
 
     remarks = fields.Char('Remarks')
 

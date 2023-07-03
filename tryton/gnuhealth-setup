@@ -42,6 +42,7 @@ TRANSLATE_URL="http://translate.gnusolidario.org"
 UPDATE_DOWNLOAD_DIR="/tmp/gnuhealth_update"
 TRYTON_PATCHES=""
 
+WGET_ARGS="--timeout=20 --waitretry=0 --tries=50"
 
 #-----------------------------------------------------------------------------
 # Functions
@@ -287,7 +288,7 @@ install_python_dependencies() {
 get_url() {
     # $1 : Module name
     # return : URL to download
-    echo ${TRYTON_BASE_URL}/${TRYTON_VERSION}/$(wget --quiet -O- ${TRYTON_BASE_URL}/${TRYTON_VERSION} | egrep -o "${1}-${TRYTON_VERSION}.[0-9\.]+.tar.gz" | sort -V | tail -1)
+    echo ${TRYTON_BASE_URL}/${TRYTON_VERSION}/$(wget ${WGET_ARGS} --quiet -O- ${TRYTON_BASE_URL}/${TRYTON_VERSION} | egrep -o "${1}-${TRYTON_VERSION}.[0-9\.]+.tar.gz" | sort -V | tail -1)
 }
 
 
@@ -321,13 +322,13 @@ install_tryton_modules() {
     cd ${TMP_DIR} || bailout
 
     message "INFO" "Downloading the Tryton server..."
-    wget ${TRYTOND_URL} || bailout
+    wget ${WGET_ARGS} ${TRYTOND_URL} || bailout
     message "INFO" "OK."
 
     message "INFO" "Downloading Tryton modules..."
     local URL=""
     for URL in ${TRYTON_MODULES_URL}; do
-        wget ${URL} || bailout
+        wget ${WGET_ARGS} ${URL} || bailout
     done
     message "INFO" "OK."
 

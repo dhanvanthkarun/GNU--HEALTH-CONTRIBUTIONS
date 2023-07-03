@@ -17,7 +17,7 @@
 import io
 import os
 import json
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 from trytond.report import Report
 from trytond.pool import Pool
 
@@ -29,25 +29,56 @@ class Odontogram(Report):
     __name__ = 'health_dentistry.odontogram.report'
 
     radius = 37
-    pieces = {
-        '18': (37, 37), '17': (119, 37), '16': (201, 37), '15': (282, 37),
-        '14': (362, 37), '13': (443, 37), '12': (524, 37), '11': (605, 37),
-        '21': (744, 37), '22': (825, 37), '23': (906, 37), '24': (987, 37),
-        '25': (1069, 37), '26': (1153, 37), '27': (1235, 37), '28': (1316, 37),
-        '48': (37, 360), '47': (119, 360), '46': (201, 360), '45': (283, 360),
-        '44': (365, 360), '43': (447, 360), '42': (529, 360), '41': (611, 360),
-        '31': (744, 360), '32': (825, 360), '33': (907, 360), '34': (988, 360),
-        '35': (1069, 360), '36': (1150, 360), '37': (1231, 360),
-        '38': (1316, 360),
-        '55': (283, 145), '54': (364, 145), '53': (445, 145), '52': (526, 145),
-        '51': (607, 145),
-        '61': (744, 145), '62': (825, 145), '63': (906, 145), '64': (987, 145),
-        '65': (1068, 145),
-        '85': (283, 253), '84': (364, 253), '83': (445, 253), '82': (526, 253),
-        '81': (607, 253),
-        '71': (744, 253), '72': (825, 253), '73': (906, 253), '74': (987, 253),
-        '75': (1068, 253),
-        }
+    __pieces = {
+        '18': ( 1, 1), '17': ( 2, 1), '16': ( 3, 1), '15': ( 4, 1),
+        '14': ( 5, 1), '13': ( 6, 1), '12': ( 7, 1), '11': ( 8, 1),
+        '21': (10, 1), '22': (11, 1), '23': (12, 1), '24': (13, 1),
+        '25': (14, 1), '26': (15, 1), '27': (16, 1), '28': (17, 1),
+        '48': ( 1, 4), '47': ( 2, 4), '46': ( 3, 4), '45': ( 4, 4),
+        '44': ( 5, 4), '43': ( 6, 4), '42': ( 7, 4), '41': ( 8, 4),
+        '31': (10, 4), '32': (11, 4), '33': (12, 4), '34': (13, 4),
+        '35': (14, 4), '36': (15, 4), '37': (16, 4), '38': (17, 4),
+        '55': ( 4, 2), '54': ( 5, 2), '53': ( 6, 2), '52': ( 7, 2), '51': ( 8, 2),
+        '61': (10, 2), '62': (11, 2), '63': (12, 2), '64': (13, 2), '65': (14, 2),
+        '85': ( 4, 3), '84': ( 5, 3), '83': ( 6, 3), '82': ( 7, 3), '81': ( 8, 3),
+        '71': (10, 3), '72': (11, 3), '73': (12, 3), '74': (13, 3), '75': (14, 3),
+    }
+
+    x_distance = 86
+    y_distance = 110
+
+    pieces = {}
+    for key, value in __pieces.items():
+        pieces[key] = (x_distance/2 + x_distance*(value[0]-1),
+                       x_distance/2 + y_distance*(value[1]-1))
+    
+    image_size = (x_distance * 17, y_distance * 4)
+
+    @classmethod
+    def plot_teeth(cls, im):
+        draw = ImageDraw.Draw(im)
+        
+        for tooth, values in cls.pieces.items():
+            width = 3
+            color = (0, 0, 0)
+
+            x = values[0]
+            y = values[1]
+            d1 = cls.x_distance/2 * 0.9
+            d2 = d1/2
+            d3 = d1/1.414
+            d4 = d2/1.414
+
+            draw.ellipse((x - d1, y - d1, x + d1, y + d1), outline=color, width = width)
+            draw.ellipse((x - d2, y - d2, x + d2, y + d2), outline=color, width = width)
+            draw.line((x - d3, y - d3, x - d4, y - d4), fill=color, width=width)
+            draw.line((x + d3, y + d3, x + d4, y + d4), fill=color, width=width)
+            draw.line((x - d3, y + d3, x - d4, y + d4), fill=color, width=width)
+            draw.line((x + d3, y - d3, x + d4, y - d4), fill=color, width=width)
+
+            fontsize = cls.x_distance//4
+            font = ImageFont.truetype("FreeSans", fontsize)
+            draw.multiline_text((x - fontsize/2 , y + d1 * 1.1), tooth, fill=color, font=font)
 
     @classmethod
     def plot_extraction(cls, piece_center, status, im):
@@ -59,10 +90,11 @@ class Odontogram(Report):
             color = for_extraction_color
 
         xcenter, ycenter = piece_center
-        llc = {'x': xcenter - 30, 'y': ycenter + 30}
-        urc = {'x': xcenter + 30, 'y': ycenter - 30}
-        ulc = {'x': xcenter - 30, 'y': ycenter - 30}
-        lrc = {'x': xcenter + 30, 'y': ycenter + 30}
+        num = cls.x_distance/(2*1.414)
+        llc = {'x': xcenter - num, 'y': ycenter + num}
+        urc = {'x': xcenter + num, 'y': ycenter - num}
+        ulc = {'x': xcenter - num, 'y': ycenter - num}
+        lrc = {'x': xcenter + num, 'y': ycenter + num}
         draw = ImageDraw.Draw(im)
         draw.line((llc['x'], llc['y'], urc['x'], urc['y']),
                   fill=color, width=10)
@@ -92,19 +124,20 @@ class Odontogram(Report):
 
         # Set the section of the filling / decay
         # Maxillar / upper region
+        num = cls.x_distance/(2*1.414)
+
         if (tooth in range(11, 28) or tooth in range(51, 65)):
-            print(tooth, tregions)
             for key in tregions.keys():
                 if (key in ['o', 'i']):  # Occlusal or Incisal
                     position = (x, y)  # Center of the tooth
                 if (key == 'v'):  # Vestibular
-                    position = (x, y - 25)
+                    position = (x, y - num)
                 if (key == 'p'):  # Palatine
-                    position = (x, y + 25)
+                    position = (x, y + num)
                 if (key == 'd'):  # Distal
-                    position = (x - 25, y)
+                    position = (x - num, y)
                 if (key == 'm'):  # Mesial
-                    position = (x + 25, y)
+                    position = (x + num, y)
 
                 ImageDraw.floodfill(im, xy=position, value=color, thresh=200)
 
@@ -114,27 +147,29 @@ class Odontogram(Report):
                 if (key in ['o', 'i']):  # Occlusal or Incisal
                     position = (x, y)  # Center of the tooth
                 if (key == 'l'):  # Lingual
-                    position = (x, y - 25)
+                    position = (x, y - num)
                 if (key == 'v'):  # Vestibular
-                    position = (x, y + 25)
+                    position = (x, y + num)
                 if (key == 'm'):  # Mesial
-                    position = (x - 25, y)
+                    position = (x - num, y)
                 if (key == 'd'):  # Distal
-                    position = (x + 25, y)
+                    position = (x + num, y)
 
                 ImageDraw.floodfill(im, xy=position, value=color, thresh=200)
 
         return (im)
 
     @classmethod
-    def plot_odontogram(cls, dental_schema):
+    def plot_odontogram(cls, patient):
 
-        # Get the template file from current module dir
-        report_dir = os.path.dirname(os.path.abspath(__file__))
-        filename = os.path.join(report_dir, 'odontogram_template.png')
-        im = Image.open(filename)
+        im = Image.new('RGB', cls.image_size, (255, 255, 255))
 
-        dschema = json.loads(dental_schema)
+        dschema1 = json.loads(patient.dental_schema or "{}")
+        dschema2 = json.loads(patient.dental_schema_primary or "{}")
+        dschema = {**dschema1, **dschema2}
+
+        if dschema:
+            cls.plot_teeth(im)
 
         for tooth, values in dschema.items():
             # Decayed or filled tooth
@@ -160,9 +195,6 @@ class Odontogram(Report):
         context = super(Odontogram, cls).get_context(
             records, header, data)
 
-        dental_schema = \
-            Pool().get('gnuhealth.patient')(data['id']).dental_schema
-
-        context['patient_odontogram'] = cls.plot_odontogram(dental_schema)
+        context['get_patient_odontogram'] = cls.plot_odontogram
 
         return context

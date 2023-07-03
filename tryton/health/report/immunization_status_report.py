@@ -53,26 +53,31 @@ class ImmunizationStatusReport(Report):
         for vaccine in immunization_schedule.vaccines:
 
             for dose in vaccine.doses:
-                dose_number, dose_age, age_unit = dose.dose_number, \
-                    dose.age_dose, dose.age_unit
+                dose_number, dose_age, age_unit, age_unit_str = dose.dose_number, \
+                    dose.age_dose, dose.age_unit, dose.age_unit_str
 
                 p_age = [patient.age.split(' ')[0][:-1],
                          patient.age.split(' ')[1][:-1],
                          patient.age.split(' ')[2][:-1]]
 
-                # Age of the person in years and months
-                pyears, pmonths = int(p_age[0]), int(p_age[1])
+                # Age of the person in years, months, weeks and days.
+                y, m, d = int(p_age[0]), int(p_age[1]), int(p_age[2])
+                pdays = (y*365) + (m*365/12) + d
+                pyears = pdays/365
+                pmonths = pdays/(365/12)
+                pweeks = pdays/7
 
-                pmonths = (pyears*12)+pmonths
-
-                if ((age_unit == 'months' and pmonths >= dose_age) or
-                        (age_unit == 'years' and pyears >= dose_age)):
+                if ((age_unit == 'days' and pdays >= dose_age) or
+                    (age_unit == 'weeks' and pweeks >= dose_age) or
+                    (age_unit == 'months' and pmonths >= dose_age) or
+                    (age_unit == 'years' and pyears >= dose_age)):
                     immunization_info = {
                         'patient': patient,
                         'vaccine': vaccine,
                         'dose': dose_number,
                         'dose_age': dose_age,
                         'age_unit': age_unit,
+                        'age_unit_str': age_unit_str,
                         'status': None}
 
                     # Add to the list of this person immunization check
