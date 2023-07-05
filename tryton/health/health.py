@@ -92,7 +92,7 @@ class DomiciliaryUnit(ModelSQL, ModelView):
     def get_parent(self, subdivision):
         # Recursively get the parent subdivisions
         if (subdivision.parent):
-            return str(subdivision.rec_name) + '\n' + \
+            return str(subdivision.rec_name) + ', ' + \
                 str(self.get_parent(subdivision.parent))
         else:
             return subdivision.rec_name
@@ -101,24 +101,30 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         du_addr = ''
         # Street
         if (self.address_street):
-            du_addr = f"{self.address_street} {self.address_street_number} " \
-                f"{self.address_street_bis}\n"
+            du_addr = f"{self.address_street} {self.address_street_number}, \n" \
+                f"{self.address_street_bis}, "
+
+        if (self.address_district):
+            du_addr = f"{du_addr}\n{self.address_district}, "
+
+        if (self.address_municipality):
+            du_addr = f"{du_addr}{self.address_municipality}, "
 
         if (self.address_city):
-            du_addr = f"{du_addr}{self.address_city}\n"
+            du_addr = f"{du_addr}{self.address_city}, "
 
         # Grab the parent subdivisions
         if (self.address_subdivision):
-            du_addr = f"{du_addr}\n" \
+            du_addr = f"{du_addr}" \
                 f"{self.get_parent(subdivision=self.address_subdivision)}"
 
         # Zip Code
         if (self.address_zip):
-            du_addr = f"{du_addr} - {self.address_zip}"
+            du_addr = f"{du_addr} - {self.address_zip}, "
 
         # Country
         if (self.address_country):
-            du_addr = f"{du_addr}\n {self.address_country.rec_name}"
+            du_addr = f"{du_addr}\n{self.address_country.rec_name}"
 
         return du_addr
 
