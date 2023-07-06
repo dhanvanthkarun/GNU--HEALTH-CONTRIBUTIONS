@@ -170,6 +170,14 @@ msgctxt "model:ir.action,name:report_summary_information"
 msgid "Summary Report"
 msgstr "医疗机构总结报告"
 
+msgctxt "model:ir.message,text:immediate_cause"
+msgid "Immediate cause"
+msgstr "直接死因"
+
+msgctxt "model:ir.message,text:underlying_condition"
+msgid "Underlying condition"
+msgstr "间接死因"
+
 msgctxt "model:ir.ui.menu,name:menu_evaluations_open"
 msgid "Evaluations Report"
 msgstr "患者评估人次统计表"
@@ -246,19 +254,19 @@ msgstr "年龄组"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Birth certs"
-msgstr ""
+msgstr "出生证明"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Cases by age group"
-msgstr ""
+msgstr "按年龄组划分的病例"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Cases by ethnic group:"
-msgstr ""
+msgstr "按种族划分的病例:"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Cases by socioeconomic group:"
-msgstr ""
+msgstr "按社会经济情况划分的病例:"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Confirmed cases"
@@ -266,7 +274,7 @@ msgstr "确诊病例"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Death certs"
-msgstr ""
+msgstr "死亡证明"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Deaths"
@@ -274,13 +282,12 @@ msgstr "死亡"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Distribution by Ethnic group"
-msgstr ""
+msgstr "按种族划分的分布情况"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Distribution by Socioeconomic Status"
 msgstr "按社会经济地位划分的分布"
 
-#, fuzzy
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Epidemiological Surveillance"
 msgstr "流行病学监测"
@@ -290,12 +297,19 @@ msgid "Female"
 msgstr "女性"
 
 msgctxt "report:gnuhealth.epidemics.report:"
+msgid ""
+"If charts in this report cannot display font correctly and only displays "
+"tofu blocks, user needs to set matplotlibrc file "
+"(~/.config/matplotlib/matplotlibrc), for example:"
+msgstr "如果图表中的字体无法正常显示，只显示豆腐块，那么需要用户设置 matplotlibrc 文件 (~/.config/matplotlib/matplotlibrc), 比如:"
+
+msgctxt "report:gnuhealth.epidemics.report:"
 msgid "In health system"
 msgstr "新注册患者"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "In this period"
-msgstr ""
+msgstr "期间"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Living Population"
@@ -307,11 +321,11 @@ msgstr "男性"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "New cases by days:"
-msgstr ""
+msgstr "按天计算的新增例数"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "New deaths by day:"
-msgstr ""
+msgstr "按天计算的死亡例数:"
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "No Age"
@@ -322,6 +336,10 @@ msgid "No DoB"
 msgstr "无出生日期"
 
 msgctxt "report:gnuhealth.epidemics.report:"
+msgid "Note"
+msgstr "备注"
+
+msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Registrations"
 msgstr "新注册人员"
 
@@ -329,7 +347,6 @@ msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Total"
 msgstr "合计"
 
-#, fuzzy
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "chart"
 msgstr "图表"
@@ -338,17 +355,14 @@ msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Σ"
 msgstr "Σ"
 
-#, fuzzy
 msgctxt "report:gnuhealth.summary.report:"
 msgid "("
 msgstr "("
 
-#, fuzzy
 msgctxt "report:gnuhealth.summary.report:"
 msgid ")"
 msgstr ")"
 
-#, fuzzy
 msgctxt "report:gnuhealth.summary.report:"
 msgid ","
 msgstr ","
@@ -471,11 +485,11 @@ msgstr "年龄区间"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Birth certs"
-msgstr ""
+msgstr "出生证明"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Death certs"
-msgstr ""
+msgstr "死亡证明"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Diagnostics"
@@ -483,7 +497,7 @@ msgstr "诊断"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Evaluations Diagnostics"
-msgstr ""
+msgstr "评估诊断"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Female"
@@ -499,7 +513,7 @@ msgstr "新注册患者"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "In this period"
-msgstr ""
+msgstr "期间"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Living Population"
@@ -510,12 +524,8 @@ msgid "Male"
 msgstr "男"
 
 msgctxt "report:gnuhealth.summary.report:"
-msgid "Male stacked"
-msgstr ""
-
-msgctxt "report:gnuhealth.summary.report:"
 msgid "New"
-msgstr ""
+msgstr "新增"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "No Age"
@@ -535,7 +545,7 @@ msgstr "人口金字塔"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Printed Date:"
-msgstr ""
+msgstr "打印日期"
 
 msgctxt "report:gnuhealth.summary.report:"
 msgid "Registrations"

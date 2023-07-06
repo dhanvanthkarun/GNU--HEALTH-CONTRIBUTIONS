@@ -322,6 +322,8 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ('4', 'Higher'),
         ], 'SES', help="Current Socioeconomic Status", sort=False),
         'get_patient_ses')
+    
+    ses_str = ses.translated('ses')
 
     ses_assessments = fields.One2Many(
                         'gnuhealth.ses.assessment',

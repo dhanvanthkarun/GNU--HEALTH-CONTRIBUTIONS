@@ -5,6 +5,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+from collections import defaultdict
 from sql.aggregate import Count
 from sql.functions import DateTrunc
 from datetime import date, datetime
@@ -17,6 +18,7 @@ from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
 from trytond.modules.health.core import convert_date_timezone
+from trytond.i18n import gettext
 
 import io
 
@@ -214,10 +216,10 @@ class InstitutionEpidemicsReport(Report):
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def plot_deaths_timeseries(cls, start_date,
@@ -238,8 +240,10 @@ class InstitutionEpidemicsReport(Report):
 
         fig = plt.figure(figsize=(6, 3))
         deaths_by_day = fig.add_subplot(1, 1, 1)
-        deaths_by_day.plot(days, certs_ic_day, label="immediate cause")
-        deaths_by_day.plot(days, certs_uc_day, label="underlying condition")
+        deaths_by_day.plot(days, certs_ic_day,
+                           label=gettext("health_reporting.immediate_cause"))
+        deaths_by_day.plot(days, certs_uc_day,
+                           label=gettext("health_reporting.underlying_condition"))
         deaths_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
         deaths_by_day.legend()
 
@@ -247,10 +251,10 @@ class InstitutionEpidemicsReport(Report):
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def plot_cases_ethnicity(cls, start_date, end_date, ethnic_count, hc):
@@ -270,10 +274,10 @@ class InstitutionEpidemicsReport(Report):
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def get_ethnic_groups(cls):
@@ -296,17 +300,17 @@ class InstitutionEpidemicsReport(Report):
         fig = plt.figure(figsize=(6, 3))
         cases_by_socioeconomics = fig.add_subplot(1, 1, 1)
         cases_by_socioeconomics.pie(ses_count.values(),
-                                    autopct='%1,1f%%',
+                                    autopct='%1.1f%%',
                                     labels=ses_count.keys())
 
         fig.autofmt_xdate()
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def get_context(cls, records, header, data):
@@ -315,16 +319,9 @@ class InstitutionEpidemicsReport(Report):
 
         ethnic_groups = cls.get_ethnic_groups()
 
-        ethnic_count = {}
-        for ethnic_group in ethnic_groups:
-            ethnic_count[ethnic_group] = 0
+        ethnic_count = defaultdict(int)
 
-        ses_count = {}
-
-        ses_groups = ['lower', 'lower-middle', 'middle', 'upper-middle',
-                      'upper']
-        for ses_group in ses_groups:
-            ses_count[ses_group] = 0
+        ses_count = defaultdict(int)
 
         context = super(InstitutionEpidemicsReport, cls).get_context(
             records, header, data)
@@ -419,17 +416,8 @@ class InstitutionEpidemicsReport(Report):
 
             # Socioeconomic groups distribution
             if (confirmed_case.name.ses):
-                ses_id = confirmed_case.name.ses
-                if (ses_id == '0'):
-                    ses_count['lower'] += 1
-                if (ses_id == '1'):
-                    ses_count['lower-middle'] += 1
-                if (ses_id == '2'):
-                    ses_count['middle'] += 1
-                if (ses_id == '3'):
-                    ses_count['upper-middle'] += 1
-                if (ses_id == '4'):
-                    ses_count['upper'] += 1
+                ses_str = confirmed_case.name.ses_str
+                ses_count[ses_str] += 1
 
             if not confirmed_case.name.age:
                 non_age_cases += 1
@@ -487,6 +475,13 @@ class InstitutionEpidemicsReport(Report):
         epidemics_dx.append(cases)
 
         context['epidemics_dx'] = epidemics_dx
+
+        # If the chart in the report cannot display the font correctly
+        # and only displays tofu blocks, the user needs to set the
+        # matplotlibrc file (~/.config/matplotlib/matplotlibrc), for
+        # example:
+        #
+        # font.family:  YOUR-FONT, sans-serif
 
         # New cases by day
         context['cases_timeseries'] = cls.plot_cases_timeseries(
