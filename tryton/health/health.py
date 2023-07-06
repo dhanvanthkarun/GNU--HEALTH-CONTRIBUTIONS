@@ -3497,6 +3497,10 @@ class Appointment(ModelSQL, ModelView):
     @classmethod
     def write(cls, appointments, values):
         for appointment in appointments:
+            # When an appointment's state is changed from 'free' to
+            # 'confirmed', make sure appointment code is generated.
+            if values.get('state') == 'confirmed' and not values.get('name'):
+                values['name'] = cls.generate_code()
             # Update the checked-in time only if unset
             if values.get('state') == 'checked_in' \
                     and values.get('checked_in_date') is None:
