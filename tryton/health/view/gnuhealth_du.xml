@@ -22,16 +22,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <label name="address_street_bis"/>
             <field name="address_street_bis"/>
             <newline/>
+            <label name="address_district"/>
+            <field name="address_district"/>            
             <label name="address_municipality"/>
             <field name="address_municipality"/>
             <label name="address_city"/>
             <field name="address_city"/>
-            <label name="address_zip"/>
-            <field name="address_zip"/>
+            <newline/>
             <label name="address_country"/>
             <field name="address_country"/>
             <label name="address_subdivision"/>
             <field name="address_subdivision"/>
+            <label name="address_zip"/>
+            <field name="address_zip"/>
         </group>       
         <group id="du_picture">
             <field xfill="0" xexpand="1" name="picture" height="200" width="200" widget="image"/>
