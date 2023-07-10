@@ -31,46 +31,77 @@ import csv
 from proteus import Model
 from proteus import config as pconfig
 
+import pandas as pd
+
 
 def PartyDemographics(line):
+    fed_country = line["fed_country"]
+    name        = line["first_name"]
+    lastname    = line["family_name"]
+    name_repr   = line["name_representation"]
+    puid        = line["puid"]
+    gender      = line["gender"]
+    dob         = line["dob"]
+    phone       = line["phone"]
+    alt_id      = line["alternative_id"]
+    alt_id_cmt  = line["alternative_id_comments"]
+    addr_1      = line["addr_1"]
+    addr_cont   = line["addr_cont"]
+    active_date = line["activation_date"]
+
     Party = Model.get('party.party')
     PartyAddress = Model.get('party.address')
     PartyAlternativeID = Model.get('gnuhealth.person_alternative_identification')
     ContactMethod = Model.get('party.contact_mechanism')
     Patient = Model.get('gnuhealth.patient')
 
-    party = Party()
+    parties = []
 
-    party.name = line[0]
-    party.lastname = line[1]
-    party.ref = line[2]
+    if puid:
+        parties = Party.find([('ref', '=', puid)])
+
+    if alt_id:
+        parties = parties + Party.find([('alternative_ids.code', '=', alt_id)])
+
+    if parties:
+        party = parties[0]
+    else:
+        party = Party()
+        
+    party.fed_country = fed_country
+    party.name = name
+    party.lastname = lastname
+    party.ref = puid
     party.is_patient = True
     party.is_person = True
 
-    if line[3] and (line[3] in ['m','f','u']):
-        party.gender = line[3]
+    if name_repr and (name_repr in ['pgfs', 'gf', 'fg', 'cjk']):
+        party.name_representation = name_repr
+
+    if gender and (gender in ['m','f','u']):
+        party.gender = gender
 
     # Set Date of birth
     try:
-        party.dob = datetime.strptime(line[4], '%d/%m/%Y')
+        party.dob = datetime.strptime(dob, '%d/%m/%Y')
     except:
         party.dob = None
 
     # Set telephone number (mobile)
-
-    if line[5]:
+    if phone:
         contactmethod = ContactMethod()
         contactmethod.type = 'mobile'
-        contactmethod.value = line[5]
+        contactmethod.value = phone
         
         party.contact_mechanisms.append(contactmethod)
         
     # Set alternative Identification
-    if line[6]:
+    if alt_id:
         party.alternative_identification = True
         altid = PartyAlternativeID()
         altid.alternative_id_type = 'other'
-        altid.code = line[6]
+        altid.code = alt_id
+        altid.comments = alt_id_cmt
 
         party.alternative_ids.append(altid)
 
@@ -79,11 +110,11 @@ def PartyDemographics(line):
 
     address = PartyAddress()
 
-    if line[7]:
-        address.street = line[7]
+    if addr_1:
+        address.street = addr_1
  
-    if line[8]:
-        address.city = line[8]
+    if addr_cont:
+        address.city = addr_cont
 
 
     # Use this if one address only, so it won't leave the first record blank
@@ -91,28 +122,31 @@ def PartyDemographics(line):
 
     # For multiple addresses, append . party.addresses.append(address)
     try:
-        party.activation_date = datetime.strptime(line[9], '%d/%m/%Y')
+        party.activation_date = datetime.strptime(active_date, '%d/%m/%Y')
     except:
         party.activation_date = None
 
 
     party.save()
-
-    patient = Patient()
-    patient.name = party
     
-    patient.save()
-
-
-# Parse the CSV file
-counter=0
+    if not Patient.find([('name.ref', '=', party.ref)]):
+        patient = Patient()
+        patient.name = party
+        patient.save()
 
 
 if (len(sys.argv) < 4):
     exit ("usage: ./patient_uploader <csv_file> \
         <hostname> <port> <user> <password> <dbname>")
 
-csv_file = csv.reader(open(sys.argv[1], 'r'))
+patient_data = pd.read_csv(open(sys.argv[1], 'r'),
+                           sep=',',
+                           skipinitialspace=True,
+                           skip_blank_lines=True,
+                           comment='#',
+                           dtype='str',
+                           keep_default_na=False,
+                           index_col=False)
 
 # Set the connection params
 hostname = sys.argv[2]
@@ -127,11 +161,10 @@ print ("Connecting to GNU Health Server ...")
 conf = pconfig.set_xmlrpc(health_server)
 # Use XML RPC using session
 #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
-print ("Connected !")
+print ("Connected !\n")
 
-next(csv_file) #Skip header
+for index, line in patient_data.iterrows(): 
+    print('---------------------------------------------------------')
+    print(line)
+    PartyDemographics(line)
 
-for line in csv_file:
-    counter=counter+1
-    print ("Uploading patient #", counter, line)
-    PartyDemographics(line)   

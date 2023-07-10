@@ -1,2 +1,11 @@
-"First name","Family name","PUID","Gender","Dob (m/d/yyy)","Phone","Alternative ID","Addr 1","Addr cont","activation date"
-"Ana","Betz",,"f","12/10/1971","+34928555555",,"C/ Buenos Aires 32","35001 – Las Palmas",
+# Demographics NOTE:
+# ---------------------------------------------------------------------------------
+# fed_country:               '3-letter Country code in ISO 3166-1 alpha-3 standard'
+# name_representation:       'pgfs', 'gf', 'fg' or 'cjk'
+# dob:                       '%d/%m/%Y'
+# gender:                    'f', 'm' or 'u'
+# activation_date:           '%d/%m/%Y'
+# ---------------------------------------------------------------------------------
+#
+"fed_country","first_name","family_name","name_representation","puid","gender","dob","phone","alternative_id","alternative_id_comments","addr_1","addr_cont","activation_date"
+"ARG","Ana","Betz","",,"f","12/10/1971","+34928555555",,"","C/ Buenos Aires 32","35001 – Las Palmas",
