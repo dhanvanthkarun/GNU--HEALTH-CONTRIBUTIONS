@@ -8,13 +8,15 @@ from proteus import config, Model, Wizard
 def main(options):
     database = options.db
     user = options.user
-    language = options.lang
+    languages = options.lang.split()
     connect_health_server(database, user)
     extract_en_translations()
     cleanup_translations()
-    update_translations_from_en(language)
-    delete_useless_translations(language)
-    export_all_translations(language)
+    for language in languages:
+        update_translations_from_en(language)
+        delete_useless_translations(language)
+        export_all_translations(language)
+    finish_export_translations()
 
 def connect_health_server(database, user):
     print("Connecting to database '{}' with '{}' ...".format(database, user))
@@ -62,7 +64,7 @@ def export_all_translations(language):
         po_file = get_po_file_path(module, language)
         print("## Exporting to '{0}'".format(po_file))
         export_translation(language, module, po_file)
-    print("Finish to export!")
+    print("Finish to export '{0}' translations!".format(language))
 
 def get_all_health_module_names():
     Module = Model.get('ir.module')
@@ -91,18 +93,24 @@ def export_translation(lang, module, po_file):
             binary_file.write(translation_export.form.file)
     translation_export.execute('end')
 
+def finish_export_translations():
+    print("Finish to export!")
+
 if __name__ == '__main__':
     parser = OptionParser("%prog [options]")
     parser.add_option('-d', '--database', dest='db')
     parser.add_option('-u', '--user', dest='user')
-    parser.add_option('-l', '--language', dest='lang')
+    ## Need improve: At the moment, --languages is a string, for
+    ## example: --language "zh_CN ca", we should support:
+    ## --languages zh_CN ca.
+    parser.add_option('-l', '--languages', dest="lang")
     parser.set_defaults(user='admin', db='', lang='')
 
     options, module_path = parser.parse_args()
     if not options.db:
         parser.error('You must define a database')
     if not options.lang:
-        parser.error('You must set a language, for example: zh_CN')
+        parser.error('You must set a string of languages, for example: "zh_CN ca"')
 
     main(options)
 

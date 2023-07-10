@@ -1,8 +1,8 @@
 #!/bin/bash
 source $HOME/.gnuhealthrc
 
-LANGUAGE=$1
-ALL_LANGUAGES="ar ca ckb de el eo es fi fr ht hu id it_IT ja_JP kab ka kn lo ml nb_NO pl pt_BR ru sq sr_Cyrl sv tr uk zh_CN zh_Hant"
+LANGUAGE=$@
+ALL_LANGUAGES="bg ca cs de es es_419 et fa fi fr hu id it lo lt nl pl pt ro ru sl tr zh_CN"
 TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
 TRYTOND_ADMIN_CMD="${TRYTON_SERVER_DIR}/trytond-${TRYTON_VERSION}/bin/trytond-admin --email admin -d ${TRYTON_DATABASE} --all"
@@ -17,6 +17,8 @@ usage: `basename $0` LANG
 
     Example:
     $ bash ./po-export.sh zh_CN
+    $ bash ./po-export.sh zh_CN ca
+    $ bash ./po-export.sh --all
 
 EOF
     exit 0
@@ -32,10 +34,16 @@ echo "|    GNU Health HMIS po files export tool    |"
 echo "+--------------------------------------------+"
 echo ""
 
-if ! [[ "$ALL_LANGUAGES" =~ "$LANGUAGE" ]]; then
-    echo "Error: '$LANGUAGE' is not a value in '$ALL_LANGUAGES'!"
-    exit 0
+if [[ $LANGUAGE = "--all" ]]; then
+    LANGUAGE=${ALL_LANGUAGES}
 fi
+    
+for lang in $LANGUAGE; do
+    if ! [[ "$ALL_LANGUAGES" =~ "$lang" ]]; then
+        echo "Error: '$lang' is not a value in '$ALL_LANGUAGES'!"
+        exit 0
+    fi
+done
 
 echo "## Export po files of '$LANGUAGE'."
 echo ""
@@ -64,4 +72,4 @@ echo "## Running trytond-admin command to update DB (3. Active language) ..."
 ${TRYTOND_ADMIN_CMD} --language ${LANGUAGE}
 
 echo "## Export po files ..."
-python3 po-export.py --user admin --database ${TRYTON_DATABASE} --language ${LANGUAGE}
+python3 po-export.py --user admin --database ${TRYTON_DATABASE} --languages "${LANGUAGE}"
