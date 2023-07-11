@@ -28,6 +28,9 @@ class Newborn(ModelSQL, ModelView):
 
     STATES = {'readonly': Eval('state') == 'signed'}
 
+    # We no longer need the legacy newborn ID, since it's using the
+    # PUID. for backward compatibility reasons, we keep it and set its
+    # value to patient.puid
     name = fields.Char('Newborn ID', states=STATES)
     patient = fields.Many2One(
         'gnuhealth.patient', 'Baby', required=True, states=STATES,
@@ -165,6 +168,10 @@ class Newborn(ModelSQL, ModelView):
         help="The baby died being transferred to another health institution")
     tod = fields.DateTime('Time of Death')
     cod = fields.Many2One('gnuhealth.pathology', 'Cause of death')
+
+    @staticmethod
+    def default_name():
+        return patient.puid
 
     @staticmethod
     def default_healthprof():

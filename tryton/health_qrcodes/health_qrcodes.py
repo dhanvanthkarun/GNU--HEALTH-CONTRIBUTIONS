@@ -121,29 +121,17 @@ class Newborn(metaclass=PoolMeta):
     def make_qrcode(self, name):
         # Create the QR code
 
-        if self.mother:
-            if self.mother.name.lastname:
-                newborn_mother_lastname = self.mother.name.lastname + ', '
-            else:
-                newborn_mother_lastname = ''
+        newborn_mother_name = self.mother and self.mother.rec_name or ''
+        newborn_mother_id = self.mother and self.mother.puid or ''
 
-            newborn_mother_name = self.mother.name.name or ''
-
-            newborn_mother_id = self.mother.puid or ''
-
-        else:
-            newborn_mother_lastname = ''
-            newborn_mother_name = ''
-            newborn_mother_id = ''
-
-        newborn_name = self.name or ''
-
-        newborn_sex = self.sex or ''
-
+        newborn_name = self.newborn_name or self.patient.rec_name or ''
+        newborn_id = self.patient.puid or ''
+        newborn_sex = self.sex_str or ''
         newborn_birth_date = self.birth_date or ''
 
-        qr_string = f'{newborn_name}\n' \
-            f'Mother: {newborn_mother_lastname} {newborn_mother_name}\n' \
+        qr_string = f'{newborn_id}\n' \
+            f'Name: {newborn_name}\n' \
+            f'Mother: {newborn_mother_name}\n' \
             f'Mother\'s PUID: {newborn_mother_id}\n' \
             f'Sex: {newborn_sex}\n' \
             f'DoB: {str(newborn_birth_date)}'
