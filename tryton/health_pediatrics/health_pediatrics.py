@@ -28,9 +28,8 @@ class Newborn(ModelSQL, ModelView):
 
     STATES = {'readonly': Eval('state') == 'signed'}
 
-    # We no longer need the legacy newborn ID, since it's using the
-    # PUID. for backward compatibility reasons, we keep it and set its
-    # value to patient.puid
+    # We no longer need the legacy newborn ID, since patient.puid is
+    # used. for backward compatibility reasons, we keep it.
     name = fields.Char('Newborn ID', states=STATES)
     patient = fields.Many2One(
         'gnuhealth.patient', 'Baby', required=True, states=STATES,
@@ -170,10 +169,6 @@ class Newborn(ModelSQL, ModelView):
     cod = fields.Many2One('gnuhealth.pathology', 'Cause of death')
 
     @staticmethod
-    def default_name():
-        return patient.puid
-
-    @staticmethod
     def default_healthprof():
         return get_health_professional()
 
@@ -297,7 +292,7 @@ class NeonatalApgar(ModelSQL, ModelView):
     'Neonatal APGAR Score'
     __name__ = 'gnuhealth.neonatal.apgar'
 
-    name = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
+    name = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
     apgar_minute = fields.Integer('Minute', required=True)
 
@@ -353,14 +348,14 @@ class NeonatalApgar(ModelSQL, ModelView):
 class NeonatalMedication(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.medication'
 
-    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
+    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
 
 # Deprecated in 3.0  - Use main patient form
 class NeonatalCongenitalDiseases(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.disease'
 
-    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
+    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
 
 class PediatricSymptomsChecklist(ModelSQL, ModelView):
