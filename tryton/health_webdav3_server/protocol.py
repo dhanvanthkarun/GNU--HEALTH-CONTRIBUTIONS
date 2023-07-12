@@ -412,7 +412,7 @@ class TrytonDAVInterface(iface.dav_interface):
         except Exception as exception:
             self._log_exception(exception)
             raise DAV_Error(500)
-        return res
+        return float(res)
 
     def get_lastmodified(self, uri):
         dbname, dburi = self._get_dburi(uri)
@@ -428,7 +428,7 @@ class TrytonDAVInterface(iface.dav_interface):
         except Exception as exception:
             self._log_exception(exception)
             raise DAV_Error(500)
-        return res
+        return float(res)
 
     def rmcol(self, uri):
         dbname, dburi = self._get_dburi(uri)
