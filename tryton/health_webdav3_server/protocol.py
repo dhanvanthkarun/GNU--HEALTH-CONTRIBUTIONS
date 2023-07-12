@@ -289,6 +289,7 @@ class TrytonDAVInterface(iface.dav_interface):
         return res[range[0]:range[1]]
 
     def put(self, uri, data, content_type=''):
+        res = []
         dbname, dburi = self._get_dburi(uri)
         if not dbname or not dburi:
             raise DAV_Forbidden
