@@ -401,7 +401,7 @@ class FederationQueue(ModelSQL, ModelView):
                 vals['msgid'] = str(uuid4())
                 vals['model'] = model
                 vals['time_stamp'] = str(time_stamp)
-                vals['args'] = json.dumps(fields_to_enqueue, ensure_ascii=False)
+                vals['args'] = json.dumps(fields_to_enqueue)
                 vals['method'] = action
                 vals['state'] = 'queued'
                 vals['federation_locator'] = federation_loc
