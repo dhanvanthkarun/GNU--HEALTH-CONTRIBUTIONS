@@ -1,16 +1,6 @@
-# rvnovaes <rvnovaes@gmail.com>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2021-11-04 22:33+0000\n"
-"Last-Translator: Vinicius Monego <monego@posteo.net>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
-"gnu-health/health_socioeconomics/pt_BR/>\n"
-"Language: pt_BR\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
-"X-POOTLE-MTIME: 1451260884.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.patient,domestic_violence:"
 msgid "Domestic violence"
@@ -56,6 +46,10 @@ msgctxt "field:gnuhealth.patient,school_withdrawal:"
 msgid "School withdrawal"
 msgstr "Abandono escolar"
 
+msgctxt "field:gnuhealth.patient,ses:"
+msgid "SES"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient,ses_assessments:"
 msgid "Assessments"
 msgstr ""
@@ -92,21 +86,14 @@ msgctxt "field:gnuhealth.ses.assessment,computed_age:"
 msgid "Age"
 msgstr "Idade"
 
-msgctxt "field:gnuhealth.ses.assessment,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.ses.assessment,create_uid:"
-msgid "Create User"
-msgstr ""
-
 msgctxt "field:gnuhealth.ses.assessment,du:"
 msgid "DU"
 msgstr "UD"
 
+#, fuzzy
 msgctxt "field:gnuhealth.ses.assessment,education:"
 msgid "Education Level"
-msgstr ""
+msgstr "Nível de educação"
 
 msgctxt "field:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Family affection"
@@ -140,13 +127,10 @@ msgctxt "field:gnuhealth.ses.assessment,health_professional:"
 msgid "Health Professional"
 msgstr "Profissional de Saúde"
 
+#, fuzzy
 msgctxt "field:gnuhealth.ses.assessment,housing:"
 msgid "Housing conditions"
-msgstr ""
-
-msgctxt "field:gnuhealth.ses.assessment,id:"
-msgid "ID"
-msgstr "ID"
+msgstr "Condições de moradia"
 
 #, fuzzy
 msgctxt "field:gnuhealth.ses.assessment,income:"
@@ -165,29 +149,19 @@ msgctxt "field:gnuhealth.ses.assessment,patient:"
 msgid "Patient"
 msgstr "Paciente"
 
-msgctxt "field:gnuhealth.ses.assessment,rec_name:"
-msgid "Name"
-msgstr "Nome"
-
+#, fuzzy
 msgctxt "field:gnuhealth.ses.assessment,ses:"
 msgid "Socioeconomics"
-msgstr ""
+msgstr "Socioeconômico"
 
 msgctxt "field:gnuhealth.ses.assessment,signed_by:"
 msgid "Signed by"
 msgstr "Assinado por"
 
+#, fuzzy
 msgctxt "field:gnuhealth.ses.assessment,state:"
 msgid "State"
-msgstr ""
-
-msgctxt "field:gnuhealth.ses.assessment,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.ses.assessment,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Estado"
 
 msgctxt "field:party.party,education:"
 msgid "Education"
@@ -202,12 +176,12 @@ msgid "Education Level"
 msgstr "Nível de educação"
 
 msgctxt "help:gnuhealth.patient,hostile_area:"
-msgid "Check if patient lives in a zone of high hostility (eg, war)"
-msgstr "Marque se o paciente morar em zonas de hostilidade alta (ex.: guerra)"
+msgid "Check if patient lives in a zoneof high hostility (eg, war)"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,hours_outside:"
-msgid "Number of hours a day the patient spend outside the house"
-msgstr "Número de horas por dia que o paciente fica fora de casa"
+msgid "Number of hours a day the patientspend outside the house"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,housing:"
 msgid "Housing and sanitary living conditions"
@@ -221,6 +195,10 @@ msgstr ""
 "Marque se algum parente do núcleo familiar esteve na prisão (ex. pais, "
 "irmãos, filhos)"
 
+msgctxt "help:gnuhealth.patient,ses:"
+msgid "Current Socioeconomic Status"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient,ses_assessments:"
 msgid "Socioeconomics and Family assessments history"
 msgstr ""
@@ -233,17 +211,19 @@ msgctxt "help:gnuhealth.ses.assessment,assessment_date:"
 msgid "Assessment date"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.ses.assessment,computed_age:"
 msgid "Computed patient age at the moment of the evaluation"
-msgstr ""
+msgstr "Idade do paciente calculada no momento da avaliação"
 
 msgctxt "help:gnuhealth.ses.assessment,du:"
 msgid "Domiciliary Unit"
 msgstr "Unidade Domiciliar"
 
+#, fuzzy
 msgctxt "help:gnuhealth.ses.assessment,education:"
 msgid "Education Level"
-msgstr ""
+msgstr "Nível de educação"
 
 msgctxt "help:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid ""
@@ -286,9 +266,10 @@ msgctxt "help:gnuhealth.ses.assessment,health_professional:"
 msgid "Health professional"
 msgstr "Profissional de saúde"
 
+#, fuzzy
 msgctxt "help:gnuhealth.ses.assessment,housing:"
 msgid "Housing and sanitary living conditions"
-msgstr ""
+msgstr "Condiçoes sanitarias e moradia"
 
 msgctxt "help:gnuhealth.ses.assessment,ses:"
 msgid "SES - Socioeconomic Status"
@@ -315,13 +296,19 @@ msgctxt "model:ir.action,name:act_ses_family_assessment"
 msgid "Socioeconomics and Family Assessment"
 msgstr ""
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:sesassmt_end_button"
+msgid "Done"
+msgstr "Feito"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_ses_assessment_menu"
 msgid "Socioeconomic Assessments"
 msgstr "Análises Socioeconômicas"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,education:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient,education:"
 msgid "Incomplete Primary School"
@@ -347,9 +334,10 @@ msgctxt "selection:gnuhealth.patient,education:"
 msgid "University"
 msgstr "Universidade"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Comfortable and good sanitary conditions"
@@ -371,9 +359,30 @@ msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Pequeno, muitos moradores, mas com boas condições sanitárias"
 
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Higher"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower-middle"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle-upper"
+msgstr ""
+
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "Incomplete Primary School"
@@ -383,9 +392,10 @@ msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "Incomplete Secondary School"
 msgstr "Ensino Médio Incompleto"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,education:"
@@ -402,89 +412,100 @@ msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "University"
 msgstr "Ensino Superior"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Moderately"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Very much"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "Moderately"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "Very much"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "Moderately"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "Very much"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "Moderately"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "Very much"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "Moderately"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "Very much"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid "Female"
@@ -494,33 +515,40 @@ msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid "Male"
 msgstr "Masculino"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Comfortable and good sanitary conditions"
-msgstr ""
+msgstr "Confortável e com boas condições sanitárias"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Luxury and excellent sanitary conditions"
-msgstr ""
+msgstr "Luxuoso com excelentes condições sanitárias"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Roomy and excellent sanitary conditions"
-msgstr ""
+msgstr "Espaçosa e com condições sanitárias excelentes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Shanty, deficient sanitary conditions"
-msgstr ""
+msgstr "Pequeno, condições sanitárias precarias"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Small, crowded but with good sanitary conditions"
-msgstr ""
+msgstr "Pequeno, muitos moradores, mas com boas condições sanitárias"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid "High"
@@ -534,9 +562,10 @@ msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid "Medium"
 msgstr "Média"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid "Higher"
@@ -558,21 +587,24 @@ msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid "Middle-upper"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid "Done"
-msgstr ""
+msgstr "Feito"
 
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid "In progress"
 msgstr "Em andamento"
 
+#, fuzzy
 msgctxt "selection:party.party,education:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:party.party,education:"
 msgid "Incomplete Primary School"
@@ -614,9 +646,10 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Socioeconomics"
 msgstr "Socioeconômico"
 
+#, fuzzy
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Done"
-msgstr ""
+msgstr "Feito"
 
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "End assessment"
@@ -634,18 +667,12 @@ msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Family functionality"
 msgstr "Funcionalidade da família"
 
+#, fuzzy
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Notes"
-msgstr ""
+msgstr "Observações"
 
+#, fuzzy
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Socioeconomics"
-msgstr ""
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family Assessment"
-msgstr ""
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family assessment"
-msgstr ""
+msgstr "Socioeconômico"

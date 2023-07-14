@@ -1,36 +1,10 @@
-# Anonymous Pootle User, 2016.
+#
 msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:gnuhealth.lab,analytes_summary:"
+msgid "Summary"
 msgstr ""
-"PO-Revision-Date: 2020-08-17 20:37+0000\n"
-"Last-Translator: Constantine Mousafiris <kvisitor@gnugr.org>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/gnu-health/"
-"health_lab/el/>\n"
-"Language: el\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
-"X-POOTLE-MTIME: 1452445400.0\n"
-
-msgctxt "error:gnuhealth.lab.test.units:"
-msgid "The Unit name must be unique"
-msgstr "Το όνομα της Μονάδος πρέπει να είναι μοναδικό"
-
-msgctxt "error:gnuhealth.lab.test_type:"
-msgid "The Lab Test code must be unique"
-msgstr "Ο Κωδικός Εργαστηρίου πρέπει να είναι μοναδικός"
-
-msgctxt "error:gnuhealth.lab:"
-msgid "The test ID code must be unique"
-msgstr "Ο κωδικός εξέτασης ID πρέπει να είναι μοναδικός"
-
-msgctxt "field:gnuhealth.lab,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.lab,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
 
 msgctxt "field:gnuhealth.lab,critearea:"
 msgid "Lab Test Critearea"
@@ -48,10 +22,6 @@ msgctxt "field:gnuhealth.lab,diagnosis:"
 msgid "Diagnosis"
 msgstr "Διάγνωση"
 
-msgctxt "field:gnuhealth.lab,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
 msgstr "ID"
@@ -60,17 +30,22 @@ msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr "Βιοπαθολόγος"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab,pathology:"
+msgid "Pathology"
+msgstr "Παθολογία"
+
 msgctxt "field:gnuhealth.lab,patient:"
 msgid "Patient"
 msgstr "Ασθενής"
 
-msgctxt "field:gnuhealth.lab,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
+msgctxt "field:gnuhealth.lab,request_order:"
+msgid "Order"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab,requestor:"
-msgid "Physician"
-msgstr "Ιατρός"
+msgid "Health prof"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
@@ -80,26 +55,6 @@ msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "Είδος εξέτασης"
 
-msgctxt "field:gnuhealth.lab,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την ημερομηνία"
-
-msgctxt "field:gnuhealth.lab,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
-
-msgctxt "field:gnuhealth.lab.test.create.init,id:"
-msgid "ID"
-msgstr "ID"
-
-msgctxt "field:gnuhealth.lab.test.critearea,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.lab.test.critearea,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
-
 msgctxt "field:gnuhealth.lab.test.critearea,excluded:"
 msgid "Excluded"
 msgstr "Αποκλείσθηκε"
@@ -107,10 +62,6 @@ msgstr "Αποκλείσθηκε"
 msgctxt "field:gnuhealth.lab.test.critearea,gnuhealth_lab_id:"
 msgid "Test Cases"
 msgstr "Δοκιμαστικές εξετάσεις"
-
-msgctxt "field:gnuhealth.lab.test.critearea,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.lab.test.critearea,lab_warning_icon:"
 msgid "Lab Warning Icon"
@@ -127,10 +78,6 @@ msgstr "Αντιδραστήριο"
 msgctxt "field:gnuhealth.lab.test.critearea,normal_range:"
 msgid "Reference"
 msgstr "Σημείο αναφοράς"
-
-msgctxt "field:gnuhealth.lab.test.critearea,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
 
 msgctxt "field:gnuhealth.lab.test.critearea,remarks:"
 msgid "Remarks"
@@ -164,65 +111,26 @@ msgctxt "field:gnuhealth.lab.test.critearea,warning:"
 msgid "Warn"
 msgstr "Προειδοποίηση"
 
-msgctxt "field:gnuhealth.lab.test.critearea,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την ημερομηνία"
-
-msgctxt "field:gnuhealth.lab.test.critearea,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
-
 msgctxt "field:gnuhealth.lab.test.units,code:"
 msgid "Code"
 msgstr "Κωδικός"
-
-msgctxt "field:gnuhealth.lab.test.units,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.lab.test.units,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
-
-msgctxt "field:gnuhealth.lab.test.units,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.lab.test.units,name:"
 msgid "Unit"
 msgstr "Μονάδα"
 
-msgctxt "field:gnuhealth.lab.test.units,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
-msgctxt "field:gnuhealth.lab.test.units,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την ημερομηνία"
-
-msgctxt "field:gnuhealth.lab.test.units,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,active:"
+msgid "Active"
+msgstr "Ενεργός"
 
 msgctxt "field:gnuhealth.lab.test_type,code:"
 msgid "Code"
 msgstr "Κωδικός"
 
-msgctxt "field:gnuhealth.lab.test_type,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.lab.test_type,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
-
 msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr "Δοκιμαστικοί έλεγχοι"
-
-msgctxt "field:gnuhealth.lab.test_type,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
@@ -236,41 +144,31 @@ msgctxt "field:gnuhealth.lab.test_type,product_id:"
 msgid "Service"
 msgstr "Υπηρεσία"
 
-msgctxt "field:gnuhealth.lab.test_type,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
-msgctxt "field:gnuhealth.lab.test_type,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την ημερομηνία"
-
-msgctxt "field:gnuhealth.lab.test_type,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
-
 msgctxt "field:gnuhealth.patient,lab_test_ids:"
 msgid "Lab Tests Required"
 msgstr "Απαιτούνται εργαστηριακές εξετάσεις"
 
-msgctxt "field:gnuhealth.patient.lab.test,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
+msgctxt "field:gnuhealth.patient.disease,lab_confirmed:"
+msgid "Lab Confirmed"
+msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.disease,lab_test:"
+msgid "Lab Test"
+msgstr "Εργαστ. εξέταση"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,context:"
+msgid "Context"
+msgstr "Γενικές συνθήκες"
 
 msgctxt "field:gnuhealth.patient.lab.test,date:"
 msgid "Date"
 msgstr "Ημερομηνία"
 
 msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Doctor"
-msgstr "Ιατρός"
-
-msgctxt "field:gnuhealth.patient.lab.test,id:"
-msgid "ID"
-msgstr "ID"
+msgid "Health prof."
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,name:"
 msgid "Test Type"
@@ -280,13 +178,9 @@ msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
 msgstr "Ασθενής"
 
-msgctxt "field:gnuhealth.patient.lab.test,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
 msgctxt "field:gnuhealth.patient.lab.test,request:"
-msgid "Request"
-msgstr "Αίτημα"
+msgid "Order"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
@@ -296,25 +190,18 @@ msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
 msgstr "Επειγόντως"
 
-msgctxt "field:gnuhealth.patient.lab.test,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την ημερομηνία"
-
-msgctxt "field:gnuhealth.patient.lab.test,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test.request.start,context:"
+msgid "Context"
+msgstr "Γενικές συνθήκες"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,date:"
 msgid "Date"
 msgstr "Ημερομηνία"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Doctor"
-msgstr "Ιατρός"
-
-msgctxt "field:gnuhealth.patient.lab.test.request.start,id:"
-msgid "ID"
-msgstr "ID"
+msgid "Health prof"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
@@ -328,10 +215,6 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,urgent:"
 msgid "Urgent"
 msgstr "Επειγόντως"
 
-msgctxt "field:gnuhealth.request-test,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.request-test,request:"
 msgid "Request"
 msgstr "Αίτημα"
@@ -341,12 +224,20 @@ msgid "Test"
 msgstr "Δοκιμή"
 
 msgctxt "field:gnuhealth.sequences,lab_request_sequence:"
-msgid "Patient Lab Request Sequence"
-msgstr "Σειρά Αιτημάτων εργαστηρίου για ασθενή"
+msgid "Lab request sequence"
+msgstr ""
 
-msgctxt "field:gnuhealth.sequences,lab_sequence:"
-msgid "Lab Sequence"
-msgstr "Αλληλουχία Εργαστηρίου"
+msgctxt "field:gnuhealth.sequences,lab_test_sequence:"
+msgid "Lab test sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences.lab_request_sequence,lab_request_sequence:"
+msgid "Lab request sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
+msgid "Lab test sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
@@ -355,6 +246,10 @@ msgstr "Κωδικός εργαστηριακού αποτελέσματος"
 msgctxt "help:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr "Βιοπαθολόγος"
+
+msgctxt "help:gnuhealth.lab,pathology:"
+msgid "Pathology confirmed / associated to this lab test."
+msgstr ""
 
 msgctxt "help:gnuhealth.lab,patient:"
 msgid "Patient ID"
@@ -400,16 +295,37 @@ msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr "Είδος εξέτασης, πχ Ακτινογραφία, γενική αίματος, βιοψία ..."
 
+msgctxt "help:gnuhealth.patient.disease,lab_confirmed:"
+msgid "Confirmed by laboratory test"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.disease,lab_test:"
+msgid "Lab test that confirmed the condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,context:"
+msgid ""
+"Health context for this order. It can be a suspected or existing health "
+"condition, a regular health checkup, ..."
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Doctor who Request the lab test."
-msgstr "Ιατρός που ζήτησε την εργαστηριακή εξέταση."
+msgid "Health professional who requests the lab test."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
+msgid ""
+"Health context for this order. It can be a suspected or existing health "
+"condition, a regular health checkup, ..."
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Doctor who Request the lab tests."
-msgstr "Ιατρός που ζήτησε τις Εργαστηρικές εξετάσεις."
+msgid "Health professional who ordered the lab tests."
+msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.lab,name:"
-msgid "Lab Test"
+msgid "Patient Lab Test Results"
 msgstr "Εργαστηριακή εξέταση"
 
 msgctxt "model:gnuhealth.lab.test.create.init,name:"
@@ -439,6 +355,10 @@ msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_bacteria0"
 msgid "Bacteria"
 msgstr "Βακτήρια"
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_bas"
+msgid "BAS"
+msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_bas0"
@@ -515,9 +435,13 @@ msgctxt ""
 msgid "Direct Bilirubin"
 msgstr "Άμεση Χολερυθρίνη"
 
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_eo"
+msgid "EO"
+msgstr ""
+
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_eos0"
-msgid "EOS%"
+msgid "EO%"
 msgstr ""
 
 msgctxt ""
@@ -525,10 +449,11 @@ msgctxt ""
 msgid "Epithelial Cells"
 msgstr "Επιθηλιακά κύτταρα"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_epithelialcells1"
 msgid "Epithelial Cells"
-msgstr ""
+msgstr "Επιθηλιακά κύτταρα"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_esr0"
@@ -560,9 +485,10 @@ msgctxt ""
 msgid "GRA#"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_haemoglobin0"
-msgid "Hemoglobin"
+msgid "HGB"
 msgstr "Αιμοσφαιρίνη"
 
 msgctxt ""
@@ -599,9 +525,10 @@ msgctxt ""
 msgid "LYM%"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_lym1"
-msgid "LYM#"
+msgid "LYM"
 msgstr "ΛΕΜΦ#"
 
 msgctxt ""
@@ -624,15 +551,20 @@ msgctxt ""
 msgid "Microscopic Examination"
 msgstr "Μικροσκοπική Εξέταση"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_microscopicexamination1"
 msgid "Microscopic Examination"
-msgstr ""
+msgstr "Μικροσκοπική Εξέταση"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_microscopicexamination2"
 msgid "Microscopic Examination"
 msgstr "Μικροσκοπική Εξέταση"
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mon"
+msgid "MON"
+msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mon0"
@@ -649,10 +581,18 @@ msgctxt ""
 msgid "Motility"
 msgstr ""
 
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mpv"
+msgid "MPV"
+msgstr ""
+
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mucus0"
 msgid "Mucus"
 msgstr "Βλέννη"
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_neu"
+msgid "NEU"
+msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_neu0"
@@ -674,15 +614,30 @@ msgctxt ""
 msgid "Non Progressive"
 msgstr "Μη προϊούσα"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_others0"
 msgid "Others"
-msgstr ""
+msgstr "Άλλα"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_ovacyst0"
 msgid "Ova/Cyst"
 msgstr "Ωά/Κύστεις"
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_pct"
+msgid "PCT"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_pdwcv"
+msgid "PDWcv"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_pdwsd"
+msgid "PDWsd"
+msgstr ""
 
 msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_ph0"
 msgid "PH"
@@ -693,10 +648,11 @@ msgctxt ""
 msgid "Physical Examination"
 msgstr "Φυσική εξέταση"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_physicalexamination1"
 msgid "Physical Examination"
-msgstr ""
+msgstr "Φυσική εξέταση"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_physicalexamination2"
@@ -733,10 +689,11 @@ msgctxt ""
 msgid "Pus cells"
 msgstr "Πυοκύτταρα"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_puscells1"
 msgid "Pus cells"
-msgstr ""
+msgstr "Πυοκύτταρα"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_puscells2"
@@ -753,10 +710,11 @@ msgctxt ""
 msgid "RBCs"
 msgstr "Ερυθρά Αιμοσφαίρια"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_rbcs1"
 msgid "RBCs"
-msgstr ""
+msgstr "Ερυθρά Αιμοσφαίρια"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_rbcs2"
@@ -768,14 +726,16 @@ msgctxt ""
 msgid "RBC's"
 msgstr "Ερυθρά αιμοσφαίρια"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_rdwcv0"
-msgid "RDW-CV"
+msgid "RDWcv"
 msgstr "Eύρος κατανομής ερυθρών (RDW-CV)"
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_rdwsd0"
-msgid "RDW-SD"
+msgid "RDWsd"
 msgstr "Eύρος κατανομής ερυθρών (RDW-SD)"
 
 msgctxt ""
@@ -920,8 +880,9 @@ msgctxt "model:gnuhealth.lab.test_type,name:gnuhealth_test_urineanalysis0"
 msgid "URINE ANALYSIS"
 msgstr "ΑΝΑΛΥΣΗ ΟΥΡΩΝ"
 
+#, fuzzy
 msgctxt "model:gnuhealth.patient.lab.test,name:"
-msgid "Patient Lab Test"
+msgid "Lab Test Request"
 msgstr "Εργαστηριακή εξέταση ασθενούς"
 
 msgctxt "model:gnuhealth.patient.lab.test.request.start,name:"
@@ -932,12 +893,22 @@ msgctxt "model:gnuhealth.request-test,name:"
 msgid "Request - Test"
 msgstr "Αίτημα - Εργαστ. εξέταση"
 
+msgctxt "model:gnuhealth.sequences.lab_request_sequence,name:"
+msgid "Lab Request Sequence setup"
+msgstr ""
+
+msgctxt "model:gnuhealth.sequences.lab_test_sequence,name:"
+msgid "Lab Test Sequence setup"
+msgstr ""
+
+#, fuzzy
 msgctxt "model:ir.action,name:act_create_lab_test"
-msgid "Create Lab Test"
+msgid "Lab: Create test"
 msgstr "Δημιουργία Εργαστηρ. Εξέτασης"
 
+#, fuzzy
 msgctxt "model:ir.action,name:act_patient_lab_history_form1"
-msgid "Lab Reports"
+msgid "Lab: Results"
 msgstr "Πορίσματα Εργαστηρίου"
 
 msgctxt "model:ir.action,name:gnuhealth_action_lab_test_request"
@@ -952,12 +923,14 @@ msgctxt "model:ir.action,name:gnuhealth_action_list_test"
 msgid "Lab Test Types"
 msgstr "Είδη Εργαστ. Εξέτασης"
 
+#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_tree_lab"
-msgid "Lab Tests Results"
+msgid "Lab Results"
 msgstr "Αποτελέσματα Εργαστ. Εξετάσεων"
 
+#, fuzzy
 msgctxt "model:ir.action,name:patient_lab_test_request"
-msgid "Request Lab Test"
+msgid "Lab: New order"
 msgstr "Παραπεμπτικό για Εργαστ. εξέταση"
 
 msgctxt "model:ir.action,name:report_patient_labtest_report"
@@ -980,8 +953,9 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_lab_test"
 msgid "Lab Test"
 msgstr "Εργαστ. εξέταση"
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_action_lab_tree"
-msgid "Lab Tests Results"
+msgid "Lab Results"
 msgstr "Αποτελέσματα Εργαστ. εξετάσεων"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_laboratory"
@@ -1004,8 +978,9 @@ msgctxt "model:ir.ui.menu,name:menu_gnuhealth_action_list_test"
 msgid "Lab Test Types"
 msgstr "Είδη Εργαστ. εξετάσεων"
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_patient_lab_test_request"
-msgid "Request Lab Test"
+msgid "Lab: New order"
 msgstr "Παραπεμπτικό για Εργαστ. εξέταση"
 
 msgctxt "model:product.category,name:product_category_labservices0"
@@ -1060,9 +1035,93 @@ msgctxt "model:res.group,name:group_health_lab_admin"
 msgid "Health lab Administration"
 msgstr "Διαχείριση Υγειονομικού Εργαστηρίου"
 
-msgctxt "model:res.user,name:user_demo_lab"
-msgid "Health Lab"
-msgstr "Υγειονομικό εργαστήριο"
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "*"
+msgstr "*"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Age:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Analyte"
+msgstr "Αντιδραστήριο"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Date:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Diagnosis:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Doctor:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Gender:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "LABORATORY REPORT"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Name:"
+msgstr "Όνομα:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Order:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Pathologist:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Reference"
+msgstr "Σημείο αναφοράς"
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Remarks"
+msgstr "Παρατηρήσεις"
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Results"
+msgstr "Αποτελέσματα"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Results:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Signature:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Test:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Unit"
+msgstr "Μονάδα"
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Value"
+msgstr "Τιμή"
 
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Cancel"
@@ -1079,6 +1138,53 @@ msgstr "Ζητήθηκε"
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Tested"
 msgstr "Έγινε δοκιμαστικός έλεγχος"
+
+msgctxt "view:gnuhealth.lab.test.create.init:"
+msgid "Create Tests"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test.create.init:"
+msgid "Do you want to generate the test(s) ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test.critearea:"
+msgid "Reference Value / Range"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Extra Info"
+msgstr "Πρόσθετες ππληροφορίες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Main Info"
+msgstr "Κύριες πληροφορίες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Diagnosis"
+msgstr "Διάγνωση"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Extra Info"
+msgstr "Πρόσθετες ππληροφορίες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Main Info"
+msgstr "Κύριες πληροφορίες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Notes"
+msgstr "Σημειώσεις"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.disease:"
+msgid "Laboratory"
+msgstr "Εργαστήριο"
 
 msgctxt "wizard_button:gnuhealth.lab.test.create,start,create_lab_test:"
 msgid "Create Test Order"

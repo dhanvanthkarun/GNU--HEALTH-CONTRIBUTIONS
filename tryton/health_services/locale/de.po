@@ -1,31 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-06-28 23:17+0000\n"
-"Last-Translator: Armand MPASSY <armandmpassy@yahoo.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/gnu-health/"
-"health_services/de/>\n"
-"Language: de\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
-
-msgctxt "error:gnuhealth.health_service:"
-msgid "The Service ID must be unique"
-msgstr "Die Service-ID muß eindeutig sein"
-
-msgctxt "error:gnuhealth.service.invoice.create:"
-msgid "No Payment Term associated to the Patient"
-msgstr "Kein Zahlungsbedingung beim Patienten hinterlegt"
-
-msgctxt "error:gnuhealth.service.invoice.create:"
-msgid "No invoice address associated"
-msgstr "Keine Rechnungsadresse hinterlegt"
-
-msgctxt "error:gnuhealth.service.invoice.create:"
-msgid "Service already invoiced"
-msgstr "Service wurde bereits abgerechnet"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:account.invoice,health_service:"
 msgid "Health Service"
@@ -35,21 +10,14 @@ msgctxt "field:account.invoice,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-msgctxt "field:gnuhealth.health_service,create_date:"
-msgid "Create Date"
-msgstr "Erstellungsdatum"
-
-msgctxt "field:gnuhealth.health_service,create_uid:"
-msgid "Create User"
-msgstr "Erstellt durch"
+#, fuzzy
+msgctxt "field:gnuhealth.health_service,company:"
+msgid "Company"
+msgstr "Unternehmen"
 
 msgctxt "field:gnuhealth.health_service,desc:"
 msgid "Description"
 msgstr "Beschreibung"
-
-msgctxt "field:gnuhealth.health_service,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.health_service,institution:"
 msgid "Institution"
@@ -67,10 +35,6 @@ msgctxt "field:gnuhealth.health_service,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-msgctxt "field:gnuhealth.health_service,rec_name:"
-msgid "Name"
-msgstr "Name"
-
 msgctxt "field:gnuhealth.health_service,service_date:"
 msgid "Date"
 msgstr "Datum"
@@ -83,25 +47,13 @@ msgctxt "field:gnuhealth.health_service,state:"
 msgid "State"
 msgstr "Status"
 
-msgctxt "field:gnuhealth.health_service,write_date:"
-msgid "Write Date"
-msgstr "Zuletzt geändert"
-
-msgctxt "field:gnuhealth.health_service,write_uid:"
-msgid "Write User"
-msgstr "Letzte Änderung durch"
+msgctxt "field:gnuhealth.health_service.line,action_required:"
+msgid "Action required"
+msgstr ""
 
 msgctxt "field:gnuhealth.health_service.line,appointment:"
 msgid "Appointment"
 msgstr "Termin"
-
-msgctxt "field:gnuhealth.health_service.line,create_date:"
-msgid "Create Date"
-msgstr "Erstellungsdatum"
-
-msgctxt "field:gnuhealth.health_service.line,create_uid:"
-msgid "Create User"
-msgstr "Erstellt durch"
 
 msgctxt "field:gnuhealth.health_service.line,desc:"
 msgid "Description"
@@ -110,10 +62,6 @@ msgstr "Beschreibung"
 msgctxt "field:gnuhealth.health_service.line,from_date:"
 msgid "From"
 msgstr "Von"
-
-msgctxt "field:gnuhealth.health_service.line,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.health_service.line,name:"
 msgid "Service"
@@ -127,9 +75,10 @@ msgctxt "field:gnuhealth.health_service.line,qty:"
 msgid "Qty"
 msgstr "Menge"
 
-msgctxt "field:gnuhealth.health_service.line,rec_name:"
-msgid "Name"
-msgstr "Name"
+#, fuzzy
+msgctxt "field:gnuhealth.health_service.line,remarks:"
+msgid "Remarks"
+msgstr "Bemerkungen"
 
 msgctxt "field:gnuhealth.health_service.line,to_date:"
 msgid "To"
@@ -139,25 +88,28 @@ msgctxt "field:gnuhealth.health_service.line,to_invoice:"
 msgid "Invoice"
 msgstr "Rechnung"
 
-msgctxt "field:gnuhealth.health_service.line,write_date:"
-msgid "Write Date"
-msgstr "Zuletzt geändert"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,product:"
+msgid "Product"
+msgstr "Produkt"
 
-msgctxt "field:gnuhealth.health_service.line,write_uid:"
-msgid "Write User"
-msgstr "Letzte Änderung durch"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,service:"
+msgid "Service"
+msgstr "Service"
 
 msgctxt "field:gnuhealth.prescription.order,service:"
 msgid "Service"
 msgstr "Service"
 
 msgctxt "field:gnuhealth.sequences,health_service_sequence:"
-msgid "Health Service Sequence"
-msgstr "Nummernkreis des Gesundheitsservice"
+msgid "Health service sequence"
+msgstr ""
 
-msgctxt "field:gnuhealth.service.invoice.init,id:"
-msgid "ID"
-msgstr "ID"
+msgctxt ""
+"field:gnuhealth.sequences.health_service_sequence,health_service_sequence:"
+msgid "Health service sequence"
+msgstr ""
 
 msgctxt "help:account.invoice,health_service:"
 msgid "The service entry"
@@ -171,12 +123,22 @@ msgctxt "help:gnuhealth.health_service,service_line:"
 msgid "Service Line"
 msgstr "Zeile des Service"
 
+msgctxt "help:gnuhealth.health_service.line,action_required:"
+msgid ""
+"This optional field is used in the context of validation on the service "
+"line. Mark it if there is any administrative or other type that needs action"
+msgstr ""
+
 msgctxt "help:gnuhealth.health_service.line,appointment:"
 msgid ""
 "Enter or select the date / ID of the appointment related to this evaluation"
 msgstr ""
 "Geben Sie das Datum / die ID des mit dieser Bewertung verbundenen Termins "
 "ein oder wählen Sie diese aus"
+
+msgctxt "help:gnuhealth.patient.evaluation,service:"
+msgid "Service document associated to this evaluation"
+msgstr ""
 
 msgctxt "help:gnuhealth.prescription.order,service:"
 msgid "Service document associated to this prescription"
@@ -190,6 +152,10 @@ msgctxt "model:gnuhealth.health_service.line,name:"
 msgid "Health Service"
 msgstr "Gesundheitservice"
 
+msgctxt "model:gnuhealth.sequences.health_service_sequence,name:"
+msgid "Health Service Request Sequence setup"
+msgstr ""
+
 msgctxt "model:gnuhealth.service.invoice.init,name:"
 msgid "Create Service Invoice Init"
 msgstr "Rechnungslinie Init erstellen"
@@ -202,17 +168,76 @@ msgctxt "model:ir.action,name:act_invoice_related_form1"
 msgid "Related Invoice"
 msgstr "Zugehörige Rechnung"
 
+msgctxt "model:ir.action,name:act_service_form1"
+msgid "Services"
+msgstr ""
+
 msgctxt "model:ir.action,name:gnuhealth_action_health_service"
 msgid "Health services"
 msgstr "Gesundheitservices"
 
+#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_health_service_invoices"
-msgid "Created invoices"
+msgid "Service invoices (last month)"
 msgstr "Erstellte Rechnungen"
 
 msgctxt "model:ir.action,name:report_health_services_report"
 msgid "Services Report"
 msgstr "Bericht über Service"
+
+#, fuzzy
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_all"
+msgid "All"
+msgstr "Alles"
+
+#, fuzzy
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_draft"
+msgid "Draft"
+msgstr "Entwurf"
+
+#, fuzzy
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_invoiced"
+msgid "Invoiced"
+msgstr "In Rechnung gestellt"
+
+msgctxt "model:ir.message,text:msg_no_account_receivable"
+msgid "No Account Receivable defined in party or in default configuration"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_invoice_address"
+msgid "No invoice adress"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_payment_term"
+msgid "Need a user payment term"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_product_associated"
+msgid "You need to associate a product"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_service_associated"
+msgid "You need to associate a service"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_service_already_invoiced"
+msgid "This service has been invoiced. You can no longer modify service lines"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:service_draft_button"
+msgid "Set to Draft"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:serviceevaluation_update_button"
+msgid "Update Services"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:servicepresc_update_button"
+msgid "Update Services"
+msgstr ""
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_health_service"
 msgid "Health Service"
@@ -222,8 +247,9 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_health_service"
 msgid "Health Service"
 msgstr "Gesundheitsleistung"
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_health_service_invoices_menu"
-msgid "Created invoices"
+msgid "Service invoices (last month)"
 msgstr "Erstellte Rechnungen"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_health_service_menu"
@@ -234,9 +260,92 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_services_menu"
 msgid "Health Services"
 msgstr "Gesundheitsleistungen"
 
+msgctxt "model:product.category,name:product_category_medical_evaluation"
+msgid "Medical Evaluation"
+msgstr ""
+
+msgctxt "model:product.template,name:product_template_medical_services"
+msgid "Medical evaluation service"
+msgstr ""
+
 msgctxt "model:res.group,name:group_health_services_admin"
 msgid "Health Services Administration"
 msgstr "Verwaltung Gesundheitsleistungen"
+
+msgctxt "report:health_services.report:"
+msgid "//"
+msgstr ""
+
+msgctxt "report:health_services.report:"
+msgid "Address:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "Date:"
+msgstr "Datum:"
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "Description:"
+msgstr "Beschreibung:"
+
+msgctxt "report:health_services.report:"
+msgid "E-mail:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "From"
+msgstr "Von"
+
+msgctxt "report:health_services.report:"
+msgid "Health Service ID:"
+msgstr ""
+
+msgctxt "report:health_services.report:"
+msgid "Health Service Report"
+msgstr ""
+
+msgctxt "report:health_services.report:"
+msgid "Institution:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "Invoice"
+msgstr "Rechnung"
+
+msgctxt "report:health_services.report:"
+msgid "Invoice to:"
+msgstr ""
+
+msgctxt "report:health_services.report:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:health_services.report:"
+msgid "Patient:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "Qty"
+msgstr "Menge"
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "Service"
+msgstr "Service"
+
+msgctxt "report:health_services.report:"
+msgid "Tel:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "To"
+msgstr "zu"
 
 msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Draft"
@@ -245,6 +354,51 @@ msgstr "Entwurf"
 msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
 msgstr "In Rechnung gestellt"
+
+#, fuzzy
+msgctxt "view:account.invoice:"
+msgid "Health"
+msgstr "Gesundheit"
+
+msgctxt "view:gnuhealth.health_service:"
+msgid "Set to Draft"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Services"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Transfer                     this evaluation to services?"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Update Service document with this evaluation"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Update Services"
+msgstr ""
+
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Transfer medicaments to services ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Update Service document with this prescription lines"
+msgstr ""
+
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Update Services"
+msgstr ""
+
+msgctxt "view:gnuhealth.service.invoice.init:"
+msgid "Create Invoices"
+msgstr ""
+
+msgctxt "view:gnuhealth.service.invoice.init:"
+msgid "Do you want to generate the Invoice(s) ?"
+msgstr ""
 
 msgctxt ""
 "wizard_button:gnuhealth.service.invoice.create,start,create_service_invoice:"

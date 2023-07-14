@@ -1,29 +1,21 @@
-# 
-# Translators:
-# Hisahiro Ohmura, 2014
-# Kentaro Hatori <hatori@hatochan.dyndns.org>, 2014
-# Shigeomi Shibata, 2014
+#
 msgid ""
-msgstr ""
-"Project-Id-Version: GNU Health\n"
-"Report-Msgid-Bugs-To: https://savannah.gnu.org/bugs/?group=health\n"
-"POT-Creation-Date: 2015-01-27 11:17+0000\n"
-"PO-Revision-Date: 2015-01-20 21:31+0000\n"
-"Last-Translator: Shigeomi Shibata\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/GNU_Health/language/ja/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:gnuhealth.drugs_recreational:"
-msgid "The Recreational Drug CODE must be unique"
-msgstr "脱法薬物コードは重複禁止です"
+#, fuzzy
+msgctxt "field:gnuhealth.diet.belief,code:"
+msgid "Code"
+msgstr "コード"
 
-msgctxt "error:gnuhealth.drugs_recreational:"
-msgid "The Recreational Drug NAME must be unique"
-msgstr "脱法薬物名は重複禁止です"
+#, fuzzy
+msgctxt "field:gnuhealth.diet.belief,description:"
+msgid "Description"
+msgstr "詳細"
+
+#, fuzzy
+msgctxt "field:gnuhealth.diet.belief,name:"
+msgid "Belief"
+msgstr "信仰"
 
 msgctxt "field:gnuhealth.drugs_recreational,addiction_level:"
 msgid "Dependence"
@@ -36,14 +28,6 @@ msgstr "カテゴリー"
 msgctxt "field:gnuhealth.drugs_recreational,code:"
 msgid "Code"
 msgstr "コード"
-
-msgctxt "field:gnuhealth.drugs_recreational,create_date:"
-msgid "Create Date"
-msgstr "作成日"
-
-msgctxt "field:gnuhealth.drugs_recreational,create_uid:"
-msgid "Create User"
-msgstr "作成者"
 
 msgctxt "field:gnuhealth.drugs_recreational,dea_schedule_i:"
 msgid "DEA schedule I"
@@ -69,10 +53,6 @@ msgctxt "field:gnuhealth.drugs_recreational,dependence_level:"
 msgid "Dependence"
 msgstr "依存性"
 
-msgctxt "field:gnuhealth.drugs_recreational,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.drugs_recreational,info:"
 msgid "Extra Info"
 msgstr "特記事項"
@@ -86,10 +66,6 @@ msgid "Legal Status"
 msgstr "合法性"
 
 msgctxt "field:gnuhealth.drugs_recreational,name:"
-msgid "Name"
-msgstr "名前"
-
-msgctxt "field:gnuhealth.drugs_recreational,rec_name:"
 msgid "Name"
 msgstr "名前"
 
@@ -133,14 +109,6 @@ msgctxt "field:gnuhealth.drugs_recreational,withdrawal_level:"
 msgid "Withdrawal"
 msgstr "禁断症状"
 
-msgctxt "field:gnuhealth.drugs_recreational,write_date:"
-msgid "Write Date"
-msgstr "記載日"
-
-msgctxt "field:gnuhealth.drugs_recreational,write_uid:"
-msgid "Write User"
-msgstr "記載者"
-
 msgctxt "field:gnuhealth.patient,age_quit_drinking:"
 msgid "Age quit drinking "
 msgstr "禁酒した年齢"
@@ -182,8 +150,8 @@ msgid "Wine / day"
 msgstr "1日あたりのワイン"
 
 msgctxt "field:gnuhealth.patient,anticonceptive:"
-msgid "Anticonceptive Method"
-msgstr "避妊法"
+msgid "Contraceptive Method"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient,cage:"
 msgid "CAGE"
@@ -212,6 +180,11 @@ msgstr "杯/日"
 msgctxt "field:gnuhealth.patient,diet:"
 msgid "Currently on a diet"
 msgstr "ダイエット中"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient,diet_belief:"
+msgid "Belief"
+msgstr "信仰"
 
 msgctxt "field:gnuhealth.patient,diet_info:"
 msgid "Diet info"
@@ -345,6 +318,10 @@ msgctxt "field:gnuhealth.patient,traffic_laws:"
 msgid "Obeys Traffic Laws"
 msgstr "交通規則を守る"
 
+msgctxt "field:gnuhealth.patient,vegetarian_type:"
+msgid "Vegetarian"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.cage,cage_a:"
 msgid "Angry with Critics"
 msgstr "飲酒を非難され気にさわる"
@@ -365,69 +342,39 @@ msgctxt "field:gnuhealth.patient.cage,cage_score:"
 msgid "CAGE Score"
 msgstr "CAGEスコア"
 
-msgctxt "field:gnuhealth.patient.cage,create_date:"
-msgid "Create Date"
-msgstr "作成日"
-
-msgctxt "field:gnuhealth.patient.cage,create_uid:"
-msgid "Create User"
-msgstr "作成者"
+msgctxt "field:gnuhealth.patient.cage,cage_warning_icon:"
+msgid "Cage Warning Icon"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.cage,evaluation_date:"
 msgid "Date"
 msgstr "日"
 
-msgctxt "field:gnuhealth.patient.cage,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.patient.cage,name:"
 msgid "Patient"
 msgstr "患者"
-
-msgctxt "field:gnuhealth.patient.cage,rec_name:"
-msgid "Name"
-msgstr "名前"
-
-msgctxt "field:gnuhealth.patient.cage,write_date:"
-msgid "Write Date"
-msgstr "記載日"
-
-msgctxt "field:gnuhealth.patient.cage,write_uid:"
-msgid "Write User"
-msgstr "記載者"
-
-msgctxt "field:gnuhealth.patient.recreational_drugs,create_date:"
-msgid "Create Date"
-msgstr "作成日"
-
-msgctxt "field:gnuhealth.patient.recreational_drugs,create_uid:"
-msgid "Create User"
-msgstr "作成者"
-
-msgctxt "field:gnuhealth.patient.recreational_drugs,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.patient.recreational_drugs,patient:"
 msgid "Patient"
 msgstr "患者"
 
-msgctxt "field:gnuhealth.patient.recreational_drugs,rec_name:"
-msgid "Name"
-msgstr "名前"
-
 msgctxt "field:gnuhealth.patient.recreational_drugs,recreational_drug:"
 msgid "Recreational Drug"
 msgstr "医療用途でなく乱用される薬物"
 
-msgctxt "field:gnuhealth.patient.recreational_drugs,write_date:"
-msgid "Write Date"
-msgstr "記載日"
+#, fuzzy
+msgctxt "field:gnuhealth.vegetarian_types,code:"
+msgid "Code"
+msgstr "コード"
 
-msgctxt "field:gnuhealth.patient.recreational_drugs,write_uid:"
-msgid "Write User"
-msgstr "記載者"
+#, fuzzy
+msgctxt "field:gnuhealth.vegetarian_types,desc:"
+msgid "Description"
+msgstr "詳細"
+
+msgctxt "field:gnuhealth.vegetarian_types,name:"
+msgid "Vegetarian"
+msgstr ""
 
 msgctxt "help:gnuhealth.drugs_recreational,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
@@ -442,7 +389,8 @@ msgid ""
 "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
 "are available by prescription, may have five refills in 6 months, and may be"
 " ordered orally. Some Schedule V drugs are available over the counter"
-msgstr "別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
+msgstr ""
+"別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
 
 msgctxt "help:gnuhealth.drugs_recreational,dea_schedule_ii:"
 msgid ""
@@ -453,7 +401,8 @@ msgid ""
 "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
 "are available by prescription, may have fiverefills in 6 months, and may be "
 "ordered orally. Some Schedule V drugs are available over the counter"
-msgstr "別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
+msgstr ""
+"別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
 
 msgctxt "help:gnuhealth.drugs_recreational,dea_schedule_iii:"
 msgid ""
@@ -464,7 +413,8 @@ msgid ""
 "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
 "are available by prescription, may have five refills in 6 months, and may be"
 " ordered orally. Some Schedule V drugs are available over the counter"
-msgstr "別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
+msgstr ""
+"別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
 
 msgctxt "help:gnuhealth.drugs_recreational,dea_schedule_iv:"
 msgid ""
@@ -475,7 +425,8 @@ msgid ""
 "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
 "are available by prescription, may have five refills in 6 months, and may be"
 " ordered orally. Some Schedule V drugs are available over the counter"
-msgstr "別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
+msgstr ""
+"別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
 
 msgctxt "help:gnuhealth.drugs_recreational,dea_schedule_v:"
 msgid ""
@@ -486,19 +437,24 @@ msgid ""
 "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
 "are available by prescription, may have five refills in 6 months, and may be"
 " ordered orally. Some Schedule V drugs are available over the counter"
-msgstr "別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
+msgstr ""
+"別表１および２にある薬物は乱用の可能性が大変高いものです。そのため他規制よりも、より厳格な保管と計画に従った製造が求められています。別表１の薬物は研究目的でのみ許可され、医学的な利用は許されません。別表２の薬物は(追加発行不能な)処方箋と書面での注文が必要です。別表３および４の薬物は、6ヶ月に5回までの追加発行が可能な処方箋により口頭で注文できます。別表５の薬物のうちいくつかは薬局で購入可能です。"
 
 msgctxt "help:gnuhealth.drugs_recreational,dependence_level:"
 msgid ""
 "How difficult it is for the user to quit, the relapse rate, the percentage of people who eventually become dependent, the rating users give their own need for the substance and the degree to which the substance will be used in the face of evidence that it causes harm.\n"
 "Using Henningfield rating. 1=highest and 6=lowest"
-msgstr "その薬物をやめることの難しさ、いったんやめた後の復帰率、最終的に依存症となる人の割合、使用者がどれだけその薬物を必要と感じるか、そして有害であることを承知したうえでもその薬物を使用しようとする度合、依存性\nヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
+msgstr ""
+"その薬物をやめることの難しさ、いったんやめた後の復帰率、最終的に依存症となる人の割合、使用者がどれだけその薬物を必要と感じるか、そして有害であることを承知したうえでもその薬物を使用しようとする度合、依存性\n"
+"ヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
 
 msgctxt "help:gnuhealth.drugs_recreational,intoxication_level:"
 msgid ""
 "the level of intoxication is associated with addiction and increases the personal and social damage a substance may do. \n"
 "Using Henningfield rating. 1=highest and 6=lowest"
-msgstr "依存に関連した中毒性のレベルで、使用者の健康や生活に害を与える量を増やしていくもの、酔いの程度\nヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
+msgstr ""
+"依存に関連した中毒性のレベルで、使用者の健康や生活に害を与える量を増やしていくもの、酔いの程度\n"
+"ヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
 
 msgctxt "help:gnuhealth.drugs_recreational,name:"
 msgid "Name of the drug"
@@ -508,7 +464,9 @@ msgctxt "help:gnuhealth.drugs_recreational,reinforcement_level:"
 msgid ""
 "A measure of the substance's ability to get users to take it  again and again, and in preference to other substances.\n"
 "Using  Henningfield rating. 1=highest and 6=lowest"
-msgstr "薬物の性質の一つで、使用者に繰り返しその薬物を、時には他のものにかえても摂取したくなる性質、習慣性。\nヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
+msgstr ""
+"薬物の性質の一つで、使用者に繰り返しその薬物を、時には他のものにかえても摂取したくなる性質、習慣性。\n"
+"ヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
 
 msgctxt "help:gnuhealth.drugs_recreational,route_inhaling:"
 msgid "Insufflation, excluding nasal"
@@ -534,13 +492,17 @@ msgctxt "help:gnuhealth.drugs_recreational,tolerance_level:"
 msgid ""
 "How much of the substance is needed to satisfy increasing cravings for it, and the level of stable need that is eventually reached.\n"
 "Using Henningfield rating. 1=highest and 6=lowest"
-msgstr "同じ満足を得るのに使用量がどの程度増えるか、そしてやがてどの水準で安定するか、耐性。\nヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
+msgstr ""
+"同じ満足を得るのに使用量がどの程度増えるか、そしてやがてどの水準で安定するか、耐性。\n"
+"ヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
 
 msgctxt "help:gnuhealth.drugs_recreational,withdrawal_level:"
 msgid ""
 "Presence and severity of characteristic withdrawal symptoms.\n"
 "Using Henningfield rating. 1=highest and 6=lowest"
-msgstr "特徴的な禁断症状の有無とその程度\nヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
+msgstr ""
+"特徴的な禁断症状の有無とその程度\n"
+"ヘニングフィールド評価を用いて　1=中毒性最大　6=中毒性最小"
 
 msgctxt "help:gnuhealth.patient,age_quit_drinking:"
 msgid "Date to stop drinking"
@@ -583,6 +545,10 @@ msgstr "1日に飲むコーヒーの杯数"
 msgctxt "help:gnuhealth.patient,diet:"
 msgid "Check if the patient is currently on a diet"
 msgstr "患者がダイエット中の場合チェックしてください"
+
+msgctxt "help:gnuhealth.patient,diet_belief:"
+msgid "Enter the patient belief or religion"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,diet_info:"
 msgid "Short description on the diet"
@@ -648,12 +614,12 @@ msgid "Check if the patient is a safe driver"
 msgstr "患者が安全運転している場合チェックしてください"
 
 msgctxt "help:gnuhealth.patient.cage,cage_a:"
-msgid "Have people Annoyed you by criticizing your drinking ?"
-msgstr "飲酒をしていることを非難されることが嫌だったことはありますか?"
+msgid "Have people Annoyed you by criticizing your drinking?"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.cage,cage_c:"
-msgid "Have you ever felt you needed to Cut down on your drinking ?"
-msgstr "飲酒をやめなければならないと感じたことがありますか？"
+msgid "Have you ever felt you needed to Cut down on your drinking?"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.cage,cage_e:"
 msgid ""
@@ -662,8 +628,103 @@ msgid ""
 msgstr "二日酔いをおさえたり、神経を落ち着かせるために朝一番で(迎え酒を)飲まなければならないと感じた事はありますか？"
 
 msgctxt "help:gnuhealth.patient.cage,cage_g:"
-msgid "Have you ever felt Guilty about drinking ?"
-msgstr "飲酒の際に罪悪感を覚えますか？"
+msgid "Have you ever felt Guilty about drinking?"
+msgstr ""
+
+msgctxt "help:gnuhealth.vegetarian_types,code:"
+msgid "Short description"
+msgstr ""
+
+msgctxt "help:gnuhealth.vegetarian_types,desc:"
+msgid "Short description"
+msgstr ""
+
+msgctxt "help:gnuhealth.vegetarian_types,name:"
+msgid "Vegetarian"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:BUDDHIST"
+msgid ""
+"While Buddhism does not have specific dietary rules, some buddhists practise"
+" vegetarianism based on a strict interpretation of the first of the Five "
+"Precepts"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:EDENIC"
+msgid ""
+"A diet based on what Adam and Eve are believed to have consumed in Garden of"
+" Eden. Usually either vegetarian or vegan, and based predominantly on fruit"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:HALLELUJAH"
+msgid ""
+"Hallelujah diet: A form of Christian vegetarianism developed in the 1970s. "
+"The creators interpret a verse from the Bible as suggesting that Christians "
+"should only consume seed bearing plants and fruits."
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:HINDU"
+msgid ""
+"Hindu and Jain diets: Followers of Hinduism and Jainism often follow lacto-"
+"vegetarian diets, based on the principle of Ahimsa (non-harming)"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:ITAL"
+msgid ""
+"I-tal: A set of principles which influences the diet of many members of the "
+"Rastafari movement. One principle is that natural foods should be consumed. "
+"Some Rastafarians interpret I-tal to advocate vegetarianism or veganism"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:KOSHER"
+msgid ""
+"Kosher diet: Food permissible under Kashrut, the set of Jewish dietary laws,"
+" is said to be Kosher. Some foods and food combinations are non-Kosher, and "
+"failure to prepare food in accordance with Kashrut can make otherwise "
+"permissible foods non-Kosher."
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,description:MUSLIM"
+msgid ""
+"Muslims follow a diet consisting solely of food that is halal – permissible "
+"under Islamic law. The opposite of halal is haraam, food that is Islamically"
+" Impermissible. Haraam substances include alcohol, pork, and any meat from "
+"an animal which was not killed through the Islamic method of ritual "
+"slaughter (Dhabiha)"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:gnuhealth.diet.belief,name:"
+msgid "Diet by Belief"
+msgstr "信仰に基づく食事"
+
+msgctxt "model:gnuhealth.diet.belief,name:BUDDHIST"
+msgid "Buddhist"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,name:EDENIC"
+msgid "Edenic"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,name:HALLELUJAH"
+msgid "Hallelujah"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,name:HINDU"
+msgid "Hindu"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,name:ITAL"
+msgid "I-tal"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,name:KOSHER"
+msgid "Kosher"
+msgstr ""
+
+msgctxt "model:gnuhealth.diet.belief,name:MUSLIM"
+msgid "Muslim"
+msgstr ""
 
 msgctxt "model:gnuhealth.drugs_recreational,name:"
 msgid "Recreational Drug"
@@ -785,9 +846,65 @@ msgctxt "model:gnuhealth.patient.recreational_drugs,name:"
 msgid "Patient use of Recreational Drugs"
 msgstr "薬物を乱用している患者"
 
+msgctxt "model:gnuhealth.vegetarian_types,desc:lacto"
+msgid "Includes dairy products but not eggs"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,desc:lactoovo"
+msgid "Includes dairy products and eggs"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,desc:ovo"
+msgid "Includes eggs but not dairy products"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,desc:pescetarian"
+msgid "Includes fish or other seafood, but not other animal products"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,desc:vegan"
+msgid "Excludes all animal flesh and products"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,name:"
+msgid "Vegetarian Types"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,name:lacto"
+msgid "Lacto vegetarian"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,name:lactoovo"
+msgid "Lacto-ovo vegetarian"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,name:ovo"
+msgid "Ovo vegetarian"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,name:pescetarian"
+msgid "Pescetarian"
+msgstr ""
+
+msgctxt "model:gnuhealth.vegetarian_types,name:vegan"
+msgid "Vegan"
+msgstr ""
+
+msgctxt "model:ir.action,name:gnuhealth_action_diet_belief"
+msgid "Belief diets"
+msgstr ""
+
 msgctxt "model:ir.action,name:gnuhealth_action_drugs_recreational"
 msgid "Recreational Drugs"
 msgstr "医療用途でない乱用薬物"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_conf_diet_belief"
+msgid "Belief diets"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_conf_diets"
+msgid "Diets"
+msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_drugs_recreational"
 msgid "Recreational Drugs"
@@ -973,6 +1090,11 @@ msgctxt "selection:gnuhealth.patient,sexual_preferences:"
 msgid "Transexual"
 msgstr "性転換"
 
+#, fuzzy
+msgctxt "view:gnuhealth.diet.belief:"
+msgid "Diet Description"
+msgstr "食事の記述"
+
 msgctxt "view:gnuhealth.drugs_recreational:"
 msgid "Additional Info and Effects"
 msgstr "追加情報と効能"
@@ -993,10 +1115,6 @@ msgctxt "view:gnuhealth.drugs_recreational:"
 msgid "Henningfield Rating"
 msgstr "ヘニングフィールド博士の危険度"
 
-msgctxt "view:gnuhealth.drugs_recreational:"
-msgid "Recreational Drugs"
-msgstr "医療用途でない乱用薬物"
-
 msgctxt "view:gnuhealth.patient.cage:"
 msgid "Patient CAGE Questionnaire"
 msgstr "患者用CAGEテスト質問表"
@@ -1016,6 +1134,11 @@ msgstr "中毒"
 msgctxt "view:gnuhealth.patient:"
 msgid "Alcohol"
 msgstr "アルコール"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient:"
+msgid "Diet"
+msgstr "療養食"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Diet and Exersice"

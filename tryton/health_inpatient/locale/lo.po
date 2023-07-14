@@ -2,64 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:gnuhealth.bed.transfer.create:"
-msgid "Destination bed is unavailable"
-msgstr ""
-
-msgctxt "error:gnuhealth.bed.transfer.create:"
-msgid "You have chosen more than 1 records. Please choose only one"
-msgstr ""
-
-msgctxt "error:gnuhealth.diet.therapeutic:"
-msgid "The Diet code already exists"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.meal.order:"
-msgid ""
-"===== MEAL WARNING ! =====\n"
-"\n"
-"\n"
-"This patient has special meal needs \n"
-"\n"
-"Check and acknowledge that\n"
-"the meal items in this order are correct \n"
-"\n"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.meal.order:"
-msgid "No health professional associated to this user"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.meal.order:"
-msgid "The Meal Order code already exists"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.medication.log:"
-msgid "No health professional associated to this user"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid ""
-"Admission and Discharge reasons \n"
-"as well as Discharge Dx are needed"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid "Bed is not available"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid "Destination bed unavailable"
-msgstr ""
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid "The Registration code already exists"
-msgstr ""
-
-msgctxt "error:wizard.gnuhealth.inpatient.evaluation:"
-msgid "You need to select an inpatient registration record"
-msgstr ""
-
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient Registration"
 msgstr ""
@@ -68,21 +10,10 @@ msgctxt "field:gnuhealth.bed.transfer,bed_from:"
 msgid "From"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.bed.transfer,bed_to:"
 msgid "To"
-msgstr ""
-
-msgctxt "field:gnuhealth.bed.transfer,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.bed.transfer,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:gnuhealth.bed.transfer,id:"
-msgid "ID"
-msgstr ""
+msgstr "ເຖິງ"
 
 msgctxt "field:gnuhealth.bed.transfer,name:"
 msgid "Registration Code"
@@ -92,25 +23,10 @@ msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
 msgstr ""
 
-msgctxt "field:gnuhealth.bed.transfer,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.bed.transfer,transfer_date:"
 msgid "Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.bed.transfer,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.bed.transfer,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.bed.transfer.init,id:"
-msgid "ID"
-msgstr ""
+msgstr "ວັນທີ:"
 
 msgctxt "field:gnuhealth.bed.transfer.init,newbed:"
 msgid "New Bed"
@@ -124,84 +40,30 @@ msgctxt "field:gnuhealth.bed.transfer.init,reason:"
 msgid "Reason"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.diet.therapeutic,code:"
 msgid "Code"
-msgstr ""
+msgstr "ລະຫັດປະເທດ"
 
-msgctxt "field:gnuhealth.diet.therapeutic,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.diet.therapeutic,create_uid:"
-msgid "Create User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.diet.therapeutic,description:"
 msgid "Indications"
-msgstr ""
-
-msgctxt "field:gnuhealth.diet.therapeutic,id:"
-msgid "ID"
-msgstr ""
+msgstr "ເຄື່ອງຊີ້ບອກ"
 
 msgctxt "field:gnuhealth.diet.therapeutic,name:"
 msgid "Diet type"
-msgstr ""
-
-msgctxt "field:gnuhealth.diet.therapeutic,rec_name:"
-msgid "Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.diet.therapeutic,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.diet.therapeutic,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.diet,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.diet,create_uid:"
-msgid "Create User"
 msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.diet,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.diet,name:"
 msgid "Registration Code"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.diet,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.diet,remarks:"
 msgid "Remarks / Directions"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.diet,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.diet,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal,create_uid:"
-msgid "Create User"
 msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.meal,diet_belief:"
@@ -216,45 +78,19 @@ msgctxt "field:gnuhealth.inpatient.meal,diet_vegetarian:"
 msgid "Vegetarian"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal,institution:"
 msgid "Institution"
-msgstr ""
+msgstr "ສະຖາບັນ"
 
 msgctxt "field:gnuhealth.inpatient.meal,name:"
 msgid "Food"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal,rec_name:"
-msgid "Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order,create_uid:"
-msgid "Create User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,health_professional:"
 msgid "Health Professional"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order,id:"
-msgid "ID"
-msgstr ""
+msgstr "ທ່ານໝໍ"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_item:"
 msgid "Items"
@@ -280,41 +116,20 @@ msgctxt "field:gnuhealth.inpatient.meal.order,name:"
 msgid "Registration Code"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
-msgstr ""
+msgstr "ວັນທີ:"
 
-msgctxt "field:gnuhealth.inpatient.meal.order,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
 msgid "Remarks"
-msgstr ""
+msgstr "ຂໍ້ສັງເກດ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,state:"
 msgid "Status"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,id:"
-msgid "ID"
-msgstr ""
+msgstr "ສະຖານະພາບ"
 
 msgctxt "field:gnuhealth.inpatient.meal.order.item,meal:"
 msgid "Meal"
@@ -324,221 +139,167 @@ msgctxt "field:gnuhealth.inpatient.meal.order.item,name:"
 msgid "Meal Order"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal.order.item,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order.item,remarks:"
 msgid "Remarks"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "ຂໍ້ສັງເກດ"
 
 msgctxt "field:gnuhealth.inpatient.medication,admin_times:"
 msgid "Admin times"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,adverse_reaction:"
 msgid "Adverse Reactions"
-msgstr ""
+msgstr "ຜົນປະຕິກິລິຍາທາງລົບບໍ່ໄດ້ຜົນ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,common_dosage:"
 msgid "Frequency"
-msgstr ""
+msgstr "ລຳດັບ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,course_completed:"
 msgid "Course Completed"
-msgstr ""
+msgstr "ຫຼັກສູດສຳເລັດແລ້ວ"
 
-msgctxt "field:gnuhealth.inpatient.medication,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication,create_uid:"
-msgid "Create User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,discontinued:"
 msgid "Discontinued"
-msgstr ""
+msgstr "ຢຸດສະງັກ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,discontinued_reason:"
 msgid "Reason for discontinuation"
-msgstr ""
+msgstr "ເຫດຜົນສໍາລັບການຢຸດສະງັກ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,dose:"
 msgid "Dose"
-msgstr ""
+msgstr "ປະລິມານຢາ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,dose_unit:"
 msgid "dose unit"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍຂອງປະລິມານ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,end_treatment:"
 msgid "End"
-msgstr ""
+msgstr "ທ້າຍສຸດ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,form:"
 msgid "Form"
-msgstr ""
+msgstr "ແບບຟອມ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,frequency:"
 msgid "Frequency"
-msgstr ""
+msgstr "ລຳດັບ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,frequency_prn:"
 msgid "PRN"
-msgstr ""
+msgstr "ຕາມຕ້ອງການ  Pro Re nata"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "unit"
-msgstr ""
+msgstr "ຫົວໜ່ວຍ"
 
-msgctxt "field:gnuhealth.inpatient.medication,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,indication:"
 msgid "Indication"
-msgstr ""
+msgstr "ເຄື່ອງຊີ້ບອກ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,is_active:"
 msgid "Active"
-msgstr ""
+msgstr "ຢ່າງຫ້າວຫັນ"
 
 msgctxt "field:gnuhealth.inpatient.medication,log_history:"
 msgid "Log History"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,medicament:"
 msgid "Medicament"
-msgstr ""
+msgstr "ຢາປົວພະຍາດ"
 
 msgctxt "field:gnuhealth.inpatient.medication,name:"
 msgid "Registration Code"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
-msgstr ""
+msgstr "x"
 
-msgctxt "field:gnuhealth.inpatient.medication,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,route:"
 msgid "Administration Route"
-msgstr ""
+msgstr "ເສັ້ນທາງການບໍລິຫານ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Start"
-msgstr ""
+msgstr "ເລີ່ມຕົ້ນວັນທີ"
 
-msgctxt "field:gnuhealth.inpatient.medication,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication,write_uid:"
-msgid "Write User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,admin_time:"
 msgid "Time"
-msgstr ""
+msgstr "ເວລາ"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,create_uid:"
-msgid "Create User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose:"
 msgid "Dose"
-msgstr ""
+msgstr "ປະລິມານຢາ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "dose unit"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍຂອງປະລິມານ"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,name:"
 msgid "Medication"
-msgstr ""
+msgstr "ຢາປິ່ນປົວ"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,remarks:"
 msgid "Remarks"
-msgstr ""
+msgstr "ຂໍ້ສັງເກດ"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,write_uid:"
-msgid "Write User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,admin_time:"
 msgid "Date"
-msgstr ""
+msgstr "ວັນທີ:"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication.log,create_uid:"
-msgid "Create User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,dose:"
 msgid "Dose"
-msgstr ""
+msgstr "ປະລິມານຢາ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,dose_unit:"
 msgid "dose unit"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍຂອງປະລິມານ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,health_professional:"
 msgid "Health Professional"
-msgstr ""
+msgstr "ທ່ານໝໍ"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,name:"
 msgid "Medication"
-msgstr ""
+msgstr "ຢາປິ່ນປົວ"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,remarks:"
 msgid "Remarks"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication.log,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.medication.log,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "ຂໍ້ສັງເກດ"
 
 msgctxt "field:gnuhealth.inpatient.registration,admission_reason:"
 msgid "Reason for Admission"
@@ -552,20 +313,13 @@ msgctxt "field:gnuhealth.inpatient.registration,attending_physician:"
 msgid "Attending Physician"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,bed:"
 msgid "Hospital Bed"
-msgstr ""
+msgstr "ຕຽງໂຮງຫມໍ"
 
 msgctxt "field:gnuhealth.inpatient.registration,bed_transfers:"
 msgid "Transfer History"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.registration,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.registration,create_uid:"
-msgid "Create User"
 msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.registration,discharge_date:"
@@ -592,21 +346,20 @@ msgctxt "field:gnuhealth.inpatient.registration,hospitalization_date:"
 msgid "Hospitalization date"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.registration,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,info:"
 msgid "Notes"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,institution:"
 msgid "Institution"
-msgstr ""
+msgstr "ສະຖາບັນ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,medications:"
 msgid "Medications"
-msgstr ""
+msgstr "ຢາປິ່ນປົວ"
 
 msgctxt "field:gnuhealth.inpatient.registration,name:"
 msgid "Registration Code"
@@ -624,32 +377,23 @@ msgctxt "field:gnuhealth.inpatient.registration,operating_physician:"
 msgid "Operating Physician"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "ຄົນເຈັບ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,puid:"
 msgid "PUID"
-msgstr ""
+msgstr "ເລກປະຈໍາໂຕທີ່ຢູ່ອາໄສ"
 
-msgctxt "field:gnuhealth.inpatient.registration,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,state:"
 msgid "Status"
-msgstr ""
+msgstr "ສະຖານະພາບ"
 
 msgctxt "field:gnuhealth.inpatient.registration,therapeutic_diets:"
 msgid "Meals / Diet Program"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.registration,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.registration,write_uid:"
-msgid "Write User"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient,patient_status:"
@@ -665,11 +409,21 @@ msgid "IPC"
 msgstr ""
 
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
-msgid "Inpatient Meal Sequence"
+msgid "Inpatient Meal order Sequence"
 msgstr ""
 
 msgctxt "field:gnuhealth.sequences,inpatient_registration_sequence:"
-msgid "Inpatient Sequence"
+msgid "Inpatient Registration Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.inpatient_meal_order_sequence,inpatient_meal_order_sequence:"
+msgid "Inpatient Meal order Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.inpatient_registration_sequence,inpatient_registration_sequence:"
+msgid "Inpatient Registration Sequence"
 msgstr ""
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
@@ -696,89 +450,112 @@ msgctxt "help:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Order date"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,adverse_reaction:"
 msgid "Side effects or adverse reactions that the patient experienced"
-msgstr ""
+msgstr "ຜົນກະທົບຂ້າງຄຽງຫຼືປະຕິກິລິຍາທາງລົບທີ່ຄົນເຈັບໄດ້ປະສົບປະການມາ."
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,common_dosage:"
 msgid "Common / standard dosage frequency for this medicament"
-msgstr ""
+msgstr "ທົ່ວໄປ / ມາດຕະຖານ ປະລິມານ ຂອງຄວາມຖີ່ໃນການວາງຢານີ້"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,discontinued_reason:"
 msgid "Short description for discontinuing the treatment"
-msgstr ""
+msgstr "ຄຳອະທິບາຍສັ້ນໆສໍາລັບການຢຸດໄຊ້ການປິ່ນປົວ."
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
-msgstr ""
+msgstr "ຈໍານວນຂອງຢາ (ຕ.ຢ. , 250 mg) ຕໍ່ຄັ້ງ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,dose_unit:"
 msgid "Unit of measure for the medication to be taken"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍຂອງຢາທີ່ຈະຕ້ອງໄດ້ໄຊ້"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,end_treatment:"
 msgid "Date of start of Treatment"
-msgstr ""
+msgstr "ວັນທີເລີ້ມການປິ່ນປົວ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,form:"
 msgid "Drug form, such as tablet or gel"
-msgstr ""
+msgstr "ຊະນິດຂອງຢາ, ເຊັ່ນ: ຢາເມັດຫຼື ປະເພດແຈວ gel"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,frequency:"
 msgid ""
 "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
 "put here 8 and select \"hours\" in the unit field"
 msgstr ""
+"ເວລາທີ່ຫ່າງກັນຄົນເຈັບຕ້ອງຖ້າລະຫວ່າງການໄຊ້ຢາ (ເຊັ່ນ: 1 ເມັດແຕ່ລະ 8 ຊົ່ວໂມງ, "
+"ໃຫ້ໃສ່ 8 ແລະເລືອກເອົາ \"ຊົ່ວໂມງ\" ຄືຫົວຫນ່ວຍຂອງຊິ້ນສ່ວນນີ້"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,frequency_prn:"
 msgid "Use it as needed, pro re nata"
-msgstr ""
+msgstr "ໃຊ້ຕາມຄວາມຕ້ອງການ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,indication:"
 msgid ""
 "Choose a disease for this medicament from the disease list. It can be an "
 "existing disease of the patient or a prophylactic."
 msgstr ""
+"ໃຫ້ເລືອກເອົາພະຍາດສໍາລັບການໄຊ້ຢາປະເພດນີ້ຕາມບັນຊີລາຍຊື່ຂອງພະຍາດ. "
+"ມັນອາດຈະເປັນພະຍາດເດີມຂອງຄົນເຈັບ ຫຼື ເປັນຢາປ້ອງກັນເຊື້ອໂລກກໍ່ເປັນໄດ້."
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,is_active:"
 msgid "Check if the patient is currently taking the medication"
-msgstr ""
+msgstr "ກວດສອບເບິ່ງວ່າຄົນເຈັບກຳລັງກິນຢານີ້."
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,medicament:"
 msgid "Prescribed Medicament"
-msgstr ""
+msgstr "ຢາທີ່ທ່ານໝໍສັ່ງ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,qty:"
 msgid "Quantity of units (eg, 2 capsules) of the medicament"
-msgstr ""
+msgstr "ຈຳນວນຫົວຫນ່ວຍຂອງຢາ (ຕ.ຢ. , 2 ແຄບຊູນ) "
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,route:"
 msgid "Drug administration route code."
-msgstr ""
+msgstr "ລະຫັດຂອງເສັ້ນທາງແຫ່ງການບຮິຫານຢາ."
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Date of start of Treatment"
-msgstr ""
+msgstr "ວັນທີເລີ້ມການປິ່ນປົວ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication.admin_time,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
-msgstr ""
+msgstr "ຈໍານວນຂອງຢາ (ຕ.ຢ. , 250 mg) ຕໍ່ຄັ້ງ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "Unit of measure for the medication to be taken"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍຂອງຢາທີ່ຈະຕ້ອງໄດ້ໄຊ້"
 
 msgctxt "help:gnuhealth.inpatient.medication.admin_time,remarks:"
 msgid "specific remarks for this dose"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication.log,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
-msgstr ""
+msgstr "ຈໍານວນຂອງຢາ (ຕ.ຢ. , 250 mg) ຕໍ່ຄັ້ງ"
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.medication.log,dose_unit:"
 msgid "Unit of measure for the medication to be taken"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍຂອງຢາທີ່ຈະຕ້ອງໄດ້ໄຊ້"
 
 msgctxt "help:gnuhealth.inpatient.medication.log,remarks:"
 msgid "specific remarks for this dose"
@@ -800,9 +577,10 @@ msgctxt "help:gnuhealth.inpatient.registration,discharged_by:"
 msgid "Health Professional that discharged the patient"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.registration,puid:"
 msgid "Person Unique Identifier"
-msgstr ""
+msgstr "ບັດປະຊາຊົນທີ່ເປັນເອກະລັກ"
 
 msgctxt "help:gnuhealth.patient,patient_status:"
 msgid "Show the hospitalization status of the patient"
@@ -1108,9 +886,10 @@ msgctxt "model:gnuhealth.diet.therapeutic,name:PRERENAL"
 msgid "PRERENAL"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.diet.therapeutic,name:REG"
 msgid "Regular"
-msgstr ""
+msgstr "ປົກກະຕິ"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:RENAL"
 msgid "RENAL"
@@ -1156,9 +935,18 @@ msgctxt "model:gnuhealth.inpatient.registration,name:"
 msgid "Patient admission History"
 msgstr ""
 
+msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
+msgid "Patient Evaluation Sequence setup"
+msgstr ""
+
+msgctxt "model:gnuhealth.sequences.inpatient_registration_sequence,name:"
+msgid "Ambulatory Care Sequences setup"
+msgstr ""
+
+#, fuzzy
 msgctxt "model:ir.action,name:act_create_inpatient_evaluation"
 msgid "Create Patient Evaluation"
-msgstr ""
+msgstr "ສ້າງການປະເມີນຜົນຄົນເຈັບ"
 
 msgctxt "model:ir.action,name:act_create_patient_bed_transfer"
 msgid "Bed Transfer"
@@ -1188,42 +976,48 @@ msgctxt "model:ir.action,name:gnuhealth_action_inpatient_registration"
 msgid "Hospitalizations"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_all"
 msgid "All"
-msgstr ""
+msgstr "ທັງໝົດ"
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_done"
 msgid "Done"
-msgstr ""
+msgstr "ແລ້ວໆ"
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_draft"
 msgid "Draft"
-msgstr ""
+msgstr "ຮ່າງກຽມ"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_ordered"
 msgid "Ordered"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_all"
 msgid "All"
-msgstr ""
+msgstr "ທັງໝົດ"
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_confirmed"
 msgid "Confirmed"
-msgstr ""
+msgstr "ຕົກລົງ"
 
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_done"
 msgid "To clean"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_draft"
 msgid "Cancelled"
-msgstr ""
+msgstr "ຍົກເລີກແລ້ວ"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_finished"
@@ -1233,6 +1027,80 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_hospitalized"
 msgid "Hospitalized"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_bed_is_not_available"
+msgid "Bed is not available"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_destination_bed_not_available"
+msgid "Destination bed is not available"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_discharge_befor_admission"
+msgid "The Discharge date must later than the admission"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_discharge_reason_needed"
+msgid "Admission and Discharge reasons as well as Discharge Dx are needed"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_many_records_chosen"
+msgid "You have chosen more than 1 record. Please choose only one"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_need_timezone"
+msgid "Need timezone"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_associated_health_professional"
+msgid "There is no health professional associated to this user"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_record_selected"
+msgid "You need to select one record"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_special_meal_needs"
+msgid "This patient has special meal needs"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:meal_cancel_button"
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:meal_done_button"
+msgid "Done"
+msgstr "ແລ້ວໆ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:meal_generate_button"
+msgid "Generate"
+msgstr "ສ້າງ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_admission_button"
+msgid "Admission"
+msgstr "ການຮັບຄົນເຈັບປິ່ນປົວ"
+
+msgctxt "model:ir.model.button,string:registration_bedclean_button"
+msgid "Clean Bed"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_cancel_button"
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_confirmed_button"
+msgid "Confirm"
+msgstr "Confirm"
+
+msgctxt "model:ir.model.button,string:registration_discharge_button"
+msgid "Discharge"
 msgstr ""
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
@@ -1272,33 +1140,29 @@ msgctxt "model:res.group,name:group_health_inpatient_admin"
 msgid "Health Inpatient Administration"
 msgstr ""
 
-msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
-msgid ""
-msgstr ""
-
+#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Free"
-msgstr ""
+msgstr "ຟຣີ"
 
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Needs cleaning"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Not available"
-msgstr ""
+msgstr "ຍັງບໍ່ທັນມີ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Occupied"
-msgstr ""
+msgstr "ມີຄົນພັກແລ້ວ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Reserved"
-msgstr ""
-
-msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
-msgid ""
-msgstr ""
+msgstr "ສະຫງວນໄວ້"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Breakfast"
@@ -1320,61 +1184,59 @@ msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Special order"
 msgstr ""
 
-msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
-msgid ""
-msgstr ""
-
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Cancelled"
-msgstr ""
+msgstr "ຍົກເລີກແລ້ວ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Done"
-msgstr ""
+msgstr "ແລ້ວໆ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Draft"
-msgstr ""
+msgstr "ຮ່າງກຽມ"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Ordered"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Processing"
-msgstr ""
+msgstr "ກຳລັງດຳເນີນການ"
 
-msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
-msgid ""
-msgstr ""
-
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "days"
-msgstr ""
+msgstr "ຫຼາຍວັນ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "hours"
-msgstr ""
+msgstr "ຊົ່ວໂມງ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "minutes"
-msgstr ""
+msgstr "ນາທີ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "seconds"
-msgstr ""
+msgstr "ວິນາທີ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "weeks"
-msgstr ""
+msgstr "ອາທິດ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "when required"
-msgstr ""
-
-msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
-msgid ""
-msgstr ""
+msgstr "ເວລາທີ່ຕ້ອງການ"
 
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Elective"
@@ -1392,13 +1254,10 @@ msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Routine"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Urgent"
-msgstr ""
-
-msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
-msgid ""
-msgstr ""
+msgstr "ຮີບດ່ວນ"
 
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Death"
@@ -1414,10 +1273,6 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Transferred to another institution"
-msgstr ""
-
-msgctxt "selection:gnuhealth.inpatient.registration,state:"
-msgid ""
 msgstr ""
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
@@ -1444,11 +1299,197 @@ msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "hospitalized"
 msgstr ""
 
+msgctxt "view:gnuhealth.diet.therapeutic:"
+msgid "Diet Description and Indications"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Cancel order"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Cancel the this meal order ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Create order"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Done"
+msgstr "ແລ້ວໆ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Generate"
+msgstr "ສ້າງ"
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Generate the meal order ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "The meal order is done"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "The meal order will be closed"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Administration"
+msgstr "ເຂດການປົກຄອງ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Adverse Reactions and Notes"
+msgstr "ຜົນປະຕິກິລິຍາທາງລົບແລະຂໍ້ສັງເກັດ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Dosage"
+msgstr "ປະລິມານການໄຊ້ຢາ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Extra Info"
+msgstr "ຂໍ້ມູນເພີ່ມ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "General Info"
+msgstr "ຂໍ້ມູນທົ່ວໄປ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Medication"
+msgstr "ຢາປິ່ນປົວ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Status"
+msgstr "ສະຖານະພາບ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Treatment period"
+msgstr "ຊ່ວງຂອງການປິ່ນປົວ"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Administrative data"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Admission"
+msgstr "ການຮັບຄົນເຈັບປິ່ນປົວ"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Admit the patient in the health institution and assign the bed"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Cancel Registration"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Cancel the patient registration process ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Care Plan"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Clean Bed"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Click when Bed has been cleaned"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Confirm"
+msgstr "Confirm"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Confirm Registration / Make the reservation"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Confirm that the bed has been cleaned and is now ready to use"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge Info"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge Patient"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge Plan"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Medication Plan"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Notes"
+msgstr "ໝາຍເຫດ"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Nursing Plan"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Nutrition"
+msgstr "ອາຫານການກິນ"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Other nutrition notes / directions"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Patient Admission"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Status"
+msgstr "ສະຖານະພາບ"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "You are about to discharge the patient from the health institution."
+msgstr ""
+
 msgctxt ""
 "wizard_button:gnuhealth.bed.transfer.create,start,create_bed_transfer:"
 msgid "Transfer Patient"
 msgstr ""
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.bed.transfer.create,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "ຍົກເລີກ"

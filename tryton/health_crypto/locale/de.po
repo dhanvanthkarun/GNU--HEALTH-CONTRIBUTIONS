@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2021-08-20 12:03+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/gnu-health/"
-"health_crypto/de/>\n"
-"Language: de\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
@@ -110,10 +101,9 @@ msgstr "Aktuelles Dokument"
 msgctxt "help:gnuhealth.birth_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done only on selected  "
+"fields."
 msgstr ""
-"Diese Feld wird markiert wenn Teile des Originaldokumentes geändert werden. "
-"Hinweis: Die Validierung findet nur auf ausgewählten Feldern statt."
 
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -122,10 +112,9 @@ msgstr "Originaler Hashwert des Dokumentes"
 msgctxt "help:gnuhealth.death_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done  only on selected "
+"fields."
 msgstr ""
-"Diese Feld wird markiert, wenn Teile des Originaldokumentes geändert werden. "
-"Hinweis: Die Verifikation findet nur auf ausgewählten Feldern statt."
 
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -148,12 +137,32 @@ msgid ""
 "This field will be set whenever parts of the main original document has been"
 " changed. Please note that the verification is done only on selected fields."
 msgstr ""
-"Diese Feld wird markiert, wenn Teile des Originaldokumentes geändert werden. "
-"Hinweis: Die Validierung findet nur auf ausgewählten Feldern statt."
+"Diese Feld wird markiert, wenn Teile des Originaldokumentes geändert werden."
+" Hinweis: Die Validierung findet nur auf ausgewählten Feldern statt."
 
 msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
 msgstr "Originaler Hashwert des Dokumentes"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:birthcert_generate_button"
+msgid "Generate"
+msgstr "Erzeugen"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:deathcert_generate_button"
+msgid "Generate"
+msgstr "Erzeugen"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:evaluation_sign_button"
+msgid "Close"
+msgstr "Schließen"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:prescription_generate_button"
+msgid "Generate"
+msgstr "Erzeugen"
 
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"

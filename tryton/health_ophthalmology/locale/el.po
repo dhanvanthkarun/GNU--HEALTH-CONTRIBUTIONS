@@ -1,27 +1,10 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2021-02-09 12:34+0000\n"
-"Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/gnu-health/"
-"health_ophthalmology/el/>\n"
-"Language: el\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.ophthalmology.evaluation,computed_age:"
 msgid "Age"
 msgstr "Ηλικία"
-
-msgctxt "field:gnuhealth.ophthalmology.evaluation,create_date:"
-msgid "Create Date"
-msgstr "Ημερομηνία δημιουργίας"
-
-msgctxt "field:gnuhealth.ophthalmology.evaluation,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία Χρήστη"
 
 msgctxt "field:gnuhealth.ophthalmology.evaluation,findings:"
 msgid "Findings"
@@ -34,10 +17,6 @@ msgstr "Φύλο"
 msgctxt "field:gnuhealth.ophthalmology.evaluation,health_professional:"
 msgid "Health Professional"
 msgstr "Επαγγελματίας Υγείας"
-
-msgctxt "field:gnuhealth.ophthalmology.evaluation,id:"
-msgid "ID"
-msgstr "Ταυτότητα"
 
 msgctxt "field:gnuhealth.ophthalmology.evaluation,iop_method:"
 msgid "Method"
@@ -155,10 +134,6 @@ msgctxt "field:gnuhealth.ophthalmology.evaluation,rdva_pinhole:"
 msgid "RDVA"
 msgstr ""
 
-msgctxt "field:gnuhealth.ophthalmology.evaluation,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
 msgctxt "field:gnuhealth.ophthalmology.evaluation,riop:"
 msgid "RIOP"
 msgstr ""
@@ -187,25 +162,9 @@ msgctxt "field:gnuhealth.ophthalmology.evaluation,visit_date:"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-msgctxt "field:gnuhealth.ophthalmology.evaluation,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.ophthalmology.evaluation,write_uid:"
-msgid "Write User"
-msgstr ""
-
 msgctxt "field:gnuhealth.ophthalmology.findings,affected_eye:"
 msgid "Eye"
 msgstr "Οφθαλμός"
-
-msgctxt "field:gnuhealth.ophthalmology.findings,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.ophthalmology.findings,create_uid:"
-msgid "Create User"
-msgstr ""
 
 msgctxt "field:gnuhealth.ophthalmology.findings,eye_structure:"
 msgid "Structure"
@@ -215,25 +174,9 @@ msgctxt "field:gnuhealth.ophthalmology.findings,finding:"
 msgid "Finding"
 msgstr "Εύρημα"
 
-msgctxt "field:gnuhealth.ophthalmology.findings,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:gnuhealth.ophthalmology.findings,name:"
 msgid "Evaluation"
 msgstr "Εκτίμηση"
-
-msgctxt "field:gnuhealth.ophthalmology.findings,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
-msgctxt "field:gnuhealth.ophthalmology.findings,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.ophthalmology.findings,write_uid:"
-msgid "Write User"
-msgstr ""
 
 msgctxt "help:gnuhealth.ophthalmology.evaluation,computed_age:"
 msgid "Computed patient age at the moment of the evaluation"
@@ -367,9 +310,10 @@ msgctxt "help:gnuhealth.ophthalmology.evaluation,rspherical:"
 msgid "Right Eye Spherical"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.ophthalmology.evaluation,signed_by:"
 msgid "Health Professional that finished the patient evaluation"
-msgstr ""
+msgstr "Επαγγελματίας υγείας που ολοκλήρωσε την εκτίμηση ασθενούς"
 
 msgctxt "help:gnuhealth.ophthalmology.evaluation,visit_date:"
 msgid "Date of Consultation"
@@ -403,6 +347,11 @@ msgctxt "model:ir.action,name:report_ophthalmology"
 msgid "Optometry Report"
 msgstr "Αναφορά οπτομετρίας"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:ophthalmoeval_end_button"
+msgid "Done"
+msgstr "Ολοκληρώθηκε"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_ophthalmology_evaluation_menu"
 msgid "Ophthalmologic evaluations"
 msgstr ""
@@ -412,16 +361,12 @@ msgid "ADD"
 msgstr "ΠΡΟΣΘΗΚΗ"
 
 msgctxt "report:ophthalmology.card:"
-msgid "Age :"
-msgstr "Ηλικία :"
+msgid "Age:"
+msgstr ""
 
 msgctxt "report:ophthalmology.card:"
 msgid "Axis"
 msgstr "Άξονας"
-
-msgctxt "report:ophthalmology.card:"
-msgid "Cyl"
-msgstr ""
 
 msgctxt "report:ophthalmology.card:"
 msgid "Cylinder"
@@ -432,28 +377,20 @@ msgid "DV"
 msgstr ""
 
 msgctxt "report:ophthalmology.card:"
-msgid "Date :"
-msgstr "Ημερομηνία :"
-
-msgctxt "report:ophthalmology.card:"
-msgid "Female"
-msgstr "Θήλυ"
+msgid "Date:"
+msgstr ""
 
 msgctxt "report:ophthalmology.card:"
 msgid "GNU Health Ophthalmology Report"
 msgstr "Οφθαλμολογική αναφορά του GNU Health"
 
 msgctxt "report:ophthalmology.card:"
-msgid "Health Professional :"
-msgstr "Επαγγελματίας Υγείας :"
+msgid "Health Prof:"
+msgstr ""
 
 msgctxt "report:ophthalmology.card:"
 msgid "Left Eye"
 msgstr "Αριστερός οφθαλμός"
-
-msgctxt "report:ophthalmology.card:"
-msgid "Male"
-msgstr "Άρρεν"
 
 msgctxt "report:ophthalmology.card:"
 msgid "NV"
@@ -464,15 +401,15 @@ msgid "Optometry Refraction Report"
 msgstr ""
 
 msgctxt "report:ophthalmology.card:"
-msgid "Patient Name :"
-msgstr "Όνομα ασθενούς :"
+msgid "Patient Name:"
+msgstr ""
 
 msgctxt "report:ophthalmology.card:"
 msgid "Right Eye"
 msgstr "Δεξιός οφθαλμός"
 
 msgctxt "report:ophthalmology.card:"
-msgid "Sex :"
+msgid "Sex:"
 msgstr ""
 
 msgctxt "report:ophthalmology.card:"
@@ -488,16 +425,15 @@ msgid "VA"
 msgstr ""
 
 msgctxt "report:ophthalmology.card:"
-msgid "Verified & Prescribed By"
+msgid "Verified And Prescribed By"
 msgstr ""
 
-msgctxt "report:ophthalmology.card:"
-msgid "inder"
-msgstr ""
-
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,gender:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,gender:"
 msgid "Female"
@@ -507,9 +443,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,gender:"
 msgid "Male"
 msgstr "Άρρεν"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,iop_method:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,iop_method:"
 msgid "Goldman tonometry"
@@ -523,9 +462,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,iop_method:"
 msgid "Schiotz tonometry"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,lbcva:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,lbcva:"
 msgid "1 Meter FC"
@@ -591,9 +533,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,lbcva:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,lbcva_nv:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,lbcva_nv:"
 msgid "N12"
@@ -623,9 +568,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,lbcva_nv:"
 msgid "N8"
 msgstr "N8"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva:"
 msgid "1 Meter FC"
@@ -691,9 +639,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva_aid:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva_aid:"
 msgid "1 Meter FC"
@@ -759,9 +710,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva_aid:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva_pinhole:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva_pinhole:"
 msgid "1 Meter FC"
@@ -827,9 +781,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,ldva_pinhole:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,lnv:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,lnv:"
 msgid "N12"
@@ -859,9 +816,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,lnv:"
 msgid "N8"
 msgstr "N8"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rbcva:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rbcva:"
 msgid "1 Meter FC"
@@ -927,9 +887,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,rbcva:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rbcva_nv:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rbcva_nv:"
 msgid "N12"
@@ -959,9 +922,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,rbcva_nv:"
 msgid "N8"
 msgstr "N8"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva:"
 msgid "1 Meter FC"
@@ -1027,9 +993,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva_aid:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva_aid:"
 msgid "1 Meter FC"
@@ -1095,9 +1064,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva_aid:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva_pinhole:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva_pinhole:"
 msgid "1 Meter FC"
@@ -1163,9 +1135,12 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,rdva_pinhole:"
 msgid "P/L"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rnv:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,rnv:"
 msgid "N12"
@@ -1195,21 +1170,28 @@ msgctxt "selection:gnuhealth.ophthalmology.evaluation,rnv:"
 msgid "N8"
 msgstr "N8"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,state:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,state:"
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.evaluation,state:"
 msgid "In progress"
-msgstr ""
+msgstr "Υπό εξέλιξη"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.findings,affected_eye:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.findings,affected_eye:"
 msgid "both"
@@ -1223,9 +1205,12 @@ msgctxt "selection:gnuhealth.ophthalmology.findings,affected_eye:"
 msgid "right"
 msgstr "δεξιός"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ophthalmology.findings,eye_structure:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ophthalmology.findings,eye_structure:"
 msgid "Anterior Chamber"
@@ -1312,16 +1297,8 @@ msgid "Notes"
 msgstr "Σημειώσεις"
 
 msgctxt "view:gnuhealth.ophthalmology.evaluation:"
-msgid "Ophthalmology Evaluation"
-msgstr "Οφθαλμολογική αξιολόγηση"
-
-msgctxt "view:gnuhealth.ophthalmology.evaluation:"
 msgid "Optometry"
 msgstr "Οπτομετρία"
-
-msgctxt "view:gnuhealth.ophthalmology.evaluation:"
-msgid "Optometry form"
-msgstr "Φόρμα Οπτομετρίας"
 
 msgctxt "view:gnuhealth.ophthalmology.evaluation:"
 msgid "Refraction"
