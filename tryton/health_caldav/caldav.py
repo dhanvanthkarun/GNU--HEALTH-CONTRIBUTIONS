@@ -313,3 +313,17 @@ def do_POST(self):
     return _prev_do_POST(self)
 
 WebDAVAuthRequestHandler.do_POST = do_POST
+
+_prev_do_REPORT = WebDAVAuthRequestHandler.do_REPORT
+
+def do_REPORT(self):
+    if not 'Depth' in self.headers:
+        # NOTE: Set 'Depth' header to '1' if it is not found, this can
+        # let Evolution work well with gnuhealth caldav, for Evolution
+        # do not set 'Depth' in header, pywebdav will use '0' as
+        # fallback.
+        self.headers['Depth'] = '1'
+
+    return _prev_do_REPORT(self)
+
+WebDAVAuthRequestHandler.do_REPORT = do_REPORT

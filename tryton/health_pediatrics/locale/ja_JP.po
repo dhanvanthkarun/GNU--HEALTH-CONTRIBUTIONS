@@ -1,30 +1,6 @@
-# 
-# Translators:
-# Kentaro Hatori <hatori@hatochan.dyndns.org>, 2014
-# Hisahiro Ohmura, 2014
-# Kentaro Hatori <hatori@hatochan.dyndns.org>, 2014
-# Shigeomi Shibata, 2014
+#
 msgid ""
-msgstr ""
-"Project-Id-Version: GNU Health\n"
-"Report-Msgid-Bugs-To: https://savannah.gnu.org/bugs/?group=health\n"
-"POT-Creation-Date: 2015-01-27 11:17+0000\n"
-"PO-Revision-Date: 2015-01-20 21:31+0000\n"
-"Last-Translator: Shigeomi Shibata\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/GNU_Health/language/ja/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "The Newborn ID must be unique !"
-msgstr "新生児IDは重複禁止です !"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "There is already a newborn record for this patient"
-msgstr "この患者の新生児記録はすでにあります"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "Activity"
@@ -54,33 +30,10 @@ msgctxt "field:gnuhealth.neonatal.apgar,apgar_score:"
 msgid "APGAR Score"
 msgstr "アプガー指数"
 
-msgctxt "field:gnuhealth.neonatal.apgar,create_date:"
-msgid "Create Date"
-msgstr "作成日"
-
-msgctxt "field:gnuhealth.neonatal.apgar,create_uid:"
-msgid "Create User"
-msgstr "作成者"
-
-msgctxt "field:gnuhealth.neonatal.apgar,id:"
-msgid "ID"
-msgstr "ID"
-
+#, fuzzy
 msgctxt "field:gnuhealth.neonatal.apgar,name:"
-msgid "Newborn ID"
-msgstr "新生児ID"
-
-msgctxt "field:gnuhealth.neonatal.apgar,rec_name:"
-msgid "Name"
-msgstr "名前"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_date:"
-msgid "Write Date"
-msgstr "記載日"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_uid:"
-msgid "Write User"
-msgstr "記載者"
+msgid "Newborn"
+msgstr "新生児"
 
 msgctxt "field:gnuhealth.newborn,apgar1:"
 msgid "APGAR 1st minute"
@@ -114,14 +67,6 @@ msgctxt "field:gnuhealth.newborn,congenital_diseases:"
 msgid "Congenital diseases"
 msgstr "先天性疾患"
 
-msgctxt "field:gnuhealth.newborn,create_date:"
-msgid "Create Date"
-msgstr "作成日"
-
-msgctxt "field:gnuhealth.newborn,create_uid:"
-msgid "Create User"
-msgstr "作成者"
-
 msgctxt "field:gnuhealth.newborn,died_at_delivery:"
 msgid "Died at delivery room"
 msgstr "分娩室での死亡"
@@ -138,9 +83,10 @@ msgctxt "field:gnuhealth.newborn,dismissed:"
 msgid "Discharged"
 msgstr "退院"
 
-msgctxt "field:gnuhealth.newborn,id:"
-msgid "ID"
-msgstr "ID"
+#, fuzzy
+msgctxt "field:gnuhealth.newborn,healthprof:"
+msgid "Health Professional"
+msgstr "主治医"
 
 msgctxt "field:gnuhealth.newborn,length:"
 msgid "Length"
@@ -242,10 +188,6 @@ msgctxt "field:gnuhealth.newborn,newborn_name:"
 msgid "Name at Birth"
 msgstr "出生時の氏名"
 
-msgctxt "field:gnuhealth.newborn,newborn_sex:"
-msgid "Sex"
-msgstr "性別"
-
 msgctxt "field:gnuhealth.newborn,notes:"
 msgid "Notes"
 msgstr "備考"
@@ -278,17 +220,19 @@ msgctxt "field:gnuhealth.newborn,reanimation_stimulation:"
 msgid "Stimulation"
 msgstr "刺激"
 
-msgctxt "field:gnuhealth.newborn,rec_name:"
-msgid "Name"
-msgstr "名前"
-
-msgctxt "field:gnuhealth.newborn,responsible:"
-msgid "Doctor in charge"
-msgstr "主治医"
-
 msgctxt "field:gnuhealth.newborn,sex:"
 msgid "Sex"
 msgstr "性別"
+
+#, fuzzy
+msgctxt "field:gnuhealth.newborn,signed_by:"
+msgid "Signed by"
+msgstr "サインされました"
+
+#, fuzzy
+msgctxt "field:gnuhealth.newborn,state:"
+msgid "State"
+msgstr "州"
 
 msgctxt "field:gnuhealth.newborn,test_audition:"
 msgid "Audition"
@@ -322,29 +266,15 @@ msgctxt "field:gnuhealth.newborn,weight:"
 msgid "Weight"
 msgstr "体重"
 
-msgctxt "field:gnuhealth.newborn,write_date:"
-msgid "Write Date"
-msgstr "記載日"
-
-msgctxt "field:gnuhealth.newborn,write_uid:"
-msgid "Write User"
-msgstr "記載者"
-
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
-msgid "Newborn ID"
-msgstr "新生児ID"
+msgid "Newborn"
+msgstr "新生児"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
-msgid "Newborn ID"
-msgstr "新生児ID"
-
-msgctxt "field:gnuhealth.patient.psc,create_date:"
-msgid "Create Date"
-msgstr "作成日"
-
-msgctxt "field:gnuhealth.patient.psc,create_uid:"
-msgid "Create User"
-msgstr "作成者"
+msgid "Newborn"
+msgstr "新生児"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -353,10 +283,6 @@ msgstr "予約"
 msgctxt "field:gnuhealth.patient.psc,evaluation_start:"
 msgid "Date"
 msgstr "日"
-
-msgctxt "field:gnuhealth.patient.psc,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.patient.psc,notes:"
 msgid "Notes"
@@ -510,21 +436,9 @@ msgctxt "field:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Worries a lot"
 msgstr "心配性"
 
-msgctxt "field:gnuhealth.patient.psc,rec_name:"
-msgid "Name"
-msgstr "名前"
-
 msgctxt "field:gnuhealth.patient.psc,user_id:"
 msgid "Health Professional"
 msgstr "主治医"
-
-msgctxt "field:gnuhealth.patient.psc,write_date:"
-msgid "Write Date"
-msgstr "記載日"
-
-msgctxt "field:gnuhealth.patient.psc,write_uid:"
-msgid "Write User"
-msgstr "記載者"
 
 msgctxt "help:gnuhealth.newborn,birth_date:"
 msgid "Date and Time of birth"
@@ -538,6 +452,10 @@ msgctxt "help:gnuhealth.newborn,died_being_transferred:"
 msgid "The baby died being transferred to another health institution"
 msgstr "他の医療機関に移送する途中に亡くなった新生児"
 
+msgctxt "help:gnuhealth.newborn,healthprof:"
+msgid "Health professional"
+msgstr ""
+
 msgctxt "help:gnuhealth.newborn,length:"
 msgid "Length in centimeters (cm)"
 msgstr "センチメートル(cm)で示した長さ"
@@ -546,13 +464,15 @@ msgctxt "help:gnuhealth.newborn,patient:"
 msgid "Patient associated to this newborn"
 msgstr "この新生児と関係のある患者"
 
-msgctxt "help:gnuhealth.newborn,responsible:"
-msgid "Signed by the health professional"
-msgstr "医療従事者によってサインされた"
-
 msgctxt "help:gnuhealth.newborn,sex:"
-msgid "Sex at birth. It might differ from the current patient sex"
-msgstr "出生時の性別。現時点での患者の性別とは違う可能性あり"
+msgid ""
+"Sex at birth. It might differ from the current patient gender. This is the "
+"biological sex."
+msgstr ""
+
+msgctxt "help:gnuhealth.newborn,signed_by:"
+msgid "Health Professional that signed this document"
+msgstr ""
 
 msgctxt "help:gnuhealth.newborn,test_metabolic:"
 msgid ""
@@ -601,6 +521,11 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr "新生児ID"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:newborn_sign_button"
+msgid "Sign"
+msgstr "サイン"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
 msgstr "新生児"
@@ -617,57 +542,47 @@ msgctxt "model:res.group,name:group_health_pediatrics_admin"
 msgid "Health Pediatrics Administration"
 msgstr "新生児健康管理"
 
+#, fuzzy
 msgctxt "report:newborn.card:"
-msgid ","
-msgstr "'"
+msgid "DoB:"
+msgstr "生年月日 :"
 
 msgctxt "report:newborn.card:"
-msgid ":"
-msgstr "："
+msgid "Ht / Wt:"
+msgstr ""
 
 msgctxt "report:newborn.card:"
-msgid "DoB"
-msgstr "生年月日"
+msgid "ID:"
+msgstr ""
 
 msgctxt "report:newborn.card:"
-msgid "Female"
-msgstr "女性"
+msgid "Mother:"
+msgstr ""
 
 msgctxt "report:newborn.card:"
-msgid "ID"
-msgstr "ID"
+msgid "Mother’s PUID:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:newborn.card:"
+msgid "Name:"
+msgstr "名前 :"
 
 msgctxt "report:newborn.card:"
-msgid "Male"
-msgstr "男性"
+msgid "Sex:"
+msgstr ""
 
 msgctxt "report:newborn.card:"
-msgid "Mother"
-msgstr "母"
-
-msgctxt "report:newborn.card:"
-msgid "Mother's"
-msgstr "母親の"
-
-msgctxt "report:newborn.card:"
-msgid "Name"
-msgstr "名前"
-
-msgctxt "report:newborn.card:"
-msgid "PU"
-msgstr "PU"
-
-msgctxt "report:newborn.card:"
-msgid "and"
-msgstr "と"
-
-msgctxt "report:newborn.card:"
-msgid "cm"
-msgstr "cm"
+msgid "cm,"
+msgstr ""
 
 msgctxt "report:newborn.card:"
 msgid "gr"
 msgstr "g"
+
+msgctxt "report:newborn.card:"
+msgid "photo"
+msgstr ""
 
 msgctxt "selection:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "None"
@@ -729,14 +644,6 @@ msgctxt "selection:gnuhealth.neonatal.apgar,apgar_respiration:"
 msgid "strong"
 msgstr "強い"
 
-msgctxt "selection:gnuhealth.newborn,newborn_sex:"
-msgid "Female"
-msgstr "女性"
-
-msgctxt "selection:gnuhealth.newborn,newborn_sex:"
-msgid "Male"
-msgstr "男性"
-
 msgctxt "selection:gnuhealth.newborn,sex:"
 msgid "Female"
 msgstr "女性"
@@ -744,6 +651,15 @@ msgstr "女性"
 msgctxt "selection:gnuhealth.newborn,sex:"
 msgid "Male"
 msgstr "男性"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.newborn,state:"
+msgid "Signed"
+msgstr "サイン"
+
+msgctxt "selection:gnuhealth.newborn,state:"
+msgid "draft"
+msgstr ""
 
 msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid "Never"
@@ -1169,9 +1085,9 @@ msgctxt "view:gnuhealth.neonatal.apgar:"
 msgid "APGAR"
 msgstr "アプガー"
 
-msgctxt "view:gnuhealth.neonatal.apgar:"
-msgid "APGAR Score"
-msgstr "アプガー指数"
+msgctxt "view:gnuhealth.newborn:"
+msgid "End the newborn document ?"
+msgstr ""
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Findings and Tests"
@@ -1190,20 +1106,31 @@ msgid "Neonatal Signs and Symptoms"
 msgstr "新生児の徴候と症状"
 
 msgctxt "view:gnuhealth.newborn:"
-msgid "Newborn Info"
-msgstr "新生児情報"
-
-msgctxt "view:gnuhealth.newborn:"
-msgid "Newborn Information"
-msgstr "新生児情報"
-
-msgctxt "view:gnuhealth.newborn:"
 msgid "Notes"
 msgstr "備考"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign"
+msgstr "サイン"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign the process"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Status"
+msgstr "状態"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Tests"
 msgstr "テスト"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Time"
+msgstr "時"
 
 msgctxt "view:gnuhealth.patient.psc:"
 msgid "PSC - Pediatric Symptoms Checklist History"

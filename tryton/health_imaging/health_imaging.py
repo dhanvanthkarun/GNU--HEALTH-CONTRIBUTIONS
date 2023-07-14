@@ -32,7 +32,7 @@ class ImagingTestType(ModelSQL, ModelView):
     __name__ = 'gnuhealth.imaging.test.type'
 
     code = fields.Char('Code', required=True)
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True, translate=True)
 
 
 class ImagingTest(ModelSQL, ModelView):
@@ -40,7 +40,7 @@ class ImagingTest(ModelSQL, ModelView):
     __name__ = 'gnuhealth.imaging.test'
 
     code = fields.Char('Code', required=True)
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True, translate=True)
     test_type = fields.Many2One(
         'gnuhealth.imaging.test.type', 'Type',
         required=True)

@@ -1,19 +1,20 @@
-# 
-# Translators:
-# Hisahiro Ohmura, 2014
+#
 msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+#, fuzzy
+msgctxt "field:gnuhealth.appointment,qr:"
+msgid "QR Code"
+msgstr "QRコード"
+
+msgctxt "field:gnuhealth.lab,bar:"
+msgid "Bar Code39"
 msgstr ""
-"Project-Id-Version: GNU Health\n"
-"Report-Msgid-Bugs-To: https://savannah.gnu.org/bugs/?group=health\n"
-"POT-Creation-Date: 2015-01-27 11:17+0000\n"
-"PO-Revision-Date: 2015-01-20 21:31+0000\n"
-"Last-Translator: Shinji KOBAYASHI <skoba@moss.gr.jp>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/GNU_Health/language/ja/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab,qr:"
+msgid "QR Code"
+msgstr "QRコード"
 
 msgctxt "field:gnuhealth.newborn,qr:"
 msgid "QR Code"
@@ -23,6 +24,18 @@ msgctxt "field:gnuhealth.patient,qr:"
 msgid "QR Code"
 msgstr "QRコード"
 
+msgctxt "model:ir.action,name:report_appointment_qrcode"
+msgid "Appointment QRCODE"
+msgstr ""
+
+msgctxt "model:ir.action,name:report_labtest_barcode39"
+msgid "Code39 barcode label"
+msgstr ""
+
+msgctxt "model:ir.action,name:report_labtest_qrcode"
+msgid "Test Labels"
+msgstr ""
+
 msgctxt "model:ir.action,name:report_newborn_qrcard"
 msgid "Newborn ID - QR"
 msgstr "新生児ID - QR"
@@ -31,82 +44,135 @@ msgctxt "model:ir.action,name:report_patient_qrcard"
 msgid "ID Cards - QR"
 msgstr "IDカード - QR"
 
+#, fuzzy
+msgctxt "report:appointment.qrcodel:"
+msgid "Appointment Receipt"
+msgstr "予約票"
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Apporintment #"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Date:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Health Professional:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Institution:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Instructions / Notes:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Patient:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Specialty:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "You must present this receipt and your PUID"
+msgstr ""
+
+msgctxt "report:labtest.qrlabel:"
+msgid "Cap label"
+msgstr ""
+
+msgctxt "report:labtest.qrlabel:"
+msgid "Extraction date:"
+msgstr ""
+
+msgctxt "report:labtest.qrlabel:"
+msgid "ID:"
+msgstr ""
+
+msgctxt "report:labtest.qrlabel:"
+msgid "Patient:"
+msgstr ""
+
+msgctxt "report:labtest.qrlabel:"
+msgid "Req by:"
+msgstr ""
+
+msgctxt "report:labtest.qrlabel:"
+msgid "Test:"
+msgstr ""
+
+#, fuzzy
 msgctxt "report:newborn.qrcard:"
-msgid ","
-msgstr ","
+msgid "DoB:"
+msgstr "生年月日 :"
 
 msgctxt "report:newborn.qrcard:"
-msgid ":"
-msgstr "："
+msgid "Ht / Wt:"
+msgstr ""
 
 msgctxt "report:newborn.qrcard:"
-msgid "DoB"
-msgstr "生年月日"
+msgid "ID:"
+msgstr ""
 
 msgctxt "report:newborn.qrcard:"
-msgid "Female"
-msgstr "女性"
+msgid "Mother:"
+msgstr ""
 
 msgctxt "report:newborn.qrcard:"
-msgid "ID"
-msgstr "ID"
+msgid "Mother’s PUID:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:newborn.qrcard:"
+msgid "Name:"
+msgstr "名前 :"
 
 msgctxt "report:newborn.qrcard:"
-msgid "Male"
-msgstr "男性"
+msgid "Sex:"
+msgstr ""
 
 msgctxt "report:newborn.qrcard:"
-msgid "Mother"
-msgstr "母"
-
-msgctxt "report:newborn.qrcard:"
-msgid "Mother's"
-msgstr "母親の"
-
-msgctxt "report:newborn.qrcard:"
-msgid "Name"
-msgstr "名前"
-
-msgctxt "report:newborn.qrcard:"
-msgid "PU"
-msgstr "PU"
-
-msgctxt "report:newborn.qrcard:"
-msgid "and"
-msgstr "と"
-
-msgctxt "report:newborn.qrcard:"
-msgid "cm"
-msgstr "cm"
+msgid "cm,"
+msgstr ""
 
 msgctxt "report:newborn.qrcard:"
 msgid "gr"
 msgstr "g"
 
-msgctxt "report:patient.qrcard:"
-msgid ","
-msgstr ","
+msgctxt "report:newborn.qrcard:"
+msgid "photo"
+msgstr ""
 
 msgctxt "report:patient.qrcard:"
-msgid ":"
-msgstr "："
+msgid "Blood Type:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.qrcard:"
+msgid "DoB:"
+msgstr "生年月日 :"
 
 msgctxt "report:patient.qrcard:"
-msgid "Blood Type"
-msgstr "血液型"
+msgid "Gender:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.qrcard:"
+msgid "Name:"
+msgstr "名前 :"
 
 msgctxt "report:patient.qrcard:"
-msgid "DoB"
-msgstr "生年月日"
+msgid "PUID:"
+msgstr ""
 
 msgctxt "report:patient.qrcard:"
-msgid "Female"
-msgstr "女性"
-
-msgctxt "report:patient.qrcard:"
-msgid "Male"
-msgstr "男性"
-
-msgctxt "report:patient.qrcard:"
-msgid "Name"
-msgstr "名前"
+msgid "photo"
+msgstr ""

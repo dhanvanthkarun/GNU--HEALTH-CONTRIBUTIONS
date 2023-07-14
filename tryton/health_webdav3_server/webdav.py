@@ -12,6 +12,7 @@ import urllib.error
 import encodings
 import uuid
 import datetime
+import socket
 from ast import literal_eval
 
 from dateutil.relativedelta import relativedelta
@@ -38,15 +39,12 @@ def get_webdav_url():
         protocol = 'https'
     else:
         protocol = 'http'
-    hostname = (config.get('webdav', 'hostname')
-                or str(socket.getfqdn(), 'utf8'))
-    hostname = '.'.join(encodings.idna.ToASCII(part) for
+    hostname = config.get('webdav', 'hostname') or socket.getfqdn()
+    hostname = '.'.join(encodings.idna.ToASCII(part).decode() for
                         part in hostname.split('.'))
     return urllib.parse.urlunsplit((protocol, hostname,
-                                    urllib.parse.
-                                    quote(Transaction().
-                                          database.name.encode('utf-8') + '/'),
-                                    None, None))
+                                    urllib.parse.quote(Transaction().database.name + '/'),
+                                    '', ''))
 
 
 class Collection(ModelSQL, ModelView):
@@ -669,11 +667,10 @@ class Share(ModelSQL, ModelView):
     def get_url(self, name):
         return urllib.parse.urljoin(get_webdav_url(),
                                     urllib.parse.urlunsplit(
-                                        (None, None, urllib.
-                                         parse.quote(
-                                             self.path.encode('utf-8')),
-                                         urllib.parse.urlencode(
-                                             [('key', self.key)]), None)))
+                                        ('', '', urllib.
+                                         parse.quote(self.path),
+                                         urllib.parse.urlencode([('key', self.key)]),
+                                         '')))
 
     @staticmethod
     def match(share, command, path):
@@ -780,8 +777,7 @@ class Attachment(ModelSQL, ModelView):
     def get_url(self, name):
         if self.path:
             return urllib.parse.urljoin(get_webdav_url(),
-                                        urllib.parse.quote(
-                                            self.path.encode('utf-8')))
+                                        urllib.parse.quote(self.path))
 
     @classmethod
     def get_shares(cls, attachments, name):

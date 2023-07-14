@@ -676,7 +676,7 @@ class Party(metaclass=PoolMeta):
             if not values.get('federation_account') and \
                     values.get('is_person'):
                 federation_account = tmp_act
-                values['federation_account'] = values['fed_country'] + \
+                values['federation_account'] = (values['fed_country'] or "XXX") + \
                     federation_account
 
             # Set the value to None to make the fields that have a

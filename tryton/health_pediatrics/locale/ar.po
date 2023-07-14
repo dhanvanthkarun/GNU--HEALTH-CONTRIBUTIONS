@@ -1,25 +1,6 @@
-# Nab3a <asn09@aub.edu.lb>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-02-06 07:37+0000\n"
-"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
-"health_pediatrics/ar/>\n"
-"Language: ar\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.16-dev\n"
-"X-POOTLE-MTIME: 1452256073.0\n"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "The Newborn ID must be unique"
-msgstr "رقم الوليد يجب ان يكون غير مكرر"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "There is already a newborn record for this patient"
-msgstr "هذا المريض لديه سجل مسبق يحتوي طفل حديث الولادة"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "Activity"
@@ -49,33 +30,10 @@ msgctxt "field:gnuhealth.neonatal.apgar,apgar_score:"
 msgid "APGAR Score"
 msgstr "مجموع نقاط APGAR"
 
-msgctxt "field:gnuhealth.neonatal.apgar,create_date:"
-msgid "Create Date"
-msgstr "أنشئ معلومات"
-
-msgctxt "field:gnuhealth.neonatal.apgar,create_uid:"
-msgid "Create User"
-msgstr "إنشاء مستخدم"
-
-msgctxt "field:gnuhealth.neonatal.apgar,id:"
-msgid "ID"
-msgstr "المعرف"
-
+#, fuzzy
 msgctxt "field:gnuhealth.neonatal.apgar,name:"
-msgid "Newborn ID"
-msgstr "رقم الأطفال حديثي الولادة"
-
-msgctxt "field:gnuhealth.neonatal.apgar,rec_name:"
-msgid "Name"
-msgstr "الاسم"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_date:"
-msgid "Write Date"
-msgstr "كتابة معلومات"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_uid:"
-msgid "Write User"
-msgstr "كتابة مستخدم"
+msgid "Newborn"
+msgstr "حديثي الولادة"
 
 msgctxt "field:gnuhealth.newborn,apgar1:"
 msgid "APGAR 1st minute"
@@ -109,14 +67,6 @@ msgctxt "field:gnuhealth.newborn,congenital_diseases:"
 msgid "Congenital diseases"
 msgstr "الامراض الوراثية"
 
-msgctxt "field:gnuhealth.newborn,create_date:"
-msgid "Create Date"
-msgstr "أنشئ تأريخ"
-
-msgctxt "field:gnuhealth.newborn,create_uid:"
-msgid "Create User"
-msgstr "إنشاء مستخدم"
-
 msgctxt "field:gnuhealth.newborn,died_at_delivery:"
 msgid "Died at delivery room"
 msgstr "توفي في غرفة الولادة"
@@ -136,10 +86,6 @@ msgstr "تفريغها"
 msgctxt "field:gnuhealth.newborn,healthprof:"
 msgid "Health Professional"
 msgstr "الطبيب الاختصاصي"
-
-msgctxt "field:gnuhealth.newborn,id:"
-msgid "ID"
-msgstr "المعرف"
 
 msgctxt "field:gnuhealth.newborn,length:"
 msgid "Length"
@@ -274,10 +220,6 @@ msgctxt "field:gnuhealth.newborn,reanimation_stimulation:"
 msgid "Stimulation"
 msgstr "المنشطات"
 
-msgctxt "field:gnuhealth.newborn,rec_name:"
-msgid "Name"
-msgstr "الاسم"
-
 msgctxt "field:gnuhealth.newborn,sex:"
 msgid "Sex"
 msgstr "الجنس"
@@ -322,29 +264,15 @@ msgctxt "field:gnuhealth.newborn,weight:"
 msgid "Weight"
 msgstr "الوزن"
 
-msgctxt "field:gnuhealth.newborn,write_date:"
-msgid "Write Date"
-msgstr "كتابة معلومات"
-
-msgctxt "field:gnuhealth.newborn,write_uid:"
-msgid "Write User"
-msgstr "كتابة مستخدم"
-
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
-msgid "Newborn ID"
-msgstr "رقم الأطفال حديثي الولادة"
+msgid "Newborn"
+msgstr "حديثي الولادة"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
-msgid "Newborn ID"
-msgstr "رقم الأطفال حديثي الولادة"
-
-msgctxt "field:gnuhealth.patient.psc,create_date:"
-msgid "Create Date"
-msgstr "أنشئ معلومات"
-
-msgctxt "field:gnuhealth.patient.psc,create_uid:"
-msgid "Create User"
-msgstr "إنشاء مستخدم"
+msgid "Newborn"
+msgstr "حديثي الولادة"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -353,10 +281,6 @@ msgstr "موعد"
 msgctxt "field:gnuhealth.patient.psc,evaluation_start:"
 msgid "Date"
 msgstr "تأريخ"
-
-msgctxt "field:gnuhealth.patient.psc,id:"
-msgid "ID"
-msgstr "المعرف"
 
 msgctxt "field:gnuhealth.patient.psc,notes:"
 msgid "Notes"
@@ -510,21 +434,9 @@ msgctxt "field:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Worries a lot"
 msgstr "القلق الكثير"
 
-msgctxt "field:gnuhealth.patient.psc,rec_name:"
-msgid "Name"
-msgstr "الاسم"
-
 msgctxt "field:gnuhealth.patient.psc,user_id:"
 msgid "Health Professional"
 msgstr "الصحة المهنية"
-
-msgctxt "field:gnuhealth.patient.psc,write_date:"
-msgid "Write Date"
-msgstr "كتابة معلومات"
-
-msgctxt "field:gnuhealth.patient.psc,write_uid:"
-msgid "Write User"
-msgstr "كتابة مستخدم"
 
 msgctxt "help:gnuhealth.newborn,birth_date:"
 msgid "Date and Time of birth"
@@ -610,6 +522,11 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr "رقم الأطفال حديثي الولادة"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:newborn_sign_button"
+msgid "Sign"
+msgstr "وقع"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
 msgstr "الأطفال حديثي الولادة"
@@ -625,6 +542,48 @@ msgstr "طب الأطفال"
 msgctxt "model:res.group,name:group_health_pediatrics_admin"
 msgid "Health Pediatrics Administration"
 msgstr "الإدارة الصحية لطب الأطفال"
+
+#, fuzzy
+msgctxt "report:newborn.card:"
+msgid "DoB:"
+msgstr "تاريخ الميلاد:"
+
+msgctxt "report:newborn.card:"
+msgid "Ht / Wt:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "ID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother’s PUID:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:newborn.card:"
+msgid "Name:"
+msgstr "الاسم:"
+
+msgctxt "report:newborn.card:"
+msgid "Sex:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "cm,"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "gr"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "photo"
+msgstr ""
 
 msgctxt "selection:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "None"
@@ -1265,3 +1224,57 @@ msgstr "احيانا"
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Sometimes"
 msgstr "في أغلب الأحيان"
+
+msgctxt "view:gnuhealth.neonatal.apgar:"
+msgid "APGAR"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "End the newborn document ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Findings and Tests"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Main"
+msgstr "الاساسيات"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Reflex Check"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Signs and Symptoms"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Notes"
+msgstr "ملاحظات"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign"
+msgstr "وقع"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign the process"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Status"
+msgstr "الوضع"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Tests"
+msgstr "الاختبار"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Time"
+msgstr "الوقت"

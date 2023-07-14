@@ -1,21 +1,6 @@
-# Nab3a <asn09@aub.edu.lb>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-02-06 07:37+0000\n"
-"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
-"health_iss/ar/>\n"
-"Language: ar\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.16-dev\n"
-"X-POOTLE-MTIME: 1452255613.0\n"
-
-msgctxt "error:gnuhealth.iss:"
-msgid "This ISS registration Code already exists"
-msgstr "رمز التسجيل موجود مسبقا"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.iss,alcohol:"
 msgid "Alcohol"
@@ -29,14 +14,6 @@ msgctxt "field:gnuhealth.iss,complaint:"
 msgid "Chief Complaint"
 msgstr "الشكوى الاساسيه"
 
-msgctxt "field:gnuhealth.iss,create_date:"
-msgid "Create Date"
-msgstr "أنشىء التاريخ"
-
-msgctxt "field:gnuhealth.iss,create_uid:"
-msgid "Create User"
-msgstr "إنشاء مستخدم"
-
 msgctxt "field:gnuhealth.iss,disposition:"
 msgid "Disposition"
 msgstr "الميل"
@@ -48,10 +25,6 @@ msgstr "مخدرات أخري"
 msgctxt "field:gnuhealth.iss,healthcenter:"
 msgid "Institution"
 msgstr "مؤسسة"
-
-msgctxt "field:gnuhealth.iss,id:"
-msgid "ID"
-msgstr "المُعرّف"
 
 msgctxt "field:gnuhealth.iss,injury_date:"
 msgid "Injury Date"
@@ -105,17 +78,14 @@ msgctxt "field:gnuhealth.iss,patient_age:"
 msgid "Age"
 msgstr "العمر"
 
+#, fuzzy
 msgctxt "field:gnuhealth.iss,patient_sex:"
-msgid "Sex"
+msgid "Gender"
 msgstr "الجنس"
 
 msgctxt "field:gnuhealth.iss,place_occurrance:"
 msgid "Place"
 msgstr "المكان"
-
-msgctxt "field:gnuhealth.iss,rec_name:"
-msgid "Name"
-msgstr "الاسم"
 
 msgctxt "field:gnuhealth.iss,registration_date:"
 msgid "Registration Date"
@@ -136,14 +106,6 @@ msgstr "العلاقة"
 msgctxt "field:gnuhealth.iss,violence_circumstances:"
 msgid "Context"
 msgstr "الحالة"
-
-msgctxt "field:gnuhealth.iss,write_date:"
-msgid "Write Date"
-msgstr "اكتب التاريخ"
-
-msgctxt "field:gnuhealth.iss,write_uid:"
-msgid "Write User"
-msgstr "كتابة مستخدم"
 
 msgctxt "help:gnuhealth.iss,alcohol:"
 msgid ""
@@ -632,3 +594,44 @@ msgstr "إعتداء جنسي"
 msgctxt "selection:gnuhealth.iss,violence_circumstances:"
 msgid "Unknown"
 msgstr "غير معروف"
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Alcohol and other Drugs context"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Details"
+msgstr "تفاصيل"
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Disposition"
+msgstr "الميل"
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Location"
+msgstr "الموقع"
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Motor Vehicle Accident"
+msgstr ""
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Patient Demographics"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Place of occurrance"
+msgstr "مكان الواقعة"
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Specifics"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Violence"
+msgstr "عنف"

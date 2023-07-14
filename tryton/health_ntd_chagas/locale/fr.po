@@ -1,27 +1,10 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-07-12 22:41+0000\n"
-"Last-Translator: Armand MPASSY <armandmpassy@yahoo.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/gnu-health/"
-"health_ntd_chagas/fr/>\n"
-"Language: fr\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.chagas_du_survey,bugtraps:"
 msgid "Bug traps"
 msgstr "Pièges à insectes"
-
-msgctxt "field:gnuhealth.chagas_du_survey,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.chagas_du_survey,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
 
 msgctxt "field:gnuhealth.chagas_du_survey,dfloor:"
 msgid "Floor"
@@ -59,10 +42,6 @@ msgctxt "field:gnuhealth.chagas_du_survey,fumigation_date:"
 msgid "Fumigation Date"
 msgstr "Date de Fumigation"
 
-msgctxt "field:gnuhealth.chagas_du_survey,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.chagas_du_survey,name:"
 msgid "Survey Code"
 msgstr "Code de l'étude"
@@ -82,10 +61,6 @@ msgstr "Observations"
 msgctxt "field:gnuhealth.chagas_du_survey,paint_date:"
 msgid "Paint Date"
 msgstr "Date de Peinture"
-
-msgctxt "field:gnuhealth.chagas_du_survey,rec_name:"
-msgid "Name"
-msgstr "Nom"
 
 msgctxt "field:gnuhealth.chagas_du_survey,survey_date:"
 msgid "Date"
@@ -107,17 +82,14 @@ msgctxt "field:gnuhealth.chagas_du_survey,vector:"
 msgid "Vector"
 msgstr "Vecteur"
 
-msgctxt "field:gnuhealth.chagas_du_survey,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.chagas_du_survey,write_uid:"
-msgid "Write User"
-msgstr "Modifié par"
-
 msgctxt "field:gnuhealth.sequences,chagas_du_survey_sequence:"
-msgid "Chagas Survey Sequence"
-msgstr "Enquête de séquence de Chagas"
+msgid "Chagas DU Survey Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.chagas_du_survey_sequence,chagas_du_survey_sequence:"
+msgid "Chagas DU Survey Sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.chagas_du_survey,bugtraps:"
 msgid "The DU has traps to detect triatomines"
@@ -134,7 +106,8 @@ msgstr "La zone péri-domiciliaire peut abriter des triatomines"
 msgctxt "help:gnuhealth.chagas_du_survey,droof:"
 msgid "Roof materials or state can host triatomines"
 msgstr ""
-"Les matériaux de la toiture ou l'état du toit peuvent abriter des triatomines"
+"Les matériaux de la toiture ou l'état du toit peuvent abriter des "
+"triatomines"
 
 msgctxt "help:gnuhealth.chagas_du_survey,du:"
 msgid "Domiciliary Unit"
@@ -170,7 +143,8 @@ msgstr "Date de la dernière peinture"
 
 msgctxt "help:gnuhealth.chagas_du_survey,t_in_house:"
 msgid "Check this box if triatomines were found inside the house"
-msgstr "Cocher cette case si des triatomines ont été trouvées dans l'habitation"
+msgstr ""
+"Cocher cette case si des triatomines ont été trouvées dans l'habitation"
 
 msgctxt "help:gnuhealth.chagas_du_survey,t_peri:"
 msgid "Check this box if triatomines were found in the peridomiciliary area"
@@ -255,7 +229,8 @@ msgstr "ANALYSE ELISA DE LA MALADIE DE CHAGAS"
 msgctxt ""
 "model:gnuhealth.lab.test_type,name:gnuhealth_test_chagas_ifa_analysis0"
 msgid "CHAGAS INDIRECT IMMUNOFLUORESCENCE - IFA"
-msgstr "ANALYSE EN IMMUNOFLUORESCENCE INDIRECTE - IFA - DE LA MALADIE DE CHAGAS"
+msgstr ""
+"ANALYSE EN IMMUNOFLUORESCENCE INDIRECTE - IFA - DE LA MALADIE DE CHAGAS"
 
 #, fuzzy
 msgctxt ""
@@ -274,15 +249,29 @@ msgctxt ""
 msgid "CHAGAS XENODIAGNOSIS"
 msgstr "XENODIAGNOSTIC DE LA MALADIE DE CHAGAS"
 
+msgctxt "model:gnuhealth.sequences.chagas_du_survey_sequence,name:"
+msgid "Chagas DU Survey Sequences setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_chagas_du_survey_form"
 msgid "Chagas DU Survey"
 msgstr "Enquête Chagas du domicile"
 
-msgctxt "model:ir.sequence,name:seq_gnuhealth_du_survey"
+msgctxt "model:ir.sequence,name:"
 msgid "Chagas DU Survey"
 msgstr "Enquête Chagas du domicile"
 
-msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_du_survey"
+#, fuzzy
+msgctxt "model:ir.sequence,name:seq_gnuhealth_chagas_du_survey"
+msgid "Chagas DU Survey"
+msgstr "Enquête Chagas du domicile"
+
+msgctxt "model:ir.sequence.type,name:"
+msgid "Chagas DU Survey"
+msgstr "Enquête Chagas du domicile"
+
+#, fuzzy
+msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_chagas_du_survey"
 msgid "Chagas DU Survey"
 msgstr "Enquête Chagas du domicile"
 
@@ -316,9 +305,10 @@ msgctxt ""
 msgid "Chagas Xenodiagnosis Charges"
 msgstr "Frais pour Xenodiagnostic de Chagas"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.chagas_du_survey,du_status:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.chagas_du_survey,du_status:"
 msgid "Improved"
@@ -336,9 +326,10 @@ msgctxt "selection:gnuhealth.chagas_du_survey,du_status:"
 msgid "Worsen"
 msgstr "Aggravé"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid "P. megistus"
@@ -358,4 +349,21 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid "T. infestans"
+msgstr ""
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Areas to Improve"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Notes"
+msgstr "Remarques"
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Presence of triatomines"
+msgstr ""
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Preventive Measures"
 msgstr ""

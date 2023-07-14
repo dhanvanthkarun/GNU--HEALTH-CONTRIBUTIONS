@@ -1,19 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2022-03-25 17:09+0000\n"
-"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/gnu-health/"
-"health_iss/fr/>\n"
-"Language: fr\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
-
-msgctxt "error:gnuhealth.iss:"
-msgid "This ISS registration Code already exists"
-msgstr "Le Code d'enregistrement existe déjà"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.iss,alcohol:"
 msgid "Alcohol"
@@ -27,14 +14,6 @@ msgctxt "field:gnuhealth.iss,complaint:"
 msgid "Chief Complaint"
 msgstr "Plainte principale"
 
-msgctxt "field:gnuhealth.iss,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.iss,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
-
 msgctxt "field:gnuhealth.iss,disposition:"
 msgid "Disposition"
 msgstr "Disposition"
@@ -46,10 +25,6 @@ msgstr "Autres Médicaments"
 msgctxt "field:gnuhealth.iss,healthcenter:"
 msgid "Institution"
 msgstr "Institution"
-
-msgctxt "field:gnuhealth.iss,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.iss,injury_date:"
 msgid "Injury Date"
@@ -103,17 +78,14 @@ msgctxt "field:gnuhealth.iss,patient_age:"
 msgid "Age"
 msgstr "Âge"
 
+#, fuzzy
 msgctxt "field:gnuhealth.iss,patient_sex:"
-msgid "Sex"
+msgid "Gender"
 msgstr "Sexe"
 
 msgctxt "field:gnuhealth.iss,place_occurrance:"
 msgid "Place"
 msgstr "Lieu"
-
-msgctxt "field:gnuhealth.iss,rec_name:"
-msgid "Name"
-msgstr "Nom"
 
 msgctxt "field:gnuhealth.iss,registration_date:"
 msgid "Registration Date"
@@ -134,14 +106,6 @@ msgstr "Relation"
 msgctxt "field:gnuhealth.iss,violence_circumstances:"
 msgid "Context"
 msgstr "Contexte"
-
-msgctxt "field:gnuhealth.iss,write_date:"
-msgid "Write Date"
-msgstr "Date de Mise à Jour"
-
-msgctxt "field:gnuhealth.iss,write_uid:"
-msgid "Write User"
-msgstr "Mise à jour par"
 
 msgctxt "help:gnuhealth.iss,alcohol:"
 msgid ""
@@ -232,9 +196,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_report_iss"
 msgid "Injury Surveillance System Registration"
 msgstr "Enregistrement au système de surveillance des blessures"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid "No"
@@ -252,9 +217,10 @@ msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid "Yes"
 msgstr "Oui"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,disposition:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,disposition:"
 msgid "Admitted to Observation"
@@ -284,9 +250,10 @@ msgctxt "selection:gnuhealth.iss,disposition:"
 msgid "Treated and Sent Home"
 msgstr "Traité et renvoyé à la maison"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,drugs:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,drugs:"
 msgid "No"
@@ -304,9 +271,10 @@ msgctxt "selection:gnuhealth.iss,drugs:"
 msgid "Yes"
 msgstr "Oui"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,injury_method:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,injury_method:"
 msgid "Blunt object"
@@ -340,9 +308,10 @@ msgctxt "selection:gnuhealth.iss,injury_method:"
 msgid "Unknown"
 msgstr "Inconnu"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,injury_type:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,injury_type:"
 msgid "Accidental / Unintentional"
@@ -360,9 +329,10 @@ msgctxt "selection:gnuhealth.iss,injury_type:"
 msgid "Violence"
 msgstr "Violence"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,mva_counterpart:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,mva_counterpart:"
 msgid "Aircraft"
@@ -416,9 +386,10 @@ msgctxt "selection:gnuhealth.iss,mva_counterpart:"
 msgid "Van / Pickup / Jeep"
 msgstr "Camionette / Pickup / Jeep"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,mva_mode:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,mva_mode:"
 msgid "Aircraft"
@@ -472,9 +443,10 @@ msgctxt "selection:gnuhealth.iss,mva_mode:"
 msgid "Van / Pickup / Jeep"
 msgstr "Camionette / Pickup /Jeep"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,mva_position:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,mva_position:"
 msgid "Bystander"
@@ -500,9 +472,10 @@ msgctxt "selection:gnuhealth.iss,mva_position:"
 msgid "Unspecified vehicle"
 msgstr "Véhicule non spécifié"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,place_occurrance:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,place_occurrance:"
 msgid "Commercial Area"
@@ -544,9 +517,10 @@ msgctxt "selection:gnuhealth.iss,place_occurrance:"
 msgid "Unknown"
 msgstr "Inconnu"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,safety_gear:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,safety_gear:"
 msgid "No"
@@ -596,9 +570,10 @@ msgctxt "selection:gnuhealth.iss,victim_perpetrator:"
 msgid "other"
 msgstr "Autre"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,violence_circumstances:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.iss,violence_circumstances:"
 msgid "Committing a crime (other)"
@@ -631,3 +606,44 @@ msgstr "Agression sexuelle"
 msgctxt "selection:gnuhealth.iss,violence_circumstances:"
 msgid "Unknown"
 msgstr "Inconnu"
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Alcohol and other Drugs context"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Details"
+msgstr "Détails"
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Disposition"
+msgstr "Disposition"
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Location"
+msgstr "Emplacement"
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Motor Vehicle Accident"
+msgstr ""
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Patient Demographics"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Place of occurrance"
+msgstr "Lieu d'occurrence"
+
+msgctxt "view:gnuhealth.iss:"
+msgid "Specifics"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.iss:"
+msgid "Violence"
+msgstr "Violence"

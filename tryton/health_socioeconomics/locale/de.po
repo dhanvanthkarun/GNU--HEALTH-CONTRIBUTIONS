@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-12-26 21:18+0000\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/gnu-health/"
-"health_socioeconomics/de/>\n"
-"Language: de\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.patient,domestic_violence:"
 msgid "Domestic violence"
@@ -55,6 +46,10 @@ msgctxt "field:gnuhealth.patient,school_withdrawal:"
 msgid "School withdrawal"
 msgstr "Schulabbrecher"
 
+msgctxt "field:gnuhealth.patient,ses:"
+msgid "SES"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient,ses_assessments:"
 msgid "Assessments"
 msgstr "Einschätzung"
@@ -90,14 +85,6 @@ msgstr "Datum"
 msgctxt "field:gnuhealth.ses.assessment,computed_age:"
 msgid "Age"
 msgstr "Alter"
-
-msgctxt "field:gnuhealth.ses.assessment,create_date:"
-msgid "Create Date"
-msgstr "Datum erstellen"
-
-msgctxt "field:gnuhealth.ses.assessment,create_uid:"
-msgid "Create User"
-msgstr "Benutzer anlegen"
 
 msgctxt "field:gnuhealth.ses.assessment,du:"
 msgid "DU"
@@ -143,10 +130,6 @@ msgctxt "field:gnuhealth.ses.assessment,housing:"
 msgid "Housing conditions"
 msgstr "Wohnverhältnisse"
 
-msgctxt "field:gnuhealth.ses.assessment,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.ses.assessment,income:"
 msgid "Income"
 msgstr "Einkommen"
@@ -163,10 +146,6 @@ msgctxt "field:gnuhealth.ses.assessment,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-msgctxt "field:gnuhealth.ses.assessment,rec_name:"
-msgid "Name"
-msgstr "Name"
-
 msgctxt "field:gnuhealth.ses.assessment,ses:"
 msgid "Socioeconomics"
 msgstr "Sozioökonomischer Status"
@@ -178,14 +157,6 @@ msgstr "Unterzeichnet von"
 msgctxt "field:gnuhealth.ses.assessment,state:"
 msgid "State"
 msgstr "Status"
-
-msgctxt "field:gnuhealth.ses.assessment,write_date:"
-msgid "Write Date"
-msgstr "Speicherdatum"
-
-msgctxt "field:gnuhealth.ses.assessment,write_uid:"
-msgid "Write User"
-msgstr "Letzte Änderung durch"
 
 msgctxt "field:party.party,education:"
 msgid "Education"
@@ -200,15 +171,12 @@ msgid "Education Level"
 msgstr "Bildungsgrad"
 
 msgctxt "help:gnuhealth.patient,hostile_area:"
-msgid "Check if patient lives in a zone of high hostility (eg, war)"
+msgid "Check if patient lives in a zoneof high hostility (eg, war)"
 msgstr ""
-"Markieren Sie dieses Kästchen, wenn der Patient in einer unsicheren Gegend "
-"wohnt (z.B. Kriegsgebiet)"
 
 msgctxt "help:gnuhealth.patient,hours_outside:"
-msgid "Number of hours a day the patient spend outside the house"
+msgid "Number of hours a day the patientspend outside the house"
 msgstr ""
-"Anzahl der Stunden pro Tag, die der Patient außerhalb der Wohnung verbringt"
 
 msgctxt "help:gnuhealth.patient,housing:"
 msgid "Housing and sanitary living conditions"
@@ -221,6 +189,10 @@ msgid ""
 msgstr ""
 "Überprüfen, ob jemand aus der Kernfamilie - Eltern / Geschwister  im "
 "Gefängnis ist oder war"
+
+msgctxt "help:gnuhealth.patient,ses:"
+msgid "Current Socioeconomic Status"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,ses_assessments:"
 msgid "Socioeconomics and Family assessments history"
@@ -327,6 +299,11 @@ msgctxt "model:ir.action,name:act_ses_family_assessment"
 msgid "Socioeconomics and Family Assessment"
 msgstr "Sozioökonomische und familiäre Bewertung"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:sesassmt_end_button"
+msgid "Done"
+msgstr "Fertig"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_ses_assessment_menu"
 msgid "Socioeconomic Assessments"
 msgstr "Sozioökonomische Beurteilungen"
@@ -382,6 +359,31 @@ msgstr "Baufällige, unzulängliche Sanitäreinrichtungen"
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Kleine, überfüllte jedoch gute Sanitäreinrichtungen"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Higher"
+msgstr "Höher"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower"
+msgstr "Unter"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower-middle"
+msgstr "Unter-mitte"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle"
+msgstr "Mitte"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle-upper"
+msgstr "Mittel-oben"
 
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid ""
@@ -650,11 +652,3 @@ msgstr "Notiz"
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Socioeconomics"
 msgstr "Sozioökonomie"
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family Assessment"
-msgstr "Sozioökonomische und familiäre Bewertung"
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family assessment"
-msgstr "Sozioökonomische und familiäre Bewertung"

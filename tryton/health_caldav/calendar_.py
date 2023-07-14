@@ -407,7 +407,7 @@ class Location(ModelSQL, ModelView):
 class Event(ModelSQL, ModelView):
     "Event"
     __name__ = 'calendar.event'
-    _rec_name = 'uuid'
+    _rec_name = 'summary'
     uuid = fields.Char(
         'UUID', required=True,
         help='Universally Unique Identifier', select=True)
@@ -1055,7 +1055,7 @@ class Event(ModelSQL, ModelView):
                 vals['uuid'] = res['uuid']
             res.setdefault('occurences', [])
             if event_id:
-                res['occurences'].append(('write', event_id, vals))
+                res['occurences'].append(('write', [event_id], vals))
             else:
                 to_create.append(vals)
         if to_create:
@@ -1320,7 +1320,7 @@ class AttendeeMixin:
         if hasattr(attendee, 'partstat_param'):
             if attendee.partstat_param.lower() in dict(cls.status.selection):
                 res['status'] = attendee.partstat_param.lower()
-        res['attendee'] = attendee.serialize()
+        res['attendee'] = attendee.serialize().encode('utf-8')
         return res
 
     def attendee2attendee(self):
@@ -1330,7 +1330,7 @@ class AttendeeMixin:
         res = None
         if self.attendee:
             res = vobject.base.textLineToContentLine(
-                    str(self.attendee).decode('utf-8').replace('\r\n ', ''))
+                    self.attendee.decode('utf-8').replace('\r\n ', ''))
         else:
             res = vobject.base.ContentLine('ATTENDEE', [], '')
 

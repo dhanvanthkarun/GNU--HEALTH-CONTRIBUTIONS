@@ -1,16 +1,6 @@
-# rvnovaes <rvnovaes@gmail.com>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2021-09-24 14:41+0000\n"
-"Last-Translator: Vinicius Monego <monego@posteo.net>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
-"gnu-health/health_crypto/pt_BR/>\n"
-"Language: pt_BR\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
-"X-POOTLE-MTIME: 1451260884.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
@@ -111,11 +101,9 @@ msgstr "Doc Atual"
 msgctxt "help:gnuhealth.birth_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done only on selected  "
+"fields."
 msgstr ""
-"Este campo será usado sempre que partess do documento original principal "
-"tiverem sido alteradas. Favor observar que a verificação é feita apenas em "
-"campos selecionados."
 
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -124,11 +112,9 @@ msgstr "Digest original do documento"
 msgctxt "help:gnuhealth.death_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done  only on selected "
+"fields."
 msgstr ""
-"Este campo será usado sempre que partess do documento original principal "
-"tiverem sido alteradas. Favor observar que a verificação é feita apenas em "
-"campos selecionados."
 
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -160,9 +146,29 @@ msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
 msgstr "Digest original do documento"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:birthcert_generate_button"
+msgid "Generate"
+msgstr "Gerar"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:deathcert_generate_button"
+msgid "Generate"
+msgstr "Gerar"
+
+msgctxt "model:ir.model.button,string:evaluation_sign_button"
+msgid "Close"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:prescription_generate_button"
+msgid "Generate"
+msgstr "Gerar"
+
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"
-msgstr ""
+msgstr "Validado"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Altered / current String"
