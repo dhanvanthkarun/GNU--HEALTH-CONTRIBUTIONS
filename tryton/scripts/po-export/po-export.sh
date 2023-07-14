@@ -73,6 +73,8 @@ echo "## Add Language to tryton ..."
 python3 po-add-language.py --user admin --database ${TRYTON_DATABASE} --languages "${LANGUAGE}"
 
 echo "## Running trytond-admin command to update DB (3. Active language) ..."
+## If we do not run this step, the existing translations of LANGUAGE
+## will be not merged, we just get pot template.
 ${TRYTOND_ADMIN_CMD} --language ${LANGUAGE}
 
 echo "## Export po files ..."
