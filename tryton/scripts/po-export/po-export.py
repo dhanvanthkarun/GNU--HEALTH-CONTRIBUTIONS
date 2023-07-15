@@ -11,7 +11,11 @@ def main(options):
     languages = options.lang.split()
     connect_health_server(database, user)
     extract_en_translations()
-    cleanup_translations()
+    ## cleanup_translations() is very very slow when export all
+    ## languages, for we always recreate db in po-export.sh, so i
+    ## think this step is no need to run.
+    ## 
+    ## cleanup_translations()
     for language in languages:
         update_translations_from_en(language)
         delete_useless_translations(language)
