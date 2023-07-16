@@ -202,7 +202,7 @@ class PatientPregnancy(ModelSQL, ModelView):
             return self.name.hb
 
     # Show the values from patient upon entering the history
-    @fields.depends('name','_parent_name.name')
+    @fields.depends('name', '_parent_name.name')
     def on_change_name(self):
         # Obsterics info
         self.gravidae = self.name.gravida
@@ -372,7 +372,7 @@ class PrenatalEvaluation(ModelSQL, ModelView):
         if name == 'gestational_weeks':
             gestational_age = datetime.datetime.date(self.evaluation_date) - \
                 self.name.lmp
-            return (gestational_age.days) / 7
+            return int((gestational_age.days) / 7)
         if name == 'gestational_days':
             gestational_age = datetime.datetime.date(self.evaluation_date) - \
                 self.name.lmp
@@ -521,7 +521,7 @@ class Perinatal(ModelSQL, ModelView):
         if name == 'gestational_weeks':
             gestational_age = datetime.datetime.date(self.admission_date) - \
                 self.name.lmp
-            return (gestational_age.days) / 7
+            return int((gestational_age.days) / 7)
 
 
 class PerinatalMonitor(ModelSQL, ModelView):
