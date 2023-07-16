@@ -35,19 +35,21 @@ import pandas as pd
 
 
 def PartyDemographics(line):
-    fed_country = line["fed_country"]
-    name        = line["first_name"]
-    lastname    = line["family_name"]
-    name_repr   = line["name_representation"]
-    puid        = line["puid"]
-    gender      = line["gender"]
-    dob         = line["dob"]
-    phone       = line["phone"]
-    alt_id      = line["alternative_id"]
-    alt_id_cmt  = line["alternative_id_comments"]
-    addr_1      = line["addr_1"]
-    addr_cont   = line["addr_cont"]
-    active_date = line["activation_date"]
+    fed_country = line.get("fed_country")
+    name        = line.get("first_name")
+    lastname    = line.get("family_name")
+    name_repr   = line.get("name_representation")
+    puid        = line.get("puid")
+    gender      = line.get("gender")
+    dob         = line.get("dob")
+    phone       = line.get("phone")
+    alt_id      = line.get("alternative_id")
+    alt_id_cmt  = line.get("alternative_id_comments")
+    addr_1      = line.get("addr_1")
+    addr_cont   = line.get("addr_cont")
+    active_date = line.get("activation_date")
+
+    print("* Importing '{0}, {1}' to GNU health ...".format(name, lastname))
 
     Party = Model.get('party.party')
     PartyAddress = Model.get('party.address')
@@ -136,35 +138,47 @@ def PartyDemographics(line):
 
 
 if (len(sys.argv) < 4):
-    exit ("usage: ./patient_uploader <csv_file> \
+    exit("usage: ./patient_uploader <file.csv|ods> \
         <hostname> <port> <user> <password> <dbname>")
 
-patient_data = pd.read_csv(open(sys.argv[1], 'r'),
-                           sep=',',
-                           skipinitialspace=True,
-                           skip_blank_lines=True,
-                           comment='#',
-                           dtype='str',
-                           keep_default_na=False,
-                           index_col=False)
-
-# Set the connection params
+filename = sys.argv[1]
 hostname = sys.argv[2]
-port = sys.argv[3]
-user = sys.argv[4]
-passwd = sys.argv[5]
-dbname = sys.argv[6]
+port     = sys.argv[3]
+user     = sys.argv[4]
+passwd   = sys.argv[5]
+dbname   = sys.argv[6]
+
+if filename.endswith('ods'):
+    patient_data = pd.read_excel(filename,
+                                 ## Note: user need install odfpy
+                                 ## package.
+                                 engine='odf',
+                                 dtype='str',
+                                 keep_default_na=False,
+                                 index_col=False)    
+else:
+    patient_data = pd.read_csv(filename,
+                               sep=',',
+                               skipinitialspace=True,
+                               skip_blank_lines=True,
+                               comment='#',
+                               dtype='str',
+                               keep_default_na=False,
+                               index_col=False)
 
 health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
 
-print ("Connecting to GNU Health Server ...")
+print("Connecting to GNU Health Server ...")
 conf = pconfig.set_xmlrpc(health_server)
 # Use XML RPC using session
 #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
-print ("Connected !\n")
+print("Connected!")
+print('-----------------------------------------------')
 
-for index, line in patient_data.iterrows(): 
-    print('---------------------------------------------------------')
-    print(line)
-    PartyDemographics(line)
+for index, line in patient_data.iterrows():
+    line = dict(line)
+    if not line.get('ignore') == 'yes':
+        PartyDemographics(line)
 
+print('-----------------------------------------------')
+print('Import finished!')
