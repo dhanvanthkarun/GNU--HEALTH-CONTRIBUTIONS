@@ -70,7 +70,7 @@ ${TRYTOND_ADMIN_CMD}
 psql -q -c "UPDATE ir_translation SET value = ''" ${TRYTON_DATABASE}
 
 echo "## Add Language to tryton ..."
-python3 po-add-language.py --user admin --database ${TRYTON_DATABASE} --languages "${LANGUAGE}"
+python3 po-export.py --user admin --database ${TRYTON_DATABASE} --add-languages ${LANGUAGE}
 
 echo "## Running trytond-admin command to update DB (3. Active language) ..."
 ## If we do not run this step, the existing translations of LANGUAGE
@@ -78,4 +78,7 @@ echo "## Running trytond-admin command to update DB (3. Active language) ..."
 ${TRYTOND_ADMIN_CMD} --language ${LANGUAGE}
 
 echo "## Export po files ..."
-python3 po-export.py --user admin --database ${TRYTON_DATABASE} --languages "${LANGUAGE}"
+## we always recreate db in po-export.sh, so we do not need to use
+## --run-cleanup-step argument, for is very very slow when export all
+## languages.
+python3 po-export.py --user admin --database ${TRYTON_DATABASE} --export-languages ${LANGUAGE}

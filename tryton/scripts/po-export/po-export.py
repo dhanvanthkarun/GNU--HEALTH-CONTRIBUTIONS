@@ -2,25 +2,60 @@
 
 import sys
 import os
-from optparse import OptionParser
+import argparse
 from proteus import config, Model, Wizard
 
-def main(options):
-    database = options.db
+def main():
+    options = parse_options()
+    database = options.database
     user = options.user
-    languages = options.lang.split()
-    connect_health_server(database, user)
-    extract_en_translations()
-    cleanup_translations()
-    for language in languages:
-        update_translations_from_en(language)
-        delete_useless_translations(language)
-        export_all_translations(language)
-    finish_export_translations()
+    export_languages = options.export_languages
+    add_languages = options.add_languages
+    run_cleanup_step = options.run_cleanup_step
+
+    if database and user:
+        connect_health_server(database, user)
+        
+        if add_languages:
+            add_all_languages(add_languages)
+            
+        if export_languages:
+            export_all_languages(export_languages, run_cleanup_step)
+    else:
+        print(options)
+        print('No database is connected.')
+
+def parse_options():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-d', '--database', default='',
+                        help="A tryton database.")
+    parser.add_argument('-u', '--user', default='admin',
+                        help="A tryton user, for example: admin.")
+    parser.add_argument('-e', '--export-languages', nargs='+', 
+                        help="A list of languages exporting to po files, for example: zh_CN ca.",
+                        default=[])
+    parser.add_argument('-a', '--add-languages', nargs='+', 
+                        help="A list of languages adding to tryton, for example: zh_CN ca.",
+                        default=[])
+    parser.add_argument('-c', '--run-cleanup-step', action="store_true",
+                        help="Run 'cleanup_translations()' or not.")
+
+    return parser.parse_args()
 
 def connect_health_server(database, user):
     print("Connecting to database '{}' with '{}' ...".format(database, user))
     config.set_trytond(database=database, user=user)
+
+def export_all_languages(languages, run_cleanup_step):
+    extract_en_translations()
+    if run_cleanup_step:
+        cleanup_translations()
+    for language in languages:
+        update_translations_from_en(language)
+        delete_useless_translations(language)
+        export_all_translations(language)
+        finish_export_translations()
 
 def extract_en_translations():
     print("Extracting en translations from models, views, reports ...")
@@ -31,6 +66,21 @@ def cleanup_translations():
     print("Cleaning up translations ...")
     translation_clean = Wizard('ir.translation.clean')
     translation_clean.execute('clean')
+
+def add_all_languages(languages):
+    for language in languages:
+        add_language(language)
+
+def add_language(language):
+    Lang = Model.get('ir.lang')
+    lang = Lang.find([('code', '=', language)])
+
+    if not lang:
+        print("Language '{0}' is not exist in tryton at the moment, adding ...".format(language))
+        lang=Lang()
+        lang.code=language
+        lang.name="X_Lang({0})".format(language)
+        lang.save()
 
 def update_translations_from_en(language):
     print("Syncing {0} translations with en translations.".format(language))
@@ -97,20 +147,5 @@ def finish_export_translations():
     print("Finish to export!")
 
 if __name__ == '__main__':
-    parser = OptionParser("%prog [options]")
-    parser.add_option('-d', '--database', dest='db')
-    parser.add_option('-u', '--user', dest='user')
-    ## Need improve: At the moment, --languages is a string, for
-    ## example: --language "zh_CN ca", we should support:
-    ## --languages zh_CN ca.
-    parser.add_option('-l', '--languages', dest="lang")
-    parser.set_defaults(user='admin', db='', lang='')
-
-    options, module_path = parser.parse_args()
-    if not options.db:
-        parser.error('You must define a database')
-    if not options.lang:
-        parser.error('You must set a string of languages, for example: "zh_CN ca"')
-
-    main(options)
+    main()
 
