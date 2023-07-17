@@ -27,14 +27,82 @@
 from datetime import datetime
 import sys
 import csv
+import argparse
 
 from proteus import Model
 from proteus import config as pconfig
 
 import pandas as pd
 
+def main():
+    options = parse_options()
+    filename = options.filename
+    patients = read_file(filename)
+    connect_service(options)
+    import_patients(patients)
 
-def PartyDemographics(line):
+def parse_options():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-f', '--filename', required=True,
+                        help="A csv or ods file.")
+    parser.add_argument('-H', '--hostname', default='localhost',
+                        help="Hostname of GNU Health Service, for example: localhost.")
+    parser.add_argument('-p', '--port', default='8000',
+                        help="Port of GNU Health Service, for example: 8000.")
+    parser.add_argument('-u', '--user', default='admin',
+                        help="User name of GNU Health.")
+    parser.add_argument('-P', '--passwd', required=True,
+                        help="Password of GNU Health.")
+    parser.add_argument('-d', '--database', required=True,
+                        help="Database name of GNU Health.")
+
+    return parser.parse_args()
+
+def connect_service(options):
+    hostname = options.hostname
+    port     = options.port
+    user     = options.user
+    passwd   = options.passwd
+    dbname   = options.database
+
+    health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
+    
+    print("Connecting to GNU Health Server ...")
+    conf = pconfig.set_xmlrpc(health_server)
+    # Use XML RPC using session
+    #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
+    print("Connected!")
+
+def read_file(filename):
+    if filename.endswith('ods'):
+        return pd.read_excel(filename,
+                             ## Note: user need install odfpy
+                             ## package.
+                             engine='odf',
+                             dtype='str',
+                             keep_default_na=False,
+                             index_col=False)    
+    else:
+        return pd.read_csv(filename,
+                           sep=',',
+                           skipinitialspace=True,
+                           skip_blank_lines=True,
+                           comment='#',
+                           dtype='str',
+                           keep_default_na=False,
+                           index_col=False)
+
+def import_patients(patients):
+    print('-----------------------------------------------')
+    for index, line in patients.iterrows():
+        line = dict(line)
+        if not line.get('ignore') == 'yes':
+            import_patient(line)
+    print('-----------------------------------------------')
+    print('Import finished!')
+
+def import_patient(line):
     fed_country = line.get("fed_country")
     name        = line.get("first_name")
     lastname    = line.get("family_name")
@@ -136,49 +204,5 @@ def PartyDemographics(line):
         patient.name = party
         patient.save()
 
-
-if (len(sys.argv) < 4):
-    exit("usage: ./patient_uploader <file.csv|ods> \
-        <hostname> <port> <user> <password> <dbname>")
-
-filename = sys.argv[1]
-hostname = sys.argv[2]
-port     = sys.argv[3]
-user     = sys.argv[4]
-passwd   = sys.argv[5]
-dbname   = sys.argv[6]
-
-if filename.endswith('ods'):
-    patient_data = pd.read_excel(filename,
-                                 ## Note: user need install odfpy
-                                 ## package.
-                                 engine='odf',
-                                 dtype='str',
-                                 keep_default_na=False,
-                                 index_col=False)    
-else:
-    patient_data = pd.read_csv(filename,
-                               sep=',',
-                               skipinitialspace=True,
-                               skip_blank_lines=True,
-                               comment='#',
-                               dtype='str',
-                               keep_default_na=False,
-                               index_col=False)
-
-health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
-
-print("Connecting to GNU Health Server ...")
-conf = pconfig.set_xmlrpc(health_server)
-# Use XML RPC using session
-#conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
-print("Connected!")
-print('-----------------------------------------------')
-
-for index, line in patient_data.iterrows():
-    line = dict(line)
-    if not line.get('ignore') == 'yes':
-        PartyDemographics(line)
-
-print('-----------------------------------------------')
-print('Import finished!')
+if __name__ == '__main__':
+    main()
