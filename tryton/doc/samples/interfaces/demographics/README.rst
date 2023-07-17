@@ -4,17 +4,16 @@
 
 patient_uploader.py
 
-Simple script to upload people demographics from a CSV formatted file.  
+Simple script to upload people demographics from a CSV or Libreoffice ODS formatted file.  
 
 Functionality :
 Small SAMPLE proteus script to create the parties and their respective patients
-from a CSV file
+from a CSV or libreoffice ODS file
 
-CSV Format :
-# CSV Format :
-# "FIRST NAME","FAMILY NAME", "PUID", "Gender", "DoB", "Phone",
-# "Alternative ID","address 1 (eg street)", "addr cont (city..)",
-# "activation date"
+CSV or ODS Fields :
+# "ignore", "fed_country","first_name","family_name","name_representation",
+# "puid","gender","dob","phone","alternative_id","alternative_id_comments",
+# "addr_1","addr_cont","activation_date"
 
 
 Requirements :
@@ -31,7 +30,7 @@ Usage :
 Invoke the program and pass the csv formatted file as an argument
 eg:
 
-$ python ./patient_uploader.py demographics.csv localhost:8000 admin:init healthdev39
+$ python3 ./patient_uploader.py -f <file.csv|ods> -H <hostname> -p <port> -u <user> -P <password> -d <database>
  
   "admin" and "init" are the correspond to the specific user and passwd 
   "healthdev39" is the database name

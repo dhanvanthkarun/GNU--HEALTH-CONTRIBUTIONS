@@ -15,14 +15,14 @@
 
 # Functionality :
 # Small SAMPLE proteus script to create the parties and their respective patients 
-# from a CSV file
+# from a CSV or Libreoffice ODS file
 
-# CSV Format :
-# "FIRST NAME","FAMILY NAME", "PUID", "Gender", "DoB", "Phone",
-# "Alternative ID","address 1 (eg street)", "addr cont (city..)",
-# "activation date"
+# CSV or ODS Fields :
+# "ignore", "fed_country","first_name","family_name","name_representation",
+# "puid","gender","dob","phone","alternative_id","alternative_id_comments",
+# "addr_1","addr_cont","activation_date"
 
-# Usage: patient_uploader <csv_file> <hostname:port> <user:password> <dbname>
+# Usage: python3 ./patient_uploader.py -f <file.csv|ods> -H <hostname> -p <port> -u <user> -P <password> -d <database>
 
 from datetime import datetime
 import sys
