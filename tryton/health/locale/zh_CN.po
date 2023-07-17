@@ -8171,6 +8171,15 @@ msgid ""
 "professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr "SM-CORE-0007: 当前用户没有关联到某个医务人员"
 
+msgctxt "model:ir.message,text:msg_prescription_line_frequency_and_unit"
+msgid "Every %(frequency)s %(frequency_unit)s"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_prescription_line_frequency_prn"
+msgid "as needed"
+msgstr "需要时使用"
+
 msgctxt "model:ir.message,text:msg_wrong_date_of_birth"
 msgid "SM-CORE-0001: Wrong date of birth for a living person"
 msgstr "SM-CORE-0001: 对活人来说，这个出生日期不对"
@@ -9286,14 +9295,6 @@ msgid "Vaccine"
 msgstr "疫苗"
 
 msgctxt "report:prescription.order:"
-msgid "("
-msgstr "("
-
-msgctxt "report:prescription.order:"
-msgid ")"
-msgstr ")"
-
-msgctxt "report:prescription.order:"
 msgid ","
 msgstr ","
 
@@ -9329,10 +9330,6 @@ msgstr ""
 msgctxt "report:prescription.order:"
 msgid "End:"
 msgstr "结束:"
-
-msgctxt "report:prescription.order:"
-msgid "Every"
-msgstr "每"
 
 msgctxt "report:prescription.order:"
 msgid "Form:"
@@ -9433,10 +9430,6 @@ msgstr ""
 msgctxt "report:prescription.order:"
 msgid "Unit"
 msgstr "单位"
-
-msgctxt "report:prescription.order:"
-msgid "as needed"
-msgstr "需要时使用"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Inpatient"
