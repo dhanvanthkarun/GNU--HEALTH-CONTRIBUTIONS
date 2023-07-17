@@ -4415,6 +4415,21 @@ class PrescriptionLine(ModelSQL, ModelView):
 
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
+    ## Used by prescription_orders report template.
+    def get_report_specific_usage_str(self):
+        string = ''
+        if self.frequency_unit == 'wr':
+            string = self.frequency_unit_str
+        elif self.frequency_prn:
+            string = gettext('health.msg_prescription_line_frequency_prn')
+        elif self.frequency and self.frequency_unit:
+            string = gettext('health.msg_prescription_line_frequency_and_unit', 
+                             frequency=str(self.frequency),
+                             frequency_unit=self.frequency_unit_str)
+        else:
+            string = ''
+        return string
+
     duration = fields.Integer(
         'Treatment duration',
         help='Period that the patient must take the medication. in minutes,'
@@ -4433,6 +4448,17 @@ class PrescriptionLine(ModelSQL, ModelView):
         ' hours, days, months, years or indefinately')
 
     duration_period_str = duration_period.translated('duration_period')
+
+    ## Used by prescription_orders report template.
+    def get_report_duration_str(self):
+        string = ''
+        if self.duration_period == 'indefinite':
+            string = self.duration_period_str
+        elif self.duration and self.duration_period:
+            string = str(self.duration) + ' ' + self.duration_period_str
+        else:
+            string = ''
+        return string
 
     infusion = fields.Boolean(
         'Infusion',
