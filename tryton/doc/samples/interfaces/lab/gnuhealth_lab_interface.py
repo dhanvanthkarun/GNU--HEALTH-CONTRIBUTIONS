@@ -81,37 +81,40 @@ def read_file(filename):
                            index_col=False)
             
 def import_results(results):
-    LabTest = Model.get('gnuhealth.lab')
-    LabTestLine = Model.get('gnuhealth.lab.test.critearea')
-    note_fmt = "NOTE: '{0}/{1}' import success!"
-    warn_fmt = "WARN: '{0}/{1}' is not found, ignore ..."
     for index, line in results.iterrows():
         line = dict(line)
-        ignore = line.get('ignore')
-        test_id = line.get('test_id')
-        analyte_code = line.get('analyte_code')
-        analyte_name = line.get('analyte_name')
-        result = line.get('result')
-        result_text = line.get('result_text')
+        if (not line.get('ignore')=='yes'):
+            import_result(line)
 
-        if (not ignore=='yes'):
-            ## NOTE: 
-            ## We prefer 'analyte_code' to 'analyte_name', for
-            ## 'analyte_name' will change when user use different
-            ## languages.        
-            domain = [['OR', ('code','=',analyte_code), ('name','=',analyte_name)],
-                      ('gnuhealth_lab_id','=',test_id)]
-            test_lines = LabTestLine.find(domain)
-            
-            ## Update the model with the result values
-            if test_lines:
-                for result_line in test_lines:
-                    result_line.result = float(result)
-                    result_line.result_text = str(result_text)
-                    result_line.save()
-                    print(note_fmt.format(test_id, analyte_code))
-            else:
-                print(warn_fmt.format(test_id, analyte_code))
+def import_result(line):
+    test_id      = line.get('test_id')
+    analyte_code = line.get('analyte_code')
+    analyte_name = line.get('analyte_name')
+    result       = line.get('result')
+    result_text  = line.get('result_text')
+
+    LabTestLine = Model.get('gnuhealth.lab.test.critearea')
+    ## NOTE: We prefer 'analyte_code' to 'analyte_name', for
+    ## 'analyte_name' will change when user use different languages.
+    domain = [['OR', 
+               ('code','=',analyte_code),
+               ('name','=',analyte_name)],
+              ('gnuhealth_lab_id','=',test_id)]
+    test_lines = LabTestLine.find(domain)
+    
+    ## Update the model with the result values
+    if test_lines:
+        for result_line in test_lines:
+            try:
+                result_line.result = float(result)
+            except:
+                result_line.result = None
+            result_line.result_text = result_text
+            result_line.save()
+            print("NOTE: '{0}/{1}' import success!".format(test_id, analyte_code))
+    else:
+        print("WARN: '{0}/{1}' is not found, ignore ...".format(test_id, analyte_code))
+    
 
 if __name__ == '__main__':
     main()
