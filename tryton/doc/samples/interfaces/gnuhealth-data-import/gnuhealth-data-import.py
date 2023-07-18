@@ -9,26 +9,17 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                       patient_uploader.py                             #
-#         Sample script to upload patients and demographics             #
+#                       gnuhealth-data-import.py                        #
+#               Sample script to import data to gnuhealth               #
 #########################################################################
-
-# Functionality :
-# Small SAMPLE proteus script to create the parties and their respective patients 
-# from a CSV or Libreoffice ODS file
-
-# CSV or ODS Fields :
-# "ignore", "fed_country","first_name","family_name","name_representation",
-# "puid","gender","dob","phone","alternative_id","alternative_id_comments",
-# "addr_1","addr_cont","activation_date"
-
-# Usage: python3 ./patient_uploader.py -f <file.csv|ods> -H <hostname> -p <port> -u <user> -P <password> -d <database>
 
 from datetime import datetime
 import sys
 import csv
 import argparse
+import attr
 
+from decimal import Decimal
 from proteus import Model
 from proteus import config as pconfig
 
@@ -37,9 +28,9 @@ import pandas as pd
 def main():
     options = parse_options()
     filename = options.filename
-    patients = read_file(filename)
+    data = read_file(filename)
     connect_service(options)
-    import_patients(patients)
+    import_data(data)
 
 def parse_options():
     parser = argparse.ArgumentParser()
@@ -47,11 +38,11 @@ def parse_options():
     parser.add_argument('-f', '--filename', required=True,
                         help="A csv or ods file.")
     parser.add_argument('-H', '--hostname', default='localhost',
-                        help="Hostname of GNU Health Service, for example: localhost.")
+                        help="Hostname of GNU Health Service, default=localhost.")
     parser.add_argument('-p', '--port', default='8000',
-                        help="Port of GNU Health Service, for example: 8000.")
+                        help="Port of GNU Health Service, default=8000.")
     parser.add_argument('-u', '--user', default='admin',
-                        help="User name of GNU Health.")
+                        help="User name of GNU Health, default=admin.")
     parser.add_argument('-P', '--passwd', required=True,
                         help="Password of GNU Health.")
     parser.add_argument('-d', '--database', required=True,
@@ -93,12 +84,17 @@ def read_file(filename):
                            keep_default_na=False,
                            index_col=False)
 
-def import_patients(patients):
+def import_data(data):
     print('-----------------------------------------------')
-    for index, line in patients.iterrows():
+
+    for index, line in data.iterrows():
         line = dict(line)
-        if not line.get('ignore') == 'yes':
-            import_patient(line)
+        ignore = line.get('_ignore')
+        data_type = line.get('_type') or 'default'
+        if not ignore == 'yes':
+            ## Call function which name is 'import_<data_type>'.
+            eval('import_' + data_type)(line)
+            
     print('-----------------------------------------------')
     print('Import finished!')
 
@@ -203,6 +199,109 @@ def import_patient(line):
         patient = Patient()
         patient.name = party
         patient.save()
+
+def import_labtest(line):
+    test_id      = line.get('test_id')
+    analyte_code = line.get('analyte_code')
+    analyte_name = line.get('analyte_name')
+    result       = line.get('result')
+    result_text  = line.get('result_text')
+
+    LabTestLine = Model.get('gnuhealth.lab.test.critearea')
+    ## NOTE: We prefer 'analyte_code' to 'analyte_name', for
+    ## 'analyte_name' will change when user use different languages.
+    domain = [['OR', 
+               ('code','=',analyte_code),
+               ('name','=',analyte_name)],
+              ('gnuhealth_lab_id','=',test_id)]
+    test_lines = LabTestLine.find(domain)
+    
+    ## Update the model with the result values
+    if test_lines:
+        for result_line in test_lines:
+            try:
+                result_line.result = float(result)
+            except:
+                result_line.result = None
+            result_line.result_text = result_text
+            result_line.save()
+            print("NOTE: '{0}/{1}' import success!".format(test_id, analyte_code))
+    else:
+        print("WARN: '{0}/{1}' is not found, ignore ...".format(test_id, analyte_code))
+
+def import_medicament(line):
+    name       = line.get('name')
+    list_price = line.get('list_price')
+    cost_price = line.get('cost_price')
+    prd_type   = line.get('type')
+    uom        = line.get('uom')
+    strength   = line.get('strength')
+    dose_uom   = line.get('strength_unit')
+    med_form   = line.get('form')
+    ## Product code - eg, "VITB12-500ug"
+    prd_code   = line.get('code')
+
+    ## Update the model with the result values
+    ProductTemplate = Model.get('product.template')
+    ProductUOM = Model.get('product.uom')
+    ProductVariant = Model.get('product.product')
+    Medicament = Model.get('gnuhealth.medicament')
+    DoseUnit = Model.get('gnuhealth.dose.unit')
+    MedForm = Model.get('gnuhealth.drug.form')
+
+    ## Create template
+    product = ProductTemplate()
+    product.name = name
+    product.code = prd_code
+    product.consumable = True
+    product.purchasable = True
+    product.list_price = Decimal(list_price)
+    uom_val, = ProductUOM.find([('symbol', '=', uom)])
+    dose_unit, = DoseUnit.find([('name', '=', dose_uom)])
+    product.default_uom = uom_val
+    product.type = prd_type
+
+    variant, = product.products
+    variant.is_medicament = True
+    variant.cost_price = Decimal(cost_price)
+    print("Importing product: '{0} ({1})'".format(product.name, product.code))
+
+    product.save()
+        
+    ## Create medicament with related product
+    print(f"Importing medicament: '{name}' ...")
+    med = Medicament()
+    med.name, = ProductVariant.find([('code', '=', prd_code)])
+    med.strength = int(strength)
+    med.unit = dose_unit
+    med.form, = MedForm.find([('code', '=', med_form)])
+
+    med.save()
+
+def import_product(line):
+    name       = line.get('name')
+    list_price = line.get('list_price')
+    cost_price = line.get('cost_price')
+    prd_type   = line.get('type')
+    uom        = line.get('uom')
+
+    # Update the model with the result values
+    print("Importing product: '{0}' ...".format(name))
+    ProductInfo = Model.get('product.template')
+    ProductUOM = Model.get('product.uom')
+    product = ProductInfo()
+    product.name = name
+    product.list_price = Decimal(list_price)
+    product.cost_price = Decimal(cost_price)
+    uom_val, = ProductUOM.find([('symbol', '=', uom)])
+    product.default_uom = uom_val
+    product.type = prd_type
+
+    product.save()
+
+def import_default(line):
+    print("Error: '_type' value error: {0}!".format(line))
+
 
 if __name__ == '__main__':
     main()
