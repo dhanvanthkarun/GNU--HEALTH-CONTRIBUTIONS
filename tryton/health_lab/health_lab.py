@@ -233,6 +233,21 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         select=True)
     sequence = fields.Integer('Sequence')
 
+    ## code field is mainly used by interface script, for example:
+    ## gnuhealth_csv_lab_interface.py in example directory.
+    ##
+    ## sequence field is not suitable for interface script, for it may
+    ## be changed by user for sort reason, when it changed, interface
+    ## script can not find error. for example: when a criterea
+    ## sequence is changed from 1 to 2 for sort reason. if interface
+    ## script do not update, it will run no error and push wrong
+    ## value.
+    ##
+    ## name field is not suitable for interface stript too, for it
+    ## will be changed when user use different languages.
+    code = fields.Char('Code', select=True, translate=False,
+                       help="Lab test critearea code, mainly used by lab interface script.")
+    
     # Show the warning icon if warning is active on the analyte line
     lab_warning_icon = fields.Function(fields.Char(
         'Lab Warning Icon'),

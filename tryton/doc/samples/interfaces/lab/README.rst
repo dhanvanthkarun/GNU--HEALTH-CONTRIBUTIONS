@@ -2,14 +2,16 @@
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
-gnuhealth_csv_lab_interface.py
+gnuhealth_lab_interface.py
 
 Simple script to show ways to interface with GNU Health in a
 non-interactive way.
-This program reads a CSV formatted file with that contains the 
-lab test id, the analytes and its results.
-Included in this directory a sample TEST006.csv, that contains the results of
-the test "TEST006", a "Complete Blood Count - CBC" 
+
+This program reads a CSV or Libreoffice ODS formatted file with that
+contains the 'test_id', 'analyte_code', 'analyte_name', 'result',
+'result_text' and 'ignore' fields.  Included in this directory are
+sample TEST006.csv and TEST006.ods, that contains the result of the
+test "TEST006", a "Complete Blood Count - CBC"
 
 
 Requirements :
@@ -26,7 +28,7 @@ Usage :
 Invoke the program and pass the csv formatted file as an argument
 eg:
 
-$ ./gnuhealth_csv_lab_interface.py TEST006.csv
+$ ./gnuhealth_lab_interface.py -f TEST006.csv|ods -H <hostname> -p <port> -u <user> -P <password> -d <database>
 
 The main steps are :
 - Test connection to the GNU Health server

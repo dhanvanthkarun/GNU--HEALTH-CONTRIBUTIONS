@@ -65,6 +65,7 @@ class CreateLabTestOrder(Wizard):
             for critearea in lab_test_order.name.critearea:
                 test_cases.append(('create', [{
                         'name': critearea.name,
+                        'code': critearea.code,
                         'sequence': critearea.sequence,
                         'lower_limit': critearea.lower_limit,
                         'upper_limit': critearea.upper_limit,
