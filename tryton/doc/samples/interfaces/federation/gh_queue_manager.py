@@ -13,25 +13,52 @@
 #   Sends the queued messages from the HMIS to the GH Federation        #
 #########################################################################
 
-from proteus import config, Model
 import sys
+import argparse
 
-dbname = 'health34'
-user = 'admin'
-password = 'gnusolidario'
-hostname = 'localhost'
-port = '8000'
-
-health_server = \
-    'http://'+user+':'+password+'@'+hostname+':'+port+'/'+dbname+'/'
+from proteus import Model
+from proteus import config as pconfig
 
 
-usage = """
-   Usage : gh_queue_manager <action> [args]
-    Actions:
-        * check: View messages in queue
-        * push: Send messages to the federation
-    """
+def main():
+    options = parse_options()
+    action = options.action
+    connect_service(options)
+    federation_queue(action)
+
+def parse_options():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-a', '--action', required=True,
+                        help="Action: 'check' or 'push'.")
+    parser.add_argument('-H', '--hostname', default='localhost',
+                        help="Hostname of GNU Health Service, default=localhost.")
+    parser.add_argument('-p', '--port', default='8000',
+                        help="Port of GNU Health Service, default=8000.")
+    parser.add_argument('-u', '--user', default='admin',
+                        help="User name of GNU Health, default=admin.")
+    parser.add_argument('-P', '--passwd', required=True,
+                        help="Password of GNU Health.")
+    parser.add_argument('-d', '--database', required=True,
+                        help="Database name of GNU Health.")
+
+    return parser.parse_args()
+
+def connect_service(options):
+    hostname = options.hostname
+    port     = options.port
+    user     = options.user
+    passwd   = options.passwd
+    dbname   = options.database
+
+    health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
+    
+    print("Connecting to GNU Health Server ...")
+    conf = pconfig.set_xmlrpc(health_server)
+    # Use XML RPC using session
+    #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
+    print("Connected!")
+
 def federation_queue(action):
     Queue = Model.get('gnuhealth.federation.queue')
 
@@ -52,12 +79,5 @@ def federation_queue(action):
                 print ("Failed to send message ", msg.msgid)
 
 
-
-if (len(sys.argv) < 2):
-    exit (usage)
-    
-print ("Connecting to GNU Health Server ...")
-conf = config.set_xmlrpc(health_server)
-print ("Connected !")
-
-federation_queue(action=sys.argv[1])
+if __name__ == '__main__':
+    main()
