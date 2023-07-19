@@ -85,9 +85,24 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
         rdelta = relativedelta(end, start)
 
-        years_months_days = str(rdelta.years) + 'y ' \
-            + str(rdelta.months) + 'm ' \
-            + str(rdelta.days) + 'd'
+        ## The format of 'years_months_days' is like below:
+        ##
+        ##   '<int1><year> <int2><month> <int3><day>'
+        ##
+        ## NOTE: <year>, <month> and <day> must be string with one
+        ## char, because for history reason, may other packages use
+        ## the below code to get year, month and day number.
+        ##  
+        ##   year  = split(' ')[0][:-1]
+        ##   month = split(' ')[1][:-1]
+        ##   day   = split(' ')[1][:-1]
+        ##
+        years_months_days = str(rdelta.years) \
+            + gettext('health.msg_compute_age_from_dates_year_str')[0] + ' ' \
+            + str(rdelta.months) \
+            + gettext('health.msg_compute_age_from_dates_month_str')[0] + ' ' \
+            + str(rdelta.days) \
+            + gettext('health.msg_compute_age_from_dates_day_str')[0]
 
     else:
         return None
