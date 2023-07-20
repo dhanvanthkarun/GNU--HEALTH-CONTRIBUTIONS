@@ -75,6 +75,16 @@ class PatientRounding(ModelSQL, ModelView):
             'invisible': ~Eval('pain'),
             'readonly': Eval('state') == 'done'})
 
+    ## Use by round_report template
+    def get_report_pain_and_level(self):
+        if self.pain and self.pain_level:
+            return gettext('health_nursing.msg_report_pain_level',
+                           pain_level=str(self.pain_level))
+        elif self.pain:
+            return gettext('health_nursing.msg_report_pain_yes')
+        else:
+            return gettext('health_nursing.msg_report_pain_no')
+
     potty = fields.Boolean(
         'Potty', help="Check if the patient needs to "
         "urinate / defecate", states=STATES)
