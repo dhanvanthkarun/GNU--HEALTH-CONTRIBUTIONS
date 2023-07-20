@@ -27,16 +27,17 @@ import pandas as pd
 
 def main():
     options = parse_options()
-    filename = options.filename
-    data = read_file(filename)
+    filenames = options.filenames
     connect_service(options)
-    import_data(data)
+    import_files(filenames)
+    import_finish()
 
 def parse_options():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-f', '--filename', required=True,
-                        help="A csv or ods file.")
+    parser.add_argument('-f', '--filenames', nargs='+', required=True,
+                        help="A list of csv or ods files.",
+                        default=[])
     parser.add_argument('-H', '--hostname', default='localhost',
                         help="Hostname of GNU Health Service, default=localhost.")
     parser.add_argument('-p', '--port', default='8000',
@@ -59,11 +60,16 @@ def connect_service(options):
 
     health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
     
-    print("Connecting to GNU Health Server ...")
+    print("## Connecting to GNU Health Server ...")
     conf = pconfig.set_xmlrpc(health_server)
     # Use XML RPC using session
     #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
-    print("Connected!")
+    print("## Connected!\n")
+
+def import_files(filenames):
+    for filename in filenames:
+        data = read_file(filename)
+        import_data(data)
 
 def read_file(filename):
     if filename.endswith('ods'):
@@ -85,20 +91,15 @@ def read_file(filename):
                            index_col=False)
 
 def import_data(data):
-    print('-----------------------------------------------')
-
     for index, line in data.iterrows():
         line = dict(line)
         ignore = line.get('_ignore')
         data_type = line.get('_type') or 'default'
         if not ignore == 'yes':
-            ## Call function which name is 'import_<data_type>'.
-            eval('import_' + data_type)(line)
-            
-    print('-----------------------------------------------')
-    print('Import finished!')
+            ## Call function which name is 'import_line_<data_type>'.
+            eval('import_line_' + data_type)(line)
 
-def import_patient(line):
+def import_line_patient(line):
     fed_country = line.get("fed_country")
     name        = line.get("first_name")
     lastname    = line.get("family_name")
@@ -113,7 +114,7 @@ def import_patient(line):
     addr_cont   = line.get("addr_cont")
     active_date = line.get("activation_date")
 
-    print("* Importing '{0}, {1}' to GNU health ...".format(name, lastname))
+    print("* Importing patient: '{0}, {1}' ...".format(name, lastname))
 
     Party = Model.get('party.party')
     PartyAddress = Model.get('party.address')
@@ -200,7 +201,7 @@ def import_patient(line):
         patient.name = party
         patient.save()
 
-def import_labtest(line):
+def import_line_labtest(line):
     test_id      = line.get('test_id')
     analyte_code = line.get('analyte_code')
     analyte_name = line.get('analyte_name')
@@ -225,11 +226,11 @@ def import_labtest(line):
                 result_line.result = None
             result_line.result_text = result_text
             result_line.save()
-            print("NOTE: '{0}/{1}' import success!".format(test_id, analyte_code))
+            print("* Importing labtest: '{0}/{1}' ...".format(test_id, analyte_code))
     else:
-        print("WARN: '{0}/{1}' is not found, ignore ...".format(test_id, analyte_code))
+        print("! Ignore labtest: '{0}/{1}', it is not found !!!".format(test_id, analyte_code))
 
-def import_medicament(line):
+def import_line_medicament(line):
     name       = line.get('name')
     list_price = line.get('list_price')
     cost_price = line.get('cost_price')
@@ -264,12 +265,12 @@ def import_medicament(line):
     variant, = product.products
     variant.is_medicament = True
     variant.cost_price = Decimal(cost_price)
-    print("Importing product: '{0} ({1})'".format(product.name, product.code))
+    print("* Importing product: '{0} ({1})'".format(product.name, product.code))
 
     product.save()
         
     ## Create medicament with related product
-    print(f"Importing medicament: '{name}' ...")
+    print(f"* Importing medicament: '{name}' ...")
     med = Medicament()
     med.name, = ProductVariant.find([('code', '=', prd_code)])
     med.strength = int(strength)
@@ -278,7 +279,7 @@ def import_medicament(line):
 
     med.save()
 
-def import_product(line):
+def import_line_product(line):
     name       = line.get('name')
     list_price = line.get('list_price')
     cost_price = line.get('cost_price')
@@ -286,7 +287,7 @@ def import_product(line):
     uom        = line.get('uom')
 
     # Update the model with the result values
-    print("Importing product: '{0}' ...".format(name))
+    print("* Importing product: '{0}' ...".format(name))
     ProductInfo = Model.get('product.template')
     ProductUOM = Model.get('product.uom')
     product = ProductInfo()
@@ -299,9 +300,11 @@ def import_product(line):
 
     product.save()
 
-def import_default(line):
-    print("Error: '_type' value error: {0}!".format(line))
+def import_line_default(line):
+    print("! Importing Error: '_type' value error: {0}!".format(line))
 
+def import_finish():
+    print('\n## Import finished!')
 
 if __name__ == '__main__':
     main()

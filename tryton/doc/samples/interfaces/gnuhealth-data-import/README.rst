@@ -20,14 +20,16 @@ Installing proteus :
 $ pip install --user "proteus>=6.0,<6.1"
 
 Usage : 
-gnuhealth-data-import.py [-h] -f FILENAME [-H HOSTNAME] [-p PORT]
+gnuhealth-data-import.py [-h] -f FILENAMES [-H HOSTNAME] [-p PORT]
                          [-u USER] -P PASSWD -d DATABASE
 
-the following arguments are required: -f/--filename, -P/--passwd, -d/--database
+the following arguments are required: -f/--filenames, -P/--passwd, -d/--database
 
 eg:
 
-$ python3 ./gnuhealth-data-import.py -f <data-file.csv|ods> -H <hostname> -p <port> -u <user> -P <password> -d <database>
+$ python3 ./gnuhealth-data-import.py -f <data-file1.csv|ods> <data-file2.csv|ods> \
+                                     -H <hostname> -p <port> -u <user> \
+                                     -P <password> -d <database>
 
 Data file examples can be found in '<PKG>/data/' directory, for example:
 - data/1-patients.csv
