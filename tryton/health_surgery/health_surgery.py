@@ -156,8 +156,9 @@ class RCRI(ModelSQL, ModelView):
         return 'I'
 
     def get_rec_name(self, name):
-        res = 'Points: ' + str(self.rcri_total) + ' (Class ' + \
-            str(self.rcri_class) + ')'
+        res = gettext('health_surgery.msg_surgery_rcri_rec_name',
+                      rcri_total=str(self.rcri_total),
+                      rcri_class=str(self.rcri_class))
         return res
 
     @classmethod

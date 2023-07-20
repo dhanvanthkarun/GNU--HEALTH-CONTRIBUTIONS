@@ -23,5 +23,8 @@ this repository contains the full copyright notices and license terms. -->
         <record model="ir.message" id="msg_surgery_is_done">
             <field name="text">This surgery is at state Done and has been signed. You can no longer modify it.</field>
         </record>
+        <record model="ir.message" id="msg_surgery_rcri_rec_name">
+            <field name="text">Points: %(rcri_total)s (Class %(rcri_class)s)</field>
+        </record>
     </data>
 </tryton>
