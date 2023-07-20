@@ -95,7 +95,7 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
         ##  
         ##   year  = split(' ')[0][:-1]
         ##   month = split(' ')[1][:-1]
-        ##   day   = split(' ')[1][:-1]
+        ##   day   = split(' ')[2][:-1]
         ##
         years_months_days = str(rdelta.years) \
             + gettext('health.msg_compute_age_from_dates_year_str')[0] + ' ' \
