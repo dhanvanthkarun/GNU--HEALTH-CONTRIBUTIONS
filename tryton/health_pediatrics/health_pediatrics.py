@@ -69,6 +69,20 @@ class Newborn(ModelSQL, ModelView):
     weight = fields.Integer(
         'Weight',
         help="Weight in grams (g)", states=STATES)
+
+    ## Used by newborn_card report template, the page of newborn_card
+    ## report is very small, so it requires compression of information.
+    def get_report_length_and_weight(self):
+        if self.length and self.weight:
+            ## I think 'cm' and 'g' do not need to translate.
+            return f'{self.length}cm, {self.weight}g'
+        elif self.length:
+            return f'{self.length}cm'
+        elif self.weight:
+            return f'{self.weight}g'
+        else:
+            return ''
+
     apgar1 = fields.Integer('APGAR 1st minute', states=STATES)
     apgar5 = fields.Integer('APGAR 5th minute', states=STATES)
     apgar_scores = fields.One2Many(
