@@ -13,12 +13,12 @@
 #               Sample script to import data to gnuhealth               #
 #########################################################################
 
-from datetime import datetime
+import os
 import sys
 import csv
 import argparse
-import attr
 
+from datetime import datetime
 from decimal import Decimal
 from proteus import Model
 from proteus import config as pconfig
@@ -27,7 +27,7 @@ import pandas as pd
 
 def main():
     options = parse_options()
-    filenames = options.filenames
+    filenames = get_filenames(options)
     connect_service(options)
     import_files(filenames)
     import_finish()
@@ -35,9 +35,11 @@ def main():
 def parse_options():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-f', '--filenames', nargs='+', required=True,
+    parser.add_argument('-f', '--filenames', nargs='+',
                         help="A list of csv or ods files.",
                         default=[])
+    parser.add_argument('-D', '--directory',
+                        help="A directory which contain csv or ods data files.")
     parser.add_argument('-H', '--hostname', default='localhost',
                         help="Hostname of GNU Health Service, default=localhost.")
     parser.add_argument('-p', '--port', default='8000',
@@ -50,6 +52,13 @@ def parse_options():
                         help="Database name of GNU Health.")
 
     return parser.parse_args()
+
+def get_filenames(options):
+    filenames = []
+    if options.directory:
+        filenames = os.listdir(options.directory)
+    filenames = [os.path.join(options.directory, f) for f in filenames]
+    return options.filenames + filenames
 
 def connect_service(options):
     hostname = options.hostname
@@ -80,7 +89,7 @@ def read_file(filename):
                              dtype='str',
                              keep_default_na=False,
                              index_col=False)    
-    else:
+    elif filename.endswith('csv'):
         return pd.read_csv(filename,
                            sep=',',
                            skipinitialspace=True,
@@ -89,6 +98,8 @@ def read_file(filename):
                            dtype='str',
                            keep_default_na=False,
                            index_col=False)
+    else:
+        print(f'## Do not support import: {filename}')
 
 def import_data(data):
     for index, line in data.iterrows():
