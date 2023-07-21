@@ -86,8 +86,8 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
         rdelta = relativedelta(end, start)
 
         years_months_days = format_years_months_days(
-            years=rdelta.years, 
-            months=rdelta.months, 
+            years=rdelta.years,
+            months=rdelta.months,
             days=rdelta.days)
     else:
         return None
@@ -110,14 +110,16 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
 
 def format_years_months_days(years=None, months=None, days=None):
-    ymd_format = '{years}{sep}{year_str}{sep}' + \
-        '{months}{sep}{month_str}{sep}' + \
-        '{days}{sep}{day_str}{sep}'
     year_str = gettext('health.msg_compute_age_from_dates_year_str')
     month_str = gettext('health.msg_compute_age_from_dates_month_str')
     day_str = gettext('health.msg_compute_age_from_dates_day_str')
+
+    ymd_format = '{years}{sep}{year_str}{sep}' \
+                 '{months}{sep}{month_str}{sep}' \
+                 '{days}{sep}{day_str}{sep}'
+
     return ymd_format.format(
-        sep='\u200b', # Zero width space
+        sep='\u200b',  # Zero width space
         years=isinstance(years, int) and str(years) or '',
         year_str=isinstance(years, int) and year_str or '',
         months=isinstance(months, int) and str(months) or '',
@@ -131,12 +133,13 @@ def parse_compute_age(age):
     if isinstance(age, str):
         return parse_compute_age_str(age)
     else:
-        return age    
+        return age
+
 
 def parse_compute_age_str(age_str):
     """ Parse age string returned by compute_age_from_dates function"""
-    age_str=age_str.strip()
-    sep = '\u200b' # Zero width space
+    age_str = age_str.strip()
+    sep = '\u200b'  # Zero width space
     try:
         if age_str.endswith(sep):
             return parse_compute_age_str_with_zero_width_space(age_str)
@@ -144,6 +147,7 @@ def parse_compute_age_str(age_str):
             return parse_compute_age_str_with_one_char_string(age_str)
     except:
         return [None, None, None]
+
 
 def parse_compute_age_str_with_zero_width_space(age_str):
     """Parse age string seperate with zero width space.
@@ -154,9 +158,10 @@ def parse_compute_age_str_with_zero_width_space(age_str):
     string are surrounded with zero width space: '\u200b'.
 
     """
-    sep = '\u200b' # Zero width space
+    sep = '\u200b'  # Zero width space
     age = age_str.split(sep)
     return [int(age[0]), int(age[2]), int(age[4])]
+
 
 def parse_compute_age_str_with_one_char_string(age_str):
     """ Parse age string which is like: '10y 2m 03d'.
@@ -171,10 +176,11 @@ def parse_compute_age_str_with_one_char_string(age_str):
     Note: Previously, compute_age_from_dates will return '10y 4m 4d'
     style age string, so this function was retained for compatibility.
     """
-    year  = int(age_str.split(' ')[0][:-1])
+    year = int(age_str.split(' ')[0][:-1])
     month = int(age_str.split(' ')[1][:-1])
-    day   = int(age_str.split(' ')[2][:-1])
+    day = int(age_str.split(' ')[2][:-1])
     return [year, month, day]
+
 
 def get_institution():
     # Retrieve the institution associated to this GNU Health instance
