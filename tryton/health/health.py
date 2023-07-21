@@ -49,6 +49,7 @@ from .exceptions import (
     )
 
 from .core import (get_institution, compute_age_from_dates,
+                   format_years_months_days,
                    estimated_date_from_years,
                    get_health_professional)
 
@@ -3349,7 +3350,8 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         def patient_age_at_dx():
             age_at_dx = ''
             if condition_info.age:
-                age_at_dx = str(condition_info.age) + 'y'
+                age_at_dx = format_years_months_days(
+                    years=condition_info.age)
             elif (condition_info.name.dob and condition_info.diagnosed_date):
                 age_at_dx = compute_age_from_dates(
                     condition_info.name.dob, None, None, None,
