@@ -110,17 +110,20 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
 
 def format_years_months_days(years=None, months=None, days=None):
-    ymd_format = '{year}{sep}{year_str}{sep}' + \
-        '{month}{sep}{month_str}{sep}' + \
-        '{day}{sep}{day_str}{sep}'
+    ymd_format = '{years}{sep}{year_str}{sep}' + \
+        '{months}{sep}{month_str}{sep}' + \
+        '{days}{sep}{day_str}{sep}'
+    year_str = gettext('health.msg_compute_age_from_dates_year_str')
+    month_str = gettext('health.msg_compute_age_from_dates_month_str')
+    day_str = gettext('health.msg_compute_age_from_dates_day_str')
     return ymd_format.format(
         sep='\u200b', # Zero width space
-        year=isinstance(years, int) and str(years) or '',
-        year_str=isinstance(years, int) and gettext('health.msg_compute_age_from_dates_year_str') or '',
-        month=isinstance(months, int) and str(months) or '',
-        month_str=isinstance(months, int) and gettext('health.msg_compute_age_from_dates_month_str') or '',
-        day=isinstance(days, int) and str(days) or '',
-        day_str=isinstance(months, int) and gettext('health.msg_compute_age_from_dates_day_str') or '')
+        years=isinstance(years, int) and str(years) or '',
+        year_str=isinstance(years, int) and year_str or '',
+        months=isinstance(months, int) and str(months) or '',
+        month_str=isinstance(months, int) and month_str or '',
+        days=isinstance(days, int) and str(days) or '',
+        day_str=isinstance(months, int) and day_str or '')
 
 
 def parse_compute_age(age):
