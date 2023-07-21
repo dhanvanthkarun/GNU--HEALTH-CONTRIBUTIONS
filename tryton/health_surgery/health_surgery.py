@@ -22,6 +22,7 @@ from trytond.pool import Pool
 from trytond.pyson import Eval, Not, Equal, And
 from trytond.pool import PoolMeta
 from trytond.i18n import gettext
+from trytond.modules.health.core import format_years_months_days
 
 from .exceptions import (
     EndDateBeforeStart, ORNotAvailable, OperatingRoomAndDateRequired)
@@ -190,10 +191,10 @@ class Surgery(ModelSQL, ModelView):
         if (self.patient.name.dob and self.surgery_date):
             rdelta = relativedelta(self.surgery_date.date(),
                                    self.patient.name.dob)
-            years_months_days = str(rdelta.years) + 'y ' \
-                + str(rdelta.months) + 'm ' \
-                + str(rdelta.days) + 'd'
-            return years_months_days
+            return format_years_months_days(
+                years=rdelta.years,
+                months=rdelta.months,
+                days=rdelta.days)
         else:
             return None
 
