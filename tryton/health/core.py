@@ -110,8 +110,8 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
 
 def format_years_months_days(years=None, months=None, days=None):
-    ymd_format = '{year}{sep}{year_str}{sep} ' + \
-        '{month}{sep}{month_str}{sep} ' + \
+    ymd_format = '{year}{sep}{year_str}{sep}' + \
+        '{month}{sep}{month_str}{sep}' + \
         '{day}{sep}{day_str}{sep}'
     return ymd_format.format(
         sep='\u200b', # Zero width space
@@ -151,12 +151,9 @@ def parse_compute_age_str_with_zero_width_space(age_str):
     string are surrounded with zero width space: '\u200b'.
 
     """
-    year_str, month_str, day_str = age_str.split(' ')
     sep = '\u200b' # Zero width space
-    year = int(year_str.split(sep)[0])
-    month = int(month_str.split(sep)[0])
-    day = int(day_str.split(sep)[0])
-    return [year, month, day]
+    age = age_str.split(sep)
+    return [int(age[0]), int(age[2]), int(age[4])]
 
 def parse_compute_age_str_with_one_char_string(age_str):
     """ Parse age string which is like: '10y 2m 03d'.
