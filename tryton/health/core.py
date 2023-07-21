@@ -123,6 +123,54 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
     else:
         return None
 
+def parse_compute_age(age):
+    """ Parse age returned by compute_age_from_dates function."""
+    if isinstance(age, str):
+        return parse_compute_age_str(age)
+    else:
+        return age    
+
+def parse_compute_age_str(age_str):
+    """ Parse age string returned by compute_age_from_dates function"""
+    age_str=age_str.strip()
+    try:
+        if age_str.endswith(']'):
+            return parse_compute_age_str_with_brackets(age_str)
+        else:
+            return parse_compute_age_str_without_brackets(age_str)
+    except:
+        return [None, None, None]
+
+def parse_compute_age_str_with_brackets(age_str):
+    """ Parse age string which is like: '10[Y] 2[M] 03[D]'.
+
+    'Y', 'M', 'D' are 1 char strings, which can be translated to other
+    languages.
+
+    '10[Y] 2[M] 03[D]' => [10, 2, 3]
+
+    """
+    year_str, month_str, day_str = age_str.split(' ')
+    year = int(year_str.split('[')[0])
+    month = int(month_str.split('[')[0])
+    day = int(day_str.split('[')[0])
+    return [year, month, day]
+
+def parse_compute_age_str_without_brackets(age_str):
+    """ Parse age string which is like: '10y 2m 03d'.
+
+    'y', 'm', 'd' are 1 char strings, which can be translated to other
+    languages.
+
+    For example:
+
+    '10y 2m 03d' => [10, 2, 3]
+
+    """
+    year  = int(age_str.split(' ')[0][:-1])
+    month = int(age_str.split(' ')[1][:-1])
+    day   = int(age_str.split(' ')[2][:-1])
+    return [year, month, day]
 
 def get_institution():
     # Retrieve the institution associated to this GNU Health instance
