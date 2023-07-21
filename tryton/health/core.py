@@ -89,8 +89,11 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
         ##
         ##   '10[Y] 20[M] 5[D]'
         ##
-        ymd_format = '{year}[{year_str}] {month}[{month_str}] {day}[{day_str}]'
+        ymd_format = '{year}{sep}{year_str}{sep} ' + \
+            '{month}{sep}{month_str}{sep} ' + \
+            '{day}{sep}{day_str}{sep}'
         years_months_days = ymd_format.format(
+            sep='\u200b', # Zero width space
             year=str(rdelta.years),
             year_str=gettext('health.msg_compute_age_from_dates_year_str'),
             month=str(rdelta.months),
@@ -126,29 +129,32 @@ def parse_compute_age(age):
 def parse_compute_age_str(age_str):
     """ Parse age string returned by compute_age_from_dates function"""
     age_str=age_str.strip()
+    sep = '\u200b' # Zero width space
     try:
-        if age_str.endswith(']'):
-            return parse_compute_age_str_with_brackets(age_str)
+        if age_str.endswith(sep):
+            return parse_compute_age_str_with_zero_width_space(age_str)
         else:
-            return parse_compute_age_str_without_brackets(age_str)
+            return parse_compute_age_str_with_one_char_string(age_str)
     except:
         return [None, None, None]
 
-def parse_compute_age_str_with_brackets(age_str):
-    """ Parse age string which is like: '10[Y] 2[M] 03[D]'.
+def parse_compute_age_str_with_zero_width_space(age_str):
+    """Parse age string seperate with zero width space.
 
-    'Y', 'M', 'D' can be translated to other languages.
+    '10y 2m 03d' => [10, 2, 3]
 
-    '10[Y] 2[M] 03[D]' => [10, 2, 3]
+    'y', 'm', 'd' can be translated to other languages, and this three
+    string are surrounded with zero width space: '\u200b'.
 
     """
     year_str, month_str, day_str = age_str.split(' ')
-    year = int(year_str.split('[')[0])
-    month = int(month_str.split('[')[0])
-    day = int(day_str.split('[')[0])
+    sep = '\u200b' # Zero width space
+    year = int(year_str.split(sep)[0])
+    month = int(month_str.split(sep)[0])
+    day = int(day_str.split(sep)[0])
     return [year, month, day]
 
-def parse_compute_age_str_without_brackets(age_str):
+def parse_compute_age_str_with_one_char_string(age_str):
     """ Parse age string which is like: '10y 2m 03d'.
 
     'y', 'm', 'd' are 1 char strings, which can be translated to other
