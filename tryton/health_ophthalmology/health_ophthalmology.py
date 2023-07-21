@@ -18,7 +18,8 @@ from trytond.model import ModelView, ModelSQL, fields
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from trytond.pyson import Eval, Equal
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         format_years_months_days)
 
 __all__ = ['OphthalmologyEvaluation', 'OphthalmologyFindings']
 
@@ -243,10 +244,10 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
             rdelta = relativedelta(
                 self.visit_date.date(),
                 self.patient.name.dob)
-            years_months_days = str(rdelta.years) + 'y ' \
-                + str(rdelta.months) + 'm ' \
-                + str(rdelta.days) + 'd'
-            return years_months_days
+            return format_years_months_days(
+                years=rdelta.years,
+                months=rdelta.months,
+                days=rdelta.days)
         else:
             return None
 
