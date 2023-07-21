@@ -2846,9 +2846,10 @@ class DeathCertificate (ModelSQL, ModelView):
     def get_age_at_death(self, name):
         if (self.name.dob):
             delta = relativedelta(self.dod, self.name.dob)
-            years_months_days = str(delta.years) + 'y ' \
-                + str(delta.months) + 'm ' \
-                + str(delta.days) + 'd'
+            years_months_days = format_years_months_days(
+                years=delta.years,
+                months=delta.months,
+                days=delta.days)
         else:
             years_months_days = None
         return years_months_days
