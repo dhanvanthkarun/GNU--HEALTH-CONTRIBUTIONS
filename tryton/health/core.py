@@ -85,21 +85,10 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
         rdelta = relativedelta(end, start)
 
-        ## The format of 'years_months_days' is like below:
-        ##
-        ##   '10[Y] 20[M] 5[D]'
-        ##
-        ymd_format = '{year}{sep}{year_str}{sep} ' + \
-            '{month}{sep}{month_str}{sep} ' + \
-            '{day}{sep}{day_str}{sep}'
-        years_months_days = ymd_format.format(
-            sep='\u200b', # Zero width space
-            year=str(rdelta.years),
-            year_str=gettext('health.msg_compute_age_from_dates_year_str'),
-            month=str(rdelta.months),
-            month_str=gettext('health.msg_compute_age_from_dates_month_str'),
-            day=str(rdelta.days),
-            day_str=gettext('health.msg_compute_age_from_dates_day_str'))
+        years_months_days = format_years_months_days(
+            years=rdelta.years, 
+            months=rdelta.months, 
+            days=rdelta.days)
     else:
         return None
 
@@ -118,6 +107,21 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
     else:
         return None
+
+
+def format_years_months_days(years=None, months=None, days=None):
+    ymd_format = '{year}{sep}{year_str}{sep} ' + \
+        '{month}{sep}{month_str}{sep} ' + \
+        '{day}{sep}{day_str}{sep}'
+    return ymd_format.format(
+        sep='\u200b', # Zero width space
+        year=isinstance(years, int) and str(years) or '',
+        year_str=isinstance(years, int) and gettext('health.msg_compute_age_from_dates_year_str') or '',
+        month=isinstance(months, int) and str(months) or '',
+        month_str=isinstance(months, int) and gettext('health.msg_compute_age_from_dates_month_str') or '',
+        day=isinstance(days, int) and str(days) or '',
+        day_str=isinstance(months, int) and gettext('health.msg_compute_age_from_dates_day_str') or '')
+
 
 def parse_compute_age(age):
     """ Parse age returned by compute_age_from_dates function."""
