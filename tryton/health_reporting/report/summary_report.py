@@ -11,6 +11,7 @@ from datetime import date, datetime
 from trytond.report import Report
 from trytond.pool import Pool
 from trytond.transaction import Transaction
+from trytond.modules.health.core import parse_compute_age
 from dateutil.relativedelta import relativedelta
 
 __all__ = ['InstitutionSummaryReport']
@@ -238,26 +239,26 @@ class InstitutionSummaryReport(Report):
                 if (unique_eval.computed_age):
 
                     # Strip to get the raw year
-                    age = int(unique_eval.computed_age.split(' ')[0][:-1])
+                    age_year = parse_compute_age(unique_eval.computed_age)[0]
 
                     # Age groups in this diagnostic
-                    if (age < 5):
+                    if (age_year < 5):
                         group_1 += 1
                         if (unique_eval.gender == 'f'):
                             group_1f += 1
-                    if (age in range(5, 14)):
+                    if (age_year in range(5, 14)):
                         group_2 += 1
                         if (unique_eval.gender == 'f'):
                             group_2f += 1
-                    if (age in range(15, 45)):
+                    if (age_year in range(15, 45)):
                         group_3 += 1
                         if (unique_eval.gender == 'f'):
                             group_3f += 1
-                    if (age in range(46, 60)):
+                    if (age_year in range(46, 60)):
                         group_4 += 1
                         if (unique_eval.gender == 'f'):
                             group_4f += 1
-                    if (age > 60):
+                    if (age_year > 60):
                         group_5 += 1
                         if (unique_eval.gender == 'f'):
                             group_5f += 1
