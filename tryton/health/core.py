@@ -87,23 +87,16 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
         ## The format of 'years_months_days' is like below:
         ##
-        ##   '<int1><year> <int2><month> <int3><day>'
+        ##   '10[Y] 20[M] 5[D]'
         ##
-        ## NOTE: <year>, <month> and <day> must be string with one
-        ## char, because for history reason, may other packages use
-        ## the below code to get year, month and day number.
-        ##  
-        ##   year  = split(' ')[0][:-1]
-        ##   month = split(' ')[1][:-1]
-        ##   day   = split(' ')[2][:-1]
-        ##
-        years_months_days = str(rdelta.years) \
-            + gettext('health.msg_compute_age_from_dates_year_str')[0] + ' ' \
-            + str(rdelta.months) \
-            + gettext('health.msg_compute_age_from_dates_month_str')[0] + ' ' \
-            + str(rdelta.days) \
-            + gettext('health.msg_compute_age_from_dates_day_str')[0]
-
+        ymd_format = '{year}[{year_str}] {month}[{month_str}] {day}[{day_str}]'
+        years_months_days = ymd_format.format(
+            year=str(rdelta.years),
+            year_str=gettext('health.msg_compute_age_from_dates_year_str'),
+            month=str(rdelta.months),
+            month_str=gettext('health.msg_compute_age_from_dates_month_str'),
+            day=str(rdelta.days),
+            day_str=gettext('health.msg_compute_age_from_dates_day_str'))
     else:
         return None
 
@@ -144,8 +137,7 @@ def parse_compute_age_str(age_str):
 def parse_compute_age_str_with_brackets(age_str):
     """ Parse age string which is like: '10[Y] 2[M] 03[D]'.
 
-    'Y', 'M', 'D' are 1 char strings, which can be translated to other
-    languages.
+    'Y', 'M', 'D' can be translated to other languages.
 
     '10[Y] 2[M] 03[D]' => [10, 2, 3]
 
@@ -166,6 +158,8 @@ def parse_compute_age_str_without_brackets(age_str):
 
     '10y 2m 03d' => [10, 2, 3]
 
+    Note: Previously, compute_age_from_dates will return '10y 4m 4d'
+    style age string, so this function was retained for compatibility.
     """
     year  = int(age_str.split(' ')[0][:-1])
     month = int(age_str.split(' ')[1][:-1])
