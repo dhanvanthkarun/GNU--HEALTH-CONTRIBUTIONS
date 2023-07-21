@@ -14,6 +14,7 @@
 
 from trytond.report import Report
 from trytond.pool import Pool
+from trytond.modules.health.core import parse_compute_age
 
 __all__ = ['ImmunizationStatusReport']
 
@@ -56,12 +57,8 @@ class ImmunizationStatusReport(Report):
                 dose_number, dose_age, age_unit, age_unit_str = dose.dose_number, \
                     dose.age_dose, dose.age_unit, dose.age_unit_str
 
-                p_age = [patient.age.split(' ')[0][:-1],
-                         patient.age.split(' ')[1][:-1],
-                         patient.age.split(' ')[2][:-1]]
-
                 # Age of the person in years, months, weeks and days.
-                y, m, d = int(p_age[0]), int(p_age[1]), int(p_age[2])
+                y, m, d = parse_compute_age(patient.age)
                 pdays = (y*365) + (m*365/12) + d
                 pyears = pdays/365
                 pmonths = pdays/(365/12)
