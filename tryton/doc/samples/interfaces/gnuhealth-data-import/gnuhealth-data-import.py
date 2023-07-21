@@ -133,19 +133,9 @@ def import_line_patient(line):
     ContactMethod = Model.get('party.contact_mechanism')
     Patient = Model.get('gnuhealth.patient')
 
-    parties = []
-
-    if puid:
-        parties = Party.find([('ref', '=', puid)])
-
-    if alt_id:
-        parties = parties + Party.find([('alternative_ids.code', '=', alt_id)])
-
-    if parties:
-        party = parties[0]
-    else:
-        party = Party()
-        
+    party = get_record(Party, 
+                       [('ref', '=', puid)],
+                       [('alternative_ids.code', '=', alt_id)])
     party.fed_country = fed_country
     party.name = name
     party.lastname = lastname
@@ -183,9 +173,7 @@ def import_line_patient(line):
 
         party.alternative_ids.append(altid)
 
-
     # Set the party address
-
     address = PartyAddress()
 
     if addr_1:
@@ -193,7 +181,6 @@ def import_line_patient(line):
  
     if addr_cont:
         address.city = addr_cont
-
 
     # Use this if one address only, so it won't leave the first record blank
     party.addresses[0] = address
@@ -204,13 +191,23 @@ def import_line_patient(line):
     except:
         party.activation_date = None
 
-
     party.save()
     
-    if not Patient.find([('name.ref', '=', party.ref)]):
-        patient = Patient()
-        patient.name = party
-        patient.save()
+    patient = get_record(Patient,
+                         [('name.ref', '=', party.ref)])
+    patient.name = party
+    patient.save()
+
+def get_record(model, *domains):
+    records = []
+
+    for domain in domains:
+        records = records + model.find(domain)
+
+    if records:
+        return records[0]
+    else:
+        return model()
 
 def import_line_labtest(line):
     test_id      = line.get('test_id')
@@ -262,7 +259,8 @@ def import_line_medicament(line):
     MedForm = Model.get('gnuhealth.drug.form')
 
     ## Create template
-    product = ProductTemplate()
+    product = get_record(ProductTemplate,
+                         [('code', '=', prd_code)])
     product.name = name
     product.code = prd_code
     product.consumable = True
@@ -282,7 +280,8 @@ def import_line_medicament(line):
         
     ## Create medicament with related product
     print(f"* Importing medicament: '{name}' ...")
-    med = Medicament()
+    med = get_record(Medicament,
+                     [('name.code', '=', prd_code)])
     med.name, = ProductVariant.find([('code', '=', prd_code)])
     med.strength = int(strength)
     med.unit = dose_unit
@@ -296,18 +295,25 @@ def import_line_product(line):
     cost_price = line.get('cost_price')
     prd_type   = line.get('type')
     uom        = line.get('uom')
+    prd_code   = line.get('code')
 
     # Update the model with the result values
     print("* Importing product: '{0}' ...".format(name))
     ProductInfo = Model.get('product.template')
     ProductUOM = Model.get('product.uom')
-    product = ProductInfo()
+    ProductVariant = Model.get('product.product')
+
+    product = get_record(ProductInfo,
+                         [('code', '=', prd_code)])
     product.name = name
+    product.code = prd_code
     product.list_price = Decimal(list_price)
-    product.cost_price = Decimal(cost_price)
     uom_val, = ProductUOM.find([('symbol', '=', uom)])
     product.default_uom = uom_val
     product.type = prd_type
+
+    variant, = product.products
+    variant.cost_price = Decimal(cost_price)
 
     product.save()
 
