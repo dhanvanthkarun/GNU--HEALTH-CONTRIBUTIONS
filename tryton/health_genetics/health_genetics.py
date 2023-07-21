@@ -15,7 +15,8 @@ from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval
 from trytond.pool import Pool
 from uuid import uuid4
-from trytond.modules.health.core import get_institution
+from trytond.modules.health.core import (get_institution,
+                                         format_years_months_days)
 
 __all__ = ['DiseaseGene', 'ProteinDisease', 'GeneVariant',
            'GeneVariantPhenotype',
@@ -316,7 +317,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
         vals = {
             'page': str(uuid4()),
             'person': genetic_info.patient.name.id,
-            'age': genetic_info.onset and str(genetic_info.onset) + 'y' or '',
+            'age': format_years_months_days(years=genetic_info.onset),
             'federation_account': genetic_info.patient.name.federation_account,
             'page_type': 'medical',
             'medical_context': 'genetics',
