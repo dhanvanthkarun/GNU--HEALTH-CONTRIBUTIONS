@@ -33,37 +33,37 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <!-- Genetic conditions -->
 
-        <record model="ir.ui.view" id="gnuhealth_disease_gene_view">
-            <field name="model">gnuhealth.disease.gene</field>
+        <record model="ir.ui.view" id="gnuhealth_gene_view">
+            <field name="model">gnuhealth.gene</field>
             <field name="type">form</field>
-            <field name="name">gnuhealth_disease_gene</field>
+            <field name="name">gnuhealth_gene</field>
         </record>
 
-        <record model="ir.ui.view" id="gnuhealth_disease_gene_tree">
-            <field name="model">gnuhealth.disease.gene</field>
+        <record model="ir.ui.view" id="gnuhealth_gene_tree">
+            <field name="model">gnuhealth.gene</field>
             <field name="type">tree</field>
-            <field name="name">gnuhealth_disease_gene_tree</field>
+            <field name="name">gnuhealth_gene_tree</field>
         </record>
 
-        <record model="ir.action.act_window" id="gnuhealth_action_disease_gene">
-            <field name="name">Disease Genes</field>
-            <field name="res_model">gnuhealth.disease.gene</field>
+        <record model="ir.action.act_window" id="gnuhealth_action_gene">
+            <field name="name">Genes</field>
+            <field name="res_model">gnuhealth.gene</field>
         </record>
 
-        <record model="ir.action.act_window.view" id="act_disease_gene_list_view">
+        <record model="ir.action.act_window.view" id="act_gene_list_view">
             <field name="sequence" eval="10"/>
-            <field name="view" ref="gnuhealth_disease_gene_tree"/>
-            <field name="act_window" ref="gnuhealth_action_disease_gene"/>
+            <field name="view" ref="gnuhealth_gene_tree"/>
+            <field name="act_window" ref="gnuhealth_action_gene"/>
         </record>
-        <record model="ir.action.act_window.view" id="act_disease_gene_form_view">
+        <record model="ir.action.act_window.view" id="act_gene_form_view">
             <field name="sequence" eval="20"/>
-            <field name="view" ref="gnuhealth_disease_gene_view"/>
-            <field name="act_window" ref="gnuhealth_action_disease_gene"/>
+            <field name="view" ref="gnuhealth_gene_view"/>
+            <field name="act_window" ref="gnuhealth_action_gene"/>
         </record>
 
         <menuitem parent="gnuhealth_conf_genetics"
-            action="gnuhealth_action_disease_gene"
-            id="gnuhealth_conf_disease_genes" icon="gnuhealth-list"/>
+            action="gnuhealth_action_gene"
+            id="gnuhealth_conf_genes" icon="gnuhealth-list"/>
 
 <!-- Gene Variants-->
 

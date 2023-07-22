@@ -11,21 +11,23 @@
 #                       HEALTH GENETICS package                         #
 #                  health_genetics.py: main module                      #
 #########################################################################
+from trytond import backend
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval
 from trytond.pool import Pool
 from uuid import uuid4
 from trytond.modules.health.core import (get_institution,
                                          format_years_months_days)
+from trytond.transaction import Transaction
 
-__all__ = ['DiseaseGene', 'ProteinDisease', 'GeneVariant',
+__all__ = ['Gene', 'ProteinDisease', 'GeneVariant',
            'GeneVariantPhenotype',
            'PatientGeneticRisk', 'FamilyDiseases', 'GnuHealthPatient']
 
 
-class DiseaseGene(ModelSQL, ModelView):
-    'Disease Genes'
-    __name__ = 'gnuhealth.disease.gene'
+class Gene(ModelSQL, ModelView):
+    'Genes'
+    __name__ = 'gnuhealth.gene'
 
     name = fields.Char('Gene Name', required=True, select=True)
     protein_name = fields.Char('Protein Code',
@@ -57,7 +59,7 @@ class DiseaseGene(ModelSQL, ModelView):
 
     @classmethod
     def __setup__(cls):
-        super(DiseaseGene, cls).__setup__()
+        super(Gene, cls).__setup__()
 
         t = cls.__table__()
         cls._sql_constraints = [
@@ -82,24 +84,20 @@ class DiseaseGene(ModelSQL, ModelView):
                 ('long_name',) + tuple(clause[1:]),
                 ]
 
-    """
-    #Obsoleted. Old (3.2) migration
     @classmethod
-    # Update to version 3.2
-    def __register__(cls, module_name):
-        super(DiseaseGene, cls).__register__(module_name)
+    def __register__(cls, module):
+        # Migration from 4.2:
+        # rename gnuhealth.disease.gene to gnuhealth.gene
+        backend.TableHandler.table_rename('gnuhealth_gene', cls._table)
 
-        TableHandler = backend.get('TableHandler')
-        table = TableHandler(cls, module_name)
-        # Insert the current "specialty" associated to the HP in the
-        # table that keeps the specialties associated to different health
-        # professionals, gnuhealth.hp_specialty
+        # Update the data field from gnuhealth.disease.gene to gnuhealth.gene
+        cursor = Transaction().connection.cursor()
+        cursor.execute("""
+            UPDATE ir_model_data SET model = 'gnuhealth.gene'
+            WHERE model = 'gnuhealth.disease.gene'
+            """)
 
-        if table.column_exist('dominance'):
-            # Drop old dominance column
-            # which is now part of the gene variant phenotype
-            table.drop_column('dominance')
-    """
+        super().__register__(module)
 
 
 class ProteinDisease(ModelSQL, ModelView):
@@ -180,7 +178,7 @@ class GeneVariant(ModelSQL, ModelView):
     'Natural Variant'
     __name__ = 'gnuhealth.gene.variant'
 
-    name = fields.Many2One('gnuhealth.disease.gene', 'Gene and Protein',
+    name = fields.Many2One('gnuhealth.gene', 'Gene and Protein',
                            required=True,
                            help="Gene and expressing protein (in parenthesis)")
     variant = fields.Char("Protein Variant", required=True, select=True)
@@ -226,7 +224,7 @@ class GeneVariantPhenotype(ModelSQL, ModelView):
                               required=True)
 
     gene = fields.Function(fields.Many2One(
-        'gnuhealth.disease.gene', 'Gene & Protein',
+        'gnuhealth.gene', 'Gene & Protein',
         depends=['variant'],
         help="Gene and expressing protein (in parenthesis)"),
         'get_gene',
@@ -279,7 +277,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
     __name__ = 'gnuhealth.patient.genetic.risk'
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', select=True)
-    disease_gene = fields.Many2One('gnuhealth.disease.gene',
+    disease_gene = fields.Many2One('gnuhealth.gene',
                                    'Gene', required=True)
     natural_variant = fields.Many2One('gnuhealth.gene.variant', 'Variant',
                                       domain=[('name', '=',
