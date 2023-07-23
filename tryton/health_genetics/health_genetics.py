@@ -29,14 +29,53 @@ class Gene(ModelSQL, ModelView):
     'Genes'
     __name__ = 'gnuhealth.gene'
 
-    name = fields.Char('Gene Name', required=True, select=True)
+    name = fields.Char(
+        'Symbol', help='Symbol', required=True, select=True)
+
+    aliases = fields.Char(
+        'Aliases', help='Symbol aliases', required=True, select=True)
+
+    hgnc_id = fields.Char(
+        'HGNC ID', help='HUGO Gene Nomenclature Committee identifier',
+        required=True, select=True)
+
+    gene_type = fields.Selection([
+        (None, ''),
+        ('protein_coding', 'Gene with protein product'),
+        ('ncrna_long_non_coding_rna', 'ncRNA: long non-coding RNA'),
+        ('ncrna_y_RNA', 'ncRNA: Y RNA'),
+        ('ncrna_cluster_rna', 'ncRNA: cluster RNA'),
+        ('ncrna_micro_rna', 'ncRNA: micro RNA'),
+        ('ncrna_misc_rna', 'ncRNA: misc RNA'),
+        ('ncrna_ribosomal_rna', 'ncRNA: ribosomal RNA'),
+        ('ncrna_small_nuclear_rna', 'ncRNA: small nuclear RNA'),
+        ('ncrna_small_nucleolar_rna', 'ncRNA: small nucleolar RNA'),
+        ('ncrna_transfer_rna', 'ncRNA: transfer RNA'),
+        ('ncrna_vault_rna', 'ncRNA: vault RNA'),
+        ('pseudogene_pseudogene', 'pseudogene: pseudogene'),
+        ('pseudogene_tcell_receptor',
+            'pseudogene: T cell receptor pseudogene'),
+        ('pseudogene_immunoglobulin', 'pseudogene: immunoglobulin pseudogene'),
+        ('other_tcell_receptor_gene', 'other: T cell receptor gene'),
+        ('other_complex_locus_constituent',
+            'other: complex locus constituent'),
+        ('other_endogenous_retrovirus', 'other: endogenous retrovirus'),
+        ('other_fragile_site', 'other: fragile site'),
+        ('other_immunoglobulin_gene', 'other: immunoglobulin gene'),
+        ('other_readthrough', 'other: readthrough'),
+        ('other_region', 'other: biological region'),
+        ('other_virus_integration_site', 'other: virus integration site'),
+        ('other_unknown', 'other: unknown'),
+        ], 'Gene type', help="Locus in the form of group:type",
+        sort=False, select=True)
+
     protein_name = fields.Char('Protein Code',
-                               help="Encoding Protein Code, \
-                               such as UniProt protein name",
+                               help="Encoding Protein Code,"
+                               " such as UniProt protein name",
                                select=True)
-    long_name = fields.Char('Official Long Name', translate=True)
-    gene_id = fields.Char('Gene ID',
-                          help="default code from NCBI Entrez database.",
+    long_name = fields.Char('Official Name', translate=True)
+    gene_id = fields.Char('Entrez Gene ID',
+                          help="Gene ID from NCBI Entrez database.",
                           select=True)
     chromosome = fields.Char('Chromosome',
                              help="Name of the affected chromosome",
@@ -63,8 +102,8 @@ class Gene(ModelSQL, ModelView):
 
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_unique', Unique(t, t.name),
-                'The Official Symbol name must be unique'),
+            ('name_unique', Unique(t, t.hgnc_id),
+                'The official identifier must be unique'),
             ]
 
     def get_rec_name(self, name):

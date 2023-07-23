@@ -31,7 +31,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">../health/icons/tryton-list.svg</field>
         </record>
 
-<!-- Genetic conditions -->
+<!-- Genes -->
 
         <record model="ir.ui.view" id="gnuhealth_gene_view">
             <field name="model">gnuhealth.gene</field>
@@ -169,7 +169,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="gnuhealth_conf_protein_diseases" icon="gnuhealth-list"/>
 
 
-<!-- Patient Genetic Risk -->
+<!-- Patient Genetic Information -->
 
         <record model="ir.ui.view" id="gnuhealth_genetic_risk_view">
             <field name="model">gnuhealth.patient.genetic.risk</field>
