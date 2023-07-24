@@ -324,7 +324,7 @@ class InstitutionEpidemicsReport(Report):
         else:
             rc_conf_json = gettext('health_reporting.msg_matplotlib_rc_config_json_str')
             rc_conf = json.loads(rc_conf_json)
-            rc_conf.pop('@comment')
+            rc_conf.pop('@comment', None)
             mpl.rcParams.update(rc_conf)
             print(f'Epidemics_report: Use matplotlib rcParams: {rc_conf}.')
 

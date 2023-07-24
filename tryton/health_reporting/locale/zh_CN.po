@@ -170,11 +170,25 @@ msgctxt "model:ir.action,name:report_summary_information"
 msgid "Summary Report"
 msgstr "医疗机构总结报告"
 
-msgctxt "model:ir.message,text:immediate_cause"
+msgctxt "model:ir.message,text:"
 msgid "Immediate cause"
 msgstr "直接死因"
 
-msgctxt "model:ir.message,text:underlying_condition"
+msgctxt "model:ir.message,text:"
+msgid "Underlying condition"
+msgstr "间接死因"
+
+msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
+msgid ""
+"{\"font.family\": [\"sans-serif\"], \"@comment\": \"Matplotlib rc config "
+"used when no matplotlibrc file is found.\"}"
+msgstr "{\"font.family\": [\"Noto Serif CJK SC\", \"WenQuanYi Micro Hei\", \"Unifont\", \"sans-serif\"]}"
+
+msgctxt "model:ir.message,text:msg_plot_label_immediate_cause_str"
+msgid "Immediate cause"
+msgstr "直接死因"
+
+msgctxt "model:ir.message,text:msg_plot_label_underlying_condition_str"
 msgid "Underlying condition"
 msgstr "间接死因"
 
@@ -297,15 +311,6 @@ msgid "Female"
 msgstr "女性"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid ""
-"If charts in this report cannot display font correctly and only displays "
-"tofu blocks, user needs to set matplotlibrc file "
-"(~/.config/matplotlib/matplotlibrc), for example:"
-msgstr ""
-"如果图表中的字体无法正常显示，只显示豆腐块，那么需要用户设置 matplotlibrc 文件 "
-"(~/.config/matplotlib/matplotlibrc), 比如:"
-
-msgctxt "report:gnuhealth.epidemics.report:"
 msgid "In health system"
 msgstr "新注册患者"
 
@@ -338,10 +343,6 @@ msgid "No DoB"
 msgstr "无出生日期"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "Note"
-msgstr "备注"
-
-msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Registrations"
 msgstr "新注册人员"
 
@@ -350,16 +351,8 @@ msgid "Total"
 msgstr "合计"
 
 msgctxt "report:gnuhealth.epidemics.report:"
-msgid "YOUR-FONT, sans-serif"
-msgstr ""
-
-msgctxt "report:gnuhealth.epidemics.report:"
 msgid "chart"
 msgstr "图表"
-
-msgctxt "report:gnuhealth.epidemics.report:"
-msgid "font.family:"
-msgstr ""
 
 msgctxt "report:gnuhealth.epidemics.report:"
 msgid "Σ"
