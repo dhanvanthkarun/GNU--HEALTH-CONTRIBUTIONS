@@ -41,7 +41,7 @@ class Gene(ModelSQL, ModelView):
 
     gene_type = fields.Selection([
         (None, ''),
-        ('protein_coding', 'Gene with protein product'),
+        ('protein_coding', 'protein-coding gene'),
         ('ncrna_long_non_coding_rna', 'ncRNA: long non-coding RNA'),
         ('ncrna_y_RNA', 'ncRNA: Y RNA'),
         ('ncrna_cluster_rna', 'ncRNA: cluster RNA'),
