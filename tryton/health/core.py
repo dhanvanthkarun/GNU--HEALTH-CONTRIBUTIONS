@@ -120,12 +120,14 @@ def format_years_months_days(years=None, months=None, days=None):
 
     return ymd_format.format(
         sep='\u200b',  # Zero width space
-        years=isinstance(years, int) and str(years) or '',
-        year_str=isinstance(years, int) and year_str or '',
-        months=isinstance(months, int) and str(months) or '',
-        month_str=isinstance(months, int) and month_str or '',
-        days=isinstance(days, int) and str(days) or '',
-        day_str=isinstance(months, int) and day_str or '')
+        ## Make sure output.split(sep)[0, 2, 4] = [years, months, days]
+        placeholder = '\u200d', # Zero width joiner
+        years=isinstance(years, int) and str(years) or placeholder,
+        year_str=isinstance(years, int) and year_str or placeholder,
+        months=isinstance(months, int) and str(months) or placeholder,
+        month_str=isinstance(months, int) and month_str or placeholder,
+        days=isinstance(days, int) and str(days) or placeholder,
+        day_str=isinstance(months, int) and day_str or placeholder)
 
 
 def parse_compute_age(age):
@@ -140,13 +142,10 @@ def parse_compute_age_str(age_str):
     """ Parse age string returned by compute_age_from_dates function"""
     age_str = age_str.strip()
     sep = '\u200b'  # Zero width space
-    try:
-        if age_str.endswith(sep):
-            return parse_compute_age_str_with_zero_width_space(age_str)
-        else:
-            return parse_compute_age_str_with_one_char_string(age_str)
-    except:
-        return [None, None, None]
+    if age_str.endswith(sep):
+        return parse_compute_age_str_with_zero_width_space(age_str)
+    else:
+        return parse_compute_age_str_with_one_char_string(age_str)
 
 
 def parse_compute_age_str_with_zero_width_space(age_str):
@@ -160,7 +159,19 @@ def parse_compute_age_str_with_zero_width_space(age_str):
     """
     sep = '\u200b'  # Zero width space
     age = age_str.split(sep)
-    return [int(age[0]), int(age[2]), int(age[4])]
+    try:
+        years = int(age[0])
+    except:
+        years = None
+    try:
+        months = int(age[2])
+    except:
+        months = None
+    try:
+        days = int(age[4])
+    except:
+        days = None
+    return [years, months, days]
 
 
 def parse_compute_age_str_with_one_char_string(age_str):
@@ -176,10 +187,13 @@ def parse_compute_age_str_with_one_char_string(age_str):
     Note: Previously, compute_age_from_dates will return '10y 4m 4d'
     style age string, so this function was retained for compatibility.
     """
-    year = int(age_str.split(' ')[0][:-1])
-    month = int(age_str.split(' ')[1][:-1])
-    day = int(age_str.split(' ')[2][:-1])
-    return [year, month, day]
+    try:
+        year = int(age_str.split(' ')[0][:-1])
+        month = int(age_str.split(' ')[1][:-1])
+        day = int(age_str.split(' ')[2][:-1])
+        return [year, month, day]
+    except:
+        return [None, None, None]
 
 
 def get_institution():
