@@ -245,9 +245,9 @@ class InstitutionEpidemicsReport(Report):
         fig = plt.figure(figsize=(6, 3))
         deaths_by_day = fig.add_subplot(1, 1, 1)
         deaths_by_day.plot(days, certs_ic_day,
-                           label=gettext("health_reporting.immediate_cause"))
+                           label=gettext("health_reporting.msg_plot_label_immediate_cause_str"))
         deaths_by_day.plot(days, certs_uc_day,
-                           label=gettext("health_reporting.underlying_condition"))
+                           label=gettext("health_reporting.msg_plot_label_underlying_condition_str"))
         deaths_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
         deaths_by_day.legend()
 
