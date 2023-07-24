@@ -161,7 +161,8 @@ def import_line_patient(line):
         contactmethod.type = 'mobile'
         contactmethod.value = phone
         
-        party.contact_mechanisms.append(contactmethod)
+        if not [x for x in party.contact_mechanisms if x.value == phone]:
+            party.contact_mechanisms.append(contactmethod)
         
     # Set alternative Identification
     if alt_id:
@@ -171,7 +172,8 @@ def import_line_patient(line):
         altid.code = alt_id
         altid.comments = alt_id_cmt
 
-        party.alternative_ids.append(altid)
+        if not [x for x in party.alternative_ids if x.code == alt_id]:
+            party.alternative_ids.append(altid)
 
     # Set the party address
     address = PartyAddress()
