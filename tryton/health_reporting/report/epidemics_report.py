@@ -17,11 +17,14 @@ from dateutil.relativedelta import relativedelta
 
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
+import matplotlib as mpl
 
 from trytond.modules.health.core import convert_date_timezone
 from trytond.i18n import gettext
 
 import io
+import os
+import json
 
 __all__ = ['InstitutionEpidemicsReport']
 
@@ -314,6 +317,18 @@ class InstitutionEpidemicsReport(Report):
         return (image)
 
     @classmethod
+    def matplotlib_rc_config(cls):
+        matplotlibrc = os.path.join(mpl.get_configdir(), 'matplotlibrc')
+        if os.path.exists(matplotlibrc):
+            print(f'Epidemics_report: Matplotlibrc: {matplotlibrc} file is found, just use it.')
+        else:
+            rc_conf_json = gettext('health_reporting.msg_matplotlib_rc_config_json_str')
+            rc_conf = json.loads(rc_conf_json)
+            rc_conf.pop('@comment')
+            mpl.rcParams.update(rc_conf)
+            print(f'Epidemics_report: Use matplotlib rcParams: {rc_conf}.')
+
+    @classmethod
     def get_context(cls, records, header, data):
 
         Condition = Pool().get('gnuhealth.pathology')
@@ -477,12 +492,8 @@ class InstitutionEpidemicsReport(Report):
 
         context['epidemics_dx'] = epidemics_dx
 
-        # If the chart in the report cannot display the font correctly
-        # and only displays tofu blocks, the user needs to set the
-        # matplotlibrc file (~/.config/matplotlib/matplotlibrc), for
-        # example:
-        #
-        # font.family:  YOUR-FONT, sans-serif
+        # Configure matplotlib, for example: font.
+        cls.matplotlib_rc_config()
 
         # New cases by day
         context['cases_timeseries'] = cls.plot_cases_timeseries(

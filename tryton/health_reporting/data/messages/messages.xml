@@ -17,5 +17,11 @@ this repository contains the full copyright notices and license terms. -->
         <record model="ir.message" id="underlying_condition">
             <field name="text">Underlying condition</field>
         </record>
+        <record model="ir.message" id="msg_matplotlib_rc_config_json_str">
+            <field name="text">
+{"font.family": ["sans-serif"],
+ "@comment": "Matplotlib rc config used when no matplotlibrc file is found."}
+            </field>
+        </record>
     </data>
 </tryton>
