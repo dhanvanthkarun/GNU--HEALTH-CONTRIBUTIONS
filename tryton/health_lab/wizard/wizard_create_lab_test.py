@@ -8,6 +8,7 @@ from trytond.model import ModelView, fields
 from trytond.wizard import Wizard, StateTransition, StateView, Button
 from trytond.transaction import Transaction
 from trytond.pool import Pool
+from trytond.pyson import Eval, Not, Bool
 from trytond.i18n import gettext
 from ..exceptions import LabOrderExists
 
@@ -56,7 +57,9 @@ class CreateLabTestOrder(Wizard):
                     )
 
             test_report_data['test'] = lab_test_order.name.id
-            test_report_data['patient'] = lab_test_order.patient_id.id
+            test_report_data['is_not_patient'] = lab_test_order.is_not_patient
+            test_report_data['patient'] = lab_test_order.patient_id and lab_test_order.patient_id.id
+            test_report_data['sample_of'] = lab_test_order.sample_of
             if lab_test_order.doctor_id:
                 test_report_data['requestor'] = lab_test_order.doctor_id.id
             test_report_data['date_requested'] = lab_test_order.date
@@ -98,7 +101,15 @@ class RequestPatientLabTestStart(ModelView):
     __name__ = 'gnuhealth.patient.lab.test.request.start'
 
     date = fields.DateTime('Date')
-    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+    is_not_patient = fields.Boolean(
+        'Non Patient',
+        help='Check sample source is a patient or not.')
+    patient = fields.Many2One('gnuhealth.patient', 
+        'Patient',
+        states={'invisible': Bool(Eval('is_not_patient'))})
+    sample_of = fields.Char('Sample of', 
+        states={'invisible': Not(Bool(Eval('is_not_patient')))},
+        help="Other sample source when no patient is selected.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
@@ -114,6 +125,10 @@ class RequestPatientLabTestStart(ModelView):
     @staticmethod
     def default_date():
         return datetime.now()
+
+    @staticmethod
+    def default_is_not_patient():
+        return False
 
     @staticmethod
     def default_patient():
@@ -153,7 +168,9 @@ class RequestPatientLabTest(Wizard):
             lab_test = {}
             lab_test['request'] = request_number
             lab_test['name'] = test.id
-            lab_test['patient_id'] = self.start.patient.id
+            lab_test['is_not_patient'] = self.start.is_not_patient
+            lab_test['patient_id'] = self.start.patient and self.start.patient.id
+            lab_test['sample_of'] = self.start.sample_of
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:

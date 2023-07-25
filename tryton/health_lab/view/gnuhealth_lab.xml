@@ -12,22 +12,29 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <page string="Main Info" id="lab_main_info">
             <label name="name"/>
             <field name="name"/>
-            <label name="test"/>
-            <field name="test"/>
-            <label name="date_analysis"/>
-            <field name="date_analysis"/>
+            <label name="is_not_patient"/>
+            <field name="is_not_patient"/>
             <newline/>
             <label name="patient"/>
             <field name="patient"/>
-            <label name="pathologist"/>
-            <field name="pathologist"/>
             <newline/>
+            <label name="sample_of"/>
+            <field name="sample_of"/>
+            <newline/>
+            <label name="test"/>
+            <field name="test"/>
             <label name="date_requested"/>
             <field name="date_requested"/>
+            <newline/>
             <label name="requestor"/>
             <field name="requestor"/>
             <label name="request_order"/>
             <field name="request_order"/>
+            <newline/>
+            <label name="pathologist"/>
+            <field name="pathologist"/>
+            <label name="date_analysis"/>
+            <field name="date_analysis"/>
             <label name="pathology"/>
             <field name="pathology"/>
             <newline/>

@@ -90,9 +90,16 @@ class Lab(ModelSQL, ModelView):
     test = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test type',
         help="Lab test type", required=True, select=True)
+    is_not_patient = fields.Boolean(
+        'Non Patient',
+        help='Check sample source is a patient or not.')
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        help="Patient ID", required=True, select=True)
+        states={'invisible': Bool(Eval('is_not_patient'))},
+        help="Patient ID", select=True)
+    sample_of = fields.Char('Sample of', 
+        states={'invisible': Not(Bool(Eval('is_not_patient')))},
+        help="Other sample source when no patient is selected.")
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
         help="Pathologist", select=True)
@@ -148,6 +155,10 @@ class Lab(ModelSQL, ModelView):
     @staticmethod
     def default_date_analysis():
         return datetime.now()
+
+    @staticmethod
+    def default_is_not_patient():
+        return False
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -299,9 +310,16 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ('ordered', 'Ordered'),
         ('cancel', 'Cancel'),
         ], 'State', readonly=True, select=True)
+    is_not_patient = fields.Boolean(
+        'Non Patient',
+        help='Check sample source is a patient or not.')
     patient_id = fields.Many2One(
-        'gnuhealth.patient', 'Patient', required=True,
+        'gnuhealth.patient', 'Patient',
+        states={'invisible': Bool(Eval('is_not_patient'))},
         select=True)
+    sample_of = fields.Char('Sample of', 
+        states={'invisible': Not(Bool(Eval('is_not_patient')))},
+        help="Other sample source when no patient is selected.")
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof.',
         help="Health professional who requests the lab test.", select=True)
@@ -323,6 +341,10 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     @staticmethod
     def default_date():
         return datetime.now()
+
+    @staticmethod
+    def default_is_not_patient():
+        return False
 
     @staticmethod
     def default_state():

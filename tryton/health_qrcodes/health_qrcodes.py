@@ -84,7 +84,7 @@ class Appointment(metaclass=PoolMeta):
 
         if (self.patient):
             appointment_patient = self.patient.rec_name or ''
-            patient_puid = self.patient.puid
+            patient_puid = self.patient and self.patient.puid
 
         if (self.appointment_date):
             appointment_date = str(self.appointment_date)
@@ -155,22 +155,40 @@ class LabTest(metaclass=PoolMeta):
     qr = fields.Function(fields.Binary('QR Code'), 'make_qrcode')
     bar = fields.Function(fields.Binary('Bar Code39'), 'make_barcode')
 
+    def format_sample_source(self, with_puid = False, with_gender = False):
+        is_patient = not self.is_not_patient
+        if is_patient:
+            name = self.patient and self.patient.rec_name or ''
+            puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
+            gender_str = with_gender and self.patient and f', {self.patient.gender_str}' or ''
+            return name + puid_str + gender_str
+        else:
+            return (self.sample_of or '')
+
     def make_qrcode(self, name):
         # Create the QR code
 
         labtest_id = self.name or ''
         labtest_type = self.test or ''
 
-        patient_puid = self.patient.puid or ''
-        patient_name = self.patient.rec_name or ''
+        is_not_patient = self.is_not_patient
+        patient_puid = self.patient and self.patient.puid or ''
+        patient_name = self.patient and self.patient.rec_name or ''
+        sample_of = self.sample_of
 
         requestor_name = self.requestor.rec_name or ''
 
-        qr_string = f'{labtest_id}\n' \
-            f'Test: {labtest_type.rec_name}\n' \
-            f'Patient ID: {patient_puid}\n' \
-            f'Patient: {patient_name}\n' \
-            f'Requestor: {requestor_name}'
+        if is_not_patient:
+            qr_string = f'{labtest_id}\n' \
+                f'Test: {labtest_type.rec_name}\n' \
+                f'Sample of: {sample_of}\n' \
+                f'Requestor: {requestor_name}'
+        else:
+            qr_string = f'{labtest_id}\n' \
+                f'Test: {labtest_type.rec_name}\n' \
+                f'Patient ID: {patient_puid}\n' \
+                f'Patient: {patient_name}\n' \
+                f'Requestor: {requestor_name}'
 
         qr_image = qrcode.make(qr_string)
 

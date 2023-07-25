@@ -10,13 +10,20 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <label name="request"/>
     <field name="request"/>
+    <label name="is_not_patient"/>
+    <field name="is_not_patient"/>
+    <newline/>
+    <label name="patient_id"/>
+    <field name="patient_id"/>
+    <newline/>
+    <label name="sample_of"/>
+    <field name="sample_of"/>
     <newline/>
     <label name="name"/>
     <field name="name"/>
     <label name="date"/>
     <field name="date"/>
-    <label name="patient_id"/>
-    <field name="patient_id"/>
+    <newline/>
     <label name="doctor_id"/>
     <field name="doctor_id"/>
     <label name="context"/>
