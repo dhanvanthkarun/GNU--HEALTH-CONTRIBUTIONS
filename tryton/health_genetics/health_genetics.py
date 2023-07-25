@@ -33,7 +33,10 @@ class Gene(ModelSQL, ModelView):
         'Symbol', help='Symbol', required=True, select=True)
 
     aliases = fields.Char(
-        'Aliases', help='Symbol aliases', required=True, select=True)
+        'Aliases', help='Symbol aliases')
+
+    name_aliases = fields.Char(
+        'Name Aliases', help='Name aliases')
 
     hgnc_id = fields.Char(
         'HGNC ID', help='HUGO Gene Nomenclature Committee identifier',
@@ -81,6 +84,10 @@ class Gene(ModelSQL, ModelView):
                              help="Name of the affected chromosome",
                              select=True)
     location = fields.Char('Location', help="Locus of the chromosome")
+
+    ensembl_id = fields.Char("Ensembl ID")
+    refseq_accession = fields.Char("RefSeq", help="RefSeq Accession ID")
+    omim_id = fields.Char("OMIM ID")
 
     info = fields.Text('Information', help="Extra Information")
     variants = fields.One2Many('gnuhealth.gene.variant', 'name',
