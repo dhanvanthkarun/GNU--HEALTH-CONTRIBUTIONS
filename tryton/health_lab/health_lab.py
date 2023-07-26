@@ -90,15 +90,19 @@ class Lab(ModelSQL, ModelView):
     test = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test type',
         help="Lab test type", required=True, select=True)
-    is_not_patient = fields.Boolean(
-        'Non Patient',
-        help='Check sample source is a patient or not.')
+    source_type = fields.Selection([
+        ('patient', 'Patient'),
+        ('other', 'Other')
+        ], 'Source Type', 
+        help='Sample source type.',
+        select=True)
+    source_type_str = source_type.translated('source_type')
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        states={'invisible': Bool(Eval('is_not_patient'))},
+        states={'invisible': (Eval('source_type') != 'patient')},
         help="Patient ID", select=True)
-    sample_of = fields.Char('Sample of', 
-        states={'invisible': Not(Bool(Eval('is_not_patient')))},
+    source = fields.Char('Source', 
+        states={'invisible': (Eval('source_type') != 'other')},
         help="Other sample source when no patient is selected.")
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
@@ -157,8 +161,8 @@ class Lab(ModelSQL, ModelView):
         return datetime.now()
 
     @staticmethod
-    def default_is_not_patient():
-        return False
+    def default_source_type():
+        return 'patient'
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -190,6 +194,9 @@ class Lab(ModelSQL, ModelView):
             ('name', ) + tuple(clause[1:]),
             ]
 
+    def is_patient(self):
+        return (self.source_type == 'patient')
+        
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
     'Lab Test Units'
@@ -310,15 +317,18 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ('ordered', 'Ordered'),
         ('cancel', 'Cancel'),
         ], 'State', readonly=True, select=True)
-    is_not_patient = fields.Boolean(
-        'Non Patient',
-        help='Check sample source is a patient or not.')
+    source_type = fields.Selection([
+        ('patient', 'Patient'),
+        ('other', 'Other')
+        ], 'Source Type', 
+        help='Sample source type.',
+        select=True)
     patient_id = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        states={'invisible': Bool(Eval('is_not_patient'))},
+        states={'invisible': (Eval('source_type') != 'patient')},
         select=True)
-    sample_of = fields.Char('Sample of', 
-        states={'invisible': Not(Bool(Eval('is_not_patient')))},
+    source = fields.Char('Source', 
+        states={'invisible': (Eval('source_type') != 'other')},
         help="Other sample source when no patient is selected.")
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof.',
@@ -343,8 +353,8 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         return datetime.now()
 
     @staticmethod
-    def default_is_not_patient():
-        return False
+    def default_source_type():
+        return 'patient'
 
     @staticmethod
     def default_state():

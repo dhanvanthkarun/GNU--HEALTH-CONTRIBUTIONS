@@ -78,9 +78,9 @@ class RequestPatientLabTest(Wizard):
             lab_test = {}
             lab_test['request'] = request_number
             lab_test['name'] = test.id
-            lab_test['is_not_patient'] = self.start.is_not_patient
+            lab_test['source_type'] = self.start.source_type
             lab_test['patient_id'] = self.start.patient and self.start.patient.id
-            lab_test['sample_of'] = self.start.sample_of
+            lab_test['source'] = self.start.source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:

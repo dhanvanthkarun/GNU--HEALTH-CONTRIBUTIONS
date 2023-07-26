@@ -199,9 +199,9 @@ class LabTest(metaclass=PoolMeta):
             'Lab_test': str(document.name) or '',
             'Test': str(document.test.rec_name) or '',
             'HP': document.requestor and str(document.requestor.rec_name) or '',
-            'Is_not_patient': str(document.is_not_patient),
+            'Source_type': str(document.source_type_str),
             'Patient': document.patient and str(document.patient.rec_name) or '',
-            'Sample_of': str(document.sample_of) or '',
+            'Source': str(document.source) or '',
             'Patient_ID': document.patient and str(document.patient.name.ref) or '',
             'Analyte_line': str(analyte_line),
              }
@@ -274,8 +274,7 @@ class LabTest(metaclass=PoolMeta):
         """ Adds an entry in the person Page of Life
             related to this person lab
         """
-        is_patient = not lab_info.is_not_patient
-        if is_patient:
+        if lab_info.is_patient():
             Pol = Pool().get('gnuhealth.pol')
             pol = []
             

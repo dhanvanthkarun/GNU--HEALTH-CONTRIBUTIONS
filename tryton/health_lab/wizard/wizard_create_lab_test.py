@@ -57,9 +57,9 @@ class CreateLabTestOrder(Wizard):
                     )
 
             test_report_data['test'] = lab_test_order.name.id
-            test_report_data['is_not_patient'] = lab_test_order.is_not_patient
+            test_report_data['source_type'] = lab_test_order.source_type
             test_report_data['patient'] = lab_test_order.patient_id and lab_test_order.patient_id.id
-            test_report_data['sample_of'] = lab_test_order.sample_of
+            test_report_data['source'] = lab_test_order.source
             if lab_test_order.doctor_id:
                 test_report_data['requestor'] = lab_test_order.doctor_id.id
             test_report_data['date_requested'] = lab_test_order.date
@@ -101,14 +101,17 @@ class RequestPatientLabTestStart(ModelView):
     __name__ = 'gnuhealth.patient.lab.test.request.start'
 
     date = fields.DateTime('Date')
-    is_not_patient = fields.Boolean(
-        'Non Patient',
-        help='Check sample source is a patient or not.')
+    source_type = fields.Selection([
+        ('patient', 'Patient'),
+        ('other', 'Other')
+        ], 'Source Type', 
+        help='Sample source type.',
+        select=True)
     patient = fields.Many2One('gnuhealth.patient', 
         'Patient',
-        states={'invisible': Bool(Eval('is_not_patient'))})
-    sample_of = fields.Char('Sample of', 
-        states={'invisible': Not(Bool(Eval('is_not_patient')))},
+        states={'invisible': (Eval('source_type') != 'patient')})
+    source = fields.Char('Source', 
+        states={'invisible': (Eval('source_type') != 'other')},
         help="Other sample source when no patient is selected.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
@@ -127,8 +130,8 @@ class RequestPatientLabTestStart(ModelView):
         return datetime.now()
 
     @staticmethod
-    def default_is_not_patient():
-        return False
+    def default_source_type():
+        return 'patient'
 
     @staticmethod
     def default_patient():
@@ -168,9 +171,9 @@ class RequestPatientLabTest(Wizard):
             lab_test = {}
             lab_test['request'] = request_number
             lab_test['name'] = test.id
-            lab_test['is_not_patient'] = self.start.is_not_patient
+            lab_test['source_type'] = self.start.source_type
             lab_test['patient_id'] = self.start.patient and self.start.patient.id
-            lab_test['sample_of'] = self.start.sample_of
+            lab_test['source'] = self.start.source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:

@@ -156,14 +156,13 @@ class LabTest(metaclass=PoolMeta):
     bar = fields.Function(fields.Binary('Bar Code39'), 'make_barcode')
 
     def format_sample_source(self, with_puid = False, with_gender = False):
-        is_patient = not self.is_not_patient
-        if is_patient:
+        if self.is_patient():
             name = self.patient and self.patient.rec_name or ''
             puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
             gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
             return name + puid_str + gender_str
         else:
-            return (self.sample_of or '')
+            return (self.source or '')
 
     def make_qrcode(self, name):
         # Create the QR code
@@ -171,23 +170,22 @@ class LabTest(metaclass=PoolMeta):
         labtest_id = self.name or ''
         labtest_type = self.test or ''
 
-        is_not_patient = self.is_not_patient
         patient_puid = self.patient and self.patient.puid or ''
         patient_name = self.patient and self.patient.rec_name or ''
-        sample_of = self.sample_of
+        source = self.source
 
         requestor_name = self.requestor and self.requestor.rec_name or ''
 
-        if is_not_patient:
-            qr_string = f'{labtest_id}\n' \
-                f'Test: {labtest_type.rec_name}\n' \
-                f'Sample of: {sample_of}\n' \
-                f'Requestor: {requestor_name}'
-        else:
+        if self.is_patient():
             qr_string = f'{labtest_id}\n' \
                 f'Test: {labtest_type.rec_name}\n' \
                 f'Patient ID: {patient_puid}\n' \
                 f'Patient: {patient_name}\n' \
+                f'Requestor: {requestor_name}'
+        else:
+            qr_string = f'{labtest_id}\n' \
+                f'Test: {labtest_type.rec_name}\n' \
+                f'Source: {source}\n' \
                 f'Requestor: {requestor_name}'
 
         qr_image = qrcode.make(qr_string)
