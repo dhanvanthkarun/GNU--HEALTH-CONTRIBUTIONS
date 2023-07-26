@@ -198,7 +198,7 @@ class LabTest(metaclass=PoolMeta):
         data_to_serialize = {
             'Lab_test': str(document.name) or '',
             'Test': str(document.test.rec_name) or '',
-            'HP': str(document.requestor.rec_name),
+            'HP': document.requestor and str(document.requestor.rec_name) or '',
             'Is_not_patient': str(document.is_not_patient),
             'Patient': document.patient and str(document.patient.rec_name) or '',
             'Sample_of': str(document.sample_of) or '',

@@ -176,7 +176,7 @@ class LabTest(metaclass=PoolMeta):
         patient_name = self.patient and self.patient.rec_name or ''
         sample_of = self.sample_of
 
-        requestor_name = self.requestor.rec_name or ''
+        requestor_name = self.requestor and self.requestor.rec_name or ''
 
         if is_not_patient:
             qr_string = f'{labtest_id}\n' \
