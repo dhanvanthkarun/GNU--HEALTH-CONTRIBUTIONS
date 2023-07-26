@@ -160,7 +160,7 @@ class LabTest(metaclass=PoolMeta):
         if is_patient:
             name = self.patient and self.patient.rec_name or ''
             puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
-            gender_str = with_gender and self.patient and f', {self.patient.gender_str}' or ''
+            gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
             return name + puid_str + gender_str
         else:
             return (self.sample_of or '')
