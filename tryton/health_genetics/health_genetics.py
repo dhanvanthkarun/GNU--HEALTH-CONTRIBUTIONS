@@ -224,13 +224,27 @@ class GeneVariant(ModelSQL, ModelView):
     'Natural Variant'
     __name__ = 'gnuhealth.gene.variant'
 
-    name = fields.Many2One('gnuhealth.gene', 'Gene and Protein',
+    name = fields.Many2One('gnuhealth.gene', 'Gene',
                            required=True,
-                           help="Gene and expressing protein (in parenthesis)")
-    variant = fields.Char("Protein Variant", required=True, select=True)
-    aa_change = fields.Char('Change', help="Resulting amino acid change")
+                           help="Gene and protein product (in parenthesis)")
+    variant = fields.Char(
+        "FTId", help="Variant Feature Identifier (FTId)",
+        required=True, select=True)
+    aa_change = fields.Char('AA Change', help="Amino acid change")
+
     phenotypes = fields.One2Many('gnuhealth.gene.variant.phenotype', 'variant',
                                  'Phenotypes')
+
+    significance = fields.Selection([
+        (None, ''),
+        ('lbb', 'LB/B: Likely benign or benign'),
+        ('lpp', 'LP/P: Likely pathogenic or pathogenic'),
+        ('us', 'US: Unknown significance'),
+        ], 'Significance',
+        help="Category related to the clinical significance of the variant",
+        sort=False, select=True)
+
+    dbsnp = fields.Char('dbSNP', help='dbSNP ID')
 
     @classmethod
     def __setup__(cls):
@@ -241,7 +255,7 @@ class GeneVariant(ModelSQL, ModelView):
             ('variant_unique', Unique(t, t.variant),
                 'The variant ID must be unique'),
             ('aa_unique', Unique(t, t.variant, t.aa_change),
-                'The resulting AA change for this protein already exists'),
+                'The amino acid change for the variant already exists'),
             ]
 
     def get_rec_name(self, name):
@@ -258,6 +272,7 @@ class GeneVariant(ModelSQL, ModelView):
                 ('name',) + tuple(clause[1:]),
                 ('variant',) + tuple(clause[1:]),
                 ('aa_change',) + tuple(clause[1:]),
+                ('dbsnp',) + tuple(clause[1:]),
                 ]
 
 
