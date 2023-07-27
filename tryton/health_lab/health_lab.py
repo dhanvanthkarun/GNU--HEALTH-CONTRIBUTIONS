@@ -95,7 +95,7 @@ class Lab(ModelSQL, ModelView):
         ('other', 'Other')
         ], 'Source Type', 
         help='Sample source type.',
-        select=True)
+        sort=False, select=True)
     source_type_str = source_type.translated('source_type')
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
@@ -322,7 +322,7 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ('other', 'Other')
         ], 'Source Type', 
         help='Sample source type.',
-        select=True)
+        sort=False, select=True)
     patient_id = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
