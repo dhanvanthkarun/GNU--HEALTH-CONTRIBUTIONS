@@ -117,11 +117,11 @@ def format_years_months_days(years=None, months=None, days=None):
     ymd_format = '{years}{sep}{year_str}{sep}' \
                  '{months}{sep}{month_str}{sep}' \
                  '{days}{sep}{day_str}{sep}'
+    placeholder = '\u200d',  # Zero width joiner
 
     return ymd_format.format(
         sep='\u200b',  # Zero width space
-        ## Make sure output.split(sep)[0, 2, 4] = [years, months, days]
-        placeholder = '\u200d', # Zero width joiner
+        # Make sure output.split(sep)[0, 2, 4] = [years, months, days]
         years=isinstance(years, int) and str(years) or placeholder,
         year_str=isinstance(years, int) and year_str or placeholder,
         months=isinstance(months, int) and str(months) or placeholder,
