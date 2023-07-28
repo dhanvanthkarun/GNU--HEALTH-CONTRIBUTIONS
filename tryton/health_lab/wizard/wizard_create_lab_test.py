@@ -112,7 +112,7 @@ class RequestPatientLabTestStart(ModelView):
         states={'invisible': (Eval('source_type') != 'patient')})
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
-        help="Other sample source when no patient is selected.")
+        help="Other sample source.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"

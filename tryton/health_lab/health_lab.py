@@ -103,7 +103,7 @@ class Lab(ModelSQL, ModelView):
         help="Patient ID", select=True)
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
-        help="Other sample source when no patient is selected.")
+        help="Other sample source.")
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
         help="Pathologist", select=True)
@@ -332,7 +332,7 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         select=True)
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
-        help="Other sample source when no patient is selected.")
+        help="Other sample source.")
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof.',
         help="Health professional who requests the lab test.", select=True)
