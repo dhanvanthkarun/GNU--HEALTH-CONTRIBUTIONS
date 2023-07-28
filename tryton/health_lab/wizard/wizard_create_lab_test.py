@@ -103,7 +103,7 @@ class RequestPatientLabTestStart(ModelView):
     date = fields.DateTime('Date')
     source_type = fields.Selection([
         ('patient', 'Patient'),
-        ('other', 'Other')
+        ('other_source', 'Other')
         ], 'Source', 
         help='Sample source type.',
         sort=False, select=True)
@@ -111,7 +111,7 @@ class RequestPatientLabTestStart(ModelView):
         'Patient',
         states={'invisible': (Eval('source_type') != 'patient')})
     other_source = fields.Char('Other', 
-        states={'invisible': (Eval('source_type') != 'other')},
+        states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source when no patient is selected.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
