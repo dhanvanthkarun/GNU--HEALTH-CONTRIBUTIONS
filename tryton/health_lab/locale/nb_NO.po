@@ -26,6 +26,10 @@ msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
 msgstr ""
 
+msgctxt "field:gnuhealth.lab,other_source:"
+msgid "Other"
+msgstr ""
+
 msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr ""
@@ -48,6 +52,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,source_type:"
+msgid "Source"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,test:"
@@ -179,12 +187,20 @@ msgctxt "field:gnuhealth.patient.lab.test,name:"
 msgid "Test Type"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test,other_source:"
+msgid "Other"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,request:"
 msgid "Order"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.lab.test,source_type:"
+msgid "Source"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,state:"
@@ -208,8 +224,16 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health prof"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Source"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,tests:"
@@ -248,6 +272,10 @@ msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,other_source:"
+msgid "Other sample source."
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr ""
@@ -262,6 +290,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.lab,requestor:"
 msgid "Doctor who requested the test"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab,source_type:"
+msgid "Sample source type."
 msgstr ""
 
 msgctxt "help:gnuhealth.lab,test:"
@@ -314,6 +346,14 @@ msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health professional who requests the lab test."
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.lab.test,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,source_type:"
+msgid "Sample source type."
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
@@ -322,6 +362,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health professional who ordered the lab tests."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Sample source type."
 msgstr ""
 
 msgctxt "model:gnuhealth.lab,name:"
@@ -1082,6 +1130,10 @@ msgid "Signature:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
+msgid "Source:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
 msgid "Test:"
 msgstr ""
 
@@ -1091,6 +1143,22 @@ msgstr ""
 
 msgctxt "report:patient.labtest.report:"
 msgid "Value"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Other"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Patient"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Other"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Patient"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
@@ -1107,6 +1175,14 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Tested"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Other"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Patient"
 msgstr ""
 
 msgctxt "view:gnuhealth.lab.test.create.init:"

@@ -26,6 +26,11 @@ msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
 msgstr "الهوية"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab,other_source:"
+msgid "Other"
+msgstr "أخرى"
+
 msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr "أخصائي علم الأمراض"
@@ -51,6 +56,11 @@ msgstr ""
 msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
 msgstr "النتائج"
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab,source_type:"
+msgid "Source"
+msgstr "المصدر"
 
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
@@ -180,6 +190,11 @@ msgctxt "field:gnuhealth.patient.lab.test,name:"
 msgid "Test Type"
 msgstr "نوع الاختبار"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,other_source:"
+msgid "Other"
+msgstr "أخرى"
+
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
 msgstr "المريض"
@@ -188,6 +203,11 @@ msgstr "المريض"
 msgctxt "field:gnuhealth.patient.lab.test,request:"
 msgid "Order"
 msgstr "الترتيب"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,source_type:"
+msgid "Source"
+msgstr "المصدر"
 
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
@@ -210,9 +230,19 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health prof"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other"
+msgstr "أخرى"
+
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
 msgstr "المريض"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Source"
+msgstr "المصدر"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,tests:"
 msgid "Tests"
@@ -250,6 +280,10 @@ msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr "رقم نتيجة الإختبار"
 
+msgctxt "help:gnuhealth.lab,other_source:"
+msgid "Other sample source."
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr "أخصائي في علم الأمراض"
@@ -265,6 +299,10 @@ msgstr "رقم المريض"
 msgctxt "help:gnuhealth.lab,requestor:"
 msgid "Doctor who requested the test"
 msgstr "الطبيب الذي طلب اختبار"
+
+msgctxt "help:gnuhealth.lab,source_type:"
+msgid "Sample source type."
+msgstr ""
 
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
@@ -318,6 +356,14 @@ msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health professional who requests the lab test."
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.lab.test,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,source_type:"
+msgid "Sample source type."
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
@@ -326,6 +372,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health professional who ordered the lab tests."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Sample source type."
 msgstr ""
 
 #, fuzzy
@@ -1104,6 +1158,10 @@ msgid "Signature:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
+msgid "Source:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
 msgid "Test:"
 msgstr ""
 
@@ -1116,6 +1174,26 @@ msgstr "وحدة"
 msgctxt "report:patient.labtest.report:"
 msgid "Value"
 msgstr "قيمة"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Other"
+msgstr "أخرى"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Patient"
+msgstr "المريض"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Other"
+msgstr "أخرى"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Patient"
+msgstr "المريض"
 
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Cancel"
@@ -1132,6 +1210,16 @@ msgstr "طلب"
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Tested"
 msgstr "اختبرت"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Other"
+msgstr "أخرى"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Patient"
+msgstr "المريض"
 
 msgctxt "view:gnuhealth.lab.test.create.init:"
 msgid "Create Tests"
