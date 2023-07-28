@@ -162,7 +162,7 @@ class LabTest(metaclass=PoolMeta):
             gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
             return name + puid_str + gender_str
         else:
-            return (self.source or '')
+            return (self.other_source or '')
 
     def make_qrcode(self, name):
         # Create the QR code
@@ -172,7 +172,7 @@ class LabTest(metaclass=PoolMeta):
 
         patient_puid = self.patient and self.patient.puid or ''
         patient_name = self.patient and self.patient.rec_name or ''
-        source = self.source
+        source = self.other_source
 
         requestor_name = self.requestor and self.requestor.rec_name or ''
 

@@ -8,16 +8,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
+    <label name="source_type"/>
+    <group id="lab_sample_source" colspan="1">
+      <field name="source_type"/>
+      <field name="patient_id"/>
+      <field name="other_source"/>
+    </group>
     <label name="request"/>
     <field name="request"/>
-    <label name="source_type"/>
-    <field name="source_type"/>
-    <newline/>
-    <label name="patient_id"/>
-    <field name="patient_id"/>
-    <newline/>
-    <label name="source"/>
-    <field name="source"/>
     <newline/>
     <label name="name"/>
     <field name="name"/>

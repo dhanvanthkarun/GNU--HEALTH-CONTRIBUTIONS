@@ -93,7 +93,7 @@ class Lab(ModelSQL, ModelView):
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other', 'Other')
-        ], 'Source Type', 
+        ], 'Source', 
         help='Sample source type.',
         sort=False, select=True)
     source_type_str = source_type.translated('source_type')
@@ -101,8 +101,8 @@ class Lab(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
         help="Patient ID", select=True)
-    source = fields.Char('Source', 
-        states={'invisible': (Eval('source_type') == 'patient')},
+    other_source = fields.Char('Other', 
+        states={'invisible': (Eval('source_type') != 'other')},
         help="Other sample source when no patient is selected.")
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
@@ -196,6 +196,9 @@ class Lab(ModelSQL, ModelView):
 
     def is_patient(self):
         return (self.source_type == 'patient')
+
+    def is_other_source(self):
+        return (self.source_type == 'other')
         
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
@@ -320,15 +323,15 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other', 'Other')
-        ], 'Source Type', 
+        ], 'Source', 
         help='Sample source type.',
         sort=False, select=True)
     patient_id = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
         select=True)
-    source = fields.Char('Source', 
-        states={'invisible': (Eval('source_type') == 'patient')},
+    other_source = fields.Char('Other', 
+        states={'invisible': (Eval('source_type') != 'other')},
         help="Other sample source when no patient is selected.")
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof.',

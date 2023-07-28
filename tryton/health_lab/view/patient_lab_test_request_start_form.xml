@@ -10,17 +10,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <label name="date"/>
     <field name="date"/>
-    <label name="urgent"/>
-    <field name="urgent"/>
     <newline/>
     <label name="source_type"/>
-    <field name="source_type"/>
-    <newline/>
-    <label name="patient"/>
-    <field name="patient"/>
-    <newline/>
-    <label name="source"/>
-    <field name="source"/>
+    <group id="lab_sample_source" colspan="1">
+      <field name="source_type"/>
+      <field name="patient"/>
+      <field name="other_source"/>
+    </group>
+    <label name="urgent"/>
+    <field name="urgent"/>
     <newline/>
     <label name="context"/>
     <field name="context"/>

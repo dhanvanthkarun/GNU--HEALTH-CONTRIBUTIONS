@@ -199,9 +199,9 @@ class LabTest(metaclass=PoolMeta):
             'Lab_test': str(document.name) or '',
             'Test': str(document.test.rec_name) or '',
             'HP': document.requestor and str(document.requestor.rec_name) or '',
-            'Source_type': str(document.source_type_str),
+            'Source_type': str(document.source_type),
             'Patient': document.patient and str(document.patient.rec_name) or '',
-            'Source': str(document.source) or '',
+            'Other_source': str(document.other_source) or '',
             'Patient_ID': document.patient and str(document.patient.name.ref) or '',
             'Analyte_line': str(analyte_line),
              }

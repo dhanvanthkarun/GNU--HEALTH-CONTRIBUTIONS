@@ -59,7 +59,7 @@ class CreateLabTestOrder(Wizard):
             test_report_data['test'] = lab_test_order.name.id
             test_report_data['source_type'] = lab_test_order.source_type
             test_report_data['patient'] = lab_test_order.patient_id and lab_test_order.patient_id.id
-            test_report_data['source'] = lab_test_order.source
+            test_report_data['other_source'] = lab_test_order.other_source
             if lab_test_order.doctor_id:
                 test_report_data['requestor'] = lab_test_order.doctor_id.id
             test_report_data['date_requested'] = lab_test_order.date
@@ -104,14 +104,14 @@ class RequestPatientLabTestStart(ModelView):
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other', 'Other')
-        ], 'Source Type', 
+        ], 'Source', 
         help='Sample source type.',
         sort=False, select=True)
     patient = fields.Many2One('gnuhealth.patient', 
         'Patient',
         states={'invisible': (Eval('source_type') != 'patient')})
-    source = fields.Char('Source', 
-        states={'invisible': (Eval('source_type') == 'patient')},
+    other_source = fields.Char('Other', 
+        states={'invisible': (Eval('source_type') != 'other')},
         help="Other sample source when no patient is selected.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
@@ -173,7 +173,7 @@ class RequestPatientLabTest(Wizard):
             lab_test['name'] = test.id
             lab_test['source_type'] = self.start.source_type
             lab_test['patient_id'] = self.start.patient and self.start.patient.id
-            lab_test['source'] = self.start.source
+            lab_test['other_source'] = self.start.other_source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:

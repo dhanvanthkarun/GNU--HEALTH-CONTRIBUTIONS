@@ -80,7 +80,7 @@ class RequestPatientLabTest(Wizard):
             lab_test['name'] = test.id
             lab_test['source_type'] = self.start.source_type
             lab_test['patient_id'] = self.start.patient and self.start.patient.id
-            lab_test['source'] = self.start.source
+            lab_test['other_source'] = self.start.other_source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:
