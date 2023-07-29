@@ -154,21 +154,24 @@ class ProteinDisease(ModelSQL, ModelView):
                        help="Uniprot Disease Code")
 
     disease_name = fields.Char('Disease name', translate=True)
-    acronym = fields.Char('Acronym', required=True, select=True,
+    acronym = fields.Char('Mnemonic', required=True, select=True,
                           help="Disease acronym / mnemonics")
 
     disease_uri = fields.Function(fields.Char("Disease URI"),
                                   'get_disease_uri')
 
-    mim_reference = fields.Char('MIM',
-                                help="MIM - "
+    mim_reference = fields.Char('MIM', help="MIM -"
                                 "Mendelian Inheritance in Man- DB reference")
 
     gene_variant = fields.One2Many('gnuhealth.gene.variant.phenotype',
                                    'phenotype',
                                    'Natural Variant',
-                                   help="Protein sequence variant(s) "
+                                   help="Natural variants "
                                         "involved in this condition")
+
+    keywords = fields.Char('Keywords', select=True)
+
+    xrefs = fields.Char('Xrefs', help="Cross references")
 
     dominance = fields.Selection([
         (None, ''),
@@ -230,10 +233,10 @@ class GeneVariant(ModelSQL, ModelView):
     variant = fields.Char(
         "FTId", help="Variant Feature Identifier (FTId)",
         required=True, select=True)
+    protein = fields.Char('Protein ', help='Uniprot Protein ID')
     aa_change = fields.Char('AA Change', help="Amino acid change")
 
-    phenotypes = fields.One2Many('gnuhealth.gene.variant.phenotype', 'variant',
-                                 'Phenotypes')
+    dbsnp = fields.Char('dbSNP', help='dbSNP ID')
 
     significance = fields.Selection([
         (None, ''),
@@ -244,7 +247,8 @@ class GeneVariant(ModelSQL, ModelView):
         help="Category related to the clinical significance of the variant",
         sort=False, select=True)
 
-    dbsnp = fields.Char('dbSNP', help='dbSNP ID')
+    phenotypes = fields.One2Many('gnuhealth.gene.variant.phenotype', 'variant',
+                                 'Phenotypes / Diseases')
 
     @classmethod
     def __setup__(cls):
