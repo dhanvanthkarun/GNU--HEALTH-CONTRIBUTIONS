@@ -104,6 +104,18 @@ class Lab(ModelSQL, ModelView):
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
+    source_name = fields.Function(
+        fields.Text('Source Name'), 'get_source_name')
+
+    def get_source_name(self, name=None, with_puid = False, with_gender = False):
+        if self.is_patient():
+            pname = self.patient and self.patient.rec_name or ''
+            puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
+            gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
+            return pname + puid_str + gender_str
+        else:
+            return (self.other_source or '')
+
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
         help="Pathologist", select=True)
@@ -333,6 +345,15 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
+    source_name = fields.Function(
+        fields.Text('Source name'), 'get_source_name')
+
+    def get_source_name(self, name):
+        if self.is_patient():
+            return self.patient_id and self.patient_id.rec_name or ''
+        else:
+            return (self.other_source or '')
+
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof.',
         help="Health professional who requests the lab test.", select=True)
@@ -394,6 +415,12 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         default['date'] = cls.default_date()
         return super(GnuHealthPatientLabTest, cls).copy(
             tests, default=default)
+
+    def is_patient(self):
+        return (self.source_type == 'patient')
+
+    def is_other_source(self):
+        return (self.source_type == 'other_source')
 
 
 class PatientHealthCondition(metaclass=PoolMeta):

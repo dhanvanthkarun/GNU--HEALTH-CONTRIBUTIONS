@@ -155,15 +155,6 @@ class LabTest(metaclass=PoolMeta):
     qr = fields.Function(fields.Binary('QR Code'), 'make_qrcode')
     bar = fields.Function(fields.Binary('Bar Code39'), 'make_barcode')
 
-    def format_sample_source(self, with_puid = False, with_gender = False):
-        if self.is_patient():
-            name = self.patient and self.patient.rec_name or ''
-            puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
-            gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
-            return name + puid_str + gender_str
-        else:
-            return (self.other_source or '')
-
     def make_qrcode(self, name):
         # Create the QR code
 
