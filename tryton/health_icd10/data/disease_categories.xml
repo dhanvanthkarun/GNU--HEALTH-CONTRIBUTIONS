@@ -6,97 +6,122 @@ SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 <tryton>
-<data noupdate="1" >
+<data noupdate="0" >
 
 <!-- Disease Categories, based on ICD-10 -->
+	<record model="gnuhealth.pathology.category" id="icdcat_root">
+		<field name="name">ICD-10</field>
+	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat1">
 		<field name="name">I Certain infectious and parasitic diseases</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat2">
 		<field name="name">II Neoplasms</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat3">
 		<field name="name">III Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat4">
 		<field name="name">IV Endocrine, nutritional and metabolic diseases</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
         <record model="gnuhealth.pathology.category" id="icdcat5">
                 <field name="name">V Mental and behavioural disorders</field>
+                <field name="parent" ref="icdcat_root"></field>
         </record>
 
 
 	<record model="gnuhealth.pathology.category" id="icdcat6">
 		<field name="name">VI Diseases of the nervous system</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat7">
 		<field name="name">VII Diseases of the eye and adnexa</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat8">
 		<field name="name">VIII Diseases of the ear and mastoid process</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat9">
 		<field name="name">IX Diseases of the circulatory system</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat10">
 		<field name="name">X Diseases of the respiratory system</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat11">
 		<field name="name">XI Diseases of the digestive system</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat12">
 		<field name="name">XII Diseases of the skin and subcutaneous tissue</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat13">
 		<field name="name">XIII Diseases of the musculoskeletal system and connective tissue</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat14">
 		<field name="name">XIV Diseases of the genitourinary system</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat15">
 		<field name="name">XV Pregnancy, childbirth and the puerperium</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat16">
 		<field name="name">XVI Certain conditions originating in the perinatal period</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat17">
 		<field name="name">XVII Congenital malformations, deformations and chromosomal abnormalities</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat18">
 		<field name="name">XVIII Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat19">
 		<field name="name">XIX Injury, poisoning and certain other consequences of external causes</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat20">
 		<field name="name">XX External causes of morbidity and mortality</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat21">
 		<field name="name">XXI Factors influencing health status and contact with health services</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 	<record model="gnuhealth.pathology.category" id="icdcat22">
 		<field name="name">XXII Codes for special purposes</field>
+                <field name="parent" ref="icdcat_root"></field>
 	</record>
 
 <record model="gnuhealth.pathology.category" id="icdcat1-1">
