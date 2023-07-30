@@ -115,7 +115,11 @@ msgid "Gene"
 msgstr ""
 
 msgctxt "field:gnuhealth.gene.variant,phenotypes:"
-msgid "Phenotypes"
+msgid "Phenotypes / Diseases"
+msgstr ""
+
+msgctxt "field:gnuhealth.gene.variant,protein:"
+msgid "Protein "
 msgstr ""
 
 msgctxt "field:gnuhealth.gene.variant,significance:"
@@ -199,7 +203,7 @@ msgid "Phenotype"
 msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
-msgid "Acronym"
+msgid "Mnemonic"
 msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,active:"
@@ -226,12 +230,20 @@ msgctxt "field:gnuhealth.protein.disease,gene_variant:"
 msgid "Natural Variant"
 msgstr ""
 
+msgctxt "field:gnuhealth.protein.disease,keywords:"
+msgid "Keywords"
+msgstr ""
+
 msgctxt "field:gnuhealth.protein.disease,mim_reference:"
 msgid "MIM"
 msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,name:"
 msgid "Disease"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,xrefs:"
+msgid "Xrefs"
 msgstr ""
 
 msgctxt "help:gnuhealth.disease.gene,chromosome:"
@@ -312,6 +324,10 @@ msgctxt "help:gnuhealth.gene.variant,name:"
 msgid "Gene and protein product (in parenthesis)"
 msgstr ""
 
+msgctxt "help:gnuhealth.gene.variant,protein:"
+msgid "Uniprot Protein ID"
+msgstr ""
+
 msgctxt "help:gnuhealth.gene.variant,significance:"
 msgid "Category related to the clinical significance of the variant"
 msgstr ""
@@ -350,15 +366,19 @@ msgid ""
 msgstr ""
 
 msgctxt "help:gnuhealth.protein.disease,gene_variant:"
-msgid "Protein sequence variant(s) involved in this condition"
+msgid "Natural variants involved in this condition"
 msgstr ""
 
 msgctxt "help:gnuhealth.protein.disease,mim_reference:"
-msgid "MIM - Mendelian Inheritance in Man- DB reference"
+msgid "MIM -Mendelian Inheritance in Man- DB reference"
 msgstr ""
 
 msgctxt "help:gnuhealth.protein.disease,name:"
 msgid "Uniprot Disease Code"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,xrefs:"
+msgid "Cross references"
 msgstr ""
 
 msgctxt "model:gnuhealth.disease.gene,long_name:"
@@ -27392,6 +27412,10 @@ msgctxt "model:gnuhealth.gene,long_name:APOBEC3AP1"
 msgid "apolipoprotein B mRNA editing enzyme catalytic subunit 3A pseudogene 1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:APOBEC3A_B"
+msgid "APOBEC3A and APOBEC3B deletion hybrid"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:APOBEC3B"
 msgid "apolipoprotein B mRNA editing enzyme catalytic subunit 3B"
 msgstr ""
@@ -30949,6 +30973,10 @@ msgctxt "model:gnuhealth.gene,long_name:BAGE4"
 msgid "BAGE family member 4"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:BAGE5"
+msgid "BAGE family member 5"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:BAHCC1"
 msgid "BAH domain and coiled-coil containing 1"
 msgstr ""
@@ -34475,6 +34503,10 @@ msgctxt "model:gnuhealth.gene,long_name:C4BPB"
 msgid "complement component 4 binding protein beta"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:C4B_2"
+msgid "complement component 4B (Chido blood group), copy 2"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:C4orf17"
 msgid "chromosome 4 open reading frame 17"
 msgstr ""
@@ -37110,12 +37142,24 @@ msgctxt "model:gnuhealth.gene,long_name:CCL3-AS1"
 msgid "CCL3 antisense RNA 1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:CCL3L1"
+msgid "C-C motif chemokine ligand 3 like 1"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:CCL3L3"
 msgid "C-C motif chemokine ligand 3 like 3"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:CCL3P1"
+msgid "C-C motif chemokine ligand 3 pseudogene 1"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:CCL4"
 msgid "C-C motif chemokine ligand 4"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:CCL4L1"
+msgid "C-C motif chemokine ligand 4 like 1"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:CCL4L2"
@@ -44739,6 +44783,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:CSPG4P5"
 msgid "chondroitin sulfate proteoglycan 4 pseudogene 5"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:CSPG4P9"
+msgid "chondroitin sulfate proteoglycan 4 pseudogene 9"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:CSPG5"
@@ -53063,6 +53111,11 @@ msgid ""
 "eukaryotic translation initiation factor 4E binding protein 1 pseudogene 1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:EIF4EBP1P2"
+msgid ""
+"eukaryotic translation initiation factor 4E binding protein 1 pseudogene 2"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:EIF4EBP2"
 msgid "eukaryotic translation initiation factor 4E binding protein 2"
 msgstr ""
@@ -57494,6 +57547,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:FAM8A4P"
 msgid "family with sequence similarity 8 member A4, pseudogene"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:FAM8A5P"
+msgid "family with sequence similarity 8 member A5, pseudogene"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:FAM8A6P"
@@ -64190,6 +64247,10 @@ msgctxt "model:gnuhealth.gene,long_name:GOLGA6L17P"
 msgid "golgin A6 family like 17, pseudogene"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:GOLGA6L19"
+msgid "golgin A6 family like 19"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:GOLGA6L2"
 msgid "golgin A6 family like 2"
 msgstr ""
@@ -65872,6 +65933,14 @@ msgctxt "model:gnuhealth.gene,long_name:GSTP1P1"
 msgid "glutathione S-transferase pi 1 pseudogene 1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:GSTT1"
+msgid "glutathione S-transferase theta 1"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:GSTT1-AS1"
+msgid "GSTT1 antisense RNA 1"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:GSTT2"
 msgid "glutathione S-transferase theta 2 (gene/pseudogene)"
 msgstr ""
@@ -65886,6 +65955,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:GSTT4"
 msgid "glutathione S-transferase theta 4"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:GSTTP2"
+msgid "glutathione S-transferase theta pseudogene 2"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:GSTZ1"
@@ -65962,6 +66035,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:GTF2H2C"
 msgid "GTF2H2 family member C"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:GTF2H2C_2"
+msgid "GTF2H2 family member C, copy 2"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:GTF2H3"
@@ -68756,12 +68833,32 @@ msgctxt "model:gnuhealth.gene,long_name:HLA-DRB1"
 msgid "major histocompatibility complex, class II, DR beta 1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:HLA-DRB2"
+msgid "major histocompatibility complex, class II, DR beta 2 (pseudogene)"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:HLA-DRB3"
+msgid "major histocompatibility complex, class II, DR beta 3"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:HLA-DRB4"
+msgid "major histocompatibility complex, class II, DR beta 4"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:HLA-DRB5"
 msgid "major histocompatibility complex, class II, DR beta 5"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:HLA-DRB6"
 msgid "major histocompatibility complex, class II, DR beta 6 (pseudogene)"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:HLA-DRB7"
+msgid "major histocompatibility complex, class II, DR beta 7 (pseudogene)"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:HLA-DRB8"
+msgid "major histocompatibility complex, class II, DR beta 8 (pseudogene)"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:HLA-DRB9"
@@ -74425,6 +74522,10 @@ msgctxt "model:gnuhealth.gene,long_name:IGLV5-37"
 msgid "immunoglobulin lambda variable 5-37"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:IGLV5-39"
+msgid "immunoglobulin lambda variable 5-39"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:IGLV5-45"
 msgid "immunoglobulin lambda variable 5-45"
 msgstr ""
@@ -78236,6 +78337,12 @@ msgid ""
 "cytoplasmic tail 1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:KIR2DL2"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and long "
+"cytoplasmic tail 2"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:KIR2DL3"
 msgid ""
 "killer cell immunoglobulin like receptor, two Ig domains and long "
@@ -78248,14 +78355,50 @@ msgid ""
 "cytoplasmic tail 4"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:KIR2DL5A"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and long "
+"cytoplasmic tail 5A"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:KIR2DL5B"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and long "
+"cytoplasmic tail 5B"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:KIR2DP1"
 msgid "killer cell immunoglobulin like receptor, two Ig domains pseudogene 1"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:KIR2DS1"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and short "
+"cytoplasmic tail 1"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:KIR2DS2"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and short "
+"cytoplasmic tail 2"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:KIR2DS3"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and short "
+"cytoplasmic tail 3"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:KIR2DS4"
 msgid ""
 "killer cell immunoglobulin like receptor, two Ig domains and short "
 "cytoplasmic tail 4"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:KIR2DS5"
+msgid ""
+"killer cell immunoglobulin like receptor, two Ig domains and short "
+"cytoplasmic tail 5"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:KIR3DL1"
@@ -78279,6 +78422,12 @@ msgstr ""
 msgctxt "model:gnuhealth.gene,long_name:KIR3DP1"
 msgid ""
 "killer cell immunoglobulin like receptor, three Ig domains pseudogene 1"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:KIR3DS1"
+msgid ""
+"killer cell immunoglobulin like receptor, three Ig domains and short "
+"cytoplasmic tail 1"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:KIR3DX1"
@@ -81704,6 +81853,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:LILRA2P1"
 msgid "LILRA2 pseudogene 1"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:LILRA3"
+msgid "leukocyte immunoglobulin like receptor A3"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:LILRA4"
@@ -108280,6 +108433,10 @@ msgctxt "model:gnuhealth.gene,long_name:MTND1P12"
 msgid "MT-ND1 pseudogene 12"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:MTND1P13"
+msgid "MT-ND1 pseudogene 13"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:MTND1P14"
 msgid "MT-ND1 pseudogene 14"
 msgstr ""
@@ -119801,6 +119958,14 @@ msgctxt "model:gnuhealth.gene,long_name:OR8U3"
 msgid "olfactory receptor family 8 subfamily U member 3"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:OR8U8"
+msgid "olfactory receptor family 8 subfamily U member 8"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:OR8U9"
+msgid "olfactory receptor family 8 subfamily U member 9"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:OR8V1P"
 msgid "olfactory receptor family 8 subfamily V member 1 pseudogene"
 msgstr ""
@@ -119839,6 +120004,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:OR9G4"
 msgid "olfactory receptor family 9 subfamily G member 4"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:OR9G9"
+msgid "olfactory receptor family 9 subfamily G member 9"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:OR9H1P"
@@ -128678,6 +128847,10 @@ msgctxt "model:gnuhealth.gene,long_name:PRAMEF20"
 msgid "PRAME family member 20"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:PRAMEF22"
+msgid "PRAME family member 22"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:PRAMEF25"
 msgid "PRAME family member 25"
 msgstr ""
@@ -129365,6 +129538,11 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:PRKRA"
 msgid "protein activator of interferon induced protein kinase EIF2AK2"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:PRKRAP1"
+msgid ""
+"protein activator of interferon induced protein kinase EIF2AK2 pseudogene 1"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:PRKRIP1"
@@ -130073,6 +130251,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:PRSS3P1"
 msgid "PRSS3 pseudogene 1"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:PRSS3P2"
+msgid "PRSS3 pseudogene 2"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:PRSS3P3"
@@ -142610,6 +142792,10 @@ msgctxt "model:gnuhealth.gene,long_name:RNU1-115P"
 msgid "RNA, U1 small nuclear 115, pseudogene"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:RNU1-116P"
+msgid "RNA, U1 small nuclear 116, pseudogene"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:RNU1-117P"
 msgid "RNA, U1 small nuclear 117, pseudogene"
 msgstr ""
@@ -142964,6 +143150,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:RNU1-78P"
 msgid "RNA, U1 small nuclear 78, pseudogene"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:RNU1-79P"
+msgid "RNA, U1 small nuclear 79, pseudogene"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:RNU1-7P"
@@ -175139,6 +175329,10 @@ msgctxt "model:gnuhealth.gene,long_name:TAS2R43"
 msgid "taste 2 receptor member 43"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:TAS2R45"
+msgid "taste 2 receptor member 45"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:TAS2R46"
 msgid "taste 2 receptor member 46"
 msgstr ""
@@ -175169,6 +175363,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TAS2R67P"
 msgid "taste 2 receptor member 67 pseudogene"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:TAS2R68P"
+msgid "taste 2 receptor member 68 pseudogene"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TAS2R6P"
@@ -181889,6 +182087,10 @@ msgctxt "model:gnuhealth.gene,long_name:TRBV3-1"
 msgid "T cell receptor beta variable 3-1"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:TRBV3-2"
+msgid "T cell receptor beta variable 3-2 (pseudogene)"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:TRBV30"
 msgid "T cell receptor beta variable 30"
 msgstr ""
@@ -181899,6 +182101,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV4-2"
 msgid "T cell receptor beta variable 4-2"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:TRBV4-3"
+msgid "T cell receptor beta variable 4-3"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV5-1"
@@ -181929,12 +182135,20 @@ msgctxt "model:gnuhealth.gene,long_name:TRBV5-7"
 msgid "T cell receptor beta variable 5-7 (non-functional)"
 msgstr ""
 
+msgctxt "model:gnuhealth.gene,long_name:TRBV5-8"
+msgid "T cell receptor beta variable 5-8"
+msgstr ""
+
 msgctxt "model:gnuhealth.gene,long_name:TRBV6-1"
 msgid "T cell receptor beta variable 6-1"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV6-2"
 msgid "T cell receptor beta variable 6-2"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:TRBV6-3"
+msgid "T cell receptor beta variable 6-3"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV6-4"
@@ -181955,6 +182169,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV6-8"
 msgid "T cell receptor beta variable 6-8"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:TRBV6-9"
+msgid "T cell receptor beta variable 6-9"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV7-1"
@@ -181983,6 +182201,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV7-7"
 msgid "T cell receptor beta variable 7-7"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:TRBV7-8"
+msgid "T cell receptor beta variable 7-8"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:TRBV7-9"
@@ -187551,6 +187773,10 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:UBE2Q2P6"
 msgid "UBE2Q2 pseudogene 6"
+msgstr ""
+
+msgctxt "model:gnuhealth.gene,long_name:UBE2Q2P7"
+msgid "UBE2Q2 pseudogene 7"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:UBE2Q2P8"

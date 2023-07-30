@@ -54,6 +54,10 @@ msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
 msgstr "结果"
 
+msgctxt "field:gnuhealth.lab,source_name:"
+msgid "Source Name"
+msgstr "来源名称"
+
 msgctxt "field:gnuhealth.lab,source_type:"
 msgid "Source"
 msgstr "样本来源"
@@ -194,6 +198,10 @@ msgstr "患者"
 msgctxt "field:gnuhealth.patient.lab.test,request:"
 msgid "Order"
 msgstr "申请编号"
+
+msgctxt "field:gnuhealth.patient.lab.test,source_name:"
+msgid "Source name"
+msgstr "来源名称"
 
 msgctxt "field:gnuhealth.patient.lab.test,source_type:"
 msgid "Source"
@@ -965,6 +973,10 @@ msgctxt "model:ir.action,name:report_patient_labtest_report"
 msgid "Lab Report"
 msgstr "检验报告"
 
+msgctxt "model:ir.model.button,string:complete_criteareas_button"
+msgid "Complete Criteareas"
+msgstr "补全检验项目明细"
+
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
 msgstr "实验室检验申请"
@@ -1207,8 +1219,20 @@ msgid "Main Info"
 msgstr "主要信息"
 
 msgctxt "view:gnuhealth.lab:"
+msgid "Complete Criteareas"
+msgstr "补全检验项目明细"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Complete criteareas of current test type."
+msgstr "补全当前检验项目明细"
+
+msgctxt "view:gnuhealth.lab:"
 msgid "Diagnosis"
 msgstr "诊断"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Do your want to complete criteareas of current test type?"
+msgstr "你确定要补全当前检验项目明细吗？"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"
