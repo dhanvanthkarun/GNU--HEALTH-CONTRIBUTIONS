@@ -105,7 +105,7 @@ class Lab(ModelSQL, ModelView):
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
     source_name = fields.Function(
-        fields.Text('Source Name'), 'get_source_name')
+        fields.Text('Source name'), 'get_source_name')
 
     def get_source_name(self, name=None, with_puid = False, with_gender = False):
         if self.is_patient():
