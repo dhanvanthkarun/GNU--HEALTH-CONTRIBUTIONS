@@ -163,6 +163,7 @@ class Lab(ModelSQL, ModelView):
              'The test ID code must be unique')
         ]
         cls._order.insert(0, ('date_requested', 'DESC'))
+        cls._buttons.update({'complete_criteareas': {}})
 
     @staticmethod
     def default_date_requested():
@@ -205,6 +206,29 @@ class Lab(ModelSQL, ModelView):
             ('patient', ) + tuple(clause[1:]),
             ('name', ) + tuple(clause[1:]),
             ]
+
+    @classmethod
+    @ModelView.button
+    def complete_criteareas(cls, labs):
+        pool = Pool()
+        Critearea = pool.get('gnuhealth.lab.test.critearea')
+
+        lab = labs[0]
+        test_cases = []
+
+        for critearea in (lab and lab.test and lab.test.critearea):
+            test_cases.append({
+                'gnuhealth_lab_id': lab.id,
+                'name': critearea.name,
+                'code': critearea.code,
+                'sequence': critearea.sequence,
+                'lower_limit': critearea.lower_limit,
+                'upper_limit': critearea.upper_limit,
+                'normal_range': critearea.normal_range,
+                'units': critearea.units and critearea.units.id})
+
+        if test_cases:
+            Critearea.create(test_cases)
 
     def is_patient(self):
         return (self.source_type == 'patient')

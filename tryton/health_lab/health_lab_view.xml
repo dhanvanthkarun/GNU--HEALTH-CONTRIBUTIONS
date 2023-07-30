@@ -188,6 +188,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <menuitem parent="gnuhealth_laboratory_menu" action="gnuhealth_action_tree_lab"
             id="gnuhealth_action_lab_tree" sequence="30" icon="gnuhealth-list"/>
 
+        <record model="ir.model.button" id="complete_criteareas_button">
+            <field name="name">complete_criteareas</field>
+            <field name="string">Complete Criteareas</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
+        </record>
+
 <!-- Shortcut to the Lab results from the Patient -->
 
         <record model="ir.action.act_window" id="act_patient_lab_history_form1">
