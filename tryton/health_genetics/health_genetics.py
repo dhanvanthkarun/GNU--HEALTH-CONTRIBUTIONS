@@ -175,10 +175,14 @@ class ProteinDisease(ModelSQL, ModelView):
 
     dominance = fields.Selection([
         (None, ''),
-        ('d', 'dominant'),
-        ('r', 'recessive'),
+        ('ad', 'Autosomic dominant'),
+        ('ar', 'Autosomic recessive'),
+        ('x', 'X-Linked'),
+        ('y', 'Y-Linked'),
+        ('m', 'Mitochondrial'),
         ('c', 'codominance'),
-        ], 'Dominance', sort=False, select=True)
+        ], 'Inheritance Pattern', help="Inheritance pattern",
+        sort=False, select=True)
 
     description = fields.Text('Description')
 
