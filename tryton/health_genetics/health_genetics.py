@@ -173,7 +173,7 @@ class ProteinDisease(ModelSQL, ModelView):
 
     xrefs = fields.Char('Xrefs', help="Cross references")
 
-    dominance = fields.Selection([
+    inheritance_pattern = fields.Selection([
         (None, ''),
         ('ad', 'Autosomic dominant'),
         ('ar', 'Autosomic recessive'),
@@ -226,6 +226,12 @@ class ProteinDisease(ModelSQL, ModelView):
                 ('disease_name',) + tuple(clause[1:]),
                 ]
 
+    @classmethod
+    def __register__(cls, module):
+        # Migration from 4.2:
+        # rename dominance field to inheritance_patter
+        table_h = cls.__table_handler__(module)
+        table_h.column_rename('dominance', 'inheritance_pattern')
 
 class GeneVariant(ModelSQL, ModelView):
     'Natural Variant'
