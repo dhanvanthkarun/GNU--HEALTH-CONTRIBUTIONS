@@ -12,7 +12,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <newline/>
         <label name="service"/>
         <field name="service"/>
-        <button colspan="2"
+        <label name="service_updated"/>
+        <field name="service_updated"/>
+        <newline/>
+        <button colspan="4"
                 name="update_service" 
                 string="Update Services" 
                 icon="tryton-go-next" 
