@@ -92,6 +92,7 @@ class RequestPatientImagingTest(Wizard):
                 # if the Ungroup flag is not set (default).
                 if not self.start.ungroup_tests:
                     self.append_services(test, self.start.service)
+                    imaging_test['service_updated'] = 'yes'
 
             imaging_tests.append(imaging_test)
         ImagingTestRequest.create(imaging_tests)
