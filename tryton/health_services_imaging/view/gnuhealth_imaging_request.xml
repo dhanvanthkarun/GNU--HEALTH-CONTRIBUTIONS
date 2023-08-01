@@ -13,7 +13,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <group id="group_imaging_request_services" colspan="4">
             <label name="service"/>
             <field name="service"/>
-            <button name="update_service" help="Update Service document with this imaging request ?" string="Update Services" icon="tryton-go-next" confirm="Transfer imaging request to services ?"/>
+            <label name="service_updated"/>
+            <field name="service_updated"/>
+            <newline/>
+            <button colspan="4"
+                    name="update_service" 
+                    string="Update Services" 
+                    icon="tryton-go-next" 
+                    help="Update Service document with this imaging request ?" 
+                    confirm="Transfer imaging request to services ?"/>
         </group>
     </xpath>
 </data>

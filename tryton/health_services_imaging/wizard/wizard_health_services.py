@@ -22,7 +22,7 @@ class RequestPatientImagingTestStart(ModelView):
     ungroup_tests = fields.Boolean(
         'Ungroup',
         help="Check if you DO NOT want to include each individual Dx"
-             " imaging test from this order in the lab test generation step."
+             " imaging test from this order in the imaging test generation step."
              " This is useful when some services are not provided in"
              " the same institution.\n"
              "In this case, you need to individually update the service"
