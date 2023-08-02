@@ -8,6 +8,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
+  <group colspan="4" string="Orthanc" id="orthanc_info">
     <label name="patient"/>
     <field name="patient"/>
     <label name="description"/>
@@ -26,6 +27,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <field name="link" widget="url"/>
     <label name="server"/>
     <field name="server"/>
+  </group>
+  <newline/>
+  <label string=" "/>
+  <newline/>
+  <group colspan="4" string="GNU Health" id="gnuhealth_info">
     <label name="imaging_test"/>
-    <field name="imaging_test"/>
+    <field name="imaging_test" colspan="3"/>
+  </group>
 </form>
