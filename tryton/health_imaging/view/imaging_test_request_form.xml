@@ -22,13 +22,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <field name="doctor"/>
     <label name="context"/>
     <field name="context"/>
-    <group col="5" colspan="4" id="imaging_request_buttons">
-        <label name="state"/>
-        <field name="state"/>
+    <newline/>
+    <label name="state"/>
+    <field name="state"/>
+    <group colspan="2" id="imaging_request_buttons">
         <button name="requested" string="Request" icon="tryton-go-next"/>
         <button name="generate_results" colspan="2" string="Generate Results" icon="tryton-go-next"/>
     </group>
-    <label name="comment"/>
+    <newline/>
+    <label name="comment" xalign="0.0"/>
     <newline/>
     <field name="comment" colspan="4"/>
 </form>
