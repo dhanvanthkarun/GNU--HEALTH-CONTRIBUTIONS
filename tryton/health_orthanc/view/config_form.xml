@@ -25,9 +25,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <label name="link"/>
             <field name="link" widget="url"/>
         </group>
+        <newline/>
+        <label string=" "/>
+        <newline/>
         <group string="User" yfill="1" id="orthanc_group_user_config">
             <label name="user"/>
             <field name="user"/>
+            <newline/>
             <label name="password"/>
             <field name="password"/>
         </group>
