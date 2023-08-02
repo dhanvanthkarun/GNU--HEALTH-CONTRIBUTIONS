@@ -464,7 +464,7 @@ class TestResult(ModelSQL, ModelView):
     __name__ = "gnuhealth.imaging.test.result"
 
     studies = fields.One2Many(
-        "gnuhealth.orthanc.study", "imaging_test", "Studies", readonly=True
+        "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies", readonly=True
     )
 
 
