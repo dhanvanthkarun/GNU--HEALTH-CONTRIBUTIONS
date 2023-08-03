@@ -8,18 +8,23 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group string="Header" colspan="4" col="13" id="evaluation_header">
-        <label name="patient"/>
-        <field name="patient" colspan="3"/>
+    <group string="Header" colspan="4" id="evaluation_header">
+      <label name="patient"/>
+      <group colspan="1" id="group_patient">
+        <field name="patient"/>
         <field name="gender"/>
         <field name="computed_age"/>
-        <label name="visit_type"/>
+      </group>
+      <label name="code"/>
+      <field name="code"/>
+      <newline/>
+      <label name="visit_type"/>
+      <group colspan="1" id="group_visit_type">
         <field name="visit_type"/>
         <field name="related_condition"/>
-        <label name="healthprof"/>
-        <field name="healthprof"/>
-        <label name="code"/>
-        <field name="code"/>
+      </group>
+      <label name="healthprof"/>
+      <field name="healthprof"/>
     </group>
     <newline/>
 
