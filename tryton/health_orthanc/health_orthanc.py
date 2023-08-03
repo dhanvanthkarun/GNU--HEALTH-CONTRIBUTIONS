@@ -83,6 +83,22 @@ class OrthancServerConfig(ModelSQL, ModelView):
         add = "app/explorer.html"
         return urljoin(pre, add)
 
+    use_stone_viewer = fields.Boolean(
+        "Use Stone Viewer", 
+        help="Use Stone Web Viewer")
+
+    @staticmethod
+    def default_use_stone_viewer():
+        return False
+
+    use_osimis_viewer = fields.Boolean(
+        "Use Osimis Viewer", 
+        help="Use Osimis Web Viewer")
+
+    @staticmethod
+    def default_use_osimis_viewer():
+        return False
+
     @classmethod
     def __setup__(cls):
         super().__setup__()
@@ -335,6 +351,7 @@ class OrthancStudy(ModelSQL, ModelView):
     description = fields.Char("Description", readonly=True)
     date = fields.Date("Date", readonly=True)
     ident = fields.Char("ID", readonly=True)
+    instance_uid = fields.Char("InstanceUID", readonly=True)
     institution = fields.Char(
         "Institution", readonly=True,
         help="Imaging center where study was undertaken"
@@ -352,7 +369,12 @@ class OrthancStudy(ModelSQL, ModelView):
 
     def get_link(self, name):
         pre = "".join([self.server.domain.rstrip("/"), "/"])
-        add = "app/explorer.html#study?uuid={}".format(self.uuid)
+        if self.server.use_stone_viewer:
+            add = "stone-webviewer/index.html?study={}".format(self.instance_uid)
+        elif self.server.use_osimis_viewer:
+            add = "osimis-viewer/app/index.html?study={}".format(self.uuid)
+        else:
+            add = "app/explorer.html#study?uuid={}".format(self.uuid)
         return urljoin(pre, add)
 
     @classmethod
@@ -395,6 +417,7 @@ class OrthancStudy(ModelSQL, ModelView):
                     "description": description,
                     "date": date,
                     "ident": study.get("MainDicomTags").get("StudyID"),
+                    "instance_uid": study.get("MainDicomTags").get("StudyInstanceUID"),
                     "institution": study.get(
                         "MainDicomTags").get("InstitutionName"),
                     "ref_phys": study.get("MainDicomTags").get(
