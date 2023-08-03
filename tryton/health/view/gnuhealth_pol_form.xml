@@ -8,13 +8,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group id="pol_header" colspan="4" col="8">
+    <group id="pol_header" colspan="4">
         <label name="person"/>
         <field name="person"/>
-        <label name="page_type"/>
-        <field name="page_type"/>
         <label name="page_date"/>
         <field name="page_date"/>
+        <newline/>
+        <label name="page_type"/>
+        <field name="page_type"/>
         <label name="relevance"/>
         <field name="relevance"/>
         <newline/>
@@ -24,7 +25,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="institution"/>
         <newline/>
         <label name="summary"/>
-        <field name="summary" colspan="4"/>
+        <field name="summary" colspan="3"/>
     </group>
     <newline/>
     <separator string="Context" id="separator_context" colspan="4"/>
@@ -72,12 +73,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="page"/>
         <label name="federation_account"/>
         <field name="federation_account"/>
+        <label name="node"/>
+        <field name="node"/>
+        <newline/>
         <label name="author"/>
         <field name="author"/>
         <label name="author_acct"/>
         <field name="author_acct"/>
-        <label name="node"/>
-        <field name="node"/>
     </group>
 
 </form>
