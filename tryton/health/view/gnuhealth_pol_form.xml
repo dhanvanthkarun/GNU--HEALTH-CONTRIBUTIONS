@@ -54,8 +54,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <newline/>
         <label name="gene"/>
         <field name="gene"/>
-        <label name="natural_variant"/>
-        <field name="natural_variant"/>
+        <group id="pol_gene_natural_variant" colspan="1" col="2">
+          <label name="natural_variant"/>
+          <field name="natural_variant"/>
+        </group>
         <label name="phenotype"/>
         <field name="phenotype"/>
     </group>
