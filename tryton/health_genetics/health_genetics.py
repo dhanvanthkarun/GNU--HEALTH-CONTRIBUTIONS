@@ -233,6 +233,7 @@ class ProteinDisease(ModelSQL, ModelView):
         table_h = cls.__table_handler__(module)
         table_h.column_rename('dominance', 'inheritance_pattern')
 
+
 class GeneVariant(ModelSQL, ModelView):
     'Natural Variant'
     __name__ = 'gnuhealth.gene.variant'
@@ -248,6 +249,10 @@ class GeneVariant(ModelSQL, ModelView):
 
     dbsnp = fields.Char('dbSNP', help='dbSNP ID')
 
+    dbsnp_url = fields.Function(
+        fields.Char("Reference SNP",
+                    help="Reference SNP (rs) link"), 'get_dbsnp_url')
+
     significance = fields.Selection([
         (None, ''),
         ('lbb', 'LB/B: Likely benign or benign'),
@@ -259,6 +264,12 @@ class GeneVariant(ModelSQL, ModelView):
 
     phenotypes = fields.One2Many('gnuhealth.gene.variant.phenotype', 'variant',
                                  'Phenotypes / Diseases')
+
+    def get_dbsnp_url(self, name):
+        url = ''
+        if (self.dbsnp):
+            url = f'https://www.ncbi.nlm.nih.gov/snp/{str(self.dbsnp)}'
+        return url
 
     @classmethod
     def __setup__(cls):
