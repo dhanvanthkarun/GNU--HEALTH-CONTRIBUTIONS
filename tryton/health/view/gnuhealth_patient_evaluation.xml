@@ -207,7 +207,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <field name="signed_by"/>
       <label name="discharge_reason"/>
       <field name="discharge_reason"/>
-      <button name="end_evaluation" help="Discharge patient / end this evaluation" string="Discharge" icon="tryton-go-next" confirm="Discharge patient / End this evaluation ?"/>
+      <button name="end_evaluation" 
+              string="Discharge" 
+              icon="tryton-go-next"
+              confirm="Discharge patient / End this evaluation ?"
+              help="Discharge patient / end this evaluation" />
     </group>
 
 </form>
