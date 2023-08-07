@@ -98,6 +98,7 @@ def register():
 
     Pool.register(
         health.OpenAppointmentReport,
+        wizard.wizard_update_patient_disease_info.UpdatePatientDiseaseInfo,
         wizard.wizard_appointment_evaluation.CreateAppointmentEvaluation,
         wizard.wizard_check_immunization_status.CheckImmunizationStatus,
         module='health', type_='wizard')

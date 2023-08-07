@@ -202,7 +202,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <field name="state"/>
     </group>
     <newline/>
-    <group colspan="4" col="6" id="group_eval_end_button">
+    <group colspan="4" col="8" id="group_eval_end_button">
       <label name="signed_by"/>
       <field name="signed_by"/>
       <label name="discharge_reason"/>
@@ -212,6 +212,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
               icon="tryton-go-next"
               confirm="Discharge patient / End this evaluation ?"
               help="Discharge patient / end this evaluation" />
+      <button name="update_patient_disease_info" 
+              string="Update Patient Disease Info" 
+              icon="tryton-go-next"/>
     </group>
 
 </form>

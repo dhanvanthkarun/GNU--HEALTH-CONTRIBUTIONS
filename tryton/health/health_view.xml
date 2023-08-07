@@ -192,6 +192,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.patient.evaluation')]"/>
         </record>
 
+        <!-- Update Patient Disease Info -->
+        <record model="ir.model.button" id="patient_evaluation_update_patient_disease_info">
+            <field name="name">update_patient_disease_info</field>
+            <field name="string">Update Patient Disease Info</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.evaluation')]"/>
+        </record>
 
         <!-- Hospital Bed -->
         <record model="ir.model.button" id="hospital_bed_fix">

@@ -5155,6 +5155,13 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
                                                Equal(Eval('state'), 'done'))}
             })
 
+        cls._buttons.update({
+            # XXX: Do we need to show button when state=done?
+            'update_patient_disease_info': {
+                'invisible': Not(And(Equal(Eval('visit_type'), 'new'),
+                                     Equal(Eval('state'), 'signed')))}
+            })
+
     @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
@@ -5281,6 +5288,11 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
         pol.append(vals)
         Pol.create(pol)
+
+    @classmethod
+    @ModelView.button_action('health.update_patient_disease_info')
+    def update_patient_disease_info(cls, evaluations):
+        pass
 
     # Search by the health condition code or the description
     @classmethod
