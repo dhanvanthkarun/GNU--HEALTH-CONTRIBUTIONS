@@ -4590,7 +4590,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'gnuhealth.patient.disease', 'Related condition',
         domain=[('name', '=', Eval('patient'))], depends=['patient'],
         help="Related condition related to this follow-up evaluation",
-        states={'invisible': (Eval('visit_type') != 'followup')})
+        states={'readonly': (Eval('visit_type') != 'followup')})
 
     evaluation_start = fields.DateTime('Start', required=True, states=STATES)
     evaluation_endtime = fields.DateTime('End', states=STATES)
