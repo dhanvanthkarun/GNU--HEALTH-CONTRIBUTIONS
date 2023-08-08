@@ -102,7 +102,8 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         du_addr = ''
         # Street
         if (self.address_street):
-            du_addr = f"{self.address_street} {self.address_street_number}, \n" \
+            du_addr = \
+                f"{self.address_street} {self.address_street_number}, \n" \
                 f"{self.address_street_bis}, "
 
         if (self.address_district):
@@ -677,8 +678,8 @@ class Party(metaclass=PoolMeta):
             if not values.get('federation_account') and \
                     values.get('is_person'):
                 federation_account = tmp_act
-                values['federation_account'] = (values['fed_country'] or "XXX") + \
-                    federation_account
+                values['federation_account'] = \
+                    (values['fed_country'] or "XXX") + federation_account
 
             # Set the value to None to make the fields that have a
             # unique constraint get the NULL value at PostgreSQL level, and not
@@ -3121,7 +3122,7 @@ class PatientData(ModelSQL, ModelView):
         gender = self.name.gender
         sex = self.biological_sex
         if sex:
-            if (gender != sex and (gender in ['f','m'])):
+            if (gender != sex and (gender in ['f', 'm'])):
                 res = sex + '-' + gender
             else:
                 res = gender
@@ -4416,7 +4417,7 @@ class PrescriptionLine(ModelSQL, ModelView):
 
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
-    ## Used by prescription_orders report template.
+    # Used by prescription_orders report template.
     def get_report_specific_usage_str(self):
         string = ''
         if self.frequency_unit == 'wr':
@@ -4424,7 +4425,7 @@ class PrescriptionLine(ModelSQL, ModelView):
         elif self.frequency_prn:
             string = gettext('health.msg_prescription_line_frequency_prn')
         elif self.frequency and self.frequency_unit:
-            string = gettext('health.msg_prescription_line_frequency_and_unit', 
+            string = gettext('health.msg_prescription_line_frequency_and_unit',
                              frequency=str(self.frequency),
                              frequency_unit=self.frequency_unit_str)
         else:
@@ -4450,7 +4451,7 @@ class PrescriptionLine(ModelSQL, ModelView):
 
     duration_period_str = duration_period.translated('duration_period')
 
-    ## Used by prescription_orders report template.
+    # Used by prescription_orders report template.
     def get_report_duration_str(self):
         string = ''
         if self.duration_period == 'indefinite':
