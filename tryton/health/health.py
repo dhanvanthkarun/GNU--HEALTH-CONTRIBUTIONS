@@ -5280,7 +5280,8 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
             'measurements': measures,
             'author': evaluation.healthprof.name.rec_name,
             'author_acct': evaluation.healthprof.name.federation_account,
-            'node': evaluation.institution.name.name,
+            'node': evaluation.institution and
+            evaluation.institution.name.name or ''
             }
         if (evaluation.diagnosis):
             vals['health_condition_text'] = evaluation.diagnosis.rec_name
