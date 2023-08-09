@@ -16,6 +16,9 @@ from trytond.transaction import Transaction
 from trytond.pool import Pool
 
 from trytond.modules.health.core import (parse_compute_age)
+from trytond.i18n import gettext
+
+from ..exceptions import (PatientDiseaseAlreadyExists)
 
 __all__ = ['UpdatePatientDiseaseInfo']
 
@@ -23,7 +26,9 @@ __all__ = ['UpdatePatientDiseaseInfo']
 class UpdatePatientDiseaseInfo(Wizard):
     __name__ = 'gnuhealth.update_patient_disease_info'
 
-    start = StateView(
+    start = StateTransition()
+
+    update_disease = StateView(
         'gnuhealth.patient.disease',
         'health.gnuhealth_patient_diseases_view_form_for_wizard', [
             Button('Cancel', 'end', 'tryton-cancel'),
@@ -31,7 +36,27 @@ class UpdatePatientDiseaseInfo(Wizard):
 
     save = StateTransition()
 
-    def default_start(self, fields):
+    def transition_start(self):
+        pool = Pool()
+        Disease = Pool().get('gnuhealth.patient.disease')
+        Evaluation = pool.get('gnuhealth.patient.evaluation')
+
+        evaluation = Evaluation.browse(
+            [Transaction().context.get('active_id')])[0]
+
+        existing_disease = Disease.search(
+            [('name', '=', evaluation.patient),
+             ('pathology', '=', evaluation.diagnosis)])
+
+        if existing_disease:
+            raise PatientDiseaseAlreadyExists(
+                gettext('health.msg_patient_disease_already_exists')
+            )
+            return 'end'
+        else:
+            return 'update_disease'
+
+    def default_update_disease(self, fields):
         pool = Pool()
         Evaluation = pool.get('gnuhealth.patient.evaluation')
 
@@ -51,5 +76,5 @@ class UpdatePatientDiseaseInfo(Wizard):
     def transition_save(self):
         pool = Pool()
         Disease = Pool().get('gnuhealth.patient.disease')
-        Disease.save([self.start])
+        Disease.save([self.update_disease])
         return 'end'
