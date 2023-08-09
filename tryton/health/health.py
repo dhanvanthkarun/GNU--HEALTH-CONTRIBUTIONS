@@ -5086,7 +5086,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
     @staticmethod
     def default_information_source():
-        return 'Self'
+        return gettext('health.msg_patient_evaluation_default_information_source')
 
     @staticmethod
     def default_reliable_info():
