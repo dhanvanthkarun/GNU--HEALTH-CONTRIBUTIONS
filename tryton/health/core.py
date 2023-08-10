@@ -22,6 +22,8 @@ from trytond.i18n import gettext
 
 from .exceptions import (NoAssociatedHealthProfessional)
 
+import os
+import json
 
 def convert_date_timezone(sdate, target):
     """
@@ -245,3 +247,16 @@ def get_health_professional(required=True):
             raise NoAssociatedHealthProfessional(gettext(
                 ('health.msg_no_associated_health_professional'))
             )
+
+# Matplotlib will be used by many report.py in the future, so we add a
+# setup function to here.
+def matplotlib_setup(matplotlab):
+    matplotlibrc = os.path.join(matplotlab.get_configdir(), 'matplotlibrc')
+    if os.path.exists(matplotlibrc):
+        print(f'Matplotlib: RC file: {matplotlibrc} is found, just use it.')
+    else:
+        rc_conf_json = gettext('health.msg_matplotlib_rc_config_json_str')
+        rc_conf = json.loads(rc_conf_json)
+        rc_conf.pop('@comment', None)
+        matplotlab.rcParams.update(rc_conf)
+        print(f'Matplotlib: Use rcParams: {rc_conf}.')
