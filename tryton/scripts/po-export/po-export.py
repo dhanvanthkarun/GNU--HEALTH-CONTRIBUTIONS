@@ -5,6 +5,15 @@ import argparse
 from proteus import config, Model, Wizard
 
 
+useless_translations = [
+    # Module            Field                          Source
+    ('health_caldav',  'calendar.event,vevent',       'vevent'),
+    ('health_caldav',  'calendar.event.alarm,valarm', 'valarm'),
+    ('health_%',       '%',                           'LibreOffice/%'),
+    ('health',         'patient.medication',
+     'iVBORw0KGgoAAAANSU%')]
+
+
 def main():
     options = parse_options()
     database = options.database
@@ -25,6 +34,8 @@ def main():
 
         if generate_pot:
             export_all_pot_files()
+
+        finish_export()
 
     else:
         print(options)
@@ -66,8 +77,6 @@ def export_all_languages(languages, run_cleanup_step):
         update_translations_from_en(language)
         delete_useless_translations(language)
         export_all_translations(language)
-    export_all_pot_files()
-    finish_export()
 
 
 def extract_en_translations():
@@ -110,13 +119,6 @@ def update_translations_from_en(language):
 
 def delete_useless_translations(language):
     for lang in ['en', language]:
-        useless_translations = [
-            # Module            Field                          Source
-            ('health_caldav',  'calendar.event,vevent',       'vevent'),
-            ('health_caldav',  'calendar.event.alarm,valarm', 'valarm'),
-            ('health_%',       '%',                           'LibreOffice/%'),
-            ('health',         'patient.medication',
-             'iVBORw0KGgoAAAANSU%')]
         Translation = Model.get('ir.translation')
         for module, field, source in useless_translations:
             translations = Translation.find([
@@ -126,7 +128,7 @@ def delete_useless_translations(language):
                 ('src', 'ilike', source)])
             for translation in translations:
                 print(f'Deleting {lang} translation of "{source}" in '
-                      '{translation.name}" ...')
+                      f'{translation.name}" ...')
                 translation.delete()
 
 
@@ -162,7 +164,7 @@ def export_translation(lang, module, po_file):
     data = translation_export.form.file
     if data is None:
         print(f"   WARN: Module {module} have no translation for languate"
-              "{lang}.\n")
+              f"{lang}.\n")
     else:
         os.makedirs(os.path.dirname(po_file), exist_ok=True)
         with open(po_file, 'wb') as binary_file:
@@ -171,6 +173,8 @@ def export_translation(lang, module, po_file):
 
 
 def export_all_pot_files():
+    extract_en_translations()
+    delete_useless_translations('en')
     print("Starting export pot files of gnuhealth modules ...")
     for module in get_all_health_module_names():
         pot_file = get_pot_file_path(module)

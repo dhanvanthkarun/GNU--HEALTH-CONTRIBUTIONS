@@ -81,4 +81,4 @@ echo "## Export po files ..."
 ## we always recreate db in po-export.sh, so we do not need to use
 ## --run-cleanup-step argument, for is very very slow when export all
 ## languages.
-python3 po-export.py --user admin --database ${TRYTON_DATABASE} --export-languages ${LANGUAGE}
+python3 po-export.py --user admin --database ${TRYTON_DATABASE} --export-pot --export-languages ${LANGUAGE} 
