@@ -55,7 +55,9 @@ def export_all_languages(languages, run_cleanup_step):
         update_translations_from_en(language)
         delete_useless_translations(language)
         export_all_translations(language)
-        finish_export_translations()
+    export_all_pot_files()
+    finish_export()
+
 
 def extract_en_translations():
     print("Extracting en translations from models, views, reports ...")
@@ -143,7 +145,20 @@ def export_translation(lang, module, po_file):
             binary_file.write(translation_export.form.file)
     translation_export.execute('end')
 
-def finish_export_translations():
+def export_all_pot_files():
+    print("Starting export pot files of gnuhealth modules ...")
+    for module in get_all_health_module_names():
+        pot_file = get_pot_file_path(module)
+        print("## Exporting pot file of '{0}' to '{1}'".format(module, pot_file))
+        export_translation('en', module, pot_file)
+    print("Finish to export pot files!")
+
+def get_pot_file_path(module_name):
+    script_dir = os.path.abspath(os.path.dirname(__file__))
+    path = script_dir + "/../../" + module_name + "/locale/" + module_name + ".pot"
+    return path
+
+def finish_export():
     print("Finish to export!")
 
 if __name__ == '__main__':
