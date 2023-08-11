@@ -6,12 +6,11 @@ from proteus import config, Model, Wizard
 
 
 useless_translations = [
-    # Module            Field                          Source
-    ('health_caldav',  'calendar.event,vevent',       'vevent'),
-    ('health_caldav',  'calendar.event.alarm,valarm', 'valarm'),
-    ('health_%',       '%',                           'LibreOffice/%'),
-    ('health',         'patient.medication',
-     'iVBORw0KGgoAAAANSU%')]
+    #'Module'         'Field'                             'Source'
+    ('health_caldav', 'calendar.event,vevent',            'vevent'),
+    ('health_caldav', 'calendar.event.alarm,valarm',      'valarm'),
+    ('health_%',      '%',                         'LibreOffice/%'),
+    ('health',        'patient.medication',  'iVBORw0KGgoAAAANSU%')]
 
 
 def main():
