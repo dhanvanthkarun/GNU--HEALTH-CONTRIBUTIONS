@@ -215,11 +215,10 @@ class ProteinDisease(ModelSQL, ModelView):
     @classmethod
     def __register__(cls, module):
         # Migration from 4.2:
-        # rename dominance field to inheritance_patter
+        # rename dominance field to inheritance_pattern
         table_h = cls.__table_handler__(module)
         table_h.column_rename('dominance', 'inheritance_pattern')
         super().__register__(module)
-
 
     def get_rec_name(self, name):
         return self.name + ':' + self.disease_name
