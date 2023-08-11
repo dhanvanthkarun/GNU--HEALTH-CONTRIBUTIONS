@@ -212,6 +212,15 @@ class ProteinDisease(ModelSQL, ModelView):
                 'The Disease Code  name must be unique'),
             ]
 
+    @classmethod
+    def __register__(cls, module):
+        # Migration from 4.2:
+        # rename dominance field to inheritance_patter
+        table_h = cls.__table_handler__(module)
+        table_h.column_rename('dominance', 'inheritance_pattern')
+        super().__register__(module)
+
+
     def get_rec_name(self, name):
         return self.name + ':' + self.disease_name
 
@@ -225,13 +234,6 @@ class ProteinDisease(ModelSQL, ModelView):
                 ('name',) + tuple(clause[1:]),
                 ('disease_name',) + tuple(clause[1:]),
                 ]
-
-    @classmethod
-    def __register__(cls, module):
-        # Migration from 4.2:
-        # rename dominance field to inheritance_patter
-        table_h = cls.__table_handler__(module)
-        table_h.column_rename('dominance', 'inheritance_pattern')
 
 
 class GeneVariant(ModelSQL, ModelView):
