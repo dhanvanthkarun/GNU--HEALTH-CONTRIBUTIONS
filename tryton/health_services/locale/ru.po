@@ -105,10 +105,18 @@ msgctxt "field:gnuhealth.patient.evaluation,service:"
 msgid "Service"
 msgstr "Услуги"
 
+msgctxt "field:gnuhealth.patient.evaluation,service_updated:"
+msgid "Service updated"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.prescription.order,service:"
 msgid "Service"
 msgstr "Услуги"
+
+msgctxt "field:gnuhealth.prescription.order,service_updated:"
+msgid "Service updated"
+msgstr ""
 
 msgctxt "field:gnuhealth.sequences,health_service_sequence:"
 msgid "Health service sequence"
@@ -229,6 +237,12 @@ msgstr ""
 
 msgctxt "model:ir.message,text:msg_service_already_invoiced"
 msgid "This service has been invoiced. You can no longer modify service lines"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_service_has_been_updated"
+msgid ""
+"\"Service updated\" is \"yes\" indicates that the service has been updated, "
+"please verify it again."
 msgstr ""
 
 msgctxt "model:ir.model.button,string:service_draft_button"
@@ -356,6 +370,32 @@ msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
 msgstr ""
 
+msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
+msgid "No"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
+msgid "Unknown"
+msgstr "Неизвестно"
+
+msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
+msgid "Yes"
+msgstr ""
+
+msgctxt "selection:gnuhealth.prescription.order,service_updated:"
+msgid "No"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.prescription.order,service_updated:"
+msgid "Unknown"
+msgstr "Неизвестно"
+
+msgctxt "selection:gnuhealth.prescription.order,service_updated:"
+msgid "Yes"
+msgstr ""
+
 msgctxt "view:account.invoice:"
 msgid "Health"
 msgstr ""
@@ -369,7 +409,7 @@ msgid "Services"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Transfer                     this evaluation to services?"
+msgid "Transfer this evaluation to services?"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"

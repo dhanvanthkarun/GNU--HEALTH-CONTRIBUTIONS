@@ -170,6 +170,50 @@ msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
 msgstr ""
 
+msgctxt "field:gnuhealth.protein.disease,acronym:"
+msgid "Mnemonic"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,active:"
+msgid "Active"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,description:"
+msgid "Description"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,disease_name:"
+msgid "Disease name"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,disease_uri:"
+msgid "Disease URI"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,gene_variant:"
+msgid "Natural Variant"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "Inheritance Pattern"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,keywords:"
+msgid "Keywords"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,mim_reference:"
+msgid "MIM"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,name:"
+msgid "Disease"
+msgstr ""
+
+msgctxt "field:gnuhealth.protein.disease,xrefs:"
+msgid "Xrefs"
+msgstr ""
+
 msgctxt "help:gnuhealth.gene,aliases:"
 msgid "Symbol aliases"
 msgstr ""
@@ -259,6 +303,36 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.genetic.risk,onset:"
 msgid "Age in years"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,acronym:"
+msgid "Disease acronym / mnemonics"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,active:"
+msgid ""
+"Whether this code is current.If you deactivate it, the code will no longer "
+"show in the protein-related diseases"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,gene_variant:"
+msgid "Natural variants involved in this condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "Inheritance pattern"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,mim_reference:"
+msgid "MIM -Mendelian Inheritance in Man- DB reference"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,name:"
+msgid "Uniprot Disease Code"
+msgstr ""
+
+msgctxt "help:gnuhealth.protein.disease,xrefs:"
+msgid "Cross references"
 msgstr ""
 
 msgctxt "model:gnuhealth.gene,long_name:A1BG"
@@ -175481,6 +175555,10 @@ msgctxt "model:gnuhealth.patient.genetic.risk,name:"
 msgid "Patient Genetic Information"
 msgstr ""
 
+msgctxt "model:gnuhealth.protein.disease,name:"
+msgid "Protein related disorders"
+msgstr ""
+
 msgctxt "model:ir.action,name:gnuhealth_action_gene"
 msgid "Genes"
 msgstr ""
@@ -175691,6 +175769,30 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
 msgid "Sibling"
+msgstr ""
+
+msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "Autosomic dominant"
+msgstr ""
+
+msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "Autosomic recessive"
+msgstr ""
+
+msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "Mitochondrial"
+msgstr ""
+
+msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "X-Linked"
+msgstr ""
+
+msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "Y-Linked"
+msgstr ""
+
+msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
+msgid "codominance"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient:"

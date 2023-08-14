@@ -8187,6 +8187,10 @@ msgctxt "model:ir.action,name:report_prescription_order"
 msgid "Prescription"
 msgstr "الوصفات العلاجيه"
 
+msgctxt "model:ir.action,name:update_patient_disease_info"
+msgid "Update patient disease"
+msgstr ""
+
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_all"
 msgid "All"
@@ -8265,6 +8269,12 @@ msgid ""
 "\"%(diagnosed_date)s\"!"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
+msgid ""
+"{\"font.family\": [\"sans-serif\"], \"@comment\": \"Matplotlib rc config "
+"used when no matplotlibrc file is found.\"}"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_med_end_date_before_start"
 msgid ""
 "SM-CORE-0004: The Medication END DATE \"%(end_treatment)s\" is BEFORE the "
@@ -8289,6 +8299,15 @@ msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid ""
 "SM-CORE-0007: Currently logged in user is not associated to a health "
 "professional. See \"Internal User\" field of \"Parties/People\" form."
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_patient_disease_already_exists"
+msgid "SM-CORE-0015: This disease already exists, do not create it again."
+msgstr ""
+
+msgctxt ""
+"model:ir.message,text:msg_patient_evaluation_default_information_source"
+msgid "Self"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_prescription_line_frequency_and_unit"
@@ -8329,6 +8348,11 @@ msgstr ""
 
 msgctxt "model:ir.model.button,string:patient_evaluation_end"
 msgid "End evaluation"
+msgstr ""
+
+msgctxt ""
+"model:ir.model.button,string:patient_evaluation_update_patient_disease_info"
+msgid "Update Patient Disease Info"
 msgstr ""
 
 msgctxt "model:ir.model.button,string:prescription_create"
@@ -11825,6 +11849,10 @@ msgid "Treatment Plan"
 msgstr "خطه العلاج"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Update Patient Disease Info"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Vital Signs"
 msgstr "المؤشرات الحيويه"
 
@@ -12074,3 +12102,14 @@ msgstr "وضع التعطيم"
 msgctxt "wizard_button:gnuhealth.check_immunization_status,start,end:"
 msgid "Cancel"
 msgstr "إلغاء"
+
+#, fuzzy
+msgctxt ""
+"wizard_button:gnuhealth.update_patient_disease_info,update_disease,end:"
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgctxt ""
+"wizard_button:gnuhealth.update_patient_disease_info,update_disease,save:"
+msgid "Save"
+msgstr ""
