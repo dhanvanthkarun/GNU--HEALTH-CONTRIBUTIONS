@@ -33,9 +33,6 @@ def main():
 
         if generate_pot:
             export_all_pot_files()
-
-        finish_export()
-
     else:
         print(options)
         print('No database is connected.')
@@ -186,10 +183,6 @@ def get_pot_file_path(module_name):
     script_dir = os.path.abspath(os.path.dirname(__file__))
     path = f'{script_dir}/../../{module_name}/locale/{module_name}.pot'
     return path
-
-
-def finish_export():
-    print("Finish to export!")
 
 
 if __name__ == '__main__':
