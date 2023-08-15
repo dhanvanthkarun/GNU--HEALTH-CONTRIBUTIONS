@@ -12,25 +12,54 @@
 #                     health_orthanc.py: main module                    #
 #########################################################################
 
-from trytond.model import ModelView, ModelSQL, fields, Unique
+from trytond.model import ModelView, ModelSQL, Workflow, fields, Unique
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 from beren import Orthanc as RestClient
 from requests.auth import HTTPBasicAuth as auth
 from datetime import datetime
 from urllib.parse import urljoin
+from genshi.template import TextTemplate
 import logging
 import pendulum
 
 __all__ = [
+    "OrthancWorklistTemplate",
     "OrthancServerConfig",
     "OrthancPatient",
     "OrthancStudy",
+    "ImagingTestRequest",
+    "ImagingTest",
     "Patient",
     "TestResult",
 ]
 
 logger = logging.getLogger(__name__)
+
+
+class OrthancWorklistTemplate(ModelSQL, ModelView):
+    """Orthanc Worklist Template"""
+    __name__ = "gnuhealth.orthanc.worklist.template"
+    _rec_name = "name"
+
+    name = fields.Char(
+        "Name", required=True,
+        help="Worklist template name")
+
+    template = fields.Text(
+        "Template", required=True, 
+        help="Template of Worklist, use python genshi syntax.")
+
+    @staticmethod
+    def default_template():
+        template = """\
+(0008,0050) SH [$AccessionNumber]
+(0010,0010) PN [$PatientName]
+(0010,0020) LO [$PatientID]
+(0010,0030) DA [$PatientBirthDate]
+(0010,0040) CS [$PatientSex]
+(0032,1032) PN [$RequestingPhysician]"""
+        return template
 
 
 class OrthancServerConfig(ModelSQL, ModelView):
@@ -479,6 +508,90 @@ class OrthancStudy(ModelSQL, ModelView):
             entry["server"] = server
             entry["patient"] = patient
         cls.create(entries)
+
+
+class ImagingTestRequest(Workflow, ModelSQL, ModelView):
+    'Medical Imaging Study Request'
+    __name__ = 'gnuhealth.imaging.test.request'
+
+    worklist_text = fields.Function(fields.Text("Worklist text"),
+                                    'get_worklist_text')
+
+    def get_worklist_text(self, name):
+        try:
+            text = self.get_worklist_text_internal()
+            return text
+        except:
+            return ''
+
+    def get_worklist_text_internal(self):
+        template = self.requested_test.worklist_template.template
+        if template:
+            data = {
+                'AccessionNumber':     self.getDicomAccessionNumber(),
+                'PatientName':         self.getDicomPatientName(),
+                'PatientID':           self.getDicomPatientID(),
+                'PatientBirthDate':    self.getDicomPatientBirthDate(),
+                'PatientSex':          self.getDicomPatientSex(),
+                'RequestingPhysician': self.getDicomRequestingPhysician()}
+            tmpl = TextTemplate(template)
+            text = str(tmpl.generate(**data))
+            return text
+        else:
+            return ''
+
+    def getDicomAccessionNumber(self):
+        return self.request or ''
+
+    def getDicomPatientName(self):
+        name = (self.format_dicom_person_name(self.patient.name.id)
+                or (self.patient and self.patient.rec_name ) or '') 
+        return name
+
+    def format_dicom_person_name(self, person_id):
+        Pname = Pool().get('gnuhealth.person_name')
+        officialname = Pname.search(
+            [("party", "=", person_id), ("use", "=", 'official')])[0]
+
+        if officialname:
+            family = officialname.family or ''
+            given = officialname.given or ''
+            # gnuhealth.person_name do not support middle name.
+            middle = ''
+            prefix = officialname.prefix or ''
+            suffix = officialname.suffix or ''
+            return "^".join([family, given, middle, prefix, suffix])
+    
+    def getDicomPatientID(self):
+        return self.patient and self.patient.puid or ''
+    
+    def getDicomPatientBirthDate(self):
+        dob = self.patient and self.patient.name.dob
+        if dob:
+            return str(dob).replace('-', '')
+    
+    def getDicomPatientSex(self):
+        sex = self.patient and self.patient.gender
+        if sex == 'f':
+            return 'F'
+        elif sex == 'm':
+            return 'M'
+        else:
+            return "O"
+
+    def getDicomRequestingPhysician(self):
+        name = (self.format_dicom_person_name(self.doctor.name.id)
+                or (self.doctor and self.doctor.rec_name) or '')
+        return name
+
+
+class ImagingTest(ModelSQL, ModelView):
+    'Medical Imaging Study'
+    __name__ = 'gnuhealth.imaging.test'
+
+    worklist_template = fields.Many2One(
+        "gnuhealth.orthanc.worklist.template", "Worklist template"
+    )
 
 
 class TestResult(ModelSQL, ModelView):
