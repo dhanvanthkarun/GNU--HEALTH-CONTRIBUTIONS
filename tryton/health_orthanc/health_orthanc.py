@@ -528,6 +528,9 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         template = self.requested_test.worklist_template.template
         if template:
             data = {
+                # We can not use 'self' as key name, so use 'context'
+                # instead.
+                'context':             self,
                 'AccessionNumber':     self.getDicomAccessionNumber(),
                 'PatientName':         self.getDicomPatientName(),
                 'PatientID':           self.getDicomPatientID(),
