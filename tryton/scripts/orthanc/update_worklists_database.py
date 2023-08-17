@@ -77,11 +77,10 @@ def connect_service(options):
 
     health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
     
-    print("Connecting to GNU Health Server ...")
+    print("# Connecting to GNU Health Server ...")
     conf = pconfig.set_xmlrpc(health_server)
     # Use XML RPC using session
     #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
-    print("Connected!")
 
 
 def update_worklists_database(worklists_db, regenerate):
@@ -91,10 +90,13 @@ def update_worklists_database(worklists_db, regenerate):
         [('state', '=', 'requested')])
 
     if test_requests:
-        print(f'Updating Worklists Database: "{worklists_db}" ...\n')
+        print(f'\n# Updating Worklists Database: "{worklists_db}" ...\n')
         for request in test_requests:
             worklist_text = request.worklist_text
+            request_num = request.request
+            patient = request.patient.rec_name
             if len(worklist_text) > 0:
+                print(f'  * "{request_num}" - "{patient}" ...')
                 create_worklist_file(worklist_text, worklists_db, regenerate)
 
     cleanup_worklists_database(worklists_db)
@@ -106,7 +108,6 @@ def create_worklist_file(worklist_text, worklists_db, regenerate):
     worklist_file = os.path.join(worklists_db, name + ".wl")
     
     if regenerate or (not os.path.exists(worklist_file)):
-        print(f'{worklist_text}\n')
         with open(dump_file, 'w') as f:
             f.write(worklist_text)
         
@@ -118,11 +119,12 @@ def create_worklist_file(worklist_text, worklists_db, regenerate):
 
 
 def cleanup_worklists_database(worklists_db):
+    print(f'\n# Removing useless files from "{worklists_db}" ...\n')
     for f in sorted(os.listdir(worklists_db)):
-        f = os.path.join(worklists_db, f)
-        if not (f in worklist_files):
-            print(f'Removing {f}')
-            os.remove(f)
+        path = os.path.join(worklists_db, f)
+        if not (path in worklist_files):
+            print(f'  * {f} ...')
+            os.remove(path)
 
 
 if __name__ == '__main__':
