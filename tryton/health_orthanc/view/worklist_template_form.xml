@@ -8,12 +8,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-  <label name="name"/>
+  <label name="name" xalign="0.0"/>
+  <newline/>
   <field name="name"/>
   <newline/>
-  <label name="template"/>
-  <field name="template"/>
+  <label name="template" xalign="0.0"/>
   <newline/>
-  <label name="comment"/>
-  <field name="comment"/>
+  <field name="template" colspan="4"/>
+  <newline/>
+  <label name="comment" xalign="0.0"/>
+  <newline/>
+  <field name="comment" colspan="4"/>
 </form>
