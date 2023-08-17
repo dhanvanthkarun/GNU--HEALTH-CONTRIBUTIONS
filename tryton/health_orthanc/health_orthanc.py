@@ -50,6 +50,8 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
         "Template", required=True, 
         help="Template of Worklist, use python genshi syntax.")
 
+    comment = fields.Text('Comment')
+
     @staticmethod
     def default_template():
         template = """\
