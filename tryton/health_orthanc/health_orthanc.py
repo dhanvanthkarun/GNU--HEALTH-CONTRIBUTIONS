@@ -13,6 +13,7 @@
 #########################################################################
 
 from trytond.model import ModelView, ModelSQL, Workflow, fields, Unique
+from trytond.pyson import Eval, Not, Bool, And, Or
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 from beren import Orthanc as RestClient
@@ -516,8 +517,16 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     'Medical Imaging Study Request'
     __name__ = 'gnuhealth.imaging.test.request'
 
-    worklist_text = fields.Function(fields.Text("Worklist text"),
-                                    'get_worklist_text')
+    show_worklist_text = fields.Boolean('Worklist')
+    
+    @staticmethod
+    def default_show_worklist_text():
+        return False
+
+    worklist_text = fields.Function(
+        fields.Text("Worklist text",
+                    states={'invisible': Not(Bool(Eval('show_worklist_text')))}),
+        'get_worklist_text')
 
     def get_worklist_text(self, name):
         template = self.requested_test.worklist_template.template
