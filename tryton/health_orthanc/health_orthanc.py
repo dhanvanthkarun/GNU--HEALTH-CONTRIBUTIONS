@@ -49,9 +49,9 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 
     template = fields.Text(
         "Template", required=True, 
-        help="Genshi syntax template used to create worklist text, \
-        with dump2dcm command of dcmtk help, worklist text file can \
-        be converted to a .wl file.")
+        help="Genshi syntax template used to create worklist text, "
+        "with dump2dcm command of dcmtk help, worklist text file can "
+        "be converted to a .wl file.")
 
     comment = fields.Text('Comment')
 
