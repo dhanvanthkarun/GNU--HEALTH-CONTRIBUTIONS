@@ -37,6 +37,7 @@ def main():
 
     if seconds:
         while True:
+            global worklist_files
             worklist_files = []
             update_worklists_database(worklists_db, regenerate)
             time.sleep(int(seconds))
