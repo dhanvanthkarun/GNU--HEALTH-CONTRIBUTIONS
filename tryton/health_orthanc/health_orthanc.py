@@ -520,13 +520,6 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                                     'get_worklist_text')
 
     def get_worklist_text(self, name):
-        try:
-            text = self.get_worklist_text_internal()
-            return text
-        except:
-            return ''
-
-    def get_worklist_text_internal(self):
         template = self.requested_test.worklist_template.template
         if template:
             data = {
