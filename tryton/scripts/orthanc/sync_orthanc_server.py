@@ -35,7 +35,7 @@ def main():
     if seconds:
         while True:
             orthanc_sync(label)
-            time.sleep(int(seconds))
+            time.sleep(seconds)
     else:
         orthanc_sync(label)
 
@@ -54,7 +54,7 @@ def parse_options():
                         help="Password of GNU Health.")
     parser.add_argument('-d', '--database', required=True,
                         help="Database name of GNU Health.")
-    parser.add_argument('-s', '--seconds',
+    parser.add_argument('-s', '--seconds', type = int,
                         help="Sync orthanc service every n seconds.")
 
     return parser.parse_args()

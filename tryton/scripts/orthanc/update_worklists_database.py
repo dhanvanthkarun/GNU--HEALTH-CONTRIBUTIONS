@@ -40,7 +40,7 @@ def main():
             global worklist_files
             worklist_files = []
             update_worklists_database(worklists_db, regenerate)
-            time.sleep(int(seconds))
+            time.sleep(seconds)
     else:
         update_worklists_database(worklists_db, regenerate)
 
@@ -63,7 +63,7 @@ def parse_options():
                         default='/var/lib/orthanc/worklists')
     parser.add_argument('-r', '--regenerate', action="store_true",
                         help="Regenerate worklists database.")
-    parser.add_argument('-s', '--seconds',
+    parser.add_argument('-s', '--seconds', type = int,
                         help="Update Worklists database every n seconds.")
 
     return parser.parse_args()
