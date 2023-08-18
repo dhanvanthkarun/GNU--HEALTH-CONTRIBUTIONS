@@ -21,6 +21,7 @@
 
 import sys
 import argparse
+import time
 
 from proteus import Model
 from proteus import config as pconfig
@@ -29,8 +30,14 @@ from proteus import config as pconfig
 def main():
     options = parse_options()
     label = options.label
+    seconds = options.seconds
     connect_service(options)
-    orthanc_sync(label)
+    if seconds:
+        while True:
+            orthanc_sync(label)
+            time.sleep(int(seconds))
+    else:
+        orthanc_sync(label)
 
 def parse_options():
     parser = argparse.ArgumentParser()
@@ -47,6 +54,8 @@ def parse_options():
                         help="Password of GNU Health.")
     parser.add_argument('-d', '--database', required=True,
                         help="Database name of GNU Health.")
+    parser.add_argument('-s', '--seconds',
+                        help="Sync orthanc service every n seconds.")
 
     return parser.parse_args()
 
