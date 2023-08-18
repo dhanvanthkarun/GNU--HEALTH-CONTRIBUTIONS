@@ -569,7 +569,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             middle = ''
             prefix = officialname.prefix or ''
             suffix = officialname.suffix or ''
-            return "^".join([family, given, middle, prefix, suffix])
+            name = "^".join([family, given, middle, prefix, suffix]).rstrip('^')
+            return name
     
     def getDicomPatientID(self):
         return self.patient and self.patient.puid or ''
