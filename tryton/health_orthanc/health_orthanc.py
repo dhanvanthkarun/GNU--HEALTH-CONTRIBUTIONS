@@ -58,7 +58,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     @staticmethod
     def default_template():
         template = """\
-(0008,0050) SH [$AccessionNumber]
+(0040,1001) SH [$RequestedProcedureID]
 (0010,0010) PN [$PatientName]
 (0010,0020) LO [$PatientID]
 (0010,0030) DA [$PatientBirthDate]
@@ -536,20 +536,20 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             data = {
                 # We can not use 'self' as key name, so use 'my'
                 # instead.
-                'my':                  self,
-                'AccessionNumber':     self.getDicomAccessionNumber(),
-                'PatientName':         self.getDicomPatientName(),
-                'PatientID':           self.getDicomPatientID(),
-                'PatientBirthDate':    self.getDicomPatientBirthDate(),
-                'PatientSex':          self.getDicomPatientSex(),
-                'RequestingPhysician': self.getDicomRequestingPhysician()}
+                'my':                    self,
+                'RequestedProcedureID':  self.getDicomRequestedProcedureID(),
+                'PatientName':           self.getDicomPatientName(),
+                'PatientID':             self.getDicomPatientID(),
+                'PatientBirthDate':      self.getDicomPatientBirthDate(),
+                'PatientSex':            self.getDicomPatientSex(),
+                'RequestingPhysician':   self.getDicomRequestingPhysician()}
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
             return text
         else:
             return ''
 
-    def getDicomAccessionNumber(self):
+    def getDicomRequestedProcedureID(self):
         return self.request or ''
 
     def getDicomPatientName(self):
