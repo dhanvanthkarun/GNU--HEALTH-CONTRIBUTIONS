@@ -16,11 +16,15 @@ from trytond.model import ModelView, ModelSQL, Workflow, fields, Unique
 from trytond.pyson import Eval, Not, Bool, And, Or
 from trytond.pool import Pool
 from trytond.transaction import Transaction
+from trytond.modules.health.core import get_institution
+
 from beren import Orthanc as RestClient
 from requests.auth import HTTPBasicAuth as auth
 from datetime import datetime
 from urllib.parse import urljoin
 from genshi.template import TextTemplate
+from pydicom.uid import generate_uid
+
 import logging
 import pendulum
 
@@ -58,12 +62,15 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     @staticmethod
     def default_template():
         template = """\
+(0020,000d) UI [$StudyInstanceUID]
 (0040,1001) SH [$RequestedProcedureID]
 (0010,0010) PN [$PatientName]
 (0010,0020) LO [$PatientID]
 (0010,0030) DA [$PatientBirthDate]
 (0010,0040) CS [$PatientSex]
-(0032,1032) PN [$RequestingPhysician]"""
+(0032,1032) PN [$RequestingPhysician]
+(0008,0080) LO [$InstitutionName]
+"""
         return template
 
 
@@ -451,9 +458,12 @@ class OrthancStudy(ModelSQL, ModelView):
                     "description": description,
                     "date": date,
                     "ident": study.get("MainDicomTags").get("StudyID"),
-                    "instance_uid": study.get("MainDicomTags").get("StudyInstanceUID"),
-                    "institution": study.get(
-                        "MainDicomTags").get("InstitutionName"),
+                    "instance_uid": study.get("MainDicomTags").get(
+                        "StudyInstanceUID"),
+                    "requested_procedure_id": study.get(
+                        "MainDicomTags").get("RequestedProcedureID"),
+                    "institution": study.get("MainDicomTags").get(
+                        "InstitutionName"),
                     "ref_phys": study.get("MainDicomTags").get(
                         "ReferringPhysicianName"
                     ),
@@ -475,12 +485,18 @@ class OrthancStudy(ModelSQL, ModelView):
                     [("uuid", "=", entry["uuid"]),
                         ("server", "=", server)], limit=1
                 )[0]
+
+                result = cls.search_test_result(entry)
+                
                 study.description = entry["description"]
                 study.date = entry["date"]
                 study.ident = entry["ident"]
+                study.instance_uid = entry["instance_uid"]
                 study.institution = entry["institution"]
                 study.ref_phys = entry["ref_phys"]
                 study.req_phys = entry["req_phys"]
+                if result:
+                    study.imaging_test = result.id
                 updates.append(study)
                 logger.info("Updating study {}".format(entry["uuid"]))
             except:
@@ -488,6 +504,14 @@ class OrthancStudy(ModelSQL, ModelView):
                 logger.warning(
                     "Unable to update study {}".format(entry["uuid"]))
         cls.save(updates)
+
+    @classmethod
+    def search_test_result(cls, entry):
+        Result = Pool.get('gnuhealth.imaging.test.result')
+        result = Result.search(
+            [("request.instance_uid", "=", entry["instance_uid"])],
+            limit=1)[0]
+        return result
 
     @classmethod
     def create_studies(cls, studies, server):
@@ -519,6 +543,15 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     'Medical Imaging Study Request'
     __name__ = 'gnuhealth.imaging.test.request'
 
+    instance_uid = fields.Char("InstanceUID")
+
+    @staticmethod
+    def default_instance_uid():
+        # XXX: Maybe we should find a better org root string for
+        # gnuhealth, or let org root string configable.
+        gnuhealth_org_root = '1.2.836.0.1.3240043.7.198.'
+        return generate_uid(gnuhealth_org_root)
+
     show_worklist_text = fields.Boolean('Worklist')
     
     @staticmethod
@@ -537,17 +570,23 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 # We can not use 'self' as key name, so use 'my'
                 # instead.
                 'my':                    self,
+                'StudyInstanceUID':      self.getDicomStudyInstanceUID(),
                 'RequestedProcedureID':  self.getDicomRequestedProcedureID(),
                 'PatientName':           self.getDicomPatientName(),
                 'PatientID':             self.getDicomPatientID(),
                 'PatientBirthDate':      self.getDicomPatientBirthDate(),
                 'PatientSex':            self.getDicomPatientSex(),
-                'RequestingPhysician':   self.getDicomRequestingPhysician()}
+                'RequestingPhysician':   self.getDicomRequestingPhysician(),
+                'InstitutionName':       self.getDicomInstitutionName(),
+            }
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
             return text
         else:
             return ''
+
+    def getDicomStudyInstanceUID(self):
+        return self.instance_uid or ''
 
     def getDicomRequestedProcedureID(self):
         return self.request or ''
@@ -593,6 +632,10 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         name = (self.format_dicom_person_name(self.doctor.name.id)
                 or (self.doctor and self.doctor.rec_name) or '')
         return name
+
+    def getDicomInstitutionName(self):
+        institution = get_institution()
+        return institution and institution.rec_name or ''
 
 
 class ImagingTest(ModelSQL, ModelView):
