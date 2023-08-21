@@ -86,9 +86,10 @@ def connect_service(options):
 
 def update_worklists_database(worklists_db, regenerate):
     TestRequest = Model.get('gnuhealth.imaging.test.request')
+    OrthancStudy = Model.get('gnuhealth.orthanc.study')
 
     test_requests = TestRequest.find(
-        [('state', '=', 'requested')])
+        [('state', '!=', 'draft')])
 
     if test_requests:
         print(f'\n# Updating Worklists Database: "{worklists_db}" ...\n')
@@ -96,7 +97,10 @@ def update_worklists_database(worklists_db, regenerate):
             worklist_text = request.worklist_text
             request_num = request.request
             patient = request.patient.rec_name
-            if len(worklist_text) > 0:
+            instance_uid = request.instance_uid
+            if len(instance_uid) > 0:
+                studies = OrthancStudy.find([('instance_uid', '=', instance_uid)])
+            if len(worklist_text) > 0 and (not studies):
                 print(f'  * "{request_num}" - "{patient}" ...')
                 create_worklist_file(worklist_text, worklists_db, regenerate)
 
