@@ -97,11 +97,12 @@ def update_worklists_database(worklists_db, regenerate):
             worklist_text = request.worklist_text
             request_num = request.request
             patient = request.patient.rec_name
+            requested_test = request.requested_test.rec_name
             instance_uid = request.instance_uid
             if len(instance_uid) > 0:
                 studies = OrthancStudy.find([('instance_uid', '=', instance_uid)])
             if len(worklist_text) > 0 and (not studies):
-                print(f'  * "{request_num}" - "{patient}" ...')
+                print(f'  * "{request_num}" - "{patient}" - "{requested_test}" ...')
                 create_worklist_file(worklist_text, worklists_db, regenerate)
 
     cleanup_worklists_database(worklists_db)
