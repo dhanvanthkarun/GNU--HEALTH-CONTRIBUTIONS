@@ -63,8 +63,9 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     def default_template():
         template = """\
 (0008,0005) SH [ISO_IR 192]
-(0020,000d) UI [$StudyInstanceUID]
+(0008,0050) SH [$AccessionNumber]
 (0040,1001) SH [$RequestedProcedureID]
+(0020,000d) UI [$StudyInstanceUID]
 (0010,0010) PN [$PatientName]
 (0010,0020) LO [$PatientID]
 (0010,0030) DA [$PatientBirthDate]
@@ -572,8 +573,9 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 # We can not use 'self' as key name, so use 'my'
                 # instead.
                 'my':                    self,
-                'StudyInstanceUID':      self.getDicomStudyInstanceUID(),
+                'AccessionNumber':       self.getDicomAccessionNumber(),
                 'RequestedProcedureID':  self.getDicomRequestedProcedureID(),
+                'StudyInstanceUID':      self.getDicomStudyInstanceUID(),
                 'PatientName':           self.getDicomPatientName(),
                 'PatientID':             self.getDicomPatientID(),
                 'PatientBirthDate':      self.getDicomPatientBirthDate(),
@@ -587,11 +589,17 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         else:
             return ''
 
-    def getDicomStudyInstanceUID(self):
-        return self.instance_uid or ''
+    def getDicomAccessionNumber(self):
+        return self.request or ''
 
     def getDicomRequestedProcedureID(self):
-        return self.request or ''
+        if self.request:
+            return f'{self.request}-{self.id}'
+        else:
+            return ''
+
+    def getDicomStudyInstanceUID(self):
+        return self.instance_uid or ''
 
     def getDicomPatientName(self):
         name = (self.format_dicom_person_name(self.patient.name.id)
@@ -665,7 +673,7 @@ class TestResult(ModelSQL, ModelView):
 
         for values in vlist:
             request = Request.search(
-                [("request", "=", values['order'])], limit=1)[0]
+                [("id", "=", values['request'])], limit=1)[0]
 
             studies = cls.find_orthanc_studies(request)
 
