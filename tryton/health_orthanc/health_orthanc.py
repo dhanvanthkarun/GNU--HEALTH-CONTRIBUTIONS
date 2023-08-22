@@ -486,7 +486,7 @@ class OrthancStudy(ModelSQL, ModelView):
                         ("server", "=", server)], limit=1
                 )[0]
 
-                result = cls.search_test_result(entry)
+                result = cls.find_test_result(entry)
                 
                 study.description = entry["description"]
                 study.date = entry["date"]
@@ -506,12 +506,13 @@ class OrthancStudy(ModelSQL, ModelView):
         cls.save(updates)
 
     @classmethod
-    def search_test_result(cls, entry):
-        Result = Pool.get('gnuhealth.imaging.test.result')
-        result = Result.search(
-            [("request.instance_uid", "=", entry["instance_uid"])],
-            limit=1)[0]
-        return result
+    def find_test_result(cls, entry):
+        if entry and len(entry["instance_uid"]) > 0:
+            Result = Pool.get('gnuhealth.imaging.test.result')
+            result = Result.search(
+                [("request.instance_uid", "=", entry["instance_uid"])],
+                limit=1)[0]
+            return result
 
     @classmethod
     def create_studies(cls, studies, server):
@@ -655,6 +656,30 @@ class TestResult(ModelSQL, ModelView):
     studies = fields.One2Many(
         "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies", readonly=True
     )
+
+    @classmethod
+    def create(cls, vlist):
+        Request = Pool().get('gnuhealth.imaging.test.request')
+        vlist = [x.copy() for x in vlist]
+
+        for values in vlist:
+            request = Request.search(
+                [("request", "=", values['order'])], limit=1)[0]
+
+            studies = cls.find_orthanc_studies(request)
+
+            if studies:
+                values['studies'] = [('add', [x.id for x in studies])]
+            
+        return super(TestResult, cls).create(vlist)
+
+    @classmethod
+    def find_orthanc_studies(cls, request):
+        if request and len(request.instance_uid) > 0:
+            Study = Pool().get('gnuhealth.orthanc.study')
+            studies = Study.search(
+                [("instance_uid", "=", request.instance_uid)])
+            return studies
 
 
 class Patient(ModelSQL, ModelView):
