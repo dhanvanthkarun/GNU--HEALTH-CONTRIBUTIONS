@@ -89,7 +89,7 @@ def update_worklists_database(worklists_db, regenerate):
     OrthancStudy = Model.get('gnuhealth.orthanc.study')
 
     test_requests = TestRequest.find(
-        [('state', '!=', 'draft')])
+        [('state', '=', 'requested')])
 
     if test_requests:
         print(f'\n# Updating Worklists Database: "{worklists_db}" ...\n')
