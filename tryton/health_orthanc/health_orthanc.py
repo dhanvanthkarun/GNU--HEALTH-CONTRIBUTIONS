@@ -62,6 +62,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     @staticmethod
     def default_template():
         template = """\
+(0008,0005) SH [ISO_IR 192]
 (0020,000d) UI [$StudyInstanceUID]
 (0040,1001) SH [$RequestedProcedureID]
 (0010,0010) PN [$PatientName]
