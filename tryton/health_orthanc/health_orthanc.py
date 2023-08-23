@@ -542,11 +542,11 @@ class OrthancStudy(ModelSQL, ModelView):
     @classmethod
     def find_test_result(cls, entry):
         if entry and len(entry["result_merge_id"]) > 0:
-            Result = Pool.get('gnuhealth.imaging.test.result')
+            Result = Pool().get('gnuhealth.imaging.test.result')
             result = Result.search(
-                [("request.instance_uid", "=", entry["result_merge_id"])],
-                limit=1)[0]
-            return result
+                [("request.instance_uid", "=", entry["result_merge_id"])], 
+                limit=1)
+            return (result and result[0])
 
     @classmethod
     def create_studies(cls, studies, server):
@@ -571,6 +571,10 @@ class OrthancStudy(ModelSQL, ModelView):
             entry.pop("parent_patient")  # remove non-model entry
             entry["server"] = server
             entry["patient"] = patient
+            result = cls.find_test_result(entry)
+            if result:
+                entry["imaging_test"] = result.id
+
         cls.create(entries)
 
 
