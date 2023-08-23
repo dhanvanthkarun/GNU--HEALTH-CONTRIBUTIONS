@@ -75,6 +75,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0010,0040) CS [$PatientSex]
 (0032,1032) PN [$RequestingPhysician]
 (0008,0080) LO [$InstitutionName]
+(0032,1060) LO [$RequestedProcedureDescription]
 """
         return template
 
@@ -610,6 +611,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 'PatientSex':            self.getDicomPatientSex(),
                 'RequestingPhysician':   self.getDicomRequestingPhysician(),
                 'InstitutionName':       self.getDicomInstitutionName(),
+                'RequestedProcedureDescription': self.getDicomRequestedProcedureDescription(),
             }
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
@@ -674,6 +676,10 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     def getDicomInstitutionName(self):
         institution = get_institution()
         return institution and institution.rec_name or ''
+
+    def getDicomRequestedProcedureDescription(self):
+        test = self.requested_test and self.requested_test.rec_name or ''
+        return test
 
 
 class ImagingTest(ModelSQL, ModelView):
