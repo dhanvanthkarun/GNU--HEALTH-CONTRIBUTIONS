@@ -100,7 +100,7 @@ def update_worklists_database(worklists_db, regenerate):
             requested_test = request.requested_test.rec_name
             instance_uid = request.instance_uid
             if len(instance_uid) > 0:
-                studies = OrthancStudy.find([('instance_uid', '=', instance_uid)])
+                studies = OrthancStudy.find([('result_merge_id', '=', instance_uid)])
             if len(worklist_text) > 0 and (not studies):
                 print(f'  * "{request_num}" - "{patient}" - "{requested_test}" ...')
                 create_worklist_file(worklist_text, worklists_db, regenerate)
