@@ -448,7 +448,7 @@ class OrthancStudy(ModelSQL, ModelView):
         return ": ".join((self.ident or self.uuid, self.description or ""))
 
     @classmethod
-    def get_info_from_dicom(cls, studies):
+    def get_info_from_dicom(cls, studies, server):
         """Extract information for writing to database"""
 
         data = []
@@ -485,32 +485,43 @@ class OrthancStudy(ModelSQL, ModelView):
                     "MainDicomTags").get("RequestingPhysician")
             }
 
-            entry['merge_id'] = cls.get_merge_id(entry)
+            entry['merge_id'] = cls.get_merge_id(entry, server)
 
             data.append(entry)
             
         return data
 
     @classmethod
-    def get_merge_id(cls, entry):
+    def get_merge_id(cls, entry, server):
         prefix = gnuhealth_org_root
         
-        # In most situations, we use the value of request instance_uid
-        # to merge result.
+        # In most situations, we use 'StudyInstanceUID' to store merge
+        # id.
         if (entry['instance_uid'] or '').startswith(prefix):
             return entry['instance_uid']
         
-        # XXX: Sometimes, maybe for bug's reason, merge id is stored
-        # to other tags instead of 'StudyInstanceUID', try to find it.
-        for k,v in entry.items():
+        # XXX: for imaging workstation's bugs, sometimes, we use other
+        # study tags instead of 'StudyInstanceUID' to store merge id.
+        for (k, v) in entry.items():
             if isinstance(v, str) and v.startswith(prefix):
                 return v
         
+        # XXX: for imaging workstation's bugs, sometimes, we use
+        # 'PatientID' tag to store merge id.
+        Patient = Pool().get("gnuhealth.orthanc.patient")
+        patient = Patient.search(
+            [("uuid", "=", entry["parent_patient"]), 
+             ("server", "=", server)],
+            limit=1)
+        if patient and patient.ident.startswith(prefix):
+            return patient.ident
+
+
     @classmethod
     def update_studies(cls, studies, server):
         """Update studies"""
 
-        entries = cls.get_info_from_dicom(studies)
+        entries = cls.get_info_from_dicom(studies, server)
         updates = []
         for entry in entries:
             try:
@@ -555,7 +566,7 @@ class OrthancStudy(ModelSQL, ModelView):
         pool = Pool()
         Patient = pool.get("gnuhealth.orthanc.patient")
 
-        entries = cls.get_info_from_dicom(studies)
+        entries = cls.get_info_from_dicom(studies, server)
         for entry in entries:
             try:
                 patient = Patient.search(
