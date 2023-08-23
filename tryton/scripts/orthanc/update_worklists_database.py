@@ -30,19 +30,21 @@ worklist_files = []
 
 def main():
     options = parse_options()
-    worklists_db = options.worklists_db
-    regenerate = options.regenerate
     seconds = options.seconds
-    connect_service(options)
 
     if seconds:
         while True:
             global worklist_files
             worklist_files = []
-            update_worklists_database(worklists_db, regenerate)
+            try:
+                connect_service(options)
+                update_worklists_database(options)
+            except:
+                None
             time.sleep(seconds)
     else:
-        update_worklists_database(worklists_db, regenerate)
+        connect_service(options)
+        update_worklists_database(options)
 
 
 def parse_options():
@@ -63,6 +65,8 @@ def parse_options():
                         default='/var/lib/orthanc/worklists')
     parser.add_argument('-r', '--regenerate', action="store_true",
                         help="Regenerate worklists database.")
+    parser.add_argument('-m', '--handle-done-state', action="store_true",
+                        help="Create worklists when request state is 'done', slowly.")
     parser.add_argument('-s', '--seconds', type = int,
                         help="Update Worklists database every n seconds.")
 
@@ -80,16 +84,22 @@ def connect_service(options):
     
     print("# Connecting to GNU Health Server ...")
     conf = pconfig.set_xmlrpc(health_server)
-    # Use XML RPC using session
-    #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
 
 
-def update_worklists_database(worklists_db, regenerate):
+def update_worklists_database(options):
+    worklists_db = options.worklists_db
+    regenerate = options.regenerate
+    handle_done_state = options.handle_done_state
+    
     TestRequest = Model.get('gnuhealth.imaging.test.request')
     OrthancStudy = Model.get('gnuhealth.orthanc.study')
 
-    test_requests = TestRequest.find(
-        [('state', '=', 'requested')])
+    if handle_done_state:
+        domain = [('state', '!=', 'draft')]
+    else:
+        domain = [('state', '=', 'requested')]
+
+    test_requests = TestRequest.find(domain)
 
     if test_requests:
         print(f'\n# Updating Worklists Database: "{worklists_db}" ...\n')
@@ -98,9 +108,9 @@ def update_worklists_database(worklists_db, regenerate):
             request_num = request.request
             patient = request.patient.rec_name
             requested_test = request.requested_test.rec_name
-            instance_uid = request.instance_uid
-            if len(instance_uid) > 0:
-                studies = OrthancStudy.find([('result_merge_id', '=', instance_uid)])
+            merge_id = request.merge_id
+            if len(merge_id) > 0:
+                studies = OrthancStudy.find([('merge_id', '=', merge_id)])
             if len(worklist_text) > 0 and (not studies):
                 print(f'  * "{request_num}" - "{patient}" - "{requested_test}" ...')
                 create_worklist_file(worklist_text, worklists_db, regenerate)
