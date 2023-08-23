@@ -31,12 +31,16 @@ def main():
     options = parse_options()
     label = options.label
     seconds = options.seconds
-    connect_service(options)
     if seconds:
         while True:
-            orthanc_sync(label)
+            try:
+                connect_service(options)
+                orthanc_sync(label)
+            except:
+                None    
             time.sleep(seconds)
     else:
+        connect_service(options)
         orthanc_sync(label)
 
 def parse_options():
