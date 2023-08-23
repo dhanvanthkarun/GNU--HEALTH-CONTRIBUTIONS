@@ -402,7 +402,7 @@ class OrthancStudy(ModelSQL, ModelView):
     requested_procedure_id = fields.Char(
         "RequestedProcedureID", readonly=True
     )
-    result_merge_id = fields.Char(
+    merge_id = fields.Char(
         "Merge ID", readonly=True,
         help="Test result merge id, with it help, "
         "gnuhealth test result and orthanc study can be merged."
@@ -485,14 +485,14 @@ class OrthancStudy(ModelSQL, ModelView):
                     "MainDicomTags").get("RequestingPhysician")
             }
 
-            entry['result_merge_id'] = cls.get_result_merge_id(entry)
+            entry['merge_id'] = cls.get_merge_id(entry)
 
             data.append(entry)
             
         return data
 
     @classmethod
-    def get_result_merge_id(cls, entry):
+    def get_merge_id(cls, entry):
         prefix = gnuhealth_org_root
         
         # In most situations, we use the value of request instance_uid
@@ -525,7 +525,7 @@ class OrthancStudy(ModelSQL, ModelView):
                 study.date = entry["date"]
                 study.ident = entry["ident"]
                 study.instance_uid = entry["instance_uid"]
-                study.result_merge_id = entry["result_merge_id"]
+                study.merge_id = entry["merge_id"]
                 study.institution = entry["institution"]
                 study.ref_phys = entry["ref_phys"]
                 study.req_phys = entry["req_phys"]
@@ -541,10 +541,10 @@ class OrthancStudy(ModelSQL, ModelView):
 
     @classmethod
     def find_test_result(cls, entry):
-        if entry and len(entry["result_merge_id"]) > 0:
+        if entry and len(entry["merge_id"]) > 0:
             Result = Pool().get('gnuhealth.imaging.test.result')
             result = Result.search(
-                [("request.instance_uid", "=", entry["result_merge_id"])], 
+                [("merge_id", "=", entry["merge_id"])], 
                 limit=1)
             return (result and result[0])
 
@@ -582,10 +582,12 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     'Medical Imaging Study Request'
     __name__ = 'gnuhealth.imaging.test.request'
 
-    instance_uid = fields.Char("InstanceUID")
+    merge_id = fields.Char("Merge ID")
 
     @staticmethod
-    def default_instance_uid():
+    def default_merge_id():
+        # Use DICOM UID format, for most situation, merge id is used
+        # as StudyInstanceUID.
         return generate_uid(gnuhealth_org_root)
 
     show_worklist_text = fields.Boolean('Worklist')
@@ -606,6 +608,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 # We can not use 'self' as key name, so use 'my'
                 # instead.
                 'my':                    self,
+                'MergeID':               self.merge_id or '',
                 'AccessionNumber':       self.getDicomAccessionNumber(),
                 'RequestedProcedureID':  self.getDicomRequestedProcedureID(),
                 'StudyInstanceUID':      self.getDicomStudyInstanceUID(),
@@ -633,7 +636,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             return ''
 
     def getDicomStudyInstanceUID(self):
-        return self.instance_uid or ''
+        return self.merge_id or ''
 
     def getDicomPatientName(self):
         name = (self.format_dicom_person_name(self.patient.name.id)
@@ -704,6 +707,8 @@ class TestResult(ModelSQL, ModelView):
         "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies", readonly=True
     )
 
+    merge_id = fields.Char("Merge ID")
+
     @classmethod
     def create(cls, vlist):
         Request = Pool().get('gnuhealth.imaging.test.request')
@@ -712,6 +717,9 @@ class TestResult(ModelSQL, ModelView):
         for values in vlist:
             request = Request.search(
                 [("id", "=", values['request'])], limit=1)[0]
+
+            if request:
+                values['merge_id'] = request.merge_id or ''
 
             studies = cls.find_orthanc_studies(request)
 
@@ -722,10 +730,10 @@ class TestResult(ModelSQL, ModelView):
 
     @classmethod
     def find_orthanc_studies(cls, request):
-        if request and len(request.instance_uid) > 0:
+        if request and len(request.merge_id) > 0:
             Study = Pool().get('gnuhealth.orthanc.study')
             studies = Study.search(
-                [("result_merge_id", "=", request.instance_uid)])
+                [("merge_id", "=", request.merge_id)])
             return studies
 
 
