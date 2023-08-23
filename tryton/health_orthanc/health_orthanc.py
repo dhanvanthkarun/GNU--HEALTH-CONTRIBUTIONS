@@ -41,6 +41,9 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
+# XXX: Maybe we should find a better org root string for
+# gnuhealth, or let org root string configable.
+gnuhealth_org_root = '1.2.836.0.1.3240043.7.198.'
 
 class OrthancWorklistTemplate(ModelSQL, ModelView):
     """Orthanc Worklist Template"""
@@ -395,6 +398,14 @@ class OrthancStudy(ModelSQL, ModelView):
     date = fields.Date("Date", readonly=True)
     ident = fields.Char("ID", readonly=True)
     instance_uid = fields.Char("InstanceUID", readonly=True)
+    requested_procedure_id = fields.Char(
+        "RequestedProcedureID", readonly=True
+    )
+    result_merge_id = fields.Char(
+        "Merge ID", readonly=True,
+        help="Test result merge id, with it help, "
+        "gnuhealth test result and orthanc study can be merged."
+    )
     institution = fields.Char(
         "Institution", readonly=True,
         help="Imaging center where study was undertaken"
@@ -435,8 +446,8 @@ class OrthancStudy(ModelSQL, ModelView):
     def get_rec_name(self, name):
         return ": ".join((self.ident or self.uuid, self.description or ""))
 
-    @staticmethod
-    def get_info_from_dicom(studies):
+    @classmethod
+    def get_info_from_dicom(cls, studies):
         """Extract information for writing to database"""
 
         data = []
@@ -453,28 +464,47 @@ class OrthancStudy(ModelSQL, ModelView):
                     study["MainDicomTags"]["RequestedProcedureDescription"]
             except:
                 description = None
-            data.append(
-                {
-                    "parent_patient": study["ParentPatient"],
-                    "uuid": study["ID"],
-                    "description": description,
-                    "date": date,
-                    "ident": study.get("MainDicomTags").get("StudyID"),
-                    "instance_uid": study.get("MainDicomTags").get(
-                        "StudyInstanceUID"),
-                    "requested_procedure_id": study.get(
-                        "MainDicomTags").get("RequestedProcedureID"),
-                    "institution": study.get("MainDicomTags").get(
-                        "InstitutionName"),
-                    "ref_phys": study.get("MainDicomTags").get(
-                        "ReferringPhysicianName"
-                    ),
-                    "req_phys": study.get(
-                        "MainDicomTags").get("RequestingPhysician"),
-                }
-            )
+
+            entry = {
+                "parent_patient": study["ParentPatient"],
+                "uuid": study["ID"],
+                "description": description,
+                "date": date,
+                "ident": study.get("MainDicomTags").get("StudyID"),
+                "instance_uid": study.get("MainDicomTags").get(
+                    "StudyInstanceUID"),
+                "requested_procedure_id": study.get("MainDicomTags").get(
+                    "RequestedProcedureID"),
+                "institution": study.get("MainDicomTags").get(
+                    "InstitutionName"),
+                "ref_phys": study.get("MainDicomTags").get(
+                    "ReferringPhysicianName"
+                ),
+                "req_phys": study.get(
+                    "MainDicomTags").get("RequestingPhysician")
+            }
+
+            entry['result_merge_id'] = cls.get_result_merge_id(entry)
+
+            data.append(entry)
+            
         return data
 
+    @classmethod
+    def get_result_merge_id(cls, entry):
+        prefix = gnuhealth_org_root
+        
+        # In most situations, we use the value of request instance_uid
+        # to merge result.
+        if (entry['instance_uid'] or '').startswith(prefix):
+            return entry['instance_uid']
+        
+        # XXX: Sometimes, maybe for bug's reason, merge id is stored
+        # to other tags instead of 'StudyInstanceUID', try to find it.
+        for k,v in entry.items():
+            if isinstance(v, str) and v.startswith(prefix):
+                return v
+        
     @classmethod
     def update_studies(cls, studies, server):
         """Update studies"""
@@ -494,6 +524,7 @@ class OrthancStudy(ModelSQL, ModelView):
                 study.date = entry["date"]
                 study.ident = entry["ident"]
                 study.instance_uid = entry["instance_uid"]
+                study.result_merge_id = entry["result_merge_id"]
                 study.institution = entry["institution"]
                 study.ref_phys = entry["ref_phys"]
                 study.req_phys = entry["req_phys"]
@@ -509,10 +540,10 @@ class OrthancStudy(ModelSQL, ModelView):
 
     @classmethod
     def find_test_result(cls, entry):
-        if entry and len(entry["instance_uid"]) > 0:
+        if entry and len(entry["result_merge_id"]) > 0:
             Result = Pool.get('gnuhealth.imaging.test.result')
             result = Result.search(
-                [("request.instance_uid", "=", entry["instance_uid"])],
+                [("request.instance_uid", "=", entry["result_merge_id"])],
                 limit=1)[0]
             return result
 
@@ -550,9 +581,6 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
 
     @staticmethod
     def default_instance_uid():
-        # XXX: Maybe we should find a better org root string for
-        # gnuhealth, or let org root string configable.
-        gnuhealth_org_root = '1.2.836.0.1.3240043.7.198.'
         return generate_uid(gnuhealth_org_root)
 
     show_worklist_text = fields.Boolean('Worklist')
@@ -687,7 +715,7 @@ class TestResult(ModelSQL, ModelView):
         if request and len(request.instance_uid) > 0:
             Study = Pool().get('gnuhealth.orthanc.study')
             studies = Study.search(
-                [("instance_uid", "=", request.instance_uid)])
+                [("result_merge_id", "=", request.instance_uid)])
             return studies
 
 
