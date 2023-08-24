@@ -514,7 +514,7 @@ class OrthancStudy(ModelSQL, ModelView):
             [("uuid", "=", entry["parent_patient"]), 
              ("server", "=", server)],
             limit=1)
-        if patient and patient.ident.startswith(prefix):
+        if patient and patient[0].ident.startswith(prefix):
             return patient.ident
 
 
@@ -553,7 +553,7 @@ class OrthancStudy(ModelSQL, ModelView):
 
     @classmethod
     def find_test_result(cls, entry):
-        if entry and len(entry["merge_id"]) > 0:
+        if entry and entry["merge_id"] and len(entry["merge_id"]) > 0:
             Result = Pool().get('gnuhealth.imaging.test.result')
             result = Result.search(
                 [("merge_id", "=", entry["merge_id"])], 
