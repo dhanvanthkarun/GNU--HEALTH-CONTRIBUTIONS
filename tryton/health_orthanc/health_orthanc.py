@@ -74,6 +74,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0010,0030) DA [$PatientBirthDate]
 (0010,0040) CS [$PatientSex]
 (0032,1032) PN [$RequestingPhysician]
+(0008,0090) PN [$ReferringPhysicianName]
 (0008,0080) LO [$InstitutionName]
 (0032,1060) LO [$RequestedProcedureDescription]
 """
@@ -618,17 +619,18 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             data = {
                 # We can not use 'self' as key name, so use 'my'
                 # instead.
-                'my':                    self,
-                'MergeID':               self.merge_id or '',
-                'AccessionNumber':       self.getDicomAccessionNumber(),
-                'RequestedProcedureID':  self.getDicomRequestedProcedureID(),
-                'StudyInstanceUID':      self.getDicomStudyInstanceUID(),
-                'PatientName':           self.getDicomPatientName(),
-                'PatientID':             self.getDicomPatientID(),
-                'PatientBirthDate':      self.getDicomPatientBirthDate(),
-                'PatientSex':            self.getDicomPatientSex(),
-                'RequestingPhysician':   self.getDicomRequestingPhysician(),
-                'InstitutionName':       self.getDicomInstitutionName(),
+                'my':                     self,
+                'MergeID':                self.merge_id or '',
+                'AccessionNumber':        self.getDicomAccessionNumber(),
+                'RequestedProcedureID':   self.getDicomRequestedProcedureID(),
+                'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
+                'PatientName':            self.getDicomPatientName(),
+                'PatientID':              self.getDicomPatientID(),
+                'PatientBirthDate':       self.getDicomPatientBirthDate(),
+                'PatientSex':             self.getDicomPatientSex(),
+                'RequestingPhysician':    self.getDicomRequestingPhysician(),
+                'ReferringPhysicianName': self.getDicomReferringPhysicianName(),
+                'InstitutionName':        self.getDicomInstitutionName(),
                 'RequestedProcedureDescription': self.getDicomRequestedProcedureDescription(),
             }
             tmpl = TextTemplate(template)
@@ -686,7 +688,15 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         else:
             return "O"
 
+    # XXX: Need help: what is RequestingPhysician in gnuhealth
+    # imaging?
     def getDicomRequestingPhysician(self):
+        name = (self.format_dicom_person_name(self.doctor.name.id)
+                or (self.doctor and self.doctor.rec_name) or '')
+        return name
+
+    # XXX: Need help: what is ReferringPhysician in gnuhealth imaging?
+    def getDicomReferringPhysicianName(self):
         name = (self.format_dicom_person_name(self.doctor.name.id)
                 or (self.doctor and self.doctor.rec_name) or '')
         return name
