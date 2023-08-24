@@ -614,7 +614,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         'get_worklist_text')
 
     def get_worklist_text(self, name):
-        template = self.requested_test.worklist_template.template
+        template = (self.requested_test.worklist_template and
+                    self.requested_test.worklist_template.template)
         if template:
             data = {
                 # We can not use 'self' as key name, so use 'my'
