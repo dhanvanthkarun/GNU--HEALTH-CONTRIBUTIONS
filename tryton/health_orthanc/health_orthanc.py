@@ -66,6 +66,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     def default_template():
         template = """\
 (0008,0005) SH [ISO_IR 192]
+(0008,0201) SH [+0000]
 (0008,0050) SH [$AccessionNumber]
 (0040,1001) SH [$RequestedProcedureID]
 (0020,000d) UI [$StudyInstanceUID]
@@ -77,6 +78,14 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0008,0090) PN [$ReferringPhysicianName]
 (0008,0080) LO [$InstitutionName]
 (0032,1060) LO [$RequestedProcedureDescription]
+(0040,0100) SQ (Sequence with undefined length #=1)
+  (fffe,e000) na (Item with undefined length #=12)
+    (0008,0060) CS []
+    (0040,0001) AE []
+    (0040,0002) DA [$ScheduledProcedureStepStartDate]
+    (0040,0003) TM [$ScheduledProcedureStepStartTime]
+  (fffe,e00d) na (ItemDelimitationItem)
+(fffe,e0dd) na (SequenceDelimitationItem)
 """
         return template
 
@@ -632,7 +641,9 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 'RequestingPhysician':    self.getDicomRequestingPhysician(),
                 'ReferringPhysicianName': self.getDicomReferringPhysicianName(),
                 'InstitutionName':        self.getDicomInstitutionName(),
-                'RequestedProcedureDescription': self.getDicomRequestedProcedureDescription(),
+                'RequestedProcedureDescription':   self.getDicomRequestedProcedureDescription(),
+                'ScheduledProcedureStepStartDate': self.getDicomScheduledProcedureStepStartDate(),
+                'ScheduledProcedureStepStartTime': self.getDicomScheduledProcedureStepStartTime(),
             }
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
@@ -678,7 +689,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     def getDicomPatientBirthDate(self):
         dob = self.patient and self.patient.name.dob
         if dob:
-            return str(dob).replace('-', '')
+            return dob.strftime('%Y%m%d')
     
     def getDicomPatientSex(self):
         sex = self.patient and self.patient.gender
@@ -709,6 +720,18 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     def getDicomRequestedProcedureDescription(self):
         test = self.requested_test and self.requested_test.rec_name or ''
         return test
+
+    def getDicomScheduledProcedureStepStartDate(self):
+        # This is UTC datetime, so we need set dicom tag (0008,0201)
+        # 'Timezone Offset From UTC' to '+0000'.
+        date = self.date.strftime('%Y%m%d')
+        return date
+
+    def getDicomScheduledProcedureStepStartTime(self):
+        # This is UTC datetime, so we need set dicom tag (0008,0201)
+        # 'Timezone Offset From UTC' to '+0000'.
+        time = self.date.strftime('%H%M%S')
+        return time
 
 
 class ImagingTest(ModelSQL, ModelView):
