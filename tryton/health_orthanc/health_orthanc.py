@@ -78,8 +78,8 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0008,0090) PN [$ReferringPhysicianName]
 (0008,0080) LO [$InstitutionName]
 (0032,1060) LO [$RequestedProcedureDescription]
-(0040,0100) SQ (Sequence with undefined length #=1)
-  (fffe,e000) na (Item with undefined length #=12)
+(0040,0100) SQ (Sequence with undefined length)
+  (fffe,e000) na (Item with undefined length)
     (0008,0060) CS []
     (0040,0001) AE []
     (0040,0002) DA [$ScheduledProcedureStepStartDate]
