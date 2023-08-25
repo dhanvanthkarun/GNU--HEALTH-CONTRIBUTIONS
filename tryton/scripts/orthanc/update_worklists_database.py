@@ -138,7 +138,10 @@ def cleanup_worklists_database(worklists_db):
     print(f'\n# Removing useless files from "{worklists_db}" ...\n')
     for f in sorted(os.listdir(worklists_db)):
         path = os.path.join(worklists_db, f)
-        if not (path in worklist_files):
+        root, ext = os.path.splitext(path)
+        # XXX: Do not remove other type files, for example: lockfile,
+        # which is useful when debug with wlmscpfs of dcmtk.
+        if (ext in ['.dump', '.wl']) and (not (path in worklist_files)):
             print(f'  * {f} ...')
             os.remove(path)
 
