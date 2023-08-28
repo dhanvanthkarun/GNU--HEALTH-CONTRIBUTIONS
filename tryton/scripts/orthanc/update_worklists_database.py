@@ -90,7 +90,14 @@ def update_worklists_database(options):
     worklists_db = options.worklists_db
     regenerate = options.regenerate
     handle_done_state = options.handle_done_state
-    
+
+    # Create lockfile, this file is useful when use wlmscpfs of dcmtk
+    # to debug.
+    lockfile = os.path.join(worklists_db, "lockfile")
+    if not os.path.exists(lockfile):
+        with open(lockfile, 'w') as f:
+            f.write('')
+
     TestRequest = Model.get('gnuhealth.imaging.test.request')
     OrthancStudy = Model.get('gnuhealth.orthanc.study')
 
