@@ -131,7 +131,7 @@ def create_worklist_file(worklist_text, worklists_db, regenerate):
     worklist_file = os.path.join(worklists_db, name + ".wl")
     
     if regenerate or (not os.path.exists(worklist_file)):
-        with open(dump_file, 'w') as f:
+        with open(dump_file, 'w', encoding='utf-8') as f:
             f.write(worklist_text)
         
         subprocess.check_call([
