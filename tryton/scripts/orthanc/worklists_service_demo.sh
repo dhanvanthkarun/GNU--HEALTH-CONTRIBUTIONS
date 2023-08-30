@@ -9,7 +9,7 @@ echo "--------------------------------------------------"
 echo "1. Directory: $DIR"
 echo "2. Port:      $PORT"
 echo "3. Aets:      "$DicomAets
-echo "4. Test cmd:  findscu -W 127.0.0.1 $PORT -k 0008,0005=\"*\" -k 0008,0050=\"*\" -aec <Aet>"
+echo "4. Test cmd:  findscu -W 127.0.0.1 $PORT -k 0008,0005=\"*\" -k 0010,0010=\"*\" -aec <Aet>"
 echo "--------------------------------------------------"
 echo ""
 
