@@ -115,23 +115,26 @@ def update_worklists_database(options):
             request_num = request.request
             patient = request.patient.rec_name
             requested_test = request.requested_test.rec_name
+            worklist_template = request.requested_test.worklist_template
+            encoding = worklist_template.dump_file_encoding
+
             merge_id = request.merge_id
             if len(merge_id) > 0:
                 studies = OrthancStudy.find([('merge_id', '=', merge_id)])
             if len(worklist_text) > 0 and (not studies):
                 print(f'  * "{request_num}" - "{patient}" - "{requested_test}" ...')
-                create_worklist_file(worklist_text, worklists_db, regenerate)
+                create_worklist_file(worklist_text, worklists_db, regenerate, encoding)
 
     cleanup_worklists_database(worklists_db)
 
 
-def create_worklist_file(worklist_text, worklists_db, regenerate):
-    name = hashlib.md5(worklist_text.encode()).hexdigest()
+def create_worklist_file(worklist_text, worklists_db, regenerate, encoding):
+    name = hashlib.md5((worklist_text+encoding).encode()).hexdigest()
     dump_file = os.path.join(worklists_db, name + ".dump")
     worklist_file = os.path.join(worklists_db, name + ".wl")
     
     if regenerate or (not os.path.exists(worklist_file)):
-        with open(dump_file, 'w', encoding='utf-8') as f:
+        with open(dump_file, 'w', encoding=encoding) as f:
             f.write(worklist_text)
         
         subprocess.check_call([
