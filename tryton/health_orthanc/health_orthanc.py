@@ -16,7 +16,9 @@ from trytond.model import ModelView, ModelSQL, Workflow, fields, Unique
 from trytond.pyson import Eval, Not, Bool, And, Or
 from trytond.pool import Pool
 from trytond.transaction import Transaction
-from trytond.modules.health.core import get_institution
+from trytond.modules.health.core import (get_institution, 
+                                         compute_age_from_dates,
+                                         parse_compute_age)
 
 from beren import Orthanc as RestClient
 from requests.auth import HTTPBasicAuth as auth
@@ -84,6 +86,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0020,000d) UI [$StudyInstanceUID]
 (0010,0010) PN [$PatientName]
 (0010,0020) LO [$PatientID]
+(0010,1010) AS [$PatientAge]
 (0010,0030) DA [$PatientBirthDate]
 (0010,0040) CS [$PatientSex]
 (0032,1032) PN [$RequestingPhysician]
@@ -615,6 +618,17 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     'Medical Imaging Study Request'
     __name__ = 'gnuhealth.imaging.test.request'
 
+    computed_age = fields.Function(fields.Char(
+        'Age',
+        help="Computed patient age at image request."),
+        'patient_age_at_imaging_request')
+
+    def patient_age_at_imaging_request(self, name):
+        if (self.patient.name.dob and self.date):
+            return compute_age_from_dates(
+                self.patient.name.dob, None, None, None, 'age',
+                self.date.date())
+
     merge_id = fields.Char("Merge ID")
 
     @staticmethod
@@ -648,6 +662,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
                 'PatientName':            self.getDicomPatientName(),
                 'PatientID':              self.getDicomPatientID(),
+                'PatientAge':             self.getDicomPatientAge(),
                 'PatientBirthDate':       self.getDicomPatientBirthDate(),
                 'PatientSex':             self.getDicomPatientSex(),
                 'RequestingPhysician':    self.getDicomRequestingPhysician(),
@@ -702,6 +717,25 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         dob = self.patient and self.patient.name.dob
         if dob:
             return dob.strftime('%Y%m%d')
+
+    def getDicomPatientAge(self):
+        age_str = self.computed_age
+        if age_str:
+            year, month, day = parse_compute_age(age_str)
+
+            # Handle y, m, d = None
+            year = year or '-1'
+            month = month or '-1'
+            day = day or '-1'
+
+            if year == 0 and month == 0 and day > 0:
+                return f'{day}D'
+            elif year == 0 and month > 0:
+                return f'{month}M'
+            elif year > 0:
+                return f'{year}Y'
+            else:
+                return ''
     
     def getDicomPatientSex(self):
         sex = self.patient and self.patient.gender
