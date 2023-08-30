@@ -729,11 +729,11 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             day = day or '-1'
 
             if year == 0 and month == 0 and day > 0:
-                return f'{day}D'
+                return f'{day:03}D'
             elif year == 0 and month > 0:
-                return f'{month}M'
+                return f'{month:03}M'
             elif year > 0:
-                return f'{year}Y'
+                return f'{year:03}Y'
             else:
                 return ''
     
