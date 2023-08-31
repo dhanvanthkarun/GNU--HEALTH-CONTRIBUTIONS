@@ -95,8 +95,8 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0032,1060) LO [$RequestedProcedureDescription]
 (0040,0100) SQ (Sequence with undefined length)
   (fffe,e000) na (Item with undefined length)
-    (0008,0060) CS []
-    (0040,0001) AE []
+    (0008,0060) CS [] # Modality
+    (0040,0001) AE [] # ScheduledStationAETitle
     (0040,0002) DA [$ScheduledProcedureStepStartDate]
     (0040,0003) TM [$ScheduledProcedureStepStartTime]
   (fffe,e00d) na (ItemDelimitationItem)
