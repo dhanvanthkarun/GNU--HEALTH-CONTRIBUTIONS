@@ -88,6 +88,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
 
     comment = fields.Text('Additional Information')
     request = fields.Char('Order', readonly=True)
+    request_line = fields.Char('Order line', readonly=True)
     urgent = fields.Boolean('Urgent')
 
     @classmethod
@@ -120,6 +121,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     def default_doctor():
         return get_health_professional()
 
+    @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
         config = Config(1)
@@ -131,9 +133,15 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     @classmethod
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
+        count = len(vlist)
+        num = 1
         for values in vlist:
             if not values.get('request'):
                 values['request'] = cls.generate_code()
+            if not values.get('request_line'):
+                values['request_line'] = f'{values["request"]}-{count:02}-{num:02}'
+            num = num + 1
+
         return super(ImagingTestRequest, cls).create(vlist)
 
     @classmethod
@@ -142,6 +150,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             default = {}
         default = default.copy()
         default['request'] = None
+        default['request_line'] = None
         default['date'] = cls.default_date()
         return super(ImagingTestRequest, cls).copy(tests, default=default)
 

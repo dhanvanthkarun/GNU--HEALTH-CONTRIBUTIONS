@@ -114,9 +114,12 @@ class RequestPatientImagingTest(Wizard):
         ImagingTestRequest = Pool().get('gnuhealth.imaging.test.request')
         request_number = self.generate_code()
         imaging_tests = []
+        count = len(self.start.tests)
+        num = 1
         for test in self.start.tests:
             imaging_test = {}
             imaging_test['request'] = request_number
+            imaging_test['request_line'] = f'{request_number}-{count:02}-{num:02}'
             imaging_test['requested_test'] = test.id
             imaging_test['patient'] = self.start.patient.id
             if self.start.doctor:
@@ -127,6 +130,7 @@ class RequestPatientImagingTest(Wizard):
             imaging_test['date'] = self.start.date
             imaging_test['urgent'] = self.start.urgent
             imaging_tests.append(imaging_test)
+            num = num + 1
         ImagingTestRequest.create(imaging_tests)
 
         return 'end'

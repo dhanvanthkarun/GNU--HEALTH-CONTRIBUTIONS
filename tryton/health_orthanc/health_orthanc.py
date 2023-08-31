@@ -682,10 +682,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         return self.request or ''
 
     def getDicomRequestedProcedureID(self):
-        if self.request:
-            return f'{self.request}-{self.id}'
-        else:
-            return ''
+        return self.request_line or ''
 
     def getDicomStudyInstanceUID(self):
         return self.merge_id or ''
