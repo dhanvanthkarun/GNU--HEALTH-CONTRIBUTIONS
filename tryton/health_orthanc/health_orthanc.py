@@ -90,6 +90,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0010,0030) DA [$PatientBirthDate]
 (0010,0040) CS [$PatientSex]
 (0032,1032) PN [$RequestingPhysician]
+(0032,1033) LO [$RequestingService]
 (0008,0090) PN [$ReferringPhysicianName]
 (0008,0080) LO [$InstitutionName]
 (0032,1060) LO [$RequestedProcedureDescription]
@@ -666,6 +667,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 'PatientBirthDate':       self.getDicomPatientBirthDate(),
                 'PatientSex':             self.getDicomPatientSex(),
                 'RequestingPhysician':    self.getDicomRequestingPhysician(),
+                'RequestingService':      self.getDicomRequestingService(),
                 'ReferringPhysicianName': self.getDicomReferringPhysicianName(),
                 'InstitutionName':        self.getDicomInstitutionName(),
                 'RequestedProcedureDescription':   self.getDicomRequestedProcedureDescription(),
@@ -748,6 +750,13 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     def getDicomRequestingPhysician(self):
         name = (self.format_dicom_person_name(self.doctor.name.id)
                 or (self.doctor and self.doctor.rec_name) or '')
+        return name
+
+    def getDicomRequestingService(self):
+        try:
+            name = self.doctor.main_specialty.rec_name
+        except:
+            name = ''
         return name
 
     # XXX: Need help: what is ReferringPhysician in gnuhealth imaging?
