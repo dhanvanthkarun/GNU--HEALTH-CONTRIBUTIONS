@@ -13,10 +13,10 @@
 #########################################################################
 
 from trytond.model import ModelView, ModelSQL, Workflow, fields, Unique
-from trytond.pyson import Eval, Not, Bool, And, Or
+from trytond.pyson import Eval, Not, Bool
 from trytond.pool import Pool
 from trytond.transaction import Transaction
-from trytond.modules.health.core import (get_institution, 
+from trytond.modules.health.core import (get_institution,
                                          compute_age_from_dates,
                                          parse_compute_age)
 
@@ -47,6 +47,7 @@ logger = logging.getLogger(__name__)
 # gnuhealth, or let org root string configable.
 gnuhealth_org_root = '1.2.836.0.1.3240043.7.198.'
 
+
 class OrthancWorklistTemplate(ModelSQL, ModelView):
     """Orthanc Worklist Template"""
     __name__ = "gnuhealth.orthanc.worklist.template"
@@ -57,7 +58,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
         help="Worklist template name")
 
     template = fields.Text(
-        "Template", required=True, 
+        "Template", required=True,
         help="Genshi syntax template used to create worklist text, "
         "with dump2dcm command of dcmtk help, worklist text file can "
         "be converted to a .wl file.")
@@ -73,7 +74,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     @staticmethod
     def default_dump_file_encoding():
         return 'utf-8'
-    
+
     comment = fields.Text('Comment')
 
     @staticmethod
@@ -157,7 +158,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
         return urljoin(pre, add)
 
     use_stone_viewer = fields.Boolean(
-        "Use Stone Viewer", 
+        "Use Stone Viewer",
         help="Use Stone Web Viewer")
 
     @staticmethod
@@ -165,7 +166,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
         return False
 
     use_osimis_viewer = fields.Boolean(
-        "Use Osimis Viewer", 
+        "Use Osimis Viewer",
         help="Use Osimis Web Viewer")
 
     @staticmethod
@@ -265,7 +266,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
                 f"Studies: New: {len(new_studies)} |"
                 f"Updated: {len(update_studies)}\n"
                  )
-            
+
         cls.save(servers)
 
     @staticmethod
@@ -451,7 +452,8 @@ class OrthancStudy(ModelSQL, ModelView):
     def get_link(self, name):
         pre = "".join([self.server.domain.rstrip("/"), "/"])
         if self.server.use_stone_viewer:
-            add = "stone-webviewer/index.html?study={}".format(self.instance_uid)
+            add = "stone-webviewer/index.html?study={}".format(
+                self.instance_uid)
         elif self.server.use_osimis_viewer:
             add = "osimis-viewer/app/index.html?study={}".format(self.uuid)
         else:
@@ -514,34 +516,33 @@ class OrthancStudy(ModelSQL, ModelView):
             entry['merge_id'] = cls.get_merge_id(entry, server)
 
             data.append(entry)
-            
+
         return data
 
     @classmethod
     def get_merge_id(cls, entry, server):
         prefix = gnuhealth_org_root
-        
+
         # In most situations, we use 'StudyInstanceUID' to store merge
         # id.
         if (entry['instance_uid'] or '').startswith(prefix):
             return entry['instance_uid']
-        
+
         # XXX: for imaging workstation's bugs, sometimes, we use other
         # study tags instead of 'StudyInstanceUID' to store merge id.
         for (k, v) in entry.items():
             if isinstance(v, str) and v.startswith(prefix):
                 return v
-        
+
         # XXX: for imaging workstation's bugs, sometimes, we use
         # 'PatientID' tag to store merge id.
         Patient = Pool().get("gnuhealth.orthanc.patient")
         patient = Patient.search(
-            [("uuid", "=", entry["parent_patient"]), 
+            [("uuid", "=", entry["parent_patient"]),
              ("server", "=", server)],
             limit=1)
         if patient and patient[0].ident.startswith(prefix):
             return patient.ident
-
 
     @classmethod
     def update_studies(cls, studies, server):
@@ -557,7 +558,7 @@ class OrthancStudy(ModelSQL, ModelView):
                 )[0]
 
                 result = cls.find_test_result(entry)
-                
+
                 study.description = entry["description"]
                 study.date = entry["date"]
                 study.ident = entry["ident"]
@@ -581,7 +582,7 @@ class OrthancStudy(ModelSQL, ModelView):
         if entry and entry["merge_id"] and len(entry["merge_id"]) > 0:
             Result = Pool().get('gnuhealth.imaging.test.result')
             result = Result.search(
-                [("merge_id", "=", entry["merge_id"])], 
+                [("merge_id", "=", entry["merge_id"])],
                 limit=1)
             return (result and result[0])
 
@@ -639,14 +640,15 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         return generate_uid(gnuhealth_org_root)
 
     show_worklist_text = fields.Boolean('Worklist')
-    
+
     @staticmethod
     def default_show_worklist_text():
         return False
 
     worklist_text = fields.Function(
         fields.Text("Worklist text",
-                    states={'invisible': Not(Bool(Eval('show_worklist_text')))}),
+                    states={'invisible': Not(
+                        Bool(Eval('show_worklist_text')))}),
         'get_worklist_text')
 
     def get_worklist_text(self, name):
@@ -668,11 +670,15 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 'PatientSex':             self.getDicomPatientSex(),
                 'RequestingPhysician':    self.getDicomRequestingPhysician(),
                 'RequestingService':      self.getDicomRequestingService(),
-                'ReferringPhysicianName': self.getDicomReferringPhysicianName(),
+                'ReferringPhysicianName':
+                    self.getDicomReferringPhysicianName(),
                 'InstitutionName':        self.getDicomInstitutionName(),
-                'RequestedProcedureDescription':   self.getDicomRequestedProcedureDescription(),
-                'ScheduledProcedureStepStartDate': self.getDicomScheduledProcedureStepStartDate(),
-                'ScheduledProcedureStepStartTime': self.getDicomScheduledProcedureStepStartTime(),
+                'RequestedProcedureDescription':
+                    self.getDicomRequestedProcedureDescription(),
+                'ScheduledProcedureStepStartDate':
+                    self.getDicomScheduledProcedureStepStartDate(),
+                'ScheduledProcedureStepStartTime':
+                    self.getDicomScheduledProcedureStepStartTime(),
             }
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
@@ -691,7 +697,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
 
     def getDicomPatientName(self):
         name = (self.format_dicom_person_name(self.patient.name.id)
-                or (self.patient and self.patient.rec_name ) or '') 
+                or (self.patient and self.patient.rec_name) or '')
         return name
 
     def format_dicom_person_name(self, person_id):
@@ -706,12 +712,13 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             middle = ''
             prefix = officialname.prefix or ''
             suffix = officialname.suffix or ''
-            name = "^".join([family, given, middle, prefix, suffix]).rstrip('^')
+            name = "^".join([
+                family, given, middle, prefix, suffix]).rstrip('^')
             return name
-    
+
     def getDicomPatientID(self):
         return self.patient and self.patient.puid or ''
-    
+
     def getDicomPatientBirthDate(self):
         dob = self.patient and self.patient.name.dob
         if dob:
@@ -735,7 +742,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
                 return f'{year:03}Y'
             else:
                 return ''
-    
+
     def getDicomPatientSex(self):
         sex = self.patient and self.patient.gender
         if sex == 'f':
@@ -801,7 +808,8 @@ class TestResult(ModelSQL, ModelView):
     __name__ = "gnuhealth.imaging.test.result"
 
     studies = fields.One2Many(
-        "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies", readonly=True
+        "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies",
+        readonly=True
     )
 
     merge_id = fields.Char("Merge ID")
@@ -822,7 +830,7 @@ class TestResult(ModelSQL, ModelView):
 
             if studies:
                 values['studies'] = [('add', [x.id for x in studies])]
-            
+
         return super(TestResult, cls).create(vlist)
 
     @classmethod
