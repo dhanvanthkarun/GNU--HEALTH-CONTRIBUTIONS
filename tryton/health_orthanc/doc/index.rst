@@ -15,7 +15,17 @@ Setup worklist template
 @@@@@@@@@@@@@@@@@@@@@@@@
 
 1. Open: Health > Configuration > Orthanc > Worklist template
-2. Create worklist templates.
+2. Set encoding field.
+
+   At the moment, it is used to generate dump2dcm dumpfile-in text
+   file by script/orthanc/update_worklists_database.py
+
+   this field should work well with (0008,0005) dicom tag of worklist
+   template, for example: if (0008,0005) = [ISO_IR 192], encoding
+   should be "utf-8", if (0008,0005) = [GBK], encoding should be
+   "gbk".
+
+3. Create worklist templates.
 
    In most situation, a type of modality should to create a template,
    template use python genshi syntax and used to generate dump2dcm
@@ -62,7 +72,7 @@ Setup worklist template
    be sent to worklist server from modality. user can try
    script/orthanc/worklists_service_demo.sh too.
 
-3. Set 'Worklist Template' fields of all 'Medical Imaging Studies'
+4. Set 'Worklist Template' fields of all 'Medical Imaging Studies'
    models, which can be found at: Health > Configuration > Medical
    Imaging > Medical Imaging Studies
 
