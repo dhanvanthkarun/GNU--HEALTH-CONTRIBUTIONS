@@ -66,6 +66,11 @@ Setup worklist template
    models, which can be found at: Health > Configuration > Medical
    Imaging > Medical Imaging Studies
 
+View worklist text of a imaging request
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+1. Open form: Medical Imaging > Medical Imaging Requests
+2. Click worklist field of a request
 
 Generate worklists wl files
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
