@@ -7,3 +7,90 @@ GNU Health Orthanc Package
 
 This package provides GNU Health integration to the
 Orthanc PACS server.
+
+Worklists
+#########
+
+Setup worklist template
+@@@@@@@@@@@@@@@@@@@@@@@@
+
+1. Open: Health > Configuration > Orthanc > Worklist template
+2. Create worklist templates.
+
+   In most situation, a type of modality should to create a template,
+   template use python genshi syntax and used to generate dump2dcm
+   dumpfile-in text file (dump2dcm is a command of dcmtk package).
+
+   At the moment, template support the following variables and most of
+   them use dicom tag nicknames.
+   
+   1. AccessionNumber
+   2. RequestedProcedureID
+   3. StudyInstanceUID
+   4. PatientName
+   5. PatientID
+   6. PatientAge
+   7. PatientBirthDate
+   8. PatientSex
+   9. RequestingPhysician
+   10. RequestingService
+   11. ReferringPhysicianName
+   12. InstitutionName
+   13. RequestedProcedureDescription
+   14. ScheduledProcedureStepStartDate
+   15. ScheduledProcedureStepStartTime
+
+   Two special variables are supported:
+
+   1. my: this variable refer to 'gnuhealth.imaging.test.request'
+      model.
+   2. MergeID: Merge Id is used to merge orthanc studies to health
+      imaging result, but in most situation, we use StudyInstanceUID
+      as merge id, so user no need to use this variable except
+      modality workstation has bug and can not handle StudyInstanceUid
+      properly.
+
+   User may need to edit the below two tags in template:
+
+   1. (0008,0060) CS [] # Modality
+   2. (0040,0001) AE [] # ScheduledStationAETitle
+
+   Note: Creating a template for a modality may need more work, user
+   should know which tags should be set up properly with the help of
+   Dicom Conformance Statement of this modality, user can use wlmscpfs
+   of dcmtk to create a test worklist server to know which tags will
+   be sent to worklist server from modality. user can try
+   script/orthanc/worklists_service_demo.sh too.
+
+3. Set 'Worklist Template' fields of all 'Medical Imaging Studies'
+   models, which can be found at: Health > Configuration > Medical
+   Imaging > Medical Imaging Studies
+
+
+Generate worklists wl files
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+1. Let orthanc enable worklists plugin, please read:
+   https://book.orthanc-server.com/plugins/worklists-plugin.html
+
+2. Install dcmtk package in orthanc machine.
+
+3. Run the below command in orthanc machine, it will get worklist text
+   from gnuhealth and generate a wl file (dicom file used by orthanc
+   worklist server) with the help of dump2dcm command in dcmtk
+   package, -w argument should set to the Database config of worklists
+   plugin.
+
+       script/orthanc/update_worklists_database.py -d <gnuhealth-db> -u <gnuhealth-user> -P <password> -w <orthanc-worklist-db-dir>
+
+   More arguments can be found by run:
+
+       script/orthanc/update_worklists_database.py -h
+
+
+Sync orthanc studies to gnuhealth imaging results.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Just run script/orthanc/sync_orthanc_server.py
+   
+
