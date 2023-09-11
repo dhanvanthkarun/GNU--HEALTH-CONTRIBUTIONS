@@ -1,5 +1,10 @@
 #!/bin/bash 
 
+if [[ $# -ne 2 ]]; then
+    echo "Usage: `basename $0` DIR PORT" >&2
+    exit 1
+fi
+
 DIR=$1
 PORT=$2
 DicomAets=`ls $DIR`
