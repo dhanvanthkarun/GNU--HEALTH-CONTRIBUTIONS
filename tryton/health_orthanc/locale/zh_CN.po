@@ -2,6 +2,30 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:gnuhealth.imaging.test,worklist_template:"
+msgid "Worklist template"
+msgstr "Worklist 模板"
+
+msgctxt "field:gnuhealth.imaging.test.request,computed_age:"
+msgid "Age"
+msgstr "年龄"
+
+msgctxt "field:gnuhealth.imaging.test.request,merge_id:"
+msgid "Merge ID"
+msgstr "合并ID"
+
+msgctxt "field:gnuhealth.imaging.test.request,show_worklist_text:"
+msgid "Worklist"
+msgstr "Worklist"
+
+msgctxt "field:gnuhealth.imaging.test.request,worklist_text:"
+msgid "Worklist text"
+msgstr "Worklist 文本"
+
+msgctxt "field:gnuhealth.imaging.test.result,merge_id:"
+msgid "Merge ID"
+msgstr "合并ID"
+
 msgctxt "field:gnuhealth.imaging.test.result,studies:"
 msgid "Orthanc studies"
 msgstr "Orthanc 检查"
@@ -142,6 +166,11 @@ msgctxt "field:gnuhealth.orthanc.study,link:"
 msgid "URL"
 msgstr "URL"
 
+#, fuzzy
+msgctxt "field:gnuhealth.orthanc.study,merge_id:"
+msgid "Merge ID"
+msgstr "合并ID"
+
 msgctxt "field:gnuhealth.orthanc.study,patient:"
 msgid "Patient"
 msgstr "患者"
@@ -154,6 +183,10 @@ msgctxt "field:gnuhealth.orthanc.study,req_phys:"
 msgid "Requesting Physician"
 msgstr "申请医师"
 
+msgctxt "field:gnuhealth.orthanc.study,requested_procedure_id:"
+msgid "RequestedProcedureID"
+msgstr ""
+
 msgctxt "field:gnuhealth.orthanc.study,server:"
 msgid "Server"
 msgstr "服务器"
@@ -162,9 +195,29 @@ msgctxt "field:gnuhealth.orthanc.study,uuid:"
 msgid "UUID"
 msgstr "检查 UUID"
 
+msgctxt "field:gnuhealth.orthanc.worklist.template,comment:"
+msgid "Comment"
+msgstr "说明"
+
+msgctxt "field:gnuhealth.orthanc.worklist.template,dump_file_encoding:"
+msgid "Encoding"
+msgstr "编码"
+
+msgctxt "field:gnuhealth.orthanc.worklist.template,name:"
+msgid "Name"
+msgstr "名称"
+
+msgctxt "field:gnuhealth.orthanc.worklist.template,template:"
+msgid "Template"
+msgstr "模版"
+
 msgctxt "field:gnuhealth.patient,orthanc_patients:"
 msgid "Orthanc patients"
 msgstr "Orthanc 患者"
+
+msgctxt "help:gnuhealth.imaging.test.request,computed_age:"
+msgid "Computed patient age at image request."
+msgstr "申请年龄"
 
 msgctxt "help:gnuhealth.orthanc.add.init,domain:"
 msgid "The full URL of the Orthanc server"
@@ -250,6 +303,30 @@ msgctxt "help:gnuhealth.orthanc.study,link:"
 msgid "Link to study in Orthanc Explorer"
 msgstr "链接到 Orthanc 浏览器对应的检查页面"
 
+msgctxt "help:gnuhealth.orthanc.study,merge_id:"
+msgid ""
+"Test result merge id, with it help, gnuhealth test result and orthanc study "
+"can be merged."
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.worklist.template,dump_file_encoding:"
+msgid ""
+"Encoding used to save worklist text to dump file by python script, it should"
+" work well with (0008,0005) dicom tag of worklist template, for example: if "
+"(0008,0005) = [ISO_IR 192], encoding should be \"utf-8\", if (0008,0005) = "
+"[GBK], encoding should be \"gbk\". "
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.worklist.template,name:"
+msgid "Worklist template name"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.worklist.template,template:"
+msgid ""
+"Genshi syntax template used to create worklist text, with dump2dcm command "
+"of dcmtk help, worklist text file can be converted to a .wl file."
+msgstr ""
+
 msgctxt "model:gnuhealth.orthanc.add.init,name:"
 msgid "Init Full Orthanc Sync"
 msgstr "Orthanc 全量同步初始化"
@@ -270,6 +347,10 @@ msgctxt "model:gnuhealth.orthanc.study,name:"
 msgid "Orthanc study"
 msgstr "Orthanc 检查"
 
+msgctxt "model:gnuhealth.orthanc.worklist.template,name:"
+msgid "Orthanc Worklist Template"
+msgstr "Orthanc Worklist 模板"
+
 msgctxt "model:ir.action,name:act_orthanc_patient_view"
 msgid "Patients"
 msgstr "患者"
@@ -281,6 +362,10 @@ msgstr "服务器列表"
 msgctxt "model:ir.action,name:act_orthanc_study_view"
 msgid "Studies"
 msgstr "检查"
+
+msgctxt "model:ir.action,name:act_orthanc_worklist_template_view"
+msgid "Worklist templates"
+msgstr "Worklist 模板"
 
 msgctxt "model:ir.action,name:act_relate_orthanc_studies"
 msgid "Orthanc Studies"
@@ -321,6 +406,10 @@ msgstr "检查"
 msgctxt "model:ir.ui.menu,name:orthanc_server_menu"
 msgid "Servers"
 msgstr "服务器列表"
+
+msgctxt "model:ir.ui.menu,name:orthanc_worklist_template_menu"
+msgid "Worklist templates"
+msgstr "Worklist 模板"
 
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Studies"

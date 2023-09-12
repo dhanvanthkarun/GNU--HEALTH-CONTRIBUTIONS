@@ -2,6 +2,31 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:gnuhealth.imaging.test,worklist_template:"
+msgid "Worklist template"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.imaging.test.request,computed_age:"
+msgid "Age"
+msgstr "Yaş"
+
+msgctxt "field:gnuhealth.imaging.test.request,merge_id:"
+msgid "Merge ID"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging.test.request,show_worklist_text:"
+msgid "Worklist"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging.test.request,worklist_text:"
+msgid "Worklist text"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging.test.result,merge_id:"
+msgid "Merge ID"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,studies:"
 msgid "Orthanc studies"
 msgstr ""
@@ -151,6 +176,10 @@ msgctxt "field:gnuhealth.orthanc.study,link:"
 msgid "URL"
 msgstr ""
 
+msgctxt "field:gnuhealth.orthanc.study,merge_id:"
+msgid "Merge ID"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.orthanc.study,patient:"
 msgid "Patient"
@@ -164,6 +193,10 @@ msgctxt "field:gnuhealth.orthanc.study,req_phys:"
 msgid "Requesting Physician"
 msgstr ""
 
+msgctxt "field:gnuhealth.orthanc.study,requested_procedure_id:"
+msgid "RequestedProcedureID"
+msgstr ""
+
 msgctxt "field:gnuhealth.orthanc.study,server:"
 msgid "Server"
 msgstr ""
@@ -172,8 +205,31 @@ msgctxt "field:gnuhealth.orthanc.study,uuid:"
 msgid "UUID"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.orthanc.worklist.template,comment:"
+msgid "Comment"
+msgstr "Yorum"
+
+msgctxt "field:gnuhealth.orthanc.worklist.template,dump_file_encoding:"
+msgid "Encoding"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.orthanc.worklist.template,name:"
+msgid "Name"
+msgstr "Ad"
+
+#, fuzzy
+msgctxt "field:gnuhealth.orthanc.worklist.template,template:"
+msgid "Template"
+msgstr "Templates"
+
 msgctxt "field:gnuhealth.patient,orthanc_patients:"
 msgid "Orthanc patients"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging.test.request,computed_age:"
+msgid "Computed patient age at image request."
 msgstr ""
 
 msgctxt "help:gnuhealth.orthanc.add.init,domain:"
@@ -261,6 +317,30 @@ msgctxt "help:gnuhealth.orthanc.study,link:"
 msgid "Link to study in Orthanc Explorer"
 msgstr ""
 
+msgctxt "help:gnuhealth.orthanc.study,merge_id:"
+msgid ""
+"Test result merge id, with it help, gnuhealth test result and orthanc study "
+"can be merged."
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.worklist.template,dump_file_encoding:"
+msgid ""
+"Encoding used to save worklist text to dump file by python script, it should"
+" work well with (0008,0005) dicom tag of worklist template, for example: if "
+"(0008,0005) = [ISO_IR 192], encoding should be \"utf-8\", if (0008,0005) = "
+"[GBK], encoding should be \"gbk\". "
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.worklist.template,name:"
+msgid "Worklist template name"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.worklist.template,template:"
+msgid ""
+"Genshi syntax template used to create worklist text, with dump2dcm command "
+"of dcmtk help, worklist text file can be converted to a .wl file."
+msgstr ""
+
 msgctxt "model:gnuhealth.orthanc.add.init,name:"
 msgid "Init Full Orthanc Sync"
 msgstr ""
@@ -281,6 +361,10 @@ msgctxt "model:gnuhealth.orthanc.study,name:"
 msgid "Orthanc study"
 msgstr ""
 
+msgctxt "model:gnuhealth.orthanc.worklist.template,name:"
+msgid "Orthanc Worklist Template"
+msgstr ""
+
 #, fuzzy
 msgctxt "model:ir.action,name:act_orthanc_patient_view"
 msgid "Patients"
@@ -292,6 +376,10 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_orthanc_study_view"
 msgid "Studies"
+msgstr ""
+
+msgctxt "model:ir.action,name:act_orthanc_worklist_template_view"
+msgid "Worklist templates"
 msgstr ""
 
 msgctxt "model:ir.action,name:act_relate_orthanc_studies"
@@ -330,6 +418,10 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:orthanc_server_menu"
 msgid "Servers"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:orthanc_worklist_template_menu"
+msgid "Worklist templates"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.result:"
