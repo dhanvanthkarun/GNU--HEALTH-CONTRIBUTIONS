@@ -76,7 +76,12 @@ class Gene(ModelSQL, ModelView):
                                help="Encoding Protein Code,"
                                " such as UniProt protein name",
                                select=True)
-    long_name = fields.Char('Official Name', translate=True)
+    # Do not translate the gene long name. Having the gene long name
+    # description in English is OK in the scientific community, and it
+    # will make the update process much faster, and don't overload the
+    # translation server at Weblate. more details:
+    # https://savannah.gnu.org/bugs/?64542
+    long_name = fields.Char('Official Name', translate=False)
     gene_id = fields.Char('Entrez Gene ID',
                           help="Gene ID from NCBI Entrez database.",
                           select=True)
