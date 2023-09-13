@@ -2,8 +2,11 @@
 source $HOME/.gnuhealthrc
 
 LANGUAGE=$@
-## ALL_LANGUAGES come from health/locale/<LANG>.po
-ALL_LANGUAGES="ar ca ckb de el eo es fi fr ht hu id it_IT ja_JP kab ka kn lo ml nb_NO pl pt_BR ru sq sr_Cyrl sv tr uk zh_CN zh_Hant"
+## All languages which translation progress > 0
+## https://hosted.weblate.org/projects/gnu-health/health/
+ALL_LANGUAGES="ar es kab id tr sr_Cyrl el de it_TI ja_JP ka fr pl ht sv lo fi pt_BR ml uk zh_CN"
+## Ignore all languages which translation progress = 0
+IGNORE_LANGUAGES="ca hu eo ru kn ckb sq zh_Hant nb_NO"
 TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
 TRYTOND_ADMIN_CMD="${TRYTON_SERVER_DIR}/trytond-${TRYTON_VERSION}/bin/trytond-admin --email admin -d ${TRYTON_DATABASE} --all"
