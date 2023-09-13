@@ -4,7 +4,7 @@ source $HOME/.gnuhealthrc
 LANGUAGE=$@
 ## All languages which translation progress > 0
 ## https://hosted.weblate.org/projects/gnu-health/health/
-ALL_LANGUAGES="ar es kab id tr sr_Cyrl el de it_TI ja_JP ka fr pl ht sv lo fi pt_BR ml uk zh_CN"
+ALL_LANGUAGES="ar es kab id tr sr_Cyrl el de it_IT ja_JP ka fr pl ht sv lo fi pt_BR ml uk zh_CN"
 ## Ignore all languages which translation progress = 0
 IGNORE_LANGUAGES="ca hu eo ru kn ckb sq zh_Hant nb_NO"
 TRYTON_DATABASE="po-export-db"
