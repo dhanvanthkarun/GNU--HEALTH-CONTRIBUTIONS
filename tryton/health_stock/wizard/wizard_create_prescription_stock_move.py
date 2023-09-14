@@ -68,6 +68,7 @@ class CreatePrescriptionStockMove(Wizard):
                 move.to_location = to_location
                 move.product = line.medicament.name
                 move.unit_price = line.medicament.name.list_price
+                move.cost_price = line.medicament.name.cost_price
                 move.quantity = line.quantity
                 move.uom = line.medicament.name.default_uom
                 moves.append(move)

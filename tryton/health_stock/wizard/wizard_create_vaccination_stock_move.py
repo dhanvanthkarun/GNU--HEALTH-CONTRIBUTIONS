@@ -60,6 +60,8 @@ class CreateVaccinationStockMove(Wizard):
                 vaccination.vaccine.name.id
             line_data['unit_price'] = \
                 vaccination.vaccine.name.list_price
+            line_data['cost_price'] = \
+                vaccination.vaccine.name.cost_price
             line_data['quantity'] = 1
             line_data['uom'] = \
                 vaccination.vaccine.name.default_uom.id
