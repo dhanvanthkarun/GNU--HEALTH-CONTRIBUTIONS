@@ -5,7 +5,9 @@ LANGUAGE=$@
 ## All languages which translation progress > 10%
 ## https://hosted.weblate.org/projects/gnu-health/health/
 ALL_LANGUAGES="ar es kab id tr sr_Cyrl el de it_IT ja_JP ka fr lo pt_BR zh_CN"
-## Ignore all languages which translation progress <= 10%
+## Ignore all languages which translation progress <= 10%, If somebody
+## are maintaining a language, he can ask to update ALL_LANGUAGE and
+## IGNORE_LANGUAGE when progress > 10%
 IGNORE_LANGUAGES="ca hu eo ru kn ckb sq zh_Hant nb_NO pl ht sv ml uk fi"
 TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
@@ -83,9 +85,10 @@ echo "## Running trytond-admin command to update DB (3. Active language) ..."
 ${TRYTOND_ADMIN_CMD} --language ${LANGUAGE}
 
 echo "## Export po files ..."
-## we always recreate db in po-export.sh, but we need to use
-## --run-cleanup-step argument, the problem is that it is very very
-## slow when export all languages.
+## We always recreate $TRYTON_DATABASE database in po-export.sh, but
+## --run-cleanup-step argument is required, this argument let
+## po-export.py run slower a bit, for example: export 15 languages
+## need about 2900s in my work machine.
 python3 po-export.py --user admin     \
         --database ${TRYTON_DATABASE} \
         --run-cleanup-step            \
