@@ -55,10 +55,13 @@ Setup worklist template
    1. my: this variable refer to 'gnuhealth.imaging.test.request'
       model.
    2. MergeID: Merge Id is used to merge orthanc studies to health
-      imaging result, but in most situation, we use StudyInstanceUID
-      as merge id, so user no need to use this variable except
-      modality workstation has bug and can not handle StudyInstanceUid
-      properly.
+      imaging result, in most situation, we do not use this variable
+      for we use StudyInstanceUID as merge id, if modality workstation
+      has bug and can not handle StudyInstanceUID properly, user can
+      use other dicom tags to tranfer merge id, more details can be
+      found in *get_merge_id* method in gnuhealth.orthanc.study
+      model. but, this is a hack way, do not use unless absolutely
+      necessary.
 
    if user would like to support new worklist template variables,
    extend *get_worklist_template_data* method in
