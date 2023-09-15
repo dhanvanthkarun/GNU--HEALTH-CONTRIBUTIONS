@@ -652,39 +652,47 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         'get_worklist_text')
 
     def get_worklist_text(self, name):
-        template = (self.requested_test.worklist_template and
-                    self.requested_test.worklist_template.template)
+        template = self.get_worklist_template()
         if template:
-            data = {
-                # We can not use 'self' as key name, so use 'my'
-                # instead.
-                'my':                     self,
-                'MergeID':                self.merge_id or '',
-                'AccessionNumber':        self.getDicomAccessionNumber(),
-                'RequestedProcedureID':   self.getDicomRequestedProcedureID(),
-                'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
-                'PatientName':            self.getDicomPatientName(),
-                'PatientID':              self.getDicomPatientID(),
-                'PatientAge':             self.getDicomPatientAge(),
-                'PatientBirthDate':       self.getDicomPatientBirthDate(),
-                'PatientSex':             self.getDicomPatientSex(),
-                'RequestingPhysician':    self.getDicomRequestingPhysician(),
-                'RequestingService':      self.getDicomRequestingService(),
-                'ReferringPhysicianName':
-                    self.getDicomReferringPhysicianName(),
-                'InstitutionName':        self.getDicomInstitutionName(),
-                'RequestedProcedureDescription':
-                    self.getDicomRequestedProcedureDescription(),
-                'ScheduledProcedureStepStartDate':
-                    self.getDicomScheduledProcedureStepStartDate(),
-                'ScheduledProcedureStepStartTime':
-                    self.getDicomScheduledProcedureStepStartTime(),
-            }
+            data = self.get_worklist_template_data()
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
             return text
         else:
             return ''
+
+    def get_worklist_template(self):
+        template = (self.requested_test.worklist_template and
+                    self.requested_test.worklist_template.template)
+        return template
+
+    def get_worklist_template_data(self):
+        data = {
+            # We can not use 'self' as key name, so use 'my'
+            # instead.
+            'my':                     self,
+            'MergeID':                self.merge_id or '',
+            'AccessionNumber':        self.getDicomAccessionNumber(),
+            'RequestedProcedureID':   self.getDicomRequestedProcedureID(),
+            'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
+            'PatientName':            self.getDicomPatientName(),
+            'PatientID':              self.getDicomPatientID(),
+            'PatientAge':             self.getDicomPatientAge(),
+            'PatientBirthDate':       self.getDicomPatientBirthDate(),
+            'PatientSex':             self.getDicomPatientSex(),
+            'RequestingPhysician':    self.getDicomRequestingPhysician(),
+            'RequestingService':      self.getDicomRequestingService(),
+            'InstitutionName':        self.getDicomInstitutionName(),
+            'ReferringPhysicianName':
+            self.getDicomReferringPhysicianName(),
+            'RequestedProcedureDescription':
+            self.getDicomRequestedProcedureDescription(),
+            'ScheduledProcedureStepStartDate':
+            self.getDicomScheduledProcedureStepStartDate(),
+            'ScheduledProcedureStepStartTime':
+            self.getDicomScheduledProcedureStepStartTime(),
+        }
+        return data
 
     def getDicomAccessionNumber(self):
         return self.request or ''

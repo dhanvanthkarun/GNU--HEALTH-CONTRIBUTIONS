@@ -60,6 +60,10 @@ Setup worklist template
       modality workstation has bug and can not handle StudyInstanceUid
       properly.
 
+   if user would like to support new worklist template variables,
+   extend *get_worklist_template_data* method in
+   gnuhealth.imaging.test.request model is a good way.
+
    User may need to edit the below two tags in template:
 
    1. (0008,0060) CS [] # Modality
