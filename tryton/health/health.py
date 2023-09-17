@@ -2872,26 +2872,24 @@ class PatientData(ModelSQL, ModelView):
         # Patient Critical Information Summary
         # The information will be shown in the front page
 
-        allergies = ""
-        other_conditions = ""
+        allergies = []
+        other_conditions = []
         conditions = []
         for disease in self.diseases:
             for member in disease.pathology.groups:
                 '''Retrieve patient allergies'''
                 if (member.disease_group.name == "ALLERGIC"):
                     if disease.pathology.name not in conditions:
-                        allergies = f"{allergies}" \
-                                    f"{disease.pathology.rec_name}\n"
+                        allergies.append(disease.pathology.rec_name)
                         conditions.append(disease.pathology.rec_name)
 
             '''Retrieve patient other relevant conditions '''
             '''Chronic and active'''
             if (disease.status == "c" or disease.is_active):
                 if disease.pathology.name not in conditions:
-                    other_conditions = f"{other_conditions} " \
-                                       f"{disease.pathology.rec_name}\n"
+                    other_conditions.append(disease.pathology.rec_name)
 
-        return allergies + other_conditions
+        return "\n".join((set(allergies + other_conditions)))
 
     name = fields.Many2One(
         'party.party', 'Patient', required=True,
