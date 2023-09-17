@@ -189,6 +189,7 @@ class LabTest(metaclass=PoolMeta):
             line_elements = [
                 line.name or '',
                 line.result or '',
+                line.units.name or '',
                 line.result_text or '',
                 line.remarks or '']
 
