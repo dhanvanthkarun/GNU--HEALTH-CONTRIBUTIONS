@@ -97,7 +97,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0032,1060) LO [$RequestedProcedureDescription]
 (0040,0100) SQ (Sequence with undefined length)
   (fffe,e000) na (Item with undefined length)
-    (0008,0060) CS [] # Modality
+    (0008,0060) CS [$Modality]
     (0040,0001) AE [] # ScheduledStationAETitle
     (0040,0002) DA [$ScheduledProcedureStepStartDate]
     (0040,0003) TM [$ScheduledProcedureStepStartTime]
@@ -683,6 +683,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             'RequestingPhysician':    self.getDicomRequestingPhysician(),
             'RequestingService':      self.getDicomRequestingService(),
             'InstitutionName':        self.getDicomInstitutionName(),
+            'Modality':               self.getDicomModality(),
             'ReferringPhysicianName':
             self.getDicomReferringPhysicianName(),
             'RequestedProcedureDescription':
@@ -799,6 +800,11 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         # 'Timezone Offset From UTC' to '+0000'.
         time = self.date.strftime('%H%M%S')
         return time
+
+    def getDicomModality(self):
+        test_type = (self.requested_test.test_type and 
+                    self.requested_test.test_type.code or '')
+        return test_type
 
 
 class ImagingTest(ModelSQL, ModelView):
