@@ -98,7 +98,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0040,0100) SQ (Sequence with undefined length)
   (fffe,e000) na (Item with undefined length)
     (0008,0060) CS [$Modality]
-    (0040,0001) AE [] # ScheduledStationAETitle
+    (0040,0001) AE [ScheduledStationAETitle]
     (0040,0002) DA [$ScheduledProcedureStepStartDate]
     (0040,0003) TM [$ScheduledProcedureStepStartTime]
   (fffe,e00d) na (ItemDelimitationItem)
@@ -688,6 +688,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             self.getDicomReferringPhysicianName(),
             'RequestedProcedureDescription':
             self.getDicomRequestedProcedureDescription(),
+            'ScheduledStationAETitle':
+            self.getDicomScheduledStationAETitle(),
             'ScheduledProcedureStepStartDate':
             self.getDicomScheduledProcedureStepStartDate(),
             'ScheduledProcedureStepStartTime':
@@ -789,6 +791,10 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         test = self.requested_test and self.requested_test.rec_name or ''
         return test
 
+    def getDicomScheduledStationAETitle(self):
+        aetitle = self.requested_test.aetitle or ''
+        return aetitle
+
     def getDicomScheduledProcedureStepStartDate(self):
         # This is UTC datetime, so we need set dicom tag (0008,0201)
         # 'Timezone Offset From UTC' to '+0000'.
@@ -811,6 +817,11 @@ class ImagingTest(ModelSQL, ModelView):
     'Medical Imaging Study'
     __name__ = 'gnuhealth.imaging.test'
 
+    aetitle = fields.Char(
+        "AETitle",
+        help="AETitle string, used as (0040,0001) "
+        "ScheduledStationAETitle tag in worklist template."
+    )
     worklist_template = fields.Many2One(
         "gnuhealth.orthanc.worklist.template", "Worklist template"
     )
