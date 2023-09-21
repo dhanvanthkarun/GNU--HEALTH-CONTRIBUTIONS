@@ -49,8 +49,9 @@ Setup worklist template
    13. RequestedProcedureDescription
    14. ScheduledProcedureStepStartDate
    15. ScheduledProcedureStepStartTime
-   16. ScheduledStationAETitle
-   17. Modality
+   16. TimezoneOffsetFromUTC
+   17. ScheduledStationAETitle
+   18. Modality
 
    Two special variables are supported:
 

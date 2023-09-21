@@ -81,7 +81,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     def default_template():
         template = """\
 (0008,0005) SH [ISO_IR 192]
-(0008,0201) SH [+0000]
+(0008,0201) SH [$TimezoneOffsetFromUTC]
 (0008,0050) SH [$AccessionNumber]
 (0040,1001) SH [$RequestedProcedureID]
 (0020,000d) UI [$StudyInstanceUID]
@@ -694,6 +694,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             self.getDicomScheduledProcedureStepStartDate(),
             'ScheduledProcedureStepStartTime':
             self.getDicomScheduledProcedureStepStartTime(),
+            'TimezoneOffsetFromUTC':
+            self.getDicomTimezoneOffsetFromUTC(),
         }
         return data
 
@@ -806,6 +808,12 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         # 'Timezone Offset From UTC' to '+0000'.
         time = self.date.strftime('%H%M%S')
         return time
+
+    def getDicomTimezoneOffsetFromUTC(self):
+        # Datetimes get from gnuhealth are UTC datetimes, so we need
+        # set dicom tag (0008,0201) 'Timezone Offset From UTC' to
+        # '+0000'.
+        return '+0000'
 
     def getDicomModality(self):
         test_type = (self.requested_test.test_type and 
