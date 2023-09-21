@@ -513,6 +513,14 @@ class Party(metaclass=PoolMeta):
         "Refer to the GNU Health manual for further information",
         states={'invisible': Not(Bool(Eval('is_person')))})
 
+    create_target = fields.Boolean(
+        'Create target',
+        help="By default, the associated target (eg, patient) "
+             "will be created, unless this option is unchecked"
+             "You should uncheck this field if, for example, the "
+             "person is a relative but will not be part of the "
+             "health system.")
+
     def get_mother(self, name):
         if (self.birth_certificate and self.birth_certificate.mother):
             return self.birth_certificate.mother.id
@@ -524,6 +532,10 @@ class Party(metaclass=PoolMeta):
     def get_dod(self, name):
         if (self.deceased and self.death_certificate):
             return self.death_certificate.dod
+
+    @staticmethod
+    def default_create_target():
+        return True
 
     @staticmethod
     def default_fed_country():
@@ -729,7 +741,44 @@ class Party(metaclass=PoolMeta):
 
                     values['person_names'] = official_name
 
-        return super(Party, cls).create(vlist)
+            # Create party before so we can assign it to the patient
+            parties = super(Party, cls).create(vlist)
+            party = parties[0]
+
+            if (values.get('create_target') and party):
+                # If the party creation was ok
+                # and create_target is checked (default), then create
+                # the related entity
+                entity = None
+                if values.get('is_patient'):
+                    entity = 'patient'
+                
+                if entity:
+                    cls.generate_target(party, entity)
+
+        return parties
+
+    @classmethod
+    def generate_target(cls, party, entity):
+        """ The method will generate the new entity depending on the
+            attributes from the party (patient, institution, healthprof..)
+            We initially start with the patient.
+        """
+        Target = None
+        values = []
+
+        # When entity is a patient
+        if (entity == 'patient'):
+            Target = Pool().get('gnuhealth.patient')
+            values.append({'name': party.id})
+
+        # TODO: Add more entities (health prof, institutions)
+        # Warning: We have to make sure Target has no required fields
+        # (like the insitution code) In that case, we need to provide it
+
+        # Finally, create the target with their field values
+        if (Target and values):
+            Target.create(values)
 
     @classmethod
     def copy(cls, parties, default=None):
@@ -829,6 +878,12 @@ class Party(metaclass=PoolMeta):
     def on_change_with_is_person(self):
         # Set is_person if the party is a health professional or a patient
         if (self.is_healthprof or self.is_patient or self.is_person):
+            return True
+
+    # Set patient attribute if create_target and is_person attributes are set
+    @fields.depends('is_person', 'create_target')
+    def on_change_with_is_patient(self):
+        if (self.create_target and self.is_person):
             return True
 
     @fields.depends('du', '_parent_du.name')

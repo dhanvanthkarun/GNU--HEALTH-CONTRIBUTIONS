@@ -69,7 +69,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field colspan="4" name="insurance"/>
                         
             <newline/>
-            <group id="party_footer" colspan="4" col="12">
+            <group id="party_footer" colspan="4" col="14">
+                <label name="create_target"/>
+                <field name="create_target"/>
                 <label name="deceased"/>
                 <field name="deceased"/>
                 <label name="unidentified"/>
