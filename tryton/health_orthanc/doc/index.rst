@@ -69,11 +69,6 @@ Setup worklist template
    extend *get_worklist_template_data* method in
    gnuhealth.imaging.test.request model is a good way.
 
-   User may need to edit the below two tags in template:
-
-   1. (0008,0060) CS [] # Modality
-   2. (0040,0001) AE [] # ScheduledStationAETitle
-
    Note: Creating a template for a modality may need more work, user
    should know which tags should be set up properly with the help of
    Dicom Conformance Statement of this modality, user can use wlmscpfs
@@ -81,9 +76,17 @@ Setup worklist template
    be sent to worklist server from modality. user can try
    script/orthanc/worklists_service_demo.sh too.
 
-4. Set 'Worklist Template' fields of all 'Medical Imaging Studies'
-   models, which can be found at: Health > Configuration > Medical
-   Imaging > Medical Imaging Studies
+4. Setup fields of Medical Imaging Studies. 
+
+   (Health > Configuration > Medical Imaging > Medical Imaging Studies)
+
+   1. Type: the code of this field is used as Modality (0008,0060) tag
+      of worklist, so make sure its code use the value of Dicom
+      Modality (0008,0060) tag, more details can be found at:
+      https://www.dicomlibrary.com/dicom/modality/
+   2. AETitle: this field is used as ScheduledStationAETitle
+      (0040,0001) tag of worklist.
+   3. Worklist Template.
 
 View worklist text of a imaging request
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
