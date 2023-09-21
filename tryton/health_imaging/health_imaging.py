@@ -31,8 +31,14 @@ class ImagingTestType(ModelSQL, ModelView):
     'Medical Imaging Study Type'
     __name__ = 'gnuhealth.imaging.test.type'
 
-    code = fields.Char('Code', required=True)
-    name = fields.Char('Name', required=True, translate=True)
+    code = fields.Char(
+        'Code', required=True,
+        help="Suggest use values of DICOM "
+        "Modality (0008,0060) tag.")
+    name = fields.Char(
+        'Name', required=True, translate=True,
+        help="Suggest use descriptions of DICOM "
+        "Modality (0008,0060) tag.")
 
 
 class ImagingTest(ModelSQL, ModelView):
