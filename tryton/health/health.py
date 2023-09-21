@@ -561,7 +561,7 @@ class Party(metaclass=PoolMeta):
     def convert_photo(cls, data):
         if data and Image:
             image = Image.open(BytesIO(data))
-            image.thumbnail((200, 200), Image.ANTIALIAS)
+            image.thumbnail((200, 200), Image.LANCZOS)
             data = BytesIO()
             image.save(data, image.format)
             data = fields.Binary.cast(data.getvalue())
