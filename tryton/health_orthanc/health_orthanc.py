@@ -81,7 +81,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     def default_template():
         template = """\
 (0008,0005) SH [ISO_IR 192]
-(0008,0201) SH [+0000]
+(0008,0201) SH [$TimezoneOffsetFromUTC]
 (0008,0050) SH [$AccessionNumber]
 (0040,1001) SH [$RequestedProcedureID]
 (0020,000d) UI [$StudyInstanceUID]
@@ -97,8 +97,8 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
 (0032,1060) LO [$RequestedProcedureDescription]
 (0040,0100) SQ (Sequence with undefined length)
   (fffe,e000) na (Item with undefined length)
-    (0008,0060) CS [] # Modality
-    (0040,0001) AE [] # ScheduledStationAETitle
+    (0008,0060) CS [$Modality]
+    (0040,0001) AE [$ScheduledStationAETitle]
     (0040,0002) DA [$ScheduledProcedureStepStartDate]
     (0040,0003) TM [$ScheduledProcedureStepStartTime]
   (fffe,e00d) na (ItemDelimitationItem)
@@ -652,39 +652,52 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         'get_worklist_text')
 
     def get_worklist_text(self, name):
-        template = (self.requested_test.worklist_template and
-                    self.requested_test.worklist_template.template)
+        template = self.get_worklist_template()
         if template:
-            data = {
-                # We can not use 'self' as key name, so use 'my'
-                # instead.
-                'my':                     self,
-                'MergeID':                self.merge_id or '',
-                'AccessionNumber':        self.getDicomAccessionNumber(),
-                'RequestedProcedureID':   self.getDicomRequestedProcedureID(),
-                'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
-                'PatientName':            self.getDicomPatientName(),
-                'PatientID':              self.getDicomPatientID(),
-                'PatientAge':             self.getDicomPatientAge(),
-                'PatientBirthDate':       self.getDicomPatientBirthDate(),
-                'PatientSex':             self.getDicomPatientSex(),
-                'RequestingPhysician':    self.getDicomRequestingPhysician(),
-                'RequestingService':      self.getDicomRequestingService(),
-                'ReferringPhysicianName':
-                    self.getDicomReferringPhysicianName(),
-                'InstitutionName':        self.getDicomInstitutionName(),
-                'RequestedProcedureDescription':
-                    self.getDicomRequestedProcedureDescription(),
-                'ScheduledProcedureStepStartDate':
-                    self.getDicomScheduledProcedureStepStartDate(),
-                'ScheduledProcedureStepStartTime':
-                    self.getDicomScheduledProcedureStepStartTime(),
-            }
+            data = self.get_worklist_template_data()
             tmpl = TextTemplate(template)
             text = str(tmpl.generate(**data))
             return text
         else:
             return ''
+
+    def get_worklist_template(self):
+        template = (self.requested_test.worklist_template and
+                    self.requested_test.worklist_template.template)
+        return template
+
+    def get_worklist_template_data(self):
+        data = {
+            # We can not use 'self' as key name, so use 'my'
+            # instead.
+            'my':                     self,
+            'MergeID':                self.merge_id or '',
+            'AccessionNumber':        self.getDicomAccessionNumber(),
+            'RequestedProcedureID':   self.getDicomRequestedProcedureID(),
+            'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
+            'PatientName':            self.getDicomPatientName(),
+            'PatientID':              self.getDicomPatientID(),
+            'PatientAge':             self.getDicomPatientAge(),
+            'PatientBirthDate':       self.getDicomPatientBirthDate(),
+            'PatientSex':             self.getDicomPatientSex(),
+            'RequestingPhysician':    self.getDicomRequestingPhysician(),
+            'RequestingService':      self.getDicomRequestingService(),
+            'InstitutionName':        self.getDicomInstitutionName(),
+            'Modality':               self.getDicomModality(),
+            'ReferringPhysicianName':
+            self.getDicomReferringPhysicianName(),
+            'RequestedProcedureDescription':
+            self.getDicomRequestedProcedureDescription(),
+            'ScheduledStationAETitle':
+            self.getDicomScheduledStationAETitle(),
+            'ScheduledProcedureStepStartDate':
+            self.getDicomScheduledProcedureStepStartDate(),
+            'ScheduledProcedureStepStartTime':
+            self.getDicomScheduledProcedureStepStartTime(),
+            'TimezoneOffsetFromUTC':
+            self.getDicomTimezoneOffsetFromUTC(),
+        }
+        return data
 
     def getDicomAccessionNumber(self):
         return self.request or ''
@@ -780,6 +793,10 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         test = self.requested_test and self.requested_test.rec_name or ''
         return test
 
+    def getDicomScheduledStationAETitle(self):
+        aetitle = self.requested_test.aetitle or ''
+        return aetitle
+
     def getDicomScheduledProcedureStepStartDate(self):
         # This is UTC datetime, so we need set dicom tag (0008,0201)
         # 'Timezone Offset From UTC' to '+0000'.
@@ -792,11 +809,27 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         time = self.date.strftime('%H%M%S')
         return time
 
+    def getDicomTimezoneOffsetFromUTC(self):
+        # Datetimes get from gnuhealth are UTC datetimes, so we need
+        # set dicom tag (0008,0201) 'Timezone Offset From UTC' to
+        # '+0000'.
+        return '+0000'
+
+    def getDicomModality(self):
+        test_type = (self.requested_test.test_type and 
+                    self.requested_test.test_type.code or '')
+        return test_type
+
 
 class ImagingTest(ModelSQL, ModelView):
     'Medical Imaging Study'
     __name__ = 'gnuhealth.imaging.test'
 
+    aetitle = fields.Char(
+        "AETitle",
+        help="AETitle string, used as (0040,0001) "
+        "ScheduledStationAETitle tag in worklist template."
+    )
     worklist_template = fields.Many2One(
         "gnuhealth.orthanc.worklist.template", "Worklist template"
     )
