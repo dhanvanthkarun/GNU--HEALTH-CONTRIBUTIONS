@@ -477,8 +477,7 @@ class Party(metaclass=PoolMeta):
 
     deceased = fields.Boolean(
         'Deceased', readonly=True,
-        help='The information is updated from the Death Certificate',
-        states={'invisible': Not(Bool(Eval('deceased')))})
+        help='The information is updated from the Death Certificate')
 
     dod = fields.Function(fields.DateTime(
         'Date of Death',
