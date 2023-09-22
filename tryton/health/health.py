@@ -515,7 +515,7 @@ class Party(metaclass=PoolMeta):
     create_target = fields.Boolean(
         'Create target',
         help="By default, the associated target (eg, patient) "
-             "will be created, unless this option is unchecked"
+             "will be created, unless this option is unchecked. "
              "You should uncheck this field if, for example, the "
              "person is a relative but will not be part of the "
              "health system.")
