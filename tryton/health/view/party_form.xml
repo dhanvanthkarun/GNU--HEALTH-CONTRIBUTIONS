@@ -10,7 +10,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <data>
     <xpath expr="/form/notebook/page[@id=&quot;general&quot;]" position="before">
         <page string="Health" id="party_gnuhealth">
-            <group col="12" colspan="4" id="party_specs">
+            <group col="12" colspan="3" id="party_specs">
                 <label name="is_person"/>
                 <field name="is_person"/>
                 <label name="is_patient"/>
@@ -25,7 +25,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <field name="is_pharmacy"/>
             </group>
             <newline/>
-            <group colspan="4" id="person_details">
+            <group colspan="3" id="person_details">
                 <group col="8" id="person_demographics" string="Demographics">
                     <label name="dob"/>
                     <field name="dob"/>
@@ -65,11 +65,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             </group>
             <newline/>
 
-            <field colspan="4" name="alternative_ids"/>
-            <field colspan="4" name="insurance"/>
+            <field colspan="3" name="alternative_ids"/>
+            <field colspan="3" name="insurance"/>
                         
             <newline/>
-            <group id="party_footer" colspan="4" col="14">
+            <group id="party_footer" colspan="3" col="14">
                 <label name="internal_user"/>
                 <field name="internal_user"/>
                 <label name="fed_country"/>
