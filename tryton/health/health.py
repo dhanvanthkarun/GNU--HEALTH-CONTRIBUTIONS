@@ -432,13 +432,13 @@ class Party(metaclass=PoolMeta):
     residence = fields.Many2One(
         'country.country', 'Residence', help='Country of Residence')
     alternative_identification = fields.Boolean(
-        'Alternative IDs', help='Other types of '
+        'Other IDs', help='Other types of '
         'identification, not the official PUID . '
         'Examples : Passport, foreign ID,..')
 
     alternative_ids = fields.One2Many(
         'gnuhealth.person_alternative_identification',
-        'name', 'Alternative IDs',
+        'name', 'Other IDs',
         states={'invisible': Not(Bool(Eval('alternative_identification')))})
 
     insurance = fields.One2Many(
@@ -477,7 +477,8 @@ class Party(metaclass=PoolMeta):
 
     deceased = fields.Boolean(
         'Deceased', readonly=True,
-        help='The information is updated from the Death Certificate')
+        help='The information is updated from the Death Certificate',
+        states={'invisible': Not(Bool(Eval('deceased')))})
 
     dod = fields.Function(fields.DateTime(
         'Date of Death',
