@@ -434,7 +434,8 @@ class Party(metaclass=PoolMeta):
     alternative_identification = fields.Boolean(
         'Other IDs', help='Other types of '
         'identification, not the official PUID . '
-        'Examples : Passport, foreign ID,..')
+        'Examples : Passport, foreign ID,..',
+        states={'invisible': Not(Bool(Eval('is_person')))})
 
     alternative_ids = fields.One2Many(
         'gnuhealth.person_alternative_identification',
