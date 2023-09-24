@@ -1,6 +1,24 @@
+changeset:   6138:0501ac0c549e
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Thu Sep 21 18:56:55 2023 +0100
+summary:     Fix bug #64706: Error saving party with photo due to PIL deprecation of ANTIALIAS
+
+changeset:   6137:e0c597c73381
+branch:      stable
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 24 16:49:01 2023 +0100
+summary:     Update to 4.2.3
+
+changeset:   6136:9e386599de72
+branch:      stable
+parent:      6121:bd91469b9d90
+user:        Luis Falcon <falcon@gnuhealth.org>
+date:        Sun Sep 24 16:33:55 2023 +0100
+summary:     Fix bug #64712: Bug afer installing patcheset 4.2.2
+
 changeset:   6117:eb00a40b5453
 branch:      stable
-tag:         tip
 user:        Luis Falcon <falcon@gnuhealth.org>
 date:        Thu Sep 14 12:15:50 2023 +0100
 summary:     Fix [bug #64665] Product cost_price needs to be passed as an argument in stock moves
