@@ -36,7 +36,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <label name="address_zip"/>
             <field name="address_zip"/>
             <newline/>
-            <group string="Position" col="4" colspan="4" id="du_georef">
+            <field name="address_repr" colspan="6"/>
+            <newline/>
+            <group string="Position" col="8" colspan="6" id="du_georef">
               <label name="latitude"/>
               <field name="latitude"/>
               <label name="longitude"/>
@@ -46,9 +48,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
               <label name="urladdr"/>
               <field name="urladdr" widget="url"/>
             </group>
-            <field name="address_repr" colspan="2"/>
             <newline/>
-            <group colspan="6" col="0" id="du_living_conditions">
+            <group string="Living conditions" colspan="6" col="0" id="du_living_conditions">
               <label name="housing"/>
               <field name="housing"/>
               <label name="dwelling"/>
@@ -58,8 +59,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
             </group>
         </group> 
 
-        <group id="du_picture">
-            <field xfill="0" xexpand="1" name="picture" height="250" width="200" widget="image"/>
+        <group string="Picture" id="du_picture">
+            <field xfill="0" xexpand="1" name="picture" height="346" width="200" widget="image"/>
         </group>
         <newline/>
   
