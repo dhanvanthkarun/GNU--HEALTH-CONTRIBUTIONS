@@ -103,11 +103,11 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         # Street
         if (self.address_street):
             du_addr = \
-                f"{self.address_street} {self.address_street_number}, \n" \
-                f"{self.address_street_bis}, "
+                f"{self.address_street} {self.address_street_number}, " \
+                f"{self.address_street_bis}, \n"
 
         if (self.address_district):
-            du_addr = f"{du_addr}\n{self.address_district}, "
+            du_addr = f"{du_addr}{self.address_district}, "
 
         if (self.address_municipality):
             du_addr = f"{du_addr}{self.address_municipality}, "
