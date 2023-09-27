@@ -3407,7 +3407,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
             age_at_dx = ''
             if condition_info.age:
                 age_at_dx = format_years_months_days(
-                    years=condition_info.age)
+                    years=condition_info.age, months=0, days=0)
             elif (condition_info.name.dob and condition_info.diagnosed_date):
                 age_at_dx = compute_age_from_dates(
                     condition_info.name.dob, None, None, None,
