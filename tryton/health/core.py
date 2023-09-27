@@ -119,17 +119,17 @@ def format_years_months_days(years=None, months=None, days=None):
     ymd_format = '{years}{sep}{year_str}{sep}' \
                  '{months}{sep}{month_str}{sep}' \
                  '{days}{sep}{day_str}{sep}'
-    placeholder = '\u200d',  # Zero width joiner
 
     return ymd_format.format(
         sep='\u200b',  # Zero width space
-        # Make sure output.split(sep)[0, 2, 4] = [years, months, days]
-        years=isinstance(years, int) and str(years) or placeholder,
-        year_str=isinstance(years, int) and year_str or placeholder,
-        months=isinstance(months, int) and str(months) or placeholder,
-        month_str=isinstance(months, int) and month_str or placeholder,
-        days=isinstance(days, int) and str(days) or placeholder,
-        day_str=isinstance(months, int) and day_str or placeholder)
+        # Make sure output.split(sep)[0, 2, 4] = [years, months, days], 
+        # and we use '\u200d' (zero width joiner) as placeholder.
+        years=isinstance(years, int) and str(years) or '\u200d',
+        year_str=isinstance(years, int) and year_str or '\u200d',
+        months=isinstance(months, int) and str(months) or '\u200d',
+        month_str=isinstance(months, int) and month_str or '\u200d',
+        days=isinstance(days, int) and str(days) or '\u200d',
+        day_str=isinstance(days, int) and day_str or '\u200d')
 
 
 def parse_compute_age(age):
