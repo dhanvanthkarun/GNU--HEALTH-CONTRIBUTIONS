@@ -64,11 +64,8 @@ class UpdatePatientDiseaseInfo(Wizard):
             [Transaction().context.get('active_id')])[0]
 
         return {'name': evaluation.patient and evaluation.patient.id,
-                # XXX: ONLY get years number from age string of
-                # evaluation, for age of disease info is an Integer
-                # field, can we change age of disease info to char
-                # field?
                 'age': evaluation.patient and parse_compute_age(evaluation.patient.age)[0],
+                'age_str': evaluation.patient and evaluation.patient.age,
                 'pathology': evaluation.diagnosis and evaluation.diagnosis.id,
                 'institution': evaluation.institution and evaluation.institution.id,
                 'diagnosed_date': evaluation.evaluation_endtime}

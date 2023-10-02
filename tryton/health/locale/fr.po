@@ -2442,12 +2442,12 @@ msgid "Age"
 msgstr "Âge"
 
 msgctxt "field:party.party,alternative_identification:"
-msgid "Alternative IDs"
-msgstr "Identifiants alternatifs"
+msgid "Other IDs"
+msgstr ""
 
 msgctxt "field:party.party,alternative_ids:"
-msgid "Alternative IDs"
-msgstr "Identifiants alternatifs"
+msgid "Other IDs"
+msgstr ""
 
 msgctxt "field:party.party,birth_certificate:"
 msgid "Birth Certificate"
@@ -2456,6 +2456,10 @@ msgstr "Acte de naissance"
 msgctxt "field:party.party,citizenship:"
 msgid "Citizenship"
 msgstr "Nationalité"
+
+msgctxt "field:party.party,create_target:"
+msgid "Create target"
+msgstr ""
 
 msgctxt "field:party.party,death_certificate:"
 msgid "Death Certificate"
@@ -3898,6 +3902,13 @@ msgstr ""
 msgctxt "help:party.party,citizenship:"
 msgid "Country of Citizenship"
 msgstr "Pays de citoyenneté"
+
+msgctxt "help:party.party,create_target:"
+msgid ""
+"By default, the associated target (eg, patient) will be created, unless this"
+" option is unchecked. You should uncheck this field if, for example, the "
+"person is a relative but will not be part of the health system."
+msgstr ""
 
 msgctxt "help:party.party,deceased:"
 msgid "The information is updated from the Death Certificate"
@@ -11556,6 +11567,20 @@ msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
 msgstr "Infrastructure"
 
+msgctxt "view:gnuhealth.du:"
+msgid "Living conditions"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.du:"
+msgid "Picture"
+msgstr "Photo"
+
+#, fuzzy
+msgctxt "view:gnuhealth.du:"
+msgid "Position"
+msgstr "Position"
+
 msgctxt "view:gnuhealth.ethnicity:"
 msgid "Ethnicities"
 msgstr "Origines ethniques"
@@ -12167,10 +12192,6 @@ msgstr "Démographie"
 msgctxt "view:party.party:"
 msgid "Health"
 msgstr "Santé"
-
-msgctxt "view:party.party:"
-msgid "Picture"
-msgstr "Photo"
 
 msgctxt "view:product.product:"
 msgid "Health"

@@ -29,7 +29,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <label name="healed_date"/>
         <field name="healed_date"/>
         <label name="age"/>
-        <field name="age"/>
+        <group colspan="1" id="group_age">
+          <field name="age_str"/>
+          <field name="age"/>
+        </group>
         <label name="healthprof"/>
         <field name="healthprof"/>
         <label name="institution"/>

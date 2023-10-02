@@ -103,11 +103,11 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         # Street
         if (self.address_street):
             du_addr = \
-                f"{self.address_street} {self.address_street_number}, \n" \
-                f"{self.address_street_bis}, "
+                f"{self.address_street} {self.address_street_number}, " \
+                f"{self.address_street_bis}, \n"
 
         if (self.address_district):
-            du_addr = f"{du_addr}\n{self.address_district}, "
+            du_addr = f"{du_addr}{self.address_district}, "
 
         if (self.address_municipality):
             du_addr = f"{du_addr}{self.address_municipality}, "
@@ -432,13 +432,14 @@ class Party(metaclass=PoolMeta):
     residence = fields.Many2One(
         'country.country', 'Residence', help='Country of Residence')
     alternative_identification = fields.Boolean(
-        'Alternative IDs', help='Other types of '
+        'Other IDs', help='Other types of '
         'identification, not the official PUID . '
-        'Examples : Passport, foreign ID,..')
+        'Examples : Passport, foreign ID,..',
+        states={'invisible': Not(Bool(Eval('is_person')))})
 
     alternative_ids = fields.One2Many(
         'gnuhealth.person_alternative_identification',
-        'name', 'Alternative IDs',
+        'name', 'Other IDs',
         states={'invisible': Not(Bool(Eval('alternative_identification')))})
 
     insurance = fields.One2Many(
@@ -516,7 +517,7 @@ class Party(metaclass=PoolMeta):
     create_target = fields.Boolean(
         'Create target',
         help="By default, the associated target (eg, patient) "
-             "will be created, unless this option is unchecked"
+             "will be created, unless this option is unchecked. "
              "You should uncheck this field if, for example, the "
              "person is a relative but will not be part of the "
              "health system.")
@@ -3296,6 +3297,11 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         'Age when diagnosed',
         help='Patient age at the moment of the diagnosis. Can be estimative')
 
+    age_str = fields.Char(
+        'Age when diagnosed', readonly=True,
+        help='Patient age at the moment of the diagnosis, '
+        'in most situation, this value is derived from patient evalution.')
+
     pregnancy_warning = fields.Boolean('Pregnancy warning')
     weeks_of_pregnancy = fields.Integer('Contracted in pregnancy week #')
     is_allergy = fields.Boolean('Allergic Disease')
@@ -3404,9 +3410,11 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
         def patient_age_at_dx():
             age_at_dx = ''
-            if condition_info.age:
+            if condition_info.age_str:
+                age_at_dx = condition_info.age_str
+            elif condition_info.age:
                 age_at_dx = format_years_months_days(
-                    years=condition_info.age)
+                    years=condition_info.age, months=0, days=0)
             elif (condition_info.name.dob and condition_info.diagnosed_date):
                 age_at_dx = compute_age_from_dates(
                     condition_info.name.dob, None, None, None,

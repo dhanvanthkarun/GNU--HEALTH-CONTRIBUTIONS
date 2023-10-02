@@ -10,29 +10,26 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <notebook>
         <page string="Main Info" id="lab_main_info">
+            <label name="name"/>
+            <field name="name"/>
+            <label name="date_analysis"/>
+            <field name="date_analysis"/>
+            <label name="request_order"/>
+            <field name="request_order" widget="char"/>
+            <label name="date_requested"/>
+            <field name="date_requested"/>
             <label name="source_type"/>
             <group id="lab_sample_source" colspan="1">
               <field name="source_type"/>
               <field name="patient"/>
               <field name="other_source"/>
             </group>
-            <label name="name"/>
-            <field name="name"/>
-            <newline/>
             <label name="test"/>
             <field name="test"/>
-            <label name="date_requested"/>
-            <field name="date_requested"/>
-            <newline/>
             <label name="requestor"/>
             <field name="requestor"/>
-            <label name="request_order"/>
-            <field name="request_order"/>
-            <newline/>
             <label name="pathologist"/>
             <field name="pathologist"/>
-            <label name="date_analysis"/>
-            <field name="date_analysis"/>
             <label name="pathology"/>
             <field name="pathology"/>
             <button colspan="2"

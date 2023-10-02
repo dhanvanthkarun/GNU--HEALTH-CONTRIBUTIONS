@@ -407,7 +407,8 @@ class PatientGeneticRisk(ModelSQL, ModelView):
         vals = {
             'page': str(uuid4()),
             'person': genetic_info.patient.name.id,
-            'age': format_years_months_days(years=genetic_info.onset),
+            'age': format_years_months_days(
+                years=genetic_info.onset, months=0, days=0),
             'federation_account': genetic_info.patient.name.federation_account,
             'page_type': 'medical',
             'medical_context': 'genetics',

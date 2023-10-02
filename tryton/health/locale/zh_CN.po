@@ -341,11 +341,11 @@ msgstr "国家"
 
 msgctxt "field:gnuhealth.du,address_district:"
 msgid "District"
-msgstr "区域"
+msgstr "社区"
 
 msgctxt "field:gnuhealth.du,address_municipality:"
 msgid "Municipality"
-msgstr "市区"
+msgstr "区县乡"
 
 msgctxt "field:gnuhealth.du,address_repr:"
 msgid "DU Address"
@@ -461,7 +461,7 @@ msgstr "垃圾回收"
 
 msgctxt "field:gnuhealth.du,urladdr:"
 msgid "OSM Map"
-msgstr "Open Street 地图"
+msgstr "地图"
 
 msgctxt "field:gnuhealth.du,water:"
 msgid "Running Water"
@@ -1321,7 +1321,7 @@ msgstr "疫苗接种"
 
 msgctxt "field:gnuhealth.patient.disease,age:"
 msgid "Age when diagnosed"
-msgstr "下诊断时的年龄"
+msgstr "诊断年龄"
 
 msgctxt "field:gnuhealth.patient.disease,allergy_type:"
 msgid "Allergy type"
@@ -2395,12 +2395,12 @@ msgid "Age"
 msgstr "年龄"
 
 msgctxt "field:party.party,alternative_identification:"
-msgid "Alternative IDs"
-msgstr "其它证件号"
+msgid "Other IDs"
+msgstr "其他证件号"
 
 msgctxt "field:party.party,alternative_ids:"
-msgid "Alternative IDs"
-msgstr "其它证件号"
+msgid "Other IDs"
+msgstr "其他证件号"
 
 msgctxt "field:party.party,birth_certificate:"
 msgid "Birth Certificate"
@@ -2409,6 +2409,10 @@ msgstr "出生证明"
 msgctxt "field:party.party,citizenship:"
 msgid "Citizenship"
 msgstr "国籍"
+
+msgctxt "field:party.party,create_target:"
+msgid "Create target"
+msgstr "创建目标"
 
 msgctxt "field:party.party,death_certificate:"
 msgid "Death Certificate"
@@ -2626,7 +2630,7 @@ msgstr "请使用大写字母，不要带空格"
 
 msgctxt "help:gnuhealth.du,address_city:"
 msgid "City"
-msgstr "城市"
+msgstr "City, 在中国，行政区划可以覆盖到乡镇，所以使用行政区划更合适。"
 
 msgctxt "help:gnuhealth.du,address_country:"
 msgid "Country"
@@ -2634,11 +2638,11 @@ msgstr "国家"
 
 msgctxt "help:gnuhealth.du,address_district:"
 msgid "Neighborhood, Village, Barrio...."
-msgstr "社区，村，街道...."
+msgstr "社区，村，街区...."
 
 msgctxt "help:gnuhealth.du,address_municipality:"
 msgid "Municipality, Township, county .."
-msgstr "市、县、乡镇 .."
+msgstr "Municipality, Township, county 等，在中国，行政区划可以覆盖到乡镇，所以使用行政区划更合适。"
 
 msgctxt "help:gnuhealth.du,altitude:"
 msgid "Altitude in meters"
@@ -3747,6 +3751,13 @@ msgstr "其他类型的证件号码，不是身份证号。比如： 护照，�
 msgctxt "help:party.party,citizenship:"
 msgid "Country of Citizenship"
 msgstr "国籍"
+
+msgctxt "help:party.party,create_target:"
+msgid ""
+"By default, the associated target (eg, patient) will be created, unless this"
+" option is unchecked. You should uncheck this field if, for example, the "
+"person is a relative but will not be part of the health system."
+msgstr ""
 
 msgctxt "help:party.party,deceased:"
 msgid "The information is updated from the Death Certificate"
@@ -10966,6 +10977,18 @@ msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
 msgstr "基础设施"
 
+msgctxt "view:gnuhealth.du:"
+msgid "Living conditions"
+msgstr "生活条件"
+
+msgctxt "view:gnuhealth.du:"
+msgid "Picture"
+msgstr "图片"
+
+msgctxt "view:gnuhealth.du:"
+msgid "Position"
+msgstr "定位"
+
 msgctxt "view:gnuhealth.family:"
 msgid "Extra Info"
 msgstr "其它信息"
@@ -11401,10 +11424,6 @@ msgstr "基本信息"
 msgctxt "view:party.party:"
 msgid "Health"
 msgstr "健康"
-
-msgctxt "view:party.party:"
-msgid "Picture"
-msgstr "图片"
 
 msgctxt "view:product.product:"
 msgid "Health"
