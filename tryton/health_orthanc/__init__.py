@@ -15,6 +15,7 @@
 from trytond.pool import Pool
 from . import health_orthanc
 from . import wizard
+from . import ir
 
 
 def register():
@@ -29,6 +30,7 @@ def register():
         health_orthanc.ImagingTest,
         health_orthanc.TestResult,
         health_orthanc.Patient,
+        ir.Cron,
         module="health_orthanc",
         type_="model",
     )
