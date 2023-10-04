@@ -540,9 +540,11 @@ class OrthancStudy(ModelSQL, ModelView):
         patient = Patient.search(
             [("uuid", "=", entry["parent_patient"]),
              ("server", "=", server)],
-            limit=1)
-        if patient and patient[0].ident.startswith(prefix):
-            return patient.ident
+            limit=1)[0]
+        if patient:
+            if patient.ident:
+                if patient.ident.startswith(prefix):
+                    return patient.ident
 
     @classmethod
     def update_studies(cls, studies, server):
@@ -816,8 +818,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         return '+0000'
 
     def getDicomModality(self):
-        test_type = (self.requested_test.test_type and 
-                    self.requested_test.test_type.code or '')
+        test_type = (self.requested_test.test_type and
+                     self.requested_test.test_type.code or '')
         return test_type
 
 
