@@ -25,9 +25,9 @@ hyperlinks to the corresponding studies and patients for
 given Orthanc DICOM servers.
 """
 
-from trytond.model import ModelView, ModelSQL, Workflow, fields, Unique
+from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval, Not, Bool
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from trytond.transaction import Transaction
 from trytond.modules.health.core import (get_institution,
                                          compute_age_from_dates,
@@ -1057,8 +1057,7 @@ class OrthancStudy(ModelSQL, ModelView):
         cls.create(entries)
 
 
-class ImagingTestRequest(Workflow, ModelSQL, ModelView):
-    'Medical Imaging Study Request'
+class ImagingTestRequest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.imaging.test.request'
 
     computed_age = fields.Function(fields.Char(
@@ -1262,8 +1261,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         return test_type
 
 
-class ImagingTest(ModelSQL, ModelView):
-    'Medical Imaging Study'
+class ImagingTest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.imaging.test'
 
     aetitle = fields.Char(
@@ -1276,7 +1274,9 @@ class ImagingTest(ModelSQL, ModelView):
     )
 
 
-class TestResult(ModelSQL, ModelView):
+class TestResult(metaclass=PoolMeta):
+    __name__ = "gnuhealth.imaging.test.result"
+
     """
     Adds Orthanc imaging studies to imaging test result.
 
@@ -1292,8 +1292,6 @@ class TestResult(ModelSQL, ModelView):
                    of the model.
     :vartype __name__: str
     """
-
-    __name__ = "gnuhealth.imaging.test.result"
 
     studies = fields.One2Many(
         "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies",
@@ -1330,7 +1328,9 @@ class TestResult(ModelSQL, ModelView):
             return studies
 
 
-class Patient(ModelSQL, ModelView):
+class Patient(metaclass=PoolMeta):
+    __name__ = "gnuhealth.patient"
+
     """
     Adds Orthanc patients to the main patient data.
 
@@ -1345,8 +1345,6 @@ class Patient(ModelSQL, ModelView):
     :var __name__: The unique name ``gnuhealth.patient`` of the model.
     :vartype __name__: str
     """
-
-    __name__ = "gnuhealth.patient"
 
     orthanc_patients = fields.One2Many(
         "gnuhealth.orthanc.patient", "patient", "Orthanc patients"
