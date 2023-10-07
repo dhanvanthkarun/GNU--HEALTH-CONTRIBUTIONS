@@ -12,6 +12,15 @@
 #                  __init__.py: Package declaration file                #
 #########################################################################
 
+"""
+Initialization module for the ``health_orthanc`` module.
+
+This module registers the necessary classes and methods of the
+``health_orthanc`` module and its wizard in the Tryton pool.
+This allows other modules to access the functionalities provided by
+the ``health_orthanc`` module.
+"""
+
 from trytond.pool import Pool
 from . import health_orthanc
 from . import wizard
