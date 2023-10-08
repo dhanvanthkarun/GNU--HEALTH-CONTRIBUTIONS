@@ -19,10 +19,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="ident"/>
             <label name="uuid"/>
             <field name="uuid"/>
-            <label name="link"/>
-            <field name="link" widget="url"/>
+            <newline/>
             <label name="server"/>
             <field name="server"/>
+            <label name="link"/>
+            <field name="link" widget="url"/>
           </group>
           <newline/>
           <separator string=" " id="blank_line"/>
