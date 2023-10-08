@@ -525,6 +525,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
         except TypeError:
             return f"No correct instance of {self.sync_time}!"
 
+
 class OrthancPatient(ModelSQL, ModelView):
     """Orthanc patient information"""
     """
@@ -1207,22 +1208,28 @@ class ImagingTestRequest(metaclass=PoolMeta):
         else:
             return "O"
 
-    # XXX: Need help: what is RequestingPhysician in gnuhealth
-    # imaging?
     def getDicomRequestingPhysician(self):
+        """
+        Returns the health professional who requests  the test
+        """
         name = (self.format_dicom_person_name(self.doctor.name.id)
                 or (self.doctor and self.doctor.rec_name) or '')
         return name
 
     def getDicomRequestingService(self):
-        try:
+        """
+        Returns the specialty of the physician associated to the test
+        as the Service
+        """
+        name = ''
+        if (self.doctor.main_specialty):
             name = self.doctor.main_specialty.rec_name
-        except:
-            name = ''
         return name
 
-    # XXX: Need help: what is ReferringPhysician in gnuhealth imaging?
     def getDicomReferringPhysicianName(self):
+        # Returns the health professional who sent / derived the patient
+        # to this unit
+
         name = (self.format_dicom_person_name(self.doctor.name.id)
                 or (self.doctor and self.doctor.rec_name) or '')
         return name
