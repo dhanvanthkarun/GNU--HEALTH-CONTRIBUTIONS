@@ -519,9 +519,11 @@ class OrthancServerConfig(ModelSQL, ModelView):
         try:
             d = pendulum.now() - pendulum.instance(self.sync_time)
             return d.in_words(Transaction().language)
-        except:
+        except ValueError:
+            logger.exception(f"No locale found for {Transaction().language}")
             return d.in_words('en')
-
+        except TypeError:
+            return f"No correct instance of {self.sync_time}!"
 
 class OrthancPatient(ModelSQL, ModelView):
     """Orthanc patient information"""
