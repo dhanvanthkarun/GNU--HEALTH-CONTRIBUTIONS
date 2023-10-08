@@ -1227,8 +1227,10 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return name
 
     def getDicomReferringPhysicianName(self):
-        # Returns the health professional who sent / derived the patient
-        # to this unit
+        """
+        Returns the health professional who sent / derived the patient
+        to this unit
+        """
 
         name = (self.format_dicom_person_name(self.doctor.name.id)
                 or (self.doctor and self.doctor.rec_name) or '')
