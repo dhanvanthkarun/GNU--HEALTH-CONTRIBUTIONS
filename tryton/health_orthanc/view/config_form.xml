@@ -18,16 +18,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="sync_time"/>
             <label name="since_sync_readable"/>
             <field name="since_sync_readable"/>
-            <label name="last"/>
-            <field name="last"/>
-            <label name="validated"/>
-            <field name="validated" readonly="1"/>
-            <label name="use_stone_viewer"/>
-            <field name="use_stone_viewer"/>
-            <label name="use_osimis_viewer"/>
-            <field name="use_osimis_viewer"/>
-            <label name="link"/>
-            <field name="link" widget="url"/>
+            <group colspan="4" col="0" id="group_small_widgets">
+              <label name="last"/>
+              <field name="last"/>
+              <label name="use_stone_viewer"/>
+              <field name="use_stone_viewer"/>
+              <label name="use_osimis_viewer"/>
+              <field name="use_osimis_viewer"/>
+              <label name="validated"/>
+              <field name="validated" readonly="1"/>
+              <label name="link"/>
+              <field name="link" widget="url"/>
+            </group>
         </group>
         <newline/>
         <separator string=" " id="blank_line"/>
@@ -35,7 +37,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <group string="User" yfill="1" id="orthanc_group_user_config">
             <label name="user"/>
             <field name="user"/>
-            <newline/>
             <label name="password"/>
             <field name="password"/>
         </group>
