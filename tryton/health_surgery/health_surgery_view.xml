@@ -208,6 +208,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_or_schedule_tree</field>
         </record>
 
+        <record model="ir.ui.view" id="gnuhealth_or_schedule_calendar">
+            <field name="model">gnuhealth.or.schedule</field>
+            <field name="type">calendar</field>
+            <field name="name">gnuhealth_or_schedule_calendar</field>
+        </record>
 
 <!-- OR Schedule menu -->
 
@@ -224,6 +229,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window.view" id="act_gnuhealth_or_schedule_form">
             <field name="sequence" eval="20"/>
             <field name="view" ref="gnuhealth_or_schedule_view"/>
+            <field name="act_window" ref="action_gnuhealth_or_schedule_view"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_or_schedule_calendar">
+            <field name="sequence" eval="30"/>
+            <field name="view" ref="gnuhealth_or_schedule_calendar"/>
             <field name="act_window" ref="action_gnuhealth_or_schedule_view"/>
         </record>
 
