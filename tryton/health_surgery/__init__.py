@@ -34,6 +34,7 @@ def register():
         health_surgery.SurgeryProtocol,
         health_surgery.SurgeryDrain,
         health_surgery.PatientEvaluation,
+        health_surgery.ORScheduler,
         module='health_surgery', type_='model')
     Pool.register(
         report.SurgeryReport,

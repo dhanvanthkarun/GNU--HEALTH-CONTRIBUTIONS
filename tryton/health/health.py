@@ -3506,6 +3506,8 @@ class Appointment(ModelSQL, ModelView):
     appointment_type = fields.Selection([
         (None, ''),
         ('outpatient', 'Outpatient'),
+        ('telemedicine', 'Telemedicine'),
+        ('homecare', 'Home Care'),
         ('inpatient', 'Inpatient'),
         ], 'Type', sort=False)
 
@@ -4758,6 +4760,8 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     evaluation_type = fields.Selection([
         (None, ''),
         ('outpatient', 'Outpatient'),
+        ('homecare', 'Home Care'),
+        ('telemedicine', 'Telemedicine'),
         ('inpatient', 'Inpatient'),
         ], 'Type', sort=False,
         states=STATES)

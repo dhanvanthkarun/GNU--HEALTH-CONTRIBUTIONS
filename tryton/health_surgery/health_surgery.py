@@ -33,7 +33,7 @@ from trytond.modules.health.core import get_health_professional, \
 __all__ = ['RCRI', 'Surgery', 'Operation', 'SurgerySupply',
            'PatientData',
            'SurgeryTeam', 'SurgeryComplication', 'SurgeryDrain',
-           'PreOperativeAssessment', 'SurgeryProtocol']
+           'PreOperativeAssessment', 'SurgeryProtocol', 'ORScheduler']
 
 
 class RCRI(ModelSQL, ModelView):
@@ -1084,6 +1084,51 @@ class PatientData(metaclass=PoolMeta):
 
     surgery = fields.One2Many(
         'gnuhealth.surgery', 'patient', 'Surgeries', readonly=True)
+
+
+# OPERATING ROOM SCHEDULER
+class ORScheduler(ModelSQL, ModelView):
+    'Operating Rooms Schedules'
+    __name__ = 'gnuhealth.or.schedule'
+
+    name = fields.Many2One(
+        'gnuhealth.hospital.or', 'Operating Room',
+        select=True, required=True, help='Operating Room')
+
+    healthprof = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Health Prof',
+        help='Health Professional')
+
+    patient = fields.Many2One(
+        'gnuhealth.patient', 'Patient',
+        help='Patient Name')
+
+    reserve_from = fields.DateTime('From')
+    reserve_to = fields.DateTime('To')
+
+    institution = fields.Many2One(
+        'gnuhealth.institution', 'Institution',
+        help='Health Care Institution')
+
+    speciality = fields.Many2One(
+        'gnuhealth.specialty', 'Specialty',
+        help='Medical Specialty / Sector')
+
+    state = fields.Selection([
+        (None, ''),
+        ('free', 'Free'),
+        ('reserved', 'Reserved'),
+        ], 'State', sort=False)
+
+    urgency = fields.Selection([
+        (None, ''),
+        ('a', 'Normal'),
+        ('b', 'Urgent'),
+        ('c', 'Medical Emergency'),
+        ], 'Urgency', sort=False)
+
+    comments = fields.Text('Comments')
+
 
 
 class PatientEvaluation (metaclass=PoolMeta):
