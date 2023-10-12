@@ -2723,6 +2723,13 @@ class AlternativePersonID (ModelSQL, ModelView):
             ('other', 'Other'),
         ], 'ID type', required=True, sort=False,)
 
+    other_alternative_id_type = fields.Char(
+        'Other ID type',
+        help = "Other Alternative ID type, "
+        "user can customize an ID type "
+        "when 'ID type' = 'other', "
+    )
+
     expiration_date = fields.Date('Expiration date')
 
     comments = fields.Char('Comments')
