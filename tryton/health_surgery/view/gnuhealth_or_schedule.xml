@@ -10,20 +10,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <label name="name"/>
     <field name="name"/>
+    <label name="patient"/>
+    <field name="patient"/>
     <label name="reserve_from"/>
     <field name="reserve_from"/>
     <label name="reserve_to"/>
     <field name="reserve_to"/>
     <label name="healthprof"/>
     <field name="healthprof"/>
-    <label name="patient"/>
-    <field name="patient"/>
     <label name="speciality"/>
     <field name="speciality"/>
     <label name="urgency"/>
     <field name="urgency"/>
-    <label name="comments"/>
-    <field name="comments"/>
     <label name="institution"/>
     <field name="institution"/>
+    <newline/>
+    <label name="comments" xalign="0.0" colspan="4"/>
+    <newline/>
+    <field name="comments" colspan="4"/>
 </form>
