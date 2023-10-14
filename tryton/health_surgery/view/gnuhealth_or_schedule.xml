@@ -8,22 +8,33 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <label name="name"/>
-    <field name="name"/>
-    <label name="reserve_from"/>
-    <field name="reserve_from"/>
-    <label name="reserve_to"/>
-    <field name="reserve_to"/>
-    <label name="healthprof"/>
-    <field name="healthprof"/>
-    <label name="patient"/>
-    <field name="patient"/>
-    <label name="speciality"/>
-    <field name="speciality"/>
-    <label name="urgency"/>
-    <field name="urgency"/>
-    <label name="comments"/>
-    <field name="comments"/>
-    <label name="institution"/>
-    <field name="institution"/>
+    <group id="or_shcedule_header" colspan="4">
+        <label name="name" string="Op. Room"/>
+        <field name="name"/>
+        <group id="or_sched_period" colspan="2" col="4">
+            <label name="reserve_from"/>
+            <field name="reserve_from"/>
+            <label name="reserve_to"/>
+            <field name="reserve_to"/>
+        </group>
+    </group>
+    <group id="or_schedule_details">
+        <label name="healthprof"/>
+        <field name="healthprof"/>
+        <label name="patient"/>
+        <field name="patient"/>
+        <newline/>
+        <label name="speciality"/>
+        <field name="speciality"/>
+        <label name="urgency"/>
+        <field name="urgency"/>
+    </group>
+    <newline/>
+    <separator id="or_schedule_remarks" string="Remarks" colspan="4"/>
+    <newline/>
+    <field name="comments" colspan="4"/>
+    <group id="or_shcedule_footer" colspan="4" col="2">
+        <label name="institution"/>
+        <field name="institution"/>
+    </group>
 </form>
