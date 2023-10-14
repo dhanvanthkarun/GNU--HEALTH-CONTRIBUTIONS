@@ -1095,6 +1095,8 @@ class ORScheduler(ModelSQL, ModelView):
         'gnuhealth.hospital.or', 'Operating Room',
         select=True, required=True, help='Operating Room')
 
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
+
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
         help='Health Professional')

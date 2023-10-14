@@ -8,15 +8,17 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group id="or_shcedule_header" colspan="4">
+    <group id="or_shcedule_header" colspan="4" col="8">
         <label name="name" string="Op. Room"/>
         <field name="name"/>
-        <group id="or_sched_period" colspan="2" col="4">
+        <group id="or_sched_period">
             <label name="reserve_from"/>
             <field name="reserve_from"/>
             <label name="reserve_to"/>
             <field name="reserve_to"/>
         </group>
+        <label name="surgery"/>
+        <field name="surgery"/>        
     </group>
     <group id="or_schedule_details">
         <label name="healthprof"/>
