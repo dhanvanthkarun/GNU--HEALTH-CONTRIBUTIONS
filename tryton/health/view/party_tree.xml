@@ -11,7 +11,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
     <xpath expr="/tree/field[@name=&quot;code&quot;]" position="replace">
         <field name="ref" tree_invisible="1"/>
-        <field name="federation_account"/>        
+        <field name="federation_account"/>
+        <field name="internal_user"/>
     </xpath>
 
     <xpath expr="/tree/field[@name=&quot;name&quot;]" position="after">

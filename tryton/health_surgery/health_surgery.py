@@ -1092,7 +1092,7 @@ class ORScheduler(ModelSQL, ModelView):
     __name__ = 'gnuhealth.or.schedule'
 
     name = fields.Many2One(
-        'gnuhealth.hospital.or', 'Operating Room',
+        'gnuhealth.hospital.or', 'Room',
         select=True, required=True, help='Operating Room')
 
     surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')

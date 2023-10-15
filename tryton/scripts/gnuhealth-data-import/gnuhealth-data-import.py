@@ -111,19 +111,20 @@ def import_data(data):
             eval('import_line_' + data_type)(line)
 
 def import_line_patient(line):
-    fed_country = line.get("fed_country")
-    name        = line.get("first_name")
-    lastname    = line.get("family_name")
-    name_repr   = line.get("name_representation")
-    puid        = line.get("puid")
-    gender      = line.get("gender")
-    dob         = line.get("dob")
-    phone       = line.get("phone")
-    alt_id      = line.get("alternative_id")
-    alt_id_cmt  = line.get("alternative_id_comments")
-    addr_1      = line.get("addr_1")
-    addr_cont   = line.get("addr_cont")
-    active_date = line.get("activation_date")
+    fed_country        =  line.get("fed_country")
+    name               =  line.get("first_name")
+    lastname           =  line.get("family_name")
+    name_repr          =  line.get("name_representation")
+    puid               =  line.get("puid")
+    gender             =  line.get("gender")
+    dob                =  line.get("dob")
+    phone              =  line.get("phone")
+    alt_id             =  line.get("alternative_id")
+    other_alt_id_type  =  line.get("other_alternative_id_type")
+    alt_id_cmt         =  line.get("alternative_id_comments")
+    addr_1             =  line.get("addr_1")
+    addr_cont          =  line.get("addr_cont")
+    active_date        =  line.get("activation_date")
 
     print("* Importing patient: '{0}, {1}' ...".format(name, lastname))
 
@@ -169,6 +170,7 @@ def import_line_patient(line):
         party.alternative_identification = True
         altid = PartyAlternativeID()
         altid.alternative_id_type = 'other'
+        altid.other_alternative_id_type = other_alt_id_type
         altid.code = alt_id
         altid.comments = alt_id_cmt
 
