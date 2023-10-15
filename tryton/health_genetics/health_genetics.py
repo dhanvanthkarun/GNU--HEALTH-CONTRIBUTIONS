@@ -139,7 +139,7 @@ class Gene(ModelSQL, ModelView):
     def __register__(cls, module):
         # Migration from 4.2:
         # rename gnuhealth.disease.gene to gnuhealth.gene
-        backend.TableHandler.table_rename('gnuhealth_gene', cls._table)
+        backend.TableHandler.table_rename('gnuhealth_disease_gene', cls._table)
 
         # Update the data field from gnuhealth.disease.gene to gnuhealth.gene
         cursor = Transaction().connection.cursor()
@@ -147,7 +147,6 @@ class Gene(ModelSQL, ModelView):
             UPDATE ir_model_data SET model = 'gnuhealth.gene'
             WHERE model = 'gnuhealth.disease.gene'
             """)
-
         super().__register__(module)
 
 
