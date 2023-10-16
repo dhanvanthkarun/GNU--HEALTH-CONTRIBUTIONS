@@ -25,7 +25,8 @@ from trytond.i18n import gettext
 from trytond.modules.health.core import format_years_months_days
 
 from .exceptions import (
-    EndDateBeforeStart, ORNotAvailable, OperatingRoomAndDateRequired)
+    EndDateBeforeStart, ORNotAvailable, OperatingRoomAndDateRequired,
+    EndReservationBeforeStart)
 
 from trytond.modules.health.core import get_health_professional, \
     get_institution
@@ -1105,8 +1106,8 @@ class ORScheduler(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient',
         help='Patient Name')
 
-    reserve_from = fields.DateTime('From')
-    reserve_to = fields.DateTime('To')
+    reserve_from = fields.DateTime('From', required=True)
+    reserve_to = fields.DateTime('To', required=True)
 
     institution = fields.Many2One(
         'gnuhealth.institution', 'Institution',
@@ -1131,6 +1132,21 @@ class ORScheduler(ModelSQL, ModelView):
 
     comments = fields.Text('Comments')
 
+    @classmethod
+    def validate(cls, reservations):
+        super(ORScheduler, cls).validate(reservations)
+        for reservation in reservations:
+            reservation.validate_reservation_period()
+
+    def validate_reservation_period(self):
+        if (self.reserve_to and self.reserve_from):
+            if (self.reserve_to < self.reserve_from):
+                raise EndReservationBeforeStart(
+                    gettext('health_surgery.msg_end_reservation_before_start',
+                            res_from=self.reserve_from,
+                            res_to=self.reserve_to,
+                            )
+                    )
 
 
 class PatientEvaluation (metaclass=PoolMeta):

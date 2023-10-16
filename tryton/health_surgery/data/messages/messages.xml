@@ -14,6 +14,9 @@ this repository contains the full copyright notices and license terms. -->
         <record model="ir.message" id="msg_end_date_before_start">
             <field name="text">End time "%(end_date)s" BEFORE surgery date "%(surgery_date)s"</field>
         </record>
+        <record model="ir.message" id="msg_end_reservation_before_start">
+            <field name="text">OR reservation end "%(res_to)s" BEFORE start "%(res_from)s"</field>
+        </record>
         <record model="ir.message" id="msg_or_is_not_available">
             <field name="text">Operating Room is not available</field>
         </record>
