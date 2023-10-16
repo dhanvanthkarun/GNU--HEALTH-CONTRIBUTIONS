@@ -564,36 +564,36 @@ class Surgery(ModelSQL, ModelView):
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
 
-        """ Create the surgery so we get the id """
-        surgeries = super(Surgery, cls).create(vlist)
-        surgery = surgeries[0]
-
         for values in vlist:
             if not values.get('code'):
                 values['code'] = cls.generate_code()
 
-                """ Create the entry in the Operating room scheduler
-                    when the surgery includes de OR
-                """
+            """ Create the entry in the Operating room scheduler
+                when the surgery includes de OR
+            """
 
-                if values.get('operating_room'):
-                    ORsched = Pool().get('gnuhealth.or.schedule')
-                    sched = []
+            """ Create the surgery so we get the id """
+            surgeries = super(Surgery, cls).create(vlist)
+            surgery = surgeries[0].id
 
-                    op_room = values['operating_room']
-                    surgery_date = values['surgery_date']
-                    surgery_end_date = values['surgery_end_date']
+            if values.get('operating_room'):
+                ORsched = Pool().get('gnuhealth.or.schedule')
+                sched = []
 
-                    values = {
-                        'name': op_room,
-                        'reserve_from': surgery_date,
-                        'reserve_to': surgery_end_date,
-                        'surgery': surgery
-                        }
+                op_room = values['operating_room']
+                surgery_date = values['surgery_date']
+                surgery_end_date = values['surgery_end_date']
 
-                    # Add new schedule entry with the surgery
-                    sched.append(values)
-                    ORsched.create(sched)
+                values = {
+                    'name': op_room,
+                    'reserve_from': surgery_date,
+                    'reserve_to': surgery_end_date,
+                    'surgery': surgery
+                    }
+
+                # Add new schedule entry with the surgery
+                sched.append(values)
+                ORsched.create(sched)
 
         return surgeries
 
