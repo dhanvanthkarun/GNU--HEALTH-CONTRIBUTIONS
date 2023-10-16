@@ -1142,7 +1142,7 @@ class ORScheduler(ModelSQL, ModelView):
         'gnuhealth.institution', 'Institution',
         help='Health Care Institution')
 
-    speciality = fields.Many2One(
+    specialty = fields.Many2One(
         'gnuhealth.specialty', 'Specialty',
         help='Medical Specialty / Sector')
 
@@ -1154,10 +1154,11 @@ class ORScheduler(ModelSQL, ModelView):
 
     urgency = fields.Selection([
         (None, ''),
-        ('a', 'Normal'),
-        ('b', 'Urgent'),
-        ('c', 'Medical Emergency'),
-        ], 'Urgency', sort=False)
+        ('o', 'Optional'),
+        ('r', 'Required'),
+        ('u', 'Urgent'),
+        ('e', 'Emergency'),
+        ], 'Urgency', help="Urgency level", sort=False)
 
     comments = fields.Text('Comments')
 
