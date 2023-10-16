@@ -563,10 +563,39 @@ class Surgery(ModelSQL, ModelView):
     @classmethod
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
+
+        """ Create the surgery so we get the id """
+        surgeries = super(Surgery, cls).create(vlist)
+        surgery = surgeries[0]
+
         for values in vlist:
             if not values.get('code'):
                 values['code'] = cls.generate_code()
-        return super(Surgery, cls).create(vlist)
+
+                """ Create the entry in the Operating room scheduler
+                    when the surgery includes de OR
+                """
+
+                if values.get('operating_room'):
+                    ORsched = Pool().get('gnuhealth.or.schedule')
+                    sched = []
+
+                    op_room = values['operating_room']
+                    surgery_date = values['surgery_date']
+                    surgery_end_date = values['surgery_end_date']
+
+                    values = {
+                        'name': op_room,
+                        'reserve_from': surgery_date,
+                        'reserve_to': surgery_end_date,
+                        'surgery': surgery
+                        }
+
+                    # Add new schedule entry with the surgery
+                    sched.append(values)
+                    ORsched.create(sched)
+
+        return surgeries
 
     @classmethod
     def __setup__(cls):
