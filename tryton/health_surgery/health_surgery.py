@@ -520,7 +520,6 @@ class Surgery(ModelSQL, ModelView):
             else:
                 self.specialty = None
 
-
     @staticmethod
     def default_state():
         return 'draft'
@@ -617,6 +616,43 @@ class Surgery(ModelSQL, ModelView):
         return surgeries
 
     @classmethod
+    def update_or_schedule(cls, surgery, values):
+        # Update the Operating Room Schedule
+        surgery_id = surgery.id
+
+        # Look for the schedule entry associated with this surgery
+        Orsched = Pool().get('gnuhealth.or.schedule')
+        orsched = Orsched.search(
+            [("surgery", "=", surgery_id)],)
+
+        # Found the schedule entry related to the surgery
+        # Update the record
+        if orsched:
+            sched_entry = []
+            sched_entry.append(orsched[0])
+            to_update = {}
+
+            if 'surgery_date' in values:
+                to_update['reserve_from'] = values['surgery_date']
+            if 'surgery_end_date' in values:
+                to_update['reserve_to'] = values['surgery_end_date']
+            if 'classification' in values:
+                to_update['urgency'] = values['classification']
+            if 'institution' in values:
+                to_update['institution'] = values['institution']
+            if 'surgeon' in values:
+                to_update['healthprof'] = values['surgeon']
+            if 'specialty' in values:
+                to_update['specialty'] = values['specialty']
+            if 'patient' in values:
+                to_update['patient'] = values['patient']
+            if 'operating_room' in values:
+                to_update['name'] = values['operating_room']
+
+            # Update schedule
+            Orsched.write(sched_entry, to_update)
+
+    @classmethod
     def __setup__(cls):
         super(Surgery, cls).__setup__()
 
@@ -657,10 +693,15 @@ class Surgery(ModelSQL, ModelView):
 
     @classmethod
     def write(cls, surgeries, vals):
+        surgery = surgeries[0]
         # Don't allow to write the record if the surgery has been signed
-        if surgeries[0].state == 'signed':
+        if surgery.state == 'signed':
             raise EndDateBeforeStart(
                 gettext('health_surgery.msg_surgery_is_done'))
+
+        # Update Operating Room schedule entry
+        cls.update_or_schedule(surgery, vals)
+
         return super(Surgery, cls).write(surgeries, vals)
 
     # Method to check for availability and make the Operating Room
@@ -1141,7 +1182,7 @@ class ORScheduler(ModelSQL, ModelView):
     __name__ = 'gnuhealth.or.schedule'
 
     name = fields.Many2One(
-        'gnuhealth.hospital.or', 'Room',
+        'gnuhealth.hospital.or', 'Op. Room',
         select=True, required=True, help='Operating Room')
 
     surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
