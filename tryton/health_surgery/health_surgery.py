@@ -583,12 +583,18 @@ class Surgery(ModelSQL, ModelView):
                 op_room = values['operating_room']
                 surgery_date = values['surgery_date']
                 surgery_end_date = values['surgery_end_date']
+                healthprof = values['surgeon']
+                urgency = values['classification']
+                institution = values['institution']
 
                 values = {
                     'name': op_room,
                     'reserve_from': surgery_date,
                     'reserve_to': surgery_end_date,
-                    'surgery': surgery
+                    'surgery': surgery,
+                    'healthprof': healthprof,
+                    'urgency': urgency,
+                    'institution': institution
                     }
 
                 # Add new schedule entry with the surgery
