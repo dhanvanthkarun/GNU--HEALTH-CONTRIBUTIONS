@@ -559,8 +559,9 @@ class Surgery(ModelSQL, ModelView):
     # These two are function fields (don't exist at DB level)
     @fields.depends('patient', '_parent_patient.name')
     def on_change_patient(self):
-        self.gender = self.patient.gender
-        self.computed_age = self.patient.age
+        if (self.patient):
+            self.gender = self.patient.gender
+            self.computed_age = self.patient.age
 
     @classmethod
     def generate_code(cls, **pattern):
