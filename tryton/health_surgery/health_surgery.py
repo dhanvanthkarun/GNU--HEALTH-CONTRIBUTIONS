@@ -1168,6 +1168,20 @@ class ORScheduler(ModelSQL, ModelView):
 
     comments = fields.Text('Comments')
 
+    @staticmethod
+    def default_healthprof():
+        return get_health_professional()
+
+    # Update specialty based on the health professional
+    @fields.depends('healthprof')
+    def on_change_healthprof(self):
+        if (self.healthprof):
+            if (self.healthprof.main_specialty):
+                self.specialty = self.healthprof.main_specialty.specialty.id
+            else:
+                self.specialty = None
+
+
     @classmethod
     def validate(cls, reservations):
         super(ORScheduler, cls).validate(reservations)
