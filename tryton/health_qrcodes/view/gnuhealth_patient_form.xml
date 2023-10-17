@@ -11,6 +11,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <xpath expr="//group[@id=&quot;misc_info_group&quot;]" position="before">
         <group id="patient_qr">
             <field xfill="0" xexpand="1" name="qr" widget="image"/>
+            <field xfill="0" xexpand="1" name="barcode" widget="image"/>
         </group>
         <newline/>
     </xpath>
