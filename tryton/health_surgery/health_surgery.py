@@ -1178,6 +1178,15 @@ class ORScheduler(ModelSQL, ModelView):
                             )
                     )
 
+    @classmethod
+    def __setup__(cls):
+        super(ORScheduler, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('surgery_uniq', Unique(t, t.surgery),
+             'The surgery is already scheduled')
+        ]
+
 
 class PatientEvaluation (metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.evaluation'
