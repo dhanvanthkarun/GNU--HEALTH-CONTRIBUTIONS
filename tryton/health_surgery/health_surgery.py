@@ -237,6 +237,8 @@ class Surgery(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Surgeon',
         help="Surgeon who did the procedure")
 
+    specialty = fields.Many2One('gnuhealth.specialty', 'Specialty')
+
     anesthetist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Anesthetist',
         help="Anesthetist in charge")
@@ -509,6 +511,16 @@ class Surgery(ModelSQL, ModelView):
         surgeon = get_health_professional()
         return surgeon
 
+    # Update specialty based on the surgeon
+    @fields.depends('surgeon')
+    def on_change_surgeon(self):
+        if (self.surgeon):
+            if (self.surgeon.main_specialty):
+                self.specialty = self.surgeon.main_specialty.specialty.id
+            else:
+                self.specialty = None
+
+
     @staticmethod
     def default_state():
         return 'draft'
@@ -579,11 +591,11 @@ class Surgery(ModelSQL, ModelView):
             if values.get('operating_room'):
                 ORsched = Pool().get('gnuhealth.or.schedule')
                 sched = []
-
                 op_room = values['operating_room']
                 surgery_date = values['surgery_date']
                 surgery_end_date = values['surgery_end_date']
                 healthprof = values['surgeon']
+                specialty = values['specialty']
                 urgency = values['classification']
                 institution = values['institution']
 
@@ -593,6 +605,7 @@ class Surgery(ModelSQL, ModelView):
                     'reserve_to': surgery_end_date,
                     'surgery': surgery,
                     'healthprof': healthprof,
+                    'specialty': specialty,
                     'urgency': urgency,
                     'institution': institution
                     }
@@ -1180,7 +1193,6 @@ class ORScheduler(ModelSQL, ModelView):
                 self.specialty = self.healthprof.main_specialty.specialty.id
             else:
                 self.specialty = None
-
 
     @classmethod
     def validate(cls, reservations):
