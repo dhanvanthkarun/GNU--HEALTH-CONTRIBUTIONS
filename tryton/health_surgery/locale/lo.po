@@ -16,6 +16,58 @@ msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "ລະຫັດປະເທດ"
 
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,comments:"
+msgid "Comments"
+msgstr "ຄໍາເຫັນ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,healthprof:"
+msgid "Health Prof"
+msgstr "ທ່ານໝໍ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,institution:"
+msgid "Institution"
+msgstr "ສະຖາບັນ"
+
+msgctxt "field:gnuhealth.or.schedule,name:"
+msgid "Op. Room"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,patient:"
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+msgctxt "field:gnuhealth.or.schedule,reserve_from:"
+msgid "From"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_to:"
+msgid "To"
+msgstr "ເຖິງ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,specialty:"
+msgid "Specialty"
+msgstr "ວິຊາສະເພາະພິເສດຫຼືຊຽ່ວຊານທາງດ້ານ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,state:"
+msgid "State"
+msgstr "ລັດ"
+
+msgctxt "field:gnuhealth.or.schedule,surgery:"
+msgid "Surgery"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,urgency:"
+msgid "Urgency"
+msgstr "ການຣິບດ່ວນ"
+
 msgctxt "field:gnuhealth.patient,surgery:"
 msgid "Surgeries"
 msgstr ""
@@ -390,6 +442,11 @@ msgid "Signed by"
 msgstr "ເຊັນໂດຍ"
 
 #, fuzzy
+msgctxt "field:gnuhealth.surgery,specialty:"
+msgid "Specialty"
+msgstr "ວິຊາສະເພາະພິເສດຫຼືຊຽ່ວຊານທາງດ້ານ"
+
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,state:"
 msgid "State"
 msgstr "ລັດ"
@@ -559,6 +616,35 @@ msgstr ""
 
 msgctxt "help:gnuhealth.operation,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS or ICPM"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,healthprof:"
+msgid "Health Professional"
+msgstr "ທ່ານໝໍ"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,institution:"
+msgid "Health Care Institution"
+msgstr "ສະຖາບັນຣັກສາສຸຂພາບ"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,name:"
+msgid "Operating Room"
+msgstr "ຫ້ອງພາຕັດ"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,patient:"
+msgid "Patient Name"
+msgstr "ຊື່ຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,specialty:"
+msgid "Medical Specialty / Sector"
+msgstr "ການປິ່ນປົວພິເສດ / ຂະແຫນງການ"
+
+msgctxt "help:gnuhealth.or.schedule,urgency:"
+msgid "Urgency level"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,thyroid_tvol:"
@@ -840,6 +926,10 @@ msgctxt "model:gnuhealth.operation,name:"
 msgid "Operation - Surgical Procedures"
 msgstr ""
 
+msgctxt "model:gnuhealth.or.schedule,name:"
+msgid "Operating Rooms Schedules"
+msgstr ""
+
 msgctxt "model:gnuhealth.preoperative_assessment,name:"
 msgid "Preoperative Assessment"
 msgstr ""
@@ -886,6 +976,10 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_surgery_form"
 msgid "Surgeries"
+msgstr ""
+
+msgctxt "model:ir.action,name:action_gnuhealth_or_schedule_view"
+msgid "Operating Room Schedules"
 msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_preoperative_assessment_view"
@@ -947,6 +1041,10 @@ msgctxt "model:ir.message,text:msg_end_date_before_start"
 msgid "End time \"%(end_date)s\" BEFORE surgery date \"%(surgery_date)s\""
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_end_reservation_before_start"
+msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -997,6 +1095,10 @@ msgstr ""
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_surgery_code"
 msgid "Surgery"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_or_schedule_menu"
+msgid "OR Schedule"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_preoperative_assessment"
@@ -1319,6 +1421,34 @@ msgstr ""
 msgctxt "report:surgery_outpatient:"
 msgid "Surgical Intervention:"
 msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Free"
+msgstr "ຟຣີ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Reserved"
+msgstr "ສະຫງວນໄວ້"
+
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Emergency"
+msgstr ""
+
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Optional"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Required"
+msgstr "ຕ້ອງມີ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Urgent"
+msgstr "ຮີບດ່ວນ"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"
@@ -2156,6 +2286,21 @@ msgstr ""
 msgctxt "view:gnuhealth.operation:"
 msgid "Procedure Details / Incidents"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Details"
+msgstr "ລາຍລະອຽດ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Main"
+msgstr "ຕົ້ນຕໍຫຼືໂຕສຳຄັນ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Remarks"
+msgstr "ຂໍ້ສັງເກດ"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Surgical relevant info"

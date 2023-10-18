@@ -14,6 +14,60 @@ msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "Κωδικός"
 
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,comments:"
+msgid "Comments"
+msgstr "Σχόλια"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,healthprof:"
+msgid "Health Prof"
+msgstr "Επαγγ. Υγείας"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,institution:"
+msgid "Institution"
+msgstr "Ίδρυμα"
+
+msgctxt "field:gnuhealth.or.schedule,name:"
+msgid "Op. Room"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,patient:"
+msgid "Patient"
+msgstr "Ασθενής"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_from:"
+msgid "From"
+msgstr "Από"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_to:"
+msgid "To"
+msgstr "Προς"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,specialty:"
+msgid "Specialty"
+msgstr "Ειδικότητα"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,state:"
+msgid "State"
+msgstr "Περιοχή"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,urgency:"
+msgid "Urgency"
+msgstr "Βαθμός επείγοντος"
+
 msgctxt "field:gnuhealth.patient,surgery:"
 msgid "Surgeries"
 msgstr "Χειρουργεία"
@@ -380,6 +434,11 @@ msgctxt "field:gnuhealth.surgery,signed_by:"
 msgid "Signed by"
 msgstr "Υπεγράφη από τον/την"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,specialty:"
+msgid "Specialty"
+msgstr "Ειδικότητα"
+
 msgctxt "field:gnuhealth.surgery,state:"
 msgid "State"
 msgstr "Περιοχή"
@@ -550,6 +609,35 @@ msgstr "Μέλος"
 msgctxt "help:gnuhealth.operation,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS or ICPM"
 msgstr "Κωδικός διαδικασίας, για παράδειγμα ICD-10-PCS ή ICPM"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,healthprof:"
+msgid "Health Professional"
+msgstr "Επαγγελματίας Υγείας"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,institution:"
+msgid "Health Care Institution"
+msgstr "Υγειονομικό Ίδρυμα"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,name:"
+msgid "Operating Room"
+msgstr "Αίθουσα Χειρουργείου"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,patient:"
+msgid "Patient Name"
+msgstr "Όνομα ασθενούς"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,specialty:"
+msgid "Medical Specialty / Sector"
+msgstr "Ιατρική ειδικότητα / Τομέας"
+
+msgctxt "help:gnuhealth.or.schedule,urgency:"
+msgid "Urgency level"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,thyroid_tvol:"
 msgid "Volume in mL"
@@ -847,6 +935,10 @@ msgctxt "model:gnuhealth.operation,name:"
 msgid "Operation - Surgical Procedures"
 msgstr "Επέμβαση - Χειρουργ. Επεμβάσεις"
 
+msgctxt "model:gnuhealth.or.schedule,name:"
+msgid "Operating Rooms Schedules"
+msgstr ""
+
 msgctxt "model:gnuhealth.preoperative_assessment,name:"
 msgid "Preoperative Assessment"
 msgstr ""
@@ -894,6 +986,10 @@ msgstr "RCRI"
 msgctxt "model:ir.action,name:act_surgery_form"
 msgid "Surgeries"
 msgstr "Χειρουργεία"
+
+msgctxt "model:ir.action,name:action_gnuhealth_or_schedule_view"
+msgid "Operating Room Schedules"
+msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_preoperative_assessment_view"
 msgid "Preoperative Assessments"
@@ -954,6 +1050,10 @@ msgctxt "model:ir.message,text:msg_end_date_before_start"
 msgid "End time \"%(end_date)s\" BEFORE surgery date \"%(surgery_date)s\""
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_end_reservation_before_start"
+msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -1006,6 +1106,10 @@ msgstr "Χειρουργείο"
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_surgery_code"
 msgid "Surgery"
 msgstr "Χειρουργείο"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_or_schedule_menu"
+msgid "OR Schedule"
+msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_preoperative_assessment"
 msgid "Preoperative Assessments"
@@ -1331,6 +1435,36 @@ msgstr "Χειρουργείο"
 msgctxt "report:surgery_outpatient:"
 msgid "Surgical Intervention:"
 msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Free"
+msgstr "Δωρεάν"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Reserved"
+msgstr "Προκρατημένο"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Emergency"
+msgstr "Επείγουσα"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Optional"
+msgstr "Προαιρετικός/ή"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Required"
+msgstr "Απαιτούμενα"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Urgent"
+msgstr "Επειγόντως"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"
@@ -2239,6 +2373,21 @@ msgstr ""
 msgctxt "view:gnuhealth.operation:"
 msgid "Procedure Details / Incidents"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Main"
+msgstr "Κύριο"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Remarks"
+msgstr "Παρατηρήσεις"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Surgical relevant info"

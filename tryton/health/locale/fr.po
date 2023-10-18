@@ -1955,6 +1955,11 @@ msgctxt "field:gnuhealth.person_alternative_identification,name:"
 msgid "Party"
 msgstr "Tiers"
 
+msgctxt ""
+"field:gnuhealth.person_alternative_identification,other_alternative_id_type:"
+msgid "Other ID type"
+msgstr ""
+
 msgctxt "field:gnuhealth.person_name,date_from:"
 msgid "From"
 msgstr "De"
@@ -3661,6 +3666,13 @@ msgstr "Code de voie d'administration du médicament."
 msgctxt "help:gnuhealth.patient.medication,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "Date de début de traitement"
+
+msgctxt ""
+"help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
+msgid ""
+"Other Alternative ID type, user can customize an ID type when 'ID type' = "
+"'other', "
+msgstr ""
 
 msgctxt "help:gnuhealth.person_name,family:"
 msgid "Family / Surname."
@@ -9691,12 +9703,20 @@ msgid ""
 msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
+msgid "Home Care"
+msgstr ""
+
+msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Inpatient"
 msgstr "Patient hospitalisé"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Outpatient"
 msgstr "Patient en ambulatoire"
+
+msgctxt "selection:gnuhealth.appointment,appointment_type:"
+msgid "Telemedicine"
+msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.appointment,state:"
@@ -10633,12 +10653,20 @@ msgid ""
 msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
+msgid "Home Care"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
 msgid "Inpatient"
 msgstr "Patient hospitalisé"
 
 msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
 msgid "Outpatient"
 msgstr "Patient ambulatoire"
+
+msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
+msgid "Telemedicine"
+msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,gender:"

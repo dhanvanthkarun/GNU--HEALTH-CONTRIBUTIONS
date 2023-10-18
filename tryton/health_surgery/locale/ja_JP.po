@@ -14,6 +14,60 @@ msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "コード"
 
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,comments:"
+msgid "Comments"
+msgstr "コメント"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,healthprof:"
+msgid "Health Prof"
+msgstr "健康プロフィール"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,institution:"
+msgid "Institution"
+msgstr "施設"
+
+msgctxt "field:gnuhealth.or.schedule,name:"
+msgid "Op. Room"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,patient:"
+msgid "Patient"
+msgstr "患者"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_from:"
+msgid "From"
+msgstr "から"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_to:"
+msgid "To"
+msgstr "まで"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,specialty:"
+msgid "Specialty"
+msgstr "専門診療科目"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,state:"
+msgid "State"
+msgstr "州"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,surgery:"
+msgid "Surgery"
+msgstr "外科"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,urgency:"
+msgid "Urgency"
+msgstr "緊急性"
+
 msgctxt "field:gnuhealth.patient,surgery:"
 msgid "Surgeries"
 msgstr "外科手術"
@@ -381,6 +435,11 @@ msgctxt "field:gnuhealth.surgery,signed_by:"
 msgid "Signed by"
 msgstr "サインされました"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,specialty:"
+msgid "Specialty"
+msgstr "専門診療科目"
+
 msgctxt "field:gnuhealth.surgery,state:"
 msgid "State"
 msgstr "州"
@@ -553,6 +612,35 @@ msgstr ""
 msgctxt "help:gnuhealth.operation,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS or ICPM"
 msgstr "処置コード, 例 ICD-10-PCS や ICPM"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,healthprof:"
+msgid "Health Professional"
+msgstr "主治医"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,institution:"
+msgid "Health Care Institution"
+msgstr "医療機関"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,name:"
+msgid "Operating Room"
+msgstr "手術室"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,patient:"
+msgid "Patient Name"
+msgstr "両親の名前"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,specialty:"
+msgid "Medical Specialty / Sector"
+msgstr "医療専門領域 / セクター"
+
+msgctxt "help:gnuhealth.or.schedule,urgency:"
+msgid "Urgency level"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,thyroid_tvol:"
 msgid "Volume in mL"
@@ -853,6 +941,10 @@ msgctxt "model:gnuhealth.operation,name:"
 msgid "Operation - Surgical Procedures"
 msgstr "手術 - 外科手術の手順"
 
+msgctxt "model:gnuhealth.or.schedule,name:"
+msgid "Operating Rooms Schedules"
+msgstr ""
+
 msgctxt "model:gnuhealth.preoperative_assessment,name:"
 msgid "Preoperative Assessment"
 msgstr ""
@@ -900,6 +992,10 @@ msgstr "RCRI"
 msgctxt "model:ir.action,name:act_surgery_form"
 msgid "Surgeries"
 msgstr "外科手術"
+
+msgctxt "model:ir.action,name:action_gnuhealth_or_schedule_view"
+msgid "Operating Room Schedules"
+msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_preoperative_assessment_view"
 msgid "Preoperative Assessments"
@@ -960,6 +1056,10 @@ msgctxt "model:ir.message,text:msg_end_date_before_start"
 msgid "End time \"%(end_date)s\" BEFORE surgery date \"%(surgery_date)s\""
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_end_reservation_before_start"
+msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -1013,6 +1113,10 @@ msgstr "外科"
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_surgery_code"
 msgid "Surgery"
 msgstr "外科"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_or_schedule_menu"
+msgid "OR Schedule"
+msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_preoperative_assessment"
 msgid "Preoperative Assessments"
@@ -1333,6 +1437,36 @@ msgstr "外科"
 msgctxt "report:surgery_outpatient:"
 msgid "Surgical Intervention:"
 msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Free"
+msgstr "空き"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Reserved"
+msgstr "予約済み"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Emergency"
+msgstr "危機"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Optional"
+msgstr "オプション"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Required"
+msgstr "必要"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Urgent"
+msgstr "緊急"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"
@@ -2180,6 +2314,21 @@ msgstr ""
 msgctxt "view:gnuhealth.operation:"
 msgid "Procedure Details / Incidents"
 msgstr "処置詳細 / インシデント"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Details"
+msgstr "詳細"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Main"
+msgstr "メイン"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Remarks"
+msgstr "注意点"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Surgical relevant info"

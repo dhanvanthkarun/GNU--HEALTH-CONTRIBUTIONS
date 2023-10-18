@@ -14,6 +14,60 @@ msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "Codice"
 
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,comments:"
+msgid "Comments"
+msgstr "Osservazioni"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,healthprof:"
+msgid "Health Prof"
+msgstr "Paramedico"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,institution:"
+msgid "Institution"
+msgstr "Istituzione"
+
+msgctxt "field:gnuhealth.or.schedule,name:"
+msgid "Op. Room"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,patient:"
+msgid "Patient"
+msgstr "Paziente"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_from:"
+msgid "From"
+msgstr "Da"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,reserve_to:"
+msgid "To"
+msgstr "A"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,specialty:"
+msgid "Specialty"
+msgstr "Specializzazione"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,state:"
+msgid "State"
+msgstr "Stato"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,surgery:"
+msgid "Surgery"
+msgstr "Chirurgia"
+
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,urgency:"
+msgid "Urgency"
+msgstr "Urgenza"
+
 msgctxt "field:gnuhealth.patient,surgery:"
 msgid "Surgeries"
 msgstr "Interventi chirurgici"
@@ -384,6 +438,11 @@ msgctxt "field:gnuhealth.surgery,signed_by:"
 msgid "Signed by"
 msgstr "Firmato da"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,specialty:"
+msgid "Specialty"
+msgstr "Specializzazione"
+
 msgctxt "field:gnuhealth.surgery,state:"
 msgid "State"
 msgstr "Stato"
@@ -551,6 +610,35 @@ msgstr ""
 
 msgctxt "help:gnuhealth.operation,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS or ICPM"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,healthprof:"
+msgid "Health Professional"
+msgstr "Paramedico"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,institution:"
+msgid "Health Care Institution"
+msgstr "Istituzione di Assistenza Sanitaria"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,name:"
+msgid "Operating Room"
+msgstr "Sala Operatoria"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,patient:"
+msgid "Patient Name"
+msgstr "Nome del paziente"
+
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,specialty:"
+msgid "Medical Specialty / Sector"
+msgstr "Specialità Medica / Settore"
+
+msgctxt "help:gnuhealth.or.schedule,urgency:"
+msgid "Urgency level"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,thyroid_tvol:"
@@ -832,6 +920,10 @@ msgctxt "model:gnuhealth.operation,name:"
 msgid "Operation - Surgical Procedures"
 msgstr ""
 
+msgctxt "model:gnuhealth.or.schedule,name:"
+msgid "Operating Rooms Schedules"
+msgstr ""
+
 msgctxt "model:gnuhealth.preoperative_assessment,name:"
 msgid "Preoperative Assessment"
 msgstr ""
@@ -879,6 +971,10 @@ msgstr ""
 msgctxt "model:ir.action,name:act_surgery_form"
 msgid "Surgeries"
 msgstr "Interventi chirurgici"
+
+msgctxt "model:ir.action,name:action_gnuhealth_or_schedule_view"
+msgid "Operating Room Schedules"
+msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_preoperative_assessment_view"
 msgid "Preoperative Assessments"
@@ -936,6 +1032,10 @@ msgctxt "model:ir.message,text:msg_end_date_before_start"
 msgid "End time \"%(end_date)s\" BEFORE surgery date \"%(surgery_date)s\""
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_end_reservation_before_start"
+msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -986,6 +1086,10 @@ msgstr "Chirurgia"
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_surgery_code"
 msgid "Surgery"
 msgstr "Chirurgia"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_or_schedule_menu"
+msgid "OR Schedule"
+msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_preoperative_assessment"
 msgid "Preoperative Assessments"
@@ -1309,6 +1413,36 @@ msgstr "Chirurgia"
 msgctxt "report:surgery_outpatient:"
 msgid "Surgical Intervention:"
 msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Free"
+msgstr "Libero"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Reserved"
+msgstr "Riservato"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Emergency"
+msgstr "Emergenza"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Optional"
+msgstr "Facoltativo"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Required"
+msgstr "Necessario"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Urgent"
+msgstr "Urgente"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"
@@ -2142,6 +2276,21 @@ msgstr ""
 msgctxt "view:gnuhealth.operation:"
 msgid "Procedure Details / Incidents"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Details"
+msgstr "Dettagli"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Main"
+msgstr "Principale"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Remarks"
+msgstr "Osservazioni"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Surgical relevant info"
