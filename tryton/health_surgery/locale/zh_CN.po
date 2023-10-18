@@ -14,6 +14,50 @@ msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "代码"
 
+msgctxt "field:gnuhealth.or.schedule,comments:"
+msgid "Comments"
+msgstr "说明"
+
+msgctxt "field:gnuhealth.or.schedule,healthprof:"
+msgid "Health Prof"
+msgstr "医务人员"
+
+msgctxt "field:gnuhealth.or.schedule,institution:"
+msgid "Institution"
+msgstr "医疗机构"
+
+msgctxt "field:gnuhealth.or.schedule,name:"
+msgid "Op. Room"
+msgstr "手术室"
+
+msgctxt "field:gnuhealth.or.schedule,patient:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "field:gnuhealth.or.schedule,reserve_from:"
+msgid "From"
+msgstr "开始时间"
+
+msgctxt "field:gnuhealth.or.schedule,reserve_to:"
+msgid "To"
+msgstr "结束时间"
+
+msgctxt "field:gnuhealth.or.schedule,specialty:"
+msgid "Specialty"
+msgstr "专业"
+
+msgctxt "field:gnuhealth.or.schedule,state:"
+msgid "State"
+msgstr "状态"
+
+msgctxt "field:gnuhealth.or.schedule,surgery:"
+msgid "Surgery"
+msgstr "手术"
+
+msgctxt "field:gnuhealth.or.schedule,urgency:"
+msgid "Urgency"
+msgstr "紧急程度"
+
 msgctxt "field:gnuhealth.patient,surgery:"
 msgid "Surgeries"
 msgstr "手术"
@@ -363,6 +407,10 @@ msgctxt "field:gnuhealth.surgery,signed_by:"
 msgid "Signed by"
 msgstr "签署人"
 
+msgctxt "field:gnuhealth.surgery,specialty:"
+msgid "Specialty"
+msgstr "专业"
+
 msgctxt "field:gnuhealth.surgery,state:"
 msgid "State"
 msgstr "状态"
@@ -518,6 +566,30 @@ msgstr "成员"
 msgctxt "help:gnuhealth.operation,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS or ICPM"
 msgstr "手术或操作代码，例如 ICD-10-PC 或者 ICPM"
+
+msgctxt "help:gnuhealth.or.schedule,healthprof:"
+msgid "Health Professional"
+msgstr "医务人员"
+
+msgctxt "help:gnuhealth.or.schedule,institution:"
+msgid "Health Care Institution"
+msgstr "医疗机构"
+
+msgctxt "help:gnuhealth.or.schedule,name:"
+msgid "Operating Room"
+msgstr "手术室"
+
+msgctxt "help:gnuhealth.or.schedule,patient:"
+msgid "Patient Name"
+msgstr "患者姓名"
+
+msgctxt "help:gnuhealth.or.schedule,specialty:"
+msgid "Medical Specialty / Sector"
+msgstr "医学专业 / 科室或病区"
+
+msgctxt "help:gnuhealth.or.schedule,urgency:"
+msgid "Urgency level"
+msgstr "紧急程度"
 
 msgctxt "help:gnuhealth.patient.evaluation,thyroid_tvol:"
 msgid "Volume in mL"
@@ -823,6 +895,10 @@ msgctxt "model:gnuhealth.operation,name:"
 msgid "Operation - Surgical Procedures"
 msgstr "手术 - 外科手术流程"
 
+msgctxt "model:gnuhealth.or.schedule,name:"
+msgid "Operating Rooms Schedules"
+msgstr "手术室安排"
+
 msgctxt "model:gnuhealth.preoperative_assessment,name:"
 msgid "Preoperative Assessment"
 msgstr "术前评估"
@@ -870,6 +946,10 @@ msgstr "RCRI 指数"
 msgctxt "model:ir.action,name:act_surgery_form"
 msgid "Surgeries"
 msgstr "手术信息"
+
+msgctxt "model:ir.action,name:action_gnuhealth_or_schedule_view"
+msgid "Operating Room Schedules"
+msgstr "手术室安排"
 
 msgctxt "model:ir.action,name:action_gnuhealth_preoperative_assessment_view"
 msgid "Preoperative Assessments"
@@ -924,6 +1004,10 @@ msgctxt "model:ir.message,text:msg_end_date_before_start"
 msgid "End time \"%(end_date)s\" BEFORE surgery date \"%(surgery_date)s\""
 msgstr "结束时间 \"%(end_date)s\" 在手术时间 \"%(surgery_date)s\" 之前"
 
+msgctxt "model:ir.message,text:msg_end_reservation_before_start"
+msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -971,6 +1055,10 @@ msgstr "手术"
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_surgery_code"
 msgid "Surgery"
 msgstr "手术"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_or_schedule_menu"
+msgid "OR Schedule"
+msgstr "手术室安排"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_preoperative_assessment"
 msgid "Preoperative Assessments"
@@ -1281,7 +1369,6 @@ msgctxt "report:surgery_outpatient:"
 msgid "Printed Date:"
 msgstr "打印日期:"
 
-#, fuzzy
 msgctxt "report:surgery_outpatient:"
 msgid "Surgery"
 msgstr "手术"
@@ -1289,6 +1376,30 @@ msgstr "手术"
 msgctxt "report:surgery_outpatient:"
 msgid "Surgical Intervention:"
 msgstr ""
+
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Free"
+msgstr "空闲"
+
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Reserved"
+msgstr "已预定"
+
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Emergency"
+msgstr "突发事件"
+
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Optional"
+msgstr "可选"
+
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Required"
+msgstr "必须"
+
+msgctxt "selection:gnuhealth.or.schedule,urgency:"
+msgid "Urgent"
+msgstr "紧急"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_disfunction:"
 msgid "Discapacitating"
@@ -2095,6 +2206,18 @@ msgstr "特伦伯格位"
 msgctxt "view:gnuhealth.operation:"
 msgid "Procedure Details / Incidents"
 msgstr "手术操作细节 / 事件"
+
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Details"
+msgstr "详细情况"
+
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Main"
+msgstr "主要情况"
+
+msgctxt "view:gnuhealth.or.schedule:"
+msgid "Remarks"
+msgstr "说明"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Surgical relevant info"
