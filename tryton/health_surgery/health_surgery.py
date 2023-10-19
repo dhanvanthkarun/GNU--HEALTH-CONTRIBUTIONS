@@ -1087,7 +1087,7 @@ class SurgeryProtocol(ModelSQL, ModelView):
 
     name = fields.Char(
         'Name',
-        help='Protocol Name')
+        help='Protocol Name', required=True)
 
     description = fields.Char('Description')
 
