@@ -594,6 +594,7 @@ class Surgery(ModelSQL, ModelView):
                 op_room = values['operating_room']
                 surgery_date = values['surgery_date']
                 surgery_end_date = values['surgery_end_date']
+                patient = values['patient']
                 healthprof = values['surgeon']
                 specialty = values['specialty']
                 urgency = values['classification']
@@ -604,6 +605,7 @@ class Surgery(ModelSQL, ModelView):
                     'reserve_from': surgery_date,
                     'reserve_to': surgery_end_date,
                     'surgery': surgery,
+                    'patient': patient,
                     'healthprof': healthprof,
                     'specialty': specialty,
                     'urgency': urgency,
