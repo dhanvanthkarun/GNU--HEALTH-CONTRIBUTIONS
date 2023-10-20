@@ -8,7 +8,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group string="Header" id="protocol_header_group" colspan="4">
+    <group string="Header" id="protocol_header_group" colspan="6">
+    <label name="code"/>
+    <field name="code"/>
     <label name="name"/>
     <field name="name"/>
     <label name="description"/>

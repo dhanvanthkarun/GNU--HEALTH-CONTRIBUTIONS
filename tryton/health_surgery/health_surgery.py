@@ -1089,6 +1089,10 @@ class SurgeryProtocol(ModelSQL, ModelView):
         'Name',
         help='Protocol Name', required=True)
 
+    code = fields.Char(
+        'Code',
+        help='Code', required=True)
+
     description = fields.Char('Description')
 
     general_info = fields.Text('General Information')
@@ -1167,8 +1171,11 @@ class SurgeryProtocol(ModelSQL, ModelView):
         super(SurgeryProtocol, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('code_uniq', Unique(t, t.name),
+            ('code_uniq', Unique(t, t.code),
+             'The code must be unique'),
+            ('name_uniq', Unique(t, t.name),
              'The protocol name must be unique')
+
         ]
 
 
