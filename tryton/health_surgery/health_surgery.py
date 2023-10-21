@@ -1236,6 +1236,19 @@ class ORScheduler(ModelSQL, ModelView):
     def default_healthprof():
         return get_health_professional()
 
+    @staticmethod
+    def default_reserve_from():
+        return datetime.now()
+
+
+    # Update time frame depending on the operating room and start date
+    @fields.depends('name', 'reserve_from','reserve_to')
+    def on_change_with_reserve_to(self):
+        if (self.name and self.reserve_from):
+            timeslot = self.name.timeslot
+            return self.reserve_from + relativedelta(minutes=+int(timeslot))
+
+
     # Update specialty based on the health professional
     @fields.depends('healthprof')
     def on_change_healthprof(self):
