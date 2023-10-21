@@ -753,7 +753,7 @@ class Party(metaclass=PoolMeta):
                 entity = None
                 if values.get('is_patient'):
                     entity = 'patient'
-                
+
                 if entity:
                     cls.generate_target(party, entity)
 
@@ -1652,6 +1652,12 @@ class HospitalOR(ModelSQL, ModelView):
 
     extra_info = fields.Text('Extra Info')
 
+    timeslot = fields.Integer(
+        "Time span", help="Default reservation"
+        " time in minutes for this operating room."
+        " It will be added automatically to the start time of the"
+        " programmed surgery and the OR Schedule")
+
     state = fields.Selection((
         (None, ''),
         ('free', 'Free'),
@@ -1663,6 +1669,10 @@ class HospitalOR(ModelSQL, ModelView):
     @staticmethod
     def default_institution():
         return get_institution()
+
+    @staticmethod
+    def default_timeslot():
+        return 60
 
     @staticmethod
     def default_state():
@@ -2725,7 +2735,7 @@ class AlternativePersonID (ModelSQL, ModelView):
 
     other_alternative_id_type = fields.Char(
         'Other ID type',
-        help = "Other Alternative ID type, "
+        help="Other Alternative ID type, "
         "user can customize an ID type "
         "when 'ID type' = 'other', "
     )
@@ -5160,7 +5170,8 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
     @staticmethod
     def default_information_source():
-        return gettext('health.msg_patient_evaluation_default_information_source')
+        return gettext(
+            'health.msg_patient_evaluation_default_information_source')
 
     @staticmethod
     def default_reliable_info():
