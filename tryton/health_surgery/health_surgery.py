@@ -541,6 +541,13 @@ class Surgery(ModelSQL, ModelView):
             self.discharge_instructions = self.protocol.discharge_instructions
             self.approach = self.protocol.approach
 
+    # Update time frame depending on the operating room and start date
+    @fields.depends('operating_room', 'surgery_date', 'surgery_end_date')
+    def on_change_with_surgery_end_date(self):
+        if (self.operating_room and self.surgery_date):
+            timeslot = self.operating_room.timeslot
+            return self.surgery_date + relativedelta(minutes=+int(timeslot))
+
     def get_rec_name(self, name):
         res = f'{self.code} ({self.description})'
         return res
@@ -1240,14 +1247,12 @@ class ORScheduler(ModelSQL, ModelView):
     def default_reserve_from():
         return datetime.now()
 
-
     # Update time frame depending on the operating room and start date
-    @fields.depends('name', 'reserve_from','reserve_to')
+    @fields.depends('name', 'reserve_from', 'reserve_to')
     def on_change_with_reserve_to(self):
         if (self.name and self.reserve_from):
             timeslot = self.name.timeslot
             return self.reserve_from + relativedelta(minutes=+int(timeslot))
-
 
     # Update specialty based on the health professional
     @fields.depends('healthprof')
