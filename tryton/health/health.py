@@ -1664,7 +1664,7 @@ class HospitalOR(ModelSQL, ModelView):
         ('confirmed', 'Confirmed'),
         ('occupied', 'Occupied'),
         ('na', 'Not available'),
-        ), 'Status', readonly=True, sort=False)
+        ), 'Status', sort=False)
 
     @staticmethod
     def default_institution():
