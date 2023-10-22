@@ -59,7 +59,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="surgery_date"/>
         <label name="operating_room"/>
         <field name="operating_room"/>
+        <button name="schedule" help="Confirm and scheduled surgery" string="Schedule Surgery" icon="tryton-go-next" confirm="Confirm the surgery and reserve the Operating Room ?"/>
     </group>
+    
     <group string="Notes" id="preop_notes" colspan="4">
         <field name="short_notes"/>
     </group>

@@ -408,5 +408,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
         </record>
 
+        <record model="ir.model.button" id="surgery_sched_button">
+            <field name="name">schedule</field>
+            <field name="string">Schedule Surgery</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.preoperative_assessment')]"/>
+        </record>
+
     </data>
 </tryton>

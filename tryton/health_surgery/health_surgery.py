@@ -19,7 +19,7 @@ from trytond.model import ModelView, ModelSQL, fields, Unique
 from datetime import datetime
 from trytond.transaction import Transaction
 from trytond.pool import Pool
-from trytond.pyson import Eval, Not, Equal, And
+from trytond.pyson import Eval, Not, Equal, And, Or
 from trytond.pool import PoolMeta
 from trytond.i18n import gettext
 from trytond.modules.health.core import format_years_months_days
@@ -336,7 +336,7 @@ class Surgery(ModelSQL, ModelView):
         preoperative assessment.
         They will not be shown in the main surgery view
     """
- 
+
     preop_bleeding_risk = fields.Boolean(
         'Risk of Massive bleeding',
         help="Patient has a risk of losing more than 500 "
@@ -517,7 +517,9 @@ class Surgery(ModelSQL, ModelView):
             return self.surgery_date + relativedelta(minutes=+int(timeslot))
 
     def get_rec_name(self, name):
-        res = f'{self.code} ({self.description})'
+        pathology = self.pathology and self.pathology.rec_name or ''
+        desc = self.description and f"({self.description})" or ''
+        res = f'{self.code} {pathology} {desc}'
         return res
 
     def get_patient_gender(self, name):
@@ -566,14 +568,14 @@ class Surgery(ModelSQL, ModelView):
             if values.get('operating_room'):
                 ORsched = Pool().get('gnuhealth.or.schedule')
                 sched = []
-                op_room = values['operating_room']
-                surgery_date = values['surgery_date']
-                surgery_end_date = values['surgery_end_date']
+                op_room = values.get('operating_room')
+                surgery_date = values.get('surgery_date')
+                surgery_end_date = values.get('surgery_end_date')
                 patient = values['patient']
-                healthprof = values['surgeon']
-                specialty = values['specialty']
-                urgency = values['classification']
-                institution = values['institution']
+                healthprof = values.get('surgeon')
+                specialty = values.get('specialty')
+                urgency = values.get('classification')
+                institution = values.get('institution')
 
                 values = {
                     'name': op_room,
@@ -587,6 +589,7 @@ class Surgery(ModelSQL, ModelView):
                     'institution': institution
                     }
 
+                print("VALUES in SURG", values)
                 # Add new schedule entry with the surgery
                 sched.append(values)
                 ORsched.create(sched)
@@ -633,8 +636,13 @@ class Surgery(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(Surgery, cls).__setup__()
-
+        t = cls.__table__()
         cls._order.insert(0, ('surgery_date', 'DESC'))
+
+        cls._sql_constraints = [
+            ('preop_uniq', Unique(t, t.preop_assessment),
+             'The preoperative assignment already exists'),
+        ]
 
         cls._buttons.update({
             'confirmed': {
@@ -805,6 +813,7 @@ class Surgery(ModelSQL, ModelView):
         return [bool_op,
                 ('patient',) + tuple(clause[1:]),
                 ('code',) + tuple(clause[1:]),
+                ('pathology',) + tuple(clause[1:]),
                 ]
 
 
@@ -1048,6 +1057,10 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         return datetime.now()
 
     @staticmethod
+    def default_surgery_date():
+        return datetime.now()
+
+    @staticmethod
     def default_health_professional():
         return get_health_professional()
 
@@ -1073,6 +1086,60 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         if (self.preop_asa):
             asa = self.preop_asa
         return (f'{str(self.assessment_date)} ASA: {asa}')
+
+    @classmethod
+    @ModelView.button
+    def schedule(cls, preop_assmts):
+        # Method to check for availability and make the Operating Room
+        # reservation for the associated surgery
+        assessment = preop_assmts[0]
+
+        # Operating Room and end surgery check
+        # TODO: Make constraint on preop assmnt id
+        if (assessment.operating_room and assessment.surgery_date):
+            surg = cls.create_preop_surgery(assessment)
+        else:
+            raise OperatingRoomAndDateRequired(
+                    gettext('health_surgery.msg_or_and_date_needed'))
+
+        if surg:
+            cls.write(preop_assmts, {'surgery': surg[0].id})
+
+    @classmethod
+    def create_preop_surgery(cls, assessment):
+        """ Create the surgery related to this preoperative
+            assessment.
+        """
+        Surgery = Pool().get('gnuhealth.surgery')
+        surg = []
+
+        timeslot = assessment.operating_room.timeslot
+        surg_end_date = assessment.surgery_date + \
+            relativedelta(minutes=+int(timeslot))
+
+        vals = {
+            'patient': assessment.patient,
+            'surgery_date': assessment.surgery_date,
+            'surgery_end_date': surg_end_date,
+            'surgeon': assessment.health_professional,
+            'operating_room': assessment.operating_room,
+            'preop_assessment': assessment.id,
+            'specialty': assessment.specialty,
+            }
+
+        surg.append(vals)
+        surg_id = Surgery.create(surg)
+        
+        return surg_id
+
+    @classmethod
+    def __setup__(cls):
+        super(PreOperativeAssessment, cls).__setup__()
+        cls._buttons.update({
+            'schedule': {'invisible': Not(Or(
+                Equal(Eval('surgical_decision'), 'needs_surgery'),
+                Equal(Eval('surgical_decision'), 'urgent_surgery')))}
+            })
 
 
 # SURGERY PROTOCOL TEMPLATE
@@ -1170,7 +1237,6 @@ class SurgeryProtocol(ModelSQL, ModelView):
              'The code must be unique'),
             ('name_uniq', Unique(t, t.name),
              'The protocol name must be unique')
-
         ]
 
 
