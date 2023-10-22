@@ -17,11 +17,35 @@ from trytond.model import fields
 from trytond.pool import PoolMeta
 
 
-__all__ = ['Patient', 'Appointment', 'Newborn', 'LabTest']
+__all__ = ['Party', 'Patient', 'Appointment', 'Newborn', 'LabTest']
+
+
+class Party(metaclass=PoolMeta):
+    __name__ = 'party.party'
+
+    # Add the CODE39 Code to the Person for ID purposes
+    barcode = fields.Function(fields.Binary('Code39'), 'make_code39')
+
+    def make_code39(self, name):
+        # Create the Code39 bar code to encode the Person ID
+        party_puid = self.ref or ''
+        puid = f'{party_puid}'
+
+        CODE39 = barcode.get_barcode_class('code39')
+
+        code39 = CODE39(puid, add_checksum=False)
+
+        # Make a PNG image from PIL without the need to create a temp file
+
+        holder = io.BytesIO()
+        code39.write(holder)
+        code39_png = holder.getvalue()
+        holder.close()
+
+        return bytearray(code39_png)
 
 
 # Add the QR field and QR image in the patient model
-
 class Patient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 

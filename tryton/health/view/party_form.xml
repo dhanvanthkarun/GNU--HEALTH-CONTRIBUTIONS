@@ -89,7 +89,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       </group>
     </xpath>
     
-    <!-- Use the SSN field in the place of the party code -->
+    <!-- Use the PUID field in the place of the party code -->
     <xpath expr="/form/group/label[@name=&quot;code&quot;]" position="replace">
         <label name="ref"/>
     </xpath>

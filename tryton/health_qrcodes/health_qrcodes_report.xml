@@ -30,10 +30,24 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="extension">pdf</field>
         </record>
 
+        <record model="ir.action.report" id="report_party_wristband">
+            <field name="name">Wristbands</field>
+            <field name="model">party.party</field>
+            <field name="report_name">party.wristband</field>
+            <field name="report">health_qrcodes/report/party_wristband.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
         <record model="ir.action.keyword" id="report_wristband_patient">
             <field name="keyword">form_print</field>
             <field name="model">gnuhealth.patient,-1</field>
             <field name="action" ref="report_patient_wristband"/>
+        </record>
+
+        <record model="ir.action.keyword" id="report_wristband_party">
+            <field name="keyword">form_print</field>
+            <field name="model">party.party,-1</field>
+            <field name="action" ref="report_party_wristband"/>
         </record>
 
        <record model="ir.action.report" id="report_newborn_qrcard">
@@ -74,7 +88,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model">gnuhealth.lab,-1</field>
             <field name="action" ref="report_labtest_barcode39"/>
         </record>
-
 
        <record model="ir.action.report" id="report_appointment_qrcode">
             <field name="name">Appointment QRCODE</field>
