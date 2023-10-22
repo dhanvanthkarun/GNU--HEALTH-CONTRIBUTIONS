@@ -946,7 +946,8 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     """ Preoperative Assessment class contains the necessary patient
         and anesthesia information to be taken into account
-        in the upcoming surgery
+        in the upcoming surgery.
+        It also allows to schedule the surgery and operating room.
     """
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
 
@@ -1067,11 +1068,30 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     surgical_decision_str = surgical_decision.translated('surgical_decision')
 
+    surgery_date = fields.DateTime(
+        'Surgery date', help="Date of the surgery")
+
+    operating_room = fields.Many2One('gnuhealth.hospital.or', 'Operating Room')
+
     short_notes = fields.Char('Notes')
 
     @staticmethod
     def default_assessment_date():
         return datetime.now()
+
+    @staticmethod
+    def default_health_professional():
+        return get_health_professional()
+
+    # Update specialty based on the surgeon
+    @fields.depends('health_professional')
+    def on_change_health_professional(self):
+        if (self.health_professional):
+            if (self.health_professional.main_specialty):
+                self.specialty = \
+                    self.health_professional.main_specialty.specialty.id
+            else:
+                self.specialty = None
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
