@@ -1125,11 +1125,12 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             'operating_room': assessment.operating_room,
             'preop_assessment': assessment.id,
             'specialty': assessment.specialty,
+            'preop_bleeding_risk': assessment.needs_blood_reserve,
             }
 
         surg.append(vals)
         surg_id = Surgery.create(surg)
-        
+
         return surg_id
 
     @classmethod
