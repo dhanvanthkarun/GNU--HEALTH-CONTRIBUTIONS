@@ -332,48 +332,16 @@ class Surgery(ModelSQL, ModelView):
         'Sterility confirmed',
         help="Nursing team has confirmed sterility of the devices and room")
 
-    """ Mallampati, ASA, bleeding risk, RCRI are now part of the
+    """ Mallampati, ASA, RCRI are now part of the
         preoperative assessment.
         They will not be shown in the main surgery view
     """
-
-    preop_mallampati = fields.Selection([
-        (None, ''),
-        ('Class 1', 'Class 1: Full visibility of tonsils, uvula and soft '
-                    'palate'),
-        ('Class 2', 'Class 2: Visibility of hard and soft palate, '
-                    'upper portion of tonsils and uvula'),
-        ('Class 3', 'Class 3: Soft and hard palate and base of the uvula are '
-                    'visible'),
-        ('Class 4', 'Class 4: Only Hard Palate visible'),
-        ], 'Mallampati Score', sort=False)
+ 
     preop_bleeding_risk = fields.Boolean(
         'Risk of Massive bleeding',
         help="Patient has a risk of losing more than 500 "
         "ml in adults of over 7ml/kg in infants. If so, make sure that "
         "intravenous access and fluids are available")
-
-    preop_asa = fields.Selection([
-        (None, ''),
-        ('ps1', 'PS 1 : Normal healthy patient'),
-        ('ps2', 'PS 2 : Patients with mild systemic disease'),
-        ('ps3', 'PS 3 : Patients with severe systemic disease'),
-        ('ps4', 'PS 4 : Patients with severe systemic disease that is'
-            ' a constant threat to life '),
-        ('ps5', 'PS 5 : Moribund patients who are not expected to'
-            ' survive without the operation'),
-        ('ps6', 'PS 6 : A declared brain-dead patient who organs are'
-            ' being removed for donor purposes'),
-        ], 'ASA PS',
-        help="ASA pre-operative Physical Status", sort=False)
-
-    preop_rcri = fields.Many2One(
-        'gnuhealth.rcri', 'RCRI',
-        help='Patient Revised Cardiac Risk Index\n'
-        'Points 0: Class I Very Low (0.4% complications)\n'
-        'Points 1: Class II Low (0.9% complications)\n'
-        'Points 2: Class III Moderate (6.6% complications)\n'
-        'Points 3 or more : Class IV High (>11% complications)')
 
     surgical_wound = fields.Selection([
         (None, ''),
