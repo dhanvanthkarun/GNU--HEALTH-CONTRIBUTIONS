@@ -935,7 +935,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         help="Health professional that signs this assessment")
 
     surgery = fields.Many2One(
-        'gnuhealth.surgery', 'Surgery',
+        'gnuhealth.surgery', 'Surgery', readonly=True,
         depends=['patient'],
         domain=[('patient', '=', Eval('patient'))],)
 
