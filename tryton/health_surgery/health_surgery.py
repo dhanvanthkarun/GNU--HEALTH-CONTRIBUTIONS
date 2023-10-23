@@ -588,10 +588,10 @@ class Surgery(ModelSQL, ModelView):
                     'healthprof': healthprof,
                     'specialty': specialty,
                     'urgency': urgency,
-                    'institution': institution
+                    'institution': institution,
+                    'state': 'reserved'
                     }
 
-                print("VALUES in SURG", values)
                 # Add new schedule entry with the surgery
                 sched.append(values)
                 ORsched.create(sched)
