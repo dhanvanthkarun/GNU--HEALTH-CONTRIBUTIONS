@@ -589,12 +589,18 @@ class Surgery(ModelSQL, ModelView):
                     'specialty': specialty,
                     'urgency': urgency,
                     'institution': institution,
-                    'state': 'reserved'
                     }
 
                 # Add new schedule entry with the surgery
                 sched.append(values)
                 ORsched.create(sched)
+
+                # Update Operating Room status to 'scheduled'
+                or_state = 'scheduled'
+                Operatingroom = Pool().get('gnuhealth.hospital.or')
+                operatingroom = Operatingroom.search(
+                    [("id", "=", op_room.id)], limit=1)
+                Operatingroom.write(operatingroom, {'state': or_state})
 
         return surgeries
 
@@ -1052,6 +1058,10 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     operating_room = fields.Many2One('gnuhealth.hospital.or', 'Operating Room')
 
+    institution = fields.Many2One(
+        'gnuhealth.institution', 'Institution',
+        help='Health Care Institution where the surgery will take place')
+
     short_notes = fields.Char('Notes')
 
     @staticmethod
@@ -1065,6 +1075,10 @@ class PreOperativeAssessment(ModelSQL, ModelView):
     @staticmethod
     def default_health_professional():
         return get_health_professional()
+
+    @staticmethod
+    def default_institution():
+        return get_institution()
 
     # Update specialty based on the surgeon
     @fields.depends('health_professional')
@@ -1134,6 +1148,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             'specialty': assessment.specialty,
             'preop_bleeding_risk': assessment.needs_blood_reserve,
             'pathology': health_condition,
+            'institution': assessment.institution,
             }
 
         surg.append(vals)
@@ -1282,7 +1297,6 @@ class ORScheduler(ModelSQL, ModelView):
         'gnuhealth.institution', 'Institution',
         help='Health Care Institution')
 
-
     specialty = fields.Many2One(
         'gnuhealth.specialty', 'Specialty',
         help='Medical Specialty / Sector')
@@ -1291,11 +1305,15 @@ class ORScheduler(ModelSQL, ModelView):
         'gnuhealth.pathology', 'Health Condition',
         help="Base Condition / Reason")
 
-    state = fields.Selection([
+    state = fields.Function(fields.Selection((
         (None, ''),
         ('free', 'Free'),
-        ('reserved', 'Reserved'),
-        ], 'State', sort=False)
+        ('scheduled', 'Scheduled'),
+        ('confirmed', 'Confirmed'),
+        ('occupied', 'Occupied'),
+        ('na', 'Not available'),
+        ), 'Status', sort=False),
+        'get_or_state', searcher='search_or_state')
 
     urgency = fields.Selection([
         (None, ''),
@@ -1306,6 +1324,18 @@ class ORScheduler(ModelSQL, ModelView):
         ], 'Urgency', help="Urgency level", sort=False)
 
     comments = fields.Text('Comments')
+
+    # Display Op. Room current state
+    def get_or_state(self, name):
+        return self.name.state
+
+    # Allow searching the state of the Operating Room
+    @classmethod
+    def search_or_state(cls, name, clause):
+        res = []
+        value = clause[2]
+        res.append(('name.state', clause[1], value))
+        return res
 
     @staticmethod
     def default_healthprof():

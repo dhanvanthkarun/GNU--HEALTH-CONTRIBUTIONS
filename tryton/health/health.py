@@ -1661,6 +1661,7 @@ class HospitalOR(ModelSQL, ModelView):
     state = fields.Selection((
         (None, ''),
         ('free', 'Free'),
+        ('scheduled', 'Scheduled'),
         ('confirmed', 'Confirmed'),
         ('occupied', 'Occupied'),
         ('na', 'Not available'),
