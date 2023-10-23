@@ -34,8 +34,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <separator id="or_schedule_remarks" string="Remarks" colspan="4"/>
     <newline/>
     <field name="comments" colspan="4"/>
-    <group id="or_shcedule_footer" colspan="4" col="2">
+    <group id="or_shcedule_footer" colspan="4">
         <label name="institution"/>
         <field name="institution"/>
+        <label name="state"/>
+        <field name="state"/>
     </group>
 </form>
