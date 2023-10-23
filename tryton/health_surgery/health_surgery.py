@@ -561,7 +561,7 @@ class Surgery(ModelSQL, ModelView):
                 when the surgery includes de OR
             """
 
-            """ Create the surgery so we get the id """
+            """ Create the surgery first so we get the id """
             surgeries = super(Surgery, cls).create(vlist)
             surgery = surgeries[0].id
 
@@ -571,7 +571,8 @@ class Surgery(ModelSQL, ModelView):
                 op_room = values.get('operating_room')
                 surgery_date = values.get('surgery_date')
                 surgery_end_date = values.get('surgery_end_date')
-                patient = values['patient']
+                patient = values.get('patient')
+                health_condition = values.get('pathology')
                 healthprof = values.get('surgeon')
                 specialty = values.get('specialty')
                 urgency = values.get('classification')
@@ -583,6 +584,7 @@ class Surgery(ModelSQL, ModelView):
                     'reserve_to': surgery_end_date,
                     'surgery': surgery,
                     'patient': patient,
+                    'health_condition': health_condition,
                     'healthprof': healthprof,
                     'specialty': specialty,
                     'urgency': urgency,
@@ -1095,7 +1097,6 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         assessment = preop_assmts[0]
 
         # Operating Room and end surgery check
-        # TODO: Make constraint on preop assmnt id
         if (assessment.operating_room and assessment.surgery_date):
             surg = cls.create_preop_surgery(assessment)
         else:
@@ -1117,6 +1118,12 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         surg_end_date = assessment.surgery_date + \
             relativedelta(minutes=+int(timeslot))
 
+        if assessment.evaluation:
+            if assessment.evaluation.diagnosis:
+                health_condition = assessment.evaluation.diagnosis
+            else:
+                health_condition = None
+
         vals = {
             'patient': assessment.patient,
             'surgery_date': assessment.surgery_date,
@@ -1126,6 +1133,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             'preop_assessment': assessment.id,
             'specialty': assessment.specialty,
             'preop_bleeding_risk': assessment.needs_blood_reserve,
+            'pathology': health_condition,
             }
 
         surg.append(vals)
@@ -1274,9 +1282,14 @@ class ORScheduler(ModelSQL, ModelView):
         'gnuhealth.institution', 'Institution',
         help='Health Care Institution')
 
+
     specialty = fields.Many2One(
         'gnuhealth.specialty', 'Specialty',
         help='Medical Specialty / Sector')
+
+    health_condition = fields.Many2One(
+        'gnuhealth.pathology', 'Health Condition',
+        help="Base Condition / Reason")
 
     state = fields.Selection([
         (None, ''),
