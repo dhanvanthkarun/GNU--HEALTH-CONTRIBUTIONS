@@ -649,6 +649,10 @@ msgctxt "field:gnuhealth.hospital.or,state:"
 msgid "Status"
 msgstr "Estado"
 
+msgctxt "field:gnuhealth.hospital.or,timeslot:"
+msgid "Time span"
+msgstr ""
+
 msgctxt "field:gnuhealth.hospital.or,unit:"
 msgid "Unit"
 msgstr "Unidade"
@@ -2810,6 +2814,13 @@ msgstr "Instituição de Saúde"
 msgctxt "help:gnuhealth.hospital.or,name:"
 msgid "Name of the Operating Room"
 msgstr "Nome da sala e operação"
+
+msgctxt "help:gnuhealth.hospital.or,timeslot:"
+msgid ""
+"Default reservation time in minutes for this operating room. It will be "
+"added automatically to the start time of the programmed surgery and the OR "
+"Schedule"
+msgstr ""
 
 msgctxt "help:gnuhealth.hospital.unit,institution:"
 msgid "Health Institution"
@@ -10055,6 +10066,10 @@ msgstr "Não disponível"
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Occupied"
 msgstr "Ocupado"
+
+msgctxt "selection:gnuhealth.hospital.or,state:"
+msgid "Scheduled"
+msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.hospital.ward,gender:"

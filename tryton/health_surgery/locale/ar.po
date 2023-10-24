@@ -19,6 +19,10 @@ msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
 msgstr "مذكره"
 
+msgctxt "field:gnuhealth.or.schedule,health_condition:"
+msgid "Health Condition"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
 msgid "Health Prof"
@@ -55,8 +59,8 @@ msgstr "التخصص"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,state:"
-msgid "State"
-msgstr "حالة"
+msgid "Status"
+msgstr "الوضع"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,surgery:"
@@ -161,6 +165,11 @@ msgctxt "field:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Imaging"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.preoperative_assessment,institution:"
+msgid "Institution"
+msgstr "مؤسسة"
+
 msgctxt "field:gnuhealth.preoperative_assessment,lab_test:"
 msgid "Lab"
 msgstr ""
@@ -172,6 +181,11 @@ msgstr ""
 msgctxt "field:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "Do NOT use anesthesia"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "غرفة العمليات"
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,patient:"
@@ -212,6 +226,10 @@ msgstr "التخصص"
 msgctxt "field:gnuhealth.preoperative_assessment,surgery:"
 msgid "Surgery"
 msgstr "عملية جراحية"
+
+msgctxt "field:gnuhealth.preoperative_assessment,surgery_date:"
+msgid "Surgery date"
+msgstr ""
 
 msgctxt "field:gnuhealth.preoperative_assessment,surgical_decision:"
 msgid "Surgical decision"
@@ -383,10 +401,6 @@ msgctxt "field:gnuhealth.surgery,preop_antibiotics:"
 msgid "Antibiotic Prophylaxis"
 msgstr "الوقاية باستخدام المضادات الحيوية"
 
-msgctxt "field:gnuhealth.surgery,preop_asa:"
-msgid "ASA PS"
-msgstr "(ASA PS)"
-
 msgctxt "field:gnuhealth.surgery,preop_assessment:"
 msgid "Preop assessment"
 msgstr ""
@@ -395,17 +409,9 @@ msgctxt "field:gnuhealth.surgery,preop_bleeding_risk:"
 msgid "Risk of Massive bleeding"
 msgstr "خطر نزيف حاد"
 
-msgctxt "field:gnuhealth.surgery,preop_mallampati:"
-msgid "Mallampati Score"
-msgstr "نقاط Mallampati"
-
 msgctxt "field:gnuhealth.surgery,preop_oximeter:"
 msgid "Pulse Oximeter in place"
 msgstr "نبض مقياس التأكسج في المكان"
-
-msgctxt "field:gnuhealth.surgery,preop_rcri:"
-msgid "RCRI"
-msgstr "RCRI"
 
 msgctxt "field:gnuhealth.surgery,preop_site_marking:"
 msgid "Surgical Site Marking"
@@ -528,6 +534,11 @@ msgid "Urgency"
 msgstr "مستوى الإلحاح"
 
 #, fuzzy
+msgctxt "field:gnuhealth.surgery.protocol,code:"
+msgid "Code"
+msgstr "رمز"
+
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,description:"
 msgid "Description"
 msgstr "الوصفة"
@@ -607,6 +618,11 @@ msgid "Procedure Code, for example ICD-10-PCS or ICPM"
 msgstr "رمز الإجراءات ، على سبيل المثال ICD-10-PCS أو ICPM"
 
 #, fuzzy
+msgctxt "help:gnuhealth.or.schedule,health_condition:"
+msgid "Base Condition / Reason"
+msgstr "الحالة الأساسية / السبب"
+
+#, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
 msgid "Health Professional"
 msgstr "الطبيب الاختصاصي"
@@ -663,6 +679,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Link to the associated Dx imaging test"
 msgstr ""
 
+msgctxt "help:gnuhealth.preoperative_assessment,institution:"
+msgid "Health Care Institution where the surgery will take place"
+msgstr ""
+
 msgctxt "help:gnuhealth.preoperative_assessment,lab_test:"
 msgid "Link to the associated lab test"
 msgstr ""
@@ -703,6 +723,10 @@ msgstr ""
 "النقاط 1: الدرجة الثانية منخفضة (0.9٪ مضاعفات)\n"
 "النقاط 2: الفئة الثالثة متوسطة (6.6٪ مضاعفات)\n"
 "النقاط 3 أو أكثر: الدرجة الرابعة عالية (> 11٪ مضاعفات)"
+
+msgctxt "help:gnuhealth.preoperative_assessment,surgery_date:"
+msgid "Date of the surgery"
+msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,surgical_decision:"
 msgid "Surgical decision / advice"
@@ -809,10 +833,6 @@ msgctxt "help:gnuhealth.surgery,preop_antibiotics:"
 msgid "Prophylactic antibiotic treatment within the last 60 minutes"
 msgstr "العلاج بالمضادات الحيوية الوقائية في غضون الدقائق ال 60 الماضية"
 
-msgctxt "help:gnuhealth.surgery,preop_asa:"
-msgid "ASA pre-operative Physical Status"
-msgstr "ASA الحالة المادية قبل الجراحة"
-
 msgctxt "help:gnuhealth.surgery,preop_assessment:"
 msgid "Preoperative assessment associated to this surgery"
 msgstr ""
@@ -828,20 +848,6 @@ msgstr ""
 msgctxt "help:gnuhealth.surgery,preop_oximeter:"
 msgid "Pulse oximeter is in place and functioning"
 msgstr "مقياس التأكسج النبضي في مكانه ويعمل"
-
-msgctxt "help:gnuhealth.surgery,preop_rcri:"
-msgid ""
-"Patient Revised Cardiac Risk Index\n"
-"Points 0: Class I Very Low (0.4% complications)\n"
-"Points 1: Class II Low (0.9% complications)\n"
-"Points 2: Class III Moderate (6.6% complications)\n"
-"Points 3 or more : Class IV High (>11% complications)"
-msgstr ""
-"مؤشر مخاطر القلب المنقح للمريض\n"
-"النقاط 0: الفئة الأولى منخفضة جدًا (0.4٪ من المضاعفات)\n"
-"النقاط 1: الدرجة الثانية منخفضة (0.9٪ مضاعفات)\n"
-"النقاط 2: الفئة الثالثة متوسطة (6.6٪ مضاعفات)\n"
-"النقاط 3 أو أكثر: الدرجة الرابعة عالية (> 11٪ مضاعفات)"
 
 msgctxt "help:gnuhealth.surgery,preop_site_marking:"
 msgid "The surgeon has marked the surgical incision"
@@ -909,6 +915,11 @@ msgstr ""
 msgctxt "help:gnuhealth.surgery.protocol,classification:"
 msgid "Urgency level for this surgery"
 msgstr "مستوى الاستعجال لهذه الجراحة"
+
+#, fuzzy
+msgctxt "help:gnuhealth.surgery.protocol,code:"
+msgid "Code"
+msgstr "رمز"
 
 msgctxt "help:gnuhealth.surgery.protocol,name:"
 msgid "Protocol Name"
@@ -1056,6 +1067,10 @@ msgctxt "model:ir.message,text:msg_end_reservation_before_start"
 msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_or_and_date_needed"
+msgid "Date and Operating room are required to schedule the surgery"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -1087,6 +1102,10 @@ msgstr ""
 
 msgctxt "model:ir.model.button,string:surgery_done_button"
 msgid "Finnish"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:surgery_sched_button"
+msgid "Schedule Surgery"
 msgstr ""
 
 #, fuzzy
@@ -1439,13 +1458,27 @@ msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Confirmed"
+msgstr "موافق عليه"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
 msgid "Free"
 msgstr "معافى"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,state:"
-msgid "Reserved"
-msgstr "محجوز"
+msgid "Not available"
+msgstr "غير متوفر"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Occupied"
+msgstr "مشغول"
+
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Scheduled"
+msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
@@ -2027,65 +2060,6 @@ msgctxt "selection:gnuhealth.surgery,patient_positioning:"
 msgid "Trendelenburg"
 msgstr ""
 
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid "PS 1 : Normal healthy patient"
-msgstr "PS 1: صحة المريض طبيعية"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid "PS 2 : Patients with mild systemic disease"
-msgstr "PS 2: المرضى الذين يعانون من أمراض جهازية معتدل"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid "PS 3 : Patients with severe systemic disease"
-msgstr "PS 3: المرضى الذين يعانون من أمراض جهازية شديدة"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-"PS 4 : Patients with severe systemic disease that is a constant threat to "
-"life "
-msgstr ""
-"PS 4: المرضى الذين يعانون من أمراض جهازية شديدة تشكل تهديدا مستمرا للحياة. "
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-"PS 5 : Moribund patients who are not expected to survive without the "
-"operation"
-msgstr "PS 5: المرضى الذين يحتضرون والذي لا يتوقع أن يعيشوا بدون عملية"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-"PS 6 : A declared brain-dead patient who organs are being removed for donor "
-"purposes"
-msgstr ""
-"PS 6: أعلنت المريض بالسكتة الدماغية الذين يتم إزالة الأجهزة لأغراض الجهات "
-"المانحة"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid "Class 1: Full visibility of tonsils, uvula and soft palate"
-msgstr "الفئة 1: وضوح كامل من اللوزتين، لهاة الحلق واللهاة"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid ""
-"Class 2: Visibility of hard and soft palate, upper portion of tonsils and "
-"uvula"
-msgstr "الفئة 2: وضوح من الحنك الصلب واللين، الجزء العلوي من اللوزتين واللهاة"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid "Class 3: Soft and hard palate and base of the uvula are visible"
-msgstr "الفئة 3: الحنك لين والثابت وقاعدة لهاة مرئية"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid "Class 4: Only Hard Palate visible"
-msgstr "الفئة 4: فقط الحنك الصلب مرئي"
-
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Cancelled"
 msgstr "الغاء"
@@ -2339,6 +2313,11 @@ msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.or.schedule:"
+msgid "Date"
+msgstr "تاريخ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.or.schedule:"
 msgid "Details"
 msgstr "تفاصيل"
 
@@ -2365,6 +2344,14 @@ msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Complementary tests"
 msgstr ""
 
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Confirm and scheduled surgery"
+msgstr ""
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Confirm the surgery and reserve the Operating Room ?"
+msgstr ""
+
 #, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Critical Information"
@@ -2373,6 +2360,11 @@ msgstr "معلومات هامة"
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Decision"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Institution"
+msgstr "مؤسسة"
 
 #, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
@@ -2386,6 +2378,14 @@ msgstr "ملاحظات"
 
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Risk assessment"
+msgstr ""
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Schedule Surgery"
+msgstr ""
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Surgery schedule"
 msgstr ""
 
 msgctxt "view:gnuhealth.surgery.protocol:"

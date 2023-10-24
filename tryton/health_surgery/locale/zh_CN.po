@@ -18,6 +18,10 @@ msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
 msgstr "说明"
 
+msgctxt "field:gnuhealth.or.schedule,health_condition:"
+msgid "Health Condition"
+msgstr "健康状况"
+
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
 msgid "Health Prof"
 msgstr "医务人员"
@@ -47,7 +51,7 @@ msgid "Specialty"
 msgstr "专业"
 
 msgctxt "field:gnuhealth.or.schedule,state:"
-msgid "State"
+msgid "Status"
 msgstr "状态"
 
 msgctxt "field:gnuhealth.or.schedule,surgery:"
@@ -142,6 +146,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Imaging"
 msgstr "医学影像检查"
 
+msgctxt "field:gnuhealth.preoperative_assessment,institution:"
+msgid "Institution"
+msgstr "医疗机构"
+
 msgctxt "field:gnuhealth.preoperative_assessment,lab_test:"
 msgid "Lab"
 msgstr "实验室检验"
@@ -153,6 +161,10 @@ msgstr "需要备血"
 msgctxt "field:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "Do NOT use anesthesia"
 msgstr "请勿麻醉"
+
+msgctxt "field:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "手术室"
 
 msgctxt "field:gnuhealth.preoperative_assessment,patient:"
 msgid "Patient"
@@ -185,6 +197,10 @@ msgstr "专业"
 msgctxt "field:gnuhealth.preoperative_assessment,surgery:"
 msgid "Surgery"
 msgstr "手术"
+
+msgctxt "field:gnuhealth.preoperative_assessment,surgery_date:"
+msgid "Surgery date"
+msgstr "手术日期"
 
 msgctxt "field:gnuhealth.preoperative_assessment,surgical_decision:"
 msgid "Surgical decision"
@@ -355,10 +371,6 @@ msgctxt "field:gnuhealth.surgery,preop_antibiotics:"
 msgid "Antibiotic Prophylaxis"
 msgstr "已使用预防性抗生素"
 
-msgctxt "field:gnuhealth.surgery,preop_asa:"
-msgid "ASA PS"
-msgstr "ASA-PS 分级"
-
 msgctxt "field:gnuhealth.surgery,preop_assessment:"
 msgid "Preop assessment"
 msgstr "术前评估"
@@ -367,17 +379,9 @@ msgctxt "field:gnuhealth.surgery,preop_bleeding_risk:"
 msgid "Risk of Massive bleeding"
 msgstr "有大出血风险"
 
-msgctxt "field:gnuhealth.surgery,preop_mallampati:"
-msgid "Mallampati Score"
-msgstr "马氏评分"
-
 msgctxt "field:gnuhealth.surgery,preop_oximeter:"
 msgid "Pulse Oximeter in place"
 msgstr "脉搏血氧仪就位"
-
-msgctxt "field:gnuhealth.surgery,preop_rcri:"
-msgid "RCRI"
-msgstr "RCRI"
 
 msgctxt "field:gnuhealth.surgery,preop_site_marking:"
 msgid "Surgical Site Marking"
@@ -491,6 +495,10 @@ msgctxt "field:gnuhealth.surgery.protocol,classification:"
 msgid "Urgency"
 msgstr "紧急程度"
 
+msgctxt "field:gnuhealth.surgery.protocol,code:"
+msgid "Code"
+msgstr "代码"
+
 msgctxt "field:gnuhealth.surgery.protocol,description:"
 msgid "Description"
 msgstr "描述"
@@ -567,6 +575,10 @@ msgctxt "help:gnuhealth.operation,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS or ICPM"
 msgstr "手术或操作代码，例如 ICD-10-PC 或者 ICPM"
 
+msgctxt "help:gnuhealth.or.schedule,health_condition:"
+msgid "Base Condition / Reason"
+msgstr "基本病况 / 原因"
+
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
 msgid "Health Professional"
 msgstr "医务人员"
@@ -619,6 +631,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Link to the associated Dx imaging test"
 msgstr "链接到相关的Dx影像检查项目"
 
+msgctxt "help:gnuhealth.preoperative_assessment,institution:"
+msgid "Health Care Institution where the surgery will take place"
+msgstr ""
+
 msgctxt "help:gnuhealth.preoperative_assessment,lab_test:"
 msgid "Link to the associated lab test"
 msgstr "连接到相关的实验室检验项目"
@@ -654,6 +670,10 @@ msgstr ""
 "1点：第二类低 (0.9% 并发症)\n"
 "2点：第三类中等(6.6% 并发症)\n"
 "3点或以上：第四类高 (大于11%并发症)"
+
+msgctxt "help:gnuhealth.preoperative_assessment,surgery_date:"
+msgid "Date of the surgery"
+msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,surgical_decision:"
 msgid "Surgical decision / advice"
@@ -767,10 +787,6 @@ msgctxt "help:gnuhealth.surgery,preop_antibiotics:"
 msgid "Prophylactic antibiotic treatment within the last 60 minutes"
 msgstr "过去60分钟内使用预防性抗生素治疗"
 
-msgctxt "help:gnuhealth.surgery,preop_asa:"
-msgid "ASA pre-operative Physical Status"
-msgstr "ASA 术前身体状况"
-
 msgctxt "help:gnuhealth.surgery,preop_assessment:"
 msgid "Preoperative assessment associated to this surgery"
 msgstr "与该手术相关的术前评估"
@@ -784,20 +800,6 @@ msgstr "如果当前成人患者有失血超过500毫升的风险（儿童患者
 msgctxt "help:gnuhealth.surgery,preop_oximeter:"
 msgid "Pulse oximeter is in place and functioning"
 msgstr "脉搏血氧仪就位，功能正常"
-
-msgctxt "help:gnuhealth.surgery,preop_rcri:"
-msgid ""
-"Patient Revised Cardiac Risk Index\n"
-"Points 0: Class I Very Low (0.4% complications)\n"
-"Points 1: Class II Low (0.9% complications)\n"
-"Points 2: Class III Moderate (6.6% complications)\n"
-"Points 3 or more : Class IV High (>11% complications)"
-msgstr ""
-"患者 RCRI 评估\n"
-"0点：第一类非常低 (0.4% 并发症)\n"
-"1点：第二类低 (0.9% 并发症)\n"
-"2点：第三类中等(6.6% 并发症)\n"
-"3点或以上：第四类高 (大于11%并发症)"
 
 msgctxt "help:gnuhealth.surgery,preop_site_marking:"
 msgid "The surgeon has marked the surgical incision"
@@ -862,6 +864,10 @@ msgstr "手术并发症简短说明(一行)."
 msgctxt "help:gnuhealth.surgery.protocol,classification:"
 msgid "Urgency level for this surgery"
 msgstr "此手术的紧急级别"
+
+msgctxt "help:gnuhealth.surgery.protocol,code:"
+msgid "Code"
+msgstr "代码"
 
 msgctxt "help:gnuhealth.surgery.protocol,name:"
 msgid "Protocol Name"
@@ -1008,6 +1014,10 @@ msgctxt "model:ir.message,text:msg_end_reservation_before_start"
 msgid "OR reservation end \"%(res_to)s\" BEFORE start \"%(res_from)s\""
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_or_and_date_needed"
+msgid "Date and Operating room are required to schedule the surgery"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_or_and_time_needed"
 msgid ""
 "Operating Room and estimated end time are needed in order to confirm the "
@@ -1039,6 +1049,10 @@ msgstr "确认"
 msgctxt "model:ir.model.button,string:surgery_done_button"
 msgid "Finnish"
 msgstr "完成"
+
+msgctxt "model:ir.model.button,string:surgery_sched_button"
+msgid "Schedule Surgery"
+msgstr "安排手术"
 
 msgctxt "model:ir.model.button,string:surgery_sign_button"
 msgid "Sign"
@@ -1378,12 +1392,24 @@ msgid "Surgical Intervention:"
 msgstr ""
 
 msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Confirmed"
+msgstr "已确认"
+
+msgctxt "selection:gnuhealth.or.schedule,state:"
 msgid "Free"
 msgstr "空闲"
 
 msgctxt "selection:gnuhealth.or.schedule,state:"
-msgid "Reserved"
-msgstr "已预定"
+msgid "Not available"
+msgstr "无效"
+
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Occupied"
+msgstr "已占用"
+
+msgctxt "selection:gnuhealth.or.schedule,state:"
+msgid "Scheduled"
+msgstr "已安排"
 
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Emergency"
@@ -1923,54 +1949,6 @@ msgctxt "selection:gnuhealth.surgery,patient_positioning:"
 msgid "Trendelenburg"
 msgstr "特伦伯格位"
 
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid "PS 1 : Normal healthy patient"
-msgstr "等级1：普通患者"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid "PS 2 : Patients with mild systemic disease"
-msgstr "等级2：轻微全身性疾病患者"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid "PS 3 : Patients with severe systemic disease"
-msgstr "等级3：重度全身性疾病患者"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-"PS 4 : Patients with severe systemic disease that is a constant threat to "
-"life "
-msgstr "等级4：患有持续威胁生命的严重系统性疾病的患者 "
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-"PS 5 : Moribund patients who are not expected to survive without the "
-"operation"
-msgstr "等级5：病危患者，必须进行手术"
-
-msgctxt "selection:gnuhealth.surgery,preop_asa:"
-msgid ""
-"PS 6 : A declared brain-dead patient who organs are being removed for donor "
-"purposes"
-msgstr "等级6：脑死亡患者，器官可被移除，用于捐助"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid "Class 1: Full visibility of tonsils, uvula and soft palate"
-msgstr "第一类：扁桃体、悬雍垂和软腭可见"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid ""
-"Class 2: Visibility of hard and soft palate, upper portion of tonsils and "
-"uvula"
-msgstr "第二类：硬腭、软腭、扁桃体上部和悬雍垂可见"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid "Class 3: Soft and hard palate and base of the uvula are visible"
-msgstr "第三类：硬软腭和小舌可见"
-
-msgctxt "selection:gnuhealth.surgery,preop_mallampati:"
-msgid "Class 4: Only Hard Palate visible"
-msgstr "第四类：只有硬腭可见"
-
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Cancelled"
 msgstr "已取消"
@@ -2208,6 +2186,10 @@ msgid "Procedure Details / Incidents"
 msgstr "手术操作细节 / 事件"
 
 msgctxt "view:gnuhealth.or.schedule:"
+msgid "Date"
+msgstr "手术日期"
+
+msgctxt "view:gnuhealth.or.schedule:"
 msgid "Details"
 msgstr "详细情况"
 
@@ -2232,12 +2214,24 @@ msgid "Complementary tests"
 msgstr "辅助检查"
 
 msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Confirm and scheduled surgery"
+msgstr "确认并安排手术"
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Confirm the surgery and reserve the Operating Room ?"
+msgstr "确认手术并预定手术室？"
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Critical Information"
 msgstr "关键信息"
 
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Decision"
 msgstr "决定"
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Institution"
+msgstr "医疗机构"
 
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Misc"
@@ -2250,6 +2244,14 @@ msgstr "注意事项"
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Risk assessment"
 msgstr "风险评估"
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Schedule Surgery"
+msgstr "安排手术"
+
+msgctxt "view:gnuhealth.preoperative_assessment:"
+msgid "Surgery schedule"
+msgstr "手术安排"
 
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Discharge instructions"

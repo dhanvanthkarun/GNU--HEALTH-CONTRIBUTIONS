@@ -649,6 +649,10 @@ msgctxt "field:gnuhealth.hospital.or,state:"
 msgid "Status"
 msgstr "Status"
 
+msgctxt "field:gnuhealth.hospital.or,timeslot:"
+msgid "Time span"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.hospital.or,unit:"
 msgid "Unit"
@@ -2959,6 +2963,13 @@ msgstr ""
 
 msgctxt "help:gnuhealth.hospital.or,name:"
 msgid "Name of the Operating Room"
+msgstr ""
+
+msgctxt "help:gnuhealth.hospital.or,timeslot:"
+msgid ""
+"Default reservation time in minutes for this operating room. It will be "
+"added automatically to the start time of the programmed surgery and the OR "
+"Schedule"
 msgstr ""
 
 msgctxt "help:gnuhealth.hospital.unit,institution:"
@@ -10018,6 +10029,10 @@ msgstr "Tidak tersedia"
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Occupied"
 msgstr "Terisi"
+
+msgctxt "selection:gnuhealth.hospital.or,state:"
+msgid "Scheduled"
+msgstr ""
 
 msgctxt "selection:gnuhealth.hospital.ward,gender:"
 msgid "Men Ward"
