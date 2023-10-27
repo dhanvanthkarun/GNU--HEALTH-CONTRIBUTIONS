@@ -5076,7 +5076,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         return 'home'
 
     def get_patient_gender(self, name):
-        return self.patient.gender
+        return (self.patient and self.patient.gender)
 
     @classmethod
     def search_patient_gender(cls, name, clause):
