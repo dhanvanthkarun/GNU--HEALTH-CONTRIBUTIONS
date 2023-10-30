@@ -3292,9 +3292,9 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
     disease_severity_str = disease_severity.translated('disease_severity')
 
-    is_on_treatment = fields.Boolean('Currently on Treatment')
+    is_on_treatment = fields.Boolean('Current', help="Currently on treatment")
     is_infectious = fields.Boolean(
-        'Infectious Disease',
+        'Infectious',
         help='Check if the patient has an infectious / transmissible disease')
 
     short_comment = fields.Char(
@@ -3307,18 +3307,23 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         'Health Prof',
         help='Health Professional who treated or diagnosed the patient')
 
-    diagnosed_date = fields.Date('Date of Diagnosis')
+    diagnosed_date = fields.Date('Dx date')
     healed_date = fields.Date('Healed')
-    is_active = fields.Boolean('Active disease')
+    is_active = fields.Boolean('Active',
+                               help="Check this box if the disease is active")
+
+    age_str = fields.Function(fields.Char(
+        'Age at dx',
+        help='Patient age at the moment of the diagnosis, '
+        'in most situations, this value is derived from patient evalution.'),
+        'patient_age_at_dx',)
 
     age = fields.Integer(
-        'Age when diagnosed',
-        help='Patient age at the moment of the diagnosis. Can be estimative')
+        'Years',
+        help='Estimated age of the diagnosis')
 
-    age_str = fields.Char(
-        'Age when diagnosed', readonly=True,
-        help='Patient age at the moment of the diagnosis, '
-        'in most situation, this value is derived from patient evalution.')
+    est_dodx = fields.Boolean('Est', help="Estimated date of diagnosis"
+                              "from referred years")
 
     pregnancy_warning = fields.Boolean('Pregnancy warning')
     weeks_of_pregnancy = fields.Integer('Contracted in pregnancy week #')
@@ -3332,8 +3337,9 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ], 'Allergy type', select=True, sort=False)
     pcs_code = fields.Many2One(
         'gnuhealth.procedure', 'Code',
-        help='Procedure code, for example, ICD-10-PCS Code 7-character string')
-    treatment_description = fields.Char('Treatment Description')
+        help='Procedure code')
+    treatment_description = fields.Char(
+        'Description', help="Short description of the treatment")
     date_start_treatment = fields.Date('Start', help='Start of treatment date')
     date_stop_treatment = fields.Date('End', help='End of treatment date')
     status = fields.Selection([
@@ -3417,6 +3423,12 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
     def get_rec_name(self, name):
         return self.pathology.rec_name
+
+    def patient_age_at_dx(self, name):
+        if (self.name.dob and self.diagnosed_date):
+            return compute_age_from_dates(
+                self.name.dob, None, None, None, 'age',
+                self.diagnosed_date)
 
     @classmethod
     def create_health_condition_pol(cls, condition_info):
