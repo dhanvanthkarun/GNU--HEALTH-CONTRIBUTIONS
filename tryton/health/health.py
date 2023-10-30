@@ -3312,15 +3312,15 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     is_active = fields.Boolean('Active',
                                help="Check this box if the disease is active")
 
+    age = fields.Integer(
+        'Years',
+        help='Estimated age of the diagnosis')
+
     age_str = fields.Function(fields.Char(
         'Age at dx',
         help='Patient age at the moment of the diagnosis, '
         'in most situations, this value is derived from patient evalution.'),
         'patient_age_at_dx',)
-
-    age = fields.Integer(
-        'Years',
-        help='Estimated age of the diagnosis')
 
     est_dodx = fields.Boolean('Est', help="Estimated date of diagnosis"
                               "from referred years")
@@ -3420,6 +3420,36 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     @staticmethod
     def default_healthprof():
         return get_health_professional()
+
+    @staticmethod
+    def default_diagnosed_date():
+        return date.today()
+
+    @fields.depends('diagnosed_date', 'age_str', 'name')
+    def on_change_diagnosed_date(self):
+        if (self.name):
+            self.age_str = compute_age_from_dates(
+                    self.name.dob, None, None, None, 'age',
+                    self.diagnosed_date)
+            self.est_dodx = False
+
+    @fields.depends('age', 'name', 'age_str')
+    def on_change_age(self):
+        if (self.age and self.name.dob):
+            self.est_dodx = True
+            self.diagnosed_date = self.name.dob + relativedelta(years=self.age)
+            self.age_str = compute_age_from_dates(
+                    self.name.dob, None, None, None, 'age',
+                    self.diagnosed_date)
+            self.age = None
+
+    @fields.depends('age', 'name', 'diagnosed_date')
+    def on_change_with_age_str(self):
+        if (self.name):
+            if (self.diagnosed_date and self.name.dob):
+                return compute_age_from_dates(
+                        self.name.dob, None, None, None, 'age',
+                        self.diagnosed_date)
 
     def get_rec_name(self, name):
         return self.pathology.rec_name
