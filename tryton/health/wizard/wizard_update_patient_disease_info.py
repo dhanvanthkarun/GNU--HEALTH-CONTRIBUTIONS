@@ -46,7 +46,8 @@ class UpdatePatientDiseaseInfo(Wizard):
 
         existing_disease = Disease.search(
             [('name', '=', evaluation.patient),
-             ('pathology', '=', evaluation.diagnosis)])
+             ('pathology', '=', evaluation.diagnosis),
+             ('diagnosed_date', '=', evaluation.evaluation_endtime.date())])
 
         if existing_disease:
             raise PatientDiseaseAlreadyExists(
