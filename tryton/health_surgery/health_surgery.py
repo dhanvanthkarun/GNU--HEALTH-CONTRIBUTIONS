@@ -605,6 +605,19 @@ class Surgery(ModelSQL, ModelView):
         return surgeries
 
     @classmethod
+    def write(cls, surgeries, vals):
+        surgery = surgeries[0]
+        # Don't allow to write the record if the surgery has been signed
+        if surgery.state == 'signed':
+            raise EndDateBeforeStart(
+                gettext('health_surgery.msg_surgery_is_done'))
+
+        # Update Operating Room schedule entry
+        cls.update_or_schedule(surgery, vals)
+
+        return super(Surgery, cls).write(surgeries, vals)
+
+    @classmethod
     def update_or_schedule(cls, surgery, values):
         # Update the Operating Room Schedule
         surgery_id = surgery.id
@@ -685,18 +698,6 @@ class Surgery(ModelSQL, ModelView):
                 raise EndDateBeforeStart(
                     gettext('health_surgery.msg_end_date_before_start'))
 
-    @classmethod
-    def write(cls, surgeries, vals):
-        surgery = surgeries[0]
-        # Don't allow to write the record if the surgery has been signed
-        if surgery.state == 'signed':
-            raise EndDateBeforeStart(
-                gettext('health_surgery.msg_surgery_is_done'))
-
-        # Update Operating Room schedule entry
-        cls.update_or_schedule(surgery, vals)
-
-        return super(Surgery, cls).write(surgeries, vals)
 
     # Method to check for availability and make the Operating Room
     # reservation for the associated surgery
