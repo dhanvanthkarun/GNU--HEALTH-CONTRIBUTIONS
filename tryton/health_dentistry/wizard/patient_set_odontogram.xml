@@ -18,6 +18,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model">gnuhealth.patient</field>
         </record>
 
+        <!-- Set Odontogram wizard from dentistry treatment-->
+        <record model="ir.action.wizard" id="wizard_set_odontogram_from_treatment">
+            <field name="name">Set Odontogram</field>
+            <field name="wiz_name">gnuhealth.dentistry.set.odontogram</field>
+            <field name="model">gnuhealth.dentistry.treatment</field>
+        </record>
+
         <record model="ir.ui.view" id="set_odontogram_start_view_form">
             <field name="model">gnuhealth.dentistry.set.odontogram.start</field>
             <field name="type">form</field>

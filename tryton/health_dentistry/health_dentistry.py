@@ -222,7 +222,7 @@ class DentistryTreatment(ModelSQL, ModelView):
         pass
 
     @classmethod
-    @ModelView.button_action('health_dentistry.wizard_set_odontogram')
+    @ModelView.button_action('health_dentistry.wizard_set_odontogram_from_treatment')
     def set_odontogram(cls, treatments):
         pass
 
