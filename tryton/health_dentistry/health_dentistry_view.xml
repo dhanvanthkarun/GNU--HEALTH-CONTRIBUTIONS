@@ -13,6 +13,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <tryton>
     <data>
 
+        <!-- Add relevant icons -->
+        <record model="ir.ui.icon" id="gnuhealth_dentistry_icon">
+            <field name="name">gnuhealth:dentistry</field>
+            <field name="path">icons/dentistry.svg</field>
+        </record>
+
         <!-- Dentistry information in the Patient -->
         <record model="ir.ui.view" id="gnuhealth_patient_view">
             <field name="model">gnuhealth.patient</field>
@@ -118,7 +124,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 
         <!-- Main menu for dentistry -->
-        <menuitem name="Dentistry" id="gnuhealth_dentistry" parent="health.gnuhealth_menu"/>
+        <menuitem name="Dentistry" id="gnuhealth_dentistry" parent="health.gnuhealth_menu"
+            icon="gnuhealth_dentistry"/>
 
         <menuitem action="action_gnuhealth_dentistry_treatment_view"
             id="menu_gnuhealth_dentistry_procedures" icon="gnuhealth-list"
