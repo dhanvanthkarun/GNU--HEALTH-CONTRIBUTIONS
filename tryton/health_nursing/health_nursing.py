@@ -75,7 +75,7 @@ class PatientRounding(ModelSQL, ModelView):
             'invisible': ~Eval('pain'),
             'readonly': Eval('state') == 'done'})
 
-    ## Use by round_report template
+    # Use by round_report template
     def get_report_pain_and_level(self):
         if self.pain and self.pain_level:
             return gettext('health_nursing.msg_report_pain_level',
@@ -480,5 +480,5 @@ class AmbulatoryCareProcedure(ModelSQL, ModelView):
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
         select=True,
-        help="Procedure Code, for example ICD-10-PCS Code 7-character string")
+        help="Procedure Code")
     comments = fields.Char('Comments')
