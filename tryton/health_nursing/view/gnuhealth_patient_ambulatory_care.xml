@@ -10,19 +10,24 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <notebook>
         <page string="Main" id="ambulatory_care_main">
-            <group colspan="4" id="ambulatory_care_main_data">
+            <group colspan="4" col="6" id="ambulatory_care_main_data">
                 <label name="patient"/>
                 <field name="patient"/>
-                <label name="name"/>
-                <field name="name"/>
-                <label name="health_professional"/>
-                <field name="health_professional"/>
                 <label name="base_condition"/>
                 <field name="base_condition"/>
-                <label name="evaluation"/>
-                <field name="evaluation"/>
                 <label name="session_number"/>
                 <field name="session_number"/>
+                <label name="health_professional"/>
+                <field name="health_professional"/>
+                <label name="name"/>
+                <field name="name"/>
+                <label name="evaluation"/>
+                <field name="evaluation"/>
+                <newline/>
+                <label name="ordering_professional"/>
+                <field name="ordering_professional"/>
+                <label name="warning"/>
+                <field name="warning"/>
             </group>
             <newline/>
             <group colspan="4" col="6" string="Vital Signs" id="group_ambulatory_care_vital_signs">
@@ -57,14 +62,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <newline/>
             <field colspan="4" name="session_notes"/>
             <newline/>
-            <group colspan="4" col="14" id="ambulatory_care_finish">
+            <group colspan="4" col="12" id="ambulatory_care_finish">
                 <field name="state"/>
-                <label name="warning"/>
-                <field name="warning"/>
                 <label name="session_start"/>
                 <field name="session_start"/>
-                <label name="ordering_professional"/>
-                <field name="ordering_professional"/>
                 <label name="session_end"/>
                 <field name="session_end"/>
                 <label name="next_session"/>
