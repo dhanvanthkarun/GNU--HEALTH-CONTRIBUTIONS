@@ -374,6 +374,17 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         'Glycemia', help='Blood Glucose level',
         states=STATES)
 
+    weight = fields.Integer(
+        'Weight',
+        help="Measured weight, in kg")
+
+    pain = fields.Boolean(
+        'Pain',
+        help="Check if the patient is in pain")
+    pain_level = fields.Integer(
+        'Pain', help="Enter the pain level, from 1 to "
+        "10")
+
     evolution = fields.Selection([
         (None, ''),
         ('initial', 'Initial'),
@@ -402,6 +413,15 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
     @staticmethod
     def default_state():
         return 'draft'
+
+    def get_report_pain_and_level(self):
+        if self.pain and self.pain_level:
+            return gettext('health_nursing.msg_report_pain_level',
+                           pain_level=str(self.pain_level))
+        elif self.pain:
+            return gettext('health_nursing.msg_report_pain_yes')
+        else:
+            return gettext('health_nursing.msg_report_pain_no')
 
     @classmethod
     def __setup__(cls):
