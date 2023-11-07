@@ -393,6 +393,9 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         ('w', 'Worsening'),
         ], 'Evolution', help="Check your judgement of current "
         "patient condition", sort=False, states=STATES)
+
+    evolution_str = evolution.translated('evolution')
+
     session_end = fields.DateTime('End', readonly=True)
     next_session = fields.DateTime('Next Session', states=STATES)
     session_notes = fields.Text('Notes', states=STATES)
