@@ -79,7 +79,7 @@ class Odontogram(Report):
             fontsize = cls.x_distance//4
             # Note: load_default support size argument when pillow-10.1.0
             font = ImageFont.load_default(size=fontsize)
-            draw.multiline_text((x - fontsize * 0.65  , y + d1 * 1.1), tooth, fill=color, font=font)
+            draw.multiline_text((x - fontsize * 0.65, y + d1 * 1.1), tooth, fill=color, font=font)
 
     @classmethod
     def plot_extraction(cls, piece_center, status, im):
