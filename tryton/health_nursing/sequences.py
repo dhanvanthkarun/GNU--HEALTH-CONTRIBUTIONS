@@ -41,7 +41,7 @@ class GnuHealthSequences(metaclass=PoolMeta):
         pool = Pool()
         ModelData = pool.get('ir.model.data')
         try:
-            return ModelData.get_id('health',
+            return ModelData.get_id('health_nursing',
                                     'seq_gnuhealth_ambulatory_care')
         except KeyError:
             return None
@@ -51,7 +51,7 @@ class GnuHealthSequences(metaclass=PoolMeta):
         pool = Pool()
         ModelData = pool.get('ir.model.data')
         try:
-            return ModelData.get_id('health',
+            return ModelData.get_id('health_nursing',
                                     'seq_gnuhealth_patient_rounding')
         except KeyError:
             return None
