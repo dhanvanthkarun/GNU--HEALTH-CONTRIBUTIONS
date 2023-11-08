@@ -15,19 +15,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <field name="patient"/>
                 <label name="base_condition"/>
                 <field name="base_condition"/>
-                <label name="session_number"/>
-                <field name="session_number"/>
+                <label name="warning"/>
+                <field name="warning"/>
                 <label name="health_professional"/>
                 <field name="health_professional"/>
                 <label name="name"/>
                 <field name="name"/>
-                <label name="evaluation"/>
-                <field name="evaluation"/>
+                <label name="session_number"/>
+                <field name="session_number"/>
                 <newline/>
                 <label name="ordering_professional"/>
                 <field name="ordering_professional"/>
-                <label name="warning"/>
-                <field name="warning"/>
+                <label name="evaluation"/>
+                <field name="evaluation"/>
             </group>
             <newline/>
             <group colspan="4" col="6" string="Vital Signs" id="group_ambulatory_care_vital_signs">
@@ -64,17 +64,24 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <newline/>
             <field colspan="4" name="session_notes"/>
             <newline/>
-            <group colspan="4" col="12" id="ambulatory_care_finish">
-                <field name="state"/>
+            <group colspan="4" col="6" id="ambulatory_care_session_info">
                 <label name="session_start"/>
                 <field name="session_start"/>
                 <label name="session_end"/>
                 <field name="session_end"/>
                 <label name="next_session"/>
                 <field name="next_session"/>
+            </group>
+            <group colspan="4" col="6" id="ambulatory_care_finish">
+                <label name="state"/>
+                <field name="state"/>
                 <label name="signed_by"/>
                 <field name="signed_by"/>
-                <button name="end_session" help="End this session" string="End" icon="tryton-go-next" confirm="End this session ?"/>
+                <button name="end_session" 
+                       string="End" 
+                       icon="tryton-go-next" 
+                       help="End this session"
+                       confirm="End this session ?"/>
             </group>
         </page>
     </notebook>
