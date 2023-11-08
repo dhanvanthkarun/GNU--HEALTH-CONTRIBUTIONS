@@ -1346,13 +1346,12 @@ msgid "Vaccinations"
 msgstr "Εμβολιασμοί"
 
 msgctxt "field:gnuhealth.patient.disease,age:"
-msgid "Age when diagnosed"
-msgstr "Ηλικία κατά τη διάγνωση"
+msgid "Years"
+msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,age_str:"
-msgid "Age when diagnosed"
-msgstr "Ηλικία κατά τη διάγνωση"
+msgid "Age at dx"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,allergy_type:"
 msgid "Allergy type"
@@ -1367,12 +1366,16 @@ msgid "End"
 msgstr "Τέλος"
 
 msgctxt "field:gnuhealth.patient.disease,diagnosed_date:"
-msgid "Date of Diagnosis"
-msgstr "Ημερομηνία διάγνωσης"
+msgid "Dx date"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,disease_severity:"
 msgid "Severity"
 msgstr "Σοβαρότητα"
+
+msgctxt "field:gnuhealth.patient.disease,est_dodx:"
+msgid "Est"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,extra_info:"
 msgid "Extra Info"
@@ -1395,21 +1398,23 @@ msgctxt "field:gnuhealth.patient.disease,institution:"
 msgid "Institution"
 msgstr "Ίδρυμα"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_active:"
-msgid "Active disease"
-msgstr "Ενεργός νόσος"
+msgid "Active"
+msgstr "Ενεργός"
 
 msgctxt "field:gnuhealth.patient.disease,is_allergy:"
 msgid "Allergic Disease"
 msgstr "Αλλεργικό νόσημα"
 
 msgctxt "field:gnuhealth.patient.disease,is_infectious:"
-msgid "Infectious Disease"
-msgstr "Λοιμώδης νόσος"
+msgid "Infectious"
+msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
-msgid "Currently on Treatment"
-msgstr "Τρεχόντως υπό αγωγή"
+msgid "Current"
+msgstr "Τρεχόντως"
 
 msgctxt "field:gnuhealth.patient.disease,name:"
 msgid "Patient"
@@ -1440,9 +1445,10 @@ msgctxt "field:gnuhealth.patient.disease,status:"
 msgid "Status"
 msgstr "Κατάσταση"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,treatment_description:"
-msgid "Treatment Description"
-msgstr "Περιγραφή της θεραπείας"
+msgid "Description"
+msgstr "Περιγραφή"
 
 msgctxt "field:gnuhealth.patient.disease,weeks_of_pregnancy:"
 msgid "Contracted in pregnancy week #"
@@ -3228,13 +3234,13 @@ msgid "Person Unique Identifier"
 msgstr "Μοναδικός Κωδικός Ταυτοποίησης Ατόμου"
 
 msgctxt "help:gnuhealth.patient.disease,age:"
-msgid "Patient age at the moment of the diagnosis. Can be estimative"
-msgstr "Ηλικία του ασθνεούς κατά τη διάγνωση. Μπορεί να είναι κατά προσέγγιση"
+msgid "Estimated age of the diagnosis"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,age_str:"
 msgid ""
-"Patient age at the moment of the diagnosis, in most situation, this value is"
-" derived from patient evalution."
+"Patient age at the moment of the diagnosis, in most situations, this value "
+"is derived from patient evalution."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,date_start_treatment:"
@@ -3245,21 +3251,33 @@ msgctxt "help:gnuhealth.patient.disease,date_stop_treatment:"
 msgid "End of treatment date"
 msgstr "Τέλος περιόδου θεραπείας"
 
+msgctxt "help:gnuhealth.patient.disease,est_dodx:"
+msgid "Estimated date of diagnosisfrom referred years"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
 msgid "Health Professional"
 msgstr "Επαγγελματίας Υγείας"
 
+msgctxt "help:gnuhealth.patient.disease,is_active:"
+msgid "Check this box if the disease is active"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.disease,is_infectious:"
 msgid "Check if the patient has an infectious / transmissible disease"
 msgstr "Ελέγξτε αν ο ασθενής έχει κάποιο λοιμώδες/ μεταδιδόμενο νόσημα"
+
+msgctxt "help:gnuhealth.patient.disease,is_on_treatment:"
+msgid "Currently on treatment"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
 msgstr "Πάθηση"
 
 msgctxt "help:gnuhealth.patient.disease,pcs_code:"
-msgid "Procedure code, for example, ICD-10-PCS Code 7-character string"
-msgstr "Κωδικός ιατρικών πράξεων, πχ, Κωδικός ICD-10-PCS με 7-χαρακτήρες"
+msgid "Procedure code"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,short_comment:"
 msgid ""
@@ -3268,6 +3286,10 @@ msgid ""
 msgstr ""
 "Σύντομη παρατήρηση, σε μία γραμμή, για το νόσημα. Οι μεγαλύτερες "
 "παρατηρήσεις θα τοποθετηθούν στο πεδίο Πρόσθετες πληροφορίες"
+
+msgctxt "help:gnuhealth.patient.disease,treatment_description:"
+msgid "Short description of the treatment"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Professional who performed the ECG"
@@ -12008,6 +12030,10 @@ msgstr "Κύρια"
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Allergies"
 msgstr "Αλλεργίες"
+
+msgctxt "view:gnuhealth.patient.disease:"
+msgid "Dates"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Extra Info"
