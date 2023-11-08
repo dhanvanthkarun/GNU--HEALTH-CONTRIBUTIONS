@@ -44,7 +44,7 @@ msgstr "医务人员"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,name:"
 msgid "ID"
-msgstr "轮次ID"
+msgstr "护理编号"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,next_session:"
 msgid "Next Session"
@@ -276,7 +276,7 @@ msgstr "护理操作代码"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"
-msgstr "Health 流动护理"
+msgstr "Health 门诊护理"
 
 msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
@@ -438,11 +438,11 @@ msgstr "护理操作代码, 例如： ICD-10-PCS 代码，7位字符组成的字
 
 msgctxt "model:gnuhealth.ambulatory_care_procedure,name:"
 msgid "Ambulatory Care Procedure"
-msgstr "流动护理操作"
+msgstr "门诊护理操作"
 
 msgctxt "model:gnuhealth.patient.ambulatory_care,name:"
 msgid "Patient Ambulatory Care"
-msgstr "患者流动护理"
+msgstr "患者门诊护理"
 
 msgctxt "model:gnuhealth.patient.rounding,name:"
 msgid "Patient Rounding"
@@ -462,7 +462,7 @@ msgstr "患者评估序列设置"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_ambulatory_care_view"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
@@ -470,11 +470,11 @@ msgstr "查房"
 
 msgctxt "model:ir.action,name:report_ambulatory_care"
 msgid "Ambulatory care session"
-msgstr "门诊护理"
+msgstr "门诊护理报告"
 
 msgctxt "model:ir.action,name:report_round_nursing"
 msgid "Nursing rounds"
-msgstr "护理查房"
+msgstr "护理查房报告"
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid "There is no health professional associated to this user"
@@ -482,14 +482,12 @@ msgstr "这个用户没有与医务人员关联"
 
 msgctxt "model:ir.message,text:msg_report_pain_level"
 msgid "Level: %(pain_level)s"
-msgstr ""
+msgstr "等级: %(pain_level)s"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_no"
 msgid "No"
 msgstr "否"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_yes"
 msgid "Yes"
 msgstr "是"
@@ -504,7 +502,7 @@ msgstr "结束本轮查房"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
@@ -512,7 +510,7 @@ msgstr "患者查房"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
@@ -524,7 +522,7 @@ msgstr "护理"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_ambulatory_care_list"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
 msgid "Roundings"
@@ -544,7 +542,7 @@ msgstr "/"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Ambulatory Care Session"
-msgstr "门诊护理"
+msgstr "门诊护理报告"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "BP"
@@ -600,7 +598,7 @@ msgstr "呼吸频率"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Session ID:"
-msgstr "轮次ID:"
+msgstr "护理编号:"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Start:"
@@ -680,13 +678,12 @@ msgstr "呼吸频率"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Code:"
-msgstr ""
+msgstr "查房编号:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Report"
-msgstr ""
+msgstr "查房报告"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Start:"
 msgstr "开始时间:"
@@ -695,12 +692,10 @@ msgctxt "report:patient.rounding.report:"
 msgid "Summary"
 msgstr "查房总结"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Temp. (C)"
 msgstr "体温(C)"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Weight (kg)"
 msgstr "体重(kg)"
