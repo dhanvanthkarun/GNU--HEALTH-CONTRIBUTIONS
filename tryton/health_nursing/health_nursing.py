@@ -69,11 +69,12 @@ class PatientRounding(ModelSQL, ModelView):
     pain = fields.Boolean(
         'Pain',
         help="Check if the patient is in pain", states=STATES)
+
     pain_level = fields.Integer(
-        'Pain', help="Enter the pain level, from 1 to "
-        "10", states={
-            'invisible': ~Eval('pain'),
-            'readonly': Eval('state') == 'done'})
+        'Pain level', 
+        help="Enter the pain level, from 1 to 10.",
+        states={'invisible': ~Eval('pain'),
+                'readonly': Eval('state') == 'done'})
 
     # Use by round_report template
     def get_report_pain_and_level(self):
@@ -381,9 +382,10 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
     pain = fields.Boolean(
         'Pain',
         help="Check if the patient is in pain")
+
     pain_level = fields.Integer(
-        'Pain', help="Enter the pain level, from 1 to "
-        "10")
+        'Pain level', 
+        help="Enter the pain level, from 1 to 10.")
 
     evolution = fields.Selection([
         (None, ''),
