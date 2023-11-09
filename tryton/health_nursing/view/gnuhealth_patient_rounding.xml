@@ -10,28 +10,29 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <notebook>
         <page string="Main" id="rounding_main">
-            <group colspan="2" col="8" id="group_admin_data">
+            <group colspan="2" col="4" id="group_admin_data">
                 <label name="name"/>
                 <field name="name"/>
+                <label name="code"/>
+                <field name="code"/>
                 <label name="health_professional"/>
                 <field name="health_professional"/>
                 <label name="evaluation_start"/>
                 <field name="evaluation_start"/>
-                <label name="code"/>
-                <field name="code"/>
                 <newline/>
             </group>
             <newline/>
-            <group colspan="4" id="group_environment_data">
+            <group colspan="4" id="group_environment_data" string="Environment">
                 <label name="environmental_assessment"/>
                 <field name="environmental_assessment"/>
                 <label name="warning"/>
                 <field name="warning"/>
             </group>
             <newline/>
-            <group colspan="4" col="7" id="the_six_p_wiew" string="Six P's">
+            <group colspan="4" col="6" id="the_six_p_wiew" string="Six P's">
                 <label name="pain"/>
                 <field name="pain"/>
+                <label name="pain_level"/>
                 <field name="pain_level"/>
                 <label name="potty"/>
                 <field name="potty"/>

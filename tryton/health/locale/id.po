@@ -1419,11 +1419,11 @@ msgid "Vaccinations"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,age:"
-msgid "Age when diagnosed"
+msgid "Years"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,age_str:"
-msgid "Age when diagnosed"
+msgid "Age at dx"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,allergy_type:"
@@ -1440,11 +1440,15 @@ msgid "End"
 msgstr "Akhir"
 
 msgctxt "field:gnuhealth.patient.disease,diagnosed_date:"
-msgid "Date of Diagnosis"
+msgid "Dx date"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,disease_severity:"
 msgid "Severity"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.disease,est_dodx:"
+msgid "Est"
 msgstr ""
 
 #, fuzzy
@@ -1470,21 +1474,23 @@ msgctxt "field:gnuhealth.patient.disease,institution:"
 msgid "Institution"
 msgstr "Institusi"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_active:"
-msgid "Active disease"
-msgstr ""
+msgid "Active"
+msgstr "Aktif"
 
 msgctxt "field:gnuhealth.patient.disease,is_allergy:"
 msgid "Allergic Disease"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,is_infectious:"
-msgid "Infectious Disease"
+msgid "Infectious"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
-msgid "Currently on Treatment"
-msgstr ""
+msgid "Current"
+msgstr "Mata uang"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.disease,name:"
@@ -1518,9 +1524,10 @@ msgctxt "field:gnuhealth.patient.disease,status:"
 msgid "Status"
 msgstr "Status"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,treatment_description:"
-msgid "Treatment Description"
-msgstr ""
+msgid "Description"
+msgstr "Keterangan"
 
 msgctxt "field:gnuhealth.patient.disease,weeks_of_pregnancy:"
 msgid "Contracted in pregnancy week #"
@@ -3342,13 +3349,13 @@ msgid "Person Unique Identifier"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,age:"
-msgid "Patient age at the moment of the diagnosis. Can be estimative"
+msgid "Estimated age of the diagnosis"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,age_str:"
 msgid ""
-"Patient age at the moment of the diagnosis, in most situation, this value is"
-" derived from patient evalution."
+"Patient age at the moment of the diagnosis, in most situations, this value "
+"is derived from patient evalution."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,date_start_treatment:"
@@ -3359,13 +3366,25 @@ msgctxt "help:gnuhealth.patient.disease,date_stop_treatment:"
 msgid "End of treatment date"
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.disease,est_dodx:"
+msgid "Estimated date of diagnosisfrom referred years"
+msgstr ""
+
 #, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
 msgid "Health Professional"
 msgstr "Profesional Kesehatan"
 
+msgctxt "help:gnuhealth.patient.disease,is_active:"
+msgid "Check this box if the disease is active"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.disease,is_infectious:"
 msgid "Check if the patient has an infectious / transmissible disease"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.disease,is_on_treatment:"
+msgid "Currently on treatment"
 msgstr ""
 
 #, fuzzy
@@ -3374,13 +3393,17 @@ msgid "Condition"
 msgstr "Kondisi"
 
 msgctxt "help:gnuhealth.patient.disease,pcs_code:"
-msgid "Procedure code, for example, ICD-10-PCS Code 7-character string"
+msgid "Procedure code"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,short_comment:"
 msgid ""
 "Brief, one-line remark of the disease. Longer description will go on the "
 "Extra info field"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.disease,treatment_description:"
+msgid "Short description of the treatment"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.ecg,healthprof:"
@@ -11405,6 +11428,10 @@ msgstr "Utama"
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Allergies"
 msgstr "Alergi"
+
+msgctxt "view:gnuhealth.patient.disease:"
+msgid "Dates"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Extra Info"

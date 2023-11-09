@@ -1344,13 +1344,12 @@ msgid "Vaccinations"
 msgstr "ワクチン接種"
 
 msgctxt "field:gnuhealth.patient.disease,age:"
-msgid "Age when diagnosed"
-msgstr "検査時の年齢"
+msgid "Years"
+msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,age_str:"
-msgid "Age when diagnosed"
-msgstr "検査時の年齢"
+msgid "Age at dx"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,allergy_type:"
 msgid "Allergy type"
@@ -1365,12 +1364,16 @@ msgid "End"
 msgstr "終了"
 
 msgctxt "field:gnuhealth.patient.disease,diagnosed_date:"
-msgid "Date of Diagnosis"
-msgstr "検査の日時"
+msgid "Dx date"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,disease_severity:"
 msgid "Severity"
 msgstr "重症度"
+
+msgctxt "field:gnuhealth.patient.disease,est_dodx:"
+msgid "Est"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,extra_info:"
 msgid "Extra Info"
@@ -1393,21 +1396,24 @@ msgctxt "field:gnuhealth.patient.disease,institution:"
 msgid "Institution"
 msgstr "施設"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_active:"
-msgid "Active disease"
-msgstr "現在患っている疾患"
+msgid "Active"
+msgstr "活動的"
 
 msgctxt "field:gnuhealth.patient.disease,is_allergy:"
 msgid "Allergic Disease"
 msgstr "アレルギー疾患"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_infectious:"
-msgid "Infectious Disease"
-msgstr "感染症"
+msgid "Infectious"
+msgstr "感染性"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
-msgid "Currently on Treatment"
-msgstr "現在、治療中"
+msgid "Current"
+msgstr "CURRENT"
 
 msgctxt "field:gnuhealth.patient.disease,name:"
 msgid "Patient"
@@ -1437,9 +1443,10 @@ msgctxt "field:gnuhealth.patient.disease,status:"
 msgid "Status"
 msgstr "状態"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,treatment_description:"
-msgid "Treatment Description"
-msgstr "治療の説明"
+msgid "Description"
+msgstr "詳細"
 
 msgctxt "field:gnuhealth.patient.disease,weeks_of_pregnancy:"
 msgid "Contracted in pregnancy week #"
@@ -3194,13 +3201,13 @@ msgid "Person Unique Identifier"
 msgstr "個人認識コード"
 
 msgctxt "help:gnuhealth.patient.disease,age:"
-msgid "Patient age at the moment of the diagnosis. Can be estimative"
-msgstr "検査時の患者年齢。推測でも良い"
+msgid "Estimated age of the diagnosis"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,age_str:"
 msgid ""
-"Patient age at the moment of the diagnosis, in most situation, this value is"
-" derived from patient evalution."
+"Patient age at the moment of the diagnosis, in most situations, this value "
+"is derived from patient evalution."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,date_start_treatment:"
@@ -3211,27 +3218,43 @@ msgctxt "help:gnuhealth.patient.disease,date_stop_treatment:"
 msgid "End of treatment date"
 msgstr "治療終了日"
 
+msgctxt "help:gnuhealth.patient.disease,est_dodx:"
+msgid "Estimated date of diagnosisfrom referred years"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
 msgid "Health Professional"
 msgstr "医療従事者"
 
+msgctxt "help:gnuhealth.patient.disease,is_active:"
+msgid "Check this box if the disease is active"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.disease,is_infectious:"
 msgid "Check if the patient has an infectious / transmissible disease"
 msgstr "患者が感染している / 伝染性の病気の場合、チェック"
+
+msgctxt "help:gnuhealth.patient.disease,is_on_treatment:"
+msgid "Currently on treatment"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
 msgstr "状態"
 
 msgctxt "help:gnuhealth.patient.disease,pcs_code:"
-msgid "Procedure code, for example, ICD-10-PCS Code 7-character string"
-msgstr "処置コード, 例, ICD-10-PCS コード　7桁の数字"
+msgid "Procedure code"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,short_comment:"
 msgid ""
 "Brief, one-line remark of the disease. Longer description will go on the "
 "Extra info field"
 msgstr "簡潔な疾病についての一行概要。詳細な説明については追加情報領域へ記述"
+
+msgctxt "help:gnuhealth.patient.disease,treatment_description:"
+msgid "Short description of the treatment"
+msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.ecg,healthprof:"
@@ -11431,6 +11454,10 @@ msgstr "メイン"
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Allergies"
 msgstr "アレルギー"
+
+msgctxt "view:gnuhealth.patient.disease:"
+msgid "Dates"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Extra Info"

@@ -4,7 +4,7 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,care_location:"
 msgid "Care Location"
-msgstr "门诊护理位置"
+msgstr "门诊护理库位"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,medical_supplies:"
 msgid "Medical Supplies"
@@ -24,7 +24,7 @@ msgstr "批号"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care.medical_supply,name:"
 msgid "Ambulatory ID"
-msgstr "门诊ID"
+msgstr "门诊护理编号"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care.medical_supply,product:"
 msgid "Medical Supply"
@@ -49,7 +49,7 @@ msgstr "药物"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,name:"
 msgid "Ambulatory ID"
-msgstr "门诊ID"
+msgstr "门诊护理编号"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,product:"
 msgid "Product"
@@ -65,7 +65,7 @@ msgstr "说明"
 
 msgctxt "field:gnuhealth.patient.rounding,hospitalization_location:"
 msgid "Hospitalization Location"
-msgstr "住院地点"
+msgstr "住院库位"
 
 msgctxt "field:gnuhealth.patient.rounding,medical_supplies:"
 msgid "Medical Supplies"
@@ -85,7 +85,7 @@ msgstr "批号"
 
 msgctxt "field:gnuhealth.patient.rounding.medical_supply,name:"
 msgid "Ambulatory ID"
-msgstr "门诊ID"
+msgstr "门诊护理编号"
 
 msgctxt "field:gnuhealth.patient.rounding.medical_supply,product:"
 msgid "Medical Supply"
@@ -109,7 +109,7 @@ msgstr "药物"
 
 msgctxt "field:gnuhealth.patient.rounding.medicament,name:"
 msgid "Ambulatory ID"
-msgstr "门诊ID"
+msgstr "门诊护理编号"
 
 msgctxt "field:gnuhealth.patient.rounding.medicament,product:"
 msgid "Product"
@@ -125,11 +125,11 @@ msgstr "说明"
 
 msgctxt "field:gnuhealth.prescription.order,moves:"
 msgid "Moves"
-msgstr "调拨"
+msgstr "库存调拨"
 
 msgctxt "field:gnuhealth.vaccination,location:"
 msgid "Stock Location"
-msgstr "库存位置"
+msgstr "库位"
 
 msgctxt "field:gnuhealth.vaccination,lot:"
 msgid "Lot"
@@ -137,7 +137,7 @@ msgstr "批号"
 
 msgctxt "field:gnuhealth.vaccination,moves:"
 msgid "Moves"
-msgstr "调拨"
+msgstr "库存调拨"
 
 msgctxt "field:gnuhealth.vaccination,product:"
 msgid "Product"
@@ -193,7 +193,7 @@ msgstr "创建处方库存调拨初始化"
 
 msgctxt "model:gnuhealth.vaccination.stock.move.init,name:"
 msgid "Create Vaccination Stock Move Init"
-msgstr "创建处方库存调拨初始化"
+msgstr "创建疫苗库存调拨初始化"
 
 msgctxt "model:ir.action,name:act_create_prescription_stock_move"
 msgid "Create Prescription Stock Move"
@@ -219,23 +219,23 @@ msgstr "过期的疫苗。请通知当地卫生部门，不要使用!!!"
 
 msgctxt "model:ir.message,text:msg_no_pharmacy"
 msgid "You need to select a pharmacy"
-msgstr "您需要选择药房"
+msgstr "您需要选择一个药房"
 
 msgctxt "model:ir.message,text:msg_stock_move_exists"
 msgid "Stock move already exists"
-msgstr "库存移动已存在"
+msgstr "库存调拨已存在"
 
 msgctxt "model:ir.model.button,string:ambcaresess_end_button"
 msgid "End Session"
-msgstr ""
+msgstr "结束"
 
 msgctxt "model:ir.model.button,string:rounding_end_button"
 msgid "End Rounding"
-msgstr ""
+msgstr "结束"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Done / Create Stock moves"
-msgstr "创建库存调拨"
+msgstr "完成 / 创建库存调拨"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Medication"

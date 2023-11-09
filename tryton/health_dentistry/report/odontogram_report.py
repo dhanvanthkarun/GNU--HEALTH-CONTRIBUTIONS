@@ -77,9 +77,9 @@ class Odontogram(Report):
             draw.line((x + d3, y - d3, x + d4, y - d4), fill=color, width=width)
 
             fontsize = cls.x_distance//4
-            # font = ImageFont.truetype("FreeSans", fontsize)
-            # draw.multiline_text((x - fontsize/2 , y + d1 * 1.1), tooth, fill=color, font=font)
-            draw.multiline_text((x - fontsize/2 , y + d1 * 1.1), tooth, fill=color)
+            # Note: load_default support size argument when pillow-10.1.0
+            font = ImageFont.load_default(size=fontsize)
+            draw.multiline_text((x - fontsize * 0.65, y + d1 * 1.1), tooth, fill=color, font=font)
 
     @classmethod
     def plot_extraction(cls, piece_center, status, im):

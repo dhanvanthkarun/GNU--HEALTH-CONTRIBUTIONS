@@ -44,7 +44,7 @@ msgstr "医务人员"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,name:"
 msgid "ID"
-msgstr "ID"
+msgstr "护理编号"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,next_session:"
 msgid "Next Session"
@@ -57,6 +57,14 @@ msgstr "申请人"
 msgctxt "field:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation"
 msgstr "血氧饱和度"
+
+msgctxt "field:gnuhealth.patient.ambulatory_care,pain:"
+msgid "Pain"
+msgstr "疼痛"
+
+msgctxt "field:gnuhealth.patient.ambulatory_care,pain_level:"
+msgid "Pain level"
+msgstr "疼痛等级"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,patient:"
 msgid "Patient"
@@ -110,6 +118,10 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,warning_icon:"
 msgid "Warning Icon"
 msgstr "警告图标"
 
+msgctxt "field:gnuhealth.patient.ambulatory_care,weight:"
+msgid "Weight"
+msgstr "体重"
+
 msgctxt "field:gnuhealth.patient.rounding,bpm:"
 msgid "Heart Rate"
 msgstr "心率"
@@ -136,11 +148,11 @@ msgstr "病房环境"
 
 msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
 msgid "End"
-msgstr "结束"
+msgstr "结束时间"
 
 msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
 msgid "Start"
-msgstr "开始"
+msgstr "开始时间"
 
 msgctxt "field:gnuhealth.patient.rounding,evolution:"
 msgid "Evolution"
@@ -167,8 +179,8 @@ msgid "Pain"
 msgstr "疼痛"
 
 msgctxt "field:gnuhealth.patient.rounding,pain_level:"
-msgid "Pain"
-msgstr "疼痛"
+msgid "Pain level"
+msgstr "疼痛等级"
 
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
@@ -264,11 +276,11 @@ msgstr "护理操作代码"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"
-msgstr "Health 流动护理"
+msgstr "门诊护理序列"
 
 msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr "Health 查房"
+msgstr "患者查房序列"
 
 msgctxt ""
 "field:gnuhealth.sequences.ambulatory_care_sequence,ambulatory_care_sequence:"
@@ -281,8 +293,8 @@ msgid "Patient Rounding Sequence"
 msgstr "患者查房序列"
 
 msgctxt "help:gnuhealth.ambulatory_care_procedure,procedure:"
-msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
-msgstr "护理操作代码, 例如： ICD-10-PCS 代码，7位字符组成的字符串"
+msgid "Procedure Code"
+msgstr "护理操作代码"
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,bpm:"
 msgid "Heart rate expressed in beats per minute"
@@ -299,6 +311,14 @@ msgstr "血糖水平"
 msgctxt "help:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation(arterial)."
 msgstr "血氧饱和度(动脉)。"
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,pain:"
+msgid "Check if the patient is in pain"
+msgstr "如果患者疼痛，就选中此项"
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,pain_level:"
+msgid "Enter the pain level, from 1 to 10."
+msgstr "请输入疼痛等级，从 1 到 10."
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,procedures:"
 msgid ""
@@ -322,7 +342,11 @@ msgctxt "help:gnuhealth.patient.ambulatory_care,warning:"
 msgid ""
 "Check this box to alert the supervisor about this session. A warning icon "
 "will be shown in the session list"
-msgstr "选中此框可提醒管理人员此次患者查房情况，查房列表中将显示警告图标"
+msgstr "选中此框可提醒管理人员此轮门诊护理情况，护理情况列表中将显示警告图标"
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,weight:"
+msgid "Measured weight, in kg"
+msgstr "已测体重，单位：kg"
 
 msgctxt "help:gnuhealth.patient.rounding,bpm:"
 msgid "Heart rate expressed in beats per minute"
@@ -357,8 +381,8 @@ msgid "Check if the patient is in pain"
 msgstr "如果患者疼痛，就选中此项"
 
 msgctxt "help:gnuhealth.patient.rounding,pain_level:"
-msgid "Enter the pain level, from 1 to 10"
-msgstr "请输入疼痛级别，从1到10"
+msgid "Enter the pain level, from 1 to 10."
+msgstr "请输入疼痛级别，从1到10."
 
 msgctxt "help:gnuhealth.patient.rounding,personal_needs:"
 msgid "Check if the patient requests anything"
@@ -384,7 +408,7 @@ msgstr "如果个人物品、水、警报器...不容易接近，选中此项"
 
 msgctxt "help:gnuhealth.patient.rounding,pump:"
 msgid "Check if there is any issues with the pumps - IVs ... "
-msgstr "如果输液泵等有问题则勾选 "
+msgstr "如果输液泵等有问题则勾选"
 
 msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
@@ -414,11 +438,11 @@ msgstr "护理操作代码, 例如： ICD-10-PCS 代码，7位字符组成的字
 
 msgctxt "model:gnuhealth.ambulatory_care_procedure,name:"
 msgid "Ambulatory Care Procedure"
-msgstr "流动护理操作"
+msgstr "门诊护理操作"
 
 msgctxt "model:gnuhealth.patient.ambulatory_care,name:"
 msgid "Patient Ambulatory Care"
-msgstr "患者流动护理"
+msgstr "患者门诊护理"
 
 msgctxt "model:gnuhealth.patient.rounding,name:"
 msgid "Patient Rounding"
@@ -438,15 +462,19 @@ msgstr "患者评估序列设置"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_ambulatory_care_view"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
-msgstr "查房"
+msgstr "护理查房"
+
+msgctxt "model:ir.action,name:report_ambulatory_care"
+msgid "Ambulatory care session"
+msgstr "门诊护理报告"
 
 msgctxt "model:ir.action,name:report_round_nursing"
 msgid "Nursing rounds"
-msgstr "护理查房"
+msgstr "护理查房报告"
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid "There is no health professional associated to this user"
@@ -454,14 +482,12 @@ msgstr "这个用户没有与医务人员关联"
 
 msgctxt "model:ir.message,text:msg_report_pain_level"
 msgid "Level: %(pain_level)s"
-msgstr ""
+msgstr "等级: %(pain_level)s"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_no"
 msgid "No"
 msgstr "否"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_yes"
 msgid "Yes"
 msgstr "是"
@@ -476,7 +502,7 @@ msgstr "结束本轮查房"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
@@ -484,7 +510,7 @@ msgstr "患者查房"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
@@ -496,11 +522,11 @@ msgstr "护理"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_ambulatory_care_list"
 msgid "Ambulatory Care"
-msgstr "流动护理"
+msgstr "门诊护理"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
 msgid "Roundings"
-msgstr "查房"
+msgstr "护理查房"
 
 msgctxt "model:res.group,name:group_health_nursing"
 msgid "Health Nursing"
@@ -510,22 +536,101 @@ msgctxt "model:res.group,name:group_health_nursing_admin"
 msgid "Health Nursing Administration"
 msgstr "Health 护理管理"
 
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "/"
+msgstr "/"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Ambulatory Care Session"
+msgstr "门诊护理报告"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "BP"
+msgstr "血压"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "End:"
+msgstr "结束时间:"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Evolution"
+msgstr "进展情况"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Glycemia"
+msgstr "血糖"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Health Prof:"
+msgstr "医务人员:"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Heart rate"
+msgstr "心率"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Next session"
+msgstr "下一轮"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "O2 Sat (%)"
+msgstr "血氧饱和度(%)"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "PUID:"
+msgstr "证件号码:"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Pain"
+msgstr "疼痛"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Patient:"
+msgstr "患者:"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Procedures"
+msgstr "护理操作"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Resp. rate"
+msgstr "呼吸频率"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Session ID:"
+msgstr "护理编号:"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Start:"
+msgstr "开始时间:"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Summary"
+msgstr "总结"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Temp. (C)"
+msgstr "体温(C)"
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Weight (kg)"
+msgstr "体重(kg)"
+
 msgctxt "report:patient.rounding.report:"
 msgid "/"
 msgstr "/"
 
 msgctxt "report:patient.rounding.report:"
 msgid "BP"
-msgstr "BP"
+msgstr "血压"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Diuresis"
 msgstr "利尿"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "End:"
-msgstr "结束:"
+msgstr "结束时间:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Evolution"
@@ -533,7 +638,7 @@ msgstr "进展情况"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Gender:"
-msgstr ""
+msgstr "性别:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Glycemia"
@@ -541,7 +646,7 @@ msgstr "血糖"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Health Prof:"
-msgstr ""
+msgstr "医务人员:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Heart rate"
@@ -549,9 +654,8 @@ msgstr "心率"
 
 msgctxt "report:patient.rounding.report:"
 msgid "O2 Sat (%)"
-msgstr ""
+msgstr "血氧饱和度(%)"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "PUID:"
 msgstr "证件号码:"
@@ -560,7 +664,6 @@ msgctxt "report:patient.rounding.report:"
 msgid "Pain"
 msgstr "疼痛"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Patient:"
 msgstr "患者:"
@@ -575,15 +678,15 @@ msgstr "呼吸频率"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Code:"
-msgstr ""
+msgstr "查房编号:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Report"
-msgstr ""
+msgstr "护理查房报告"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Start:"
-msgstr ""
+msgstr "开始时间:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Summary"
@@ -591,11 +694,11 @@ msgstr "查房总结"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Temp. (C)"
-msgstr ""
+msgstr "体温(C)"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Weight (kg)"
-msgstr ""
+msgstr "体重(kg)"
 
 msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
 msgid "Improving"
@@ -684,6 +787,10 @@ msgstr "结束此次查房"
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding ?"
 msgstr "结束此次查房？"
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Environment"
+msgstr "病房环境"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Main"
