@@ -148,11 +148,11 @@ msgstr "病房环境"
 
 msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
 msgid "End"
-msgstr "结束"
+msgstr "结束时间"
 
 msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
 msgid "Start"
-msgstr "开始"
+msgstr "开始时间"
 
 msgctxt "field:gnuhealth.patient.rounding,evolution:"
 msgid "Evolution"
@@ -276,11 +276,11 @@ msgstr "护理操作代码"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"
-msgstr "Health 门诊护理"
+msgstr "门诊护理序列"
 
 msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr "Health 查房"
+msgstr "患者查房序列"
 
 msgctxt ""
 "field:gnuhealth.sequences.ambulatory_care_sequence,ambulatory_care_sequence:"
@@ -342,7 +342,7 @@ msgctxt "help:gnuhealth.patient.ambulatory_care,warning:"
 msgid ""
 "Check this box to alert the supervisor about this session. A warning icon "
 "will be shown in the session list"
-msgstr "选中此框可提醒管理人员此次患者查房情况，查房列表中将显示警告图标"
+msgstr "选中此框可提醒管理人员此轮门诊护理情况，护理情况列表中将显示警告图标"
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,weight:"
 msgid "Measured weight, in kg"
@@ -408,7 +408,7 @@ msgstr "如果个人物品、水、警报器...不容易接近，选中此项"
 
 msgctxt "help:gnuhealth.patient.rounding,pump:"
 msgid "Check if there is any issues with the pumps - IVs ... "
-msgstr "如果输液泵等有问题则勾选 "
+msgstr "如果输液泵等有问题则勾选"
 
 msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
@@ -466,7 +466,7 @@ msgstr "门诊护理"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
-msgstr "查房"
+msgstr "护理查房"
 
 msgctxt "model:ir.action,name:report_ambulatory_care"
 msgid "Ambulatory care session"
@@ -526,7 +526,7 @@ msgstr "门诊护理"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
 msgid "Roundings"
-msgstr "查房"
+msgstr "护理查房"
 
 msgctxt "model:res.group,name:group_health_nursing"
 msgid "Health Nursing"
@@ -682,7 +682,7 @@ msgstr "查房编号:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Report"
-msgstr "查房报告"
+msgstr "护理查房报告"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Start:"
@@ -787,6 +787,10 @@ msgstr "结束此次查房"
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding ?"
 msgstr "结束此次查房？"
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Environment"
+msgstr "病房环境"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Main"
