@@ -1174,15 +1174,20 @@ class SurgeryProtocol(ModelSQL, ModelView):
 
     name = fields.Char(
         'Name',
-        help='Protocol Name', required=True)
+        help='Protocol Name',
+        required=True, translate=True)
 
     code = fields.Char(
-        'Code',
-        help='Code', required=True)
+        'Code', help='Code',
+        required=True, translate=False)
 
-    description = fields.Char('Description')
+    description = fields.Char(
+        'Description',
+        translate=True)
 
-    general_info = fields.Text('General Information')
+    general_info = fields.Text(
+        'General Information',
+        translate=True)
 
     anesthesia_type = fields.Selection([
         (None, ''),
@@ -1249,9 +1254,13 @@ class SurgeryProtocol(ModelSQL, ModelView):
         ('e', 'Emergency'),
         ], 'Urgency', help="Urgency level for this surgery", sort=False)
 
-    postoperative_guidelines = fields.Text('Postoperative guidelines')
+    postoperative_guidelines = fields.Text(
+        'Postoperative guidelines',
+        translate=True)
 
-    discharge_instructions = fields.Text('Discharge Instructions')
+    discharge_instructions = fields.Text(
+        'Discharge Instructions',
+        translate=True)
 
     @classmethod
     def __setup__(cls):
