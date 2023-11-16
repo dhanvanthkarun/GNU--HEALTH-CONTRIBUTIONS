@@ -55,7 +55,7 @@ class Odontogram(Report):
     image_size = (x_distance * 17, y_distance * 4)
 
     @classmethod
-    def plot_teeth(cls, im):
+    def plot_teeth(cls, dschema, im):
         draw = ImageDraw.Draw(im)
         
         for tooth, values in cls.pieces.items():
@@ -70,11 +70,13 @@ class Odontogram(Report):
             d4 = d2/1.414
 
             draw.ellipse((x - d1, y - d1, x + d1, y + d1), outline=color, width = width)
-            draw.ellipse((x - d2, y - d2, x + d2, y + d2), outline=color, width = width)
-            draw.line((x - d3, y - d3, x - d4, y - d4), fill=color, width=width)
-            draw.line((x + d3, y + d3, x + d4, y + d4), fill=color, width=width)
-            draw.line((x - d3, y + d3, x - d4, y + d4), fill=color, width=width)
-            draw.line((x + d3, y - d3, x + d4, y - d4), fill=color, width=width)
+            
+            if tooth in dschema.keys():
+                draw.ellipse((x - d2, y - d2, x + d2, y + d2), outline=color, width = width)
+                draw.line((x - d3, y - d3, x - d4, y - d4), fill=color, width=width)
+                draw.line((x + d3, y + d3, x + d4, y + d4), fill=color, width=width)
+                draw.line((x - d3, y + d3, x - d4, y + d4), fill=color, width=width)
+                draw.line((x + d3, y - d3, x + d4, y - d4), fill=color, width=width)
 
             fontsize = cls.x_distance//4
             # Note: load_default support size argument when pillow-10.1.0
@@ -166,11 +168,15 @@ class Odontogram(Report):
         im = Image.new('RGB', cls.image_size, (255, 255, 255))
 
         dschema1 = json.loads(patient.dental_schema or "{}")
-        dschema2 = json.loads(patient.dental_schema_primary or "{}")
+
+        if patient.use_primary_schema:
+            dschema2 = json.loads(patient.dental_schema_primary or "{}")
+        else:
+            dschema2 = {}
+
         dschema = {**dschema1, **dschema2}
 
-        if dschema:
-            cls.plot_teeth(im)
+        cls.plot_teeth(dschema, im)
 
         for tooth, values in dschema.items():
             # Decayed or filled tooth
