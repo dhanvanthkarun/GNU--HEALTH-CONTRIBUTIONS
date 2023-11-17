@@ -28,7 +28,9 @@ __all__ = ['Odontogram']
 class Odontogram(Report):
     __name__ = 'health_dentistry.odontogram.report'
 
-    radius = 37
+    x_distance = 86
+    y_distance = 110
+
     __pieces = {
         '18': ( 1, 1), '17': ( 2, 1), '16': ( 3, 1), '15': ( 4, 1),
         '14': ( 5, 1), '13': ( 6, 1), '12': ( 7, 1), '11': ( 8, 1),
@@ -43,9 +45,6 @@ class Odontogram(Report):
         '85': ( 4, 3), '84': ( 5, 3), '83': ( 6, 3), '82': ( 7, 3), '81': ( 8, 3),
         '71': (10, 3), '72': (11, 3), '73': (12, 3), '74': (13, 3), '75': (14, 3),
     }
-
-    x_distance = 86
-    y_distance = 110
 
     pieces = {}
     for key, value in __pieces.items():
