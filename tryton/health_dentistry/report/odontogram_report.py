@@ -54,8 +54,8 @@ class Odontogram(Report):
     image_size = (x_distance * 17, y_distance * 4)
 
     @classmethod
-    def plot_teeth(cls, dschema, im):
-        draw = ImageDraw.Draw(im)
+    def plot_teeth(cls, image, dschema):
+        draw = ImageDraw.Draw(image)
         
         for tooth, values in cls.pieces.items():
             width = 3
@@ -83,7 +83,7 @@ class Odontogram(Report):
             draw.multiline_text((x - fontsize * 0.65, y + d1 * 1.1), tooth, fill=color, font=font)
 
     @classmethod
-    def plot_extraction(cls, piece_center, status, im):
+    def plot_extraction(cls, image, piece_center, status):
         missing_color = "#0000ff"  # blue
         for_extraction_color = "#ff0000"  # red
         if (status == 'M'):
@@ -97,17 +97,17 @@ class Odontogram(Report):
         urc = {'x': xcenter + num, 'y': ycenter - num}
         ulc = {'x': xcenter - num, 'y': ycenter - num}
         lrc = {'x': xcenter + num, 'y': ycenter + num}
-        draw = ImageDraw.Draw(im)
+        draw = ImageDraw.Draw(image)
         draw.line((llc['x'], llc['y'], urc['x'], urc['y']),
                   fill=color, width=10)
 
         draw.line((ulc['x'], ulc['y'], lrc['x'], lrc['y']),
                   fill=color, width=10)
 
-        return (im)
+        return (image)
 
     @classmethod
-    def plot_decayed(cls, tooth, piece_center, status, im):
+    def plot_decayed(cls, image, tooth, piece_center, status):
         x, y = piece_center
         filling = (0, 0, 255)  # blue
         decayed = (255, 0, 0)  # red
@@ -119,7 +119,7 @@ class Odontogram(Report):
             color = filling
 
         position = (x, y)  # Center of the tooth
-        draw = ImageDraw.Draw(im)
+        draw = ImageDraw.Draw(image)
 
         tregions = status.copy()
         tregions.pop('ts')  # Delete ts element and focus on the tooth areas
@@ -141,7 +141,7 @@ class Odontogram(Report):
                 if (key == 'm'):  # Mesial
                     position = (x + num, y)
 
-                ImageDraw.floodfill(im, xy=position, value=color, thresh=200)
+                ImageDraw.floodfill(image, xy=position, value=color, thresh=200)
 
         # Mandibular / lower region
         if (tooth in range(31, 48) or tooth in range(71, 85)):
@@ -157,14 +157,14 @@ class Odontogram(Report):
                 if (key == 'd'):  # Distal
                     position = (x + num, y)
 
-                ImageDraw.floodfill(im, xy=position, value=color, thresh=200)
+                ImageDraw.floodfill(image, xy=position, value=color, thresh=200)
 
-        return (im)
+        return (image)
 
     @classmethod
     def plot_odontogram(cls, patient):
 
-        im = Image.new('RGB', cls.image_size, (255, 255, 255))
+        image = Image.new('RGB', cls.image_size, (255, 255, 255))
 
         dschema1 = json.loads(patient.dental_schema or "{}")
 
@@ -175,7 +175,7 @@ class Odontogram(Report):
 
         dschema = {**dschema1, **dschema2}
 
-        cls.plot_teeth(dschema, im)
+        cls.plot_teeth(image, dschema)
 
         for tooth, values in dschema.items():
             # Decayed or filled tooth
@@ -183,15 +183,15 @@ class Odontogram(Report):
             # other symbols
             if (values['ts'] in ('D', 'F')):
                 status = dschema[tooth]  # Get all the keys (ts, o, m, d, ...)
-                cls.plot_decayed(int(tooth), cls.pieces[tooth], status, im)
+                cls.plot_decayed(image, int(tooth), cls.pieces[tooth], status)
 
             # Missing or set for extraction tooth
             if (values['ts'] in ('M', 'E')):
                 status = values['ts']
-                cls.plot_extraction(cls.pieces[tooth], status, im)
+                cls.plot_extraction(image, cls.pieces[tooth], status)
 
         holder = io.BytesIO()
-        im.save(holder, 'png')
+        image.save(holder, 'png')
         image_png = holder.getvalue()
         holder.close()
         return (image_png)
