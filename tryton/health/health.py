@@ -3024,6 +3024,9 @@ class PatientData(ModelSQL, ModelView):
 
     photo = fields.Function(fields.Binary('Picture'), 'get_patient_photo')
     
+    # photo_crop method is used in report template, for we can not
+    # find a way to keep the original aspect ratio in odt template at
+    # the moment.
     @classmethod
     def photo_crop(cls, photo, ratio):
         return image_crop_to_ratio(Image, photo, ratio)
