@@ -23,6 +23,7 @@ from trytond.i18n import gettext
 from .exceptions import (NoAssociatedHealthProfessional)
 
 import os
+import io
 import json
 
 def convert_date_timezone(sdate, target):
@@ -247,6 +248,39 @@ def get_health_professional(required=True):
             raise NoAssociatedHealthProfessional(gettext(
                 ('health.msg_no_associated_health_professional'))
             )
+
+def image_crop_to_ratio(plt, image, ratio):
+    """ Center-crop an image, make it conform to the ratio,
+    This function is useful to adjust ID card photo.
+    """
+    img = plt.open(io.BytesIO(image))
+    orig_width, orig_height = img.size
+    orig_ratio = float(orig_height / orig_width)
+
+    if orig_ratio >= ratio:
+        width = orig_width
+        height = int(width * ratio)
+        x = 0
+        y = (orig_height - height) / 2
+    else:
+        height = orig_height
+        width = int(height / ratio)
+        x = (orig_width - width) / 2
+        y = 0
+        
+    regin = (x, y, width + x, height + y)
+
+    new_img = img.crop(regin)
+
+    # Make a PNG image from PIL without the need to create a temp
+    # file.
+    holder = io.BytesIO()
+    new_img.save(holder, format='png')
+    new_img_png = holder.getvalue()
+    holder.close()
+
+    return bytearray(new_img_png)
+
 
 # Matplotlib will be used by many report.py in the future, so we add a
 # setup function to here.

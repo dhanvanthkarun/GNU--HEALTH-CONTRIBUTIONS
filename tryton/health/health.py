@@ -27,6 +27,7 @@ from urllib.parse import urlunparse
 from collections import OrderedDict
 from io import BytesIO
 from uuid import uuid4
+from PIL import Image
 
 from sql import Literal, Join
 
@@ -51,7 +52,8 @@ from .exceptions import (
 from .core import (get_institution, compute_age_from_dates,
                    format_years_months_days,
                    estimated_date_from_years,
-                   get_health_professional)
+                   get_health_professional,
+                   image_crop_to_ratio)
 
 
 try:
@@ -3021,6 +3023,10 @@ class PatientData(ModelSQL, ModelView):
     # Retrieves the information from the party.
 
     photo = fields.Function(fields.Binary('Picture'), 'get_patient_photo')
+    
+    @classmethod
+    def photo_crop(cls, photo, ratio):
+        return image_crop_to_ratio(Image, photo, ratio)
 
     # Removed in 2.0 . DOB It's now a functional field
     # Retrieves the information from the party.

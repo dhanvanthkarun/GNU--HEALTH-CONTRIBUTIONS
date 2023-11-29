@@ -16,7 +16,11 @@ from trytond.transaction import Transaction
 from trytond.pool import Pool, PoolMeta
 from datetime import datetime
 from trytond.pyson import Eval, Not, Equal
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         image_crop_to_ratio)
+
+from PIL import Image
+
 
 __all__ = ['Newborn', 'NeonatalApgar', 'NeonatalMedication',
            'NeonatalCongenitalDiseases', 'PediatricSymptomsChecklist']
@@ -41,6 +45,10 @@ class Newborn(ModelSQL, ModelView):
         'DoB', required=True,
         help="Date and Time of birth", states=STATES)
     photo = fields.Binary('Picture', states=STATES)
+
+    @classmethod
+    def photo_crop(cls, photo, ratio):
+        return image_crop_to_ratio(Image, photo, ratio)
 
     # Sex / Gender at birth.
 
