@@ -2647,6 +2647,8 @@ class DeathUnderlyingCondition(ModelSQL, ModelView):
         ('years', 'years'),
         ], 'Unit', select=True, sort=False, required=True)
 
+    unit_of_time_str = unit_of_time.translated('unit_of_time')
+
 
 class InsurancePlan(ModelSQL, ModelView):
     'Insurance Plan'
