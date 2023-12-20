@@ -44,7 +44,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
 
     health_professional = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health Professional', readonly=True,
+        'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
         help="Health professional / Ophthalmologist / OptoMetrist"
         )
 
@@ -178,10 +178,10 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         help="Left Eye Best Corrected VA", sort=False, states=STATES)
 
     rbcva_nv_add = fields.Float(
-        'BCVA - Add',
+        'BCVA Add',
         help='Right Eye Best Corrected NV Add', states=STATES)
     lbcva_nv_add = fields.Float(
-        'BCVA - Add',
+        'BCVA Add',
         help='Left Eye Best Corrected NV Add', states=STATES)
 
     rbcva_nv = fields.Selection(
