@@ -2373,7 +2373,8 @@ class PathologyGroup(ModelSQL, ModelView):
         help='for example MDG6 code will contain the Millennium Development'
         ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS')
 
-    desc = fields.Char('Short Description', required=True)
+    desc = fields.Char(
+        'Short Description', required=True, translate=True)
     info = fields.Text('Detailed information')
 
     members = fields.One2Many('gnuhealth.disease_group.members',
