@@ -119,7 +119,7 @@
 
 (defun gnuhealth--handle-icd10-section (code desc)
   (goto-char (point-min))
-  (when (and (re-search-forward (format "^msgid \"(%s)" code) nil t)
+  (when (and (re-search-forward (format "\"(%s)" code) nil t)
              (re-search-forward "msgstr \"" nil t))
     (delete-region (point) (line-end-position))
     (insert (format "(%s) %s" code desc))
