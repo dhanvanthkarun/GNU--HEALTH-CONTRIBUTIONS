@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-12-20 04:07+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.3\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Date and Time"
@@ -3819,8 +3810,8 @@ msgid ""
 "By default, the associated target (eg, patient) will be created, unless this"
 " option is unchecked. You should uncheck this field if, for example, the "
 "person is a relative but will not be part of the health system."
-msgstr "默认情况下，关联目标（如患者）将自动创建，除非未选中此选项。例如，如果此人只"
-"是某个患者的亲属，不应该按作为病人记入系统，则应取消选中此字段。"
+msgstr ""
+"默认情况下，关联目标（如患者）将自动创建，除非未选中此选项。例如，如果此人只是某个患者的亲属，不应该按作为病人记入系统，则应取消选中此字段。"
 
 msgctxt "help:party.party,deceased:"
 msgid "The information is updated from the Death Certificate"
@@ -7393,6 +7384,84 @@ msgctxt "model:gnuhealth.pathology.category,name:"
 msgid "Disease Categories"
 msgstr "疾病分类"
 
+msgctxt "model:gnuhealth.pathology.group,desc:ALLERGIC"
+msgid "Hypersensitivity reactions to environmental - external antigens"
+msgstr "对环境外部抗原的超敏反应"
+
+msgctxt "model:gnuhealth.pathology.group,desc:AUTOIMMUNE"
+msgid "Reactions to self antigens"
+msgstr "对自身抗原的反应"
+
+msgctxt "model:gnuhealth.pathology.group,desc:CONNECTIVE"
+msgid "Disorders of the connective tissue and MSDs"
+msgstr "结缔组织疾病和肌肉骨骼失调"
+
+msgctxt "model:gnuhealth.pathology.group,desc:GASTRO"
+msgid "Diseases related to the Digestive track and accesory organs"
+msgstr "消化道及附属器官有关的疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:GENITOURINARY"
+msgid "Renal, Urologic and Male reproductive disorders"
+msgstr "肾脏，泌尿和男性生殖疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:HEART"
+msgid "Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias.. "
+msgstr "心脏疾病。冠心病、心衰、瓣膜病、心律失常 ..."
+
+msgctxt "model:gnuhealth.pathology.group,desc:INFECTIOUS"
+msgid "Infectious diseases"
+msgstr "传染病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:METABOLIC"
+msgid "Metabolic and endocrine disorders"
+msgstr "代谢和内分泌紊乱"
+
+msgctxt "model:gnuhealth.pathology.group,desc:NEOPLASIC"
+msgid "Neoplasic disorders, both benign and malignant"
+msgstr "肿瘤疾病，包括良性和恶性"
+
+msgctxt "model:gnuhealth.pathology.group,desc:NEUROLOGIC"
+msgid "Neurological disorders"
+msgstr "神经系统疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:NOTIFIABLE"
+msgid ""
+"The disease is subject to mandatory notification to the health authorities"
+msgstr "这种疾病必须向卫生健康主管部门上报"
+
+msgctxt "model:gnuhealth.pathology.group,desc:NUTRITION"
+msgid "Nutritional disorders"
+msgstr "营养失调"
+
+msgctxt "model:gnuhealth.pathology.group,desc:OBSGYN"
+msgid "Women and pregnancies related disorders"
+msgstr "妇女和妊娠相关疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:PEDIATRIC"
+msgid "Disorders related to pediatric population"
+msgstr "儿科相关疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:PSYCHIATRIC"
+msgid "Psychiatric disorders"
+msgstr "精神疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:RESP"
+msgid "Respiratory - Pulmonary Diseases"
+msgstr "呼吸系统 - 肺部疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:SOCIAL"
+msgid "Diseases related to socio-economic and family environments"
+msgstr "与社会经济和家庭环境有关的疾病"
+
+msgctxt "model:gnuhealth.pathology.group,desc:VASCULAR"
+msgid "Disorders of the Circulatory System"
+msgstr "循环系统紊乱"
+
+msgctxt "model:gnuhealth.pathology.group,desc:VIOLENCE"
+msgid ""
+"Assault, sex crimes, bullying and other psychological or physical violence"
+msgstr "袭击、性犯罪、欺凌和其他心理或身体暴力"
+
 msgctxt "model:gnuhealth.pathology.group,name:"
 msgid "Pathology Groups"
 msgstr "疾病诊断分组"
@@ -8266,8 +8335,7 @@ msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid ""
 "SM-CORE-0007: Currently logged in user is not associated to a health "
 "professional. See \"Internal User\" field of \"Parties/People\" form."
-msgstr "SM-CORE-0007: "
-"当前登录用户没有关联到某个医务人员，请查看“参与者/人”界面的“内部用户”字段。"
+msgstr "SM-CORE-0007: 当前登录用户没有关联到某个医务人员，请查看“参与者/人”界面的“内部用户”字段。"
 
 msgctxt "model:ir.message,text:msg_patient_disease_already_exists"
 msgid "SM-CORE-0015: This disease already exists, do not create it again."
@@ -8918,8 +8986,7 @@ msgid ""
 "This automatically generated report is a tool to assist, but never to "
 "replace the criteria of the health professional. Always verify the person "
 "vaccination cards."
-msgstr "这个自动生成的报告只是一种辅助工具，它永远不会取代卫生专业人员的标准，请务必"
-"核实个人的疫苗接种卡。"
+msgstr "这个自动生成的报告只是一种辅助工具，它永远不会取代卫生专业人员的标准，请务必核实个人的疫苗接种卡。"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Vaccine"
