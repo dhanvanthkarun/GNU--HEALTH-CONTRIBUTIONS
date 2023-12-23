@@ -13,7 +13,7 @@
 #                The GNU Health control center                          #
 #########################################################################
 
-VERSION="4.2.0"
+VERSION="4.2.1"
 
 TRYTON_URL="https://downloads.tryton.org"
 GNUHEALTH_URL="https://ftp.gnu.org/gnu/health"
@@ -497,7 +497,7 @@ getlang() {
 
     cd ${GNUHEALTH_DIR}/tryton/server/modules || bailout
     message "INFO" "Retrieving language pack file for ${lang_to_install}" 
-    wget ${TRANSLATE_URL}/download-language/${lang_to_install}/gnu-health/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
+    wget ${TRANSLATE_URL}/download/gnu-health/-/${lang_to_install}/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
     message "INFO" "Installing / Updating language files for ${lang_to_install} ..."
 
     ${BSDTAR} --strip-components 3 -xzf ${lang_download_dir}/${lang_file} || bailout
