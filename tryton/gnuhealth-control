@@ -13,7 +13,7 @@
 #                The GNU Health control center                          #
 #########################################################################
 
-VERSION="4.2.0"
+VERSION="4.4.0"
 
 TRYTON_URL="https://downloads.tryton.org"
 GNUHEALTH_URL="https://ftp.gnu.org/gnu/health"
@@ -497,12 +497,14 @@ getlang() {
 
     cd ${GNUHEALTH_DIR}/tryton/server/modules || bailout
     message "INFO" "Retrieving language pack file for ${lang_to_install}" 
-    wget ${TRANSLATE_URL}/download-language/${lang_to_install}/gnu-health/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
+    wget ${TRANSLATE_URL}/download/gnu-health/-/${lang_to_install}/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
     message "INFO" "Installing / Updating language files for ${lang_to_install} ..."
 
     ${BSDTAR} --strip-components 3 -xzf ${lang_download_dir}/${lang_file} || bailout
-    message "INFO" "Language pack ${lang_to_install} sucessfully installed / updated"
-    message "INFO" "You now need to update the database modules"
+    message "INFO" "Language pack ${lang_to_install} sucessfully installed / Updated"
+    message "INFO" "You now need to load language translations again in one the following ways:"
+    message "INFO" "1. Command:  cdexe; ./tryton-admin --database YOUR-DB --language YOUR-LANG"
+    message "INFO" "2. Menu:     Administration > Localization > Languages > YOUR-LANG > Load translations"
     message "INFO" "Removing temporary directories"
     rm -rf ${lang_download_dir}
     cd
@@ -536,7 +538,7 @@ install_python_dependencies() {
     local PIP_LXML="lxml"
     local PIP_RELATORIO="relatorio"
     local PIP_WRAPT="wrapt"
-    local PIP_WERKZEUG="werkzeug<2"
+    local PIP_WERKZEUG="werkzeug<3"
     local PIP_DATEUTIL="python-dateutil"
     local PIP_PSYCOPG2="psycopg2-binary"
     local PIP_PYTZ="pytz"
@@ -545,14 +547,14 @@ install_python_dependencies() {
     local PIP_QRCODE="qrcode"
     local PIP_PYBARCODE="python-barcode"
     local PIP_SIX="six"
-    local PIP_PILLOW="Pillow"
+    local PIP_PILLOW="Pillow>=10.1.0"
     local PIP_CALDAV="caldav"
     local PIP_POLIB="polib"
     local PIP_SQL="python-sql"
     local PIP_STDNUM="python-stdnum"
     local PIP_SIMPLEEVAL="simpleeval"
     local PIP_CONFIGPARSER="configparser"
-    local PIP_WEBDAV3="pywebdav3-gnuhealth"
+    local PIP_WEBDAV3="pywebdav3-gnuhealth>=0.11.0"
     local PIP_BCRYPT="bcrypt"
     local PIP_NUMPY="numpy"
     local PIP_UNOCONV="unoconv"

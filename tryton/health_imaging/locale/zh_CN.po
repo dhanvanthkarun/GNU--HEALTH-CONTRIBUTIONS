@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-12-20 04:07+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_imaging/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.3\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.imaging.test,active:"
 msgid "Active"
@@ -220,9 +211,17 @@ msgctxt "model:gnuhealth.imaging.test.type,name:"
 msgid "Medical Imaging Study Type"
 msgstr "医学影像检查类型"
 
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_cr"
+msgid "Computed Radiography"
+msgstr "计算机射线成像系统"
+
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ctscan"
 msgid "Computed Tomography"
 msgstr "计算机断层扫描"
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_dx"
+msgid "Digital Radiography"
+msgstr "数字放射摄影系统"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_mri"
 msgid "Magnetic Resonance"
@@ -237,9 +236,13 @@ msgctxt ""
 msgid "Ultrasound"
 msgstr "超声"
 
-msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xa"
 msgid "X-Ray Angiography"
 msgstr "X射线血管造影"
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
+msgid "X-ray"
+msgstr "X射线"
 
 msgctxt "model:gnuhealth.patient.imaging.test.request.start,name:"
 msgid "Request Patient Imaging Test Start"
