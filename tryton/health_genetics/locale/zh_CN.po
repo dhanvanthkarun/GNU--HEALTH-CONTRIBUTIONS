@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-25 08:08+0000\n"
+"PO-Revision-Date: 2023-12-25 08:53+0000\n"
 "Last-Translator: Feng Shu <tumashu@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "gnu-health/health_genetics/zh_Hans/>\n"
@@ -105,11 +105,11 @@ msgstr "基因显著性"
 
 msgctxt "field:gnuhealth.gene.variant,variant:"
 msgid "FTId"
-msgstr "FTId"
+msgstr "变异特征 ID"
 
 msgctxt "field:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene & Protein"
-msgstr "基因 & 蛋白"
+msgstr "基因&蛋白"
 
 msgctxt "field:gnuhealth.gene.variant.phenotype,name:"
 msgid "Code"
@@ -261,7 +261,7 @@ msgstr "名称别名"
 
 msgctxt "help:gnuhealth.gene,protein_name:"
 msgid "Encoding Protein Code, such as UniProt protein name"
-msgstr "编码蛋白代码，如 UniProt 蛋白质名称"
+msgstr "编码蛋白代码，如 UniProt 蛋白名称"
 
 msgctxt "help:gnuhealth.gene,refseq_accession:"
 msgid "RefSeq Accession ID"
@@ -325,7 +325,7 @@ msgctxt "help:gnuhealth.protein.disease,active:"
 msgid ""
 "Whether this code is current.If you deactivate it, the code will no longer "
 "show in the protein-related diseases"
-msgstr "此代码是否为最新代码。如果你停用它，该代码将不再显示在与蛋白质相关的疾病中"
+msgstr "此代码是否为最新代码。如果你停用它，该代码将不在蛋白相关疾病中显示"
 
 msgctxt "help:gnuhealth.protein.disease,gene_variant:"
 msgid "Natural variants involved in this condition"
@@ -369,7 +369,7 @@ msgstr "患者基因信息"
 
 msgctxt "model:gnuhealth.protein.disease,name:"
 msgid "Protein related disorders"
-msgstr "蛋白质相关疾病"
+msgstr "蛋白相关疾病"
 
 msgctxt "model:ir.action,name:"
 msgid "Disease Genes"
@@ -393,7 +393,7 @@ msgstr "个人遗传信息"
 
 msgctxt "model:ir.action,name:gnuhealth_action_protein_disease"
 msgid "Protein related diseases"
-msgstr "蛋白质相关疾病"
+msgstr "蛋白相关疾病"
 
 msgctxt "model:ir.ui.menu,name:"
 msgid "Disease Genes"
@@ -417,7 +417,7 @@ msgstr "遗传学"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_protein_diseases"
 msgid "Protein related diseases"
-msgstr "蛋白质相关疾病"
+msgstr "蛋白相关疾病"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_genetics"
 msgid "Genetics"
@@ -529,7 +529,7 @@ msgstr "LB/B: 可能良性的"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "LP/P: Likely pathogenic or pathogenic"
-msgstr "LP/P: 可能致病性的"
+msgstr "LP/P: 可能致病的"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
@@ -593,7 +593,7 @@ msgstr "兄弟姐妹"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomic dominant"
-msgstr "常染色体显性的"
+msgstr "常染色体显性"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomic recessive"
