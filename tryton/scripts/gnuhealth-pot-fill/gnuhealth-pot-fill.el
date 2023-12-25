@@ -1,4 +1,4 @@
-;;; gnuhealth-pot-fill.el --- A tool used to fill GNU Health pot file  -*- lexical-binding: t; -*-
+;;; gnuhealth-pot-fill.el --- A tool used to fill GNU Health icd* pot file  -*- lexical-binding: t; -*-
 
 ;; Author: Feng Shu <tumashu@163.com>
 ;; Url: https://hg.savannah.gnu.org/hgweb/health/
@@ -42,19 +42,32 @@
 ;; We can use this Emacs package to fill pot files to get a po file,
 ;; in following steps:
 
-;; 1. Find the translated version of icd10 and icd9procs, in most
-;;    case, we can find two xlsx files.
+;; 1. Find the translated version of icd10 and icd9procs, for example,
+;; two xlsx files.
+;;
 ;; 2. Extract infos from xlsx files and update data/icd10-*.txt and
-;;    icd9procs.txt
-;; 3. Add to ~/.emacs
+;;    icd9procs.txt, the lines of files are similar:
 ;;
-;;    (add-to-list 'load-path "/PATH/TO/health/tryton/script/health-pot-fill")
-;;    (require 'gnuhealth-po-update)
+;;        Class<TAB>Code<TAB>Description
+;;        icd10-disease<TAB>A00<TAB>霍乱
 ;;
-;; 4. Open file with Emacs: health/tryton/health_icd10/locale/health_icd10.pot
+;; 3. Add config to ~/.emacs
+;;
+;;        (add-to-list 'load-path "/path/to/health/tryton/script/gnuhealth-pot-fill")
+;;        (require 'gnuhealth-pot-fill)
+;;
+;; 4. Open pot file with Emacs, for example:
+;;    health/tryton/health_icd10/locale/health_icd10.pot
+;;
 ;; 5. Run Emacs command (M-x): gnuhealth-pot-fill
+;;
 ;; 6. Save file to zh_CN.po.
-;; 7. Review diff with the help of hg (This step is very import!!!).
+;;
+;; 7. Review diff with the help of hg diff, this step is very
+;; import!!! for this tool may fill wrong in some situation.
+;;
+;; NOTE: This tool can be used to update exist po files, but may face
+;; some bugs in some situation, so need review change.
 
 ;;; Code:
 (defun gnuhealth-pot-fill ()
