@@ -501,8 +501,10 @@ getlang() {
     message "INFO" "Installing / Updating language files for ${lang_to_install} ..."
 
     ${BSDTAR} --strip-components 3 -xzf ${lang_download_dir}/${lang_file} || bailout
-    message "INFO" "Language pack ${lang_to_install} sucessfully installed / updated"
-    message "INFO" "You now need to update the database modules"
+    message "INFO" "Language pack ${lang_to_install} sucessfully installed / Updated"
+    message "INFO" "You now need to load language translations again in one the following ways:"
+    message "INFO" "1. Command:  cdexe; ./tryton-admin --database YOUR-DB --language YOUR-LANG"
+    message "INFO" "2. Menu:     Administration > Localization > Languages > YOUR-LANG > Load translations"
     message "INFO" "Removing temporary directories"
     rm -rf ${lang_download_dir}
     cd
