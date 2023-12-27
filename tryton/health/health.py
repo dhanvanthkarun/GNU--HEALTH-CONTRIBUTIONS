@@ -4819,6 +4819,16 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         "if the information provided by the source seems not reliable",
         states=STATES)
 
+    # This method is used in report templates, for example:
+    # patient_evaluation.fodt
+    def get_report_reliable_info(self):
+        if self.reliable_info:
+            return gettext(
+                'health.msg_patient_evaluation_reliable_info_is_true')
+        else:
+            return gettext(
+                'health.msg_patient_evaluation_reliable_info_is_false')
+
     derived_from = fields.Many2One(
         'gnuhealth.healthprofessional', 'Derived from',
         help='Health Professional who derived the case',
