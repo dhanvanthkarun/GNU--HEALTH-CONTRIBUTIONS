@@ -4,11 +4,11 @@ source $HOME/.gnuhealthrc
 LANGUAGE=$@
 ## All languages which translation progress > 10%
 ## https://hosted.weblate.org/projects/gnu-health/health/
-ALL_LANGUAGES="ar es kab id tr sr_Cyrl el de it_IT ja_JP ka fr lo pt_BR zh_CN"
+ALL_LANGUAGES="ar es kab id tr sr_Cyrl sv el de it_IT ja_JP ka fr lo pt_BR zh_CN"
 ## Ignore all languages which translation progress <= 10%, If somebody
 ## are maintaining a language, he can ask to update ALL_LANGUAGE and
 ## IGNORE_LANGUAGE when progress > 10%
-IGNORE_LANGUAGES="ca hu eo ru kn ckb sq zh_Hant nb_NO pl ht sv ml uk fi"
+IGNORE_LANGUAGES="ca hu eo ru kn ckb sq zh_Hant nb_NO pl ht ml uk fi"
 TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
 TRYTOND_ADMIN_CMD="${TRYTON_SERVER_DIR}/trytond-${TRYTON_VERSION}/bin/trytond-admin --email admin -d ${TRYTON_DATABASE} --all"
@@ -17,11 +17,16 @@ help()
 {
     cat << EOF
 
-GNU Health HMIS po files export tool
+GNU Health HMIS po files export tool, this tool must be called from
+health/tryton/script/po-export/ directory.
 
-usage: `basename $0` LANG
+Usage:
 
-    Example:
+    $ cd /path/to/health/tryton/script/po-export/
+    $ bash ./`basename $0` LANG
+
+Example:
+
     $ bash ./po-export.sh zh_CN
     $ bash ./po-export.sh zh_CN ca
     $ bash ./po-export.sh --all
