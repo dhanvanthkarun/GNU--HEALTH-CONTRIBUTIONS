@@ -13,16 +13,22 @@ TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
 TRYTOND_ADMIN_CMD="${TRYTON_SERVER_DIR}/trytond-${TRYTON_VERSION}/bin/trytond-admin --email admin -d ${TRYTON_DATABASE} --all"
 
+PO_EXPORT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+cd ${PO_EXPORT_DIR}
+
+if [[ ! -f "po-export.py" ]]; then
+ 　　echo "Error: po-export.py is not found at directory: ${PO_EXPORT_DIR}!"
+     exit 0
+fi
+
 help()
 {
     cat << EOF
 
-GNU Health HMIS po files export tool, this tool must be called from
-health/tryton/script/po-export/ directory.
+GNU Health HMIS po files export tool.
 
 Usage:
 
-    $ cd /path/to/health/tryton/script/po-export/
     $ bash ./`basename $0` LANG
 
 Example:
@@ -39,12 +45,6 @@ if [ $# -eq 0 ]; then
     help
 fi
 
-echo ""
-echo "+--------------------------------------------+"
-echo "|    GNU Health HMIS po files export tool    |"
-echo "+--------------------------------------------+"
-echo ""
-
 if [[ $LANGUAGE = "--all" ]]; then
     LANGUAGE=${ALL_LANGUAGES}
 fi
@@ -56,6 +56,11 @@ for lang in $LANGUAGE; do
     fi
 done
 
+echo ""
+echo "+--------------------------------------------+"
+echo "|    GNU Health HMIS po files export tool    |"
+echo "+--------------------------------------------+"
+echo ""
 echo "## Export po files of '$LANGUAGE'."
 echo ""
 
