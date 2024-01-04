@@ -52,7 +52,7 @@ fi
 for lang in $LANGUAGE; do
     if ! [[ "$ALL_LANGUAGES" =~ "$lang" ]]; then
         echo "Error: '$lang' is not a value in '$ALL_LANGUAGES'!"
-        exit 0
+        exit 1
     fi
 done
 
@@ -61,6 +61,24 @@ echo "+--------------------------------------------+"
 echo "|    GNU Health HMIS po files export tool    |"
 echo "+--------------------------------------------+"
 echo ""
+
+cat << EOF
+** NOTE for developer **
+
+Before export po files, suggest commit all pending changes in weblate
+and lock weblate's translation in weblate admin UI, this can reduce po
+files merge conflicts in the future.
+
+EOF
+
+read -p "Continue run po-export.sh? [y|n]" -n 1 -r
+echo ""
+echo ""
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
 echo "## Export po files of '$LANGUAGE'."
 echo ""
 
@@ -104,3 +122,14 @@ python3 po-export.py --user admin     \
         --run-cleanup-step            \
         --export-pot                  \
         --export-languages ${LANGUAGE} 
+
+
+cat << EOF
+
+** NOTE for developer **
+
+After the change of po files has been pushed to gnuhealth hg, we
+should wait this change sync to weblate then unlock weblate
+translation in weblate admin UI.
+
+EOF
