@@ -383,7 +383,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
 
     onset = fields.Integer('Onset', help="Age in years")
 
-    notes = fields.Char("Notes")
+    notes = fields.Text("Notes")
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof',
