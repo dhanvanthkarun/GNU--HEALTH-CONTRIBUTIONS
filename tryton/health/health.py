@@ -3761,7 +3761,7 @@ class AppointmentReport(ModelSQL, ModelView):
     diagnosis = fields.Function(
         fields.Many2One(
             'gnuhealth.pathology',
-            'Main Codition'), 'get_diagnosis')
+            'Main Condition'), 'get_diagnosis')
 
     @classmethod
     def __setup__(cls):
