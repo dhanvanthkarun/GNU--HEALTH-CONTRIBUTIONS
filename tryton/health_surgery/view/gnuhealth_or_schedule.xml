@@ -18,13 +18,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <label name="reserve_to"/>
         <field name="reserve_to"/>
     </group>
-    <group id="or_schedule_details" string="Details" colspan="4" col="10">
-        <label name="healthprof"/>
-        <field name="healthprof"/>
+    <group id="or_schedule_details" string="Details" colspan="4" col="6">
         <label name="patient"/>
         <field name="patient"/>
         <label name="health_condition"/>
-        <field name="health_condition"/>
+        <field name="health_condition" colspan="3"/>
+        <label name="healthprof"/>
+        <field name="healthprof"/>
         <label name="specialty"/>
         <field name="specialty"/>
         <label name="urgency"/>

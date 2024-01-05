@@ -1243,7 +1243,7 @@ class SurgeryProtocol(ModelSQL, ModelView):
         help="This code reflects the main intervention of this surgery.")
 
     pathology = fields.Many2One(
-        'gnuhealth.pathology', 'Health Condition',
+        'gnuhealth.pathology', 'Condition',
         help="Base Condition / Reason")
 
     classification = fields.Selection([
@@ -1312,7 +1312,7 @@ class ORScheduler(ModelSQL, ModelView):
         help='Medical Specialty / Sector')
 
     health_condition = fields.Many2One(
-        'gnuhealth.pathology', 'Health Condition',
+        'gnuhealth.pathology', 'Condition',
         help="Base Condition / Reason")
 
     state = fields.Function(fields.Selection((
