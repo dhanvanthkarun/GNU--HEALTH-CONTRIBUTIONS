@@ -220,7 +220,7 @@ class Surgery(ModelSQL, ModelView):
         help="List of the supplies required for the surgery")
 
     pathology = fields.Many2One(
-        'gnuhealth.pathology', 'Health Condition',
+        'gnuhealth.pathology', 'Condition',
         help="Base Condition / Reason")
 
     classification = fields.Selection([

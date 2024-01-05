@@ -15,11 +15,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="computed_age"/>
         <label name="surgery_date"/>
         <field name="surgery_date"/>
-        <label name="code"/>
-        <field name="code"/>
     </group>
     <newline/>
-    <group colspan="4" col="10" id="group_surgery_header">
+    <group colspan="4" col="6" id="group_surgery_header">
+        <label name="code"/>
+        <field name="code"/>
         <label name="protocol"/>
         <field name="protocol"/>
         <label name="description"/>
