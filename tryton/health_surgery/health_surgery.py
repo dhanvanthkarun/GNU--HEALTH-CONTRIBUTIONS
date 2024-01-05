@@ -971,7 +971,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         ('Class 3', 'Class 3: Soft and hard palate and base of the uvula are '
                     'visible'),
         ('Class 4', 'Class 4: Only Hard Palate visible'),
-        ], 'Mallampati Score', sort=False)
+        ], 'Mallampati', sort=False, help='Mallampati Score')
 
     preop_mallampati_str = preop_mallampati.translated('preop_mallampati')
 
