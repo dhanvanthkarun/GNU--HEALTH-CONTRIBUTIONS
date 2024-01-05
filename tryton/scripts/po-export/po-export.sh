@@ -63,11 +63,23 @@ echo "+--------------------------------------------+"
 echo ""
 
 cat << EOF
-** NOTE for developer **
 
-Before export po files, suggest commit all pending changes in weblate
-and lock weblate's translation in weblate admin UI, this can reduce po
-files merge conflicts in the future.
+NOTE: If your are gnuhealth developer, before export po files, suggest
+do the following steps, which can reduce po files merge conflicts.
+
+1. Commit all pending changes in weblate.
+    
+   a) Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
+   b) Click button: Manage > Repository maintenance > (pending changes) Commit
+   c) Make sure commits can be found at: https://hg.weblate.org/gnu-health/health
+   
+2. Lock translation in weblate.
+
+3. Pull and merge changes in below hg repos to local repo your are
+   working.
+
+   1. gnuhealth-upstream: https://hg.savannah.gnu.org/hgweb/health
+   2. gnuhealth-weblate:  https://hg.weblate.org/gnu-health/health
 
 EOF
 
@@ -126,10 +138,15 @@ python3 po-export.py --user admin     \
 
 cat << EOF
 
-** NOTE for developer **
+After po-export.sh run successful and po files changes has been pushed
+to gnuhealth upstream hg repo, we should:
 
-After the change of po files has been pushed to gnuhealth hg, we
-should wait this change sync to weblate then unlock weblate
-translation in weblate admin UI.
+1. Make sure all po files changes sync to weblate:
+
+   a) Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
+   b) Click button: Manage > Repository maintenance > (missing commits) Push
+   c) Make sure commits can be found at: https://hg.weblate.org/gnu-health/health
+
+2. Unlock translation in weblate.
 
 EOF
