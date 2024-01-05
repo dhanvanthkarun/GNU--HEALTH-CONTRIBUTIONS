@@ -5587,7 +5587,7 @@ class PatientECG(ModelSQL, ModelView):
 
     twave_inversion = fields.Boolean('T wave inversion')
 
-    interpretation = fields.Char('Interpretation', required=True)
+    interpretation = fields.Text('Interpretation', required=True)
     ecg_strip = fields.Binary('ECG Strip')
 
     healthprof = fields.Many2One(

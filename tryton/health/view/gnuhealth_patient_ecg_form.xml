@@ -10,38 +10,40 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <form>
     <label name="name"/>
     <field name="name"/>
-    <label name="lead"/>
-    <field name="lead"/>
-    <label name="axis"/>
-    <field name="axis"/>
-    <label name="rate"/>
-    <field name="rate"/>
-    <label name="pacemaker"/>
-    <field name="pacemaker"/>
-    <label name="rhythm"/>
-    <field name="rhythm"/>
-    <newline/>
-    <group id="ecg_intervals" colspan="4" col="6">
-        <label name="pr"/>
+    <group string= "Results" id="ecg_results" colspan="4">
+      <label name="lead"/>
+      <field name="lead"/>
+      <label name="axis"/>
+      <field name="axis"/>
+      <label name="rate"/>
+      <field name="rate"/>
+      <label name="pacemaker"/>
+      <field name="pacemaker"/>
+      <label name="rhythm"/>
+      <field name="rhythm"/>
+      <label name="pr"/>
+      <group id="ecg_intervals" col="6">
         <field name="pr"/>
         <label name="qrs"/>
         <field name="qrs"/>
         <label name="qt"/>
         <field name="qt"/>
+      </group>
+      <newline/>
+      <label name="st_segment"/>
+      <field name="st_segment"/>
+      <label name="twave_inversion"/>
+      <field name="twave_inversion"/>
     </group>
-    <newline/>
-    <label name="st_segment"/>
-    <field name="st_segment"/>
-    <label name="twave_inversion"/>
-    <field name="twave_inversion"/>
-    <newline/>
-    <label name="interpretation"/>
-    <field name="interpretation" colspan="3"/>
-    <newline/>
-    <field colspan="4" name="ecg_strip" widget="image"/>
-    <newline/>
-    <label name="healthprof"/>
-    <field name="healthprof"/>
-    <label name="institution"/>
-    <field name="institution"/>
+    <group string="Image" id="ecg_image" colspan="4">
+      <field colspan="4" name="ecg_strip" widget="image"/>
+    </group>
+    <label string="Interpretation" xalign="0.0" colspan="4"/>
+    <field name="interpretation" colspan="4"/>
+    <group id="ecg_footer" colspan="4">
+      <label name="healthprof"/>
+      <field name="healthprof"/>
+      <label name="institution"/>
+      <field name="institution"/>
+    </group>
 </form>
