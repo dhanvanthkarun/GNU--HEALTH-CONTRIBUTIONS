@@ -314,7 +314,7 @@ class FederationCountryConfig(ModelSingleton, ModelSQL, ModelView):
 
     country = fields.Many2One(
         'country.country', 'Country', required=True,
-        help="Country code to be use as the prefix for the Federation"
+        help="Country code to be used as the prefix for the Federation"
              "ID account.")
 
     code = fields.Function(fields.Char('Code'), 'get_country_code')
