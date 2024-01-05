@@ -4811,7 +4811,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
 
     information_source = fields.Char(
-        'Source', help="Source of"
+        'Source', help="Source of "
         "Information, eg : Self, relative, friend ...",
         states=STATES)
 
