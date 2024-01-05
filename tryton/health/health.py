@@ -4713,8 +4713,9 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
                     return self.evaluation_start - \
                         self.appointment.checked_in_date
 
-    code = fields.Char('Code', help="Unique code that \
-        identifies the evaluation")
+    code = fields.Char(
+        'Code',
+        help="Unique code that identifies the evaluation")
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', states=STATES)
 
