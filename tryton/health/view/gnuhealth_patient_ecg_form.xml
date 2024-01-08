@@ -38,7 +38,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <group string="Image" id="ecg_image" colspan="4">
       <field colspan="4" name="ecg_strip" widget="image"/>
     </group>
-    <label string="Interpretation" xalign="0.0" colspan="4"/>
+    <label string="Interpretation" 
+           name="interpretation" 
+           xalign="0.0" colspan="4"/>
     <field name="interpretation" colspan="4"/>
     <group id="ecg_footer" colspan="4">
       <label name="healthprof"/>
