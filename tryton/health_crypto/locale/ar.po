@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-01-10 02:21+0000\n"
+"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
+"health_crypto/ar/>\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.4-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
@@ -104,6 +114,8 @@ msgid ""
 " changed. Please note that the verification is done only on selected  "
 "fields."
 msgstr ""
+"سيتم تعيين هذا الحقل كلما تم تغيير أجزاء من المستند الأصلي الرئيسي. يرجى "
+"ملاحظة أن التحقق يتم فقط في الحقول المحددة."
 
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -115,6 +127,8 @@ msgid ""
 " changed. Please note that the verification is done  only on selected "
 "fields."
 msgstr ""
+"سيتم تعيين هذا الحقل كلما تم تغيير أجزاء من المستند الأصلي الرئيسي. يرجى "
+"ملاحظة أن التحقق يتم فقط في الحقول المحددة...."
 
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -144,21 +158,18 @@ msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
 msgstr "مٌلخص المستند الأصلي"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:birthcert_generate_button"
 msgid "Generate"
 msgstr "توليد"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:deathcert_generate_button"
 msgid "Generate"
 msgstr "توليد"
 
 msgctxt "model:ir.model.button,string:evaluation_sign_button"
 msgid "Close"
-msgstr ""
+msgstr "اغلاق"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:prescription_generate_button"
 msgid "Generate"
 msgstr "توليد"
