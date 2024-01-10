@@ -3546,7 +3546,8 @@ class Appointment(ModelSQL, ModelView):
         select=True, help='Patient Name',
         states={'required': (Eval('state') != 'free')})
 
-    appointment_date = fields.DateTime('Date and Time')
+    appointment_date = fields.DateTime(
+        'Start', help="Appintmont start date and time.")
 
     checked_in_date = fields.DateTime('Checked-in Time')
 
@@ -3759,8 +3760,10 @@ class AppointmentReport(ModelSQL, ModelView):
         ('f', 'Female')], 'Gender')
     address = fields.Function(fields.Char('Address'), 'get_address')
     insurance = fields.Function(fields.Char('Insurance'), 'get_insurance')
-    appointment_date = fields.Date('Date')
-    appointment_date_time = fields.DateTime('Date and Time')
+    appointment_date = fields.Date(
+        'Start', help='Appointment start date.')
+    appointment_date_time = fields.DateTime(
+        'Start', help="Appointment start time.")
     diagnosis = fields.Function(
         fields.Many2One(
             'gnuhealth.pathology',

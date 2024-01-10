@@ -40,7 +40,8 @@ class Appointment(metaclass=PoolMeta):
         'calendar.event', 'CalDAV Event', readonly=True,
         help="Calendar Event",
         states={'invisible': Not(Bool(Eval('event')))})
-    appointment_date_end = fields.DateTime('End Date and Time')
+    appointment_date_end = fields.DateTime(
+        'End', help="Appointment end date and time.")
 
     @classmethod
     def validate(cls, appointments):
