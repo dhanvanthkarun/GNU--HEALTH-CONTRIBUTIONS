@@ -67,7 +67,7 @@ class RequestPatientImagingTestStart(ModelView):
 
     date = fields.DateTime('Date')
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
-    doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof',
+    doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health Prof',
         required=True, help="Health professionalwho requests the study.")
     context = fields.Many2One('gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"

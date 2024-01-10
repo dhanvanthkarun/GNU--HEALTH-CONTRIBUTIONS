@@ -1883,7 +1883,7 @@ class HealthProfessional(ModelSQL, ModelView):
     __name__ = 'gnuhealth.healthprofessional'
 
     name = fields.Many2One(
-        'party.party', 'Health Professional', required=True,
+        'party.party', 'Health Prof', required=True,
         domain=[
             ('is_healthprof', '=', True),
             ('is_person', '=', True),
@@ -1967,8 +1967,10 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
     'Health Professional Specialties'
     __name__ = 'gnuhealth.hp_specialty'
 
-    name = fields.Many2One('gnuhealth.healthprofessional',
-                           'Health Professional', required=True)
+    name = fields.Many2One(
+        'gnuhealth.healthprofessional',
+        'Health Prof', required=True,
+        help='Health Professional')
 
     specialty = fields.Many2One(
         'gnuhealth.specialty', 'Specialty', required=True,

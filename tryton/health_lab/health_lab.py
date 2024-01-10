@@ -120,7 +120,7 @@ class Lab(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Pathologist',
         help="Pathologist", select=True)
     requestor = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof',
+        'gnuhealth.healthprofessional', 'Health Prof',
         help="Doctor who requested the test", select=True)
     results = fields.Text('Results')
     diagnosis = fields.Text('Diagnosis')
@@ -379,7 +379,7 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
             return (self.other_source or '')
 
     doctor_id = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof.',
+        'gnuhealth.healthprofessional', 'Health Prof',
         help="Health professional who requests the lab test.", select=True)
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',

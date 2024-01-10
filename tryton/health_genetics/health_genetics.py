@@ -386,7 +386,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
     notes = fields.Text("Notes")
 
     healthprof = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof',
+        'gnuhealth.healthprofessional', 'Health Prof',
         help="Health professional")
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')

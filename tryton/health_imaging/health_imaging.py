@@ -79,7 +79,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         'gnuhealth.imaging.test', 'Study',
         required=True)
     doctor = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof', required=True)
+        'gnuhealth.healthprofessional', 'Health Prof', required=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('requested', 'Requested'),

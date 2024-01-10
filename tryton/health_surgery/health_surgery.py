@@ -44,7 +44,7 @@ class RCRI(ModelSQL, ModelView):
     patient = fields.Many2One('gnuhealth.patient', 'Patient ID', required=True)
     rcri_date = fields.DateTime('Date', required=True)
     health_professional = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health Professional',
+        'gnuhealth.healthprofessional', 'Health Prof',
         help="Health professional /"
         "Cardiologist who signed the assesment RCRI")
 

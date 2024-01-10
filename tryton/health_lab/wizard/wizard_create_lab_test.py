@@ -118,7 +118,7 @@ class RequestPatientLabTestStart(ModelView):
         help="Health context for this order. It can be a suspected or"
              " existing health condition, a regular health checkup, ...")
     doctor = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof',
+        'gnuhealth.healthprofessional', 'Health Prof',
         help="Health professional who ordered the lab tests.")
     tests = fields.Many2Many(
         'gnuhealth.request-test', 'request', 'test',
