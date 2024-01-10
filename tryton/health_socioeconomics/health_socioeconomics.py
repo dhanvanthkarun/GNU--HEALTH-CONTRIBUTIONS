@@ -61,7 +61,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
             help="Computed patient age at the moment of the evaluation"),
             'patient_age_at_assessment')
     health_professional = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health Professional', readonly=True,
+        'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
         help="Health professional"
         )
 
