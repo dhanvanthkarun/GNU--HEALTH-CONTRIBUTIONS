@@ -163,7 +163,7 @@ class Newborn(ModelSQL, ModelView):
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional',
+        'Health Prof',
         help="Health professional", readonly=True)
 
     signed_by = fields.Many2One(
@@ -396,7 +396,7 @@ class PediatricSymptomsChecklist(ModelSQL, ModelView):
 
     evaluation_start = fields.DateTime('Date', required=True)
 
-    user_id = fields.Many2One('res.user', 'Health Professional', readonly=True)
+    user_id = fields.Many2One('res.user', 'Health Prof', readonly=True)
 
     notes = fields.Text('Notes')
 

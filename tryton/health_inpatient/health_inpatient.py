@@ -597,7 +597,7 @@ class InpatientMedicationLog (ModelSQL, ModelView):
     admin_time = fields.DateTime("Date", readonly=True)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional', readonly=True)
+        'Health Prof', readonly=True)
     dose = fields.Float(
         'Dose',
         help='Amount of medication (eg, 250 mg) per dose')
@@ -708,7 +708,7 @@ class InpatientMealOrder (ModelSQL, ModelView):
 
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional')
+        'Health Prof')
 
     remarks = fields.Text('Remarks')
 

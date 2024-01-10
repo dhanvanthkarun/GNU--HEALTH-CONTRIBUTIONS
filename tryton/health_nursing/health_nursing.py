@@ -47,7 +47,7 @@ class PatientRounding(ModelSQL, ModelView):
     code = fields.Char('Code', readonly=True)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional', readonly=True)
+        'Health Prof', readonly=True)
     evaluation_start = fields.DateTime('Start', required=True, states=STATES)
     evaluation_end = fields.DateTime('End', readonly=True)
 
@@ -337,7 +337,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         'Requested by', states=STATES)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional', readonly=True)
+        'Health Prof', readonly=True)
     procedures = fields.One2Many(
         'gnuhealth.ambulatory_care_procedure', 'name',
         'Procedures', states=STATES,
