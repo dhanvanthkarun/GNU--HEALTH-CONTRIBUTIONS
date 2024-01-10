@@ -302,8 +302,10 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     ##
     ## name field is not suitable for interface stript too, for it
     ## will be changed when user use different languages.
-    code = fields.Char('Code', select=True, translate=False,
-                       help="Lab test critearea code, mainly used by lab interface script.")
+    code = fields.Char(
+        'Code', select=True, translate=False,
+        help="Lab test critearea code, "
+        "mainly used by lab interface script.")
     
     # Show the warning icon if warning is active on the analyte line
     lab_warning_icon = fields.Function(fields.Char(
@@ -386,6 +388,8 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         help="Health context for this order. It can be a suspected or"
              " existing health condition, a regular health checkup, ...",
              select=True)
+
+    comment = fields.Text('Additional Information')
     request = fields.Integer('Order', readonly=True)
     urgent = fields.Boolean('Urgent')
 
