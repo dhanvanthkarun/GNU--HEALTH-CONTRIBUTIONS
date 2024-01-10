@@ -1065,10 +1065,15 @@ class PageOfLife(ModelSQL, ModelView):
         ], 'Relevance', sort=False, required=True)
 
     health_condition = fields.Many2One(
-        'gnuhealth.pathology', 'Health Condition')
+        'gnuhealth.pathology', 'Condition',
+        help='Health Condition')
 
     health_condition_code = fields.Char("Code")
-    health_condition_text = fields.Char("Health Condition")
+
+    health_condition_text = fields.Char(
+        "Condition",
+        help='Health Condition')
+
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Procedure', help="Procedure code")
 
