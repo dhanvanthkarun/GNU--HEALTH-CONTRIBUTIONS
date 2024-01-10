@@ -62,9 +62,10 @@ msgctxt "field:gnuhealth.appointment.report,age:"
 msgid "Age"
 msgstr "年龄"
 
+#, fuzzy
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
-msgid "Date"
-msgstr "日期"
+msgid "Start"
+msgstr "预约时间"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
 msgid "Start"
@@ -2579,17 +2580,27 @@ msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
 msgstr "疫苗"
 
+msgctxt "help:gnuhealth.appointment,appointment_date:"
+msgid "Appintmont start date and time."
+msgstr ""
+
 msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
 msgstr "咨询服务"
 
+#, fuzzy
 msgctxt "help:gnuhealth.appointment,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "医务人员"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
 msgstr "医疗机构"
+
+#, fuzzy
+msgctxt "help:gnuhealth.appointment,name:"
+msgid "Appointment ID"
+msgstr "预约号 #"
 
 msgctxt "help:gnuhealth.appointment,patient:"
 msgid "Patient Name"
@@ -2598,6 +2609,14 @@ msgstr "患者姓名"
 msgctxt "help:gnuhealth.appointment,speciality:"
 msgid "Medical Specialty / Sector"
 msgstr "医学专业 / 科室或病区"
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date:"
+msgid "Appointment start date."
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date_time:"
+msgid "Appointment start time."
+msgstr ""
 
 msgctxt "help:gnuhealth.birth_certificate,signed_by:"
 msgid "Person who certifies this birth document"
@@ -2801,6 +2820,11 @@ msgstr "每个病房的病人数量"
 msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr "如果此病房为私人病房，就选中此项"
+
+#, fuzzy
+msgctxt "help:gnuhealth.hp_specialty,name:"
+msgid "Health Professional"
+msgstr "医务人员"
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3184,8 +3208,9 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr "、"
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "医务人员"
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
@@ -3603,6 +3628,14 @@ msgstr "GNU Health 信息平台帐号"
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
 msgstr "基因/蛋白质"
+
+msgctxt "help:gnuhealth.pol,health_condition:"
+msgid "Health Condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition_text:"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "help:gnuhealth.pol,measurements:"
 msgid ""
@@ -4660,8 +4693,9 @@ msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
 msgstr "GNU Health 信息平台帐号-国家设置"
 
+#, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "医务人员"
 
 msgctxt "model:gnuhealth.help,name:"
@@ -4676,8 +4710,9 @@ msgctxt "model:gnuhealth.hospital.building,name:"
 msgid "Hospital Building"
 msgstr "医院建筑"
 
+#, fuzzy
 msgctxt "model:gnuhealth.hospital.or,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "手术室"
 
 msgctxt "model:gnuhealth.hospital.unit,name:"
@@ -8700,12 +8735,12 @@ msgid "Health Social Worker"
 msgstr "Health 社会工作者"
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment Receipt"
-msgstr "预约凭证"
-
-msgctxt "report:appointment.receipt:"
 msgid "Appointment ID"
 msgstr "预约号 #"
+
+msgctxt "report:appointment.receipt:"
+msgid "Appointment Receipt"
+msgstr "预约凭证"
 
 msgctxt "report:appointment.receipt:"
 msgid "Date:"
@@ -9293,8 +9328,8 @@ msgid "Gender:"
 msgstr "性别:"
 
 msgctxt "report:patient.conditions_history:"
-msgid "Condition"
-msgstr "健康状况"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "report:patient.conditions_history:"
 msgid "Infectious"
@@ -10650,8 +10685,8 @@ msgid "Genetics"
 msgstr "基因"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
-msgid "Condition"
-msgstr "健康状况"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Hospitalization"

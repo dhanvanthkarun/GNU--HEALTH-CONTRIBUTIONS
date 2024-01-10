@@ -62,9 +62,10 @@ msgctxt "field:gnuhealth.appointment.report,age:"
 msgid "Age"
 msgstr "Yaş"
 
+#, fuzzy
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
-msgid "Date"
-msgstr "Tarih"
+msgid "Start"
+msgstr "Tarih ve Saat"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
 msgid "Start"
@@ -2630,17 +2631,25 @@ msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
 msgstr "Aşı"
 
+msgctxt "help:gnuhealth.appointment,appointment_date:"
+msgid "Appintmont start date and time."
+msgstr ""
+
 msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
 msgstr "Danışma Hizmetleri"
 
 #, fuzzy
 msgctxt "help:gnuhealth.appointment,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Sağlık Çalışanı"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment,name:"
+msgid "Appointment ID"
 msgstr ""
 
 msgctxt "help:gnuhealth.appointment,patient:"
@@ -2650,6 +2659,14 @@ msgstr "Hasta Adı"
 msgctxt "help:gnuhealth.appointment,speciality:"
 msgid "Medical Specialty / Sector"
 msgstr "Tıbbi Uzmanlık/Sektör"
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date:"
+msgid "Appointment start date."
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date_time:"
+msgid "Appointment start time."
+msgstr ""
 
 msgctxt "help:gnuhealth.birth_certificate,signed_by:"
 msgid "Person who certifies this birth document"
@@ -2851,6 +2868,11 @@ msgstr ""
 msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.hp_specialty,name:"
+msgid "Health Professional"
+msgstr "Sağlık Çalışanı"
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3218,7 +3240,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Sağlık Çalışanı"
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
@@ -3634,6 +3656,14 @@ msgstr ""
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
 msgstr "Gen/protein"
+
+msgctxt "help:gnuhealth.pol,health_condition:"
+msgid "Health Condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition_text:"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "help:gnuhealth.pol,measurements:"
 msgid ""
@@ -4692,8 +4722,9 @@ msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Sağlık Çalışanı"
 
 msgctxt "model:gnuhealth.help,name:"
@@ -4710,7 +4741,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "model:gnuhealth.hospital.or,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "Ameliyathane"
 
 msgctxt "model:gnuhealth.hospital.unit,name:"
@@ -8763,11 +8794,11 @@ msgid "Health Social Worker"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment Receipt"
+msgid "Appointment ID"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
+msgid "Appointment Receipt"
 msgstr ""
 
 #, fuzzy
@@ -9400,8 +9431,8 @@ msgid "Gender:"
 msgstr ""
 
 msgctxt "report:patient.conditions_history:"
-msgid "Condition"
-msgstr "Sağlık Durumu"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "report:patient.conditions_history:"
 msgid "Infectious"
@@ -10798,10 +10829,9 @@ msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Genetics"
 msgstr "Kalıtım Bilimi (Genetik)"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.pol,medical_context:"
-msgid "Condition"
-msgstr "Sağlık Durumu"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Hospitalization"

@@ -62,9 +62,10 @@ msgctxt "field:gnuhealth.appointment.report,age:"
 msgid "Age"
 msgstr "年齢"
 
+#, fuzzy
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
-msgid "Date"
-msgstr "日"
+msgid "Start"
+msgstr "日時"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
 msgid "Start"
@@ -2023,18 +2024,20 @@ msgctxt "field:gnuhealth.pol,gene:"
 msgid "Gene"
 msgstr "遺伝子"
 
+#, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition:"
 msgid "Condition"
-msgstr ""
+msgstr "状態"
 
 #, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition_code:"
 msgid "Code"
 msgstr "コード"
 
+#, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition_text:"
 msgid "Condition"
-msgstr ""
+msgstr "状態"
 
 msgctxt "field:gnuhealth.pol,info:"
 msgid "Extended Information"
@@ -2625,17 +2628,26 @@ msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
 msgstr "ワクチン"
 
+msgctxt "help:gnuhealth.appointment,appointment_date:"
+msgid "Appintmont start date and time."
+msgstr ""
+
 msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
 msgstr "コンサルテーション"
 
+#, fuzzy
 msgctxt "help:gnuhealth.appointment,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "医療従事者"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
 msgstr "医療機関"
+
+msgctxt "help:gnuhealth.appointment,name:"
+msgid "Appointment ID"
+msgstr ""
 
 msgctxt "help:gnuhealth.appointment,patient:"
 msgid "Patient Name"
@@ -2644,6 +2656,14 @@ msgstr "両親の名前"
 msgctxt "help:gnuhealth.appointment,speciality:"
 msgid "Medical Specialty / Sector"
 msgstr "医療専門領域 / セクター"
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date:"
+msgid "Appointment start date."
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date_time:"
+msgid "Appointment start time."
+msgstr ""
 
 msgctxt "help:gnuhealth.birth_certificate,signed_by:"
 msgid "Person who certifies this birth document"
@@ -2845,6 +2865,11 @@ msgstr "病棟毎の患者数"
 msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr "個室のときに、このオプションをチェック"
+
+#, fuzzy
+msgctxt "help:gnuhealth.hp_specialty,name:"
+msgid "Health Professional"
+msgstr "医療従事者"
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3222,8 +3247,9 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "医療従事者"
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
@@ -3645,6 +3671,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition:"
+msgid "Health Condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition_text:"
+msgid "Health Condition"
 msgstr ""
 
 msgctxt "help:gnuhealth.pol,measurements:"
@@ -4702,8 +4736,9 @@ msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "医療従事者"
 
 msgctxt "model:gnuhealth.help,name:"
@@ -4718,8 +4753,9 @@ msgctxt "model:gnuhealth.hospital.building,name:"
 msgid "Hospital Building"
 msgstr "病院"
 
+#, fuzzy
 msgctxt "model:gnuhealth.hospital.or,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "手術室"
 
 msgctxt "model:gnuhealth.hospital.unit,name:"
@@ -8753,14 +8789,14 @@ msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
 msgstr "保健社会事業相談員"
 
+msgctxt "report:appointment.receipt:"
+msgid "Appointment ID"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Appointment Receipt"
 msgstr "予約票"
-
-msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
-msgstr ""
 
 msgctxt "report:appointment.receipt:"
 msgid "Date:"
@@ -9393,7 +9429,7 @@ msgid "Gender:"
 msgstr ""
 
 msgctxt "report:patient.conditions_history:"
-msgid "Condition"
+msgid "Health Condition"
 msgstr ""
 
 msgctxt "report:patient.conditions_history:"
@@ -10767,7 +10803,7 @@ msgid "Genetics"
 msgstr "遺伝子"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
-msgid "Condition"
+msgid "Health Condition"
 msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"

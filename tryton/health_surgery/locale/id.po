@@ -636,7 +636,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Profesional Kesehatan"
 
 msgctxt "help:gnuhealth.or.schedule,institution:"
@@ -644,7 +644,7 @@ msgid "Health Care Institution"
 msgstr ""
 
 msgctxt "help:gnuhealth.or.schedule,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr ""
 
 msgctxt "help:gnuhealth.or.schedule,patient:"
@@ -701,6 +701,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "The patient is not eligible to be anesthetized"
+msgstr ""
+
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
 msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
@@ -813,6 +817,10 @@ msgid ""
 "Time in minutes of the surgery process. This value is optional and is used "
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
+msgstr ""
+
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,pathology:"
@@ -1108,9 +1116,10 @@ msgctxt "model:ir.model.button,string:surgery_sign_button"
 msgid "Sign"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:surgery_start_button"
 msgid "Start"
-msgstr ""
+msgstr "Tanggal dan Waktu"
 
 #, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_surgery_code"
@@ -2478,9 +2487,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Sign this surgery"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Start"
-msgstr ""
+msgstr "Tanggal dan Waktu"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Start the Surgery"

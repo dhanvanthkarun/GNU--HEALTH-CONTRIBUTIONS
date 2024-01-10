@@ -34,9 +34,10 @@ msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
 msgstr "Institución"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,name:"
 msgid "Op. Room"
-msgstr ""
+msgstr "Quirófano"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,patient:"
@@ -599,8 +600,8 @@ msgstr "Condición de base / Motivo"
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
-msgid "Health Prof"
-msgstr "Profesional de Salud"
+msgid "Health Professional"
+msgstr "Profesional de la salud"
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,institution:"
@@ -609,7 +610,7 @@ msgstr "Institución de Atención de la Salud"
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "Quirófano"
 
 #, fuzzy
@@ -669,6 +670,11 @@ msgstr "La cirugía requiere reserva de sangre"
 msgctxt "help:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "The patient is not eligible to be anesthetized"
 msgstr "El paciente no debe ser anestesiado"
+
+#, fuzzy
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "Quirófano"
 
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA pre-operative Physical Status"
@@ -815,6 +821,11 @@ msgstr ""
 "Tiempo en minutos de la cirugía. Este valor es opcional y se usa cuando el "
 "valor calculado automáticamente no refleja la duración actual o se ha "
 "registrado posteriormente."
+
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
+msgstr "Quirófano"
 
 msgctxt "help:gnuhealth.surgery,pathology:"
 msgid "Base Condition / Reason"

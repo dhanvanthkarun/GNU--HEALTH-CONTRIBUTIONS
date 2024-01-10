@@ -242,9 +242,10 @@ msgctxt "field:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Start"
 msgstr "Start"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,admin_time:"
 msgid "Time"
-msgstr ""
+msgstr "Klockslag"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose:"
@@ -420,7 +421,7 @@ msgid "Inpatient Registration Sequence"
 msgstr ""
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
-msgid "Enter the patient hospitalization code"
+msgid "Inpatient Registration, please enter the patient hospitalization code."
 msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.diet,remarks:"
@@ -556,11 +557,11 @@ msgid "Show the hospitalization status of the patient"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.ecg,inpatient_registration_code:"
-msgid "Enter the patient hospitalization code"
+msgid "Inpatient Registration, please enter the patient hospitalization code"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,inpatient_registration_code:"
-msgid "Enter the patient hospitalization code"
+msgid "Inpatient Code, please enter the patient hospitalization code"
 msgstr ""
 
 msgctxt "model:gnuhealth.bed.transfer,name:"
@@ -855,9 +856,10 @@ msgctxt "model:gnuhealth.diet.therapeutic,name:PRERENAL"
 msgid "PRERENAL"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.diet.therapeutic,name:REG"
 msgid "Regular"
-msgstr ""
+msgstr "Vanlig"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:RENAL"
 msgid "RENAL"
@@ -1063,7 +1065,7 @@ msgid "Inpatient Meal Order"
 msgstr ""
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_registration"
-msgid "Inpatient"
+msgid "Inpatient Registration"
 msgstr ""
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_meal_order"
@@ -1072,7 +1074,7 @@ msgstr ""
 
 msgctxt ""
 "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_registration"
-msgid "Inpatient"
+msgid "Inpatient Registration"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_diet_therapeutic"
@@ -1195,9 +1197,10 @@ msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Routine"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Urgent"
-msgstr ""
+msgstr "Brådskande"
 
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Death"

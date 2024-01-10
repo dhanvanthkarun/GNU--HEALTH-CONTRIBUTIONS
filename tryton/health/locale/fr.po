@@ -62,9 +62,10 @@ msgctxt "field:gnuhealth.appointment.report,age:"
 msgid "Age"
 msgstr "Âge"
 
+#, fuzzy
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
-msgid "Date"
-msgstr "Date"
+msgid "Start"
+msgstr "Début"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
 msgid "Start"
@@ -2632,17 +2633,26 @@ msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
 msgstr "Vaccin"
 
+msgctxt "help:gnuhealth.appointment,appointment_date:"
+msgid "Appintmont start date and time."
+msgstr ""
+
 msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
 msgstr "Services de consultation"
 
+#, fuzzy
 msgctxt "help:gnuhealth.appointment,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Professionnel de santé"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
 msgstr "Établissement de santé"
+
+msgctxt "help:gnuhealth.appointment,name:"
+msgid "Appointment ID"
+msgstr ""
 
 msgctxt "help:gnuhealth.appointment,patient:"
 msgid "Patient Name"
@@ -2651,6 +2661,14 @@ msgstr "Nom du patient"
 msgctxt "help:gnuhealth.appointment,speciality:"
 msgid "Medical Specialty / Sector"
 msgstr "Spécialité médicale/Secteur"
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date:"
+msgid "Appointment start date."
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date_time:"
+msgid "Appointment start time."
+msgstr ""
 
 msgctxt "help:gnuhealth.birth_certificate,signed_by:"
 msgid "Person who certifies this birth document"
@@ -2856,6 +2874,11 @@ msgstr "Nombre de patients par service"
 msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr "Cocher cette option pour une chambre privée"
+
+#, fuzzy
+msgctxt "help:gnuhealth.hp_specialty,name:"
+msgid "Health Professional"
+msgstr "Professionnel de santé"
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3255,8 +3278,9 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Professionnel de santé"
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
@@ -3729,6 +3753,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition:"
+msgid "Health Condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition_text:"
+msgid "Health Condition"
 msgstr ""
 
 msgctxt "help:gnuhealth.pol,measurements:"
@@ -4812,8 +4844,9 @@ msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Professionnel de santé"
 
 msgctxt "model:gnuhealth.help,name:"
@@ -4828,8 +4861,9 @@ msgctxt "model:gnuhealth.hospital.building,name:"
 msgid "Hospital Building"
 msgstr "Bâtiment hospitalier"
 
+#, fuzzy
 msgctxt "model:gnuhealth.hospital.or,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "Salle d'opération"
 
 msgctxt "model:gnuhealth.hospital.unit,name:"
@@ -8861,14 +8895,14 @@ msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
 msgstr "Assistant Social de Santé"
 
+msgctxt "report:appointment.receipt:"
+msgid "Appointment ID"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Appointment Receipt"
 msgstr "Reçu de rendez-vous"
-
-msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
-msgstr ""
 
 #, fuzzy
 msgctxt "report:appointment.receipt:"
@@ -9513,10 +9547,9 @@ msgctxt "report:patient.conditions_history:"
 msgid "Gender:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:patient.conditions_history:"
-msgid "Condition"
-msgstr "Affection"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "report:patient.conditions_history:"
 msgid "Infectious"
@@ -11164,10 +11197,9 @@ msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Genetics"
 msgstr "Génétique"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.pol,medical_context:"
-msgid "Condition"
-msgstr "Affection"
+msgid "Health Condition"
+msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Hospitalization"

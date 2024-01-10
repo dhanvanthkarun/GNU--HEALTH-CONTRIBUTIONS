@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-01-09 05:06+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_caldav/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:calendar.calendar,description:"
 msgid "Description"
@@ -39,13 +30,15 @@ msgctxt "field:calendar.calendar-read-res.user,user:"
 msgid "User"
 msgstr "Användare"
 
+#, fuzzy
 msgctxt "field:calendar.calendar-write-res.user,calendar:"
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
+#, fuzzy
 msgctxt "field:calendar.calendar-write-res.user,user:"
 msgid "User"
-msgstr ""
+msgstr "Användare"
 
 #, fuzzy
 msgctxt "field:calendar.category,name:"
@@ -186,9 +179,10 @@ msgctxt "field:calendar.event.exdate,datetime:"
 msgid "Date"
 msgstr "Datum"
 
+#, fuzzy
 msgctxt "field:calendar.event.exdate,event:"
 msgid "Event"
-msgstr ""
+msgstr "Händelse"
 
 msgctxt "field:calendar.event.exrule,byday:"
 msgid "By Day"
@@ -230,9 +224,10 @@ msgctxt "field:calendar.event.exrule,count:"
 msgid "Count"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,event:"
 msgid "Event"
-msgstr ""
+msgstr "Händelse"
 
 #, fuzzy
 msgctxt "field:calendar.event.exrule,freq:"
@@ -265,9 +260,10 @@ msgctxt "field:calendar.event.rdate,datetime:"
 msgid "Date"
 msgstr "Datum"
 
+#, fuzzy
 msgctxt "field:calendar.event.rdate,event:"
 msgid "Event"
-msgstr ""
+msgstr "Händelse"
 
 msgctxt "field:calendar.event.rrule,byday:"
 msgid "By Day"
@@ -309,9 +305,10 @@ msgctxt "field:calendar.event.rrule,count:"
 msgid "Count"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event.rrule,event:"
 msgid "Event"
-msgstr ""
+msgstr "Händelse"
 
 #, fuzzy
 msgctxt "field:calendar.event.rrule,freq:"
@@ -368,9 +365,10 @@ msgctxt "help:calendar.event.rrule,until_date:"
 msgid "Ignore time of field \"Until Date\", but handle as date only."
 msgstr ""
 
+#, fuzzy
 msgctxt "model:calendar.calendar,name:"
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 msgctxt "model:calendar.calendar-read-res.user,name:"
 msgid "Calendar - read - User"
@@ -385,9 +383,10 @@ msgctxt "model:calendar.category,name:"
 msgid "Category"
 msgstr "Kategori"
 
+#, fuzzy
 msgctxt "model:calendar.event,name:"
 msgid "Event"
-msgstr ""
+msgstr "Händelse"
 
 msgctxt "model:calendar.event-calendar.category,name:"
 msgid "Event - Category"
@@ -417,9 +416,10 @@ msgctxt "model:calendar.event.rrule,name:"
 msgid "Recurrence Rule"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:calendar.location,name:"
 msgid "Location"
-msgstr ""
+msgstr "Plats"
 
 msgctxt "model:ir.action,name:act_calendar_form"
 msgid "Calendars"
@@ -501,9 +501,10 @@ msgctxt "model:ir.rule.group,name:rule_group_write_event"
 msgid "Event rule group - write"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_calendar"
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 msgctxt "model:ir.ui.menu,name:menu_calendar_form"
 msgid "Calendars"
@@ -690,21 +691,24 @@ msgctxt "view:calendar.calendar:"
 msgid "General"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:calendar.event.exdate:"
 msgid "Time"
-msgstr ""
+msgstr "Klockslag"
 
+#, fuzzy
 msgctxt "view:calendar.event.rdate:"
 msgid "Time"
-msgstr ""
+msgstr "Klockslag"
 
 msgctxt "view:calendar.event:"
 msgid "Attendees"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:calendar.event:"
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 msgctxt "view:calendar.event:"
 msgid "End Time"

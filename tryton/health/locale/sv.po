@@ -63,9 +63,10 @@ msgctxt "field:gnuhealth.appointment.report,age:"
 msgid "Age"
 msgstr "Ålder"
 
+#, fuzzy
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
-msgid "Date"
-msgstr "Datum"
+msgid "Start"
+msgstr "Start"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
 msgid "Start"
@@ -1719,9 +1720,10 @@ msgctxt "field:gnuhealth.patient.evaluation,object_recognition:"
 msgid "Object Recognition"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,orientation:"
 msgid "Orientation"
-msgstr ""
+msgstr "Orientering"
 
 msgctxt "field:gnuhealth.patient.evaluation,osat:"
 msgid "Oxygen Saturation"
@@ -2118,9 +2120,10 @@ msgctxt "field:gnuhealth.pol,social_context:"
 msgid "Social Context"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.pol,summary:"
 msgid "Summary"
-msgstr ""
+msgstr "Sammanfattning"
 
 msgctxt "field:gnuhealth.prescription.line,add_to_history:"
 msgid "Hist"
@@ -2464,9 +2467,10 @@ msgctxt "field:ir.module,description:"
 msgid "Description"
 msgstr "Beskrivning"
 
+#, fuzzy
 msgctxt "field:party.address,is_school:"
 msgid "School"
-msgstr ""
+msgstr "Skola"
 
 msgctxt "field:party.address,is_work:"
 msgid "Work"
@@ -2685,6 +2689,10 @@ msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
 msgstr "Vaccin"
 
+msgctxt "help:gnuhealth.appointment,appointment_date:"
+msgid "Appintmont start date and time."
+msgstr ""
+
 #, fuzzy
 msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
@@ -2692,11 +2700,15 @@ msgstr "Konsulteringstjänster"
 
 #, fuzzy
 msgctxt "help:gnuhealth.appointment,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Vårdpersonal"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment,name:"
+msgid "Appointment ID"
 msgstr ""
 
 msgctxt "help:gnuhealth.appointment,patient:"
@@ -2705,6 +2717,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.appointment,speciality:"
 msgid "Medical Specialty / Sector"
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date:"
+msgid "Appointment start date."
+msgstr ""
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date_time:"
+msgid "Appointment start time."
 msgstr ""
 
 msgctxt "help:gnuhealth.birth_certificate,signed_by:"
@@ -2908,6 +2928,11 @@ msgstr ""
 msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.hp_specialty,name:"
+msgid "Health Professional"
+msgstr "Vårdpersonal"
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3165,9 +3190,10 @@ msgctxt "help:gnuhealth.patient,crit_cognitive:"
 msgid "Cognitive issues"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient,crit_dbt:"
 msgid "Diabetes"
-msgstr ""
+msgstr "Diabetes"
 
 msgctxt "help:gnuhealth.patient,crit_hbp:"
 msgid "High blood pressure (hypertension)"
@@ -3276,7 +3302,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Vårdpersonal"
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
@@ -3689,6 +3715,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition:"
+msgid "Health Condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.pol,health_condition_text:"
+msgid "Health Condition"
 msgstr ""
 
 msgctxt "help:gnuhealth.pol,measurements:"
@@ -4750,7 +4784,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Vårdpersonal"
 
 msgctxt "model:gnuhealth.help,name:"
@@ -4767,7 +4801,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "model:gnuhealth.hospital.or,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "Operationsrum"
 
 msgctxt "model:gnuhealth.hospital.unit,name:"
@@ -8671,9 +8705,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology"
 msgid "Conditions"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_categories"
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_category"
 msgid "Disease categories"
@@ -8811,11 +8846,11 @@ msgid "Health Social Worker"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment Receipt"
+msgid "Appointment ID"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
+msgid "Appointment Receipt"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
@@ -8902,9 +8937,10 @@ msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Printed Date:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Sex"
-msgstr ""
+msgstr "Kön"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid ","
@@ -9017,9 +9053,10 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Residence Country"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Sex"
-msgstr ""
+msgstr "Kön"
 
 #, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
@@ -9432,7 +9469,7 @@ msgid "Gender:"
 msgstr ""
 
 msgctxt "report:patient.conditions_history:"
-msgid "Condition"
+msgid "Health Condition"
 msgstr ""
 
 #, fuzzy
@@ -9776,9 +9813,10 @@ msgctxt "selection:gnuhealth.appointment,urgency:"
 msgid "Normal"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.appointment,urgency:"
 msgid "Urgent"
-msgstr ""
+msgstr "Brådskande"
 
 msgctxt "selection:gnuhealth.appointment,visit_type:"
 msgid "Followup"
@@ -9824,9 +9862,10 @@ msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Health Center"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Home"
-msgstr ""
+msgstr "Hemma"
 
 msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Public place"
@@ -10448,9 +10487,10 @@ msgctxt "selection:gnuhealth.patient.ecg,rhythm:"
 msgid "Irregular"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.ecg,rhythm:"
 msgid "Regular"
-msgstr ""
+msgstr "Vanlig"
 
 msgctxt "selection:gnuhealth.patient.ecg,st_segment:"
 msgid "Depressed"
@@ -10640,9 +10680,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,urgency:"
 msgid "Normal"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,urgency:"
 msgid "Urgent"
-msgstr ""
+msgstr "Brådskande"
 
 msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Followup"
@@ -10810,7 +10851,7 @@ msgid "Genetics"
 msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
-msgid "Condition"
+msgid "Health Condition"
 msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
@@ -11187,9 +11228,10 @@ msgctxt "view:gnuhealth.appointment:"
 msgid "The patient has arrived and is waiting"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.appointment:"
 msgid "Time"
-msgstr ""
+msgstr "Klockslag"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Main"
@@ -11537,9 +11579,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Psychological Assessment"
 msgstr "Psykologisk bedömning"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
-msgstr ""
+msgstr "Klockslag"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Treatment Plan"
