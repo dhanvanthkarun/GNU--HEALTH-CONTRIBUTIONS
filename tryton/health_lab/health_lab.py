@@ -129,7 +129,7 @@ class Lab(ModelSQL, ModelView):
         'gnuhealth_lab_id', 'Lab Test Critearea')
     date_requested = fields.DateTime(
         'Date requested', required=True, select=True)
-    date_analysis = fields.DateTime('Date of the Analysis', select=True)
+    date_analysis = fields.DateTime('Analysis Date', select=True)
     request_order = fields.Integer('Order', readonly=True)
 
     pathology = fields.Many2One(
