@@ -3532,7 +3532,10 @@ class Appointment(ModelSQL, ModelView):
     'Patient Appointments'
     __name__ = 'gnuhealth.appointment'
 
-    name = fields.Char('Appointment ID', readonly=True)
+    name = fields.Char(
+        'APPT ID', 
+        help='Appointment ID',
+        readonly=True)
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
