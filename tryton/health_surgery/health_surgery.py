@@ -201,7 +201,11 @@ class Surgery(ModelSQL, ModelView):
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     admission = fields.Many2One('gnuhealth.appointment', 'Admission')
-    operating_room = fields.Many2One('gnuhealth.hospital.or', 'Operating Room')
+
+    operating_room = fields.Many2One(
+        'gnuhealth.hospital.or', 'Op. Room',
+        help='Operating Room')
+
     code = fields.Char('Code', readonly=True,
                        help="Health Center code / sequence")
     protocol = fields.Many2One(
@@ -1057,7 +1061,9 @@ class PreOperativeAssessment(ModelSQL, ModelView):
     surgery_date = fields.DateTime(
         'Surgery date', help="Date of the surgery")
 
-    operating_room = fields.Many2One('gnuhealth.hospital.or', 'Operating Room')
+    operating_room = fields.Many2One(
+        'gnuhealth.hospital.or', 'Op. Room',
+        help='Operating Room')
 
     institution = fields.Many2One(
         'gnuhealth.institution', 'Institution',

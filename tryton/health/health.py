@@ -1445,10 +1445,11 @@ class HealthInstitution(ModelSQL, ModelView):
 
     beds = fields.Integer("Beds")
 
-    operating_room = fields.Boolean("Operating Room",
-                                    help="Check this box if the institution"
-                                         " has operating rooms",)
-
+    operating_room = fields.Boolean(
+        "Op. Room",
+        help="Check this box if the institution "
+        "has operating rooms")
+    
     or_number = fields.Integer(
         "ORs", states={'invisible': Not(Bool(Eval('operating_room')))})
 
