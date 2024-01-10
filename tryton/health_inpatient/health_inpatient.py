@@ -392,8 +392,9 @@ class Appointment(ModelSQL, ModelView):
     __name__ = 'gnuhealth.appointment'
 
     inpatient_registration_code = fields.Many2One(
-        'gnuhealth.inpatient.registration', 'Inpatient Registration',
-        help="Enter the patient hospitalization code")
+        'gnuhealth.inpatient.registration', 'Inpatient',
+        help="Inpatient Registration, "
+        "please enter the patient hospitalization code.")
 
 
 class PatientEvaluation(ModelSQL, ModelView):
@@ -401,15 +402,17 @@ class PatientEvaluation(ModelSQL, ModelView):
 
     inpatient_registration_code = fields.Many2One(
         'gnuhealth.inpatient.registration', 'IPC',
-        help="Enter the patient hospitalization code")
+        help="Inpatient Code, "
+        "please enter the patient hospitalization code")
 
 
 class ECG(ModelSQL, ModelView):
     __name__ = 'gnuhealth.patient.ecg'
 
     inpatient_registration_code = fields.Many2One(
-        'gnuhealth.inpatient.registration', 'Inpatient Registration',
-        help="Enter the patient hospitalization code")
+        'gnuhealth.inpatient.registration', 'Inpatient',
+        help="Inpatient Registration, "
+        "please enter the patient hospitalization code")
 
 
 class PatientData(ModelSQL, ModelView):
