@@ -83,8 +83,9 @@ class PatientPregnancy(ModelSQL, ModelView):
     lmp = fields.Date('LMP', help="Last Menstrual Period", required=True)
 
     pdd = fields.Function(
-        fields.Date('Pregnancy Due Date'),
+        fields.Date('Due Date', help='Pregnancy Due Date'),
         'get_pregnancy_data')
+
     prenatal_evaluations = fields.One2Many(
         'gnuhealth.patient.prenatal.evaluation', 'name',
         'Prenatal Evaluations')
