@@ -190,7 +190,7 @@ class ImagingTestResult(ModelSQL, ModelView):
     patient = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True)
     number = fields.Char('Number', readonly=True)
     date = fields.DateTime('Date', required=True)
-    request_date = fields.DateTime('Requested Date', readonly=True)
+    request_date = fields.DateTime('Request Date', readonly=True)
     requested_test = fields.Many2One(
         'gnuhealth.imaging.test', 'Study',
         required=True)
