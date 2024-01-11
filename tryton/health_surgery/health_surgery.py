@@ -41,7 +41,7 @@ class RCRI(ModelSQL, ModelView):
     'Revised Cardiac Risk Index'
     __name__ = 'gnuhealth.rcri'
 
-    patient = fields.Many2One('gnuhealth.patient', 'Patient ID', required=True)
+    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     rcri_date = fields.DateTime('Date', required=True)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
