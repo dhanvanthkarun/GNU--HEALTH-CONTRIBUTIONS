@@ -83,7 +83,7 @@ class Patient(metaclass=PoolMeta):
         return bytearray(qr_png)
 
     def make_code39(self, name):
-        # Create the Code39 bar code to encode the Patient ID
+        # Create the Code39 bar code to encode the patient's PUID
 
         patient_puid = self.puid or ''
         puid = f'{patient_puid}'
@@ -212,7 +212,7 @@ class LabTest(metaclass=PoolMeta):
         if self.is_patient():
             qr_string = f'{labtest_id}\n' \
                 f'Test: {labtest_type.rec_name}\n' \
-                f'Patient ID: {patient_puid}\n' \
+                f'PUID: {patient_puid}\n' \
                 f'Patient: {patient_name}\n' \
                 f'Requestor: {requestor_name}'
         else:
