@@ -4288,7 +4288,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
                                               states=STATES)
 
     healthprof = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Prescribed by', readonly=True)
+        'gnuhealth.healthprofessional', 'Prescriber', readonly=True)
 
     report_prescription_date = fields.Function(
         fields.Date('Date', help="Prescription Date"),
