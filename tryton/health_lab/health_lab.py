@@ -100,7 +100,7 @@ class Lab(ModelSQL, ModelView):
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
-        help="Patient ID", select=True)
+        help="Patient", select=True)
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
