@@ -430,9 +430,10 @@ msgctxt "field:gnuhealth.du,name:"
 msgid "Code"
 msgstr "Kod"
 
+#, fuzzy
 msgctxt "field:gnuhealth.du,operational_sector:"
-msgid "Operational Sector"
-msgstr ""
+msgid "Op. Sector"
+msgstr "Driftsektor"
 
 msgctxt "field:gnuhealth.du,picture:"
 msgid "Picture"
@@ -1982,13 +1983,15 @@ msgctxt ""
 msgid "Other ID type"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.person_name,date_from:"
 msgid "From"
-msgstr ""
+msgstr "Från"
 
+#, fuzzy
 msgctxt "field:gnuhealth.person_name,date_to:"
 msgid "To"
-msgstr ""
+msgstr "Till"
 
 #, fuzzy
 msgctxt "field:gnuhealth.person_name,family:"
@@ -2797,6 +2800,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.du,housing:"
 msgid "Housing and sanitary living conditions"
+msgstr ""
+
+msgctxt "help:gnuhealth.du,operational_sector:"
+msgid "Operational Sector"
 msgstr ""
 
 msgctxt "help:gnuhealth.du,total_surface:"
@@ -3819,6 +3826,10 @@ msgctxt "help:gnuhealth.prescription.line,medicament:"
 msgid "Prescribed Medicament"
 msgstr ""
 
+msgctxt "help:gnuhealth.prescription.line,name:"
+msgid "Prescription ID"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.line,prnt:"
 msgid "Check this box to print this line of the prescription."
 msgstr ""
@@ -3850,8 +3861,16 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr ""
 
+msgctxt "help:gnuhealth.prescription.order,prescription_date:"
+msgid "Prescription Date"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
+msgstr ""
+
+msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
+msgid "Prescription Date"
 msgstr ""
 
 msgctxt "help:gnuhealth.specialty,code:"
@@ -4132,9 +4151,10 @@ msgctxt "model:gnuhealth.dose.unit,name:kg"
 msgid "kg"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.dose.unit,name:l"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 msgctxt "model:gnuhealth.dose.unit,name:mg"
 msgid "mg"
@@ -8098,9 +8118,10 @@ msgctxt "model:ir.action,name:act_death_cert_form1"
 msgid "Death Certificate"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:act_ecg_view"
 msgid "ECGs"
-msgstr ""
+msgstr "ECG:er"
 
 msgctxt "model:ir.action,name:act_evaluation_form1"
 msgid "Evaluations"
@@ -8846,7 +8867,7 @@ msgid "Health Social Worker"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
+msgid "APPT ID:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
@@ -8858,15 +8879,15 @@ msgid "Date:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr ""
+
+msgctxt "report:appointment.receipt:"
+msgid "Health Prof:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
 msgid "Institution:"
-msgstr ""
-
-msgctxt "report:appointment.receipt:"
-msgid "Extra Info:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
@@ -9249,9 +9270,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Evaluation Digital Signature"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "GCS"
-msgstr ""
+msgstr "GCS"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Gender:"
@@ -9850,9 +9872,10 @@ msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Done"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Utdrag"
 
 msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Signed"
@@ -9879,9 +9902,10 @@ msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Done"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Utdrag"
 
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Signed"
@@ -10052,9 +10076,10 @@ msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Needs cleaning"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Not available"
-msgstr ""
+msgstr "Ej tillgänglig"
 
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Occupied"
@@ -10072,9 +10097,10 @@ msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Free"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Not available"
-msgstr ""
+msgstr "Ej tillgänglig"
 
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Occupied"
@@ -10104,9 +10130,10 @@ msgctxt "selection:gnuhealth.hospital.ward,state:"
 msgid "Full"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.ward,state:"
 msgid "Not available"
-msgstr ""
+msgstr "Ej tillgänglig"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "days"
@@ -11041,9 +11068,10 @@ msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Done"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Utdrag"
 
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"
@@ -11685,9 +11713,10 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Notepad"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.pol:"
 msgid "Context"
-msgstr ""
+msgstr "Sammanhang"
 
 msgctxt "view:gnuhealth.pol:"
 msgid "Extended Information"

@@ -436,8 +436,9 @@ msgctxt "field:gnuhealth.du,name:"
 msgid "Code"
 msgstr "Código"
 
+#, fuzzy
 msgctxt "field:gnuhealth.du,operational_sector:"
-msgid "Operational Sector"
+msgid "Op. Sector"
 msgstr "Setor Operacional"
 
 msgctxt "field:gnuhealth.du,picture:"
@@ -2746,6 +2747,11 @@ msgctxt "help:gnuhealth.du,housing:"
 msgid "Housing and sanitary living conditions"
 msgstr "Condiçoes sanitarias e moradia"
 
+#, fuzzy
+msgctxt "help:gnuhealth.du,operational_sector:"
+msgid "Operational Sector"
+msgstr "Setor Operacional"
+
 msgctxt "help:gnuhealth.du,total_surface:"
 msgid "Surface in sq. meters"
 msgstr "Superfície em metros quadrados"
@@ -3865,6 +3871,10 @@ msgctxt "help:gnuhealth.prescription.line,medicament:"
 msgid "Prescribed Medicament"
 msgstr "Medicamento Prescrito"
 
+msgctxt "help:gnuhealth.prescription.line,name:"
+msgid "Prescription ID"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.line,prnt:"
 msgid "Check this box to print this line of the prescription."
 msgstr "Marque esta caixa para imprimir esta linha na prescrição."
@@ -3897,9 +3907,17 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "Data do início do Tratamento"
 
+msgctxt "help:gnuhealth.prescription.order,prescription_date:"
+msgid "Prescription Date"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
 msgstr "Digite o ID desta prescrição"
+
+msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
+msgid "Prescription Date"
+msgstr ""
 
 msgctxt "help:gnuhealth.specialty,code:"
 msgid "ie, ADP. Please use CAPITAL LETTERS and no spaces"
@@ -8892,7 +8910,7 @@ msgid "Health Social Worker"
 msgstr "Assistente Social de Saúde"
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
+msgid "APPT ID:"
 msgstr ""
 
 #, fuzzy
@@ -8905,15 +8923,15 @@ msgid "Date:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr ""
+
+msgctxt "report:appointment.receipt:"
+msgid "Health Prof:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"
 msgid "Institution:"
-msgstr ""
-
-msgctxt "report:appointment.receipt:"
-msgid "Extra Info:"
 msgstr ""
 
 msgctxt "report:appointment.receipt:"

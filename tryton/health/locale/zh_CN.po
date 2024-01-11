@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-01-10 08:04+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.4-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -437,7 +428,7 @@ msgid "Code"
 msgstr "代码"
 
 msgctxt "field:gnuhealth.du,operational_sector:"
-msgid "Operational Sector"
+msgid "Op. Sector"
 msgstr "卫生子区域"
 
 msgctxt "field:gnuhealth.du,picture:"
@@ -2694,6 +2685,10 @@ msgctxt "help:gnuhealth.du,housing:"
 msgid "Housing and sanitary living conditions"
 msgstr "住房条件和卫生状况"
 
+msgctxt "help:gnuhealth.du,operational_sector:"
+msgid "Operational Sector"
+msgstr "卫生子区域"
+
 msgctxt "help:gnuhealth.du,total_surface:"
 msgid "Surface in sq. meters"
 msgstr "房屋总面积（平方米）"
@@ -3734,6 +3729,10 @@ msgctxt "help:gnuhealth.prescription.line,medicament:"
 msgid "Prescribed Medicament"
 msgstr "处方药"
 
+msgctxt "help:gnuhealth.prescription.line,name:"
+msgid "Prescription ID"
+msgstr "处方编号"
+
 msgctxt "help:gnuhealth.prescription.line,prnt:"
 msgid "Check this box to print this line of the prescription."
 msgstr "如果需要打印当前处方，请选中此项。"
@@ -3765,9 +3764,17 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "治疗开始时间"
 
+msgctxt "help:gnuhealth.prescription.order,prescription_date:"
+msgid "Prescription Date"
+msgstr "处方日期"
+
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
 msgstr "填写处方编号"
+
+msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
+msgid "Prescription Date"
+msgstr "处方日期"
 
 msgctxt "help:gnuhealth.specialty,code:"
 msgid "ie, ADP. Please use CAPITAL LETTERS and no spaces"
@@ -8737,8 +8744,8 @@ msgid "Health Social Worker"
 msgstr "Health 社会工作者"
 
 msgctxt "report:appointment.receipt:"
-msgid "Appointment ID"
-msgstr "预约号 #"
+msgid "APPT ID:"
+msgstr "预约号:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Appointment Receipt"
@@ -8749,16 +8756,16 @@ msgid "Date:"
 msgstr "日期:"
 
 msgctxt "report:appointment.receipt:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr "其他信息:"
+
+msgctxt "report:appointment.receipt:"
+msgid "Health Prof:"
 msgstr "医务人员:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Institution:"
 msgstr "医疗机构:"
-
-msgctxt "report:appointment.receipt:"
-msgid "Extra Info:"
-msgstr "说明 / 注释:"
 
 msgctxt "report:appointment.receipt:"
 msgid "PUID:"

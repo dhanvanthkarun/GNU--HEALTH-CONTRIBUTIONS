@@ -1,31 +1,25 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-01-11 01:23+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_crypto/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+#, fuzzy
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
-msgstr ""
+msgstr "Aktuell hash-summa"
 
+#, fuzzy
 msgctxt "field:gnuhealth.birth_certificate,digest_status:"
 msgid "Altered"
-msgstr ""
+msgstr "Förändrad"
 
 msgctxt "field:gnuhealth.birth_certificate,digital_signature:"
 msgid "Digital Signature"
 msgstr "Digital signatur"
 
+#, fuzzy
 msgctxt "field:gnuhealth.birth_certificate,document_digest:"
 msgid "Digest"
-msgstr ""
+msgstr "Förlaga"
 
 msgctxt "field:gnuhealth.birth_certificate,serializer:"
 msgid "Doc String"
@@ -35,13 +29,15 @@ msgctxt "field:gnuhealth.birth_certificate,serializer_current:"
 msgid "Current Doc"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.death_certificate,digest_current:"
 msgid "Current Hash"
-msgstr ""
+msgstr "Aktuell hash-summa"
 
+#, fuzzy
 msgctxt "field:gnuhealth.death_certificate,digest_status:"
 msgid "Altered"
-msgstr ""
+msgstr "Förändrad"
 
 msgctxt "field:gnuhealth.death_certificate,digital_signature:"
 msgid "Digital Signature"
@@ -59,21 +55,24 @@ msgctxt "field:gnuhealth.death_certificate,serializer_current:"
 msgid "Current Doc"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,digest_current:"
 msgid "Current Hash"
-msgstr ""
+msgstr "Aktuell hash-summa"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,digest_status:"
 msgid "Altered"
-msgstr ""
+msgstr "Förändrad"
 
 msgctxt "field:gnuhealth.patient.evaluation,digital_signature:"
 msgid "Digital Signature"
 msgstr "Digital signatur"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,document_digest:"
 msgid "Digest"
-msgstr ""
+msgstr "Förlaga"
 
 msgctxt "field:gnuhealth.patient.evaluation,serializer:"
 msgid "Doc String"
@@ -83,9 +82,10 @@ msgctxt "field:gnuhealth.patient.evaluation,serializer_current:"
 msgid "Current Doc"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,digest_current:"
 msgid "Current Hash"
-msgstr ""
+msgstr "Aktuell hash-summa"
 
 msgctxt "field:gnuhealth.prescription.order,digest_status:"
 msgid "Altered"
@@ -95,9 +95,10 @@ msgctxt "field:gnuhealth.prescription.order,digital_signature:"
 msgid "Digital Signature"
 msgstr "Digital signatur"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,document_digest:"
 msgid "Digest"
-msgstr ""
+msgstr "Förlaga"
 
 msgctxt "field:gnuhealth.prescription.order,serializer:"
 msgid "Doc String"
@@ -114,9 +115,10 @@ msgid ""
 "fields."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
 msgid "Original Document Digest"
-msgstr ""
+msgstr "Förlaga för originaldokumentet"
 
 msgctxt "help:gnuhealth.death_certificate,digest_status:"
 msgid ""
@@ -125,9 +127,10 @@ msgid ""
 "fields."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
 msgid "Original Document Digest"
-msgstr ""
+msgstr "Förlaga för originaldokumentet"
 
 msgctxt "help:gnuhealth.patient.evaluation,digest_status:"
 msgid ""
@@ -135,9 +138,10 @@ msgid ""
 " changed. Please note that the verification is done only on selected fields."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,document_digest:"
 msgid "Original Document Digest"
-msgstr ""
+msgstr "Förlaga för originaldokumentet"
 
 msgctxt "help:gnuhealth.prescription.order,digest_status:"
 msgid ""
@@ -145,9 +149,10 @@ msgid ""
 " changed. Please note that the verification is done only on selected fields."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
-msgstr ""
+msgstr "Förlaga för originaldokumentet"
 
 msgctxt "model:ir.model.button,string:birthcert_generate_button"
 msgid "Generate"
@@ -181,9 +186,10 @@ msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Generate"
 msgstr "Generera"
 
+#, fuzzy
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Generate certificate ?"
-msgstr ""
+msgstr "Generera certifikat ?"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Generate the certificate"
@@ -225,9 +231,10 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Hashes"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Original String"
-msgstr ""
+msgstr "Originalsträng"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Altered / current String"
@@ -261,9 +268,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Sign this patient evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Validation"
-msgstr ""
+msgstr "Validering"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Document validation"
