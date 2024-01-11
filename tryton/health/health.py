@@ -4262,7 +4262,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient', required=True, states=STATES)
 
     prescription_id = fields.Char(
-        'Rx ID', readonly=True, 
+        'ID', readonly=True, 
         help='Type in the ID of this prescription')
 
     prescription_date = fields.DateTime(
@@ -4486,7 +4486,7 @@ class PrescriptionLine(ModelSQL, ModelView):
 #        'Medication Template')
 
     name = fields.Many2One(
-        'gnuhealth.prescription.order', 'Rx ID',
+        'gnuhealth.prescription.order', 'ID',
         help='Prescription ID')
 
     review = fields.DateTime('Valid Until', help="Until this date, the patient"
