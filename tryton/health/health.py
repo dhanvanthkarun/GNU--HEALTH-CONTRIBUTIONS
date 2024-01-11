@@ -154,7 +154,8 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         depends=['address_country'])
 
     operational_sector = fields.Many2One(
-        'gnuhealth.operational_sector', 'Operational Sector')
+        'gnuhealth.operational_sector', 'Op. Sector',
+        help='Operational Sector')
 
     picture = fields.Binary('Picture')
 
