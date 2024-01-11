@@ -4266,7 +4266,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
         help='Type in the ID of this prescription')
 
     prescription_date = fields.DateTime(
-        'Rx Date', states=STATES,
+        'Date', states=STATES,
         help='Prescription Date')
 
     user_id = fields.Many2One('res.user', 'Prescribing Doctor', readonly=True)
@@ -4291,7 +4291,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Prescribed by', readonly=True)
 
     report_prescription_date = fields.Function(
-        fields.Date('Rx Date', help="Prescription Date"),
+        fields.Date('Date', help="Prescription Date"),
         'get_report_prescription_date')
 
     report_prescription_time = fields.Function(fields.Time(
