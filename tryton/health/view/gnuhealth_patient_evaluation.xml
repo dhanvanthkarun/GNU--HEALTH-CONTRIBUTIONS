@@ -165,7 +165,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="actions" colspan="4"/>
         </page>
         <page string="Administrative" id="page_patient_evaluation_administrative">
-            <group id='group_patient_evaluation_appointment' colspan="4" col="10">
+            <group id='group_patient_evaluation_appointment' colspan="4" col="6">
                 <label name="urgency"/>
                 <field name="urgency"/>
                 <label name="appointment"/>
@@ -180,8 +180,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <separator string="Other information related to this evaluation" colspan="4" id="separator_evaluation_diagnosis_1"/>
             <field name="notes" colspan="4"/>
             <newline/>
-            <group id='group_patient_evaluation_institution_info' colspan="4" col="8">
-                <field name="institution" colspan="2"/>
+            <group id='group_patient_evaluation_institution_info' colspan="4" col="6">
+                <label name="institution"/>
+                <field name="institution"/>
                 <label name="specialty"/>
                 <field name="specialty"/>
                 <label name="evaluation_type"/>
