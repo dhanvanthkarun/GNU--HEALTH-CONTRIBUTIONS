@@ -4262,8 +4262,8 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient', required=True, states=STATES)
 
     prescription_id = fields.Char(
-        'Prescription ID',
-        readonly=True, help='Type in the ID of this prescription')
+        'Rx ID', readonly=True, 
+        help='Type in the ID of this prescription')
 
     prescription_date = fields.DateTime(
         'Rx Date', states=STATES,
@@ -4485,7 +4485,10 @@ class PrescriptionLine(ModelSQL, ModelView):
 #    template = fields.Many2One('gnuhealth.medication.template',
 #        'Medication Template')
 
-    name = fields.Many2One('gnuhealth.prescription.order', 'Prescription ID')
+    name = fields.Many2One(
+        'gnuhealth.prescription.order', 'Rx ID',
+        help='Prescription ID')
+
     review = fields.DateTime('Valid Until', help="Until this date, the patient"
                              "usually can ask for a refill / "
                              "reorder of this medicament")
