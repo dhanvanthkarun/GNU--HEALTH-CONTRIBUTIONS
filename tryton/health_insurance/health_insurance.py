@@ -81,7 +81,7 @@ class HealthService(metaclass=PoolMeta):
     __name__ = 'gnuhealth.health_service'
 
     insurance_holder = fields.Many2One(
-        'party.party', 'Insurance Holder',
+        'party.party', 'Insurance of',
         help="Insurance Policy Holder")
 
     insurance_plan = fields.Many2One(
