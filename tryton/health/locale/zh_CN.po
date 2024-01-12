@@ -101,7 +101,7 @@ msgstr "患者"
 
 msgctxt "field:gnuhealth.appointment.report,ref:"
 msgid "PUID"
-msgstr "证件号"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.appointment.report.open.start,date_end:"
 msgid "Date End"
@@ -550,7 +550,7 @@ msgstr "医务人员"
 
 msgctxt "field:gnuhealth.healthprofessional,puid:"
 msgid "PUID"
-msgstr "证件号"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.healthprofessional,specialties:"
 msgid "Specialties"
@@ -1322,7 +1322,7 @@ msgstr "家庭医生"
 
 msgctxt "field:gnuhealth.patient,puid:"
 msgid "PUID"
-msgstr "证件号"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.patient,rh:"
 msgid "Rh"
@@ -1927,11 +1927,11 @@ msgstr "开始"
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
 msgid "ID type"
-msgstr "证件号类型"
+msgstr "备选证件号类型"
 
 msgctxt "field:gnuhealth.person_alternative_identification,code:"
 msgid "Code"
-msgstr "证件号"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.person_alternative_identification,comments:"
 msgid "Comments"
@@ -1948,7 +1948,7 @@ msgstr "参与者"
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid "Other ID type"
-msgstr "证件号其他类型"
+msgstr "备选证件号其他类型"
 
 msgctxt "field:gnuhealth.person_name,date_from:"
 msgid "From"
@@ -2422,11 +2422,11 @@ msgstr "年龄"
 
 msgctxt "field:party.party,alternative_identification:"
 msgid "Other IDs"
-msgstr "其他证件号"
+msgstr "备选证件号"
 
 msgctxt "field:party.party,alternative_ids:"
 msgid "Other IDs"
-msgstr "其他证件号"
+msgstr "备选证件号"
 
 msgctxt "field:party.party,birth_certificate:"
 msgid "Birth Certificate"
@@ -2558,7 +2558,7 @@ msgstr "图片"
 
 msgctxt "field:party.party,ref:"
 msgid "PUID"
-msgstr "证件号"
+msgstr "健康号"
 
 msgctxt "field:party.party,residence:"
 msgid "Residence"
@@ -2754,7 +2754,7 @@ msgstr "卫生专业人员的名字，来自 partner 列表"
 
 msgctxt "help:gnuhealth.healthprofessional,puid:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，个人身份证件号"
+msgstr "GNU Health 系统中使用的个人唯一标识号"
 
 msgctxt "help:gnuhealth.help,description:"
 msgid "Short description"
@@ -3193,7 +3193,7 @@ msgstr "当前患者的全科医生/家庭医生"
 
 msgctxt "help:gnuhealth.patient,puid:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，个人身份证件号"
+msgstr "GNU Health 系统中使用的个人唯一标识号"
 
 msgctxt "help:gnuhealth.patient.disease,age:"
 msgid "Estimated age of the diagnosis"
@@ -3611,7 +3611,7 @@ msgctxt ""
 msgid ""
 "Other Alternative ID type, user can customize an ID type when 'ID type' = "
 "'other', "
-msgstr "其他可选ID类型，当 'ID type' = 'other' 时，用户可以自定义一个ID类型。 "
+msgstr "备选证件号其它自定义类型，当 'ID type' = 'other' 时，用户可以自定义一个备选证件号类型。 "
 
 msgctxt "help:gnuhealth.person_name,family:"
 msgid "Family / Surname."
@@ -3852,7 +3852,7 @@ msgctxt "help:party.party,alternative_identification:"
 msgid ""
 "Other types of identification, not the official PUID . Examples : Passport, "
 "foreign ID,.."
-msgstr "其他类型的证件号，不是身份证号。比如： 护照，外国身份证 ..."
+msgstr "其他可供选择使用的证件号，不是 GNU Health 健康号。比如： 护照，外国身份证 ..."
 
 msgctxt "help:party.party,citizenship:"
 msgid "Country of Citizenship"
@@ -3955,7 +3955,7 @@ msgstr "出生证明上的母亲记录"
 
 msgctxt "help:party.party,ref:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，身份证证件号"
+msgstr "GNU Health 系统中使用的个人唯一标识号"
 
 msgctxt "help:party.party,residence:"
 msgid "Country of Residence"
@@ -7617,7 +7617,7 @@ msgstr "患者用药"
 
 msgctxt "model:gnuhealth.person_alternative_identification,name:"
 msgid "Alternative person ID"
-msgstr "其它证件号"
+msgstr "备选证件号"
 
 msgctxt "model:gnuhealth.person_name,name:"
 msgid "Person Name"
@@ -8778,7 +8778,7 @@ msgstr "医疗机构:"
 
 msgctxt "report:appointment.receipt:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Patient:"
@@ -8790,7 +8790,7 @@ msgstr "专业:"
 
 msgctxt "report:appointment.receipt:"
 msgid "You must present this receipt and your PUID"
-msgstr "您必须出示此预约单和证件号"
+msgstr "您必须出示此预约单和健康号"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid ","
@@ -9010,7 +9010,7 @@ msgstr "重要通知:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Patient:"
@@ -9179,7 +9179,7 @@ msgstr "其它诊断"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient Evaluation Report"
@@ -9275,7 +9275,7 @@ msgstr "主要诊断"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Patient Evaluation Brief Report"
@@ -9315,7 +9315,7 @@ msgstr "姓名:"
 
 msgctxt "report:patient.card:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:patient.card:"
 msgid "photo"
@@ -9363,7 +9363,7 @@ msgstr "患者健康状况总结"
 
 msgctxt "report:patient.conditions_history:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Print Date:"
@@ -9419,7 +9419,7 @@ msgstr "患者用药史"
 
 msgctxt "report:patient.medication:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:patient.medication:"
 msgid "Patient:"
@@ -9475,7 +9475,7 @@ msgstr "患者疫苗接种史"
 
 msgctxt "report:patient.vaccination:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:patient.vaccination:"
 msgid "Patient:"
@@ -9563,7 +9563,7 @@ msgstr "注意事项"
 
 msgctxt "report:prescription.order:"
 msgid "PUID:"
-msgstr "证件号:"
+msgstr "健康号:"
 
 msgctxt "report:prescription.order:"
 msgid "Patient:"
