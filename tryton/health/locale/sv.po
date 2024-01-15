@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-01-13 14:14+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -315,9 +306,10 @@ msgctxt "field:gnuhealth.disease_group.members,disease_group:"
 msgid "Group"
 msgstr "Grupp"
 
+#, fuzzy
 msgctxt "field:gnuhealth.disease_group.members,name:"
 msgid "Condition"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "field:gnuhealth.dose.unit,desc:"
 msgid "Description"
@@ -1430,9 +1422,10 @@ msgctxt "field:gnuhealth.patient.disease,name:"
 msgid "Patient"
 msgstr "Patient"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "field:gnuhealth.patient.disease,pcs_code:"
 msgid "Code"
@@ -2050,18 +2043,20 @@ msgctxt "field:gnuhealth.pol,gene:"
 msgid "Gene"
 msgstr "Gen"
 
+#, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition:"
 msgid "Condition"
-msgstr ""
+msgstr "Tillstånd"
 
 #, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition_code:"
 msgid "Code"
 msgstr "Kod"
 
+#, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition_text:"
 msgid "Condition"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "field:gnuhealth.pol,info:"
 msgid "Extended Information"
@@ -3337,9 +3332,10 @@ msgctxt "help:gnuhealth.patient.disease,is_on_treatment:"
 msgid "Currently on treatment"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "help:gnuhealth.patient.disease,pcs_code:"
 msgid "Procedure code"
@@ -6620,9 +6616,10 @@ msgctxt "model:gnuhealth.occupation,name:occ473"
 msgid "Proofreader"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.occupation,name:occ474"
 msgid "Prostitute"
-msgstr ""
+msgstr "Prostituerad"
 
 msgctxt "model:gnuhealth.occupation,name:occ475"
 msgid "Psychiatrist"
@@ -9005,9 +9002,10 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Citizenship"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Condition"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Conditions chronologically ordered leading to the cause of death"
@@ -10467,13 +10465,15 @@ msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "I"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "II"
-msgstr ""
+msgstr "II"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "III"
-msgstr ""
+msgstr "III"
 
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "V1"
@@ -11767,9 +11767,10 @@ msgctxt "view:gnuhealth.prescription.line:"
 msgid "Treatment time"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Create"
-msgstr ""
+msgstr "Skapa"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Create prescription ?"
@@ -11839,9 +11840,10 @@ msgctxt "view:product.product:"
 msgid "Health"
 msgstr ""
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.appointment.report.open,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 msgctxt "wizard_button:gnuhealth.appointment.report.open,start,open_:"
 msgid "Open"
@@ -11852,14 +11854,16 @@ msgctxt ""
 msgid "Immunization Status"
 msgstr ""
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.check_immunization_status,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
+#, fuzzy
 msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,save:"
