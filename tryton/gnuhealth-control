@@ -488,19 +488,46 @@ getlang() {
         usage
     fi
 
+    if [ ! command -v msgcat >/dev/null 2>&1 ]; then
+        echo "msgcat command is not found, please install gettext package."
+        exit 1
+    fi
+
     local lang_to_install=$2
     local lang_file=${lang_to_install}.zip
     source $HOME/.gnuhealthrc || bailout
     local lang_download_dir=$(mktemp -d /tmp/gnuhealth-XXXX)
+    local gnuhealth_module_dir=${GNUHEALTH_DIR}/tryton/server/modules
 
-    message "INFO" "Going to modules directory..." 
-
-    cd ${GNUHEALTH_DIR}/tryton/server/modules || bailout
     message "INFO" "Retrieving language pack file for ${lang_to_install}" 
     wget ${TRANSLATE_URL}/download/gnu-health/-/${lang_to_install}/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
+
+    cd ${lang_download_dir} || bailout
+    ${BSDTAR} --strip-components 3 -xzf ${lang_download_dir}/${lang_file} || bailout
+
     message "INFO" "Installing / Updating language files for ${lang_to_install} ..."
 
-    ${BSDTAR} --strip-components 3 -xzf ${lang_download_dir}/${lang_file} || bailout
+    ## After gnuhealth-4.4, we use po-export tool to update po and pot
+    ## files of gnuhealth, po files will sync to
+    ## gnuhealth-hg-dev. which means that po items used in before
+    ## gnuhealth version but removed in gnuhealth-hg-dev will be
+    ## removed and not sync to weblate to translate.
+    ##
+    ## To solve this problem, we use msgcat to merge weblate's po
+    ## files and installed po files, but removed po items can not
+    ## lost, but they will be not updated with weblate, user should
+    ## maintain them by manual.
+
+    for po in $(find . -name '*.po'); do
+        local weblate_po=${lang_download_dir}/${po}
+        local installed_po=${gnuhealth_module_dir}/${po}
+        if [ -e ${installed_po} ]; then
+            msgcat --use-first ${weblate_po} ${installed_po} -o ${installed_po}
+        else
+            msgcat --use-first ${weblate_po} -o ${installed_po}
+        fi
+    done
+
     message "INFO" "Language pack ${lang_to_install} sucessfully installed / Updated"
     message "INFO" "You now need to load language translations again in one the following ways:"
     message "INFO" "1. Run command (have no effect sometimes)"
@@ -509,6 +536,8 @@ getlang() {
     message "INFO" "2. Open language form: Administration > Localization > Languages > YOUR-LANG"
     message "INFO" "   Click 'Unload translations' then click 'Load translations'"
     message "INFO" "Removing temporary directories"
+
+    cd ${gnuhealth_module_dir} || bailout
     rm -rf ${lang_download_dir}
     cd
 }
