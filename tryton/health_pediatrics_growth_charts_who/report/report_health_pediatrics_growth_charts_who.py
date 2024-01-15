@@ -7,37 +7,45 @@
 from datetime import datetime
 from trytond.report import Report
 from trytond.pool import Pool
+from trytond.i18n import gettext
 
 __all__ = ['PediatricsGrowthChartsWHOReport', 'WeightForAge',
            'LengthHeightForAge', 'BMIForAge']
-
-_TYPES = {
-    '-3': 'p3',
-    '-2': 'p15',
-    '0': 'p50',
-    '2': 'p85',
-    '3': 'p97',
-    }
-_INDICATORS = {
-    'l/h-f-a': 'Length/height for age',
-    'w-f-a': 'Weight for age',
-    'bmi-f-a': 'Body mass index for age (BMI for age)',
-    }
-_MEASURES = {
-    'p': 'percentiles',
-    'z': 'z-scores',
-    }
-_GENDERS = {
-    'f': 'Girls',
-    'm': 'Boys',
-    }
-
 
 class PediatricsGrowthChartsWHOReport(Report):
     __name__ = 'gnuhealth.pediatrics.growth.charts.who.report'
 
     @classmethod
     def get_context(cls, records, header, data):
+        
+        _MODULE = "health_pediatrics_growth_charts_who"
+
+        _TYPES = {
+            '-3': gettext(_MODULE + ".msg_type_p3"),
+            '-2': gettext(_MODULE + ".msg_type_p15"),
+            '0':  gettext(_MODULE + ".msg_type_p50"),
+            '2':  gettext(_MODULE + ".msg_type_p85"),
+            '3':  gettext(_MODULE + ".msg_type_p97"),
+        }
+
+        _INDICATORS = {
+            'l/h-f-a': gettext(_MODULE + ".msg_indicator_length_or_height_for_age"),
+            'w-f-a':   gettext(_MODULE + ".msg_indicator_weight_for_age"),
+            'bmi-f-a': gettext(_MODULE + ".msg_indicator_bmi_for_age"),
+        }
+
+        _MEASURES = {
+            'p': gettext(_MODULE + ".msg_measure_percentiles"),
+            'z': gettext(_MODULE + ".msg_measure_z_scores"),
+        }
+
+        _GENDERS = {
+            'f': gettext(_MODULE + ".msg_gender_girls"),
+            'm': gettext(_MODULE + ".msg_gender_boys"),
+        }
+
+        _SUBTITLE = gettext(_MODULE + ".msg_subtitle")
+
         pool = Pool()
         GrowthChartsWHO = pool.get('gnuhealth.pediatrics.growth.charts.who')
         Patient = pool.get('gnuhealth.patient')
@@ -56,10 +64,10 @@ class PediatricsGrowthChartsWHOReport(Report):
                 ], order=[('month', 'ASC')],
                 )
 
-        context['title'] = _INDICATORS[data['indicator']] + ' ' + \
-            _GENDERS[patient.name.gender]
-        context['subtitle'] = 'Birth to 5 years (%s)' % \
-            _MEASURES[data['measure']]
+        context['title'] = _INDICATORS[data['indicator']].format(
+            gender=_GENDERS[patient.name.gender])
+        context['subtitle'] = _SUBTITLE.format(
+            measure=_MEASURES[data['measure']])
         context['name'] = patient.name.rec_name
         context['puid'] = patient.puid
         context['date'] = datetime.now().date()
