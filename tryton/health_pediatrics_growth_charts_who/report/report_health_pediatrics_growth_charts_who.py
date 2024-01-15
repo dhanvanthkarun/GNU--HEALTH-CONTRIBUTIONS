@@ -21,11 +21,11 @@ class PediatricsGrowthChartsWHOReport(Report):
         _MODULE = "health_pediatrics_growth_charts_who"
 
         _TYPES = {
-            '-3': gettext(_MODULE + ".msg_type_p3"),
-            '-2': gettext(_MODULE + ".msg_type_p15"),
-            '0':  gettext(_MODULE + ".msg_type_p50"),
-            '2':  gettext(_MODULE + ".msg_type_p85"),
-            '3':  gettext(_MODULE + ".msg_type_p97"),
+            '-3': 'p3',
+            '-2': 'p15',
+            '0': 'p50',
+            '2': 'p85',
+            '3': 'p97',
         }
 
         _INDICATORS = {
@@ -75,17 +75,17 @@ class PediatricsGrowthChartsWHOReport(Report):
         context['measure'] = data['measure']
 
         if data['measure'] == 'p':
-            context['p3'] = '3rd'
-            context['p15'] = '15th'
-            context['p50'] = '50th'
-            context['p85'] = '85th'
-            context['p97'] = '97th'
+            context['p3']  = gettext(_MODULE + ".msg_table_header_percentile_p3"),
+            context['p15'] = gettext(_MODULE + ".msg_table_header_percentile_p15"),
+            context['p50'] = gettext(_MODULE + ".msg_table_header_percentile_p50"),
+            context['p85'] = gettext(_MODULE + ".msg_table_header_percentile_p85"),
+            context['p97'] = gettext(_MODULE + ".msg_table_header_percentile_p97"),
         else:
-            context['p3'] = '-3'
-            context['p15'] = '-2'
-            context['p50'] = '0'
-            context['p85'] = '2'
-            context['p97'] = '3'
+            context['p3']  = gettext(_MODULE + ".msg_table_header_z_score_p3"),
+            context['p15'] = gettext(_MODULE + ".msg_table_header_z_score_p15"),
+            context['p50'] = gettext(_MODULE + ".msg_table_header_z_score_p50"),
+            context['p85'] = gettext(_MODULE + ".msg_table_header_z_score_p85"),
+            context['p97'] = gettext(_MODULE + ".msg_table_header_z_score_p97"),
 
         for value in growthchartswho:
             if data['measure'] == 'p':
