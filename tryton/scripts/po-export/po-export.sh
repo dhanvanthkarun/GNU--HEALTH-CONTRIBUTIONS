@@ -75,6 +75,8 @@ do the following steps, which can reduce po files merge conflicts.
    
 2. Lock translation in weblate.
 
+   Click button: Manage > Repository maintenance > Lock
+
 3. Pull and merge changes in below hg repos to local repo your are
    working.
 
@@ -148,5 +150,7 @@ to gnuhealth upstream hg repo, we should:
    c) Make sure commits can be found at: https://hg.weblate.org/gnu-health/health
 
 2. Unlock translation in weblate.
+
+   Click button: Manage > Repository maintenance > Unlock
 
 EOF
