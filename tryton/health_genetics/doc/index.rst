@@ -14,4 +14,6 @@ This module add support to:
      
      * Person / Patient relevant genetic information
 
-     * Human genes dataset (HUGO)
+     * Human genes dataset (HUGO) 
+
+     * Ensembl, NCBI Entrez, RefSeq and OMIM references
