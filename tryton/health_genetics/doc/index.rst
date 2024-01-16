@@ -10,6 +10,8 @@ Family history and genetic risks.
 
 This module add support to:
 
-     * Hereditary risks, family history and genetic disorders.
+     * Family History
+     
+     * Person / Patient relevant genetic information
 
-     * NCBI and GeneCards information, more than 4200 genes associated to diseases
+     * Human genes dataset (HUGO)
