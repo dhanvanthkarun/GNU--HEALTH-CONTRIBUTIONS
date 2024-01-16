@@ -26,6 +26,12 @@ import os
 import io
 import json
 
+def get_yes_or_no_string(yes=True):
+    if yes:
+        return gettext('health.msg_yes_str')
+    else:
+        return gettext('health.msg_no_str')
+
 def convert_date_timezone(sdate, target):
     """
     Convert dates from UTC to local timezone and viceversa
