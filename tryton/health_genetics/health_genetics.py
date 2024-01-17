@@ -179,8 +179,8 @@ class ProteinDisease(ModelSQL, ModelView):
 
     inheritance_pattern = fields.Selection([
         (None, ''),
-        ('ad', 'Autosomic dominant'),
-        ('ar', 'Autosomic recessive'),
+        ('ad', 'Autosomal dominant'),
+        ('ar', 'Autosomal recessive'),
         ('x', 'X-Linked'),
         ('y', 'Y-Linked'),
         ('m', 'Mitochondrial'),
