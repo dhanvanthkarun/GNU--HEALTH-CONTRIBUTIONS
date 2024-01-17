@@ -188,7 +188,7 @@ class ProteinDisease(ModelSQL, ModelView):
         ], 'Inheritance Pattern', help="Inheritance pattern",
         sort=False, select=True)
 
-    description = fields.Text('Description')
+    description = fields.Text('Description', translate=True)
 
     active = fields.Boolean('Active', help="Whether this code is current."
                             "If you deactivate it, the code will "
