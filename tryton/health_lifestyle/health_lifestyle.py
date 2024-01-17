@@ -213,7 +213,7 @@ class DrugsRecreational(ModelSQL, ModelView):
         "refills in 6 months, and may be ordered orally. "
         "Some Schedule V drugs are available over the counter")
 
-    info = fields.Text('Extra Info')
+    info = fields.Text('Extra Info', translate=True)
 
     @classmethod
     def __setup__(cls):
