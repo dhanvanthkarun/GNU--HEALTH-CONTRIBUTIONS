@@ -2753,7 +2753,7 @@ class AlternativePersonID (ModelSQL, ModelView):
         'Other ID type',
         help="Other Alternative ID type, "
         "user can customize an ID type "
-        "when 'ID type' = 'other', "
+        "when 'ID type' = 'other'."
     )
 
     expiration_date = fields.Date('Expiration date')

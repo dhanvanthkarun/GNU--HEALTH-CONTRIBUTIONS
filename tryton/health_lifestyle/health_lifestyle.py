@@ -147,7 +147,7 @@ class DrugsRecreational(ModelSQL, ModelView):
 
     route_sniffing = fields.Boolean(
         'Sniffing',
-        help="Also called snorting - inhaling through the nares  ")
+        help="Also called snorting - inhaling through the nares")
 
     route_injection = fields.Boolean(
         'Injection',
@@ -349,10 +349,10 @@ class MedicalPatient(metaclass=PoolMeta):
         help="Age of quitting smoking")
     alcohol = fields.Boolean('Drinks Alcohol')
     age_start_drinking = fields.Integer(
-        'Age started to drink ',
+        'Age started to drink',
         help="Date to start drinking")
     age_quit_drinking = fields.Integer(
-        'Age quit drinking ',
+        'Age quit drinking',
         help="Date to stop drinking")
     ex_alcoholic = fields.Boolean('Ex alcoholic')
     alcohol_beer_number = fields.Integer('Beer / day')
@@ -364,10 +364,10 @@ class MedicalPatient(metaclass=PoolMeta):
         'IV drug user',
         help="Check this option if the patient injects drugs")
     age_start_drugs = fields.Integer(
-        'Age started drugs ',
+        'Age started drugs',
         help="Age of start drugs")
     age_quit_drugs = fields.Integer(
-        'Age quit drugs ',
+        'Age quit drugs',
         help="Date of quitting drugs")
     recreational_drugs = fields.One2Many(
         'gnuhealth.patient.recreational_drugs', 'patient', 'Drugs')
