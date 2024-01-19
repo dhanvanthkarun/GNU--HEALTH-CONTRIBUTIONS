@@ -3621,22 +3621,22 @@ class Appointment(ModelSQL, ModelView):
         cls._order.insert(0, ('appointment_date', 'DESC'))
 
         cls._buttons.update({
-            'checked_in': {'invisible': Not(Equal(Eval('state'), 'confirmed'))}
-            })
+            'check_in': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed'))}})
 
         cls._buttons.update({
-            'no_show': {'invisible': Not(Equal(Eval('state'), 'confirmed'))}
-            })
+            'miss_out': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed'))}})
 
     @classmethod
     @ModelView.button
-    def checked_in(cls, appointments):
+    def check_in(cls, appointments):
         cls.write(appointments, {
             'state': 'checked_in'})
 
     @classmethod
     @ModelView.button
-    def no_show(cls, appointments):
+    def miss_out(cls, appointments):
         cls.write(appointments, {
             'state': 'no_show'})
 
