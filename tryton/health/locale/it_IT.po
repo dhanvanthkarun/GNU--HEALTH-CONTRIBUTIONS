@@ -8578,15 +8578,6 @@ msgctxt "model:ir.message,text:msg_yes_str"
 msgid "Yes"
 msgstr ""
 
-msgctxt "model:ir.model.button,string:appoinntment_checked_in"
-msgid "Check In"
-msgstr ""
-
-#, fuzzy
-msgctxt "model:ir.model.button,string:appoinntment_no_show"
-msgid "No show"
-msgstr "Non mostrare"
-
 #, fuzzy
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
 msgid "Sign"
@@ -11291,10 +11282,9 @@ msgctxt "view:gnuhealth.appointment.report:"
 msgid "Appointments Report"
 msgstr "Resoconto degli appuntamenti"
 
-#, fuzzy
 msgctxt "view:gnuhealth.appointment:"
-msgid "Checked in"
-msgstr "Arrivo"
+msgid "Check In"
+msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Date"
@@ -11304,17 +11294,20 @@ msgctxt "view:gnuhealth.appointment:"
 msgid "Information"
 msgstr "Informazioni"
 
-#, fuzzy
 msgctxt "view:gnuhealth.appointment:"
-msgid "No show"
-msgstr "Non mostrare"
-
-msgctxt "view:gnuhealth.appointment:"
-msgid "The patient did not show up"
+msgid "Miss Out"
 msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "The patient has arrived and is waiting"
+msgid ""
+"The patient did not show up, click this button will switch appointment to "
+"'no_show' state."
+msgstr ""
+
+msgctxt "view:gnuhealth.appointment:"
+msgid ""
+"The patient has arrived and is waiting, click this button will switch "
+"appointment to 'checked_in' state."
 msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
