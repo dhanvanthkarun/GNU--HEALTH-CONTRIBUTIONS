@@ -56,6 +56,7 @@ class TestType(ModelSQL, ModelView):
         ('fluid_excreta', 'Body Fluid and Excreta Examination'),
         ('biochemical', 'Biochemical Testing'),
         ('immunological', 'Immunological Testing'),
+        ('microbiological', 'Microbiological Testing'),
         ('molecular_biology', 'Molecular Biology Testing'),
         ('chromosome_genetic', 'Chromosome and Genetic Disease Detection'),
         ('others', 'Others'),
