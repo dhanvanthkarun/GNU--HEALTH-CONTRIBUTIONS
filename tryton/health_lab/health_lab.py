@@ -358,7 +358,8 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
             normal_range = ''
         
         if self.result and self.result_text:
-            return str(self.result) + unit + normal_range + '\n(' + self.result_text + ')' 
+            return str(self.result) + unit + normal_range + \
+                ' (' + self.result_text + ')' 
         elif self.result:
             return str(self.result) + unit + normal_range
         elif self.result_text:
