@@ -50,6 +50,21 @@ class TestType(ModelSQL, ModelView):
         'gnuhealth.lab.test.critearea', 'test_type_id',
         'Test Cases')
 
+    category = fields.Selection([
+        (None, ''),
+        ('hematology', 'Hematology Testing'),
+        ('fluid_excreta', 'Body Fluid and Excreta Examination'),
+        ('biochemical', 'Biochemical Testing'),
+        ('immunological', 'Immunological Testing'),
+        ('molecular_biology', 'Molecular Biology Testing'),
+        ('chromosome_genetic', 'Chromosome and Genetic Disease Detection'),
+        ('others', 'Others'),
+        ], 'Category', sort=False, select=True)
+
+    @staticmethod
+    def default_category():
+        return None
+
     report_style = fields.Selection([
         ('tbl_h_r_u_nr', 'Table with result, unit and normal_range columns'),
         ('tbl_h_r_nr', 'Table with result and normal_range columns'),
