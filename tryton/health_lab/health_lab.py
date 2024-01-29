@@ -149,7 +149,7 @@ class Lab(ModelSQL, ModelView):
                     res_text = analyte.result_text
                 if analyte.result:
                     res = str(analyte.result) + \
-                        " (" + analyte.units.name + ")  "
+                        " (" + (analyte.units and analyte.units.name or '') + ")  "
                 summ = summ + analyte.rec_name + "  " + \
                     res + res_text + "\n"
         return summ
@@ -316,6 +316,27 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     def get_lab_warning_icon(self, name):
         if (self.warning):
             return 'gnuhealth-warning'
+
+    # Use by template
+    def get_report_result(self, unit=True, normal_range=True):
+        if unit:
+            unit = " " + (self.units and self.units.name or '')
+        else:
+            unit = ''
+
+        if normal_range:
+            normal_range = " " + (self.normal_range or '')
+        else:
+            normal_range = ''
+        
+        if self.result and self.result_text:
+            return str(self.result) + unit + normal_range + '\n(' + self.result_text + ')' 
+        elif self.result:
+            return str(self.result) + unit + normal_range
+        elif self.result_text:
+            return self.result_text
+        else:
+            return ''
 
     @classmethod
     def __setup__(cls):
