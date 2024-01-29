@@ -270,10 +270,11 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         ' this analyte is excluded from the test')
     result = fields.Float('Value')
     result_text = fields.Char(
-        'Result - Text', help='Non-numeric results. For '
+        'Result - Text', translate=True,
+        help='Non-numeric results. For '
         'example qualitative values, morphological, colors ...')
     remarks = fields.Char('Remarks')
-    normal_range = fields.Text('Reference')
+    normal_range = fields.Text('Reference', translate=True)
     lower_limit = fields.Float('Lower Limit')
     upper_limit = fields.Float('Upper Limit')
     warning = fields.Boolean(
