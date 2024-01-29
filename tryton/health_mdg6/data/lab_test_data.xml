@@ -189,8 +189,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field eval="&quot;&quot;&quot;Induration Size&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_ppd_analysis0"/>
-            <field eval="&quot;&quot;&quot;Immunocompetent: 15 mm
-\nImmunocompromised: 5 mm&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Immunocompetent: 15 mm;
+\nImmunocompromised: 5 mm;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="15" name="upper_limit"/>
             <field name="units" ref="gnuhealth_lab_test_units_mm"/>
@@ -310,9 +310,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field eval="&quot;&quot;&quot;HIV-1&quot;&quot;&quot;" name="name"/>
             <field eval="&quot;&quot;&quot;HIV-1&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
-            <field eval="&quot;&quot;&quot;Negative: 1 s/co
-\nBorderline: 0-4 s/co
-\nPositive: 4 s/co&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Negative: 1 s/co;
+\nBorderline: 0-4 s/co;
+\nPositive: 4 s/co;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="1" name="upper_limit"/>
             <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
@@ -323,8 +323,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field eval="&quot;&quot;&quot;HIV-2&quot;&quot;&quot;" name="name"/>
             <field eval="&quot;&quot;&quot;HIV-2&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
-            <field eval="&quot;&quot;&quot;Negative: 1 s/co
-\nBorderline: 0-4 s/co&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Negative: 1 s/co;
+\nBorderline: 0-4 s/co;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="1" name="upper_limit"/>
             <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
