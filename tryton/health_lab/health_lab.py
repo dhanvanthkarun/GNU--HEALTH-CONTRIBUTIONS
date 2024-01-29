@@ -50,6 +50,18 @@ class TestType(ModelSQL, ModelView):
         'gnuhealth.lab.test.critearea', 'test_type_id',
         'Test Cases')
 
+    report_style = fields.Selection([
+        ('tbl_h_r_u_nr', 'Table with result, unit and normal_range columns'),
+        ('tbl_h_r_nr', 'Table with result and normal_range columns'),
+        ('tbl_h_r', 'Table with result column'),
+        ('tbl_nh_r', 'Table with result column (no header)'),
+        ('no_tbl', 'Do not use table'),
+        ], 'Report style', sort=False, select=True)
+
+    @staticmethod
+    def default_report_style():
+        return 'tbl_h_r_nr'
+
     active = fields.Boolean('Active', select=True)
 
     @staticmethod
