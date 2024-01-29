@@ -354,7 +354,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
             unit = ''
 
         if normal_range:
-            normal_range = " " + (self.normal_range or '')
+            normal_range = " (" + (self.normal_range or '') + ")"
         else:
             normal_range = ''
         
