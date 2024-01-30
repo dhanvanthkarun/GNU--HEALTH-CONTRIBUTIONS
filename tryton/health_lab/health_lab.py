@@ -251,6 +251,7 @@ class Lab(ModelSQL, ModelView):
                 'name': critearea.name,
                 'code': critearea.code,
                 'sequence': critearea.sequence,
+                'limits_verified': critearea.limits_verified,
                 'lower_limit': critearea.lower_limit,
                 'upper_limit': critearea.upper_limit,
                 'normal_range': critearea.normal_range,
@@ -306,6 +307,12 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     normal_range = fields.Text('Reference', translate=True)
     lower_limit = fields.Float('Lower Limit')
     upper_limit = fields.Float('Upper Limit')
+    limits_verified = fields.Boolean(
+        'Limits verified',
+        help='The upper and lower limits have been verified again, '
+        'sometimes limits will depend on other indicators of the patient, '
+        'such as: age, pregnancy status, etc, so it is very importent to '
+        'verify them, because warning status depend on limits values.')
     warning = fields.Boolean(
         'Warn', help='Warns the patient about this '
         ' analyte result'
@@ -380,6 +387,10 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     @staticmethod
     def default_excluded():
         return False
+
+    @staticmethod
+    def default_limits_verified():
+        return True
 
     @fields.depends('result', 'lower_limit', 'upper_limit')
     def on_change_with_warning(self):

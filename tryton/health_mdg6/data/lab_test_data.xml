@@ -193,6 +193,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 \nImmunocompromised: 5 mm;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="15" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_mm"/>
         </record>
 
@@ -315,6 +316,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 \nPositive: 4 s/co;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="1" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
             <field name="test_type_id" ref="gnuhealth_test_ELISA_CMIA_analysis0"/>
         </record>
@@ -327,6 +329,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 \nBorderline: 0-4 s/co;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="1" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
             <field name="test_type_id" ref="gnuhealth_test_ELISA_CMIA_analysis0"/>
         </record>
