@@ -79,6 +79,21 @@ class TestType(ModelSQL, ModelView):
     def default_report_style():
         return 'tbl_h_r_nr'
 
+    tags = fields.Char(
+        'Tags', help='Tags of test type, which can be used in '
+        'if directive of report template file, '
+        'tags use letters and numbers, separated by colon.')
+
+    # Mostly used in report template file.
+    def all_tags(self):
+        tags = self.tags.split(':')
+        return tags
+
+    # Mostly used in report template file.
+    def has_tag(self, tag):
+        tags = self.tags.split(':')
+        return (tag in tags)
+
     active = fields.Boolean('Active', select=True)
 
     @staticmethod

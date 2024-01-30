@@ -21,6 +21,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <field name="category"/>
                 <label name="report_style"/>
                 <field name="report_style"/>
+                <newline/>
+                <label name="tags"/>
+                <field name="tags" colspan="3"/>
             </group>
             <newline/>
             <field name="critearea" colspan="4" view_ids="health_lab.test_critearea_view_tree_test_type,health_lab.test_critearea_view_form_test_type"/>
