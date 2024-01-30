@@ -300,7 +300,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         ' this analyte is excluded from the test')
     result = fields.Float('Value')
     result_text = fields.Text(
-        'Result - Text', translate=True,
+        'Result - Text',
         help='Non-numeric results. For '
         'example qualitative values, morphological, colors ...')
     remarks = fields.Text('Remarks')
