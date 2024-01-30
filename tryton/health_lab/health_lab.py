@@ -302,7 +302,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         'Result - Text', translate=True,
         help='Non-numeric results. For '
         'example qualitative values, morphological, colors ...')
-    remarks = fields.Text('Remarks', translate=True)
+    remarks = fields.Text('Remarks')
     normal_range = fields.Text('Reference', translate=True)
     lower_limit = fields.Float('Lower Limit')
     upper_limit = fields.Float('Upper Limit')
