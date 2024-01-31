@@ -1902,6 +1902,11 @@ class HealthProfessional(ModelSQL, ModelView):
         'gnuhealth.institution', 'Institution',
         help='Main institution where she/he works')
 
+    institution_unit = fields.Many2One(
+        'gnuhealth.hospital.unit', 'Unit',
+        domain=[('institution', '=', Eval('institution'))],
+        depends=['institution'])
+
     code = fields.Char('LICENSE ID', help='License ID')
 
     specialties = fields.One2Many(
