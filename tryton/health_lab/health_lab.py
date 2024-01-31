@@ -286,8 +286,11 @@ class GnuHealthLabTestUnits(ModelSQL, ModelView):
     'Lab Test Units'
     __name__ = 'gnuhealth.lab.test.units'
 
-    name = fields.Char('Unit', select=True)
-    code = fields.Char('Code', select=True)
+    name = fields.Char(
+        'Unit', select=True, translate=True)
+
+    code = fields.Char(
+        'Code', select=True, translate=False)
 
     @classmethod
     def __setup__(cls):
