@@ -409,14 +409,31 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
 
     @fields.depends('result', 'lower_limit', 'upper_limit')
     def on_change_with_warning(self):
-        if (self.result and self.lower_limit):
-            if (self.result < self.lower_limit):
-                return True
+        normal = True
 
-        if (self.result and self.upper_limit):
-            if (self.result > self.upper_limit):
-                return True
+        ## Note: do not use 'if (self.result)' code style in here, for
+        ## in python: 0.0 = False
 
+        ## lower_limit < x < upper_limit
+        if (self.result != None 
+            and self.lower_limit != None
+            and self.upper_limit != None):
+            normal = (self.lower_limit < self.result < self.upper_limit)
+        ## lower_limit < x, At least lower_limit
+        elif (self.result != None 
+              and self.lower_limit != None 
+              and self.upper_limit == None):
+            normal = (self.lower_limit < self.result)
+        ## x < upper_limit, Up to upper_limit
+        elif (self.result != None 
+              and self.lower_limit == None
+              and self.upper_limit != None):
+            normal = (self.result < self.upper_limit)
+        else:
+            normal = True
+
+        return (not normal)
+        
     @classmethod
     def check_xml_record(cls, records, values):
         return True
