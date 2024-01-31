@@ -70,6 +70,7 @@ class CreateLabTestOrder(Wizard):
                         'name': critearea.name,
                         'code': critearea.code,
                         'sequence': critearea.sequence,
+                        'limits_verified': critearea.limits_verified,
                         'lower_limit': critearea.lower_limit,
                         'upper_limit': critearea.upper_limit,
                         'normal_range': critearea.normal_range,
