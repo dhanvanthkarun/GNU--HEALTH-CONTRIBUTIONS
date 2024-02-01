@@ -1,6 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-02-02 06:05+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
+"health_genetics/sv/>\n"
+"Language: sv\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.gene,aliases:"
 msgid "Aliases"
@@ -8,7 +17,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene,chromosome:"
 msgid "Chromosome"
-msgstr ""
+msgstr "Kromosom"
 
 msgctxt "field:gnuhealth.gene,ensembl_id:"
 msgid "Ensembl ID"
@@ -20,7 +29,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene,gene_type:"
 msgid "Gene type"
-msgstr ""
+msgstr "Typ av gen"
 
 msgctxt "field:gnuhealth.gene,hgnc_id:"
 msgid "HGNC ID"
@@ -28,20 +37,19 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene,info:"
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
-#, fuzzy
 msgctxt "field:gnuhealth.gene,location:"
 msgid "Location"
 msgstr "Plats"
 
 msgctxt "field:gnuhealth.gene,long_name:"
 msgid "Official Name"
-msgstr ""
+msgstr "Officiellt namn"
 
 msgctxt "field:gnuhealth.gene,name:"
 msgid "Symbol"
-msgstr ""
+msgstr "Symbol"
 
 msgctxt "field:gnuhealth.gene,name_aliases:"
 msgid "Name Aliases"
@@ -53,7 +61,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene,protein_name:"
 msgid "Protein Code"
-msgstr ""
+msgstr "Protein-kod"
 
 msgctxt "field:gnuhealth.gene,protein_uri:"
 msgid "Protein URI"
@@ -65,7 +73,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene,variants:"
 msgid "Variants"
-msgstr ""
+msgstr "Varianter"
 
 msgctxt "field:gnuhealth.gene.variant,aa_change:"
 msgid "AA Change"
@@ -79,7 +87,6 @@ msgctxt "field:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.gene.variant,name:"
 msgid "Gene"
 msgstr "Gen"
@@ -90,11 +97,11 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene.variant,protein:"
 msgid "Protein"
-msgstr ""
+msgstr "Protein"
 
 msgctxt "field:gnuhealth.gene.variant,significance:"
 msgid "Significance"
-msgstr ""
+msgstr "Betydelse"
 
 msgctxt "field:gnuhealth.gene.variant,variant:"
 msgid "FTId"
@@ -102,9 +109,8 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene & Protein"
-msgstr ""
+msgstr "Gen & Protein"
 
-#, fuzzy
 msgctxt "field:gnuhealth.gene.variant.phenotype,name:"
 msgid "Code"
 msgstr "Kod"
@@ -171,32 +177,29 @@ msgctxt "field:gnuhealth.patient.genetic.risk,onset:"
 msgid "Onset"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,patient:"
 msgid "Patient"
 msgstr "Patient"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
-msgstr ""
+msgstr "Fenotyp"
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
 msgid "Mnemonic"
-msgstr ""
+msgstr "Mnemonisk"
 
-#, fuzzy
 msgctxt "field:gnuhealth.protein.disease,active:"
 msgid "Active"
 msgstr "Aktiv"
 
-#, fuzzy
 msgctxt "field:gnuhealth.protein.disease,description:"
 msgid "Description"
 msgstr "Beskrivning"
 
 msgctxt "field:gnuhealth.protein.disease,disease_name:"
 msgid "Disease name"
-msgstr ""
+msgstr "Sjukdomens namn"
 
 msgctxt "field:gnuhealth.protein.disease,disease_uri:"
 msgid "Disease URI"
@@ -204,13 +207,12 @@ msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,gene_variant:"
 msgid "Natural Variant"
-msgstr ""
+msgstr "Naturlig variant"
 
 msgctxt "field:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Inheritance Pattern"
-msgstr ""
+msgstr "Arvsmönster"
 
-#, fuzzy
 msgctxt "field:gnuhealth.protein.disease,keywords:"
 msgid "Keywords"
 msgstr "Nyckelord"
@@ -221,7 +223,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,name:"
 msgid "Disease"
-msgstr ""
+msgstr "Sjukdom"
 
 msgctxt "field:gnuhealth.protein.disease,xrefs:"
 msgid "Xrefs"
@@ -233,11 +235,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.gene,chromosome:"
 msgid "Name of the affected chromosome"
-msgstr ""
+msgstr "Namn på den drabbade kromosomen"
 
 msgctxt "help:gnuhealth.gene,gene_id:"
 msgid "Gene ID from NCBI Entrez database."
-msgstr ""
+msgstr "Genens ID från NCBI Entrez-databasen."
 
 msgctxt "help:gnuhealth.gene,gene_type:"
 msgid "Locus in the form of group:type"
@@ -247,7 +249,6 @@ msgctxt "help:gnuhealth.gene,hgnc_id:"
 msgid "HUGO Gene Nomenclature Committee identifier"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:gnuhealth.gene,info:"
 msgid "Extra Information"
 msgstr "Extra information"
@@ -258,7 +259,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.gene,name:"
 msgid "Symbol"
-msgstr ""
+msgstr "Symbol"
 
 msgctxt "help:gnuhealth.gene,name_aliases:"
 msgid "Name aliases"
@@ -317,7 +318,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.genetic.risk,onset:"
 msgid "Age in years"
-msgstr ""
+msgstr "Ålder i år"
 
 msgctxt "help:gnuhealth.protein.disease,acronym:"
 msgid "Disease acronym / mnemonics"
@@ -331,7 +332,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.protein.disease,gene_variant:"
 msgid "Natural variants involved in this condition"
-msgstr ""
+msgstr "Naturliga varianter som involveras i det här tillståndet"
 
 msgctxt "help:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Inheritance pattern"
@@ -351,51 +352,51 @@ msgstr ""
 
 msgctxt "model:gnuhealth.gene,name:"
 msgid "Genes"
-msgstr ""
+msgstr "Gener"
 
 msgctxt "model:gnuhealth.gene.variant,name:"
 msgid "Natural Variant"
-msgstr ""
+msgstr "Naturlig variant"
 
 msgctxt "model:gnuhealth.gene.variant.phenotype,name:"
 msgid "Variant Phenotypes"
-msgstr ""
+msgstr "Variant av fenotyper"
 
 msgctxt "model:gnuhealth.patient.family.diseases,name:"
 msgid "Family History"
-msgstr ""
+msgstr "Familjehistorik"
 
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
 msgid "Patient Genetic Information"
-msgstr ""
+msgstr "Patientens genetiska information"
 
 msgctxt "model:gnuhealth.protein.disease,name:"
 msgid "Protein related disorders"
-msgstr ""
+msgstr "Protein-relaterade störningar"
 
 msgctxt "model:ir.action,name:"
 msgid "Disease Genes"
-msgstr ""
+msgstr "Sjukdomens gener"
 
 msgctxt "model:ir.action,name:gnuhealth_action_gene"
 msgid "Genes"
-msgstr ""
+msgstr "Gener"
 
 msgctxt "model:ir.action,name:gnuhealth_action_gene_variant"
 msgid "Natural Variants"
-msgstr ""
+msgstr "Naturliga varianter"
 
 msgctxt "model:ir.action,name:gnuhealth_action_gene_variant_phenotype"
 msgid "Variant Phenotypes"
-msgstr ""
+msgstr "Varianter av Fenotyper"
 
 msgctxt "model:ir.action,name:gnuhealth_action_patient_genetics"
 msgid "Person genetic information"
-msgstr ""
+msgstr "Personens genetiska information"
 
 msgctxt "model:ir.action,name:gnuhealth_action_protein_disease"
 msgid "Protein related diseases"
-msgstr ""
+msgstr "Protein-relaterade sjukdomar"
 
 msgctxt "model:ir.ui.menu,name:"
 msgid "Disease Genes"
@@ -407,27 +408,27 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_gene_variants"
 msgid "Natural Variants"
-msgstr ""
+msgstr "Naturliga varianter"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_genes"
 msgid "Genes"
-msgstr ""
+msgstr "Gener"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_genetics"
 msgid "Genetics"
-msgstr ""
+msgstr "Genetik"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_protein_diseases"
 msgid "Protein related diseases"
-msgstr ""
+msgstr "Protein-relaterade sjukdomar"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_genetics"
 msgid "Genetics"
-msgstr ""
+msgstr "Genetik"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patient_genetics"
 msgid "Person genetic information"
-msgstr ""
+msgstr "Personens genetiska information"
 
 msgctxt "model:res.group,name:group_health_genetics_admin"
 msgid "Health Genetics Administration"
@@ -511,11 +512,11 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "protein-coding gene"
-msgstr ""
+msgstr "protein-kodad gen"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: T cell receptor pseudogene"
-msgstr ""
+msgstr "pseudogen: Pseudogen för T-cellsreceptor"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: immunoglobulin pseudogene"
@@ -523,19 +524,19 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: pseudogene"
-msgstr ""
+msgstr "pseudogen: pseudogen"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "LB/B: Likely benign or benign"
-msgstr ""
+msgstr "TG/G: Troligtvis godartad eller godartad"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "LP/P: Likely pathogenic or pathogenic"
-msgstr ""
+msgstr "TP/P: Troligtvis patogenisk eller patogenisk"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
-msgstr ""
+msgstr "OB: Okänd betydelse"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Aunt"
@@ -543,13 +544,12 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Brother"
-msgstr ""
+msgstr "Broder"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Cousin"
-msgstr ""
+msgstr "Kusin"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Father"
 msgstr "Fader"
@@ -562,22 +562,21 @@ msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Grandmother"
 msgstr ""
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Mother"
 msgstr "Moder"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Nephew"
-msgstr ""
+msgstr "Brorson"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Niece"
-msgstr ""
+msgstr "Brorsdotter"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Sister"
-msgstr ""
+msgstr "Syster"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Uncle"
@@ -593,7 +592,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
 msgid "Sibling"
-msgstr ""
+msgstr "Syskon"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomal dominant"
@@ -609,11 +608,11 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "X-Linked"
-msgstr ""
+msgstr "X-länkad"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Y-Linked"
-msgstr ""
+msgstr "Y-länkad"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "codominance"
@@ -621,12 +620,12 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Genetics"
-msgstr ""
+msgstr "Genetik"
 
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Disease"
-msgstr ""
+msgstr "Sjukdom"
 
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Protein and Gene"
-msgstr ""
+msgstr "Protein och Gen"
