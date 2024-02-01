@@ -270,6 +270,7 @@ class Lab(ModelSQL, ModelView):
                 'lower_limit': critearea.lower_limit,
                 'upper_limit': critearea.upper_limit,
                 'normal_range': critearea.normal_range,
+                "to_integer": critearea.to_integer,
                 'units': critearea.units and critearea.units.id})
 
         if test_cases:
@@ -317,6 +318,11 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         'Excluded', help='Select this option when'
         ' this analyte is excluded from the test')
     result = fields.Float('Value')
+
+    to_integer = fields.Boolean(
+        'To integer',
+        help='Convert result value to interger in report.')
+
     result_text = fields.Text(
         'Result - Text',
         help='Non-numeric results. For '
@@ -373,30 +379,39 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
 
     # Use by template
     def get_report_result(self, unit=True, normal_range=True):
-        if unit:
-            unit = " " + (self.units and self.units.name or '')
+        if (self.result != None):
+            if self.to_integer:
+                result = str(int(self.result))
+            else:
+                result = str(self.result)
+        else:
+            result = ''
+
+        if (self.result != None) and unit and self.units:
+            unit = " " + self.units.name
         else:
             unit = ''
 
-        if normal_range:
-            normal_range = " (" + (self.normal_range or '') + ")"
+        if (self.result != None) and normal_range and self.normal_range:
+            normal_range = " (" + self.normal_range + ")"
         else:
             normal_range = ''
-        
-        if self.result and self.result_text:
-            return str(self.result) + unit + normal_range + \
-                ' (' + self.result_text + ')' 
-        elif self.result:
-            return str(self.result) + unit + normal_range
-        elif self.result_text:
-            return self.result_text
-        else:
-            return ''
 
+        if self.result_text:
+            result_text = ' {' + self.result_text + '}'
+        else:
+            result_text = ''
+
+        return result + unit + normal_range + result_text
+        
     @classmethod
     def __setup__(cls):
         super(GnuHealthTestCritearea, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
+
+    @staticmethod
+    def default_to_integer():
+        return False
 
     @staticmethod
     def default_sequence():

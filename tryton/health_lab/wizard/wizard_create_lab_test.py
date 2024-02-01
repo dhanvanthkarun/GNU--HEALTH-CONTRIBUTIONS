@@ -67,14 +67,15 @@ class CreateLabTestOrder(Wizard):
 
             for critearea in lab_test_order.name.critearea:
                 test_cases.append(('create', [{
-                        'name': critearea.name,
-                        'code': critearea.code,
-                        'sequence': critearea.sequence,
-                        'limits_verified': critearea.limits_verified,
-                        'lower_limit': critearea.lower_limit,
-                        'upper_limit': critearea.upper_limit,
-                        'normal_range': critearea.normal_range,
-                        'units': critearea.units and critearea.units.id,
+                    'name': critearea.name,
+                    'code': critearea.code,
+                    'sequence': critearea.sequence,
+                    'limits_verified': critearea.limits_verified,
+                    'lower_limit': critearea.lower_limit,
+                    'upper_limit': critearea.upper_limit,
+                    'normal_range': critearea.normal_range,
+                    "to_integer": critearea.to_integer,
+                    'units': critearea.units and critearea.units.id,
                     }]))
             test_report_data['critearea'] = test_cases
 
