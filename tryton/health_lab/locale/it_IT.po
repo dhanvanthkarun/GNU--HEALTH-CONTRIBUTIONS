@@ -153,6 +153,10 @@ msgctxt "field:gnuhealth.lab.test_type,active:"
 msgid "Active"
 msgstr "Attivo"
 
+msgctxt "field:gnuhealth.lab.test_type,age_range:"
+msgid "Age range"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.lab.test_type,category:"
 msgid "Category"
@@ -166,9 +170,22 @@ msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr "Casi di prova"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,gender:"
+msgid "Gender"
+msgstr "Sesso"
+
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
 msgstr "Descrizione"
+
+msgctxt "field:gnuhealth.lab.test_type,max_age:"
+msgid "Max age"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab.test_type,min_age:"
+msgid "Min age"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test_type,name:"
 msgid "Test"
@@ -383,6 +400,14 @@ msgstr ""
 msgctxt "help:gnuhealth.lab.test_type,code:"
 msgid "Short name - code for the test"
 msgstr "Nome corto - codice del test"
+
+msgctxt "help:gnuhealth.lab.test_type,max_age:"
+msgid "Max age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test_type,min_age:"
+msgid "Min age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
@@ -1712,6 +1737,16 @@ msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Others"
 msgstr "Altri"
 
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Female"
+msgstr "Femmina"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Male"
+msgstr "Maschio"
+
 msgctxt "selection:gnuhealth.lab.test_type,report_style:"
 msgid "Do not use table"
 msgstr ""
@@ -1782,6 +1817,10 @@ msgstr ""
 
 msgctxt "view:gnuhealth.lab.test.critearea:"
 msgid "Reference Value / Range"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Age range:"
 msgstr ""
 
 #, fuzzy

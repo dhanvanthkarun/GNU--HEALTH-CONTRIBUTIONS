@@ -154,6 +154,11 @@ msgid "Active"
 msgstr "活動的"
 
 #, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,age_range:"
+msgid "Age range"
+msgstr "年齢幅"
+
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test_type,category:"
 msgid "Category"
 msgstr "カテゴリー"
@@ -166,9 +171,22 @@ msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr "検査症例"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,gender:"
+msgid "Gender"
+msgstr "性別"
+
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
 msgstr "詳細"
+
+msgctxt "field:gnuhealth.lab.test_type,max_age:"
+msgid "Max age"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab.test_type,min_age:"
+msgid "Min age"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test_type,name:"
 msgid "Test"
@@ -378,6 +396,14 @@ msgstr "患者にこの検体結果について知らせる。年齢、性別、
 msgctxt "help:gnuhealth.lab.test_type,code:"
 msgid "Short name - code for the test"
 msgstr "短縮名 - 検査コード"
+
+msgctxt "help:gnuhealth.lab.test_type,max_age:"
+msgid "Max age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test_type,min_age:"
+msgid "Min age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
@@ -1698,6 +1724,16 @@ msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Others"
 msgstr "その他"
 
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Female"
+msgstr "女性"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Male"
+msgstr "男性"
+
 msgctxt "selection:gnuhealth.lab.test_type,report_style:"
 msgid "Do not use table"
 msgstr ""
@@ -1773,6 +1809,10 @@ msgstr "参考値 / 範囲"
 msgctxt "view:gnuhealth.lab.test.units:"
 msgid "Test Unit"
 msgstr "検査単位"
+
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Age range:"
+msgstr ""
 
 msgctxt "view:gnuhealth.lab.test_type:"
 msgid "Extra Info"

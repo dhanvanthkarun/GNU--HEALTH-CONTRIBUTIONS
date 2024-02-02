@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-02-01 03:22+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_lab/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
@@ -155,6 +146,11 @@ msgctxt "field:gnuhealth.lab.test_type,active:"
 msgid "Active"
 msgstr "启用"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,age_range:"
+msgid "Age range"
+msgstr "年龄组"
+
 msgctxt "field:gnuhealth.lab.test_type,category:"
 msgid "Category"
 msgstr "类别"
@@ -167,9 +163,22 @@ msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr "检验用例"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,gender:"
+msgid "Gender"
+msgstr "性别"
+
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
 msgstr "描述"
+
+msgctxt "field:gnuhealth.lab.test_type,max_age:"
+msgid "Max age"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab.test_type,min_age:"
+msgid "Min age"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test_type,name:"
 msgid "Test"
@@ -371,6 +380,14 @@ msgstr "警告患者，此分析结果需要结合患者的实际情况来解读
 msgctxt "help:gnuhealth.lab.test_type,code:"
 msgid "Short name - code for the test"
 msgstr "简称 - 检验项目编码"
+
+msgctxt "help:gnuhealth.lab.test_type,max_age:"
+msgid "Max age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test_type,min_age:"
+msgid "Min age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
@@ -1674,6 +1691,16 @@ msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Others"
 msgstr "其它"
 
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Female"
+msgstr "女性"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Male"
+msgstr "男性"
+
 msgctxt "selection:gnuhealth.lab.test_type,report_style:"
 msgid "Do not use table"
 msgstr "不使用表格"
@@ -1741,6 +1768,10 @@ msgstr "是否要创建检验项目？"
 msgctxt "view:gnuhealth.lab.test.critearea:"
 msgid "Reference Value / Range"
 msgstr "参考值 / 范围"
+
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Age range:"
+msgstr ""
 
 msgctxt "view:gnuhealth.lab.test_type:"
 msgid "Extra Info"
