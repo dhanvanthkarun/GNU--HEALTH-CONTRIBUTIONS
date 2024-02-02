@@ -19,6 +19,7 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
 from trytond.modules.health.core import get_health_professional
 
+
 __all__ = [
     'PatientData', 'TestType', 'Lab',
     'GnuHealthLabTestUnits', 'GnuHealthTestCritearea',
@@ -49,6 +50,42 @@ class TestType(ModelSQL, ModelView):
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea', 'test_type_id',
         'Test Cases')
+
+    gender = fields.Selection([
+        (None, ''),
+        ('m', 'Male'),
+        ('f', 'Female'),
+        ], 'Gender')
+
+    @staticmethod
+    def default_gender():
+        return None
+
+    min_age = fields.Float(
+        "Min age",
+        help='Min age year, '
+        '(years x 365 + months x 30.5 + days) / 365')
+
+    @staticmethod
+    def default_min_age():
+        return 0
+
+    max_age = fields.Float(
+        "Max age",
+        help='Max age year, '
+        '(years x 365 + months x 30.5 + days) / 365')
+
+    @staticmethod
+    def default_max_age():
+        return 150
+
+    age_range = fields.Function(
+        fields.Char('Age range'), 'get_age_range')
+    
+    def get_age_range(self, name):
+        age_min = self.min_age or 0
+        age_max = self.max_age or 150
+        return str(age_min) + "-" + str(age_max)
 
     category = fields.Selection([
         (None, ''),
@@ -141,10 +178,12 @@ class Lab(ModelSQL, ModelView):
         help='Sample source type.',
         sort=False, select=True)
     source_type_str = source_type.translated('source_type')
+
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
         help="Patient", select=True)
+
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
@@ -479,10 +518,12 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ], 'Source', 
         help='Sample source type.',
         sort=False, select=True)
+
     patient_id = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
         select=True)
+
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
