@@ -151,6 +151,13 @@ class TestType(ModelSQL, ModelView):
              'The Lab Test code must be unique')
         ]
 
+        cls._order.insert(0, ('category', 'ASC'))
+        cls._order.insert(1, ('name', 'ASC'))
+        cls._order.insert(2, ('gender', 'ASC'))
+        cls._order.insert(3, ('min_age', 'ASC'))
+        cls._order.insert(4, ('max_age', 'ASC'))
+        cls._order.insert(4, ('tags', 'ASC'))
+
     @classmethod
     def check_xml_record(cls, records, values):
         return True
