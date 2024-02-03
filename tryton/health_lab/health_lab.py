@@ -114,7 +114,7 @@ class TestType(ModelSQL, ModelView):
         ('tbl_h_r', 'Table with result column'),
         ('tbl_nh_r', 'Table with result column (no header)'),
         ('no_tbl', 'Do not use table'),
-        ('no_report', 'No report'),
+        ('do_not_show', 'Do not show in report'),
         ], 'Report style', sort=False, select=True)
 
     @staticmethod
