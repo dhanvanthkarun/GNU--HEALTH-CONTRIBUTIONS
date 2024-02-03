@@ -83,9 +83,14 @@ class TestType(ModelSQL, ModelView):
         fields.Char('Age range'), 'get_age_range')
     
     def get_age_range(self, name):
-        age_min = self.min_age or 0
-        age_max = self.max_age or 150
-        return str(age_min) + "-" + str(age_max)
+        min_age = self.min_age
+        max_age = self.max_age
+        if min_age != None and max_age !=None:
+            if min_age == None:
+                min_age =  0
+            if max_age == None:
+                max_age = 150
+            return str(min_age) + "-" + str(max_age)
 
     category = fields.Selection([
         (None, ''),
@@ -109,7 +114,7 @@ class TestType(ModelSQL, ModelView):
         ('tbl_h_r', 'Table with result column'),
         ('tbl_nh_r', 'Table with result column (no header)'),
         ('no_tbl', 'Do not use table'),
-        ('no_report', 'No report'),
+        ('do_not_show', 'Do not show in report'),
         ], 'Report style', sort=False, select=True)
 
     @staticmethod
@@ -145,6 +150,13 @@ class TestType(ModelSQL, ModelView):
             ('code_uniq', Unique(t, t.name),
              'The Lab Test code must be unique')
         ]
+
+        cls._order.insert(0, ('category', 'ASC'))
+        cls._order.insert(1, ('name', 'ASC'))
+        cls._order.insert(2, ('gender', 'ASC'))
+        cls._order.insert(3, ('min_age', 'ASC'))
+        cls._order.insert(4, ('max_age', 'ASC'))
+        cls._order.insert(4, ('tags', 'ASC'))
 
     @classmethod
     def check_xml_record(cls, records, values):
