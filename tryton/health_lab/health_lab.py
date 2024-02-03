@@ -83,9 +83,14 @@ class TestType(ModelSQL, ModelView):
         fields.Char('Age range'), 'get_age_range')
     
     def get_age_range(self, name):
-        age_min = self.min_age or 0
-        age_max = self.max_age or 150
-        return str(age_min) + "-" + str(age_max)
+        min_age = self.min_age
+        max_age = self.max_age
+        if min_age != None and max_age !=None:
+            if min_age == None:
+                min_age =  0
+            if max_age == None:
+                max_age = 150
+            return str(min_age) + "-" + str(max_age)
 
     category = fields.Selection([
         (None, ''),
