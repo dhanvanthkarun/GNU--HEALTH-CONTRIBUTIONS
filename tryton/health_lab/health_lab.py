@@ -19,6 +19,7 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
 from trytond.modules.health.core import get_health_professional
 
+import re
 
 __all__ = [
     'PatientData', 'TestType', 'Lab',
@@ -129,7 +130,7 @@ class TestType(ModelSQL, ModelView):
     # Mostly used in report template file.
     def all_tags(self):
         tags = self.tags.split(':')
-        return tags
+        return tags.sort()
 
     # Mostly used in report template file.
     def has_tag(self, tag):
@@ -173,6 +174,16 @@ class TestType(ModelSQL, ModelView):
         if tests:
             return [(field,) + tuple(clause[1:])]
         return [(cls._rec_name,) + tuple(clause[1:])]
+
+    @classmethod
+    def write(cls, test_types, values):
+        for test_type in test_types:
+            tags = values['tags'].split(':')
+            tags = [re.sub(r'[^\w_@#%]', '', tag) for tag in tags]
+            tags = list(set([tag for tag in tags if tag != '']))
+            tags.sort()
+            values['tags'] = ":".join(tags)
+        return super(TestType, cls).write(test_types, values)
 
 
 class Lab(ModelSQL, ModelView):
