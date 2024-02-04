@@ -229,6 +229,7 @@ class Lab(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Health Prof',
         help="Doctor who requested the test", select=True)
     results = fields.Text('Results')
+    images = fields.One2Many('ir.attachment', 'resource', 'Images')
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
