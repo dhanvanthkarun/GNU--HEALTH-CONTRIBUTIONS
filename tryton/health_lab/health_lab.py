@@ -19,6 +19,7 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
 from trytond.modules.health.core import get_health_professional
 
+import re
 
 __all__ = [
     'PatientData', 'TestType', 'Lab',
@@ -113,6 +114,7 @@ class TestType(ModelSQL, ModelView):
         ('tbl_h_r_nr', 'Table with result and normal_range columns'),
         ('tbl_h_r', 'Table with result column'),
         ('tbl_nh_r', 'Table with result column (no header)'),
+        ('tbl_nh_r_img', 'Table with result column and inline images (no header)'),
         ('no_tbl', 'Do not use table'),
         ('do_not_show', 'Do not show in report'),
         ], 'Report style', sort=False, select=True)
@@ -129,7 +131,7 @@ class TestType(ModelSQL, ModelView):
     # Mostly used in report template file.
     def all_tags(self):
         tags = self.tags.split(':')
-        return tags
+        return tags.sort()
 
     # Mostly used in report template file.
     def has_tag(self, tag):
@@ -173,6 +175,17 @@ class TestType(ModelSQL, ModelView):
         if tests:
             return [(field,) + tuple(clause[1:])]
         return [(cls._rec_name,) + tuple(clause[1:])]
+
+    @classmethod
+    def write(cls, test_types, values):
+        for test_type in test_types:
+            if values.get('tags') != '':
+                tags = values.get('tags', '').split(':')
+                tags = [re.sub(r'[^\w_@#%]', '', tag) for tag in tags]
+                tags = list(set([tag for tag in tags if tag != '']))
+                tags.sort()
+                values['tags'] = ":".join(tags)
+        return super(TestType, cls).write(test_types, values)
 
 
 class Lab(ModelSQL, ModelView):
@@ -218,6 +231,7 @@ class Lab(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Health Prof',
         help="Doctor who requested the test", select=True)
     results = fields.Text('Results')
+    images = fields.One2Many('ir.attachment', 'resource', 'Images')
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
@@ -332,6 +346,21 @@ class Lab(ModelSQL, ModelView):
 
     def is_other_source(self):
         return (self.source_type == 'other_source')
+
+    def find_images(self, critearea_code):
+        pool = Pool()
+        Attachment = pool.get('ir.attachment')
+
+        images = None
+        if critearea_code:
+            ## We will search images which description include string:
+            ## '[[critearea_code]]'.
+            search_str = '%[[' + critearea_code + ']]%'
+            images = Attachment.search(
+                [('resource', '=', self),
+                 ('description', 'like', search_str)])
+
+        return images
         
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
