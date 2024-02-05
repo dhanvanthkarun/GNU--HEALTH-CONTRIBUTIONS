@@ -354,8 +354,8 @@ class Lab(ModelSQL, ModelView):
         images = None
         if critearea_code:
             ## We will search images which description include string:
-            ## '[[critearea_code]]'.
-            search_str = '%[[' + critearea_code + ']]%'
+            ## '<<critearea_code>>'.
+            search_str = '%<<' + critearea_code + '>>%'
             images = Attachment.search(
                 [('resource', '=', self),
                  ('description', 'like', search_str)])
