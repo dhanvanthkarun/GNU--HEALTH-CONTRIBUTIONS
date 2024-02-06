@@ -90,7 +90,7 @@
    <config:config-item config:name="ChartAutoUpdate" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
    <config:config-item config:name="AddParaTableSpacingAtStart" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">5174356</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">5240858</config:config-item>
    <config:config-item config:name="EmbeddedDatabaseName" config:type="string"/>
    <config:config-item config:name="FieldAutoUpdate" config:type="boolean">true</config:config-item>
    <config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
@@ -1364,6 +1364,9 @@
   <style:style style:name="Table7.3" style:family="table-row">
    <style:table-row-properties style:min-row-height="1.836cm"/>
   </style:style>
+  <style:style style:name="Table7.B3" style:family="table-cell">
+   <style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="0.5pt solid #000000"/>
+  </style:style>
   <style:style style:name="Tabla2" style:family="table">
    <style:table-properties style:width="17cm" table:align="margins" style:may-break-between-rows="false" table:border-model="collapsing"/>
   </style:style>
@@ -2307,7 +2310,7 @@
         </draw:text-box>
        </draw:frame></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="Table7.B1" office:value-type="string">
+     <table:table-cell table:style-name="Table7.B3" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;for each=&quot;line in (image.description or &quot;&quot;).split(&apos;\n&apos;)&quot;&gt;</text:placeholder></text:p>
       <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;line&gt;</text:placeholder></text:p>
       <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;/for&gt;</text:placeholder></text:p>
