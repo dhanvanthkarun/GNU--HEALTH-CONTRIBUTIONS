@@ -478,7 +478,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
             normal_range = ''
 
         if (self.result != None) and self.result_text:
-            result_text = ' {' + self.result_text + '}'
+            result_text = '\n{' + self.result_text + '}'
         elif self.result_text:
             result_text = self.result_text
         else:
