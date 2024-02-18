@@ -232,6 +232,12 @@ class Lab(ModelSQL, ModelView):
         help="Doctor who requested the test", select=True)
     results = fields.Text('Results')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
+
+    ## Mostly used in report template.
+    def has_image_comments(self):
+        return (True in [image.description != '' and 
+                         image.description != None for image in self.images])
+
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
