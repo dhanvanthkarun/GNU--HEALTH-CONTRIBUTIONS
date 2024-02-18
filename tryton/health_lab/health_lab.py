@@ -242,6 +242,12 @@ class Lab(ModelSQL, ModelView):
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
         'gnuhealth_lab_id', 'Lab Test Critearea')
+
+    ## Mostly used in report template.
+    def has_critearea_remarks(self):
+        return (True in [c.remarks != '' and
+                         c.remarks != None for c in self.critearea])
+
     date_requested = fields.DateTime(
         'Request Date', required=True, select=True)
     date_analysis = fields.DateTime('Analysis Date', select=True)
