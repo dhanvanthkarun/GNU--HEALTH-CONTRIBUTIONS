@@ -235,8 +235,9 @@ class Lab(ModelSQL, ModelView):
 
     ## Mostly used in report template.
     def has_image_comments(self):
-        return (True in [image.description != '' and 
-                         image.description != None for image in self.images])
+        return (True in [img.description != '' and
+                         img.description != 'From GNU Health camera' and
+                         img.description != None for img in self.images])
 
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
