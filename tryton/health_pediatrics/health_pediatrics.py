@@ -49,8 +49,8 @@ class Newborn(ModelSQL, ModelView):
     # photo_crop method is used in report template, for we can not
     # find a way to keep the original aspect ratio in odt template at
     # the moment.
-    @classmethod
-    def photo_crop(cls, photo, ratio):
+    @staticmethod
+    def photo_crop(photo, ratio):
         return image_crop_to_ratio(Image, photo, ratio)
 
     # Sex / Gender at birth.

@@ -8,12 +8,16 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tree>
-    <button name="checked_in" help="The patient has arrived and is waiting" string="Checked in"/>
+    <field name="state" expand="1"/>
+    <button name="check_in" 
+            help="The patient has arrived and is waiting, click this button will switch appointment to 'checked_in' state."  
+            string="Check In"/>
+    <button name="miss_out" 
+            help="The patient did not show up, click this button will switch appointment to 'no_show' state." 
+            string="Miss Out"/>
+    <field name="patient" expand="1"/>
     <field name="appointment_date" string="Date" widget="date"/>
     <field name="appointment_date" string="Time" widget="time"/>
-    <field name="patient" expand="1"/>
-    <button name="no_show" help="The patient did not show up" string="No show"/>
-    <field name="state" expand="1"/>
     <field name="visit_type" expand="1"/>
     <field name="appointment_type" expand="1"/>
     <field name="urgency" expand="1"/>

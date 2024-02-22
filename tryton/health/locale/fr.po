@@ -544,6 +544,11 @@ msgctxt "field:gnuhealth.healthprofessional,institution:"
 msgid "Institution"
 msgstr "Établissement"
 
+#, fuzzy
+msgctxt "field:gnuhealth.healthprofessional,institution_unit:"
+msgid "Unit"
+msgstr "Unité"
+
 msgctxt "field:gnuhealth.healthprofessional,main_specialty:"
 msgid "Main Specialty"
 msgstr "Spécialité principale"
@@ -1205,6 +1210,10 @@ msgstr "Actif"
 msgctxt "field:gnuhealth.patient,age:"
 msgid "Age"
 msgstr "Âge"
+
+msgctxt "field:gnuhealth.patient,age_num:"
+msgid "Age number"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient,appointments:"
 msgid "Appointments"
@@ -3143,6 +3152,10 @@ msgctxt "help:gnuhealth.pathology.group,name:"
 msgid "Group name"
 msgstr "Nom du groupe"
 
+msgctxt "help:gnuhealth.patient,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient,biological_sex:"
 msgid ""
 "Biological sex. By defaults it takes the value from the neonatal information"
@@ -3734,7 +3747,7 @@ msgctxt ""
 "help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid ""
 "Other Alternative ID type, user can customize an ID type when 'ID type' = "
-"'other', "
+"'other'."
 msgstr ""
 
 msgctxt "help:gnuhealth.person_name,family:"
@@ -4615,7 +4628,7 @@ msgid "Wafer"
 msgstr "Cachet"
 
 msgctxt "model:gnuhealth.drug.form,name:WIP"
-msgid "Wipe "
+msgid "Wipe"
 msgstr "Lingette "
 
 msgctxt "model:gnuhealth.drug.route,name:"
@@ -4623,71 +4636,71 @@ msgid "Drug Administration Route"
 msgstr "Voie d'administration du médicament"
 
 msgctxt "model:gnuhealth.drug.route,name:route_1"
-msgid "Apply Externally "
+msgid "Apply Externally"
 msgstr "Application externe "
 
 msgctxt "model:gnuhealth.drug.route,name:route_10"
-msgid "Intrabursal "
-msgstr "Intrabursal "
+msgid "Intrabursal"
+msgstr "Intrabursal"
 
 msgctxt "model:gnuhealth.drug.route,name:route_11"
-msgid "Intracardiac "
+msgid "Intracardiac"
 msgstr "Intracardiaque "
 
 msgctxt "model:gnuhealth.drug.route,name:route_12"
-msgid "Intracervical (uterus) "
+msgid "Intracervical (uterus)"
 msgstr "Intracervical (utérus) "
 
 msgctxt "model:gnuhealth.drug.route,name:route_13"
-msgid "Intradermal "
+msgid "Intradermal"
 msgstr "Intradermique "
 
 msgctxt "model:gnuhealth.drug.route,name:route_14"
-msgid "Inhalation "
-msgstr "Inhalation "
+msgid "Inhalation"
+msgstr "Inhalation"
 
 msgctxt "model:gnuhealth.drug.route,name:route_15"
-msgid "Intrahepatic Artery "
+msgid "Intrahepatic Artery"
 msgstr "Artère intrahépatique "
 
 msgctxt "model:gnuhealth.drug.route,name:route_16"
-msgid "Intramuscular "
+msgid "Intramuscular"
 msgstr "Intramusculaire "
 
 msgctxt "model:gnuhealth.drug.route,name:route_17"
-msgid "Intranasal "
+msgid "Intranasal"
 msgstr "Intranasale "
 
 msgctxt "model:gnuhealth.drug.route,name:route_18"
-msgid "Intraocular "
+msgid "Intraocular"
 msgstr "Intraoculaire "
 
 msgctxt "model:gnuhealth.drug.route,name:route_19"
-msgid "Intraperitoneal "
+msgid "Intraperitoneal"
 msgstr "Intrapéritonéal "
 
 msgctxt "model:gnuhealth.drug.route,name:route_2"
-msgid "Buccal "
+msgid "Buccal"
 msgstr "Buccale "
 
 msgctxt "model:gnuhealth.drug.route,name:route_20"
-msgid "Intrasynovial "
+msgid "Intrasynovial"
 msgstr "Intrasynoviale "
 
 msgctxt "model:gnuhealth.drug.route,name:route_21"
-msgid "Intrathecal "
+msgid "Intrathecal"
 msgstr "Intrathécale "
 
 msgctxt "model:gnuhealth.drug.route,name:route_22"
-msgid "Intrauterine "
+msgid "Intrauterine"
 msgstr "Intra-utérine "
 
 msgctxt "model:gnuhealth.drug.route,name:route_23"
-msgid "Intravenous "
+msgid "Intravenous"
 msgstr "Intraveineuse "
 
 msgctxt "model:gnuhealth.drug.route,name:route_24"
-msgid "Mouth/Throat "
+msgid "Mouth/Throat"
 msgstr "Bouche/Gorge "
 
 msgctxt "model:gnuhealth.drug.route,name:route_25"
@@ -4711,7 +4724,7 @@ msgid "Nasotrachial Tube"
 msgstr "Tube nasotrachéale"
 
 msgctxt "model:gnuhealth.drug.route,name:route_3"
-msgid "Dental "
+msgid "Dental"
 msgstr "Dentaire "
 
 msgctxt "model:gnuhealth.drug.route,name:route_30"
@@ -4755,7 +4768,7 @@ msgid "Sublingual"
 msgstr "Sublinguale"
 
 msgctxt "model:gnuhealth.drug.route,name:route_4"
-msgid "Epidural "
+msgid "Epidural"
 msgstr "Épidurale "
 
 msgctxt "model:gnuhealth.drug.route,name:route_40"
@@ -4795,19 +4808,19 @@ msgid "Endotrachial Tube"
 msgstr "Sonde endotrachéale"
 
 msgctxt "model:gnuhealth.drug.route,name:route_6"
-msgid "Gastrostomy Tube "
+msgid "Gastrostomy Tube"
 msgstr "Sonde de gastrostomie "
 
 msgctxt "model:gnuhealth.drug.route,name:route_7"
-msgid "GU Irrigant "
-msgstr "GU Irrigant "
+msgid "GU Irrigant"
+msgstr "GU Irrigant"
 
 msgctxt "model:gnuhealth.drug.route,name:route_8"
-msgid "Immerse (Soak) Body Part "
+msgid "Immerse (Soak) Body Part"
 msgstr "Partie immergée du corps (trempée) "
 
 msgctxt "model:gnuhealth.drug.route,name:route_9"
-msgid "Intra-arterial "
+msgid "Intra-arterial"
 msgstr "Intra-artérielle "
 
 msgctxt "model:gnuhealth.du,name:"
@@ -5550,7 +5563,7 @@ msgstr "Flûtiste"
 
 msgctxt "model:gnuhealth.occupation,name:occ218"
 msgid "Foreman"
-msgstr "Chef d'équipe"
+msgstr "Chefd'équipe"
 
 msgctxt "model:gnuhealth.occupation,name:occ219"
 msgid "Forensic scientist"
@@ -5941,7 +5954,7 @@ msgid "Laborer"
 msgstr "Ouvrier"
 
 msgctxt "model:gnuhealth.occupation,name:occ307"
-msgid "Landlord "
+msgid "Landlord"
 msgstr "Juge "
 
 msgctxt "model:gnuhealth.occupation,name:occ308"
@@ -6113,7 +6126,7 @@ msgid "Mason"
 msgstr "Maçon"
 
 msgctxt "model:gnuhealth.occupation,name:occ346"
-msgid "Massage therapist "
+msgid "Massage therapist"
 msgstr "Massothérapeute "
 
 msgctxt "model:gnuhealth.occupation,name:occ347"
@@ -6201,7 +6214,7 @@ msgid "Midwife"
 msgstr "Sage-femme"
 
 msgctxt "model:gnuhealth.occupation,name:occ366"
-msgid "Milkman "
+msgid "Milkman"
 msgstr "Laitier "
 
 msgctxt "model:gnuhealth.occupation,name:occ367"
@@ -6337,8 +6350,8 @@ msgid "Astronaut"
 msgstr "Astronaute"
 
 msgctxt "model:gnuhealth.occupation,name:occ40"
-msgid "Chef "
-msgstr "Chef de cuisine "
+msgid "Chef"
+msgstr "Chefde cuisine "
 
 msgctxt "model:gnuhealth.occupation,name:occ400"
 msgid "Nursemaid"
@@ -6658,7 +6671,7 @@ msgstr "Développeur"
 
 msgctxt "model:gnuhealth.occupation,name:occ472"
 msgid "Project Manager"
-msgstr "Chef de projet"
+msgstr "Chefde projet"
 
 msgctxt "model:gnuhealth.occupation,name:occ473"
 msgid "Proofreader"
@@ -6946,7 +6959,7 @@ msgstr "Ingénieur civil"
 
 msgctxt "model:gnuhealth.occupation,name:occ540"
 msgid "Software project manager"
-msgstr "Chef de projet logiciel"
+msgstr "Chefde projet logiciel"
 
 msgctxt "model:gnuhealth.occupation,name:occ541"
 msgid "Soil scientist"
@@ -7450,7 +7463,7 @@ msgstr "Concierge"
 
 msgctxt "model:gnuhealth.occupation,name:occ71"
 msgid "Conductor (music)"
-msgstr "Chef d'orchestre"
+msgstr "Chefd'orchestre"
 
 msgctxt "model:gnuhealth.occupation,name:occ72"
 msgid "Constable"
@@ -7462,7 +7475,7 @@ msgstr "Ingénieur en construction"
 
 msgctxt "model:gnuhealth.occupation,name:occ74"
 msgid "Construction manager"
-msgstr "Chef de chantier"
+msgstr "Chefde chantier"
 
 msgctxt "model:gnuhealth.occupation,name:occ75"
 msgid "Construction worker"
@@ -7545,7 +7558,7 @@ msgid "CPA (Certified Public Accountant)"
 msgstr "Expert-comptable"
 
 msgctxt "model:gnuhealth.occupation,name:occ93"
-msgid "Craftsman "
+msgid "Craftsman"
 msgstr "Artisan "
 
 msgctxt "model:gnuhealth.occupation,name:occ94"
@@ -7609,7 +7622,7 @@ msgid "Renal, Urologic and Male reproductive disorders"
 msgstr ""
 
 msgctxt "model:gnuhealth.pathology.group,desc:HEART"
-msgid "Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias.. "
+msgid "Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias ..."
 msgstr ""
 
 msgctxt "model:gnuhealth.pathology.group,desc:INFECTIOUS"
@@ -8583,15 +8596,6 @@ msgstr ""
 msgctxt "model:ir.message,text:msg_yes_str"
 msgid "Yes"
 msgstr "Oui"
-
-msgctxt "model:ir.model.button,string:appoinntment_checked_in"
-msgid "Check In"
-msgstr ""
-
-#, fuzzy
-msgctxt "model:ir.model.button,string:appoinntment_no_show"
-msgid "No show"
-msgstr "Ne s'est pas présenté"
 
 #, fuzzy
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
@@ -11647,8 +11651,8 @@ msgid "Appointments Report"
 msgstr "Rapport de rendez-vous"
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "Checked in"
-msgstr "Arrivé(e)"
+msgid "Check In"
+msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Date"
@@ -11659,16 +11663,20 @@ msgid "Information"
 msgstr "Information"
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "No show"
-msgstr "Ne s'est pas présenté"
+msgid "Miss Out"
+msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "The patient did not show up"
-msgstr "Le patient ne s'est pas présenté"
+msgid ""
+"The patient did not show up, click this button will switch appointment to "
+"'no_show' state."
+msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "The patient has arrived and is waiting"
-msgstr "Le patient est arrivé et attend"
+msgid ""
+"The patient has arrived and is waiting, click this button will switch "
+"appointment to 'checked_in' state."
+msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Time"

@@ -96,7 +96,7 @@ class PatientRounding(ModelSQL, ModelView):
         "water, alarm, ... are not in easy reach", states=STATES)
     pump = fields.Boolean(
         'Pumps', help="Check if there is any issues with "
-        "the pumps - IVs ... ", states=STATES)
+        "the pumps - IVs ...", states=STATES)
     personal_needs = fields.Boolean(
         'Personal needs', help="Check if the "
         "patient requests anything", states=STATES)

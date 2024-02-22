@@ -19,7 +19,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <label name="date_requested"/>
             <field name="date_requested"/>
             <label name="source_type"/>
-            <group id="lab_sample_source" colspan="1">
+            <group id="lab_sample_source" colspan="1" col="0">
               <field name="source_type"/>
               <field name="patient"/>
               <field name="other_source"/>
@@ -41,6 +41,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <newline/>
             <field name="critearea" colspan="4" view_ids="health_lab.test_critearea_view_tree_lab,health_lab.test_critearea_view_form_lab"/>
         </page>
+        <page string="Images" id="lab_images">
+          <field name="images"/>
+        </page>
         <page string="Extra Info" id="lab_extra_info">
             <group id="lab_result_extra_info" colspan="4">
                 <separator colspan="4" string="Notes" id="separator_notes"/>
@@ -48,7 +51,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <newline/>
                 <separator colspan="4" string="Diagnosis" id="separator_diagnosis"/>
                 <field name="diagnosis"/>
-        </group>
+            </group>
         </page>
     </notebook>
 </form>

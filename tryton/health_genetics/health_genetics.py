@@ -249,7 +249,7 @@ class GeneVariant(ModelSQL, ModelView):
     variant = fields.Char(
         "FTId", help="Variant Feature Identifier (FTId)",
         required=True, select=True)
-    protein = fields.Char('Protein ', help='Uniprot Protein ID')
+    protein = fields.Char('Protein', help='Uniprot Protein ID')
     aa_change = fields.Char('AA Change', help="Amino acid change")
 
     dbsnp = fields.Char('dbSNP', help='dbSNP ID')

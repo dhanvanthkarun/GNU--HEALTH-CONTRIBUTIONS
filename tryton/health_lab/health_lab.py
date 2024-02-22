@@ -19,6 +19,8 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
 from trytond.modules.health.core import get_health_professional
 
+import re
+
 __all__ = [
     'PatientData', 'TestType', 'Lab',
     'GnuHealthLabTestUnits', 'GnuHealthTestCritearea',
@@ -50,6 +52,92 @@ class TestType(ModelSQL, ModelView):
         'gnuhealth.lab.test.critearea', 'test_type_id',
         'Test Cases')
 
+    gender = fields.Selection([
+        (None, ''),
+        ('m', 'Male'),
+        ('f', 'Female'),
+        ], 'Gender')
+
+    @staticmethod
+    def default_gender():
+        return None
+
+    min_age = fields.Float(
+        "Min age",
+        help='Min age year, '
+        '(years x 365 + months x 30.5 + days) / 365')
+
+    @staticmethod
+    def default_min_age():
+        return 0
+
+    max_age = fields.Float(
+        "Max age",
+        help='Max age year, '
+        '(years x 365 + months x 30.5 + days) / 365')
+
+    @staticmethod
+    def default_max_age():
+        return 150
+
+    age_range = fields.Function(
+        fields.Char('Age range'), 'get_age_range')
+    
+    def get_age_range(self, name):
+        min_age = self.min_age
+        max_age = self.max_age
+        if min_age != None and max_age !=None:
+            if min_age == None:
+                min_age =  0
+            if max_age == None:
+                max_age = 150
+            return str(min_age) + "-" + str(max_age)
+
+    category = fields.Selection([
+        (None, ''),
+        ('hematology', 'Hematology Testing'),
+        ('fluid_excreta', 'Body Fluid and Excreta Examination'),
+        ('biochemical', 'Biochemical Testing'),
+        ('immunological', 'Immunological Testing'),
+        ('microbiological', 'Microbiological Testing'),
+        ('molecular_biology', 'Molecular Biology Testing'),
+        ('chromosome_genetic', 'Chromosome and Genetic Disease Detection'),
+        ('others', 'Others'),
+        ], 'Category', sort=False, select=True)
+
+    @staticmethod
+    def default_category():
+        return None
+
+    report_style = fields.Selection([
+        ('tbl_h_r_u_nr', 'Table with result, unit and normal_range columns'),
+        ('tbl_h_r_nr', 'Table with result and normal_range columns'),
+        ('tbl_h_r', 'Table with result column'),
+        ('tbl_nh_r', 'Table with result column (no header)'),
+        ('tbl_nh_r_img', 'Table with result column and inline images (no header)'),
+        ('no_tbl', 'Do not use table'),
+        ('do_not_show', 'Do not show in report'),
+        ], 'Report style', sort=False, select=True)
+
+    @staticmethod
+    def default_report_style():
+        return 'tbl_h_r_nr'
+
+    tags = fields.Char(
+        'Tags', help='Tags of test type, which can be used in '
+        'if directive of report template file, '
+        'tags use letters and numbers, separated by colon.')
+
+    # Mostly used in report template file.
+    def all_tags(self):
+        tags = self.tags.split(':')
+        return tags.sort()
+
+    # Mostly used in report template file.
+    def has_tag(self, tag):
+        tags = self.tags.split(':')
+        return (tag in tags)
+
     active = fields.Boolean('Active', select=True)
 
     @staticmethod
@@ -64,6 +152,13 @@ class TestType(ModelSQL, ModelView):
             ('code_uniq', Unique(t, t.name),
              'The Lab Test code must be unique')
         ]
+
+        cls._order.insert(0, ('category', 'ASC'))
+        cls._order.insert(1, ('name', 'ASC'))
+        cls._order.insert(2, ('gender', 'ASC'))
+        cls._order.insert(3, ('min_age', 'ASC'))
+        cls._order.insert(4, ('max_age', 'ASC'))
+        cls._order.insert(4, ('tags', 'ASC'))
 
     @classmethod
     def check_xml_record(cls, records, values):
@@ -81,6 +176,17 @@ class TestType(ModelSQL, ModelView):
             return [(field,) + tuple(clause[1:])]
         return [(cls._rec_name,) + tuple(clause[1:])]
 
+    @classmethod
+    def write(cls, test_types, values):
+        for test_type in test_types:
+            if values.get('tags') != '':
+                tags = values.get('tags', '').split(':')
+                tags = [re.sub(r'[^\w_@#%]', '', tag) for tag in tags]
+                tags = list(set([tag for tag in tags if tag != '']))
+                tags.sort()
+                values['tags'] = ":".join(tags)
+        return super(TestType, cls).write(test_types, values)
+
 
 class Lab(ModelSQL, ModelView):
     'Patient Lab Test Results'
@@ -97,10 +203,12 @@ class Lab(ModelSQL, ModelView):
         help='Sample source type.',
         sort=False, select=True)
     source_type_str = source_type.translated('source_type')
+
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
         help="Patient", select=True)
+
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")
@@ -123,10 +231,24 @@ class Lab(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Health Prof',
         help="Doctor who requested the test", select=True)
     results = fields.Text('Results')
+    images = fields.One2Many('ir.attachment', 'resource', 'Images')
+
+    ## Mostly used in report template.
+    def has_image_comments(self):
+        return (True in [img.description != '' and
+                         img.description != 'From GNU Health camera' and
+                         img.description != None for img in self.images])
+
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
         'gnuhealth_lab_id', 'Lab Test Critearea')
+
+    ## Mostly used in report template.
+    def has_critearea_remarks(self):
+        return (True in [c.remarks != '' and
+                         c.remarks != None for c in self.critearea])
+
     date_requested = fields.DateTime(
         'Request Date', required=True, select=True)
     date_analysis = fields.DateTime('Analysis Date', select=True)
@@ -149,7 +271,7 @@ class Lab(ModelSQL, ModelView):
                     res_text = analyte.result_text
                 if analyte.result:
                     res = str(analyte.result) + \
-                        " (" + analyte.units.name + ")  "
+                        " (" + (analyte.units and analyte.units.name or '') + ")  "
                 summ = summ + analyte.rec_name + "  " + \
                     res + res_text + "\n"
         return summ
@@ -222,9 +344,11 @@ class Lab(ModelSQL, ModelView):
                 'name': critearea.name,
                 'code': critearea.code,
                 'sequence': critearea.sequence,
+                'limits_verified': critearea.limits_verified,
                 'lower_limit': critearea.lower_limit,
                 'upper_limit': critearea.upper_limit,
                 'normal_range': critearea.normal_range,
+                "to_integer": critearea.to_integer,
                 'units': critearea.units and critearea.units.id})
 
         if test_cases:
@@ -235,14 +359,32 @@ class Lab(ModelSQL, ModelView):
 
     def is_other_source(self):
         return (self.source_type == 'other_source')
+
+    def find_images(self, critearea_code):
+        pool = Pool()
+        Attachment = pool.get('ir.attachment')
+
+        images = None
+        if critearea_code:
+            ## We will search images which description include string:
+            ## '<<critearea_code>>'.
+            search_str = '%<<' + critearea_code + '>>%'
+            images = Attachment.search(
+                [('resource', '=', self),
+                 ('description', 'like', search_str)])
+
+        return images
         
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
     'Lab Test Units'
     __name__ = 'gnuhealth.lab.test.units'
 
-    name = fields.Char('Unit', select=True)
-    code = fields.Char('Code', select=True)
+    name = fields.Char(
+        'Unit', select=True, translate=True)
+
+    code = fields.Char(
+        'Code', select=True, translate=False)
 
     @classmethod
     def __setup__(cls):
@@ -269,13 +411,25 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         'Excluded', help='Select this option when'
         ' this analyte is excluded from the test')
     result = fields.Float('Value')
-    result_text = fields.Char(
-        'Result - Text', help='Non-numeric results. For '
+
+    to_integer = fields.Boolean(
+        'To integer',
+        help='Convert result value to interger in report.')
+
+    result_text = fields.Text(
+        'Result - Text',
+        help='Non-numeric results. For '
         'example qualitative values, morphological, colors ...')
-    remarks = fields.Char('Remarks')
-    normal_range = fields.Text('Reference')
+    remarks = fields.Text('Remarks')
+    normal_range = fields.Text('Reference', translate=True)
     lower_limit = fields.Float('Lower Limit')
     upper_limit = fields.Float('Upper Limit')
+    limits_verified = fields.Boolean(
+        'Limits verified',
+        help='The upper and lower limits have been verified again, '
+        'sometimes limits will depend on other indicators of the patient, '
+        'such as: age, pregnancy status, etc, so it is very importent to '
+        'verify them, because warning status depend on limits values.')
     warning = fields.Boolean(
         'Warn', help='Warns the patient about this '
         ' analyte result'
@@ -316,10 +470,43 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         if (self.warning):
             return 'gnuhealth-warning'
 
+    # Use by template
+    def get_report_result(self, unit=True, normal_range=True):
+        if (self.result != None):
+            if self.to_integer:
+                result = str(int(self.result))
+            else:
+                result = str(self.result)
+        else:
+            result = ''
+
+        if (self.result != None) and unit and self.units:
+            unit = " " + self.units.name
+        else:
+            unit = ''
+
+        if (self.result != None) and normal_range and self.normal_range:
+            normal_range = " (" + self.normal_range + ")"
+        else:
+            normal_range = ''
+
+        if (self.result != None) and self.result_text:
+            result_text = '\n{' + self.result_text + '}'
+        elif self.result_text:
+            result_text = self.result_text
+        else:
+            result_text = ''
+
+        return result + unit + normal_range + result_text
+        
     @classmethod
     def __setup__(cls):
         super(GnuHealthTestCritearea, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
+
+    @staticmethod
+    def default_to_integer():
+        return False
 
     @staticmethod
     def default_sequence():
@@ -329,16 +516,37 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     def default_excluded():
         return False
 
+    @staticmethod
+    def default_limits_verified():
+        return True
+
     @fields.depends('result', 'lower_limit', 'upper_limit')
     def on_change_with_warning(self):
-        if (self.result and self.lower_limit):
-            if (self.result < self.lower_limit):
-                return True
+        normal = True
 
-        if (self.result and self.upper_limit):
-            if (self.result > self.upper_limit):
-                return True
+        ## Note: do not use 'if (self.result)' code style in here, for
+        ## in python: 0.0 = False
 
+        ## lower_limit < x < upper_limit
+        if (self.result != None 
+            and self.lower_limit != None
+            and self.upper_limit != None):
+            normal = (self.lower_limit < self.result < self.upper_limit)
+        ## lower_limit < x, At least lower_limit
+        elif (self.result != None 
+              and self.lower_limit != None 
+              and self.upper_limit == None):
+            normal = (self.lower_limit < self.result)
+        ## x < upper_limit, Up to upper_limit
+        elif (self.result != None 
+              and self.lower_limit == None
+              and self.upper_limit != None):
+            normal = (self.result < self.upper_limit)
+        else:
+            normal = True
+
+        return (not normal)
+        
     @classmethod
     def check_xml_record(cls, records, values):
         return True
@@ -364,10 +572,12 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ], 'Source', 
         help='Sample source type.',
         sort=False, select=True)
+
     patient_id = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
         select=True)
+
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
         help="Other sample source.")

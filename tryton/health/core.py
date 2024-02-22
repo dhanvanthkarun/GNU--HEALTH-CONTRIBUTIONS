@@ -139,6 +139,32 @@ def format_years_months_days(years=None, months=None, days=None):
         day_str=isinstance(days, int) and day_str or '\u200d')
 
 
+def get_age_for_comparison(age, type='y'):
+    """ Get a age number used to conparison age."""
+    (y, m, d) = parse_compute_age(age)
+    
+    if not isinstance(y, int):
+        y = 0
+
+    if not isinstance(m, int):
+        m = 0
+
+    if not isinstance(d, int):
+        d = 0
+
+    days = y * 365 + m * 30.5 + d
+    months = days / 30.5
+    years = days / 365
+
+    if type == 'y':
+        return years
+    elif type == 'm':
+        return months
+    elif type =='d':
+        return days
+    else:
+        return years
+
 def parse_compute_age(age):
     """ Parse age returned by compute_age_from_dates function."""
     if isinstance(age, str):

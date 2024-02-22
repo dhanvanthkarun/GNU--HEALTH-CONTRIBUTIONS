@@ -1,6 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-02-11 19:57+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
+"health_federation/sv/>\n"
+"Language: sv\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.federation.config,enabled:"
 msgid "Enabled"
@@ -12,17 +21,16 @@ msgstr ""
 
 msgctxt "field:gnuhealth.federation.config,password:"
 msgid "Password"
-msgstr ""
+msgstr "Lösenord"
 
 msgctxt "field:gnuhealth.federation.config,port:"
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 msgctxt "field:gnuhealth.federation.config,ssl:"
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.config,user:"
 msgid "User"
 msgstr "Användare"
@@ -31,15 +39,15 @@ msgctxt "field:gnuhealth.federation.config,verify_ssl:"
 msgid "Verify SSL cert"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.federation.object,enabled:"
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiverat"
 
 msgctxt "field:gnuhealth.federation.object,fields:"
 msgid "Fields"
-msgstr ""
+msgstr "Fält"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.object,model:"
 msgid "Model"
 msgstr "Modell"
@@ -50,7 +58,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.federation.queue,args_preview:"
 msgid "Preview"
-msgstr ""
+msgstr "Förhandsgranska"
 
 msgctxt "field:gnuhealth.federation.queue,federation_locator:"
 msgid "Fed ID"
@@ -58,9 +66,8 @@ msgstr ""
 
 msgctxt "field:gnuhealth.federation.queue,method:"
 msgid "Method"
-msgstr ""
+msgstr "Metod"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,model:"
 msgid "Model"
 msgstr "Modell"
@@ -71,16 +78,15 @@ msgstr ""
 
 msgctxt "field:gnuhealth.federation.queue,node:"
 msgid "Node"
-msgstr ""
+msgstr "Nod"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,state:"
 msgid "Status"
 msgstr "Status"
 
 msgctxt "field:gnuhealth.federation.queue,time_stamp:"
 msgid "Timestamp"
-msgstr ""
+msgstr "Tidsstämpel"
 
 msgctxt "field:gnuhealth.federation.queue,url_suffix:"
 msgid "URL suffix"
@@ -112,7 +118,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.federation.config,ssl:"
 msgid "Use encrypted communication via SSL"
-msgstr ""
+msgstr "Använd krypterad kommunikation via SSL"
 
 msgctxt "help:gnuhealth.federation.config,user:"
 msgid "Admin associated to this institution"
@@ -123,6 +129,8 @@ msgid ""
 "Check this option if your certificate has been emitted by a CA authority. If"
 " it is a self-signed certifiate leave it unchecked"
 msgstr ""
+"Markera det här alternativet om ditt certifikat har utfärdats av en CA-"
+"myndighet. Lämna det o-markerat om det är ett självsignerat certifikat"
 
 msgctxt "help:gnuhealth.federation.object,enabled:"
 msgid "Check if the model is active to participate on the Federation"
@@ -136,11 +144,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.federation.object,model:"
 msgid "Local Model"
-msgstr ""
+msgstr "Lokal modell"
 
 msgctxt "help:gnuhealth.federation.queue,args:"
 msgid "Arguments"
-msgstr ""
+msgstr "Argument"
 
 msgctxt "help:gnuhealth.federation.queue,federation_locator:"
 msgid ""
@@ -207,7 +215,7 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_failed"
 msgid "Failed"
-msgstr ""
+msgstr "Misslyckades"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_queued"
@@ -241,7 +249,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "DELETE"
-msgstr ""
+msgstr "RADERA"
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "GET"
@@ -257,7 +265,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.federation.queue,state:"
 msgid "Failed"
-msgstr ""
+msgstr "Misslyckades"
 
 msgctxt "selection:gnuhealth.federation.queue,state:"
 msgid "Queued"
@@ -281,7 +289,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Arguments"
-msgstr ""
+msgstr "Argument"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send"

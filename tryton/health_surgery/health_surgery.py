@@ -375,7 +375,7 @@ class Surgery(ModelSQL, ModelView):
         ('grade2', 'Grade II'),
         ('grade3', 'Grade III'),
         ('grade3a', 'Grade IIIa'),
-        ('grade3a', 'Grade IIIa'),
+        ('grade3b', 'Grade IIIb'),
         ('grade4', 'Grade IV'),
         ('grade4a', 'Grade IVa'),
         ('grade4b', 'Grade IVb'),
@@ -991,7 +991,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         ('ps2', 'PS 2 : Patients with mild systemic disease'),
         ('ps3', 'PS 3 : Patients with severe systemic disease'),
         ('ps4', 'PS 4 : Patients with severe systemic disease that is'
-            ' a constant threat to life '),
+            ' a constant threat to life'),
         ('ps5', 'PS 5 : Moribund patients who are not expected to'
             ' survive without the operation'),
         ('ps6', 'PS 6 : A declared brain-dead patient who organs are'

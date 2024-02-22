@@ -51,6 +51,7 @@ from .exceptions import (
 
 from .core import (get_yes_or_no_string, get_institution,
                    compute_age_from_dates,
+                   get_age_for_comparison,
                    format_years_months_days,
                    estimated_date_from_years,
                    get_health_professional,
@@ -1902,6 +1903,11 @@ class HealthProfessional(ModelSQL, ModelView):
         'gnuhealth.institution', 'Institution',
         help='Main institution where she/he works')
 
+    institution_unit = fields.Many2One(
+        'gnuhealth.hospital.unit', 'Unit',
+        domain=[('institution', '=', Eval('institution'))],
+        depends=['institution'])
+
     code = fields.Char('LICENSE ID', help='License ID')
 
     specialties = fields.One2Many(
@@ -2753,7 +2759,7 @@ class AlternativePersonID (ModelSQL, ModelView):
         'Other ID type',
         help="Other Alternative ID type, "
         "user can customize an ID type "
-        "when 'ID type' = 'other', "
+        "when 'ID type' = 'other'."
     )
 
     expiration_date = fields.Date('Expiration date')
@@ -3044,8 +3050,8 @@ class PatientData(ModelSQL, ModelView):
     # photo_crop method is used in report template, for we can not
     # find a way to keep the original aspect ratio in odt template at
     # the moment.
-    @classmethod
-    def photo_crop(cls, photo, ratio):
+    @staticmethod
+    def photo_crop(photo, ratio):
         return image_crop_to_ratio(Image, photo, ratio)
 
     # Removed in 2.0 . DOB It's now a functional field
@@ -3055,6 +3061,14 @@ class PatientData(ModelSQL, ModelView):
     dob = fields.Function(fields.Date('DoB'), 'get_patient_dob')
 
     age = fields.Function(fields.Char('Age'), 'get_patient_age')
+
+    age_num = fields.Function(
+        fields.Float(
+            'Age number',
+            digits=(3, 3),
+            help='Age year number, '
+            '(years x 365 + months x 30.5 + days) / 365'),
+        'get_patient_age_num')
 
     gender = fields.Function(fields.Selection([
         (None, ''),
@@ -3244,6 +3258,9 @@ class PatientData(ModelSQL, ModelView):
 
     def get_patient_age(self, name):
         return self.name.age
+
+    def get_patient_age_num(self, name):
+        return get_age_for_comparison(self.age, type='y')
 
     def get_childbearing_age(self, name):
         return compute_age_from_dates(
@@ -3621,22 +3638,22 @@ class Appointment(ModelSQL, ModelView):
         cls._order.insert(0, ('appointment_date', 'DESC'))
 
         cls._buttons.update({
-            'checked_in': {'invisible': Not(Equal(Eval('state'), 'confirmed'))}
-            })
+            'check_in': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed'))}})
 
         cls._buttons.update({
-            'no_show': {'invisible': Not(Equal(Eval('state'), 'confirmed'))}
-            })
+            'miss_out': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed'))}})
 
     @classmethod
     @ModelView.button
-    def checked_in(cls, appointments):
+    def check_in(cls, appointments):
         cls.write(appointments, {
             'state': 'checked_in'})
 
     @classmethod
     @ModelView.button
-    def no_show(cls, appointments):
+    def miss_out(cls, appointments):
         cls.write(appointments, {
             'state': 'no_show'})
 
