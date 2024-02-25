@@ -1,4 +1,4 @@
-.. SPDX-FileCopyrightText: 2008-2023 Luis Falcón
+.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
@@ -13,7 +13,7 @@ other type data from a CSV or Libreoffice ODS formatted file.
 Requirements :
 This version works with the following versions :
 
-- GNU Health : 4.0 
+- GNU Health : >=4.0, <5 
 - Proteus library : 6.0 
 
 Installing proteus :
