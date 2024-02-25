@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2022-07-24 23:45+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_lab/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
@@ -35,6 +26,10 @@ msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
 msgstr "结果编号"
 
+msgctxt "field:gnuhealth.lab,other_source:"
+msgid "Other"
+msgstr "其它"
+
 msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr "病理医师"
@@ -59,9 +54,21 @@ msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
 msgstr "结果"
 
+msgctxt "field:gnuhealth.lab,source_name:"
+msgid "Source name"
+msgstr "来源名称"
+
+msgctxt "field:gnuhealth.lab,source_type:"
+msgid "Source"
+msgstr "样本来源"
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "检验类型"
+
+msgctxt "field:gnuhealth.lab.test.critearea,code:"
+msgid "Code"
+msgstr "分析项目代码"
 
 msgctxt "field:gnuhealth.lab.test.critearea,excluded:"
 msgid "Excluded"
@@ -179,6 +186,10 @@ msgctxt "field:gnuhealth.patient.lab.test,name:"
 msgid "Test Type"
 msgstr "检验类型"
 
+msgctxt "field:gnuhealth.patient.lab.test,other_source:"
+msgid "Other"
+msgstr "其它"
+
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
 msgstr "患者"
@@ -186,6 +197,14 @@ msgstr "患者"
 msgctxt "field:gnuhealth.patient.lab.test,request:"
 msgid "Order"
 msgstr "申请编号"
+
+msgctxt "field:gnuhealth.patient.lab.test,source_name:"
+msgid "Source name"
+msgstr "来源名称"
+
+msgctxt "field:gnuhealth.patient.lab.test,source_type:"
+msgid "Source"
+msgstr "样本来源"
 
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
@@ -207,9 +226,17 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health prof"
 msgstr "医务人员"
 
+msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other"
+msgstr "其它"
+
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
 msgstr "患者"
+
+msgctxt "field:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Source"
+msgstr "样本来源"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,tests:"
 msgid "Tests"
@@ -247,6 +274,10 @@ msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr "实验室检验结果编号"
 
+msgctxt "help:gnuhealth.lab,other_source:"
+msgid "Other sample source."
+msgstr "其它样本来源。"
+
 msgctxt "help:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
 msgstr "病理医师"
@@ -263,9 +294,17 @@ msgctxt "help:gnuhealth.lab,requestor:"
 msgid "Doctor who requested the test"
 msgstr "申请实验室检验的医师"
 
+msgctxt "help:gnuhealth.lab,source_type:"
+msgid "Sample source type."
+msgstr "样本来源类型。"
+
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "实验室检验类型"
+
+msgctxt "help:gnuhealth.lab.test.critearea,code:"
+msgid "Lab test critearea code, mainly used by lab interface script."
+msgstr "实验室检验项目代码，主要用于实验室接口脚本。"
 
 msgctxt "help:gnuhealth.lab.test.critearea,excluded:"
 msgid "Select this option when this analyte is excluded from the test"
@@ -303,23 +342,37 @@ msgctxt "help:gnuhealth.patient.lab.test,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
-msgstr "此申请对应的患者健康情况说明。它可以是疑似或现有的健康状况，定期健康检查。。"
-"。"
+msgstr "此申请对应的患者健康情况说明。它可以是疑似或现有的健康状况，定期健康检查。。。"
 
 msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health professional who requests the lab test."
 msgstr "请求检验的医师。"
 
+msgctxt "help:gnuhealth.patient.lab.test,other_source:"
+msgid "Other sample source."
+msgstr "其它样本来源。"
+
+msgctxt "help:gnuhealth.patient.lab.test,source_type:"
+msgid "Sample source type."
+msgstr "样本来源类型。"
+
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
-msgstr "此申请对应的患者健康相关情况说明。它可以是疑似或现有的健康状况，定期健康检查"
-"。。。"
+msgstr "此申请对应的患者健康相关情况说明。它可以是疑似或现有的健康状况，定期健康检查。。。"
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health professional who ordered the lab tests."
 msgstr "请求化验的医师。"
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other sample source."
+msgstr "其它样本来源。"
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Sample source type."
+msgstr "样本来源类型。"
 
 msgctxt "model:gnuhealth.lab,name:"
 msgid "Patient Lab Test Results"
@@ -918,6 +971,10 @@ msgctxt "model:ir.action,name:report_patient_labtest_report"
 msgid "Lab Report"
 msgstr "检验报告"
 
+msgctxt "model:ir.model.button,string:complete_criteareas_button"
+msgid "Complete Criteareas"
+msgstr "补全检验项目明细"
+
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
 msgstr "实验室检验申请"
@@ -1015,64 +1072,48 @@ msgid "Health lab Administration"
 msgstr "Health 实验室管理"
 
 msgctxt "report:patient.labtest.report:"
-msgid "*"
-msgstr "*"
-
-msgctxt "report:patient.labtest.report:"
-msgid ":"
-msgstr "："
-
-msgctxt "report:patient.labtest.report:"
-msgid "Age"
-msgstr "年龄"
+msgid "Age:"
+msgstr "年龄:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Analyte"
 msgstr "分析物"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Date"
-msgstr "日期"
+msgid "Date:"
+msgstr "日期:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Diagnosis"
-msgstr "诊断"
+msgid "Diagnosis:"
+msgstr "诊断:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Doctor"
-msgstr "医务人员"
+msgid "Doctor:"
+msgstr "医师:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Female"
-msgstr "女"
-
-msgctxt "report:patient.labtest.report:"
-msgid "ID"
-msgstr "检查报告 ID"
+msgid "Gender:"
+msgstr "性别:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "LABORATORY REPORT"
 msgstr "实验室检验报告"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Male"
-msgstr "男"
+msgid "Name:"
+msgstr "姓名:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Name"
-msgstr "名称"
+msgid "Order:"
+msgstr "申请编号:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Order #"
-msgstr "申请编号 #"
+msgid "PUID:"
+msgstr "证件号码:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "PU"
-msgstr "PU"
-
-msgctxt "report:patient.labtest.report:"
-msgid "Pathologist"
-msgstr "病理医师"
+msgid "Pathologist:"
+msgstr "病理医师:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Reference"
@@ -1087,12 +1128,20 @@ msgid "Results"
 msgstr "结果"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Sex"
-msgstr "性别"
+msgid "Results:"
+msgstr "检验结果:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Signature"
-msgstr "签名"
+msgid "Signature:"
+msgstr "签名:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Source:"
+msgstr "样本来源:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Test:"
+msgstr "检验项目:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Unit"
@@ -1102,13 +1151,21 @@ msgctxt "report:patient.labtest.report:"
 msgid "Value"
 msgstr "测量值"
 
-msgctxt "report:patient.labtest.report:"
-msgid "Warn"
-msgstr "警告"
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Other"
+msgstr "其它"
 
-msgctxt "report:patient.labtest.report:"
-msgid "____________________________"
-msgstr "____________________________"
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Other"
+msgstr "其它"
+
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Cancel"
@@ -1125,6 +1182,14 @@ msgstr "已申请"
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Tested"
 msgstr "已检验"
+
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Other"
+msgstr "其它"
+
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "view:gnuhealth.lab.test.create.init:"
 msgid "Create Tests"
@@ -1147,8 +1212,20 @@ msgid "Main Info"
 msgstr "主要信息"
 
 msgctxt "view:gnuhealth.lab:"
+msgid "Complete Criteareas"
+msgstr "补全检验项目明细"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Complete criteareas of current test type."
+msgstr "补全当前检验项目明细。"
+
+msgctxt "view:gnuhealth.lab:"
 msgid "Diagnosis"
 msgstr "诊断"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Do your want to complete criteareas of current test type?"
+msgstr "你确定要补全当前检验项目明细吗？"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"

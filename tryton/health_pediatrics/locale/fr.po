@@ -1,23 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-07-09 23:32+0000\n"
-"Last-Translator: Armand MPASSY <armandmpassy@yahoo.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/gnu-health/"
-"health_pediatrics/fr/>\n"
-"Language: fr\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "The Newborn ID must be unique"
-msgstr "l'ID du Nouveau né doit être unique"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "There is already a newborn record for this patient"
-msgstr "Il y a déjà un dossier de nouveau né pour ce patient"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "Activity"
@@ -47,33 +30,10 @@ msgctxt "field:gnuhealth.neonatal.apgar,apgar_score:"
 msgid "APGAR Score"
 msgstr "Score d'Apgar"
 
-msgctxt "field:gnuhealth.neonatal.apgar,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.neonatal.apgar,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
-
-msgctxt "field:gnuhealth.neonatal.apgar,id:"
-msgid "ID"
-msgstr "ID"
-
+#, fuzzy
 msgctxt "field:gnuhealth.neonatal.apgar,name:"
-msgid "Newborn ID"
-msgstr "ID du nouveau-né"
-
-msgctxt "field:gnuhealth.neonatal.apgar,rec_name:"
-msgid "Name"
-msgstr "Nom"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_date:"
-msgid "Write Date"
-msgstr "Date de modification"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_uid:"
-msgid "Write User"
-msgstr "Modifié par"
+msgid "Newborn"
+msgstr "Nouveau-né"
 
 msgctxt "field:gnuhealth.newborn,apgar1:"
 msgid "APGAR 1st minute"
@@ -107,14 +67,6 @@ msgctxt "field:gnuhealth.newborn,congenital_diseases:"
 msgid "Congenital diseases"
 msgstr "Maladies congénitales"
 
-msgctxt "field:gnuhealth.newborn,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.newborn,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
-
 msgctxt "field:gnuhealth.newborn,died_at_delivery:"
 msgid "Died at delivery room"
 msgstr "Décédé à la salle d'accouchement"
@@ -134,10 +86,6 @@ msgstr "Sortie Hôpital"
 msgctxt "field:gnuhealth.newborn,healthprof:"
 msgid "Health Professional"
 msgstr "Prof. de Santé"
-
-msgctxt "field:gnuhealth.newborn,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.newborn,length:"
 msgid "Length"
@@ -271,10 +219,6 @@ msgctxt "field:gnuhealth.newborn,reanimation_stimulation:"
 msgid "Stimulation"
 msgstr "Stimulation"
 
-msgctxt "field:gnuhealth.newborn,rec_name:"
-msgid "Name"
-msgstr "Nom"
-
 msgctxt "field:gnuhealth.newborn,sex:"
 msgid "Sex"
 msgstr "Sexe"
@@ -319,29 +263,15 @@ msgctxt "field:gnuhealth.newborn,weight:"
 msgid "Weight"
 msgstr "Poids"
 
-msgctxt "field:gnuhealth.newborn,write_date:"
-msgid "Write Date"
-msgstr "Date de modification"
-
-msgctxt "field:gnuhealth.newborn,write_uid:"
-msgid "Write User"
-msgstr "Modifié par"
-
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
-msgid "Newborn ID"
-msgstr "ID du nouveau-né"
+msgid "Newborn"
+msgstr "Nouveau-né"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
-msgid "Newborn ID"
-msgstr "ID du nouveau-né"
-
-msgctxt "field:gnuhealth.patient.psc,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.patient.psc,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
+msgid "Newborn"
+msgstr "Nouveau-né"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -350,10 +280,6 @@ msgstr "Consultation"
 msgctxt "field:gnuhealth.patient.psc,evaluation_start:"
 msgid "Date"
 msgstr "Date"
-
-msgctxt "field:gnuhealth.patient.psc,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.patient.psc,notes:"
 msgid "Notes"
@@ -507,21 +433,9 @@ msgctxt "field:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Worries a lot"
 msgstr "S'inquiète beaucoup"
 
-msgctxt "field:gnuhealth.patient.psc,rec_name:"
-msgid "Name"
-msgstr "Nom"
-
 msgctxt "field:gnuhealth.patient.psc,user_id:"
 msgid "Health Professional"
 msgstr "Professionnel de santé"
-
-msgctxt "field:gnuhealth.patient.psc,write_date:"
-msgid "Write Date"
-msgstr "Date de modification"
-
-msgctxt "field:gnuhealth.patient.psc,write_uid:"
-msgid "Write User"
-msgstr "Modifié par"
 
 msgctxt "help:gnuhealth.newborn,birth_date:"
 msgid "Date and Time of birth"
@@ -610,6 +524,11 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr "ID du nouveau-né"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:newborn_sign_button"
+msgid "Sign"
+msgstr "Signer"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
 msgstr "Nouveau-né"
@@ -625,6 +544,38 @@ msgstr "Pédiatrie"
 msgctxt "model:res.group,name:group_health_pediatrics_admin"
 msgid "Health Pediatrics Administration"
 msgstr "Administration Pédiatrie"
+
+msgctxt "report:newborn.card:"
+msgid "DoB:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Ht / Wt:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother ID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Name:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Sex:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "photo"
+msgstr ""
 
 msgctxt "selection:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "None"
@@ -694,9 +645,10 @@ msgctxt "selection:gnuhealth.newborn,sex:"
 msgid "Male"
 msgstr "Masculin"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid "Signed"
@@ -706,9 +658,10 @@ msgctxt "selection:gnuhealth.newborn,state:"
 msgid "draft"
 msgstr "draft"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid "Never"
@@ -722,9 +675,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid "Never"
@@ -738,9 +692,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid "Never"
@@ -754,9 +709,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid "Never"
@@ -770,9 +726,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid "Never"
@@ -786,9 +743,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid "Never"
@@ -802,9 +760,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid "Never"
@@ -818,9 +777,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid "Never"
@@ -834,9 +794,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid "Never"
@@ -850,9 +811,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid "Never"
@@ -866,9 +828,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid "Never"
@@ -882,9 +845,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid "Never"
@@ -898,9 +862,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid "Never"
@@ -914,9 +879,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid "Never"
@@ -930,9 +896,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid "Never"
@@ -946,9 +913,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid "Never"
@@ -962,9 +930,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid "Never"
@@ -978,9 +947,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid "Never"
@@ -994,9 +964,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid "Never"
@@ -1010,9 +981,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid "Never"
@@ -1026,9 +998,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid "Never"
@@ -1042,9 +1015,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid "Never"
@@ -1058,9 +1032,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid "Never"
@@ -1074,9 +1049,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid "Never"
@@ -1090,9 +1066,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid "Never"
@@ -1106,9 +1083,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid "Never"
@@ -1122,9 +1100,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid "Never"
@@ -1138,9 +1117,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid "Never"
@@ -1154,9 +1134,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid "Never"
@@ -1170,9 +1151,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid "Never"
@@ -1186,9 +1168,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid "Never"
@@ -1202,9 +1185,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid "Never"
@@ -1218,9 +1202,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid "Never"
@@ -1234,9 +1219,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid "Never"
@@ -1250,9 +1236,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid "Sometimes"
 msgstr "Parfois"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Never"
@@ -1265,3 +1252,57 @@ msgstr "Souvent"
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Sometimes"
 msgstr "Parfois"
+
+msgctxt "view:gnuhealth.neonatal.apgar:"
+msgid "APGAR"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "End the newborn document ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Findings and Tests"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Main"
+msgstr "Principal"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Reflex Check"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Signs and Symptoms"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Notes"
+msgstr "Remarques"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign"
+msgstr "Signer"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign the process"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Status"
+msgstr "Statut"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Tests"
+msgstr "Tests"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Time"
+msgstr "Heure"

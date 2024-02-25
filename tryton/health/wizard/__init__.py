@@ -13,3 +13,4 @@
 
 from . import wizard_appointment_evaluation
 from . import wizard_check_immunization_status
+from . import wizard_update_patient_disease_info

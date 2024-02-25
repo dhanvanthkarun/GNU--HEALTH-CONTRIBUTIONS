@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2022-08-02 05:21+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_dentistry/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.dentistry.load.procedure.start,distal:"
 msgid "Distal"
@@ -2703,66 +2694,6 @@ msgctxt "model:gnuhealth.dentistry.load.procedure.start,name:"
 msgid "Load Procedure Start"
 msgstr "牙科操作加载开始"
 
-msgctxt "model:gnuhealth.dentistry.procedure,code:10"
-msgid "EXAM"
-msgstr "EXAM"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:11"
-msgid "RCAN"
-msgstr "RCAN"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:12"
-msgid "SEAL"
-msgstr "SEAL"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:13"
-msgid "WHIT"
-msgstr "WHIT"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:14"
-msgid "VENE"
-msgstr "VENE"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:15"
-msgid "CLEANING"
-msgstr "CLEANING"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:16"
-msgid "CLEANFLUOR"
-msgstr "CLEANFLUOR"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:2"
-msgid "BOND"
-msgstr "BOND"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:3"
-msgid "BRAC"
-msgstr "BRAC"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:4"
-msgid "IMPL"
-msgstr "IMPL"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:5"
-msgid "CROW"
-msgstr "CROW"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:6"
-msgid "EXTR"
-msgstr "EXTR"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:7"
-msgid "DENT"
-msgstr "DENT"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:8"
-msgid "FILL"
-msgstr "FILL"
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:9"
-msgid "SURG"
-msgstr "SURG"
-
 msgctxt "model:gnuhealth.dentistry.procedure,name:"
 msgid "Dentistry Procedure"
 msgstr "牙科操作"
@@ -2847,6 +2778,10 @@ msgctxt "model:ir.action,name:action_gnuhealth_dentistry_procedure_view"
 msgid "Dentistry Procedures"
 msgstr "牙科操作"
 
+msgctxt "model:ir.action,name:action_gnuhealth_dentistry_treatment_view"
+msgid "Dentistry Treatments"
+msgstr "牙科治疗"
+
 msgctxt "model:ir.action,name:load_procedure"
 msgid "Load Procedure"
 msgstr "加载操作"
@@ -2863,89 +2798,105 @@ msgctxt "model:ir.action,name:wizard_set_odontogram"
 msgid "Set Odontogram"
 msgstr "设置齿形图"
 
+msgctxt "model:ir.action,name:wizard_set_odontogram_from_treatment"
+msgid "Set Odontogram"
+msgstr "设置齿形图"
+
 msgctxt "model:ir.model.button,string:patient_set_odontogram_button"
 msgid "Set Odontogram"
 msgstr "设置齿形图"
 
+msgctxt "model:ir.model.button,string:treatment_endtreatment_button"
+msgid "End Treatment"
+msgstr "结束治疗"
+
+msgctxt "model:ir.model.button,string:treatment_loadprocedure_button"
+msgid "Load Procedure"
+msgstr "加载牙科操作"
+
+msgctxt "model:ir.model.button,string:treatment_setodontogram_button"
+msgid "Set Odontogram"
+msgstr "设置齿形图"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_dentistry"
+msgid "Dentistry"
+msgstr "牙科"
+
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_dentistry_procedure_list"
 msgid "Dentistry Procedures"
 msgstr "牙科操作"
+
+msgctxt "model:ir.ui.menu,name:menu_gnuhealth_dentistry_procedures"
+msgid "Dentistry Treatments"
+msgstr "牙科治疗"
 
 msgctxt "model:res.group,name:group_health_dentist"
 msgid "Health Dentist"
 msgstr "Health 牙医"
 
 msgctxt "report:health_dentistry.odontogram.report:"
-msgid ":"
-msgstr "："
+msgid ","
+msgstr ","
+
+msgctxt "report:health_dentistry.odontogram.report:"
+msgid "Age:"
+msgstr "年龄:"
 
 msgctxt "report:health_dentistry.odontogram.report:"
 msgid "Odontogram"
 msgstr "齿形图"
 
 msgctxt "report:health_dentistry.odontogram.report:"
-msgid "PUID"
-msgstr "PUID"
+msgid "PUID:"
+msgstr "证件号码:"
 
 msgctxt "report:health_dentistry.odontogram.report:"
-msgid "Patient"
-msgstr "患者"
+msgid "Patient:"
+msgstr "患者:"
 
 msgctxt "report:health_dentistry.odontogram.report:"
 msgid "Print Date:"
-msgstr "打印日期："
-
-msgctxt "report:health_dentistry.odontogram.report:"
-msgid "at"
-msgstr "在"
+msgstr "打印日期:"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid ":"
-msgstr "："
+msgid ","
+msgstr ","
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Age :"
-msgstr "年龄："
+msgid "Age:"
+msgstr "年龄:"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "DENTISTRY PROCEDURES"
-msgstr "牙科操作"
+msgid "DENTISTRY PROCEDURES HISTORY"
+msgstr "牙科手术史"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "DMFT Index:"
-msgstr "恒牙龋失补指数:"
+msgid "DMFT Index"
+msgstr "恒牙龋失补指数"
+
+msgctxt "report:health_dentistry.procedure.report:"
+msgid "DMFT Index For Primary Teeth"
+msgstr "乳牙龋失补指数"
 
 msgctxt "report:health_dentistry.procedure.report:"
 msgid "Date"
 msgstr "日期"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Date :"
-msgstr "日期："
-
-msgctxt "report:health_dentistry.procedure.report:"
-msgid "HISTORY"
-msgstr "史"
-
-msgctxt "report:health_dentistry.procedure.report:"
-msgid "ID"
-msgstr "ID"
-
-msgctxt "report:health_dentistry.procedure.report:"
 msgid "Notes"
 msgstr "注意事项"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "PU"
-msgstr "PU"
+msgid "PUID:"
+msgstr "证件号码:"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Patient"
-msgstr "患者"
+msgid "Patient:"
+msgstr "患者:"
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Print"
-msgstr "打印"
+msgid "Print Date:"
+msgstr "打印日期:"
 
 msgctxt "report:health_dentistry.procedure.report:"
 msgid "Procedure"
@@ -2954,10 +2905,6 @@ msgstr "牙科操作"
 msgctxt "report:health_dentistry.procedure.report:"
 msgid "State"
 msgstr "状态"
-
-msgctxt "report:health_dentistry.procedure.report:"
-msgid "dmft index:"
-msgstr "乳牙龋失补指数:"
 
 msgctxt "selection:gnuhealth.dentistry.set.odontogram.start,t11:"
 msgid "Decayed"

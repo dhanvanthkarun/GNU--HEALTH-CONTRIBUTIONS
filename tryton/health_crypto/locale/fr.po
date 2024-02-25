@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-06-28 02:41+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/gnu-health/"
-"health_crypto/fr/>\n"
-"Language: fr\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
@@ -110,11 +101,9 @@ msgstr "Document actuel"
 msgctxt "help:gnuhealth.birth_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done only on selected  "
+"fields."
 msgstr ""
-"Ce champ sera activé chaque fois que des parties du document d'origine "
-"principal auront été modifiées. Veuillez noter que la vérification n'est "
-"effectuée que sur les champs sélectionnés."
 
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -123,11 +112,9 @@ msgstr "Résumé du document d'origine"
 msgctxt "help:gnuhealth.death_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done  only on selected "
+"fields."
 msgstr ""
-"Ce champ sera activé chaque fois que des parties du document d'origine "
-"principal auront été modifiées. Veuillez noter que la vérification n'est "
-"effectuée que sur les champs sélectionnés."
 
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -158,6 +145,26 @@ msgstr ""
 msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
 msgstr "Résumé du document d'origine"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:birthcert_generate_button"
+msgid "Generate"
+msgstr "Générer"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:deathcert_generate_button"
+msgid "Generate"
+msgstr "Générer"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:evaluation_sign_button"
+msgid "Close"
+msgstr "Fermer"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:prescription_generate_button"
+msgid "Generate"
+msgstr "Générer"
 
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"

@@ -1,14 +1,6 @@
-# anousak <anousak@gmail.com>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2016-01-08 02:56+0000\n"
-"Last-Translator: anousak <anousak@gmail.com>\n"
-"Language: lo\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1452221812.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
@@ -109,7 +101,8 @@ msgstr ""
 msgctxt "help:gnuhealth.birth_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done only on selected  "
+"fields."
 msgstr ""
 
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
@@ -119,7 +112,8 @@ msgstr ""
 msgctxt "help:gnuhealth.death_certificate,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
-" changed. Please note that the verification is done only on selected fields."
+" changed. Please note that the verification is done  only on selected "
+"fields."
 msgstr ""
 
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
@@ -146,9 +140,30 @@ msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
 msgstr ""
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:birthcert_generate_button"
+msgid "Generate"
+msgstr "ສ້າງ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:deathcert_generate_button"
+msgid "Generate"
+msgstr "ສ້າງ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:evaluation_sign_button"
+msgid "Close"
+msgstr "ອັດ"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:prescription_generate_button"
+msgid "Generate"
+msgstr "ສ້າງ"
+
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"
-msgstr ""
+msgstr "ກວດສອບແລ້ວ"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Altered / current String"

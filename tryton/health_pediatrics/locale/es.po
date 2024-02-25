@@ -1,24 +1,6 @@
-# Anonymous Pootle User, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2021-07-28 01:55+0000\n"
-"Last-Translator: light lrc <lrc572lrc@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/gnu-health/"
-"health_pediatrics/es/>\n"
-"Language: es\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.2-dev\n"
-"X-POOTLE-MTIME: 1452251937.0\n"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "The Newborn ID must be unique"
-msgstr "La identificación del recién nacido debe ser única"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "There is already a newborn record for this patient"
-msgstr "Ya existe un registro de recién nacido para este paciente"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "Activity"
@@ -48,33 +30,10 @@ msgctxt "field:gnuhealth.neonatal.apgar,apgar_score:"
 msgid "APGAR Score"
 msgstr "Puntuación APGAR"
 
-msgctxt "field:gnuhealth.neonatal.apgar,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:gnuhealth.neonatal.apgar,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
-msgctxt "field:gnuhealth.neonatal.apgar,id:"
-msgid "ID"
-msgstr "ID"
-
+#, fuzzy
 msgctxt "field:gnuhealth.neonatal.apgar,name:"
-msgid "Newborn ID"
-msgstr "ID del recién nacido"
-
-msgctxt "field:gnuhealth.neonatal.apgar,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
+msgid "Newborn"
+msgstr "Recién nacido"
 
 msgctxt "field:gnuhealth.newborn,apgar1:"
 msgid "APGAR 1st minute"
@@ -108,14 +67,6 @@ msgctxt "field:gnuhealth.newborn,congenital_diseases:"
 msgid "Congenital diseases"
 msgstr "Enfermedades Congénitas"
 
-msgctxt "field:gnuhealth.newborn,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:gnuhealth.newborn,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
 msgctxt "field:gnuhealth.newborn,died_at_delivery:"
 msgid "Died at delivery room"
 msgstr "Murió en la sala de parto"
@@ -132,13 +83,10 @@ msgctxt "field:gnuhealth.newborn,dismissed:"
 msgid "Discharged"
 msgstr "Alta"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,healthprof:"
 msgid "Health Professional"
-msgstr ""
-
-msgctxt "field:gnuhealth.newborn,id:"
-msgid "ID"
-msgstr "ID"
+msgstr "Profesional de Salud"
 
 msgctxt "field:gnuhealth.newborn,length:"
 msgid "Length"
@@ -272,21 +220,19 @@ msgctxt "field:gnuhealth.newborn,reanimation_stimulation:"
 msgid "Stimulation"
 msgstr "Estimulación"
 
-msgctxt "field:gnuhealth.newborn,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:gnuhealth.newborn,sex:"
 msgid "Sex"
 msgstr "Sexo"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,signed_by:"
 msgid "Signed by"
-msgstr ""
+msgstr "Firmado por"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,state:"
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 msgctxt "field:gnuhealth.newborn,test_audition:"
 msgid "Audition"
@@ -320,29 +266,15 @@ msgctxt "field:gnuhealth.newborn,weight:"
 msgid "Weight"
 msgstr "Peso (g)"
 
-msgctxt "field:gnuhealth.newborn,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:gnuhealth.newborn,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
-msgid "Newborn ID"
-msgstr "ID del Neonato"
+msgid "Newborn"
+msgstr "Recién nacido"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
-msgid "Newborn ID"
-msgstr "ID del Neonato"
-
-msgctxt "field:gnuhealth.patient.psc,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:gnuhealth.patient.psc,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
+msgid "Newborn"
+msgstr "Recién nacido"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -351,10 +283,6 @@ msgstr "Cita"
 msgctxt "field:gnuhealth.patient.psc,evaluation_start:"
 msgid "Date"
 msgstr "Fecha"
-
-msgctxt "field:gnuhealth.patient.psc,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.patient.psc,notes:"
 msgid "Notes"
@@ -508,21 +436,9 @@ msgctxt "field:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Worries a lot"
 msgstr "Se preocupa mucho"
 
-msgctxt "field:gnuhealth.patient.psc,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:gnuhealth.patient.psc,user_id:"
 msgid "Health Professional"
 msgstr "Profesional de la salud"
-
-msgctxt "field:gnuhealth.patient.psc,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:gnuhealth.patient.psc,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
 
 msgctxt "help:gnuhealth.newborn,birth_date:"
 msgid "Date and Time of birth"
@@ -536,9 +452,10 @@ msgctxt "help:gnuhealth.newborn,died_being_transferred:"
 msgid "The baby died being transferred to another health institution"
 msgstr "El bebé murió siendo transferido a otra institución de salud"
 
+#, fuzzy
 msgctxt "help:gnuhealth.newborn,healthprof:"
 msgid "Health professional"
-msgstr ""
+msgstr "Profesional de la Salud"
 
 msgctxt "help:gnuhealth.newborn,length:"
 msgid "Length in centimeters (cm)"
@@ -609,6 +526,11 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr "ID del Neonato"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:newborn_sign_button"
+msgid "Sign"
+msgstr "Signo"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
 msgstr "Neonato"
@@ -624,6 +546,40 @@ msgstr "Pediatría"
 msgctxt "model:res.group,name:group_health_pediatrics_admin"
 msgid "Health Pediatrics Administration"
 msgstr "Administración de salud pediátrica"
+
+#, fuzzy
+msgctxt "report:newborn.card:"
+msgid "DoB:"
+msgstr "FNac:"
+
+msgctxt "report:newborn.card:"
+msgid "Ht / Wt:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother ID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:newborn.card:"
+msgid "Name:"
+msgstr "Nombre:"
+
+msgctxt "report:newborn.card:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Sex:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "photo"
+msgstr ""
 
 msgctxt "selection:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "None"
@@ -693,23 +649,16 @@ msgctxt "selection:gnuhealth.newborn,sex:"
 msgid "Male"
 msgstr "Masculino"
 
-msgctxt "selection:gnuhealth.newborn,state:"
-msgid ""
-msgstr ""
-
+#, fuzzy
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid "Signed"
-msgstr ""
+msgstr "Firmado"
 
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid "draft"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -722,10 +671,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -738,10 +683,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -754,10 +695,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -770,10 +707,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -786,10 +719,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -802,10 +731,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -818,10 +743,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -834,10 +755,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -850,10 +767,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -866,10 +779,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -882,10 +791,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -898,10 +803,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -914,10 +815,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -930,10 +827,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -946,10 +839,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -962,10 +851,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -978,10 +863,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -994,10 +875,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1010,10 +887,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1026,10 +899,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1042,10 +911,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1058,10 +923,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1074,10 +935,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1090,10 +947,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1106,10 +959,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1122,10 +971,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1138,10 +983,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1154,10 +995,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1170,10 +1007,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1186,10 +1019,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1202,10 +1031,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1218,10 +1043,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1232,10 +1053,6 @@ msgstr "A menudo"
 msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid "Sometimes"
 msgstr "A veces"
-
-msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
-msgid ""
-msgstr ""
 
 msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid "Never"
@@ -1250,10 +1067,6 @@ msgid "Sometimes"
 msgstr "A veces"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Never"
 msgstr "Nunca"
 
@@ -1264,3 +1077,57 @@ msgstr "A menudo"
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Sometimes"
 msgstr "A veces"
+
+msgctxt "view:gnuhealth.neonatal.apgar:"
+msgid "APGAR"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "End the newborn document ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Findings and Tests"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Main"
+msgstr "Principal"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Reflex Check"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Signs and Symptoms"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Notes"
+msgstr "Notas"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign"
+msgstr "Signo"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign the process"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Status"
+msgstr "Estatus"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Tests"
+msgstr "Tests"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Time"
+msgstr "Tiempo"

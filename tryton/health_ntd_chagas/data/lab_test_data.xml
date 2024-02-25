@@ -40,6 +40,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_parasites" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;T. cruzi in triatomine excreta&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;T. cruzi in triatomine excreta&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field eval="&quot;&quot;&quot;Values > 0 are positive&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
@@ -79,6 +80,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_strout_trypomastigotes" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Trypomastigotes&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Trypomastigotes&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field eval="&quot;&quot;&quot;Values > 0 are positive&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
@@ -118,6 +120,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_bsmear_trypomastigotes" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Trypomastigotes&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Trypomastigotes&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field eval="&quot;&quot;&quot;Values > 0 are positive&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
@@ -156,11 +159,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_elisa_igg" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chagas ELISA Ig-G&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chagas ELISA Ig-G&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_chagas_elisa_analysis0"/>
         </record>
         <record id="gnuhealth_test_critearea_elisa_igm" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chagas ELISA Ig-M&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chagas ELISA Ig-M&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_chagas_elisa_analysis0"/>
         </record>
@@ -196,11 +201,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_ifa_igg" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chagas IFA Ig-G&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chagas IFA Ig-G&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_chagas_ifa_analysis0"/>
         </record>
         <record id="gnuhealth_test_critearea_ifa_igm" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chagas IFA Ig-M&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chagas IFA Ig-M&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_chagas_ifa_analysis0"/>
         </record>
@@ -236,12 +243,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_qualitative_pcr" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chagas Qualitative PCR&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chagas Qualitative PCR&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_chagas_pcr_analysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_qpcr" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chagas Realtime Quantitative qPCR&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chagas Realtime Quantitative qPCR&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_chagas_pcr_analysis0"/>
         </record>

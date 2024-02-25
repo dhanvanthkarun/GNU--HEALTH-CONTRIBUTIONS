@@ -16,7 +16,9 @@ from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval, Equal
 from trytond.pool import PoolMeta
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         format_years_months_days)
+
 
 __all__ = ['Party', 'PatientSESAssessment', 'GnuHealthPatient']
 
@@ -76,6 +78,8 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('4', 'Higher'),
         ], 'Socioeconomics', help="SES - Socioeconomic Status", sort=False,
             states=STATES)
+
+    ses_str = ses.translated('ses')
 
     housing = fields.Selection([
         (None, ''),
@@ -252,10 +256,10 @@ class PatientSESAssessment(ModelSQL, ModelView):
         if (self.patient.name.dob and self.assessment_date):
             rdelta = relativedelta(self.assessment_date.date(),
                                    self.patient.name.dob)
-            years_months_days = str(rdelta.years) + 'y ' \
-                + str(rdelta.months) + 'm ' \
-                + str(rdelta.days) + 'd'
-            return years_months_days
+            return format_years_months_days(
+                years=rdelta.years,
+                months=rdelta.months,
+                days=rdelta.days)
         else:
             return None
 
@@ -297,6 +301,8 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ], 'Education Level', help="Education Level", sort=False),
         'get_patient_education')
 
+    education_str = education.translated('education')
+
     housing = fields.Function(fields.Selection([
         (None, ''),
         ('0', 'Shanty, deficient sanitary conditions'),
@@ -307,6 +313,8 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ], 'Housing conditions', help="Housing and sanitary living conditions",
         sort=False), 'get_patient_housing')
 
+    housing_str = housing.translated('housing')
+
     ses = fields.Function(fields.Selection([
         (None, ''),
         ('0', 'Lower'),
@@ -316,6 +324,8 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ('4', 'Higher'),
         ], 'SES', help="Current Socioeconomic Status", sort=False),
         'get_patient_ses')
+    
+    ses_str = ses.translated('ses')
 
     ses_assessments = fields.One2Many(
                         'gnuhealth.ses.assessment',

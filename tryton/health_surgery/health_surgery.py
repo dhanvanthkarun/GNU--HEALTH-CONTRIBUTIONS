@@ -19,12 +19,14 @@ from trytond.model import ModelView, ModelSQL, fields, Unique
 from datetime import datetime
 from trytond.transaction import Transaction
 from trytond.pool import Pool
-from trytond.pyson import Eval, Not, Equal, And
+from trytond.pyson import Eval, Not, Equal, And, Or
 from trytond.pool import PoolMeta
 from trytond.i18n import gettext
+from trytond.modules.health.core import format_years_months_days
 
 from .exceptions import (
-    EndDateBeforeStart, ORNotAvailable, OperatingRoomAndDateRequired)
+    EndDateBeforeStart, ORNotAvailable, OperatingRoomAndDateRequired,
+    EndReservationBeforeStart)
 
 from trytond.modules.health.core import get_health_professional, \
     get_institution
@@ -32,7 +34,7 @@ from trytond.modules.health.core import get_health_professional, \
 __all__ = ['RCRI', 'Surgery', 'Operation', 'SurgerySupply',
            'PatientData',
            'SurgeryTeam', 'SurgeryComplication', 'SurgeryDrain',
-           'PreOperativeAssessment', 'SurgeryProtocol']
+           'PreOperativeAssessment', 'SurgeryProtocol', 'ORScheduler']
 
 
 class RCRI(ModelSQL, ModelView):
@@ -156,8 +158,9 @@ class RCRI(ModelSQL, ModelView):
         return 'I'
 
     def get_rec_name(self, name):
-        res = 'Points: ' + str(self.rcri_total) + ' (Class ' + \
-            str(self.rcri_class) + ')'
+        res = gettext('health_surgery.msg_surgery_rcri_rec_name',
+                      rcri_total=str(self.rcri_total),
+                      rcri_class=str(self.rcri_class))
         return res
 
     @classmethod
@@ -189,10 +192,10 @@ class Surgery(ModelSQL, ModelView):
         if (self.patient.name.dob and self.surgery_date):
             rdelta = relativedelta(self.surgery_date.date(),
                                    self.patient.name.dob)
-            years_months_days = str(rdelta.years) + 'y ' \
-                + str(rdelta.months) + 'm ' \
-                + str(rdelta.days) + 'd'
-            return years_months_days
+            return format_years_months_days(
+                years=rdelta.years,
+                months=rdelta.months,
+                days=rdelta.days)
         else:
             return None
 
@@ -227,9 +230,14 @@ class Surgery(ModelSQL, ModelView):
         ('u', 'Urgent'),
         ('e', 'Emergency'),
         ], 'Urgency', help="Urgency level for this surgery", sort=False)
+
+    classification_str = classification.translated('classification')
+
     surgeon = fields.Many2One(
         'gnuhealth.healthprofessional', 'Surgeon',
         help="Surgeon who did the procedure")
+
+    specialty = fields.Many2One('gnuhealth.specialty', 'Specialty')
 
     anesthetist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Anesthetist',
@@ -324,48 +332,16 @@ class Surgery(ModelSQL, ModelView):
         'Sterility confirmed',
         help="Nursing team has confirmed sterility of the devices and room")
 
-    """ Mallampati, ASA, bleeding risk, RCRI are now part of the
+    """ Mallampati, ASA, RCRI are now part of the
         preoperative assessment.
         They will not be shown in the main surgery view
     """
 
-    preop_mallampati = fields.Selection([
-        (None, ''),
-        ('Class 1', 'Class 1: Full visibility of tonsils, uvula and soft '
-                    'palate'),
-        ('Class 2', 'Class 2: Visibility of hard and soft palate, '
-                    'upper portion of tonsils and uvula'),
-        ('Class 3', 'Class 3: Soft and hard palate and base of the uvula are '
-                    'visible'),
-        ('Class 4', 'Class 4: Only Hard Palate visible'),
-        ], 'Mallampati Score', sort=False)
     preop_bleeding_risk = fields.Boolean(
         'Risk of Massive bleeding',
         help="Patient has a risk of losing more than 500 "
         "ml in adults of over 7ml/kg in infants. If so, make sure that "
         "intravenous access and fluids are available")
-
-    preop_asa = fields.Selection([
-        (None, ''),
-        ('ps1', 'PS 1 : Normal healthy patient'),
-        ('ps2', 'PS 2 : Patients with mild systemic disease'),
-        ('ps3', 'PS 3 : Patients with severe systemic disease'),
-        ('ps4', 'PS 4 : Patients with severe systemic disease that is'
-            ' a constant threat to life '),
-        ('ps5', 'PS 5 : Moribund patients who are not expected to'
-            ' survive without the operation'),
-        ('ps6', 'PS 6 : A declared brain-dead patient who organs are'
-            ' being removed for donor purposes'),
-        ], 'ASA PS',
-        help="ASA pre-operative Physical Status", sort=False)
-
-    preop_rcri = fields.Many2One(
-        'gnuhealth.rcri', 'RCRI',
-        help='Patient Revised Cardiac Risk Index\n'
-        'Points 0: Class I Very Low (0.4% complications)\n'
-        'Points 1: Class II Low (0.9% complications)\n'
-        'Points 2: Class III Moderate (6.6% complications)\n'
-        'Points 3 or more : Class IV High (>11% complications)')
 
     surgical_wound = fields.Selection([
         (None, ''),
@@ -503,6 +479,15 @@ class Surgery(ModelSQL, ModelView):
         surgeon = get_health_professional()
         return surgeon
 
+    # Update specialty based on the surgeon
+    @fields.depends('surgeon')
+    def on_change_surgeon(self):
+        if (self.surgeon):
+            if (self.surgeon.main_specialty):
+                self.specialty = self.surgeon.main_specialty.specialty.id
+            else:
+                self.specialty = None
+
     @staticmethod
     def default_state():
         return 'draft'
@@ -524,8 +509,17 @@ class Surgery(ModelSQL, ModelView):
             self.discharge_instructions = self.protocol.discharge_instructions
             self.approach = self.protocol.approach
 
+    # Update time frame depending on the operating room and start date
+    @fields.depends('operating_room', 'surgery_date', 'surgery_end_date')
+    def on_change_with_surgery_end_date(self):
+        if (self.operating_room and self.surgery_date):
+            timeslot = self.operating_room.timeslot
+            return self.surgery_date + relativedelta(minutes=+int(timeslot))
+
     def get_rec_name(self, name):
-        res = f'{self.code} ({self.description})'
+        pathology = self.pathology and self.pathology.rec_name or ''
+        desc = self.description and f"({self.description})" or ''
+        res = f'{self.code} {pathology} {desc}'
         return res
 
     def get_patient_gender(self, name):
@@ -542,8 +536,9 @@ class Surgery(ModelSQL, ModelView):
     # These two are function fields (don't exist at DB level)
     @fields.depends('patient', '_parent_patient.name')
     def on_change_patient(self):
-        self.gender = self.patient.gender
-        self.computed_age = self.patient.age
+        if (self.patient):
+            self.gender = self.patient.gender
+            self.computed_age = self.patient.age
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -557,16 +552,118 @@ class Surgery(ModelSQL, ModelView):
     @classmethod
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
+
         for values in vlist:
             if not values.get('code'):
                 values['code'] = cls.generate_code()
-        return super(Surgery, cls).create(vlist)
+
+            """ Create the entry in the Operating room scheduler
+                when the surgery includes de OR
+            """
+
+            """ Create the surgery first so we get the id """
+            surgeries = super(Surgery, cls).create(vlist)
+            surgery = surgeries[0].id
+
+            if values.get('operating_room'):
+                ORsched = Pool().get('gnuhealth.or.schedule')
+                sched = []
+                op_room = values.get('operating_room')
+                surgery_date = values.get('surgery_date')
+                surgery_end_date = values.get('surgery_end_date')
+                patient = values.get('patient')
+                health_condition = values.get('pathology')
+                healthprof = values.get('surgeon')
+                specialty = values.get('specialty')
+                urgency = values.get('classification')
+                institution = values.get('institution')
+
+                values = {
+                    'name': op_room,
+                    'reserve_from': surgery_date,
+                    'reserve_to': surgery_end_date,
+                    'surgery': surgery,
+                    'patient': patient,
+                    'health_condition': health_condition,
+                    'healthprof': healthprof,
+                    'specialty': specialty,
+                    'urgency': urgency,
+                    'institution': institution,
+                    }
+
+                # Add new schedule entry with the surgery
+                sched.append(values)
+                ORsched.create(sched)
+
+                # Update Operating Room status to 'scheduled'
+                or_state = 'scheduled'
+                Operatingroom = Pool().get('gnuhealth.hospital.or')
+                operatingroom = Operatingroom.search(
+                    [("id", "=", op_room.id)], limit=1)
+                Operatingroom.write(operatingroom, {'state': or_state})
+
+        return surgeries
+
+    @classmethod
+    def write(cls, surgeries, vals):
+        surgery = surgeries[0]
+        # Don't allow to write the record if the surgery has been signed
+        if surgery.state == 'signed':
+            raise EndDateBeforeStart(
+                gettext('health_surgery.msg_surgery_is_done'))
+
+        # Update Operating Room schedule entry
+        cls.update_or_schedule(surgery, vals)
+
+        return super(Surgery, cls).write(surgeries, vals)
+
+    @classmethod
+    def update_or_schedule(cls, surgery, values):
+        # Update the Operating Room Schedule
+        surgery_id = surgery.id
+
+        # Look for the schedule entry associated with this surgery
+        Orsched = Pool().get('gnuhealth.or.schedule')
+        orsched = Orsched.search(
+            [("surgery", "=", surgery_id)],)
+
+        # Found the schedule entry related to the surgery
+        # Update the record
+        if orsched:
+            sched_entry = []
+            sched_entry.append(orsched[0])
+            to_update = {}
+
+            if 'surgery_date' in values:
+                to_update['reserve_from'] = values['surgery_date']
+            if 'surgery_end_date' in values:
+                to_update['reserve_to'] = values['surgery_end_date']
+            if 'classification' in values:
+                to_update['urgency'] = values['classification']
+            if 'institution' in values:
+                to_update['institution'] = values['institution']
+            if 'surgeon' in values:
+                to_update['healthprof'] = values['surgeon']
+            if 'specialty' in values:
+                to_update['specialty'] = values['specialty']
+            if 'patient' in values:
+                to_update['patient'] = values['patient']
+            if 'operating_room' in values:
+                to_update['name'] = values['operating_room']
+
+            # Update schedule
+            Orsched.write(sched_entry, to_update)
 
     @classmethod
     def __setup__(cls):
         super(Surgery, cls).__setup__()
-
+        t = cls.__table__()
         cls._order.insert(0, ('surgery_date', 'DESC'))
+
+        cls._sql_constraints = [
+            ('preop_uniq', Unique(t, t.preop_assessment),
+             'The preoperative assignment already exists'),
+        ]
 
         cls._buttons.update({
             'confirmed': {
@@ -601,13 +698,6 @@ class Surgery(ModelSQL, ModelView):
                 raise EndDateBeforeStart(
                     gettext('health_surgery.msg_end_date_before_start'))
 
-    @classmethod
-    def write(cls, surgeries, vals):
-        # Don't allow to write the record if the surgery has been signed
-        if surgeries[0].state == 'signed':
-            raise EndDateBeforeStart(
-                gettext('health_surgery.msg_surgery_is_done'))
-        return super(Surgery, cls).write(surgeries, vals)
 
     # Method to check for availability and make the Operating Room
     # reservation for the associated surgery
@@ -732,6 +822,7 @@ class Surgery(ModelSQL, ModelView):
         return [bool_op,
                 ('patient',) + tuple(clause[1:]),
                 ('code',) + tuple(clause[1:]),
+                ('pathology',) + tuple(clause[1:]),
                 ]
 
 
@@ -841,7 +932,8 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     """ Preoperative Assessment class contains the necessary patient
         and anesthesia information to be taken into account
-        in the upcoming surgery
+        in the upcoming surgery.
+        It also allows to schedule the surgery and operating room.
     """
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
 
@@ -850,7 +942,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         help="Health professional that signs this assessment")
 
     surgery = fields.Many2One(
-        'gnuhealth.surgery', 'Surgery',
+        'gnuhealth.surgery', 'Surgery', readonly=True,
         depends=['patient'],
         domain=[('patient', '=', Eval('patient'))],)
 
@@ -962,11 +1054,42 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     surgical_decision_str = surgical_decision.translated('surgical_decision')
 
+    surgery_date = fields.DateTime(
+        'Surgery date', help="Date of the surgery")
+
+    operating_room = fields.Many2One('gnuhealth.hospital.or', 'Operating Room')
+
+    institution = fields.Many2One(
+        'gnuhealth.institution', 'Institution',
+        help='Health Care Institution where the surgery will take place')
+
     short_notes = fields.Char('Notes')
 
     @staticmethod
     def default_assessment_date():
         return datetime.now()
+
+    @staticmethod
+    def default_surgery_date():
+        return datetime.now()
+
+    @staticmethod
+    def default_health_professional():
+        return get_health_professional()
+
+    @staticmethod
+    def default_institution():
+        return get_institution()
+
+    # Update specialty based on the surgeon
+    @fields.depends('health_professional')
+    def on_change_health_professional(self):
+        if (self.health_professional):
+            if (self.health_professional.main_specialty):
+                self.specialty = \
+                    self.health_professional.main_specialty.specialty.id
+            else:
+                self.specialty = None
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
@@ -981,6 +1104,68 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             asa = self.preop_asa
         return (f'{str(self.assessment_date)} ASA: {asa}')
 
+    @classmethod
+    @ModelView.button
+    def schedule(cls, preop_assmts):
+        # Method to check for availability and make the Operating Room
+        # reservation for the associated surgery
+        assessment = preop_assmts[0]
+
+        # Operating Room and end surgery check
+        if (assessment.operating_room and assessment.surgery_date):
+            surg = cls.create_preop_surgery(assessment)
+        else:
+            raise OperatingRoomAndDateRequired(
+                    gettext('health_surgery.msg_or_and_date_needed'))
+
+        if surg:
+            cls.write(preop_assmts, {'surgery': surg[0].id})
+
+    @classmethod
+    def create_preop_surgery(cls, assessment):
+        """ Create the surgery related to this preoperative
+            assessment.
+        """
+        Surgery = Pool().get('gnuhealth.surgery')
+        surg = []
+
+        timeslot = assessment.operating_room.timeslot
+        surg_end_date = assessment.surgery_date + \
+            relativedelta(minutes=+int(timeslot))
+
+        if assessment.evaluation:
+            if assessment.evaluation.diagnosis:
+                health_condition = assessment.evaluation.diagnosis
+            else:
+                health_condition = None
+
+        vals = {
+            'patient': assessment.patient,
+            'surgery_date': assessment.surgery_date,
+            'surgery_end_date': surg_end_date,
+            'surgeon': assessment.health_professional,
+            'operating_room': assessment.operating_room,
+            'preop_assessment': assessment.id,
+            'specialty': assessment.specialty,
+            'preop_bleeding_risk': assessment.needs_blood_reserve,
+            'pathology': health_condition,
+            'institution': assessment.institution,
+            }
+
+        surg.append(vals)
+        surg_id = Surgery.create(surg)
+
+        return surg_id
+
+    @classmethod
+    def __setup__(cls):
+        super(PreOperativeAssessment, cls).__setup__()
+        cls._buttons.update({
+            'schedule': {'invisible': Not(Or(
+                Equal(Eval('surgical_decision'), 'needs_surgery'),
+                Equal(Eval('surgical_decision'), 'urgent_surgery')))}
+            })
+
 
 # SURGERY PROTOCOL TEMPLATE
 class SurgeryProtocol(ModelSQL, ModelView):
@@ -989,11 +1174,20 @@ class SurgeryProtocol(ModelSQL, ModelView):
 
     name = fields.Char(
         'Name',
-        help='Protocol Name')
+        help='Protocol Name',
+        required=True, translate=True)
 
-    description = fields.Char('Description')
+    code = fields.Char(
+        'Code', help='Code',
+        required=True, translate=False)
 
-    general_info = fields.Text('General Information')
+    description = fields.Char(
+        'Description',
+        translate=True)
+
+    general_info = fields.Text(
+        'General Information',
+        translate=True)
 
     anesthesia_type = fields.Selection([
         (None, ''),
@@ -1060,16 +1254,22 @@ class SurgeryProtocol(ModelSQL, ModelView):
         ('e', 'Emergency'),
         ], 'Urgency', help="Urgency level for this surgery", sort=False)
 
-    postoperative_guidelines = fields.Text('Postoperative guidelines')
+    postoperative_guidelines = fields.Text(
+        'Postoperative guidelines',
+        translate=True)
 
-    discharge_instructions = fields.Text('Discharge Instructions')
+    discharge_instructions = fields.Text(
+        'Discharge Instructions',
+        translate=True)
 
     @classmethod
     def __setup__(cls):
         super(SurgeryProtocol, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('code_uniq', Unique(t, t.name),
+            ('code_uniq', Unique(t, t.code),
+             'The code must be unique'),
+            ('name_uniq', Unique(t, t.name),
              'The protocol name must be unique')
         ]
 
@@ -1079,6 +1279,122 @@ class PatientData(metaclass=PoolMeta):
 
     surgery = fields.One2Many(
         'gnuhealth.surgery', 'patient', 'Surgeries', readonly=True)
+
+
+# OPERATING ROOM SCHEDULER
+class ORScheduler(ModelSQL, ModelView):
+    'Operating Rooms Schedules'
+    __name__ = 'gnuhealth.or.schedule'
+
+    name = fields.Many2One(
+        'gnuhealth.hospital.or', 'Op. Room',
+        select=True, required=True, help='Operating Room')
+
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
+
+    healthprof = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Health Prof',
+        help='Health Professional')
+
+    patient = fields.Many2One(
+        'gnuhealth.patient', 'Patient',
+        help='Patient Name')
+
+    reserve_from = fields.DateTime('From', required=True)
+    reserve_to = fields.DateTime('To', required=True)
+
+    institution = fields.Many2One(
+        'gnuhealth.institution', 'Institution',
+        help='Health Care Institution')
+
+    specialty = fields.Many2One(
+        'gnuhealth.specialty', 'Specialty',
+        help='Medical Specialty / Sector')
+
+    health_condition = fields.Many2One(
+        'gnuhealth.pathology', 'Health Condition',
+        help="Base Condition / Reason")
+
+    state = fields.Function(fields.Selection((
+        (None, ''),
+        ('free', 'Free'),
+        ('scheduled', 'Scheduled'),
+        ('confirmed', 'Confirmed'),
+        ('occupied', 'Occupied'),
+        ('na', 'Not available'),
+        ), 'Status', sort=False),
+        'get_or_state', searcher='search_or_state')
+
+    urgency = fields.Selection([
+        (None, ''),
+        ('o', 'Optional'),
+        ('r', 'Required'),
+        ('u', 'Urgent'),
+        ('e', 'Emergency'),
+        ], 'Urgency', help="Urgency level", sort=False)
+
+    comments = fields.Text('Comments')
+
+    # Display Op. Room current state
+    def get_or_state(self, name):
+        return self.name.state
+
+    # Allow searching the state of the Operating Room
+    @classmethod
+    def search_or_state(cls, name, clause):
+        res = []
+        value = clause[2]
+        res.append(('name.state', clause[1], value))
+        return res
+
+    @staticmethod
+    def default_healthprof():
+        return get_health_professional()
+
+    @staticmethod
+    def default_reserve_from():
+        return datetime.now()
+
+    # Update time frame depending on the operating room and start date
+    @fields.depends('name', 'reserve_from', 'reserve_to')
+    def on_change_with_reserve_to(self):
+        if (self.name and self.reserve_from):
+            timeslot = self.name.timeslot
+            return self.reserve_from + relativedelta(minutes=+int(timeslot))
+
+    # Update specialty based on the health professional
+    @fields.depends('healthprof')
+    def on_change_healthprof(self):
+        if (self.healthprof):
+            if (self.healthprof.main_specialty):
+                self.specialty = self.healthprof.main_specialty.specialty.id
+            else:
+                self.specialty = None
+
+    @classmethod
+    def validate(cls, reservations):
+        super(ORScheduler, cls).validate(reservations)
+        for reservation in reservations:
+            reservation.validate_reservation_period()
+
+    def validate_reservation_period(self):
+        if (self.reserve_to and self.reserve_from):
+            if (self.reserve_to < self.reserve_from):
+                raise EndReservationBeforeStart(
+                    gettext('health_surgery.msg_end_reservation_before_start',
+                            res_from=self.reserve_from,
+                            res_to=self.reserve_to,
+                            )
+                    )
+
+    @classmethod
+    def __setup__(cls):
+        super(ORScheduler, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('surgery_uniq', Unique(t, t.surgery),
+             'The surgery is already scheduled')
+        ]
 
 
 class PatientEvaluation (metaclass=PoolMeta):

@@ -1,22 +1,6 @@
-# rvnovaes <rvnovaes@gmail.com>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2015-12-28 00:01+0000\n"
-"Last-Translator: rvnovaes <rvnovaes@gmail.com>\n"
-"Language: pt_BR\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1451260884.0\n"
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "The Newborn ID must be unique"
-msgstr ""
-
-msgctxt "error:gnuhealth.newborn:"
-msgid "There is already a newborn record for this patient"
-msgstr ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "Activity"
@@ -46,33 +30,10 @@ msgctxt "field:gnuhealth.neonatal.apgar,apgar_score:"
 msgid "APGAR Score"
 msgstr "Escala APGAR"
 
-msgctxt "field:gnuhealth.neonatal.apgar,create_date:"
-msgid "Create Date"
-msgstr "Criar Data"
-
-msgctxt "field:gnuhealth.neonatal.apgar,create_uid:"
-msgid "Create User"
-msgstr "Criar Usuário"
-
-msgctxt "field:gnuhealth.neonatal.apgar,id:"
-msgid "ID"
-msgstr "ID"
-
+#, fuzzy
 msgctxt "field:gnuhealth.neonatal.apgar,name:"
-msgid "Newborn ID"
-msgstr "ID do Recém-Nascido"
-
-msgctxt "field:gnuhealth.neonatal.apgar,rec_name:"
-msgid "Name"
-msgstr "Nome"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_date:"
-msgid "Write Date"
-msgstr "Escreva Data"
-
-msgctxt "field:gnuhealth.neonatal.apgar,write_uid:"
-msgid "Write User"
-msgstr "Escreva Usuário"
+msgid "Newborn"
+msgstr "Recém-nascido"
 
 msgctxt "field:gnuhealth.newborn,apgar1:"
 msgid "APGAR 1st minute"
@@ -106,14 +67,6 @@ msgctxt "field:gnuhealth.newborn,congenital_diseases:"
 msgid "Congenital diseases"
 msgstr "Doenças congênitas"
 
-msgctxt "field:gnuhealth.newborn,create_date:"
-msgid "Create Date"
-msgstr "Criar Data"
-
-msgctxt "field:gnuhealth.newborn,create_uid:"
-msgid "Create User"
-msgstr "Criar Usuário"
-
 msgctxt "field:gnuhealth.newborn,died_at_delivery:"
 msgid "Died at delivery room"
 msgstr "Morreu na sala de parto"
@@ -130,13 +83,10 @@ msgctxt "field:gnuhealth.newborn,dismissed:"
 msgid "Discharged"
 msgstr "Alta"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,healthprof:"
 msgid "Health Professional"
-msgstr ""
-
-msgctxt "field:gnuhealth.newborn,id:"
-msgid "ID"
-msgstr "ID"
+msgstr "Profissional de Saúde"
 
 msgctxt "field:gnuhealth.newborn,length:"
 msgid "Length"
@@ -270,21 +220,19 @@ msgctxt "field:gnuhealth.newborn,reanimation_stimulation:"
 msgid "Stimulation"
 msgstr "Estimulação"
 
-msgctxt "field:gnuhealth.newborn,rec_name:"
-msgid "Name"
-msgstr "Nome"
-
 msgctxt "field:gnuhealth.newborn,sex:"
 msgid "Sex"
 msgstr "Sexo"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,signed_by:"
 msgid "Signed by"
-msgstr ""
+msgstr "Assinado por"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,state:"
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 msgctxt "field:gnuhealth.newborn,test_audition:"
 msgid "Audition"
@@ -318,29 +266,15 @@ msgctxt "field:gnuhealth.newborn,weight:"
 msgid "Weight"
 msgstr "Peso"
 
-msgctxt "field:gnuhealth.newborn,write_date:"
-msgid "Write Date"
-msgstr "Inserir Data"
-
-msgctxt "field:gnuhealth.newborn,write_uid:"
-msgid "Write User"
-msgstr "Inserir Usuário"
-
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
-msgid "Newborn ID"
-msgstr "ID do Recém-Nascido"
+msgid "Newborn"
+msgstr "Recém-nascido"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
-msgid "Newborn ID"
-msgstr "ID do Recém-Nascido"
-
-msgctxt "field:gnuhealth.patient.psc,create_date:"
-msgid "Create Date"
-msgstr "Agendar"
-
-msgctxt "field:gnuhealth.patient.psc,create_uid:"
-msgid "Create User"
-msgstr "Criar usuário"
+msgid "Newborn"
+msgstr "Recém-nascido"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -349,10 +283,6 @@ msgstr "Comentário"
 msgctxt "field:gnuhealth.patient.psc,evaluation_start:"
 msgid "Date"
 msgstr "Data"
-
-msgctxt "field:gnuhealth.patient.psc,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.patient.psc,notes:"
 msgid "Notes"
@@ -506,21 +436,9 @@ msgctxt "field:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Worries a lot"
 msgstr "Se preocupa em demasia"
 
-msgctxt "field:gnuhealth.patient.psc,rec_name:"
-msgid "Name"
-msgstr "Nome"
-
 msgctxt "field:gnuhealth.patient.psc,user_id:"
 msgid "Health Professional"
 msgstr "Profissional de saúde"
-
-msgctxt "field:gnuhealth.patient.psc,write_date:"
-msgid "Write Date"
-msgstr "Inserir Data"
-
-msgctxt "field:gnuhealth.patient.psc,write_uid:"
-msgid "Write User"
-msgstr "Inserir Usuário"
 
 msgctxt "help:gnuhealth.newborn,birth_date:"
 msgid "Date and Time of birth"
@@ -534,9 +452,10 @@ msgctxt "help:gnuhealth.newborn,died_being_transferred:"
 msgid "The baby died being transferred to another health institution"
 msgstr "O bebê morreu ao ser transferido para outra instituição de saúde"
 
+#, fuzzy
 msgctxt "help:gnuhealth.newborn,healthprof:"
 msgid "Health professional"
-msgstr ""
+msgstr "Profissional de saúde"
 
 msgctxt "help:gnuhealth.newborn,length:"
 msgid "Length in centimeters (cm)"
@@ -606,6 +525,11 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr "ID do Recém-Nascido"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:newborn_sign_button"
+msgid "Sign"
+msgstr "Sinal"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
 msgstr "Recém-nascido"
@@ -621,6 +545,39 @@ msgstr "Pediatria"
 msgctxt "model:res.group,name:group_health_pediatrics_admin"
 msgid "Health Pediatrics Administration"
 msgstr "Administração de Pediatria"
+
+msgctxt "report:newborn.card:"
+msgid "DoB:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Ht / Wt:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother ID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Mother:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:newborn.card:"
+msgid "Name:"
+msgstr "Nome:"
+
+msgctxt "report:newborn.card:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "Sex:"
+msgstr ""
+
+msgctxt "report:newborn.card:"
+msgid "photo"
+msgstr ""
 
 msgctxt "selection:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "None"
@@ -690,21 +647,24 @@ msgctxt "selection:gnuhealth.newborn,sex:"
 msgid "Male"
 msgstr "Masculino"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid "Signed"
-msgstr ""
+msgstr "Assinado"
 
 msgctxt "selection:gnuhealth.newborn,state:"
 msgid "draft"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid "Never"
@@ -718,9 +678,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_absent_from_school:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid "Never"
@@ -734,9 +695,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_aches_pains:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid "Never"
@@ -750,9 +712,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_act_as_younger:"
 msgid "Sometimes"
 msgstr "Algumas  Vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid "Never"
@@ -766,9 +729,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_acts_as_driven_by_motor:"
 msgid "Sometimes"
 msgstr "Algumas  Vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid "Never"
@@ -782,9 +746,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_afraid_of_new_situations:"
 msgid "Sometimes"
 msgstr "Algumas  Vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid "Never"
@@ -798,9 +763,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_blames_others:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid "Never"
@@ -814,9 +780,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_daydreams_too_much:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid "Never"
@@ -830,9 +797,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_distracted_easily:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid "Never"
@@ -846,9 +814,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_does_not_get_people_feelings:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid "Never"
@@ -862,9 +831,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_does_not_listen_to_rules:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid "Never"
@@ -878,9 +848,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_does_not_show_feelings:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid "Never"
@@ -894,9 +865,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_down_on_self:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid "Never"
@@ -910,9 +882,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_feels_hopeless:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid "Never"
@@ -926,9 +899,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_feels_is_bad_child:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid "Never"
@@ -942,9 +916,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_fidgety:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid "Never"
@@ -958,9 +933,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_fights_with_others:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid "Never"
@@ -974,9 +950,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_gets_hurt_often:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid "Never"
@@ -990,9 +967,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_having_less_fun:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid "Never"
@@ -1006,9 +984,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_irritable_angry:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid "Never"
@@ -1022,9 +1001,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_less_interest_in_school:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid "Never"
@@ -1038,9 +1018,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_less_interested_in_friends:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid "Never"
@@ -1054,9 +1035,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_refuses_to_share:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid "Never"
@@ -1070,9 +1052,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_sad_unhappy:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid "Never"
@@ -1086,9 +1069,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_school_grades_dropping:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid "Never"
@@ -1102,9 +1086,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_spend_time_alone:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid "Never"
@@ -1118,9 +1103,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_takes_things_from_others:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid "Never"
@@ -1134,9 +1120,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_takes_unnecesary_risks:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid "Never"
@@ -1150,9 +1137,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_teases_others:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid "Never"
@@ -1166,9 +1154,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_tires_easily:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid "Never"
@@ -1182,9 +1171,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_trouble_concentrating:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid "Never"
@@ -1198,9 +1188,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_trouble_sleeping:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid "Never"
@@ -1214,9 +1205,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_trouble_with_teacher:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid "Never"
@@ -1230,9 +1222,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_visit_doctor_finds_ok:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid "Never"
@@ -1246,9 +1239,10 @@ msgctxt "selection:gnuhealth.patient.psc,psc_wants_to_be_with_parents:"
 msgid "Sometimes"
 msgstr "As vezes"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid ""
-msgstr ""
+msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Never"
@@ -1261,3 +1255,57 @@ msgstr "Frequentemente"
 msgctxt "selection:gnuhealth.patient.psc,psc_worries_a_lot:"
 msgid "Sometimes"
 msgstr "As vezes"
+
+msgctxt "view:gnuhealth.neonatal.apgar:"
+msgid "APGAR"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "End the newborn document ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Findings and Tests"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Main"
+msgstr "Principal"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Reflex Check"
+msgstr ""
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Neonatal Signs and Symptoms"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Notes"
+msgstr "Observações"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign"
+msgstr "Sinal"
+
+msgctxt "view:gnuhealth.newborn:"
+msgid "Sign the process"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Status"
+msgstr "Situação"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Tests"
+msgstr "Testes"
+
+#, fuzzy
+msgctxt "view:gnuhealth.newborn:"
+msgid "Time"
+msgstr "Tempo"

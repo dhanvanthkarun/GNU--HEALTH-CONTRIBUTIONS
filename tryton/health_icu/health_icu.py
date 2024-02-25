@@ -87,7 +87,8 @@ class InpatientIcu(ModelSQL, ModelView):
                 table.name, where=(
                     (table.name == self.name.id) &
                     (table.admitted))))
-        if cursor.fetchone():
+        res = cursor.fetchall()
+        if len(res) > 1:
             raise PatientAlreadyInICU(
                 gettext('health_icu.msg_patient_already_in_icu'))
 

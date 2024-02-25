@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-08-18 22:33+0000\n"
-"Last-Translator: Ingrid Spessotti <ladeluno@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/gnu-health/"
-"health_ntd_dengue/es/>\n"
-"Language: es\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.dengue_du_survey,aedes_larva:"
 msgid "Larvae"
@@ -18,14 +9,6 @@ msgstr "Larvas"
 msgctxt "field:gnuhealth.dengue_du_survey,animal_water_container:"
 msgid "Animal Water containers"
 msgstr "Bebederos de Animales"
-
-msgctxt "field:gnuhealth.dengue_du_survey,create_date:"
-msgid "Create Date"
-msgstr "Fecha de Creación"
-
-msgctxt "field:gnuhealth.dengue_du_survey,create_uid:"
-msgid "Create User"
-msgstr "Creado por"
 
 msgctxt "field:gnuhealth.dengue_du_survey,du:"
 msgid "DU"
@@ -46,10 +29,6 @@ msgstr "Florero"
 msgctxt "field:gnuhealth.dengue_du_survey,fumigation_date:"
 msgid "Fumigation Date"
 msgstr "Fecha de Fumigación"
-
-msgctxt "field:gnuhealth.dengue_du_survey,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.dengue_du_survey,larva_in_house:"
 msgid "Domiciliary"
@@ -83,10 +62,6 @@ msgctxt "field:gnuhealth.dengue_du_survey,potted_plant:"
 msgid "Potted Plants"
 msgstr "Plantas en Macetas"
 
-msgctxt "field:gnuhealth.dengue_du_survey,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:gnuhealth.dengue_du_survey,rock_holes:"
 msgid "Rock holes"
 msgstr "Agujeros en Roca"
@@ -99,17 +74,14 @@ msgctxt "field:gnuhealth.dengue_du_survey,tree_holes:"
 msgid "Tree holes"
 msgstr "Agujeros en Árboles"
 
-msgctxt "field:gnuhealth.dengue_du_survey,write_date:"
-msgid "Write Date"
-msgstr "Fecha de Modificación"
-
-msgctxt "field:gnuhealth.dengue_du_survey,write_uid:"
-msgid "Write User"
-msgstr "Modificado por"
-
 msgctxt "field:gnuhealth.sequences,dengue_du_survey_sequence:"
-msgid "Dengue Survey Sequence"
-msgstr "Secuencia de Encuesta Dengue"
+msgid "Dengue DU Survey Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.dengue_du_survey_sequence,dengue_du_survey_sequence:"
+msgid "Dengue DU Survey Sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.dengue_du_survey,aedes_larva:"
 msgid "Check this box if Aedes aegypti larvae were found"
@@ -213,15 +185,29 @@ msgctxt ""
 msgid "DENGUE PRNT"
 msgstr "DENGUE por PRNT"
 
+msgctxt "model:gnuhealth.sequences.dengue_du_survey_sequence,name:"
+msgid "Dengue DU Survey Sequences setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_dengue_du_survey_form"
 msgid "Dengue DU Survey"
 msgstr "Encuesta de UD de Dengue"
 
-msgctxt "model:ir.sequence,name:seq_gnuhealth_du_survey"
+msgctxt "model:ir.sequence,name:"
 msgid "Dengue DU Survey"
 msgstr "Encuesta de UD de Dengue"
 
-msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_du_survey"
+#, fuzzy
+msgctxt "model:ir.sequence,name:seq_gnuhealth_dengue_du_survey"
+msgid "Dengue DU Survey"
+msgstr "Encuesta de UD de Dengue"
+
+msgctxt "model:ir.sequence.type,name:"
+msgid "Dengue DU Survey"
+msgstr "Encuesta de UD de Dengue"
+
+#, fuzzy
+msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_dengue_du_survey"
 msgid "Dengue DU Survey"
 msgstr "Encuesta de UD de Dengue"
 
@@ -246,10 +232,6 @@ msgid "Dengue PRNT Charges"
 msgstr "Cargos por Dengue por PRNT"
 
 msgctxt "selection:gnuhealth.dengue_du_survey,du_status:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:gnuhealth.dengue_du_survey,du_status:"
 msgid "Improved"
 msgstr "Mejorando"
 
@@ -264,3 +246,20 @@ msgstr "Sin Cambios"
 msgctxt "selection:gnuhealth.dengue_du_survey,du_status:"
 msgid "Worsen"
 msgstr "Empeorando"
+
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Areas to Improve"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Notes"
+msgstr "Notas"
+
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Presence of larvae"
+msgstr ""
+
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Preventive Measures"
+msgstr ""

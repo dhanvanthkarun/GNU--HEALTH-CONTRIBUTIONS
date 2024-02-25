@@ -31,8 +31,8 @@ msgid "APGAR Score"
 msgstr "APGAR 新生儿评分"
 
 msgctxt "field:gnuhealth.neonatal.apgar,name:"
-msgid "Newborn ID"
-msgstr "新生儿编号"
+msgid "Newborn"
+msgstr "新生儿"
 
 msgctxt "field:gnuhealth.newborn,apgar1:"
 msgid "APGAR 1st minute"
@@ -116,7 +116,7 @@ msgstr "巴宾斯基反射"
 
 msgctxt "field:gnuhealth.newborn,neonatal_barlow:"
 msgid "Positive Barlow"
-msgstr ""
+msgstr "Barlow 试验阳性"
 
 msgctxt "field:gnuhealth.newborn,neonatal_blink_reflex:"
 msgid "Blink Reflex"
@@ -124,7 +124,7 @@ msgstr "眨眼反射"
 
 msgctxt "field:gnuhealth.newborn,neonatal_erbs_palsy:"
 msgid "Erbs Palsy"
-msgstr ""
+msgstr "臂丛神经产伤"
 
 msgctxt "field:gnuhealth.newborn,neonatal_grasp_reflex:"
 msgid "Grasp Reflex"
@@ -144,7 +144,7 @@ msgstr "惊跳反射"
 
 msgctxt "field:gnuhealth.newborn,neonatal_ortolani:"
 msgid "Positive Ortolani"
-msgstr ""
+msgstr "Ortolani 测试阳性"
 
 msgctxt "field:gnuhealth.newborn,neonatal_palmar_crease:"
 msgid "Transversal Palmar Crease"
@@ -244,7 +244,7 @@ msgstr "南美锥虫病"
 
 msgctxt "field:gnuhealth.newborn,test_metabolic:"
 msgid "Metabolic (\"heel stick screening\")"
-msgstr ""
+msgstr "代谢性疾病(足跟血筛查)"
 
 msgctxt "field:gnuhealth.newborn,test_toxo:"
 msgid "Toxoplasmosis"
@@ -263,12 +263,12 @@ msgid "Weight"
 msgstr "体重"
 
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
-msgid "Newborn ID"
-msgstr "新生儿编号"
+msgid "Newborn"
+msgstr "新生儿"
 
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
-msgid "Newborn ID"
-msgstr "新生儿编号"
+msgid "Newborn"
+msgstr "新生儿"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -515,6 +515,10 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr "新生儿编号"
 
+msgctxt "model:ir.model.button,string:newborn_sign_button"
+msgid "Sign"
+msgstr "签署"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
 msgstr "新生儿"
@@ -531,60 +535,37 @@ msgctxt "model:res.group,name:group_health_pediatrics_admin"
 msgid "Health Pediatrics Administration"
 msgstr "Health 儿科管理"
 
-#, fuzzy
 msgctxt "report:newborn.card:"
-msgid ","
-msgstr ","
-
-#, fuzzy
-msgctxt "report:newborn.card:"
-msgid ":"
-msgstr "："
+msgid "DoB:"
+msgstr "出生日期:"
 
 msgctxt "report:newborn.card:"
-msgid "DoB"
-msgstr "出生日期"
+msgid "Ht / Wt:"
+msgstr "身长 / 体重:"
 
 msgctxt "report:newborn.card:"
-msgid "Female"
-msgstr "女"
+msgid "Mother ID:"
+msgstr "母亲证件号:"
 
 msgctxt "report:newborn.card:"
-msgid "ID"
-msgstr "ID"
+msgid "Mother:"
+msgstr "母亲:"
 
 msgctxt "report:newborn.card:"
-msgid "Male"
-msgstr "男"
+msgid "Name:"
+msgstr "姓名:"
 
 msgctxt "report:newborn.card:"
-msgid "Mother"
-msgstr "母亲"
+msgid "PUID:"
+msgstr "证件号码:"
 
 msgctxt "report:newborn.card:"
-msgid "Mother's"
-msgstr "母亲"
+msgid "Sex:"
+msgstr "性别:"
 
 msgctxt "report:newborn.card:"
-msgid "Name"
-msgstr "姓名"
-
-msgctxt "report:newborn.card:"
-msgid "PU"
-msgstr ""
-
-msgctxt "report:newborn.card:"
-msgid "and"
-msgstr "和"
-
-#, fuzzy
-msgctxt "report:newborn.card:"
-msgid "cm"
-msgstr "cm"
-
-msgctxt "report:newborn.card:"
-msgid "gr"
-msgstr ""
+msgid "photo"
+msgstr "照片"
 
 msgctxt "selection:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "None"
@@ -1088,7 +1069,7 @@ msgstr "APGAR 新生儿评分"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "End the newborn document ?"
-msgstr ""
+msgstr "是否结束新生儿建档？"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Findings and Tests"
@@ -1116,7 +1097,7 @@ msgstr "已签署"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Sign the process"
-msgstr ""
+msgstr "签署流程"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Status"

@@ -93,6 +93,9 @@ setup(
         ],
     license='GPL-3',
     install_requires=requires,
+    extras_require={
+        'Pillow': ['Pillow'],
+        },
     zip_safe=False,
     entry_points="""
     [trytond.modules]

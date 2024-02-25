@@ -11,34 +11,88 @@
 #                       HEALTH GENETICS package                         #
 #                  health_genetics.py: main module                      #
 #########################################################################
+from trytond import backend
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval
 from trytond.pool import Pool
 from uuid import uuid4
-from trytond.modules.health.core import get_institution
+from trytond.modules.health.core import (get_institution,
+                                         format_years_months_days)
+from trytond.transaction import Transaction
 
-__all__ = ['DiseaseGene', 'ProteinDisease', 'GeneVariant',
+__all__ = ['Gene', 'ProteinDisease', 'GeneVariant',
            'GeneVariantPhenotype',
            'PatientGeneticRisk', 'FamilyDiseases', 'GnuHealthPatient']
 
 
-class DiseaseGene(ModelSQL, ModelView):
-    'Disease Genes'
-    __name__ = 'gnuhealth.disease.gene'
+class Gene(ModelSQL, ModelView):
+    'Genes'
+    __name__ = 'gnuhealth.gene'
 
-    name = fields.Char('Gene Name', required=True, select=True)
+    name = fields.Char(
+        'Symbol', help='Symbol', required=True, select=True)
+
+    aliases = fields.Char(
+        'Aliases', help='Symbol aliases')
+
+    name_aliases = fields.Char(
+        'Name Aliases', help='Name aliases')
+
+    hgnc_id = fields.Char(
+        'HGNC ID', help='HUGO Gene Nomenclature Committee identifier',
+        required=True, select=True)
+
+    gene_type = fields.Selection([
+        (None, ''),
+        ('protein_coding', 'protein-coding gene'),
+        ('ncrna_long_non_coding_rna', 'ncRNA: long non-coding RNA'),
+        ('ncrna_y_rna', 'ncRNA: Y RNA'),
+        ('ncrna_cluster_rna', 'ncRNA: cluster RNA'),
+        ('ncrna_micro_rna', 'ncRNA: micro RNA'),
+        ('ncrna_misc_rna', 'ncRNA: misc RNA'),
+        ('ncrna_ribosomal_rna', 'ncRNA: ribosomal RNA'),
+        ('ncrna_small_nuclear_rna', 'ncRNA: small nuclear RNA'),
+        ('ncrna_small_nucleolar_rna', 'ncRNA: small nucleolar RNA'),
+        ('ncrna_transfer_rna', 'ncRNA: transfer RNA'),
+        ('ncrna_vault_rna', 'ncRNA: vault RNA'),
+        ('pseudogene_pseudogene', 'pseudogene: pseudogene'),
+        ('pseudogene_tcell_receptor',
+            'pseudogene: T cell receptor pseudogene'),
+        ('pseudogene_immunoglobulin', 'pseudogene: immunoglobulin pseudogene'),
+        ('other_tcell_receptor_gene', 'other: T cell receptor gene'),
+        ('other_complex_locus_constituent',
+            'other: complex locus constituent'),
+        ('other_endogenous_retrovirus', 'other: endogenous retrovirus'),
+        ('other_fragile_site', 'other: fragile site'),
+        ('other_immunoglobulin_gene', 'other: immunoglobulin gene'),
+        ('other_readthrough', 'other: readthrough'),
+        ('other_region', 'other: biological region'),
+        ('other_virus_integration_site', 'other: virus integration site'),
+        ('other_unknown', 'other: unknown'),
+        ], 'Gene type', help="Locus in the form of group:type",
+        sort=False, select=True)
+
     protein_name = fields.Char('Protein Code',
-                               help="Encoding Protein Code, \
-                               such as UniProt protein name",
+                               help="Encoding Protein Code,"
+                               " such as UniProt protein name",
                                select=True)
-    long_name = fields.Char('Official Long Name', translate=True)
-    gene_id = fields.Char('Gene ID',
-                          help="default code from NCBI Entrez database.",
+    # Do not translate the gene long name. Having the gene long name
+    # description in English is OK in the scientific community, and it
+    # will make the update process much faster, and don't overload the
+    # translation server at Weblate. more details:
+    # https://savannah.gnu.org/bugs/?64542
+    long_name = fields.Char('Official Name', translate=False)
+    gene_id = fields.Char('Entrez Gene ID',
+                          help="Gene ID from NCBI Entrez database.",
                           select=True)
     chromosome = fields.Char('Chromosome',
                              help="Name of the affected chromosome",
                              select=True)
     location = fields.Char('Location', help="Locus of the chromosome")
+
+    ensembl_id = fields.Char("Ensembl ID")
+    refseq_accession = fields.Char("RefSeq", help="RefSeq Accession ID")
+    omim_id = fields.Char("OMIM ID")
 
     info = fields.Text('Information', help="Extra Information")
     variants = fields.One2Many('gnuhealth.gene.variant', 'name',
@@ -56,12 +110,12 @@ class DiseaseGene(ModelSQL, ModelView):
 
     @classmethod
     def __setup__(cls):
-        super(DiseaseGene, cls).__setup__()
+        super(Gene, cls).__setup__()
 
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_unique', Unique(t, t.name),
-                'The Official Symbol name must be unique'),
+            ('name_unique', Unique(t, t.hgnc_id),
+                'The official identifier must be unique'),
             ]
 
     def get_rec_name(self, name):
@@ -81,24 +135,19 @@ class DiseaseGene(ModelSQL, ModelView):
                 ('long_name',) + tuple(clause[1:]),
                 ]
 
-    """
-    #Obsoleted. Old (3.2) migration
     @classmethod
-    # Update to version 3.2
-    def __register__(cls, module_name):
-        super(DiseaseGene, cls).__register__(module_name)
+    def __register__(cls, module):
+        # Migration from 4.2:
+        # rename gnuhealth.disease.gene to gnuhealth.gene
+        backend.TableHandler.table_rename('gnuhealth_disease_gene', cls._table)
 
-        TableHandler = backend.get('TableHandler')
-        table = TableHandler(cls, module_name)
-        # Insert the current "specialty" associated to the HP in the
-        # table that keeps the specialties associated to different health
-        # professionals, gnuhealth.hp_specialty
-
-        if table.column_exist('dominance'):
-            # Drop old dominance column
-            # which is now part of the gene variant phenotype
-            table.drop_column('dominance')
-    """
+        # Update the data field from gnuhealth.disease.gene to gnuhealth.gene
+        cursor = Transaction().connection.cursor()
+        cursor.execute("""
+            UPDATE ir_model_data SET model = 'gnuhealth.gene'
+            WHERE model = 'gnuhealth.disease.gene'
+            """)
+        super().__register__(module)
 
 
 class ProteinDisease(ModelSQL, ModelView):
@@ -109,28 +158,35 @@ class ProteinDisease(ModelSQL, ModelView):
                        help="Uniprot Disease Code")
 
     disease_name = fields.Char('Disease name', translate=True)
-    acronym = fields.Char('Acronym', required=True, select=True,
+    acronym = fields.Char('Mnemonic', required=True, select=True,
                           help="Disease acronym / mnemonics")
 
     disease_uri = fields.Function(fields.Char("Disease URI"),
                                   'get_disease_uri')
 
-    mim_reference = fields.Char('MIM',
-                                help="MIM - "
+    mim_reference = fields.Char('MIM', help="MIM -"
                                 "Mendelian Inheritance in Man- DB reference")
 
     gene_variant = fields.One2Many('gnuhealth.gene.variant.phenotype',
                                    'phenotype',
                                    'Natural Variant',
-                                   help="Protein sequence variant(s) "
+                                   help="Natural variants "
                                         "involved in this condition")
 
-    dominance = fields.Selection([
+    keywords = fields.Char('Keywords', select=True)
+
+    xrefs = fields.Char('Xrefs', help="Cross references")
+
+    inheritance_pattern = fields.Selection([
         (None, ''),
-        ('d', 'dominant'),
-        ('r', 'recessive'),
+        ('ad', 'Autosomic dominant'),
+        ('ar', 'Autosomic recessive'),
+        ('x', 'X-Linked'),
+        ('y', 'Y-Linked'),
+        ('m', 'Mitochondrial'),
         ('c', 'codominance'),
-        ], 'Dominance', sort=False, select=True)
+        ], 'Inheritance Pattern', help="Inheritance pattern",
+        sort=False, select=True)
 
     description = fields.Text('Description')
 
@@ -160,6 +216,14 @@ class ProteinDisease(ModelSQL, ModelView):
                 'The Disease Code  name must be unique'),
             ]
 
+    @classmethod
+    def __register__(cls, module):
+        # Migration from 4.2:
+        # rename dominance field to inheritance_pattern
+        table_h = cls.__table_handler__(module)
+        table_h.column_rename('dominance', 'inheritance_pattern')
+        super().__register__(module)
+
     def get_rec_name(self, name):
         return self.name + ':' + self.disease_name
 
@@ -179,13 +243,38 @@ class GeneVariant(ModelSQL, ModelView):
     'Natural Variant'
     __name__ = 'gnuhealth.gene.variant'
 
-    name = fields.Many2One('gnuhealth.disease.gene', 'Gene and Protein',
+    name = fields.Many2One('gnuhealth.gene', 'Gene',
                            required=True,
-                           help="Gene and expressing protein (in parenthesis)")
-    variant = fields.Char("Protein Variant", required=True, select=True)
-    aa_change = fields.Char('Change', help="Resulting amino acid change")
+                           help="Gene and protein product (in parenthesis)")
+    variant = fields.Char(
+        "FTId", help="Variant Feature Identifier (FTId)",
+        required=True, select=True)
+    protein = fields.Char('Protein ', help='Uniprot Protein ID')
+    aa_change = fields.Char('AA Change', help="Amino acid change")
+
+    dbsnp = fields.Char('dbSNP', help='dbSNP ID')
+
+    dbsnp_url = fields.Function(
+        fields.Char("Reference SNP",
+                    help="Reference SNP (rs) link"), 'get_dbsnp_url')
+
+    significance = fields.Selection([
+        (None, ''),
+        ('lbb', 'LB/B: Likely benign or benign'),
+        ('lpp', 'LP/P: Likely pathogenic or pathogenic'),
+        ('us', 'US: Unknown significance'),
+        ], 'Significance',
+        help="Category related to the clinical significance of the variant",
+        sort=False, select=True)
+
     phenotypes = fields.One2Many('gnuhealth.gene.variant.phenotype', 'variant',
-                                 'Phenotypes')
+                                 'Phenotypes / Diseases')
+
+    def get_dbsnp_url(self, name):
+        url = ''
+        if (self.dbsnp):
+            url = f'https://www.ncbi.nlm.nih.gov/snp/{str(self.dbsnp)}'
+        return url
 
     @classmethod
     def __setup__(cls):
@@ -196,7 +285,7 @@ class GeneVariant(ModelSQL, ModelView):
             ('variant_unique', Unique(t, t.variant),
                 'The variant ID must be unique'),
             ('aa_unique', Unique(t, t.variant, t.aa_change),
-                'The resulting AA change for this protein already exists'),
+                'The amino acid change for the variant already exists'),
             ]
 
     def get_rec_name(self, name):
@@ -213,6 +302,7 @@ class GeneVariant(ModelSQL, ModelView):
                 ('name',) + tuple(clause[1:]),
                 ('variant',) + tuple(clause[1:]),
                 ('aa_change',) + tuple(clause[1:]),
+                ('dbsnp',) + tuple(clause[1:]),
                 ]
 
 
@@ -225,7 +315,7 @@ class GeneVariantPhenotype(ModelSQL, ModelView):
                               required=True)
 
     gene = fields.Function(fields.Many2One(
-        'gnuhealth.disease.gene', 'Gene & Protein',
+        'gnuhealth.gene', 'Gene & Protein',
         depends=['variant'],
         help="Gene and expressing protein (in parenthesis)"),
         'get_gene',
@@ -278,7 +368,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
     __name__ = 'gnuhealth.patient.genetic.risk'
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', select=True)
-    disease_gene = fields.Many2One('gnuhealth.disease.gene',
+    disease_gene = fields.Many2One('gnuhealth.gene',
                                    'Gene', required=True)
     natural_variant = fields.Many2One('gnuhealth.gene.variant', 'Variant',
                                       domain=[('name', '=',
@@ -316,7 +406,8 @@ class PatientGeneticRisk(ModelSQL, ModelView):
         vals = {
             'page': str(uuid4()),
             'person': genetic_info.patient.name.id,
-            'age': genetic_info.onset and str(genetic_info.onset) + 'y' or '',
+            'age': format_years_months_days(
+                years=genetic_info.onset, months=0, days=0),
             'federation_account': genetic_info.patient.name.federation_account,
             'page_type': 'medical',
             'medical_context': 'genetics',
@@ -372,6 +463,8 @@ class FamilyDiseases(ModelSQL, ModelView):
         ('f', 'Paternal'),
         ('s', 'Sibling'),
         ], 'Maternal or Paternal', select=True)
+
+    xory_str = xory.translated('xory')
 
     relative = fields.Selection([
         ('mother', 'Mother'),

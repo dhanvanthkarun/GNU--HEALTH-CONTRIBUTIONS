@@ -16,7 +16,11 @@ from trytond.transaction import Transaction
 from trytond.pool import Pool, PoolMeta
 from datetime import datetime
 from trytond.pyson import Eval, Not, Equal
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         image_crop_to_ratio)
+
+from PIL import Image
+
 
 __all__ = ['Newborn', 'NeonatalApgar', 'NeonatalMedication',
            'NeonatalCongenitalDiseases', 'PediatricSymptomsChecklist']
@@ -28,6 +32,8 @@ class Newborn(ModelSQL, ModelView):
 
     STATES = {'readonly': Eval('state') == 'signed'}
 
+    # We no longer need the legacy newborn ID, since patient.puid is
+    # used. for backward compatibility reasons, we keep it.
     name = fields.Char('Newborn ID', states=STATES)
     patient = fields.Many2One(
         'gnuhealth.patient', 'Baby', required=True, states=STATES,
@@ -40,6 +46,13 @@ class Newborn(ModelSQL, ModelView):
         help="Date and Time of birth", states=STATES)
     photo = fields.Binary('Picture', states=STATES)
 
+    # photo_crop method is used in report template, for we can not
+    # find a way to keep the original aspect ratio in odt template at
+    # the moment.
+    @classmethod
+    def photo_crop(cls, photo, ratio):
+        return image_crop_to_ratio(Image, photo, ratio)
+
     # Sex / Gender at birth.
 
     sex = fields.Selection(
@@ -49,6 +62,8 @@ class Newborn(ModelSQL, ModelView):
         ], 'Sex', sort=False, required=True,
         help="Sex at birth. It might differ from the current patient"
         " gender. This is the biological sex.", states=STATES)
+
+    sex_str = sex.translated('sex')
 
     state = fields.Selection([
         (None, ''),
@@ -65,6 +80,20 @@ class Newborn(ModelSQL, ModelView):
     weight = fields.Integer(
         'Weight',
         help="Weight in grams (g)", states=STATES)
+
+    ## Used by newborn_card report template, the page of newborn_card
+    ## report is very small, so it requires compression of information.
+    def get_report_length_and_weight(self):
+        if self.length and self.weight:
+            ## I think 'cm' and 'g' do not need to translate.
+            return f'{self.length}cm, {self.weight}g'
+        elif self.length:
+            return f'{self.length}cm'
+        elif self.weight:
+            return f'{self.weight}g'
+        else:
+            return ''
+
     apgar1 = fields.Integer('APGAR 1st minute', states=STATES)
     apgar5 = fields.Integer('APGAR 5th minute', states=STATES)
     apgar_scores = fields.One2Many(
@@ -288,7 +317,7 @@ class NeonatalApgar(ModelSQL, ModelView):
     'Neonatal APGAR Score'
     __name__ = 'gnuhealth.neonatal.apgar'
 
-    name = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
+    name = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
     apgar_minute = fields.Integer('Minute', required=True)
 
@@ -344,14 +373,14 @@ class NeonatalApgar(ModelSQL, ModelView):
 class NeonatalMedication(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.medication'
 
-    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
+    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
 
 # Deprecated in 3.0  - Use main patient form
 class NeonatalCongenitalDiseases(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.disease'
 
-    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn ID')
+    newborn_id = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
 
 class PediatricSymptomsChecklist(ModelSQL, ModelView):

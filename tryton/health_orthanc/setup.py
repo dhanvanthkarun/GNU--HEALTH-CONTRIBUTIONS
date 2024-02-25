@@ -35,7 +35,7 @@ for key in ('depends', 'extras_depend', 'xml'):
 major_version, minor_version = 6, 0
 
 # Initial packages required specifically for health_orthanc
-requires = ['pendulum', 'beren == 0.7.0']
+requires = ['pendulum', 'beren == 0.7.0', "pydicom"]
 
 for dep in info.get('depends', []):
     if (dep == 'health'):

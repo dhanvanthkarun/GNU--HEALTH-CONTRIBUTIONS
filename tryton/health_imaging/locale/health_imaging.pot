@@ -46,6 +46,10 @@ msgctxt "field:gnuhealth.imaging.test.request,request:"
 msgid "Order"
 msgstr ""
 
+msgctxt "field:gnuhealth.imaging.test.request,request_line:"
+msgid "Order line"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.request,requested_test:"
 msgid "Study"
 msgstr ""
@@ -173,6 +177,14 @@ msgctxt "help:gnuhealth.imaging.test.result,order:"
 msgid "The order ID containing this particular imaging study"
 msgstr ""
 
+msgctxt "help:gnuhealth.imaging.test.type,code:"
+msgid "Suggest use values of DICOM Modality (0008,0060) tag."
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging.test.type,name:"
+msgid "Suggest use descriptions of DICOM Modality (0008,0060) tag."
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.imaging.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
@@ -197,6 +209,39 @@ msgstr ""
 
 msgctxt "model:gnuhealth.imaging.test.type,name:"
 msgid "Medical Imaging Study Type"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_cr"
+msgid "Computed Radiography"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ctscan"
+msgid "Computed Tomography"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_dx"
+msgid "Digital Radiography"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_mri"
+msgid "Magnetic Resonance"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_petscan"
+msgid "Positron emission tomography (PET)"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ultrasound"
+msgid "Ultrasound"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xa"
+msgid "X-Ray Angiography"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
+msgid "X-ray"
 msgstr ""
 
 msgctxt "model:gnuhealth.patient.imaging.test.request.start,name:"
@@ -356,11 +401,11 @@ msgid "Health Imaging Administration"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid ","
+msgid "Age:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid ":"
+msgid "Comment"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
@@ -368,7 +413,7 @@ msgid "Context:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "D"
+msgid "Date:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
@@ -376,31 +421,35 @@ msgid "DoB:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Evaluated"
+msgid "Evaluated by:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Female"
+msgid "Gender:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Interpretation"
+msgid "Image"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Male"
+msgid "Imaging Study Report"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Order"
+msgid "Interpretation:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "PUID"
+msgid "Order:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Patient"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Patient:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
@@ -408,7 +457,7 @@ msgid "Print Date:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "R"
+msgid "Requested by:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
@@ -416,27 +465,11 @@ msgid "Resources:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Sex:"
+msgid "Study ID:"
 msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
-msgid "Study"
-msgstr ""
-
-msgctxt "report:patient.imaging_report_results:"
-msgid "Study ID"
-msgstr ""
-
-msgctxt "report:patient.imaging_report_results:"
-msgid "ate:"
-msgstr ""
-
-msgctxt "report:patient.imaging_report_results:"
-msgid "by"
-msgstr ""
-
-msgctxt "report:patient.imaging_report_results:"
-msgid "equested by:"
+msgid "Study:"
 msgstr ""
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"

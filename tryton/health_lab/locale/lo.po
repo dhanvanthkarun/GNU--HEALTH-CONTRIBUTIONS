@@ -2,24 +2,8 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:gnuhealth.lab.test.units:"
-msgid "The Unit name must be unique"
-msgstr ""
-
-msgctxt "error:gnuhealth.lab.test_type:"
-msgid "The Lab Test code must be unique"
-msgstr ""
-
-msgctxt "error:gnuhealth.lab:"
-msgid "The test ID code must be unique"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,create_uid:"
-msgid "Create User"
+msgctxt "field:gnuhealth.lab,analytes_summary:"
+msgid "Summary"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,critearea:"
@@ -38,57 +22,60 @@ msgctxt "field:gnuhealth.lab,diagnosis:"
 msgid "Diagnosis"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
-msgstr ""
+msgstr "ເລດລຳດັບ"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab,other_source:"
+msgid "Other"
+msgstr "ອື່ນໆ"
+
+#, fuzzy
 msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
-msgstr ""
+msgstr "ນັກວິໃຈຄົ້ນຄົ້ວພະຍາດ"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab,pathology:"
+msgid "Pathology"
+msgstr "ວິທະຍາສາດເານປິ່ນປົວ"
+
+#, fuzzy
 msgctxt "field:gnuhealth.lab,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "ຄົນເຈັບ"
 
-msgctxt "field:gnuhealth.lab,rec_name:"
-msgid "Name"
+msgctxt "field:gnuhealth.lab,request_order:"
+msgid "Order"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,requestor:"
-msgid "Physician"
+msgid "Health prof"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
 msgstr ""
 
+msgctxt "field:gnuhealth.lab,source_name:"
+msgid "Source name"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab,source_type:"
+msgid "Source"
+msgstr "ແຫຼ່ງຂໍ້ມູນ"
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.create.init,id:"
-msgid "ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,create_uid:"
-msgid "Create User"
-msgstr ""
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test.critearea,code:"
+msgid "Code"
+msgstr "ລະຫັດປະເທດ"
 
 msgctxt "field:gnuhealth.lab.test.critearea,excluded:"
 msgid "Excluded"
@@ -96,10 +83,6 @@ msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,gnuhealth_lab_id:"
 msgid "Test Cases"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,id:"
-msgid "ID"
 msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,lab_warning_icon:"
@@ -114,236 +97,225 @@ msgctxt "field:gnuhealth.lab.test.critearea,name:"
 msgid "Analyte"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,normal_range:"
 msgid "Reference"
-msgstr ""
+msgstr "ເອກະສານອ້າງອີງ"
 
-msgctxt "field:gnuhealth.lab.test.critearea,rec_name:"
-msgid "Name"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,remarks:"
 msgid "Remarks"
-msgstr ""
+msgstr "ຂໍ້ສັງເກດ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,result:"
 msgid "Value"
-msgstr ""
+msgstr "ໝາຍເລກ"
 
 msgctxt "field:gnuhealth.lab.test.critearea,result_text:"
 msgid "Result - Text"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,sequence:"
 msgid "Sequence"
-msgstr ""
+msgstr "ລໍາດັບ"
 
 msgctxt "field:gnuhealth.lab.test.critearea,test_type_id:"
 msgid "Test type"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,units:"
 msgid "Units"
-msgstr ""
+msgstr "ຫົວຫນ່ວຍ"
 
 msgctxt "field:gnuhealth.lab.test.critearea,upper_limit:"
 msgid "Upper Limit"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,warning:"
 msgid "Warn"
-msgstr ""
+msgstr "ເຕືອນ"
 
-msgctxt "field:gnuhealth.lab.test.critearea,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.critearea,write_uid:"
-msgid "Write User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.units,code:"
 msgid "Code"
-msgstr ""
+msgstr "ລະຫັດປະເທດ"
 
-msgctxt "field:gnuhealth.lab.test.units,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test.units,name:"
 msgid "Unit"
-msgstr ""
+msgstr "ຫົວໜ່ວຍ"
 
-msgctxt "field:gnuhealth.lab.test.units,rec_name:"
-msgid "Name"
-msgstr ""
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,active:"
+msgid "Active"
+msgstr "ຢ່າງຫ້າວຫັນ"
 
-msgctxt "field:gnuhealth.lab.test.units,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test.units,write_uid:"
-msgid "Write User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test_type,code:"
 msgid "Code"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "ລະຫັດປະເທດ"
 
 msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr ""
 
-msgctxt "field:gnuhealth.lab.test_type,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 msgctxt "field:gnuhealth.lab.test_type,name:"
 msgid "Test"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab.test_type,product_id:"
 msgid "Service"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,rec_name:"
-msgid "Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab.test_type,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "ບໍລິການ"
 
 msgctxt "field:gnuhealth.patient,lab_test_ids:"
 msgid "Lab Tests Required"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,create_date:"
-msgid "Create Date"
+msgctxt "field:gnuhealth.patient.disease,lab_confirmed:"
+msgid "Lab Confirmed"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,create_uid:"
-msgid "Create User"
+msgctxt "field:gnuhealth.patient.disease,lab_test:"
+msgid "Lab Test"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test,context:"
+msgid "Context"
+msgstr ""
+
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,date:"
 msgid "Date"
-msgstr ""
+msgstr "ວັນທີ:"
 
 msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Doctor"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test,id:"
-msgid "ID"
+msgid "Health prof."
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,name:"
 msgid "Test Type"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,other_source:"
+msgid "Other"
+msgstr "ອື່ນໆ"
+
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test,rec_name:"
-msgid "Name"
-msgstr ""
+msgstr "ຄົນເຈັບ"
 
 msgctxt "field:gnuhealth.patient.lab.test,request:"
-msgid "Request"
+msgid "Order"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test,source_name:"
+msgid "Source name"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,source_type:"
+msgid "Source"
+msgstr "ແຫຼ່ງຂໍ້ມູນ"
+
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
-msgstr ""
+msgstr "ລັດ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
+msgstr "ຮີບດ່ວນ"
+
+msgctxt "field:gnuhealth.patient.lab.test.request.start,context:"
+msgid "Context"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.lab.test,write_uid:"
-msgid "Write User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,date:"
 msgid "Date"
-msgstr ""
+msgstr "ວັນທີ:"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Doctor"
+msgid "Health prof"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test.request.start,id:"
-msgid "ID"
-msgstr ""
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other"
+msgstr "ອື່ນໆ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "ຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Source"
+msgstr "ແຫຼ່ງຂໍ້ມູນ"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,tests:"
 msgid "Tests"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,urgent:"
 msgid "Urgent"
-msgstr ""
+msgstr "ຮີບດ່ວນ"
 
-msgctxt "field:gnuhealth.request-test,id:"
-msgid "ID"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:gnuhealth.request-test,request:"
 msgid "Request"
-msgstr ""
+msgstr "Requests"
 
 msgctxt "field:gnuhealth.request-test,test:"
 msgid "Test"
 msgstr ""
 
 msgctxt "field:gnuhealth.sequences,lab_request_sequence:"
-msgid "Patient Lab Request Sequence"
+msgid "Lab request sequence"
 msgstr ""
 
-msgctxt "field:gnuhealth.sequences,lab_sequence:"
-msgid "Lab Sequence"
+msgctxt "field:gnuhealth.sequences,lab_test_sequence:"
+msgid "Lab test sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences.lab_request_sequence,lab_request_sequence:"
+msgid "Lab request sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
+msgid "Lab test sequence"
 msgstr ""
 
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+#, fuzzy
 msgctxt "help:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
+msgstr "ນັກວິໃຈຄົ້ນຄົ້ວພະຍາດ"
+
+msgctxt "help:gnuhealth.lab,pathology:"
+msgid "Pathology confirmed / associated to this lab test."
 msgstr ""
 
 msgctxt "help:gnuhealth.lab,patient:"
@@ -354,8 +326,16 @@ msgctxt "help:gnuhealth.lab,requestor:"
 msgid "Doctor who requested the test"
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,source_type:"
+msgid "Sample source type."
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test.critearea,code:"
+msgid "Lab test critearea code, mainly used by lab interface script."
 msgstr ""
 
 msgctxt "help:gnuhealth.lab.test.critearea,excluded:"
@@ -382,16 +362,52 @@ msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.disease,lab_confirmed:"
+msgid "Confirmed by laboratory test"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.disease,lab_test:"
+msgid "Lab test that confirmed the condition"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,context:"
+msgid ""
+"Health context for this order. It can be a suspected or existing health "
+"condition, a regular health checkup, ..."
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Doctor who Request the lab test."
+msgid "Health professional who requests the lab test."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,source_type:"
+msgid "Sample source type."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
+msgid ""
+"Health context for this order. It can be a suspected or existing health "
+"condition, a regular health checkup, ..."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Doctor who Request the lab tests."
+msgid "Health professional who ordered the lab tests."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,other_source:"
+msgid "Other sample source."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Sample source type."
 msgstr ""
 
 msgctxt "model:gnuhealth.lab,name:"
-msgid "Lab Test"
+msgid "Patient Lab Test Results"
 msgstr ""
 
 msgctxt "model:gnuhealth.lab.test.create.init,name:"
@@ -420,6 +436,10 @@ msgstr ""
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_bacteria0"
 msgid "Bacteria"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_bas"
+msgid "BAS"
 msgstr ""
 
 msgctxt ""
@@ -497,9 +517,13 @@ msgctxt ""
 msgid "Direct Bilirubin"
 msgstr ""
 
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_eo"
+msgid "EO"
+msgstr ""
+
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_eos0"
-msgid "EOS%"
+msgid "EO%"
 msgstr ""
 
 msgctxt ""
@@ -544,7 +568,7 @@ msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_haemoglobin0"
-msgid "Hemoglobin"
+msgid "HGB"
 msgstr ""
 
 msgctxt ""
@@ -583,7 +607,7 @@ msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_lym1"
-msgid "LYM#"
+msgid "LYM"
 msgstr ""
 
 msgctxt ""
@@ -616,6 +640,10 @@ msgctxt ""
 msgid "Microscopic Examination"
 msgstr ""
 
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mon"
+msgid "MON"
+msgstr ""
+
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mon0"
 msgid "MON%"
@@ -631,9 +659,17 @@ msgctxt ""
 msgid "Motility"
 msgstr ""
 
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mpv"
+msgid "MPV"
+msgstr ""
+
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_mucus0"
 msgid "Mucus"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_neu"
+msgid "NEU"
 msgstr ""
 
 msgctxt ""
@@ -664,6 +700,20 @@ msgstr ""
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_ovacyst0"
 msgid "Ova/Cyst"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_pct"
+msgid "PCT"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_pdwcv"
+msgid "PDWcv"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_pdwsd"
+msgid "PDWsd"
 msgstr ""
 
 msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_ph0"
@@ -752,12 +802,12 @@ msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_rdwcv0"
-msgid "RDW-CV"
+msgid "RDWcv"
 msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_rdwsd0"
-msgid "RDW-SD"
+msgid "RDWsd"
 msgstr ""
 
 msgctxt ""
@@ -840,10 +890,11 @@ msgctxt ""
 msgid "Viscosity"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_volume0"
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_wbc0"
@@ -902,7 +953,7 @@ msgid "URINE ANALYSIS"
 msgstr ""
 
 msgctxt "model:gnuhealth.patient.lab.test,name:"
-msgid "Patient Lab Test"
+msgid "Lab Test Request"
 msgstr ""
 
 msgctxt "model:gnuhealth.patient.lab.test.request.start,name:"
@@ -913,12 +964,20 @@ msgctxt "model:gnuhealth.request-test,name:"
 msgid "Request - Test"
 msgstr ""
 
+msgctxt "model:gnuhealth.sequences.lab_request_sequence,name:"
+msgid "Lab Request Sequence setup"
+msgstr ""
+
+msgctxt "model:gnuhealth.sequences.lab_test_sequence,name:"
+msgid "Lab Test Sequence setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_create_lab_test"
-msgid "Create Lab Test"
+msgid "Lab: Create test"
 msgstr ""
 
 msgctxt "model:ir.action,name:act_patient_lab_history_form1"
-msgid "Lab Reports"
+msgid "Lab: Results"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_lab_test_request"
@@ -934,15 +993,19 @@ msgid "Lab Test Types"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_tree_lab"
-msgid "Lab Tests Results"
+msgid "Lab Results"
 msgstr ""
 
 msgctxt "model:ir.action,name:patient_lab_test_request"
-msgid "Request Lab Test"
+msgid "Lab: New order"
 msgstr ""
 
 msgctxt "model:ir.action,name:report_patient_labtest_report"
 msgid "Lab Report"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:complete_criteareas_button"
+msgid "Complete Criteareas"
 msgstr ""
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
@@ -962,7 +1025,7 @@ msgid "Lab Test"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_action_lab_tree"
-msgid "Lab Tests Results"
+msgid "Lab Results"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_laboratory"
@@ -986,7 +1049,7 @@ msgid "Lab Test Types"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_patient_lab_test_request"
-msgid "Request Lab Test"
+msgid "Lab: New order"
 msgstr ""
 
 msgctxt "model:product.category,name:product_category_labservices0"
@@ -997,9 +1060,10 @@ msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
 msgid "Blood count test charges"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
-msgstr ""
+msgstr "ແພດວິຊາຖໍ່ຫຼອດລົມ"
 
 msgctxt "model:product.template,name:product_template_haematologycharges0"
 msgid "Haematology Charges"
@@ -1041,17 +1105,120 @@ msgctxt "model:res.group,name:group_health_lab_admin"
 msgid "Health lab Administration"
 msgstr ""
 
-msgctxt "model:res.user,name:user_demo_lab"
-msgid "Health Lab"
+msgctxt "report:patient.labtest.report:"
+msgid "Age:"
 msgstr ""
 
+msgctxt "report:patient.labtest.report:"
+msgid "Analyte"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Date:"
+msgstr "ວັນທີ:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Diagnosis:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Doctor:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Gender:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "LABORATORY REPORT"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Name:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Order:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Pathologist:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Reference"
+msgstr "ເອກະສານອ້າງອີງ"
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Remarks"
+msgstr "ຂໍ້ສັງເກດ"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Results"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Results:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Signature:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Source:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Test:"
+msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Unit"
+msgstr "ຫົວໜ່ວຍ"
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Value"
+msgstr "ໝາຍເລກ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Other"
+msgstr "ອື່ນໆ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab,source_type:"
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Other"
+msgstr "ອື່ນໆ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Cancel"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Draft"
-msgstr ""
+msgstr "ຮ່າງກຽມ"
 
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Ordered"
@@ -1061,18 +1228,88 @@ msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Tested"
 msgstr ""
 
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Other"
+msgstr "ອື່ນໆ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+msgctxt "view:gnuhealth.lab.test.create.init:"
+msgid "Create Tests"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test.create.init:"
+msgid "Do you want to generate the test(s) ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test.critearea:"
+msgid "Reference Value / Range"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Extra Info"
+msgstr "ຂໍ້ມູນເພີ່ມ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Main Info"
+msgstr "ຂໍ້ມູນຕົ້ນຕໍ"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Complete Criteareas"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Complete criteareas of current test type."
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Diagnosis"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Do your want to complete criteareas of current test type?"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Extra Info"
+msgstr "ຂໍ້ມູນເພີ່ມ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Main Info"
+msgstr "ຂໍ້ມູນຕົ້ນຕໍ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Notes"
+msgstr "ໝາຍເຫດ"
+
+msgctxt "view:gnuhealth.patient.disease:"
+msgid "Laboratory"
+msgstr ""
+
 msgctxt "wizard_button:gnuhealth.lab.test.create,start,create_lab_test:"
 msgid "Create Test Order"
 msgstr ""
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.lab.test.create,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.patient.lab.test.request,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.patient.lab.test.request,start,request:"
 msgid "Request"
-msgstr ""
+msgstr "Requests"

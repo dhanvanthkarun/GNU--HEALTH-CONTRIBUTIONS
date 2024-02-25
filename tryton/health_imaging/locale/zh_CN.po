@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2022-07-18 04:39+0000\n"
-"Last-Translator: Feng Shu <tumashu@163.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"gnu-health/health_imaging/zh_Hans/>\n"
-"Language: zh_CN\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.imaging.test,active:"
 msgid "Active"
@@ -55,9 +46,13 @@ msgctxt "field:gnuhealth.imaging.test.request,request:"
 msgid "Order"
 msgstr "申请编号"
 
+msgctxt "field:gnuhealth.imaging.test.request,request_line:"
+msgid "Order line"
+msgstr "明细编号"
+
 msgctxt "field:gnuhealth.imaging.test.request,requested_test:"
-msgid "Test"
-msgstr "影像检查"
+msgid "Study"
+msgstr "检查项目"
 
 msgctxt "field:gnuhealth.imaging.test.request,state:"
 msgid "State"
@@ -71,13 +66,17 @@ msgctxt "field:gnuhealth.imaging.test.result,comment:"
 msgid "Additional Information"
 msgstr "说明"
 
+msgctxt "field:gnuhealth.imaging.test.result,computed_age:"
+msgid "Age"
+msgstr "年龄"
+
 msgctxt "field:gnuhealth.imaging.test.result,date:"
 msgid "Date"
 msgstr "日期"
 
 msgctxt "field:gnuhealth.imaging.test.result,doctor:"
-msgid "Health prof"
-msgstr "医生"
+msgid "Evaluated by"
+msgstr "评估人"
 
 msgctxt "field:gnuhealth.imaging.test.result,images:"
 msgid "Images"
@@ -96,16 +95,16 @@ msgid "Patient"
 msgstr "患者"
 
 msgctxt "field:gnuhealth.imaging.test.result,request:"
-msgid "Request"
-msgstr "申请项"
+msgid "Request Info"
+msgstr "申请信息"
 
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
 msgid "Requested Date"
 msgstr "申请日期"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
-msgid "Test"
-msgstr "影像检查"
+msgid "Study"
+msgstr "检查项目"
 
 msgctxt "field:gnuhealth.imaging.test.type,code:"
 msgid "Code"
@@ -144,8 +143,8 @@ msgid "Request"
 msgstr "申请编号"
 
 msgctxt "field:gnuhealth.request-imaging-test,test:"
-msgid "Test"
-msgstr "影像检查"
+msgid "Study"
+msgstr "检查项目"
 
 msgctxt "field:gnuhealth.sequences,imaging_req_seq:"
 msgid "Imaging Request Sequence"
@@ -170,9 +169,21 @@ msgid ""
 "condition, a regular health checkup, ..."
 msgstr "此申请涉及患者的健康状况。它可以是疑似或现有的健康状况，定期健康检查。。。"
 
+msgctxt "help:gnuhealth.imaging.test.result,computed_age:"
+msgid "Computed patient age at the moment of the evaluation"
+msgstr "评估时计算的患者年龄"
+
 msgctxt "help:gnuhealth.imaging.test.result,order:"
 msgid "The order ID containing this particular imaging study"
 msgstr "包含这个特定影像检查的订单编号"
+
+msgctxt "help:gnuhealth.imaging.test.type,code:"
+msgid "Suggest use values of DICOM Modality (0008,0060) tag."
+msgstr "建议使用 DICOM Modality (0008,0060) tag 的取值。"
+
+msgctxt "help:gnuhealth.imaging.test.type,name:"
+msgid "Suggest use descriptions of DICOM Modality (0008,0060) tag."
+msgstr "建议使用 DICOM Modality (0008,0060) tag 的描述。"
 
 msgctxt "help:gnuhealth.patient.imaging.test.request.start,context:"
 msgid ""
@@ -181,24 +192,58 @@ msgid ""
 msgstr "此申请涉及患者的健康情况。它可以是疑似或现有的健康状况，定期健康检查。。。"
 
 msgctxt "help:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health professionalwho requests the lab tests."
-msgstr "申请医生."
+msgid "Health professionalwho requests the study."
+msgstr "申请此检查项目的医务人员。"
 
 msgctxt "model:gnuhealth.imaging.test,name:"
-msgid "Imaging Test"
-msgstr "影像检查"
+msgid "Medical Imaging Study"
+msgstr "医学影像检查"
 
 msgctxt "model:gnuhealth.imaging.test.request,name:"
-msgid "Imaging Test Request"
-msgstr "影像检查申请"
+msgid "Medical Imaging Study Request"
+msgstr "医学影像检查申请"
 
 msgctxt "model:gnuhealth.imaging.test.result,name:"
-msgid "Imaging Test Result"
-msgstr "影像检查结果"
+msgid "Medical Imaging Study Result"
+msgstr "医学影像检查结果"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:"
-msgid "Imaging Test Type"
-msgstr "影像检查类型"
+msgid "Medical Imaging Study Type"
+msgstr "医学影像检查类型"
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_cr"
+msgid "Computed Radiography"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ctscan"
+msgid "Computed Tomography"
+msgstr "计算机断层扫描"
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_dx"
+msgid "Digital Radiography"
+msgstr ""
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_mri"
+msgid "Magnetic Resonance"
+msgstr "磁共振"
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_petscan"
+msgid "Positron emission tomography (PET)"
+msgstr "正电子发射计算机断层显像 (PET)"
+
+msgctxt ""
+"model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ultrasound"
+msgid "Ultrasound"
+msgstr "超声"
+
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xa"
+msgid "X-Ray Angiography"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
+msgid "X-ray"
+msgstr "X射线血管造影"
 
 msgctxt "model:gnuhealth.patient.imaging.test.request.start,name:"
 msgid "Request Patient Imaging Test Start"
@@ -217,36 +262,40 @@ msgid "Imaging Test Sequence setup"
 msgstr "影像检查序列设置"
 
 msgctxt "model:ir.action,name:act_imaging_test_request_view"
-msgid "Dx Imaging Requests"
-msgstr "影像: 检查申请列表"
+msgid "Medical Imaging Requests"
+msgstr "医学影像: 检查申请列表"
 
 msgctxt "model:ir.action,name:act_imaging_test_request_view2"
-msgid "Dx Imaging Requests"
-msgstr "影像: 检查申请列表"
+msgid "Medical Imaging Requests"
+msgstr "医学影像: 检查申请列表"
 
 msgctxt "model:ir.action,name:act_imaging_test_result_view"
-msgid "Dx Imaging - Results"
-msgstr "影像: 检查结果列表"
+msgid "Medical Imaging Results"
+msgstr "医学影像: 检查结果列表"
 
 msgctxt "model:ir.action,name:act_imaging_test_result_view2"
-msgid "Dx Imaging Results"
-msgstr "影像: 检查结果列表"
+msgid "Medical Imaging Results"
+msgstr "医学影像: 检查结果列表"
 
 msgctxt "model:ir.action,name:act_imaging_test_type_view"
-msgid "Dx Imaging Test Types"
-msgstr "影像检查类型"
+msgid "Medical Imaging Types"
+msgstr "医学影像检查类型"
 
 msgctxt "model:ir.action,name:act_imaging_test_view"
-msgid "Dx Imaging Tests"
-msgstr "影像检查"
+msgid "Medical Imaging Studies"
+msgstr "医学影像检查"
+
+msgctxt "model:ir.action,name:imaging_result_report"
+msgid "Medical Imaging Study"
+msgstr "医学影像检查"
 
 msgctxt "model:ir.action,name:patient_imaging_test_request"
-msgid "Dx Imaging - New order"
-msgstr "影像: 申请检查项目"
+msgid "Medical Imaging - New order"
+msgstr "医学影像: 申请检查项目"
 
 msgctxt "model:ir.action,name:wizard_generate_result"
-msgid "Dx Imaging - Generate Result"
-msgstr "影像: 生成并填写检查结果"
+msgid "Medical Imaging - Generate Result"
+msgstr "医学影像: 生成检查结果"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_imaging_test_request_domain_all"
@@ -268,6 +317,14 @@ msgctxt ""
 msgid "Requested"
 msgstr "已申请"
 
+msgctxt "model:ir.model.button,string:image_generateresults_button"
+msgid "Generate Results"
+msgstr "生成检查结果"
+
+msgctxt "model:ir.model.button,string:image_request_button"
+msgid "Request"
+msgstr "申请编号"
+
 msgctxt "model:ir.sequence,name:seq_gnuhealth_imaging_test"
 msgid "Imaging Test"
 msgstr "影像检查"
@@ -285,32 +342,32 @@ msgid "Imaging Test Request"
 msgstr "影像检查申请"
 
 msgctxt "model:ir.ui.menu,name:menu_imaging"
-msgid "Imaging"
-msgstr "影像检查"
+msgid "Medical Imaging"
+msgstr "医学影像检查"
 
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_parent"
-msgid "Dx Imaging"
-msgstr "影像检查"
+msgid "Medical Imaging"
+msgstr "医学影像检查"
 
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_request_view"
-msgid "Dx Imaging Requests"
-msgstr "影像: 检查申请列表"
+msgid "Medical Imaging Requests"
+msgstr "医学影像: 检查申请列表"
 
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_result_view"
-msgid "Dx Imaging - Results"
-msgstr "影像: 检查结果列表"
+msgid "Medical Imaging Results"
+msgstr "医学影像: 检查结果列表"
 
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_type"
-msgid "Dx Imaging Test Types"
-msgstr "影像检查类型"
+msgid "Medical Imaging Types"
+msgstr "医学影像检查类型"
 
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_view"
-msgid "Dx Imaging Tests"
-msgstr "影像检查"
+msgid "Medical Imaging Studies"
+msgstr "医学影像检查"
 
 msgctxt "model:ir.ui.menu,name:menu_patient_imaging_test_request"
-msgid "Dx Imaging - New order"
-msgstr "影像: 申请检查项目"
+msgid "Medical Imaging - New order"
+msgstr "医学影像: 申请检查项目"
 
 msgctxt "model:product.category,name:product_category_imagingservices"
 msgid "Imaging Services"
@@ -336,6 +393,86 @@ msgctxt "model:product.template,name:product_template_xraycharges"
 msgid "X-ray charges"
 msgstr "X 射线收费"
 
+msgctxt "model:res.group,name:group_health_imaging"
+msgid "Health Imaging"
+msgstr "Health 影像"
+
+msgctxt "model:res.group,name:group_health_imaging_admin"
+msgid "Health Imaging Administration"
+msgstr "Health 影像管理"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Age:"
+msgstr "年龄:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Comment"
+msgstr "说明"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Context:"
+msgstr "背景情况:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Date:"
+msgstr "日期:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "DoB:"
+msgstr "出生日期:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Evaluated by:"
+msgstr "评估人:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Gender:"
+msgstr "性别:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Image"
+msgstr "影像图片"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Imaging Study Report"
+msgstr "影像检查报告"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Interpretation:"
+msgstr "报告解释:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Order:"
+msgstr "申请编号:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "PUID:"
+msgstr "证件号码:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Patient:"
+msgstr "患者:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Print Date:"
+msgstr "打印日期:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Requested by:"
+msgstr "申请人:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Resources:"
+msgstr "资源:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Study ID:"
+msgstr "结果编号:"
+
+msgctxt "report:patient.imaging_report_results:"
+msgid "Study:"
+msgstr "检查类型:"
+
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Done"
 msgstr "完成"
@@ -357,12 +494,12 @@ msgid "Request"
 msgstr "申请"
 
 msgctxt "view:gnuhealth.imaging.test.result:"
-msgid "Comment"
-msgstr "说明"
-
-msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Images"
 msgstr "影像图片"
+
+msgctxt "view:gnuhealth.imaging.test.result:"
+msgid "Interpretation / Report"
+msgstr "解释/报告"
 
 msgctxt "wizard_button:gnuhealth.patient.imaging.test.request,start,end:"
 msgid "Cancel"

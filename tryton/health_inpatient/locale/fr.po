@@ -1,83 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-06-25 08:10+0000\n"
-"Last-Translator: Armand MPASSY <armandmpassy@yahoo.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/gnu-health/"
-"health_inpatient/fr/>\n"
-"Language: fr\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
-
-msgctxt "error:gnuhealth.bed.transfer.create:"
-msgid "Destination bed is unavailable"
-msgstr "Le lit de destination n'est pas disponible"
-
-msgctxt "error:gnuhealth.bed.transfer.create:"
-msgid "You have chosen more than 1 records. Please choose only one"
-msgstr "Vous avez choisi plus de 1 enregistrement. Prière d'en choisir un seul"
-
-msgctxt "error:gnuhealth.diet.therapeutic:"
-msgid "The Diet code already exists"
-msgstr "Ce code de régime existe déjà"
-
-msgctxt "error:gnuhealth.inpatient.meal.order:"
-msgid ""
-"===== MEAL WARNING ! =====\n"
-"\n"
-"\n"
-"This patient has special meal needs \n"
-"\n"
-"Check and acknowledge that\n"
-"the meal items in this order are correct \n"
-"\n"
-msgstr ""
-"===== ALERTE REPAS ! =====\n"
-"\n"
-"\n"
-"Ce patient a des besoins spéciaux en terme de repas \n"
-"\n"
-"Cochez et confirmez que\n"
-"les aliments sont corrects dans cet ordre \n"
-"\n"
-
-msgctxt "error:gnuhealth.inpatient.meal.order:"
-msgid "No health professional associated to this user"
-msgstr "Pas de professionnel de santé associé à l'utilisateur"
-
-msgctxt "error:gnuhealth.inpatient.meal.order:"
-msgid "The Meal Order code already exists"
-msgstr "Le code de commande repas existe déjà"
-
-msgctxt "error:gnuhealth.inpatient.medication.log:"
-msgid "No health professional associated to this user"
-msgstr "Pas de professionnel de santé associé à l'utilisateur"
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid ""
-"Admission and Discharge reasons \n"
-"as well as Discharge Dx are needed"
-msgstr ""
-"Les raisons de sortie et \n"
-"le diagnostique sont exigés"
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid "Bed is not available"
-msgstr "Lit indisponible"
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid "Destination bed unavailable"
-msgstr "Le lit de destination n'est pas disponible"
-
-msgctxt "error:gnuhealth.inpatient.registration:"
-msgid "The Registration code already exists"
-msgstr "Ce code d'enregistrement existe déjà"
-
-msgctxt "error:wizard.gnuhealth.inpatient.evaluation:"
-msgid "You need to select an inpatient registration record"
-msgstr "Vous devez sélectionner un enregistrement d'hospitalisation"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient Registration"
@@ -91,18 +14,6 @@ msgctxt "field:gnuhealth.bed.transfer,bed_to:"
 msgid "To"
 msgstr "A"
 
-msgctxt "field:gnuhealth.bed.transfer,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.bed.transfer,create_uid:"
-msgid "Create User"
-msgstr "Utilisateur qui a crée"
-
-msgctxt "field:gnuhealth.bed.transfer,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.bed.transfer,name:"
 msgid "Registration Code"
 msgstr "Code d'enregistrement"
@@ -111,25 +22,9 @@ msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
 msgstr "Motif"
 
-msgctxt "field:gnuhealth.bed.transfer,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.bed.transfer,transfer_date:"
 msgid "Date"
 msgstr "Date"
-
-msgctxt "field:gnuhealth.bed.transfer,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.bed.transfer,write_uid:"
-msgid "Write User"
-msgstr "Utilisateur qui a modifié"
-
-msgctxt "field:gnuhealth.bed.transfer.init,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.bed.transfer.init,newbed:"
 msgid "New Bed"
@@ -147,81 +42,25 @@ msgctxt "field:gnuhealth.diet.therapeutic,code:"
 msgid "Code"
 msgstr "Code"
 
-msgctxt "field:gnuhealth.diet.therapeutic,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.diet.therapeutic,create_uid:"
-msgid "Create User"
-msgstr "Utilisateur qui a crée"
-
 msgctxt "field:gnuhealth.diet.therapeutic,description:"
 msgid "Indications"
 msgstr "Indications"
-
-msgctxt "field:gnuhealth.diet.therapeutic,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.diet.therapeutic,name:"
 msgid "Diet type"
 msgstr "Type de régime"
 
-msgctxt "field:gnuhealth.diet.therapeutic,rec_name:"
-msgid "Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.diet.therapeutic,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.diet.therapeutic,write_uid:"
-msgid "Write User"
-msgstr "Utilisateur qui a modifié"
-
-msgctxt "field:gnuhealth.inpatient.diet,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.diet,create_uid:"
-msgid "Create User"
-msgstr "Utilisateur qui a crée"
-
 msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr "Régime"
-
-msgctxt "field:gnuhealth.inpatient.diet,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.inpatient.diet,name:"
 msgid "Registration Code"
 msgstr "Code d'enregistrement"
 
-msgctxt "field:gnuhealth.inpatient.diet,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.diet,remarks:"
 msgid "Remarks / Directions"
 msgstr "Remarques / Directives"
-
-msgctxt "field:gnuhealth.inpatient.diet,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.inpatient.diet,write_uid:"
-msgid "Write User"
-msgstr "Utilisateur qui a modifié"
-
-msgctxt "field:gnuhealth.inpatient.meal,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.meal,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
 
 msgctxt "field:gnuhealth.inpatient.meal,diet_belief:"
 msgid "Belief"
@@ -235,10 +74,6 @@ msgctxt "field:gnuhealth.inpatient.meal,diet_vegetarian:"
 msgid "Vegetarian"
 msgstr "Végétarien"
 
-msgctxt "field:gnuhealth.inpatient.meal,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.inpatient.meal,institution:"
 msgid "Institution"
 msgstr "Institution"
@@ -247,33 +82,9 @@ msgctxt "field:gnuhealth.inpatient.meal,name:"
 msgid "Food"
 msgstr "Nourriture"
 
-msgctxt "field:gnuhealth.inpatient.meal,rec_name:"
-msgid "Name"
-msgstr ""
-
-msgctxt "field:gnuhealth.inpatient.meal,write_date:"
-msgid "Write Date"
-msgstr "Date de Mise à Jour"
-
-msgctxt "field:gnuhealth.inpatient.meal,write_uid:"
-msgid "Write User"
-msgstr "Mis à Jour par"
-
-msgctxt "field:gnuhealth.inpatient.meal.order,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.meal.order,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
-
 msgctxt "field:gnuhealth.inpatient.meal.order,health_professional:"
 msgid "Health Professional"
 msgstr "Professionnel de Santé"
-
-msgctxt "field:gnuhealth.inpatient.meal.order,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_item:"
 msgid "Items"
@@ -303,10 +114,6 @@ msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
 msgstr "Date"
 
-msgctxt "field:gnuhealth.inpatient.meal.order,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
 msgid "Remarks"
 msgstr "Remarques"
@@ -314,26 +121,6 @@ msgstr "Remarques"
 msgctxt "field:gnuhealth.inpatient.meal.order,state:"
 msgid "Status"
 msgstr "État"
-
-msgctxt "field:gnuhealth.inpatient.meal.order,write_date:"
-msgid "Write Date"
-msgstr "Date de Mise à Jour"
-
-msgctxt "field:gnuhealth.inpatient.meal.order,write_uid:"
-msgid "Write User"
-msgstr "Mise à Jour par"
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.inpatient.meal.order.item,meal:"
 msgid "Meal"
@@ -343,21 +130,9 @@ msgctxt "field:gnuhealth.inpatient.meal.order.item,name:"
 msgid "Meal Order"
 msgstr "Commande repas"
 
-msgctxt "field:gnuhealth.inpatient.meal.order.item,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.meal.order.item,remarks:"
 msgid "Remarks"
 msgstr "Remarques"
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,write_date:"
-msgid "Write Date"
-msgstr "Date de Mise à Jour"
-
-msgctxt "field:gnuhealth.inpatient.meal.order.item,write_uid:"
-msgid "Write User"
-msgstr "Mise à Jour par"
 
 msgctxt "field:gnuhealth.inpatient.medication,admin_times:"
 msgid "Admin times"
@@ -374,14 +149,6 @@ msgstr "Fréquence"
 msgctxt "field:gnuhealth.inpatient.medication,course_completed:"
 msgid "Course Completed"
 msgstr "Cours Terminé"
-
-msgctxt "field:gnuhealth.inpatient.medication,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.medication,create_uid:"
-msgid "Create User"
-msgstr "Utilisateur qui a crée"
 
 msgctxt "field:gnuhealth.inpatient.medication,discontinued:"
 msgid "Discontinued"
@@ -419,10 +186,6 @@ msgctxt "field:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "unit"
 msgstr "l'unité"
 
-msgctxt "field:gnuhealth.inpatient.medication,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.inpatient.medication,indication:"
 msgid "Indication"
 msgstr "Indication"
@@ -447,10 +210,6 @@ msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
 msgstr "x"
 
-msgctxt "field:gnuhealth.inpatient.medication,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.medication,route:"
 msgid "Administration Route"
 msgstr "Voie d'administration"
@@ -459,25 +218,9 @@ msgctxt "field:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Start"
 msgstr "Début"
 
-msgctxt "field:gnuhealth.inpatient.medication,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.inpatient.medication,write_uid:"
-msgid "Write User"
-msgstr "Utilisateur qui a modifié"
-
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,admin_time:"
 msgid "Time"
 msgstr "Heure"
-
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,create_uid:"
-msgid "Create User"
-msgstr "Utilisateur qui a crée"
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose:"
 msgid "Dose"
@@ -487,41 +230,17 @@ msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "dose unit"
 msgstr "unité de dose"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,name:"
 msgid "Medication"
 msgstr "Médicaments"
-
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,rec_name:"
-msgid "Name"
-msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,remarks:"
 msgid "Remarks"
 msgstr "Remarques"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,write_uid:"
-msgid "Write User"
-msgstr "Utilisateur qui a modifié"
-
 msgctxt "field:gnuhealth.inpatient.medication.log,admin_time:"
 msgid "Date"
 msgstr "Date"
-
-msgctxt "field:gnuhealth.inpatient.medication.log,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.medication.log,create_uid:"
-msgid "Create User"
-msgstr "Utilisateur qui a crée"
 
 msgctxt "field:gnuhealth.inpatient.medication.log,dose:"
 msgid "Dose"
@@ -535,29 +254,13 @@ msgctxt "field:gnuhealth.inpatient.medication.log,health_professional:"
 msgid "Health Professional"
 msgstr "Professionnel de santé"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.inpatient.medication.log,name:"
 msgid "Medication"
 msgstr "Médicaments"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.medication.log,remarks:"
 msgid "Remarks"
 msgstr "Remarques"
-
-msgctxt "field:gnuhealth.inpatient.medication.log,write_date:"
-msgid "Write Date"
-msgstr "Date d'écriture"
-
-msgctxt "field:gnuhealth.inpatient.medication.log,write_uid:"
-msgid "Write User"
-msgstr "Utilisateur qui a modifié"
 
 msgctxt "field:gnuhealth.inpatient.registration,admission_reason:"
 msgid "Reason for Admission"
@@ -578,14 +281,6 @@ msgstr "Lit hospitalier"
 msgctxt "field:gnuhealth.inpatient.registration,bed_transfers:"
 msgid "Transfer History"
 msgstr "Historique des transferts"
-
-msgctxt "field:gnuhealth.inpatient.registration,create_date:"
-msgid "Create Date"
-msgstr "Date de création"
-
-msgctxt "field:gnuhealth.inpatient.registration,create_uid:"
-msgid "Create User"
-msgstr "Créer utilisateur"
 
 msgctxt "field:gnuhealth.inpatient.registration,discharge_date:"
 msgid "Expected Discharge Date"
@@ -610,10 +305,6 @@ msgstr "Patient sorti par:"
 msgctxt "field:gnuhealth.inpatient.registration,hospitalization_date:"
 msgid "Hospitalization date"
 msgstr "Date d'hospitalisation"
-
-msgctxt "field:gnuhealth.inpatient.registration,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:gnuhealth.inpatient.registration,info:"
 msgid "Notes"
@@ -651,10 +342,6 @@ msgctxt "field:gnuhealth.inpatient.registration,puid:"
 msgid "PUID"
 msgstr "ID Unique de la  Personne"
 
-msgctxt "field:gnuhealth.inpatient.registration,rec_name:"
-msgid "Name"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.registration,state:"
 msgid "Status"
 msgstr "Statut"
@@ -662,14 +349,6 @@ msgstr "Statut"
 msgctxt "field:gnuhealth.inpatient.registration,therapeutic_diets:"
 msgid "Meals / Diet Program"
 msgstr "Repas / Programme  de Diète"
-
-msgctxt "field:gnuhealth.inpatient.registration,write_date:"
-msgid "Write Date"
-msgstr "Inscrivez date"
-
-msgctxt "field:gnuhealth.inpatient.registration,write_uid:"
-msgid "Write User"
-msgstr "Inscrivez utilisateur"
 
 msgctxt "field:gnuhealth.patient,patient_status:"
 msgid "Hospitalized"
@@ -684,12 +363,22 @@ msgid "IPC"
 msgstr "IPC (Code Malade Hospitalisé)"
 
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
-msgid "Inpatient Meal Sequence"
-msgstr "Séquence de repas d'hôpital"
+msgid "Inpatient Meal order Sequence"
+msgstr ""
 
 msgctxt "field:gnuhealth.sequences,inpatient_registration_sequence:"
-msgid "Inpatient Sequence"
-msgstr "Séquence patient"
+msgid "Inpatient Registration Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.inpatient_meal_order_sequence,inpatient_meal_order_sequence:"
+msgid "Inpatient Meal order Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.inpatient_registration_sequence,inpatient_registration_sequence:"
+msgid "Inpatient Registration Sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Enter the patient hospitalization code"
@@ -857,10 +546,8 @@ msgid ""
 "Used in the treatment of conditions characterized by edema, including the following: cirrhosis of the\n"
 "liver with ascites, Congested Heart Failure - CHF, essential hypertension and renal disease."
 msgstr ""
-"Utilisé dans le traitement des affections caractérisées par œdème, y compris "
-"ce qui suit: cirrhose du \n"
-"foie avec ascite, Insuffisance Cardiaque Congestive - ICC, hypertension "
-"artérielle essentielle et les maladies rénales."
+"Utilisé dans le traitement des affections caractérisées par œdème, y compris ce qui suit: cirrhose du \n"
+"foie avec ascite, Insuffisance Cardiaque Congestive - ICC, hypertension artérielle essentielle et les maladies rénales."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:BLAND"
 msgid ""
@@ -897,8 +584,8 @@ msgid ""
 msgstr ""
 "1800-3000 cal/jour. Le régime fournit des quantités constantes de glucides "
 "en fonction du niveau calorique pour permettre le contrôle de la glycémie "
-"optimale. Des collations entre les repas pour fournir environ 35-40% de Kcal "
-"de glucides."
+"optimale. Des collations entre les repas pour fournir environ 35-40% de Kcal"
+" de glucides."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:CLIQUID"
 msgid ""
@@ -925,31 +612,23 @@ msgid ""
 "Mechanically altered. Meats are ground or minced. Foods are moist, soft-textured, and easily formed into a bolus. All vegetables\n"
 "are fork-mashable. Liquids must be ordered separately as regular, nectar, or honey."
 msgstr ""
-"Modifié mécaniquement. Les viandes sont broyées ou émincées. Les aliments "
-"sont humides, de texture douce, et facilement transformé en bolus. Tous les "
-"légumes\n"
-" sont écrasables. Les liquides doivent être commandés séparément comme "
-"réguliers, nectar ou miel"
+"Modifié mécaniquement. Les viandes sont broyées ou émincées. Les aliments sont humides, de texture douce, et facilement transformé en bolus. Tous les légumes\n"
+" sont écrasables. Les liquides doivent être commandés séparément comme réguliers, nectar ou miel"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:DYSAD"
 msgid ""
 "Foods are nearly regular textures with the exception of hard, sticky, or crunchy foods. Foods are moist, bite-sized pieces. All\n"
 "vegetables are fork-mashable. Liquids must be ordered separately as regular, nectar, or honey."
 msgstr ""
-"Les aliments sont des textures presque régulières à l'exception des aliments "
-"durs, collants ou croustillants. Les aliments sont humides, des morceaux de "
-"taille d'une bouchée. Tous \n"
-" les légumes sont écrasables. Les liquides doivent être commandés séparément "
-"comme réguliers, nectar ou miel"
+"Les aliments sont des textures presque régulières à l'exception des aliments durs, collants ou croustillants. Les aliments sont humides, des morceaux de taille d'une bouchée. Tous \n"
+" les légumes sont écrasables. Les liquides doivent être commandés séparément comme réguliers, nectar ou miel"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:DYSP"
 msgid ""
 "For patients with problems chewing and swallowing or esophageal inflammation or varices. Food consistency is blended. Liquids must be ordered\n"
 "separately as regular, nectar, or honey."
 msgstr ""
-"Pour les patients ayant des problèmes de mastication et de déglutition ou "
-"d'inflammation œsophagienne ou de varices. La consistance alimentaire est "
-"mélangée. Les liquides doivent être commandés\n"
+"Pour les patients ayant des problèmes de mastication et de déglutition ou d'inflammation œsophagienne ou de varices. La consistance alimentaire est mélangée. Les liquides doivent être commandés\n"
 " séparément comme régulier, le nectar ou le miel."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:EMESIS"
@@ -961,8 +640,8 @@ msgid ""
 msgstr ""
 "Le régime fournit  des aliments fades, à température ambiante ou froids "
 "séparés en solides et liquides. Les patients de ce régime peuvent demander "
-"des aliments supplémentaires qu'ils estiment être tolérés. Les patients sont "
-"encouragés à séparer leur consommation d'aliments et de boissons"
+"des aliments supplémentaires qu'ils estiment être tolérés. Les patients sont"
+" encouragés à séparer leur consommation d'aliments et de boissons"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:FINGERFOOD"
 msgid ""
@@ -989,9 +668,9 @@ msgid ""
 "not nutritionally adequate."
 msgstr ""
 "Le régime alimentaire consiste en des aliments qui sont liquides à la "
-"température du corps. Les aliments sont faciles à digérer et fournissent une "
-"stimulation minimale dans le tractus gastro-intestinal. Le régime n'est pas "
-"nutritionnellement adéquat"
+"température du corps. Les aliments sont faciles à digérer et fournissent une"
+" stimulation minimale dans le tractus gastro-intestinal. Le régime n'est pas"
+" nutritionnellement adéquat"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:GB1"
 msgid "Sugar-Free fluids"
@@ -1026,8 +705,8 @@ msgid ""
 "The diet omits foods processed with Gluten. The diet is the primary means of"
 " treatment for celiac sprue"
 msgstr ""
-"The diet omits foods processed with Gluten. The diet is the primary means of "
-"treatment for celiac sprue"
+"The diet omits foods processed with Gluten. The diet is the primary means of"
+" treatment for celiac sprue"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:LOWFAT"
 msgid "Provides less than 30% energy from fat."
@@ -1070,8 +749,8 @@ msgid ""
 "Provides limited amounts of protein (40-60g/d), potassium (2g/d), and sodium"
 " (2g/d) for the pre-dialyzed patient."
 msgstr ""
-"Fournit des quantités limitées de protéines (40-60g / d), de potassium (2g / "
-"d) et de sodium (2g / d) pour le patient pré-dialysé."
+"Fournit des quantités limitées de protéines (40-60g / d), de potassium (2g /"
+" d) et de sodium (2g / d) pour le patient pré-dialysé."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:REG"
 msgid "No dietary modifications required"
@@ -1092,7 +771,8 @@ msgstr "Le régime se compose de 6 petits repas par jour"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:SLL"
 msgid "Soft bland foods that have low fiber content. Lactose is limited."
-msgstr "Aliments mous et doux à faible teneur en fibres. Le lactose est limité"
+msgstr ""
+"Aliments mous et doux à faible teneur en fibres. Le lactose est limité"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:"
 msgid "Diet Therapy"
@@ -1254,6 +934,14 @@ msgctxt "model:gnuhealth.inpatient.registration,name:"
 msgid "Patient admission History"
 msgstr "Historique d'admission du patient"
 
+msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
+msgid "Patient Evaluation Sequence setup"
+msgstr ""
+
+msgctxt "model:gnuhealth.sequences.inpatient_registration_sequence,name:"
+msgid "Ambulatory Care Sequences setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_create_inpatient_evaluation"
 msgid "Create Patient Evaluation"
 msgstr "Créer Évaluation Patient"
@@ -1332,6 +1020,81 @@ msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_hospitalized"
 msgid "Hospitalized"
 msgstr "Hospitalizé(e)"
+
+msgctxt "model:ir.message,text:msg_bed_is_not_available"
+msgid "Bed is not available"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_destination_bed_not_available"
+msgid "Destination bed is not available"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_discharge_befor_admission"
+msgid "The Discharge date must later than the admission"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_discharge_reason_needed"
+msgid "Admission and Discharge reasons as well as Discharge Dx are needed"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_many_records_chosen"
+msgid "You have chosen more than 1 record. Please choose only one"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_need_timezone"
+msgid "Need timezone"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_associated_health_professional"
+msgid "There is no health professional associated to this user"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_record_selected"
+msgid "You need to select one record"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_special_meal_needs"
+msgid "This patient has special meal needs"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:meal_cancel_button"
+msgid "Cancel"
+msgstr "Annuler "
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:meal_done_button"
+msgid "Done"
+msgstr "Terminé"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:meal_generate_button"
+msgid "Generate"
+msgstr "Générer"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_admission_button"
+msgid "Admission"
+msgstr "Admission"
+
+msgctxt "model:ir.model.button,string:registration_bedclean_button"
+msgid "Clean Bed"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_cancel_button"
+msgid "Cancel"
+msgstr "Annuler "
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_confirmed_button"
+msgid "Confirm"
+msgstr "Confirmer"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:registration_discharge_button"
+msgid "Discharge"
+msgstr "Sortie Hôpital"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
@@ -1541,6 +1304,194 @@ msgstr "libre"
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "hospitalized"
 msgstr "hospitalisé(e)"
+
+msgctxt "view:gnuhealth.diet.therapeutic:"
+msgid "Diet Description and Indications"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Cancel"
+msgstr "Annuler "
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Cancel order"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Cancel the this meal order ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Create order"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Done"
+msgstr "Terminé"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Generate"
+msgstr "Générer"
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "Generate the meal order ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "The meal order is done"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.meal.order:"
+msgid "The meal order will be closed"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Administration"
+msgstr "Administration"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Adverse Reactions and Notes"
+msgstr "Effets secondaires et observations"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Dosage"
+msgstr "Posologie"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Extra Info"
+msgstr "Info Supplémentaire"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "General Info"
+msgstr "Informations générales"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Medication"
+msgstr "Ordonnance"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Status"
+msgstr "Statut"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.medication:"
+msgid "Treatment period"
+msgstr "Période du traitement"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Administrative data"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Admission"
+msgstr "Admission"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Admit the patient in the health institution and assign the bed"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Cancel"
+msgstr "Annuler "
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Cancel Registration"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Cancel the patient registration process ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Care Plan"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Clean Bed"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Click when Bed has been cleaned"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Confirm"
+msgstr "Confirmer"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Confirm Registration / Make the reservation"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Confirm that the bed has been cleaned and is now ready to use"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge"
+msgstr "Sortie Hôpital"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge Info"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge Patient"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Discharge Plan"
+msgstr "Plan de sortie"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Medication Plan"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Notes"
+msgstr "Remarques"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Nursing Plan"
+msgstr "Plan de soins infirmiers"
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Nutrition"
+msgstr "Nutrition"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Other nutrition notes / directions"
+msgstr ""
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Patient Admission"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "Status"
+msgstr "Statut"
+
+msgctxt "view:gnuhealth.inpatient.registration:"
+msgid "You are about to discharge the patient from the health institution."
+msgstr ""
 
 msgctxt ""
 "wizard_button:gnuhealth.bed.transfer.create,start,create_bed_transfer:"

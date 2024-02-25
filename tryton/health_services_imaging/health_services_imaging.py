@@ -14,8 +14,10 @@
 from trytond.model import ModelView, fields
 from trytond.pyson import Eval, Equal
 from trytond.pool import Pool, PoolMeta
-from .exceptions import (NoServiceAssociated)
 from trytond.i18n import gettext
+from .exceptions import (NoServiceAssociated,
+                         ServiceHasBeenUpdated)
+
 
 __all__ = ['ImagingTestRequest']
 
@@ -32,6 +34,16 @@ class ImagingTestRequest(metaclass=PoolMeta):
         states={'readonly': Equal(Eval('state'), 'done')},
         help="Service document associated to this Imaging Request")
 
+    service_updated = fields.Selection((
+        ('yes', 'Yes'),
+        ('no', 'No'),
+        ('unknown', 'Unknown'),
+        ), 'Service updated', sort=False)
+
+    @classmethod
+    def default_service_updated(self):
+        return 'unknown'
+
     @classmethod
     def __setup__(cls):
         super(ImagingTestRequest, cls).__setup__()
@@ -44,17 +56,21 @@ class ImagingTestRequest(metaclass=PoolMeta):
     @classmethod
     @ModelView.button
     def update_service(cls, imaging_orders):
-        pool = Pool()
-        HealthService = pool.get('gnuhealth.health_service')
-
-        hservice = []
         imaging_order = imaging_orders[0]
 
         if not imaging_order.service:
             raise NoServiceAssociated(
-                gettext('health_service_imaging.msg_no_service_associated')
+                gettext('health_services_imaging.msg_no_service_associated')
                 )
 
+        if imaging_order.service_updated == 'yes':
+            raise ServiceHasBeenUpdated(
+                gettext('health_services_imaging.msg_service_has_been_updated'))
+
+        pool = Pool()
+        HealthService = pool.get('gnuhealth.health_service')
+
+        hservice = []
         service_data = {}
         service_lines = []
 
@@ -74,3 +90,5 @@ class ImagingTestRequest(metaclass=PoolMeta):
         service_data['service_line'] = service_lines
 
         HealthService.write(hservice, service_data)
+
+        cls.write(imaging_orders, {'service_updated': 'yes'})

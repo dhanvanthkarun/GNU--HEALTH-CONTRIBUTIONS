@@ -5,18 +5,23 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+from collections import defaultdict
 from sql.aggregate import Count
 from sql.functions import DateTrunc
 from datetime import date, datetime
 from trytond.report import Report
 from trytond.pool import Pool
 from trytond.transaction import Transaction
+from trytond.modules.health.core import parse_compute_age
 from dateutil.relativedelta import relativedelta
 
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
+import matplotlib as mpl
 
-from trytond.modules.health.core import convert_date_timezone
+from trytond.modules.health.core import (convert_date_timezone,
+                                         matplotlib_setup)
+from trytond.i18n import gettext
 
 import io
 
@@ -208,18 +213,16 @@ class InstitutionEpidemicsReport(Report):
 
         fig = plt.figure(figsize=(6, 3))
         cases_by_day = fig.add_subplot(1, 1, 1)
-        title = 'New cases by day: ' + hc.rec_name
-        cases_by_day.set_title(title)
         cases_by_day.bar(days, cases_day)
         cases_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
         fig.autofmt_xdate()
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def plot_deaths_timeseries(cls, start_date,
@@ -238,12 +241,12 @@ class InstitutionEpidemicsReport(Report):
             # Death certificates as an underlying cause
             certs_uc_day.append(day['certs_day_uc'])
 
-        title = "New deaths by day: " + hc.rec_name
         fig = plt.figure(figsize=(6, 3))
         deaths_by_day = fig.add_subplot(1, 1, 1)
-        deaths_by_day.set_title(title)
-        deaths_by_day.plot(days, certs_ic_day, label="immediate cause")
-        deaths_by_day.plot(days, certs_uc_day, label="underlying condition")
+        deaths_by_day.plot(days, certs_ic_day,
+                           label=gettext("health_reporting.msg_plot_label_immediate_cause_str"))
+        deaths_by_day.plot(days, certs_uc_day,
+                           label=gettext("health_reporting.msg_plot_label_underlying_condition_str"))
         deaths_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
         deaths_by_day.legend()
 
@@ -251,10 +254,10 @@ class InstitutionEpidemicsReport(Report):
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def plot_cases_ethnicity(cls, start_date, end_date, ethnic_count, hc):
@@ -264,10 +267,8 @@ class InstitutionEpidemicsReport(Report):
                 # Remove ethnicities with zero cases from the plot
                 del(ethnic_count[k])
 
-        title = "Cases by ethnic group: " + hc.rec_name
         fig = plt.figure(figsize=(6, 3))
         cases_by_ethnicity = fig.add_subplot(1, 1, 1)
-        cases_by_ethnicity.set_title(title)
         cases_by_ethnicity.pie(ethnic_count.values(),
                                autopct='%1.1f%%',
                                labels=ethnic_count.keys())
@@ -276,10 +277,10 @@ class InstitutionEpidemicsReport(Report):
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def get_ethnic_groups(cls):
@@ -299,22 +300,20 @@ class InstitutionEpidemicsReport(Report):
                 # Remove socioeconomic groups with zero cases from the plot
                 del(ses_count[k])
 
-        title = "Cases by Socioeconomic groups: " + hc.rec_name
         fig = plt.figure(figsize=(6, 3))
         cases_by_socioeconomics = fig.add_subplot(1, 1, 1)
-        cases_by_socioeconomics.set_title(title)
         cases_by_socioeconomics.pie(ses_count.values(),
-                                    autopct='%1,1f%%',
+                                    autopct='%1.1f%%',
                                     labels=ses_count.keys())
 
         fig.autofmt_xdate()
 
         holder = io.BytesIO()
         fig.savefig(holder, format="svg")
-        image_png = holder.getvalue()
+        image = holder.getvalue()
 
         holder.close()
-        return (image_png)
+        return (image)
 
     @classmethod
     def get_context(cls, records, header, data):
@@ -323,16 +322,9 @@ class InstitutionEpidemicsReport(Report):
 
         ethnic_groups = cls.get_ethnic_groups()
 
-        ethnic_count = {}
-        for ethnic_group in ethnic_groups:
-            ethnic_count[ethnic_group] = 0
+        ethnic_count = defaultdict(int)
 
-        ses_count = {}
-
-        ses_groups = ['lower', 'lower-middle', 'middle', 'upper-middle',
-                      'upper']
-        for ses_group in ses_groups:
-            ses_count[ses_group] = 0
+        ses_count = defaultdict(int)
 
         context = super(InstitutionEpidemicsReport, cls).get_context(
             records, header, data)
@@ -427,17 +419,8 @@ class InstitutionEpidemicsReport(Report):
 
             # Socioeconomic groups distribution
             if (confirmed_case.name.ses):
-                ses_id = confirmed_case.name.ses
-                if (ses_id == '0'):
-                    ses_count['lower'] += 1
-                if (ses_id == '1'):
-                    ses_count['lower-middle'] += 1
-                if (ses_id == '2'):
-                    ses_count['middle'] += 1
-                if (ses_id == '3'):
-                    ses_count['upper-middle'] += 1
-                if (ses_id == '4'):
-                    ses_count['upper'] += 1
+                ses_str = confirmed_case.name.ses_str
+                ses_count[ses_str] += 1
 
             if not confirmed_case.name.age:
                 non_age_cases += 1
@@ -457,26 +440,26 @@ class InstitutionEpidemicsReport(Report):
             if (case.name.age):
 
                 # Strip to get the raw year
-                age = int(case.name.age.split(' ')[0][:-1])
+                age_year = parse_compute_age(case.name.age)[0]
 
                 # Age groups in this diagnostic
-                if (age < 5):
+                if (age_year < 5):
                     group_1 += 1
                     if (case.name.gender == 'f'):
                         group_1f += 1
-                if (age in range(5, 14)):
+                if (age_year in range(5, 14)):
                     group_2 += 1
                     if (case.name.gender == 'f'):
                         group_2f += 1
-                if (age in range(15, 45)):
+                if (age_year in range(15, 45)):
                     group_3 += 1
                     if (case.name.gender == 'f'):
                         group_3f += 1
-                if (age in range(46, 60)):
+                if (age_year in range(46, 60)):
                     group_4 += 1
                     if (case.name.gender == 'f'):
                         group_4f += 1
-                if (age > 60):
+                if (age_year > 60):
                     group_5 += 1
                     if (case.name.gender == 'f'):
                         group_5f += 1
@@ -495,6 +478,9 @@ class InstitutionEpidemicsReport(Report):
         epidemics_dx.append(cases)
 
         context['epidemics_dx'] = epidemics_dx
+
+        # Configure matplotlib, for example: font.
+        matplotlib_setup(mpl)
 
         # New cases by day
         context['cases_timeseries'] = cls.plot_cases_timeseries(

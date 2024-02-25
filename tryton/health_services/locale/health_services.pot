@@ -94,8 +94,16 @@ msgctxt "field:gnuhealth.patient.evaluation,service:"
 msgid "Service"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.evaluation,service_updated:"
+msgid "Service updated"
+msgstr ""
+
 msgctxt "field:gnuhealth.prescription.order,service:"
 msgid "Service"
+msgstr ""
+
+msgctxt "field:gnuhealth.prescription.order,service_updated:"
+msgid "Service updated"
 msgstr ""
 
 msgctxt "field:gnuhealth.sequences,health_service_sequence:"
@@ -217,6 +225,12 @@ msgctxt "model:ir.message,text:msg_service_already_invoiced"
 msgid "This service has been invoiced. You can no longer modify service lines"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_service_has_been_updated"
+msgid ""
+"\"Service updated\" is \"yes\" indicates that the service has been updated, "
+"please verify it again."
+msgstr ""
+
 msgctxt "model:ir.model.button,string:service_draft_button"
 msgid "Set to Draft"
 msgstr ""
@@ -262,27 +276,23 @@ msgid "Health Services Administration"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "-"
-msgstr ""
-
-msgctxt "report:health_services.report:"
 msgid "//"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid ":"
+msgid "Address:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Address"
+msgid "Date:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "D"
+msgid "Description:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Description"
+msgid "E-mail:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
@@ -290,15 +300,15 @@ msgid "From"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Health Service"
+msgid "Health Service ID:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "ID :"
+msgid "Health Service Report"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Institution :"
+msgid "Institution:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
@@ -306,19 +316,15 @@ msgid "Invoice"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Invoice to :"
+msgid "Invoice to:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "PUID"
+msgid "PUID:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Patient :"
-msgstr ""
-
-msgctxt "report:health_services.report:"
-msgid "Patient Contact Information"
+msgid "Patient:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
@@ -330,23 +336,11 @@ msgid "Service"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Tel"
+msgid "Tel:"
 msgstr ""
 
 msgctxt "report:health_services.report:"
 msgid "To"
-msgstr ""
-
-msgctxt "report:health_services.report:"
-msgid "ate"
-msgstr ""
-
-msgctxt "report:health_services.report:"
-msgid "e"
-msgstr ""
-
-msgctxt "report:health_services.report:"
-msgid "mail"
 msgstr ""
 
 msgctxt "selection:gnuhealth.health_service,state:"
@@ -355,6 +349,30 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
+msgid "No"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
+msgid "Yes"
+msgstr ""
+
+msgctxt "selection:gnuhealth.prescription.order,service_updated:"
+msgid "No"
+msgstr ""
+
+msgctxt "selection:gnuhealth.prescription.order,service_updated:"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "selection:gnuhealth.prescription.order,service_updated:"
+msgid "Yes"
 msgstr ""
 
 msgctxt "view:account.invoice:"
@@ -370,7 +388,7 @@ msgid "Services"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Transfer                     this evaluation to services?"
+msgid "Transfer this evaluation to services?"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"

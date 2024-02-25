@@ -27,6 +27,7 @@ from urllib.parse import urlunparse
 from collections import OrderedDict
 from io import BytesIO
 from uuid import uuid4
+from PIL import Image
 
 from sql import Literal, Join
 
@@ -49,8 +50,10 @@ from .exceptions import (
     )
 
 from .core import (get_institution, compute_age_from_dates,
+                   format_years_months_days,
                    estimated_date_from_years,
-                   get_health_professional)
+                   get_health_professional,
+                   image_crop_to_ratio)
 
 
 try:
@@ -92,7 +95,7 @@ class DomiciliaryUnit(ModelSQL, ModelView):
     def get_parent(self, subdivision):
         # Recursively get the parent subdivisions
         if (subdivision.parent):
-            return str(subdivision.rec_name) + '\n' + \
+            return str(subdivision.rec_name) + ', ' + \
                 str(self.get_parent(subdivision.parent))
         else:
             return subdivision.rec_name
@@ -101,24 +104,31 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         du_addr = ''
         # Street
         if (self.address_street):
-            du_addr = f"{self.address_street} {self.address_street_number} " \
-                f"{self.address_street_bis}\n"
+            du_addr = \
+                f"{self.address_street} {self.address_street_number}, " \
+                f"{self.address_street_bis}, \n"
+
+        if (self.address_district):
+            du_addr = f"{du_addr}{self.address_district}, "
+
+        if (self.address_municipality):
+            du_addr = f"{du_addr}{self.address_municipality}, "
 
         if (self.address_city):
-            du_addr = f"{du_addr}{self.address_city}\n"
+            du_addr = f"{du_addr}{self.address_city}, "
 
         # Grab the parent subdivisions
         if (self.address_subdivision):
-            du_addr = f"{du_addr}\n" \
+            du_addr = f"{du_addr}" \
                 f"{self.get_parent(subdivision=self.address_subdivision)}"
 
         # Zip Code
         if (self.address_zip):
-            du_addr = f"{du_addr} - {self.address_zip}"
+            du_addr = f"{du_addr} - {self.address_zip}, "
 
         # Country
         if (self.address_country):
-            du_addr = f"{du_addr}\n {self.address_country.rec_name}"
+            du_addr = f"{du_addr}\n{self.address_country.rec_name}"
 
         return du_addr
 
@@ -424,13 +434,14 @@ class Party(metaclass=PoolMeta):
     residence = fields.Many2One(
         'country.country', 'Residence', help='Country of Residence')
     alternative_identification = fields.Boolean(
-        'Alternative IDs', help='Other types of '
+        'Other IDs', help='Other types of '
         'identification, not the official PUID . '
-        'Examples : Passport, foreign ID,..')
+        'Examples : Passport, foreign ID,..',
+        states={'invisible': Not(Bool(Eval('is_person')))})
 
     alternative_ids = fields.One2Many(
         'gnuhealth.person_alternative_identification',
-        'name', 'Alternative IDs',
+        'name', 'Other IDs',
         states={'invisible': Not(Bool(Eval('alternative_identification')))})
 
     insurance = fields.One2Many(
@@ -505,6 +516,14 @@ class Party(metaclass=PoolMeta):
         "Refer to the GNU Health manual for further information",
         states={'invisible': Not(Bool(Eval('is_person')))})
 
+    create_target = fields.Boolean(
+        'Create target',
+        help="By default, the associated target (eg, patient) "
+             "will be created, unless this option is unchecked. "
+             "You should uncheck this field if, for example, the "
+             "person is a relative but will not be part of the "
+             "health system.")
+
     def get_mother(self, name):
         if (self.birth_certificate and self.birth_certificate.mother):
             return self.birth_certificate.mother.id
@@ -516,6 +535,10 @@ class Party(metaclass=PoolMeta):
     def get_dod(self, name):
         if (self.deceased and self.death_certificate):
             return self.death_certificate.dod
+
+    @staticmethod
+    def default_create_target():
+        return True
 
     @staticmethod
     def default_fed_country():
@@ -670,8 +693,8 @@ class Party(metaclass=PoolMeta):
             if not values.get('federation_account') and \
                     values.get('is_person'):
                 federation_account = tmp_act
-                values['federation_account'] = values['fed_country'] + \
-                    federation_account
+                values['federation_account'] = \
+                    (values['fed_country'] or "XXX") + federation_account
 
             # Set the value to None to make the fields that have a
             # unique constraint get the NULL value at PostgreSQL level, and not
@@ -721,7 +744,44 @@ class Party(metaclass=PoolMeta):
 
                     values['person_names'] = official_name
 
-        return super(Party, cls).create(vlist)
+            # Create party before so we can assign it to the patient
+            parties = super(Party, cls).create(vlist)
+            party = parties[0]
+
+            if (values.get('create_target') and party):
+                # If the party creation was ok
+                # and create_target is checked (default), then create
+                # the related entity
+                entity = None
+                if values.get('is_patient'):
+                    entity = 'patient'
+
+                if entity:
+                    cls.generate_target(party, entity)
+
+        return parties
+
+    @classmethod
+    def generate_target(cls, party, entity):
+        """ The method will generate the new entity depending on the
+            attributes from the party (patient, institution, healthprof..)
+            We initially start with the patient.
+        """
+        Target = None
+        values = []
+
+        # When entity is a patient
+        if (entity == 'patient'):
+            Target = Pool().get('gnuhealth.patient')
+            values.append({'name': party.id})
+
+        # TODO: Add more entities (health prof, institutions)
+        # Warning: We have to make sure Target has no required fields
+        # (like the insitution code) In that case, we need to provide it
+
+        # Finally, create the target with their field values
+        if (Target and values):
+            Target.create(values)
 
     @classmethod
     def copy(cls, parties, default=None):
@@ -821,6 +881,12 @@ class Party(metaclass=PoolMeta):
     def on_change_with_is_person(self):
         # Set is_person if the party is a health professional or a patient
         if (self.is_healthprof or self.is_patient or self.is_person):
+            return True
+
+    # Set patient attribute if create_target and is_person attributes are set
+    @fields.depends('is_person', 'create_target')
+    def on_change_with_is_patient(self):
+        if (self.create_target and self.is_person):
             return True
 
     @fields.depends('du', '_parent_du.name')
@@ -1588,17 +1654,28 @@ class HospitalOR(ModelSQL, ModelView):
 
     extra_info = fields.Text('Extra Info')
 
+    timeslot = fields.Integer(
+        "Time span", help="Default reservation"
+        " time in minutes for this operating room."
+        " It will be added automatically to the start time of the"
+        " programmed surgery and the OR Schedule")
+
     state = fields.Selection((
         (None, ''),
         ('free', 'Free'),
+        ('scheduled', 'Scheduled'),
         ('confirmed', 'Confirmed'),
         ('occupied', 'Occupied'),
         ('na', 'Not available'),
-        ), 'Status', readonly=True, sort=False)
+        ), 'Status', sort=False)
 
     @staticmethod
     def default_institution():
         return get_institution()
+
+    @staticmethod
+    def default_timeslot():
+        return 60
 
     @staticmethod
     def default_state():
@@ -2151,6 +2228,8 @@ class ImmunizationScheduleDose(ModelSQL, ModelView):
         ('years', 'years'),
         ], 'Time Unit', required=True)
 
+    age_unit_str = age_unit.translated('age_unit')
+
     remarks = fields.Char('Remarks')
 
     sched = fields.Function(
@@ -2198,6 +2277,8 @@ class ImmunizationScheduleLine(ModelSQL, ModelView):
         ('recommended', 'Recommended'),
         ('highrisk', 'Risk groups'),
         ], 'Scope', sort=False)
+
+    scope_str = scope.translated('scope')
 
     remarks = fields.Char('Remarks')
 
@@ -2292,7 +2373,8 @@ class PathologyGroup(ModelSQL, ModelView):
         help='for example MDG6 code will contain the Millennium Development'
         ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS')
 
-    desc = fields.Char('Short Description', required=True)
+    desc = fields.Char(
+        'Short Description', required=True, translate=True)
     info = fields.Text('Detailed information')
 
     members = fields.One2Many('gnuhealth.disease_group.members',
@@ -2566,6 +2648,8 @@ class DeathUnderlyingCondition(ModelSQL, ModelView):
         ('years', 'years'),
         ], 'Unit', select=True, sort=False, required=True)
 
+    unit_of_time_str = unit_of_time.translated('unit_of_time')
+
 
 class InsurancePlan(ModelSQL, ModelView):
     'Insurance Plan'
@@ -2654,6 +2738,13 @@ class AlternativePersonID (ModelSQL, ModelView):
             ('ghealth_federation', 'GNU Health Federation'),
             ('other', 'Other'),
         ], 'ID type', required=True, sort=False,)
+
+    other_alternative_id_type = fields.Char(
+        'Other ID type',
+        help="Other Alternative ID type, "
+        "user can customize an ID type "
+        "when 'ID type' = 'other', "
+    )
 
     expiration_date = fields.Date('Expiration date')
 
@@ -2835,9 +2926,10 @@ class DeathCertificate (ModelSQL, ModelView):
     def get_age_at_death(self, name):
         if (self.name.dob):
             delta = relativedelta(self.dod, self.name.dob)
-            years_months_days = str(delta.years) + 'y ' \
-                + str(delta.months) + 'm ' \
-                + str(delta.days) + 'd'
+            years_months_days = format_years_months_days(
+                years=delta.years,
+                months=delta.months,
+                days=delta.days)
         else:
             years_months_days = None
         return years_months_days
@@ -2934,6 +3026,13 @@ class PatientData(ModelSQL, ModelView):
     # Retrieves the information from the party.
 
     photo = fields.Function(fields.Binary('Picture'), 'get_patient_photo')
+    
+    # photo_crop method is used in report template, for we can not
+    # find a way to keep the original aspect ratio in odt template at
+    # the moment.
+    @classmethod
+    def photo_crop(cls, photo, ratio):
+        return image_crop_to_ratio(Image, photo, ratio)
 
     # Removed in 2.0 . DOB It's now a functional field
     # Retrieves the information from the party.
@@ -2954,6 +3053,8 @@ class PatientData(ModelSQL, ModelView):
         ('f-m', 'Female -> Male'),
         ('m-f', 'Male -> Female'),
         ], 'Gender'), 'get_patient_gender')
+
+    gender_str = gender.translated('gender')
 
     biological_sex = fields.Selection([
         (None, ''),
@@ -3107,7 +3208,7 @@ class PatientData(ModelSQL, ModelView):
         gender = self.name.gender
         sex = self.biological_sex
         if sex:
-            if (gender != sex and (gender in ['f','m'])):
+            if (gender != sex and (gender in ['f', 'm'])):
                 res = sex + '-' + gender
             else:
                 res = gender
@@ -3201,9 +3302,11 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('3_sv', 'Severe'),
         ], 'Severity', select=True, sort=False)
 
-    is_on_treatment = fields.Boolean('Currently on Treatment')
+    disease_severity_str = disease_severity.translated('disease_severity')
+
+    is_on_treatment = fields.Boolean('Current', help="Currently on treatment")
     is_infectious = fields.Boolean(
-        'Infectious Disease',
+        'Infectious',
         help='Check if the patient has an infectious / transmissible disease')
 
     short_comment = fields.Char(
@@ -3216,13 +3319,23 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         'Health Prof',
         help='Health Professional who treated or diagnosed the patient')
 
-    diagnosed_date = fields.Date('Date of Diagnosis')
+    diagnosed_date = fields.Date('Dx date')
     healed_date = fields.Date('Healed')
-    is_active = fields.Boolean('Active disease')
+    is_active = fields.Boolean('Active',
+                               help="Check this box if the disease is active")
 
     age = fields.Integer(
-        'Age when diagnosed',
-        help='Patient age at the moment of the diagnosis. Can be estimative')
+        'Years',
+        help='Estimated age of the diagnosis')
+
+    age_str = fields.Function(fields.Char(
+        'Age at dx',
+        help='Patient age at the moment of the diagnosis, '
+        'in most situations, this value is derived from patient evalution.'),
+        'patient_age_at_dx',)
+
+    est_dodx = fields.Boolean('Est', help="Estimated date of diagnosis"
+                              "from referred years")
 
     pregnancy_warning = fields.Boolean('Pregnancy warning')
     weeks_of_pregnancy = fields.Integer('Contracted in pregnancy week #')
@@ -3236,8 +3349,9 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ], 'Allergy type', select=True, sort=False)
     pcs_code = fields.Many2One(
         'gnuhealth.procedure', 'Code',
-        help='Procedure code, for example, ICD-10-PCS Code 7-character string')
-    treatment_description = fields.Char('Treatment Description')
+        help='Procedure code')
+    treatment_description = fields.Char(
+        'Description', help="Short description of the treatment")
     date_start_treatment = fields.Date('Start', help='Start of treatment date')
     date_stop_treatment = fields.Date('End', help='End of treatment date')
     status = fields.Selection([
@@ -3249,6 +3363,9 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('i', 'improving'),
         ('w', 'worsening'),
         ], 'Status', select=True, sort=False)
+
+    status_str = status.translated('status')
+
     extra_info = fields.Text('Extra Info')
 
     healthprof = fields.Many2One(
@@ -3316,8 +3433,44 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     def default_healthprof():
         return get_health_professional()
 
+    @staticmethod
+    def default_diagnosed_date():
+        return date.today()
+
+    @fields.depends('diagnosed_date', 'age_str', 'name')
+    def on_change_diagnosed_date(self):
+        if (self.name):
+            self.age_str = compute_age_from_dates(
+                    self.name.dob, None, None, None, 'age',
+                    self.diagnosed_date)
+            self.est_dodx = False
+
+    @fields.depends('age', 'name', 'age_str')
+    def on_change_age(self):
+        if (self.age and self.name.dob):
+            self.est_dodx = True
+            self.diagnosed_date = self.name.dob + relativedelta(years=self.age)
+            self.age_str = compute_age_from_dates(
+                    self.name.dob, None, None, None, 'age',
+                    self.diagnosed_date)
+            self.age = None
+
+    @fields.depends('age', 'name', 'diagnosed_date')
+    def on_change_with_age_str(self):
+        if (self.name):
+            if (self.diagnosed_date and self.name.dob):
+                return compute_age_from_dates(
+                        self.name.dob, None, None, None, 'age',
+                        self.diagnosed_date)
+
     def get_rec_name(self, name):
         return self.pathology.rec_name
+
+    def patient_age_at_dx(self, name):
+        if (self.name.dob and self.diagnosed_date):
+            return compute_age_from_dates(
+                self.name.dob, None, None, None, 'age',
+                self.diagnosed_date)
 
     @classmethod
     def create_health_condition_pol(cls, condition_info):
@@ -3329,8 +3482,11 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
         def patient_age_at_dx():
             age_at_dx = ''
-            if condition_info.age:
-                age_at_dx = str(condition_info.age) + 'y'
+            if condition_info.age_str:
+                age_at_dx = condition_info.age_str
+            elif condition_info.age:
+                age_at_dx = format_years_months_days(
+                    years=condition_info.age, months=0, days=0)
             elif (condition_info.name.dob and condition_info.diagnosed_date):
                 age_at_dx = compute_age_from_dates(
                     condition_info.name.dob, None, None, None,
@@ -3422,6 +3578,8 @@ class Appointment(ModelSQL, ModelView):
     appointment_type = fields.Selection([
         (None, ''),
         ('outpatient', 'Outpatient'),
+        ('telemedicine', 'Telemedicine'),
+        ('homecare', 'Home Care'),
         ('inpatient', 'Inpatient'),
         ], 'Type', sort=False)
 
@@ -4392,7 +4550,24 @@ class PrescriptionLine(ModelSQL, ModelView):
         ('wr', 'when required'),
         ], 'unit', select=True, sort=False)
 
+    frequency_unit_str = frequency_unit.translated('frequency_unit')
+
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
+
+    # Used by prescription_orders report template.
+    def get_report_specific_usage_str(self):
+        string = ''
+        if self.frequency_unit == 'wr':
+            string = self.frequency_unit_str
+        elif self.frequency_prn:
+            string = gettext('health.msg_prescription_line_frequency_prn')
+        elif self.frequency and self.frequency_unit:
+            string = gettext('health.msg_prescription_line_frequency_and_unit',
+                             frequency=str(self.frequency),
+                             frequency_unit=self.frequency_unit_str)
+        else:
+            string = ''
+        return string
 
     duration = fields.Integer(
         'Treatment duration',
@@ -4410,6 +4585,19 @@ class PrescriptionLine(ModelSQL, ModelView):
         ], 'Treatment period', sort=False,
         help='Period that the patient must take the medication in minutes,'
         ' hours, days, months, years or indefinately')
+
+    duration_period_str = duration_period.translated('duration_period')
+
+    # Used by prescription_orders report template.
+    def get_report_duration_str(self):
+        string = ''
+        if self.duration_period == 'indefinite':
+            string = self.duration_period_str
+        elif self.duration and self.duration_period:
+            string = str(self.duration) + ' ' + self.duration_period_str
+        else:
+            string = ''
+        return string
 
     infusion = fields.Boolean(
         'Infusion',
@@ -4540,7 +4728,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'gnuhealth.patient.disease', 'Related condition',
         domain=[('name', '=', Eval('patient'))], depends=['patient'],
         help="Related condition related to this follow-up evaluation",
-        states={'invisible': (Eval('visit_type') != 'followup')})
+        states={'readonly': (Eval('visit_type') != 'followup')})
 
     evaluation_start = fields.DateTime('Start', required=True, states=STATES)
     evaluation_endtime = fields.DateTime('End', states=STATES)
@@ -4644,6 +4832,8 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     evaluation_type = fields.Selection([
         (None, ''),
         ('outpatient', 'Outpatient'),
+        ('homecare', 'Home Care'),
+        ('telemedicine', 'Telemedicine'),
         ('inpatient', 'Inpatient'),
         ], 'Type', sort=False,
         states=STATES)
@@ -4940,7 +5130,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         return 'home'
 
     def get_patient_gender(self, name):
-        return self.patient.gender
+        return (self.patient and self.patient.gender)
 
     @classmethod
     def search_patient_gender(cls, name, clause):
@@ -5026,12 +5216,17 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     # These two are function fields (don't exist at DB level)
     @fields.depends('patient')
     def on_change_patient(self):
-        self.computed_age = self.patient.age
-        self.gender = self.patient.gender
+        if self.patient:
+            self.computed_age = self.patient.age
+            self.gender = self.patient.gender
+        else:
+            self.computed_age = None
+            self.gender = None
 
     @staticmethod
     def default_information_source():
-        return 'Self'
+        return gettext(
+            'health.msg_patient_evaluation_default_information_source')
 
     @staticmethod
     def default_reliable_info():
@@ -5099,6 +5294,13 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         cls._buttons.update({
             'end_evaluation': {'invisible': Or(Equal(Eval('state'), 'signed'),
                                                Equal(Eval('state'), 'done'))}
+            })
+
+        cls._buttons.update({
+            # XXX: Do we need to show button when state=done?
+            'update_patient_disease_info': {
+                'invisible': Not(And(Equal(Eval('visit_type'), 'new'),
+                                     Equal(Eval('state'), 'signed')))}
             })
 
     @classmethod
@@ -5229,6 +5431,11 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         pol.append(vals)
         Pol.create(pol)
 
+    @classmethod
+    @ModelView.button_action('health.update_patient_disease_info')
+    def update_patient_disease_info(cls, evaluations):
+        pass
+
     # Search by the health condition code or the description
     @classmethod
     def search_rec_name(cls, name, clause):
@@ -5297,6 +5504,8 @@ class SignsAndSymptoms(ModelSQL, ModelView):
         ('sign', 'Sign'),
         ('symptom', 'Symptom')],
         'Subjective / Objective', required=True)
+
+    sign_or_symptom_str = sign_or_symptom.translated('sign_or_symptom')
 
     clinical = fields.Many2One(
         'gnuhealth.pathology', 'Sign or Symptom',

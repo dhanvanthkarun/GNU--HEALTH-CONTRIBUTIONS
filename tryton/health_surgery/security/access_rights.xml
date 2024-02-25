@@ -50,6 +50,16 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <record model="ir.model.access" id="access_health_surgery_preop_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.preoperative_assessment')]"/>
+            <field name="group" ref="group_health_surgery_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
 <!-- END OF SURGERY ADMINISTRATION GROUP ACCESS RIGHTS -->
 
 
@@ -68,6 +78,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record model="ir.model.access" id="access_health_surgery_surgery">
             <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_surgery_preop">
+            <field name="model" search="[('model', '=', 'gnuhealth.preoperative_assessment')]"/>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -95,6 +113,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record model="ir.model.access" id="access_health_surgery_surgery_doctor">
             <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_surgery_preop_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.preoperative_assessment')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>

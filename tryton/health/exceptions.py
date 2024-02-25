@@ -70,3 +70,7 @@ class NoAppointmentSelected(UserError):
 
 class CanNotModifyVaccination(UserError):
     pass
+
+
+class PatientDiseaseAlreadyExists(UserError):
+    pass

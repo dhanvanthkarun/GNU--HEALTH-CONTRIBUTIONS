@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2022-12-08 15:49+0000\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
-"gnu-health/health_crypto_lab/pt_BR/>\n"
-"Language: pt_BR\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.lab,digest_current:"
 msgid "Current Hash"
@@ -23,9 +14,10 @@ msgctxt "field:gnuhealth.lab,digital_signature:"
 msgid "Digital Signature"
 msgstr "Assinatura Digital"
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab,document_digest:"
 msgid "Digest"
-msgstr ""
+msgstr "Digest"
 
 msgctxt "field:gnuhealth.lab,done_by:"
 msgid "Done by"
@@ -35,17 +27,24 @@ msgctxt "field:gnuhealth.lab,done_date:"
 msgid "Finished on"
 msgstr ""
 
+msgctxt "field:gnuhealth.lab,historize:"
+msgid "Historize"
+msgstr ""
+
+#, fuzzy
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Doc String"
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab,serializer_current:"
 msgid "Current Doc"
-msgstr ""
+msgstr "Doc Atual"
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab,state:"
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 msgctxt "field:gnuhealth.lab,validated_by:"
 msgid "Validated by"
@@ -65,19 +64,42 @@ msgstr ""
 "forem alteradas. Note que a verificação é feita apenas nos campos "
 "selecionados."
 
+#, fuzzy
 msgctxt "help:gnuhealth.lab,document_digest:"
 msgid "Original Document Digest"
-msgstr ""
+msgstr "Digest original do documento"
 
 #, fuzzy
 msgctxt "help:gnuhealth.lab,done_by:"
 msgid "Professional who processes this lab test"
 msgstr "Profissional que processa este teste de laboratório"
 
+msgctxt "help:gnuhealth.lab,historize:"
+msgid ""
+"If this flag is set the a new health condition will be added to the patient "
+"history. Unset it if this lab test is in the context of a pre-existing "
+"condition of the patient. The condition will be created when the lab test is"
+" confirmed and validated"
+msgstr ""
+
 #, fuzzy
 msgctxt "help:gnuhealth.lab,validated_by:"
 msgid "Professional who validates this lab test"
 msgstr "Profissional que valida este teste de laboratório"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:labtest_generate_button"
+msgid "Done"
+msgstr "Feito"
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:labtest_setdraft_button"
+msgid "Draft"
+msgstr "Rascunho"
+
+msgctxt "model:ir.model.button,string:labtest_sign_button"
+msgid "Validate"
+msgstr ""
 
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Done"
@@ -91,3 +113,55 @@ msgstr "Rascunho"
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Validated"
 msgstr "Validado"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Are the results ready ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Are you sure to sign this lab results ?"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Digital Signature"
+msgstr "Assinatura Digital"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Document validation"
+msgstr "Validação do documento"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Done"
+msgstr "Feito"
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Draft"
+msgstr "Rascunho"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Reverse the document to draft state."
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Set to Draft ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "The lab test is done and results are waiting to be validated"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Validate"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Validate and Sign the lab test"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Validation"
+msgstr ""

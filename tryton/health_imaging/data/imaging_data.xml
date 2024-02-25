@@ -69,29 +69,51 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="template" ref="product_template_petscancharges"/>
         </record>
 
-        <record id="gnuhealth_test_type_ultrasound" model="gnuhealth.imaging.test.type">
-            <field name="code">US</field>
-            <field name="name">Ultrasound</field>
-        </record>
-
-        <record id="gnuhealth_test_type_mri" model="gnuhealth.imaging.test.type">
-            <field name="code">MRI</field>
-            <field name="name">MRI</field>
-        </record>
-
         <record id="gnuhealth_test_type_xray" model="gnuhealth.imaging.test.type">
             <field name="code">XR</field>
             <field name="name">X-ray</field>
         </record>
 
-        <record id="gnuhealth_test_type_ctscan" model="gnuhealth.imaging.test.type">
-            <field name="code">CT</field>
-            <field name="name">CT Scan</field>
+        <!-- Reference values and descriptions of DICOM modality tag -->
+        <record id="gnuhealth_test_type_ultrasound" model="gnuhealth.imaging.test.type">
+            <field name="code">US</field>
+            <field name="name">Ultrasound</field>
         </record>
 
+        <!-- Reference values and descriptions of DICOM modality tag -->
+        <record id="gnuhealth_test_type_mri" model="gnuhealth.imaging.test.type">
+            <field name="code">MR</field>
+            <field name="name">Magnetic Resonance</field>
+        </record>
+
+        <!-- Reference values and descriptions of DICOM modality tag -->
+        <record id="gnuhealth_test_type_xa" model="gnuhealth.imaging.test.type">
+            <field name="code">XA</field>
+            <field name="name">X-Ray Angiography</field>
+        </record>
+
+        <!-- Reference values and descriptions of DICOM modality tag -->
+        <record id="gnuhealth_test_type_dx" model="gnuhealth.imaging.test.type">
+            <field name="code">DX</field>
+            <field name="name">Digital Radiography</field>
+        </record>
+
+        <!-- Reference values and descriptions of DICOM modality tag -->
+        <record id="gnuhealth_test_type_cr" model="gnuhealth.imaging.test.type">
+            <field name="code">CR</field>
+            <field name="name">Computed Radiography</field>
+        </record>
+
+        <!-- Reference values and descriptions of DICOM modality tag -->
+        <record id="gnuhealth_test_type_ctscan" model="gnuhealth.imaging.test.type">
+            <field name="code">CT</field>
+            <field name="name">Computed Tomography</field>
+        </record>
+
+        <!-- Reference values and descriptions of DICOM modality tag -->
         <record id="gnuhealth_test_type_petscan" model="gnuhealth.imaging.test.type">
-            <field name="code">PET</field>
-            <field name="name">PET Scan</field>
+            <field name="code">PT</field>
+            <field name="name">Positron emission tomography (PET)</field>
         </record>
 
         <!-- Categories -->

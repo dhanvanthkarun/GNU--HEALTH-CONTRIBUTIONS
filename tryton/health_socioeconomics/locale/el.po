@@ -1,16 +1,6 @@
-# Anonymous Pootle User, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-08-17 20:37+0000\n"
-"Last-Translator: Constantine Mousafiris <kvisitor@gnugr.org>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/gnu-health/"
-"health_socioeconomics/el/>\n"
-"Language: el\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
-"X-POOTLE-MTIME: 1452445411.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.patient,domestic_violence:"
 msgid "Domestic violence"
@@ -56,6 +46,10 @@ msgctxt "field:gnuhealth.patient,school_withdrawal:"
 msgid "School withdrawal"
 msgstr "Διέκοψε το σχολείο"
 
+msgctxt "field:gnuhealth.patient,ses:"
+msgid "SES"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient,ses_assessments:"
 msgid "Assessments"
 msgstr "Εκτιμήσεις"
@@ -91,14 +85,6 @@ msgstr "Ημερομηνία"
 msgctxt "field:gnuhealth.ses.assessment,computed_age:"
 msgid "Age"
 msgstr "Ηλικία"
-
-msgctxt "field:gnuhealth.ses.assessment,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.ses.assessment,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
 
 msgctxt "field:gnuhealth.ses.assessment,du:"
 msgid "DU"
@@ -144,10 +130,6 @@ msgctxt "field:gnuhealth.ses.assessment,housing:"
 msgid "Housing conditions"
 msgstr "Συνθήκες κατοίκησης"
 
-msgctxt "field:gnuhealth.ses.assessment,id:"
-msgid "ID"
-msgstr "Κωδικός Ταυτοποίησης"
-
 msgctxt "field:gnuhealth.ses.assessment,income:"
 msgid "Income"
 msgstr "Εισόδημα"
@@ -164,10 +146,6 @@ msgctxt "field:gnuhealth.ses.assessment,patient:"
 msgid "Patient"
 msgstr "Ασθενής"
 
-msgctxt "field:gnuhealth.ses.assessment,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
 msgctxt "field:gnuhealth.ses.assessment,ses:"
 msgid "Socioeconomics"
 msgstr "Κοινωνικο-οικονομικά"
@@ -179,14 +157,6 @@ msgstr "Υπεγράφη από"
 msgctxt "field:gnuhealth.ses.assessment,state:"
 msgid "State"
 msgstr "Νομός"
-
-msgctxt "field:gnuhealth.ses.assessment,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την Ημερομηνία"
-
-msgctxt "field:gnuhealth.ses.assessment,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
 
 msgctxt "field:party.party,education:"
 msgid "Education"
@@ -201,14 +171,12 @@ msgid "Education Level"
 msgstr "Μορφωτικό επίπεδο"
 
 msgctxt "help:gnuhealth.patient,hostile_area:"
-msgid "Check if patient lives in a zone of high hostility (eg, war)"
+msgid "Check if patient lives in a zoneof high hostility (eg, war)"
 msgstr ""
-"Ελέγξτε αν ο ασθενής ζει σε περιοχή με υψηλό βαθμό εχθροπραξιών (πχ. σε "
-"πόλεμο)"
 
 msgctxt "help:gnuhealth.patient,hours_outside:"
-msgid "Number of hours a day the patient spend outside the house"
-msgstr "Πόσες ώρες την ημέρα ο ασθενής περνάει εκτός σπιτιού"
+msgid "Number of hours a day the patientspend outside the house"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,housing:"
 msgid "Housing and sanitary living conditions"
@@ -221,6 +189,10 @@ msgid ""
 msgstr ""
 "Ελέγξτε αν κάποιος από την στενή οικογένεια - γονείς/αδέλφια είναι ή είχε "
 "μπει ποτέ στη φυλακή"
+
+msgctxt "help:gnuhealth.patient,ses:"
+msgid "Current Socioeconomic Status"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,ses_assessments:"
 msgid "Socioeconomics and Family assessments history"
@@ -251,8 +223,8 @@ msgid ""
 "Is the patient satisfied with the level of affection coming from the family "
 "?"
 msgstr ""
-"Ο/η ασθενής είναι ικανοποιημένος/η από το επίπεδο στοργής που προέρχεται από "
-"την οικογένεια ;"
+"Ο/η ασθενής είναι ικανοποιημένος/η από το επίπεδο στοργής που προέρχεται από"
+" την οικογένεια ;"
 
 msgctxt "help:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid ""
@@ -267,8 +239,8 @@ msgid ""
 "Is the patient satisfied with the level talking over the problems as family "
 "?"
 msgstr ""
-"Ο/η ασθενής είναι ικανοποιημένος/η από το πώς συζητιούνται τα προβλήματα σαν "
-"οικογένεια ;"
+"Ο/η ασθενής είναι ικανοποιημένος/η από το πώς συζητιούνται τα προβλήματα σαν"
+" οικογένεια ;"
 
 msgctxt "help:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid ""
@@ -327,13 +299,21 @@ msgctxt "model:ir.action,name:act_ses_family_assessment"
 msgid "Socioeconomics and Family Assessment"
 msgstr "Κοινωνικο-οικονομικά και Οικογενειακή εκτίμηση"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:sesassmt_end_button"
+msgid "Done"
+msgstr "Ολοκληρώθηκε"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_ses_assessment_menu"
 msgid "Socioeconomic Assessments"
 msgstr "Κοινωνικο-οικονομικές εκτιμήσεις"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,education:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient,education:"
 msgid "Incomplete Primary School"
@@ -359,9 +339,12 @@ msgctxt "selection:gnuhealth.patient,education:"
 msgid "University"
 msgstr "Πανεπιστήμιο"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Comfortable and good sanitary conditions"
@@ -383,9 +366,37 @@ msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Μικροί χώροι, στενοί, αλλά με καλές συνθήκες υγιεινής"
 
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Higher"
+msgstr "Υψηλότερος/η"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower"
+msgstr "Χαμηλότερος/η"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower-middle"
+msgstr "Χαμηλό-μέσο"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle"
+msgstr "Μέσο"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle-upper"
+msgstr "Μεσαίο-ανώτερο"
+
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "Incomplete Primary School"
@@ -411,9 +422,12 @@ msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "University"
 msgstr "Πανεπιστήμιο"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Moderately"
@@ -427,9 +441,12 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Very much"
 msgstr "Πάρα πολύ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "Moderately"
@@ -443,9 +460,12 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "Very much"
 msgstr "Πάρα πολύ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "Moderately"
@@ -459,9 +479,12 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "Very much"
 msgstr "Πάρα πολύ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "Moderately"
@@ -475,9 +498,12 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "Very much"
 msgstr "Πάρα πολύ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "Moderately"
@@ -491,9 +517,12 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "Very much"
 msgstr "Πάρα πολύ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid "Female"
@@ -503,9 +532,12 @@ msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid "Male"
 msgstr "Άρρην"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Comfortable and good sanitary conditions"
@@ -527,9 +559,12 @@ msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Καλές συνθήκες υγιεινής αλλά με μικρούς χώρους και πολύ κόσμο"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid "High"
@@ -543,9 +578,12 @@ msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid "Medium"
 msgstr "Μέτριος/α"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid "Higher"
@@ -567,21 +605,28 @@ msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid "Middle-upper"
 msgstr "Μεσαίο-ανώτερο"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid "Done"
-msgstr ""
+msgstr "Ολοκληρώθηκε"
 
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid "In progress"
 msgstr "Υπό εξέλιξη"
 
+#, fuzzy
 msgctxt "selection:party.party,education:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:party.party,education:"
 msgid "Incomplete Primary School"
@@ -650,11 +695,3 @@ msgstr "Σημειώσεις"
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Socioeconomics"
 msgstr "Κοινωνικο-οικονομικά"
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family Assessment"
-msgstr "Κοινωνικο-οικονομικά και Οικογενειακή εκτίμηση"
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family assessment"
-msgstr "Κοινωνικο-οικονομικά και Οικογενειακή εκτίμηση"

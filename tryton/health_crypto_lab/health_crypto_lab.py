@@ -170,7 +170,7 @@ class LabTest(metaclass=PoolMeta):
             'state': 'validated', })
 
         # Create lab PoL if the person has a federation account.
-        if (document.patient.name.federation_account):
+        if (document.patient and document.patient.name.federation_account):
             cls.create_lab_pol(document)
 
         # Create Health condition to the patient
@@ -198,9 +198,11 @@ class LabTest(metaclass=PoolMeta):
         data_to_serialize = {
             'Lab_test': str(document.name) or '',
             'Test': str(document.test.rec_name) or '',
-            'HP': str(document.requestor.rec_name),
-            'Patient': str(document.patient.rec_name),
-            'Patient_ID': str(document.patient.name.ref) or '',
+            'HP': document.requestor and str(document.requestor.rec_name) or '',
+            'Source_type': str(document.source_type),
+            'Patient': document.patient and str(document.patient.rec_name) or '',
+            'Other_source': str(document.other_source) or '',
+            'Patient_ID': document.patient and str(document.patient.name.ref) or '',
             'Analyte_line': str(analyte_line),
              }
 
@@ -272,29 +274,30 @@ class LabTest(metaclass=PoolMeta):
         """ Adds an entry in the person Page of Life
             related to this person lab
         """
-        Pol = Pool().get('gnuhealth.pol')
-        pol = []
+        if lab_info.is_patient():
+            Pol = Pool().get('gnuhealth.pol')
+            pol = []
+            
+            test_lines = ""
+            for line in lab_info.critearea:
+                test_lines = test_lines + line.rec_name + "\n"
 
-        test_lines = ""
-        for line in lab_info.critearea:
-            test_lines = test_lines + line.rec_name + "\n"
-
-        vals = {
-            'page': str(uuid4()),
-            'person': lab_info.patient.name.id,
-            'page_date': lab_info.date_analysis,
-            'federation_account':
-                lab_info.patient.name.federation_account,
-            'page_type': 'medical',
-            'medical_context': 'lab',
-            'relevance': 'important',
-            'info': lab_info.analytes_summary,
-            'author': lab_info.requestor and
-                lab_info.requestor.rec_name
+            vals = {
+                'page': str(uuid4()),
+                'person': lab_info.patient.name.id,
+                'page_date': lab_info.date_analysis,
+                'federation_account': 
+                    lab_info.patient.name.federation_account,
+                'page_type': 'medical',
+                'medical_context': 'lab',
+                'relevance': 'important',
+                'info': lab_info.analytes_summary,
+                'author': lab_info.requestor and
+                    lab_info.requestor.rec_name
             }
 
-        pol.append(vals)
-        Pol.create(pol)
+            pol.append(vals)
+            Pol.create(pol)
 
 
 class HealthCrypto:

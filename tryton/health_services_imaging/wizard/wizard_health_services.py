@@ -22,7 +22,7 @@ class RequestPatientImagingTestStart(ModelView):
     ungroup_tests = fields.Boolean(
         'Ungroup',
         help="Check if you DO NOT want to include each individual Dx"
-             " imaging test from this order in the lab test generation step."
+             " imaging test from this order in the imaging test generation step."
              " This is useful when some services are not provided in"
              " the same institution.\n"
              "In this case, you need to individually update the service"
@@ -75,9 +75,12 @@ class RequestPatientImagingTest(Wizard):
         ImagingTestRequest = Pool().get('gnuhealth.imaging.test.request')
         request_number = self.generate_code()
         imaging_tests = []
+        count = len(self.start.tests)
+        num = 1
         for test in self.start.tests:
             imaging_test = {}
             imaging_test['request'] = request_number
+            imaging_test['request_line'] = f'{request_number}-{count:02}-{num:02}'
             imaging_test['requested_test'] = test.id
             imaging_test['patient'] = self.start.patient.id
             if self.start.doctor:
@@ -92,8 +95,10 @@ class RequestPatientImagingTest(Wizard):
                 # if the Ungroup flag is not set (default).
                 if not self.start.ungroup_tests:
                     self.append_services(test, self.start.service)
+                    imaging_test['service_updated'] = 'yes'
 
             imaging_tests.append(imaging_test)
+            num = num + 1
         ImagingTestRequest.create(imaging_tests)
 
         return 'end'

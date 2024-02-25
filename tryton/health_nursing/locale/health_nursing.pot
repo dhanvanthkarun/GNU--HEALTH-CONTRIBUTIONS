@@ -58,6 +58,14 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.ambulatory_care,pain:"
+msgid "Pain"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.ambulatory_care,pain_level:"
+msgid "Pain level"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.ambulatory_care,patient:"
 msgid "Patient"
 msgstr ""
@@ -108,6 +116,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,warning_icon:"
 msgid "Warning Icon"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.ambulatory_care,weight:"
+msgid "Weight"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.rounding,bpm:"
@@ -167,7 +179,7 @@ msgid "Pain"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.rounding,pain_level:"
-msgid "Pain"
+msgid "Pain level"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
@@ -281,7 +293,7 @@ msgid "Patient Rounding Sequence"
 msgstr ""
 
 msgctxt "help:gnuhealth.ambulatory_care_procedure,procedure:"
-msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
+msgid "Procedure Code"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,bpm:"
@@ -298,6 +310,14 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation(arterial)."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,pain:"
+msgid "Check if the patient is in pain"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,pain_level:"
+msgid "Enter the pain level, from 1 to 10."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,procedures:"
@@ -322,6 +342,10 @@ msgctxt "help:gnuhealth.patient.ambulatory_care,warning:"
 msgid ""
 "Check this box to alert the supervisor about this session. A warning icon "
 "will be shown in the session list"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,weight:"
+msgid "Measured weight, in kg"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.rounding,bpm:"
@@ -357,7 +381,7 @@ msgid "Check if the patient is in pain"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.rounding,pain_level:"
-msgid "Enter the pain level, from 1 to 10"
+msgid "Enter the pain level, from 1 to 10."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.rounding,personal_needs:"
@@ -444,12 +468,28 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
 msgstr ""
 
+msgctxt "model:ir.action,name:report_ambulatory_care"
+msgid "Ambulatory care session"
+msgstr ""
+
 msgctxt "model:ir.action,name:report_round_nursing"
 msgid "Nursing rounds"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid "There is no health professional associated to this user"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_report_pain_level"
+msgid "Level: %(pain_level)s"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_report_pain_no"
+msgid "No"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_report_pain_yes"
+msgid "Yes"
 msgstr ""
 
 msgctxt "model:ir.model.button,string:rounding_end_button"
@@ -496,36 +536,88 @@ msgctxt "model:res.group,name:group_health_nursing_admin"
 msgid "Health Nursing Administration"
 msgstr ""
 
-msgctxt "report:patient.rounding.report:"
-msgid "(%)"
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "/"
 msgstr ""
 
-msgctxt "report:patient.rounding.report:"
-msgid "(C)"
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Ambulatory Care Session"
 msgstr ""
 
-msgctxt "report:patient.rounding.report:"
-msgid "(kg)"
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "BP"
 msgstr ""
 
-msgctxt "report:patient.rounding.report:"
-msgid "."
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "End:"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Evolution"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Glycemia"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Health Prof:"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Heart rate"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Next session"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "O2 Sat (%)"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "PUID:"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Pain"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Patient:"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Procedures"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Resp. rate"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Session ID:"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Start:"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Summary"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Temp. (C)"
+msgstr ""
+
+msgctxt "report:patient.ambulatory_care.report:"
+msgid "Weight (kg)"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
 msgid "/"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "2"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid ":"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid ";"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
@@ -537,7 +629,7 @@ msgid "Diuresis"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "End"
+msgid "End:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
@@ -545,7 +637,7 @@ msgid "Evolution"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Female"
+msgid "Gender:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
@@ -553,7 +645,7 @@ msgid "Glycemia"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Health Professional:"
+msgid "Health Prof:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
@@ -561,39 +653,19 @@ msgid "Heart rate"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "ID:"
+msgid "O2 Sat (%)"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Improving"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "Level:"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "Male"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "No"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "O"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "P"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "PU"
+msgid "PUID:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
 msgid "Pain"
+msgstr ""
+
+msgctxt "report:patient.rounding.report:"
+msgid "Patient:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
@@ -605,15 +677,15 @@ msgid "Resp. rate"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Sat"
+msgid "Round Code:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Start"
+msgid "Round Report"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Status quo"
+msgid "Start:"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
@@ -621,23 +693,11 @@ msgid "Summary"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Temp"
+msgid "Temp. (C)"
 msgstr ""
 
 msgctxt "report:patient.rounding.report:"
-msgid "Weight"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "Worsening"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "Yes"
-msgstr ""
-
-msgctxt "report:patient.rounding.report:"
-msgid "atient:"
+msgid "Weight (kg)"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
@@ -726,6 +786,10 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Environment"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.rounding:"

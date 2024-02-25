@@ -17,6 +17,7 @@ from .import health_qrcodes
 
 def register():
     Pool.register(
+        health_qrcodes.Party,
         health_qrcodes.Patient,
         health_qrcodes.Appointment,
         health_qrcodes.Newborn,

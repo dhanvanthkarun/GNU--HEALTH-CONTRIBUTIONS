@@ -192,6 +192,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.patient.evaluation')]"/>
         </record>
 
+        <!-- Update Patient Disease Info -->
+        <record model="ir.model.button" id="patient_evaluation_update_patient_disease_info">
+            <field name="name">update_patient_disease_info</field>
+            <field name="string">Update Patient Disease Info</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.evaluation')]"/>
+        </record>
 
         <!-- Hospital Bed -->
         <record model="ir.model.button" id="hospital_bed_fix">
@@ -1240,7 +1246,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             action="act_people_form" id="menu_people"/>
 
 
-<!-- Add the Lastname and SSN (ref) field to the tree view of the party -->
+        <!-- Add the Lastname and SSN (ref) field to the tree view of the party -->
 
         <record model="ir.ui.view" id="party_view_tree">
             <field name="model">party.party</field>
@@ -1249,7 +1255,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
 
-<!-- PARTY CONTACT INFO - RELATIVES -->
+        <!-- PARTY CONTACT INFO - RELATIVES -->
 
         <record model="ir.ui.view" id="view_party_address_form">
             <field name="model">party.address</field>
@@ -1264,7 +1270,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
 
-<!-- Add Emergency type for contact mechanism -->
+        <!-- Add Emergency type for contact mechanism -->
 
         <record model="ir.ui.view" id="contact_mechanism_view_tree">
             <field name="model">party.contact_mechanism</field>

@@ -2694,66 +2694,6 @@ msgctxt "model:gnuhealth.dentistry.load.procedure.start,name:"
 msgid "Load Procedure Start"
 msgstr ""
 
-msgctxt "model:gnuhealth.dentistry.procedure,code:10"
-msgid "EXAM"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:11"
-msgid "RCAN"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:12"
-msgid "SEAL"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:13"
-msgid "WHIT"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:14"
-msgid "VENE"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:15"
-msgid "CLEANING"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:16"
-msgid "CLEANFLUOR"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:2"
-msgid "BOND"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:3"
-msgid "BRAC"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:4"
-msgid "IMPL"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:5"
-msgid "CROW"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:6"
-msgid "EXTR"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:7"
-msgid "DENT"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:8"
-msgid "FILL"
-msgstr ""
-
-msgctxt "model:gnuhealth.dentistry.procedure,code:9"
-msgid "SURG"
-msgstr ""
-
 msgctxt "model:gnuhealth.dentistry.procedure,name:"
 msgid "Dentistry Procedure"
 msgstr ""
@@ -2838,6 +2778,10 @@ msgctxt "model:ir.action,name:action_gnuhealth_dentistry_procedure_view"
 msgid "Dentistry Procedures"
 msgstr ""
 
+msgctxt "model:ir.action,name:action_gnuhealth_dentistry_treatment_view"
+msgid "Dentistry Treatments"
+msgstr ""
+
 msgctxt "model:ir.action,name:load_procedure"
 msgid "Load Procedure"
 msgstr ""
@@ -2851,6 +2795,10 @@ msgid "Dentistry Procedures"
 msgstr ""
 
 msgctxt "model:ir.action,name:wizard_set_odontogram"
+msgid "Set Odontogram"
+msgstr ""
+
+msgctxt "model:ir.action,name:wizard_set_odontogram_from_treatment"
 msgid "Set Odontogram"
 msgstr ""
 
@@ -2870,8 +2818,16 @@ msgctxt "model:ir.model.button,string:treatment_setodontogram_button"
 msgid "Set Odontogram"
 msgstr ""
 
+msgctxt "model:ir.ui.menu,name:gnuhealth_dentistry"
+msgid "Dentistry"
+msgstr ""
+
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_dentistry_procedure_list"
 msgid "Dentistry Procedures"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:menu_gnuhealth_dentistry_procedures"
+msgid "Dentistry Treatments"
 msgstr ""
 
 msgctxt "model:res.group,name:group_health_dentist"
@@ -2879,7 +2835,11 @@ msgid "Health Dentist"
 msgstr ""
 
 msgctxt "report:health_dentistry.odontogram.report:"
-msgid ":"
+msgid ","
+msgstr ""
+
+msgctxt "report:health_dentistry.odontogram.report:"
+msgid "Age:"
 msgstr ""
 
 msgctxt "report:health_dentistry.odontogram.report:"
@@ -2887,35 +2847,35 @@ msgid "Odontogram"
 msgstr ""
 
 msgctxt "report:health_dentistry.odontogram.report:"
-msgid "PUID"
+msgid "PUID:"
 msgstr ""
 
 msgctxt "report:health_dentistry.odontogram.report:"
-msgid "Patient"
+msgid "Patient:"
 msgstr ""
 
 msgctxt "report:health_dentistry.odontogram.report:"
 msgid "Print Date:"
 msgstr ""
 
-msgctxt "report:health_dentistry.odontogram.report:"
-msgid "at"
+msgctxt "report:health_dentistry.procedure.report:"
+msgid ","
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid ":"
+msgid "Age:"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Age :"
+msgid "DENTISTRY PROCEDURES HISTORY"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "DENTISTRY PROCEDURES"
+msgid "DMFT Index"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "DMFT Index:"
+msgid "DMFT Index For Primary Teeth"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
@@ -2923,31 +2883,19 @@ msgid "Date"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Date :"
-msgstr ""
-
-msgctxt "report:health_dentistry.procedure.report:"
-msgid "HISTORY"
-msgstr ""
-
-msgctxt "report:health_dentistry.procedure.report:"
-msgid "ID"
-msgstr ""
-
-msgctxt "report:health_dentistry.procedure.report:"
 msgid "Notes"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "PU"
+msgid "PUID:"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Patient"
+msgid "Patient:"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
-msgid "Print"
+msgid "Print Date:"
 msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
@@ -2956,10 +2904,6 @@ msgstr ""
 
 msgctxt "report:health_dentistry.procedure.report:"
 msgid "State"
-msgstr ""
-
-msgctxt "report:health_dentistry.procedure.report:"
-msgid "dmft index:"
 msgstr ""
 
 msgctxt "selection:gnuhealth.dentistry.set.odontogram.start,t11:"

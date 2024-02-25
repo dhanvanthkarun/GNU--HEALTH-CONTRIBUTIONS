@@ -1,26 +1,10 @@
-# Anonymous Pootle User, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2016-01-10 17:03+0000\n"
-"Last-Translator: Anonymous Pootle User\n"
-"Language: el_GR\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1452445404.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.chagas_du_survey,bugtraps:"
 msgid "Bug traps"
 msgstr "Εντομοπαγίδες"
-
-msgctxt "field:gnuhealth.chagas_du_survey,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.chagas_du_survey,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
 
 msgctxt "field:gnuhealth.chagas_du_survey,dfloor:"
 msgid "Floor"
@@ -58,10 +42,6 @@ msgctxt "field:gnuhealth.chagas_du_survey,fumigation_date:"
 msgid "Fumigation Date"
 msgstr "Ημερομηνία υποκαπνισμού"
 
-msgctxt "field:gnuhealth.chagas_du_survey,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.chagas_du_survey,name:"
 msgid "Survey Code"
 msgstr "Κωδικός έρευνας"
@@ -81,10 +61,6 @@ msgstr "Παρατηρήσεις"
 msgctxt "field:gnuhealth.chagas_du_survey,paint_date:"
 msgid "Paint Date"
 msgstr "Ημερομηνία μπογιατίσματος"
-
-msgctxt "field:gnuhealth.chagas_du_survey,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
 
 msgctxt "field:gnuhealth.chagas_du_survey,survey_date:"
 msgid "Date"
@@ -106,17 +82,14 @@ msgctxt "field:gnuhealth.chagas_du_survey,vector:"
 msgid "Vector"
 msgstr "Φορέας"
 
-msgctxt "field:gnuhealth.chagas_du_survey,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την Ημερομηνία"
-
-msgctxt "field:gnuhealth.chagas_du_survey,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τον χρήστη"
-
 msgctxt "field:gnuhealth.sequences,chagas_du_survey_sequence:"
-msgid "Chagas Survey Sequence"
-msgstr "Αλληλουχία Μελέτης Chagas"
+msgid "Chagas DU Survey Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.chagas_du_survey_sequence,chagas_du_survey_sequence:"
+msgid "Chagas DU Survey Sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.chagas_du_survey,bugtraps:"
 msgid "The DU has traps to detect triatomines"
@@ -266,22 +239,37 @@ msgctxt ""
 msgid "CHAGAS XENODIAGNOSIS"
 msgstr ""
 
+msgctxt "model:gnuhealth.sequences.chagas_du_survey_sequence,name:"
+msgid "Chagas DU Survey Sequences setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_chagas_du_survey_form"
 msgid "Chagas DU Survey"
 msgstr "Mελέτη Chagas DU"
 
-msgctxt "model:ir.sequence,name:seq_gnuhealth_du_survey"
+msgctxt "model:ir.sequence,name:"
 msgid "Chagas DU Survey"
 msgstr "Mελέτη Chagas DU"
 
-msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_du_survey"
+#, fuzzy
+msgctxt "model:ir.sequence,name:seq_gnuhealth_chagas_du_survey"
+msgid "Chagas DU Survey"
+msgstr "Mελέτη Chagas DU"
+
+msgctxt "model:ir.sequence.type,name:"
+msgid "Chagas DU Survey"
+msgstr "Mελέτη Chagas DU"
+
+#, fuzzy
+msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_chagas_du_survey"
 msgid "Chagas DU Survey"
 msgstr "Mελέτη Chagas DU"
 
 msgctxt ""
 "model:product.template,name:product_template_chagas_bsmear_analysischarges0"
 msgid "Chagas Blood Smear Charges"
-msgstr "Χρεώσεις για λεπτό επίχρισμα περιφερικού αίματος προς εντοπισμό Chagas"
+msgstr ""
+"Χρεώσεις για λεπτό επίχρισμα περιφερικού αίματος προς εντοπισμό Chagas"
 
 msgctxt ""
 "model:product.template,name:product_template_chagas_elisa_analysischarges0"
@@ -308,9 +296,12 @@ msgctxt ""
 msgid "Chagas Xenodiagnosis Charges"
 msgstr "Χρεώσεις για Ξενοδιάγνωση Chagas"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.chagas_du_survey,du_status:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.chagas_du_survey,du_status:"
 msgid "Improved"
@@ -328,9 +319,12 @@ msgctxt "selection:gnuhealth.chagas_du_survey,du_status:"
 msgid "Worsen"
 msgstr "Σε επιδείνωση"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid ""
 msgstr ""
+"\n"
+"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid "P. megistus"
@@ -351,3 +345,20 @@ msgstr "T. dimidiata"
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid "T. infestans"
 msgstr "T. infestans"
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Areas to Improve"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Notes"
+msgstr "Σημειώσεις"
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Presence of triatomines"
+msgstr ""
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Preventive Measures"
+msgstr ""

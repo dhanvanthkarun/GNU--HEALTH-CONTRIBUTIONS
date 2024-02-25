@@ -41,6 +41,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_elisa_elisa_igg" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Dengue ELISA Ig-M&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Dengue ELISA Ig-M&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_dengue_elisa_igm_analysis0"/>
         </record>
@@ -77,6 +78,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_elisa_igg" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Dengue Ig-G&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Dengue Ig-G&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_dengue_elisa_igg_analysis0"/>
         </record>
@@ -112,6 +114,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_qualitative_pcr" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Dengue PCR&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Dengue PCR&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_dengue_pcr_analysis0"/>
         </record>
@@ -147,6 +150,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_qualitative_prnt" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Dengue PRNT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Dengue PRNT&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_dengue_prnt_analysis0"/>
         </record>

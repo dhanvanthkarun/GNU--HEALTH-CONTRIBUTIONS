@@ -8,6 +8,7 @@ from trytond.model import ModelView, fields
 from trytond.wizard import Wizard, StateTransition, StateView, Button
 from trytond.transaction import Transaction
 from trytond.pool import Pool
+from trytond.pyson import Eval, Not, Bool
 from trytond.i18n import gettext
 from ..exceptions import LabOrderExists
 
@@ -56,7 +57,9 @@ class CreateLabTestOrder(Wizard):
                     )
 
             test_report_data['test'] = lab_test_order.name.id
-            test_report_data['patient'] = lab_test_order.patient_id.id
+            test_report_data['source_type'] = lab_test_order.source_type
+            test_report_data['patient'] = lab_test_order.patient_id and lab_test_order.patient_id.id
+            test_report_data['other_source'] = lab_test_order.other_source
             if lab_test_order.doctor_id:
                 test_report_data['requestor'] = lab_test_order.doctor_id.id
             test_report_data['date_requested'] = lab_test_order.date
@@ -65,6 +68,7 @@ class CreateLabTestOrder(Wizard):
             for critearea in lab_test_order.name.critearea:
                 test_cases.append(('create', [{
                         'name': critearea.name,
+                        'code': critearea.code,
                         'sequence': critearea.sequence,
                         'lower_limit': critearea.lower_limit,
                         'upper_limit': critearea.upper_limit,
@@ -97,7 +101,18 @@ class RequestPatientLabTestStart(ModelView):
     __name__ = 'gnuhealth.patient.lab.test.request.start'
 
     date = fields.DateTime('Date')
-    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+    source_type = fields.Selection([
+        ('patient', 'Patient'),
+        ('other_source', 'Other')
+        ], 'Source', 
+        help='Sample source type.',
+        sort=False, select=True)
+    patient = fields.Many2One('gnuhealth.patient', 
+        'Patient',
+        states={'invisible': (Eval('source_type') != 'patient')})
+    other_source = fields.Char('Other', 
+        states={'invisible': (Eval('source_type') != 'other_source')},
+        help="Other sample source.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
@@ -113,6 +128,10 @@ class RequestPatientLabTestStart(ModelView):
     @staticmethod
     def default_date():
         return datetime.now()
+
+    @staticmethod
+    def default_source_type():
+        return 'patient'
 
     @staticmethod
     def default_patient():
@@ -152,7 +171,9 @@ class RequestPatientLabTest(Wizard):
             lab_test = {}
             lab_test['request'] = request_number
             lab_test['name'] = test.id
-            lab_test['patient_id'] = self.start.patient.id
+            lab_test['source_type'] = self.start.source_type
+            lab_test['patient_id'] = self.start.patient and self.start.patient.id
+            lab_test['other_source'] = self.start.other_source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:

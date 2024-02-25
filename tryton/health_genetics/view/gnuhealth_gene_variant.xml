@@ -8,13 +8,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <label name="name"/>
-    <field name="name"/>
-    <label name="variant"/>
-    <field name="variant"/>
+    <group id="variant_header_group" colspan="4" col="6">
+        <label name="variant"/>
+        <field name="variant"/>
+        <label name="name"/>
+        <field name="name"/>
+        <label name="significance"/>
+        <field name="significance"/>
+    </group>
     <newline/>
-    <label name="aa_change"/>
-    <field name="aa_change"/>
+    <group id="variant_info_group" colspan="4" col="9">
+        <label name="aa_change"/>
+        <field name="aa_change"/>
+        <label name="dbsnp"/>
+        <field name="dbsnp"/>
+        <field name="dbsnp_url" widget="url"/>
+    </group>
     <newline/>
     <field colspan="4" name="phenotypes"/>
 </form>

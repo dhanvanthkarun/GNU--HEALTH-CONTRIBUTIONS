@@ -15,6 +15,9 @@ class ServiceAlreadyInvoiced(ValidationError):
 class NoServiceAssociated(UserError):
     pass
 
+class ServiceHasBeenUpdated(UserError):
+    pass
+
 class NoProductAssociated(UserError):
     pass
 

@@ -190,6 +190,17 @@ class FederationQueue(ModelSQL, ModelView):
         'Arguments', required=True,
         help="Arguments")
 
+    args_preview = fields.Function(
+        fields.Text('Preview'),
+        "get_args_preview_string")
+
+    def get_args_preview_string(self, name):
+        try:
+            data = json.loads(self.args)
+            return json.dumps(data, indent=4, ensure_ascii=False)
+        except:
+            return "Fail to parse json string of args field."
+
     method = fields.Selection([
         (None, ''),
         ('POST', 'POST'),

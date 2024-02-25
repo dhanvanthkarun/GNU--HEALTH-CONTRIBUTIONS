@@ -1,23 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-07-16 18:29+0000\n"
-"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/gnu-health/"
-"health_insurance/el/>\n"
-"Language: el\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
-
-msgctxt "error:gnuhealth.insurance.plan.product.policy:"
-msgid "Percentage out of range [0-100]"
-msgstr "Ποσοστό εκτός ορίου [0-100]"
-
-msgctxt "error:gnuhealth.insurance.plan.product.policy:"
-msgid "You need a product or category"
-msgstr "Χρειάζεστε ένα προϊόν ή μια κατηγορία"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.health_service,insurance_holder:"
 msgid "Insurance Holder"
@@ -31,25 +14,17 @@ msgctxt "field:gnuhealth.insurance.plan,product_policy:"
 msgid "Policy"
 msgstr "Πολιτική"
 
-msgctxt "field:gnuhealth.insurance.plan.product.policy,create_date:"
-msgid "Create Date"
-msgstr "Δημιουργία ημερομηνίας"
-
-msgctxt "field:gnuhealth.insurance.plan.product.policy,create_uid:"
-msgid "Create User"
-msgstr "Δημιουργία χρήστη"
-
 msgctxt "field:gnuhealth.insurance.plan.product.policy,discount:"
 msgid "Discount"
 msgstr "Έκπτωση"
 
-msgctxt "field:gnuhealth.insurance.plan.product.policy,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.insurance.plan.product.policy,plan:"
 msgid "Plan"
 msgstr "Πλάνο"
+
+msgctxt "field:gnuhealth.insurance.plan.product.policy,price:"
+msgid "Price"
+msgstr ""
 
 msgctxt "field:gnuhealth.insurance.plan.product.policy,product:"
 msgid "Product"
@@ -59,25 +34,19 @@ msgctxt "field:gnuhealth.insurance.plan.product.policy,product_category:"
 msgid "Category"
 msgstr "Κατηγορία"
 
-msgctxt "field:gnuhealth.insurance.plan.product.policy,rec_name:"
-msgid "Name"
-msgstr "Όνομα"
-
-msgctxt "field:gnuhealth.insurance.plan.product.policy,write_date:"
-msgid "Write Date"
-msgstr "Γράψτε την ημερομηνία"
-
-msgctxt "field:gnuhealth.insurance.plan.product.policy,write_uid:"
-msgid "Write User"
-msgstr "Γράψτε τν χρήστη"
-
 msgctxt "help:gnuhealth.health_service,insurance_holder:"
 msgid "Insurance Policy Holder"
 msgstr "Κάτοχος ασφαλιστηρίου συμβολαίου"
 
 msgctxt "help:gnuhealth.insurance.plan.product.policy,discount:"
-msgid "Discount in Percentage"
-msgstr "Έκπτωση σε ποσοστό"
+msgid ""
+"Discount in Percentage. It has higher precedence than the fixed price when "
+"both values coexist"
+msgstr ""
+
+msgctxt "help:gnuhealth.insurance.plan.product.policy,price:"
+msgid "Apply a fixed price for this product or category"
+msgstr ""
 
 msgctxt "model:gnuhealth.insurance.plan.product.policy,name:"
 msgid "Policy associated to the product on the insurance plan"
@@ -87,6 +56,40 @@ msgctxt ""
 "model:ir.action,name:action_gnuhealth_insurance_plan_product_policy_view"
 msgid "Plan Product Policies"
 msgstr "Πολιτικές πλάνου προϊόντος"
+
+msgctxt "model:ir.message,text:msg_discount_without_element"
+msgid ""
+"SM-INSURANCE-0002: You need to associate a product or category to the "
+"discount"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_need_a_policy"
+msgid ""
+"SM-INSURANCE-0006: You need to specify either a percentage or a fixed price "
+"for this policy line. If both are present, the percentage will be applied"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_account_receivable"
+msgid ""
+"SM-INSURANCE-0007: No Account Receivable defined in party or in default "
+"configuration"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_invoice_address"
+msgid "SM-INSURANCE-0004: No address associated to the invoice"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_payment_term"
+msgid "SM-INSURANCE-0005: No payment term"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_pct_out_of_range"
+msgid "SM-INSURANCE-0001: Percentage out of range [0-100]"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_service_invoiced"
+msgid "SM-INSURANCE-0003: The service has been invoiced"
+msgstr ""
 
 msgctxt ""
 "model:ir.ui.menu,name:menu_gnuhealth_insurance_plan_product_policy_list"

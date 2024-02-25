@@ -17,7 +17,7 @@ from . import health_genetics
 
 def register():
     Pool.register(
-        health_genetics.DiseaseGene,
+        health_genetics.Gene,
         health_genetics.ProteinDisease,
         health_genetics.GeneVariant,
         health_genetics.GeneVariantPhenotype,

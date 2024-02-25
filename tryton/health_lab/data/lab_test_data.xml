@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record id="product_category_labservices0" model="product.category">
             <field name="name">Lab Services</field>
@@ -316,6 +316,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_fsh0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;FSH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;FSH&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
             <field eval="&quot;&quot;&quot;Follicular Phase   : 3.0-12.0
@@ -330,6 +331,7 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_rbcs0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RBCs&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RBCs&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_peripheralsmearexamination0"/>
         </record>
@@ -337,18 +339,21 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_physicalexamination0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Physical Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Physical Examination&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_physicalexamination1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Physical Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Physical Examination&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_urea0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Urea&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Urea&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_renalfunctiontest0"/>
             <field eval="&quot;&quot;&quot;13-43&quot;&quot;&quot;" name="normal_range"/>
@@ -359,18 +364,21 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_physicalexamination2" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Physical Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Physical Examination&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_bloodgrouprh0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Blood Group &amp; RH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Blood Group &amp; RH&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_haematology0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_haemoglobin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;HGB&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;HGB&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;11-16.0&quot;&quot;&quot;" name="normal_range"/>
@@ -381,6 +389,7 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_totalprotein0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Total Protein&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Total Protein&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;6.4-8.3&quot;&quot;&quot;" name="normal_range"/>
@@ -391,6 +400,7 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_albumin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Albumin&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Albumin&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;3.5-5.5&quot;&quot;&quot;" name="normal_range"/>
@@ -401,12 +411,14 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_color0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Color&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Color&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_lh0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;LH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;LH&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
             <field eval="&quot;&quot;&quot;Follicular Phase   : 0.8-10.5
@@ -420,6 +432,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_color1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Color&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Color&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Yellow&quot;&quot;&quot;" name="normal_range"/>
@@ -427,12 +440,14 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_wbcs0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;WBCs&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;WBCs&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_peripheralsmearexamination0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_rbc0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RBC&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RBC&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;3.5-5.50&quot;&quot;&quot;" name="normal_range"/>
@@ -445,12 +460,14 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
         <record id="gnuhealth_test_critearea_testingheader0" model="gnuhealth.lab.test.critearea">
             <field model="gnuhealth.lab" name="gnuhealth_lab_id" search="[('name', '=', u'TEST003')]"/>
             <field eval="&quot;&quot;&quot;testing header&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;testing header&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
         </record>
 -->
 
         <record id="gnuhealth_test_critearea_color2" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Color&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Color&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;Brown&quot;&quot;&quot;" name="normal_range"/>
@@ -458,6 +475,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_creatinine0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Creatinine&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Creatinine&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_renalfunctiontest0"/>
             <field eval="&quot;&quot;&quot;0.8-1.3&quot;&quot;&quot;" name="normal_range"/>
@@ -468,6 +486,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_tsh0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;TSH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;TSH&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
             <field eval="&quot;&quot;&quot;0.3-6.2&quot;&quot;&quot;" name="normal_range"/>
@@ -478,6 +497,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_globulin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Globulin&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Globulin&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;1.5-3.5&quot;&quot;&quot;" name="normal_range"/>
@@ -488,6 +508,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_hct0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;HCT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;HCT&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;37.0-50&quot;&quot;&quot;" name="normal_range"/>
@@ -498,6 +519,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_uricacid0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Uric Acid&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Uric Acid&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_renalfunctiontest0"/>
             <field eval="&quot;&quot;&quot;3.5-7.2&quot;&quot;&quot;" name="normal_range"/>
@@ -508,6 +530,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_consistency0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Consistency&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Consistency&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;Well formed&quot;&quot;&quot;" name="normal_range"/>
@@ -515,6 +538,7 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_clarityappearance0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Clarity/ Appearance&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Clarity/ Appearance&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Clear&quot;&quot;&quot;" name="normal_range"/>
@@ -522,18 +546,21 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_platelets0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Platelets&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Platelets&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_peripheralsmearexamination0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_volume0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Volume&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Volume&quot;&quot;&quot;" name="code"/>
             <field eval="3" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_totalbilirubin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Total Bilirubin&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Total Bilirubin&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;0.3-1.2&quot;&quot;&quot;" name="normal_range"/>
@@ -544,12 +571,14 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_reaction0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Reaction&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Reaction&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_mcv0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;MCV&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;MCV&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;82-95&quot;&quot;&quot;" name="normal_range"/>
@@ -560,12 +589,14 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_chemicalexamination0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Chemical Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Chemical Examination&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_prolactin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;PROLACTIN&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;PROLACTIN&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
             <field eval="&quot;&quot;&quot;Women, non pregnant : 1.2-19.5
@@ -577,6 +608,7 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_mucus0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Mucus&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Mucus&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -584,12 +616,14 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_report0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;REPORT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;REPORT&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_peripheralsmearexamination0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_mch0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;MCH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;MCH&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;27-31&quot;&quot;&quot;" name="normal_range"/>
@@ -600,12 +634,14 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_viscosity0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Viscosity&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Viscosity&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_directbilirubin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Direct Bilirubin&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Direct Bilirubin&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;&lt;0.2&quot;&quot;&quot;" name="normal_range"/>
@@ -616,6 +652,7 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_blood0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Blood&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Blood&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -623,6 +660,7 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_specificgravity0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Specific Gravity&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Specific Gravity&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;103-130&quot;&quot;&quot;" name="normal_range"/>
@@ -632,6 +670,7 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_testosterone0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;TESTOSTERONE&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;TESTOSTERONE&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
             <field eval="&quot;&quot;&quot;Sexually mature women : &lt; 0.6
@@ -643,12 +682,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_liquefactiontime0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Liquefaction Time&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Liquefaction Time&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_indirectbilirubin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Indirect Bilirubin&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Indirect Bilirubin&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;Up to 0.8&quot;&quot;&quot;" name="normal_range"/>
@@ -659,12 +700,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_microscopicexamination0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Microscopic Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Microscopic Examination&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_mchc0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;MCHC&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;MCHC&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;32.0-36.0&quot;&quot;&quot;" name="normal_range"/>
@@ -675,6 +718,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_pct" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;PCT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;PCT&quot;&quot;&quot;" name="code"/>
             <field eval="22" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;0.13-0.43&quot;&quot;&quot;" name="normal_range"/>
@@ -685,6 +729,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_mpv" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;MPV&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;MPV&quot;&quot;&quot;" name="code"/>
             <field eval="23" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;6.3-15.0&quot;&quot;&quot;" name="normal_range"/>
@@ -695,6 +740,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_pdwsd" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;PDWsd&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;PDWsd&quot;&quot;&quot;" name="code"/>
             <field eval="24" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field name="units" ref="gnuhealth_lab_test_units_fl0"/>
@@ -702,6 +748,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_pdwcv" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;PDWcv&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;PDWcv&quot;&quot;&quot;" name="code"/>
             <field eval="25" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field name="units" ref="gnuhealth_lab_test_units_0"/>
@@ -709,6 +756,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_ph0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Acidic&quot;&quot;&quot;" name="normal_range"/>
@@ -717,12 +765,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_microscopicexamination1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Microscopic Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Microscopic Examination&quot;&quot;&quot;" name="code"/>
             <field eval="7" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_rdwcv0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RDWcv&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RDWcv&quot;&quot;&quot;" name="code"/>
             <field eval="7" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;11.5-14.5&quot;&quot;&quot;" name="normal_range"/>
@@ -733,6 +783,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_nitrites0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Nitrites&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Nitrites&quot;&quot;&quot;" name="code"/>
             <field eval="7" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -740,6 +791,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_alkalinephosphatase0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Alkaline Phosphatase&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Alkaline Phosphatase&quot;&quot;&quot;" name="code"/>
             <field eval="7" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;&lt;270&quot;&quot;&quot;" name="normal_range"/>
@@ -750,6 +802,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_puscells0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Pus cells&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Pus cells&quot;&quot;&quot;" name="code"/>
             <field eval="7" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;0-1&quot;&quot;&quot;" name="normal_range"/>
@@ -760,6 +813,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_glucose0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Glucose&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Glucose&quot;&quot;&quot;" name="code"/>
             <field eval="8" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -767,12 +821,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_motility0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Motility&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Motility&quot;&quot;&quot;" name="code"/>
             <field eval="8" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_sgpt0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;SGPT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;SGPT&quot;&quot;&quot;" name="code"/>
             <field eval="8" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;&lt;40&quot;&quot;&quot;" name="normal_range"/>
@@ -784,6 +840,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_rdwsd0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RDWsd&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RDWsd&quot;&quot;&quot;" name="code"/>
             <field eval="8" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;35-56&quot;&quot;&quot;" name="normal_range"/>
@@ -794,6 +851,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_rbcs1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RBCs&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RBCs&quot;&quot;&quot;" name="code"/>
             <field eval="8" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;0-1&quot;&quot;&quot;" name="normal_range"/>
@@ -804,6 +862,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_sgot0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;SGOT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;SGOT&quot;&quot;&quot;" name="code"/>
             <field eval="9" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;&lt;40&quot;&quot;&quot;" name="normal_range"/>
@@ -814,6 +873,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_ovacyst0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Ova/Cyst&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Ova/Cyst&quot;&quot;&quot;" name="code"/>
             <field eval="9" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
             <field eval="&quot;&quot;&quot;Absent&quot;&quot;&quot;" name="normal_range"/>
@@ -821,12 +881,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_progressive0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Progressive&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Progressive&quot;&quot;&quot;" name="code"/>
             <field eval="9" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_protein0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Protein&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Protein&quot;&quot;&quot;" name="code"/>
             <field eval="9" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -834,6 +896,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_wbc0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;WBC&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;WBC&quot;&quot;&quot;" name="code"/>
             <field eval="10" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;4.5-11&quot;&quot;&quot;" name="normal_range"/>
@@ -844,6 +907,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_neu" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;NEU&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;NEU&quot;&quot;&quot;" name="code"/>
             <field eval="11" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;2-7&quot;&quot;&quot;" name="normal_range"/>
@@ -854,6 +918,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_gammagt0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Gamma GT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Gamma GT&quot;&quot;&quot;" name="code"/>
             <field eval="10" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;&lt;55&quot;&quot;&quot;" name="normal_range"/>
@@ -864,18 +929,21 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_nonprogressive0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Non Progressive&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Non Progressive&quot;&quot;&quot;" name="code"/>
             <field eval="10" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_undigestedmatter0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Un digested matter&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Un digested matter&quot;&quot;&quot;" name="code"/>
             <field eval="10" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_stoolexamination0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_ketonebodies0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Ketone Bodies&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Ketone Bodies&quot;&quot;&quot;" name="code"/>
             <field eval="10" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -883,6 +951,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_agratio0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;AG Ratio&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;AG Ratio&quot;&quot;&quot;" name="code"/>
             <field eval="11" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_liverfunctiontest0"/>
             <field eval="&quot;&quot;&quot;1.5:1-2.5:1&quot;&quot;&quot;" name="normal_range"/>
@@ -892,6 +961,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_neu0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;NEU%&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;NEU%&quot;&quot;&quot;" name="code"/>
             <field eval="16" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;45-70&quot;&quot;&quot;" name="normal_range"/>
@@ -902,12 +972,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_nonmotile0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Non Motile&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Non Motile&quot;&quot;&quot;" name="code"/>
             <field eval="11" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_urobilinogen0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Urobilinogen&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Urobilinogen&quot;&quot;&quot;" name="code"/>
             <field eval="11" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -915,6 +987,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_lym0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;LYM%&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;LYM%&quot;&quot;&quot;" name="code"/>
             <field eval="17" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;20-45&quot;&quot;&quot;" name="normal_range"/>
@@ -925,6 +998,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_totalcount0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Total count&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Total count&quot;&quot;&quot;" name="code"/>
             <field eval="12" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
             <field eval="&quot;&quot;&quot;60-150&quot;&quot;&quot;" name="normal_range"/>
@@ -935,6 +1009,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_leucocytes0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Leucocytes&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Leucocytes&quot;&quot;&quot;" name="code"/>
             <field eval="12" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -942,12 +1017,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_morphology0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Morphology&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Morphology&quot;&quot;&quot;" name="code"/>
             <field eval="13" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_mon0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;MON%&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;MON%&quot;&quot;&quot;" name="code"/>
             <field eval="18" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;2-10&quot;&quot;&quot;" name="normal_range"/>
@@ -958,6 +1035,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_bilirubin0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Bilirubin&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Bilirubin&quot;&quot;&quot;" name="code"/>
             <field eval="13" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -965,6 +1043,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_blood1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Blood&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Blood&quot;&quot;&quot;" name="code"/>
             <field eval="14" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Negative&quot;&quot;&quot;" name="normal_range"/>
@@ -972,6 +1051,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_eos0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;EO%&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;EO%&quot;&quot;&quot;" name="code"/>
             <field eval="19" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;1-6&quot;&quot;&quot;" name="normal_range"/>
@@ -982,12 +1062,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_puscells1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Pus cells&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Pus cells&quot;&quot;&quot;" name="code"/>
             <field eval="14" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_bas0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;BAS%&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;BAS%&quot;&quot;&quot;" name="code"/>
             <field eval="20" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;0-2&quot;&quot;&quot;" name="normal_range"/>
@@ -998,18 +1080,21 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_rbcs2" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RBCs&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RBCs&quot;&quot;&quot;" name="code"/>
             <field eval="15" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_microscopicexamination2" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Microscopic Examination&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Microscopic Examination&quot;&quot;&quot;" name="code"/>
             <field eval="15" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_lym1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;LYM&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;LYM&quot;&quot;&quot;" name="code"/>
             <field eval="12" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;1.5-4.0&quot;&quot;&quot;" name="normal_range"/>
@@ -1020,6 +1105,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_mon" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;MON&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;MON&quot;&quot;&quot;" name="code"/>
             <field eval="13" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;0.15-0.70&quot;&quot;&quot;" name="normal_range"/>
@@ -1030,6 +1116,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_bas" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;BAS&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;BAS&quot;&quot;&quot;" name="code"/>
             <field eval="14" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;0-0.15&quot;&quot;&quot;" name="normal_range"/>
@@ -1040,6 +1127,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_eo" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;EO&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;EO&quot;&quot;&quot;" name="code"/>
             <field eval="15" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;0-0.5&quot;&quot;&quot;" name="normal_range"/>
@@ -1051,6 +1139,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_puscells2" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Pus Cells&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Pus Cells&quot;&quot;&quot;" name="code"/>
             <field eval="16" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;1-2&quot;&quot;&quot;" name="normal_range"/>
@@ -1061,12 +1150,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_epithelialcells0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Epithelial Cells&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Epithelial Cells&quot;&quot;&quot;" name="code"/>
             <field eval="16" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_rbcs3" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;RBC's&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;RBC's&quot;&quot;&quot;" name="code"/>
             <field eval="17" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;0-2&quot;&quot;&quot;" name="normal_range"/>
@@ -1077,6 +1168,7 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_gra0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;GRA#&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;GRA#&quot;&quot;&quot;" name="code"/>
             <field eval="27" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;2.0-7.5&quot;&quot;&quot;" name="normal_range"/>
@@ -1087,18 +1179,21 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_spermatogoniccells0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Spermatogonic Cells&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Spermatogonic Cells&quot;&quot;&quot;" name="code"/>
             <field eval="17" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_semenanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_epithelialcells1" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Epithelial Cells&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Epithelial Cells&quot;&quot;&quot;" name="code"/>
             <field eval="18" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_plt0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;PLT&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;PLT&quot;&quot;&quot;" name="code"/>
             <field eval="21" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;150-450&quot;&quot;&quot;" name="normal_range"/>
@@ -1109,12 +1204,14 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_crystals0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Crystals&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Crystals&quot;&quot;&quot;" name="code"/>
             <field eval="19" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_esr0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;ESR&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;ESR&quot;&quot;&quot;" name="code"/>
             <field eval="26" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_completebloodcount0"/>
             <field eval="&quot;&quot;&quot;Up to 15&quot;&quot;&quot;" name="normal_range"/>
@@ -1126,18 +1223,21 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
 
         <record id="gnuhealth_test_critearea_casts0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Casts&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Casts&quot;&quot;&quot;" name="code"/>
             <field eval="20" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_bacteria0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Bacteria&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Bacteria&quot;&quot;&quot;" name="code"/>
             <field eval="21" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>
 
         <record id="gnuhealth_test_critearea_others0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;Others&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;Others&quot;&quot;&quot;" name="code"/>
             <field eval="22" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
         </record>

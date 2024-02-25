@@ -12,4 +12,6 @@ from trytond.model.exceptions import ValidationError
 class NoServiceAssociated(UserError):
     pass
 
+class ServiceHasBeenUpdated(UserError):
+    pass
 

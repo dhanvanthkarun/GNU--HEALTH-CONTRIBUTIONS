@@ -1,17 +1,6 @@
-# Nab3a <asn09@aub.edu.lb>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-02-06 07:37+0000\n"
-"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
-"health_ntd_dengue/ar/>\n"
-"Language: ar\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.16-dev\n"
-"X-POOTLE-MTIME: 1452255985.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.dengue_du_survey,aedes_larva:"
 msgid "Larvae"
@@ -20,14 +9,6 @@ msgstr "اليرقات"
 msgctxt "field:gnuhealth.dengue_du_survey,animal_water_container:"
 msgid "Animal Water containers"
 msgstr "احواض الحيوانات"
-
-msgctxt "field:gnuhealth.dengue_du_survey,create_date:"
-msgid "Create Date"
-msgstr "أنشئ معلومات"
-
-msgctxt "field:gnuhealth.dengue_du_survey,create_uid:"
-msgid "Create User"
-msgstr "إنشاء مستخدم"
 
 msgctxt "field:gnuhealth.dengue_du_survey,du:"
 msgid "DU"
@@ -48,10 +29,6 @@ msgstr "مزهرية"
 msgctxt "field:gnuhealth.dengue_du_survey,fumigation_date:"
 msgid "Fumigation Date"
 msgstr "تاريخ التبخير"
-
-msgctxt "field:gnuhealth.dengue_du_survey,id:"
-msgid "ID"
-msgstr "المُعرّف"
 
 msgctxt "field:gnuhealth.dengue_du_survey,larva_in_house:"
 msgid "Domiciliary"
@@ -85,10 +62,6 @@ msgctxt "field:gnuhealth.dengue_du_survey,potted_plant:"
 msgid "Potted Plants"
 msgstr "نبات في أصيص"
 
-msgctxt "field:gnuhealth.dengue_du_survey,rec_name:"
-msgid "Name"
-msgstr "الاسم"
-
 msgctxt "field:gnuhealth.dengue_du_survey,rock_holes:"
 msgid "Rock holes"
 msgstr "ثقوب صخرية"
@@ -101,17 +74,14 @@ msgctxt "field:gnuhealth.dengue_du_survey,tree_holes:"
 msgid "Tree holes"
 msgstr "ثقوب اشجار"
 
-msgctxt "field:gnuhealth.dengue_du_survey,write_date:"
-msgid "Write Date"
-msgstr "كتابة معلومات"
-
-msgctxt "field:gnuhealth.dengue_du_survey,write_uid:"
-msgid "Write User"
-msgstr "كتابة مستخدم"
-
 msgctxt "field:gnuhealth.sequences,dengue_du_survey_sequence:"
-msgid "Dengue Survey Sequence"
-msgstr "تسلسل مسح حمى الضنك"
+msgid "Dengue DU Survey Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.dengue_du_survey_sequence,dengue_du_survey_sequence:"
+msgid "Dengue DU Survey Sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.dengue_du_survey,aedes_larva:"
 msgid "Check this box if Aedes aegypti larvae were found"
@@ -213,15 +183,29 @@ msgctxt ""
 msgid "DENGUE PRNT"
 msgstr "حمى الضنك PRNT"
 
+msgctxt "model:gnuhealth.sequences.dengue_du_survey_sequence,name:"
+msgid "Dengue DU Survey Sequences setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_dengue_du_survey_form"
 msgid "Dengue DU Survey"
 msgstr "مسح حمى الضنك DU"
 
-msgctxt "model:ir.sequence,name:seq_gnuhealth_du_survey"
+msgctxt "model:ir.sequence,name:"
 msgid "Dengue DU Survey"
 msgstr "مسح حمى الضنك DU"
 
-msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_du_survey"
+#, fuzzy
+msgctxt "model:ir.sequence,name:seq_gnuhealth_dengue_du_survey"
+msgid "Dengue DU Survey"
+msgstr "مسح حمى الضنك DU"
+
+msgctxt "model:ir.sequence.type,name:"
+msgid "Dengue DU Survey"
+msgstr "مسح حمى الضنك DU"
+
+#, fuzzy
+msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_dengue_du_survey"
 msgid "Dengue DU Survey"
 msgstr "مسح حمى الضنك DU"
 
@@ -264,3 +248,20 @@ msgstr "لم يتغير"
 msgctxt "selection:gnuhealth.dengue_du_survey,du_status:"
 msgid "Worsen"
 msgstr "أسوأ"
+
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Areas to Improve"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Presence of larvae"
+msgstr ""
+
+msgctxt "view:gnuhealth.dengue_du_survey:"
+msgid "Preventive Measures"
+msgstr ""

@@ -193,6 +193,58 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_surgery_protocol_tree</field>
         </record>
 
+
+<!-- Operating Room Schedule -->
+
+        <record model="ir.ui.view" id="gnuhealth_or_schedule_view">
+            <field name="model">gnuhealth.or.schedule</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_or_schedule</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_or_schedule_tree">
+            <field name="model">gnuhealth.or.schedule</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_or_schedule_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_or_schedule_calendar">
+            <field name="model">gnuhealth.or.schedule</field>
+            <field name="type">calendar</field>
+            <field name="name">gnuhealth_or_schedule_calendar</field>
+        </record>
+
+<!-- OR Schedule menu -->
+
+        <record model="ir.action.act_window" id="action_gnuhealth_or_schedule_view">
+            <field name="name">Operating Room Schedules</field>
+            <field name="res_model">gnuhealth.or.schedule</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_or_schedule_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_or_schedule_tree"/>
+            <field name="act_window" ref="action_gnuhealth_or_schedule_view"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_or_schedule_calendar">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_or_schedule_calendar"/>
+            <field name="act_window" ref="action_gnuhealth_or_schedule_view"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_or_schedule_form">
+            <field name="sequence" eval="30"/>
+            <field name="view" ref="gnuhealth_or_schedule_view"/>
+            <field name="act_window" ref="action_gnuhealth_or_schedule_view"/>
+        </record>
+
+
+        <menuitem name="OR Schedule" parent="gnuhealth_surgery_menu"
+            id="gnuhealth_or_schedule_menu" sequence="50"
+            action="action_gnuhealth_or_schedule_view"
+            icon="icon-surgery"/>
+
 <!-- Surgery Protocol Menu -->
 
         <record model="ir.action.act_window" id="action_gnuhealth_surgery_protocol_view">
@@ -211,7 +263,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="act_window" ref="action_gnuhealth_surgery_protocol_view"/>
         </record>
 
-        <menuitem name="Surgery Protocols" parent="gnuhealth_surgery_menu"
+        <menuitem name="Surgery Protocols" parent="health.gnuhealth_conf_procedure"
             id="gnuhealth_surgery_protocol" sequence="50"
             action="action_gnuhealth_surgery_protocol_view"
             icon="icon-surgery"/>
@@ -355,6 +407,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">signsurgery</field>
             <field name="string">Sign</field>
             <field name="model" search="[('model', '=', 'gnuhealth.surgery')]"/>
+        </record>
+
+        <record model="ir.model.button" id="surgery_sched_button">
+            <field name="name">schedule</field>
+            <field name="string">Schedule Surgery</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.preoperative_assessment')]"/>
         </record>
 
     </data>

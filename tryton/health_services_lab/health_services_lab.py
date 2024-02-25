@@ -16,7 +16,8 @@ from trytond.pyson import Eval, Equal
 from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
 
-from .exceptions import (NoServiceAssociated)
+from .exceptions import (NoServiceAssociated,
+                         ServiceHasBeenUpdated)
 
 __all__ = ['PatientLabTestRequest']
 
@@ -35,6 +36,16 @@ class PatientLabTestRequest(metaclass=PoolMeta):
         states={'readonly': Equal(Eval('state'), 'done')},
         help="Service document associated to this Lab Request")
 
+    service_updated = fields.Selection((
+        ('yes', 'Yes'),
+        ('no', 'No'),
+        ('unknown', 'Unknown'),
+        ), 'Service updated', sort=False)
+
+    @classmethod
+    def default_service_updated(self):
+        return 'unknown'
+
     @classmethod
     def __setup__(cls):
         super(PatientLabTestRequest, cls).__setup__()
@@ -47,17 +58,20 @@ class PatientLabTestRequest(metaclass=PoolMeta):
     @classmethod
     @ModelView.button
     def update_service(cls, laborders):
-        pool = Pool()
-        HealthService = pool.get('gnuhealth.health_service')
-
-        hservice = []
         laborder = laborders[0]
 
         if not laborder.service:
             raise NoServiceAssociated(
-                gettext('health_services_lab.msg_no_service_associated')
-                )
+                gettext('health_services_lab.msg_no_service_associated'))
 
+        if laborder.service_updated == 'yes':
+            raise ServiceHasBeenUpdated(
+                gettext('health_services_lab.msg_service_has_been_updated'))
+
+        pool = Pool()
+        HealthService = pool.get('gnuhealth.health_service')
+
+        hservice = []
         service_data = {}
         service_lines = []
 
@@ -77,3 +91,5 @@ class PatientLabTestRequest(metaclass=PoolMeta):
         service_data['service_line'] = service_lines
 
         HealthService.write(hservice, service_data)
+        
+        cls.write(laborders, {'service_updated': 'yes'})

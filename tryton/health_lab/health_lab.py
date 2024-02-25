@@ -90,9 +90,32 @@ class Lab(ModelSQL, ModelView):
     test = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test type',
         help="Lab test type", required=True, select=True)
+    source_type = fields.Selection([
+        ('patient', 'Patient'),
+        ('other_source', 'Other')
+        ], 'Source', 
+        help='Sample source type.',
+        sort=False, select=True)
+    source_type_str = source_type.translated('source_type')
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        help="Patient ID", required=True, select=True)
+        states={'invisible': (Eval('source_type') != 'patient')},
+        help="Patient ID", select=True)
+    other_source = fields.Char('Other', 
+        states={'invisible': (Eval('source_type') != 'other_source')},
+        help="Other sample source.")
+    source_name = fields.Function(
+        fields.Text('Source name'), 'get_source_name')
+
+    def get_source_name(self, name=None, with_puid = False, with_gender = False):
+        if self.is_patient():
+            pname = self.patient and self.patient.rec_name or ''
+            puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
+            gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
+            return pname + puid_str + gender_str
+        else:
+            return (self.other_source or '')
+
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
         help="Pathologist", select=True)
@@ -125,8 +148,9 @@ class Lab(ModelSQL, ModelView):
                 if analyte.result_text:
                     res_text = analyte.result_text
                 if analyte.result:
-                    res = str(analyte.result) + " "
-                summ = summ + analyte.rec_name + " " + \
+                    res = str(analyte.result) + \
+                        " (" + analyte.units.name + ")  "
+                summ = summ + analyte.rec_name + "  " + \
                     res + res_text + "\n"
         return summ
 
@@ -139,6 +163,7 @@ class Lab(ModelSQL, ModelView):
              'The test ID code must be unique')
         ]
         cls._order.insert(0, ('date_requested', 'DESC'))
+        cls._buttons.update({'complete_criteareas': {}})
 
     @staticmethod
     def default_date_requested():
@@ -147,6 +172,10 @@ class Lab(ModelSQL, ModelView):
     @staticmethod
     def default_date_analysis():
         return datetime.now()
+
+    @staticmethod
+    def default_source_type():
+        return 'patient'
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -178,6 +207,35 @@ class Lab(ModelSQL, ModelView):
             ('name', ) + tuple(clause[1:]),
             ]
 
+    @classmethod
+    @ModelView.button
+    def complete_criteareas(cls, labs):
+        pool = Pool()
+        Critearea = pool.get('gnuhealth.lab.test.critearea')
+
+        lab = labs[0]
+        test_cases = []
+
+        for critearea in (lab and lab.test and lab.test.critearea):
+            test_cases.append({
+                'gnuhealth_lab_id': lab.id,
+                'name': critearea.name,
+                'code': critearea.code,
+                'sequence': critearea.sequence,
+                'lower_limit': critearea.lower_limit,
+                'upper_limit': critearea.upper_limit,
+                'normal_range': critearea.normal_range,
+                'units': critearea.units and critearea.units.id})
+
+        if test_cases:
+            Critearea.create(test_cases)
+
+    def is_patient(self):
+        return (self.source_type == 'patient')
+
+    def is_other_source(self):
+        return (self.source_type == 'other_source')
+        
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
     'Lab Test Units'
@@ -232,6 +290,21 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         select=True)
     sequence = fields.Integer('Sequence')
 
+    ## code field is mainly used by interface script, for example:
+    ## gnuhealth_csv_lab_interface.py in example directory.
+    ##
+    ## sequence field is not suitable for interface script, for it may
+    ## be changed by user for sort reason, when it changed, interface
+    ## script can not find error. for example: when a criterea
+    ## sequence is changed from 1 to 2 for sort reason. if interface
+    ## script do not update, it will run no error and push wrong
+    ## value.
+    ##
+    ## name field is not suitable for interface stript too, for it
+    ## will be changed when user use different languages.
+    code = fields.Char('Code', select=True, translate=False,
+                       help="Lab test critearea code, mainly used by lab interface script.")
+    
     # Show the warning icon if warning is active on the analyte line
     lab_warning_icon = fields.Function(fields.Char(
         'Lab Warning Icon'),
@@ -283,9 +356,28 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ('ordered', 'Ordered'),
         ('cancel', 'Cancel'),
         ], 'State', readonly=True, select=True)
+    source_type = fields.Selection([
+        ('patient', 'Patient'),
+        ('other_source', 'Other')
+        ], 'Source', 
+        help='Sample source type.',
+        sort=False, select=True)
     patient_id = fields.Many2One(
-        'gnuhealth.patient', 'Patient', required=True,
+        'gnuhealth.patient', 'Patient',
+        states={'invisible': (Eval('source_type') != 'patient')},
         select=True)
+    other_source = fields.Char('Other', 
+        states={'invisible': (Eval('source_type') != 'other_source')},
+        help="Other sample source.")
+    source_name = fields.Function(
+        fields.Text('Source name'), 'get_source_name')
+
+    def get_source_name(self, name):
+        if self.is_patient():
+            return self.patient_id and self.patient_id.rec_name or ''
+        else:
+            return (self.other_source or '')
+
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof.',
         help="Health professional who requests the lab test.", select=True)
@@ -307,6 +399,10 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     @staticmethod
     def default_date():
         return datetime.now()
+
+    @staticmethod
+    def default_source_type():
+        return 'patient'
 
     @staticmethod
     def default_state():
@@ -343,6 +439,12 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         default['date'] = cls.default_date()
         return super(GnuHealthPatientLabTest, cls).copy(
             tests, default=default)
+
+    def is_patient(self):
+        return (self.source_type == 'patient')
+
+    def is_other_source(self):
+        return (self.source_type == 'other_source')
 
 
 class PatientHealthCondition(metaclass=PoolMeta):

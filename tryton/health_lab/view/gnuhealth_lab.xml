@@ -12,24 +12,32 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <page string="Main Info" id="lab_main_info">
             <label name="name"/>
             <field name="name"/>
-            <label name="test"/>
-            <field name="test"/>
             <label name="date_analysis"/>
             <field name="date_analysis"/>
-            <newline/>
-            <label name="patient"/>
-            <field name="patient"/>
-            <label name="pathologist"/>
-            <field name="pathologist"/>
-            <newline/>
+            <label name="request_order"/>
+            <field name="request_order" widget="char"/>
             <label name="date_requested"/>
             <field name="date_requested"/>
+            <label name="source_type"/>
+            <group id="lab_sample_source" colspan="1">
+              <field name="source_type"/>
+              <field name="patient"/>
+              <field name="other_source"/>
+            </group>
+            <label name="test"/>
+            <field name="test"/>
             <label name="requestor"/>
             <field name="requestor"/>
-            <label name="request_order"/>
-            <field name="request_order"/>
+            <label name="pathologist"/>
+            <field name="pathologist"/>
             <label name="pathology"/>
             <field name="pathology"/>
+            <button colspan="2"
+                    name="complete_criteareas"
+                    string="Complete Criteareas" 
+                    icon="tryton-go-next"
+                    help="Complete criteareas of current test type."
+                    confirm="Do your want to complete criteareas of current test type?"/>
             <newline/>
             <field name="critearea" colspan="4" view_ids="health_lab.test_critearea_view_tree_lab,health_lab.test_critearea_view_form_lab"/>
         </page>

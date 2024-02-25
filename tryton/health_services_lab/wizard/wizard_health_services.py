@@ -78,7 +78,9 @@ class RequestPatientLabTest(Wizard):
             lab_test = {}
             lab_test['request'] = request_number
             lab_test['name'] = test.id
-            lab_test['patient_id'] = self.start.patient.id
+            lab_test['source_type'] = self.start.source_type
+            lab_test['patient_id'] = self.start.patient and self.start.patient.id
+            lab_test['other_source'] = self.start.other_source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:
@@ -92,6 +94,8 @@ class RequestPatientLabTest(Wizard):
                 # if the Ungroup flag is not set (default).
                 if not self.start.ungroup_tests:
                     self.append_services(test, self.start.service)
+                    lab_test['service_updated'] = 'yes'
+
             lab_tests.append(lab_test)
 
         PatientLabTest.create(lab_tests)

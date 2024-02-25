@@ -21,7 +21,7 @@ from trytond.modules.health.core import get_institution
 
 from .exceptions import (
     ServiceAlreadyInvoiced, NoServiceAssociated, NoProductAssociated,
-    )
+    ServiceHasBeenUpdated)
 
 
 __all__ = ['HealthService', 'HealthServiceLine', 'PatientPrescriptionOrder']
@@ -174,6 +174,16 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
         states={'readonly': Equal(Eval('state'), 'done')},
         help="Service document associated to this prescription")
 
+    service_updated = fields.Selection((
+        ('yes', 'Yes'),
+        ('no', 'No'),
+        ('unknown', 'Unknown'),
+        ), 'Service updated', sort=False)
+
+    @classmethod
+    def default_service_updated(self):
+        return 'unknown'
+
     @classmethod
     def __setup__(cls):
         super(PatientPrescriptionOrder, cls).__setup__()
@@ -196,6 +206,10 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
             raise NoServiceAssociated(
                     gettext('health_services.msg_no_service_associated'))
 
+        if prescription.service_updated == 'yes':
+            raise ServiceHasBeenUpdated(
+                    gettext('health_services.msg_service_has_been_updated'))
+
         service_data = {}
         service_lines = []
 
@@ -217,6 +231,8 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
         service_data['service_line'] = service_lines
 
         HealthService.write(hservice, service_data)
+        
+        cls.write(prescriptions, {'service_updated': 'yes'})
 
 
 # Include  Patient Evaluation service
@@ -229,7 +245,17 @@ class PatientEvaluation(metaclass=PoolMeta):
         states={'readonly': Equal(Eval('state'), 'done')},
         help="Service document associated to this evaluation")
 
+    service_updated = fields.Selection((
+        ('yes', 'Yes'),
+        ('no', 'No'),
+        ('unknown', 'Unknown'),
+        ), 'Service updated', sort=False)
+
     product = fields.Many2One('product.product', 'Product')
+
+    @classmethod
+    def default_service_updated(self):
+        return 'unknown'
 
     @classmethod
     def __setup__(cls):
@@ -257,6 +283,11 @@ class PatientEvaluation(metaclass=PoolMeta):
             raise NoProductAssociated(
                     gettext('health_services.msg_no_product_associated'))
 
+        if evaluation.service_updated == 'yes':
+            raise ServiceHasBeenUpdated(
+                    gettext('health_services.msg_service_has_been_updated'))
+
+
         service_data = {}
         service_lines = []
 
@@ -275,3 +306,5 @@ class PatientEvaluation(metaclass=PoolMeta):
         service_data['service_line'] = service_lines
 
         HealthService.write(hservice, service_data)
+
+        cls.write(evaluations, {'service_updated': 'yes'})

@@ -44,7 +44,7 @@ class PatientRounding(ModelSQL, ModelView):
     name = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True, states=STATES)
-    code = fields.Char('Code',  states=STATES)
+    code = fields.Char('Code', readonly=True)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
         'Health Professional', readonly=True)
@@ -69,11 +69,21 @@ class PatientRounding(ModelSQL, ModelView):
     pain = fields.Boolean(
         'Pain',
         help="Check if the patient is in pain", states=STATES)
+
     pain_level = fields.Integer(
-        'Pain', help="Enter the pain level, from 1 to "
-        "10", states={
-            'invisible': ~Eval('pain'),
-            'readonly': Eval('state') == 'done'})
+        'Pain level', 
+        help="Enter the pain level, from 1 to 10.",
+        states={'readonly': Eval('state') == 'done'})
+
+    # Use by round_report template
+    def get_report_pain_and_level(self):
+        if self.pain and self.pain_level:
+            return gettext('health_nursing.msg_report_pain_level',
+                           pain_level=str(self.pain_level))
+        elif self.pain:
+            return gettext('health_nursing.msg_report_pain_yes')
+        else:
+            return gettext('health_nursing.msg_report_pain_no')
 
     potty = fields.Boolean(
         'Potty', help="Check if the patient needs to "
@@ -127,6 +137,9 @@ class PatientRounding(ModelSQL, ModelView):
             ('w', 'Worsening'),
         ], 'Evolution', help="Check your judgement of current "
         "patient condition", sort=False, states=STATES)
+
+    evolution_str = evolution.translated('evolution')
+
     round_summary = fields.Text('Round Summary', states=STATES)
 
     signed_by = fields.Many2One(
@@ -361,6 +374,18 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         'Glycemia', help='Blood Glucose level',
         states=STATES)
 
+    weight = fields.Integer(
+        'Weight',
+        help="Measured weight, in kg")
+
+    pain = fields.Boolean(
+        'Pain',
+        help="Check if the patient is in pain")
+
+    pain_level = fields.Integer(
+        'Pain level', 
+        help="Enter the pain level, from 1 to 10.")
+
     evolution = fields.Selection([
         (None, ''),
         ('initial', 'Initial'),
@@ -369,6 +394,9 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         ('w', 'Worsening'),
         ], 'Evolution', help="Check your judgement of current "
         "patient condition", sort=False, states=STATES)
+
+    evolution_str = evolution.translated('evolution')
+
     session_end = fields.DateTime('End', readonly=True)
     next_session = fields.DateTime('Next Session', states=STATES)
     session_notes = fields.Text('Notes', states=STATES)
@@ -389,6 +417,15 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
     @staticmethod
     def default_state():
         return 'draft'
+
+    def get_report_pain_and_level(self):
+        if self.pain and self.pain_level:
+            return gettext('health_nursing.msg_report_pain_level',
+                           pain_level=str(self.pain_level))
+        elif self.pain:
+            return gettext('health_nursing.msg_report_pain_yes')
+        else:
+            return gettext('health_nursing.msg_report_pain_no')
 
     @classmethod
     def __setup__(cls):
@@ -467,5 +504,5 @@ class AmbulatoryCareProcedure(ModelSQL, ModelView):
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
         select=True,
-        help="Procedure Code, for example ICD-10-PCS Code 7-character string")
+        help="Procedure Code")
     comments = fields.Char('Comments')

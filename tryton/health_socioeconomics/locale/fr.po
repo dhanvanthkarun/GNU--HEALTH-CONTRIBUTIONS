@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2020-07-07 14:06+0000\n"
-"Last-Translator: Armand MPASSY <armandmpassy@yahoo.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/gnu-health/"
-"health_socioeconomics/fr/>\n"
-"Language: fr\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.patient,domestic_violence:"
 msgid "Domestic violence"
@@ -55,6 +46,10 @@ msgctxt "field:gnuhealth.patient,school_withdrawal:"
 msgid "School withdrawal"
 msgstr "retrait de l'école"
 
+msgctxt "field:gnuhealth.patient,ses:"
+msgid "SES"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient,ses_assessments:"
 msgid "Assessments"
 msgstr "Évaluations"
@@ -90,14 +85,6 @@ msgstr "Date"
 msgctxt "field:gnuhealth.ses.assessment,computed_age:"
 msgid "Age"
 msgstr "Age"
-
-msgctxt "field:gnuhealth.ses.assessment,create_date:"
-msgid "Create Date"
-msgstr "Créé le"
-
-msgctxt "field:gnuhealth.ses.assessment,create_uid:"
-msgid "Create User"
-msgstr "Créé par"
 
 msgctxt "field:gnuhealth.ses.assessment,du:"
 msgid "DU"
@@ -143,10 +130,6 @@ msgctxt "field:gnuhealth.ses.assessment,housing:"
 msgid "Housing conditions"
 msgstr "Conditions de logement"
 
-msgctxt "field:gnuhealth.ses.assessment,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:gnuhealth.ses.assessment,income:"
 msgid "Income"
 msgstr "Revenu"
@@ -163,10 +146,6 @@ msgctxt "field:gnuhealth.ses.assessment,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-msgctxt "field:gnuhealth.ses.assessment,rec_name:"
-msgid "Name"
-msgstr "Name"
-
 msgctxt "field:gnuhealth.ses.assessment,ses:"
 msgid "Socioeconomics"
 msgstr "Socioéconomique"
@@ -178,14 +157,6 @@ msgstr "Signé par"
 msgctxt "field:gnuhealth.ses.assessment,state:"
 msgid "State"
 msgstr "État"
-
-msgctxt "field:gnuhealth.ses.assessment,write_date:"
-msgid "Write Date"
-msgstr "Mise à jour le"
-
-msgctxt "field:gnuhealth.ses.assessment,write_uid:"
-msgid "Write User"
-msgstr "Mise à jour par"
 
 msgctxt "field:party.party,education:"
 msgid "Education"
@@ -200,14 +171,12 @@ msgid "Education Level"
 msgstr "Niveau éducatif"
 
 msgctxt "help:gnuhealth.patient,hostile_area:"
-msgid "Check if patient lives in a zone of high hostility (eg, war)"
+msgid "Check if patient lives in a zoneof high hostility (eg, war)"
 msgstr ""
-"Cocher si le patient vit dans une zone d'hostilité élevé (par exemple, pays "
-"en guerre)"
 
 msgctxt "help:gnuhealth.patient,hours_outside:"
-msgid "Number of hours a day the patient spend outside the house"
-msgstr "Nombre d'heures par jour que le patient passe en dehors de chez lui"
+msgid "Number of hours a day the patientspend outside the house"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,housing:"
 msgid "Housing and sanitary living conditions"
@@ -220,6 +189,10 @@ msgid ""
 msgstr ""
 "Cocher si quelqu'un de la famille nucléaire - parents / sibblings est ou a "
 "été en prison"
+
+msgctxt "help:gnuhealth.patient,ses:"
+msgid "Current Socioeconomic Status"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient,ses_assessments:"
 msgid "Socioeconomics and Family assessments history"
@@ -326,13 +299,19 @@ msgctxt "model:ir.action,name:act_ses_family_assessment"
 msgid "Socioeconomics and Family Assessment"
 msgstr "Évaluation socioéconomique et familiale"
 
+#, fuzzy
+msgctxt "model:ir.model.button,string:sesassmt_end_button"
+msgid "Done"
+msgstr "Terminé"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_ses_assessment_menu"
 msgid "Socioeconomic Assessments"
 msgstr "Évaluation socioéconomique"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,education:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient,education:"
 msgid "Incomplete Primary School"
@@ -358,9 +337,10 @@ msgctxt "selection:gnuhealth.patient,education:"
 msgid "University"
 msgstr "Université"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Comfortable and good sanitary conditions"
@@ -382,9 +362,35 @@ msgctxt "selection:gnuhealth.patient,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Petit, mais avec de bonnes conditions sanitaires"
 
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Higher"
+msgstr "Plus élevé"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower"
+msgstr "Plus bas"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Lower-middle"
+msgstr "Moyen- inférieur"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle"
+msgstr "Moyen"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient,ses:"
+msgid "Middle-upper"
+msgstr "Moyen - supérieur"
+
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "Incomplete Primary School"
@@ -410,9 +416,10 @@ msgctxt "selection:gnuhealth.ses.assessment,education:"
 msgid "University"
 msgstr "Université"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Moderately"
@@ -426,9 +433,10 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_affection:"
 msgid "Very much"
 msgstr "Beaucoup"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "Moderately"
@@ -442,9 +450,10 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_decisions:"
 msgid "Very much"
 msgstr "Beaucoup"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "Moderately"
@@ -458,9 +467,10 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_discussion:"
 msgid "Very much"
 msgstr "Beaucoup"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "Moderately"
@@ -474,9 +484,10 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_help:"
 msgid "Very much"
 msgstr "Beaucoup"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "Moderately"
@@ -490,9 +501,10 @@ msgctxt "selection:gnuhealth.ses.assessment,fam_apgar_timesharing:"
 msgid "Very much"
 msgstr "Beaucoup"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid "Female"
@@ -502,9 +514,10 @@ msgctxt "selection:gnuhealth.ses.assessment,gender:"
 msgid "Male"
 msgstr "Homme"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Comfortable and good sanitary conditions"
@@ -526,9 +539,10 @@ msgctxt "selection:gnuhealth.ses.assessment,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Petit, bondé mais avec de bonnes conditions sanitaires"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid "High"
@@ -542,9 +556,10 @@ msgctxt "selection:gnuhealth.ses.assessment,income:"
 msgid "Medium"
 msgstr "Moyen"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid "Higher"
@@ -566,9 +581,10 @@ msgctxt "selection:gnuhealth.ses.assessment,ses:"
 msgid "Middle-upper"
 msgstr "Moyen - supérieur"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid ""
-msgstr ""
+msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ses.assessment,state:"
 msgid "Done"
@@ -649,11 +665,3 @@ msgstr "Notes"
 msgctxt "view:gnuhealth.ses.assessment:"
 msgid "Socioeconomics"
 msgstr "Socioéconomique"
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family Assessment"
-msgstr "Évaluation socio-économique et de la situation familiale"
-
-msgctxt "view:gnuhealth.ses.assessment:"
-msgid "Socioeconomics and Family assessment"
-msgstr "Évaluation socio-économique et de la situation familiale"

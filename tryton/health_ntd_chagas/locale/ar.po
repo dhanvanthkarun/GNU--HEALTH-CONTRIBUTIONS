@@ -1,29 +1,10 @@
-# Nab3a <asn09@aub.edu.lb>, 2016.
+#
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2023-02-06 07:37+0000\n"
-"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
-"health_ntd_chagas/ar/>\n"
-"Language: ar\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.16-dev\n"
-"X-POOTLE-MTIME: 1452255953.0\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.chagas_du_survey,bugtraps:"
 msgid "Bug traps"
 msgstr "مصائد الحشرات"
-
-msgctxt "field:gnuhealth.chagas_du_survey,create_date:"
-msgid "Create Date"
-msgstr "أنشئ تاريخا"
-
-msgctxt "field:gnuhealth.chagas_du_survey,create_uid:"
-msgid "Create User"
-msgstr "إنشاء مستخدم"
 
 msgctxt "field:gnuhealth.chagas_du_survey,dfloor:"
 msgid "Floor"
@@ -61,10 +42,6 @@ msgctxt "field:gnuhealth.chagas_du_survey,fumigation_date:"
 msgid "Fumigation Date"
 msgstr "تاريخ التبخير"
 
-msgctxt "field:gnuhealth.chagas_du_survey,id:"
-msgid "ID"
-msgstr "الهوية"
-
 msgctxt "field:gnuhealth.chagas_du_survey,name:"
 msgid "Survey Code"
 msgstr "رمز الاستبيان"
@@ -84,10 +61,6 @@ msgstr "ملاحظات"
 msgctxt "field:gnuhealth.chagas_du_survey,paint_date:"
 msgid "Paint Date"
 msgstr "تاريخ الدهان"
-
-msgctxt "field:gnuhealth.chagas_du_survey,rec_name:"
-msgid "Name"
-msgstr "الاسم"
 
 msgctxt "field:gnuhealth.chagas_du_survey,survey_date:"
 msgid "Date"
@@ -109,17 +82,14 @@ msgctxt "field:gnuhealth.chagas_du_survey,vector:"
 msgid "Vector"
 msgstr "الاتجاه"
 
-msgctxt "field:gnuhealth.chagas_du_survey,write_date:"
-msgid "Write Date"
-msgstr "كتابة معلومات"
-
-msgctxt "field:gnuhealth.chagas_du_survey,write_uid:"
-msgid "Write User"
-msgstr "كتابة مستخدم"
-
 msgctxt "field:gnuhealth.sequences,chagas_du_survey_sequence:"
-msgid "Chagas Survey Sequence"
-msgstr "تسلسل مسح شاغاس"
+msgid "Chagas DU Survey Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.chagas_du_survey_sequence,chagas_du_survey_sequence:"
+msgid "Chagas DU Survey Sequence"
+msgstr ""
 
 msgctxt "help:gnuhealth.chagas_du_survey,bugtraps:"
 msgid "The DU has traps to detect triatomines"
@@ -264,17 +234,31 @@ msgctxt ""
 msgid "CHAGAS XENODIAGNOSIS"
 msgstr "تشاجاس XENODIAGNOSIS"
 
+msgctxt "model:gnuhealth.sequences.chagas_du_survey_sequence,name:"
+msgid "Chagas DU Survey Sequences setup"
+msgstr ""
+
 msgctxt "model:ir.action,name:act_chagas_du_survey_form"
 msgid "Chagas DU Survey"
 msgstr "مسح Chagas DU"
 
-msgctxt "model:ir.sequence,name:seq_gnuhealth_du_survey"
+msgctxt "model:ir.sequence,name:"
 msgid "Chagas DU Survey"
 msgstr "مسح Chagas DU"
 
-msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_du_survey"
+#, fuzzy
+msgctxt "model:ir.sequence,name:seq_gnuhealth_chagas_du_survey"
+msgid "Chagas DU Survey"
+msgstr "مسح Chagas DU"
+
+msgctxt "model:ir.sequence.type,name:"
 msgid "Chagas DU Survey"
 msgstr "استبيان Chagas DU"
+
+#, fuzzy
+msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_chagas_du_survey"
+msgid "Chagas DU Survey"
+msgstr "مسح Chagas DU"
 
 msgctxt ""
 "model:product.template,name:product_template_chagas_bsmear_analysischarges0"
@@ -349,3 +333,20 @@ msgstr "(T. dimidiata)"
 msgctxt "selection:gnuhealth.chagas_du_survey,vector:"
 msgid "T. infestans"
 msgstr "(T. infestans)"
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Areas to Improve"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Presence of triatomines"
+msgstr ""
+
+msgctxt "view:gnuhealth.chagas_du_survey:"
+msgid "Preventive Measures"
+msgstr ""

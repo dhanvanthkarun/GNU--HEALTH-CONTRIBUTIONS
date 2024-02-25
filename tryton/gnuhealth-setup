@@ -20,7 +20,7 @@
 
 #GNU Health HMIS installer version
 
-VERSION="4.2.0"
+VERSION="4.4.0"
 
 # Colors constants
 NONE="$(tput sgr0)"
@@ -42,6 +42,7 @@ TRANSLATE_URL="http://translate.gnusolidario.org"
 UPDATE_DOWNLOAD_DIR="/tmp/gnuhealth_update"
 TRYTON_PATCHES=""
 
+WGET_ARGS="--timeout=20 --waitretry=0 --tries=50"
 
 #-----------------------------------------------------------------------------
 # Functions
@@ -236,7 +237,7 @@ install_python_dependencies() {
     local PIP_LXML="lxml"
     local PIP_RELATORIO="relatorio"
     local PIP_WRAPT="wrapt"
-    local PIP_WERKZEUG="werkzeug<2"
+    local PIP_WERKZEUG="werkzeug<3"
     local PIP_DATEUTIL="python-dateutil"
     local PIP_PSYCOPG2="psycopg2-binary"
     local PIP_PYTZ="pytz"
@@ -245,14 +246,14 @@ install_python_dependencies() {
     local PIP_QRCODE="qrcode"
     local PIP_PYBARCODE="python-barcode"
     local PIP_SIX="six"
-    local PIP_PILLOW="Pillow"
+    local PIP_PILLOW="Pillow>=10.1.0"
     local PIP_CALDAV="caldav"
     local PIP_POLIB="polib"
     local PIP_SQL="python-sql"
     local PIP_STDNUM="python-stdnum"
     local PIP_SIMPLEEVAL="simpleeval"
     local PIP_CONFIGPARSER="configparser"
-    local PIP_WEBDAV3="pywebdav3-gnuhealth"
+    local PIP_WEBDAV3="pywebdav3-gnuhealth>=0.11.0"
     local PIP_BCRYPT="bcrypt"
     local PIP_NUMPY="numpy"
     local PIP_UNOCONV="unoconv"
@@ -264,6 +265,7 @@ install_python_dependencies() {
     local PIP_PYCOUNTRY="pycountry==20.7.3"
     local PIP_PROGRESSBAR="progressbar==2.2"
     local PIP_DEFUSEDXML="defusedxml"
+    local PIP_PYDICOM="pydicom"
 
     # Operating System specific package selection
     # Skip PYTHON-LDAP installation since it tries to install / compile it system-wide
@@ -272,7 +274,8 @@ install_python_dependencies() {
 
     local PIP_PKGS="$PIP_NUMPY $PIP_PYTZ $PIP_WRAPT $PIP_WERKZEUG $PIP_SIX $PIP_LXML $PIP_RELATORIO $PIP_DATEUTIL $PIP_PSYCOPG2 $PIP_VOBJECT \
         $PIP_QRCODE $PIP_PYBARCODE $PIP_PILLOW $PIP_CALDAV $PIP_POLIB $PIP_SQL $PIP_STDNUM $PIP_SIMPLEEVAL $PIP_CONFIGPARSER \
-        $PIP_WEBDAV3 $PIP_BCRYPT $PIP_UNOCONV $PIP_MAGIC $PIP_PASSLIB $PIP_BEREN $PIP_PENDULUM $PIP_MATPLOTLIB $PIP_PYCOUNTRY $PIP_PROGRESSBAR $PIP_DEFUSEDXML"
+        $PIP_WEBDAV3 $PIP_BCRYPT $PIP_UNOCONV $PIP_MAGIC $PIP_PASSLIB $PIP_BEREN $PIP_PENDULUM $PIP_MATPLOTLIB $PIP_PYCOUNTRY $PIP_PROGRESSBAR \
+        $PIP_DEFUSEDXML $PIP_PYDICOM"
     
     message "INFO" "Installing python dependencies with pip-${PIP_VERSION} ..."
 
@@ -287,7 +290,7 @@ install_python_dependencies() {
 get_url() {
     # $1 : Module name
     # return : URL to download
-    echo ${TRYTON_BASE_URL}/${TRYTON_VERSION}/$(wget --quiet -O- ${TRYTON_BASE_URL}/${TRYTON_VERSION} | egrep -o "${1}-${TRYTON_VERSION}.[0-9\.]+.tar.gz" | sort -V | tail -1)
+    echo ${TRYTON_BASE_URL}/${TRYTON_VERSION}/$(wget ${WGET_ARGS} --quiet -O- ${TRYTON_BASE_URL}/${TRYTON_VERSION} | egrep -o "${1}-${TRYTON_VERSION}.[0-9\.]+.tar.gz" | sort -V | tail -1)
 }
 
 
@@ -321,13 +324,13 @@ install_tryton_modules() {
     cd ${TMP_DIR} || bailout
 
     message "INFO" "Downloading the Tryton server..."
-    wget ${TRYTOND_URL} || bailout
+    wget ${WGET_ARGS} ${TRYTOND_URL} || bailout
     message "INFO" "OK."
 
     message "INFO" "Downloading Tryton modules..."
     local URL=""
     for URL in ${TRYTON_MODULES_URL}; do
-        wget ${URL} || bailout
+        wget ${WGET_ARGS} ${URL} || bailout
     done
     message "INFO" "OK."
 

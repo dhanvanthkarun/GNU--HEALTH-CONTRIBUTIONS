@@ -222,7 +222,7 @@ class DentistryTreatment(ModelSQL, ModelView):
         pass
 
     @classmethod
-    @ModelView.button_action('health_dentistry.wizard_set_odontogram')
+    @ModelView.button_action('health_dentistry.wizard_set_odontogram_from_treatment')
     def set_odontogram(cls, treatments):
         pass
 
@@ -268,9 +268,8 @@ class DentistryProcedure(ModelSQL, ModelView):
     __name__ = 'gnuhealth.dentistry.procedure'
 
     name = fields.Char('Procedure', required=True, translate=True)
-    code = fields.Char(
-        'Code', required=True, translate=True,
-        help='Please use CAPITAL LETTERS and no spaces')
+    code = fields.Char('Code', required=True,
+                       help='Please use CAPITAL LETTERS and no spaces')
 
     @classmethod
     def __setup__(cls):

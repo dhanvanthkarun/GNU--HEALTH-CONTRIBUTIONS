@@ -17,16 +17,41 @@ from trytond.model import fields
 from trytond.pool import PoolMeta
 
 
-__all__ = ['Patient', 'Appointment', 'Newborn', 'LabTest']
+__all__ = ['Party', 'Patient', 'Appointment', 'Newborn', 'LabTest']
+
+
+class Party(metaclass=PoolMeta):
+    __name__ = 'party.party'
+
+    # Add the CODE39 Code to the Person for ID purposes
+    barcode = fields.Function(fields.Binary('Code39'), 'make_code39')
+
+    def make_code39(self, name):
+        # Create the Code39 bar code to encode the Person ID
+        party_puid = self.ref or ''
+        puid = f'{party_puid}'
+
+        CODE39 = barcode.get_barcode_class('code39')
+
+        code39 = CODE39(puid, add_checksum=False)
+
+        # Make a PNG image from PIL without the need to create a temp file
+
+        holder = io.BytesIO()
+        code39.write(holder)
+        code39_png = holder.getvalue()
+        holder.close()
+
+        return bytearray(code39_png)
 
 
 # Add the QR field and QR image in the patient model
-
 class Patient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     # Add the QR Code to the Patient
     qr = fields.Function(fields.Binary('QR Code'), 'make_qrcode')
+    barcode = fields.Function(fields.Binary('Code39'), 'make_code39')
 
     def make_qrcode(self, name):
         # Create the QR code
@@ -57,8 +82,25 @@ class Patient(metaclass=PoolMeta):
 
         return bytearray(qr_png)
 
+    def make_code39(self, name):
+        # Create the Code39 bar code to encode the Patient ID
 
-# Add the QR field and QR image in the appointment model
+        patient_puid = self.puid or ''
+        puid = f'{patient_puid}'
+
+        CODE39 = barcode.get_barcode_class('code39')
+
+        code39 = CODE39(puid, add_checksum=False)
+
+        # Make a PNG image from PIL without the need to create a temp file
+
+        holder = io.BytesIO()
+        code39.write(holder)
+        code39_png = holder.getvalue()
+        holder.close()
+
+        return bytearray(code39_png)
+
 
 class Appointment(metaclass=PoolMeta):
     __name__ = 'gnuhealth.appointment'
@@ -84,7 +126,7 @@ class Appointment(metaclass=PoolMeta):
 
         if (self.patient):
             appointment_patient = self.patient.rec_name or ''
-            patient_puid = self.patient.puid
+            patient_puid = self.patient and self.patient.puid
 
         if (self.appointment_date):
             appointment_date = str(self.appointment_date)
@@ -121,29 +163,17 @@ class Newborn(metaclass=PoolMeta):
     def make_qrcode(self, name):
         # Create the QR code
 
-        if self.mother:
-            if self.mother.name.lastname:
-                newborn_mother_lastname = self.mother.name.lastname + ', '
-            else:
-                newborn_mother_lastname = ''
+        newborn_mother_name = self.mother and self.mother.rec_name or ''
+        newborn_mother_id = self.mother and self.mother.puid or ''
 
-            newborn_mother_name = self.mother.name.name or ''
-
-            newborn_mother_id = self.mother.puid or ''
-
-        else:
-            newborn_mother_lastname = ''
-            newborn_mother_name = ''
-            newborn_mother_id = ''
-
-        newborn_name = self.name or ''
-
-        newborn_sex = self.sex or ''
-
+        newborn_name = self.newborn_name or self.patient.rec_name or ''
+        newborn_id = self.patient.puid or ''
+        newborn_sex = self.sex_str or ''
         newborn_birth_date = self.birth_date or ''
 
-        qr_string = f'{newborn_name}\n' \
-            f'Mother: {newborn_mother_lastname} {newborn_mother_name}\n' \
+        qr_string = f'{newborn_id}\n' \
+            f'Name: {newborn_name}\n' \
+            f'Mother: {newborn_mother_name}\n' \
             f'Mother\'s PUID: {newborn_mother_id}\n' \
             f'Sex: {newborn_sex}\n' \
             f'DoB: {str(newborn_birth_date)}'
@@ -173,16 +203,23 @@ class LabTest(metaclass=PoolMeta):
         labtest_id = self.name or ''
         labtest_type = self.test or ''
 
-        patient_puid = self.patient.puid or ''
-        patient_name = self.patient.rec_name or ''
+        patient_puid = self.patient and self.patient.puid or ''
+        patient_name = self.patient and self.patient.rec_name or ''
+        source = self.other_source
 
-        requestor_name = self.requestor.rec_name or ''
+        requestor_name = self.requestor and self.requestor.rec_name or ''
 
-        qr_string = f'{labtest_id}\n' \
-            f'Test: {labtest_type.rec_name}\n' \
-            f'Patient ID: {patient_puid}\n' \
-            f'Patient: {patient_name}\n' \
-            f'Requestor: {requestor_name}'
+        if self.is_patient():
+            qr_string = f'{labtest_id}\n' \
+                f'Test: {labtest_type.rec_name}\n' \
+                f'Patient ID: {patient_puid}\n' \
+                f'Patient: {patient_name}\n' \
+                f'Requestor: {requestor_name}'
+        else:
+            qr_string = f'{labtest_id}\n' \
+                f'Test: {labtest_type.rec_name}\n' \
+                f'Source: {source}\n' \
+                f'Requestor: {requestor_name}'
 
         qr_image = qrcode.make(qr_string)
 

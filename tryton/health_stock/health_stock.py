@@ -160,6 +160,7 @@ class PatientAmbulatoryCare(Workflow, metaclass=PoolMeta):
                     ambulatory.patient.name.customer_location.id
                 move_info['unit_price'] = \
                     medicament.medicament.name.list_price
+                move_info['cost_price'] = medicament.medicament.name.cost_price
                 if medicament.lot:
                     if medicament.lot.expiration_date and \
                             medicament.lot.expiration_date < Date.today():
