@@ -33,7 +33,7 @@ for key in ('depends', 'extras_depend', 'xml'):
         info[key] = info[key].strip().splitlines()
 major_version, minor_version = 6, 0
 
-requires = []
+requires = ['python-barcode', 'qrcode']
 
 for dep in info.get('depends', []):
     if (dep == 'health'):
