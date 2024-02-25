@@ -371,7 +371,7 @@ class Surgery(ModelSQL, ModelView):
         ('grade2', 'Grade II'),
         ('grade3', 'Grade III'),
         ('grade3a', 'Grade IIIa'),
-        ('grade3b', 'Grade IIIb'),
+        ('grade3a', 'Grade IIIa'),
         ('grade4', 'Grade IV'),
         ('grade4a', 'Grade IVa'),
         ('grade4b', 'Grade IVb'),

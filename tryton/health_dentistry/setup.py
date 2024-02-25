@@ -23,7 +23,7 @@ from setuptools import setup
 long_desc = open('README.rst').read()
 
 config = configparser.ConfigParser()
-config.read_file(open('tryton.cfg'))
+config.readfp(open('tryton.cfg'))
 info = dict(config.items('tryton'))
 
 for key in ('depends', 'extras_depend', 'xml'):
