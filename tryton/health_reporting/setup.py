@@ -26,7 +26,7 @@ def read(fname):
 
 
 config = configparser.ConfigParser()
-config.readfp(open('tryton.cfg'))
+config.read_file(open('tryton.cfg'))
 info = dict(config.items('tryton'))
 
 for key in ('depends', 'extras_depend', 'xml'):
@@ -34,7 +34,7 @@ for key in ('depends', 'extras_depend', 'xml'):
         info[key] = info[key].strip().splitlines()
 major_version, minor_version = 6, 0
 
-requires = []
+requires = ['matplotlib']
 
 for dep in info.get('depends', []):
     if (dep == 'health'):

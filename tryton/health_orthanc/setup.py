@@ -26,7 +26,7 @@ def read(fname):
 
 
 config = configparser.ConfigParser()
-config.readfp(open('tryton.cfg'))
+config.read_file(open('tryton.cfg'))
 info = dict(config.items('tryton'))
 
 for key in ('depends', 'extras_depend', 'xml'):
@@ -35,7 +35,7 @@ for key in ('depends', 'extras_depend', 'xml'):
 major_version, minor_version = 6, 0
 
 # Initial packages required specifically for health_orthanc
-requires = ['pendulum', 'beren == 0.7.0', "pydicom"]
+requires = ['pendulum', 'beren == 0.7.0', "pydicom", 'requests']
 
 for dep in info.get('depends', []):
     if (dep == 'health'):
