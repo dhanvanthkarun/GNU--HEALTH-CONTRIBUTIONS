@@ -1186,9 +1186,12 @@ class ImagingTestRequest(metaclass=PoolMeta):
             year, month, day = parse_compute_age(age_str)
 
             # Handle y, m, d = None
-            year = year or '-1'
-            month = month or '-1'
-            day = day or '-1'
+            if year is None:
+                year = -1
+            if month is None:
+                month = -1
+            if day is None:
+                day = -1
 
             if year == 0 and month == 0 and day > 0:
                 return f'{day:03}D'

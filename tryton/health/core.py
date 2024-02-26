@@ -281,11 +281,11 @@ def get_health_professional(required=True):
                 ('health.msg_no_associated_health_professional'))
             )
 
-def image_crop_to_ratio(plt, image, ratio):
+def image_crop_to_ratio(PIL_Image, image, ratio):
     """ Center-crop an image, make it conform to the ratio,
     This function is useful to adjust ID card photo.
     """
-    img = plt.open(io.BytesIO(image))
+    img = PIL_Image.open(io.BytesIO(image))
     orig_width, orig_height = img.size
     orig_ratio = float(orig_height / orig_width)
 

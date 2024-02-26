@@ -28,7 +28,9 @@ for key in ('depends', 'extras_depend', 'xml'):
         info[key] = info[key].strip().splitlines()
 major_version, minor_version = 6, 0
 
-requires = []
+proteus = 'proteus >= %s.%s, < %s.%s' % (major_version, minor_version,
+                                        major_version, minor_version + 1)
+requires = [proteus, 'vobject']
 
 for dep in info.get('depends', []):
     if (dep == 'health'):
@@ -46,9 +48,6 @@ for dep in info.get('depends', []):
                 (dep, major_version, minor_version, major_version,
                     minor_version + 1))
 
-
-requires = ['PyWebDAV3-GNUHealth >= 0.10.1',
-            'gnuhealth_webdav3_server', 'vobject']
 
 
 setup(
