@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-02-05 07:36+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_lab/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
@@ -40,9 +31,10 @@ msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
 msgstr "ID"
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab,other_source:"
 msgid "Other"
-msgstr ""
+msgstr "Andra"
 
 msgctxt "field:gnuhealth.lab,pathologist:"
 msgid "Pathologist"
@@ -243,9 +235,10 @@ msgctxt "field:gnuhealth.patient.lab.test,name:"
 msgid "Test Type"
 msgstr "Typ av test"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
-msgstr ""
+msgstr "Andra"
 
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
@@ -255,9 +248,10 @@ msgctxt "field:gnuhealth.patient.lab.test,request:"
 msgid "Order"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,source_name:"
 msgid "Source name"
-msgstr ""
+msgstr "Källans namn"
 
 msgctxt "field:gnuhealth.patient.lab.test,source_type:"
 msgid "Source"
@@ -285,9 +279,10 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health Prof"
 msgstr "Vårdpersonal"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
 msgid "Other"
-msgstr ""
+msgstr "Andra"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
@@ -305,9 +300,10 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,urgent:"
 msgid "Urgent"
 msgstr "Brådskande"
 
+#, fuzzy
 msgctxt "field:gnuhealth.request-test,request:"
 msgid "Request"
-msgstr ""
+msgstr "Begär"
 
 msgctxt "field:gnuhealth.request-test,test:"
 msgid "Test"
@@ -325,9 +321,10 @@ msgctxt "field:gnuhealth.sequences.lab_request_sequence,lab_request_sequence:"
 msgid "Lab request sequence"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
 msgid "Lab test sequence"
-msgstr ""
+msgstr "Sekvens för labbtest"
 
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
@@ -1486,9 +1483,10 @@ msgctxt "model:ir.model.button,string:complete_criteareas_button"
 msgid "Complete Criteareas"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
-msgstr ""
+msgstr "Labb-förfrågning"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_test"
 msgid "Lab Test"
@@ -1591,9 +1589,10 @@ msgctxt "report:patient.labtest.report:"
 msgid "Analyte"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
@@ -1613,42 +1612,47 @@ msgctxt "report:patient.labtest.report:"
 msgid "Gender:"
 msgstr "Kön:"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 msgctxt "report:patient.labtest.report:"
 msgid "LABORATORY REPORT"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Order:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Pathologist:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Reference"
-msgstr ""
+msgstr "Referens"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "Anmärkningar"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Results"
-msgstr ""
+msgstr "Resultat"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Results:"
@@ -1658,22 +1662,25 @@ msgctxt "report:patient.labtest.report:"
 msgid "Signature:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Source:"
-msgstr ""
+msgstr "Källa:"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Test:"
-msgstr ""
+msgstr "Test:"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Unit"
 msgstr "Enhet"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Other"
-msgstr ""
+msgstr "Andra"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.lab,source_type:"
@@ -1712,13 +1719,15 @@ msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Others"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.lab.test_type,gender:"
 msgid "Female"
-msgstr ""
+msgstr "Kvinna"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.lab.test_type,gender:"
 msgid "Male"
-msgstr ""
+msgstr "Man"
 
 msgctxt "selection:gnuhealth.lab.test_type,report_style:"
 msgid "Do not show in report"
@@ -1748,9 +1757,10 @@ msgctxt "selection:gnuhealth.lab.test_type,report_style:"
 msgid "Table with result, unit and normal_range columns"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
 msgid "Other"
-msgstr ""
+msgstr "Andra"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
@@ -1775,9 +1785,10 @@ msgctxt "selection:gnuhealth.patient.lab.test,state:"
 msgid "Tested"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
 msgid "Other"
-msgstr ""
+msgstr "Andra"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
@@ -1817,9 +1828,10 @@ msgctxt "view:gnuhealth.lab:"
 msgid "Complete criteareas of current test type."
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Diagnosis"
-msgstr ""
+msgstr "Diagnos"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Do your want to complete criteareas of current test type?"
@@ -1830,9 +1842,10 @@ msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"
 msgstr "Extra info"
 
+#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Images"
-msgstr ""
+msgstr "Bilder"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Main Info"
@@ -1861,6 +1874,7 @@ msgctxt "wizard_button:gnuhealth.patient.lab.test.request,start,end:"
 msgid "Cancel"
 msgstr "Avbryt"
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.patient.lab.test.request,start,request:"
 msgid "Request"
-msgstr ""
+msgstr "Begär"

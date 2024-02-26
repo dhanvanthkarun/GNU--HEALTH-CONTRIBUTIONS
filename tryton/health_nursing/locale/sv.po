@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-02-10 16:57+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_nursing/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,comments:"
 msgid "Comments"
@@ -189,9 +180,10 @@ msgctxt "field:gnuhealth.patient.rounding,pain:"
 msgid "Pain"
 msgstr "Smärta"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,pain_level:"
 msgid "Pain level"
-msgstr ""
+msgstr "Nivå av smärta"
 
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
@@ -338,9 +330,10 @@ msgid ""
 "main procedure"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.ambulatory_care,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
-msgstr ""
+msgstr "Andningsfrekvens uttryckt i andetag per minut"
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,signed_by:"
 msgid "Health Professional that signed the session"
@@ -472,9 +465,10 @@ msgctxt "model:gnuhealth.sequences.patient_rounding_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_patient_ambulatory_care_view"
 msgid "Ambulatory Care"
-msgstr ""
+msgstr "Ambulerande vård"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
@@ -512,17 +506,19 @@ msgctxt "model:ir.model.button,string:session_end_button"
 msgid "End session"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
-msgstr ""
+msgstr "Ambulerande vård"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
-msgstr ""
+msgstr "Ambulerande vård"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
@@ -585,13 +581,15 @@ msgctxt "report:patient.ambulatory_care.report:"
 msgid "Next session"
 msgstr "Nästa session"
 
+#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "O2 Sat (%)"
-msgstr ""
+msgstr "Syressättning (%)"
 
+#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Pain"
@@ -669,9 +667,10 @@ msgctxt "report:patient.rounding.report:"
 msgid "O2 Sat (%)"
 msgstr "Syressättning (%)"
 
+#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Pain"
@@ -721,9 +720,10 @@ msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
 msgid "Initial"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
 msgid "Status Quo"
-msgstr ""
+msgstr "Status Quo"
 
 msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
 msgid "Worsening"
