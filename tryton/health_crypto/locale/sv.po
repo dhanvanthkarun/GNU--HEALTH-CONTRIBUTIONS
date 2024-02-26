@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-02-10 16:57+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_crypto/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.birth_certificate,digest_current:"
 msgid "Current Hash"
@@ -27,9 +18,10 @@ msgctxt "field:gnuhealth.birth_certificate,document_digest:"
 msgid "Digest"
 msgstr "Förlaga"
 
+#, fuzzy
 msgctxt "field:gnuhealth.birth_certificate,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Dokumentsträng"
 
 msgctxt "field:gnuhealth.birth_certificate,serializer_current:"
 msgid "Current Doc"
@@ -51,13 +43,15 @@ msgctxt "field:gnuhealth.death_certificate,document_digest:"
 msgid "Digest"
 msgstr "Förlaga"
 
+#, fuzzy
 msgctxt "field:gnuhealth.death_certificate,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Dokumentsträng"
 
+#, fuzzy
 msgctxt "field:gnuhealth.death_certificate,serializer_current:"
 msgid "Current Doc"
-msgstr ""
+msgstr "Aktuellt dokument"
 
 msgctxt "field:gnuhealth.patient.evaluation,digest_current:"
 msgid "Current Hash"
@@ -80,9 +74,10 @@ msgctxt "field:gnuhealth.patient.evaluation,serializer:"
 msgid "Doc String"
 msgstr "Dokumentsträng"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,serializer_current:"
 msgid "Current Doc"
-msgstr ""
+msgstr "Aktuellt dokument"
 
 msgctxt "field:gnuhealth.prescription.order,digest_current:"
 msgid "Current Hash"
@@ -143,11 +138,15 @@ msgctxt "help:gnuhealth.patient.evaluation,document_digest:"
 msgid "Original Document Digest"
 msgstr "Förlaga till originaldokumentet"
 
+#, fuzzy
 msgctxt "help:gnuhealth.prescription.order,digest_status:"
 msgid ""
 "This field will be set whenever parts of the main original document has been"
 " changed. Please note that the verification is done only on selected fields."
 msgstr ""
+"Det här fältet kommer att ställas in när delar av det huvudsakliga "
+"originaldokumentet har ändrats. Vänligen observera att verifieringen endast "
+"görs på valda fält."
 
 msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
@@ -209,9 +208,10 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Digital Signature"
 msgstr "Digital signatur"
 
+#, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Document validation"
-msgstr ""
+msgstr "Validering för dokumentet"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Generate"
@@ -269,9 +269,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Validation"
 msgstr "Validering"
 
+#, fuzzy
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Document validation"
-msgstr ""
+msgstr "Validering för dokumentet"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Generate Validation"

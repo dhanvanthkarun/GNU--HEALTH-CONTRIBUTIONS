@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-02-24 07:17+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_inpatient/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
@@ -206,9 +197,10 @@ msgctxt "field:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "unit"
 msgstr "enhet"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,indication:"
 msgid "Indication"
-msgstr ""
+msgstr "Indikering"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,is_active:"
@@ -397,9 +389,10 @@ msgctxt "field:gnuhealth.patient,patient_status:"
 msgid "Hospitalized"
 msgstr "Inlagd på sjukhus"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,inpatient_registration_code:"
 msgid "Inpatient"
-msgstr ""
+msgstr "Öppenvård"
 
 msgctxt "field:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "IPC"
@@ -431,9 +424,10 @@ msgctxt "help:gnuhealth.inpatient.diet,remarks:"
 msgid "specific remarks for this diet / patient"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.inpatient.meal,name:"
 msgid "Food"
-msgstr ""
+msgstr "Mat"
 
 msgctxt "help:gnuhealth.inpatient.meal.order,meal_warning:"
 msgid "The patient has special needs on meals"
@@ -973,28 +967,31 @@ msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_all"
 msgid "All"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_confirmed"
 msgid "Confirmed"
-msgstr ""
+msgstr "Bekräftades"
 
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_done"
 msgid "To clean"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_draft"
 msgid "Cancelled"
-msgstr ""
+msgstr "Avbröts"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_finished"
 msgid "Finished"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_hospitalized"
 msgid "Hospitalized"
-msgstr ""
+msgstr "Inlagd på sjukhus"
 
 msgctxt "model:ir.message,text:msg_bed_is_not_available"
 msgid "Bed is not available"
@@ -1145,9 +1142,10 @@ msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Special order"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Cancelled"
-msgstr ""
+msgstr "Avbröts"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Done"
@@ -1314,9 +1312,10 @@ msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "General Info"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Medication"
-msgstr ""
+msgstr "Medicin"
 
 #, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
@@ -1390,9 +1389,10 @@ msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Patient"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Plan"
-msgstr ""
+msgstr "Utskrivningsplan"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Medication Plan"
