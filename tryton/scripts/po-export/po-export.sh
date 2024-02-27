@@ -67,21 +67,23 @@ cat << EOF
 NOTE: If your are gnuhealth developer, before export po files, suggest
 do the following steps, which can reduce po files merge conflicts.
 
-1. Commit all pending changes in weblate.
-    
-   a) Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
-   b) Click button: Manage > Repository maintenance > (pending changes) Commit
-   c) Make sure commits can be found at: https://hg.weblate.org/gnu-health/health
-   
+1. Open GNU Health weblate page.
+
+   Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
+
 2. Lock translation in weblate.
 
    Click button: Manage > Repository maintenance > Lock
 
-3. Pull and merge changes in below hg repos to local repo your are
-   working.
+3. Commit all pending changes in weblate page.
+ 
+   Click button: Manage > Repository maintenance > (pending changes) Commit
+   
+4. Push outgoing commits to GNU Health upstream repo.
 
-   1. gnuhealth-upstream: https://hg.savannah.gnu.org/hgweb/health
-   2. gnuhealth-weblate:  https://hg.weblate.org/gnu-health/health
+   Click button: Manage > Repository maintenance > Push
+
+5. Pull and update changes from gnuhealth upstream repo to your working repo.
 
 EOF
 
@@ -140,16 +142,19 @@ python3 po-export.py --user admin     \
 
 cat << EOF
 
-After po-export.sh run successful and po files changes has been pushed
-to gnuhealth upstream hg repo, we should:
+After po-export.sh run successful, we should do:
 
-1. Make sure all po files changes sync to weblate:
+1. Push po files changes to GNU Health upstream repo.
 
-   a) Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
-   b) Click button: Manage > Repository maintenance > (missing commits) Push
-   c) Make sure commits can be found at: https://hg.weblate.org/gnu-health/health
+2. Open GNU Health weblate page.
 
-2. Unlock translation in weblate.
+   Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
+
+3. Sync all po files changes from upstream to weblate.
+
+   Click button: Manage > Repository maintenance > (missing commits) Update
+
+4. Unlock translation in weblate.
 
    Click button: Manage > Repository maintenance > Unlock
 

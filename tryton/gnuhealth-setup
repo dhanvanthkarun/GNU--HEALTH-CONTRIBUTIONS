@@ -237,7 +237,7 @@ install_python_dependencies() {
     local PIP_LXML="lxml"
     local PIP_RELATORIO="relatorio"
     local PIP_WRAPT="wrapt"
-    local PIP_WERKZEUG="werkzeug<3"
+    local PIP_WERKZEUG="werkzeug<4"
     local PIP_DATEUTIL="python-dateutil"
     local PIP_PSYCOPG2="psycopg2-binary"
     local PIP_PYTZ="pytz"
@@ -246,6 +246,7 @@ install_python_dependencies() {
     local PIP_QRCODE="qrcode"
     local PIP_PYBARCODE="python-barcode"
     local PIP_SIX="six"
+    # odontogram_report.py of health_dentistry need pillow >= 10.1.0
     local PIP_PILLOW="Pillow>=10.1.0"
     local PIP_CALDAV="caldav"
     local PIP_POLIB="polib"
