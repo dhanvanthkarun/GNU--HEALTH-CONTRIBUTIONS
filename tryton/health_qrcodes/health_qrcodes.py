@@ -20,6 +20,11 @@ from trytond.pool import PoolMeta
 __all__ = ['Party', 'Patient', 'Appointment', 'Newborn', 'LabTest']
 
 
+# Remove text of barcode.
+from barcode.base import Barcode
+Barcode.default_writer_options['write_text'] = False
+
+
 class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
