@@ -3121,6 +3121,17 @@ class PatientData(ModelSQL, ModelView):
         ('-', '-'),
         ], 'Rh')
 
+    # Used in report template.
+    def get_report_blood_type(self):
+        blood_type = self.blood_type
+        rh = self.rh
+        if blood_type and rh:
+            return blood_type + ' ' + rh
+        elif blood_type:
+            return blood_type
+        else:
+            return ''
+        
     hb = fields.Selection([
         (None, ''),
         ('aa', 'AA'),
