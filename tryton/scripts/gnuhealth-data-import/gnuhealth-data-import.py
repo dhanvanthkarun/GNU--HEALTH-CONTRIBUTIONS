@@ -238,9 +238,11 @@ def import_line_labtest(line):
                 result_line.result = None
             result_line.result_text = result_text
             result_line.save()
-            print("* Importing labtest: '{0}/{1}' ...".format(test_id, analyte_code))
+            print("* Importing labtest: '{0}/{1}' ...".format(
+                test_id, (analyte_code or analyte_name or "Unknow")))
     else:
-        print("! Ignore labtest: '{0}/{1}', it is not found !!!".format(test_id, analyte_code))
+        print("! Ignore labtest: '{0}/{1}', it is not found !!!".format(
+            test_id, (analyte_code or analyte_name or "Unknow")))
 
 def import_line_medicament(line):
     name       = line.get('name')
