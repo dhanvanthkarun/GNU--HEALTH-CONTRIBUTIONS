@@ -29,7 +29,7 @@ def main():
     options = parse_options()
     filenames = get_filenames(options)
     connect_service(options)
-    import_files(filenames)
+    import_files(filenames, options)
     import_finish()
 
 def parse_options():
@@ -50,6 +50,11 @@ def parse_options():
                         help="Password of GNU Health.")
     parser.add_argument('-d', '--database', required=True,
                         help="Database name of GNU Health.")
+    parser.add_argument('-t', '--datatype', required=False,
+                        help="Type of imported data, "
+                        "its value can be 'patient', 'medicament', "
+                        "'produce' or 'labtest' at the moment, "
+                        "override by '__type' field of csv or odt file.")
 
     return parser.parse_args()
 
@@ -75,10 +80,10 @@ def connect_service(options):
     #conf = pconfig.set_xmlrpc_session(health_server, username=user, password=passwd)
     print("## Connected!\n")
 
-def import_files(filenames):
+def import_files(filenames, options):
     for filename in filenames:
         data = read_file(filename)
-        import_data(data)
+        import_data(data, options)
 
 def read_file(filename):
     if filename.endswith('ods'):
@@ -101,11 +106,11 @@ def read_file(filename):
     else:
         print(f'## Do not support import: {filename}')
 
-def import_data(data):
+def import_data(data, options):
     for index, line in data.iterrows():
         line = dict(line)
         ignore = line.get('_ignore')
-        data_type = line.get('_type') or 'default'
+        data_type = line.get('_type') or options.datatype or 'default'
         if not ignore == 'yes':
             ## Call function which name is 'import_line_<data_type>'.
             eval('import_line_' + data_type)(line)
