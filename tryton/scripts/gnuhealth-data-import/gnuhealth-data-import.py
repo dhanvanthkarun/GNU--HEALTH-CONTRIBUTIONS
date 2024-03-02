@@ -246,7 +246,8 @@ def import_line_labtest(line):
             print("* Importing labtest: '{0}/{1}' ...".format(
                 test_id, (analyte_code or analyte_name or "Unknow")))
     else:
-        print("! Ignore labtest: '{0}/{1}', it is not found !!!".format(
+        print(("! Ignore, HMIS is not found lab test result '{0}' " +
+               "or found '{0}' have no analyte '{1}'!").format(
             test_id, (analyte_code or analyte_name or "Unknow")))
 
 def import_line_medicament(line):
