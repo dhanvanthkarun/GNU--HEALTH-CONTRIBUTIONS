@@ -522,10 +522,17 @@ getlang() {
         local weblate_po=${lang_download_dir}/${po}
         local installed_po=${gnuhealth_module_dir}/${po}
         local installed_pot=${gnuhealth_module_dir}/$(echo ${po} | awk -F/ '{print $2 "/locale/" $2 ".pot"}')
+
+        ## Sometimes, po files will include duplicate strings, deal
+        ## with it for msgcat.
+        msguniq --use-first ${weblate_po} -o ${weblate_po}
+
         if [ -e ${installed_po} ]; then
+            msguniq --use-first ${installed_po} -o ${installed_po}
             msgcat --use-first ${weblate_po} ${installed_po} -o ${installed_po}
         else
             if [ -e ${installed_pot} ]; then
+                msguniq --use-first ${installed_pot} -o ${installed_pot}
                 msgcat --use-first ${weblate_po} ${installed_pot} -o ${installed_po}
             else
                 msgcat --use-first ${weblate_po} -o ${installed_po}
