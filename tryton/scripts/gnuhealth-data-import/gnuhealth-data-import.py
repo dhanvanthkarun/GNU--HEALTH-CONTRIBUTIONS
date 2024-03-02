@@ -54,7 +54,7 @@ def parse_options():
                         help="Type of imported data, "
                         "its value can be 'patient', 'medicament', "
                         "'produce' or 'labtest' at the moment, "
-                        "override by '__type' field of csv or odt file.")
+                        "override by '_type' field of csv or odt file.")
 
     return parser.parse_args()
 
