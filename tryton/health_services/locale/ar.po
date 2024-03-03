@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-03-03 08:33+0000\n"
+"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
+"health_services/ar/>\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.5-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:account.invoice,health_service:"
 msgid "Health Service"
@@ -12,7 +22,7 @@ msgstr "المريض"
 
 msgctxt "field:gnuhealth.health_service,company:"
 msgid "Company"
-msgstr ""
+msgstr "الشركة"
 
 msgctxt "field:gnuhealth.health_service,desc:"
 msgid "Description"
@@ -48,7 +58,7 @@ msgstr "الحالة"
 
 msgctxt "field:gnuhealth.health_service.line,action_required:"
 msgid "Action required"
-msgstr ""
+msgstr "الحقل مطلوب"
 
 msgctxt "field:gnuhealth.health_service.line,appointment:"
 msgid "Appointment"
@@ -74,7 +84,6 @@ msgctxt "field:gnuhealth.health_service.line,qty:"
 msgid "Qty"
 msgstr "الكمية"
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "ملاحظات"
@@ -87,19 +96,17 @@ msgctxt "field:gnuhealth.health_service.line,to_invoice:"
 msgid "Invoice"
 msgstr "فاتورة"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,product:"
 msgid "Product"
 msgstr "منتج"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,service:"
 msgid "Service"
 msgstr "خدمة"
 
 msgctxt "field:gnuhealth.patient.evaluation,service_updated:"
 msgid "Service updated"
-msgstr ""
+msgstr "تم تحديث الخدمة"
 
 msgctxt "field:gnuhealth.prescription.order,service:"
 msgid "Service"
@@ -107,16 +114,16 @@ msgstr "خدمة"
 
 msgctxt "field:gnuhealth.prescription.order,service_updated:"
 msgid "Service updated"
-msgstr ""
+msgstr "تم تحديث الخدمة"
 
 msgctxt "field:gnuhealth.sequences,health_service_sequence:"
 msgid "Health service sequence"
-msgstr ""
+msgstr "تسلسل الخدمات الصحية"
 
 msgctxt ""
 "field:gnuhealth.sequences.health_service_sequence,health_service_sequence:"
 msgid "Health service sequence"
-msgstr ""
+msgstr "تسلسل الخدمات الصحية"
 
 msgctxt "help:account.invoice,health_service:"
 msgid "The service entry"
@@ -135,6 +142,8 @@ msgid ""
 "This optional field is used in the context of validation on the service "
 "line. Mark it if there is any administrative or other type that needs action"
 msgstr ""
+"يتم استخدام هذا الحقل الاختياري في سياق التحقق من الصحة على خط الخدمة. قم "
+"بوضع علامة عليه إذا كان هناك أي نوع إداري أو أي نوع آخر يحتاج إلى إجراء"
 
 msgctxt "help:gnuhealth.health_service.line,appointment:"
 msgid ""
@@ -143,7 +152,7 @@ msgstr "أدخل أو حدّد التاريخ/الهوية للموعد المت
 
 msgctxt "help:gnuhealth.patient.evaluation,service:"
 msgid "Service document associated to this evaluation"
-msgstr ""
+msgstr "وثيقة الخدمة المرتبطة بهذا التقييم"
 
 msgctxt "help:gnuhealth.prescription.order,service:"
 msgid "Service document associated to this prescription"
@@ -159,7 +168,7 @@ msgstr "الخدمة الصحية"
 
 msgctxt "model:gnuhealth.sequences.health_service_sequence,name:"
 msgid "Health Service Request Sequence setup"
-msgstr ""
+msgstr "إعداد تسلسل طلب الخدمة الصحية"
 
 msgctxt "model:gnuhealth.service.invoice.init,name:"
 msgid "Create Service Invoice Init"
@@ -175,34 +184,30 @@ msgstr "الفاتورة المرتبطة"
 
 msgctxt "model:ir.action,name:act_service_form1"
 msgid "Services"
-msgstr ""
+msgstr "الخدمات"
 
 msgctxt "model:ir.action,name:gnuhealth_action_health_service"
 msgid "Health services"
 msgstr "الخدمات الصحية"
 
-#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_health_service_invoices"
 msgid "Service invoices (last month)"
-msgstr "الفواتير المُنشأة"
+msgstr "الفواتير المُنشأة (اخر شهر)"
 
 msgctxt "model:ir.action,name:report_health_services_report"
 msgid "Services Report"
 msgstr "تقرير الخدمة"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_all"
 msgid "All"
 msgstr "الكل"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_draft"
 msgid "Draft"
 msgstr "مسودة"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_invoiced"
 msgid "Invoiced"
@@ -210,45 +215,47 @@ msgstr "مفوترة"
 
 msgctxt "model:ir.message,text:msg_no_account_receivable"
 msgid "No Account Receivable defined in party or in default configuration"
-msgstr ""
+msgstr "لم يتم تحديد أي حساب مدينة في الطرف أو في التكوين الافتراضي"
 
 msgctxt "model:ir.message,text:msg_no_invoice_address"
 msgid "No invoice adress"
-msgstr ""
+msgstr "لايوجد عنوان للفاتورة"
 
 msgctxt "model:ir.message,text:msg_no_payment_term"
 msgid "Need a user payment term"
-msgstr ""
+msgstr "تحتاج إلى مصطلح دفع المستخدم"
 
 msgctxt "model:ir.message,text:msg_no_product_associated"
 msgid "You need to associate a product"
-msgstr ""
+msgstr "تحتاج إلى ربط المنتج"
 
 msgctxt "model:ir.message,text:msg_no_service_associated"
 msgid "You need to associate a service"
-msgstr ""
+msgstr "تحتاج إلى ربط الخدمة"
 
 msgctxt "model:ir.message,text:msg_service_already_invoiced"
 msgid "This service has been invoiced. You can no longer modify service lines"
-msgstr ""
+msgstr "لقد تمت فاتورة هذه الخدمة. لم يعد بإمكانك تعديل خطوط الخدمة"
 
 msgctxt "model:ir.message,text:msg_service_has_been_updated"
 msgid ""
 "\"Service updated\" is \"yes\" indicates that the service has been updated, "
 "please verify it again."
 msgstr ""
+"\"تم تحديث الخدمة\" هي \"نعم\" تشير إلى أنه تم تحديث الخدمة، يرجى التحقق من "
+"ذلك مرة أخرى."
 
 msgctxt "model:ir.model.button,string:service_draft_button"
 msgid "Set to Draft"
-msgstr ""
+msgstr "انشاء مسودة"
 
 msgctxt "model:ir.model.button,string:serviceevaluation_update_button"
 msgid "Update Services"
-msgstr ""
+msgstr "تحديث الخدمات"
 
 msgctxt "model:ir.model.button,string:servicepresc_update_button"
 msgid "Update Services"
-msgstr ""
+msgstr "تحديث الخدمات"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_health_service"
 msgid "Health Service"
@@ -258,10 +265,9 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_health_service"
 msgid "Health Service"
 msgstr "الخدمة الصحية"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_health_service_invoices_menu"
 msgid "Service invoices (last month)"
-msgstr "الفواتير المنشئة"
+msgstr "الفواتير المنشئة (اخر شهر)"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_health_service_menu"
 msgid "Health services"
@@ -273,11 +279,11 @@ msgstr "الخدمات الصحية"
 
 msgctxt "model:product.category,name:product_category_medical_evaluation"
 msgid "Medical Evaluation"
-msgstr ""
+msgstr "التطور الطبي"
 
 msgctxt "model:product.template,name:product_template_medical_services"
 msgid "Medical evaluation service"
-msgstr ""
+msgstr "خدمة التطوير الطبي"
 
 msgctxt "model:res.group,name:group_health_services_admin"
 msgid "Health Services Administration"
@@ -285,73 +291,68 @@ msgstr "إدارة الخدمات الصحية"
 
 msgctxt "report:health_services.report:"
 msgid "//"
-msgstr ""
+msgstr "//"
 
 msgctxt "report:health_services.report:"
 msgid "Address:"
-msgstr ""
+msgstr "العنوان:"
 
 msgctxt "report:health_services.report:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
 msgctxt "report:health_services.report:"
 msgid "Description:"
-msgstr ""
+msgstr "الوصف:"
 
 msgctxt "report:health_services.report:"
 msgid "E-mail:"
-msgstr ""
+msgstr "البريد الالكتروني:"
 
-#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "From"
 msgstr "من"
 
 msgctxt "report:health_services.report:"
 msgid "Health Service Report"
-msgstr ""
+msgstr "تقرير الخدمة الصحي"
 
 msgctxt "report:health_services.report:"
 msgid "Institution:"
-msgstr ""
+msgstr "المؤسسة:"
 
-#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Invoice"
 msgstr "فاتورة"
 
 msgctxt "report:health_services.report:"
 msgid "Invoice to:"
-msgstr ""
+msgstr "فاتورة الى:"
 
 msgctxt "report:health_services.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:health_services.report:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
-#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Qty"
 msgstr "الكمية"
 
-#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Service"
 msgstr "خدمة"
 
 msgctxt "report:health_services.report:"
 msgid "Service ID:"
-msgstr ""
+msgstr "رقم الخدمة:"
 
 msgctxt "report:health_services.report:"
 msgid "Tel:"
-msgstr ""
+msgstr "هاتف:"
 
-#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "To"
 msgstr "إلى"
@@ -364,80 +365,73 @@ msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
 msgstr "مفوترة"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "No"
 msgstr "لا"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Unknown"
 msgstr "غير معروف"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Yes"
 msgstr "نعم"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "No"
 msgstr "لا"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "Unknown"
 msgstr "غير معروف"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "Yes"
 msgstr "نعم"
 
-#, fuzzy
 msgctxt "view:account.invoice:"
 msgid "Health"
 msgstr "الصحه"
 
 msgctxt "view:gnuhealth.health_service:"
 msgid "Set to Draft"
-msgstr ""
+msgstr "انشاء مسودة"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Services"
-msgstr ""
+msgstr "خدمة"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Transfer this evaluation to services?"
-msgstr ""
+msgstr "هل تريد نقل هذا التقييم إلى الخدمات؟"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Service document with this evaluation"
-msgstr ""
+msgstr "قم بتحديث مستند الخدمة بهذا التقييم"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Services"
-msgstr ""
+msgstr "خدمات التحديث"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Transfer medicaments to services ?"
-msgstr ""
+msgstr "تحويل الأدوية إلى الخدمات؟"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Update Service document with this prescription lines"
-msgstr ""
+msgstr "قم بتحديث مستند الخدمة باستخدام بنود الوصفات الطبية هذه"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Update Services"
-msgstr ""
+msgstr "خدمات التحديث"
 
 msgctxt "view:gnuhealth.service.invoice.init:"
 msgid "Create Invoices"
-msgstr ""
+msgstr "إنشاء الفواتير"
 
 msgctxt "view:gnuhealth.service.invoice.init:"
 msgid "Do you want to generate the Invoice(s) ?"
-msgstr ""
+msgstr "هل تريد إنشاء الفاتورة (الفواتير)؟"
 
 msgctxt ""
 "wizard_button:gnuhealth.service.invoice.create,start,create_service_invoice:"
