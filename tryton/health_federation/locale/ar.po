@@ -1,206 +1,215 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-03-03 08:33+0000\n"
+"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
+"health_federation/ar/>\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.5-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.federation.config,enabled:"
 msgid "Enabled"
-msgstr ""
+msgstr "مفعل"
 
 msgctxt "field:gnuhealth.federation.config,host:"
 msgid "Thalamus server"
-msgstr ""
+msgstr "مخدم ثالاموس"
 
 msgctxt "field:gnuhealth.federation.config,password:"
 msgid "Password"
-msgstr ""
+msgstr "كلمة السر"
 
 msgctxt "field:gnuhealth.federation.config,port:"
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 msgctxt "field:gnuhealth.federation.config,ssl:"
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 msgctxt "field:gnuhealth.federation.config,user:"
 msgid "User"
-msgstr ""
+msgstr "المستخدم"
 
 msgctxt "field:gnuhealth.federation.config,verify_ssl:"
 msgid "Verify SSL cert"
-msgstr ""
+msgstr "تأكيد شهادة SSL"
 
 msgctxt "field:gnuhealth.federation.object,enabled:"
 msgid "Enabled"
-msgstr ""
+msgstr "مفعل"
 
 msgctxt "field:gnuhealth.federation.object,fields:"
 msgid "Fields"
-msgstr ""
+msgstr "الحقول"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.object,model:"
 msgid "Model"
 msgstr "نموذج"
 
 msgctxt "field:gnuhealth.federation.queue,args:"
 msgid "Arguments"
-msgstr ""
+msgstr "المتحولات"
 
 msgctxt "field:gnuhealth.federation.queue,args_preview:"
 msgid "Preview"
-msgstr ""
+msgstr "عرض"
 
 msgctxt "field:gnuhealth.federation.queue,federation_locator:"
 msgid "Fed ID"
-msgstr ""
+msgstr "رقم الاتحاد"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,method:"
 msgid "Method"
 msgstr "طريقة"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,model:"
 msgid "Model"
 msgstr "نموذج"
 
 msgctxt "field:gnuhealth.federation.queue,msgid:"
 msgid "Message ID"
-msgstr ""
+msgstr "رقم الرسالة"
 
 msgctxt "field:gnuhealth.federation.queue,node:"
 msgid "Node"
-msgstr ""
+msgstr "النقطة"
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,state:"
 msgid "Status"
 msgstr "الوضع"
 
 msgctxt "field:gnuhealth.federation.queue,time_stamp:"
 msgid "Timestamp"
-msgstr ""
+msgstr "Timestamp"
 
 msgctxt "field:gnuhealth.federation.queue,url_suffix:"
 msgid "URL suffix"
-msgstr ""
+msgstr "لاحقة URL"
 
 msgctxt "field:gnuhealth.pol,fsync:"
 msgid "Fsync"
-msgstr ""
+msgstr "Fsync"
 
 msgctxt "field:party.party,fsync:"
 msgid "Fsync"
-msgstr ""
+msgstr "Fsync"
 
 msgctxt "help:gnuhealth.federation.config,enabled:"
 msgid "Mark if the node is active in the Federation"
-msgstr ""
+msgstr "حدد ما إذا كانت العقدة نشطة في الاتحاد"
 
 msgctxt "help:gnuhealth.federation.config,host:"
 msgid "GNU Health Thalamus server"
-msgstr ""
+msgstr "مخدم ثالاموس"
 
 msgctxt "help:gnuhealth.federation.config,password:"
 msgid "Password of the institution admin user in the Federation"
-msgstr ""
+msgstr "كلمة سر مستخدم مدير المؤسسة في الاتحاد"
 
 msgctxt "help:gnuhealth.federation.config,port:"
 msgid "Thalamus port"
-msgstr ""
+msgstr "ثالاموس port"
 
 msgctxt "help:gnuhealth.federation.config,ssl:"
 msgid "Use encrypted communication via SSL"
-msgstr ""
+msgstr "استخدام اتصال مشفر باستخدام SSL"
 
 msgctxt "help:gnuhealth.federation.config,user:"
 msgid "Admin associated to this institution"
-msgstr ""
+msgstr "المدير المتصل بهذه المؤسسة"
 
 msgctxt "help:gnuhealth.federation.config,verify_ssl:"
 msgid ""
 "Check this option if your certificate has been emitted by a CA authority. If"
 " it is a self-signed certifiate leave it unchecked"
 msgstr ""
+"حدد هذا الخيار إذا تم إصدار شهادتك من قبل سلطة CA. إذا كانت شهادة موقعة "
+"ذاتيًا، فاتركها دون تحديد"
 
 msgctxt "help:gnuhealth.federation.object,enabled:"
 msgid "Check if the model is active to participate on the Federation"
-msgstr ""
+msgstr "تحقق مما إذا كان النموذج نشطًا للمشاركة في الاتحاد"
 
 msgctxt "help:gnuhealth.federation.object,fields:"
 msgid ""
 "Contains a list of the local model fields that participate on the federation.\n"
 "Each line will have the format field:endpoint:key"
 msgstr ""
+"يحتوي على قائمة بحقول النماذج المحلية المشاركة في الاتحاد.\n"
+"سيكون لكل سطر حقل التنسيق:نقطة النهاية:مفتاح"
 
 msgctxt "help:gnuhealth.federation.object,model:"
 msgid "Local Model"
-msgstr ""
+msgstr "نموذج محلي"
 
 msgctxt "help:gnuhealth.federation.queue,args:"
 msgid "Arguments"
-msgstr ""
+msgstr "متحولات"
 
 msgctxt "help:gnuhealth.federation.queue,federation_locator:"
 msgid ""
 "Unique locator in Federation, such as person Federation account or Page of "
 "Life code"
-msgstr ""
+msgstr "محدد مواقع فريد في الاتحاد، مثل حساب الاتحاد الشخصي أو رمز صفحة الحياة"
 
 msgctxt "help:gnuhealth.federation.queue,model:"
 msgid "Source Model"
-msgstr ""
+msgstr "النموذج المصدر"
 
 msgctxt "help:gnuhealth.federation.queue,msgid:"
 msgid "Message UID"
-msgstr ""
+msgstr "رقم المستخدم الخاص بالرسالة"
 
 msgctxt "help:gnuhealth.federation.queue,node:"
 msgid "The originating node id"
-msgstr ""
+msgstr "معرف العقدة الأصلية"
 
 msgctxt "help:gnuhealth.federation.queue,time_stamp:"
 msgid "UTC timestamp at the moment of writing record on the node"
-msgstr ""
+msgstr "الطابع الزمني UTC في لحظة كتابة السجل على العقدة"
 
 msgctxt "help:gnuhealth.federation.queue,url_suffix:"
 msgid "suffix to be passed to the URL"
-msgstr ""
+msgstr "اللاحقة التي سيتم تمريرها إلى عنوان URL"
 
 msgctxt "help:gnuhealth.pol,fsync:"
 msgid " If active, this record information will be sent to the Federation"
-msgstr ""
+msgstr " إذا كان نشطًا، فسيتم إرسال معلومات السجل هذه إلى الاتحاد"
 
 msgctxt "help:party.party,fsync:"
 msgid "If active, this record information will be sent to the Federation"
-msgstr ""
+msgstr "إذا كان نشطًا، فسيتم إرسال معلومات السجل هذه إلى الاتحاد"
 
 msgctxt "model:gnuhealth.federation.config,name:"
 msgid "Federation Node Configuration"
-msgstr ""
+msgstr "تكوين عقدة الاتحاد"
 
 msgctxt "model:gnuhealth.federation.object,name:"
 msgid "Federation Object"
-msgstr ""
+msgstr "غرض في الاتحاد"
 
 msgctxt "model:gnuhealth.federation.queue,name:"
 msgid "Federation Queue"
-msgstr ""
+msgstr "جدولة في الاتحاد"
 
 msgctxt "model:ir.action,name:gnuhealth_action_federation_config"
 msgid "Node Configuration"
-msgstr ""
+msgstr "اعدادات العقدة"
 
 msgctxt "model:ir.action,name:gnuhealth_action_federation_object"
 msgid "Federation Objects"
-msgstr ""
+msgstr "اغراض في الاتحاد"
 
 msgctxt "model:ir.action,name:gnuhealth_action_federation_queue"
 msgid "Federation Queue Manager"
-msgstr ""
+msgstr "مدير جداول الاتحاد"
 
-#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_all"
 msgid "All"
 msgstr "الكل"
@@ -208,86 +217,86 @@ msgstr "الكل"
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_failed"
 msgid "Failed"
-msgstr ""
+msgstr "حقل"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_queued"
 msgid "Queued"
-msgstr ""
+msgstr "مجدول"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_sent"
 msgid "Sent"
-msgstr ""
+msgstr "ارسل"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_config"
 msgid "Node Configuration"
-msgstr ""
+msgstr "اعدادات العقدة"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_object"
 msgid "Federation Objects"
-msgstr ""
+msgstr "اغراض الاتحاد"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_queue"
 msgid "Federation Queue Manager"
-msgstr ""
+msgstr "مدير جداول الاتحاد"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_federation"
 msgid "Federation"
-msgstr ""
+msgstr "الاتحاد"
 
 msgctxt "model:res.group,name:group_health_federation_admin"
 msgid "Health Federation Administration"
-msgstr ""
+msgstr "مدير صحة الاتحاد"
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "DELETE"
-msgstr ""
+msgstr "حذف"
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "GET"
-msgstr ""
+msgstr "جلب"
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "PATCH"
-msgstr ""
+msgstr "PATCH"
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "POST"
-msgstr ""
+msgstr "POST"
 
 msgctxt "selection:gnuhealth.federation.queue,state:"
 msgid "Failed"
-msgstr ""
+msgstr "حقل"
 
 msgctxt "selection:gnuhealth.federation.queue,state:"
 msgid "Queued"
-msgstr ""
+msgstr "مجدول"
 
 msgctxt "selection:gnuhealth.federation.queue,state:"
 msgid "Sent"
-msgstr ""
+msgstr "ارسل"
 
 msgctxt "view:gnuhealth.federation.config:"
 msgid "Test Connection"
-msgstr ""
+msgstr "تجربة اتصال"
 
 msgctxt "view:gnuhealth.federation.config:"
 msgid "Test Connection to Thalamus server"
-msgstr ""
+msgstr "تجربة اتصال لمخدم ثالاموس"
 
 msgctxt "view:gnuhealth.federation.config:"
 msgid "Test Thalamus connection"
-msgstr ""
+msgstr "تجربة اتصال ثالاموس"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Arguments"
-msgstr ""
+msgstr "مدخلات"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send"
-msgstr ""
+msgstr "ارسال"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send the record to the Federation"
-msgstr ""
+msgstr "ارسال السطر الى الاتحاد"
