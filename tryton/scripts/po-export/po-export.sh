@@ -134,19 +134,4 @@ python3 po-export.py --user admin     \
         --export-languages ${LANGUAGE} 
 
 
-if [ ! command -v msguniq >/dev/null 2>&1 ]; then
-    echo "msguniq command is not found, please install gettext package."
-    exit 1
-fi
-
-cd ${PO_EXPORT_DIR}/../../
-
-echo "## Checking duplicate po items..."
-for po_file in $(find . -name '*.po*'); 
-do
-    msg=$(msguniq --use-first --repeated ${po_file} | grep 'msgid')
-    if [ -n "${msg}" ]; then
-        echo ${msg} "|" ${po_file} 
-    fi
-
-done
+source ./po-msguniq.sh
