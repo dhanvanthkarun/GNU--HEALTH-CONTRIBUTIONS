@@ -20,7 +20,7 @@ do
     ## with files needed, this can reduce diff's size.
     if [ -n "${msg}" ]; then
         echo "   Handling: ${po_file} ..."
-        msguniq --no-wrap --use-first --unique ${po_file} -o ${po_file}
+        msguniq --no-wrap --use-first ${po_file} -o ${po_file}
     fi
 
 done
