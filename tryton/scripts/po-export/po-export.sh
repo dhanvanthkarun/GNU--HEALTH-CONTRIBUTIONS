@@ -64,26 +64,20 @@ echo ""
 
 cat << EOF
 
-NOTE: If your are gnuhealth developer, before export po files, suggest
-do the following steps, which can reduce po files merge conflicts.
+NOTE for developer:
 
-1. Open GNU Health weblate page.
-
-   Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
-
-2. Lock translation in weblate.
-
-   Click button: Manage > Repository maintenance > Lock
-
-3. Commit all pending changes in weblate page.
- 
-   Click button: Manage > Repository maintenance > (pending changes) Commit
-   
-4. Push outgoing commits to GNU Health upstream repo.
-
-   Click button: Manage > Repository maintenance > Push
-
+## Before run po-export.sh, the following steps can reduce po files merge conflicts.
+1. Open GNU Health weblate page: (https://hosted.weblate.org/projects/gnu-health/)
+2. Lock translation: (Manage > Repository maintenance > Lock)
+3. Commit pending changes: (Manage > Repository maintenance > (pending changes) Commit)
+4. Push outgoing commits: (Manage > Repository maintenance > Push)
 5. Pull and update changes from gnuhealth upstream repo to your working repo.
+
+## After run po-export.sh: 
+1. Push po files changes to GNU Health upstream repo.
+2. Open GNU Health weblate page: (https://hosted.weblate.org/projects/gnu-health/)
+3. Sync all changes to weblate: (Manage > Repository maintenance > (missing commits) Update)
+4. Unlock translation (Manage > Repository maintenance > Unlock)
 
 EOF
 
@@ -140,22 +134,4 @@ python3 po-export.py --user admin     \
         --export-languages ${LANGUAGE} 
 
 
-cat << EOF
-
-After po-export.sh run successful, we should do:
-
-1. Push po files changes to GNU Health upstream repo.
-
-2. Open GNU Health weblate page.
-
-   Open url in web browser: https://hosted.weblate.org/projects/gnu-health/
-
-3. Sync all po files changes from upstream to weblate.
-
-   Click button: Manage > Repository maintenance > (missing commits) Update
-
-4. Unlock translation in weblate.
-
-   Click button: Manage > Repository maintenance > Unlock
-
-EOF
+source ./po-msguniq.sh

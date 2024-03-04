@@ -1083,6 +1083,14 @@ msgctxt "field:gnuhealth.occupation,name:"
 msgid "Name"
 msgstr "名称"
 
+msgctxt "field:gnuhealth.online_document,name:"
+msgid "Name"
+msgstr "名称"
+
+msgctxt "field:gnuhealth.online_document,uri:"
+msgid "URI"
+msgstr "网址"
+
 msgctxt "field:gnuhealth.operational_area,info:"
 msgid "Extra Information"
 msgstr "其它信息"
@@ -3023,6 +3031,14 @@ msgstr "通用名"
 msgctxt "help:gnuhealth.occupation,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr "请使用大写字母，不要带空格"
+
+msgctxt "help:gnuhealth.online_document,name:"
+msgid "Health Online document name."
+msgstr "Health 在线文档名称。"
+
+msgctxt "help:gnuhealth.online_document,uri:"
+msgid "Health online document URL address."
+msgstr "Health 在线文档 URL 地址。"
 
 msgctxt "help:gnuhealth.operational_area,name:"
 msgid "Operational Area of the city or region"
@@ -7424,6 +7440,14 @@ msgctxt "model:gnuhealth.occupation,name:occ99"
 msgid "Crystallographer"
 msgstr "晶体学"
 
+msgctxt "model:gnuhealth.online_document,name:"
+msgid "Health Online Document"
+msgstr "Health 在线文档"
+
+msgctxt "model:gnuhealth.online_document,name:gnuhealth_online_document_001"
+msgid "GNU Health Documentation Portal"
+msgstr "GNU Health 官方文档"
+
 msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
 msgstr "卫生区域"
@@ -8206,6 +8230,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_occupation"
 msgid "Occupations"
 msgstr "职业"
 
+msgctxt "model:ir.action,name:gnuhealth_action_online_document"
+msgid "Online Documentation"
+msgstr "在线文档"
+
 msgctxt "model:ir.action,name:gnuhealth_action_operational_area"
 msgid "Operational Areas"
 msgstr "卫生区域"
@@ -8686,6 +8714,10 @@ msgstr "健康"
 msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
 msgstr "医疗机构"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
+msgid "Online Documentation"
+msgstr "在线文档"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"

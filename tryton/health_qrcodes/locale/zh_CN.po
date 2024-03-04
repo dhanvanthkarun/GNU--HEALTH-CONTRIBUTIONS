@@ -2,6 +2,11 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+#, fuzzy
+msgctxt "field:gnuhealth.appointment,barcode:"
+msgid "Code39"
+msgstr "Code39"
+
 msgctxt "field:gnuhealth.appointment,qr:"
 msgid "QR Code"
 msgstr "二维码"
@@ -44,7 +49,7 @@ msgstr "检验项目标签"
 
 msgctxt "model:ir.action,name:report_newborn_qrcard"
 msgid "Newborn ID - QR"
-msgstr "新生儿ID（二维码）"
+msgstr "新生儿信息卡(带二维码)"
 
 msgctxt "model:ir.action,name:report_party_wristband"
 msgid "Wristbands"
@@ -154,13 +159,10 @@ msgctxt "report:newborn.qrcard:"
 msgid "photo"
 msgstr "照片"
 
+#, fuzzy
 msgctxt "report:party.wristband:"
-msgid "("
-msgstr "("
-
-msgctxt "report:party.wristband:"
-msgid ")"
-msgstr ")"
+msgid ","
+msgstr ","
 
 msgctxt "report:patient.qrcard:"
 msgid "Blood Type:"
@@ -185,3 +187,8 @@ msgstr "健康号:"
 msgctxt "report:patient.qrcard:"
 msgid "photo"
 msgstr "照片"
+
+#, fuzzy
+msgctxt "report:patient.wristband:"
+msgid ","
+msgstr ","

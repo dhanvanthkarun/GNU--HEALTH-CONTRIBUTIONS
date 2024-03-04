@@ -20,6 +20,11 @@ from trytond.pool import PoolMeta
 __all__ = ['Party', 'Patient', 'Appointment', 'Newborn', 'LabTest']
 
 
+# Remove text of barcode.
+from barcode.base import Barcode
+Barcode.default_writer_options['write_text'] = False
+
+
 class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
@@ -107,6 +112,7 @@ class Appointment(metaclass=PoolMeta):
 
     # Add the QR Code to the Appointment
     qr = fields.Function(fields.Binary('QR Code'), 'make_qrcode')
+    barcode = fields.Function(fields.Binary('Code39'), 'make_code39')
 
     def make_qrcode(self, name):
         # Create the QR code
@@ -151,6 +157,25 @@ class Appointment(metaclass=PoolMeta):
         holder.close()
 
         return bytearray(qr_png)
+
+    def make_code39(self, name):
+        if (self.name):
+            appointment = f'{self.name}'
+        else:
+            appointment = ''
+
+        CODE39 = barcode.get_barcode_class('code39')
+
+        code39 = CODE39(appointment, add_checksum=False)
+
+        # Make a PNG image from PIL without the need to create a temp file
+
+        holder = io.BytesIO()
+        code39.write(holder)
+        code39_png = holder.getvalue()
+        holder.close()
+
+        return bytearray(code39_png)
 
 
 class Newborn(metaclass=PoolMeta):

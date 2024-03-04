@@ -165,9 +165,10 @@ msgctxt "field:gnuhealth.command,description:"
 msgid "Description"
 msgstr "الوصفة"
 
+#, fuzzy
 msgctxt "field:gnuhealth.command,domain:"
 msgid "Domain"
-msgstr ""
+msgstr "النطاق"
 
 msgctxt "field:gnuhealth.command,internal:"
 msgid "Internal"
@@ -1102,6 +1103,15 @@ msgctxt "field:gnuhealth.occupation,name:"
 msgid "Name"
 msgstr "الاسم"
 
+#, fuzzy
+msgctxt "field:gnuhealth.online_document,name:"
+msgid "Name"
+msgstr "الاسم"
+
+msgctxt "field:gnuhealth.online_document,uri:"
+msgid "URI"
+msgstr ""
+
 msgctxt "field:gnuhealth.operational_area,info:"
 msgid "Extra Information"
 msgstr "معلومات اضافية"
@@ -1240,9 +1250,10 @@ msgctxt "field:gnuhealth.patient,crit_cancer:"
 msgid "Cancer"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient,crit_cardio:"
 msgid "Cardiovascular"
-msgstr ""
+msgstr "القلب والأوعية الدموية"
 
 msgctxt "field:gnuhealth.patient,crit_cognitive:"
 msgid "Cognitive"
@@ -1313,9 +1324,10 @@ msgctxt "field:gnuhealth.patient,general_info:"
 msgid "General Information"
 msgstr "معلومات عامة"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient,hb:"
 msgid "Hb"
-msgstr ""
+msgstr "الخضاب"
 
 msgctxt "field:gnuhealth.patient,lastname:"
 msgid "Lastname"
@@ -2069,9 +2081,10 @@ msgctxt "field:gnuhealth.pol,natural_variant:"
 msgid "Natural variant"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.pol,node:"
 msgid "Node"
-msgstr ""
+msgstr "النقطة"
 
 msgctxt "field:gnuhealth.pol,page:"
 msgid "Page"
@@ -3081,6 +3094,14 @@ msgstr "الإسم المشترك للتردد"
 msgctxt "help:gnuhealth.occupation,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr "يرجي الكتابة بأحرف كبيرة و من دون مسافات"
+
+msgctxt "help:gnuhealth.online_document,name:"
+msgid "Health Online document name."
+msgstr ""
+
+msgctxt "help:gnuhealth.online_document,uri:"
+msgid "Health online document URL address."
+msgstr ""
 
 msgctxt "help:gnuhealth.operational_area,name:"
 msgid "Operational Area of the city or region"
@@ -7544,6 +7565,14 @@ msgctxt "model:gnuhealth.occupation,name:occ99"
 msgid "Crystallographer"
 msgstr "البلورات"
 
+msgctxt "model:gnuhealth.online_document,name:"
+msgid "Health Online Document"
+msgstr ""
+
+msgctxt "model:gnuhealth.online_document,name:gnuhealth_online_document_001"
+msgid "GNU Health Documentation Portal"
+msgstr ""
+
 msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
 msgstr "منطقة العمليات"
@@ -8329,6 +8358,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_occupation"
 msgid "Occupations"
 msgstr "الوظائف"
 
+msgctxt "model:ir.action,name:gnuhealth_action_online_document"
+msgid "Online Documentation"
+msgstr ""
+
 msgctxt "model:ir.action,name:gnuhealth_action_operational_area"
 msgid "Operational Areas"
 msgstr "المجالات التنفيذية"
@@ -8671,9 +8704,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_ethnicity"
 msgid "Ethnicities"
 msgstr "القوميات"
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation"
 msgid "Federation"
-msgstr ""
+msgstr "الاتحاد"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_country_config"
 msgid "Federation Country Configuration"
@@ -8815,6 +8849,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
 msgstr "مؤسسات"
 
+msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
+msgid "Online Documentation"
+msgstr ""
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
 msgstr "المجالات التنفيذية"
@@ -8884,46 +8922,55 @@ msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
 msgstr "أخصائي صحة إجتماعية"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "APPT ID:"
-msgstr ""
+msgstr "رقم الموعد:"
 
 #, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Appointment Receipt"
 msgstr "إيصال الموعد"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Extra Info:"
-msgstr ""
+msgstr "معلومات اضافية:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Health Prof:"
-msgstr ""
+msgstr "الطبيب المختص:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Institution:"
-msgstr ""
+msgstr "المؤسسة:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Specialty:"
-msgstr ""
+msgstr "الاختصاص:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "You must present this receipt and your PUID"
-msgstr ""
+msgstr "يجب تقديم هذا الايصال ورقم المريض"
 
 #, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
@@ -9139,9 +9186,10 @@ msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Age:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Description:"
-msgstr ""
+msgstr "الوصف:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Dose"
@@ -9151,9 +9199,10 @@ msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Dose #"
 msgstr "الجرعة"
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
@@ -9164,13 +9213,15 @@ msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Important notice:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
@@ -9263,9 +9314,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Comments"
 msgstr "التعليقات"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Differential Diagnoses"
@@ -9295,9 +9347,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "GCS"
 msgstr "-GCS-"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Heart Rate"
@@ -9336,17 +9389,19 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Other Conditions"
 msgstr "شروط أخرى"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient Evaluation Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Phone:"
@@ -9409,9 +9464,10 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Code:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -9423,9 +9479,10 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "DoB:"
 msgstr "تاريخ الميلاد:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -9441,17 +9498,19 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Main Condition"
 msgstr "الحالة الرئيسية"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Patient Evaluation Brief Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -9467,29 +9526,33 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Treatment Plan"
 msgstr "خطه العلاج"
 
+#, fuzzy
 msgctxt "report:patient.card:"
 msgid "Blood Type:"
-msgstr ""
+msgstr "زمرة الدم:"
 
 msgctxt "report:patient.card:"
 msgid "DoB:"
 msgstr "تاريخ الميلاد:"
 
+#, fuzzy
 msgctxt "report:patient.card:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:patient.card:"
 msgid "Name:"
 msgstr "الاسم:"
 
+#, fuzzy
 msgctxt "report:patient.card:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
+#, fuzzy
 msgctxt "report:patient.card:"
 msgid "photo"
-msgstr ""
+msgstr "الصورة"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Active"
@@ -9511,9 +9574,10 @@ msgctxt "report:patient.conditions_history:"
 msgid "Diagnosed"
 msgstr "مفحوص"
 
+#, fuzzy
 msgctxt "report:patient.conditions_history:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Health Condition"
@@ -9532,9 +9596,10 @@ msgctxt "report:patient.conditions_history:"
 msgid "PATIENT HEALTH CONDITIONS SUMMARY"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.conditions_history:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 #, fuzzy
 msgctxt "report:patient.conditions_history:"
@@ -9573,9 +9638,10 @@ msgctxt "report:patient.medication:"
 msgid "End"
 msgstr "انهاء"
 
+#, fuzzy
 msgctxt "report:patient.medication:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:patient.medication:"
 msgid "Indication"
@@ -9589,13 +9655,15 @@ msgctxt "report:patient.medication:"
 msgid "PATIENT MEDICATION HISTORY"
 msgstr "التاريخ الدوائي للمريض"
 
+#, fuzzy
 msgctxt "report:patient.medication:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
+#, fuzzy
 msgctxt "report:patient.medication:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 msgctxt "report:patient.medication:"
 msgid "Phone:"
@@ -9630,9 +9698,10 @@ msgctxt "report:patient.vaccination:"
 msgid "Dose"
 msgstr "الجرعة"
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:patient.vaccination:"
 msgid "Next Dose"
@@ -9646,13 +9715,15 @@ msgctxt "report:patient.vaccination:"
 msgid "PATIENT VACCINATION HISTORY"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 #, fuzzy
 msgctxt "report:patient.vaccination:"
@@ -9667,9 +9738,10 @@ msgctxt "report:prescription.order:"
 msgid ","
 msgstr ","
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Address:"
-msgstr ""
+msgstr "العنوان:"
 
 msgctxt "report:prescription.order:"
 msgid "Allowed"
@@ -9679,9 +9751,10 @@ msgctxt "report:prescription.order:"
 msgid "Common Usage"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
 msgctxt "report:prescription.order:"
 msgid "Directions"
@@ -9700,9 +9773,10 @@ msgctxt "report:prescription.order:"
 msgid "Duration:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "E-mail:"
-msgstr ""
+msgstr "البريد الالكتروني:"
 
 msgctxt "report:prescription.order:"
 msgid "End:"
@@ -9716,9 +9790,10 @@ msgctxt "report:prescription.order:"
 msgid "Health Prof Signature"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "ID:"
-msgstr ""
+msgstr "الرقم:"
 
 msgctxt "report:prescription.order:"
 msgid "Indication:"
@@ -9736,13 +9811,15 @@ msgctxt "report:prescription.order:"
 msgid "Notes"
 msgstr "ملاحظات"
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 msgctxt "report:prescription.order:"
 msgid "Prescriber:"
@@ -9789,9 +9866,10 @@ msgctxt "report:prescription.order:"
 msgid "Substitution:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Tel:"
-msgstr ""
+msgstr "هاتف:"
 
 msgctxt "report:prescription.order:"
 msgid "Unit"
@@ -10476,13 +10554,15 @@ msgctxt "selection:gnuhealth.patient,hb:"
 msgid "A-THAL"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,hb:"
 msgid "AA"
-msgstr ""
+msgstr "AA"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,hb:"
 msgid "AS"
-msgstr ""
+msgstr "AS"
 
 msgctxt "selection:gnuhealth.patient,hb:"
 msgid "B-THAL"
@@ -10496,9 +10576,10 @@ msgctxt "selection:gnuhealth.patient,hb:"
 msgid "SC"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient,hb:"
 msgid "SS"
-msgstr ""
+msgstr "SS"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient,marital_status:"

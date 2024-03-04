@@ -31,6 +31,8 @@ TRYTON_PATCHES=""
 
 BSDTAR="bsdtar"
 
+WGET_ARGS="--timeout=20 --waitretry=0 --tries=50"
+
 usage()
 {
     cat << EOF
@@ -250,7 +252,7 @@ check_updates()
     message "INFO" "GNUHEALTH-CONTROL VERSION : ${VERSION}"
 
     # Retrieve the latest control center that is compatible with the current GNU Health version
-    LATEST_GHCONTROL=`wget --quiet -O - ${GNUHEALTH_URL} | egrep -o gnuhealth-control-${GNUHEALTH_MAJOR_MINOR}.[0-9\.]+.tar.gz | sort -V | tail -1`
+    LATEST_GHCONTROL=`wget ${WGET_ARGS} --quiet -O - ${GNUHEALTH_URL} | egrep -o gnuhealth-control-${GNUHEALTH_MAJOR_MINOR}.[0-9\.]+.tar.gz | sort -V | tail -1`
     local LATEST_GHCONTROL_PATCHSET=`echo ${LATEST_GHCONTROL} | cut -d'.' -f3`
     local GHCONTROL_PATCHSET=`echo $VERSION | cut -d'.' -f3`
 
@@ -267,7 +269,7 @@ check_updates()
 
     message "INFO" "TRYTON SERVER : Checking latest patchlevel"
 
-    LATEST_TRYTOND=`wget --quiet -O - ${TRYTON_URL}/${TRYTON_MAJOR_MINOR} | egrep -o trytond-${TRYTON_MAJOR_MINOR}.[0-9\.]+.tar.gz | sort -V | tail -1`
+    LATEST_TRYTOND=`wget ${WGET_ARGS} --quiet -O - ${TRYTON_URL}/${TRYTON_MAJOR_MINOR} | egrep -o trytond-${TRYTON_MAJOR_MINOR}.[0-9\.]+.tar.gz | sort -V | tail -1`
     local LATEST_TRYTOND_PATCHLEVEL=`echo ${LATEST_TRYTOND} | cut -d'.' -f3`
 
     # Check latest tryton server against local version
@@ -288,7 +290,7 @@ check_updates()
         message "INFO" "Checking MODULE ${MOD}"
         MODNAME=`echo $MOD | cut -d'-' -f1`
         MODULE_PATCHLEVEL=`echo $MOD | sed  's/^.*\.\([[:digit:]]*\)$/\1/'`
-        LATEST_MODULE=`wget --quiet -O - ${TRYTON_URL}/${TRYTON_MAJOR_MINOR} | egrep -o ${MODNAME}-${TRYTON_MAJOR_MINOR}.[0-9\.]+.tar.gz | sort -V | tail -1`
+        LATEST_MODULE=`wget ${WGET_ARGS} --quiet -O - ${TRYTON_URL}/${TRYTON_MAJOR_MINOR} | egrep -o ${MODNAME}-${TRYTON_MAJOR_MINOR}.[0-9\.]+.tar.gz | sort -V | tail -1`
         LATEST_MODULE_PATCHLEVEL=`echo ${LATEST_MODULE} | cut -d'.' -f3`
         if (( ${MODULE_PATCHLEVEL} < ${LATEST_MODULE_PATCHLEVEL} )); then
             message "WARNING" "${MODNAME} patchlevel ${MODULE_PATCHLEVEL} is outdated ! A newer version is available (${LATEST_MODULE})"
@@ -304,12 +306,12 @@ check_updates()
     # Check latest GNU HEALTH PATCHSETS against local version
     message "INFO" "GNU HEALTH KERNEL : Checking latest PATCHSETS"
 
-    PATCHSETS_NUM=`wget --quiet -O - ${GNUHEALTH_URL}/ | egrep -o gnuhealth_patchset-${GNUHEALTH_MAJOR_MINOR}\.[0-9\.]+.tar.gz | uniq | wc -l | tr -d ' '`
+    PATCHSETS_NUM=`wget ${WGET_ARGS} --quiet -O - ${GNUHEALTH_URL}/ | egrep -o gnuhealth_patchset-${GNUHEALTH_MAJOR_MINOR}\.[0-9\.]+.tar.gz | uniq | wc -l | tr -d ' '`
 
     if (( ${PATCHSETS_NUM} > 0 )); then
         message "INFO" "Number of Patchsets for this version : ${PATCHSETS_NUM}"
 
-        LATEST_GNUHEALTH=`wget --quiet -O - ${GNUHEALTH_URL}/ | egrep -o gnuhealth_patchset-${GNUHEALTH_MAJOR_MINOR}\.[0-9\.]+.tar.gz | sort -V | tail -1`
+        LATEST_GNUHEALTH=`wget ${WGET_ARGS} --quiet -O - ${GNUHEALTH_URL}/ | egrep -o gnuhealth_patchset-${GNUHEALTH_MAJOR_MINOR}\.[0-9\.]+.tar.gz | sort -V | tail -1`
         LATEST_GNUHEALTH_PATCHSET=`echo ${LATEST_GNUHEALTH} | cut -d'.' -f3`
 
         if (( ${GNUHEALTH_PATCHSET} < ${LATEST_GNUHEALTH_PATCHSET} )); then
@@ -337,7 +339,7 @@ check_updates()
             for n in ${TRYTON_PATCHES}
             do
                 message "INFO" "Downloading patch for Tryton server : ${n}"
-                wget --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/ ${GNUHEALTH_URL}/security/${n} || message "ERROR" "Could not get patch"
+                wget ${WGET_ARGS} --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/ ${GNUHEALTH_URL}/security/${n} || message "ERROR" "Could not get patch"
                 message "INFO" "Checking elegibility of the patch"
                 cd ${GNUHEALTH_DIR}/tryton/server/trytond-${TRYTON_VERSION}*
                 patch --dry-run --silent -N -p1 < ${UPDATE_DOWNLOAD_DIR}/${n}
@@ -358,7 +360,7 @@ install_updates()
 {
     if [ $NEED_UPDATE_GCONTROL -eq 1 ]; then
         message "INFO" "Downloading ${LATEST_GHCONTROL} ..."
-        wget --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/ ${GNUHEALTH_URL}/${LATEST_GHCONTROL} || bailout
+        wget ${WGET_ARGS} --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/ ${GNUHEALTH_URL}/${LATEST_GHCONTROL} || bailout
         message "INFO" "Uncompressing ${LATEST_GHCONTROL} ..."        
         tar -xzf ${UPDATE_DOWNLOAD_DIR}/${LATEST_GHCONTROL} --directory ${UTIL_DIR}|| bailout
         message "INFO" "Sucessfully installed ${LATEST_GHCONTROL} "
@@ -371,7 +373,7 @@ install_updates()
 
     if [ $NEED_UPDATE_TRYTOND -eq 1 ]; then
         message "INFO" "Downloading TRYTON SERVER $LATEST_TRYTOND"
-        wget --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/trytond ${TRYTON_URL}/${TRYTON_MAJOR_MINOR}/${LATEST_TRYTOND} || bailout
+        wget ${WGET_ARGS} --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/trytond ${TRYTON_URL}/${TRYTON_MAJOR_MINOR}/${LATEST_TRYTOND} || bailout
         message "INFO" "--> Uncompressing TRYTON SERVER $LATEST_TRYTOND"
         tar -xzf ${UPDATE_DOWNLOAD_DIR}/trytond/${LATEST_TRYTOND} --directory ${GNUHEALTH_DIR}/tryton/server || bailout
     fi
@@ -380,7 +382,7 @@ install_updates()
         for mod in ${MOD_UPDATES}
         do
             message "INFO" "Downloading $mod"
-            wget --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/modules ${TRYTON_URL}/${TRYTON_MAJOR_MINOR}/${mod} || bailout
+            wget ${WGET_ARGS} --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/modules ${TRYTON_URL}/${TRYTON_MAJOR_MINOR}/${mod} || bailout
             message "INFO" "--> Uncompressing ${mod}"
             tar -xzf ${UPDATE_DOWNLOAD_DIR}/modules/${mod} --directory ${GNUHEALTH_DIR}/tryton/server/modules || bailout
         done
@@ -390,7 +392,7 @@ install_updates()
         for patchset in ${PATCHSETS}
         do
             message "INFO" "Downloading $patchset"
-            wget --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/patchsets ${GNUHEALTH_URL}/${patchset} || bailout
+            wget ${WGET_ARGS} --quiet --directory-prefix=${UPDATE_DOWNLOAD_DIR}/patchsets ${GNUHEALTH_URL}/${patchset} || bailout
             message "INFO" "--> Applying PATCHSET $patchset"
             tar -xzf ${UPDATE_DOWNLOAD_DIR}/patchsets/${patchset} --directory ${HOME} || bailout
         done
@@ -500,7 +502,7 @@ getlang() {
     local gnuhealth_module_dir=${GNUHEALTH_DIR}/tryton/server/modules
 
     message "INFO" "Retrieving language pack file for ${lang_to_install}" 
-    wget ${TRANSLATE_URL}/download/gnu-health/-/${lang_to_install}/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
+    wget ${WGET_ARGS} ${TRANSLATE_URL}/download/gnu-health/-/${lang_to_install}/?format=zip -O ${lang_download_dir}/${lang_file} || bailout
 
     cd ${lang_download_dir} || bailout
     ${BSDTAR} --strip-components 3 -xzf ${lang_download_dir}/${lang_file} || bailout
@@ -522,10 +524,17 @@ getlang() {
         local weblate_po=${lang_download_dir}/${po}
         local installed_po=${gnuhealth_module_dir}/${po}
         local installed_pot=${gnuhealth_module_dir}/$(echo ${po} | awk -F/ '{print $2 "/locale/" $2 ".pot"}')
+
+        ## Sometimes, po files will include duplicate strings, deal
+        ## with it for msgcat.
+        msguniq --use-first ${weblate_po} -o ${weblate_po}
+
         if [ -e ${installed_po} ]; then
+            msguniq --use-first ${installed_po} -o ${installed_po}
             msgcat --use-first ${weblate_po} ${installed_po} -o ${installed_po}
         else
             if [ -e ${installed_pot} ]; then
+                msguniq --use-first ${installed_pot} -o ${installed_pot}
                 msgcat --use-first ${weblate_po} ${installed_pot} -o ${installed_po}
             else
                 msgcat --use-first ${weblate_po} -o ${installed_po}

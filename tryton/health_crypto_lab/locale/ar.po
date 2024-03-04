@@ -28,7 +28,7 @@ msgstr "انتهى في"
 
 msgctxt "field:gnuhealth.lab,historize:"
 msgid "Historize"
-msgstr ""
+msgstr "تأريخ"
 
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
@@ -73,24 +73,25 @@ msgid ""
 "condition of the patient. The condition will be created when the lab test is"
 " confirmed and validated"
 msgstr ""
+"إذا تم تعيين هذه العلامة، فسيتم إضافة حالة صحية جديدة إلى تاريخ المريض. قم "
+"بإلغاء تعيينه إذا كان هذا الاختبار المعملي في سياق حالة موجودة مسبقًا "
+"للمريض. سيتم إنشاء الحالة عندما يتم تأكيد الاختبار المعملي والتحقق من صحته"
 
 msgctxt "help:gnuhealth.lab,validated_by:"
 msgid "Professional who validates this lab test"
 msgstr "المختص الذي صادق على نتيجة التحليل"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_generate_button"
 msgid "Done"
 msgstr "منتهي"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_setdraft_button"
 msgid "Draft"
 msgstr "مسودة"
 
 msgctxt "model:ir.model.button,string:labtest_sign_button"
 msgid "Validate"
-msgstr ""
+msgstr "تحقق"
 
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Done"
@@ -106,53 +107,48 @@ msgstr "مصادق"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are the results ready ?"
-msgstr ""
+msgstr "هل النتائج جاهزة ؟"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are you sure to sign this lab results ?"
-msgstr ""
+msgstr "هل تريد توقيع الاختبار ؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Digital Signature"
 msgstr "توقيع رقمي"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Document validation"
 msgstr "التحقق من المستند"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Done"
 msgstr "منتهي"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Draft"
 msgstr "مسودة"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Reverse the document to draft state."
-msgstr ""
+msgstr "عكس الوثيقة إلى مسودة."
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Set to Draft ?"
-msgstr ""
+msgstr "تحويل الى مسودة ؟"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "The lab test is done and results are waiting to be validated"
-msgstr ""
+msgstr "تم إجراء الاختبار المعملي والنتائج في انتظار التحقق من صحتها"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate"
-msgstr ""
+msgstr "تحقق"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate and Sign the lab test"
-msgstr ""
+msgstr "تأكيد وتوقيع الاختبار"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Validation"
 msgstr "التحقق"
