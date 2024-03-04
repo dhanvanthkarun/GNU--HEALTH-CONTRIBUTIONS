@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-03-02 09:17+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -911,9 +902,10 @@ msgctxt "field:gnuhealth.institution.operationalsector,name:"
 msgid "Institution"
 msgstr "Instutition"
 
+#, fuzzy
 msgctxt "field:gnuhealth.institution.operationalsector,operational_sector:"
 msgid "Operational Sector"
-msgstr ""
+msgstr "Verksamhetsområde"
 
 #, fuzzy
 msgctxt "field:gnuhealth.institution.specialties,name:"
@@ -1123,9 +1115,10 @@ msgctxt "field:gnuhealth.operational_area,name:"
 msgid "Name"
 msgstr "Namn"
 
+#, fuzzy
 msgctxt "field:gnuhealth.operational_area,operational_sector:"
 msgid "Operational Sector"
-msgstr ""
+msgstr "Verksamhetsområde"
 
 msgctxt "field:gnuhealth.operational_sector,info:"
 msgid "Extra Information"
@@ -1300,9 +1293,10 @@ msgctxt "field:gnuhealth.patient,deceased:"
 msgid "Deceased"
 msgstr "Avliden"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient,diseases:"
 msgid "Conditions"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "field:gnuhealth.patient,dob:"
 msgid "DoB"
@@ -2787,9 +2781,10 @@ msgctxt "help:gnuhealth.death_certificate,dod:"
 msgid "Date and time of Death"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.death_certificate,du:"
 msgid "Domiciliary Unit"
-msgstr ""
+msgstr "Domicilär enhet"
 
 msgctxt "help:gnuhealth.death_certificate,signed_by:"
 msgid "Health Professional that signed the death certificate"
@@ -2839,9 +2834,10 @@ msgctxt "help:gnuhealth.du,housing:"
 msgid "Housing and sanitary living conditions"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.du,operational_sector:"
 msgid "Operational Sector"
-msgstr ""
+msgstr "Verksamhetsområde"
 
 msgctxt "help:gnuhealth.du,total_surface:"
 msgid "Surface in sq. meters"
@@ -4006,9 +4002,10 @@ msgctxt "help:party.party,dob:"
 msgid "Date of Birth"
 msgstr "Födelsedag"
 
+#, fuzzy
 msgctxt "help:party.party,du:"
 msgid "Domiciliary Unit"
-msgstr ""
+msgstr "Domicilär enhet"
 
 msgctxt "help:party.party,du_address:"
 msgid "Main Address, based on the associated DU"
@@ -4793,9 +4790,10 @@ msgctxt "model:gnuhealth.drug.route,name:route_9"
 msgid "Intra-arterial"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.du,name:"
 msgid "Domiciliary Unit"
-msgstr ""
+msgstr "Domicilär enhet"
 
 msgctxt "model:gnuhealth.ethnicity,name:"
 msgid "Ethnicity"
@@ -5011,9 +5009,10 @@ msgctxt "model:gnuhealth.medication.dosage,name:422114001"
 msgid "1 time"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.occupation,name:"
 msgid "Occupation"
-msgstr ""
+msgstr "Yrke"
 
 msgctxt "model:gnuhealth.occupation,name:occ1"
 msgid "Unemployed"
@@ -7568,9 +7567,10 @@ msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.operational_sector,name:"
 msgid "Operational Sector"
-msgstr ""
+msgstr "Verksamhetsområde"
 
 msgctxt "model:gnuhealth.pathology,name:"
 msgid "Health Conditions"
@@ -8153,9 +8153,10 @@ msgctxt "model:ir.action,name:act_check_immunization_status"
 msgid "Immunization Status Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:act_condition_form1"
 msgid "Conditions"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "model:ir.action,name:act_create_patient_evaluation"
 msgid "Create Patient Evaluation"
@@ -8264,9 +8265,10 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_evaluation_view"
 msgid "Patient Evaluations [readonly]"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
-msgstr ""
+msgstr "Patienter"
 
 msgctxt "model:ir.action,name:action_gnuhealth_prescription_view"
 msgid "Prescriptions"
@@ -8318,9 +8320,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_federation_country_config"
 msgid "Federation Country Configuration"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_form_pathology"
 msgid "Conditions"
-msgstr ""
+msgstr "Tillstånd"
 
 msgctxt "model:ir.action,name:gnuhealth_action_healthprofessional"
 msgid "Health Professionals"
@@ -8784,9 +8787,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_occupation"
 msgid "Occupations"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology"
 msgid "Conditions"
-msgstr ""
+msgstr "Tillstånd"
 
 #, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_categories"
@@ -8801,9 +8805,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_group"
 msgid "Pathology Groups"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_pathology"
 msgid "Conditions"
-msgstr ""
+msgstr "Tillstånd"
 
 #, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedure"
@@ -8865,9 +8870,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
 msgid "Patients"
-msgstr ""
+msgstr "Patienter"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_pol"
 msgid "Pages of life"
@@ -9088,9 +9094,10 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Date of birth"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Domiciliary Unit"
-msgstr ""
+msgstr "Domicilär enhet"
 
 #, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
@@ -9133,9 +9140,10 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Name of decedent"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Occupation"
-msgstr ""
+msgstr "Yrke"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Place of Death"
@@ -10132,13 +10140,15 @@ msgctxt "selection:gnuhealth.du,housing:"
 msgid "Comfortable and good sanitary conditions"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.du,housing:"
 msgid "Luxury and excellent sanitary conditions"
-msgstr ""
+msgstr "Lyx och utmärkta sanitära förhållanden"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.du,housing:"
 msgid "Roomy and excellent sanitary conditions"
-msgstr ""
+msgstr "Rymliga och utmärkta sanitära förhållanden"
 
 msgctxt "selection:gnuhealth.du,housing:"
 msgid "Shanty, deficient sanitary conditions"
@@ -10861,9 +10871,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,state:"
 msgid "Done"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,state:"
 msgid "In progress"
-msgstr ""
+msgstr "Pågår"
 
 msgctxt "selection:gnuhealth.patient.evaluation,state:"
 msgid "Signed"
@@ -11124,13 +11135,15 @@ msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Early life development"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Education"
-msgstr ""
+msgstr "Utbildning"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Family functionality"
-msgstr ""
+msgstr "Familjens funktionalitet"
 
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Family violence"
@@ -11488,9 +11501,10 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Other"
 msgstr "Andra"
 
+#, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Place"
-msgstr ""
+msgstr "Plats"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign"
