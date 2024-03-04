@@ -111,6 +111,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/help.svg</field>
         </record>
 
+<!-- Create the GNU HEALTH Online document icon -->
+        <record model="ir.ui.icon" id="gnuhealth_online_document_icon">
+            <field name="name">health-online-document</field>
+            <field name="path">icons/online_document.svg</field>
+        </record>
+
 <!-- Replace default Tryton module icons -->
 
         <!-- Party -->
@@ -2297,10 +2303,33 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="act_window" ref="gnuhealth_action_help"/>
         </record>
 
-        <!-- Place  the menu entrey as the last item, 
-             after the configuration menu (999) -->
         <menuitem action="gnuhealth_action_help" icon="health-help"
-            id="gnuhealth_help" sequence="1000" parent="gnuhealth_menu"/>
+            id="gnuhealth_help" sequence="999" parent="gnuhealth_menu"/>
+
+<!-- Online documentation -->
+
+        <record model="ir.ui.view" id="gnuhealth_online_document_tree">
+            <field name="model">gnuhealth.online_document</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_online_document_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_online_document">
+            <field name="name">Online Documentation</field>
+            <field name="res_model">gnuhealth.online_document</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_online_document_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_online_document_tree"/>
+            <field name="act_window" ref="gnuhealth_action_online_document"/>
+        </record>
+
+        <!-- Place  the menu entry as the last item, 
+             after the configuration menu (999) -->
+        <menuitem action="gnuhealth_action_online_document" icon="health-online-document"
+            id="gnuhealth_online_document" sequence="1000" parent="gnuhealth_menu"/>
+
 
     </data>
 </tryton>

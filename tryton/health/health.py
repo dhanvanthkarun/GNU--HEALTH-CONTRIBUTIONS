@@ -87,7 +87,7 @@ __all__ = [
     'PatientVaccination', 'PatientEvaluation',
     'Directions', 'SecondaryCondition', 'DiagnosticHypothesis',
     'SignsAndSymptoms', 'PatientECG', 'ProductTemplate', 'PageOfLife',
-    'Commands', 'Modules', 'Help']
+    'Commands', 'Modules', 'Help', 'OnlineDocument']
 
 
 class DomiciliaryUnit(ModelSQL, ModelView):
@@ -5790,3 +5790,28 @@ class Help(ModelSQL, ModelView):
             ('code_unique', Unique(t, t.name),
              'The help code already exists')
         ]
+
+
+class OnlineDocument(ModelSQL, ModelView):
+    'Health Online Document'
+    __name__ = 'gnuhealth.online_document'
+
+    name = fields.Char(
+        'Name', required=True, translate=True, 
+        help='Health Online document name.')
+    
+    uri = fields.Char(
+        'URI', required=True, translate=False,
+        help="Health online document URL address.")
+
+    @classmethod
+    def __setup__(cls):
+        super(OnlineDocument, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('code_unique', Unique(t, t.name),
+             'The online document name already exists')
+        ]
+
+
+

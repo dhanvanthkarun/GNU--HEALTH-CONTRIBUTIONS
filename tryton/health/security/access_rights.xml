@@ -393,6 +393,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_delete" eval="True"/>
         </record>
 
+        <record model="ir.model.access" id="access_online_document_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.online_document')]"/>
+            <field name="group" ref="group_health_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
 
 <!-- END OF ADMINISTRATION GROUP ACCESS RIGHTS -->
 
@@ -681,6 +689,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_online_document">
+            <field name="model" search="[('model', '=', 'gnuhealth.online_document')]"/>
+            <field name="perm_read" eval="True"/>
         </record>
 
 <!-- END OF DEFAULT ACCESS RIGHTS -->
