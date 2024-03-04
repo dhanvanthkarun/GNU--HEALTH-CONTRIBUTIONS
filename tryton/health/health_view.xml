@@ -2307,6 +2307,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="gnuhealth_help" sequence="999" parent="gnuhealth_menu"/>
 
 <!-- Online documentation -->
+        <record model="ir.ui.view" id="gnuhealth_online_document_view">
+            <field name="model">gnuhealth.online_document</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_online_document_form</field>
+        </record>
 
         <record model="ir.ui.view" id="gnuhealth_online_document_tree">
             <field name="model">gnuhealth.online_document</field>
@@ -2322,6 +2327,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window.view" id="act_online_document_list_view">
             <field name="sequence" eval="10"/>
             <field name="view" ref="gnuhealth_online_document_tree"/>
+            <field name="act_window" ref="gnuhealth_action_online_document"/>
+        </record>
+
+       <record model="ir.action.act_window.view" id="act_online_document_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_online_document_view"/>
             <field name="act_window" ref="gnuhealth_action_online_document"/>
         </record>
 
