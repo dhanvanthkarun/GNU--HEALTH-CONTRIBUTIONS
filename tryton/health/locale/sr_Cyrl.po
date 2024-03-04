@@ -1,16 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-03-04 01:19+0000\n"
-"Last-Translator: Pera Petrovic <tsrdjan@pm.me>\n"
-"Language-Team: Serbian (cyrillic) <https://hosted.weblate.org/projects/"
-"gnu-health/health/sr_Cyrl/>\n"
-"Language: sr_Cyrl\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.5-dev\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1125,6 +1115,15 @@ msgstr "Шифрa"
 msgctxt "field:gnuhealth.occupation,name:"
 msgid "Name"
 msgstr "Назив"
+
+#, fuzzy
+msgctxt "field:gnuhealth.online_document,name:"
+msgid "Name"
+msgstr "Назив"
+
+msgctxt "field:gnuhealth.online_document,uri:"
+msgid "URI"
+msgstr ""
 
 msgctxt "field:gnuhealth.operational_area,info:"
 msgid "Extra Information"
@@ -3185,6 +3184,14 @@ msgctxt "help:gnuhealth.occupation,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr ""
 
+msgctxt "help:gnuhealth.online_document,name:"
+msgid "Health Online document name."
+msgstr ""
+
+msgctxt "help:gnuhealth.online_document,uri:"
+msgid "Health online document URL address."
+msgstr ""
+
 msgctxt "help:gnuhealth.operational_area,name:"
 msgid "Operational Area of the city or region"
 msgstr ""
@@ -3715,8 +3722,8 @@ msgid ""
 "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
 "put here 8 and select \"hours\" in the unit field"
 msgstr ""
-"Време између доза које пацијент мора да сачека (тј. 1 таблету сваких 8 сати, "
-"ставите овде 8 и у пољу јединице изаберите \"сати\""
+"Време између доза које пацијент мора да сачека (тј. 1 таблету сваких 8 сати,"
+" ставите овде 8 и у пољу јединице изаберите \"сати\""
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.medication,frequency_prn:"
@@ -3876,8 +3883,8 @@ msgid ""
 "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
 "put here 8 and select \"hours\" in the unit field"
 msgstr ""
-"Време између доза које пацијент мора да сачека (тј. 1 таблету сваких 8 сати, "
-"ставите овде 8 и у пољу јединице изаберите \"сати\""
+"Време између доза које пацијент мора да сачека (тј. 1 таблету сваких 8 сати,"
+" ставите овде 8 и у пољу јединице изаберите \"сати\""
 
 #, fuzzy
 msgctxt "help:gnuhealth.prescription.line,frequency_prn:"
@@ -7598,6 +7605,14 @@ msgctxt "model:gnuhealth.occupation,name:occ99"
 msgid "Crystallographer"
 msgstr ""
 
+msgctxt "model:gnuhealth.online_document,name:"
+msgid "Health Online Document"
+msgstr ""
+
+msgctxt "model:gnuhealth.online_document,name:gnuhealth_online_document_001"
+msgid "GNU Health Documentation Portal"
+msgstr ""
+
 #, fuzzy
 msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
@@ -8389,6 +8404,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_occupation"
 msgid "Occupations"
 msgstr ""
 
+msgctxt "model:ir.action,name:gnuhealth_action_online_document"
+msgid "Online Documentation"
+msgstr ""
+
 msgctxt "model:ir.action,name:gnuhealth_action_operational_area"
 msgid "Operational Areas"
 msgstr ""
@@ -8872,6 +8891,10 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
+msgid "Online Documentation"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
