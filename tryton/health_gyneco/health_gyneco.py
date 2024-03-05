@@ -64,10 +64,10 @@ class PatientPregnancy(ModelSQL, ModelView):
     warning_icon = fields.Function(fields.Char(
         'Pregnancy warning icon'), 'get_warn_icon')
     reverse = fields.Boolean(
-        'Reverse', help="Use this method *only* when the \
-        pregnancy information is referred by the patient, as a history taking \
-        procedure. Please keep in mind that the reverse pregnancy data is \
-        subjective",
+        'Reverse', help="Use this method *only* when the "
+        "pregnancy information is referred by the patient, as a history taking "
+        "procedure. Please keep in mind that the reverse pregnancy data is "
+        "subjective.",
         states={
             'invisible': Bool(Eval('current_pregnancy')),
             }
@@ -358,8 +358,8 @@ class PrenatalEvaluation(ModelSQL, ModelView):
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
-        help="Health Professional in charge, or that who entered the \
-            information in the system")
+        help="Health Professional in charge, or that who entered the "
+        "information in the system.")
 
     @staticmethod
     def default_institution():
@@ -419,8 +419,8 @@ class PuerperiumMonitor(ModelSQL, ModelView):
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
-        help="Health Professional in charge, or that who entered the \
-            information in the system")
+        help="Health Professional in charge, or that who entered the "
+        "information in the system.")
 
     @staticmethod
     def default_institution():
@@ -507,8 +507,8 @@ class Perinatal(ModelSQL, ModelView):
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
-        help="Health Professional in charge, or that who entered the \
-            information in the system")
+        help="Health Professional in charge, or that who entered the "
+        "information in the system.")
 
     @staticmethod
     def default_institution():
@@ -610,7 +610,7 @@ class GnuHealthPatient(metaclass=PoolMeta):
     # GPA Deprecated in 1.6.4. It will be used as a function or report from the
     # other fields
     #    gpa = fields.Char('GPA',
-    #        help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 " \
+    #        help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 "
     #        "Pregnancies, 3 viable and 1 abortion")
     # Deprecated. The born alive number will be calculated from pregnancies -
     # abortions - stillbirths
@@ -771,8 +771,8 @@ class PatientMammographyHistory(ModelSQL, ModelView):
         (None, ''),
         ('normal', 'normal'),
         ('abnormal', 'abnormal'),
-        ], 'result', help="Please check the lab test results if the module is \
-            installed", sort=False)
+        ], 'result', help="Please check the lab test results if the module is "
+                    "installed", sort=False)
     comments = fields.Char('Remarks')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
@@ -819,8 +819,8 @@ class PatientPAPHistory(ModelSQL, ModelView):
         ('c3', 'LSIL'),
         ('c4', 'HSIL'),
         ('g4', 'AIS'),
-        ], 'result', help="Please check the lab results if the module is \
-            installed", sort=False)
+        ], 'result', help="Please check the lab results if the module is "
+                     "installed", sort=False)
     comments = fields.Char('Remarks')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
@@ -862,8 +862,8 @@ class PatientColposcopyHistory(ModelSQL, ModelView):
         (None, ''),
         ('normal', 'normal'),
         ('abnormal', 'abnormal'),
-        ], 'result', help="Please check the lab test results if the module is \
-            installed", sort=False)
+        ], 'result', help="Please check the lab test results if the module is "
+                     "installed", sort=False)
     comments = fields.Char('Remarks')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')

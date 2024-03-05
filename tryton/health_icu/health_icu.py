@@ -54,8 +54,10 @@ class InpatientIcu(ModelSQL, ModelView):
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
 
-    admitted = fields.Boolean('Admitted', help="Will be set when the patient \
-        is currently admitted at ICU")
+    admitted = fields.Boolean(
+        'Admitted',
+        help="Will be set when the patient "
+        "is currently admitted at ICU.")
 
     icu_admission_date = fields.DateTime(
         'ICU Admission',

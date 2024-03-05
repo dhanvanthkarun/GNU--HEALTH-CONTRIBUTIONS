@@ -55,12 +55,12 @@ class RCRI(ModelSQL, ModelView):
 
     rcri_ischemic_history = fields.Boolean(
         'History of ischemic heart disease',
-        help="history of MI or a positive exercise test, current \
-        complaint of chest pain considered to be secondary to myocardial \
-        ischemia, use of nitrate therapy, or ECG with pathological \
-        Q waves; do not count prior coronary revascularization procedure \
-        unless one of the other criteria for ischemic heart disease is \
-        present")
+        help="history of MI or a positive exercise test, current "
+        "complaint of chest pain considered to be secondary to myocardial "
+        "ischemia, use of nitrate therapy, or ECG with pathological "
+        "Q waves; do not count prior coronary revascularization procedure "
+        "unless one of the other criteria for ischemic heart disease is "
+        "present.")
 
     rcri_congestive_history = fields.Boolean(
         'History of congestive heart disease')
@@ -294,8 +294,8 @@ class Surgery(ModelSQL, ModelView):
     # age is deprecated in GNU Health 2.0
     age = fields.Char(
         'Estimative Age',
-        help="Use this field for historical purposes, \
-        when no date of surgery is given")
+        help="Use this field for historical purposes, "
+        "when no date of surgery is given")
 
     computed_age = fields.Function(
         fields.Char(
