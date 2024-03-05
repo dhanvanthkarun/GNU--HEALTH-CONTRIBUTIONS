@@ -3034,10 +3034,10 @@ class PatientData(ModelSQL, ModelView):
         'party.address', 'Temp. Addr',
         domain=[('party', '=', Eval('name'))],
         depends=['name'],
-        help="Use this address for temporary contact information. For example \
-        if the patient is on vacation, you can put the hotel address. \
-        In the case of a Domiciliary Unit, just link it to the name of the \
-        contact in the address form.")
+        help="Use this address for temporary contact information. For example, "
+        "if the patient is on vacation, you can put the hotel address. "
+        "In the case of a Domiciliary Unit, just link it to the name of the "
+        "contact in the address form.")
     primary_care_doctor = fields.Many2One(
         'gnuhealth.healthprofessional',
         'GP', help='Current General Practitioner / Family Doctor')
@@ -4185,8 +4185,8 @@ class PatientVaccination(ModelSQL, ModelView):
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
-        help="Health Professional who administered or reviewed the vaccine \
-         information")
+        help="Health Professional who administered or reviewed "
+        "the vaccine information.")
 
     signed_by = fields.Many2One(
         'gnuhealth.healthprofessional', 'Signed by', readonly=True,
@@ -4195,8 +4195,8 @@ class PatientVaccination(ModelSQL, ModelView):
 
     amount = fields.Float(
         'Amount',
-        help='Amount of vaccine administered, in mL . The dose per mL \
-            (eg, mcg, EL.U ..) can be found at the related medicament')
+        help='Amount of vaccine administered, in mL . The dose per mL '
+        '(eg, mcg, EL.U ..) can be found at the related medicament.')
 
     admin_site = fields.Selection([
         (None, ''),
