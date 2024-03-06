@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from trytond.exceptions import UserError, UserWarning
+from trytond.exceptions import UserError
 
 
 class NeedLoginCredentials(UserError):
