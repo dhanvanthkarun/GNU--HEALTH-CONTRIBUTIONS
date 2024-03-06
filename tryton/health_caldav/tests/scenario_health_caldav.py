@@ -60,7 +60,7 @@ class TestCase(unittest.TestCase):
         self.client = caldav.DAVClient(URL)
         self.principal = caldav.Principal(self.client, URL)
         self.calendar, = [x for x in self.principal.calendars()
-            if x.url.path.endswith(user)]
+                          if x.url.path.endswith(user)]
 
     def test0010calendar(self):
         'Test calendar'
@@ -73,17 +73,19 @@ class TestCase(unittest.TestCase):
         vevent.add('summary')
         vevent.summary.value = 'Test event'
         vevent.add('dtstart')
-        vevent.dtstart.value = (datetime.datetime.now()
+        vevent.dtstart.value = (
+            datetime.datetime.now()
             + relativedelta(months=1))
         vevent.add('dtend')
-        vevent.dtend.value = datetime.datetime.now() + relativedelta(months=1,
-            hours=1)
+        vevent.dtend.value = datetime.datetime.now() + \
+            relativedelta(months=1, hours=1)
         caldav.Event(self.client, data=ical.serialize(),
-            parent=self.calendar).save()
+                     parent=self.calendar).save()
 
     def test0030search_event(self):
         'Search date'
-        events = self.calendar.date_search(datetime.datetime.now(),
+        events = self.calendar.date_search(
+            datetime.datetime.now(),
             datetime.datetime.now() + relativedelta(months=2))
         self.assertEqual(len(events), 1)
         events = self.calendar.date_search(
@@ -106,8 +108,8 @@ class TestCase(unittest.TestCase):
         vevent.add('dtstart')
         vevent.dtstart.value = datetime.datetime.now() + relativedelta(days=10)
         vevent.add('dtend')
-        vevent.dtend.value = datetime.datetime.now() + relativedelta(days=10,
-            hours=4)
+        vevent.dtend.value = datetime.datetime.now() + \
+            relativedelta(days=10, hours=4)
         vevent.add('organizer')
         vevent.organizer.value = '%s@example.com' % user
         attendees = []
@@ -118,16 +120,16 @@ class TestCase(unittest.TestCase):
             attendees.append(attendee)
         vevent.attendee_list = attendees
         caldav.Event(self.client, data=ical.serialize(),
-            parent=self.calendar).save()
+                     parent=self.calendar).save()
 
         Event = Model.get('calendar.event')
         owner_event, = Event.find([
-                ('calendar.owner.email', '=', '%s@example.com' % user),
-                ('summary', '=', vevent.summary.value),
-                ])
+            ('calendar.owner.email', '=', '%s@example.com' % user),
+            ('summary', '=', vevent.summary.value),
+        ])
         attendee_event, = Event.find([
-                ('calendar.owner.email', '=', 'foo@example.com'),
-                ])
+            ('calendar.owner.email', '=', 'foo@example.com'),
+        ])
         self.assertEqual(attendee_event.uuid, owner_event.uuid)
 
     def test0060update_attendee_status(self):
@@ -143,8 +145,8 @@ class TestCase(unittest.TestCase):
 
         Event = Model.get('calendar.event')
         attendee_event, = Event.find([
-                ('calendar.owner.email', '=', 'foo@example.com'),
-                ])
+            ('calendar.owner.email', '=', 'foo@example.com'),
+        ])
         for attendee in attendee_event.attendees:
             self.assertEqual(attendee.status, 'accepted')
 
@@ -160,14 +162,17 @@ class TestCase(unittest.TestCase):
 
         Event = Model.get('calendar.event')
         self.assertEqual(Event.find([
-                    ('calendar.owner.email', '=', 'foo@example.com'),
-                    ]), [])
+            ('calendar.owner.email', '=', 'foo@example.com'),
+        ]), [])
+
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--xmlrpc', dest='xmlrpc', metavar='URL',
+    parser.add_argument(
+        '--xmlrpc', dest='xmlrpc', metavar='URL',
         help='use trytond XML-RPC at URL')
-    parser.add_argument('--url', dest='url', metavar='URL',
+    parser.add_argument(
+        '--url', dest='url', metavar='URL',
         help='use calendar at URL')
     options = parser.parse_args()
     config = config.set_xmlrpc(options.xmlrpc)
