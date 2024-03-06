@@ -89,7 +89,7 @@ class RCRI(ModelSQL, ModelView):
         ('II', 'II'),
         ('III', 'III'),
         ('IV', 'IV'),
-        ], 'RCRI Class', sort=False)
+    ], 'RCRI Class', sort=False)
 
     @fields.depends(
         'rcri_high_risk_surgery', 'rcri_ischemic_history',
@@ -233,7 +233,7 @@ class Surgery(ModelSQL, ModelView):
         ('r', 'Required'),
         ('u', 'Urgent'),
         ('e', 'Emergency'),
-        ], 'Urgency', help="Urgency level for this surgery", sort=False)
+    ], 'Urgency', help="Urgency level for this surgery", sort=False)
 
     classification_str = classification.translated('classification')
 
@@ -254,7 +254,7 @@ class Surgery(ModelSQL, ModelView):
         'End',
         states={
             'required': Equal(Eval('state'), 'done'),
-            },
+        },
         help="Automatically set when the surgery is done."
              "It is also the estimated end time when"
              " confirming the surgery.")
@@ -281,13 +281,13 @@ class Surgery(ModelSQL, ModelView):
         ('in_progress', 'In Progress'),
         ('done', 'Done'),
         ('signed', 'Signed'),
-        ], 'State', readonly=True, sort=False)
+    ], 'State', readonly=True, sort=False)
 
     signed_by = fields.Many2One(
         'gnuhealth.healthprofessional', 'Signed by', readonly=True,
         states={
             'invisible': Not(Equal(Eval('state'), 'signed'))
-            },
+        },
 
         help="Health Professional that signed this surgery document")
 
@@ -309,7 +309,7 @@ class Surgery(ModelSQL, ModelView):
         ('f', 'Female'),
         ('f-m', 'Female -> Male'),
         ('m-f', 'Male -> Female'),
-        ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
+    ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
 
     description = fields.Char('Description')
 
@@ -353,7 +353,7 @@ class Surgery(ModelSQL, ModelView):
         ('II', 'Clean-Contaminated . Class II'),
         ('III', 'Contaminated . Class III'),
         ('IV', 'Dirty-Infected . Class IV'),
-        ], 'Surgical wound', sort=False)
+    ], 'Surgical wound', sort=False)
 
     anesthesia_type = fields.Selection([
         (None, ''),
@@ -367,7 +367,7 @@ class Surgery(ModelSQL, ModelView):
         ('regional_block', 'Regional Block'),
         ('local_sedation', 'Local + sedation'),
         ('No anesthesia', 'No anesthesia'),
-        ], 'Anesthesia', sort=False)
+    ], 'Anesthesia', sort=False)
 
     clavien_dindo = fields.Selection([
         (None, ''),
@@ -380,7 +380,7 @@ class Surgery(ModelSQL, ModelView):
         ('grade4a', 'Grade IVa'),
         ('grade4b', 'Grade IVb'),
         ('grade5', 'Grade V'),
-        ], 'Clavien-Dindo', sort=False,
+    ], 'Clavien-Dindo', sort=False,
         help="Grade I: Any deviation from the normal postoperative "
              "course without the need for pharmacological treatment "
              "or surgical, endoscopic and radiological interventions\n"
@@ -412,14 +412,14 @@ class Surgery(ModelSQL, ModelView):
         ('lloyd_davies', 'Lloyd-Davies'),
         ('kidney', 'Kidney positioning'),
         ('other', 'Other'),
-        ], 'Patient Positioning', sort=False,)
+    ], 'Patient Positioning', sort=False,)
 
     laterality = fields.Selection([
         (None, ''),
         ('right', 'Right'),
         ('left', 'Left'),
         ('bilateral', 'Bilateral'),
-        ], 'Laterality', sort=False,)
+    ], 'Laterality', sort=False,)
 
     approach = fields.Selection([
         (None, ''),
@@ -429,7 +429,7 @@ class Surgery(ModelSQL, ModelView):
         ('arthroscopic', 'Arthroscopic'),
         ('robotic', 'Robotic'),
         ('other', 'other'),
-        ], 'Approach', sort=False)
+    ], 'Approach', sort=False)
 
     surgery_complications = fields.One2Many(
         'gnuhealth.surgery.complication', 'name', 'Complications',
@@ -593,7 +593,7 @@ class Surgery(ModelSQL, ModelView):
                     'specialty': specialty,
                     'urgency': urgency,
                     'institution': institution,
-                    }
+                }
 
                 # Add new schedule entry with the surgery
                 sched.append(values)
@@ -674,21 +674,21 @@ class Surgery(ModelSQL, ModelView):
                 'invisible': And(Not(Equal(Eval('state'), 'draft')),
                                  Not(Equal(
                                      Eval('state'), 'cancelled'))),
-                },
+            },
             'cancel': {
                 'invisible': Not(Equal(Eval('state'), 'confirmed')),
-                },
+            },
             'start': {
                 'invisible': Not(Equal(Eval('state'), 'confirmed')),
-                },
+            },
             'done': {
                 'invisible': Not(Equal(Eval('state'), 'in_progress')),
-                },
+            },
             'signsurgery': {
                 'invisible': Not(Equal(Eval('state'), 'done')),
-                },
+            },
 
-            })
+        })
 
     @classmethod
     def validate(cls, surgeries):
@@ -702,9 +702,9 @@ class Surgery(ModelSQL, ModelView):
                 raise EndDateBeforeStart(
                     gettext('health_surgery.msg_end_date_before_start'))
 
-
     # Method to check for availability and make the Operating Room
     # reservation for the associated surgery
+
     @classmethod
     @ModelView.button
     def confirmed(cls, surgeries):
@@ -715,26 +715,26 @@ class Surgery(ModelSQL, ModelView):
             # Operating Room and end surgery time check
             if (not surgery.operating_room or not surgery.surgery_end_date):
                 raise OperatingRoomAndDateRequired(
-                        gettext('health_surgery.msg_or_and_time_needed'))
+                    gettext('health_surgery.msg_or_and_time_needed'))
             if surgery.surgery_end_date < surgery.surgery_date:
                 raise EndDateBeforeStart(
-                        gettext('health_surgery.msg_end_date_before_start'))
+                    gettext('health_surgery.msg_end_date_before_start'))
             cursor.execute(*table.select(
-                    table.id,
-                    where=(
-                        ((table.surgery_date <= surgery.surgery_date) &
-                         (table.surgery_end_date >= surgery.surgery_date)) |
-                        ((table.surgery_date <= surgery.surgery_end_date)
-                            & (table.surgery_end_date
-                                >= surgery.surgery_end_date)) |
-                        ((table.surgery_date >= surgery.surgery_date)
-                            & (table.surgery_end_date
-                                <= surgery.surgery_end_date)))
-                    & table.state.in_(['confirmed', 'in_progress'])
-                    & (table.operating_room == surgery.operating_room.id)))
+                table.id,
+                where=(
+                    ((table.surgery_date <= surgery.surgery_date) &
+                     (table.surgery_end_date >= surgery.surgery_date)) |
+                    ((table.surgery_date <= surgery.surgery_end_date)
+                     & (table.surgery_end_date
+                        >= surgery.surgery_end_date)) |
+                    ((table.surgery_date >= surgery.surgery_date)
+                     & (table.surgery_end_date
+                        <= surgery.surgery_end_date)))
+                & table.state.in_(['confirmed', 'in_progress'])
+                & (table.operating_room == surgery.operating_room.id)))
             if cursor.fetchone():
                 raise ORNotAvailable(
-                        gettext('health_surgery.msg_or_is_not_available'))
+                    gettext('health_surgery.msg_or_is_not_available'))
 
         cls.write(surgeries, {'state': 'confirmed'})
 
@@ -859,7 +859,7 @@ class SurgeryDrain(ModelSQL, ModelView):
         ('thoracic_tube', 'Thoracic tube'),
         ('redivac', 'Redivac'),
         ('davol', 'Davol'),
-        ], 'Drain', sort=False,)
+    ], 'Drain', sort=False,)
 
     notes = fields.Text('Notes')
 
@@ -913,15 +913,15 @@ class SurgeryComplication(ModelSQL, ModelView):
     name = fields.Many2One('gnuhealth.surgery', 'Surgery')
 
     complication = fields.Many2One(
-            'gnuhealth.pathology', 'Complication', required=True,
-            help='Complication during surgery')
+        'gnuhealth.pathology', 'Complication', required=True,
+        help='Complication during surgery')
 
     severity = fields.Selection([
         (None, ''),
         ('1_mi', 'Mild'),
         ('2_mo', 'Moderate'),
         ('3_sv', 'Severe'),
-        ], 'Severity', select=True, sort=False)
+    ], 'Severity', select=True, sort=False)
 
     severity_str = severity.translated('severity')
 
@@ -975,7 +975,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         ('Class 3', 'Class 3: Soft and hard palate and base of the uvula are '
                     'visible'),
         ('Class 4', 'Class 4: Only Hard Palate visible'),
-        ], 'Mallampati', sort=False, help='Mallampati Score')
+    ], 'Mallampati', sort=False, help='Mallampati Score')
 
     preop_mallampati_str = preop_mallampati.translated('preop_mallampati')
 
@@ -996,7 +996,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             ' survive without the operation'),
         ('ps6', 'PS 6 : A declared brain-dead patient who organs are'
             ' being removed for donor purposes'),
-        ], 'ASA PS',
+    ], 'ASA PS',
         help="ASA pre-operative Physical Status", sort=False)
     preop_asa_str = preop_asa.translated('preop_asa')
 
@@ -1014,7 +1014,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         ('II', 'Clean-Contaminated . Class II'),
         ('III', 'Contaminated . Class III'),
         ('IV', 'Dirty-Infected . Class IV'),
-        ], 'Surgical wound', sort=False)
+    ], 'Surgical wound', sort=False)
 
     no_anesthesia = fields.Boolean(
         'Do NOT use anesthesia',
@@ -1052,7 +1052,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
         ('needs_surgery', 'Needs surgery'),
         ('urgent_surgery', 'Urgent surgery'),
         ('discharge', 'Discharge'),
-        ], 'Surgical decision',
+    ], 'Surgical decision',
         help='Surgical decision / advice',
         sort=False)
 
@@ -1122,7 +1122,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             surg = cls.create_preop_surgery(assessment)
         else:
             raise OperatingRoomAndDateRequired(
-                    gettext('health_surgery.msg_or_and_date_needed'))
+                gettext('health_surgery.msg_or_and_date_needed'))
 
         if surg:
             cls.write(preop_assmts, {'surgery': surg[0].id})
@@ -1156,7 +1156,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             'preop_bleeding_risk': assessment.needs_blood_reserve,
             'pathology': health_condition,
             'institution': assessment.institution,
-            }
+        }
 
         surg.append(vals)
         surg_id = Surgery.create(surg)
@@ -1170,7 +1170,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
             'schedule': {'invisible': Not(Or(
                 Equal(Eval('surgical_decision'), 'needs_surgery'),
                 Equal(Eval('surgical_decision'), 'urgent_surgery')))}
-            })
+        })
 
 
 # SURGERY PROTOCOL TEMPLATE
@@ -1207,7 +1207,7 @@ class SurgeryProtocol(ModelSQL, ModelView):
         ('regional_block', 'Regional Block'),
         ('local_sedation', 'Local + sedation'),
         ('No anesthesia', 'No anesthesia'),
-        ], 'Anesthesia', sort=False)
+    ], 'Anesthesia', sort=False)
 
     patient_positioning = fields.Selection([
         (None, ''),
@@ -1225,14 +1225,14 @@ class SurgeryProtocol(ModelSQL, ModelView):
         ('lloyd_davies', 'Lloyd-Davies'),
         ('kidney', 'Kidney positioning'),
         ('other', 'Other'),
-        ], 'Patient Positioning', sort=False,)
+    ], 'Patient Positioning', sort=False,)
 
     laterality = fields.Selection([
         (None, ''),
         ('right', 'Right'),
         ('left', 'Left'),
         ('bilateral', 'Bilateral'),
-        ], 'Laterality', sort=False,)
+    ], 'Laterality', sort=False,)
 
     approach = fields.Selection([
         (None, ''),
@@ -1242,7 +1242,7 @@ class SurgeryProtocol(ModelSQL, ModelView):
         ('arthroscopic', 'Arthroscopic'),
         ('robotic', 'Robotic'),
         ('other', 'other'),
-        ], 'Approach', sort=False)
+    ], 'Approach', sort=False)
 
     surgical_intervention = fields.Many2One(
         'gnuhealth.procedure', 'Surgical Intervention',
@@ -1258,7 +1258,7 @@ class SurgeryProtocol(ModelSQL, ModelView):
         ('r', 'Required'),
         ('u', 'Urgent'),
         ('e', 'Emergency'),
-        ], 'Urgency', help="Urgency level for this surgery", sort=False)
+    ], 'Urgency', help="Urgency level for this surgery", sort=False)
 
     postoperative_guidelines = fields.Text(
         'Postoperative guidelines',
@@ -1328,7 +1328,7 @@ class ORScheduler(ModelSQL, ModelView):
         ('confirmed', 'Confirmed'),
         ('occupied', 'Occupied'),
         ('na', 'Not available'),
-        ), 'Status', sort=False),
+    ), 'Status', sort=False),
         'get_or_state', searcher='search_or_state')
 
     urgency = fields.Selection([
@@ -1337,7 +1337,7 @@ class ORScheduler(ModelSQL, ModelView):
         ('r', 'Required'),
         ('u', 'Urgent'),
         ('e', 'Emergency'),
-        ], 'Urgency', help="Urgency level", sort=False)
+    ], 'Urgency', help="Urgency level", sort=False)
 
     comments = fields.Text('Comments')
 
@@ -1391,7 +1391,7 @@ class ORScheduler(ModelSQL, ModelView):
                             res_from=self.reserve_from,
                             res_to=self.reserve_to,
                             )
-                    )
+                )
 
     @classmethod
     def __setup__(cls):
@@ -1413,7 +1413,7 @@ class PatientEvaluation (metaclass=PoolMeta):
         (None, ''),
         ('thyroid', 'Thyroid'),
         ('hernia', 'Hernia'),
-        ], 'Context')
+    ], 'Context')
 
     # Begin hernia specific information
     hernia_localization = fields.Selection([
@@ -1425,14 +1425,14 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('spigelian', 'Spigelian'),
         ('lumbar', 'Lumbar'),
         ('eventration', 'Eventration'),
-        ], 'Localization', sort=False)
+    ], 'Localization', sort=False)
 
     hernia_side = fields.Selection([
         (None, ''),
         ('left', 'Left'),
         ('right', 'Right'),
         ('bilateral', 'bilateral'),
-        ], 'Side', sort=False)
+    ], 'Side', sort=False)
 
     hernia_type = fields.Selection([
         (None, ''),
@@ -1448,7 +1448,7 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('h4a', 'H4a - Irreducible. Component ing-scrot<10cm'),
         ('h4b', 'H4b - Irreducible. Component ing-scrot 10-20 cm'),
         ('h4c', 'H4c - Irreducible. Component ing-scrot >20 cm'),
-        ], 'Type', sort=False)
+    ], 'Type', sort=False)
 
     hernia_ehs = fields.Selection([
         (None, ''),
@@ -1456,21 +1456,21 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('medial', 'Medial (direct)'),
         ('sliding', 'Sliding'),
         ('femoral', 'Femoral'),
-        ], 'EHS', sort=False)
+    ], 'EHS', sort=False)
 
     hernia_time = fields.Selection([
         (None, ''),
         ('less_1_year', '< 1 year'),
         ('1_to_5_year', '1 - 5 years'),
         ('more_5_year', '> 5 years'),
-        ], 'Evolution time', sort=False)
+    ], 'Evolution time', sort=False)
 
     hernia_disfunction = fields.Selection([
         (None, ''),
         ('no_disfunction', 'No disfunction'),
         ('limited', 'Limited daily activities'),
         ('severe', 'Discapacitating'),
-        ], 'Disfunctionality level', sort=False)
+    ], 'Disfunctionality level', sort=False)
 
     # End hernia specific information
 
@@ -1480,21 +1480,21 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('normal', 'Normal'),
         ('nodule', 'Nodule'),
         ('goiter', 'Goiter'),
-        ], 'Exploration', sort=False)
+    ], 'Exploration', sort=False)
 
     thyroid_side = fields.Selection([
         (None, ''),
         ('left', 'Left'),
         ('right', 'Right'),
         ('bilateral', 'Bilateral'),
-        ], 'Side', sort=False)
+    ], 'Side', sort=False)
 
     thyroid_clinical = fields.Selection([
         (None, ''),
         ('hoarseness', 'Hoarseness'),
         ('cough', 'Cough'),
         ('other', 'Other'),
-        ], 'Clinical', sort=False)
+    ], 'Clinical', sort=False)
 
     thyroid_goiter = fields.Selection([
         (None, ''),
@@ -1502,7 +1502,7 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('multinodular', 'Multinodular'),
         ('difuse', 'Difuse'),
         ('intrathoracic', 'Intrathoracic'),
-        ], 'Goiter', sort=False)
+    ], 'Goiter', sort=False)
 
     thyroid_tirads = fields.Selection([
         (None, ''),
@@ -1513,7 +1513,7 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('tr4b', 'TR4b'),
         ('tr5', 'TR5'),
         ('tr6', 'TR6'),
-        ], 'TI-RADS', sort=False)
+    ], 'TI-RADS', sort=False)
 
     thyroid_tvol = fields.Integer(
         "TVol (mL)",
@@ -1527,20 +1527,20 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('gr4a', '3'),
         ('gr5', '4'),
         ('gr5', '5'),
-        ], 'Goiter classification', sort=False)
+    ], 'Goiter classification', sort=False)
 
     @classmethod
     def view_attributes(cls):
         # Hide the specific group unless selected in surgical_context
         return super(PatientEvaluation, cls).view_attributes() + [
-                ('//group[@id="group_evl_surgery_hernia_info"]',
-                    'states', {
-                        'invisible': ~Equal(
-                            Eval('surgical_context'), 'hernia'),
-                    }),
-                ('//group[@id="group_evl_surgery_thyroid_info"]',
-                    'states', {
-                        'invisible': ~Equal(
-                            Eval('surgical_context'), 'thyroid'),
-                    }),
-                    ]
+            ('//group[@id="group_evl_surgery_hernia_info"]',
+             'states', {
+                 'invisible': ~Equal(
+                     Eval('surgical_context'), 'hernia'),
+             }),
+            ('//group[@id="group_evl_surgery_thyroid_info"]',
+             'states', {
+                 'invisible': ~Equal(
+                     Eval('surgical_context'), 'thyroid'),
+             }),
+        ]

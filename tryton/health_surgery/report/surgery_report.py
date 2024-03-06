@@ -30,5 +30,5 @@ class SurgeryReport(Report):
 
         dt = datetime.now()
 
-        return super(SurgeryReport, cls).parse(report, objects, data, 
-            localcontext)
+        return super(SurgeryReport, cls).parse(
+            report, objects, data, localcontext)
