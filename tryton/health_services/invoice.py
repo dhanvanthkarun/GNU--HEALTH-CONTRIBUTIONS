@@ -27,13 +27,13 @@ class Invoice(metaclass=PoolMeta):
     def get_patient(self, name):
         try:
             return self.lines[0].origin.name.patient.id
-        except:
+        except BaseException:
             return None
 
     def get_health_service(self, name):
         try:
             return self.lines[0].origin.name.id
-        except:
+        except BaseException:
             return None
 
     @classmethod
@@ -52,4 +52,4 @@ class InvoiceLine(metaclass=PoolMeta):
     def _get_origin(cls):
         return super(InvoiceLine, cls)._get_origin() + [
             'gnuhealth.health_service.line'
-            ]
+        ]
