@@ -8,15 +8,16 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import urllib.parse
-import urllib.request, urllib.parse, urllib.error
-import string
+import urllib.request
+import urllib.parse
+import urllib.error
 import xml.dom.minidom
 from pywebdav.lib import propfind
 from pywebdav.lib.errors import DAV_NotFound, DAV_Error, DAV_Forbidden
 from pywebdav.lib.utils import get_uriparentpath
 from pywebdav.lib.constants import DAV_VERSION_1, DAV_VERSION_2
-from trytond.modules.health_webdav3_server.protocol import TrytonDAVInterface, LOCAL, \
-        WebDAVAuthRequestHandler
+from trytond.modules.health_webdav3_server.protocol import (
+    TrytonDAVInterface, LOCAL, WebDAVAuthRequestHandler)
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 
@@ -29,9 +30,9 @@ TrytonDAVInterface.PROPS['urn:ietf:params:xml:ns:caldav'] = (
     'calendar-user-address-set',
     'schedule-inbox-URL',
     'schedule-outbox-URL',
-    )
-TrytonDAVInterface.PROPS['DAV:'] = tuple(list(TrytonDAVInterface.PROPS['DAV:'])
-    + ['principal-collection-set'])
+)
+TrytonDAVInterface.PROPS['DAV:'] = tuple(
+    list(TrytonDAVInterface.PROPS['DAV:']) + ['principal-collection-set'])
 TrytonDAVInterface.M_NS['urn:ietf:params:xml:ns:caldav'] = '_get_caldav'
 DAV_VERSION_1['version'] += ',calendar-access,calendar-schedule'
 DAV_VERSION_2['version'] += ',calendar-access,calendar-schedule'
@@ -59,6 +60,7 @@ def mk_prop_response(self, uri, good_props, bad_props, doc):
             # cols[0].parentNode.appendChild(vc)
     return res
 
+
 propfind.PROPFIND.mk_prop_response = mk_prop_response
 
 
@@ -82,6 +84,7 @@ def _get_caldav_calendar_description(self, uri):
         self._log_exception(exception)
         raise DAV_Error(500)
     return res
+
 
 TrytonDAVInterface._get_caldav_calendar_description = \
     _get_caldav_calendar_description
@@ -107,6 +110,7 @@ def _get_caldav_calendar_data(self, uri):
         self._log_exception(exception)
         raise DAV_Error(500)
     return res
+
 
 TrytonDAVInterface._get_caldav_calendar_data = _get_caldav_calendar_data
 
@@ -141,6 +145,7 @@ def _get_caldav_calendar_home_set(self, uri):
     href.appendChild(huri)
     return href
 
+
 TrytonDAVInterface._get_caldav_calendar_home_set = \
     _get_caldav_calendar_home_set
 
@@ -171,6 +176,7 @@ def _get_caldav_calendar_user_address_set(self, uri):
     huri = doc.createTextNode('MAILTO:' + res)
     href.appendChild(huri)
     return href
+
 
 TrytonDAVInterface._get_caldav_calendar_user_address_set = \
     _get_caldav_calendar_user_address_set
@@ -204,6 +210,7 @@ def _get_caldav_schedule_inbox_URL(self, uri):
     href.appendChild(huri)
     return href
 
+
 TrytonDAVInterface._get_caldav_schedule_inbox_URL = \
     _get_caldav_schedule_inbox_URL
 
@@ -236,12 +243,13 @@ def _get_caldav_schedule_outbox_URL(self, uri):
     href.appendChild(huri)
     return href
 
+
 TrytonDAVInterface._get_caldav_schedule_outbox_URL = \
     _get_caldav_schedule_outbox_URL
 
-_prev_get_dav_principal_collection_set = hasattr(TrytonDAVInterface,
-        '_get_dav_principal_collection_set') and \
-                TrytonDAVInterface._get_dav_principal_collection_set or None
+_prev_get_dav_principal_collection_set = hasattr(
+    TrytonDAVInterface, '_get_dav_principal_collection_set') and \
+    TrytonDAVInterface._get_dav_principal_collection_set or None
 
 
 def _get_dav_principal_collection_set(self, uri):
@@ -258,6 +266,7 @@ def _get_dav_principal_collection_set(self, uri):
     if _prev_get_dav_principal_collection_set:
         return _prev_get_dav_principal_collection_set(self, uri)
     raise DAV_NotFound
+
 
 TrytonDAVInterface._get_dav_principal_collection_set = \
     _get_dav_principal_collection_set
@@ -281,6 +290,7 @@ def _get_caldav_post(self, uri, body, contenttype=''):
         raise DAV_Error(500)
     return res
 
+
 TrytonDAVInterface._get_caldav_post = _get_caldav_post
 
 _prev_do_POST = WebDAVAuthRequestHandler.do_POST
@@ -297,8 +307,8 @@ def do_POST(self):
         # read the body
         body = None
         if 'Content-Length' in self.headers:
-            l = self.headers['Content-Length']
-            body = self.rfile.read(int(l))
+            length = self.headers['Content-Length']
+            body = self.rfile.read(int(length))
         ct = None
         if 'Content-Type' in self.headers:
             ct = self.headers['Content-Type']
@@ -312,12 +322,14 @@ def do_POST(self):
         return
     return _prev_do_POST(self)
 
+
 WebDAVAuthRequestHandler.do_POST = do_POST
 
 _prev_do_REPORT = WebDAVAuthRequestHandler.do_REPORT
 
+
 def do_REPORT(self):
-    if not 'Depth' in self.headers:
+    if 'Depth' not in self.headers:
         # NOTE: Set 'Depth' header to '1' if it is not found, this can
         # let Evolution work well with gnuhealth caldav, for Evolution
         # do not set 'Depth' in header, pywebdav will use '0' as
@@ -325,5 +337,6 @@ def do_REPORT(self):
         self.headers['Depth'] = '1'
 
     return _prev_do_REPORT(self)
+
 
 WebDAVAuthRequestHandler.do_REPORT = do_REPORT
