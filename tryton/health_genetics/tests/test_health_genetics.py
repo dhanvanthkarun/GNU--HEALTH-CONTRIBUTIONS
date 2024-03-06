@@ -14,6 +14,7 @@ class HealthGeneticsTestCase(ModuleTestCase):
     '''
     module = 'health_genetics'
 
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
