@@ -10,5 +10,3 @@ from trytond.exceptions import UserError
 
 class LabOrderExists(UserError):
     pass
-
-
