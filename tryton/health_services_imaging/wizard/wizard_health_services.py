@@ -22,11 +22,11 @@ class RequestPatientImagingTestStart(ModelView):
     ungroup_tests = fields.Boolean(
         'Ungroup',
         help="Check if you DO NOT want to include each individual Dx"
-             " imaging test from this order in the imaging test generation step."
-             " This is useful when some services are not provided in"
-             " the same institution.\n"
-             "In this case, you need to individually update the service"
-             " document from each individual test")
+        " imaging test from this order in the imaging test generation step."
+        " This is useful when some services are not provided in"
+        " the same institution.\n"
+        "In this case, you need to individually update the service"
+        " document from each individual test")
 
     service = fields.Many2One(
         'gnuhealth.health_service', 'Service',
@@ -64,7 +64,7 @@ class RequestPatientImagingTest(Wizard):
             'product': imgtest.product.id,
             'desc': imgtest.product.rec_name,
             'qty': 1
-            }]))
+        }]))
 
         hservice.append(service)
         service_data['service_line'] = service_lines
@@ -80,7 +80,8 @@ class RequestPatientImagingTest(Wizard):
         for test in self.start.tests:
             imaging_test = {}
             imaging_test['request'] = request_number
-            imaging_test['request_line'] = f'{request_number}-{count:02}-{num:02}'
+            request_line = f'{request_number}-{count:02}-{num:02}'
+            imaging_test['request_line'] = request_line
             imaging_test['requested_test'] = test.id
             imaging_test['patient'] = self.start.patient.id
             if self.start.doctor:
