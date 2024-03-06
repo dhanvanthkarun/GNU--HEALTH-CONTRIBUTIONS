@@ -14,7 +14,6 @@
 # plugin is used.                                                       #
 #########################################################################
 
-import sys
 import os
 import argparse
 import hashlib
@@ -51,9 +50,11 @@ def parse_options():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-H', '--hostname', default='localhost',
-                        help="Hostname of GNU Health Service, default=localhost.")
+                        help="Hostname of GNU Health Service, "
+                        "default=localhost.")
     parser.add_argument('-p', '--port', default='8000',
-                        help="Port of GNU Health Service, default=8000.")
+                        help="Port of GNU Health Service, "
+                        "default=8000.")
     parser.add_argument('-u', '--user', default='admin',
                         help="User name of GNU Health, default=admin.")
     parser.add_argument('-P', '--passwd', required=True,
@@ -65,8 +66,10 @@ def parse_options():
                         default='/var/lib/orthanc/worklists')
     parser.add_argument('-r', '--regenerate', action="store_true",
                         help="Regenerate worklists database.")
-    parser.add_argument('-m', '--handle-done-state', action="store_true",
-                        help="Create worklists when request state is 'done', slowly.")
+    parser.add_argument('-m', '--handle-done-state',
+                        action="store_true",
+                        help="Create worklists when "
+                        "request state is 'done', slowly.")
     parser.add_argument('-s', '--seconds', type=int,
                         help="Update Worklists database every n seconds.")
 
@@ -84,7 +87,7 @@ def connect_service(options):
         '@' + hostname + ':' + port + '/' + dbname + '/'
 
     print("# Connecting to GNU Health Server ...")
-    conf = pconfig.set_xmlrpc(health_server)
+    pconfig.set_xmlrpc(health_server)
 
 
 def update_worklists_database(options):
@@ -124,7 +127,7 @@ def update_worklists_database(options):
                 studies = OrthancStudy.find([('merge_id', '=', merge_id)])
             if len(worklist_text) > 0 and (not studies):
                 print(f'  * "{request_num}" - '
-                      '"{patient}" - "{requested_test}" ...')
+                      f'"{patient}" - "{requested_test}" ...')
                 create_worklist_file(
                     worklist_text, worklists_db, regenerate, encoding)
 
