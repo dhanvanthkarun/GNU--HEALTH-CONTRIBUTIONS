@@ -8,7 +8,7 @@ from trytond.model import ModelView, fields
 from trytond.wizard import Wizard, StateTransition, StateView, Button
 from trytond.transaction import Transaction
 from trytond.pool import Pool
-from trytond.pyson import Eval, Not, Bool
+from trytond.pyson import Eval
 from trytond.i18n import gettext
 from ..exceptions import LabOrderExists
 
@@ -34,7 +34,7 @@ class CreateLabTestOrder(Wizard):
         'health_lab.view_lab_make_test', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Create Test Order', 'create_lab_test', 'tryton-ok', True),
-            ])
+        ])
 
     create_lab_test = StateTransition()
 
@@ -54,11 +54,12 @@ class CreateLabTestOrder(Wizard):
             if lab_test_order.state == 'ordered':
                 raise LabOrderExists(
                     gettext('health_lab.msg_lab_order_exists')
-                    )
+                )
 
             test_report_data['test'] = lab_test_order.name.id
             test_report_data['source_type'] = lab_test_order.source_type
-            test_report_data['patient'] = lab_test_order.patient_id and lab_test_order.patient_id.id
+            test_report_data['patient'] = (lab_test_order.patient_id
+                                           and lab_test_order.patient_id.id)
             test_report_data['other_source'] = lab_test_order.other_source
             if lab_test_order.doctor_id:
                 test_report_data['requestor'] = lab_test_order.doctor_id.id
@@ -76,7 +77,7 @@ class CreateLabTestOrder(Wizard):
                     'normal_range': critearea.normal_range,
                     "to_integer": critearea.to_integer,
                     'units': critearea.units and critearea.units.id,
-                    }]))
+                }]))
             test_report_data['critearea'] = test_cases
 
             tests_report_data.append(test_report_data)
@@ -106,14 +107,17 @@ class RequestPatientLabTestStart(ModelView):
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other_source', 'Other')
-        ], 'Source', 
+    ], 'Source',
         help='Sample source type.',
         sort=False, select=True)
-    patient = fields.Many2One('gnuhealth.patient', 
-        'Patient',
+    patient = fields.Many2One(
+        'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')})
-    other_source = fields.Char('Other', 
-        states={'invisible': (Eval('source_type') != 'other_source')},
+    other_source = fields.Char(
+        'Other',
+        states={
+            'invisible': (
+                Eval('source_type') != 'other_source')},
         help="Other sample source.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
@@ -154,7 +158,7 @@ class RequestPatientLabTest(Wizard):
         'health_lab.patient_lab_test_request_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Request', 'request', 'tryton-ok', default=True),
-            ])
+        ])
     request = StateTransition()
 
     def generate_code(self, **pattern):
@@ -174,7 +178,8 @@ class RequestPatientLabTest(Wizard):
             lab_test['request'] = request_number
             lab_test['name'] = test.id
             lab_test['source_type'] = self.start.source_type
-            lab_test['patient_id'] = self.start.patient and self.start.patient.id
+            lab_test['patient_id'] = (self.start.patient
+                                      and self.start.patient.id)
             lab_test['other_source'] = self.start.other_source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
