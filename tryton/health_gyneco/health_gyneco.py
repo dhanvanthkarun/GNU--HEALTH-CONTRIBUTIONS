@@ -20,7 +20,7 @@ from trytond.transaction import Transaction
 from sql import Table
 from sql.aggregate import Count
 from trytond.modules.health.core import get_health_professional, \
-     get_institution
+    get_institution
 from trytond.i18n import gettext
 
 from .exceptions import PatientAlreadyPregnant
@@ -65,21 +65,21 @@ class PatientPregnancy(ModelSQL, ModelView):
         'Pregnancy warning icon'), 'get_warn_icon')
     reverse = fields.Boolean(
         'Reverse', help="Use this method *only* when the "
-        "pregnancy information is referred by the patient, as a history taking "
-        "procedure. Please keep in mind that the reverse pregnancy data is "
-        "subjective.",
+        "pregnancy information is referred by the patient, "
+        "as a history taking procedure. Please keep in mind "
+        "that the reverse pregnancy data is subjective.",
         states={
             'invisible': Bool(Eval('current_pregnancy')),
-            }
-        )
+        }
+    )
     reverse_weeks = fields.Integer(
         "Pr. Weeks", help="Number of weeks at "
         "the end of pregnancy. Used only with the reverse input method.",
         states={
             'invisible': Not(Bool(Eval('reverse'))),
             'required': Bool(Eval('reverse')),
-            }
-        )
+        }
+    )
     lmp = fields.Date('LMP', help="Last Menstrual Period", required=True)
 
     pdd = fields.Function(
@@ -104,27 +104,27 @@ class PatientPregnancy(ModelSQL, ModelView):
         ('abortion', 'Abortion'),
         ('stillbirth', 'Stillbirth'),
         ('status_unknown', 'Status unknown'),
-        ], 'Result', sort=False,
-            states={
-            'invisible': Bool(Eval('current_pregnancy')),
+    ], 'Result', sort=False,
+        states={
+        'invisible': Bool(Eval('current_pregnancy')),
             'required': Not(Bool(Eval('current_pregnancy'))),
-            })
+    })
     pregnancy_end_date = fields.DateTime(
         'End of Pregnancy',
         states={
             'invisible': Bool(Eval('current_pregnancy')),
             'required': Not(Bool(Eval('current_pregnancy'))),
-            })
+        })
     bba = fields.Boolean(
         'BBA', help="Born Before Arrival",
         states={
             'invisible': Bool(Eval('current_pregnancy')),
-            })
+        })
     home_birth = fields.Boolean(
         'Home Birth', help="Home Birth",
         states={
             'invisible': Bool(Eval('current_pregnancy')),
-            })
+        })
 
     pregnancy_end_age = fields.Function(fields.Integer(
         'Weeks', help='Weeks at'
@@ -133,7 +133,7 @@ class PatientPregnancy(ModelSQL, ModelView):
         (None, ''),
         ('symmetric', 'Symmetric'),
         ('assymetric', 'Asymmetric'),
-        ], 'IUGR', sort=False)
+    ], 'IUGR', sort=False)
 
     institution = fields.Many2One(
         'gnuhealth.institution', 'Institution',
@@ -164,14 +164,14 @@ class PatientPregnancy(ModelSQL, ModelView):
         ('B', 'B'),
         ('AB', 'AB'),
         ('O', 'O'),
-        ], 'Blood Type', sort=False),
+    ], 'Blood Type', sort=False),
         'patient_blood_info')
 
     rh = fields.Function(fields.Selection([
         (None, ''),
         ('+', '+'),
         ('-', '-'),
-        ], 'Rh'),
+    ], 'Rh'),
         'patient_blood_info')
 
     hb = fields.Function(fields.Selection([
@@ -179,7 +179,7 @@ class PatientPregnancy(ModelSQL, ModelView):
         ('aa', 'AA'),
         ('as', 'AS'),
         ('ss', 'SS'),
-        ], 'Hb'),
+    ], 'Hb'),
         'patient_blood_info')
 
     # Retrieve the info from the patient current GPA status
@@ -221,8 +221,8 @@ class PatientPregnancy(ModelSQL, ModelView):
         super(PatientPregnancy, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints += [
-                ('gravida_uniq', Unique(t, t.name, t.gravida),
-                    'This pregnancy code for this patient already exists'),
+            ('gravida_uniq', Unique(t, t.name, t.gravida),
+             'This pregnancy code for this patient already exists'),
         ]
         cls._order.insert(0, ('lmp', 'DESC'))
 
@@ -266,8 +266,8 @@ class PatientPregnancy(ModelSQL, ModelView):
 
         if (self.reverse_weeks and self.pregnancy_end_date):
             estimated_lmp = datetime.datetime.date(
-                    self.pregnancy_end_date -
-                    datetime.timedelta(self.reverse_weeks*7))
+                self.pregnancy_end_date -
+                datetime.timedelta(self.reverse_weeks * 7))
 
             return estimated_lmp
 
@@ -325,7 +325,7 @@ class PrenatalEvaluation(ModelSQL, ModelView):
         ('accreta', 'Accreta'),
         ('increta', 'Increta'),
         ('percreta', 'Percreta'),
-        ], 'Placentation', sort=False)
+    ], 'Placentation', sort=False)
     placenta_previa = fields.Boolean('Placenta Previa')
     vasa_previa = fields.Boolean('Vasa Previa')
     fundal_height = fields.Integer(
@@ -398,18 +398,18 @@ class PuerperiumMonitor(ModelSQL, ModelView):
         ('n', 'normal'),
         ('e', 'abundant'),
         ('h', 'hemorrhage'),
-        ], 'Lochia amount', sort=False)
+    ], 'Lochia amount', sort=False)
     lochia_color = fields.Selection([
         (None, ''),
         ('r', 'rubra'),
         ('s', 'serosa'),
         ('a', 'alba'),
-        ], 'Lochia color', sort=False)
+    ], 'Lochia color', sort=False)
     lochia_odor = fields.Selection([
         (None, ''),
         ('n', 'normal'),
         ('o', 'offensive'),
-        ], 'Lochia odor', sort=False)
+    ], 'Lochia odor', sort=False)
     uterus_involution = fields.Integer(
         'Fundal Height',
         help="Distance between the symphysis pubis and the uterine fundus "
@@ -458,7 +458,7 @@ class Perinatal(ModelSQL, ModelView):
         ('ve', 'Vaginal - Vacuum Extraction'),
         ('vf', 'Vaginal - Forceps Extraction'),
         ('c', 'C-section'),
-        ], 'Delivery mode', sort=False)
+    ], 'Delivery mode', sort=False)
     gestational_weeks = fields.Function(
         fields.Integer('Gestational wks'),
         'get_perinatal_information')
@@ -468,7 +468,7 @@ class Perinatal(ModelSQL, ModelView):
         ('cephalic', 'Cephalic'),
         ('breech', 'Breech'),
         ('shoulder', 'Shoulder'),
-        ], 'Fetus Presentation', sort=False)
+    ], 'Fetus Presentation', sort=False)
     dystocia = fields.Boolean('Dystocia')
     placenta_incomplete = fields.Boolean(
         'Incomplete', help='Incomplete Placenta')
@@ -494,13 +494,13 @@ class Perinatal(ModelSQL, ModelView):
         ('rectal', 'Rectal'),
         ('bladder', 'Bladder'),
         ('urethral', 'Urethral'),
-        ], 'Lacerations', sort=False)
+    ], 'Lacerations', sort=False)
     hematoma = fields.Selection([
         (None, ''),
         ('vaginal', 'Vaginal'),
         ('vulvar', 'Vulvar'),
         ('retroperitoneal', 'Retroperitoneal'),
-        ], 'Hematoma', sort=False)
+    ], 'Hematoma', sort=False)
     notes = fields.Text('Notes')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
@@ -549,7 +549,7 @@ class PerinatalMonitor(ModelSQL, ModelView):
         ('cb', 'Complete Breech'),
         ('t', 'Transverse Lie'),
         ('t', 'Footling Breech'),
-        ], 'Fetus Position', sort=False)
+    ], 'Fetus Position', sort=False)
 
 
 class GnuHealthPatient(metaclass=PoolMeta):
@@ -630,16 +630,16 @@ class GnuHealthPatient(metaclass=PoolMeta):
     mammography_history = fields.One2Many(
         'gnuhealth.patient.mammography_history', 'name', 'Mammography History',
         states={'invisible': Not(Bool(Eval('mammography')))},
-        )
+    )
     pap_history = fields.One2Many(
         'gnuhealth.patient.pap_history', 'name',
         'PAP smear History',
         states={'invisible': Not(Bool(Eval('pap_test')))},
-        )
+    )
     colposcopy_history = fields.One2Many(
         'gnuhealth.patient.colposcopy_history', 'name', 'Colposcopy History',
         states={'invisible': Not(Bool(Eval('colposcopy')))},
-        )
+    )
     pregnancy_history = fields.One2Many(
         'gnuhealth.patient.pregnancy', 'name',
         'Pregnancies')
@@ -694,9 +694,9 @@ class GnuHealthPatient(metaclass=PoolMeta):
     @classmethod
     def view_attributes(cls):
         return super(GnuHealthPatient, cls).view_attributes() + [
-                ('//page[@id="page_gyneco_obs"]', 'states', {
-                    'invisible': Equal(Eval('biological_sex'), 'm'),
-                })]
+            ('//page[@id="page_gyneco_obs"]', 'states', {
+                'invisible': Equal(Eval('biological_sex'), 'm'),
+            })]
 
 
 class PatientMenstrualHistory(ModelSQL, ModelView):
@@ -721,12 +721,12 @@ class PatientMenstrualHistory(ModelSQL, ModelView):
         ('oligomenorrhea', 'oligomenorrhea'),
         ('eumenorrhea', 'eumenorrhea'),
         ('polymenorrhea', 'polymenorrhea'),
-        ], 'frequency', sort=False)
+    ], 'frequency', sort=False)
     volume = fields.Selection([
         ('hypomenorrhea', 'hypomenorrhea'),
         ('normal', 'normal'),
         ('menorrhagia', 'menorrhagia'),
-        ], 'volume', sort=False)
+    ], 'volume', sort=False)
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
 
@@ -771,8 +771,9 @@ class PatientMammographyHistory(ModelSQL, ModelView):
         (None, ''),
         ('normal', 'normal'),
         ('abnormal', 'abnormal'),
-        ], 'result', help="Please check the lab test results if the module is "
-                    "installed", sort=False)
+    ], 'result',
+        help="Please check the lab test results if the module is "
+        "installed", sort=False)
     comments = fields.Char('Remarks')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
@@ -819,8 +820,8 @@ class PatientPAPHistory(ModelSQL, ModelView):
         ('c3', 'LSIL'),
         ('c4', 'HSIL'),
         ('g4', 'AIS'),
-        ], 'result', help="Please check the lab results if the module is "
-                     "installed", sort=False)
+    ], 'result', help="Please check the lab results if the module is "
+        "installed", sort=False)
     comments = fields.Char('Remarks')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
@@ -862,8 +863,9 @@ class PatientColposcopyHistory(ModelSQL, ModelView):
         (None, ''),
         ('normal', 'normal'),
         ('abnormal', 'abnormal'),
-        ], 'result', help="Please check the lab test results if the module is "
-                     "installed", sort=False)
+    ], 'result',
+        help="Please check the lab test results if the module is "
+        "installed", sort=False)
     comments = fields.Char('Remarks')
 
     institution = fields.Many2One('gnuhealth.institution', 'Institution')
