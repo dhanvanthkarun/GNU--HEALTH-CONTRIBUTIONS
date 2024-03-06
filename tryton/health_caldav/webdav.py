@@ -8,7 +8,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import vobject
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 from urllib.parse import urlparse
 from sql.functions import Extract
 from sql.conditionals import Coalesce
@@ -27,36 +29,37 @@ CALDAV_NS = 'urn:ietf:params:xml:ns:caldav'
 
 logger = logging.getLogger(__name__)
 
+
 def _comp_filter_domain(dtstart, dtend):
     return ['OR',
-        [
-            ['OR',
-                [('dtstart', '<=', dtstart),
-                    ('dtend', '>=', dtstart)],
-                [('dtstart', '<=', dtend),
-                    ('dtend', '>=', dtend)],
-                [('dtstart', '>=', dtstart),
-                    ('dtend', '<=', dtend)],
-                [('dtstart', '>=', dtstart),
-                    ('dtstart', '<=', dtend),
-                    ('dtend', '=', None)]],
-            ('parent', '=', None),
-            ('rdates', '=', None),
-            ('rrules', '=', None),
-            ('exdates', '=', None),
-            ('exrules', '=', None),
-            ('occurences', '=', None),
+            [
+                ['OR',
+                 [('dtstart', '<=', dtstart),
+                  ('dtend', '>=', dtstart)],
+                 [('dtstart', '<=', dtend),
+                  ('dtend', '>=', dtend)],
+                 [('dtstart', '>=', dtstart),
+                  ('dtend', '<=', dtend)],
+                 [('dtstart', '>=', dtstart),
+                  ('dtstart', '<=', dtend),
+                  ('dtend', '=', None)]],
+                ('parent', '=', None),
+                ('rdates', '=', None),
+                ('rrules', '=', None),
+                ('exdates', '=', None),
+                ('exrules', '=', None),
+                ('occurences', '=', None),
             ],
-        [  # TODO manage better recurring event
-            ('parent', '=', None),
-            ('dtstart', '<=', dtend),
-            ['OR',
-                ('rdates', '!=', None),
-                ('rrules', '!=', None),
-                ('exdates', '!=', None),
-                ('exrules', '!=', None),
-                ('occurences', '!=', None),
-                ]
+            [  # TODO manage better recurring event
+                ('parent', '=', None),
+                ('dtstart', '<=', dtend),
+                ['OR',
+                 ('rdates', '!=', None),
+                 ('rrules', '!=', None),
+                 ('exdates', '!=', None),
+                 ('exrules', '!=', None),
+                 ('occurences', '!=', None),
+                 ]
             ]]
 
 
@@ -100,10 +103,10 @@ class Collection(metaclass=PoolMeta):
                 if not calendar_id:
                     return None
             events = Event.search([
-                    ('calendar', '=', calendar_id),
-                    ('uuid', '=', event_uri[:-4]),
-                    ('parent', '=', None),
-                    ], limit=1)
+                ('calendar', '=', calendar_id),
+                ('uuid', '=', event_uri[:-4]),
+                ('parent', '=', None),
+            ], limit=1)
             if events:
                 event_id = events[0].id
         cls._event_cache.set(key, event_id)
@@ -160,7 +163,8 @@ class Collection(metaclass=PoolMeta):
                                 continue
                             start = comp_filter.getAttribute('start')
                             if start:
-                                start = vobject.icalendar.stringToDateTime(start)
+                                start = vobject.icalendar.stringToDateTime(
+                                    start)
                                 end = comp_filter.getAttribute('end')
                             if end:
                                 end = vobject.icalendar.stringToDateTime(end)
@@ -204,26 +208,26 @@ class Collection(metaclass=PoolMeta):
         if uri in ('Calendars', 'Calendars/'):
             domain = cls._caldav_filter_domain_calendar(filter)
             domain = [['OR',
-                    ('owner', '=', Transaction().user),
-                    ('read_users', '=', Transaction().user),
-                    ],
-                domain]
+                       ('owner', '=', Transaction().user),
+                       ('read_users', '=', Transaction().user),
+                       ],
+                      domain]
             calendars = Calendar.search(domain)
             if cache is not None:
                 cache.setdefault('_calendar', {})
                 cache['_calendar'].setdefault(Calendar.__name__, {})
                 for calendar in calendars:
                     cache['_calendar'][Calendar.__name__][calendar.id] = {}
-            return ([x.name for x in calendars]
-                + [x.name + '.ics' for x in calendars])
+            return ([x.name for x in calendars] +
+                    [x.name + '.ics' for x in calendars])
         if uri and uri.startswith('Calendars/'):
             calendar_id = cls.calendar(uri)
             if calendar_id and not (uri[10:].split('/', 1) + [None])[1]:
                 domain = cls._caldav_filter_domain_event(filter)
                 events = Event.search([
-                        ('calendar', '=', calendar_id),
-                        domain,
-                        ])
+                    ('calendar', '=', calendar_id),
+                    domain,
+                ])
                 if cache is not None:
                     cache.setdefault('_calendar', {})
                     cache['_calendar'].setdefault(Event.__name__, {})
@@ -231,8 +235,8 @@ class Collection(metaclass=PoolMeta):
                         cache['_calendar'][Event.__name__][event.id] = {}
                 return [x.uuid + '.ics' for x in events]
             return []
-        childs = super(Collection, cls).get_childs(uri, filter=filter,
-            cache=cache)
+        childs = super(Collection, cls).get_childs(
+            uri, filter=filter, cache=cache)
         if not uri and not filter:
             childs.append('Calendars')
         elif not uri and filter:
@@ -303,9 +307,10 @@ class Collection(metaclass=PoolMeta):
                 cursor = Transaction().connection.cursor()
                 for sub_ids in grouped_slice(ids):
                     red_sql = reduce_ids(calendar.id, sub_ids)
-                    cursor.execute(*calendar.select(calendar.id,
-                            Extract('EPOCH', calendar.create_date),
-                            where=red_sql))
+                    cursor.execute(*calendar.select(
+                        calendar.id,
+                        Extract('EPOCH', calendar.create_date),
+                        where=red_sql))
                     for calendar_id2, date in cursor.fetchall():
                         if calendar_id2 == calendar_id:
                             res = date
@@ -335,9 +340,10 @@ class Collection(metaclass=PoolMeta):
                     cursor = Transaction().connection.cursor()
                     for sub_ids in grouped_slice(ids):
                         red_sql = reduce_ids(event.id, sub_ids)
-                        cursor.execute(*event.select(event.id,
-                                Extract('EPOCH', event.create_date),
-                                where=red_sql))
+                        cursor.execute(*event.select(
+                            event.id,
+                            Extract('EPOCH', event.create_date),
+                            where=red_sql))
                         for event_id2, date in cursor.fetchall():
                             if event_id2 == event_id:
                                 res = date
@@ -378,10 +384,12 @@ class Collection(metaclass=PoolMeta):
                 res = None
                 for sub_ids in grouped_slice(ids):
                     red_sql = reduce_ids(calendar.id, sub_ids)
-                    cursor.execute(*calendar.select(calendar.id,
-                            Extract('EPOCH', Coalesce(calendar.write_date,
-                                    calendar.create_date)),
-                            where=red_sql))
+                    cursor.execute(*calendar.select(
+                        calendar.id,
+                        Extract('EPOCH', Coalesce(
+                            calendar.write_date,
+                            calendar.create_date)),
+                        where=red_sql))
                     for calendar_id2, date in cursor.fetchall():
                         if calendar_id2 == calendar_id:
                             res = date
@@ -414,11 +422,12 @@ class Collection(metaclass=PoolMeta):
                         red_id_sql = reduce_ids(event.id, sub_ids)
                         red_parent_sql = reduce_ids(event.parent, sub_ids)
                         cursor.execute(*event.select(
-                                Coalesce(event.parent, event.id),
-                                Max(Extract('EPOCH', Coalesce(event.write_date,
-                                            event.create_date))),
-                                where=red_id_sql | red_parent_sql,
-                                group_by=(event.parent, event.id)))
+                            Coalesce(event.parent, event.id),
+                            Max(Extract('EPOCH', Coalesce(
+                                event.write_date,
+                                event.create_date))),
+                            where=red_id_sql | red_parent_sql,
+                            group_by=(event.parent, event.id)))
                         for event_id2, date in cursor.fetchall():
                             if event_id2 == event_id:
                                 res = date
@@ -446,11 +455,13 @@ class Collection(metaclass=PoolMeta):
             res = None
             for sub_ids in grouped_slice(ids):
                 red_sql = reduce_ids(event.calendar, sub_ids)
-                cursor.execute(*event.select(event.calendar,
-                        Max(Extract('EPOCH', Coalesce(event.write_date,
-                                    event.create_date))),
-                        where=red_sql,
-                        group_by=event.calendar))
+                cursor.execute(*event.select(
+                    event.calendar,
+                    Max(Extract('EPOCH', Coalesce(
+                        event.write_date,
+                        event.create_date))),
+                    where=red_sql,
+                    group_by=event.calendar))
                 for calendar_id2, date in cursor.fetchall():
                     if calendar_id2 == calendar_ics_id:
                         res = date
@@ -514,7 +525,7 @@ class Collection(metaclass=PoolMeta):
                             .setdefault(calendar.id, {})
                         cache['_calendar'][Calendar.__name__][
                             calendar.id]['calendar_description'] = \
-                                calendar.description
+                            calendar.description
                 if res is not None:
                     return res
         raise DAV_NotFound
@@ -543,7 +554,7 @@ class Collection(metaclass=PoolMeta):
 
         calendars = Calendar.search([
             ('owner', '=', user),
-            ], limit=1)
+        ], limit=1)
         if not calendars:
             # Sunbird failed with no value
             return '/Calendars'
@@ -561,23 +572,22 @@ class Collection(metaclass=PoolMeta):
         Party = Pool().get('party.party')
         Hprof = Pool().get('gnuhealth.healthprofessional')
 
-        event_owner =  event.calendar.owner.id
+        event_owner = event.calendar.owner.id
 
         party, = Party.search(
-                [('internal_user', '=', event_owner)], limit=1)
+            [('internal_user', '=', event_owner)], limit=1)
 
         hprof, = Hprof.search(
-                [('name', '=', party)], limit=1)
+            [('name', '=', party)], limit=1)
 
         return hprof
 
     @classmethod
-    def appointment_from_event(cls,values, Appointment, event):
+    def appointment_from_event(cls, values, Appointment, event):
         """ Creates the patient appointment associated to the event
             The patient ID is the first word from the summary field
         """
         Patient = Pool().get('gnuhealth.patient')
-        appointment_id = values['uuid']
         summary = values['summary']
         desc = values['description']
         header = summary.split(" ")
@@ -596,12 +606,14 @@ class Collection(metaclass=PoolMeta):
 
         if (patient_id):
             res = Patient.search(
-                        [('puid', '=', patient_id)], limit=1)
-            #Warning if the patient ID is not found
+                [('puid', '=', patient_id)], limit=1)
+            # Warning if the patient ID is not found
             if (len(res) > 0):
                 patient = res[0]
             else:
-                logger.error ("The patient with PUID '%s' is not found.", patient_id)
+                logger.error(
+                    "The patient with PUID '%s' is not found.",
+                    patient_id)
 
         # If the ID is associated to a patient
         # create the appointment related to her / him
@@ -618,12 +630,10 @@ class Collection(metaclass=PoolMeta):
                 'state': 'confirmed',
                 'appointment_date': app_date,
                 'appointment_date_end': app_end
-                }
+            }
 
             app.append(app_values)
             Appointment.create(app)
-
-
 
     @classmethod
     def put(cls, uri, data, content_type, cache=None):
@@ -639,8 +649,8 @@ class Collection(metaclass=PoolMeta):
                 raise DAV_Forbidden
             event_id = cls.event(uri, calendar_id=calendar_id)
             if not event_id:
-                #Create a new event 
-                #Convert to data str from binary 
+                # Create a new event
+                # Convert to data str from binary
                 if (isinstance(data, bytes)):
                     ical = vobject.readOne(data.decode())
                 else:
@@ -658,8 +668,8 @@ class Collection(metaclass=PoolMeta):
                 return (Transaction().database.name + '/Calendars/' +
                         calendar.name + '/' + event.uuid + '.ics')
             else:
-                #Update an existing event
-                #Convert to data str from binary 
+                # Update an existing event
+                # Convert to data str from binary
                 ical = vobject.readOne(data.decode())
                 values = Event.ical2values(event_id, ical, calendar_id)
                 Event.write([Event(event_id)], values)
@@ -667,7 +677,6 @@ class Collection(metaclass=PoolMeta):
                 # Check if the event is an appointment in GNU Health
                 dtstart = values['dtstart']
                 dtend = values['dtend']
-                summary = values['summary']
                 description = values['description']
 
                 # Check if there is an appointment in GNU Health
@@ -679,10 +688,11 @@ class Collection(metaclass=PoolMeta):
                     [('event', '=', event_id)], limit=1)
                 if (appointment):
                     app = appointment[0]
-                    app_vals = {'appointment_date':dtstart,
-                        'appointment_date_end':dtend,'comments':description}
+                    app_vals = {'appointment_date': dtstart,
+                                'appointment_date_end': dtend,
+                                'comments': description}
 
-                    Appointment.write([app],app_vals)
+                    Appointment.write([app], app_vals)
 
                 return
         calendar_ics_id = cls.calendar(uri, ics=True)
@@ -771,5 +781,5 @@ class Collection(metaclass=PoolMeta):
                     res.extend(['read', 'write', 'delete'])
                 return res
             return []
-        return super(Collection, cls).current_user_privilege_set(uri,
-            cache=cache)
+        return super(Collection, cls).current_user_privilege_set(
+            uri, cache=cache)
