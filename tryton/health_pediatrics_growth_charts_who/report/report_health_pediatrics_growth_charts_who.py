@@ -30,9 +30,12 @@ class PediatricsGrowthChartsWHOReport(Report):
         }
 
         _INDICATORS = {
-            'l/h-f-a': gettext(_MODULE + ".msg_indicator_length_or_height_for_age"),
-            'w-f-a': gettext(_MODULE + ".msg_indicator_weight_for_age"),
-            'bmi-f-a': gettext(_MODULE + ".msg_indicator_bmi_for_age"),
+            'l/h-f-a': gettext(
+                _MODULE + ".msg_indicator_length_or_height_for_age"),
+            'w-f-a': gettext(
+                _MODULE + ".msg_indicator_weight_for_age"),
+            'bmi-f-a': gettext(
+                _MODULE + ".msg_indicator_bmi_for_age"),
         }
 
         _MEASURES = {
@@ -48,7 +51,8 @@ class PediatricsGrowthChartsWHOReport(Report):
         _SUBTITLE = gettext(_MODULE + ".msg_subtitle")
 
         pool = Pool()
-        GrowthChartsWHO = pool.get('gnuhealth.pediatrics.growth.charts.who')
+        GrowthChartsWHO = pool.get(
+            'gnuhealth.pediatrics.growth.charts.who')
         Patient = pool.get('gnuhealth.patient')
         Evaluation = pool.get('gnuhealth.patient.evaluation')
 
@@ -87,7 +91,8 @@ class PediatricsGrowthChartsWHOReport(Report):
             context['p97'] = gettext(
                 _MODULE + ".msg_table_header_percentile_p97"),
         else:
-            context['p3'] = gettext(_MODULE + ".msg_table_header_z_score_p3"),
+            context['p3'] = gettext(
+                _MODULE + ".msg_table_header_z_score_p3"),
             context['p15'] = gettext(
                 _MODULE + ".msg_table_header_z_score_p15"),
             context['p50'] = gettext(
