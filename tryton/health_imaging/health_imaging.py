@@ -84,7 +84,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         ('draft', 'Draft'),
         ('requested', 'Requested'),
         ('done', 'Done'),
-        ], 'State', readonly=True)
+    ], 'State', readonly=True)
 
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
@@ -107,11 +107,11 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         cls._buttons.update({
             'requested': {
                 'invisible': ~Eval('state').in_(['draft']),
-                },
+            },
             'generate_results': {
                 'invisible': ~Eval('state').in_(['requested'])
-                }
-            })
+            }
+        })
         cls._order.insert(0, ('date', 'DESC'))
         cls._order.insert(1, ('request', 'DESC'))
 
@@ -145,7 +145,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             if not values.get('request'):
                 values['request'] = cls.generate_code()
             if not values.get('request_line'):
-                values['request_line'] = f'{values["request"]}-{count:02}-{num:02}'
+                line = f'{values["request"]}-{count:02}-{num:02}'
+                values['request_line'] = line
             num = num + 1
 
         return super(ImagingTestRequest, cls).create(vlist)
@@ -204,9 +205,9 @@ class ImagingTestResult(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Evaluated by', required=True)
 
     computed_age = fields.Function(fields.Char(
-            'Age',
-            help="Computed patient age at the moment of the evaluation"),
-            'patient_age_at_evaluation')
+        'Age',
+        help="Computed patient age at the moment of the evaluation"),
+        'patient_age_at_evaluation')
 
     comment = fields.Text('Additional Information')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
@@ -238,7 +239,7 @@ class ImagingTestResult(ModelSQL, ModelView):
             bool_op,
             ('patient',) + tuple(clause[1:]),
             ('number',) + tuple(clause[1:]),
-            ]
+        ]
 
     @classmethod
     def __setup__(cls):
