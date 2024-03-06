@@ -148,12 +148,13 @@ class PatientSESAssessment(ModelSQL, ModelView):
         help="Is the patient satisfied with the level of affection coming "
         "from the family ?", sort=False, states=STATES)
 
-    fam_apgar_score = fields.Integer('Score',
-                                     help="Total Family APGAR \n"
-                                     "7 - 10 : Functional Family \n"
-                                     "4 - 6  : Some level of disfunction \n"
-                                     "0 - 3  : Severe disfunctional family \n",
-                                     states=STATES)
+    fam_apgar_score = fields.Integer(
+        'Score',
+        help="Total Family APGAR \n"
+        "7 - 10 : Functional Family \n"
+        "4 - 6  : Some level of disfunction \n"
+        "0 - 3  : Severe disfunctional family \n",
+        states=STATES)
 
     education = fields.Selection([
         (None, ''),
