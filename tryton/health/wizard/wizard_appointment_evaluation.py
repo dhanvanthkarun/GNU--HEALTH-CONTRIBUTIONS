@@ -36,10 +36,10 @@ class CreateAppointmentEvaluation(Wizard):
         try:
             app_id = \
                 Pool().get('gnuhealth.appointment').browse([appointment])[0]
-        except:
+        except BaseException:
             raise NoAppointmentSelected(gettext(
                 'health.msg_no_appointment_selected')
-                )
+            )
 
         patient = app_id.patient.id
 
@@ -58,7 +58,7 @@ class CreateAppointmentEvaluation(Wizard):
             ('urgency', '=', urgency),
             ('evaluation_type', '=', evaluation_type),
             ('visit_type', '=', visit_type),
-            ])
+        ])
         action['pyson_context'] = PYSONEncoder().encode({
             'appointment': appointment,
             'patient': patient,
@@ -66,6 +66,6 @@ class CreateAppointmentEvaluation(Wizard):
             'urgency': urgency,
             'evaluation_type': evaluation_type,
             'visit_type': visit_type,
-            })
+        })
 
         return action, {}
