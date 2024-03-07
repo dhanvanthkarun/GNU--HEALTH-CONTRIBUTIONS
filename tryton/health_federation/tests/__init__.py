@@ -4,3 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .test_health_federation import suite
+
+
+__all__ = ['suite']
