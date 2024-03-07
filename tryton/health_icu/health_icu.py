@@ -64,9 +64,9 @@ class InpatientIcu(ModelSQL, ModelView):
         help="ICU Admission Date", required=True)
     discharged_from_icu = fields.Boolean('Discharged')
     icu_discharge_date = fields.DateTime('Discharge', states={
-            'invisible': Not(Bool(Eval('discharged_from_icu'))),
-            'required': Bool(Eval('discharged_from_icu')),
-            },
+        'invisible': Not(Bool(Eval('discharged_from_icu'))),
+        'required': Bool(Eval('discharged_from_icu')),
+    },
         depends=['discharged_from_icu'])
     icu_stay = fields.Function(fields.TimeDelta('Duration'), 'icu_duration')
 
@@ -129,14 +129,14 @@ class Glasgow(ModelSQL, ModelView):
         ('2', '2 : Opens eyes in response to painful stimuli'),
         ('3', '3 : Opens eyes in response to voice'),
         ('4', '4 : Opens eyes spontaneously'),
-        ], 'Eyes', sort=False)
+    ], 'Eyes', sort=False)
     glasgow_verbal = fields.Selection([
         ('1', '1 : Makes no sounds'),
         ('2', '2 : Incomprehensible sounds'),
         ('3', '3 : Utters inappropriate words'),
         ('4', '4 : Confused, disoriented'),
         ('5', '5 : Oriented, converses normally'),
-        ], 'Verbal', sort=False)
+    ], 'Verbal', sort=False)
     glasgow_motor = fields.Selection([
         ('1', '1 : Makes no movement'),
         ('2', '2 : Extension to painful stimuli - decerebrate response -'),
@@ -145,7 +145,7 @@ class Glasgow(ModelSQL, ModelView):
         ('4', '4 : Flexion / Withdrawal to painful stimuli'),
         ('5', '5 : localizes painful stimuli'),
         ('6', '6 : Obeys commands'),
-        ], 'Motor', sort=False)
+    ], 'Motor', sort=False)
 
     @staticmethod
     def default_glasgow_eyes():
@@ -444,10 +444,10 @@ class MechanicalVentilation(ModelSQL, ModelView):
         "ETT - Endotracheal Tube", sort=False)
 
     ett_size = fields.Integer('ETT Size', states={
-            'invisible': Not(Equal(Eval('ventilation'), 'ett'))})
+        'invisible': Not(Equal(Eval('ventilation'), 'ett'))})
 
     tracheostomy_size = fields.Integer('Tracheostomy size', states={
-            'invisible': Not(Equal(Eval('ventilation'), 'tracheostomy'))})
+        'invisible': Not(Equal(Eval('ventilation'), 'tracheostomy'))})
 
     mv_start = fields.DateTime(
         'From', help="Start of Mechanical Ventilation",
@@ -457,7 +457,7 @@ class MechanicalVentilation(ModelSQL, ModelView):
         states={
             'invisible': Bool(Eval('current_mv')),
             'required': Not(Bool(Eval('current_mv'))),
-            },
+        },
         depends=['current_mv'])
     mv_period = fields.Function(fields.TimeDelta('Duration'), 'mv_duration')
     current_mv = fields.Boolean('Current')
@@ -474,9 +474,9 @@ class MechanicalVentilation(ModelSQL, ModelView):
         cursor = Transaction().connection.cursor()
         table = self.__class__.__table__()
         cursor.execute(*table.select(
-                table.name, where=(
-                    (table.name == self.name.id)
-                    & (table.current_mv))))
+            table.name, where=(
+                (table.name == self.name.id)
+                & (table.current_mv))))
         if cursor.fetchone():
             raise PatientAlreadyOnMV(
                 gettext('health_icu.msg_patient_already_on_mv'))
@@ -508,9 +508,9 @@ class ChestDrainageAssessment(ModelSQL, ModelView):
         'Aspect', sort=False)
     suction = fields.Boolean('Suction')
     suction_pressure = fields.Integer('cm H2O', states={
-            'invisible': Not(Bool(Eval('suction'))),
-            'required': Bool(Eval('suction')),
-            },
+        'invisible': Not(Bool(Eval('suction'))),
+        'required': Bool(Eval('suction')),
+    },
         depends=['suction'])
     oscillation = fields.Boolean('Oscillation')
     air_leak = fields.Boolean('Air Leak')
@@ -578,10 +578,10 @@ class PatientRounding(metaclass=PoolMeta):
     peep = fields.Boolean('PEEP', states=STATES)
 
     peep_pressure = fields.Integer('cm H2O', help="Pressure", states={
-            'invisible': Not(Bool(Eval('peep'))),
-            'required': Bool(Eval('peep')),
-            'readonly': Eval('state') == 'done',
-            },
+        'invisible': Not(Bool(Eval('peep'))),
+        'required': Bool(Eval('peep')),
+        'readonly': Eval('state') == 'done',
+    },
         depends=['peep'])
 
     sce = fields.Boolean(
