@@ -22,12 +22,12 @@ Usage : gnuhealth-webdav-server
 """
 
 from trytond.pool import Pool
-from .webdav import *
+from . import webdav
 
 
 def register():
     Pool.register(
-        Collection,
-        Share,
-        Attachment,
+        webdav.Collection,
+        webdav.Share,
+        webdav.Attachment,
         module='health_webdav3_server', type_='model')

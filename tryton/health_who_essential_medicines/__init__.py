@@ -15,3 +15,6 @@
 #########################################################################
 
 from . import health_who_essential_medicines
+
+
+__all__ = ['health_who_essential_medicines']

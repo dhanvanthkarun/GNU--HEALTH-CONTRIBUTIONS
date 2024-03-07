@@ -12,3 +12,6 @@
 #########################################################################
 from . import health_report
 from . import immunization_status_report
+
+
+__all__ = ['health_report', 'immunization_status_report']

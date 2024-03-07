@@ -12,3 +12,6 @@
 #               __init__.py test initialization                         #
 #########################################################################
 from .test_health_inpatient_calendar import suite
+
+
+__all__ = ['suite']

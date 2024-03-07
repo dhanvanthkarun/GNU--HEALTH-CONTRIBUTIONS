@@ -12,3 +12,6 @@
 #               __init__.py health test initialization                  #
 #########################################################################
 from .test_health_orthanc import suite
+
+
+__all__ = ['suite']

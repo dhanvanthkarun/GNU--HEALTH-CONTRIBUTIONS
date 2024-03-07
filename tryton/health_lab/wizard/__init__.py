@@ -3,4 +3,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .wizard_create_lab_test import *
+from . import wizard_create_lab_test
+
+
+__all__ = ['wizard_create_lab_test']

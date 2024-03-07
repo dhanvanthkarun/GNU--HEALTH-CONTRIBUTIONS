@@ -5,5 +5,9 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .wizard_create_prescription_stock_move import *
-from .wizard_create_vaccination_stock_move import *
+from . import wizard_create_prescription_stock_move
+from . import wizard_create_vaccination_stock_move
+
+
+__all__ = ['wizard_create_prescription_stock_move',
+           'wizard_create_vaccination_stock_move']

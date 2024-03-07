@@ -1,5 +1,11 @@
 #!/bin/bash 
 
+# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+
 if [[ $# -ne 2 ]]; then
     echo "Usage: `basename $0` DIR PORT" >&2
     exit 1

@@ -5,4 +5,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .wizard_health_services import *
+from . import wizard_health_services
+
+
+__all__ = ['wizard_health_services']
