@@ -5,5 +5,8 @@
 
 # -*- coding: utf-8 -*-
 
-from .summary_report import *
-from .epidemics_report import *
+from . import summary_report
+from . import epidemics_report
+
+
+__all__ = ['summary_report', 'epidemics_report']

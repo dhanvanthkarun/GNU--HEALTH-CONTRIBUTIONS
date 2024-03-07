@@ -4,7 +4,11 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .wizard_top_diseases import *
-from .wizard_evaluations import *
-from .wizard_summary_report import *
-from .wizard_epidemics_report import *
+from . import wizard_top_diseases
+from . import wizard_evaluations
+from . import wizard_summary_report
+from . import wizard_epidemics_report
+
+
+__all__ = ['wizard_top_diseases', 'wizard_evaluations',
+           'wizard_summary_report', 'wizard_epidemics_report']
