@@ -25,15 +25,15 @@ def register():
         health_lab.GnuHealthLabTestUnits,
         health_lab.GnuHealthTestCritearea,
         health_lab.GnuHealthPatientLabTest,
-        wizard.CreateLabTestOrderInit,
-        wizard.RequestPatientLabTestStart,
-        wizard.RequestTest,
+        wizard.wizard_create_lab_test.CreateLabTestOrderInit,
+        wizard.wizard_create_lab_test.RequestPatientLabTestStart,
+        wizard.wizard_create_lab_test.RequestTest,
         health_lab.PatientHealthCondition,
         sequences.GnuHealthSequences,
         sequences.LabRequestSequence,
         sequences.LabTestSequence,
         module='health_lab', type_='model')
     Pool.register(
-        wizard.CreateLabTestOrder,
-        wizard.RequestPatientLabTest,
+        wizard.wizard_create_lab_test.CreateLabTestOrder,
+        wizard.wizard_create_lab_test.RequestPatientLabTest,
         module='health_lab', type_='wizard')
