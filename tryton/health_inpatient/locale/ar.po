@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-03-07 18:11+0000\n"
+"Last-Translator: MHD Tareq Shaheen <shaheen.mhd.tareq@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/gnu-health/"
+"health_inpatient/ar/>\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.5-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
@@ -364,25 +374,25 @@ msgstr "رمز المريض الداخلي"
 
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
-msgstr ""
+msgstr "تسلسل ترتيب وجبات المرضى الداخليين"
 
 msgctxt "field:gnuhealth.sequences,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
-msgstr ""
+msgstr "تسلسل تسجيل المرضى الداخليين"
 
 msgctxt ""
 "field:gnuhealth.sequences.inpatient_meal_order_sequence,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
-msgstr ""
+msgstr "تسلسل ترتيب وجبات المرضى الداخليين"
 
 msgctxt ""
 "field:gnuhealth.sequences.inpatient_registration_sequence,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
-msgstr ""
+msgstr "تسلسل تسجيل المرضى الداخليين"
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient Registration, please enter the patient hospitalization code."
-msgstr ""
+msgstr "تسجيل المرضى الداخليين، يرجى إدخال رمز دخول المريض إلى المستشفى."
 
 msgctxt "help:gnuhealth.inpatient.diet,remarks:"
 msgid "specific remarks for this diet / patient"
@@ -523,11 +533,11 @@ msgstr "إظهار حالة المريض في المستشفى"
 
 msgctxt "help:gnuhealth.patient.ecg,inpatient_registration_code:"
 msgid "Inpatient Registration, please enter the patient hospitalization code"
-msgstr ""
+msgstr "تسجيل المرضى الداخليين، يرجى إدخال رمز دخول المريض إلى المستشفى"
 
 msgctxt "help:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "Inpatient Code, please enter the patient hospitalization code"
-msgstr ""
+msgstr "رمز المريض الداخلي، يرجى إدخال رمز دخول المريض إلى المستشفى"
 
 msgctxt "model:gnuhealth.bed.transfer,name:"
 msgid "Bed transfers"
@@ -917,11 +927,11 @@ msgstr "سجل قبول المريض"
 
 msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
-msgstr ""
+msgstr "إعداد تسلسل تقييم المريض"
 
 msgctxt "model:gnuhealth.sequences.inpatient_registration_sequence,name:"
 msgid "Ambulatory Care Sequences setup"
-msgstr ""
+msgstr "إعداد تسلسلات الرعاية الإسعافية"
 
 msgctxt "model:ir.action,name:act_create_inpatient_evaluation"
 msgid "Create Patient Evaluation"
@@ -1004,76 +1014,72 @@ msgstr "مقيم"
 
 msgctxt "model:ir.message,text:msg_bed_is_not_available"
 msgid "Bed is not available"
-msgstr ""
+msgstr "السرير مشغول"
 
 msgctxt "model:ir.message,text:msg_destination_bed_not_available"
 msgid "Destination bed is not available"
-msgstr ""
+msgstr "السرير الوجهة مشغول"
 
 msgctxt "model:ir.message,text:msg_discharge_befor_admission"
 msgid "The Discharge date must later than the admission"
-msgstr ""
+msgstr "يجب أن يكون تاريخ الخروج بعد القبول"
 
 msgctxt "model:ir.message,text:msg_discharge_reason_needed"
 msgid "Admission and Discharge reasons as well as Discharge Dx are needed"
-msgstr ""
+msgstr "هناك حاجة إلى أسباب القبول والخروج وكذلك التفريغ Dx"
 
 msgctxt "model:ir.message,text:msg_many_records_chosen"
 msgid "You have chosen more than 1 record. Please choose only one"
-msgstr ""
+msgstr "لقد اخترت أكثر من سجل واحد. الرجاء اختيار واحد فقط"
 
 msgctxt "model:ir.message,text:msg_need_timezone"
 msgid "Need timezone"
-msgstr ""
+msgstr "تحتاج المنطقة الزمنية"
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid ""
 "SM-CORE-0007: Currently logged in user is not associated to a health "
 "professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr ""
+"SM-CORE-0007: المستخدم الذي قام بتسجيل الدخول حاليًا غير مرتبط بأخصائي صحي. "
+"راجع حقل \"المستخدم الداخلي\" في نموذج \"الأطراف/الأشخاص\"."
 
 msgctxt "model:ir.message,text:msg_no_record_selected"
 msgid "You need to select one record"
-msgstr ""
+msgstr "يجب اختيار سجل واحد"
 
 msgctxt "model:ir.message,text:msg_special_meal_needs"
 msgid "This patient has special meal needs"
-msgstr ""
+msgstr "المريض يحتاج وجبة بمواصفات خاصة"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:meal_cancel_button"
 msgid "Cancel"
 msgstr "إلغاء"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:meal_done_button"
 msgid "Done"
 msgstr "منتهي"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:meal_generate_button"
 msgid "Generate"
 msgstr "توليد"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:registration_admission_button"
 msgid "Admission"
 msgstr "القبول"
 
 msgctxt "model:ir.model.button,string:registration_bedclean_button"
 msgid "Clean Bed"
-msgstr ""
+msgstr "السرير نظيف"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:registration_cancel_button"
 msgid "Cancel"
 msgstr "إلغاء"
 
 msgctxt "model:ir.model.button,string:registration_confirmed_button"
 msgid "Confirm"
-msgstr ""
+msgstr "قبول"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:registration_discharge_button"
 msgid "Discharge"
 msgstr "تخريج"
@@ -1082,7 +1088,6 @@ msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
 msgstr "وجبة مريض داخلي"
 
-#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
 msgstr "تسجيل المرضى الداخليين"
@@ -1091,7 +1096,6 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
 msgstr "وجبة مريض داخلي"
 
-#, fuzzy
 msgctxt ""
 "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
@@ -1291,190 +1295,171 @@ msgstr "نزيل في المشفى"
 
 msgctxt "view:gnuhealth.diet.therapeutic:"
 msgid "Diet Description and Indications"
-msgstr ""
+msgstr "وصف النظام الغذائي والمؤشرات"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Cancel"
 msgstr "إلغاء"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Cancel order"
-msgstr ""
+msgstr "الغاء الامر"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Cancel the this meal order ?"
-msgstr ""
+msgstr "الغاء الوجبة ؟"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Create order"
-msgstr ""
+msgstr "انشاء امر"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Done"
 msgstr "منتهي"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Generate"
 msgstr "توليد"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Generate the meal order ?"
-msgstr ""
+msgstr "انشاء طلب وجبة ؟"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "The meal order is done"
-msgstr ""
+msgstr "طلب الوجبة اكتمل"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "The meal order will be closed"
-msgstr ""
+msgstr "طلب الوجبة سوف يغلق"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Administration"
 msgstr "الادارة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Adverse Reactions and Notes"
 msgstr "ردود الفعل العكسية والملاحظات"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Dosage"
 msgstr "الجرعه"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Extra Info"
 msgstr "معلومات اضافيه"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "General Info"
 msgstr "المعلومات العامه"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Medication"
 msgstr "الادويه"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Status"
 msgstr "الوضع"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Treatment period"
 msgstr "فتره العلاج"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Administrative data"
-msgstr ""
+msgstr "بيانات ادارية"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Admission"
 msgstr "القبول"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Admit the patient in the health institution and assign the bed"
-msgstr ""
+msgstr "قبول المريض في المؤسسة الصحية وتخصيص السرير له"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel"
 msgstr "إلغاء"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel Registration"
-msgstr ""
+msgstr "الغاء التسجيل"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel the patient registration process ?"
-msgstr ""
+msgstr "الغاء عملية تسجيل المريض ؟"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Care Plan"
-msgstr ""
+msgstr "خطة العلاج"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Clean Bed"
-msgstr ""
+msgstr "السرير نظيف"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Click when Bed has been cleaned"
-msgstr ""
+msgstr "اضغط عندما يصبح السرير نظيف"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm"
-msgstr ""
+msgstr "تأكيد"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm Registration / Make the reservation"
-msgstr ""
+msgstr "تأكيد التسجيل / الحجز"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm that the bed has been cleaned and is now ready to use"
-msgstr ""
+msgstr "تأكيد أن السرير نظيف وجاهز للاستخدام"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge"
 msgstr "تخريج"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Info"
-msgstr ""
+msgstr "معلومات الخروج"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Patient"
-msgstr ""
+msgstr "تخريج المريض"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Plan"
-msgstr "خطة التسديد"
+msgstr "خطة التخريج"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Medication Plan"
-msgstr ""
+msgstr "خطة الادوية"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Notes"
 msgstr "ملاحظات"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Nursing Plan"
 msgstr "خطة التمريض"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Nutrition"
 msgstr "التغذيه"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Other nutrition notes / directions"
-msgstr ""
+msgstr "ملاحظات / توجيهات غذائية أخرى"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Patient Admission"
-msgstr ""
+msgstr "قبول المريض"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Status"
 msgstr "الوضع"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "You are about to discharge the patient from the health institution."
-msgstr ""
+msgstr "أنت على وشك إخراج المريض من المؤسسة الصحية."
 
 msgctxt ""
 "wizard_button:gnuhealth.bed.transfer.create,start,create_bed_transfer:"
