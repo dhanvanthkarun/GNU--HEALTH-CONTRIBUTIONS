@@ -33,20 +33,20 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     visit_date = fields.DateTime('Date', help="Date of Consultation")
     computed_age = fields.Function(fields.Char(
-            'Age',
-            help="Computed patient age at the moment of the evaluation"),
-            'patient_age_at_evaluation')
+        'Age',
+        help="Computed patient age at the moment of the evaluation"),
+        'patient_age_at_evaluation')
 
     gender = fields.Function(fields.Selection([
         (None, ''),
         ('m', 'Male'),
         ('f', 'Female'),
-        ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
+    ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
 
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
         help="Health professional / Ophthalmologist / OptoMetrist"
-        )
+    )
 
     # there are two types of charts, a meter chart.. 6/.. val
     # and ft chart.. 200/...
@@ -68,7 +68,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ('1_2_meter_fc', '1/2 Meter FC'),
         ('hmfc', 'HMCF'),
         ('p_l', 'P/L'),
-        ]
+    ]
 
     # Near vision chart
     near_vision_chart = [
@@ -80,7 +80,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ('N24', 'N24'),
         ('N36', 'N36'),
         ('N60', 'N60'),
-        ]
+    ]
     # vision test using snellen chart
     rdva = fields.Selection(
         snellen_chart, 'RDVA',
@@ -213,7 +213,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ('nct', 'Non-contact tonometry'),
         ('schiotz', 'Schiotz tonometry'),
         ('goldmann', 'Goldman tonometry'),
-        ], 'Method', help='Tonometry / Intraocular pressure reading method',
+    ], 'Method', help='Tonometry / Intraocular pressure reading method',
         states=STATES)
 
     riop = fields.Float(
@@ -226,13 +226,13 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
 
     findings = fields.One2Many(
         'gnuhealth.ophthalmology.findings', 'name',
-        'Findings',  states=STATES)
+        'Findings', states=STATES)
 
     state = fields.Selection([
         (None, ''),
         ('in_progress', 'In progress'),
         ('done', 'Done'),
-        ], 'State', readonly=True, sort=False)
+    ], 'State', readonly=True, sort=False)
 
     signed_by = fields.Many2One(
         'gnuhealth.healthprofessional', 'Signed by', readonly=True,
@@ -338,7 +338,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         cls.write(evaluations, {
             'state': 'done',
             'signed_by': signing_hp,
-            })
+        })
 
     @classmethod
     def __setup__(cls):
@@ -346,7 +346,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
 
         cls._buttons.update({
             'end_evaluation': {'invisible': Equal(Eval('state'), 'done')}
-            })
+        })
 
 
 class OphthalmologyFindings(ModelSQL, ModelView):
@@ -378,7 +378,7 @@ class OphthalmologyFindings(ModelSQL, ModelView):
         ('fundus_background', 'Fundus background'),
         ('fundus_vessels', 'Fundus vessels'),
         ('other', 'Other'),
-        ]
+    ]
 
     eye_structure = fields.Selection(
         structure,

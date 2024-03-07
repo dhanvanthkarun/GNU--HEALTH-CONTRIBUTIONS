@@ -79,7 +79,7 @@ class CreateServiceInvoice(Wizard):
             if service.state == 'invoiced':
                 raise ServiceInvoiced(
                     gettext('health_insurance.msg_service_invoiced')
-                    )
+                )
             if service.invoice_to:
                 party = service.invoice_to
             else:
@@ -118,7 +118,7 @@ class CreateServiceInvoice(Wizard):
 
             journals = Journal.search([
                 ('type', '=', 'revenue'),
-                ], limit=1)
+            ], limit=1)
 
             if journals:
                 journal, = journals
@@ -131,7 +131,7 @@ class CreateServiceInvoice(Wizard):
             if not party_address:
                 raise NoInvoiceAddress(
                     gettext('health_insurance.msg_no_invoice_address')
-                    )
+                )
 
             invoice_data['invoice_address'] = party_address.id
             invoice_data['reference'] = service.name
@@ -149,7 +149,7 @@ class CreateServiceInvoice(Wizard):
             else:
                 raise NoPaymentTerm(
                     gettext('health_insurance.msg_no_payment_term')
-                    )
+                )
 
             # Invoice Lines
             seq = 0
@@ -186,7 +186,7 @@ class CreateServiceInvoice(Wizard):
                                 if discount['value']:
                                     if (discount['type'] == 'pct'):
                                         unit_price *= decimal.Decimal(
-                                            1 - discount['value']/100)
+                                            1 - discount['value'] / 100)
                                         # Use price_decimal value from
                                         # system configuration to set
                                         # the number of decimals
@@ -201,16 +201,16 @@ class CreateServiceInvoice(Wizard):
                                         unit_price = discount['value']
                                         desc = f"{line.desc} (policy plan)"
                     invoice_lines.append(('create', [{
-                            'origin': str(line),
-                            'product': line.product.id,
-                            'description': desc,
-                            'quantity': line.qty,
-                            'account': account,
-                            'unit': line.product.default_uom.id,
-                            'unit_price': unit_price,
-                            'sequence': seq,
-                            'taxes': [('add', taxes)],
-                        }]))
+                        'origin': str(line),
+                        'product': line.product.id,
+                        'description': desc,
+                        'quantity': line.qty,
+                        'account': account,
+                        'unit': line.product.default_uom.id,
+                        'unit_price': unit_price,
+                        'sequence': seq,
+                        'taxes': [('add', taxes)],
+                    }]))
                 invoice_data['lines'] = invoice_lines
 
             invoices.append(invoice_data)

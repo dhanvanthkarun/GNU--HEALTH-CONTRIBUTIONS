@@ -4,4 +4,3 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from . import patient_evaluation_report
-

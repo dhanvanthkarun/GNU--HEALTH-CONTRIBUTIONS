@@ -8,7 +8,7 @@
 # this repository contains the full copyright notices and license terms.
 """WebDAV server for GNU Health
 
-WebDAV server for GNU Health HMIS. It contains the 
+WebDAV server for GNU Health HMIS. It contains the
 functionality for Collections, Shares and Attachments
 
 The package is the continuation of the WebDAV functionality

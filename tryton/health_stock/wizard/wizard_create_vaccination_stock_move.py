@@ -46,7 +46,7 @@ class CreateVaccinationStockMove(Wizard):
             if vaccination.moves:
                 raise StockMoveExists(
                     gettext('health_stock.msg_stock_move_exists')
-                    )
+                )
 
             lines = []
 

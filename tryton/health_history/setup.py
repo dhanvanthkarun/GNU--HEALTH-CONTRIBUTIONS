@@ -70,14 +70,14 @@ setup(
         'trytond.modules.health_history',
         'trytond.modules.health_history.tests',
         'trytond.modules.health_history.report',
-        ],
+    ],
 
     package_data={
         'trytond.modules.health_history': info.get('xml', [])
         + info.get('translation', [])
         + ['tryton.cfg', 'view/*.xml', 'doc/*.rst', 'locale/*.po',
            'report/*.fodt', 'icons/*.svg'],
-        },
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -92,7 +92,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        ],
+    ],
     license='GPL-3',
     install_requires=requires,
     zip_safe=False,
@@ -102,4 +102,4 @@ setup(
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-    )
+)

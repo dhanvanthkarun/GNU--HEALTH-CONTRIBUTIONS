@@ -15,4 +15,4 @@ class Cron(metaclass=PoolMeta):
         super().__setup__()
         cls.method.selection.extend([
             ('gnuhealth.orthanc.config|sync', "Orthanc: Sync studies"),
-            ])
+        ])

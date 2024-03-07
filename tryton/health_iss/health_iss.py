@@ -65,7 +65,7 @@ class Iss (ModelSQL, ModelView):
         ('violence', 'Violence'),
         ('attempt_suicide', 'Suicide Attempt'),
         ('motor_vehicle', 'Motor Vehicle'),
-        ], 'Injury Type', required=True, sort=False)
+    ], 'Injury Type', required=True, sort=False)
 
     mva_mode = fields.Selection([
         (None, ''),
@@ -82,8 +82,8 @@ class Iss (ModelSQL, ModelView):
         ('aircraft', 'Aircraft'),
         ('other', 'Other'),
         ('unknown', 'Unknown'),
-        ], 'Mode', help="Motor Vehicle Accident Mode", sort=False,
-           states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
+    ], 'Mode', help="Motor Vehicle Accident Mode", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
 
     mva_position = fields.Selection([
         (None, ''),
@@ -93,9 +93,9 @@ class Iss (ModelSQL, ModelView):
         ('bystander', 'Bystander'),
         ('unspecified_vehicle', 'Unspecified vehicle'),
         ('unknown', 'Unknown'),
-        ], 'User Position',
-            help="Motor Vehicle Accident user position", sort=False,
-            states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
+    ], 'User Position',
+        help="Motor Vehicle Accident user position", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
 
     mva_counterpart = fields.Selection([
         (None, ''),
@@ -112,18 +112,18 @@ class Iss (ModelSQL, ModelView):
         ('aircraft', 'Aircraft'),
         ('other', 'Other'),
         ('unknown', 'Unknown'),
-        ], 'Counterpart',
-            help="Motor Vehicle Accident Counterpart", sort=False,
-            states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
+    ], 'Counterpart',
+        help="Motor Vehicle Accident Counterpart", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
 
     safety_gear = fields.Selection([
         (None, ''),
         ('yes', 'Yes'),
         ('no', 'No'),
         ('unknown', 'Unknown'),
-        ], 'Safety Gear',
-            help="Use of Safety Gear - Helmet, safety belt...", sort=False,
-            states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
+    ], 'Safety Gear',
+        help="Use of Safety Gear - Helmet, safety belt...", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'motor_vehicle')})
 
     alcohol = fields.Selection([
         (None, ''),
@@ -131,9 +131,9 @@ class Iss (ModelSQL, ModelView):
         ('no', 'No'),
         ('suspected', 'Suspected'),
         ('unknown', 'Unknown'),
-        ], 'Alcohol', required=True,
-            help="Is there evidence of alcohol use by the injured person"
-            " in the 6 hours before the accident ?", sort=False)
+    ], 'Alcohol', required=True,
+        help="Is there evidence of alcohol use by the injured person"
+        " in the 6 hours before the accident ?", sort=False)
 
     drugs = fields.Selection([
         (None, ''),
@@ -141,9 +141,9 @@ class Iss (ModelSQL, ModelView):
         ('no', 'No'),
         ('suspected', 'Suspected'),
         ('unknown', 'Unknown'),
-        ], 'Other Drugs', required=True,
-            help="Is there evidence of drug use by the injured person"
-            " in the 6 hours before the accident ?", sort=False)
+    ], 'Other Drugs', required=True,
+        help="Is there evidence of drug use by the injured person"
+        " in the 6 hours before the accident ?", sort=False)
 
     injury_details = fields.Text('Details')
 
@@ -158,9 +158,9 @@ class Iss (ModelSQL, ModelView):
         ('official', 'Official / Legal'),
         ('stranger', 'Stranger'),
         ('other', 'other'),
-        ], 'Relationship',
-            help="Victim - Perpetrator relationship", sort=False,
-            states={'required': Equal(Eval('injury_type'), 'violence')})
+    ], 'Relationship',
+        help="Victim - Perpetrator relationship", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'violence')})
 
     violence_circumstances = fields.Selection([
         (None, ''),
@@ -172,9 +172,9 @@ class Iss (ModelSQL, ModelView):
         ('other_crime', 'Committing a crime (other)'),
         ('other', 'Other'),
         ('unknown', 'Unknown'),
-        ], 'Context',
-            help="Precipitating Factor", sort=False,
-            states={'required': Equal(Eval('injury_type'), 'violence')})
+    ], 'Context',
+        help="Precipitating Factor", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'violence')})
 
     injury_method = fields.Selection([
         (None, ''),
@@ -186,9 +186,9 @@ class Iss (ModelSQL, ModelView):
         ('choking', 'Choking/strangulation'),
         ('other', 'Other'),
         ('unknown', 'Unknown'),
-        ], 'Method',
-            help="Method of Injury", sort=False,
-            states={'required': Equal(Eval('injury_type'), 'violence')})
+    ], 'Method',
+        help="Method of Injury", sort=False,
+        states={'required': Equal(Eval('injury_type'), 'violence')})
 
     # Place of occurrance . Not used in motor vehicle accidents
 
@@ -204,10 +204,10 @@ class Iss (ModelSQL, ModelView):
         ('transportation', 'Public transportation'),
         ('sports', 'Sports event'),
         ('unknown', 'Unknown'),
-        ], 'Place',
-            help="Place of occurrance", sort=False,
-            states={
-                'required': Not(Equal(Eval('injury_type'), 'motor_vehicle'))})
+    ], 'Place',
+        help="Place of occurrance", sort=False,
+        states={
+        'required': Not(Equal(Eval('injury_type'), 'motor_vehicle'))})
 
     disposition = fields.Selection([
         (None, ''),
@@ -218,7 +218,7 @@ class Iss (ModelSQL, ModelView):
         ('daa', 'Discharge Against Advise'),
         ('transferred', 'Transferred'),
         ('doa', 'Dead on Arrival'),
-        ], 'Disposition',
+    ], 'Disposition',
         help="Place of occurrance", sort=False, required=True)
 
     def get_patient(self, name):

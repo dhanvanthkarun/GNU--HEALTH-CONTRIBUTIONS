@@ -31,7 +31,7 @@ from .exceptions import (
     DischargeReasonNeeded, DischargeBeforeAdmission,
     BedIsNotAvailable, NeedTimeZone,
     AdmissionMustBeToday, SpecialMealNeeds
-    )
+)
 
 
 __all__ = [
@@ -60,7 +60,7 @@ class DietTherapeutic (ModelSQL, ModelView):
         cls._sql_constraints = [
             ('code_unique', Unique(t, t.code),
                 'The Diet code already exists'),
-            ]
+        ]
 
 
 class InpatientRegistration(ModelSQL, ModelView):
@@ -82,7 +82,7 @@ class InpatientRegistration(ModelSQL, ModelView):
         ('elective', 'Elective'),
         ('urgent', 'Urgent'),
         ('emergency', 'Emergency'),
-        ], 'Admission type', required=True, select=True, states=STATES)
+    ], 'Admission type', required=True, select=True, states=STATES)
     hospitalization_date = fields.DateTime(
         'Hospitalization date',
         required=True, select=True, states=STATES)
@@ -91,10 +91,10 @@ class InpatientRegistration(ModelSQL, ModelView):
         states=STATES)
     attending_physician = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Attending Physician',  states=STATES)
+        'Attending Physician', states=STATES)
     operating_physician = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Operating Physician',  states=STATES)
+        'Operating Physician', states=STATES)
     admission_reason = fields.Many2One(
         'gnuhealth.pathology',
         'Reason for Admission', help="Reason for Admission", states=STATES,
@@ -107,8 +107,8 @@ class InpatientRegistration(ModelSQL, ModelView):
                 Eval('state') == 'done',
                 Eval('state') == 'finished',
                 Bool(Eval('name')),
-                        )
-            },
+            )
+        },
         depends=['name'])
     nursing_plan = fields.Text('Nursing Plan', states=STATES)
     medications = fields.One2Many(
@@ -131,7 +131,7 @@ class InpatientRegistration(ModelSQL, ModelView):
         ('hospitalized', 'hospitalized'),
         ('done', 'Discharged - needs cleaning'),
         ('finished', 'Finished'),
-        ), 'Status', select=True, readonly=True)
+    ), 'Status', select=True, readonly=True)
 
     bed_transfers = fields.One2Many(
         'gnuhealth.bed.transfer', 'name',
@@ -185,27 +185,27 @@ class InpatientRegistration(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_unique', Unique(t, t.name),
                 'The Registration code already exists'),
-            ]
+        ]
 
         cls._buttons.update({
-                'confirmed': {
-                    'invisible': And(
-                        Not(Equal(Eval('state'), 'free')),
-                        Not(Equal(Eval('state'), 'cancelled'))),
-                    },
-                'cancel': {
-                    'invisible': Not(Equal(Eval('state'), 'confirmed')),
-                    },
-                'admission': {
-                    'invisible': Not(Equal(Eval('state'), 'confirmed')),
-                    },
-                'discharge': {
-                    'invisible': Not(Equal(Eval('state'), 'hospitalized')),
-                    },
-                'bedclean': {
-                    'invisible': Not(Equal(Eval('state'), 'done')),
-                    },
-                })
+            'confirmed': {
+                'invisible': And(
+                    Not(Equal(Eval('state'), 'free')),
+                    Not(Equal(Eval('state'), 'cancelled'))),
+            },
+            'cancel': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed')),
+            },
+            'admission': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed')),
+            },
+            'discharge': {
+                'invisible': Not(Equal(Eval('state'), 'hospitalized')),
+            },
+            'bedclean': {
+                'invisible': Not(Equal(Eval('state'), 'done')),
+            },
+        })
 
     # Method to check for availability and make the hospital bed reservation
     # Checks that there are not overlapping dates and status of the bed / room
@@ -225,23 +225,23 @@ class InpatientRegistration(ModelSQL, ModelView):
                 raise DischargeBeforeAdmission(
                     gettext('health_inpatient.msg_discharge_befor_admission'))
             cursor.execute(*table.select(
-                    table.id,
-                    where=((
-                            (table.hospitalization_date <=
-                             registration.hospitalization_date) &
-                            (table.discharge_date >=
-                             registration.hospitalization_date)
-                            ) |
-                           ((table.hospitalization_date
-                            <= registration.discharge_date)
-                            & (table.discharge_date
-                                >= registration.discharge_date)) |
-                           ((table.hospitalization_date
-                            >= registration.hospitalization_date)
-                            & (table.discharge_date
-                                <= registration.discharge_date)))
-                    & table.state.in_(['confirmed', 'hospitalized', 'done'])
-                    & (table.bed == registration.bed.id)))
+                table.id,
+                where=((
+                    (table.hospitalization_date <=
+                     registration.hospitalization_date) &
+                    (table.discharge_date >=
+                     registration.hospitalization_date)
+                ) |
+                    ((table.hospitalization_date
+                      <= registration.discharge_date)
+                        & (table.discharge_date
+                           >= registration.discharge_date)) |
+                    ((table.hospitalization_date
+                      >= registration.hospitalization_date)
+                     & (table.discharge_date
+                        <= registration.discharge_date)))
+                & table.state.in_(['confirmed', 'hospitalized', 'done'])
+                & (table.bed == registration.bed.id)))
 
             if cursor.fetchone():
                 raise BedIsNotAvailable(
@@ -263,7 +263,7 @@ class InpatientRegistration(ModelSQL, ModelView):
                         'msg_no_associated_health_professional'))
 
         cls.write(registrations, {
-                    'state': 'done', 'discharged_by': signing_hp})
+            'state': 'done', 'discharged_by': signing_hp})
 
         Bed.write([registration_id.bed], {'state': 'to_clean'})
 
@@ -532,7 +532,7 @@ class InpatientMedication (ModelSQL, ModelView):
         ('days', 'days'),
         ('weeks', 'weeks'),
         ('wr', 'when required'),
-        ], 'unit', select=True, sort=False)
+    ], 'unit', select=True, sort=False)
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
     is_active = fields.Boolean(
@@ -545,7 +545,7 @@ class InpatientMedication (ModelSQL, ModelView):
         states={
             'invisible': Not(Bool(Eval('discontinued'))),
             'required': Bool(Eval('discontinued')),
-            },
+        },
         depends=['discontinued'],
         help='Short description for discontinuing the treatment')
     adverse_reaction = fields.Text(
@@ -698,7 +698,7 @@ class InpatientMealOrder (ModelSQL, ModelView):
         ('dinner', 'Dinner'),
         ('snack', 'Snack'),
         ('special', 'Special order'),
-        ), 'Meal time', required=True, sort=False)
+    ), 'Meal time', required=True, sort=False)
 
     meal_item = fields.One2Many(
         'gnuhealth.inpatient.meal.order.item', 'name',
@@ -730,7 +730,7 @@ class InpatientMealOrder (ModelSQL, ModelView):
         ('ordered', 'Ordered'),
         ('processing', 'Processing'),
         ('done', 'Done'),
-        ), 'Status', readonly=True)
+    ), 'Status', readonly=True)
 
     @staticmethod
     def default_order_date():
@@ -793,23 +793,23 @@ class InpatientMealOrder (ModelSQL, ModelView):
         super(InpatientMealOrder, cls).__setup__()
         cls._buttons.update({
             'cancel': {'invisible': Not(Equal(Eval('state'), 'ordered'))}
-            })
+        })
 
         cls._buttons.update({
             'generate': {
                 'invisible': Or(Equal(Eval('state'), 'ordered'),
                                 Equal(Eval('state'), 'done'))},
-            })
+        })
 
         cls._buttons.update({
             'done': {'invisible': Not(Equal(Eval('state'), 'ordered'))}
-            })
+        })
 
         t = cls.__table__()
         cls._sql_constraints = [
             ('meal_order_uniq', Unique(t, t.meal_order),
                 'The Meal Order code already exists'),
-            ]
+        ]
 
     @classmethod
     @ModelView.button

@@ -66,14 +66,14 @@ setup(
     packages=[
         'trytond.modules.health_federation',
         'trytond.modules.health_federation.tests',
-        ],
+    ],
 
     package_data={
         'trytond.modules.health_federation': info.get('xml', [])
         + info.get('translation', [])
         + ['tryton.cfg', 'view/*.xml', 'doc/*.rst', 'locale/*.po',
            'icons/*.svg'],
-        },
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -90,7 +90,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        ],
+    ],
     license='GPL-3',
     install_requires=requires,
     zip_safe=False,
@@ -100,4 +100,4 @@ setup(
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-    )
+)

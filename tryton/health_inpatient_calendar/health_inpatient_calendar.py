@@ -48,7 +48,7 @@ class InpatientRegistration(metaclass=PoolMeta):
                         'calendar': inpatient_registration.bed.calendar.id,
                         'summary':
                             bed + inpatient_registration.patient.name.rec_name
-                        }])
+                    }])
                     cls.write(
                         [inpatient_registration],
                         {'event': events[0].id})
@@ -74,22 +74,22 @@ class InpatientRegistration(metaclass=PoolMeta):
                 if 'hospitalization_date' in values:
                     Event.write([inpatient_registration.event], {
                         'dtstart': values['hospitalization_date'],
-                        })
+                    })
                 if 'discharge_date' in values:
                     Event.write([inpatient_registration.event], {
                         'dtend': values['discharge_date'],
-                        })
+                    })
                 if 'bed' in values:
                     bed = HospitalBed(values['bed'])
                     Event.write([inpatient_registration.event], {
                         'calendar': bed.calendar.id,
-                        })
+                    })
                 if 'patient' in values:
                     patient = Patient(values['patient'])
                     bed = inpatient_registration.bed.name.code + ": "
                     Event.write([inpatient_registration.event], {
                         'summary': bed + patient.name.rec_name,
-                        })
+                    })
 
         return super(InpatientRegistration, cls).write(registrations, values)
 

@@ -37,7 +37,7 @@ class ChagasDUSurvey(ModelSQL, ModelView):
         ('unchanged', 'Unchanged'),
         ('better', 'Improved'),
         ('worse', 'Worsen'),
-        ], 'Status',
+    ], 'Status',
         help="DU status compared to last visit", required=True, sort=False)
 
     # Findings of Triatomines in the DU
@@ -50,7 +50,7 @@ class ChagasDUSurvey(ModelSQL, ModelView):
         ('r_prolixus', 'R. prolixus'),
         ('t_dimidiata', 'T. dimidiata'),
         ('p_megistus', 'P. megistus'),
-        ], 'Vector', help="Vector", sort=False)
+    ], 'Vector', help="Vector", sort=False)
 
     nymphs = fields.Boolean(
         'Nymphs', "Check this box if triatomine nymphs were found")
