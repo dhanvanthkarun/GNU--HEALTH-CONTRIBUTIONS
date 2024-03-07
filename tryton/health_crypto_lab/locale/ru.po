@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-05 00:08+0000\n"
+"PO-Revision-Date: 2024-03-07 04:10+0000\n"
 "Last-Translator: gfbdrgng <hnaofegnp@hldrive.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gnu-health/"
 "health_crypto_lab/ru/>\n"
@@ -28,12 +28,10 @@ msgctxt "field:gnuhealth.lab,document_digest:"
 msgid "Digest"
 msgstr "Дайджест"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,done_by:"
 msgid "Done by"
 msgstr "Продолжить"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,done_date:"
 msgid "Finished on"
 msgstr "Закончил"
@@ -77,7 +75,7 @@ msgstr "Дайджест оригинальных документов"
 
 msgctxt "help:gnuhealth.lab,done_by:"
 msgid "Professional who processes this lab test"
-msgstr ""
+msgstr "Профессионал, который обрабатывает этот лабораторный тест"
 
 msgctxt "help:gnuhealth.lab,historize:"
 msgid ""
@@ -86,87 +84,83 @@ msgid ""
 "condition of the patient. The condition will be created when the lab test is"
 " confirmed and validated"
 msgstr ""
+"Если этот флаг установлен, то в историю болезни будет добавлено новое "
+"состояние здоровья. Снимите его, если этот лабораторный тест находится в "
+"контексте уже существующего состояния пациента. Состояние будет создано, "
+"когда лабораторный тест будет подтвержден и валидирован"
 
 msgctxt "help:gnuhealth.lab,validated_by:"
 msgid "Professional who validates this lab test"
-msgstr ""
+msgstr "Профессионал, который проверяет этот лабораторный тест"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_generate_button"
 msgid "Done"
-msgstr "Выполнено"
+msgstr "Сделано"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_setdraft_button"
 msgid "Draft"
-msgstr "Черновик"
+msgstr "Проект"
 
 msgctxt "model:ir.model.button,string:labtest_sign_button"
 msgid "Validate"
 msgstr "Проверить"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Done"
-msgstr "Выполнено"
+msgstr "Сделано"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Draft"
-msgstr "Черновик"
+msgstr "Проект"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Validated"
-msgstr "Утвержденный"
+msgstr "Проверено"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are the results ready ?"
-msgstr ""
+msgstr "Готовы ли результаты?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are you sure to sign this lab results ?"
-msgstr ""
+msgstr "Вы обязательно подпишете результаты этой лаборатории?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Digital Signature"
-msgstr ""
+msgstr "Цифровая подпись"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Document validation"
-msgstr ""
+msgstr "Проверка документов"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Done"
-msgstr "Выполнено"
+msgstr "Сделано"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Draft"
-msgstr "Черновик"
+msgstr "Проект"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Reverse the document to draft state."
-msgstr ""
+msgstr "Переключить документ на проект состояния."
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Set to Draft ?"
-msgstr ""
+msgstr "Готовы к проекту?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "The lab test is done and results are waiting to be validated"
-msgstr ""
+msgstr "Лабораторный тест выполнен, и результаты ждут подтверждения"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate"
 msgstr "Проверить"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate and Sign the lab test"
-msgstr ""
+msgstr "Проверка и подписание лабораторного теста"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validation"
-msgstr ""
+msgstr "Проверка"
