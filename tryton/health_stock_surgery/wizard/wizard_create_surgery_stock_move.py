@@ -49,7 +49,7 @@ class CreateSurgeryStockMove(Wizard):
             if surgery.moves:
                 raise StockMoveExists(
                     gettext('health_stock_surgery.msg_stock_move_exists')
-                    )
+                )
 
             from_location = surgery.location
             if from_location.type == 'warehouse':
