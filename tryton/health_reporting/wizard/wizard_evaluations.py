@@ -28,7 +28,7 @@ class OpenEvaluationsStart(ModelView):
         ('doctor', 'Doctor'),
         ('specialty', 'Specialty'),
         ('sector', 'Sector'),
-        ], 'Group By', sort=False, required=True)
+    ], 'Group By', sort=False, required=True)
 
 
 class OpenEvaluations(Wizard):
@@ -40,7 +40,7 @@ class OpenEvaluations(Wizard):
         'health_reporting.evaluations_open_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Open', 'select', 'tryton-ok', default=True),
-            ])
+        ])
     select = StateTransition()
     open_doctor = StateAction('health_reporting.act_evaluations_doctor')
     open_specialty = StateAction('health_reporting.act_evaluations_specialty')
@@ -51,23 +51,23 @@ class OpenEvaluations(Wizard):
 
     def do_open_doctor(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+        })
         return action, {}
 
     def do_open_specialty(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+        })
         return action, {}
 
     def do_open_sector(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+        })
         return action, {}
 
     def transition_open_doctor(self):

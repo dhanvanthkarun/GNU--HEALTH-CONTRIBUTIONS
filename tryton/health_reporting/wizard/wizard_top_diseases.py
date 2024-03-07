@@ -90,16 +90,16 @@ class OpenTopDiseases(Wizard):
         'health_reporting.top_diseases_open_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Open', 'open_', 'tryton-ok', default=True),
-            ])
+        ])
     open_ = StateAction('health_reporting.act_top_diseases_form')
 
     def do_open_(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                'group': self.start.group.id if self.start.group else None,
-                'number_records': self.start.number_records,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+            'group': self.start.group.id if self.start.group else None,
+            'number_records': self.start.number_records,
+        })
         return action, {}
 
     def transition_open_(self):
