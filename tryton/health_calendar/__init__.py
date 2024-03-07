@@ -20,8 +20,8 @@ def register():
     Pool.register(
         health_calendar.User,
         health_calendar.Appointment,
-        wizard.CreateAppointmentStart,
+        wizard.wizard_health_calendar.CreateAppointmentStart,
         module='health_calendar', type_='model')
     Pool.register(
-        wizard.CreateAppointment,
+        wizard.wizard_health_calendar.CreateAppointment,
         module='health_calendar', type_='wizard')
