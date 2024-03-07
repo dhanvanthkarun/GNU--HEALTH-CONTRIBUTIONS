@@ -45,8 +45,8 @@ class PatientDiseaseReport(Report):
         localcontext['print_time'] = localcontext['print_date'].time()
 
         return super(
-                     PatientDiseaseReport, cls).parse(
-                     report, objects, data, localcontext)
+            PatientDiseaseReport, cls).parse(
+            report, objects, data, localcontext)
 
 
 class PatientMedicationReport(Report):
@@ -58,8 +58,8 @@ class PatientMedicationReport(Report):
         localcontext['print_time'] = localcontext['print_date'].time()
 
         return super(
-                     PatientMedicationReport, cls).parse(
-                     report, objects, data, localcontext)
+            PatientMedicationReport, cls).parse(
+            report, objects, data, localcontext)
 
 
 class PatientVaccinationReport(Report):
@@ -71,5 +71,5 @@ class PatientVaccinationReport(Report):
         localcontext['print_time'] = localcontext['print_date'].time()
 
         return super(
-                     PatientVaccinationReport, cls).parse(
-                     report, objects, data, localcontext)
+            PatientVaccinationReport, cls).parse(
+            report, objects, data, localcontext)
