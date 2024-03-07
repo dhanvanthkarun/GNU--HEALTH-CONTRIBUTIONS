@@ -24,12 +24,12 @@ def register():
         sequences.HealthServiceSequence,
         health_services.HealthService,
         health_services.HealthServiceLine,
-        wizard.CreateServiceInvoiceInit,
+        wizard.wizard_health_services.CreateServiceInvoiceInit,
         invoice.Invoice,
         invoice.InvoiceLine,
         health_services.PatientPrescriptionOrder,
         health_services.PatientEvaluation,
         module='health_services', type_='model')
     Pool.register(
-        wizard.CreateServiceInvoice,
+        wizard.wizard_health_services.CreateServiceInvoice,
         module='health_services', type_='wizard')
