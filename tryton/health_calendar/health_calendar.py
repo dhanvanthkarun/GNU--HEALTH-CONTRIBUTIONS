@@ -30,7 +30,7 @@ class User(metaclass=PoolMeta):
         states={
             'invisible': Not(Bool(Eval('use_caldav'))),
             'required': Bool(Eval('use_caldav')),
-            })
+        })
 
 
 class Appointment(metaclass=PoolMeta):
@@ -56,7 +56,7 @@ class Appointment(metaclass=PoolMeta):
                     'health_calendar.msg_appointment_end_date_before_start',
                     appointment_date=self.appointment_date,
                     appointment_date_end=self.appointment_date_end
-                    )
+                )
                 )
 
     @classmethod
@@ -91,7 +91,7 @@ class Appointment(metaclass=PoolMeta):
                                 healthprof.name.internal_user.calendar.id,
                             'summary': patient.name.rec_name,
                             'description': values['comments'],
-                            }])
+                        }])
                         values['event'] = events[0].id
         return super(Appointment, cls).create(vlist)
 
@@ -108,20 +108,20 @@ class Appointment(metaclass=PoolMeta):
                 if 'appointment_date' in values:
                     Event.write([appointment.event], {
                         'dtstart': values['appointment_date'],
-                        })
+                    })
                 if 'appointment_date_end' in values:
                     Event.write([appointment.event], {
                         'dtend': values['appointment_date_end'],
-                        })
+                    })
                 if 'patient' in values:
                     patient = Patient(values['patient'])
                     Event.write([appointment.event], {
                         'summary': patient.name.rec_name,
-                        })
+                    })
                 if 'comments' in values:
                     Event.write([appointment.event], {
                         'description': values['comments'],
-                        })
+                    })
 
             else:
                 # Move the event to the new health professional
@@ -155,7 +155,7 @@ class Appointment(metaclass=PoolMeta):
                                 'summary':
                                     patient,
                                 'description': comments,
-                                }])
+                            }])
                             values['event'] = events[0].id
 
                     # Delete the event from the current health professional
