@@ -13,7 +13,7 @@
 #########################################################################
 
 from trytond.pool import Pool
-from .import health_pediatrics_growth_charts 
+from .import health_pediatrics_growth_charts
 
 
 def register():

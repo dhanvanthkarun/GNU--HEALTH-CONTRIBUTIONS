@@ -14,5 +14,5 @@
 #                         HEALTH DENTISTRY package                      #
 #                __init__.py: Report declaration file                   #
 #########################################################################
-from . import procedures_report 
+from . import procedures_report
 from . import odontogram_report

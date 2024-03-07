@@ -17,5 +17,5 @@ from .health_crypto_lab import *
 
 def register():
     Pool.register(
-	LabTest,
+        LabTest,
         module='health_crypto_lab', type_='model')

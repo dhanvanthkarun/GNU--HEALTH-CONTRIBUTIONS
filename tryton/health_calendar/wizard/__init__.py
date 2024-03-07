@@ -8,7 +8,7 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                       HEALTH CALENDAR PACKAGE                         # 
+#                       HEALTH CALENDAR PACKAGE                         #
 #                __init__.py: Wizard declaration file                   #
 #########################################################################
 from .wizard_health_calendar import *
