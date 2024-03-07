@@ -67,14 +67,14 @@ setup(
     packages=[
         'trytond.modules.health_icd10',
         'trytond.modules.health_icd10.tests',
-        ],
+    ],
 
     package_data={
         'trytond.modules.health_icd10': info.get('xml', [])
         + info.get('translation', [])
         + ['tryton.cfg', 'view/*.xml', 'doc/*.rst', 'locale/*.po',
            'report/*.fodt', 'icons/*.svg'],
-        },
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -91,12 +91,12 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        ],
+    ],
     license='GPL-3',
     install_requires=requires,
     extras_require={
         'Pillow': ['Pillow'],
-        },
+    },
     zip_safe=False,
     entry_points="""
     [trytond.modules]
@@ -104,4 +104,4 @@ setup(
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-    )
+)

@@ -65,7 +65,7 @@ setup(
         'trytond.modules.health_dentistry.tests',
         'trytond.modules.health_dentistry.wizard',
         'trytond.modules.health_dentistry.report',
-        ],
+    ],
 
     package_data={
         'trytond.modules.health_dentistry': info.get('xml', []) +
@@ -73,7 +73,7 @@ setup(
         ['tryton.cfg', 'view/*.xml', 'doc/*.rst',
             'locale/*.po', 'report/*.fodt', 'icons/*.svg',
             'report/*.png'],
-        },
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -88,12 +88,12 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        ],
+    ],
     license='GPL-3',
     install_requires=requires,
     extras_require={
         'Pillow': ['Pillow'],
-        },
+    },
     zip_safe=False,
     entry_points="""
     [trytond.modules]

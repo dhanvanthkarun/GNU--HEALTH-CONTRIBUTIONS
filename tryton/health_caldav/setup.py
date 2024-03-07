@@ -29,7 +29,7 @@ for key in ('depends', 'extras_depend', 'xml'):
 major_version, minor_version = 6, 0
 
 proteus = 'proteus >= %s.%s, < %s.%s' % (major_version, minor_version,
-                                        major_version, minor_version + 1)
+                                         major_version, minor_version + 1)
 requires = [proteus, 'vobject']
 
 for dep in info.get('depends', []):
@@ -49,7 +49,6 @@ for dep in info.get('depends', []):
                     minor_version + 1))
 
 
-
 setup(
     name='gnuhealth_caldav',
     version=info.get('version', '0.0.1'),
@@ -64,12 +63,12 @@ setup(
     packages=[
         'trytond.modules.health_caldav',
         'trytond.modules.health_caldav.tests',
-        ],
+    ],
     package_data={
         'trytond.modules.health_caldav': (
             info.get('xml', [])
             + ['tryton.cfg', 'view/*.xml', 'locale/*.po']),
-        },
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Plugins',
@@ -84,12 +83,12 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        ],
+    ],
     license='GPL-3',
     install_requires=requires,
     extras_require={
         'test': ['health_caldav'],
-        },
+    },
     zip_safe=False,
     entry_points="""
     [trytond.modules]
@@ -97,4 +96,4 @@ setup(
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-    )
+)
