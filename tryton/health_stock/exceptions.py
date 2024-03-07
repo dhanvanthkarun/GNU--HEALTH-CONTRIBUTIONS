@@ -15,5 +15,6 @@ class ExpiredVaccine(ValidationError):
 class StockMoveExists(ValidationError):
     pass
 
+
 class NoPharmacy(ValidationError):
     pass

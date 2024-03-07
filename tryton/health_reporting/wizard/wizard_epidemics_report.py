@@ -46,7 +46,7 @@ class EpidemicsReport(Wizard):
         'health_reporting.epidemics_report_open_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Open', 'open_', 'tryton-ok', default=True),
-            ])
+        ])
 
     open_ = StateAction('health_reporting.report_epidemics_information')
 

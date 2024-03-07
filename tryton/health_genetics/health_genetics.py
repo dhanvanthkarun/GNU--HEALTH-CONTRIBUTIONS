@@ -69,7 +69,7 @@ class Gene(ModelSQL, ModelView):
         ('other_region', 'other: biological region'),
         ('other_virus_integration_site', 'other: virus integration site'),
         ('other_unknown', 'other: unknown'),
-        ], 'Gene type', help="Locus in the form of group:type",
+    ], 'Gene type', help="Locus in the form of group:type",
         sort=False, select=True)
 
     protein_name = fields.Char('Protein Code',
@@ -116,7 +116,7 @@ class Gene(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_unique', Unique(t, t.hgnc_id),
                 'The official identifier must be unique'),
-            ]
+        ]
 
     def get_rec_name(self, name):
         protein = ''
@@ -185,7 +185,7 @@ class ProteinDisease(ModelSQL, ModelView):
         ('y', 'Y-Linked'),
         ('m', 'Mitochondrial'),
         ('c', 'codominance'),
-        ], 'Inheritance Pattern', help="Inheritance pattern",
+    ], 'Inheritance Pattern', help="Inheritance pattern",
         sort=False, select=True)
 
     description = fields.Text('Description', translate=True)
@@ -214,7 +214,7 @@ class ProteinDisease(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_unique', Unique(t, t.name),
                 'The Disease Code  name must be unique'),
-            ]
+        ]
 
     @classmethod
     def __register__(cls, module):
@@ -263,7 +263,7 @@ class GeneVariant(ModelSQL, ModelView):
         ('lbb', 'LB/B: Likely benign or benign'),
         ('lpp', 'LP/P: Likely pathogenic or pathogenic'),
         ('us', 'US: Unknown significance'),
-        ], 'Significance',
+    ], 'Significance',
         help="Category related to the clinical significance of the variant",
         sort=False, select=True)
 
@@ -286,7 +286,7 @@ class GeneVariant(ModelSQL, ModelView):
                 'The variant ID must be unique'),
             ('aa_unique', Unique(t, t.variant, t.aa_change),
                 'The amino acid change for the variant already exists'),
-            ]
+        ]
 
     def get_rec_name(self, name):
         return ' : '.join([self.variant, self.aa_change])
@@ -360,7 +360,7 @@ class GeneVariantPhenotype(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('code', Unique(t, t.name),
                 'This code already exists'),
-                ]
+        ]
 
 
 class PatientGeneticRisk(ModelSQL, ModelView):
@@ -420,7 +420,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
             genetic_info.healthprof.name.rec_name,
             'node': genetic_info.institution and
             genetic_info.institution.name.rec_name
-            }
+        }
         if (genetic_info.variant_phenotype):
             vals['health_condition_text'] = vals['health_condition_text'] = \
                 genetic_info.variant_phenotype.phenotype.rec_name
@@ -462,7 +462,7 @@ class FamilyDiseases(ModelSQL, ModelView):
         ('m', 'Maternal'),
         ('f', 'Paternal'),
         ('s', 'Sibling'),
-        ], 'Maternal or Paternal', select=True)
+    ], 'Maternal or Paternal', select=True)
 
     xory_str = xory.translated('xory')
 
@@ -478,7 +478,7 @@ class FamilyDiseases(ModelSQL, ModelView):
         ('grandfather', 'Grandfather'),
         ('grandmother', 'Grandmother'),
         ('cousin', 'Cousin'),
-        ], 'Relative',
+    ], 'Relative',
         help='First degree = siblings, mother and father\n'
              'Second degree = Uncles, nephews and Nieces\n'
              'Third degree = Grandparents and cousins',

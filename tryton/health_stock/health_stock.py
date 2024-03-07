@@ -30,7 +30,7 @@ __all__ = ['Party', 'Lot', 'Move',
 
 _STATES = {
     'readonly': Eval('state') == 'done',
-    }
+}
 _DEPENDS = ['state']
 
 
@@ -42,7 +42,7 @@ class Party(metaclass=PoolMeta):
         states={
             'invisible': Not(Bool(Eval('is_pharmacy'))),
             'required': Bool(Eval('is_pharmacy')),
-            },
+        },
         depends=['is_pharmacy'])
 
     @classmethod
@@ -68,7 +68,7 @@ class Move(metaclass=PoolMeta):
             'gnuhealth.patient.ambulatory_care',
             'gnuhealth.patient.rounding',
             'gnuhealth.vaccination',
-            ]
+        ]
 
 
 class PatientAmbulatoryCare(Workflow, metaclass=PoolMeta):
@@ -140,7 +140,7 @@ class PatientAmbulatoryCare(Workflow, metaclass=PoolMeta):
         cls.write(ambulatory_cares, {
             'signed_by': signing_hp,
             'session_end': datetime.now()
-            })
+        })
 
     @classmethod
     def create_stock_moves(cls, ambulatory_cares, lines):
@@ -245,7 +245,7 @@ class PatientAmbulatoryCareMedicalSupply(ModelSQL, ModelView):
         'stock.lot', 'Lot', depends=['product'],
         domain=[
             ('product', '=', Eval('product')),
-            ])
+        ])
 
     @staticmethod
     def default_quantity():
@@ -320,7 +320,7 @@ class PatientRounding(Workflow, ModelSQL, ModelView):
         cls.write(roundings, {
             'signed_by': signing_hp,
             'evaluation_end': datetime.now()
-            })
+        })
 
     @classmethod
     def create_stock_moves(cls, roundings, lines):
@@ -370,7 +370,7 @@ class PatientRounding(Workflow, ModelSQL, ModelView):
         Move.write(new_moves, {
             'state': 'done',
             'effective_date': Date.today(),
-            })
+        })
 
         return True
 
@@ -421,7 +421,7 @@ class PatientRoundingMedicalSupply(ModelSQL, ModelView):
         'stock.lot', 'Lot', depends=['product'],
         domain=[
             ('product', '=', Eval('product')),
-            ])
+        ])
 
     @staticmethod
     def default_quantity():
@@ -469,7 +469,7 @@ class PatientVaccination(metaclass=PoolMeta):
             if self.lot.expiration_date < datetime.date(self.date):
                 raise ExpiredVaccine(
                     gettext('health_stock.msg_expired_vaccine')
-                    )
+                )
         return {}
 
     @classmethod

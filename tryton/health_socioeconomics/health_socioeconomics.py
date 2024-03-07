@@ -36,7 +36,7 @@ class Party (metaclass=PoolMeta):
         ('3', 'Incomplete Secondary School'),
         ('4', 'Secondary School'),
         ('5', 'University'),
-        ], 'Education', help="Education Level", sort=False)
+    ], 'Education', help="Education Level", sort=False)
 
 
 class PatientSESAssessment(ModelSQL, ModelView):
@@ -51,19 +51,19 @@ class PatientSESAssessment(ModelSQL, ModelView):
         (None, ''),
         ('m', 'Male'),
         ('f', 'Female'),
-        ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
+    ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
 
     assessment_date = fields.DateTime('Date', help="Assessment date",
                                       states=STATES)
 
     computed_age = fields.Function(fields.Char(
-            'Age',
-            help="Computed patient age at the moment of the evaluation"),
-            'patient_age_at_assessment')
+        'Age',
+        help="Computed patient age at the moment of the evaluation"),
+        'patient_age_at_assessment')
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
         help="Health professional"
-        )
+    )
 
     du = fields.Many2One(
         'gnuhealth.du', 'DU', help="Domiciliary Unit",
@@ -76,8 +76,8 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('2', 'Middle'),
         ('3', 'Middle-upper'),
         ('4', 'Higher'),
-        ], 'Socioeconomics', help="SES - Socioeconomic Status", sort=False,
-            states=STATES)
+    ], 'Socioeconomics', help="SES - Socioeconomic Status", sort=False,
+        states=STATES)
 
     ses_str = ses.translated('ses')
 
@@ -88,9 +88,9 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('2', 'Comfortable and good sanitary conditions'),
         ('3', 'Roomy and excellent sanitary conditions'),
         ('4', 'Luxury and excellent sanitary conditions'),
-        ], 'Housing conditions',
-         help="Housing and sanitary living conditions", sort=False,
-         states=STATES)
+    ], 'Housing conditions',
+        help="Housing and sanitary living conditions", sort=False,
+        states=STATES)
 
     occupation = fields.Many2One('gnuhealth.occupation', 'Occupation',
                                  states=STATES)
@@ -100,24 +100,24 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('l', 'Low'),
         ('m', 'Medium'),
         ('h', 'High'),
-        ], 'Income', sort=False, states=STATES)
+    ], 'Income', sort=False, states=STATES)
 
     fam_apgar_help = fields.Selection([
         (None, ''),
         ('0', 'None'),
         ('1', 'Moderately'),
         ('2', 'Very much'),
-        ], 'Help from family',
-         help="Is the patient satisfied with the level of help coming from "
-         "the family when there is a problem ?", sort=False,
-         states=STATES)
+    ], 'Help from family',
+        help="Is the patient satisfied with the level of help coming from "
+        "the family when there is a problem ?", sort=False,
+        states=STATES)
 
     fam_apgar_discussion = fields.Selection([
         (None, ''),
         ('0', 'None'),
         ('1', 'Moderately'),
         ('2', 'Very much'),
-        ], 'Problems discussion',
+    ], 'Problems discussion',
         help="Is the patient satisfied with the level talking over the "
         "problems as family ?", sort=False, states=STATES)
 
@@ -126,7 +126,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('0', 'None'),
         ('1', 'Moderately'),
         ('2', 'Very much'),
-        ], 'Decision making',
+    ], 'Decision making',
         help="Is the patient satisfied with the level of making important "
         "decisions as a group ?", sort=False, states=STATES)
 
@@ -135,7 +135,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('0', 'None'),
         ('1', 'Moderately'),
         ('2', 'Very much'),
-        ], 'Time sharing',
+    ], 'Time sharing',
         help="Is the patient satisfied with the level of time that they "
         "spend together ?", sort=False, states=STATES)
 
@@ -144,16 +144,17 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('0', 'None'),
         ('1', 'Moderately'),
         ('2', 'Very much'),
-        ], 'Family affection',
+    ], 'Family affection',
         help="Is the patient satisfied with the level of affection coming "
         "from the family ?", sort=False, states=STATES)
 
-    fam_apgar_score = fields.Integer('Score',
-                                     help="Total Family APGAR \n"
-                                     "7 - 10 : Functional Family \n"
-                                     "4 - 6  : Some level of disfunction \n"
-                                     "0 - 3  : Severe disfunctional family \n",
-                                     states=STATES)
+    fam_apgar_score = fields.Integer(
+        'Score',
+        help="Total Family APGAR \n"
+        "7 - 10 : Functional Family \n"
+        "4 - 6  : Some level of disfunction \n"
+        "0 - 3  : Severe disfunctional family \n",
+        states=STATES)
 
     education = fields.Selection([
         (None, ''),
@@ -163,8 +164,8 @@ class PatientSESAssessment(ModelSQL, ModelView):
         ('3', 'Incomplete Secondary School'),
         ('4', 'Secondary School'),
         ('5', 'University'),
-        ], 'Education Level', help="Education Level", sort=False,
-            states=STATES)
+    ], 'Education Level', help="Education Level", sort=False,
+        states=STATES)
 
     notes = fields.Text('Notes', states=STATES)
 
@@ -172,7 +173,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
         (None, ''),
         ('in_progress', 'In progress'),
         ('done', 'Done'),
-        ], 'State', readonly=True, sort=False)
+    ], 'State', readonly=True, sort=False)
 
     signed_by = fields.Many2One(
         'gnuhealth.healthprofessional', 'Signed by', readonly=True,
@@ -250,7 +251,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
         cls.write(assessments, {
             'state': 'done',
             'signed_by': signing_hp,
-            })
+        })
 
     def patient_age_at_assessment(self, name):
         if (self.patient.name.dob and self.assessment_date):
@@ -269,7 +270,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
 
         cls._buttons.update({
             'end_assessment': {'invisible': Equal(Eval('state'), 'done')}
-            })
+        })
         cls._order.insert(0, ('assessment_date', 'DESC'))
 
     @classmethod
@@ -298,7 +299,7 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ('3', 'Incomplete Secondary School'),
         ('4', 'Secondary School'),
         ('5', 'University'),
-        ], 'Education Level', help="Education Level", sort=False),
+    ], 'Education Level', help="Education Level", sort=False),
         'get_patient_education')
 
     education_str = education.translated('education')
@@ -310,7 +311,7 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ('2', 'Comfortable and good sanitary conditions'),
         ('3', 'Roomy and excellent sanitary conditions'),
         ('4', 'Luxury and excellent sanitary conditions'),
-        ], 'Housing conditions', help="Housing and sanitary living conditions",
+    ], 'Housing conditions', help="Housing and sanitary living conditions",
         sort=False), 'get_patient_housing')
 
     housing_str = housing.translated('housing')
@@ -322,20 +323,20 @@ class GnuHealthPatient(ModelSQL, ModelView):
         ('2', 'Middle'),
         ('3', 'Middle-upper'),
         ('4', 'Higher'),
-        ], 'SES', help="Current Socioeconomic Status", sort=False),
+    ], 'SES', help="Current Socioeconomic Status", sort=False),
         'get_patient_ses')
-    
+
     ses_str = ses.translated('ses')
 
     ses_assessments = fields.One2Many(
-                        'gnuhealth.ses.assessment',
-                        'patient', 'Assessments', readonly=True,
-                        help="Socioeconomics and Family assessments history")
+        'gnuhealth.ses.assessment',
+        'patient', 'Assessments', readonly=True,
+        help="Socioeconomics and Family assessments history")
 
     hostile_area = fields.Boolean(
-                    'Hostile Area',
-                    help="Check if patient lives in a zone"
-                         "of high hostility (eg, war)")
+        'Hostile Area',
+        help="Check if patient lives in a zone"
+        "of high hostility (eg, war)")
 
     single_parent = fields.Boolean('Single parent family')
     domestic_violence = fields.Boolean('Domestic violence')
@@ -347,26 +348,26 @@ class GnuHealthPatient(ModelSQL, ModelView):
     prison_past = fields.Boolean('Has been in prison')
     prison_current = fields.Boolean('Currently in prison')
     relative_in_prison = fields.Boolean(
-                            'Relative in prison',
-                            help="Check if someone from"
-                                 " the nuclear family - parents / "
-                                 "sibblings  is or has been in prison")
+        'Relative in prison',
+        help="Check if someone from"
+        " the nuclear family - parents / "
+        "sibblings  is or has been in prison")
 
     ses_notes = fields.Text('Extra info')
 
     # GnuHealth 2.0 . Occupation and Education are now functional fields.
     # Retrives the information from the party model.
     occupation = fields.Function(
-                    fields.Many2One('gnuhealth.occupation',
-                                    'Occupation'), 'get_patient_occupation')
+        fields.Many2One('gnuhealth.occupation',
+                        'Occupation'), 'get_patient_occupation')
 
     works_at_home = fields.Boolean(
-                        'Works at home',
-                        help="Check if the patient works at his / her house")
+        'Works at home',
+        help="Check if the patient works at his / her house")
     hours_outside = fields.Integer(
-                        'Hours outside home',
-                        help="Number of hours a day the patient"
-                             "spend outside the house")
+        'Hours outside home',
+        help="Number of hours a day the patient"
+        "spend outside the house")
 
     def get_patient_occupation(self, name):
         if (self.name.occupation):

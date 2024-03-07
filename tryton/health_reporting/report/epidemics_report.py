@@ -39,10 +39,10 @@ class InstitutionEpidemicsReport(Report):
         Party = pool.get('party.party')
 
         return Party.search([
-                ('is_person', '=', True),
-                ('deceased', '!=', True),
-                ('dob', '=', None),
-                ], count=True)
+            ('is_person', '=', True),
+            ('deceased', '!=', True),
+            ('dob', '=', None),
+        ], count=True)
 
     @classmethod
     def get_population(cls, date1, date2, gender, total):
@@ -54,7 +54,7 @@ class InstitutionEpidemicsReport(Report):
         domain = [
             ('deceased', '!=', True),
             ('gender', '=', gender),
-            ]
+        ]
 
         if not total:
             domain.append(('dob', '>=', date2))
@@ -73,7 +73,7 @@ class InstitutionEpidemicsReport(Report):
             ('activation_date', '<=', end_date),
             ('deceased', '!=', True),
             ('is_person', '=', True),
-            ]
+        ]
 
         if in_health_system:
             domain.append(('is_patient', '=', True))
@@ -87,9 +87,9 @@ class InstitutionEpidemicsReport(Report):
         BirthCertificate = pool.get('gnuhealth.birth_certificate')
 
         return BirthCertificate.search([
-                ('dob', '>=', start_date),
-                ('dob', '<=', end_date),
-                ], count=True)
+            ('dob', '>=', start_date),
+            ('dob', '<=', end_date),
+        ], count=True)
 
     @classmethod
     def get_new_deaths(cls, start_date, end_date):
@@ -103,8 +103,8 @@ class InstitutionEpidemicsReport(Report):
 
         cursor = Transaction().connection.cursor()
         cursor.execute(*table.select(
-                Count(table.dod),
-                where=((dod >= start_date) & (dod <= end_date))))
+            Count(table.dod),
+            where=((dod >= start_date) & (dod <= end_date))))
         return cursor.fetchone()
 
     @classmethod
@@ -116,14 +116,14 @@ class InstitutionEpidemicsReport(Report):
         clause = [
             ('diagnosed_date', '>=', start_date),
             ('diagnosed_date', '<=', end_date),
-            ]
+        ]
 
         if dx:
             clause.append(('pathology', '=', dx))
 
         res = Condition.search(clause)
 
-        return(res)
+        return (res)
 
     @classmethod
     def get_epi_by_day(cls, start_date, end_date, dx):
@@ -138,7 +138,7 @@ class InstitutionEpidemicsReport(Report):
 
             clause = [
                 ('diagnosed_date', '=', current_day),
-                ]
+            ]
 
             if dx:
                 clause.append(('pathology', '=', dx))
@@ -147,7 +147,7 @@ class InstitutionEpidemicsReport(Report):
             cases_day = len(res)
             daily_data = {'date': current_day, 'cases': cases_day}
             aggr.append(daily_data)
-        return(aggr)
+        return (aggr)
 
     # Death Certificates by day
     @classmethod
@@ -171,7 +171,7 @@ class InstitutionEpidemicsReport(Report):
             clause = [
                 ('dod', '>=', utc_from),
                 ('dod', '<', utc_to)
-                ]
+            ]
 
             res = DeathCert.search(clause)
 
@@ -195,7 +195,7 @@ class InstitutionEpidemicsReport(Report):
             aggr.append(daily_data)
             current_day = current_day + relativedelta(days=1)
 
-        return(aggr)
+        return (aggr)
 
     @classmethod
     def plot_cases_timeseries(cls, start_date, end_date,
@@ -243,10 +243,13 @@ class InstitutionEpidemicsReport(Report):
 
         fig = plt.figure(figsize=(6, 3))
         deaths_by_day = fig.add_subplot(1, 1, 1)
-        deaths_by_day.plot(days, certs_ic_day,
-                           label=gettext("health_reporting.msg_plot_label_immediate_cause_str"))
-        deaths_by_day.plot(days, certs_uc_day,
-                           label=gettext("health_reporting.msg_plot_label_underlying_condition_str"))
+        deaths_by_day.plot(
+            days, certs_ic_day, label=gettext(
+                "health_reporting.msg_plot_label_immediate_cause_str"))
+        deaths_by_day.plot(
+            days, certs_uc_day,
+            label=gettext(
+                "health_reporting.msg_plot_label_underlying_condition_str"))
         deaths_by_day.yaxis.set_major_locator(MaxNLocator(integer=True))
         deaths_by_day.legend()
 
@@ -265,7 +268,7 @@ class InstitutionEpidemicsReport(Report):
         for k, v in list(ethnic_count.items()):
             if (v == 0):
                 # Remove ethnicities with zero cases from the plot
-                del(ethnic_count[k])
+                del (ethnic_count[k])
 
         fig = plt.figure(figsize=(6, 3))
         cases_by_ethnicity = fig.add_subplot(1, 1, 1)
@@ -298,7 +301,7 @@ class InstitutionEpidemicsReport(Report):
         for k, v in list(ses_count.items()):
             if (v == 0):
                 # Remove socioeconomic groups with zero cases from the plot
-                del(ses_count[k])
+                del (ses_count[k])
 
         fig = plt.figure(figsize=(6, 3))
         cases_by_socioeconomics = fig.add_subplot(1, 1, 1)
@@ -340,7 +343,7 @@ class InstitutionEpidemicsReport(Report):
         health_condition_id = data['health_condition']
 
         hc = Condition.search(
-                [('id', '=', health_condition_id)], limit=1)[0]
+            [('id', '=', health_condition_id)], limit=1)[0]
 
         context['health_condition'] = hc
 
@@ -360,8 +363,8 @@ class InstitutionEpidemicsReport(Report):
         # Build the Population Pyramid for registered people
 
         for age_group in range(0, 21):
-            date1 = today - relativedelta(years=(age_group*5))
-            date2 = today - relativedelta(years=((age_group*5)+5), days=-1)
+            date1 = today - relativedelta(years=(age_group * 5))
+            date2 = today - relativedelta(years=((age_group * 5) + 5), days=-1)
 
             context[''.join(['p', str(age_group), 'f'])] = \
                 cls.get_population(date1, date2, 'f', total=False)

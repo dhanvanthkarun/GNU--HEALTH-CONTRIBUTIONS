@@ -5,5 +5,7 @@
 
 # -*- coding: utf-8 -*-
 
-from .surgery_report import *
+from . import surgery_report
 
+
+__all__ = ['surgery_report']

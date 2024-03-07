@@ -54,20 +54,21 @@ class ImmunizationStatusReport(Report):
         for vaccine in immunization_schedule.vaccines:
 
             for dose in vaccine.doses:
-                dose_number, dose_age, age_unit, age_unit_str = dose.dose_number, \
-                    dose.age_dose, dose.age_unit, dose.age_unit_str
+                dose_number, dose_age, age_unit, age_unit_str = \
+                    dose.dose_number, dose.age_dose, \
+                    dose.age_unit, dose.age_unit_str
 
                 # Age of the person in years, months, weeks and days.
                 y, m, d = parse_compute_age(patient.age)
-                pdays = (y*365) + (m*365/12) + d
-                pyears = pdays/365
-                pmonths = pdays/(365/12)
-                pweeks = pdays/7
+                pdays = (y * 365) + (m * 365 / 12) + d
+                pyears = pdays / 365
+                pmonths = pdays / (365 / 12)
+                pweeks = pdays / 7
 
                 if ((age_unit == 'days' and pdays >= dose_age) or
                     (age_unit == 'weeks' and pweeks >= dose_age) or
                     (age_unit == 'months' and pmonths >= dose_age) or
-                    (age_unit == 'years' and pyears >= dose_age)):
+                        (age_unit == 'years' and pyears >= dose_age)):
                     immunization_info = {
                         'patient': patient,
                         'vaccine': vaccine,
@@ -93,7 +94,7 @@ class ImmunizationStatusReport(Report):
                 ('name', '=', immunization['patient']),
                 ('dose', '=', immunization['dose']),
                 ('vaccine.name', '=', immunization['vaccine'].vaccine.name),
-                ])
+            ])
 
             if res:
                 immunization['status'] = 'ok'

@@ -56,17 +56,17 @@ class InsurancePlanProductPolicy(ModelSQL, ModelView):
             if (self.discount < 0 or self.discount > 100):
                 raise DiscountPctOutOfRange(
                     gettext('health_insurance.msg_pct_out_of_range')
-                    )
+                )
         if (not self.discount and not self.price):
             raise NeedAPolicy(
                 gettext('health_insurance.msg_need_a_policy')
-                )
+            )
 
     def validate_policy_elements(self):
         if (not self.product and not self.product_category):
             raise DiscountWithoutElement(
                 gettext('health_insurance.msg_discount_without_element')
-                )
+            )
 
 
 class InsurancePlan(metaclass=PoolMeta):

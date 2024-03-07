@@ -37,7 +37,7 @@ class DengueDUSurvey(ModelSQL, ModelView):
         ('unchanged', 'Unchanged'),
         ('better', 'Improved'),
         ('worse', 'Worsen'),
-        ], 'Status',
+    ], 'Status',
         help="DU status compared to last visit", required=True, sort=False)
 
     # Surveillance traps (ovitraps)

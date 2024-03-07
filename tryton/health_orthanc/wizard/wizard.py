@@ -89,7 +89,7 @@ class FullSyncOrthanc(Wizard):
             else:
                 self.result.result = "Invalid domain provided"
                 logger.exception("Request returned error status code")
-        except:
+        except BaseException:
             self.result.result = "Invalid domain provided"
             logger.exception("Other error occurred")
         else:

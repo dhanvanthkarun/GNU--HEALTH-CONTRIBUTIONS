@@ -19,8 +19,8 @@ from . import wizard
 def register():
     Pool.register(
         health_services_imaging.ImagingTestRequest,
-        wizard.RequestPatientImagingTestStart,
+        wizard.wizard_health_services.RequestPatientImagingTestStart,
         module='health_services_imaging', type_='model')
     Pool.register(
-        wizard.RequestPatientImagingTest,
+        wizard.wizard_health_services.RequestPatientImagingTest,
         module='health_services_imaging', type_='wizard')

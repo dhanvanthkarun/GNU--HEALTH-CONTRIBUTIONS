@@ -12,8 +12,10 @@ from trytond.model.exceptions import ValidationError
 class DiscountPctOutOfRange(ValidationError):
     pass
 
+
 class NeedAPolicy(ValidationError):
     pass
+
 
 class DiscountWithoutElement(ValidationError):
     pass
@@ -29,6 +31,7 @@ class NoInvoiceAddress(UserError):
 
 class NoPaymentTerm(UserError):
     pass
+
 
 class NoAccountReceivable(UserError):
     pass

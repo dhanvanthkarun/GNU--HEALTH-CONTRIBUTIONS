@@ -39,7 +39,7 @@ class LabTest(metaclass=PoolMeta):
         ('draft', 'Draft'),
         ('done', 'Done'),
         ('validated', 'Validated'),
-        ], 'State', readonly=True, sort=False)
+    ], 'State', readonly=True, sort=False)
 
     digest_status = fields.Function(
         fields.Boolean(
@@ -55,7 +55,7 @@ class LabTest(metaclass=PoolMeta):
             'Current Doc',
             states={
                 'invisible': Not(Bool(Eval('digest_status'))),
-                }),
+            }),
         'check_digest')
 
     digest_current = fields.Function(
@@ -63,7 +63,7 @@ class LabTest(metaclass=PoolMeta):
             'Current Hash',
             states={
                 'invisible': Not(Bool(Eval('digest_status'))),
-                }),
+            }),
         'check_digest')
 
     digital_signature = fields.Text('Digital Signature', readonly=True)
@@ -119,18 +119,18 @@ class LabTest(metaclass=PoolMeta):
         cls._buttons.update({
             'generate_document': {
                 'invisible': Not(Equal(Eval('state'), 'draft')),
-                },
+            },
             'set_to_draft': {
                 'invisible': Not(Equal(Eval('state'), 'done')),
-                },
+            },
             'sign_document': {
                 'invisible': Not(Equal(Eval('state'), 'done')),
-                },
-            })
+            },
+        })
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
-                'set_signature': RPC(readonly=False),
-                })
+            'set_signature': RPC(readonly=False),
+        })
 
     @classmethod
     @ModelView.button
@@ -198,13 +198,19 @@ class LabTest(metaclass=PoolMeta):
         data_to_serialize = {
             'Lab_test': str(document.name) or '',
             'Test': str(document.test.rec_name) or '',
-            'HP': document.requestor and str(document.requestor.rec_name) or '',
+            'HP': (document.requestor
+                   and str(document.requestor.rec_name)
+                   or ''),
             'Source_type': str(document.source_type),
-            'Patient': document.patient and str(document.patient.rec_name) or '',
+            'Patient': (document.patient
+                        and str(document.patient.rec_name)
+                        or ''),
             'Other_source': str(document.other_source) or '',
-            'Patient_ID': document.patient and str(document.patient.name.ref) or '',
+            'Patient_ID': (document.patient
+                           and str(document.patient.name.ref)
+                           or ''),
             'Analyte_line': str(analyte_line),
-             }
+        }
 
         serialized_doc = str(HealthCrypto().serialize(data_to_serialize))
 
@@ -220,7 +226,7 @@ class LabTest(metaclass=PoolMeta):
 
         cls.write([cls(doc_id)], {
             'digital_signature': signature,
-            })
+        })
 
     def check_digest(self, name):
         result = ''
@@ -264,7 +270,7 @@ class LabTest(metaclass=PoolMeta):
             'lab_test': lab_info.id,
             'extra_info': lab_info.diagnosis,
             'healthprof': lab_info.requestor
-            }
+        }
 
         health_condition.append(vals)
         HealthCondition.create(health_condition)
@@ -277,7 +283,7 @@ class LabTest(metaclass=PoolMeta):
         if lab_info.is_patient():
             Pol = Pool().get('gnuhealth.pol')
             pol = []
-            
+
             test_lines = ""
             for line in lab_info.critearea:
                 test_lines = test_lines + line.rec_name + "\n"
@@ -286,7 +292,7 @@ class LabTest(metaclass=PoolMeta):
                 'page': str(uuid4()),
                 'person': lab_info.patient.name.id,
                 'page_date': lab_info.date_analysis,
-                'federation_account': 
+                'federation_account':
                     lab_info.patient.name.federation_account,
                 'page_type': 'medical',
                 'medical_context': 'lab',
@@ -303,6 +309,7 @@ class LabTest(metaclass=PoolMeta):
 class HealthCrypto:
     """ GNU Health Cryptographic functions
     """
+
     def serialize(self, data_to_serialize):
         """ Format to JSON """
 

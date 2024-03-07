@@ -29,7 +29,7 @@ def register():
         health_inpatient.InpatientMedicationAdminTimes,
         health_inpatient.InpatientMedicationLog,
         health_inpatient.InpatientDiet,
-        wizard.CreateBedTransferInit,
+        wizard.wizard_health_inpatient.CreateBedTransferInit,
         health_inpatient.InpatientMeal,
         health_inpatient.InpatientMealOrder,
         health_inpatient.InpatientMealOrderItem,
@@ -39,6 +39,6 @@ def register():
         module='health_inpatient', type_='model')
 
     Pool.register(
-        wizard.CreateBedTransfer,
-        wizard.CreateInpatientEvaluation,
+        wizard.wizard_health_inpatient.CreateBedTransfer,
+        wizard.wizard_inpatient_evaluation.CreateInpatientEvaluation,
         module='health_inpatient', type_='wizard')

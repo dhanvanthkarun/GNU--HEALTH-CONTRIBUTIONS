@@ -14,5 +14,8 @@
 #                         HEALTH DENTISTRY package                      #
 #                __init__.py: Wizard declaration file                   #
 #########################################################################
-from . import patient_set_odontogram 
+from . import patient_set_odontogram
 from . import load_procedure
+
+
+__all__ = ['patient_set_odontogram', 'load_procedure']

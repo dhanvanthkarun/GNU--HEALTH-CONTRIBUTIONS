@@ -26,7 +26,7 @@ class Move(metaclass=PoolMeta):
     def _get_origin(cls):
         return super(Move, cls)._get_origin() + [
             'gnuhealth.surgery',
-            ]
+        ]
 
 
 class Surgery(metaclass=PoolMeta):

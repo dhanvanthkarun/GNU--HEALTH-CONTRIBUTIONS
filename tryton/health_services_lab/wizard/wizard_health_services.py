@@ -21,11 +21,11 @@ class RequestPatientLabTestStart(ModelView):
     ungroup_tests = fields.Boolean(
         'Ungroup',
         help="Check if you DO NOT want to include each individual lab test"
-             " from this order in the lab test generation step."
-             " This is useful when some services are not provided in"
-             " the same institution.\n"
-             "In this case, you need to individually update the service"
-             " document from each individual test")
+        " from this order in the lab test generation step."
+        " This is useful when some services are not provided in"
+        " the same institution.\n"
+        "In this case, you need to individually update the service"
+        " document from each individual test")
 
     service = fields.Many2One(
         'gnuhealth.health_service', 'Service',
@@ -63,7 +63,7 @@ class RequestPatientLabTest(Wizard):
             'product': labtest.product_id.id,
             'desc': labtest.product_id.rec_name,
             'qty': 1
-            }]))
+        }]))
 
         hservice.append(service)
         service_data['service_line'] = service_lines
@@ -79,7 +79,8 @@ class RequestPatientLabTest(Wizard):
             lab_test['request'] = request_number
             lab_test['name'] = test.id
             lab_test['source_type'] = self.start.source_type
-            lab_test['patient_id'] = self.start.patient and self.start.patient.id
+            lab_test['patient_id'] = (self.start.patient
+                                      and self.start.patient.id)
             lab_test['other_source'] = self.start.other_source
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id

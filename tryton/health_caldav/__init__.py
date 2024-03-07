@@ -21,7 +21,6 @@ It contains the models to use Calendars in GNU Health HMIS.
 """
 
 from trytond.pool import Pool
-from . import caldav
 from . import webdav
 from . import calendar_
 from . import res

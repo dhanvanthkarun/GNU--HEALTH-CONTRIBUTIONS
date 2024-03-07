@@ -10,8 +10,7 @@
 #                           HEALTH package                              #
 #              wizard_update_patient_disease_info.py: wizard            #
 #########################################################################
-from trytond.wizard import Wizard, StateView, Button, StateAction, StateTransition
-from trytond.model import ModelView, fields
+from trytond.wizard import Wizard, StateView, Button, StateTransition
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 
@@ -64,15 +63,19 @@ class UpdatePatientDiseaseInfo(Wizard):
         evaluation = Evaluation.browse(
             [Transaction().context.get('active_id')])[0]
 
-        return {'name': evaluation.patient and evaluation.patient.id,
-                'age': evaluation.patient and parse_compute_age(evaluation.patient.age)[0],
-                'age_str': evaluation.patient and evaluation.patient.age,
-                'pathology': evaluation.diagnosis and evaluation.diagnosis.id,
-                'institution': evaluation.institution and evaluation.institution.id,
+        return {'name': (evaluation.patient
+                         and evaluation.patient.id),
+                'age': (evaluation.patient
+                        and parse_compute_age(evaluation.patient.age)[0]),
+                'age_str': (evaluation.patient
+                            and evaluation.patient.age),
+                'pathology': (evaluation.diagnosis
+                              and evaluation.diagnosis.id),
+                'institution': (evaluation.institution
+                                and evaluation.institution.id),
                 'diagnosed_date': evaluation.evaluation_endtime}
 
     def transition_save(self):
-        pool = Pool()
         Disease = Pool().get('gnuhealth.patient.disease')
         Disease.save([self.update_disease])
         return 'end'

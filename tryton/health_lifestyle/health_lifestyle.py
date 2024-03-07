@@ -53,7 +53,7 @@ class DietBelief (ModelSQL, ModelView):
         cls._sql_constraints = [
             ('code_unique', Unique(t, t.code),
                 'The Diet code already exists'),
-            ]
+        ]
 
 
 class DrugsRecreational(ModelSQL, ModelView):
@@ -76,7 +76,7 @@ class DrugsRecreational(ModelSQL, ModelView):
         ('1', 'Low'),
         ('2', 'High'),
         ('3', 'Extreme'),
-        ], 'Toxicity', sort=False)
+    ], 'Toxicity', sort=False)
 
     addiction_level = fields.Selection([
         (None, ''),
@@ -84,13 +84,13 @@ class DrugsRecreational(ModelSQL, ModelView):
         ('1', 'Low'),
         ('2', 'High'),
         ('3', 'Extreme'),
-        ], 'Dependence', sort=False)
+    ], 'Dependence', sort=False)
 
     legal_status = fields.Selection([
         (None, ''),
         ('0', 'Legal'),
         ('1', 'Illegal'),
-        ], 'Legal Status', sort=False)
+    ], 'Legal Status', sort=False)
 
     category = fields.Selection([
         (None, ''),
@@ -101,7 +101,7 @@ class DrugsRecreational(ModelSQL, ModelView):
         ('opioid', 'Opioids'),
         ('stimulant', 'Stimulants'),
         ('other', 'Others'),
-        ], 'Category', sort=False)
+    ], 'Category', sort=False)
 
     withdrawal_level = fields.Integer(
         'Withdrawal',
@@ -225,7 +225,7 @@ class DrugsRecreational(ModelSQL, ModelView):
                 'The Recreational Drug name must be unique'),
             ('code_unique', Unique(t, t.code),
                 'The Recreational Drug CODE must be unique'),
-            ]
+        ]
 
 
 class PatientRecreationalDrugs(ModelSQL, ModelView):
@@ -403,15 +403,16 @@ class MedicalPatient(metaclass=PoolMeta):
         ('g', 'Homosexual'),
         ('b', 'Bisexual'),
         ('t', 'Transexual'),
-        ], 'Sexual Preferences', sort=False)
+    ], 'Sexual Preferences', sort=False)
 
-    sexual_preferences_str = sexual_preferences.translated('sexual_preferences')
+    sexual_preferences_str = sexual_preferences.translated(
+        'sexual_preferences')
 
     sexual_practices = fields.Selection([
         (None, ''),
         ('s', 'Safe / Protected sex'),
         ('r', 'Risky / Unprotected sex'),
-        ], 'Sexual Practices', sort=False)
+    ], 'Sexual Practices', sort=False)
 
     sexual_practices_str = sexual_practices.translated('sexual_practices')
 
@@ -419,8 +420,8 @@ class MedicalPatient(metaclass=PoolMeta):
         (None, ''),
         ('m', 'Monogamous'),
         ('t', 'Polygamous'),
-        ], 'Sexual Partners', sort=False)
-    
+    ], 'Sexual Partners', sort=False)
+
     sexual_partners_str = sexual_partners.translated('sexual_partners')
 
     sexual_partners_number = fields.Integer('Number of sexual partners')
@@ -440,7 +441,7 @@ class MedicalPatient(metaclass=PoolMeta):
         ('8', 'Contraceptive injection'),
         ('9', 'Skin Patch'),
         ('10', 'Female condom'),
-        ], 'Contraceptive Method', sort=False)
+    ], 'Contraceptive Method', sort=False)
 
     sex_oral = fields.Selection([
         (None, ''),
@@ -448,7 +449,7 @@ class MedicalPatient(metaclass=PoolMeta):
         ('1', 'Active'),
         ('2', 'Passive'),
         ('3', 'Both'),
-        ], 'Oral Sex', sort=False)
+    ], 'Oral Sex', sort=False)
 
     sex_anal = fields.Selection([
         (None, ''),
@@ -456,7 +457,7 @@ class MedicalPatient(metaclass=PoolMeta):
         ('1', 'Active'),
         ('2', 'Passive'),
         ('3', 'Both'),
-        ], 'Anal Sex', sort=False)
+    ], 'Anal Sex', sort=False)
 
     prostitute = fields.Boolean(
         'Prostitute',

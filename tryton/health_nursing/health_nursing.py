@@ -24,7 +24,7 @@ from trytond.modules.health.core import get_health_professional
 
 from .exceptions import (
     NoAssociatedHealthProfessional
-    )
+)
 
 __all__ = [
     'PatientRounding', 'RoundingProcedure',
@@ -55,7 +55,7 @@ class PatientRounding(ModelSQL, ModelView):
         (None, ''),
         ('draft', 'In Progress'),
         ('done', 'Done'),
-        ], 'State', readonly=True)
+    ], 'State', readonly=True)
 
     environmental_assessment = fields.Char(
         'Environment', help="Environment"
@@ -71,7 +71,7 @@ class PatientRounding(ModelSQL, ModelView):
         help="Check if the patient is in pain", states=STATES)
 
     pain_level = fields.Integer(
-        'Pain level', 
+        'Pain level',
         help="Enter the pain level, from 1 to 10.",
         states={'readonly': Eval('state') == 'done'})
 
@@ -205,7 +205,7 @@ class PatientRounding(ModelSQL, ModelView):
             'state': 'done',
             'signed_by': signing_hp,
             'evaluation_end': datetime.now()
-            })
+        })
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -323,7 +323,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         (None, ''),
         ('draft', 'In Progress'),
         ('done', 'Done'),
-        ], 'State', readonly=True)
+    ], 'State', readonly=True)
 
     base_condition = fields.Many2One(
         'gnuhealth.pathology', 'Condition',
@@ -383,7 +383,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         help="Check if the patient is in pain")
 
     pain_level = fields.Integer(
-        'Pain level', 
+        'Pain level',
         help="Enter the pain level, from 1 to 10.")
 
     evolution = fields.Selection([
@@ -392,7 +392,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         ('n', 'Status Quo'),
         ('i', 'Improving'),
         ('w', 'Worsening'),
-        ], 'Evolution', help="Check your judgement of current "
+    ], 'Evolution', help="Check your judgement of current "
         "patient condition", sort=False, states=STATES)
 
     evolution_str = evolution.translated('evolution')
@@ -448,7 +448,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
             'state': 'done',
             'signed_by': signing_hp,
             'session_end': datetime.now()
-            })
+        })
 
     @classmethod
     def validate(cls, records):

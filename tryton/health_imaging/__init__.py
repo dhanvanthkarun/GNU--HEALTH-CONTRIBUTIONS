@@ -23,13 +23,13 @@ def register():
         health_imaging.ImagingTest,
         health_imaging.ImagingTestRequest,
         health_imaging.ImagingTestResult,
-        wizard.RequestImagingTest,
-        wizard.RequestPatientImagingTestStart,
+        wizard.wizard_health_imaging.RequestImagingTest,
+        wizard.wizard_health_imaging.RequestPatientImagingTestStart,
         sequences.GnuHealthSequences,
         sequences.ImagingRequestSequence,
         sequences.ImagingTestSequence,
         module='health_imaging', type_='model')
     Pool.register(
-        wizard.WizardGenerateResult,
-        wizard.RequestPatientImagingTest,
+        wizard.wizard_health_imaging.WizardGenerateResult,
+        wizard.wizard_health_imaging.RequestPatientImagingTest,
         module='health_imaging', type_='wizard')

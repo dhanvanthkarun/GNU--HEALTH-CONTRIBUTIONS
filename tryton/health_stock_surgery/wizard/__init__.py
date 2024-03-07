@@ -5,4 +5,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .wizard_create_surgery_stock_move import *
+from . import wizard_create_surgery_stock_move
+
+
+__all__ = ['wizard_create_surgery_stock_move']

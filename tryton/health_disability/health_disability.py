@@ -236,7 +236,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'Hand', sort=False)
+    ], 'Hand', sort=False)
 
     visual_function = fields.Selection([
         (None, ''),
@@ -245,7 +245,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'Visual', sort=False)
+    ], 'Visual', sort=False)
 
     speech_function = fields.Selection([
         (None, ''),
@@ -254,7 +254,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'Speech', sort=False)
+    ], 'Speech', sort=False)
 
     hearing_function = fields.Selection([
         (None, ''),
@@ -263,7 +263,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'Hearing', sort=False)
+    ], 'Hearing', sort=False)
 
     cognitive_function = fields.Selection([
         (None, ''),
@@ -272,7 +272,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'Cognitive', sort=False)
+    ], 'Cognitive', sort=False)
 
     locomotor_function = fields.Selection([
         (None, ''),
@@ -281,7 +281,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'Mobility', sort=False)
+    ], 'Mobility', sort=False)
 
     activity_participation = fields.Selection([
         (None, ''),
@@ -290,7 +290,7 @@ class PatientDisabilityAssessment(ModelSQL, ModelView):
         ('2', 'Moderate impairment'),
         ('3', 'Severe impairment'),
         ('4', 'Complete impairment'),
-        ], 'A & P', sort=False)
+    ], 'A & P', sort=False)
 
     body_functions = fields.One2Many(
         'gnuhealth.body_function.assessment',
@@ -348,7 +348,7 @@ class PatientBodyFunctionAssessment(ModelSQL, ModelView):
         ('3', 'Complete impairment'),
         ('8', 'Not specified'),
         ('9', 'Not applicable'),
-        ], 'Qualifier', sort=False)
+    ], 'Qualifier', sort=False)
 
 
 class PatientBodyStructureAssessment(ModelSQL, ModelView):
@@ -369,7 +369,7 @@ class PatientBodyStructureAssessment(ModelSQL, ModelView):
         ('4', 'Complete impairment'),
         ('8', 'Not specified'),
         ('9', 'Not applicable'),
-        ], 'Extent', help="Extent of the impairment", sort=False)
+    ], 'Extent', help="Extent of the impairment", sort=False)
 
     qualifier2 = fields.Selection([
         (None, ''),
@@ -384,14 +384,14 @@ class PatientBodyStructureAssessment(ModelSQL, ModelView):
             ' including accumulation of fluid'),
         ('8', '8 - Not specified'),
         ('9', '9 - Not applicable'),
-        ], 'Nature', help="Nature of the change", sort=False)
+    ], 'Nature', help="Nature of the change", sort=False)
 
     body_side = fields.Selection([
         (None, ''),
         ('left', 'Left'),
         ('right', 'Right'),
         ('both', 'Both'),
-        ], 'Side', help="Side of the body, if applies", sort=False)
+    ], 'Side', help="Side of the body, if applies", sort=False)
 
 
 class PatientActivityAndParticipationAsssessment(ModelSQL, ModelView):
@@ -414,7 +414,7 @@ class PatientActivityAndParticipationAsssessment(ModelSQL, ModelView):
         ('4', 'Complete difficulty'),
         ('8', 'Not specified'),
         ('9', 'Not applicable'),
-        ], 'Performance', help="Extent of the difficulty", sort=False)
+    ], 'Performance', help="Extent of the difficulty", sort=False)
 
     qualifier2 = fields.Selection([
         (None, ''),
@@ -425,7 +425,7 @@ class PatientActivityAndParticipationAsssessment(ModelSQL, ModelView):
         ('4', 'Complete difficulty'),
         ('8', 'Not specified'),
         ('9', 'Not applicable'),
-        ], 'Capacity', help="Extent of the dificulty", sort=False)
+    ], 'Capacity', help="Extent of the dificulty", sort=False)
 
 
 class PatientEnvironmentalFactorAssessment(ModelSQL, ModelView):
@@ -451,7 +451,7 @@ class PatientEnvironmentalFactorAssessment(ModelSQL, ModelView):
         ('22', 'Moderate facilitator'),
         ('33', 'Severe facilitator'),
         ('44', 'Complete facilitator'),
-        ], 'Barriers',
+    ], 'Barriers',
         help="Extent of the barriers or facilitators", sort=False)
 
 
@@ -473,20 +473,20 @@ class PatientAmputation(ModelSQL, ModelView):
         ('neoplasia', 'Neoplasia'),
         ('infection', 'Infection'),
         ('congenital', 'Congenital'),
-        ], 'Etiology', sort=False)
+    ], 'Etiology', sort=False)
 
     limb = fields.Selection([
         (None, ''),
         ('lower', 'lower limb'),
         ('upper', 'upper limb'),
-        ], 'Limb', sort=False)
+    ], 'Limb', sort=False)
 
     side = fields.Selection([
         (None, ''),
         ('left', 'left'),
         ('right', 'right'),
         ('both', 'both'),
-        ], 'Side', sort=False)
+    ], 'Side', sort=False)
 
     amputation_level = fields.Selection([
         (None, ''),
@@ -501,7 +501,7 @@ class PatientAmputation(ModelSQL, ModelView):
         ('tt', 'TT - Transtibial'),
         ('symes', 'Symes'),
         ('pffd', 'PFFD'),
-        ], 'Level', sort=False)
+    ], 'Level', sort=False)
 
     comments = fields.Char('Comments')
 

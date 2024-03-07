@@ -12,12 +12,13 @@ from trytond.i18n import gettext
 __all__ = ['PediatricsGrowthChartsWHOReport', 'WeightForAge',
            'LengthHeightForAge', 'BMIForAge']
 
+
 class PediatricsGrowthChartsWHOReport(Report):
     __name__ = 'gnuhealth.pediatrics.growth.charts.who.report'
 
     @classmethod
     def get_context(cls, records, header, data):
-        
+
         _MODULE = "health_pediatrics_growth_charts_who"
 
         _TYPES = {
@@ -29,9 +30,12 @@ class PediatricsGrowthChartsWHOReport(Report):
         }
 
         _INDICATORS = {
-            'l/h-f-a': gettext(_MODULE + ".msg_indicator_length_or_height_for_age"),
-            'w-f-a':   gettext(_MODULE + ".msg_indicator_weight_for_age"),
-            'bmi-f-a': gettext(_MODULE + ".msg_indicator_bmi_for_age"),
+            'l/h-f-a': gettext(
+                _MODULE + ".msg_indicator_length_or_height_for_age"),
+            'w-f-a': gettext(
+                _MODULE + ".msg_indicator_weight_for_age"),
+            'bmi-f-a': gettext(
+                _MODULE + ".msg_indicator_bmi_for_age"),
         }
 
         _MEASURES = {
@@ -47,7 +51,8 @@ class PediatricsGrowthChartsWHOReport(Report):
         _SUBTITLE = gettext(_MODULE + ".msg_subtitle")
 
         pool = Pool()
-        GrowthChartsWHO = pool.get('gnuhealth.pediatrics.growth.charts.who')
+        GrowthChartsWHO = pool.get(
+            'gnuhealth.pediatrics.growth.charts.who')
         Patient = pool.get('gnuhealth.patient')
         Evaluation = pool.get('gnuhealth.patient.evaluation')
 
@@ -58,11 +63,11 @@ class PediatricsGrowthChartsWHOReport(Report):
         patient = Patient(data['patient'])
 
         growthchartswho = GrowthChartsWHO.search([
-                ('indicator', '=', data['indicator']),
-                ('measure', '=', data['measure']),
-                ('sex', '=', patient.name.gender),
-                ], order=[('month', 'ASC')],
-                )
+            ('indicator', '=', data['indicator']),
+            ('measure', '=', data['measure']),
+            ('sex', '=', patient.name.gender),
+        ], order=[('month', 'ASC')],
+        )
 
         context['title'] = _INDICATORS[data['indicator']].format(
             gender=_GENDERS[patient.name.gender])
@@ -75,17 +80,27 @@ class PediatricsGrowthChartsWHOReport(Report):
         context['measure'] = data['measure']
 
         if data['measure'] == 'p':
-            context['p3']  = gettext(_MODULE + ".msg_table_header_percentile_p3"),
-            context['p15'] = gettext(_MODULE + ".msg_table_header_percentile_p15"),
-            context['p50'] = gettext(_MODULE + ".msg_table_header_percentile_p50"),
-            context['p85'] = gettext(_MODULE + ".msg_table_header_percentile_p85"),
-            context['p97'] = gettext(_MODULE + ".msg_table_header_percentile_p97"),
+            context['p3'] = gettext(
+                _MODULE + ".msg_table_header_percentile_p3"),
+            context['p15'] = gettext(
+                _MODULE + ".msg_table_header_percentile_p15"),
+            context['p50'] = gettext(
+                _MODULE + ".msg_table_header_percentile_p50"),
+            context['p85'] = gettext(
+                _MODULE + ".msg_table_header_percentile_p85"),
+            context['p97'] = gettext(
+                _MODULE + ".msg_table_header_percentile_p97"),
         else:
-            context['p3']  = gettext(_MODULE + ".msg_table_header_z_score_p3"),
-            context['p15'] = gettext(_MODULE + ".msg_table_header_z_score_p15"),
-            context['p50'] = gettext(_MODULE + ".msg_table_header_z_score_p50"),
-            context['p85'] = gettext(_MODULE + ".msg_table_header_z_score_p85"),
-            context['p97'] = gettext(_MODULE + ".msg_table_header_z_score_p97"),
+            context['p3'] = gettext(
+                _MODULE + ".msg_table_header_z_score_p3"),
+            context['p15'] = gettext(
+                _MODULE + ".msg_table_header_z_score_p15"),
+            context['p50'] = gettext(
+                _MODULE + ".msg_table_header_z_score_p50"),
+            context['p85'] = gettext(
+                _MODULE + ".msg_table_header_z_score_p85"),
+            context['p97'] = gettext(
+                _MODULE + ".msg_table_header_z_score_p97"),
 
         for value in growthchartswho:
             if data['measure'] == 'p':
@@ -96,8 +111,8 @@ class PediatricsGrowthChartsWHOReport(Report):
                     value.value
 
         evaluations = Evaluation.search([
-                ('patient', '=', data['patient']),
-                ])
+            ('patient', '=', data['patient']),
+        ])
 
         for month in range(61):
             context['v' + str(month)] = ''

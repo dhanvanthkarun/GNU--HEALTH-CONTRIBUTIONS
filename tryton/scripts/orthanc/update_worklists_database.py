@@ -14,7 +14,6 @@
 # plugin is used.                                                       #
 #########################################################################
 
-import sys
 import os
 import argparse
 import hashlib
@@ -39,7 +38,7 @@ def main():
             try:
                 connect_service(options)
                 update_worklists_database(options)
-            except:
+            except BaseException:
                 None
             time.sleep(seconds)
     else:
@@ -51,9 +50,11 @@ def parse_options():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-H', '--hostname', default='localhost',
-                        help="Hostname of GNU Health Service, default=localhost.")
+                        help="Hostname of GNU Health Service, "
+                        "default=localhost.")
     parser.add_argument('-p', '--port', default='8000',
-                        help="Port of GNU Health Service, default=8000.")
+                        help="Port of GNU Health Service, "
+                        "default=8000.")
     parser.add_argument('-u', '--user', default='admin',
                         help="User name of GNU Health, default=admin.")
     parser.add_argument('-P', '--passwd', required=True,
@@ -65,9 +66,11 @@ def parse_options():
                         default='/var/lib/orthanc/worklists')
     parser.add_argument('-r', '--regenerate', action="store_true",
                         help="Regenerate worklists database.")
-    parser.add_argument('-m', '--handle-done-state', action="store_true",
-                        help="Create worklists when request state is 'done', slowly.")
-    parser.add_argument('-s', '--seconds', type = int,
+    parser.add_argument('-m', '--handle-done-state',
+                        action="store_true",
+                        help="Create worklists when "
+                        "request state is 'done', slowly.")
+    parser.add_argument('-s', '--seconds', type=int,
                         help="Update Worklists database every n seconds.")
 
     return parser.parse_args()
@@ -75,15 +78,16 @@ def parse_options():
 
 def connect_service(options):
     hostname = options.hostname
-    port     = options.port
-    user     = options.user
-    passwd   = options.passwd
-    dbname   = options.database
+    port = options.port
+    user = options.user
+    passwd = options.passwd
+    dbname = options.database
 
-    health_server = 'http://'+user+':'+passwd+'@'+hostname+':'+port+'/'+dbname+'/'
-    
+    health_server = 'http://' + user + ':' + passwd + \
+        '@' + hostname + ':' + port + '/' + dbname + '/'
+
     print("# Connecting to GNU Health Server ...")
-    conf = pconfig.set_xmlrpc(health_server)
+    pconfig.set_xmlrpc(health_server)
 
 
 def update_worklists_database(options):
@@ -122,25 +126,28 @@ def update_worklists_database(options):
             if len(merge_id) > 0:
                 studies = OrthancStudy.find([('merge_id', '=', merge_id)])
             if len(worklist_text) > 0 and (not studies):
-                print(f'  * "{request_num}" - "{patient}" - "{requested_test}" ...')
-                create_worklist_file(worklist_text, worklists_db, regenerate, encoding)
+                print(f'  * "{request_num}" - '
+                      f'"{patient}" - "{requested_test}" ...')
+                create_worklist_file(
+                    worklist_text, worklists_db, regenerate, encoding)
 
     cleanup_worklists_database(worklists_db)
 
 
-def create_worklist_file(worklist_text, worklists_db, regenerate, encoding):
-    name = hashlib.md5((worklist_text+encoding).encode()).hexdigest()
+def create_worklist_file(
+        worklist_text, worklists_db, regenerate, encoding):
+    name = hashlib.md5((worklist_text + encoding).encode()).hexdigest()
     dump_file = os.path.join(worklists_db, name + ".dump")
     worklist_file = os.path.join(worklists_db, name + ".wl")
-    
+
     if regenerate or (not os.path.exists(worklist_file)):
         with open(dump_file, 'w', encoding=encoding) as f:
             f.write(worklist_text)
-        
+
         subprocess.check_call([
             'dump2dcm', '-g', '-q',
             dump_file, worklist_file])
-    
+
     worklist_files.append(worklist_file)
 
 

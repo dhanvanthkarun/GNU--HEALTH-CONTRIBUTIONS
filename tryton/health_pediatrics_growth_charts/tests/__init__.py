@@ -4,3 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .test_health_pediatrics_growth_charts import suite
+
+
+__all__ = ['suite']

@@ -24,11 +24,11 @@ class GNUHealthWebdavServer(object):
 
         if options.logconf:
             logging.config.fileConfig(options.logconf)
-            logging.getLogger('server').info('using %s as logging '
-                'configuration file', options.logconf)
+            logging.getLogger('server').info(
+                'using %s as logging configuration file', options.logconf)
         else:
             logformat = ('%(process)s %(thread)s [%(asctime)s] '
-                '%(levelname)s %(name)s %(message)s')
+                         '%(levelname)s %(name)s %(message)s')
             if options.verbose:
                 if options.dev:
                     level = logging.DEBUG
@@ -41,7 +41,8 @@ class GNUHealthWebdavServer(object):
         self.logger = logging.getLogger(__name__)
 
         if options.configfile:
-            self.logger.info('using %s as configuration file',
+            self.logger.info(
+                'using %s as configuration file',
                 options.configfile)
         else:
             self.logger.info('using default configuration')
@@ -84,7 +85,8 @@ class GNUHealthWebdavServer(object):
             for hostname, port in parse_listen(
                     config.get('webdav', 'listen')):
                 self.webdavd.append(WebDAVServerThread(hostname, port, ssl))
-                self.logger.info("starting WebDAV%s protocol on %s:%d",
+                self.logger.info(
+                    "starting WebDAV%s protocol on %s:%d",
                     ssl and ' SSL' or '', hostname or '*', port)
 
         for server in self.webdavd:
@@ -104,7 +106,7 @@ class GNUHealthWebdavServer(object):
     def restart(self):
         self.stop(False)
         args = ([sys.executable] + ['-W%s' % o for o in sys.warnoptions]
-            + sys.argv)
+                + sys.argv)
         if sys.platform == "win32":
             args = ['"%s"' % arg for arg in args]
         os.execv(sys.executable, args)

@@ -40,7 +40,7 @@ class PatientLabTestRequest(metaclass=PoolMeta):
         ('yes', 'Yes'),
         ('no', 'No'),
         ('unknown', 'Unknown'),
-        ), 'Service updated', sort=False)
+    ), 'Service updated', sort=False)
 
     @classmethod
     def default_service_updated(self):
@@ -53,7 +53,7 @@ class PatientLabTestRequest(metaclass=PoolMeta):
             'update_service': {
                 'readonly': Equal(Eval('state'), 'done'),
             },
-            })
+        })
 
     @classmethod
     @ModelView.button
@@ -81,7 +81,7 @@ class PatientLabTestRequest(metaclass=PoolMeta):
             'product': laborder.name.product_id.id,
             'desc': laborder.name.product_id.rec_name,
             'qty': 1
-            }]))
+        }]))
 
         hservice.append(laborder.service)
 
@@ -91,5 +91,5 @@ class PatientLabTestRequest(metaclass=PoolMeta):
         service_data['service_line'] = service_lines
 
         HealthService.write(hservice, service_data)
-        
+
         cls.write(laborders, {'service_updated': 'yes'})

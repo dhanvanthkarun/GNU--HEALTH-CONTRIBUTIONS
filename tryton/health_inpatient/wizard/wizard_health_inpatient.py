@@ -29,7 +29,7 @@ class CreateBedTransferInit(ModelView):
         ('occupied', 'Occupied'),
         ('to_clean', 'Needs cleaning'),
         ('na', 'Not available'),
-        ), 'Bed of origin Status', sort=False, required=True)
+    ), 'Bed of origin Status', sort=False, required=True)
 
     @staticmethod
     def default_orig_bed_state():
@@ -47,7 +47,7 @@ class CreateBedTransfer(Wizard):
             Button(
                 'Transfer Patient', 'create_bed_transfer', 'tryton-ok',
                 True),
-            ])
+        ])
     create_bed_transfer = StateTransition()
 
     def transition_create_bed_transfer(self):
@@ -85,11 +85,11 @@ class CreateBedTransfer(Wizard):
             # Update the hospitalization data
             transfers = []
             transfers.append(('create', [{
-                            'transfer_date': datetime.now(),
-                            'bed_from': current_bed,
-                            'bed_to': destination_bed,
-                            'reason': reason,
-                        }]))
+                'transfer_date': datetime.now(),
+                'bed_from': current_bed,
+                'bed_to': destination_bed,
+                'reason': reason,
+            }]))
             hospitalization_info['bed_transfers'] = transfers
 
             inpatient_registrations.write([registration], hospitalization_info)

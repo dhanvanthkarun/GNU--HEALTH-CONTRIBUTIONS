@@ -28,10 +28,10 @@ class InstitutionSummaryReport(Report):
         Party = pool.get('party.party')
 
         return Party.search([
-                ('is_person', '=', True),
-                ('deceased', '!=', True),
-                ('dob', '=', None),
-                ], count=True)
+            ('is_person', '=', True),
+            ('deceased', '!=', True),
+            ('dob', '=', None),
+        ], count=True)
 
     @classmethod
     def get_population(cls, date1, date2, gender, total):
@@ -43,7 +43,7 @@ class InstitutionSummaryReport(Report):
         domain = [
             ('deceased', '!=', True),
             ('gender', '=', gender),
-            ]
+        ]
 
         if not total:
             domain.append(('dob', '>=', date2))
@@ -62,7 +62,7 @@ class InstitutionSummaryReport(Report):
             ('activation_date', '<=', end_date),
             ('deceased', '!=', True),
             ('is_person', '=', True),
-            ]
+        ]
 
         if in_health_system:
             domain.append(('is_patient', '=', True))
@@ -76,9 +76,9 @@ class InstitutionSummaryReport(Report):
         BirthCertificate = pool.get('gnuhealth.birth_certificate')
 
         return BirthCertificate.search([
-                ('dob', '>=', start_date),
-                ('dob', '<=', end_date),
-                ], count=True)
+            ('dob', '>=', start_date),
+            ('dob', '<=', end_date),
+        ], count=True)
 
     @classmethod
     def get_new_deaths(cls, start_date, end_date):
@@ -92,8 +92,8 @@ class InstitutionSummaryReport(Report):
 
         cursor = Transaction().connection.cursor()
         cursor.execute(*table.select(
-                Count(table.dod),
-                where=((dod >= start_date) & (dod <= end_date))))
+            Count(table.dod),
+            where=((dod >= start_date) & (dod <= end_date))))
         return cursor.fetchone()
 
     @classmethod
@@ -109,7 +109,7 @@ class InstitutionSummaryReport(Report):
         clause = [
             ('evaluation_start', '>=', start_date),
             ('evaluation_start', '<=', end_date),
-            ]
+        ]
 
         if dx:
             clause.append(('diagnosis', '=', dx))
@@ -150,8 +150,8 @@ class InstitutionSummaryReport(Report):
 
         # Build the Population Pyramid for registered people
         for age_group in range(0, 21):
-            date1 = today - relativedelta(years=(age_group*5))
-            date2 = today - relativedelta(years=((age_group*5)+5), days=-1)
+            date1 = today - relativedelta(years=(age_group * 5))
+            date2 = today - relativedelta(years=((age_group * 5) + 5), days=-1)
 
             context[''.join(['p', str(age_group), 'f'])] = \
                 cls.get_population(date1, date2, 'f', total=False)
@@ -277,7 +277,7 @@ class InstitutionSummaryReport(Report):
                 'age_group_4': group_4, 'age_group_4f': group_4f,
                 'age_group_5': group_5, 'age_group_5f': group_5f,
                 'total': total_evals, 'new_conditions': new_conditions,
-                }
+            }
 
             # Append into the report list the resulting
             # dictionary entry

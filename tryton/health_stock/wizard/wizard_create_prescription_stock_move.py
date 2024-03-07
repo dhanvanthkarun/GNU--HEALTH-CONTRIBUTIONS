@@ -49,12 +49,12 @@ class CreatePrescriptionStockMove(Wizard):
             if prescription.moves:
                 raise StockMoveExists(
                     gettext('health_stock.msg_stock_move_exists')
-                    )
+                )
 
             if not prescription.pharmacy:
                 raise NoPharmacy(
                     gettext('health_stock.msg_no_pharmacy')
-                    )
+                )
 
             from_location = prescription.pharmacy.warehouse
             if from_location.type == 'warehouse':

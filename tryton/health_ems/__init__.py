@@ -27,4 +27,3 @@ def register():
         health_ems.AmbulanceHealthProfessional,
         health_ems.SupportRequestLog,
         module='health_ems', type_='model')
-

@@ -3,5 +3,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .wizard_health_inpatient import *
-from .wizard_inpatient_evaluation import *
+from . import wizard_health_inpatient
+from . import wizard_inpatient_evaluation
+
+
+__all__ = ['wizard_health_inpatient', 'wizard_inpatient_evaluation']

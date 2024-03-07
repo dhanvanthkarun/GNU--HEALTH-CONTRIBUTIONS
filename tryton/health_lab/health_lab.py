@@ -56,7 +56,7 @@ class TestType(ModelSQL, ModelView):
         (None, ''),
         ('m', 'Male'),
         ('f', 'Female'),
-        ], 'Gender')
+    ], 'Gender')
 
     @staticmethod
     def default_gender():
@@ -82,14 +82,14 @@ class TestType(ModelSQL, ModelView):
 
     age_range = fields.Function(
         fields.Char('Age range'), 'get_age_range')
-    
+
     def get_age_range(self, name):
         min_age = self.min_age
         max_age = self.max_age
-        if min_age != None and max_age !=None:
-            if min_age == None:
-                min_age =  0
-            if max_age == None:
+        if min_age is not None and max_age is not None:
+            if min_age is None:
+                min_age = 0
+            if max_age is None:
                 max_age = 150
             return str(min_age) + "-" + str(max_age)
 
@@ -103,21 +103,23 @@ class TestType(ModelSQL, ModelView):
         ('molecular_biology', 'Molecular Biology Testing'),
         ('chromosome_genetic', 'Chromosome and Genetic Disease Detection'),
         ('others', 'Others'),
-        ], 'Category', sort=False, select=True)
+    ], 'Category', sort=False, select=True)
 
     @staticmethod
     def default_category():
         return None
 
     report_style = fields.Selection([
-        ('tbl_h_r_u_nr', 'Table with result, unit and normal_range columns'),
+        ('tbl_h_r_u_nr',
+         'Table with result, unit and normal_range columns'),
         ('tbl_h_r_nr', 'Table with result and normal_range columns'),
         ('tbl_h_r', 'Table with result column'),
         ('tbl_nh_r', 'Table with result column (no header)'),
-        ('tbl_nh_r_img', 'Table with result column and inline images (no header)'),
+        ('tbl_nh_r_img',
+         'Table with result column and inline images (no header)'),
         ('no_tbl', 'Do not use table'),
         ('do_not_show', 'Do not show in report'),
-        ], 'Report style', sort=False, select=True)
+    ], 'Report style', sort=False, select=True)
 
     @staticmethod
     def default_report_style():
@@ -182,8 +184,7 @@ class TestType(ModelSQL, ModelView):
             if values.get('tags') != '':
                 tags = values.get('tags', '').split(':')
                 tags = [re.sub(r'[^\w_@#%]', '', tag) for tag in tags]
-                tags = list(set([tag for tag in tags if tag != '']))
-                tags.sort()
+                tags = sorted(set([tag for tag in tags if tag != '']))
                 values['tags'] = ":".join(tags)
         return super(TestType, cls).write(test_types, values)
 
@@ -199,7 +200,7 @@ class Lab(ModelSQL, ModelView):
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other_source', 'Other')
-        ], 'Source', 
+    ], 'Source',
         help='Sample source type.',
         sort=False, select=True)
     source_type_str = source_type.translated('source_type')
@@ -209,17 +210,28 @@ class Lab(ModelSQL, ModelView):
         states={'invisible': (Eval('source_type') != 'patient')},
         help="Patient", select=True)
 
-    other_source = fields.Char('Other', 
-        states={'invisible': (Eval('source_type') != 'other_source')},
+    other_source = fields.Char(
+        'Other',
+        states={
+            'invisible': (
+                Eval('source_type') != 'other_source')},
         help="Other sample source.")
     source_name = fields.Function(
         fields.Text('Source name'), 'get_source_name')
 
-    def get_source_name(self, name=None, with_puid = False, with_gender = False):
+    def get_source_name(self, name=None, with_puid=False, with_gender=False):
         if self.is_patient():
-            pname = self.patient and self.patient.rec_name or ''
-            puid_str = with_puid and self.patient and f' ({self.patient.puid})' or ''
-            gender_str = with_gender and self.patient and f' {self.patient.gender_str}' or ''
+            pname = (self.patient
+                     and self.patient.rec_name
+                     or '')
+            puid_str = (with_puid
+                        and self.patient
+                        and f' ({self.patient.puid})'
+                        or '')
+            gender_str = (with_gender
+                          and self.patient
+                          and f' {self.patient.gender_str}'
+                          or '')
             return pname + puid_str + gender_str
         else:
             return (self.other_source or '')
@@ -233,21 +245,21 @@ class Lab(ModelSQL, ModelView):
     results = fields.Text('Results')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
-    ## Mostly used in report template.
+    # Mostly used in report template.
     def has_image_comments(self):
         return (True in [img.description != '' and
                          img.description != 'From GNU Health camera' and
-                         img.description != None for img in self.images])
+                         img.description is not None for img in self.images])
 
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
         'gnuhealth_lab_id', 'Lab Test Critearea')
 
-    ## Mostly used in report template.
+    # Mostly used in report template.
     def has_critearea_remarks(self):
         return (True in [c.remarks != '' and
-                         c.remarks != None for c in self.critearea])
+                         c.remarks is not None for c in self.critearea])
 
     date_requested = fields.DateTime(
         'Request Date', required=True, select=True)
@@ -270,8 +282,10 @@ class Lab(ModelSQL, ModelView):
                 if analyte.result_text:
                     res_text = analyte.result_text
                 if analyte.result:
-                    res = str(analyte.result) + \
-                        " (" + (analyte.units and analyte.units.name or '') + ")  "
+                    unit = (analyte.units
+                            and analyte.units.name
+                            or '')
+                    res = str(analyte.result) + f' ({unit})  '
                 summ = summ + analyte.rec_name + "  " + \
                     res + res_text + "\n"
         return summ
@@ -327,7 +341,7 @@ class Lab(ModelSQL, ModelView):
             bool_op,
             ('patient', ) + tuple(clause[1:]),
             ('name', ) + tuple(clause[1:]),
-            ]
+        ]
 
     @classmethod
     @ModelView.button
@@ -366,15 +380,15 @@ class Lab(ModelSQL, ModelView):
 
         images = None
         if critearea_code:
-            ## We will search images which description include string:
-            ## '<<critearea_code>>'.
+            # We will search images which description include string:
+            # '<<critearea_code>>'.
             search_str = '%<<' + critearea_code + '>>%'
             images = Attachment.search(
                 [('resource', '=', self),
                  ('description', 'like', search_str)])
 
         return images
-        
+
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
     'Lab Test Units'
@@ -444,23 +458,23 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         select=True)
     sequence = fields.Integer('Sequence')
 
-    ## code field is mainly used by interface script, for example:
-    ## gnuhealth_csv_lab_interface.py in example directory.
+    # code field is mainly used by interface script, for example:
+    # gnuhealth_csv_lab_interface.py in example directory.
     ##
-    ## sequence field is not suitable for interface script, for it may
-    ## be changed by user for sort reason, when it changed, interface
-    ## script can not find error. for example: when a criterea
-    ## sequence is changed from 1 to 2 for sort reason. if interface
-    ## script do not update, it will run no error and push wrong
-    ## value.
+    # sequence field is not suitable for interface script, for it may
+    # be changed by user for sort reason, when it changed, interface
+    # script can not find error. for example: when a criterea
+    # sequence is changed from 1 to 2 for sort reason. if interface
+    # script do not update, it will run no error and push wrong
+    # value.
     ##
-    ## name field is not suitable for interface stript too, for it
-    ## will be changed when user use different languages.
+    # name field is not suitable for interface stript too, for it
+    # will be changed when user use different languages.
     code = fields.Char(
         'Code', select=True, translate=False,
         help="Lab test critearea code, "
         "mainly used by lab interface script.")
-    
+
     # Show the warning icon if warning is active on the analyte line
     lab_warning_icon = fields.Function(fields.Char(
         'Lab Warning Icon'),
@@ -472,7 +486,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
 
     # Use by template
     def get_report_result(self, unit=True, normal_range=True):
-        if (self.result != None):
+        if (self.result is not None):
             if self.to_integer:
                 result = str(int(self.result))
             else:
@@ -480,17 +494,17 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         else:
             result = ''
 
-        if (self.result != None) and unit and self.units:
+        if (self.result is not None) and unit and self.units:
             unit = " " + self.units.name
         else:
             unit = ''
 
-        if (self.result != None) and normal_range and self.normal_range:
+        if (self.result is not None) and normal_range and self.normal_range:
             normal_range = " (" + self.normal_range + ")"
         else:
             normal_range = ''
 
-        if (self.result != None) and self.result_text:
+        if (self.result is not None) and self.result_text:
             result_text = '\n{' + self.result_text + '}'
         elif self.result_text:
             result_text = self.result_text
@@ -498,7 +512,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
             result_text = ''
 
         return result + unit + normal_range + result_text
-        
+
     @classmethod
     def __setup__(cls):
         super(GnuHealthTestCritearea, cls).__setup__()
@@ -524,29 +538,29 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     def on_change_with_warning(self):
         normal = True
 
-        ## Note: do not use 'if (self.result)' code style in here, for
-        ## in python: 0.0 = False
+        # Note: do not use 'if (self.result)' code style in here, for
+        # in python: 0.0 = False
 
-        ## lower_limit < x < upper_limit
-        if (self.result != None 
-            and self.lower_limit != None
-            and self.upper_limit != None):
+        # lower_limit < x < upper_limit
+        if (self.result is not None
+            and self.lower_limit is not None
+                and self.upper_limit is not None):
             normal = (self.lower_limit < self.result < self.upper_limit)
-        ## lower_limit < x, At least lower_limit
-        elif (self.result != None 
-              and self.lower_limit != None 
-              and self.upper_limit == None):
+        # lower_limit < x, At least lower_limit
+        elif (self.result is not None
+              and self.lower_limit is not None
+              and self.upper_limit is None):
             normal = (self.lower_limit < self.result)
-        ## x < upper_limit, Up to upper_limit
-        elif (self.result != None 
-              and self.lower_limit == None
-              and self.upper_limit != None):
+        # x < upper_limit, Up to upper_limit
+        elif (self.result is not None
+              and self.lower_limit is None
+              and self.upper_limit is not None):
             normal = (self.result < self.upper_limit)
         else:
             normal = True
 
         return (not normal)
-        
+
     @classmethod
     def check_xml_record(cls, records, values):
         return True
@@ -565,11 +579,11 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         ('tested', 'Tested'),
         ('ordered', 'Ordered'),
         ('cancel', 'Cancel'),
-        ], 'State', readonly=True, select=True)
+    ], 'State', readonly=True, select=True)
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other_source', 'Other')
-        ], 'Source', 
+    ], 'Source',
         help='Sample source type.',
         sort=False, select=True)
 
@@ -578,8 +592,11 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         states={'invisible': (Eval('source_type') != 'patient')},
         select=True)
 
-    other_source = fields.Char('Other', 
-        states={'invisible': (Eval('source_type') != 'other_source')},
+    other_source = fields.Char(
+        'Other',
+        states={
+            'invisible': (
+                Eval('source_type') != 'other_source')},
         help="Other sample source.")
     source_name = fields.Function(
         fields.Text('Source name'), 'get_source_name')

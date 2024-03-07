@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 
+# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 import os
 import argparse
 from proteus import config, Model, Wizard
 
 
 useless_translations = [
-    #'Module'         'Field'                             'Source'
-    ('health_caldav', 'calendar.event,vevent',            'vevent'),
-    ('health_caldav', 'calendar.event.alarm,valarm',      'valarm'),
-    ('health_%',      '%',                         'LibreOffice/%'),
-    ('health',        'patient.medication',  'iVBORw0KGgoAAAANSU%')]
+    # 'Module', 'Field', 'Source'
+    ('health_caldav', 'calendar.event,vevent', 'vevent'),
+    ('health_caldav', 'calendar.event.alarm,valarm', 'valarm'),
+    ('health_%', '%', 'LibreOffice/%'),
+    ('health', 'patient.medication', 'iVBORw0KGgoAAAANSU%')]
 
 
 def main():

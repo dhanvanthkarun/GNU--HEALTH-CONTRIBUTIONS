@@ -306,7 +306,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
                     "http_error",
                     cls.http_error_messages[status_code]) from None
             raise UserWarning(
-                    "unhandled_http", "Unhandled HTTP error") from None
+                "unhandled_http", "Unhandled HTTP error") from None
         except RequestException as exc:
             raise UserWarning(
                 "request_error", "Unhandled request error occured") from exc
@@ -418,7 +418,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
                 f"Updated: {len(update_patients)}\n"
                 f"Studies: New: {len(new_studies)} |"
                 f"Updated: {len(update_studies)}\n"
-                 )
+            )
 
         cls.save(servers)
 
@@ -591,7 +591,7 @@ class OrthancPatient(ModelSQL, ModelView):
     link = fields.Function(
         fields.Char(
             "URL", help="Link to patient in Orthanc Explorer"), "get_link"
-            )
+    )
 
     def get_link(self, name):
         """
@@ -1113,20 +1113,20 @@ class ImagingTestRequest(metaclass=PoolMeta):
         data = {
             # We can not use 'self' as key name, so use 'my'
             # instead.
-            'my':                     self,
-            'MergeID':                self.merge_id or '',
-            'AccessionNumber':        self.getDicomAccessionNumber(),
-            'RequestedProcedureID':   self.getDicomRequestedProcedureID(),
-            'StudyInstanceUID':       self.getDicomStudyInstanceUID(),
-            'PatientName':            self.getDicomPatientName(),
-            'PatientID':              self.getDicomPatientID(),
-            'PatientAge':             self.getDicomPatientAge(),
-            'PatientBirthDate':       self.getDicomPatientBirthDate(),
-            'PatientSex':             self.getDicomPatientSex(),
-            'RequestingPhysician':    self.getDicomRequestingPhysician(),
-            'RequestingService':      self.getDicomRequestingService(),
-            'InstitutionName':        self.getDicomInstitutionName(),
-            'Modality':               self.getDicomModality(),
+            'my': self,
+            'MergeID': self.merge_id or '',
+            'AccessionNumber': self.getDicomAccessionNumber(),
+            'RequestedProcedureID': self.getDicomRequestedProcedureID(),
+            'StudyInstanceUID': self.getDicomStudyInstanceUID(),
+            'PatientName': self.getDicomPatientName(),
+            'PatientID': self.getDicomPatientID(),
+            'PatientAge': self.getDicomPatientAge(),
+            'PatientBirthDate': self.getDicomPatientBirthDate(),
+            'PatientSex': self.getDicomPatientSex(),
+            'RequestingPhysician': self.getDicomRequestingPhysician(),
+            'RequestingService': self.getDicomRequestingService(),
+            'InstitutionName': self.getDicomInstitutionName(),
+            'Modality': self.getDicomModality(),
             'ReferringPhysicianName':
             self.getDicomReferringPhysicianName(),
             'RequestedProcedureDescription':

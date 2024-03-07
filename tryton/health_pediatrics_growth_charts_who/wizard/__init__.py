@@ -4,3 +4,6 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 from . import wizard_health_pediatrics_growth_charts_who
+
+
+__all__ = ['wizard_health_pediatrics_growth_charts_who']

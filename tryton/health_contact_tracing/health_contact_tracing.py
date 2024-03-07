@@ -49,7 +49,7 @@ class ContactTracing(ModelSQL, ModelView):
         ('low', 'Low'),
         ('high', 'High'),
         ('na', 'Not available'),
-        ), 'Exposure', required=True, sort=False)
+    ), 'Exposure', required=True, sort=False)
 
     exposure_time = fields.Integer(
         "Exposure time",
@@ -59,7 +59,7 @@ class ContactTracing(ModelSQL, ModelView):
         ('unreached', 'Unreached'),
         ('followingup', 'Following up'),
         ('na', 'Not available'),
-        ), 'Status', required=True, sort=False,
+    ), 'Status', required=True, sort=False,
         help="Unreached: The contact has not been reached yet."
         "\nFollowing up: The contact has been traced, demographics information"
         " has been created and followup evaluations status are stored in the"

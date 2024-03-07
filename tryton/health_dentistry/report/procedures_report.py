@@ -15,10 +15,6 @@
 #                procedures_report: Procedures report module            #
 #########################################################################
 
-import io
-import os
-from PIL import Image, ImageDraw
-
 from collections import defaultdict
 
 from trytond.pool import Pool
@@ -54,7 +50,7 @@ class DentistryProcedureReport(Report):
                     'state': t.state_string,
                     'procedure': procedure_info,
                     'notes': notes,
-                    })
+                })
         return result
 
     @classmethod
