@@ -230,7 +230,7 @@ class Lab(ModelSQL, ModelView):
                         or '')
             gender_str = (with_gender
                           and self.patient
-                          and f' {self.patient.gender_str}'
+                          and f' [{self.patient.gender_str}]'
                           or '')
             return pname + puid_str + gender_str
         else:
