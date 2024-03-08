@@ -7,10 +7,16 @@
 
 source $HOME/.gnuhealthrc
 
-## LANG_GROUP1: All languages which translation progress > 10%
+## We split languages to three groups, because if too many languages
+## are processed at once, the speed is very very slow, at the moment,
+## deal with a group need about 1 hour in my machine.
+##
+## LANG_GROUP1: The translation progress is relatively high,
+## translation is more active. see:
 ## https://hosted.weblate.org/projects/gnu-health/health/
 LANG_GROUP1="ar es kab id tr sr_Cyrl sv el de it_IT ja_JP ka fr lo pt_BR zh_CN"
-## LANG_GROUP2: All languages which translation progress <= 10%
+## LANG_GROUP2: The translation progress is relatively low,
+## translation is not very active.
 LANG_GROUP2="ca hu eo ru kn ckb sq sl nl zh_Hant nb_NO pl ht ml uk fi"
 ## LANG_GROUP3: Reserved for future use.
 LANG_GROUP3=""
