@@ -3784,7 +3784,16 @@ class Appointment(ModelSQL, ModelView):
             return hp_main_specialty.specialty.id
 
     def get_rec_name(self, name):
-        return self.name
+        name = self.name
+        healthprof = (self.healthprof
+                      and self.healthprof.rec_name
+                      or '')
+        appointment_date = str(self.appointment_date)
+        if name:
+            return name
+        else:
+            # Let report do not show error when state=free
+            return healthprof + "-" + appointment_date
 
 
 class AppointmentReport(ModelSQL, ModelView):

@@ -162,7 +162,9 @@ class Appointment(metaclass=PoolMeta):
         if (self.name):
             appointment = f'{self.name}'
         else:
-            appointment = ''
+            # Use ' ' instead '', for the barcode of '' can not be
+            # recognized by the barcode scanner.
+            appointment = ' '
 
         CODE39 = barcode.get_barcode_class('code39')
 
