@@ -7,14 +7,15 @@
 
 source $HOME/.gnuhealthrc
 
-LANGUAGE=$@
-## All languages which translation progress > 10%
+## LANG_GROUP1: All languages which translation progress > 10%
 ## https://hosted.weblate.org/projects/gnu-health/health/
-ALL_LANGUAGES="ar es kab id tr sr_Cyrl sv el de it_IT ja_JP ka fr lo pt_BR zh_CN"
-## Ignore all languages which translation progress <= 10%, If somebody
-## are maintaining a language, he can ask to update ALL_LANGUAGE and
-## IGNORE_LANGUAGE when progress > 10%
-IGNORE_LANGUAGES="ca hu eo ru kn ckb sq zh_Hant nb_NO pl ht ml uk fi"
+LANG_GROUP1="ar es kab id tr sr_Cyrl sv el de it_IT ja_JP ka fr lo pt_BR zh_CN"
+## LANG_GROUP2: All languages which translation progress <= 10%
+LANG_GROUP2="ca hu eo ru kn ckb sq sl nl zh_Hant nb_NO pl ht ml uk fi"
+## LANG_GROUP3: Reserved for future use.
+LANG_GROUP3=""
+ALL_LANGUAGES="${LANG_GROUP1} ${LANG_GROUP2} ${LANG_GROUP3}" 
+
 TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
 TRYTOND_ADMIN_CMD="${TRYTON_SERVER_DIR}/trytond-${TRYTON_VERSION}/bin/trytond-admin --email admin -d ${TRYTON_DATABASE} --all"
@@ -35,13 +36,15 @@ GNU Health HMIS po files export tool.
 
 Usage:
 
-    $ bash ./`basename $0` LANG
+    $ bash ./`basename $0` --lang LANG
+    $ bash ./`basename $0` --group1
+    $ bash ./`basename $0` --group2
+    $ bash ./`basename $0` --group3
 
 Example:
 
-    $ bash ./po-export.sh zh_CN
-    $ bash ./po-export.sh zh_CN ca
-    $ bash ./po-export.sh --all
+    $ bash ./po-export.sh --lang zh_CN
+    $ bash ./po-export.sh --lang zh_CN ca
 
 EOF
     exit 0
@@ -51,12 +54,19 @@ if [ $# -eq 0 ]; then
     help
 fi
 
-if [[ $LANGUAGE = "--all" ]]; then
-    LANGUAGE=${ALL_LANGUAGES}
-fi
-    
+case $1 in
+    --lang) LANGUAGE=$@;;
+    --group1) LANGUAGE=${LANG_GROUP1};;
+    --group2) LANGUAGE=${LANG_GROUP2};;
+    --group3) LANGUAGE=${LANG_GROUP3};;
+    help) help;;
+    *) echo $1: Unrecognized argument; exit 1;;
+esac
+
+LANGUAGE=${LANGUAGE//--lang }
+
 for lang in $LANGUAGE; do
-    if ! [[ "$ALL_LANGUAGES" =~ "$lang" ]]; then
+    if ! [[ "${ALL_LANGUAGES}" =~ "$lang" ]]; then
         echo "Error: '$lang' is not a value in '$ALL_LANGUAGES'!"
         exit 1
     fi
