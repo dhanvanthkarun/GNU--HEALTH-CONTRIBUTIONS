@@ -4609,6 +4609,19 @@ class PrescriptionLine(ModelSQL, ModelView):
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
     # Used by prescription_orders report template.
+    def get_report_common_usage_str(self):
+        common_dosage = self.common_dosage
+        admin_times = self.admin_times
+        if common_dosage and admin_times:
+            return f'{common_dosage.name}\n({admin_times})'
+        elif common_dosage:
+            return common_dosage.name
+        elif admin_times:
+            return admin_times
+        else:
+            return ''
+
+    # Used by prescription_orders report template.
     def get_report_specific_usage_str(self):
         string = ''
         if self.frequency_unit == 'wr':
