@@ -98,9 +98,10 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,session_number:"
 msgid "Session #"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,session_start:"
 msgid "Start"
-msgstr ""
+msgstr "Data i Godzina"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,signed_by:"
 msgid "Signed by"
@@ -164,9 +165,10 @@ msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
 msgid "End"
 msgstr "Koniec"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
 msgid "Start"
-msgstr ""
+msgstr "Data i Godzina"
 
 msgctxt "field:gnuhealth.patient.rounding,evolution:"
 msgid "Evolution"
@@ -499,7 +501,9 @@ msgid "Nursing rounds"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
-msgid "There is no health professional associated to this user"
+msgid ""
+"SM-CORE-0007: Currently logged in user is not associated to a health "
+"professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_report_pain_level"

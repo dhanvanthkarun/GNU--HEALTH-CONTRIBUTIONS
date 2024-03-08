@@ -25,9 +25,10 @@ msgctxt "field:gnuhealth.or.schedule,health_condition:"
 msgid "Condition"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
 msgid "Health Prof"
-msgstr ""
+msgstr "Terveydenhuollon ammattilainen"
 
 msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
@@ -147,9 +148,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,evaluation:"
 msgid "Evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,health_professional:"
 msgid "Health Prof"
-msgstr ""
+msgstr "Terveydenhuollon ammattilainen"
 
 msgctxt "field:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Imaging"
@@ -189,7 +191,7 @@ msgid "Risk of Massive bleeding"
 msgstr ""
 
 msgctxt "field:gnuhealth.preoperative_assessment,preop_mallampati:"
-msgid "Mallampati Score"
+msgid "Mallampati"
 msgstr ""
 
 msgctxt "field:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -227,9 +229,10 @@ msgctxt "field:gnuhealth.rcri,health_professional:"
 msgid "Health Prof"
 msgstr "Terveydenhuollon ammattilainen"
 
+#, fuzzy
 msgctxt "field:gnuhealth.rcri,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "Potilas"
 
 msgctxt "field:gnuhealth.rcri,rcri_cerebrovascular_history:"
 msgid "History of Cerebrovascular disease"
@@ -615,7 +618,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Terveydenhuollon ammattilainen"
 
 msgctxt "help:gnuhealth.or.schedule,institution:"
@@ -623,7 +626,7 @@ msgid "Health Care Institution"
 msgstr ""
 
 msgctxt "help:gnuhealth.or.schedule,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr ""
 
 msgctxt "help:gnuhealth.or.schedule,patient:"
@@ -682,6 +685,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "The patient is not eligible to be anesthetized"
 msgstr ""
 
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr ""
+
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA pre-operative Physical Status"
 msgstr ""
@@ -690,6 +697,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid ""
 "Patient has a risk of losing more than 500 ml in adults of over 7ml/kg in "
 "infants. If so, make sure that intravenous access and fluids are available"
+msgstr ""
+
+msgctxt "help:gnuhealth.preoperative_assessment,preop_mallampati:"
+msgid "Mallampati Score"
 msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -725,11 +736,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.rcri,rcri_ischemic_history:"
 msgid ""
-"history of MI or a positive exercise test, current         complaint of "
-"chest pain considered to be secondary to myocardial         ischemia, use of"
-" nitrate therapy, or ECG with pathological         Q waves; do not count "
-"prior coronary revascularization procedure         unless one of the other "
-"criteria for ischemic heart disease is         present"
+"history of MI or a positive exercise test, current complaint of chest pain "
+"considered to be secondary to myocardial ischemia, use of nitrate therapy, "
+"or ECG with pathological Q waves; do not count prior coronary "
+"revascularization procedure unless one of the other criteria for ischemic "
+"heart disease is present."
 msgstr ""
 
 msgctxt "help:gnuhealth.rcri,rcri_kidney_history:"
@@ -746,8 +757,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.surgery,age:"
 msgid ""
-"Use this field for historical purposes,         when no date of surgery is "
-"given"
+"Use this field for historical purposes, when no date of surgery is given"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,anesthetist:"
@@ -788,6 +798,10 @@ msgid ""
 "Time in minutes of the surgery process. This value is optional and is used "
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
+msgstr ""
+
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,pathology:"
@@ -1872,6 +1886,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade IIIa"
+msgstr ""
+
+msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
+msgid "Grade IIIb"
 msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"

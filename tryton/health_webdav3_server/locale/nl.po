@@ -1,22 +1,6 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "error:ir.attachment:"
-msgid ""
-"You can not create an attachment named \"%(attachment)s\" in collection "
-"\"%(collection)s\" because there is already a collection with that name."
-msgstr ""
-
-msgctxt "error:webdav.collection:"
-msgid "The collection name must be unique inside a collection!"
-msgstr "De naam van de verzameling moet uniek zijn binnen de verzameling!"
-
-msgctxt "error:webdav.collection:"
-msgid ""
-"You can not create a collection named \"%(parent)s\" in collection "
-"\"%(child)s\" because there is already a file with that name."
-msgstr ""
 
 #, fuzzy
 msgctxt "field:ir.attachment,path:"
@@ -41,24 +25,9 @@ msgctxt "field:webdav.collection,complete_name:"
 msgid "Complete Name"
 msgstr "Volledige naam"
 
-#, fuzzy
-msgctxt "field:webdav.collection,create_date:"
-msgid "Create Date"
-msgstr "Datum"
-
-#, fuzzy
-msgctxt "field:webdav.collection,create_uid:"
-msgid "Create User"
-msgstr "Gebruiker"
-
 msgctxt "field:webdav.collection,domain:"
 msgid "Domain"
 msgstr "Domein"
-
-#, fuzzy
-msgctxt "field:webdav.collection,id:"
-msgid "ID"
-msgstr "ID"
 
 msgctxt "field:webdav.collection,model:"
 msgid "Model"
@@ -72,42 +41,14 @@ msgctxt "field:webdav.collection,parent:"
 msgid "Parent"
 msgstr "Bovenliggend niveau"
 
-msgctxt "field:webdav.collection,rec_name:"
-msgid "Name"
-msgstr "Naam"
-
-#, fuzzy
-msgctxt "field:webdav.collection,write_date:"
-msgid "Write Date"
-msgstr "Schrijfdatum"
-
-#, fuzzy
-msgctxt "field:webdav.collection,write_uid:"
-msgid "Write User"
-msgstr "Gebruiker"
-
-#, fuzzy
-msgctxt "field:webdav.share,create_date:"
-msgid "Create Date"
-msgstr "Datum"
-
-#, fuzzy
-msgctxt "field:webdav.share,create_uid:"
-msgid "Create User"
-msgstr "Gebruiker"
-
 msgctxt "field:webdav.share,expiration_date:"
 msgid "Expiration Date"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:webdav.share,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:webdav.share,key:"
 msgid "Key"
-msgstr ""
+msgstr "Sleutel"
 
 #, fuzzy
 msgctxt "field:webdav.share,note:"
@@ -120,11 +61,6 @@ msgid "Path"
 msgstr "Pad"
 
 #, fuzzy
-msgctxt "field:webdav.share,rec_name:"
-msgid "Name"
-msgstr "Naam bijlage"
-
-#, fuzzy
 msgctxt "field:webdav.share,url:"
 msgid "URL"
 msgstr "URL"
@@ -132,16 +68,6 @@ msgstr "URL"
 #, fuzzy
 msgctxt "field:webdav.share,user:"
 msgid "User"
-msgstr "Gebruiker"
-
-#, fuzzy
-msgctxt "field:webdav.share,write_date:"
-msgid "Write Date"
-msgstr "Schrijfdatum"
-
-#, fuzzy
-msgctxt "field:webdav.share,write_uid:"
-msgid "Write User"
 msgstr "Gebruiker"
 
 #, fuzzy
@@ -155,6 +81,24 @@ msgstr "Verzamelingen"
 
 msgctxt "model:ir.action,name:act_share_list"
 msgid "Shares"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_collection_file_name"
+msgid ""
+"You can not create a collection named \"%(parent)s\" in collection "
+"\"%(child)s\" because there is already a file with that name."
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_collection_unique"
+msgid "The collection name must be unique inside"
+msgstr ""
+
+msgctxt "model:ir.rule.group,name:rule_group_share"
+msgid "share"
+msgstr ""
+
+msgctxt "model:ir.rule.group,name:rule_group_share_admin"
+msgid "share_admin"
 msgstr ""
 
 #, fuzzy
