@@ -1,6 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-03-09 23:31+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
+"health_calendar/sv/>\n"
+"Language: sv\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5-dev\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date_end:"
 msgid "End"
@@ -8,12 +17,13 @@ msgstr "Slut"
 
 msgctxt "field:gnuhealth.appointment,event:"
 msgid "CalDAV Event"
-msgstr ""
+msgstr "CalDAV-händelse"
 
+#, fuzzy
 msgctxt ""
 "field:gnuhealth.calendar.create.appointment.start,appointment_minutes:"
 msgid "Appointment Minutes"
-msgstr ""
+msgstr "Mötet i minuter"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,date_end:"
 msgid "End Date"
@@ -27,7 +37,6 @@ msgctxt "field:gnuhealth.calendar.create.appointment.start,friday:"
 msgid "Friday"
 msgstr "Fredag"
 
-#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,healthprof:"
 msgid "Health Prof"
 msgstr "Vårdpersonal"
@@ -47,7 +56,7 @@ msgstr "Lördag"
 #, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,specialty:"
 msgid "Specialty"
-msgstr "Specialitet"
+msgstr "Specialistområde"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,sunday:"
 msgid "Sunday"
@@ -93,11 +102,11 @@ msgctxt "help:res.user,use_caldav:"
 msgid "The user has a CalDav account"
 msgstr "Användaren har ett CalDav-konto"
 
+#, fuzzy
 msgctxt "model:gnuhealth.calendar.create.appointment.start,name:"
 msgid "Create Appointments Start"
-msgstr ""
+msgstr "Boka ett möte"
 
-#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_appointment_calendar"
 msgid "Appointments Calendar"
 msgstr "Möteskalender"
@@ -111,10 +120,12 @@ msgid ""
 "SM-CALENDAR-0004: The Appointment END date \"%(appointment_date_end)s\" is "
 "BEFORE the start date \"%(appointment_date)s\""
 msgstr ""
+"SM-CALENDAR-0004: Mötets SLUT-datum \"%(appointment_date_end)s\" är FÖRE "
+"start-datumet \"%(appointment_date)s\""
 
 msgctxt "model:ir.message,text:msg_end_before_start"
 msgid "SM-CALENDAR-002: End date before start"
-msgstr ""
+msgstr "SM-CALENDAR-002: Slutdatum före start"
 
 msgctxt "model:ir.message,text:msg_no_company_timezone"
 msgid ""
