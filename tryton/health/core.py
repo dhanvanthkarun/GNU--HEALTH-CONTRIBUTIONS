@@ -315,17 +315,17 @@ def image_crop_to_ratio(PIL_Image, image, ratio):
     holder.close()
 
     return {'image': bytearray(new_img_png),
-            'image_type': 'image/png'}
+            'mimetype': 'image/png'}
 
 
 def image_crop(PIL_Image, image, width, height, unit='cm'):
     ratio = height / width
     image_info = image_crop_to_ratio(PIL_Image, image, ratio)
     image = image_info.get('image')
-    image_type = image_info.get('image_type')
+    mimetype = image_info.get('mimetype')
     w = str(width) + unit
     h = str(height) + unit
-    return (image, image_type, w, h)
+    return (image, mimetype, w, h)
 
 
 # Matplotlib will be used by many report.py in the future, so we add a
