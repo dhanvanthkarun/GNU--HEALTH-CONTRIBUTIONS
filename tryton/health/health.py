@@ -54,7 +54,7 @@ from .core import (get_yes_or_no_string, get_institution,
                    format_years_months_days,
                    estimated_date_from_years,
                    get_health_professional,
-                   image_crop_to_ratio)
+                   image_crop)
 
 
 try:
@@ -3050,8 +3050,8 @@ class PatientData(ModelSQL, ModelView):
     # find a way to keep the original aspect ratio in odt template at
     # the moment.
     @staticmethod
-    def photo_crop(photo, ratio):
-        return image_crop_to_ratio(Image, photo, ratio)
+    def photo_crop(photo, width, height, unit='cm'):
+        return image_crop(Image, photo, width, height, unit)
 
     # Removed in 2.0 . DOB It's now a functional field
     # Retrieves the information from the party.

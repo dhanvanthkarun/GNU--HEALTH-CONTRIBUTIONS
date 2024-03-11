@@ -17,7 +17,7 @@ from trytond.pool import Pool, PoolMeta
 from datetime import datetime
 from trytond.pyson import Eval, Not, Equal
 from trytond.modules.health.core import (get_health_professional,
-                                         image_crop_to_ratio)
+                                         image_crop)
 
 from PIL import Image
 
@@ -50,8 +50,8 @@ class Newborn(ModelSQL, ModelView):
     # find a way to keep the original aspect ratio in odt template at
     # the moment.
     @staticmethod
-    def photo_crop(photo, ratio):
-        return image_crop_to_ratio(Image, photo, ratio)
+    def photo_crop(photo, width, height, unit='cm'):
+        return image_crop(Image, photo, width, height, unit)
 
     # Sex / Gender at birth.
 

@@ -314,7 +314,18 @@ def image_crop_to_ratio(PIL_Image, image, ratio):
     new_img_png = holder.getvalue()
     holder.close()
 
-    return bytearray(new_img_png)
+    return {'image': bytearray(new_img_png),
+            'image_type': 'image/png'}
+
+
+def image_crop(PIL_Image, image, width, height, unit='cm'):
+    ratio = height / width
+    image_info = image_crop_to_ratio(PIL_Image, image, ratio)
+    image = image_info.get('image')
+    image_type = image_info.get('image_type')
+    w = str(width) + unit
+    h = str(height) + unit
+    return (image, image_type, w, h)
 
 
 # Matplotlib will be used by many report.py in the future, so we add a
