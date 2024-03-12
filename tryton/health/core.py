@@ -319,6 +319,15 @@ def image_crop_to_ratio(PIL_Image, image, ratio):
 
 
 def image_crop(PIL_Image, image, width, height, unit='cm'):
+    """Center-crop image and return a tuple like:
+
+        (new_image, mimetype, width, height)
+
+    which is used in relatorio open document's image template, this
+    tuple let image showed in odt file keep ratio and size = (width,
+    height).
+
+    """
     try:
         ratio = height / width
         image_info = image_crop_to_ratio(PIL_Image, image, ratio)
