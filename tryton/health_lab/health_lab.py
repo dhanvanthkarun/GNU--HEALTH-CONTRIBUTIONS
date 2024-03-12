@@ -17,9 +17,16 @@ from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         image_resize)
 
 import re
+
+try:
+    from PIL import Image
+except ImportError:
+    Image = None
+
 
 __all__ = [
     'PatientData', 'TestType', 'Lab',
@@ -245,7 +252,14 @@ class Lab(ModelSQL, ModelView):
     results = fields.Text('Results')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
+    # resize_image method is used in report template
+    @staticmethod
+    def resize_image(image, max_width, max_height, unit='cm'):
+        return image_resize(
+            Image, image, max_width, max_height, unit)
+
     # Mostly used in report template.
+
     def has_image_comments(self):
         return (True in [img.description != '' and
                          img.description != 'From GNU Health camera' and
