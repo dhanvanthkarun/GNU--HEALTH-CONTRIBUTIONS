@@ -319,10 +319,15 @@ def image_crop_to_ratio(PIL_Image, image, ratio):
 
 
 def image_crop(PIL_Image, image, width, height, unit='cm'):
-    ratio = height / width
-    image_info = image_crop_to_ratio(PIL_Image, image, ratio)
-    image = image_info.get('image')
-    mimetype = image_info.get('mimetype')
+    try:
+        ratio = height / width
+        image_info = image_crop_to_ratio(PIL_Image, image, ratio)
+        image = image_info.get('image')
+        mimetype = image_info.get('mimetype')
+    except BaseException:
+        image = image
+        mimetype = None
+
     w = str(width) + unit
     h = str(height) + unit
     return (image, mimetype, w, h)
