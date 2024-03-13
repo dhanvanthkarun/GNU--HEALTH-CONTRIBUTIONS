@@ -5610,6 +5610,7 @@ class PatientECG(ModelSQL, ModelView):
                            'Patient', required=True)
 
     ecg_date = fields.DateTime('Date', required=True)
+    images = fields.One2Many('ir.attachment', 'resource', 'Images')
     lead = fields.Selection([
         (None, ''),
         ('i', 'I'),
