@@ -15,6 +15,7 @@
 
 import os
 import argparse
+import csv
 
 from datetime import datetime
 from decimal import Decimal
@@ -62,6 +63,8 @@ def connect_service(options):
 
 
 def update_criteareas():
+    fallback_maps = read_fallback_maps()
+
     Critearea = Model.get('gnuhealth.lab.test.critearea')
     criteareas = Critearea.find(
         [['OR',
@@ -77,16 +80,33 @@ def update_criteareas():
              ('name', '=', critearea.name)])
 
         codes = list(set([c.code for c in x]))
+        fallback_code = fallback_maps.get(critearea.name)
 
-        if len(codes) > 1:
-            print("* Ignore! Found multi code "
-                  f"for '{critearea.name}' ...")
-        elif len(codes) == 1:
+        if len(codes) == 1:
             critearea.code = codes[0]
             critearea.save()
             print(f"* Update: '{critearea.name}' code  -> '{codes[0]}'")
+        elif fallback_code:
+            critearea.code = fallback_code
+            critearea.save()
+            print(f"* Update: '{critearea.name}' code  -> '{fallback_code}', "
+                  "using fallback maps.")
+        elif len(codes) > 1:
+            print("* Ignore! Found multi code "
+                  f"for '{critearea.name}' ...")
         else:
             print(f"* Ignore! Find no code for '{critearea.name}' ...")
+
+
+def read_fallback_maps():
+    csv_file = csv.reader(open('fallback-maps.csv', 'r'))
+    result = {}
+    for line in csv_file:
+        name = line[0]
+        code = line[1]
+        if name != 'name':
+            result[name] = code
+    return result
 
 
 if __name__ == '__main__':

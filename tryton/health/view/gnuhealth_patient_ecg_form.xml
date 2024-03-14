@@ -35,13 +35,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <label name="twave_inversion"/>
       <field name="twave_inversion"/>
     </group>
-    <group string="Image" id="ecg_image" colspan="4">
-      <field colspan="4" name="ecg_strip" widget="image"/>
-    </group>
+    <field colspan="4" name="images"/>
     <label string="Interpretation" 
            name="interpretation" 
            xalign="0.0" colspan="4"/>
-    <field name="interpretation" colspan="4"/>
+    <field name="interpretation" colspan="3"/>
+    <field colspan="1" name="ecg_strip" widget="image"/>
     <group id="ecg_footer" colspan="4">
       <label name="healthprof"/>
       <field name="healthprof"/>
