@@ -314,7 +314,64 @@ def image_crop_to_ratio(PIL_Image, image, ratio):
     new_img_png = holder.getvalue()
     holder.close()
 
-    return bytearray(new_img_png)
+    return {'image': bytearray(new_img_png),
+            'mimetype': 'image/png'}
+
+
+def image_crop(PIL_Image, image, width, height, unit='cm'):
+    """Center-crop image and return a tuple like:
+
+        (new_image, mimetype, width, height)
+
+    which is used in relatorio open document's image template, this
+    tuple let image showed in odt file keep ratio and size = (width,
+    height).
+
+    """
+    try:
+        ratio = height / width
+        image_info = image_crop_to_ratio(PIL_Image, image, ratio)
+        image = image_info.get('image')
+        mimetype = image_info.get('mimetype')
+    except BaseException:
+        image = image
+        mimetype = None
+
+    w = str(width) + unit
+    h = str(height) + unit
+    return (image, mimetype, w, h)
+
+
+def image_resize(PIL_Image, image, max_width, max_height, unit='cm'):
+    """Return a tuple like: (image, mimetype, width, height), which is
+    used in relatorio open document's image template, this tuple let
+    image showed in odt file keep ratio, and width < max_width, height
+    < max_height.
+    """
+    try:
+        img = PIL_Image.open(io.BytesIO(image))
+        orig_width, orig_height = img.size
+        orig_ratio = float(orig_height / orig_width)
+        ratio = max_height / max_width
+
+        if orig_ratio >= ratio:
+            width = max_height / orig_ratio
+            height = max_height
+        else:
+            width = max_width
+            height = max_width * orig_ratio
+
+        w = str(width) + unit
+        h = str(height) + unit
+        mimetype = None
+
+    except BaseException:
+
+        w = str(max_width) + unit
+        h = str(max_height) + unit
+        mimetype = None
+
+    return (image, mimetype, w, h)
 
 
 # Matplotlib will be used by many report.py in the future, so we add a

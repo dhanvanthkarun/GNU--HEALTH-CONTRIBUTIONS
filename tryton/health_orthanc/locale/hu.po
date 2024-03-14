@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:gnuhealth.imaging.test,aetitle:"
+msgid "AETitle"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test,worklist_template:"
 msgid "Worklist template"
 msgstr ""
@@ -229,6 +233,12 @@ msgctxt "field:gnuhealth.patient,orthanc_patients:"
 msgid "Orthanc patients"
 msgstr ""
 
+msgctxt "help:gnuhealth.imaging.test,aetitle:"
+msgid ""
+"AETitle string, used as (0040,0001) ScheduledStationAETitle tag in worklist "
+"template."
+msgstr ""
+
 msgctxt "help:gnuhealth.imaging.test.request,computed_age:"
 msgid "Computed patient age at image request."
 msgstr ""
@@ -359,7 +369,7 @@ msgid "Orthanc patient information"
 msgstr ""
 
 msgctxt "model:gnuhealth.orthanc.study,name:"
-msgid "Orthanc study"
+msgid "Defines an Orthanc Study."
 msgstr ""
 
 msgctxt "model:gnuhealth.orthanc.worklist.template,name:"
@@ -421,6 +431,10 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:orthanc_worklist_template_menu"
 msgid "Worklist templates"
+msgstr ""
+
+msgctxt "selection:ir.cron,method:"
+msgid "Orthanc: Sync studies"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.result:"

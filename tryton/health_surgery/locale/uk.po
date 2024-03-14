@@ -21,9 +21,10 @@ msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
 msgstr "Коментарі"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,health_condition:"
 msgid "Condition"
-msgstr ""
+msgstr "Умова"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
@@ -35,9 +36,10 @@ msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
 msgstr "Установа"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,name:"
 msgid "Op. Room"
-msgstr ""
+msgstr "Операційна"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,patient:"
@@ -195,7 +197,7 @@ msgid "Risk of Massive bleeding"
 msgstr ""
 
 msgctxt "field:gnuhealth.preoperative_assessment,preop_mallampati:"
-msgid "Mallampati Score"
+msgid "Mallampati"
 msgstr ""
 
 msgctxt "field:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -233,9 +235,10 @@ msgctxt "field:gnuhealth.rcri,health_professional:"
 msgid "Health Prof"
 msgstr "Медичний працівник"
 
+#, fuzzy
 msgctxt "field:gnuhealth.rcri,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "Пацієнт(ка)"
 
 msgctxt "field:gnuhealth.rcri,rcri_cerebrovascular_history:"
 msgid "History of Cerebrovascular disease"
@@ -375,9 +378,10 @@ msgctxt "field:gnuhealth.surgery,operating_room:"
 msgid "Op. Room"
 msgstr "Операційна"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,pathology:"
 msgid "Condition"
-msgstr ""
+msgstr "Умова"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery,patient:"
@@ -558,9 +562,10 @@ msgctxt "field:gnuhealth.surgery.protocol,name:"
 msgid "Name"
 msgstr "Назва"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,pathology:"
 msgid "Condition"
-msgstr ""
+msgstr "Умова"
 
 msgctxt "field:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Patient Positioning"
@@ -623,7 +628,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
-msgid "Health Prof"
+msgid "Health Professional"
 msgstr "Медичний працівник"
 
 msgctxt "help:gnuhealth.or.schedule,institution:"
@@ -632,7 +637,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,name:"
-msgid "Op. Room"
+msgid "Operating Room"
 msgstr "Операційна"
 
 msgctxt "help:gnuhealth.or.schedule,patient:"
@@ -691,6 +696,11 @@ msgctxt "help:gnuhealth.preoperative_assessment,no_anesthesia:"
 msgid "The patient is not eligible to be anesthetized"
 msgstr ""
 
+#, fuzzy
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "Операційна"
+
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA pre-operative Physical Status"
 msgstr ""
@@ -699,6 +709,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid ""
 "Patient has a risk of losing more than 500 ml in adults of over 7ml/kg in "
 "infants. If so, make sure that intravenous access and fluids are available"
+msgstr ""
+
+msgctxt "help:gnuhealth.preoperative_assessment,preop_mallampati:"
+msgid "Mallampati Score"
 msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -734,11 +748,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.rcri,rcri_ischemic_history:"
 msgid ""
-"history of MI or a positive exercise test, current         complaint of "
-"chest pain considered to be secondary to myocardial         ischemia, use of"
-" nitrate therapy, or ECG with pathological         Q waves; do not count "
-"prior coronary revascularization procedure         unless one of the other "
-"criteria for ischemic heart disease is         present"
+"history of MI or a positive exercise test, current complaint of chest pain "
+"considered to be secondary to myocardial ischemia, use of nitrate therapy, "
+"or ECG with pathological Q waves; do not count prior coronary "
+"revascularization procedure unless one of the other criteria for ischemic "
+"heart disease is present."
 msgstr ""
 
 msgctxt "help:gnuhealth.rcri,rcri_kidney_history:"
@@ -755,8 +769,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.surgery,age:"
 msgid ""
-"Use this field for historical purposes,         when no date of surgery is "
-"given"
+"Use this field for historical purposes, when no date of surgery is given"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,anesthetist:"
@@ -798,6 +811,11 @@ msgid ""
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
 msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
+msgstr "Операційна"
 
 msgctxt "help:gnuhealth.surgery,pathology:"
 msgid "Base Condition / Reason"
@@ -1083,9 +1101,10 @@ msgctxt "model:ir.model.button,string:surgery_sign_button"
 msgid "Sign"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:surgery_start_button"
 msgid "Start"
-msgstr ""
+msgstr "Дата й час"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_surgery_code"
 msgid "Surgery"
@@ -1869,6 +1888,10 @@ msgid "Grade IIIa"
 msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
+msgid "Grade IIIb"
+msgstr ""
+
+msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade IV"
 msgstr ""
 
@@ -2399,9 +2422,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Sign this surgery"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Start"
-msgstr ""
+msgstr "Дата й час"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Start the Surgery"

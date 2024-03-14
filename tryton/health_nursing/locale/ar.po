@@ -58,14 +58,13 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation"
 msgstr "تشبع الأكسجين"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,pain:"
 msgid "Pain"
 msgstr "ألم"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,pain_level:"
 msgid "Pain level"
-msgstr ""
+msgstr "درجة الالم"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,patient:"
 msgid "Patient"
@@ -119,7 +118,6 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,warning_icon:"
 msgid "Warning Icon"
 msgstr "مصغر تحذير"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,weight:"
 msgid "Weight"
 msgstr "الوزن"
@@ -182,7 +180,7 @@ msgstr "ألم"
 
 msgctxt "field:gnuhealth.patient.rounding,pain_level:"
 msgid "Pain level"
-msgstr ""
+msgstr "درجة الالم"
 
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
@@ -278,25 +276,25 @@ msgstr "رمز"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"
-msgstr ""
+msgstr "التسلسل الإسعافي"
 
 msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr ""
+msgstr "تسلسل تقريب المريض"
 
 msgctxt ""
 "field:gnuhealth.sequences.ambulatory_care_sequence,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"
-msgstr ""
+msgstr "التسلسل الإسعافي"
 
 msgctxt ""
 "field:gnuhealth.sequences.patient_rounding_sequence,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr ""
+msgstr "تسلسل تقريب المريض"
 
 msgctxt "help:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Procedure Code"
-msgstr ""
+msgstr "رمز العملية"
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,bpm:"
 msgid "Heart rate expressed in beats per minute"
@@ -314,14 +312,13 @@ msgctxt "help:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation(arterial)."
 msgstr "تشبع الأكسجين (الشرايين)."
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.ambulatory_care,pain:"
 msgid "Check if the patient is in pain"
 msgstr "تحقق مما إذا كان المريض يتألم"
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,pain_level:"
 msgid "Enter the pain level, from 1 to 10."
-msgstr ""
+msgstr "ادخل درجة الالم من 1 الى .10"
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,procedures:"
 msgid ""
@@ -350,7 +347,6 @@ msgid ""
 msgstr ""
 "حدد هذا المربع لتنبيه المشرف بهذه الجلسة. سيظهر رمز تحذير في قائمة الجلسات"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.ambulatory_care,weight:"
 msgid "Measured weight, in kg"
 msgstr "الوزن المحسوب بالكيلو غرام"
@@ -389,7 +385,7 @@ msgstr "تحقق مما إذا كان المريض يتألم"
 
 msgctxt "help:gnuhealth.patient.rounding,pain_level:"
 msgid "Enter the pain level, from 1 to 10."
-msgstr ""
+msgstr "ادخل درجة الالم من 1 الى 10."
 
 msgctxt "help:gnuhealth.patient.rounding,personal_needs:"
 msgid "Check if the patient requests anything"
@@ -417,7 +413,7 @@ msgstr "تحقق مما إذا البنود الشخصية، والمياه، ا
 
 msgctxt "help:gnuhealth.patient.rounding,pump:"
 msgid "Check if there is any issues with the pumps - IVs ..."
-msgstr ""
+msgstr "تحقق مما إذا كان هناك أي مشاكل في المضخات - IVs ..."
 
 msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
@@ -465,11 +461,11 @@ msgstr "الزيارة - إجراء"
 
 msgctxt "model:gnuhealth.sequences.ambulatory_care_sequence,name:"
 msgid "Ambulatory Care Sequences setup"
-msgstr ""
+msgstr "إعداد تسلسلات الرعاية الإسعافية"
 
 msgctxt "model:gnuhealth.sequences.patient_rounding_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
-msgstr ""
+msgstr "إعداد تسلسل تقييم المريض"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_ambulatory_care_view"
 msgid "Ambulatory Care"
@@ -481,7 +477,7 @@ msgstr "الزيارات"
 
 msgctxt "model:ir.action,name:report_ambulatory_care"
 msgid "Ambulatory care session"
-msgstr ""
+msgstr "جلسة رعاية متنقلة"
 
 msgctxt "model:ir.action,name:report_round_nursing"
 msgid "Nursing rounds"
@@ -492,28 +488,28 @@ msgid ""
 "SM-CORE-0007: Currently logged in user is not associated to a health "
 "professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr ""
+"SM-CORE-0007: المستخدم الذي قام بتسجيل الدخول حاليًا غير مرتبط بأخصائي صحي. "
+"راجع حقل \"المستخدم الداخلي\" في نموذج \"الأطراف/الأشخاص\"."
 
 msgctxt "model:ir.message,text:msg_report_pain_level"
 msgid "Level: %(pain_level)s"
-msgstr ""
+msgstr "المستوى: %(pain_level)s"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_no"
 msgid "No"
 msgstr "لا"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_yes"
 msgid "Yes"
 msgstr "نعم"
 
 msgctxt "model:ir.model.button,string:rounding_end_button"
 msgid "End rounding"
-msgstr ""
+msgstr "انهاء الجولة"
 
 msgctxt "model:ir.model.button,string:session_end_button"
 msgid "End session"
-msgstr ""
+msgstr "انهاء الجلسة"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_ambulatory_care"
 msgid "Ambulatory Care"
@@ -551,189 +547,169 @@ msgctxt "model:res.group,name:group_health_nursing_admin"
 msgid "Health Nursing Administration"
 msgstr "إدارة التمريض الصحي"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "/"
 msgstr "/"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Ambulatory Care Session"
-msgstr ""
+msgstr "جلسة عناية اسعافية"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "BP"
-msgstr ""
+msgstr "BP"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "End:"
 msgstr "ينتهي :"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Evolution"
 msgstr "تطور"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Glycemia"
 msgstr "سكر الدم"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Health Prof:"
 msgstr "الطبيب المختص:"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Heart rate"
-msgstr ""
+msgstr "النبض"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Next session"
-msgstr ""
+msgstr "الجلسة التالية"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "O2 Sat (%)"
-msgstr ""
+msgstr "تشبع الاكسجين (%)"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "PUID:"
 msgstr "رقم المريض:"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Pain"
 msgstr "ألم"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Patient:"
 msgstr "المريض:"
 
-#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Procedures"
 msgstr "الإجراءات"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Resp. rate"
-msgstr ""
+msgstr "نسبة القبول"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Session ID:"
-msgstr ""
+msgstr "رقم الجلسة:"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Start:"
-msgstr ""
+msgstr "البداية:"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Summary"
-msgstr ""
+msgstr "ملخص"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Temp. (C)"
-msgstr ""
+msgstr "الحرارة. (C)"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Weight (kg)"
-msgstr ""
+msgstr "الوزن كجم"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "/"
 msgstr "/"
 
 msgctxt "report:patient.rounding.report:"
 msgid "BP"
-msgstr ""
+msgstr "BP"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Diuresis"
 msgstr "إدرار البول"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "End:"
 msgstr "ينتهي :"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Evolution"
 msgstr "تطور"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Gender:"
 msgstr "الجنس:"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Glycemia"
 msgstr "سكر الدم"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Health Prof:"
 msgstr "الطبيب المختص:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Heart rate"
-msgstr ""
+msgstr "النبض"
 
 msgctxt "report:patient.rounding.report:"
 msgid "O2 Sat (%)"
-msgstr ""
+msgstr "تشبع الاكسجين (%)"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "PUID:"
 msgstr "رقم المريض:"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Pain"
 msgstr "ألم"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Patient:"
 msgstr "المريض:"
 
-#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Procedures"
 msgstr "الإجراءات"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Resp. rate"
-msgstr ""
+msgstr "معدل القبول"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Code:"
-msgstr ""
+msgstr "رقم الجولة:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Round Report"
-msgstr ""
+msgstr "تقرير الجولة"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Start:"
-msgstr ""
+msgstr "البداية:"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Summary"
-msgstr ""
+msgstr "الملخص"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Temp. (C)"
-msgstr ""
+msgstr "الحرارة"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Weight (kg)"
-msgstr ""
+msgstr "الوزن"
 
 msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
 msgid ""
@@ -797,90 +773,80 @@ msgstr "في العمل"
 
 msgctxt "view:gnuhealth.ambulatory_care_procedure:"
 msgid "Procedure Details / Incidents"
-msgstr ""
+msgstr "تفاصيل العملية / الحادثة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "End"
 msgstr "انهاء"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "End this session"
-msgstr ""
+msgstr "انهاء الجلسة"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "End this session ?"
-msgstr ""
+msgstr "انهاء الجلسة ؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Main"
 msgstr "الاساسيات"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Misc"
 msgstr "متنوع"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Summary"
-msgstr ""
+msgstr "ملخص"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Vital Signs"
 msgstr "المؤشرات الحيويه"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End rounding"
-msgstr ""
+msgstr "انهاء الجولة"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding"
-msgstr ""
+msgstr "انهاء ه"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding ?"
-msgstr ""
+msgstr "انهاء هذه الجولة ؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Environment"
 msgstr "البيئة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Main"
 msgstr "الاساسيات"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Other"
 msgstr "أخرى"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Procedures"
 msgstr "الإجراءات"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Round summary"
-msgstr ""
+msgstr "ملخص الجولة"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Six P's"
 msgstr "P السادسة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Time"
 msgstr "الوقت"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Vital Signs"
 msgstr "المؤشرات الحيويه"
 
 msgctxt "view:gnuhealth.rounding_procedure:"
 msgid "Procedure Details / Incidents"
-msgstr ""
+msgstr "تفاصيل العملية / الحادثة"

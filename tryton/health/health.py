@@ -54,7 +54,7 @@ from .core import (get_yes_or_no_string, get_institution,
                    format_years_months_days,
                    estimated_date_from_years,
                    get_health_professional,
-                   image_crop_to_ratio)
+                   image_crop)
 
 
 try:
@@ -3050,8 +3050,8 @@ class PatientData(ModelSQL, ModelView):
     # find a way to keep the original aspect ratio in odt template at
     # the moment.
     @staticmethod
-    def photo_crop(photo, ratio):
-        return image_crop_to_ratio(Image, photo, ratio)
+    def photo_crop(photo, width, height, unit='cm'):
+        return image_crop(Image, photo, width, height, unit)
 
     # Removed in 2.0 . DOB It's now a functional field
     # Retrieves the information from the party.
@@ -3784,7 +3784,16 @@ class Appointment(ModelSQL, ModelView):
             return hp_main_specialty.specialty.id
 
     def get_rec_name(self, name):
-        return self.name
+        name = self.name
+        healthprof = (self.healthprof
+                      and self.healthprof.rec_name
+                      or '')
+        appointment_date = str(self.appointment_date)
+        if name:
+            return name
+        else:
+            # Let report do not show error when state=free
+            return healthprof + "-" + appointment_date
 
 
 class AppointmentReport(ModelSQL, ModelView):
@@ -4607,6 +4616,19 @@ class PrescriptionLine(ModelSQL, ModelView):
     frequency_unit_str = frequency_unit.translated('frequency_unit')
 
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
+
+    # Used by prescription_orders report template.
+    def get_report_common_usage_str(self):
+        common_dosage = self.common_dosage
+        admin_times = self.admin_times
+        if common_dosage and admin_times:
+            return f'{common_dosage.name}\n({admin_times})'
+        elif common_dosage:
+            return common_dosage.name
+        elif admin_times:
+            return admin_times
+        else:
+            return ''
 
     # Used by prescription_orders report template.
     def get_report_specific_usage_str(self):
@@ -5588,6 +5610,7 @@ class PatientECG(ModelSQL, ModelView):
                            'Patient', required=True)
 
     ecg_date = fields.DateTime('Date', required=True)
+    images = fields.One2Many('ir.attachment', 'resource', 'Images')
     lead = fields.Selection([
         (None, ''),
         ('i', 'I'),
