@@ -12,13 +12,9 @@
 #                       gnuhealth-data-import.py                        #
 #               Sample script to import data to gnuhealth               #
 #########################################################################
-
-import os
 import argparse
 import csv
 
-from datetime import datetime
-from decimal import Decimal
 from proteus import Model
 from proteus import config as pconfig
 
