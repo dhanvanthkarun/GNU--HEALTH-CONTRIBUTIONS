@@ -53,8 +53,7 @@ from .core import (get_yes_or_no_string, get_institution,
                    get_age_for_comparison,
                    format_years_months_days,
                    estimated_date_from_years,
-                   get_health_professional,
-                   ImageMixin)
+                   get_health_professional)
 
 
 try:
@@ -2975,7 +2974,7 @@ class Product(ModelSQL, ModelView):
 
 
 # PATIENT GENERAL INFORMATION
-class PatientData(ModelSQL, ModelView, ImageMixin):
+class PatientData(ModelSQL, ModelView):
     'Patient related information'
     __name__ = 'gnuhealth.patient'
 

@@ -18,6 +18,7 @@ from datetime import datetime
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.i18n import gettext
+from trytond.report import Report
 
 from .exceptions import (NoAssociatedHealthProfessional)
 
@@ -304,8 +305,8 @@ def matplotlib_setup(matplotlab):
         print(f'Matplotlib: Use rcParams: {rc_conf}.')
 
 
-class ImageMixin:
-    'Mixin to operate image'
+class ImageReportMixin:
+    'Mixin to operate image in report.'
     __slots__ = ()
 
     @classmethod
@@ -397,3 +398,13 @@ class ImageMixin:
 
         return {'image': bytearray(new_img_png),
                 'mimetype': 'image/png'}
+
+    @classmethod
+    def get_context(cls, records, header, data):
+        context = super(ImageReportMixin, cls).get_context(
+            records, header, data)
+
+        context['image_crop'] = cls.image_crop
+        context['image_resize'] = cls.image_resize
+
+        return context

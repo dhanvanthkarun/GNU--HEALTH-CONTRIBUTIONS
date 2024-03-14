@@ -16,15 +16,14 @@ from trytond.transaction import Transaction
 from trytond.pool import Pool, PoolMeta
 from datetime import datetime
 from trytond.pyson import Eval, Not, Equal
-from trytond.modules.health.core import (get_health_professional,
-                                         ImageMixin)
+from trytond.modules.health.core import get_health_professional
 
 
 __all__ = ['Newborn', 'NeonatalApgar', 'NeonatalMedication',
            'NeonatalCongenitalDiseases', 'PediatricSymptomsChecklist']
 
 
-class Newborn(ModelSQL, ModelView, ImageMixin):
+class Newborn(ModelSQL, ModelView):
     'Newborn Information'
     __name__ = 'gnuhealth.newborn'
 

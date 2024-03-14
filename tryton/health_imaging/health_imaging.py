@@ -20,7 +20,7 @@ from trytond.pyson import Eval
 from trytond.pool import Pool
 
 from trytond.modules.health.core import (
-    get_health_professional, compute_age_from_dates, ImageMixin)
+    get_health_professional, compute_age_from_dates)
 
 
 __all__ = [
@@ -179,7 +179,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         pass
 
 
-class ImagingTestResult(ModelSQL, ModelView, ImageMixin):
+class ImagingTestResult(ModelSQL, ModelView):
     'Medical Imaging Study Result'
     __name__ = 'gnuhealth.imaging.test.result'
 

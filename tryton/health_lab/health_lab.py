@@ -17,8 +17,7 @@ from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
-from trytond.modules.health.core import (get_health_professional,
-                                         ImageMixin)
+from trytond.modules.health.core import get_health_professional
 
 import re
 
@@ -196,7 +195,7 @@ class TestType(ModelSQL, ModelView):
         return super(TestType, cls).write(test_types, values)
 
 
-class Lab(ModelSQL, ModelView, ImageMixin):
+class Lab(ModelSQL, ModelView):
     'Patient Lab Test Results'
     __name__ = 'gnuhealth.lab'
 
