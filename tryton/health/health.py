@@ -48,7 +48,7 @@ from .exceptions import (
     CanNotModifyVaccination
 )
 
-from .core import (get_yes_or_no_string, get_institution,
+from .core import (get_institution,
                    compute_age_from_dates,
                    get_age_for_comparison,
                    format_years_months_days,
@@ -2857,10 +2857,6 @@ class DeathCertificate (ModelSQL, ModelView):
     autopsy = fields.Boolean('Autopsy', help="Check this box "
                              "if autopsy has been done",
                              states=STATES)
-
-    # Used by report templates.
-    def yes_no(self, yes=True):
-        return get_yes_or_no_string(yes)
 
     dod = fields.DateTime('Date', required=True,
                           help="Date and time of Death",

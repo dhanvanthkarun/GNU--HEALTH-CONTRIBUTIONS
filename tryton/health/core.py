@@ -32,13 +32,6 @@ except ImportError:
     Image = None
 
 
-def get_yes_or_no_string(yes=True):
-    if yes:
-        return gettext('health.msg_yes_str')
-    else:
-        return gettext('health.msg_no_str')
-
-
 def convert_date_timezone(sdate, target):
     """
     Convert dates from UTC to local timezone and viceversa
@@ -303,6 +296,22 @@ def matplotlib_setup(matplotlab):
         rc_conf.pop('@comment', None)
         matplotlab.rcParams.update(rc_conf)
         print(f'Matplotlib: Use rcParams: {rc_conf}.')
+
+
+class GettextReportMixin:
+    'Mixin gettext function and some strings need translation and used frequently.'
+    __slots__ = ()
+
+    @classmethod
+    def get_context(cls, records, header, data):
+        context = super(GettextReportMixin, cls).get_context(
+            records, header, data)
+
+        context['yes_str'] = gettext('health.msg_yes_str')
+        context['no_str'] = gettext('health.msg_no_str')
+        context['gettext'] = gettext
+
+        return context
 
 
 class ImageReportMixin:

@@ -116,3 +116,7 @@ def register():
     Pool.register_mixin(
         core.ImageReportMixin, Report,
         module='health')
+
+    Pool.register_mixin(
+        core.GettextReportMixin, Report,
+        module='health')
