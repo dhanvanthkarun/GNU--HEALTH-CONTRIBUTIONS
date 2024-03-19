@@ -26,6 +26,8 @@ TRYTON_DATABASE="po-export-db"
 TRYTON_SERVER_DIR=${GNUHEALTH_DIR}/tryton/server
 TRYTOND_ADMIN_CMD="${TRYTON_SERVER_DIR}/trytond-${TRYTON_VERSION}/bin/trytond-admin --email admin -d ${TRYTON_DATABASE} --all"
 
+USE_MSGMERGE=false
+
 PO_EXPORT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 cd ${PO_EXPORT_DIR}
 
@@ -66,6 +68,10 @@ case $1 in
     --group2) LANGUAGE=${LANG_GROUP2};;
     --group3) LANGUAGE=${LANG_GROUP3};;
     --pot) LANGUAGE='';;
+    --use-msgmerge)
+        LANGUAGE=''
+        USE_MSGMERGE=true
+        ;;
     help) help;;
     *) echo $1: Unrecognized argument; exit 1;;
 esac
@@ -158,3 +164,8 @@ python3 po-export.py --user admin     \
 
 
 source ./po-msguniq.sh
+
+
+if [ "$USE_MSGMERGE" = true ]; then
+    source ./po-msgmerge.sh
+fi
