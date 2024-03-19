@@ -26,6 +26,11 @@ do
     if [ -n "${msg}" ]; then
         echo "   Handling: ${po_file} ..."
         msguniq --no-wrap --use-first ${po_file} -o ${po_file}
+
+        # Format po file with the help of polib, reduce git diff's
+        # size.
+        python ${PO_EXPORT_DIR}/po-polib-format.py --file ${po_file}
+
     fi
 
 done
