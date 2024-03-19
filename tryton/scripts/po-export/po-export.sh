@@ -162,10 +162,10 @@ python3 po-export.py --user admin     \
         --export-pot                  \
         --export-languages ${LANGUAGE} 
 
-
+cd ${PO_EXPORT_DIR}
 source ./po-msguniq.sh
 
-
+cd ${PO_EXPORT_DIR}
 if [ "$USE_MSGMERGE" = true ]; then
     source ./po-msgmerge.sh
 fi
