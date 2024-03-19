@@ -50,10 +50,10 @@ def parse_options():
                         help="A tryton database.")
     parser.add_argument('-u', '--user', default='admin',
                         help="A tryton user, for example: admin.")
-    parser.add_argument('-e', '--export-languages', nargs='+',
+    parser.add_argument('-e', '--export-languages', nargs='*',
                         help="A list of languages exporting to po files,"
                         " for example: zh_CN ca.", default=[])
-    parser.add_argument('-a', '--add-languages', nargs='+',
+    parser.add_argument('-a', '--add-languages', nargs='*',
                         help="A list of languages adding to tryton,"
                         "for example: zh_CN ca.", default=[])
     parser.add_argument('-c', '--run-cleanup-step', action="store_true",

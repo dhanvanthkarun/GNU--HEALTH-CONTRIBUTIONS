@@ -65,6 +65,7 @@ case $1 in
     --group1) LANGUAGE=${LANG_GROUP1};;
     --group2) LANGUAGE=${LANG_GROUP2};;
     --group3) LANGUAGE=${LANG_GROUP3};;
+    --pot) LANGUAGE='';;
     help) help;;
     *) echo $1: Unrecognized argument; exit 1;;
 esac
