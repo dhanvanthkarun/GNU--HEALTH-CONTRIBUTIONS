@@ -25,7 +25,7 @@ do
         for po_file in $(find . -name '*.po');
         do
 
-            msgmerge --update --backup=none ${po_file} ${dir}.pot
+            msgmerge --quiet --update --backup=none ${po_file} ${dir}.pot
 
             # Format po file with the help of polib, reduce git diff's
             # size.
