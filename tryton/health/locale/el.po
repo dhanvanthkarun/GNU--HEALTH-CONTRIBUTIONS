@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1489,6 +1489,10 @@ msgstr "Ταινία ΗΚΓ"
 msgctxt "field:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Prof"
 msgstr "Επαγγ. Υγείας"
+
+msgctxt "field:gnuhealth.patient.ecg,images:"
+msgid "Images"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.ecg,institution:"
 msgid "Institution"
@@ -9881,13 +9885,6 @@ msgctxt "report:prescription.order:"
 msgid "Usage"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.appointment,appointment_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Home Care"
 msgstr ""
@@ -9903,13 +9900,6 @@ msgstr "Εξωτερικός ασθενής"
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Telemedicine"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.appointment,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Cancelled by Health Center"
@@ -9939,13 +9929,6 @@ msgctxt "selection:gnuhealth.appointment,state:"
 msgid "No show"
 msgstr "Δεν εμφανίσθηκε"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.appointment,urgency:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.appointment,urgency:"
 msgid "Medical Emergency"
 msgstr "Ιατρικό επείγον"
@@ -9957,13 +9940,6 @@ msgstr "Φυσιολογικός/ ή"
 msgctxt "selection:gnuhealth.appointment,urgency:"
 msgid "Urgent"
 msgstr "Επείγον"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.appointment,visit_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.appointment,visit_type:"
 msgid "Followup"
@@ -9987,13 +9963,6 @@ msgstr "Επίσκεψη για υγιή γυναίκα"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.appointment.report,gender:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.appointment.report,gender:"
 msgid "Female"
 msgstr "Θήλυ"
 
@@ -10001,13 +9970,6 @@ msgstr "Θήλυ"
 msgctxt "selection:gnuhealth.appointment.report,gender:"
 msgid "Male"
 msgstr "Άρρην"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.birth_certificate,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Done"
@@ -10021,13 +9983,6 @@ msgstr "Πρόχειρο/ προσχέδιο"
 msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Signed"
 msgstr "Υπεγράφη"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Health Center"
@@ -10045,13 +10000,6 @@ msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Work"
 msgstr "Εργασία"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.death_certificate,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Done"
 msgstr "Έγινε"
@@ -10064,13 +10012,6 @@ msgstr "Πρόχειρο/ προσχέδιο"
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Signed"
 msgstr "Υπεγράφη"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.death_certificate,type_of_death:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.death_certificate,type_of_death:"
 msgid "Homicide"
@@ -10092,13 +10033,6 @@ msgctxt "selection:gnuhealth.death_certificate,type_of_death:"
 msgid "Undetermined"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
 msgid "days"
 msgstr "ημέρες"
@@ -10118,13 +10052,6 @@ msgstr "μήνες"
 msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
 msgid "years"
 msgstr "έτη"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.du,dwelling:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.du,dwelling:"
 msgid "Apartment"
@@ -10150,13 +10077,6 @@ msgctxt "selection:gnuhealth.du,dwelling:"
 msgid "Townhouse"
 msgstr "Αστική κατοικία"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.du,housing:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.du,housing:"
 msgid "Comfortable and good sanitary conditions"
 msgstr "Καλές και άνετες συνθήκες διαβίωσης"
@@ -10177,13 +10097,6 @@ msgctxt "selection:gnuhealth.du,housing:"
 msgid "Small, crowded but with good sanitary conditions"
 msgstr "Μικροί χώροι, στενοί, αλλά με καλές συνθήκες υγιεινής"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.du,materials:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.du,materials:"
 msgid "Adobe"
 msgstr "Adobe"
@@ -10203,13 +10116,6 @@ msgstr "Πέτρα"
 msgctxt "selection:gnuhealth.du,materials:"
 msgid "Wood"
 msgstr "Ξύλο"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.du,roof_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Adobe"
@@ -10234,13 +10140,6 @@ msgstr "Αχυροσκεπές"
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Wood"
 msgstr "Ξύλο"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.hospital.bed,bed_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.hospital.bed,bed_type:"
 msgid "Circo Electric"
@@ -10270,13 +10169,6 @@ msgctxt "selection:gnuhealth.hospital.bed,bed_type:"
 msgid "Stretcher"
 msgstr "Φορείο"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.hospital.bed,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Free"
 msgstr "Δωρεάν"
@@ -10296,13 +10188,6 @@ msgstr "Κατειλημμένο"
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Reserved"
 msgstr "Προκρατημένο"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.hospital.or,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.hospital.or,state:"
@@ -10328,13 +10213,6 @@ msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Scheduled"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.hospital.ward,gender:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.hospital.ward,gender:"
 msgid "Men Ward"
 msgstr "Ανδρικός θάλαμος"
@@ -10347,13 +10225,6 @@ msgctxt "selection:gnuhealth.hospital.ward,gender:"
 msgid "Women Ward"
 msgstr "Γυναικείος θάλαμος"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.hospital.ward,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.hospital.ward,state:"
 msgid "Beds available"
 msgstr "Διαθέσιμες κλίνες"
@@ -10365,13 +10236,6 @@ msgstr "Πλήρες"
 msgctxt "selection:gnuhealth.hospital.ward,state:"
 msgid "Not available"
 msgstr "Μη διαθέσιμα"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "days"
@@ -10389,13 +10253,6 @@ msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "years"
 msgstr "έτη"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.immunization_schedule_line,scope:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.immunization_schedule_line,scope:"
 msgid "Recommended"
 msgstr ""
@@ -10407,13 +10264,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.immunization_schedule_line,scope:"
 msgid "Systematic"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.institution,institution_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.institution,institution_type:"
 msgid "Clinic"
@@ -10447,13 +10297,6 @@ msgctxt "selection:gnuhealth.institution,institution_type:"
 msgid "Specialized Hospital"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.institution,public_level:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.institution,public_level:"
 msgid "Private"
 msgstr "Ιδιώτης"
@@ -10465,13 +10308,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.institution,public_level:"
 msgid "Public"
 msgstr "Δημόσιο"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.institution,trauma_level:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.institution,trauma_level:"
 msgid "Level I"
@@ -10493,13 +10329,6 @@ msgctxt "selection:gnuhealth.institution,trauma_level:"
 msgid "Level V"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.insurance,insurance_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.insurance,insurance_type:"
 msgid "Labour Union / Syndical"
 msgstr "Εργατικό σωματείο/ Συδικάτο"
@@ -10511,13 +10340,6 @@ msgstr "Ιδιώτης"
 msgctxt "selection:gnuhealth.insurance,insurance_type:"
 msgid "State"
 msgstr "Κατάσταση"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.medicament,pregnancy_category:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.medicament,pregnancy_category:"
 msgid "A"
@@ -10543,13 +10365,6 @@ msgctxt "selection:gnuhealth.medicament,pregnancy_category:"
 msgid "X"
 msgstr "X"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient,biological_sex:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient,biological_sex:"
 msgid "Female"
 msgstr "Θήλυ"
@@ -10557,13 +10372,6 @@ msgstr "Θήλυ"
 msgctxt "selection:gnuhealth.patient,biological_sex:"
 msgid "Male"
 msgstr "Άρρεν"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient,blood_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient,blood_type:"
 msgid "A"
@@ -10580,13 +10388,6 @@ msgstr "B"
 msgctxt "selection:gnuhealth.patient,blood_type:"
 msgid "O"
 msgstr "O"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient,gender:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient,gender:"
@@ -10654,13 +10455,6 @@ msgctxt "selection:gnuhealth.patient,hb:"
 msgid "SS"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient,marital_status:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient,marital_status:"
 msgid "Concubinage"
 msgstr "Συμβίωση"
@@ -10685,13 +10479,6 @@ msgctxt "selection:gnuhealth.patient,marital_status:"
 msgid "Widowed"
 msgstr "Χήρος/ Χήρα"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient,rh:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient,rh:"
 msgid "+"
 msgstr "+"
@@ -10699,13 +10486,6 @@ msgstr "+"
 msgctxt "selection:gnuhealth.patient,rh:"
 msgid "-"
 msgstr "-"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.disease,allergy_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.disease,allergy_type:"
 msgid "Drug Allergy"
@@ -10723,13 +10503,6 @@ msgctxt "selection:gnuhealth.patient.disease,allergy_type:"
 msgid "Misc Contraindication"
 msgstr "Διάφορες Αντενδείξεις"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.disease,disease_severity:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.disease,disease_severity:"
 msgid "Mild"
 msgstr "Ήπια"
@@ -10741,13 +10514,6 @@ msgstr "Μέτρια"
 msgctxt "selection:gnuhealth.patient.disease,disease_severity:"
 msgid "Severe"
 msgstr "Σοβαρή"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.disease,status:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.disease,status:"
 msgid "acute"
@@ -10773,13 +10539,6 @@ msgctxt "selection:gnuhealth.patient.disease,status:"
 msgid "worsening"
 msgstr "Σε επιδείνωση"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.ecg,axis:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.ecg,axis:"
 msgid "Extreme right deviation"
 msgstr ""
@@ -10795,13 +10554,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.ecg,axis:"
 msgid "Right deviation"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.ecg,lead:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "I"
@@ -10851,13 +10603,6 @@ msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "aVR"
 msgstr "aVR"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.ecg,pacemaker:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.ecg,pacemaker:"
 msgid "Atrioventricular"
 msgstr "Κολποκοιλιακή"
@@ -10870,13 +10615,6 @@ msgctxt "selection:gnuhealth.patient.ecg,pacemaker:"
 msgid "Sinus Node"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.ecg,rhythm:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.ecg,rhythm:"
 msgid "Irregular"
 msgstr ""
@@ -10885,13 +10623,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.ecg,rhythm:"
 msgid "Regular"
 msgstr "Κανονική"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.ecg,st_segment:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.ecg,st_segment:"
 msgid "Depressed"
@@ -10905,13 +10636,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.ecg,st_segment:"
 msgid "Normal"
 msgstr "Φυσιολογικός/ ή"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Death"
@@ -10929,13 +10653,6 @@ msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Transferred to another institution"
 msgstr "Μεταφέρθηκε σε άλλο ίδρυμα"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
 msgid "Home Care"
 msgstr ""
@@ -10951,13 +10668,6 @@ msgstr "Εξωτερικός ασθενής"
 msgctxt "selection:gnuhealth.patient.evaluation,evaluation_type:"
 msgid "Telemedicine"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,gender:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.evaluation,gender:"
 msgid "Female"
@@ -11053,13 +10763,6 @@ msgctxt "selection:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Utters inappropriate words"
 msgstr "Ψελλίζει ακτάλληλες λέξεις"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,mood:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.evaluation,mood:"
 msgid "Disgust"
 msgstr "Αηδία"
@@ -11092,13 +10795,6 @@ msgctxt "selection:gnuhealth.patient.evaluation,mood:"
 msgid "Sad"
 msgstr "Λυπημένος/ η"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.evaluation,state:"
 msgid "Done"
 msgstr "Έγινε"
@@ -11112,13 +10808,6 @@ msgctxt "selection:gnuhealth.patient.evaluation,state:"
 msgid "Signed"
 msgstr "Υπεγράφη"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,urgency:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.evaluation,urgency:"
 msgid "Medical Emergency"
 msgstr "Ιατρικό επείγον"
@@ -11130,13 +10819,6 @@ msgstr "Φυσιολογικός"
 msgctxt "selection:gnuhealth.patient.evaluation,urgency:"
 msgid "Urgent"
 msgstr "Επειγόντως"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Followup"
@@ -11157,13 +10839,6 @@ msgstr "Επίσκεψη για υγιή άνδρα"
 msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr "Επίσκεψη για υγιή γυναίκα"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.medication,duration_period:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
@@ -11189,13 +10864,6 @@ msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "years"
 msgstr "έτη"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "days"
 msgstr "ημέρες"
@@ -11220,24 +10888,9 @@ msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "when required"
 msgstr "όταν απαιτείται"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.medication,infusion_rate_units:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.patient.medication,infusion_rate_units:"
 msgid "mL/hour"
 msgstr "mL/ώρα"
-
-#, fuzzy
-msgctxt ""
-"selection:gnuhealth.person_alternative_identification,alternative_id_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -11264,13 +10917,6 @@ msgctxt ""
 msgid "Passport"
 msgstr "Διαβατήριο"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.person_name,prefix:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.person_name,prefix:"
 msgid "Dr"
 msgstr "Δρ."
@@ -11286,13 +10932,6 @@ msgstr "Κος"
 msgctxt "selection:gnuhealth.person_name,prefix:"
 msgid "Mrs"
 msgstr "Κα"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.person_name,use:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.person_name,use:"
 msgid "Anonymous"
@@ -11486,13 +11125,6 @@ msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "uninsured"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.prescription.line,duration_period:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "days"
 msgstr "ημέρες"
@@ -11516,13 +11148,6 @@ msgstr "μήνες"
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "years"
 msgstr "έτη"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "days"
@@ -11548,13 +11173,6 @@ msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "when required"
 msgstr "όταν απαιτείται"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.prescription.line,infusion_rate_units:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.prescription.line,infusion_rate_units:"
 msgid "mL/hour"
 msgstr "mL/ώρα"
@@ -11571,13 +11189,6 @@ msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Sign"
 msgstr "Σημείο"
@@ -11585,13 +11196,6 @@ msgstr "Σημείο"
 msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Symptom"
 msgstr "Σύμπτωμα"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.vaccination,admin_route:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Intradermal"
@@ -11612,13 +11216,6 @@ msgstr "Στοματικό"
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Subcutaneous"
 msgstr "Υποδόρια"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.vaccination,admin_site:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.vaccination,admin_site:"
 msgid "left anterolateral fat of thigh"
@@ -11660,13 +11257,6 @@ msgctxt "selection:gnuhealth.vaccination,admin_site:"
 msgid "right vastus lateralis"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.vaccination,state:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.vaccination,state:"
 msgid "Done"
 msgstr "Έγινε"
@@ -11674,13 +11264,6 @@ msgstr "Έγινε"
 msgctxt "selection:gnuhealth.vaccination,state:"
 msgid "In Progress"
 msgstr "Σε εξέλιξη"
-
-#, fuzzy
-msgctxt "selection:party.party,gender:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:party.party,gender:"
 msgid "Female"
@@ -11708,13 +11291,6 @@ msgctxt "selection:party.party,gender:"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#, fuzzy
-msgctxt "selection:party.party,insurance_company_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:party.party,insurance_company_type:"
 msgid "Labour Union / Syndical"
 msgstr "Εργατικό σωματείο/ Συνδικάτο"
@@ -11726,13 +11302,6 @@ msgstr "Ιδιώτης"
 msgctxt "selection:party.party,insurance_company_type:"
 msgid "State"
 msgstr "Κατάσταση"
-
-#, fuzzy
-msgctxt "selection:party.party,marital_status:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:party.party,marital_status:"
 msgid "Concubinage"
@@ -11758,13 +11327,6 @@ msgctxt "selection:party.party,marital_status:"
 msgid "Widowed"
 msgstr "Χήρος/ Χήρα"
 
-#, fuzzy
-msgctxt "selection:party.party,name_representation:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:party.party,name_representation:"
 msgid "CJK: Family+Given"
 msgstr ""
@@ -11780,14 +11342,6 @@ msgstr ""
 msgctxt "selection:party.party,name_representation:"
 msgid "Prefix Given Family, Suffix"
 msgstr ""
-
-msgctxt "view:gnuhealth.appointment.report.open.start:"
-msgid "Appointment Report"
-msgstr "Κατάσταση ραντεβού"
-
-msgctxt "view:gnuhealth.appointment.report:"
-msgid "Appointments Report"
-msgstr "Κατάσταση Ραντεβού"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Check In"
@@ -11842,10 +11396,6 @@ msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign the certificate"
 msgstr ""
 
-msgctxt "view:gnuhealth.check_immunization_status.init:"
-msgid "Immunization status Report"
-msgstr ""
-
 #, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Cause"
@@ -11879,62 +11429,6 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign the certificate"
 msgstr ""
 
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying Condition"
-msgstr ""
-
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying conditions to death"
-msgstr ""
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Patient Evaluation other diagnostic hypotheses"
-msgstr "Εκτίμηση ασθενούς / Άλλες διαγνωστικές υποθέσεις"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Secondary Condition"
-msgstr ""
-
-msgctxt "view:gnuhealth.directions:"
-msgid "Patient directions"
-msgstr "Οδηγίες προς; τον ασθενή"
-
-msgctxt "view:gnuhealth.directions:"
-msgid "directions"
-msgstr "Οδηγίες"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Member of Pathology Groups"
-msgstr "Μέλος ομάδων παθολογίας"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Pathology Group Member"
-msgstr "Μέλος ομάδας παθολογίας"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "dose"
-msgstr "Δόση"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "doses"
-msgstr "Δόσεις"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Form"
-msgstr "Μορφή φαρμάκου"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Forms"
-msgstr "Μορφές φαρμάκου"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Form"
-msgstr "Μορφή φαρμάκου"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Forms"
-msgstr "Μορφές φαρμάκου"
-
 msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
 msgstr "Υποδομή"
@@ -11953,14 +11447,6 @@ msgctxt "view:gnuhealth.du:"
 msgid "Position"
 msgstr "Θέση"
 
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "Ethnicities"
-msgstr "Εθνικότητες"
-
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "ethnicity"
-msgstr "Εθνικότητα"
-
 msgctxt "view:gnuhealth.family:"
 msgid "Extra Info"
 msgstr "Πρόσθετες πληροφορίες"
@@ -11968,14 +11454,6 @@ msgstr "Πρόσθετες πληροφορίες"
 msgctxt "view:gnuhealth.family:"
 msgid "Members"
 msgstr "Μέλη"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Member"
-msgstr "Μέλος της οικογένειας"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Members"
-msgstr "Μέλη της οικογένειας"
 
 msgctxt "view:gnuhealth.healthprofessional:"
 msgid "Extra Info"
@@ -11997,86 +11475,9 @@ msgctxt "view:gnuhealth.hospital.bed:"
 msgid "Fix Bed"
 msgstr ""
 
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Building"
-msgstr "Κτίριο"
-
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Health Center Building"
-msgstr "Κτίριο του Κέντρου Υγείας"
-
-msgctxt "view:gnuhealth.hospital.or:"
-msgid "Op. Room"
-msgstr "Αίθουσα Χειρουργείου"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "Health Center unit"
-msgstr "Μονάδα Ιατρικού Κέντρου"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "unit"
-msgstr "Μονάδα"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward"
-msgstr "Τμήμα/ Κλινική Ιατρικού Κέντρου"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward Info"
-msgstr "Πληροφορίες Τμήματος/ Κλινικής Ιατρικού Κέντρου"
-
-msgctxt "view:gnuhealth.hp_specialty:"
-msgid "Health Professional Specialties"
-msgstr "Ειδικότητες του επαγγελματία υγείας"
-
-#, fuzzy
-msgctxt "view:gnuhealth.immunization_schedule:"
-msgid "Immunization Schedule"
-msgstr "Πρόγραμμα εμβολιασμών"
-
-msgctxt "view:gnuhealth.immunization_schedule_dose:"
-msgid "Doses"
-msgstr "Δόσεις"
-
-msgctxt "view:gnuhealth.immunization_schedule_line:"
-msgid "Immunization Schedule Line"
-msgstr ""
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sector x Health Institution"
-msgstr ""
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sectors x Health Institution"
-msgstr ""
-
-msgctxt "view:gnuhealth.institution.specialties:"
-msgid "Specialties x Health Institution"
-msgstr ""
-
 msgctxt "view:gnuhealth.institution:"
 msgid "Institution Picture"
 msgstr ""
-
-msgctxt "view:gnuhealth.insurance.plan:"
-msgid "Insurance Plans"
-msgstr "Ασφαλιστικά πλάνα"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurance List"
-msgstr "Κατάλογος ασφαλιστικών εταιρειών"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurances"
-msgstr "Ασφαλιστικές εταιρείες"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament Categories"
-msgstr "Κατηγορίες φαρμάκων"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament categories"
-msgstr "Κατηγορίες φαρμάκων"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Adverse Reactions"
@@ -12148,46 +11549,6 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "strength"
 msgstr ""
 
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosage"
-msgstr "Δοσολογία"
-
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosages"
-msgstr "Δοσολογίες"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "Occupations"
-msgstr "Επαγγέλματα"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "occupation"
-msgstr "Επάγγελμα"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Area"
-msgstr "Περιοχή επιχειρήσεων"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Areas List"
-msgstr "Κατάλογος Περιοχών επιχειρήσεων"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Operational Sector List"
-msgstr "Κατάλογος Επιχειρησιακών Τομέων"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Region Operational Sector"
-msgstr "Περιφερειακός Επιχειρησιακός Τομέας"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease Categories"
-msgstr "Κατηγορίες νοσημάτων"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease categories"
-msgstr "Κατηγορίες νοσημάτων"
-
 msgctxt "view:gnuhealth.pathology.group:"
 msgid "Extra Information"
 msgstr "Πρόσθετες πληροφορίες"
@@ -12232,10 +11593,6 @@ msgstr "Σχετικές εκτιμήσεις"
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
 msgstr "Θεραπεία"
-
-msgctxt "view:gnuhealth.patient.ecg:"
-msgid "Image"
-msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.ecg:"
@@ -12443,19 +11800,6 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Notepad"
 msgstr "Σημειωματάριο"
 
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Alternative ID"
-msgstr "Εναλλακτική ταυτότητα"
-
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Person alternative IDs"
-msgstr "Προσωπικά εναλλακτικά ID"
-
-#, fuzzy
-msgctxt "view:gnuhealth.person_name:"
-msgid "Person Names"
-msgstr "Ονόματα ατόμου"
-
 #, fuzzy
 msgctxt "view:gnuhealth.pol:"
 msgid "Context"
@@ -12517,18 +11861,6 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "Πληροφορίες για τον ασθενή και τον επαγγελματία υγείας"
 
-msgctxt "view:gnuhealth.procedure:"
-msgid "Procedure"
-msgstr "Ιατρική πράξη/ Διαδικασία"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Patient Evaluation secondary condition"
-msgstr "Εκτίμηση ασθενούς και δευτερεύοντα προβλήματα"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Secondary Condition"
-msgstr ""
-
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "Σχόλια"
@@ -12536,14 +11868,6 @@ msgstr "Σχόλια"
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Sign or Symptom"
 msgstr "Σημεία και Συμπτώματα"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "Medical Specialties"
-msgstr "Ιατρικές ειδικότητες"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "specialty"
-msgstr "Ειδικότητα"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Administration"

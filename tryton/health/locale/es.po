@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1461,6 +1461,11 @@ msgstr "Electrocardiograma"
 msgctxt "field:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Prof"
 msgstr "Prof Salud"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.ecg,images:"
+msgid "Images"
+msgstr "Imagen"
 
 msgctxt "field:gnuhealth.patient.ecg,institution:"
 msgid "Institution"
@@ -11251,14 +11256,6 @@ msgctxt "selection:party.party,name_representation:"
 msgid "Prefix Given Family, Suffix"
 msgstr "Prefijo de familia, Sufijo"
 
-msgctxt "view:gnuhealth.appointment.report.open.start:"
-msgid "Appointment Report"
-msgstr "Informe de cita"
-
-msgctxt "view:gnuhealth.appointment.report:"
-msgid "Appointments Report"
-msgstr "Informe de Citas"
-
 msgctxt "view:gnuhealth.appointment:"
 msgid "Check In"
 msgstr "Registro de entrada"
@@ -11315,10 +11312,6 @@ msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign the certificate"
 msgstr "Firmar el certificado"
 
-msgctxt "view:gnuhealth.check_immunization_status.init:"
-msgid "Immunization status Report"
-msgstr "Informe de estado de Inmunización"
-
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Cause"
 msgstr "Causa"
@@ -11351,62 +11344,6 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign the certificate"
 msgstr "Firmar el certificado"
 
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying Condition"
-msgstr "Afección Subyacente"
-
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying conditions to death"
-msgstr "Afecciones subyacentes al deceso"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Patient Evaluation other diagnostic hypotheses"
-msgstr "Evaluación del paciente y otras hipótesis de diagnóstico"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Secondary Condition"
-msgstr "Afección Secundaria"
-
-msgctxt "view:gnuhealth.directions:"
-msgid "Patient directions"
-msgstr "Directrices para el paciente"
-
-msgctxt "view:gnuhealth.directions:"
-msgid "directions"
-msgstr "directrices"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Member of Pathology Groups"
-msgstr "Miembro de grupos de patología"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Pathology Group Member"
-msgstr "Miembro de grupos de patología"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "dose"
-msgstr "dosis"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "doses"
-msgstr "dosis"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Form"
-msgstr "Forma de presentación de la droga"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Forms"
-msgstr "Presentaciones de la droga"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Form"
-msgstr "Forma de presentación de la droga"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Forms"
-msgstr "Presentaciones de la droga"
-
 msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
 msgstr "Infraestructura"
@@ -11423,14 +11360,6 @@ msgctxt "view:gnuhealth.du:"
 msgid "Position"
 msgstr "Posición"
 
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "Ethnicities"
-msgstr "Grupos étnicos"
-
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "ethnicity"
-msgstr "grupo étnico"
-
 msgctxt "view:gnuhealth.family:"
 msgid "Extra Info"
 msgstr "Información adicional"
@@ -11438,14 +11367,6 @@ msgstr "Información adicional"
 msgctxt "view:gnuhealth.family:"
 msgid "Members"
 msgstr "Miembros"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Member"
-msgstr "Miembro de la familia"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Members"
-msgstr "Miembros familiares"
 
 msgctxt "view:gnuhealth.healthprofessional:"
 msgid "Extra Info"
@@ -11469,85 +11390,9 @@ msgctxt "view:gnuhealth.hospital.bed:"
 msgid "Fix Bed"
 msgstr "Arreglar cama"
 
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Building"
-msgstr "Edificio"
-
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Health Center Building"
-msgstr "Edificio del Centro de Salud"
-
-msgctxt "view:gnuhealth.hospital.or:"
-msgid "Op. Room"
-msgstr "Quirófano"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "Health Center unit"
-msgstr "Unidad del Centro de Salud"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "unit"
-msgstr "unidad"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward"
-msgstr "Sala del Centro de Salud"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward Info"
-msgstr "Información de la sala del Centro de Salud"
-
-msgctxt "view:gnuhealth.hp_specialty:"
-msgid "Health Professional Specialties"
-msgstr "Especialidades del Profesional de la Salud"
-
-msgctxt "view:gnuhealth.immunization_schedule:"
-msgid "Immunization Schedule"
-msgstr "Calendario de Vacunación"
-
-msgctxt "view:gnuhealth.immunization_schedule_dose:"
-msgid "Doses"
-msgstr "Dosis"
-
-msgctxt "view:gnuhealth.immunization_schedule_line:"
-msgid "Immunization Schedule Line"
-msgstr "Línea del calendario de vacunación"
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sector x Health Institution"
-msgstr "Sector Operacional x Institución de Salud"
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sectors x Health Institution"
-msgstr "Sectores Operacionales x Institución de Salud"
-
-msgctxt "view:gnuhealth.institution.specialties:"
-msgid "Specialties x Health Institution"
-msgstr "Especialidades x Institución de Salud"
-
 msgctxt "view:gnuhealth.institution:"
 msgid "Institution Picture"
 msgstr "Foto de la Institución"
-
-msgctxt "view:gnuhealth.insurance.plan:"
-msgid "Insurance Plans"
-msgstr "Planes de seguro"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurance List"
-msgstr "Listado de Seguros"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurances"
-msgstr "Seguros"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament Categories"
-msgstr "Categorías de medicamentos"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament categories"
-msgstr "Categorías de medicamentos"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Adverse Reactions"
@@ -11617,46 +11462,6 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "strength"
 msgstr "fuerza"
 
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosage"
-msgstr "Dosis"
-
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosages"
-msgstr "Dosis"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "Occupations"
-msgstr "Ocupaciones"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "occupation"
-msgstr "ocupación"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Area"
-msgstr "Área Operacional"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Areas List"
-msgstr "Lista de Áreas Operacionales"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Operational Sector List"
-msgstr "Lista de Sectores Operacionales"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Region Operational Sector"
-msgstr "Sector de Región Operacional"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease Categories"
-msgstr "Categorías de enfermedad"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease categories"
-msgstr "Categorías de enfermedad"
-
 msgctxt "view:gnuhealth.pathology.group:"
 msgid "Extra Information"
 msgstr "Información adicional"
@@ -11700,10 +11505,6 @@ msgstr "Evaluaciones Relacionadas"
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
 msgstr "Terapia"
-
-msgctxt "view:gnuhealth.patient.ecg:"
-msgid "Image"
-msgstr "Imagen"
 
 msgctxt "view:gnuhealth.patient.ecg:"
 msgid "Interpretation"
@@ -11905,18 +11706,6 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Notepad"
 msgstr "Apuntes"
 
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Alternative ID"
-msgstr "ID Alternativo"
-
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Person alternative IDs"
-msgstr "IDs persona alternativa"
-
-msgctxt "view:gnuhealth.person_name:"
-msgid "Person Names"
-msgstr "Nombres de Persona"
-
 msgctxt "view:gnuhealth.pol:"
 msgid "Context"
 msgstr "Contexto"
@@ -11977,18 +11766,6 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "Información del Paciente y el Profesional de la Salud"
 
-msgctxt "view:gnuhealth.procedure:"
-msgid "Procedure"
-msgstr "Procedimiento"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Patient Evaluation secondary condition"
-msgstr "Evaluación del Paciente condición secundaria"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Secondary Condition"
-msgstr "Afección Secundaria"
-
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "Comentarios"
@@ -11996,14 +11773,6 @@ msgstr "Comentarios"
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Sign or Symptom"
 msgstr "Signos o Síntomas"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "Medical Specialties"
-msgstr "Especialidades médicas"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "specialty"
-msgstr "especialidad"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Administration"
