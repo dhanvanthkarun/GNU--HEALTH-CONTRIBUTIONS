@@ -151,7 +151,9 @@ python3 po-export.py --user admin     \
 echo "## Running trytond-admin command to update DB (3. Active language) ..."
 ## If we do not run this step, the existing translations of LANGUAGE
 ## will be not merged, we just get pot template.
-${TRYTOND_ADMIN_CMD} --language ${LANGUAGE}
+if [ -n "${LANGUAGE}" ]; then
+    ${TRYTOND_ADMIN_CMD} --language ${LANGUAGE}
+fi
 
 echo "## Export po files ..."
 ## We always recreate $TRYTON_DATABASE database in po-export.sh, but
