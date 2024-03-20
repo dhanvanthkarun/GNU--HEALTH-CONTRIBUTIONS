@@ -11,7 +11,7 @@
 source $HOME/.gnuhealthrc
 
 DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
-MODULES_DIR=${DIR}/../..
+MODULES_DIR=$(realpath "${DIR}/../..")
 INSTALL_DIR=${GNUHEALTH_DIR}/tryton/server/modules/
 
 for module in $(ls ${MODULES_DIR} | grep ^health)
