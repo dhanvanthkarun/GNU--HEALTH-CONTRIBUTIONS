@@ -48,6 +48,8 @@ Usage:
     $ bash ./`basename $0` --group1
     $ bash ./`basename $0` --group2
     $ bash ./`basename $0` --group3
+    $ bash ./`basename $0` --pot
+    $ bash ./`basename $0` --use-msgmerge
 
 Example:
 
