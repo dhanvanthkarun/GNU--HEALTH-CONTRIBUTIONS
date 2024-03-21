@@ -5,8 +5,15 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# This script will link modules in gnuhealth git repo to gnuhealth
-# install directory, only applicable for developer testing purposes.
+# Some tools, such as: po-export, require developers to install the
+# latest code from gnuhealth-git, it is a frequent and cumbersome
+# operation.
+
+# This script will link modules in gnuhealth git repo to the
+# installation directory of gnuhealth, avoiding frequent
+# installations.
+
+# WARN: Only used for development environment.
 
 source $HOME/.gnuhealthrc
 
