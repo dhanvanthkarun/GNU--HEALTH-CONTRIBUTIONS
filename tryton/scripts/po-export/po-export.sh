@@ -98,7 +98,7 @@ cat << EOF
 NOTE for developer:
 
 ## Before run po-export.sh, the following steps can reduce po files merge conflicts.
-1. Open GNU Health weblate page: (https://hosted.weblate.org/projects/gnu-health/)
+1. Open GNU Health weblate page: (https://translate.codeberg.org/projects/gnuhealth)
 2. Lock translation: (Manage > Repository maintenance > Lock)
 3. Commit pending changes: (Manage > Repository maintenance > (pending changes) Commit)
 4. Push outgoing commits: (Manage > Repository maintenance > Push)
@@ -106,7 +106,7 @@ NOTE for developer:
 
 ## After run po-export.sh: 
 1. Push po files changes to GNU Health upstream repo.
-2. Open GNU Health weblate page: (https://hosted.weblate.org/projects/gnu-health/)
+2. Open GNU Health weblate page: (https://translate.codeberg.org/projects/gnuhealth)
 3. Sync all changes to weblate: (Manage > Repository maintenance > (missing commits) Update)
 4. Unlock translation (Manage > Repository maintenance > Unlock)
 
