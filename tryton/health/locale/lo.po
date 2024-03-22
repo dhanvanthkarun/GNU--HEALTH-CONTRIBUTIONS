@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1499,6 +1499,10 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Prof"
 msgstr "ທ່ານໝໍ"
+
+msgctxt "field:gnuhealth.patient.ecg,images:"
+msgid "Images"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,institution:"
@@ -11308,14 +11312,6 @@ msgctxt "selection:party.party,name_representation:"
 msgid "Prefix Given Family, Suffix"
 msgstr ""
 
-msgctxt "view:gnuhealth.appointment.report.open.start:"
-msgid "Appointment Report"
-msgstr "ບົດລາຍງານການນັດພົບ"
-
-msgctxt "view:gnuhealth.appointment.report:"
-msgid "Appointments Report"
-msgstr "ບົດລາຍງານການນັດພົບ"
-
 msgctxt "view:gnuhealth.appointment:"
 msgid "Check In"
 msgstr ""
@@ -11370,10 +11366,6 @@ msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign the certificate"
 msgstr "ເຊັນໃບຢັ້ງຢືນ"
 
-msgctxt "view:gnuhealth.check_immunization_status.init:"
-msgid "Immunization status Report"
-msgstr "ລາຍງານສະຖານະພຸມຄຸ້ມກັນ"
-
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Cause"
 msgstr "ສາເຫດການຕາຍ"
@@ -11406,62 +11398,6 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign the certificate"
 msgstr "ເຊັນໃບຢັ້ງຢືນ"
 
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying Condition"
-msgstr "ສະພາບອ້າງອີງ"
-
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying conditions to death"
-msgstr "ສະພາບເງື່ອນໄຂພື້ນຖານສູ່ການເສັຍຊີວິດ"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Patient Evaluation other diagnostic hypotheses"
-msgstr "ການກວດກາຄົນເຈັບຕາມການສົມມຸດຖານການບົ່ງມະຕິແບບອຶ່ນ"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Secondary Condition"
-msgstr "ສະພາບເງື່ອນໄຂສຳຮອງ"
-
-msgctxt "view:gnuhealth.directions:"
-msgid "Patient directions"
-msgstr "ທິດທາງຂອງຄົນເຈັບ."
-
-msgctxt "view:gnuhealth.directions:"
-msgid "directions"
-msgstr "ທິດທາງ"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Member of Pathology Groups"
-msgstr "ສະມາຊິກກຸ່ມວິທະຍາສາດການປິ່ນປົວ"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Pathology Group Member"
-msgstr "ສະມາຊິກກຸ່ມຂອງວິທະຍາສາດເານປິ່ນປົວ"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "dose"
-msgstr "ປະລິມານ"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "doses"
-msgstr "ປະລິມານ"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Form"
-msgstr "ແບບຟອມຢາ"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Forms"
-msgstr "ແບບຟອມຢາ"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Form"
-msgstr "ແບບຟອມຢາ"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Forms"
-msgstr "ແບບຟອມຢາ"
-
 msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
 msgstr "ພື້ນຖານໂຄງລ່າງ"
@@ -11479,14 +11415,6 @@ msgctxt "view:gnuhealth.du:"
 msgid "Position"
 msgstr ""
 
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "Ethnicities"
-msgstr "ຊົນເຜົ່າ"
-
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "ethnicity"
-msgstr "ຊົນເຜົ່າ"
-
 msgctxt "view:gnuhealth.family:"
 msgid "Extra Info"
 msgstr "ຂໍ້ມູນຂ່າວສານເພີ່ມ"
@@ -11494,14 +11422,6 @@ msgstr "ຂໍ້ມູນຂ່າວສານເພີ່ມ"
 msgctxt "view:gnuhealth.family:"
 msgid "Members"
 msgstr "ສະມາຊິກ"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Member"
-msgstr "ສະມາຊິກໃນຄອບຄົວ"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Members"
-msgstr "ສະມາຊິກໃນຄອບຄົວ"
 
 msgctxt "view:gnuhealth.healthprofessional:"
 msgid "Extra Info"
@@ -11523,85 +11443,9 @@ msgctxt "view:gnuhealth.hospital.bed:"
 msgid "Fix Bed"
 msgstr ""
 
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Building"
-msgstr "ອາຄານ"
-
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Health Center Building"
-msgstr "ຕຶກທີ່ສູນສຸຂະພາບ"
-
-msgctxt "view:gnuhealth.hospital.or:"
-msgid "Op. Room"
-msgstr "ຫ້ອງພາຕັດ"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "Health Center unit"
-msgstr "ຫນ່ວຍ​ບໍ​ລິ​ການນຶ່ງໃນສູນສຸຂະພາບ"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "unit"
-msgstr "ຫົວຫນ່ວຍ"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward"
-msgstr "ສູນສຸຂະພາບອຸປະຖໍາແຫ່ງນຶ່ງ"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward Info"
-msgstr "ຂໍ້ມູນສູນສຸຂະພາບອຸປະຖໍາແຫ່ງນຶ່ງ"
-
-msgctxt "view:gnuhealth.hp_specialty:"
-msgid "Health Professional Specialties"
-msgstr "ວິຊາສະເພາະທ່ານໝໍ"
-
-msgctxt "view:gnuhealth.immunization_schedule:"
-msgid "Immunization Schedule"
-msgstr "ຕາຕະລາງໃຫ້ຢາປ້ອງກັນ"
-
-msgctxt "view:gnuhealth.immunization_schedule_dose:"
-msgid "Doses"
-msgstr "ຂະໜາດເທື່ອສັກ"
-
-msgctxt "view:gnuhealth.immunization_schedule_line:"
-msgid "Immunization Schedule Line"
-msgstr "ແຖວຕາຕະລາງໃຫ້ຢາປ້ອງກັນ"
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sector x Health Institution"
-msgstr "ຂະແໜງຜ່າຕັດ ຂອງ ໂຮງໝໍ"
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sectors x Health Institution"
-msgstr "ຂະແໜງຜ່າຕັດ x ໂຮງໝໍ"
-
-msgctxt "view:gnuhealth.institution.specialties:"
-msgid "Specialties x Health Institution"
-msgstr "ຊ່ຽວຊານສະເພາະດ້ານ x ໂຮງໝໍ"
-
 msgctxt "view:gnuhealth.institution:"
 msgid "Institution Picture"
 msgstr "ຮູບສະຖາບັນ"
-
-msgctxt "view:gnuhealth.insurance.plan:"
-msgid "Insurance Plans"
-msgstr "ແຜນປະກັນໄພ"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurance List"
-msgstr "ບັນຊີບໍສິສັດປະກັນໄພ"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurances"
-msgstr "ປະກັນໄພ"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament Categories"
-msgstr "ປະເພດຢາປົວພະຍາດ"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament categories"
-msgstr "ປະເພດຢາປົວພະຍາດ"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Adverse Reactions"
@@ -11676,46 +11520,6 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "strength"
 msgstr ""
 
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosage"
-msgstr "ປະລິມານການໄຊ້ຢາ"
-
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosages"
-msgstr "ປະລິມານການໄຊ້ຢາ"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "Occupations"
-msgstr "ອາຊີບ"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "occupation"
-msgstr "ອາຊີບ"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Area"
-msgstr "ຂົງເຂດການປະຕິບັດງານ"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Areas List"
-msgstr "ບັນຊີຂົງເຂດການຜ່າຕັດ"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Operational Sector List"
-msgstr "ບັນຊີເຂດການຜ່າຕັດ"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Region Operational Sector"
-msgstr "ເຂດການຜ່າຕັດ"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease Categories"
-msgstr "ປະເພດຂອງພະຍາດຕ່າງໆ"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease categories"
-msgstr "ປະເພດຂອງພະຍາດພະຍາດ"
-
 msgctxt "view:gnuhealth.pathology.group:"
 msgid "Extra Information"
 msgstr "ຂໍ້ມູນຂ່າວສານເພີ່ມ"
@@ -11759,10 +11563,6 @@ msgstr ""
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
 msgstr "ການບຳບັດ"
-
-msgctxt "view:gnuhealth.patient.ecg:"
-msgid "Image"
-msgstr ""
 
 msgctxt "view:gnuhealth.patient.ecg:"
 msgid "Interpretation"
@@ -11969,18 +11769,6 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Notepad"
 msgstr "ກະດາດຂຽນ"
 
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Alternative ID"
-msgstr "ບັດປະຈຳຕົວອັນອື່ນ"
-
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Person alternative IDs"
-msgstr "ບັດປະຈຳຕົວອັນອື່ນຂອງບຸກຄົນ"
-
-msgctxt "view:gnuhealth.person_name:"
-msgid "Person Names"
-msgstr ""
-
 msgctxt "view:gnuhealth.pol:"
 msgid "Context"
 msgstr ""
@@ -12043,18 +11831,6 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "ຂໍ້ມູນຂອງຄົນເຈັບແລະທ່ານໝໍ "
 
-msgctxt "view:gnuhealth.procedure:"
-msgid "Procedure"
-msgstr "ຂັ້ນຕອນ"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Patient Evaluation secondary condition"
-msgstr "ການປະເມີນຜົນຂອງຄົນເຈັບຂອງສະພາບທີສອງ"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Secondary Condition"
-msgstr "ສະພາບເງື່ອນໄຂສຳຮອງ"
-
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "ຄໍາເຫັນ"
@@ -12062,14 +11838,6 @@ msgstr "ຄໍາເຫັນ"
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Sign or Symptom"
 msgstr "ອາການຫຼືສາເຫດພະຍາດ"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "Medical Specialties"
-msgstr "ພິເສດທາງການແພດ"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "specialty"
-msgstr "ວິຊາສະເພາະພິເສດຫຼືຊຽ່ວຊານທາງດ້ານ"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Administration"

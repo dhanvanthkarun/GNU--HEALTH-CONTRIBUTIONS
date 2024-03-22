@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1487,6 +1487,10 @@ msgstr "連続心電図記録"
 msgctxt "field:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Prof"
 msgstr "健康教授"
+
+msgctxt "field:gnuhealth.patient.ecg,images:"
+msgid "Images"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.ecg,institution:"
 msgid "Institution"
@@ -11215,14 +11219,6 @@ msgctxt "selection:party.party,name_representation:"
 msgid "Prefix Given Family, Suffix"
 msgstr "前置語 名 姓, 後置語"
 
-msgctxt "view:gnuhealth.appointment.report.open.start:"
-msgid "Appointment Report"
-msgstr "予約レポート"
-
-msgctxt "view:gnuhealth.appointment.report:"
-msgid "Appointments Report"
-msgstr "予約レポート"
-
 msgctxt "view:gnuhealth.appointment:"
 msgid "Check In"
 msgstr ""
@@ -11275,10 +11271,6 @@ msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign the certificate"
 msgstr "証明書にサインしてください"
 
-msgctxt "view:gnuhealth.check_immunization_status.init:"
-msgid "Immunization status Report"
-msgstr "予防接種状況レポート"
-
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Cause"
 msgstr "原因原因"
@@ -11311,62 +11303,6 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign the certificate"
 msgstr "証明書にサインしてください"
 
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying Condition"
-msgstr "基礎疾患"
-
-msgctxt "view:gnuhealth.death_underlying_condition:"
-msgid "Underlying conditions to death"
-msgstr "死に至る基礎疾患"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Patient Evaluation other diagnostic hypotheses"
-msgstr "他の診断仮説による患者の評価"
-
-msgctxt "view:gnuhealth.diagnostic_hypothesis:"
-msgid "Secondary Condition"
-msgstr "二次的疾患"
-
-msgctxt "view:gnuhealth.directions:"
-msgid "Patient directions"
-msgstr "患者への指示"
-
-msgctxt "view:gnuhealth.directions:"
-msgid "directions"
-msgstr "指示"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Member of Pathology Groups"
-msgstr "病理学グループメンバー"
-
-msgctxt "view:gnuhealth.disease_group.members:"
-msgid "Pathology Group Member"
-msgstr "病理学グループメンバー"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "dose"
-msgstr "服用"
-
-msgctxt "view:gnuhealth.dose.unit:"
-msgid "doses"
-msgstr "服用"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Form"
-msgstr "剤型"
-
-msgctxt "view:gnuhealth.drug.form:"
-msgid "Drug Forms"
-msgstr "剤型"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Form"
-msgstr "剤型"
-
-msgctxt "view:gnuhealth.drug.route:"
-msgid "Drug Forms"
-msgstr "剤型"
-
 msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
 msgstr "基盤設備"
@@ -11385,14 +11321,6 @@ msgctxt "view:gnuhealth.du:"
 msgid "Position"
 msgstr "姿勢"
 
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "Ethnicities"
-msgstr "民族性"
-
-msgctxt "view:gnuhealth.ethnicity:"
-msgid "ethnicity"
-msgstr "民族性"
-
 msgctxt "view:gnuhealth.family:"
 msgid "Extra Info"
 msgstr "特記事項"
@@ -11400,14 +11328,6 @@ msgstr "特記事項"
 msgctxt "view:gnuhealth.family:"
 msgid "Members"
 msgstr "構成員"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Member"
-msgstr "家族構成員"
-
-msgctxt "view:gnuhealth.family_member:"
-msgid "Family Members"
-msgstr "家族構成員"
 
 msgctxt "view:gnuhealth.healthprofessional:"
 msgid "Extra Info"
@@ -11430,85 +11350,9 @@ msgctxt "view:gnuhealth.hospital.bed:"
 msgid "Fix Bed"
 msgstr "病床を修理する"
 
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Building"
-msgstr "建物"
-
-msgctxt "view:gnuhealth.hospital.building:"
-msgid "Health Center Building"
-msgstr "医療拠点建物"
-
-msgctxt "view:gnuhealth.hospital.or:"
-msgid "Op. Room"
-msgstr "手術室"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "Health Center unit"
-msgstr "医療拠点ユニット"
-
-msgctxt "view:gnuhealth.hospital.unit:"
-msgid "unit"
-msgstr "単位"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward"
-msgstr "医療拠点地域"
-
-msgctxt "view:gnuhealth.hospital.ward:"
-msgid "Health Center Ward Info"
-msgstr "医療拠点地域情報"
-
-msgctxt "view:gnuhealth.hp_specialty:"
-msgid "Health Professional Specialties"
-msgstr "医療従事者の専門分野"
-
-msgctxt "view:gnuhealth.immunization_schedule:"
-msgid "Immunization Schedule"
-msgstr "予防接種スケジュール"
-
-msgctxt "view:gnuhealth.immunization_schedule_dose:"
-msgid "Doses"
-msgstr "投薬"
-
-msgctxt "view:gnuhealth.immunization_schedule_line:"
-msgid "Immunization Schedule Line"
-msgstr "予防接種スケジュールライン"
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sector x Health Institution"
-msgstr "オペレーショナルセクター x 保健機関"
-
-msgctxt "view:gnuhealth.institution.operationalsector:"
-msgid "Operational Sectors x Health Institution"
-msgstr "オペレーショナルセクター x 保健機関"
-
-msgctxt "view:gnuhealth.institution.specialties:"
-msgid "Specialties x Health Institution"
-msgstr "医療機関の専門領域"
-
 msgctxt "view:gnuhealth.institution:"
 msgid "Institution Picture"
 msgstr "期間の図面"
-
-msgctxt "view:gnuhealth.insurance.plan:"
-msgid "Insurance Plans"
-msgstr "保険プラン"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurance List"
-msgstr "保険のリスト"
-
-msgctxt "view:gnuhealth.insurance:"
-msgid "Insurances"
-msgstr "保険"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament Categories"
-msgstr "薬剤カテゴリー"
-
-msgctxt "view:gnuhealth.medicament.category:"
-msgid "Medicament categories"
-msgstr "薬剤カテゴリー"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Adverse Reactions"
@@ -11580,46 +11424,6 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "strength"
 msgstr "強さ"
 
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosage"
-msgstr "適用量"
-
-msgctxt "view:gnuhealth.medication.dosage:"
-msgid "Dosages"
-msgstr "適用量"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "Occupations"
-msgstr "職業"
-
-msgctxt "view:gnuhealth.occupation:"
-msgid "occupation"
-msgstr "職業"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Area"
-msgstr "カバーしている地域"
-
-msgctxt "view:gnuhealth.operational_area:"
-msgid "Operational Areas List"
-msgstr "オペレーションエリアリスト"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Operational Sector List"
-msgstr "オペレーションセクタリスト"
-
-msgctxt "view:gnuhealth.operational_sector:"
-msgid "Region Operational Sector"
-msgstr "オペレーションセクタの領域"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease Categories"
-msgstr "疾患カテゴリー"
-
-msgctxt "view:gnuhealth.pathology.category:"
-msgid "Disease categories"
-msgstr "疾患カテゴリー"
-
 msgctxt "view:gnuhealth.pathology.group:"
 msgid "Extra Information"
 msgstr "特記事項"
@@ -11663,10 +11467,6 @@ msgstr "関連評価"
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
 msgstr "治療"
-
-msgctxt "view:gnuhealth.patient.ecg:"
-msgid "Image"
-msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.ecg:"
@@ -11875,19 +11675,6 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Notepad"
 msgstr "メモ帳"
 
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Alternative ID"
-msgstr "代理のID"
-
-msgctxt "view:gnuhealth.person_alternative_identification:"
-msgid "Person alternative IDs"
-msgstr "個人の代理ID"
-
-#, fuzzy
-msgctxt "view:gnuhealth.person_name:"
-msgid "Person Names"
-msgstr "人名"
-
 #, fuzzy
 msgctxt "view:gnuhealth.pol:"
 msgid "Context"
@@ -11950,18 +11737,6 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "患者と医療従事者情報"
 
-msgctxt "view:gnuhealth.procedure:"
-msgid "Procedure"
-msgstr "処置"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Patient Evaluation secondary condition"
-msgstr "患者の第二症状についての評価"
-
-msgctxt "view:gnuhealth.secondary_condition:"
-msgid "Secondary Condition"
-msgstr "二次的疾患"
-
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "コメント"
@@ -11969,14 +11744,6 @@ msgstr "コメント"
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Sign or Symptom"
 msgstr "兆候もしくは症状"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "Medical Specialties"
-msgstr "医療の専門領域"
-
-msgctxt "view:gnuhealth.specialty:"
-msgid "specialty"
-msgstr "専門診察科目"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Administration"

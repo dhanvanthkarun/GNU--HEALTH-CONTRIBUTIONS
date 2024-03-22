@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1561,6 +1561,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Prof"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.ecg,images:"
+msgid "Images"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.ecg,institution:"
@@ -9687,9 +9691,10 @@ msgctxt "report:prescription.order:"
 msgid "Allowed"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:prescription.order:"
-msgid "Common Usage"
-msgstr ""
+msgid "Common:"
+msgstr "Opomba"
 
 #, fuzzy
 msgctxt "report:prescription.order:"
@@ -9697,15 +9702,11 @@ msgid "Date:"
 msgstr "Datum:"
 
 msgctxt "report:prescription.order:"
-msgid "Directions"
-msgstr ""
-
-msgctxt "report:prescription.order:"
 msgid "DoB:"
 msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Dose"
+msgid "Dose:"
 msgstr ""
 
 msgctxt "report:prescription.order:"
@@ -9741,7 +9742,7 @@ msgid "Insurance:"
 msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Medicament"
+msgid "Medicament:"
 msgstr ""
 
 #, fuzzy
@@ -9766,7 +9767,7 @@ msgid "Prescription"
 msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Qty"
+msgid "Qty:"
 msgstr ""
 
 msgctxt "report:prescription.order:"
@@ -9790,7 +9791,7 @@ msgid "Route:"
 msgstr ""
 
 msgctxt "report:prescription.order:"
-msgid "Specific Usage"
+msgid "Specific:"
 msgstr ""
 
 msgctxt "report:prescription.order:"
@@ -9805,10 +9806,9 @@ msgctxt "report:prescription.order:"
 msgid "Tel:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:prescription.order:"
-msgid "Unit"
-msgstr "Unit"
+msgid "Usage"
+msgstr ""
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Home Care"
@@ -11523,10 +11523,6 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
-msgstr ""
-
-msgctxt "view:gnuhealth.patient.ecg:"
-msgid "Image"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.ecg:"
