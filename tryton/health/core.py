@@ -319,6 +319,28 @@ class ImageReportMixin:
     __slots__ = ()
 
     @classmethod
+    def image_keep_size(cls, image):
+        """Return a tuple like: (image, mimetype, width, height), which is
+        used in relatorio open document's image template, this tuple let
+        image keep its pt size.
+        """
+        try:
+            img = Image.open(io.BytesIO(image))
+            width, height = img.size
+
+            w = str(width) + 'pt'
+            h = str(height) + 'pt'
+            mimetype = None
+
+        except BaseException:
+
+            w = None
+            h = None
+            mimetype = None
+
+        return (image, mimetype, w, h)
+
+    @classmethod
     def image_resize(cls, image, max_width, max_height, unit='cm'):
         """Return a tuple like: (image, mimetype, width, height), which is
         used in relatorio open document's image template, this tuple let
@@ -415,5 +437,6 @@ class ImageReportMixin:
 
         context['image_crop'] = cls.image_crop
         context['image_resize'] = cls.image_resize
+        context['image_keep_size'] = cls.image_keep_size
 
         return context
