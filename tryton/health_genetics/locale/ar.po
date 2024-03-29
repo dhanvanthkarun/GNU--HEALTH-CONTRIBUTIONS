@@ -1,16 +1,16 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-28 21:18+0000\n"
+"PO-Revision-Date: 2024-03-29 08:33+0000\n"
 "Last-Translator: Pulsar87 <Pulsar87@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Arabic <https://translate.codeberg.org/projects/gnuhealth/"
 "health_genetics/ar/>\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 5.4.2\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.gene,aliases:"
 msgid "Aliases"
@@ -396,7 +396,7 @@ msgstr "المعلومات الوراثية للشخص"
 
 msgctxt "model:ir.action,name:gnuhealth_action_protein_disease"
 msgid "Protein related diseases"
-msgstr ""
+msgstr "الامراض المتعلقة بالبروتين"
 
 msgctxt "model:ir.ui.menu,name:"
 msgid "Disease Genes"
@@ -404,15 +404,15 @@ msgstr "مورثات المرض"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_gene_variant_phenotypes"
 msgid "Variant Phenotypes"
-msgstr ""
+msgstr "الظواهر المتغيرة"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_gene_variants"
 msgid "Natural Variants"
-msgstr ""
+msgstr "المتغيرات الطبيعية"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_genes"
 msgid "Genes"
-msgstr ""
+msgstr "الجينات"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_genetics"
 msgid "Genetics"
@@ -420,16 +420,15 @@ msgstr "علم الوراثة"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_protein_diseases"
 msgid "Protein related diseases"
-msgstr ""
+msgstr "الأمراض المرتبطة بالبروتين"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_genetics"
 msgid "Genetics"
 msgstr "علم الوراثة"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patient_genetics"
 msgid "Person genetic information"
-msgstr ""
+msgstr "المعلومات الوراثية للشخص"
 
 msgctxt "model:res.group,name:group_health_genetics_admin"
 msgid "Health Genetics Administration"
@@ -437,107 +436,107 @@ msgstr "الإدارة الصحية لعلم الوراثة"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: Y RNA"
-msgstr ""
+msgstr "ncRNA: Y RNA"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: cluster RNA"
-msgstr ""
+msgstr "ncRNA: مجموعة RNA"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: long non-coding RNA"
-msgstr ""
+msgstr "ncRNA: RNA طويل غير مشفر"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: micro RNA"
-msgstr ""
+msgstr "ncRNA: الحمض النووي الريبي الصغير"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: misc RNA"
-msgstr ""
+msgstr "ncRNA: RNA متنوع"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: ribosomal RNA"
-msgstr ""
+msgstr "ncRNA: الريبوسوم RNA"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: small nuclear RNA"
-msgstr ""
+msgstr "ncRNA: RNA النووي الصغير"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: small nucleolar RNA"
-msgstr ""
+msgstr "ncRNA: الحمض النووي الريبي النووي الصغير"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: transfer RNA"
-msgstr ""
+msgstr "ncRNA: نقل الحمض النووي الريبي"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "ncRNA: vault RNA"
-msgstr ""
+msgstr "ncRNA: قبو الحمض النووي الريبي"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: T cell receptor gene"
-msgstr ""
+msgstr "أخرى: جين مستقبل الخلايا التائية"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: biological region"
-msgstr ""
+msgstr "أخرى: المنطقة البيولوجية"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: complex locus constituent"
-msgstr ""
+msgstr "أخرى: مكون موضعي معقد"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: endogenous retrovirus"
-msgstr ""
+msgstr "أخرى: الفيروسات القهقرية الذاتية"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: fragile site"
-msgstr ""
+msgstr "أخرى: موقع هش"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: immunoglobulin gene"
-msgstr ""
+msgstr "أخرى: جين الجلوبيولين المناعي"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: readthrough"
-msgstr ""
+msgstr "أخرى: القراءة"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: unknown"
-msgstr ""
+msgstr "أخرى: غير معروفة"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "other: virus integration site"
-msgstr ""
+msgstr "أخرى: موقع تكامل الفيروسات"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "protein-coding gene"
-msgstr ""
+msgstr "جين ترميز البروتين"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: T cell receptor pseudogene"
-msgstr ""
+msgstr "الجين الكاذب: الجين الكاذب لمستقبلات الخلايا التائية"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: immunoglobulin pseudogene"
-msgstr ""
+msgstr "الجين الكاذب: الغلوبولين المناعي الكاذب"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: pseudogene"
-msgstr ""
+msgstr "الجين الكاذب: الجين الكاذب"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "LB/B: Likely benign or benign"
-msgstr ""
+msgstr "LB/B: من المحتمل أن يكون حميدًا أو حميدًا"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "LP/P: Likely pathogenic or pathogenic"
-msgstr ""
+msgstr "LP/P: من المحتمل أن يكون مسببًا للأمراض أو مسببًا للأمراض"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
-msgstr ""
+msgstr "الولايات المتحدة: أهمية غير معروفة"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Aunt"
@@ -583,7 +582,6 @@ msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Uncle"
 msgstr "عم"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
 msgid ""
 msgstr "-"
@@ -602,38 +600,36 @@ msgstr "شَقيق"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomal dominant"
-msgstr ""
+msgstr "العامل الوراثي المسيطر"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomal recessive"
-msgstr ""
+msgstr "صفة متنحية"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Mitochondrial"
-msgstr ""
+msgstr "الميتوكوندريا"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "X-Linked"
-msgstr ""
+msgstr "مرتبط بـ X"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Y-Linked"
-msgstr ""
+msgstr "مرتبط بـ Y"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "codominance"
-msgstr ""
+msgstr "سيادة مشتركة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient:"
 msgid "Genetics"
 msgstr "علم الوراثة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Disease"
 msgstr "المرض"
 
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Protein and Gene"
-msgstr ""
+msgstr "البروتين والجين"
