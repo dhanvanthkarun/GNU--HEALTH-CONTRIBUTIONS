@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Gerald Wiese
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+steps:
+  test:
+    image: gnuhealth/linter:latest
+    commands:
+      - bash lint.sh
