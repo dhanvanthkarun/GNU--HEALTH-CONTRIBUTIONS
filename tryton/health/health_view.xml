@@ -161,6 +161,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.death_certificate')]"/>
         </record>
 
+        <!-- Appointment -->
+        <record model="ir.model.button" id="appoinntment_check_in">
+            <field name="name">check_in</field>
+            <field name="string">Check In</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.appointment')]"/>
+        </record>
+
+        <record model="ir.model.button" id="appoinntment_miss_out">
+            <field name="name">miss_out</field>
+            <field name="string">Miss Out</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.appointment')]"/>
+        </record>
+
         <!-- Vaccination -->
         <record model="ir.model.button" id="vaccination_sign">
             <field name="name">sign</field>
