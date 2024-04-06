@@ -12,10 +12,12 @@
 #########################################################################
 
 from trytond.pool import Pool
+from trytond.report import Report
 from . import health
 from . import sequences
 from . import wizard
 from . import report
+from . import core
 
 
 def register():
@@ -103,9 +105,18 @@ def register():
         wizard.wizard_appointment_evaluation.CreateAppointmentEvaluation,
         wizard.wizard_check_immunization_status.CheckImmunizationStatus,
         module='health', type_='wizard')
+
     Pool.register(
         report.health_report.PatientDiseaseReport,
         report.health_report.PatientMedicationReport,
         report.health_report.PatientVaccinationReport,
         report.immunization_status_report.ImmunizationStatusReport,
         module='health', type_='report')
+
+    Pool.register_mixin(
+        core.ImageReportMixin, Report,
+        module='health')
+
+    Pool.register_mixin(
+        core.GettextReportMixin, Report,
+        module='health')

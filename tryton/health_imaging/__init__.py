@@ -29,6 +29,7 @@ def register():
         sequences.ImagingRequestSequence,
         sequences.ImagingTestSequence,
         module='health_imaging', type_='model')
+
     Pool.register(
         wizard.wizard_health_imaging.WizardGenerateResult,
         wizard.wizard_health_imaging.RequestPatientImagingTest,

@@ -48,13 +48,12 @@ from .exceptions import (
     CanNotModifyVaccination
 )
 
-from .core import (get_yes_or_no_string, get_institution,
+from .core import (get_institution,
                    compute_age_from_dates,
                    get_age_for_comparison,
                    format_years_months_days,
                    estimated_date_from_years,
-                   get_health_professional,
-                   image_crop)
+                   get_health_professional)
 
 
 try:
@@ -2859,10 +2858,6 @@ class DeathCertificate (ModelSQL, ModelView):
                              "if autopsy has been done",
                              states=STATES)
 
-    # Used by report templates.
-    def yes_no(self, yes=True):
-        return get_yes_or_no_string(yes)
-
     dod = fields.DateTime('Date', required=True,
                           help="Date and time of Death",
                           states=STATES)
@@ -3045,13 +3040,6 @@ class PatientData(ModelSQL, ModelView):
     # Retrieves the information from the party.
 
     photo = fields.Function(fields.Binary('Picture'), 'get_patient_photo')
-
-    # photo_crop method is used in report template, for we can not
-    # find a way to keep the original aspect ratio in odt template at
-    # the moment.
-    @staticmethod
-    def photo_crop(photo, width, height, unit='cm'):
-        return image_crop(Image, photo, width, height, unit)
 
     # Removed in 2.0 . DOB It's now a functional field
     # Retrieves the information from the party.

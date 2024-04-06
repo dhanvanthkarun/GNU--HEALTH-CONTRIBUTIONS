@@ -16,10 +16,7 @@ from trytond.transaction import Transaction
 from trytond.pool import Pool, PoolMeta
 from datetime import datetime
 from trytond.pyson import Eval, Not, Equal
-from trytond.modules.health.core import (get_health_professional,
-                                         image_crop)
-
-from PIL import Image
+from trytond.modules.health.core import get_health_professional
 
 
 __all__ = ['Newborn', 'NeonatalApgar', 'NeonatalMedication',
@@ -46,15 +43,7 @@ class Newborn(ModelSQL, ModelView):
         help="Date and Time of birth", states=STATES)
     photo = fields.Binary('Picture', states=STATES)
 
-    # photo_crop method is used in report template, for we can not
-    # find a way to keep the original aspect ratio in odt template at
-    # the moment.
-    @staticmethod
-    def photo_crop(photo, width, height, unit='cm'):
-        return image_crop(Image, photo, width, height, unit)
-
     # Sex / Gender at birth.
-
     sex = fields.Selection(
         [
             ('m', 'Male'),

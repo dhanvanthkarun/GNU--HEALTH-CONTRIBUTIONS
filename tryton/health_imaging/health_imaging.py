@@ -20,12 +20,7 @@ from trytond.pyson import Eval
 from trytond.pool import Pool
 
 from trytond.modules.health.core import (
-    get_health_professional, compute_age_from_dates, image_resize)
-
-try:
-    from PIL import Image
-except ImportError:
-    Image = None
+    get_health_professional, compute_age_from_dates)
 
 
 __all__ = [
@@ -217,12 +212,6 @@ class ImagingTestResult(ModelSQL, ModelView):
 
     comment = fields.Text('Additional Information')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
-
-    # resize_image method is used in report template
-    @staticmethod
-    def resize_image(image, max_width, max_height, unit='cm'):
-        return image_resize(
-            Image, image, max_width, max_height, unit)
 
     @classmethod
     def generate_code(cls, **pattern):

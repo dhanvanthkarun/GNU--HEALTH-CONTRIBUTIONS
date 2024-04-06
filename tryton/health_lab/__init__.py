@@ -33,6 +33,7 @@ def register():
         sequences.LabRequestSequence,
         sequences.LabTestSequence,
         module='health_lab', type_='model')
+
     Pool.register(
         wizard.wizard_create_lab_test.CreateLabTestOrder,
         wizard.wizard_create_lab_test.RequestPatientLabTest,
