@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-03-14 02:30+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/gnu-health/"
-"health_surgery/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.operation,name:"
 msgid "Surgery"
@@ -70,9 +61,10 @@ msgctxt "field:gnuhealth.or.schedule,state:"
 msgid "Status"
 msgstr "Status"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,surgery:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,urgency:"
@@ -224,9 +216,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,specialty:"
 msgid "Specialty"
 msgstr "Specialitet"
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,surgery:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 msgctxt "field:gnuhealth.preoperative_assessment,surgery_date:"
 msgid "Surgery date"
@@ -509,9 +502,10 @@ msgctxt "field:gnuhealth.surgery.complication,complication:"
 msgid "Complication"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,name:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
@@ -527,9 +521,10 @@ msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,name:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
@@ -594,9 +589,10 @@ msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery_supply,name:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery_supply,notes:"
@@ -615,9 +611,10 @@ msgctxt "field:gnuhealth.surgery_supply,supply:"
 msgid "Supply"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery_team,name:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery_team,notes:"
@@ -975,9 +972,10 @@ msgctxt "model:gnuhealth.sequences.surgery_code_sequence,name:"
 msgid "Health Service Request Sequence setup"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.surgery,name:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 msgctxt "model:gnuhealth.surgery.complication,name:"
 msgid "Surgery Complication"
@@ -1127,13 +1125,15 @@ msgctxt "model:ir.model.button,string:surgery_start_button"
 msgid "Start"
 msgstr "Start"
 
+#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_surgery_code"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
+#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_surgery_code"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_or_schedule_menu"
 msgid "OR Schedule"
@@ -1463,9 +1463,10 @@ msgctxt "report:surgery_outpatient:"
 msgid "Printed Date:"
 msgstr "Utskriftsdatum:"
 
+#, fuzzy
 msgctxt "report:surgery_outpatient:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 msgctxt "report:surgery_outpatient:"
 msgid "Surgical Intervention:"

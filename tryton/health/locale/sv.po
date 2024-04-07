@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-03-26 03:34+0000\n"
-"Last-Translator: Umeaman <Umeaman@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/"
-"health/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4.2\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1615,9 +1606,10 @@ msgctxt "field:gnuhealth.patient.evaluation,derived_to:"
 msgid "Derived to"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,diagnosis:"
 msgid "Main Condition"
-msgstr ""
+msgstr "Huvudsakligt tillstånd"
 
 msgctxt "field:gnuhealth.patient.evaluation,diagnostic_hypothesis:"
 msgid "Hypotheses / DDx"
@@ -8637,6 +8629,14 @@ msgctxt "model:ir.message,text:msg_yes_str"
 msgid "Yes"
 msgstr "Ja"
 
+msgctxt "model:ir.model.button,string:appoinntment_check_in"
+msgid "Check In"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:appoinntment_miss_out"
+msgid "Miss Out"
+msgstr ""
+
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
 msgid "Sign"
 msgstr ""
@@ -9451,9 +9451,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Initiated by:"
 msgstr "Initierades av:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Main Condition"
-msgstr ""
+msgstr "Huvudsakligt tillstånd"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9582,9 +9583,10 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Initiated by:"
 msgstr "Initierades av:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Main Condition"
-msgstr ""
+msgstr "Huvudsakligt tillstånd"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -11128,9 +11130,10 @@ msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Self monitoring"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Surgery"
-msgstr ""
+msgstr "Operation"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "lab"
@@ -11802,9 +11805,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Information on Diagnosis"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Main Condition"
-msgstr ""
+msgstr "Huvudsakligt tillstånd"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Main Info"

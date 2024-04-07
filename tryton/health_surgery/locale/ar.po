@@ -1,16 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-03-31 08:18+0000\n"
-"Last-Translator: Pulsar87 <Pulsar87@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Arabic <https://translate.codeberg.org/projects/gnuhealth/"
-"health_surgery/ar/>\n"
-"Language: ar\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.4.2\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.operation,name:"
 msgid "Surgery"
@@ -767,15 +757,12 @@ msgid ""
 "  IVb: multiorgan dysfunction\n"
 "Grade V: Death of a patient"
 msgstr ""
-"الدرجة الأولى: أي انحراف عن المسار الطبيعي بعد العملية الجراحية دون الحاجة "
-"إلى علاج دوائي أو تدخلات جراحية وتنظيرية وإشعاعية\n"
-"الدرجة الثانية: تتطلب العلاج الدوائي بأدوية غير تلك المسموح بها لمضاعفات "
-"الدرجة الأولى.\n"
+"الدرجة الأولى: أي انحراف عن المسار الطبيعي بعد العملية الجراحية دون الحاجة إلى علاج دوائي أو تدخلات جراحية وتنظيرية وإشعاعية\n"
+"الدرجة الثانية: تتطلب العلاج الدوائي بأدوية غير تلك المسموح بها لمضاعفات الدرجة الأولى.\n"
 "الدرجة الثالثة: تتطلب التدخل الجراحي أو التنظيري أو الإشعاعي.\n"
 "   IIIأ: التدخل بدون التخدير العام\n"
 "   IIIb: التدخل تحت التخدير العام\n"
-"الدرجة الرابعة: المضاعفات التي تهدد الحياة (بما في ذلك مضاعفات الجهاز العصبي "
-"المركزي) والتي تتطلب إدارة IC / ICU.\n"
+"الدرجة الرابعة: المضاعفات التي تهدد الحياة (بما في ذلك مضاعفات الجهاز العصبي المركزي) والتي تتطلب إدارة IC / ICU.\n"
 "   IVa: خلل وظيفي في عضو واحد (بما في ذلك غسيل الكلى)\n"
 "   IVb: خلل وظيفي متعدد الأعضاء\n"
 "الدرجة الخامسة: وفاة المريض"
@@ -798,8 +785,8 @@ msgid ""
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
 msgstr ""
-"الوقت بالدقائق من عملية الجراحة. هذه القيمة اختيارية ويتم استخدامها عندما لا "
-"يعكس طول الجراحة المحسوبة تلقائيًا الوقت الفعلي أو تم تسجيله بعد ذلك."
+"الوقت بالدقائق من عملية الجراحة. هذه القيمة اختيارية ويتم استخدامها عندما لا"
+" يعكس طول الجراحة المحسوبة تلقائيًا الوقت الفعلي أو تم تسجيله بعد ذلك."
 
 msgctxt "help:gnuhealth.surgery,operating_room:"
 msgid "Operating Room"
@@ -1068,7 +1055,8 @@ msgctxt "model:ir.message,text:msg_surgery_is_done"
 msgid ""
 "This surgery is at state Done and has been signed. You can no longer modify "
 "it."
-msgstr "هذه الجراحة في حالة الانتهاء وتم التوقيع عليها. لم يعد بإمكانك تعديله."
+msgstr ""
+"هذه الجراحة في حالة الانتهاء وتم التوقيع عليها. لم يعد بإمكانك تعديله."
 
 msgctxt "model:ir.message,text:msg_surgery_rcri_rec_name"
 msgid "Points: %(rcri_total)s (Class %(rcri_class)s)"
@@ -1542,7 +1530,8 @@ msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid ""
 "H3a - Inguino-scrotal reductible with manual manipulation. Component ing-"
 "scrot<10cm"
-msgstr "H3a - كيس الصفن الإربي قابل للاختزال بالتلاعب اليدوي. مكون الصفن <10 سم"
+msgstr ""
+"H3a - كيس الصفن الإربي قابل للاختزال بالتلاعب اليدوي. مكون الصفن <10 سم"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid ""
@@ -1554,7 +1543,8 @@ msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid ""
 "H3c - Inguino-scrotal reductible with manual manipulation. Component ing-"
 "scrot>20cm"
-msgstr "H3c - الصفن الأربي قابل للاختزال بالتلاعب اليدوي. مكون من الصفن> 20 سم"
+msgstr ""
+"H3c - الصفن الأربي قابل للاختزال بالتلاعب اليدوي. مكون من الصفن> 20 سم"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H4a - Irreducible. Component ing-scrot<10cm"
@@ -2089,58 +2079,70 @@ msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "General"
 msgstr "عام"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Local"
-msgstr ""
+msgstr "محلي"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Local + sedation"
-msgstr ""
+msgstr "موضعي + تخدير"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "No anesthesia"
-msgstr ""
+msgstr "لا تخدير"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Peribulbar"
-msgstr ""
+msgstr "كنت قلقا"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Rachianesthesia"
-msgstr ""
+msgstr "Rachianesthesia"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Regional"
-msgstr ""
+msgstr "موضعي"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Regional Block"
-msgstr ""
+msgstr "المكان الموضعي"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Sedation"
-msgstr ""
+msgstr "التخدير"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Arthroscopic"
-msgstr ""
+msgstr "بالمنظار"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Endoscopic"
-msgstr ""
+msgstr "بالمنظار"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Laparoscopic"
-msgstr ""
+msgstr "بالمنظار"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Open"
 msgstr "مفتوح"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Robotic"
-msgstr ""
+msgstr "الي"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
@@ -2167,74 +2169,90 @@ msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Urgent"
 msgstr "مٌستعجل"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,laterality:"
 msgid "Bilateral"
-msgstr ""
+msgstr "ثنائي"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,laterality:"
 msgid "Left"
-msgstr ""
+msgstr "يسار"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,laterality:"
 msgid "Right"
-msgstr ""
+msgstr "يمين"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Fowlers"
-msgstr ""
+msgstr "فاولر"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Jacknife"
-msgstr ""
+msgstr "ثني"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Kidney positioning"
-msgstr ""
+msgstr "تحديد موضع الكلى"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Knee-chest"
-msgstr ""
+msgstr "الركبة الصدر"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Lateral"
-msgstr ""
+msgstr "جانبي"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Lithotomy"
-msgstr ""
+msgstr "تفتيت الحصى"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Lloyd-Davies"
-msgstr ""
+msgstr "لويد ديفيز"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Other"
 msgstr "أخرى"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Prone Decubitus"
-msgstr ""
+msgstr "الاستلقاء على الأرض"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Reverse Trendelenburg"
-msgstr ""
+msgstr "عكس ترندلينبورج"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Semi-Fowler"
-msgstr ""
+msgstr "شبه فاولر"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Sims"
-msgstr ""
+msgstr "سيمز"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Supine Decubitus"
-msgstr ""
+msgstr "استلقاء مستلق"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Trendelenburg"
-msgstr ""
+msgstr "ترندلينبورج"
 
 #, fuzzy
 msgctxt "view:gnuhealth.operation:"
@@ -2287,9 +2305,10 @@ msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Critical Information"
 msgstr "معلومات هامة"
 
+#, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Decision"
-msgstr ""
+msgstr "القرار"
 
 #, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
@@ -2310,17 +2329,19 @@ msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Risk assessment"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Schedule Surgery"
-msgstr ""
+msgstr "جدولة جراحة"
 
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Surgery schedule"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Discharge instructions"
-msgstr ""
+msgstr "تعليمات التخريج"
 
 #, fuzzy
 msgctxt "view:gnuhealth.surgery.protocol:"
@@ -2336,17 +2357,20 @@ msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Patient positioning"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Postoperative guidelines"
-msgstr ""
+msgstr "المبادئ التوجيهية بعد العملية الجراحية"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Surgical Intervention"
-msgstr ""
+msgstr "تدخل جراحي"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Anesthesia"
-msgstr ""
+msgstr "تخدير"
 
 #, fuzzy
 msgctxt "view:gnuhealth.surgery:"
@@ -2389,9 +2413,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Discharge"
 msgstr "تخريج"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Discharge instructions"
-msgstr ""
+msgstr "تعليمات التخريج"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "End this surgery ?"
@@ -2401,9 +2426,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Finish and sign this surgery ? Itwill become read-only !"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish"
-msgstr ""
+msgstr "انهاء"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish the surgery"
@@ -2427,9 +2453,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Postoperative"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Postoperative guidelines"
-msgstr ""
+msgstr "المبادئ التوجيهية بعد العملية الجراحية"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Preoperative checklist"
@@ -2467,9 +2494,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Supplies"
 msgstr "المواد"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Surgical Intervention"
-msgstr ""
+msgstr "تدخل جراحي"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Team"
