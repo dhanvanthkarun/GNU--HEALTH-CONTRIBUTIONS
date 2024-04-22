@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-04-20 10:18+0000\n"
+"Last-Translator: hurzelchen <hurzelchen@users.noreply.translate.codeberg.org>"
+"\n"
+"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/"
+"health_ems/de/>\n"
+"Language: de\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4.3\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.ambulance,active:"
 msgid "Active"
@@ -36,7 +46,7 @@ msgstr "Bemerkungen"
 
 msgctxt "field:gnuhealth.ambulance,vehicle_station:"
 msgid "Station"
-msgstr "Station"
+msgstr "Rettungswache"
 
 msgctxt "field:gnuhealth.ambulance,vehicle_type:"
 msgid "Type"
@@ -109,7 +119,7 @@ msgstr "Aufrufende Einrichtung"
 
 msgctxt "field:gnuhealth.support_request,latitude:"
 msgid "Latidude"
-msgstr "Latidude"
+msgstr "Breitengrad"
 
 msgctxt "field:gnuhealth.support_request,longitude:"
 msgid "Longitude"
@@ -213,7 +223,7 @@ msgstr "Aktueller Kilometerstand"
 
 msgctxt "help:gnuhealth.ambulance,vehicle_station:"
 msgid "Station / Base of the vehicle"
-msgstr "Station / Basis des Fahrzeugs"
+msgstr "Wache / Basis des Fahrzeugs"
 
 msgctxt "help:gnuhealth.ambulance,vehicle_type:"
 msgid "Type of vehicle"
@@ -241,7 +251,7 @@ msgstr "Benötigter Rettungswagen für diese Unterstützungsanfrage"
 
 msgctxt "help:gnuhealth.support_request,code:"
 msgid "Request Code"
-msgstr "Anfrage Code"
+msgstr "Anfrage-Code"
 
 msgctxt "help:gnuhealth.support_request,evaluation:"
 msgid "Related Patient Evaluation"
@@ -249,7 +259,7 @@ msgstr "Verwandte Patientenbewertung"
 
 msgctxt "help:gnuhealth.support_request,operational_sector:"
 msgid "Operational Sector"
-msgstr "Betrieblichen Bereich"
+msgstr "Betrieblicher Bereich"
 
 msgctxt "help:gnuhealth.support_request,operator:"
 msgid "Operator who took the call / support request"
@@ -257,7 +267,7 @@ msgstr "Mitarbeiter, der diesen Anruf / diese Anfrage entgegennahm"
 
 msgctxt "help:gnuhealth.support_request,place_occurrance:"
 msgid "Place of occurrance"
-msgstr "Ort des Vorkommens"
+msgstr "Ort des Ereignisses"
 
 msgctxt "help:gnuhealth.support_request,request_actions:"
 msgid "Support request activity log"
@@ -301,7 +311,7 @@ msgstr "Rettungswagen im Zusammenhang mit einer Anfrage"
 
 msgctxt "model:gnuhealth.ambulance_hp,name:"
 msgid "Ambulance Health Professionals"
-msgstr "Rettungswagen Personal"
+msgstr "Rettungswagenpersonal"
 
 msgctxt "model:gnuhealth.sequences.support_request_code_sequence,name:"
 msgid "Health Service Request Sequence setup"
@@ -309,7 +319,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.support_request,name:"
 msgid "Support Request Registration"
-msgstr "Unterstützungsanfrage Registrierung"
+msgstr "Registrierung der Unterstützungsanfrage"
 
 msgctxt "model:gnuhealth.support_request.log,name:"
 msgid "Ambulance associated to a Support Request"
@@ -353,19 +363,19 @@ msgstr "  "
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "At Hospital"
-msgstr "Beim Krankenhaus"
+msgstr "Im Krankenhaus"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "Available / At Station"
-msgstr "Verfügbar / Stationiert"
+msgstr "Verfügbar / Auf der Wache"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "Dispatched"
-msgstr "Gestartet"
+msgstr "Alarmiert"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "En Route"
-msgstr "Unterwegs"
+msgstr "Ausgerückt"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "On Location"
@@ -373,7 +383,7 @@ msgstr "Vor Ort"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "Out of service"
-msgstr "Außer Betrieb"
+msgstr "Nicht einsatzklar"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "Returning"
@@ -397,7 +407,7 @@ msgstr "Typ B - Notfall"
 
 msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
 msgid "Type C - Mobile ICU"
-msgstr "Typ C - Mobile Intensivstation"
+msgstr "Typ C - Intensivtransport"
 
 msgctxt "selection:gnuhealth.ambulance,vehicle_type:"
 msgid ""
@@ -441,11 +451,11 @@ msgstr "  "
 
 msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "At Hospital"
-msgstr "Beim Krankenhaus"
+msgstr "Im Krankenhaus"
 
 msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "Available / At Station"
-msgstr "Verfügbar / Stationiert"
+msgstr "Verfügbar / Auf der Wache"
 
 msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "Dispatched"
@@ -686,15 +696,15 @@ msgstr "Beim Krankenhaus"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Available"
-msgstr ""
+msgstr "Einsatzklar"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Confirm arrival to the incident location ?"
-msgstr ""
+msgstr "Bestätigen Sie die Ankunft am Einsatzort?"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Dispatch ambulance ?"
-msgstr ""
+msgstr "Rettungswagen alamieren?"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
@@ -708,15 +718,15 @@ msgstr "Unterwegs"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Going to hospital from incident location ?"
-msgstr ""
+msgstr "Transport vom Einsatzort zum Krankenhaus?"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Has the ambulance arrived to hospital ?"
-msgstr ""
+msgstr "Ist der Rettungswagen am Krankenhaus angekommen?"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Is the ambulance returning to the station ?"
-msgstr ""
+msgstr "Kehrt der Rettungswagen zur Wache zurück?"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
@@ -725,7 +735,7 @@ msgstr "Haupt"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Mark vehicle as available ?"
-msgstr ""
+msgstr "Das Fahrzeug als einsatzklar markieren?"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
@@ -734,7 +744,7 @@ msgstr "Vor Ort"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Out of Service"
-msgstr ""
+msgstr "Nicht einsatzklar"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
@@ -743,11 +753,11 @@ msgstr "Rückkehr"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Set as En Route to the incident ?"
-msgstr ""
+msgstr "Ist das Fahrzeug auf Anfahrt zum Einsatzort?"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Set the ambulance as Out of Service ?"
-msgstr ""
+msgstr "Den Rettungswagen als nicht einsatzklar markieren?"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
@@ -756,35 +766,35 @@ msgstr "Status"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance going to the hospital from the incident location"
-msgstr ""
+msgstr "Der Rettungswagen transportiert vom Einsatzort zu Krankenhaus"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has arrived at the incident location"
-msgstr ""
+msgstr "Der Rettungswagen ist am Einsatzort eingetroffen"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has arrived to base / is available"
-msgstr ""
+msgstr "Der Rettungswagen ist an der Wache angekommen / einsatzklar"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has arrived to hospital"
-msgstr ""
+msgstr "Der Rettungswagen ist am Krankenhaus angekommen"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has been dispatched"
-msgstr ""
+msgstr "Der Rettungswagen wurde alarmiert"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance is going to the incident"
-msgstr ""
+msgstr "Der Rettungswagen fährt zum Einsatzort"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance is out of service"
-msgstr ""
+msgstr "Der Rettungswagen ist nicht einsatzklar"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance is returning to base"
-msgstr ""
+msgstr "Der Rettungswagen kehrt zur Wache zurück"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
@@ -793,11 +803,11 @@ msgstr "Zum Krankenhaus"
 
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Functionality"
-msgstr ""
+msgstr "Funktionalität"
 
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Identification"
-msgstr ""
+msgstr "Identifikation"
 
 #, fuzzy
 msgctxt "view:gnuhealth.ambulance:"
@@ -806,7 +816,7 @@ msgstr "Bemerkungen"
 
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Station and Status"
-msgstr ""
+msgstr "Rettungswache und Status"
 
 #, fuzzy
 msgctxt "view:gnuhealth.support_request.log:"
@@ -825,7 +835,7 @@ msgstr "Schließen"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Close the request ?"
-msgstr ""
+msgstr "Die Anfrage schließen?"
 
 #, fuzzy
 msgctxt "view:gnuhealth.support_request:"
@@ -848,16 +858,16 @@ msgstr "Öffnen"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Open the request ?"
-msgstr ""
+msgstr "Die Anfrage öffnen?"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Patient Demographics"
-msgstr ""
+msgstr "Patientendaten"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Set this support request to closed"
-msgstr ""
+msgstr "Diese Anfrage schließen"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Set this support request to open"
-msgstr ""
+msgstr "Diese Anfragen öffnen"
