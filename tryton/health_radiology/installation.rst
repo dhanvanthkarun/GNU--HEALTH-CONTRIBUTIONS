@@ -17,8 +17,8 @@ Installation
 2. We also assume that you have created the demo database ``ghdemo44`` as described at hddttps://en.wikibooks.org/wiki/GNU_Health/The_Demo_database.
 
 3. Install PyOrthanc:
-    ::
-       pip install pyorthanc
+   ::
+      pip install pyorthanc
 
 4. Clone this repository and ``cd`` into its directory.
    
@@ -47,13 +47,14 @@ Installation
    
     - For the desktop client: Let's assume that your desktop client is installed in ```/home/gnuhealth/health-hmis-client/```. Copy the widget into the   plugin directory of the client:
       ::
-        mkdir -p /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary
+         mkdir -p /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary
       
-        cp clientwidget_dicombinary.py /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary/__init__.py
+         cp clientwidget_dicombinary.py /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary/__init__.py
 
     - For the SAO web client: Let's assume you have installed the SAO client in ``/home/gnuhealth/sao`` (see [#f3]_). If there is not already a custom.js file in the web client's directory, you can just copy the widget into the client:
       ::
          cp custom.js /home/gnuhealth/sao
+         
 
    Otherwise, you have to manually add the content of our custom.js file to the existing file in the SAO client.    
 
