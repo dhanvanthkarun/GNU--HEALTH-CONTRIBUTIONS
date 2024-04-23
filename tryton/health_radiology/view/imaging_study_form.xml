@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form>
+    <notebook>
+        <page string = 'Study Content' id='imagingstudy_content_page'>
+            <group colspan="3" id="gnuhealth_info">
+                <label name="patient"/>
+                <field name="patient" colspan="1"/>
+            </group>
+            <newline/>
+            <group colspan="4" col="6" id="imagingStudy_info">
+                <label name="date"/>
+                <field name="date"/>
+                <label name="institution"/>
+                <field name="institution"/>
+                <label name="performingPhysicianName"/>
+                <field name="performingPhysicianName"/>
+            </group>
+            <newline/>
+            <group colspan="4" id="study_series_group" yexpand="1">
+                <field colspan="5" name="series"/>
+            </group>    
+            <newline/>
+            <group string="Study Notes" colspan="4" id="imaging_study_notes">
+                <field name="notes" colspan="4"/>
+            </group>
+        </page>
+     </notebook>
+</form>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2020-2021 National University of Entre Rios (UNER)
+SPDX-FileCopyrightText: 2020 Mario Puntin <mario@silix.com.ar>
+SPDX-FileCopyrightText: 2020-2024 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2020-2024 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <record model="ir.action.wizard" id="act_upload_image_data">
+         <field name="name">Upload DICOM files</field>
+         <field name="wiz_name">gnuhealth.imaging.uploadImageData</field>
+         <field name="model">gnuhealth.imaging.imagingStudy</field>
+        </record>
+
+        <record model="ir.action.keyword" id="upload_image_data_keyword">
+           <field name="keyword">form_action</field>
+           <field name="model">gnuhealth.imaging.imagingStudy,-1</field>
+           <field name="action" ref="act_upload_image_data"/>
+        </record>
+
+        <record model="ir.ui.view" id="upload_image_data_start_form">
+         <field name="model">gnuhealth.imaging.uploadImageData.start</field>
+         <field name="type">form</field>
+         <field name="name">upload_image_data_start_form</field>
+        </record>
+    </data>
+</tryton>

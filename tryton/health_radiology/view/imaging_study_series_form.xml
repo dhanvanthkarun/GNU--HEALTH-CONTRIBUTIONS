@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form>
+    <group colspan='3' string="Series" id="imaging_study_series_form">
+        <label name="seriesDescription"/>
+        <field name="seriesDescription"/>
+        <label name="modality"/>
+        <field name="modality"/>
+        <label name="link"/>
+        <field name="link"/>
+    </group>
+    <newline/>
+    <group colspan="3" id="series_instances_group" yexpand = "1">
+        <field colspan="3" name="instances"/>
+    </group>    
+    <newline/>
+    <group string="Series Notes" colspan="3" id="imaging_series_notes">
+        <field name="notes" colspan="3"/>
+    </group>
+</form>

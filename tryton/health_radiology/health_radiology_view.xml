@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <!-- Icons-->
+
+        <record model="ir.ui.icon" id="imaging_icon">
+            <field name="name">gnuhealth.imaging</field>
+            <field name="path">icons/imaging_icon.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="orthanc_icon">
+            <field name="name">orthanc</field>
+            <field name="path">icons/orthanc_logo.svg</field>
+        </record>
+        <!-- <record model="ir.ui.icon" id="delete_icon">
+            <field name="name">delete</field>
+            <field name="path">icons/delete.svg</field>
+        </record> -->
+        
+        <!-- Parent menu item -->
+
+        <menuitem name="Health Radiology" parent="health.gnuhealth_menu"
+            id="menu_radiology_parent" icon="gnuhealth.imaging"/>
+
+        <!-- Views -->
+
+        <record model="ir.ui.view" id="view_imaging_patient_form">
+            <field name="model">gnuhealth.patient</field>
+            <field name="type">form</field>
+            <field name="name">imaging_patient_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_patient_tree">
+            <field name="model">gnuhealth.patient</field>
+            <field name="type">tree</field>
+            <field name="name">imaging_patient_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_study_form">
+            <field name="model">gnuhealth.imaging.imagingStudy</field>
+            <field name="type">form</field>
+            <field name="name">imaging_study_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_study_tree">
+            <field name="model">gnuhealth.imaging.imagingStudy</field>
+            <field name="type">tree</field>
+            <field name="name">imaging_study_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_study_series_form">
+            <field name="model">gnuhealth.imaging.imagingStudySeries</field>
+            <field name="type">form</field>
+            <field name="name">imaging_study_series_form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_imaging_study_series_tree">
+            <field name="model">gnuhealth.imaging.imagingStudySeries</field>
+            <field name="type">tree</field>
+            <field name="name">imaging_study_series_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_seriesInstances_form">
+            <field name="model">gnuhealth.imaging.imagingSeriesInstances</field>
+            <field name="type">form</field>
+            <field name="name">imaging_seriesInstances_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_seriesInstances_tree">
+            <field name="model">gnuhealth.imaging.imagingSeriesInstances</field>
+            <field name="type">tree</field>
+            <field name="name">imaging_seriesInstances_tree</field>
+        </record>
+
+        
+        <!-- Act_Windows -->
+
+        <record model="ir.action.act_window" id="act_imaging_patient_view">
+            <field name="name">Patients</field>
+            <field name="res_model">gnuhealth.patient</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_imaging_study_view">
+            <field name="name">Studies</field>
+            <field name="res_model">gnuhealth.imaging.imagingStudy</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_imaging_study_series_view">
+            <field name="name">Series</field>
+            <field name="res_model">gnuhealth.imaging.imagingStudySeries</field>
+        </record>
+
+        <!-- Window views -->
+
+        <record model="ir.action.act_window.view" id="act_imaging_patient_tree_view">
+            <field name="sequence" eval="30"/>
+            <field name="view" ref="view_imaging_patient_tree"/>
+            <field name="act_window" ref="act_imaging_patient_view"/>
+        </record>
+      
+        <record model="ir.action.act_window.view" id="act_imaging_patient_form_view">
+            <field name="sequence" eval="40"/>
+            <field name="view" ref="view_imaging_patient_form"/>
+            <field name="act_window" ref="act_imaging_patient_view"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_imaging_study_tree_view">
+            <field name="sequence" eval="50"/>
+            <field name="view" ref="view_imaging_study_tree"/>
+            <field name="act_window" ref="act_imaging_study_view"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_imaging_study_form_view">
+            <field name="sequence" eval="60"/>
+            <field name="view" ref="view_imaging_study_form"/>
+            <field name="act_window" ref="act_imaging_study_view"/>
+        </record>
+        
+        <!-- Menu items -->
+        <menuitem parent="menu_radiology_parent" action="act_imaging_patient_view" 
+            id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence= "10"/>
+
+        <menuitem parent="menu_radiology_parent" action="act_imaging_study_view" 
+            id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>        
+    </data>
+</tryton>
+ 

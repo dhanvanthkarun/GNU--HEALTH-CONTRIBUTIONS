@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tree>
+    <field name="patient" expand="1"/>
+    <field name="patientName" expand="1"/>
+    <field name="server" expand="1"/>
+    <button name="select_viewer" help="Choose DICOM viewer" string=">>"/>
+    <field name="viewerName" expand = "1"/>
+    <field name="link" widget="url"/>
+    <button name="delete_study" help="Delete study from Orthanc" confirm="Do you really want to delete the study from Orthanc?" string="Permanent Delete" tree_invisible="1"/>
+</tree>
