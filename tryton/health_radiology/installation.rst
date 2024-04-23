@@ -16,7 +16,7 @@ Installation
 
 2. We also assume that you have created the demo database ``ghdemo44`` as described at hddttps://en.wikibooks.org/wiki/GNU_Health/The_Demo_database.
 
-3. Install 'PyOrthanc':
+3. Install PyOrthanc:
    ::
       pip install pyorthanc
 
