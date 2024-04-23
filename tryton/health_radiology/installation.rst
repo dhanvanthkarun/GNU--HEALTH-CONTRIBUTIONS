@@ -32,7 +32,7 @@ Installation
   
       ln -s /home/gnuhealth/gnuhealth/tryton/server/modules/health_orthanc_configuration /gnuhealth/tryton/server/trytond-6.0.43/trytond/modules
 
-    If your GNU Health server uses a different version of tryton, you have to adapt the directory names accordingly.
+   If your GNU Health server uses a different version of tryton, you have to adapt the directory names accordingly.
 
 6. Activate the modules for the demo database:
    ::
@@ -41,7 +41,7 @@ Installation
       /home/gnuhealth/gnuhealth/tryton/server/trytond-6.0.43/bin/trytond-admin -d ghdemo44 -u  health_orthanc_configuration --activate-dependencies
 
     
-    If you are using a different database, you have to replace ```ghdemo44``` by its name.
+   If you are using a different database, you have to replace ```ghdemo44``` by its name.
 
 7. We have created a new widget that allows to select and upload multiple DICOM files in the desktop client and web client. The widget has to be added to the clients.
    
@@ -55,7 +55,7 @@ Installation
       ::
         cp custom.js /home/gnuhealth/sao
 
-    Otherwise, you have to manually add the content of our custom.js file to the existing file in the SAO client.    
+   Otherwise, you have to manually add the content of our custom.js file to the existing file in the SAO client.    
 
 8. Restart your GNU Health server.
 
