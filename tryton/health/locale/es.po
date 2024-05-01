@@ -1,16 +1,16 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-27 16:18+0000\n"
+"PO-Revision-Date: 2024-05-01 17:57+0000\n"
 "Last-Translator: gallegonovato <gallegonovato@users.noreply.translate."
 "codeberg.org>\n"
 "Language-Team: Spanish <https://translate.codeberg.org/projects/gnuhealth/"
 "health/es/>\n"
 "Language: es\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4.3\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5.2\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1097,7 +1097,6 @@ msgctxt "field:gnuhealth.online_document,name:"
 msgid "Name"
 msgstr "Nombre"
 
-#, fuzzy
 msgctxt "field:gnuhealth.online_document,uri:"
 msgid "URI"
 msgstr "URI"
@@ -3065,7 +3064,7 @@ msgstr "Nombre del documento de Salud Online."
 
 msgctxt "help:gnuhealth.online_document,uri:"
 msgid "Health online document URL address."
-msgstr ""
+msgstr "Dirección URL del documento de salud en línea."
 
 msgctxt "help:gnuhealth.operational_area,name:"
 msgid "Operational Area of the city or region"
@@ -3131,7 +3130,7 @@ msgstr "Grupo"
 
 msgctxt "help:gnuhealth.patient,age_num:"
 msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
-msgstr ""
+msgstr "Edad en años, (años x 365 + meses x 30,5 + días) / 365"
 
 msgctxt "help:gnuhealth.patient,biological_sex:"
 msgid ""
@@ -3208,6 +3207,10 @@ msgid ""
 "Domiciliary Unit, just link it to the name of the contact in the address "
 "form."
 msgstr ""
+"Utilice esta dirección para obtener información de contacto temporal. Por "
+"ejemplo, si el paciente está de vacaciones, puede poner la dirección del "
+"hotel. En el caso de una Unidad Domiciliaria, basta con vincularla al nombre "
+"del contacto en el formulario de dirección."
 
 msgctxt "help:gnuhealth.patient,current_insurance:"
 msgid ""
@@ -3953,11 +3956,14 @@ msgid ""
 "Amount of vaccine administered, in mL . The dose per mL (eg, mcg, EL.U ..) "
 "can be found at the related medicament."
 msgstr ""
+"Cantidad de vacuna administrada, en ml. La dosis por ml (p. ej., mcg, EL.U "
+"..) se puede encontrar en el medicamento relacionado."
 
 msgctxt "help:gnuhealth.vaccination,healthprof:"
 msgid ""
 "Health Professional who administered or reviewed the vaccine information."
 msgstr ""
+"Profesional de la salud que administró o revisó la información de la vacuna."
 
 msgctxt "help:gnuhealth.vaccination,signed_by:"
 msgid "Health Professional that signed the vaccination document"
@@ -7595,11 +7601,11 @@ msgstr "Cristalógrafo"
 
 msgctxt "model:gnuhealth.online_document,name:"
 msgid "Health Online Document"
-msgstr ""
+msgstr "Información en línea de salud"
 
 msgctxt "model:gnuhealth.online_document,name:gnuhealth_online_document_001"
 msgid "GNU Health Documentation Portal"
-msgstr ""
+msgstr "Portal de documentación de salud de GNU"
 
 msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
@@ -8390,7 +8396,7 @@ msgstr "Ocupaciones"
 
 msgctxt "model:ir.action,name:gnuhealth_action_online_document"
 msgid "Online Documentation"
-msgstr ""
+msgstr "Instrucciones en línea"
 
 msgctxt "model:ir.action,name:gnuhealth_action_operational_area"
 msgid "Operational Areas"
@@ -8632,15 +8638,13 @@ msgctxt "model:ir.message,text:msg_yes_str"
 msgid "Yes"
 msgstr "Sí"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:appoinntment_check_in"
 msgid "Check In"
-msgstr "Registro de entrada"
+msgstr "Registrarse"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:appoinntment_miss_out"
 msgid "Miss Out"
-msgstr "Falta"
+msgstr "Omitir"
 
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
 msgid "Sign"
@@ -8901,7 +8905,7 @@ msgstr "Instituciones"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
 msgid "Online Documentation"
-msgstr ""
+msgstr "Instrucciones en línea"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
@@ -9729,7 +9733,7 @@ msgstr "Permitido"
 
 msgctxt "report:prescription.order:"
 msgid "Common:"
-msgstr ""
+msgstr "Común:"
 
 msgctxt "report:prescription.order:"
 msgid "Date:"
@@ -9741,7 +9745,7 @@ msgstr "Fecha de nacimiento:"
 
 msgctxt "report:prescription.order:"
 msgid "Dose:"
-msgstr ""
+msgstr "Dosis:"
 
 msgctxt "report:prescription.order:"
 msgid "Duration:"
@@ -9777,7 +9781,7 @@ msgstr "Seguro:"
 
 msgctxt "report:prescription.order:"
 msgid "Medicament:"
-msgstr ""
+msgstr "Medicamentos:"
 
 msgctxt "report:prescription.order:"
 msgid "Notes"
@@ -9801,7 +9805,7 @@ msgstr "Receta médica"
 
 msgctxt "report:prescription.order:"
 msgid "Qty:"
-msgstr ""
+msgstr "Cantidad:"
 
 msgctxt "report:prescription.order:"
 msgid "Quantity:"
@@ -9825,7 +9829,7 @@ msgstr "Ruta:"
 
 msgctxt "report:prescription.order:"
 msgid "Specific:"
-msgstr ""
+msgstr "Específico:"
 
 msgctxt "report:prescription.order:"
 msgid "Start:"
@@ -9839,7 +9843,6 @@ msgctxt "report:prescription.order:"
 msgid "Tel:"
 msgstr "Tfno.:"
 
-#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Usage"
 msgstr "Uso"
