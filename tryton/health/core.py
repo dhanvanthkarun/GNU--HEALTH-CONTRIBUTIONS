@@ -298,7 +298,10 @@ def matplotlib_setup(matplotlab):
 
 
 class GettextReportMixin:
-    'Mixin gettext function and some strings need translation and used frequently.'
+    '''Mixin gettext function and some strings need translation and
+    used frequently.
+
+    '''
     __slots__ = ()
 
     @classmethod
