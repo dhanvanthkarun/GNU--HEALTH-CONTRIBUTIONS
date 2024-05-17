@@ -98,8 +98,8 @@ setup(
     zip_safe=False,
     entry_points="""
     [trytond.modules]
-    health_pediatrics_growth_charts_who = trytond.modules.health_pediatrics_growth_charts_who
-    """,
+    health_pediatrics_growth_charts_who = {}
+    """.format('trytond.modules.health_pediatrics_growth_charts_who'),
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
 )
