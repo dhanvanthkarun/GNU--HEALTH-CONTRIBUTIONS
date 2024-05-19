@@ -77,10 +77,10 @@ class OrthancServerConfig(ModelSQL, ModelView):
     _rec_name = "label"
 
     label = fields.Char(
-        "Label", required=True, help="Label for server (eg., remote1)")
+        "Label", required=True, readonly=True, help="Label for server (eg., remote1)")
 
     domain = fields.Char(
-        "URL", required=True, help="The full URL of the Orthanc server")
+        "URL", required=True, readonly=True, help="The full URL of the Orthanc server")
 
     user = fields.Char(
         "Username", required=True, help="Username for Orthanc REST server")
@@ -94,7 +94,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
     
     link = fields.Function(
         fields.Char(
-            "URL",
+            "Link",
             help="Link to server in Orthanc Explorer"), "get_link")
     
     lastChangedIndex = fields.Integer("LastChangedIndex", readonly=True, help="Index of last change")
