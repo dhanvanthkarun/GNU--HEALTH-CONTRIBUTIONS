@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<!-- This file is part of GNU Health. GPL v3+ -->
+<!-- Luis Falcon . GNU Solidario -->
+<!-- Default template for permission groups -->
+
+<tryton>
+    <data>
+
+<!-- Default access rights to models -->
+        <record model="ir.model.access" id="access_health_orthanc_configServer">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+<!-- END OF DEFAULT ACCESS RIGHTS -->
+
+<!-- Create the Health orthanc configuration group -->
+        <record model="res.group" id="group_health_orthanc_config">
+            <field name="name">Health Orthanc Configuration</field>
+        </record>
+
+<!-- Create the Health orthanc configuration group -->
+        <record model="res.group" id="group_health_orthanc_config_admin">
+            <field name="name">Health Orthanc Configuration Administration</field>
+        </record>
+
+<!-- BEGIN imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="user_admin_group_orthanc_config">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_health_orthanc_config_admin"/>
+        </record>
+
+<!-- Access to Menus -->
+        <!-- <record model="ir.ui.menu-res.group" id="menu_health_group_health_radiology_admin">
+            <field name="menu" ref="menu_radiology_parent"/>
+            <field name="group" ref="group_health_radiology_admin"/>
+        </record> -->
+
+<!-- Access rights to models for the health admin group -->
+        <record model="ir.model.access" id="access_orthanc_config_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
+            <field name="group" ref="group_health_orthanc_config_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+<!-- END imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+<!-- BEGIN USER GROUP ACCESS RIGHTS -->
+
+<!-- Create the demo user -->
+        <!-- <record model="res.user" id="user_demo_radiology">
+            <field name="name">Health Radiology Demo</field>
+            <field name="login">test</field>
+            <field name="password">1</field>
+            <field name="active" eval="False"></field>
+        </record> -->
+
+<!-- Access to Menus: -->
+
+<!-- Access rights to models for the health configure group -->
+        <record model="ir.model.access" id="access_health_orthanc_config_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
+            <field name="group" ref="group_health_orthanc_config_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+
+<!-- BEGIN DOCTOR GROUP ACCESS RIGHTS -->
+        <record model="ir.model.access" id="access_orthanc_config_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+<!-- END OF CONFIGURE GROUP ACCESS RIGHTS -->
+
+    </data>
+</tryton>

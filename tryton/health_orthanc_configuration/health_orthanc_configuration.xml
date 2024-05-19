@@ -14,6 +14,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">orthanc</field>
             <field name="path">icons/orthanc_logo.svg</field>
         </record>
+        <record model="ir.ui.icon" id="excute_icon">
+            <field name="name">execute</field>
+            <field name="path">icons/execute_icon.svg</field>
+        </record>
         
         <!-- Orthanc config  -->
         <record model="ir.ui.view" id="orthanc_view_config_tree">
@@ -54,6 +58,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">Add Orthanc Server</field>
             <field name="wiz_name">gnuhealth.orthanc.wizard.newConnect</field>
         </record>
-        <menuitem parent="orthanc_config_menu" action="orthanc_add_server_initData" id="orthanc_add_server_menu" sequence="10" icon="gnuhealth-execute"/>
+        <menuitem parent="orthanc_config_menu" action="orthanc_add_server_initData" id="orthanc_add_server_menu" sequence="10" icon="execute"/>
     </data>
 </tryton>

@@ -16,7 +16,6 @@ def register():
     Pool.register(
         health_orthanc_configuration.OrthancServerConfig,
         wizard.wizard_orthanc_config.AddOrthancInitData,
-        wizard.wizard_orthanc_config.AddOrthancStatus,
         module='health_orthanc_configuration', type_='model'
     )
     Pool.register(

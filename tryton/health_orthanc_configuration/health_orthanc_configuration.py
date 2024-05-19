@@ -25,6 +25,8 @@ from trytond.model import ModelView, ModelSQL, fields, Unique
 from pyorthanc import Orthanc
 from urllib.parse import urljoin
 from requests.exceptions import HTTPError, RequestException
+from trytond.exceptions import UserError
+from trytond.pool import Pool
 
 import logging
 
@@ -129,11 +131,14 @@ class OrthancServerConfig(ModelSQL, ModelView):
         """
         super().__setup__()
         t = cls.__table__()
+        cls._buttons.update({
+          'remove_config_server': {}
+        })
+        
         cls._sql_constraints = [
             ("label_unique", Unique(t, t.label), "The label must be unique."),
             ("domain_unique", Unique(t, t.domain), "The domain must be unique."),
         ]
-        # cls._buttons.update({"do_sync": {}})
 
 
     @staticmethod
@@ -203,3 +208,22 @@ class OrthancServerConfig(ModelSQL, ModelView):
         """
 
         return self.quick_check(self.domain, self.user, self.password)
+    
+    @classmethod
+    @ModelView.button
+    def remove_config_server(cls, records):
+        Study = Pool().get("gnuhealth.imaging.imagingStudy")
+        
+        # check which configurations we can delete
+        failedDomains = []
+        for config in records:
+            # check if there are studies with same domain as this config
+            studies = Study.search([("server", "=", config.domain)])
+            if len(studies) > 0:
+                failedDomains.append(config.domain)
+            else:
+                cls.delete([config])
+            
+        if len(failedDomains) > 0:
+            raise UserError(("Cannot remove the following servers because there are studies from them: %s") % ", ".join(failedDomains))
+        return "reload"
