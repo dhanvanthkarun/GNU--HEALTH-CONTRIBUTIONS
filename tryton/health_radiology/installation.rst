@@ -43,7 +43,18 @@ Installation
     
   .. note:: If you are using a different database, you have to replace ```ghdemo44``` by its name.
 
-7. We have created a new widget that allows to select and upload multiple DICOM files in the desktop client and web client. The widget has to be added to the clients.
+7. Install the local Orthanc server and plugins:
+   ::
+      sudo apt install orthanc
+      sudo apt install orthanc-dicomweb
+      sudo apt install orthanc-webviewer
+      sudo apt install orthanc-wsi
+
+   Download the OHIF viewer ``libOrthancOHIF.so`` in https://orthanc.uclouvain.be/downloads/linux-standard-base/orthanc-ohif/1.2/index.html and copy it in the plugins directory ``/usr/share/orthanc/plugins/``.
+
+   Download the stone web viewer ``libStoneWebViewer.so`` in https://orthanc.uclouvain.be/downloads/linux-standard-base/stone-web-viewer/2.5/index.html and copy it in the plugins directory ``/usr/share/orthanc/plugins/``.
+
+8. We have created a new widget that allows to select and upload multiple DICOM files in the desktop client and web client. The widget has to be added to the clients.
    
     - For the desktop client: Let's assume that your desktop client is installed in ```/home/gnuhealth/health-hmis-client/```. Copy the widget into the   plugin directory of the client:
       ::
@@ -57,7 +68,7 @@ Installation
 
     Otherwise, you have to manually add the content of our custom.js file to the existing file in the SAO client.    
 
-8. If you are using nginx as proxy:
+9.  If you are using nginx as proxy:
    
    In file ``/etc/nginx/sites-enabled/GH_HIS_HTTP.conf`` add the following line in the server block.
     ::
@@ -70,11 +81,11 @@ Installation
    
     .. note:: If you are using ansible to install gnuhealth as described in https://docs.gnuhealth.org/ansible/examples/gnuhealth_server_and_client.html. You have to modify the ansible files to make the above changes permanent.
 
-9.  Restart your GNU Health server.
+11. Restart your GNU Health server.
 
-10. Connect to the demo database with the client and open the module ``Configuration/Orthanc_Config``. Select ``Add Orthanc Server`` to configure the connection to the Orthanc server.
+12. Connect to the demo database with the client and open the module ``Configuration/Orthanc_Config``. Select ``Add Orthanc Server`` to configure the connection to the Orthanc server.
 
-11.   Watch the video [#f4]_ to see how to use the ``Health Radiology`` module to fetch DICOM studies from the Orthanc server and open medical images.
+13.   Watch the video [#f4]_ to see how to use the ``Health Radiology`` module to fetch DICOM studies from the Orthanc server and open medical images.
 
 
 .. rubric:: Footnotes
