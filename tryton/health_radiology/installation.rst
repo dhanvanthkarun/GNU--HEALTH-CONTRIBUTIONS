@@ -16,9 +16,9 @@ Installation
 
 2. We also assume that you have created the demo database ``ghdemo44`` as described at hddttps://en.wikibooks.org/wiki/GNU_Health/The_Demo_database.
 
-3. Install PyOrthanc:
-
-      ``pip install pyorthanc``
+3. Install 'PyOrthanc':
+   ::
+      pip install pyorthanc
 
 4. Clone this repository and ``cd`` into its directory.
    
@@ -32,7 +32,7 @@ Installation
   
       ln -s /home/gnuhealth/gnuhealth/tryton/server/modules/health_orthanc_configuration /gnuhealth/tryton/server/trytond-6.0.43/trytond/modules
 
-   If your GNU Health server uses a different version of tryton, you have to adapt the directory names accordingly.
+  .. note:: If your GNU Health server uses a different version of tryton, you have to adapt the directory names accordingly.
 
 6. Activate the modules for the demo database:
    ::
@@ -41,27 +41,40 @@ Installation
       /home/gnuhealth/gnuhealth/tryton/server/trytond-6.0.43/bin/trytond-admin -d ghdemo44 -u  health_orthanc_configuration --activate-dependencies
 
     
-   If you are using a different database, you have to replace ```ghdemo44``` by its name.
+  .. note:: If you are using a different database, you have to replace ```ghdemo44``` by its name.
 
 7. We have created a new widget that allows to select and upload multiple DICOM files in the desktop client and web client. The widget has to be added to the clients.
    
     - For the desktop client: Let's assume that your desktop client is installed in ```/home/gnuhealth/health-hmis-client/```. Copy the widget into the   plugin directory of the client:
       ::
-         mkdir -p /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary
+        mkdir -p /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary
       
-         cp clientwidget_dicombinary.py /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary/__init__.py
+        cp clientwidget_dicombinary.py /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary/__init__.py
 
     - For the SAO web client: Let's assume you have installed the SAO client in ``/home/gnuhealth/sao`` (see [#f3]_). If there is not already a custom.js file in the web client's directory, you can just copy the widget into the client:
-    
-     	``cp custom.js /home/gnuhealth/sao``
-         
-   Otherwise, you have to manually add the content of our custom.js file to the existing file in the SAO client.    
+      ::
+        cp custom.js /home/gnuhealth/sao
 
-8. Restart your GNU Health server.
+    Otherwise, you have to manually add the content of our custom.js file to the existing file in the SAO client.    
 
-9.  Connect to the demo database with the client and open the module ``Configuration/Orthanc_Config``. Select ``Add Orthanc Server`` to configure the connection to the Orthanc server.
+8. If you are using nginx as proxy:
+   
+   In file ``/etc/nginx/sites-enabled/GH_HIS_HTTP.conf`` add the following line in the server block.
+    ::
+      client_max_body_size 500M;
+      proxy_send_timeout 300;
+  
+   Restart nginx (debian, ubuntu,...):
+    ::
+      systemctl restart nginx
+   
+    .. note:: If you are using ansible to install gnuhealth as described in https://docs.gnuhealth.org/ansible/examples/gnuhealth_server_and_client.html. You have to modify the ansible files to make the above changes permanent.
 
-10.   Watch the video [#f4]_ to see how to use the ``Health Radiology`` module to fetch DICOM studies from the Orthanc server and open medical images.
+9.  Restart your GNU Health server.
+
+10. Connect to the demo database with the client and open the module ``Configuration/Orthanc_Config``. Select ``Add Orthanc Server`` to configure the connection to the Orthanc server.
+
+11.   Watch the video [#f4]_ to see how to use the ``Health Radiology`` module to fetch DICOM studies from the Orthanc server and open medical images.
 
 
 .. rubric:: Footnotes
