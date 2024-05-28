@@ -90,7 +90,8 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
         'by python script, it should work well with (0008,0005) '
         'dicom tag of worklist template, for example: '
         'if (0008,0005) = [ISO_IR 192], encoding should be "utf-8", '
-        'if (0008,0005) = [GBK], encoding should be "gbk".')
+        'if (0008,0005) = [GBK], encoding should be "gbk". '
+        'This field is useful when template type is dump2dcm.')
 
     @staticmethod
     def default_dump_file_encoding():
