@@ -153,7 +153,7 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     "ScheduledStationAETitle": "$ScheduledStationAETitle",
     "ScheduledProcedureStepStartDate": "$ScheduledProcedureStepStartDate",
     "ScheduledProcedureStepStartTime": "$ScheduledProcedureStepStartTime",
-    "ScheduledProcedureStepID": ""
+    "ScheduledProcedureStepID": "$ScheduledProcedureStepID"
 }
 {% end %}\
 """
@@ -1182,6 +1182,8 @@ class ImagingTestRequest(metaclass=PoolMeta):
             self.getDicomScheduledProcedureStepStartDate(),
             'ScheduledProcedureStepStartTime':
             self.getDicomScheduledProcedureStepStartTime(),
+            'ScheduledProcedureStepID':
+            self.getDicomScheduledProcedureStepID(),
             'TimezoneOffsetFromUTC':
             self.getDicomTimezoneOffsetFromUTC(),
         }
@@ -1307,6 +1309,10 @@ class ImagingTestRequest(metaclass=PoolMeta):
         # 'Timezone Offset From UTC' to '+0000'.
         time = self.date.strftime('%H%M%S')
         return time
+
+    def getDicomScheduledProcedureStepID(self):
+        # FIXME: how to get proper value of the tag from gnuhealth?
+        return 'Unknown'
 
     def getDicomTimezoneOffsetFromUTC(self):
         # Datetimes get from gnuhealth are UTC datetimes, so we need
