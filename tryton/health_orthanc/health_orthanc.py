@@ -1313,8 +1313,9 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return time
 
     def getDicomScheduledProcedureStepID(self):
-        # FIXME: how to get proper value of the tag from gnuhealth?
-        return 'Unknown'
+        # FIXME: how to get proper value of this tag from gnuhealth?
+        # request number is enough?
+        return self.request or ''
 
     def getDicomTimezoneOffsetFromUTC(self):
         # Datetimes get from gnuhealth are UTC datetimes, so we need
