@@ -43,6 +43,7 @@ from requests.exceptions import HTTPError, RequestException
 
 import logging
 import pendulum
+import json
 
 __all__ = [
     "OrthancWorklistTemplate",
@@ -1131,13 +1132,26 @@ class ImagingTestRequest(metaclass=PoolMeta):
 
     def get_worklist_text(self, name):
         template = self.get_worklist_template()
+        template_type = self.get_worklist_template_type()
         if template:
             data = self.get_worklist_template_data()
+            data = {k: self.quote_template_value(v, template_type)
+                    for (k, v) in data.items()}
             tmpl = NewTextTemplate(template)
             text = str(tmpl.generate(**data))
             return text
         else:
             return ''
+
+    @classmethod
+    def quote_template_value(cls, value, template_type):
+        if isinstance(value, str):
+            if template_type == 'python-orthanc-tools':
+                value = json.dumps(value, ensure_ascii=False)[1:][:-1]
+            elif template_type == 'dump2dcm':
+                value = value.replace('\n', ' ')
+
+        return value
 
     def get_worklist_template(self):
         template = (self.requested_test.worklist_template and
