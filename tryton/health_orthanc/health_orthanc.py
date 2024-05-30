@@ -37,12 +37,13 @@ from beren import Orthanc as RestClient
 from requests.auth import HTTPBasicAuth as auth
 from datetime import datetime
 from urllib.parse import urljoin
-from genshi.template import TextTemplate
+from genshi.template import NewTextTemplate
 from pydicom.uid import generate_uid
 from requests.exceptions import HTTPError, RequestException
 
 import logging
 import pendulum
+import json
 
 __all__ = [
     "OrthancWorklistTemplate",
@@ -71,30 +72,39 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
         "Name", required=True,
         help="Worklist template name")
 
+    template_type = fields.Selection([
+        ('dump2dcm', 'dump2dcm'),
+        ('json', 'json'),
+    ], 'Template Type', sort=False)
+
     template = fields.Text(
         "Template", required=True,
         help="Genshi syntax template used to create worklist text, "
-        "with dump2dcm command of dcmtk help, worklist text file can "
-        "be converted to a .wl file.")
+        "if template type is dump2dcm, worklist wl file can be generated "
+        "by dump2dcm command of dcmtk. "
+        "if template type is json, worklist wl file can be generated "
+        "from json by tool like python-orthanc-tools.")
 
-    dump_file_encoding = fields.Char(
-        'Encoding',
-        help='Encoding used to save worklist text to dump file '
-        'by python script, it should work well with (0008,0005) '
-        'dicom tag of worklist template, for example: '
-        'if (0008,0005) = [ISO_IR 192], encoding should be "utf-8", '
-        'if (0008,0005) = [GBK], encoding should be "gbk".')
+    charset = fields.Char(
+        'Charset',
+        help='This field is used to store SpecificCharacterSet tag '
+        '(0008,0005) of worklist, for example: ISO_IR 100, ISO_IR 192, GBK ...')
 
     @staticmethod
-    def default_dump_file_encoding():
-        return 'utf-8'
+    def default_charset():
+        return 'IS0_IR 192'
 
     comment = fields.Text('Comment')
 
     @staticmethod
-    def default_template():
+    def default_template_type():
+        return 'dump2dcm'
+
+    @classmethod
+    def default_template(cls, **abc):
         template = """\
-(0008,0005) SH [ISO_IR 192]
+{% if template_type=='dump2dcm' %}\\
+(0008,0005) SH [$SpecificCharacterSet]
 (0008,0201) SH [$TimezoneOffsetFromUTC]
 (0008,0050) SH [$AccessionNumber]
 (0040,1001) SH [$RequestedProcedureID]
@@ -117,6 +127,32 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     (0040,0003) TM [$ScheduledProcedureStepStartTime]
   (fffe,e00d) na (ItemDelimitationItem)
 (fffe,e0dd) na (SequenceDelimitationItem)
+{% end %}\\
+\\
+{% if template_type=='json' %}\\
+{
+    "SpecificCharacterSet": "$SpecificCharacterSet",
+    "TimezoneOffsetFromUTC": "$TimezoneOffsetFromUTC",
+    "AccessionNumber": "$AccessionNumber",
+    "RequestedProcedureID": "$RequestedProcedureID",
+    "StudyInstanceUID": "$StudyInstanceUID",
+    "PatientName": "$PatientName",
+    "PatientID": "$PatientID",
+    "PatientAge": "$PatientAge",
+    "PatientBirthDate": "$PatientBirthDate",
+    "PatientSex": "$PatientSex",
+    "RequestingPhysician": "$RequestingPhysician",
+    "RequestingService": "$RequestingService",
+    "ReferringPhysicianName": "$ReferringPhysicianName",
+    "InstitutionName": "$InstitutionName",
+    "RequestedProcedureDescription": "$RequestedProcedureDescription",
+    "Modality": "$Modality",
+    "ScheduledStationAETitle": "$ScheduledStationAETitle",
+    "ScheduledProcedureStepStartDate": "$ScheduledProcedureStepStartDate",
+    "ScheduledProcedureStepStartTime": "$ScheduledProcedureStepStartTime",
+    "ScheduledProcedureStepID": "$ScheduledProcedureStepID"
+}
+{% end %}\
 """
         return template
 
@@ -1096,25 +1132,45 @@ class ImagingTestRequest(metaclass=PoolMeta):
 
     def get_worklist_text(self, name):
         template = self.get_worklist_template()
+        template_type = self.get_worklist_template_type()
         if template:
             data = self.get_worklist_template_data()
-            tmpl = TextTemplate(template)
+            data = {k: self.quote_template_value(v, template_type)
+                    for (k, v) in data.items()}
+            tmpl = NewTextTemplate(template)
             text = str(tmpl.generate(**data))
             return text
         else:
             return ''
+
+    @classmethod
+    def quote_template_value(cls, value, template_type):
+        if isinstance(value, str):
+            if template_type == 'json':
+                value = json.dumps(value, ensure_ascii=False)[1:][:-1]
+            elif template_type == 'dump2dcm':
+                value = value.replace('\n', ' ')
+
+        return value
 
     def get_worklist_template(self):
         template = (self.requested_test.worklist_template and
                     self.requested_test.worklist_template.template)
         return template
 
+    def get_worklist_template_type(self):
+        template_type = (self.requested_test.worklist_template and
+                         self.requested_test.worklist_template.template_type)
+        return template_type
+
     def get_worklist_template_data(self):
         data = {
             # We can not use 'self' as key name, so use 'my'
             # instead.
             'my': self,
+            'template_type': self.get_worklist_template_type(),
             'MergeID': self.merge_id or '',
+            'SpecificCharacterSet': self.getDicomSpecificCharacterSet(),
             'AccessionNumber': self.getDicomAccessionNumber(),
             'RequestedProcedureID': self.getDicomRequestedProcedureID(),
             'StudyInstanceUID': self.getDicomStudyInstanceUID(),
@@ -1137,10 +1193,17 @@ class ImagingTestRequest(metaclass=PoolMeta):
             self.getDicomScheduledProcedureStepStartDate(),
             'ScheduledProcedureStepStartTime':
             self.getDicomScheduledProcedureStepStartTime(),
+            'ScheduledProcedureStepID':
+            self.getDicomScheduledProcedureStepID(),
             'TimezoneOffsetFromUTC':
             self.getDicomTimezoneOffsetFromUTC(),
         }
         return data
+
+    def getDicomSpecificCharacterSet(self):
+        charset = (self.requested_test.worklist_template and
+                   self.requested_test.worklist_template.charset)
+        return charset
 
     def getDicomAccessionNumber(self):
         return self.request or ''
@@ -1262,6 +1325,11 @@ class ImagingTestRequest(metaclass=PoolMeta):
         # 'Timezone Offset From UTC' to '+0000'.
         time = self.date.strftime('%H%M%S')
         return time
+
+    def getDicomScheduledProcedureStepID(self):
+        # FIXME: how to get proper value of this tag from gnuhealth?
+        # request number is enough?
+        return self.request or ''
 
     def getDicomTimezoneOffsetFromUTC(self):
         # Datetimes get from gnuhealth are UTC datetimes, so we need
