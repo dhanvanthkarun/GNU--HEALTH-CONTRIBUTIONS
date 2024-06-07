@@ -41,7 +41,7 @@ class UploadImageData(Wizard):
     start = StateView('gnuhealth.imaging.uploadImageData.start',
                       'health_radiology.upload_image_data_start_form',
                       [Button('Cancel', 'end', 'tryton-cancel'),
-                       Button('Upload Image Data', 'upload', 'tryton-ok', validate = True),])
+                       Button('Upload Image Data', 'upload', 'tryton-ok', validate = True)])
     upload = StateTransition()
     
     def upload_imageData(self, dataToUpload, serverConfig):
