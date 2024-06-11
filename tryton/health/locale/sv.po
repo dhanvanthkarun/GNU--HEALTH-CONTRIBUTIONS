@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-06-11 01:37+0000\n"
-"Last-Translator: Umeaman <Umeaman@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/"
-"health/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -2235,9 +2226,10 @@ msgctxt "field:gnuhealth.prescription.line,infusion:"
 msgid "Infusion"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.line,infusion_rate:"
 msgid "Rate"
-msgstr ""
+msgstr "Frekvens"
 
 msgctxt "field:gnuhealth.prescription.line,infusion_rate_units:"
 msgid "Unit Rate"
@@ -4161,9 +4153,10 @@ msgctxt "model:gnuhealth.death_certificate,name:"
 msgid "Death Certificate"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.death_underlying_condition,name:"
 msgid "Underlying Conditions"
-msgstr ""
+msgstr "Underliggande tillstånd"
 
 msgctxt "model:gnuhealth.diagnostic_hypothesis,name:"
 msgid "Other Diagnostic Hypothesis"
@@ -7065,9 +7058,10 @@ msgctxt "model:gnuhealth.occupation,name:occ566"
 msgid "Stunt performer"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.occupation,name:occ568"
 msgid "Surgeon"
-msgstr ""
+msgstr "Kirurg"
 
 msgctxt "model:gnuhealth.occupation,name:occ569"
 msgid "Surgical Technologist"
@@ -7497,9 +7491,10 @@ msgctxt "model:gnuhealth.occupation,name:occ79"
 msgid "Controller"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.occupation,name:occ8"
 msgid "Author"
-msgstr ""
+msgstr "Författare"
 
 msgctxt "model:gnuhealth.occupation,name:occ80"
 msgid "Coroner"
@@ -8379,9 +8374,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_immunization_schedule_line"
 msgid "Schedule Vaccines"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_insurance"
 msgid "Insurances"
-msgstr ""
+msgstr "Försäkringar"
 
 #, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_insurance_company"
@@ -8664,9 +8660,10 @@ msgctxt "model:ir.model.button,string:vaccination_sign"
 msgid "Sign"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_appointment"
 msgid "Appointment"
-msgstr ""
+msgstr "Möte"
 
 #, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient"
@@ -8682,9 +8679,10 @@ msgctxt "model:ir.sequence,name:seq_gnuhealth_prescription"
 msgid "Prescription"
 msgstr "Recept"
 
+#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_appointment"
 msgid "Appointment"
-msgstr ""
+msgstr "Möte"
 
 #, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient"
@@ -8729,9 +8727,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_drug_route"
 msgid "Drug Administration Routes"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_insurance"
 msgid "Insurances"
-msgstr ""
+msgstr "Försäkringar"
 
 #, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_insurance_company"
@@ -8804,9 +8803,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_institution_ward_add"
 msgid "Wards"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_insurances"
 msgid "Insurances"
-msgstr ""
+msgstr "Försäkringar"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_medicament_category"
 msgid "Medicament categories"
@@ -8959,9 +8959,10 @@ msgctxt "model:ir.ui.menu,name:menu_people"
 msgid "People"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:product.category,name:prod_insurance"
 msgid "Insurances"
-msgstr ""
+msgstr "Försäkringar"
 
 msgctxt "model:res.group,name:group_health_admin"
 msgid "Health Administration"
@@ -9115,9 +9116,10 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certification Date"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Citizenship"
-msgstr ""
+msgstr "Medborgarskap"
 
 #, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
@@ -9771,9 +9773,10 @@ msgctxt "report:patient.medication:"
 msgid "Phone:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.medication:"
 msgid "Prescriber"
-msgstr ""
+msgstr "Ordinerare"
 
 #, fuzzy
 msgctxt "report:patient.medication:"
@@ -10096,9 +10099,10 @@ msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Public place"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.death_certificate,place_of_death:"
 msgid "Work"
-msgstr ""
+msgstr "Arbete"
 
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Done"
@@ -11318,9 +11322,10 @@ msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Intradermal"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Intramuscular"
-msgstr ""
+msgstr "Intramuskulär"
 
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Intranasal"
@@ -11635,9 +11640,10 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "Form"
 msgstr "Formulär"
 
+#, fuzzy
 msgctxt "view:gnuhealth.medicament:"
 msgid "Indications"
-msgstr ""
+msgstr "Indikeringar"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Main"
@@ -11675,9 +11681,10 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "Route"
 msgstr "Rutt"
 
+#, fuzzy
 msgctxt "view:gnuhealth.medicament:"
 msgid "Solution"
-msgstr ""
+msgstr "Lösning"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Storage"

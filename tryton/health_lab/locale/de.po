@@ -222,9 +222,10 @@ msgctxt "field:gnuhealth.patient.disease,lab_test:"
 msgid "Lab Test"
 msgstr "Laboruntersuchung"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "Zusätzliche Informationen"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,context:"
@@ -430,11 +431,15 @@ msgctxt "help:gnuhealth.patient.disease,lab_test:"
 msgid "Lab test that confirmed the condition"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.lab.test,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"Gesundheitlicher Kontext für diese Anforderung. Es kann sich um einen "
+"Vedacht, eine Vorerkrankung, eine regelmäßige Vorsorgeuntersuchen, etc. "
+"handeln."
 
 msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health professional who requests the lab test."
@@ -448,11 +453,15 @@ msgctxt "help:gnuhealth.patient.lab.test,source_type:"
 msgid "Sample source type."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"Gesundheitlicher Kontext für diese Anforderung. Es kann sich um einen "
+"Vedacht, eine Vorerkrankung, eine regelmäßige Vorsorgeuntersuchen, etc. "
+"handeln."
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health professional who ordered the lab tests."
@@ -1602,9 +1611,10 @@ msgctxt "model:res.group,name:group_health_lab_admin"
 msgid "Health lab Administration"
 msgstr "Health Labor Administration"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Age:"
-msgstr ""
+msgstr "Alter:"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
@@ -1629,9 +1639,10 @@ msgctxt "report:patient.labtest.report:"
 msgid "Doctor:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Gender:"
-msgstr ""
+msgstr "Geschlecht:"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
@@ -1647,13 +1658,15 @@ msgctxt "report:patient.labtest.report:"
 msgid "Name:"
 msgstr "Name:"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Order:"
-msgstr ""
+msgstr "Anforderung:"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Pathologist:"
