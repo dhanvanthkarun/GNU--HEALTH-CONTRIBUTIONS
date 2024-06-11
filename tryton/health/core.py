@@ -18,7 +18,6 @@ from datetime import datetime
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.i18n import gettext
-from trytond.report import Report
 
 from .exceptions import (NoAssociatedHealthProfessional)
 
@@ -299,7 +298,10 @@ def matplotlib_setup(matplotlab):
 
 
 class GettextReportMixin:
-    'Mixin gettext function and some strings need translation and used frequently.'
+    '''Mixin gettext function and some strings need translation and
+    used frequently.
+
+    '''
     __slots__ = ()
 
     @classmethod

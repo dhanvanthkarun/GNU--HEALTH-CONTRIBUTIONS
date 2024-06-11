@@ -30,5 +30,8 @@ class SurgeryReport(Report):
 
         dt = datetime.now()
 
+        localcontext['timezone'] = timezone
+        localcontext['datetime_now'] = dt
+
         return super(SurgeryReport, cls).parse(
             report, objects, data, localcontext)

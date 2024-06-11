@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # SPDX-FileCopyrightText: 2011-2023 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2011 Cédric Krier <cedric.krier@b2ck.com>
@@ -12,7 +14,6 @@
 #                        HEALTH ARCHIVES package                        #
 #                       setup.py: Setuptools file                       #
 #########################################################################
-#!/usr/bin/env python
 
 from setuptools import setup
 import re

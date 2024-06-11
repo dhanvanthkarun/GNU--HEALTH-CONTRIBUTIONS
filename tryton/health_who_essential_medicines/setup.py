@@ -95,8 +95,8 @@ setup(
     zip_safe=False,
     entry_points="""
     [trytond.modules]
-    health_who_essential_medicines = trytond.modules.health_who_essential_medicines
-    """,
+    health_who_essential_medicines = {}
+    """.format('trytond.modules.health_who_essential_medicines'),
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
 )
