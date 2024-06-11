@@ -28,6 +28,8 @@ from gnuhealth.gui.window.view_form.view.form import FormXMLViewParser
 
 _ = gettext.gettext
 
+# The dicombinary widget is based on the existing binary widget of tryton.
+
 # all plugins must have this function
 def get_plugins(model):
     """
@@ -132,7 +134,7 @@ class DicomBinaryMixin(Widget):
         :return: None
         """
         if value:
-            self.but_save_as.show()
+            # self.but_save_as.show()    # don't show "save as" button
             self.but_select.hide()
             self.but_clear.show()
         else:

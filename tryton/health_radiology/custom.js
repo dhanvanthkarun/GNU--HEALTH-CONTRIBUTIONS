@@ -13,6 +13,8 @@
 # 
 */
 
+// The dicombinary widget is based on the existing binary widget of tryton.
+
 // returns the number as Uint8Array with 8 bytes in Little Endian order
 function numToUint8Array(num) {
     let arr = new Uint8Array(8);
@@ -107,7 +109,7 @@ DicomBinaryMixin = Sao.class_(Sao.View.Form.Widget, {
      */
     update_buttons: function (value) {
         if (value) {
-            this.but_save_as.show();
+            // this.but_save_as.show();   // don't show "save as" button
             this.but_select.hide();
             this.but_clear.show();
         } else {

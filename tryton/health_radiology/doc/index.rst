@@ -3,8 +3,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
-GNU Health Radiology Module
+Health Radiology Module
 ############################
 
-This module provides functions for management of medical image data stored on an Orthanc server.
+The Health Radiology Module is a main module that provides functions for management Image data. This module's documentation includes the following sections:
 
+RadiologyModule
