@@ -1,6 +1,3 @@
-.. _OrthancModule:
-
-
 Connection Configuration
 ========================
 
@@ -12,7 +9,7 @@ Configuration
 
 .. class:: health_orthanc_configuration.OrthancServerConfig(ModelSQL, ModelView)
     
-    This class, `OrthancServerConfig`, This class is used to connect to an Orthanc DICOM server and to check if a connection to the corresponding domain can be established.
+    This class, `OrthancServerConfig`, is used to connect to an Orthanc DICOM server and to check if a connection to the corresponding domain can be established.
 
     :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL database operations.
     :type ModelSQL: class: ``trytond.model.ModelSQL``

@@ -1,9 +1,8 @@
-.. _RadiologyModule:
-
 Radiology
 =========
 
-This is the main module of the Orthancintegration. It is designed for uploading and updating patient images and for viewing the images using special Orthanc DICOM viewers. 
+This is the main module of the Orthanc integration. It is designed for uploading and updating patient images and for viewing the images using special Orthanc DICOM viewers.
+
 
 Data Models for image data
 --------------------------
@@ -146,7 +145,7 @@ Full Synchronize Studies
 Get new studies
 ^^^^^^^^^^^^^^^
 
-This class defines a Tryton wizard that is responsible for updating studies from an Orthanc server by processing changes to studies, series and instances. It retrieves configuration information, fetches chnages from the Orthanc server, and updates the studies in the GNU Health database. If there is an error in the process, it raises an exception.
+This class defines a Tryton wizard that is responsible for updating studies from an Orthanc server by processing changes to studies, series and instances. It retrieves configuration information, fetches changes from the Orthanc server and updates the studies in the GNU Health database. If there is an error in the process, it throws an exception.
 
 Here's what the class method does:
     - ``get_new_studies()``: Retrieves new studies from the Orthanc server and updates the studies in the GNU Health database.
