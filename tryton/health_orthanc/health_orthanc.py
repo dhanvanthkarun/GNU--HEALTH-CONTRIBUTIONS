@@ -272,6 +272,14 @@ class OrthancServerConfig(ModelSQL, ModelView):
         add = "app/explorer.html"
         return urljoin(pre, add)
 
+    use_ohif_viewer = fields.Boolean(
+        "Use OHIF Viewer",
+        help="Use OHIF Viewer")
+
+    @staticmethod
+    def default_use_ohif_viewer():
+        return False
+
     use_stone_viewer = fields.Boolean(
         "Use Stone Viewer",
         help="Use Stone Web Viewer")
@@ -876,7 +884,10 @@ class OrthancStudy(ModelSQL, ModelView):
         """
 
         pre = "".join([self.server.domain.rstrip("/"), "/"])
-        if self.server.use_stone_viewer:
+        if self.server.use_ohif_viewer:
+            add = "ohif/viewer?url=../studies/{}/ohif-dicom-json".format(
+                self.uuid)
+        elif self.server.use_stone_viewer:
             add = "stone-webviewer/index.html?study={}".format(
                 self.instance_uid)
         elif self.server.use_osimis_viewer:
