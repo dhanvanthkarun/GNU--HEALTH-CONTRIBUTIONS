@@ -1,12 +1,20 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-06-27 00:49+0000\n"
+"Last-Translator: victorhck <victorhck@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Spanish <https://translate.codeberg.org/projects/gnuhealth/"
+"health_crypto_lab/es/>\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5.5\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.lab,digest_current:"
 msgid "Current Hash"
 msgstr "Hash actual"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,digest_status:"
 msgid "Altered"
 msgstr "Alterado"
@@ -15,32 +23,29 @@ msgctxt "field:gnuhealth.lab,digital_signature:"
 msgid "Digital Signature"
 msgstr "Firma digital"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,document_digest:"
 msgid "Digest"
 msgstr "Resumen"
 
 msgctxt "field:gnuhealth.lab,done_by:"
 msgid "Done by"
-msgstr ""
+msgstr "Realizado por"
 
 msgctxt "field:gnuhealth.lab,done_date:"
 msgid "Finished on"
-msgstr ""
+msgstr "Terminado el"
 
 msgctxt "field:gnuhealth.lab,historize:"
 msgid "Historize"
-msgstr ""
+msgstr "Historizar"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
 msgstr "Cadena de documentos"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,serializer_current:"
 msgid "Current Doc"
-msgstr "Documento Actual"
+msgstr "Documento actual"
 
 msgctxt "field:gnuhealth.lab,state:"
 msgid "State"
@@ -63,14 +68,13 @@ msgstr ""
 "original principal. Observe que la verificación se efectúa solo en "
 "determinados campos."
 
-#, fuzzy
 msgctxt "help:gnuhealth.lab,document_digest:"
 msgid "Original Document Digest"
-msgstr "Resumen del Documento Original"
+msgstr "Resumen del documento original"
 
 msgctxt "help:gnuhealth.lab,done_by:"
 msgid "Professional who processes this lab test"
-msgstr ""
+msgstr "Profesional que procesa esta prueba de laboratorio"
 
 msgctxt "help:gnuhealth.lab,historize:"
 msgid ""
@@ -79,29 +83,30 @@ msgid ""
 "condition of the patient. The condition will be created when the lab test is"
 " confirmed and validated"
 msgstr ""
+"Si se establece este indicador, se agregará una nueva condición de salud al "
+"historial del paciente. Desactívelo si esta prueba de laboratorio se realiza "
+"en el contexto de una condición preexistente del paciente. La condición se "
+"creará cuando se confirme y valide la prueba de laboratorio"
 
 msgctxt "help:gnuhealth.lab,validated_by:"
 msgid "Professional who validates this lab test"
-msgstr ""
+msgstr "Profesional que valida esta prueba de laboratorio"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_generate_button"
 msgid "Done"
-msgstr "Terminados"
+msgstr "Realizado"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_setdraft_button"
 msgid "Draft"
 msgstr "Borrador"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_sign_button"
 msgid "Validate"
 msgstr "Validar"
 
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Done"
-msgstr "Hecho"
+msgstr "Realizado"
 
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Draft"
@@ -113,54 +118,50 @@ msgstr "Validado"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are the results ready ?"
-msgstr ""
+msgstr "¿Están listos los resultados?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are you sure to sign this lab results ?"
-msgstr ""
+msgstr "¿Está seguro de firmar los resultados del laboratorio?"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Digital Signature"
-msgstr "Firma Digital"
+msgstr "Firma digital"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Document validation"
 msgstr "Validación de documento"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Done"
-msgstr "Terminados"
+msgstr "Realizado"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Draft"
 msgstr "Borrador"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Reverse the document to draft state."
-msgstr ""
+msgstr "Revertir el documento al estado borrador."
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Set to Draft ?"
-msgstr ""
+msgstr "¿Establecer como borrador?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "The lab test is done and results are waiting to be validated"
 msgstr ""
+"La prueba de laboratorio está realizada y los resultados están esperando ser "
+"validados"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate"
 msgstr "Validar"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate and Sign the lab test"
-msgstr ""
+msgstr "Validar y firmar la prueba de laboratorio"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Validation"
-msgstr "Validación "
+msgstr "Validación"
