@@ -1,13 +1,98 @@
+.. _Radiology:
+
+Orthanc Server Configuration
+==============================
+
+The primary function is to establish the connection between Orthanc's DICOM servers and GNU Health. The label of a server is a name that the user can choose to represent the server directly. The domain field contains the full web address (URL) to the Orthanc server. This helps GNU Health to find the correct server to connect to. The user must also provide a username and password to log in to the Orthanc server. 
+
+The image below displays a snapshot of the Orthanc module:
+
+.. image:: /source/image/orthanc-config.png
+    :width: 400
+    :height: 180
+    :align: center
+    :alt: GNU Health Orthanc Configuration Module
+
+
+Configuration
+-------------
+
+.. class:: health_orthanc_configuration.OrthancServerConfig(ModelSQL, ModelView)
+    
+    This class, `OrthancServerConfig`, is used to connect to an Orthanc DICOM server and to check if a connection to the corresponding domain can be established.
+
+    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL database operations.
+    :type ModelSQL: class: ``trytond.model.ModelSQL``
+
+    :param ModelView: Inherit from the Tryton ModelView class for user interface operations.
+    :type ModelView: class: ``trytond.model.ModelView``
+
+    Here's a brief description of each method:
+
+    - ``__setup__(cls)``: Set up the class for database access by initializing properties and contstrains, such as ensuring the uniqueness 
+        of the ``label`` and ``domain`` fields.
+
+    - ``quick_check(domain, user, password)``: Checks if the server details are correct by attempting to connect to the Orthanc DICOM server with the provided domain.
+
+    - ``on_change_with_validated(self)``: Updates the validated field based on the current server details by calling the ``quick_check`` method with the ``domain``, ``user``, and ``password`` attributes.
+
+
+Wizard
+------
+
+.. class:: health_orthanc_configuration.wizard.AddOrthancInit(ModelView)
+  
+  This class definition `AddOrthancInit` is a model view for initializing an Orthanc connection.
+    
+  :param ModelView: Inherit from the Tryton ModelView class for user interface operations.
+  :type ModelView: class: ``trytond.model.ModelView``
+
+  - ``label``: Represents the label of the Orthanc server. Must be unique.
+
+  - ``domain``: Represents the full URL of the Orthanc server.
+
+  - ``user``: Represents the username for the Orthanc REST server.
+
+  - ``password``: Represents the password for the Orthanc REST server.
+
+
+.. class:: health_orthanc_configuration.wizard.ConnectNewOrthancServer(Wizard)
+ 
+  This class, `ConnectNewOrthancServer` defines a wizard for connecting to an Orthanc server. 
+
+  :param Wizard: A finite state machine. 
+  :type Wizard: class: ``trytond.wizard.Wizard``
+
+   Here's what each class method does:
+
+  - ``start``: Displays the initial state of the wizard, asking for the label, URL, username, and password of the Orthanc server.
+
+  - ``connect``: Handles the transition when the 'Begin' button is pressed. It attempts to connect to the Orthanc server using the provided credentials. 
+
+  - ``status``: Displays the status of the connection attempt. It includes a 'Close' button.
+
+  - ``transition_connect()``: Connects to the Orthanc servers, handles different exceptions, logs the success or failure of the connection attempt, and return 'status' after completion. 
+ 
+  - ``default_status(fields)``: Generates a default status dictionary based on the provided fields.
+
+
+
 Radiology
 =========
 
-This is the main module of the Orthanc integration. It is designed for uploading and updating patient images and for viewing the images using special Orthanc DICOM viewers.
+This section presents the core aspect of the Orthanc integration. It is designed for uploading and updating patient images and for viewing the images using special Orthanc DICOM viewers. The image below displays a snapshot of the radiolgy module:
 
+.. image:: /source/image/radiology-module.png
+    :width: 400
+    :height: 180
+    :align: center
+    :alt: GNU Health Radiology Module
 
 Data Models for image data
 --------------------------
 
 In this module we have developed three data models to organise image study data according to the DICOM format. These models represent studies, series within studies (such as CT, MR or PET scans) and the individual instances within each series. They represent the relationships between these elements. For example, a single patient may undergo multiple studies, each study may consist of multiple series, and each series may contain multiple instances.
+
 
 Patient Orthanc Study
 ^^^^^^^^^^^^^^^^^^^^^
@@ -114,6 +199,7 @@ Upload Image Data
 ^^^^^^^^^^^^^^^^^
 
 .. class:: health_radiology.wizard.UploadImageData(Wizard)
+    
    This class definition is a custom Tryton wizard for uploading image data. 
    
    :param Wizard: A finite state machine. 
@@ -149,3 +235,12 @@ This class defines a Tryton wizard that is responsible for updating studies from
 
 Here's what the class method does:
     - ``get_new_studies()``: Retrieves new studies from the Orthanc server and updates the studies in the GNU Health database.
+
+
+The following shows the outcome of the integration between GNU Health and Orthanc:
+
+.. image:: /source/image/Integration_result.png
+    :width: 430
+    :height: 440
+    :align: center
+    :alt: Integration result between GNU Health and Orthanc

@@ -1,8 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2024 Wei Zhao <wei.zhao@uclouvain.be>
-# SPDX-FileCopyrightText: 2013 Sebastián Marró <smarro@thymbra.com>
 
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 #########################################################################
@@ -16,6 +13,7 @@
 
 from urllib.parse import urljoin
 import logging
+from trytond.i18n import gettext
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import PoolMeta, Pool
 from trytond.exceptions import UserError
@@ -179,24 +177,26 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         :return: 'reload' if the operation is successful
         :raises: UserError if there is an issue with the Orthanc server
         """
+        records_to_delete = []
         try:
             Config = Pool().get('gnuhealth.orthanc.configServer')
             servers = Config.search([])
             for record in records:
-                for confServer in servers:
+                for confServer in servers:        
                     if confServer.domain == record.server:
                         client = Orthanc(url=confServer.domain,
                                          username=confServer.user, password=confServer.password, return_raw_response=True)
                         response = client.delete_studies_id(record.orthancUID)
                         if 200<=response.status_code<300 or response.status_code==404:
-                            cls.delete([record])
+                            records_to_delete.append(record)
                         else:
                             raise UserError(f'Orthanc server returned HTTP code {response.status_code}, with content {response.text}', description="Unable to delete Orthanc study. It may no longer exist or the Orthanc server could be in read-only mode. Please review your Orthanc server configuration.")
-            return 'reload'
         except Exception as exception:
             logger.error('Delete Orthanc study exception: %s', exception, exc_info=True)
-            raise UserError(str(exception), description="Unable to delete Orthanc study. It may no longer exist or the Orthanc server could be in read-only mode. Please review your Orthanc server configuration.")
-        
+            raise UserError(str(exception))
+        finally:
+            cls.delete(records_to_delete)
+            return 'reload'
 
     @classmethod
     def get_new_studies(cls):
@@ -424,7 +424,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         except Exception as exception:
             raise UserError(str(exception), description="Failed to update imaging studies, pleasecheck the Orthanc server") 
         
-class ImagingStudySeries(ModelSQL, ModelView):
+class ImagingStudySeries(ModelSQL, ModelView):            
     'Imaging Study Series'
     __name__ = 'gnuhealth.imaging.imagingStudySeries' 
     study = fields.Many2One('gnuhealth.imaging.imagingStudy', 'Study', help='Patient study series', readonly=True, required=True, ondelete='CASCADE')

@@ -1,8 +1,4 @@
-# Copyright (C) 2008-2024 Luis Falcon <lfalcon@gnuhealth.org>
-# Copyright (C) 2013  Sebastián Marro <smarro@thymbra.com>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
-#
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from trytond.model import ModelView

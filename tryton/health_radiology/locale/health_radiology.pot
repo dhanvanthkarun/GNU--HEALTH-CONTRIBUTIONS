@@ -2,46 +2,28 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-
-msgctxt "model:ir.action,name:imaging_status_report"
-msgid "Medical Imaging Study"
+msgctxt "model:res.group,name:group_health_radiology"
+msgid "Health Radiology"
 msgstr ""
 
-
-msgctxt "model:ir.action,name:wizard_generate_status"
-msgid "Medical Imaging - Generate Status"
-msgstr ""
-
-
-msgctxt "model:ir.model.button,string:image_generaterestatus_button"
-msgid "Generate Status"
-msgstr ""
-
-msgctxt "model:ir.model.button,string:image_request_button"
-msgid "Request"
-msgstr ""
-
-
-msgctxt "model:res.group,name:group_health_imaging"
-msgid "Health Imaging"
-msgstr ""
-
-msgctxt "model:res.group,name:group_health_imaging_admin_radiology"
+msgctxt "model:res.group,name:group_health_radiology_admin"
 msgid "Health Radiology Administration"
 msgstr ""
 
 
-msgctxt "wizard_button:gnuhealth.imaging.getNewStudies,start,end:"
+msgctxt "wizard_button:gnuhealth.imaging.getNewStudies,start:"
 msgid "Start"
 msgstr "
 
-msgctxt "wizard_button:gnuhealth.imaging.fullSynchronize,start,synchronize,end:"
+
+msgctxt "wizard_button:gnuhealth.imaging.fullSynchronize,start:"
 msgid "synchronize"
 msgstr "
 
-msgctxt "wizard_button:gnuhealth.imaging.uploadImageData,start,pload_imaging_data,end:"
+msgctxt "wizard_button:gnuhealth.imaging.uploadImageData,start:"
 msgid "Upload"
 msgstr "
+
 
 msgctxt "view:gnuhealth.imaging.imagingStudySeries,notes:"
 msgid "Series Notes"
@@ -52,6 +34,76 @@ msgid "Study Notes"
 msgstr ""
 
 
-msgctxt "field:gnuhealth.patient.ecg,ecg_strip:"
-msgid "ECG Strip"
+msgctxt "model:ir.action,name:transition_connect"
+msgid "Add Orthanc Server"
+msgstr ""
+
+msgctxt "wizard_button:transition_connect, Connect, end:"
+msgid "There is already a server configuration with the same label or URL"
+msgstr ""
+
+msgctxt "wizard_button:transition_connect,Connect,end:"
+msgid "Cannot connect to the specified Orthanc server. Is the URL correct?"
+msgstr ""
+
+msgctxt "wizard_button:upload_imageData,start,upload:"
+msgid "Upload dicom files:"
+msgstr ""
+
+
+msgctxt "help:gnuhealth.orthanc.configServer,label:"
+msgid "Label for server (eg., remote)"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.configServer,URL:"
+msgid "The full URL of the Orthanc server"
+msgstr ""
+
+
+msgctxt "help:gnuhealth.orthanc.configServer,Username:"
+msgid "Username for Orthanc REST server"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.configServer,Password:"
+msgid "Username for Orthanc REST server"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.configServer,link:"
+msgid "Link to server in Orthanc Explorer"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.configServer,validated:"
+msgid "Whether the server details have been successfully checked."
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging.imagingStudy,link:"
+msgid "Link to Orthanc Explorer"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging.imagingStudySeries,link:"
+msgid "Link to the DICOM viewer in Orthanc"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging.imagingStudySeries,link:"
+msgid "Link to the DICOM viewer in Orthanc"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging.imagingStudySeries,notes:"
+msgid "Extra Information"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.add.initData,label:"
+msgid "The label of the Orthanc server. Must be unique"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.add.initData,domain:"
+msgid "The full URL of the Orthanc server. Must be unique"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.add.initData,user:"
+msgid "Username for Orthanc REST server"
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.add.initData,password:"
+msgid "Password for Orthanc REST server"
 msgstr ""

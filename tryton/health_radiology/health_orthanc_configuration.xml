@@ -1,16 +1,14 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
-
-SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
     <data>
         <!-- Orthanc icon -->
-        <record model="ir.ui.icon" id="orthanc_icon">
+        <record model="ir.ui.icon" id="orthanc_icon_config">
             <field name="name">orthanc</field>
             <field name="path">icons/orthanc_logo.svg</field>
         </record>
@@ -18,6 +16,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">execute</field>
             <field name="path">icons/execute_icon.svg</field>
         </record>
+        <!-- <record model="ir.ui.icon" id="imaging_icon_config">
+            <field name="name">radiology</field>
+            <field name="path">icons/imaging_icon.svg</field>
+        </record> -->
         
         <!-- Orthanc config  -->
         <record model="ir.ui.view" id="orthanc_view_config_tree">
@@ -32,14 +34,16 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
         
         <!-- Orthanc config menu -->
-        <menuitem name="Orthanc_Config" parent="health.gnuhealth_conf_menu" id="orthanc_config_menu" icon="orthanc"/>
+        <menuitem name="Radiology" parent="health.gnuhealth_conf_menu" id="radiology_orthanc_config_menu" icon="gnuhealth.imaging"/>
+
+        <menuitem name="Orthanc" parent="radiology_orthanc_config_menu" id="radio_orthanc_config_menu" icon="orthanc"/>
 
         <record model="ir.action.act_window" id="act_orthanc_server_view">
             <field name="name">Servers</field>
             <field name="res_model">gnuhealth.orthanc.configServer</field>
         </record>
 
-        <menuitem name="Servers" sequence="20" parent="orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_server_menu" icon="gnuhealth-list"/>
+        <menuitem name="Servers" sequence="20" parent="radio_orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_servers_menu" icon="gnuhealth-list"/>
            
         <!-- Wizard and Views to add server -->
         <record model="ir.ui.view" id="view_orthanc_add_initData">
@@ -55,9 +59,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
         
         <record model="ir.action.wizard" id="orthanc_add_server_initData">
-            <field name="name">Add Orthanc Server</field>
+            <field name="name">Add New Server</field>
             <field name="wiz_name">gnuhealth.orthanc.wizard.newConnect</field>
         </record>
-        <menuitem parent="orthanc_config_menu" action="orthanc_add_server_initData" id="orthanc_add_server_menu" sequence="10" icon="execute"/>
+        <menuitem parent="radio_orthanc_config_menu" action="orthanc_add_server_initData" id="radio_orthanc_add_server_menu" sequence="10" icon="execute"/>
     </data>
 </tryton>

@@ -1,22 +1,18 @@
-# SPDX-FileCopyrightText: 2019-2022 Chris Zimmerman <chris@teffalump.com>
-# SPDX-FileCopyrightText: 2021-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2024 Patryk Rosik <p.rosik@stud.uni-hannover.de>
-# SPDX-FileCopyrightText: 2024 Wei Zhao <wei.zhao@uclouvain.be>
-# SPDX-FileCopyrightText: 2021-2024 GNU Solidario <health@gnusolidario.org>
-#
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
+#
 #########################################################################
 #   Hospital Management Information System (HMIS) component of the      #
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#              HEALTH ORTHANC Configuration package                     #
-#              health_orthanc_configuration.py: configuration module    #
+#                     HEALTH RADIOLOGY package                          #
+#                  health_orthanc_configuration.py     
 #########################################################################
 
 
 """
-Configuration module of the Orthanc DICOM Server integration.
+The Configuration of Orthanc DICOM Server.
 This module provides the configuration to connect Orthanc Server to the GNU Health HMIS. 
 
 """
@@ -27,7 +23,7 @@ from urllib.parse import urljoin
 from requests.exceptions import HTTPError, RequestException
 from trytond.exceptions import UserError
 from trytond.pool import Pool
-
+from trytond.i18n import gettext
 import logging
 
 __all__ = ['OrthancServerConfig']
@@ -72,25 +68,23 @@ class OrthancServerConfig(ModelSQL, ModelView):
     :vartype password: class: ``trytond.model.fields.Char``
     
     """
-    
     __name__ = "gnuhealth.orthanc.configServer"
     _rec_name = "label"
 
     label = fields.Char(
-        "Label", required=True, readonly=True, help="Label for server (eg., remote1)")
-
+        "Label", required=True, readonly=True, help=gettext("Label for server (eg., remote)"))
+    
     domain = fields.Char(
-        "URL", required=True, readonly=True, help="The full URL of the Orthanc server")
+        "URL", required=True, readonly=True, help=gettext("The full URL of the Orthanc server"))
 
     user = fields.Char(
-        "Username", required=True, help="Username for Orthanc REST server")
+        "Username", required=True, help=gettext("Username for Orthanc REST server"))
 
     password = fields.Char(
-        "Password", required=True, help="Password for Orthanc REST server")
+        "Password", required=True, help=gettext("Password for Orthanc REST server"))
 
     validated = fields.Boolean(
-        "Validated", help="Whether the server details have been "
-        "successfully checked")
+        "Validated", help=gettext("Whether the server details have been successfully checked"))
     
     link = fields.Function(
         fields.Char(

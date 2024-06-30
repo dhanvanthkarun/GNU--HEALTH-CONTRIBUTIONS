@@ -1,7 +1,6 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
-#
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
+#
 #########################################################################
 #   Hospital Management Information System (HMIS) component of the      #
 #                       GNU Health project                              #
@@ -15,6 +14,7 @@
 from trytond.pool import Pool
 from . import wizard
 from . import health_radiology
+from . import health_orthanc_configuration
 
 
 def register():
@@ -25,7 +25,10 @@ def register():
     - health_radiology.PatientData
     - health_radiology.PatientOrthancStudy
     - wizard.wizard_upload_image_data.UploadImageDataStart
-    - wizard.wizard_get_new_studies.getNewStudies.Start,
+    - wizard.wizard_get_new_studies.getNewStudies.Start
+    - wizard.wizard_orthanc_config.AddOrthancInitData
+    - wizard.wizard_orthanc_config.ConnectNewOrthancServer
+    - health_orthanc_configuration.OrthancServerConfig
     - health_radiology.ImagingStudySeries
     - health_radiology.ImagingSeriesInstances
 
@@ -43,13 +46,16 @@ def register():
         wizard.wizard_upload_image_data.UploadImageDataStart,
         wizard.wizard_get_new_studies.GetNewStudiesStart,
         wizard.wizard_full_synchronize.FullSynchronizeStart,
+        wizard.wizard_orthanc_config.AddOrthancInitData,
         health_radiology.ImagingStudySeries,
         health_radiology.ImagingSeriesInstances,
+        health_orthanc_configuration.OrthancServerConfig,
         module='health_radiology', type_='model'
     )
     Pool.register(
         wizard.wizard_full_synchronize.FullSynchronize,
         wizard.wizard_get_new_studies.GetNewStudies,
         wizard.wizard_upload_image_data.UploadImageData,
+        wizard.wizard_orthanc_config.ConnectNewOrthancServer,
         module='health_radiology', type_='wizard'
     )

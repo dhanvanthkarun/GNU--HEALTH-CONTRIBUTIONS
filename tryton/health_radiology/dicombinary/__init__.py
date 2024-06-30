@@ -5,11 +5,10 @@
 #       The GNUHealth HMIS client based on the Tryton GTK Client        #
 #########################################################################
 #
-# SPDX-FileCopyrightText: 2008-2021 The Tryton Community <info@tryton.org>
-# SPDX-FileCopyrightText: 2017-2024 GNU Health Community <info@gnuhealth.org>
-#
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
-
+#
+#
 # This file is part of GNU Health.  The COPYRIGHT file at the top level of
 # this repository contains the full copyright notices and license terms.
 
@@ -26,8 +25,6 @@ from gnuhealth.common.entry_position import reset_position
 from gnuhealth.gui.window.view_form.view.form_gtk.widget import Widget
 from gnuhealth.gui.window.view_form.view.form import FormXMLViewParser
 
-_ = gettext.gettext
-
 # The dicombinary widget is based on the existing binary widget of tryton.
 
 # all plugins must have this function
@@ -39,6 +36,14 @@ def get_plugins(model):
     :return: A list of plugins.
     """
     return []
+
+def get_gettext():
+    try:
+        localedir = os.path.dirname(os.path.abspath(__file__)) + '/locale'
+        lang = gettext.translation('dicombinary', localedir=localedir)
+        return lang.gettext
+    except:
+        return gettext.gettext
 
 class DicomBinaryMixin(Widget):
 
@@ -56,6 +61,8 @@ class DicomBinaryMixin(Widget):
         'Return HBox with the toolbar'
         hbox = Gtk.HBox(spacing=0)
         tooltips = Tooltips()
+        
+        _ = get_gettext()
 
         self.but_save_as = Gtk.Button()
         self.but_save_as.set_image(common.IconFactory.get_image(
@@ -106,6 +113,8 @@ class DicomBinaryMixin(Widget):
         Get the list of filters to apply when selecting files.
         Return a list of Gtk.FileFilter objects.
         """
+        _ = get_gettext()
+                
         filter_all = Gtk.FileFilter()
         filter_all.set_name(_('All files'))
         filter_all.add_pattern("*")
@@ -155,6 +164,8 @@ class DicomBinaryMixin(Widget):
         Raises:
             None
         """
+        _ = get_gettext()
+        
         if not self.field:
             return
         filenames = file_selection(
@@ -237,6 +248,8 @@ class DicomBinaryMixin(Widget):
         :param widget: The widget triggering the save action.
         :return: None
         """
+        _ = get_gettext()
+        
         filename = ''
         if self.filename_field:
             filename = self.filename_field.get(self.record)
@@ -347,6 +360,8 @@ class DicomBinary(DicomBinaryMixin, Widget):
         Returns:
             bool: True if the DicomBinary object is successfully displayed, False otherwise.
         """
+        _ = get_gettext()
+         
         super(DicomBinary, self).display()
         if not self.field:
             if self.wid_text:

@@ -6,9 +6,7 @@
 #       The GNUHealth HMIS client based on the Tryton SAO Client      #
 #########################################################################
 #
-# SPDX-FileCopyrightText: 2008-2021 The Tryton Community <info@tryton.org>
-# SPDX-FileCopyrightText: 2017-2024 GNU Health Community <info@gnuhealth.org>
-#
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
 # 
 */

@@ -1,5 +1,4 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 

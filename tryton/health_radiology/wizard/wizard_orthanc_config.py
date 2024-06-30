@@ -1,7 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2022 Chris Zimmerman <chris@teffalump.com>
-# SPDX-FileCopyrightText: 2021-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2021-2024 GNU Solidario <health@gnusolidario.org>
-#
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from trytond.model import ModelView, fields
@@ -11,30 +8,31 @@ from trytond.exceptions import UserError
 from requests.exceptions import HTTPError
 from httpx import ConnectError
 from pyorthanc import Orthanc
+from trytond.i18n import gettext
 import logging
 
 logger = logging.getLogger(__name__)
 
+    
 __all__ = ["AddOrthancInitData", "ConnectNewOrthancServer"]
-
 
 class AddOrthancInitData(ModelView):
     """Init data for Orthanc connection"""
 
     __name__ = "gnuhealth.orthanc.add.initData"
-
+    
     label = fields.Char(
         "Label", required=True,
-        help="The label of the Orthanc server. Must be unique"
+        help=gettext("The label of the Orthanc server. Must be unique")
     )
     domain = fields.Char(
-        "URL", required=True, help="The full URL of the Orthanc server. Must be unique"
+        "URL", required=True, help=gettext("The full URL of the Orthanc server. Must be unique")
     )
     user = fields.Char(
-        "Username", required=True, help="Username for Orthanc REST server"
+        "Username", required=True, help=gettext("Username for Orthanc REST server")
     )
     password = fields.Char(
-        "Password", required=True, help="Password for Orthanc REST server"
+        "Password", required=True, help=gettext("Password for Orthanc REST server")
     )
     
 class ConnectNewOrthancServer(Wizard):
@@ -43,7 +41,7 @@ class ConnectNewOrthancServer(Wizard):
     
     start = StateView(
         "gnuhealth.orthanc.add.initData",
-        "health_orthanc_configuration.view_orthanc_add_initData",
+        "health_radiology.view_orthanc_add_initData",
         [
             Button("Cancel", "end", "tryton-cancel"),
             Button("Connect", "connect", "tryton-ok", default=True),
