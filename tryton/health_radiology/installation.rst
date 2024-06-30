@@ -58,10 +58,7 @@ Installation
    
     - For the desktop client: Let's assume that your desktop client is installed in ```/home/gnuhealth/health-hmis-client/```. Copy the widget into the   plugin directory of the client:
       ::
-         mkdir -p /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary
-      
-         cp clientwidget_dicombinary.py /home/gnuhealth/health-hmis-client/gnuhealth/plugins/dicombinary/__init__.py
-         health_radiology/installation.rst
+         cp -r /home/health_radiology/dicombinary /home/gnuhealth/health-hmis-client/gnuhealth/plugins/
 
 
     - For the SAO web client: Let's assume you have installed the SAO client in ``/home/gnuhealth/sao`` (see [#f3]_). If there is not already a custom.js file in the web client's directory, you can just copy the widget into the client:
@@ -87,11 +84,11 @@ Installation
    
     .. note:: If you are using ansible to install gnuhealth as described in https://docs.gnuhealth.org/ansible/examples/gnuhealth_server_and_client.html. You have to modify the ansible files to make the above changes permanent.
 
-11. Restart your GNU Health server.
+10. Restart your GNU Health server.
 
-12. Connect to the demo database with the client and open the module ``Configuration/Radiology/Orthanc``. Select ``Add Orthanc Server`` to configure the connection to the Orthanc server.
+11. Connect to the demo database with the client and open the module ``Configuration/Radiology/Orthanc``. Select ``Add Orthanc Server`` to configure the connection to the Orthanc server.
 
-13.   Watch the video [#f4]_ to see how to use the ``Health Radiology`` module to fetch DICOM studies from the Orthanc server and open medical images.
+12.   Watch the video [#f4]_ to see how to use the ``Health Radiology`` module to fetch DICOM studies from the Orthanc server and open medical images.
 
 
 .. rubric:: Footnotes
