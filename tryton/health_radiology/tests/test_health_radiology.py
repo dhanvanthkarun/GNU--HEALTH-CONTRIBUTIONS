@@ -9,7 +9,6 @@
 #                       HEALTH RADIOLOGY package                          #
 #                test_health_radiology.py health unittest file            #
 #########################################################################
-import unittest
 import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
@@ -20,11 +19,11 @@ class HealthImagingTestCase(ModuleTestCase):
     '''
     module = 'health_radiology'
 
+
 def suite():
     """
-    Generate a test suite consisting of tests for the HealthOrthancTestCase class.
+    Generate a test suite consisting "
+    "of tests for the HealthOrthancTestCase class.
     """
     suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        HealthRadiologyTestCase))
     return suite

@@ -12,32 +12,14 @@
 
 
 from trytond.pool import Pool
-from . import wizard
 from . import health_radiology
 from . import health_orthanc_configuration
+from . import wizard
 
 
 def register():
     """
     Registers the models and wizards for the health_radiology module.
-
-    This function registers the following models and wizards:
-    - health_radiology.PatientData
-    - health_radiology.PatientOrthancStudy
-    - wizard.wizard_upload_image_data.UploadImageDataStart
-    - wizard.wizard_get_new_studies.getNewStudies.Start
-    - wizard.wizard_orthanc_config.AddOrthancInitData
-    - wizard.wizard_orthanc_config.ConnectNewOrthancServer
-    - health_orthanc_configuration.OrthancServerConfig
-    - health_radiology.ImagingStudySeries
-    - health_radiology.ImagingSeriesInstances
-
-    The models are registered with the 'health_radiology' module and the 'model' type.
-    The wizards are registered with the 'health_radiology' module and the 'wizard' type.
-
-    This function does not have any parameters.
-
-    This function does not return any values.
     """
     Pool.register(
         health_radiology.View,

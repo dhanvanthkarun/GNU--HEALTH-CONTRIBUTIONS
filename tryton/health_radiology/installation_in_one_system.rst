@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+..
+.. SPDX-License-Identifier: CC-BY-SA-4.0
+
 .. _installation_in_one_system:
 
 

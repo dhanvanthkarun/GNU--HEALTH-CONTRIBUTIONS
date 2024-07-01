@@ -28,22 +28,23 @@ from gnuhealth.gui.window.view_form.view.form import FormXMLViewParser
 # The dicombinary widget is based on the existing binary widget of tryton.
 
 # all plugins must have this function
+
+
 def get_plugins(model):
     """
     Retrieve a list of plugins for the given model.
-
-    :param model: The model for which to retrieve the plugins.
-    :return: A list of plugins.
     """
     return []
+
 
 def get_gettext():
     try:
         localedir = os.path.dirname(os.path.abspath(__file__)) + '/locale'
         lang = gettext.translation('dicombinary', localedir=localedir)
         return lang.gettext
-    except:
+    except Exception:
         return gettext.gettext
+
 
 class DicomBinaryMixin(Widget):
 
@@ -61,12 +62,11 @@ class DicomBinaryMixin(Widget):
         'Return HBox with the toolbar'
         hbox = Gtk.HBox(spacing=0)
         tooltips = Tooltips()
-        
         _ = get_gettext()
 
         self.but_save_as = Gtk.Button()
         self.but_save_as.set_image(common.IconFactory.get_image(
-                'gnuhealth-save', Gtk.IconSize.SMALL_TOOLBAR))
+            'gnuhealth-save', Gtk.IconSize.SMALL_TOOLBAR))
         self.but_save_as.set_relief(Gtk.ReliefStyle.NONE)
         self.but_save_as.connect('clicked', self.save_as)
         tooltips.set_tip(self.but_save_as, _('Save As...'))
@@ -74,13 +74,13 @@ class DicomBinaryMixin(Widget):
 
         self.but_select = Gtk.Button()
         self.but_select.set_image(common.IconFactory.get_image(
-                'gnuhealth-search', Gtk.IconSize.SMALL_TOOLBAR))
+            'gnuhealth-search', Gtk.IconSize.SMALL_TOOLBAR))
         self.but_select.set_relief(Gtk.ReliefStyle.NONE)
         self.but_select.connect('clicked', self.select)
         target_entry = Gtk.TargetEntry.new('text/uri-list', 0, 0)
         self.but_select.drag_dest_set(Gtk.DestDefaults.ALL, [
-                target_entry,
-                ],
+            target_entry,
+        ],
             Gdk.DragAction.MOVE | Gdk.DragAction.COPY)
         self.but_select.connect(
             'drag-data-received', self.select_drag_data_received)
@@ -89,7 +89,7 @@ class DicomBinaryMixin(Widget):
 
         self.but_clear = Gtk.Button()
         self.but_clear.set_image(common.IconFactory.get_image(
-                'gnuhealth-clear', Gtk.IconSize.SMALL_TOOLBAR))
+            'gnuhealth-clear', Gtk.IconSize.SMALL_TOOLBAR))
         self.but_clear.set_relief(Gtk.ReliefStyle.NONE)
         self.but_clear.connect('clicked', self.clear)
         tooltips.set_tip(self.but_clear, _('Clear'))
@@ -101,9 +101,8 @@ class DicomBinaryMixin(Widget):
     @property
     def filename_field(self):
         """
-        Returns the value of the `filename` field from the `group` dictionary in the `record` object.
-
-        :return: The value of the `filename` field.
+        Returns the value of the `filename` field from
+        the `group` dictionary in the `record` object.
         """
         return self.record.group.fields.get(self.filename)
 
@@ -114,11 +113,9 @@ class DicomBinaryMixin(Widget):
         Return a list of Gtk.FileFilter objects.
         """
         _ = get_gettext()
-                
         filter_all = Gtk.FileFilter()
         filter_all.set_name(_('All files'))
         filter_all.add_pattern("*")
-        
         filter_dicom = Gtk.FileFilter()
         filter_dicom.set_name(_('DICOM files'))
         filter_dicom.add_pattern("*.dcm")
@@ -138,9 +135,6 @@ class DicomBinaryMixin(Widget):
     def update_buttons(self, value):
         """
         Updates the visibility of buttons based on the input value.
-
-        :param value: A boolean value indicating whether to show or hide buttons.
-        :return: None
         """
         if value:
             # self.but_save_as.show()    # don't show "save as" button
@@ -154,35 +148,23 @@ class DicomBinaryMixin(Widget):
     def select(self, widget=None):
         """
         Selects files from the file system and sets their URIs.
-
-        Parameters:
-            widget (Optional): The widget to use for the file selection dialog. Defaults to None.
-
-        Returns:
-            None
-
-        Raises:
-            None
         """
         _ = get_gettext()
-        
         if not self.field:
             return
         filenames = file_selection(
-            _('Select'), preview=self.preview, filters=self.filters, multi=True)
+            _('Select'),
+            preview=self.preview,
+            filters=self.filters,
+            multi=True)
         if filenames:
             uris = ['file:///' + filename for filename in filenames]
             self._set_uris(uris)
 
-    def select_drag_data_received(
-            self, selection):
+    def select_drag_data_received(self, selection):
         """
-        Handle the data received when an item is dragged and dropped onto the widget.
-
-        Args:
-            selection: The data that was dropped.
-        Returns:
-            None
+        Handle the data received when an item is
+        dragged and dropped onto the widget.
         """
         if not self.field:
             return
@@ -196,13 +178,13 @@ class DicomBinaryMixin(Widget):
         #   2. 8 bytes containing the length of the file (Little Endian)
         #   3. the data of the file
         #   4. repeat steps 2 and 3 for next file
-        allData = bytearray([77,85,76,84])
+        allData = bytearray([77, 85, 76, 84])
         for uri in uris:
             uri = unquote(uri)
-            data = urlopen(uri).read()           
-            allData.extend(len(data).to_bytes(8, byteorder='little')) # size in little endian 8 bytes
+            data = urlopen(uri).read()
+            # size in little endian 8 bytes
+            allData.extend(len(data).to_bytes(8, byteorder='little'))
             allData.extend(data)
-    
         # set the content of the field in the wizard
         self.field.set_client(self.record, allData)
         if self.filename_field:
@@ -223,12 +205,6 @@ class DicomBinaryMixin(Widget):
     def open_(self, widget=None):
         """
         Opens a file based on the given widget and filename.
-
-        :param widget: (Optional) The widget to open the file from. Defaults to None.
-        :type widget: Any
-
-        :return: None
-        :rtype: None
         """
         if not self.filename_field:
             return
@@ -244,32 +220,31 @@ class DicomBinaryMixin(Widget):
     def save_as(self, widget=None):
         """
         Save the data as a file after prompting the user for a filename.
-
-        :param widget: The widget triggering the save action.
-        :return: None
         """
         _ = get_gettext()
-        
         filename = ''
         if self.filename_field:
             filename = self.filename_field.get(self.record)
-        filename = file_selection(_('Save As...'), filename=filename,
-            action=Gtk.FileChooserAction.SAVE)
+        filename = file_selection(_('Save As...'),
+                                  filename=filename,
+                                  action=Gtk.FileChooserAction.SAVE)
         if filename:
             with open(filename, 'wb') as fp:
                 fp.write(self.get_data())
 
     def clear(self, widget=None):
         """
-        A description of the entire function, its parameters, and its return types.
+        A description of the entire function,
+        its parameters, and its return types.
         """
         if self.filename_field:
             self.filename_field.set_client(self.record, None)
         self.field.set_client(self.record, None)
 
 
-# This is the dedicated widget for uploading DICOM files. 
-# It allows multiple selection. It can read the DICOM files, the zipped DICOM files (.zip, .gz) 
+# This is the dedicated widget for uploading DICOM files.
+# It allows multiple selection. It can read the DICOM files,
+# the zipped DICOM files (.zip, .gz)
 class DicomBinary(DicomBinaryMixin, Widget):
     "DicomBinary"
 
@@ -295,7 +270,8 @@ class DicomBinary(DicomBinaryMixin, Widget):
             self.wid_text = Gtk.Entry()
             self.wid_text.set_property('activates_default', True)
             self.wid_text.connect('focus-out-event',
-                lambda x, y: self._focus_out())
+                                  lambda x,
+                                  y: self._focus_out())
             self.wid_text.connect_after('key_press_event', self.sig_key_press)
             self.wid_text.connect('icon-press', self.sig_icon_press)
             self.widget.pack_start(
@@ -311,10 +287,8 @@ class DicomBinary(DicomBinaryMixin, Widget):
 
     def _readonly_set(self, value):
         """
-        Set the sensitivity of buttons and text widget based on the given value.
-
-        :param value: bool - The value to determine the sensitivity of the buttons and text widget.
-        :return: None
+        Set the sensitivity of buttons and
+        text widget based on the given value.
         """
         self.but_select.set_sensitive(not value)
         self.but_clear.set_sensitive(not value)
@@ -323,15 +297,8 @@ class DicomBinary(DicomBinaryMixin, Widget):
 
     def sig_key_press(self, widget, event, *args):
         """
-        Handle key press events and perform corresponding actions based on the event's key value and widget's editability. 
-
-        Args:
-            widget: The widget that received the key press event.
-            event: The key press event object.
-            *args: Additional arguments.
-
-        Returns:
-            bool: True if a corresponding action was performed, False otherwise.
+        Handle key press events and perform corresponding
+        actions based on the event's key value and widget's editability.
         """
         editable = self.wid_text and self.wid_text.get_editable()
         if event.keyval == Gdk.KEY_F3 and editable:
@@ -347,7 +314,8 @@ class DicomBinary(DicomBinaryMixin, Widget):
 
     def sig_icon_press(self, widget, icon_pos):
         """
-        This function handles the press event for the signal icon. It takes in the widget, icon position, and event as parameters.
+        This function handles the press event for the signal icon.
+        It takes in the widget, icon position, and event as parameters.
         """
         widget.grab_focus()
         if icon_pos == Gtk.EntryIconPosition.PRIMARY:
@@ -356,12 +324,8 @@ class DicomBinary(DicomBinaryMixin, Widget):
     def display(self):
         """
         Displays the DicomBinary object on the screen.
-
-        Returns:
-            bool: True if the DicomBinary object is successfully displayed, False otherwise.
         """
         _ = get_gettext()
-         
         super(DicomBinary, self).display()
         if not self.field:
             if self.wid_text:
@@ -395,17 +359,13 @@ class DicomBinary(DicomBinaryMixin, Widget):
 
     def set_value(self):
         """
-        Sets the value of the filename field in the record based on the text entered in the wid_text field.
-
-        This function does not take any parameters.
-
-        Returns:
-            None
+        Sets the value of the filename field in the
+        record based on the text entered in the wid_text field
         """
         if self.wid_text:
             self.filename_field.set_client(self.record,
-                    self.wid_text.get_text() or False)
+                                           self.wid_text.get_text() or False)
         return
 
-FormXMLViewParser.WIDGETS['dicombinary'] = DicomBinary
 
+FormXMLViewParser.WIDGETS['dicombinary'] = DicomBinary

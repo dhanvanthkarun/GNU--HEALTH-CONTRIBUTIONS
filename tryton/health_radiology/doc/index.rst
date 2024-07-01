@@ -1,11 +1,9 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
-Health Radiology Module
+GNU Health Radiology Module
 ############################
 
-The Health Radiology Module is a main module that provides functions for management Image data. This module's documentation includes the following sections:
+This module provides functions for management of medical image data stored on an Orthanc server.
 
-RadiologyModule

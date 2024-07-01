@@ -112,31 +112,6 @@
 
 <!-- BEGIN imaging USER GROUP ACCESS RIGHTS -->
 
-<!-- Create the demo_radiology user -->
-        <record model="res.user" id="user_demo_radiology">
-            <field name="name">Health Radiology Demo</field>
-            <field name="login">test</field>
-            <field name="password">test</field>
-            <field name="active" eval="False"></field>
-        </record>
-
-<!-- Create the Health radiology demo group -->
-        <record model="res.group" id="group_health_radiology_demo">
-            <field name="name">Health Radiology Group</field>
-        </record>
-
-<!-- Assign the Group to the "demo_user" user -->
-        <record model="res.user-res.group" id="user_radiology_group_health_radiology_demo">
-            <field name="user" ref="user_demo_radiology"/>
-            <field name="group" ref="group_health_radiology"/>
-        </record>
-
-<!-- Assign the Admin group to the "demo radiology" user -->
-        <record model="res.user-res.group" id="user_demo_admin">
-            <field name="user" ref="user_demo_radiology"/>
-            <field name="group" ref="group_health_radiology_admin"/>
-        </record>
-
 <!-- Access to Menus: -->
         <record model="ir.ui.menu-res.group" id="menu_health_group_health_radiology">
             <field name="menu" ref="health.gnuhealth_menu"/>

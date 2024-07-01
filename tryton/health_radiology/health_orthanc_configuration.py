@@ -7,14 +7,12 @@
 #                   https://www.gnuhealth.org                           #
 #########################################################################
 #                     HEALTH RADIOLOGY package                          #
-#                  health_orthanc_configuration.py     
+#                  health_orthanc_configuration.py
 #########################################################################
 
 
 """
 The Configuration of Orthanc DICOM Server.
-This module provides the configuration to connect Orthanc Server to the GNU Health HMIS. 
-
 """
 
 from trytond.model import ModelView, ModelSQL, fields, Unique
@@ -23,75 +21,51 @@ from urllib.parse import urljoin
 from requests.exceptions import HTTPError, RequestException
 from trytond.exceptions import UserError
 from trytond.pool import Pool
-from trytond.i18n import gettext
 import logging
 
 __all__ = ['OrthancServerConfig']
 
 logger = logging.getLogger(__name__)
 
+
 class OrthancServerConfig(ModelSQL, ModelView):
-    """Orthanc server details"""
-
     """
-    Orthanc server details.
-
-    This class is used to connect to an Orthanc DICOM server and  
+    This class is used to connect to an Orthanc DICOM server and
     to check if a connection to the corresponding domain can be established.
-
-    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL
-                      database operations.
-    :type ModelSQL: class: ``trytond.model.ModelSQL``
-
-    :param ModelView: Inherit from the Tryton ModelView class
-                      for user interface operations.
-    :type ModelView: class: ``trytond.model.ModelView``
-
-    :var __name__: The unique name ``gnuhealth.orthanc.configServer`` of the model.
-    :vartype __name__: str
-
-    :var _rec_name: The name ``label`` of the field used as name of records.
-    :vartype _rec_name: str
-
-    :var label: Label for the server that is displayed to the user. Required.
-    :vartype label: class: ``trytond.model.fields.Char``
-
-    :var domain: The full URL for the Orthanc DICOM server. Required.
-    :vartype domain: class: ``trytond.model.fields.Char``
-
-    :var user: Username of an authorized user for the Orthanc DICOM
-        Server. Required.
-    :vartype user: class: ``trytond.model.fields.Char``
-
-    :var password: Password of an authorized user with corresponding name
-        for the Orthanc DICOM Server. Required.
-    :vartype password: class: ``trytond.model.fields.Char``
-    
     """
     __name__ = "gnuhealth.orthanc.configServer"
     _rec_name = "label"
 
     label = fields.Char(
-        "Label", required=True, readonly=True, help=gettext("Label for server (eg., remote)"))
-    
+        "Label", required=True,
+        readonly=True,
+        help="Label for server (eg., remote)")
     domain = fields.Char(
-        "URL", required=True, readonly=True, help=gettext("The full URL of the Orthanc server"))
-
+        "URL",
+        required=True,
+        readonly=True,
+        help="The full URL of the Orthanc server")
     user = fields.Char(
-        "Username", required=True, help=gettext("Username for Orthanc REST server"))
-
+        "Username",
+        required=True,
+        help="Username for Orthanc REST server")
     password = fields.Char(
-        "Password", required=True, help=gettext("Password for Orthanc REST server"))
-
+        "Password",
+        required=True,
+        help="Password for Orthanc REST server")
     validated = fields.Boolean(
-        "Validated", help=gettext("Whether the server details have been successfully checked"))
-    
+        "Validated",
+        help="Whether the server details have "
+        "been successfully checked")
     link = fields.Function(
         fields.Char(
             "Link",
             help="Link to server in Orthanc Explorer"), "get_link")
-    
-    lastChangedIndex = fields.Integer("LastChangedIndex", readonly=True, help="Index of last change")
+
+    lastChangedIndex = fields.Integer(
+        "LastChangedIndex",
+        readonly=True,
+        help="Index of last change")
 
     @classmethod
     def default_lastChangedIndex(cls):
@@ -101,15 +75,8 @@ class OrthancServerConfig(ModelSQL, ModelView):
         return -1
 
     def get_link(self, name):
-        """
-        Get the full link by joining the domain and the additional path provided.
+        """Get the full link"""
 
-        Parameters:
-            name (str): The additional path to be added to the domain.
-
-        Returns:
-            str: The full URL after joining the domain and the additional path.
-        """
         pre = "".join([self.domain.rstrip("/"), "/"])
         add = "app/explorer.html"
         return urljoin(pre, add)
@@ -126,14 +93,15 @@ class OrthancServerConfig(ModelSQL, ModelView):
         super().__setup__()
         t = cls.__table__()
         cls._buttons.update({
-          'remove_config_server': {}
+            'remove_config_server': {}
         })
-        
-        cls._sql_constraints = [
-            ("label_unique", Unique(t, t.label), "The label must be unique."),
-            ("domain_unique", Unique(t, t.domain), "The domain must be unique."),
-        ]
 
+        cls._sql_constraints = [
+            ("label_unique", Unique(t, t.label),
+             "The label must be unique."),
+            ("domain_unique", Unique(t, t.domain),
+             "The domain must be unique."),
+        ]
 
     @staticmethod
     def quick_check(domain, user, password):
@@ -154,7 +122,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
                  ``False`` otherwise.
         :rtype: bool
         """
-        
+
         try:
             client = Orthanc(url=domain, username=user, password=password)
             client.get_changes(last=True)
@@ -202,12 +170,12 @@ class OrthancServerConfig(ModelSQL, ModelView):
         """
 
         return self.quick_check(self.domain, self.user, self.password)
-    
+
     @classmethod
     @ModelView.button
     def remove_config_server(cls, records):
         Study = Pool().get("gnuhealth.imaging.imagingStudy")
-        
+
         # check which configurations we can delete
         failedDomains = []
         for config in records:
@@ -217,7 +185,10 @@ class OrthancServerConfig(ModelSQL, ModelView):
                 failedDomains.append(config.domain)
             else:
                 cls.delete([config])
-            
+
         if len(failedDomains) > 0:
-            raise UserError(("Cannot remove the following servers because there are studies from them: %s") % ", ".join(failedDomains))
+            raise UserError(
+                ("Cannot remove the following servers because ",
+                 "there are studies from them: %s") %
+                ", ".join(failedDomains))
         return "reload"

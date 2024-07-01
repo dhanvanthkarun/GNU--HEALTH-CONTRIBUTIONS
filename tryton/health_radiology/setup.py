@@ -17,6 +17,7 @@ import re
 import os
 import configparser
 
+
 def read(fname):
     """
     Read the contents of a file.
@@ -32,7 +33,8 @@ def read(fname):
     """
     return open(os.path.join(os.path.dirname(__file__), fname),
                 encoding="UTF-8").read()
-    
+
+
 config = configparser.ConfigParser()
 config.readfp(open('tryton.cfg'))
 info = dict(config.items('tryton'))
@@ -77,14 +79,14 @@ setup(
         'trytond.modules.health_radiology',
         'trytond.modules.health_radiology.tests',
         'trytond.modules.health_radiology.wizard',
-        ],
+    ],
 
     package_data={
         'trytond.modules.health_radiology': info.get('xml', [])
         + info.get('translation', [])
         + ['tryton.cfg', 'view/*.xml', 'doc/*.rst', 'locale/*.po',
            'report/*.fodt', 'icons/*.svg'],
-        },
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -99,7 +101,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        ],
+    ],
     license='GPL-3',
     install_requires=requires,
     zip_safe=False,
@@ -109,4 +111,4 @@ setup(
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-    )
+)
