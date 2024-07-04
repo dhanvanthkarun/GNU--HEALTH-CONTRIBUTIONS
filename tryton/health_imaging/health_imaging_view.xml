@@ -41,8 +41,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <menuitem parent="menu_imaging_test_parent"
-            action="act_imaging_test_type_view" id="menu_imaging_test_type"
-            icon="gnuhealth-list"/>
+                  sequence="40"
+                  action="act_imaging_test_type_view" id="menu_imaging_test_type"
+                  icon="gnuhealth-list"/>
 
         <record model="ir.ui.view" id="view_imaging_test_form">
             <field name="model">gnuhealth.imaging.test</field>
@@ -62,8 +63,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <menuitem parent="menu_imaging_test_parent"
-            action="act_imaging_test_view"
-            id="menu_imaging_test_view" icon="gnuhealth-list"/>
+                  sequence="60"
+                  action="act_imaging_test_view"
+                  id="menu_imaging_test_view" icon="gnuhealth-list"/>
 
        <record model="ir.action.wizard" id="wizard_generate_result">
            <field name="name">Medical Imaging - Generate Result</field>

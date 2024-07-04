@@ -69,7 +69,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Orthanc config menu -->
-        <menuitem name="Orthanc" parent="health.gnuhealth_conf_menu" id="orthanc_config_menu" icon="orthanc"/>
+        <menuitem name="Orthanc"
+                  sequence="20"
+                  parent="health_imaging.menu_imaging_test_parent"
+                  id="orthanc_config_menu" icon="orthanc"/>
 
         <record model="ir.action.act_window" id="act_orthanc_server_view">
             <field name="name">Servers</field>
@@ -99,8 +102,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <menuitem name="Worklist templates"
                   icon="gnuhealth-list"
-                  sequence="20" 
-                  parent="orthanc_config_menu"
+                  sequence="80"
+                  parent="health_imaging.menu_imaging_test_parent"
                   action="act_orthanc_worklist_template_view" 
                   id="orthanc_worklist_template_menu"/>
 
