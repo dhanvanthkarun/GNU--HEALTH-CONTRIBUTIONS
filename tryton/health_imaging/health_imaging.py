@@ -213,6 +213,11 @@ class ImagingTestResult(ModelSQL, ModelView):
     comment = fields.Text('Additional Information')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
+    # Mostly used in report template.
+    def has_image_comments(self):
+        return (True in [img.description != '' and
+                         img.description is not None for img in self.images])
+
     @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
