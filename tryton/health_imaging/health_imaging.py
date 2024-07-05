@@ -216,6 +216,7 @@ class ImagingTestResult(ModelSQL, ModelView):
     # Mostly used in report template.
     def has_image_comments(self):
         return (True in [img.description != '' and
+                         img.description != 'From GNU Health camera' and
                          img.description is not None for img in self.images])
 
     @classmethod
