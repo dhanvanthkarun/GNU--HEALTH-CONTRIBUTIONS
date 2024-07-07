@@ -154,21 +154,21 @@ DicomBinaryMixin = Sao.class_(Sao.View.Form.Widget, {
             //   2. 8 bytes containing the length of the file (Little Endian)
             //   3. the data of the file
             //   4. repeat steps 2 and 3 for next file
-            var allData = new Uint8Array(allLength);
-            allData.set([77,85,76,84], 0)
+            var all_data = new Uint8Array(allLength);
+            all_data.set([77,85,76,84], 0)
             var pos = 4
             for (let content of fileContents) {
                 var data = new Uint8Array(content);
-                allData.set(numToUint8Array(data.length), pos)  // size in little endian 8 bytes
+                all_data.set(numToUint8Array(data.length), pos)  // size in little endian 8 bytes
                 pos += 8;
-                allData.set(data, pos)
+                all_data.set(data, pos)
                 pos += data.length
             }
 
             // set the content of the field in the wizard
-            field.set_client(record, allData);
+            field.set_client(record, all_data);
             if (filename_field) {
-                filename_field.set_client(record, allData.length);
+                filename_field.set_client(record, all_data.length);
             }
         });
     },

@@ -7,10 +7,10 @@
 
 <tree>
     <field name="patient" expand="1"/>
-    <field name="patientName" expand="1"/>
+    <field name="patient_name" expand="1"/>
     <field name="server" expand="1"/>
-    <button name="select_viewer" help="Choose DICOM viewer" string=">>"/>
-    <field name="viewerName" expand = "1"/>
+    <button name="select_viewer" help="Choose DICOM viewer" string="Switch Viewer"/>
+    <field name="viewer_name" expand = "1"/>
     <field name="link" widget="url"/>
     <button name="delete_study" help="Delete study from Orthanc" confirm="Do you really want to delete the study from Orthanc?" string="Permanent Delete" tree_invisible="1"/>
 </tree>

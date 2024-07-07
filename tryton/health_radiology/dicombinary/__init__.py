@@ -178,17 +178,17 @@ class DicomBinaryMixin(Widget):
         #   2. 8 bytes containing the length of the file (Little Endian)
         #   3. the data of the file
         #   4. repeat steps 2 and 3 for next file
-        allData = bytearray([77, 85, 76, 84])
+        all_data = bytearray([77, 85, 76, 84])
         for uri in uris:
             uri = unquote(uri)
             data = urlopen(uri).read()
             # size in little endian 8 bytes
-            allData.extend(len(data).to_bytes(8, byteorder='little'))
-            allData.extend(data)
+            all_data.extend(len(data).to_bytes(8, byteorder='little'))
+            all_data.extend(data)
         # set the content of the field in the wizard
-        self.field.set_client(self.record, allData)
+        self.field.set_client(self.record, all_data)
         if self.filename_field:
-            self.filename_field.set_client(self.record, len(allData))
+            self.filename_field.set_client(self.record, len(all_data))
 
     def get_data(self):
         """

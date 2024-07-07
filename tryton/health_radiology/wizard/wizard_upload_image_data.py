@@ -23,12 +23,12 @@ class UploadImageDataStart(ModelView):
     "Upload Image Data Start"
     __name__ = "gnuhealth.imaging.uploadImageData.start"
     # The image data needs to be uploaded to the orthanc server.
-    dataToUpload = fields.Binary("File to upload", required=True)
+    data_to_Upload = fields.Binary("File to upload", required=True)
     # The target orthanc server where the image data will be saved
-    serverConfig = fields.Many2One('gnuhealth.orthanc.configServer', 'Server',
-                                   select=True,
-                                   help='Orthanc server',
-                                   required=True)
+    server_config = fields.Many2One('gnuhealth.orthanc.configServer', 'Server',
+                                    select=True,
+                                    help='Orthanc server',
+                                    required=True)
 
 #
 # Uploading of image data
@@ -45,41 +45,41 @@ class UploadImageData(Wizard):
                               validate=True)])
     upload = StateTransition()
 
-    def upload_imageData(self, dataToUpload, serverConfig):
+    def upload_imageData(self, data_to_Upload, server_config):
         # A function to upload image data to the selected server.
-        # dataToUpload contains the byte data of multiple dicom files.
+        # data_to_Upload contains the byte data of multiple dicom files.
         # The format is:
         # 1.the bytes 'M', 'U', 'L', 'T' (ASCII 77,85,76,84)
         # 2.8 bytes containing the length of the file (Little Endian)
         # 3.the data of the file
         # 4.repeat steps 2 and 3 for next file
         try:
-            if (dataToUpload[0] == 77 and dataToUpload[1] == 85
-                    and dataToUpload[2] == 76 and dataToUpload[3] == 84):
+            if (data_to_Upload[0] == 77 and data_to_Upload[1] == 85
+                    and data_to_Upload[2] == 76 and data_to_Upload[3] == 84):
                 pos = 4
-                while pos < len(dataToUpload):
+                while pos < len(data_to_Upload):
                     # get length of file from data
-                    dataLength = 0
+                    data_length = 0
                     for i in range(0, 8):
-                        dataLength = dataToUpload[pos +
-                                                  7 - i] + dataLength * 256
+                        data_length = data_to_Upload[pos +
+                                                     7 - i] + data_length * 256
                     pos = pos + 8
                     # get content of file from data
-                    data = BytesIO(dataToUpload[pos: pos + dataLength])
-                    pos = pos + dataLength
+                    data = BytesIO(data_to_Upload[pos: pos + data_length])
+                    pos = pos + data_length
                     # send file to Orthanc
                     client = Orthanc(
-                        url=serverConfig.domain,
-                        username=serverConfig.user,
-                        password=serverConfig.password,
+                        url=server_config.domain,
+                        username=server_config.user,
+                        password=server_config.password,
                         timeout=600)
                     client.post_instances(data.getvalue())
             else:
-                data = BytesIO(dataToUpload[4:])
+                data = BytesIO(data_to_Upload[4:])
                 client = Orthanc(
-                    url=serverConfig.domain,
-                    username=serverConfig.user,
-                    password=serverConfig.password,
+                    url=server_config.domain,
+                    username=server_config.user,
+                    password=server_config.password,
                     timeout=600)
                 client.post_instances(data.getvalue())
         except Exception as exception:
@@ -90,7 +90,7 @@ class UploadImageData(Wizard):
         # Transitions the upload process by uploading the image data specified
         # in the start view
 
-        self.upload_imageData(self.start.dataToUpload, self.start.serverConfig)
+        self.upload_imageData(self.start.data_to_Upload, self.start.server_config)  # noqa	E501
         Pool().get('gnuhealth.imaging.imagingStudy').get_new_studies()
         return 'end'
 

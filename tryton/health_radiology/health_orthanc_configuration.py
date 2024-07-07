@@ -62,13 +62,13 @@ class OrthancServerConfig(ModelSQL, ModelView):
             "Link",
             help="Link to server in Orthanc Explorer"), "get_link")
 
-    lastChangedIndex = fields.Integer(
+    last_changed_index = fields.Integer(
         "LastChangedIndex",
         readonly=True,
         help="Index of last change")
 
     @classmethod
-    def default_lastChangedIndex(cls):
+    def default_last_changed_index(cls):
         """
         Class method to return the default last changed index.
         """
@@ -97,10 +97,8 @@ class OrthancServerConfig(ModelSQL, ModelView):
         })
 
         cls._sql_constraints = [
-            ("label_unique", Unique(t, t.label),
-             "The label must be unique."),
-            ("domain_unique", Unique(t, t.domain),
-             "The domain must be unique."),
+            ("label_unique", Unique(t, t.label), "The label must be unique."),  # noqa E501
+            ("domain_unique", Unique(t, t.domain), "The domain must be unique."),  # noqa E501
         ]
 
     @staticmethod
@@ -177,18 +175,15 @@ class OrthancServerConfig(ModelSQL, ModelView):
         Study = Pool().get("gnuhealth.imaging.imagingStudy")
 
         # check which configurations we can delete
-        failedDomains = []
+        failed_domains = []
         for config in records:
             # check if there are studies with same domain as this config
             studies = Study.search([("server", "=", config.domain)])
             if len(studies) > 0:
-                failedDomains.append(config.domain)
+                failed_domains.append(config.domain)
             else:
                 cls.delete([config])
 
-        if len(failedDomains) > 0:
-            raise UserError(
-                ("Cannot remove the following servers because ",
-                 "there are studies from them: %s") %
-                ", ".join(failedDomains))
+        if len(failed_domains) > 0:
+            raise UserError(("Cannot remove the following servers because there are studies from them: %s") % ", ".join(failed_domains))  # noqa E501
         return "reload"

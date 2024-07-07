@@ -7,10 +7,10 @@
 
 <tree>
     <field name="study" expand="1"/>
-    <field name="seriesDescription" expand="1"/>
+    <field name="series_description" expand="1"/>
     <field name="modality"/>
     <field name="server" expand="1"/>
-    <field name="viewerName" string="Viewer" />
+    <field name="viewer_name" string="Viewer" />
     <field name="link" widget="url"/>
     <button name="delete_series" help="Delete series from the study" confirm="Do you really want to delete the series from Orthanc? After deleting your selected series, remember to click 'Reload' to refresh the table if there are empty rows left!" string="Permenant Delele"/>
 </tree>

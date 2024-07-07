@@ -7,8 +7,8 @@
 
 <form col="2">
     <label id='upload_imageData' string="Upload the DICOM files to Orthanc?" colspan="2" xalign="0"/>
-    <label name="dataToUpload"/>
-    <field name="dataToUpload" widget="dicombinary"/>
-    <label name="serverConfig"/>
-    <field name="serverConfig" widget="selection"/>
+    <label name="data_to_Upload"/>
+    <field name="data_to_Upload" widget="dicombinary"/>
+    <label name="server_config"/>
+    <field name="server_config" widget="selection"/>
 </form>

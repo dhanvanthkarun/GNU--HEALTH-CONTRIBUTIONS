@@ -58,7 +58,7 @@ class View(metaclass=PoolMeta):
 class PatientData (metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
-    imagingStudies = fields.One2Many(
+    imaging_studies = fields.One2Many(
         'gnuhealth.imaging.imagingStudy', 'patient', 'Study')
 
 #
@@ -71,7 +71,10 @@ class PatientData (metaclass=PoolMeta):
 class PatientOrthancStudy(ModelSQL, ModelView):
     'Patient Orthanc Study'
     __name__ = "gnuhealth.imaging.imagingStudy"
-
+    
+    _order_name = 'patient_name'
+    _order = [('patient_name', 'DESC')]
+    
     patient = fields.Many2One(
         'gnuhealth.patient',
         'Patient',
@@ -79,24 +82,24 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         help='Patient Name',
         readonly=False)
     date = fields.Char('Date', required=False, readonly=True)
-    patientName = fields.Char('Orthanc Patient', required=True, readonly=True)
-    studyInstanceUID = fields.Char('Study UID', required=True, readonly=True)
-    orthancUID = fields.Char('Orthanc UID', readonly=True, required=True)
+    patient_name = fields.Char('Orthanc Patient', required=True, readonly=True)
+    study_instance_UID = fields.Char('Study UID', required=True, readonly=True)
+    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
     institution = fields.Char('Institution', readonly=True)
-    performingPhysicianName = fields.Char('Physician', readonly=True)
+    performing_physician_name = fields.Char('Physician', readonly=True)
     series = fields.One2Many(
         'gnuhealth.imaging.imagingStudySeries',
         'study',
         'Study Series')
     server = fields.Char('Server', readonly=True, required=True)
-    viewerName = fields.Selection(
-        [('stone-webviewer', 'StoneView'), ('OHIF-viewer', 'OHIF Viewer')],
+    viewer_name = fields.Selection(
+        [('stone-webviewer', 'Stone Viewer'), ('OHIF-viewer', 'OHIF Viewer')],
         'Viewer',
         sort=False)
     link = fields.Function(fields.Char(
         "URL",
         help="Link to Orthanc Explorer"), "get_link")
-    gnuPatientName = fields.Function(
+    gnu_patient_name = fields.Function(
         fields.Char('Health Patient'),
         "get_gnu_patient")
     notes = fields.Text(
@@ -119,8 +122,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         })
 
         cls._sql_constraints = [
-            ('studyUID_unique', Unique(t, t.studyInstanceUID,
-             t.server), "The studyInstanceUID must be unique")
+            ('studyUID_unique', Unique(t, t.study_instance_UID, t.server), "There is already a study with the same UID. Use the \"Get New studies\" action to get the latest list of studies from the Orthanc servers to see whether there is already a study with the same UID.")  # noqa E501
         ]
 
     @classmethod
@@ -136,18 +138,18 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             str: The action to be taken after selecting the viewer.
         """
         for st in studies:
-            if st.viewerName == 'stone-webviewer':
-                newViewerName = 'OHIF-viewer'
+            if st.viewer_name == 'stone-webviewer':
+                new_viewer_name = 'OHIF-viewer'
             else:
-                newViewerName = 'stone-webviewer'
-            cls.write([st], {'viewerName': newViewerName})
+                new_viewer_name = 'stone-webviewer'
+            cls.write([st], {'viewer_name': new_viewer_name})
         return 'reload'
 
-    @fields.depends("viewerName")
+    @fields.depends("viewer_name")
     def on_change_with_link(self):
         """
-        This function is a decorator that depends on the "viewerName" field.
-        It is triggered when the value of the "viewerName" field changes.
+        This function is a decorator that depends on the "viewer_name" field.
+        It is triggered when the value of the "viewer_name" field changes.
         """
         return self.get_link(None)
 
@@ -169,7 +171,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
     def get_link(self, name):
         """
         Get the link for the specified viewer and study, based on the server,
-        viewerName, studyInstanceUID, and orthancUID.
+        viewer_name, study_instance_UID, and orthanc_UID.
         """
         # Example fro stone-web
         # https://orthanc.uclouvain.be/demo/stone-webviewer/index.html?study=1.2.840.113745.101000.1008000.38179.6792.6324567
@@ -179,10 +181,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
         pre = "".join([self.server.rstrip("/"), "/"])
         url = ""
-        if self.viewerName == 'stone-webviewer':
-            url = urljoin(pre, f'{self.viewerName}/index.html?study={self.studyInstanceUID}')  # noqa E501
-        elif self.viewerName == 'OHIF-viewer':
-            url = urljoin(pre, f'ohif/viewer?url=../studies/{self.orthancUID}/ohif-dicom-json')  # noqa E501
+        if self.viewer_name == 'stone-webviewer':
+            url = urljoin(pre, f'{self.viewer_name}/index.html?study={self.study_instance_UID}')  # noqa E501
+        elif self.viewer_name == 'OHIF-viewer':
+            url = urljoin(pre, f'ohif/viewer?url=../studies/{self.orthanc_UID}/ohif-dicom-json')  # noqa E501
         return url
 
     @classmethod
@@ -199,13 +201,13 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             Config = Pool().get('gnuhealth.orthanc.configServer')
             servers = Config.search([])
             for record in records:
-                for confServer in servers:
-                    if confServer.domain == record.server:
-                        client = Orthanc(url=confServer.domain,
-                                         username=confServer.user,
-                                         password=confServer.password,
+                for conf_server in servers:
+                    if conf_server.domain == record.server:
+                        client = Orthanc(url=conf_server.domain,
+                                         username=conf_server.user,
+                                         password=conf_server.password,
                                          return_raw_response=True)
-                        response = client.delete_studies_id(record.orthancUID)
+                        response = client.delete_studies_id(record.orthanc_UID)
                         if (200 <= response.status_code < 300 or
                                 response.status_code == 404):
                             records_to_delete.append(record)
@@ -237,27 +239,27 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         try:
             pool = Pool()
             Config = pool.get('gnuhealth.orthanc.configServer')
-            serverConfigs = Config.search([])
-            for serverConfig in serverConfigs:
+            server_configs = Config.search([])
+            for server_config in server_configs:
                 client = Orthanc(
-                    url=serverConfig.domain,
-                    username=serverConfig.user,
-                    password=serverConfig.password)
+                    url=server_config.domain,
+                    username=server_config.user,
+                    password=server_config.password)
                 # get changes
-                lastChangedIndex = serverConfig.lastChangedIndex if serverConfig.lastChangedIndex is not None else -1   # noqa E501
-                newChanges = client.get_changes({"since": lastChangedIndex, "limit": 100000})  # noqa E501
+                last_changed_index = server_config.last_changed_index if server_config.last_changed_index is not None else -1   # noqa E501
+                new_changes = client.get_changes({"since": last_changed_index, "limit": 100000})  # noqa E501
                 # process changes to studies
-                newOrthancStudyIDs = [s['ID'] for s in newChanges['Changes'] if s['ChangeType'] == 'NewStudy' or s['ChangeType'] == 'StableStudy']  # noqa E501
-                cls.createOrUpdateStudiesFromOrthanc(client, serverConfig.domain, newOrthancStudyIDs)  # noqa E501
+                new_orthanc_studyIDs = [s['ID'] for s in new_changes['Changes'] if s['ChangeType'] == 'NewStudy' or s['ChangeType'] == 'StableStudy']  # noqa E501
+                cls.createOrUpdateStudiesFromOrthanc(client, server_config.domain, new_orthanc_studyIDs)  # noqa E501
                 # process changes to series
-                newOrthancSeriesIDs = [s['ID'] for s in newChanges['Changes'] if s['ChangeType'] == 'NewSeries' or s['ChangeType'] == 'StableSeries']  # noqa E501
-                cls.createOrUpdateSeriesFromOrthanc(client, serverConfig.domain, newOrthancSeriesIDs)  # noqa E501
+                new_orthanc_seriesIDs = [s['ID'] for s in new_changes['Changes'] if s['ChangeType'] == 'NewSeries' or s['ChangeType'] == 'StableSeries']  # noqa E501
+                cls.createOrUpdateSeriesFromOrthanc(client, server_config.domain, new_orthanc_seriesIDs)  # noqa E501
                 # process changes to instances
-                newOrthancInstanceIDs = [s['ID'] for s in newChanges['Changes'] if s['ChangeType'] == 'NewInstance' or s['ChangeType'] == 'StableInstance']  # noqa E501
-                cls.createOrUpdateInstancesFromOrthanc(client, serverConfig.domain, newOrthancInstanceIDs)  # noqa E501
+                new_orthanc_instanceIDs = [s['ID'] for s in new_changes['Changes'] if s['ChangeType'] == 'NewInstance' or s['ChangeType'] == 'StableInstance']  # noqa E501
+                cls.createOrUpdateInstancesFromOrthanc(client, server_config.domain, new_orthanc_instanceIDs)  # noqa E501
                 # remember last processed change
-                serverConfig.lastChangedIndex = newChanges['Last']
-                Config.save([serverConfig])
+                server_config.last_changed_index = new_changes['Last']
+                Config.save([server_config])
         except Exception as exception:
             raise UserError(
                 str(exception),
@@ -265,41 +267,41 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 "please check the Orthanc server")
 
     @classmethod
-    def createOrUpdateStudiesFromOrthanc(cls, client, server, orthancStudyIDs):
+    def createOrUpdateStudiesFromOrthanc(cls, client, server, orthanc_StudyIDs):  # noqa E501
         """
         Create or update imaging studies from Orthanc server "
         "based on the provided study IDs.
         """
         pool = Pool()
         IStu = pool.get('gnuhealth.imaging.imagingStudy')
-        for orthancStudyID in orthancStudyIDs:
-            orthancStudy = client.get_studies_id(orthancStudyID)
-            dicomTags = orthancStudy['MainDicomTags']
-            patientMainDicomTags = orthancStudy['PatientMainDicomTags']
-            studyValues = {}
+        for orthanc_StudyID in orthanc_StudyIDs:
+            orthanc_Study = client.get_studies_id(orthanc_StudyID)
+            dicom_tags = orthanc_Study['MainDicomTags']
+            patient_main_dicomTags = orthanc_Study['PatientMainDicomTags']
+            study_values = {}
             # Create or update?
-            ghStudy = IStu.search([('studyInstanceUID', '=',
-                                    dicomTags['StudyInstanceUID']),
+            gh_Study = IStu.search([('study_instance_UID', '=',
+                                    dicom_tags['StudyInstanceUID']),
                                    ('server', '=', server)])
-            if len(ghStudy) == 0:
-                studyValues['patient'] = None
-                studyValues['date'] = dicomTags['StudyDate'] if 'StudyDate' in dicomTags else ""  # noqa E501
-                studyValues['studyInstanceUID'] = dicomTags['StudyInstanceUID']
-                studyValues['orthancUID'] = orthancStudy['ID']
-                studyValues['patientName'] = patientMainDicomTags['PatientName'] if 'PatientName' in patientMainDicomTags else ""  # noqa E501
-                studyValues['institution'] = dicomTags['InstitutionName'] if 'InstitutionName' in dicomTags else ""  # noqa E501
-                studyValues['performingPhysicianName'] = dicomTags['ReferringPhysicianName'] if 'ReferringPhysicianName' else ""  # noqa E501
-                studyValues['viewerName'] = 'stone-webviewer'
-                studyValues['server'] = server
-                IStu.create([studyValues])
+            if len(gh_Study) == 0:
+                study_values['patient'] = None
+                study_values['date'] = dicom_tags['StudyDate'] if 'StudyDate' in dicom_tags else ""  # noqa E501
+                study_values['study_instance_UID'] = dicom_tags['StudyInstanceUID']  # noqa E501
+                study_values['orthanc_UID'] = orthanc_Study['ID']
+                study_values['patient_name'] = patient_main_dicomTags['PatientName'] if 'PatientName' in patient_main_dicomTags else ""  # noqa E501
+                study_values['institution'] = dicom_tags['InstitutionName'] if 'InstitutionName' in dicom_tags else ""  # noqa E501
+                study_values['performing_physician_name'] = dicom_tags['ReferringPhysicianName'] if 'ReferringPhysicianName' else ""  # noqa E501
+                study_values['viewer_name'] = 'stone-webviewer'
+                study_values['server'] = server
+                IStu.create([study_values])
             else:
                 # DICOM studies are immutable. Only the internal Orthanc ID can
                 # change.
-                studyValues['orthancUID'] = orthancStudy['ID']
-                IStu.write(ghStudy, studyValues)
+                study_values['orthanc_UID'] = orthanc_Study['ID']
+                IStu.write(gh_Study, study_values)
 
     @classmethod
-    def createOrUpdateSeriesFromOrthanc(cls, client, server, orthancSeriesIDs):
+    def createOrUpdateSeriesFromOrthanc(cls, client, server, orthanc_seriesIDs):  # noqa E501
         """
         Create or update series from Orthanc "
         "in the imaging study and series models.
@@ -308,59 +310,62 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         pool = Pool()
         IStu = pool.get('gnuhealth.imaging.imagingStudy')
         ISer = pool.get('gnuhealth.imaging.imagingStudySeries')
-        for orthancSeriesID in orthancSeriesIDs:
-            orthancSeries = client.get_series_id(orthancSeriesID)
-            dicomTags = orthancSeries['MainDicomTags']
-            seriesValues = {}
+        for orthanc_seriesID in orthanc_seriesIDs:
+            orthanc_series = client.get_series_id(orthanc_seriesID)
+            dicom_tags = orthanc_series['MainDicomTags']
+            series_values = {}
             # Create or update?
-            ghSeries = ISer.search([('seriesUID', '=', dicomTags['SeriesInstanceUID']), ('server', '=', server)])  # noqa E501
-            if len(ghSeries) == 0:
-                seriesValues['modality'] = dicomTags['Modality'] if 'Modality' in dicomTags else ""  # noqa E501
-                seriesValues['seriesUID'] = dicomTags['SeriesInstanceUID']
-                seriesValues['orthancUID'] = orthancSeries['ID']
-                seriesValues['seriesDescription'] = dicomTags['SeriesDescription'] if 'SeriesDescription' in dicomTags else ""  # noqa E501
-                seriesValues['seriesNumber'] = dicomTags['SeriesNumber'] if 'SeriesNumber' in dicomTags else ""  # noqa E501
-                seriesValues['viewerName'] = 'stone-webviewer'
-                ghStudy = IStu.search([('orthancUID', '=', orthancSeries['ParentStudy']), ('server', '=', server)])  # noqa E501
-                if len(ghStudy) == 0:
+            gh_series = ISer.search([('series_UID', '=', dicom_tags['SeriesInstanceUID']), ('server', '=', server)])  # noqa E501
+            if len(gh_series) == 0:
+                series_values['modality'] = dicom_tags['Modality'] if 'Modality' in dicom_tags else ""  # noqa E501
+                series_values['series_UID'] = dicom_tags['SeriesInstanceUID']
+                series_values['orthanc_UID'] = orthanc_series['ID']
+                series_values['series_description'] = dicom_tags['SeriesDescription'] if 'SeriesDescription' in dicom_tags else ""  # noqa E501
+                series_values['series_number'] = dicom_tags['SeriesNumber'] if 'SeriesNumber' in dicom_tags else ""  # noqa E501
+                series_values['viewer_name'] = 'stone-webviewer'
+                gh_Study = IStu.search([('orthanc_UID', '=', orthanc_series['ParentStudy']), ('server', '=', server)])  # noqa E501
+                if len(gh_Study) == 0:
                     raise UserError("The study with the given Orthanc ID does not exist in the gnuhealth database")  # noqa E501
-                IStu.write(ghStudy, {'series': [('create', [seriesValues])]})
+                IStu.write(gh_Study, {'series': [('create', [series_values])]})
             else:
                 # DICOM series are immutable. Only the internal Orthanc ID can
                 # change.
-                seriesValues['orthancUID'] = orthancSeries['ID']
-                ISer.write(ghSeries, seriesValues)
+                series_values['orthanc_UID'] = orthanc_series['ID']
+                ISer.write(gh_series, series_values)
 
     @classmethod
     def createOrUpdateInstancesFromOrthanc(
-            cls, client, server, orthancInstanceIDs):
+            cls, client, server, orthanc_instanceIDs):
         """
         Create or update instances from Orthanc in the GNU Health system.
         """
         pool = Pool()
         ISer = pool.get('gnuhealth.imaging.imagingStudySeries')
         IInst = pool.get('gnuhealth.imaging.imagingSeriesInstances')
-        for orthancInstanceID in orthancInstanceIDs:
-            orthancInstance = client.get_instances_id(orthancInstanceID)
-            dicomTags = orthancInstance['MainDicomTags']
-            instanceValues = {}
+        for orthanc_instanceID in orthanc_instanceIDs:
+            orthanc_instance = client.get_instances_id(orthanc_instanceID)
+            dicom_tags = orthanc_instance['MainDicomTags']
+            instance_values = {}
             # Create or update?
-            ghInstance = IInst.search([('sopInstanceUID', '=', dicomTags['SOPInstanceUID']), ('server', '=', server)])  # noqa E501
-            if len(ghInstance) == 0:
-                instanceValues['sopInstanceUID'] = dicomTags['SOPInstanceUID']  # noqa E501
-                instanceValues['orthancUID'] = orthancInstance['ID']
-                instanceValues['instanceNumber'] = dicomTags['InstanceNumber'] if 'InstanceNumber' in dicomTags else ""  # noqa E501
-                instanceValues['imagePositionPatient'] = dicomTags['ImagePositionPatient'] if 'ImagePositionPatient' in dicomTags else ""  # noqa E501
-                ghSeries = ISer.search([('orthancUID', '=', orthancInstance['ParentSeries']), ('server', '=', server)])  # noqa E501
-                if len(ghSeries) == 0:
+            gh_instance = IInst.search([('sop_instance_UID', '=', dicom_tags['SOPInstanceUID']), ('server', '=', server)])  # noqa E501
+            if len(gh_instance) == 0:
+                instance_values['sop_instance_UID'] = dicom_tags['SOPInstanceUID']  # noqa E501
+                instance_values['orthanc_UID'] = orthanc_instance['ID']
+                if 'InstanceNumber' in dicom_tags and dicom_tags['InstanceNumber'] != "" and dicom_tags['InstanceNumber'] != None:  # noqa E501
+                    instance_values['instance_number'] = int(float(dicom_tags['InstanceNumber']))  # noqa E501
+                else:
+                    instance_values['instance_number'] = 0
+                instance_values['image_position_patient'] = dicom_tags['ImagePositionPatient'] if 'ImagePositionPatient' in dicom_tags else ""  # noqa E501
+                gh_series = ISer.search([('orthanc_UID', '=', orthanc_instance['ParentSeries']), ('server', '=', server)])  # noqa E501
+                if len(gh_series) == 0:
                     raise UserError("The series with the given Orthanc ID "
                                     "does not exist in the gnuhealth database")
-                ISer.write(ghSeries, {'instances': [('create', [instanceValues])]})  # noqa E501
+                ISer.write(gh_series, {'instances': [('create', [instance_values])]})  # noqa E501
             else:
                 # DICOM instances are immutable. Only the internal Orthanc ID
                 # can change.
-                instanceValues['orthancUID'] = orthancInstance['ID']
-                IInst.write(ghInstance, instanceValues)
+                instance_values['orthanc_UID'] = orthanc_instance['ID']
+                IInst.write(gh_instance, instance_values)
 
     @classmethod
     def full_synchronize(cls):
@@ -380,7 +385,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             # IInst = pool.get('gnuhealth.imaging.imagingSeriesInstances')
 
             # Get all studies that are already in gnuhealth
-            ghStudies = IStu.search([])
+            gh_studies = IStu.search([])
             # Get studies from Orthanc servers
             Config = pool.get('gnuhealth.orthanc.configServer')
             servers = Config.search([])
@@ -389,75 +394,78 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 client = Orthanc(url=server.domain,
                                  username=server.user,
                                  password=server.password)
-                orthancStudies = client.get_studies({'expand': True})
-                for orthancStudy in orthancStudies:
+                orthanc_studies = client.get_studies({'expand': True})
+                for orthanc_Study in orthanc_studies:
                     # Create study in gnuhealth if it does not exist
-                    dicomTags = orthancStudy['MainDicomTags']
-                    ghStudy = [s for s in ghStudies
-                               if s.studyInstanceUID == dicomTags['StudyInstanceUID'] and s.server == server.domain]  # noqa E501
-                    if len(ghStudy) == 0:
-                        dicomTags = orthancStudy['MainDicomTags']
-                        patientMainDicomTags = orthancStudy['PatientMainDicomTags']  # noqa E501
-                        studyValues = {}
-                        studyValues['patient'] = None
-                        studyValues['date'] = dicomTags['StudyDate'] if 'StudyDate' in dicomTags else ""  # noqa E501
-                        studyValues['studyInstanceUID'] = dicomTags['StudyInstanceUID']  # noqa E501
-                        studyValues['orthancUID'] = orthancStudy['ID']
-                        studyValues['patientName'] = patientMainDicomTags['PatientName'] if 'PatientName' in patientMainDicomTags else ""  # noqa E501
-                        studyValues['institution'] = dicomTags['InstitutionName'] if 'InstitutionName' in dicomTags else ""  # noqa E501
-                        studyValues['performingPhysicianName'] = dicomTags['ReferringPhysicianName'] if 'ReferringPhysicianName' else ""  # noqa E501
-                        studyValues['viewerName'] = 'stone-webviewer'
-                        studyValues['server'] = server.domain
+                    dicom_tags = orthanc_Study['MainDicomTags']
+                    gh_Study = [s for s in gh_studies
+                               if s.study_instance_UID == dicom_tags['StudyInstanceUID'] and s.server == server.domain]  # noqa E501
+                    if len(gh_Study) == 0:
+                        dicom_tags = orthanc_Study['MainDicomTags']
+                        patient_main_dicomTags = orthanc_Study['PatientMainDicomTags']  # noqa E501
+                        study_values = {}
+                        study_values['patient'] = None
+                        study_values['date'] = dicom_tags['StudyDate'] if 'StudyDate' in dicom_tags else ""  # noqa E501
+                        study_values['study_instance_UID'] = dicom_tags['StudyInstanceUID']  # noqa E501
+                        study_values['orthanc_UID'] = orthanc_Study['ID']
+                        study_values['patient_name'] = patient_main_dicomTags['PatientName'] if 'PatientName' in patient_main_dicomTags else ""  # noqa E501
+                        study_values['institution'] = dicom_tags['InstitutionName'] if 'InstitutionName' in dicom_tags else ""  # noqa E501
+                        study_values['performing_physician_name'] = dicom_tags['ReferringPhysicianName'] if 'ReferringPhysicianName' else ""  # noqa E501
+                        study_values['viewer_name'] = 'stone-webviewer'
+                        study_values['server'] = server.domain
                         logger.error("Creating study")
-                        ghStudy = IStu.create([studyValues])
-                    ghStudy = ghStudy[0]
+                        gh_Study = IStu.create([study_values])
+                    gh_Study = gh_Study[0]
 
-                    orthancSeriesIDs = orthancStudy['Series']
-                    for orthancSeriesID in orthancSeriesIDs:
-                        orthancSeries = client.get_series_id(orthancSeriesID)
+                    orthanc_seriesIDs = orthanc_Study['Series']
+                    for orthanc_seriesID in orthanc_seriesIDs:
+                        orthanc_series = client.get_series_id(orthanc_seriesID)
                         # Create series in gnuhealth if it does not exist
-                        ghSeries = [
-                            s for s in ghStudy.series
-                            if s.orthancUID == orthancSeriesID]
-                        if len(ghSeries) == 0:
-                            seriesValues = {}
-                            seriesMainDicomTags = orthancSeries['MainDicomTags']  # noqa E501
-                            seriesValues['modality'] = seriesMainDicomTags['Modality'] if 'Modality' in seriesMainDicomTags else ""  # noqa E501
-                            seriesValues['seriesUID'] = seriesMainDicomTags['SeriesInstanceUID']  # noqa E501
-                            seriesValues['orthancUID'] = orthancSeries['ID']
-                            seriesValues['seriesDescription'] = seriesMainDicomTags['SeriesDescription'] if 'SeriesDescription' in seriesMainDicomTags else ""  # noqa E501
-                            seriesValues['seriesNumber'] = seriesMainDicomTags['SeriesNumber'] if 'SeriesNumber' in seriesMainDicomTags else ""  # noqa E501
-                            seriesValues['viewerName'] = 'stone-webviewer'
-                            seriesValues['study'] = ghStudy
+                        gh_series = [
+                            s for s in gh_Study.series
+                            if s.orthanc_UID == orthanc_seriesID]
+                        if len(gh_series) == 0:
+                            series_values = {}
+                            series_main_dicomTags = orthanc_series['MainDicomTags']  # noqa E501
+                            series_values['modality'] = series_main_dicomTags['Modality'] if 'Modality' in series_main_dicomTags else ""  # noqa E501
+                            series_values['series_UID'] = series_main_dicomTags['SeriesInstanceUID']  # noqa E501
+                            series_values['orthanc_UID'] = orthanc_series['ID']
+                            series_values['series_description'] = series_main_dicomTags['SeriesDescription'] if 'SeriesDescription' in series_main_dicomTags else ""  # noqa E501
+                            series_values['series_number'] = series_main_dicomTags['SeriesNumber'] if 'SeriesNumber' in series_main_dicomTags else ""  # noqa E501
+                            series_values['viewer_name'] = 'stone-webviewer'
+                            series_values['study'] = gh_Study
                             logger.error("Creating series")
-                            ghSeries = ISer.create([seriesValues])
+                            gh_series = ISer.create([series_values])
                             IStu.write(
-                                [ghStudy], {
+                                [gh_Study], {
                                     'series': [
                                         ('add', [
-                                            ghSeries[0].id])]})
-                        ghSeries = ghSeries[0]
+                                            gh_series[0].id])]})
+                        gh_series = gh_series[0]
 
-                        instanceValuesToCreate = []
-                        for orthancInstanceID in orthancSeries['Instances']:
+                        instance_values_to_create = []
+                        for orthanc_instanceID in orthanc_series['Instances']:
                             # Create instance in gnuhealth if it does not exist
-                            ghInstance = [s for s in ghSeries.instances if s.orthancUID == orthancInstanceID]  # noqa E501
-                            if len(ghInstance) == 0:
-                                orthancInstance = client.get_instances_id(orthancInstanceID)  # noqa E501
-                                instanceValues = {}
-                                instanceMainDicomTags = orthancInstance['MainDicomTags']  # noqa E501
-                                instanceValues['sopInstanceUID'] = instanceMainDicomTags['SOPInstanceUID']  # noqa E501
-                                instanceValues['orthancUID'] = orthancInstance['ID']  # noqa E501
-                                instanceValues['instanceNumber'] = instanceMainDicomTags['InstanceNumber'] if 'InstanceNumber' in instanceMainDicomTags else ""  # noqa E501
-                                instanceValues['imagePositionPatient'] = instanceMainDicomTags['ImagePositionPatient'] if 'ImagePositionPatient' in instanceMainDicomTags else ""  # noqa E501
-                                instanceValuesToCreate.append(instanceValues)
+                            gh_instance = [s for s in gh_series.instances if s.orthanc_UID == orthanc_instanceID]  # noqa E501
+                            if len(gh_instance) == 0:
+                                orthanc_instance = client.get_instances_id(orthanc_instanceID)  # noqa E501
+                                instance_values = {}
+                                instance_main_dicomTags = orthanc_instance['MainDicomTags']  # noqa E501
+                                instance_values['sop_instance_UID'] = instance_main_dicomTags['SOPInstanceUID']  # noqa E501
+                                instance_values['orthanc_UID'] = orthanc_instance['ID']  # noqa E501
+                                if 'InstanceNumber' in instance_main_dicomTags and instance_main_dicomTags['InstanceNumber'] != '' and instance_main_dicomTags['InstanceNumber'] is not None:  # noqa E501
+                                    instance_values['instance_number'] = int(float(instance_main_dicomTags['InstanceNumber']))  # noqa E501
+                                else:
+                                    instance_values['instance_number'] = 0
+                                instance_values['image_position_patient'] = instance_main_dicomTags['ImagePositionPatient'] if 'ImagePositionPatient' in instance_main_dicomTags else ""  # noqa E501
+                                instance_values_to_create.append(instance_values)  # noqa E501
                         logger.error("Creating " +
-                                     str(len(instanceValuesToCreate)) +
+                                     str(len(instance_values_to_create)) +
                                      " instances")
                         ISer.write(
-                            [ghSeries], {
+                            [gh_series], {
                                 'instances': [
-                                    ('create', instanceValuesToCreate)]})
+                                    ('create', instance_values_to_create)]})
         except Exception as exception:
             raise UserError(
                 str(exception),
@@ -473,12 +481,12 @@ class ImagingStudySeries(ModelSQL, ModelView):
                             readonly=True,
                             required=True,
                             ondelete='CASCADE')
-    orthancUID = fields.Char('Orthanc UID', readonly=True, required=True)
-    seriesNumber = fields.Char('Series No.', readonly=True)
-    seriesDescription = fields.Char('Description', readonly=True, required=False)  # noqa E501
-    seriesUID = fields.Char('Series UID', readonly=True, required=True)
+    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
+    series_number = fields.Char('Series No.', readonly=True)
+    series_description = fields.Char('Description', readonly=True, required=False)  # noqa E501
+    series_UID = fields.Char('Series UID', readonly=True, required=True)
     modality = fields.Char('Modality', required=True, readonly=True)
-    viewerName = fields.Char("stone-webviewer")
+    viewer_name = fields.Char("stone-webviewer")
     server = fields.Function(fields.Char("Server",
                                          readonly=True,
                                          required=True),
@@ -507,11 +515,11 @@ class ImagingStudySeries(ModelSQL, ModelView):
             'delete_series': {},
         })
 
-    @fields.depends("viewerName")
+    @fields.depends("viewer_name")
     def on_change_with_link(self):
         """
-        This function is a decorator that depends on the "viewerName" field. "
-        "It is triggered when the value of the "viewerName" field changes.
+        This function is a decorator that depends on the "viewer_name" field. "
+        "It is triggered when the value of the "viewer_name" field changes.
         """
         return self.get_link(None)
 
@@ -566,10 +574,10 @@ class ImagingStudySeries(ModelSQL, ModelView):
 
         pre = "".join([self.study.server.rstrip("/"), "/"])
         url = ""
-        if self.viewerName == 'stone-webviewer':
-            url = urljoin(pre, f'{self.viewerName}/index.html?study={self.study.studyInstanceUID}&series={self.seriesUID}')  # noqa E501
-        elif self.viewerName == 'web-viewer':
-            url = urljoin(pre, f'{self.viewerName}/app/viewer.html?series={self.orthancUID}')  # noqa E501
+        if self.viewer_name == 'stone-webviewer':
+            url = urljoin(pre, f'{self.viewer_name}/index.html?study={self.study.study_instance_UID}&series={self.series_UID}')  # noqa E501
+        elif self.viewer_name == 'web-viewer':
+            url = urljoin(pre, f'{self.viewer_name}/app/viewer.html?series={self.orthanc_UID}')  # noqa E501
         return url
 
     @classmethod
@@ -600,14 +608,14 @@ class ImagingStudySeries(ModelSQL, ModelView):
             Config = Pool().get('gnuhealth.orthanc.configServer')
             servers = Config.search([])
             for record in records:
-                for confServer in servers:
-                    if (confServer.domain == record.study.server):
-                        client = Orthanc(url=confServer.domain,
-                                         username=confServer.user,
-                                         password=confServer.password,
+                for conf_server in servers:
+                    if (conf_server.domain == record.study.server):
+                        client = Orthanc(url=conf_server.domain,
+                                         username=conf_server.user,
+                                         password=conf_server.password,
                                          return_raw_response=True)
 
-                        response = client.delete_series_id(record.orthancUID)
+                        response = client.delete_series_id(record.orthanc_UID)
                         if (200 <= response.status_code < 300 or
                                 response.status_code == 404):
                             cls.delete([record])
@@ -625,17 +633,8 @@ class ImagingStudySeries(ModelSQL, ModelView):
 
             return 'reload'
         except Exception as exception:
-            logger.error(
-                'Delete Orthanc Series exception: %s',
-                exception,
-                exc_info=True)
-            raise UserError(
-                str(exception),
-                description="Unable to delete Orthanc study series. "
-                "It may no longer exist or "
-                "the Orthanc server could be "
-                "in read-only mode. Please review "
-                "your Orthanc server configuration.")
+            logger.error('Delete Orthanc study exception: %s', exception, exc_info=True)  # noqa E501
+            raise UserError(str(exception), description="Unable to delete Orthanc study. It may no longer exist or the Orthanc server could be in read-only mode. Please review your Orthanc server configuration.")  # noqa E501
         return 'reload'
 #
 # All instances in the series of patient's image study.
@@ -646,8 +645,8 @@ class ImagingSeriesInstances(ModelSQL, ModelView):
     'Imaging Series Instance'
     __name__ = 'gnuhealth.imaging.imagingSeriesInstances'
 
-    _order_name = 'instanceNumber'
-    _order = [('instanceNumber', 'DESC')]
+    _order_name = 'instance_number'
+    _order = [('instance_number', 'DESC')]
 
     series = fields.Many2One(
         'gnuhealth.imaging.imagingStudySeries',
@@ -656,16 +655,16 @@ class ImagingSeriesInstances(ModelSQL, ModelView):
         readonly=True,
         required=True,
         ondelete='CASCADE')
-    sopInstanceUID = fields.Char(
+    sop_instance_UID = fields.Char(
         'SOP Instance UID',
         readonly=True,
         required=True)
-    orthancUID = fields.Char('Orthanc UID', readonly=True, required=True)
-    instanceNumber = fields.Char(
+    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
+    instance_number = fields.Integer(
         'Instance Number',
         readonly=True,
         required=False)
-    imagePositionPatient = fields.Char(
+    image_position_patient = fields.Char(
         'Image Position', readonly=True, required=False)
     server = fields.Function(
         fields.Char(
@@ -715,18 +714,18 @@ class ImagingSeriesInstances(ModelSQL, ModelView):
         try:
             Config = Pool().get('gnuhealth.orthanc.configServer')
             servers = Config.search([])
-            for confServer in servers:
-                if confServer.domain == self.server:
-                    logger.error(confServer.domain)
-                    client = Orthanc(url=confServer.domain,
-                                     username=confServer.user,
-                                     password=confServer.password,
+            for conf_server in servers:
+                if conf_server.domain == self.server:
+                    logger.error(conf_server.domain)
+                    client = Orthanc(url=conf_server.domain,
+                                     username=conf_server.user,
+                                     password=conf_server.password,
                                      return_raw_response=True)
                     response = client.get_instances_id_frames_frame_rendered(
-                        0, self.orthancUID, headers={'Accept': 'image/png'})
+                        0, self.orthanc_UID, headers={'Accept': 'image/png'})
                     if 200 <= response.status_code < 300:
-                        imageData = response.read()
-                        return imageData
+                        image_data = response.read()
+                        return image_data
                     else:
                         raise UserError(
                             "Orthanc server returned HTTP code"
