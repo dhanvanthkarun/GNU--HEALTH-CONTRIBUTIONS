@@ -88,7 +88,8 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
     charset = fields.Char(
         'Charset',
         help='This field is used to store SpecificCharacterSet tag '
-        '(0008,0005) of worklist, for example: ISO_IR 100, ISO_IR 192, GBK ...')
+        '(0008,0005) of worklist, for example: ISO_IR 100, ISO_IR 192,'
+        ' GBK ...')
 
     @staticmethod
     def default_charset():
