@@ -28,9 +28,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <label name="req_phys"/>
     <field name="req_phys"/>
     <label name="server"/>
-    <group colspan="1" col="12" id="group_server_and_link">
-      <field name="server" colspan="11"/>
-      <field name="link" widget="url" colspan="1"/>
+    <field name="server"/>
+    <newline/>
+    <group string="Viewers" colspan="4" col="12" id="group_links">
+      <label name="ohif_viewer_link"/>
+      <field name="ohif_viewer_link" widget="url" colspan="1"/>
+      <label name="stone_viewer_link"/>
+      <field name="stone_viewer_link" widget="url" colspan="1"/>
+      <label name="orthanc_explorer_link"/>
+      <field name="orthanc_explorer_link" widget="url" colspan="1"/>
     </group>
   </group>
   <newline/>

@@ -272,30 +272,6 @@ class OrthancServerConfig(ModelSQL, ModelView):
         add = "app/explorer.html"
         return urljoin(pre, add)
 
-    use_ohif_viewer = fields.Boolean(
-        "Use OHIF Viewer",
-        help="Use OHIF Viewer")
-
-    @staticmethod
-    def default_use_ohif_viewer():
-        return False
-
-    use_stone_viewer = fields.Boolean(
-        "Use Stone Viewer",
-        help="Use Stone Web Viewer")
-
-    @staticmethod
-    def default_use_stone_viewer():
-        return False
-
-    use_osimis_viewer = fields.Boolean(
-        "Use Osimis Viewer",
-        help="Use Osimis Web Viewer")
-
-    @staticmethod
-    def default_use_osimis_viewer():
-        return False
-
     @classmethod
     def __setup__(cls):
         """
@@ -831,7 +807,13 @@ class OrthancStudy(ModelSQL, ModelView):
     :var server: Server on which the study is located. Read-only.
     :vartype server: class: ``trytond.model.fields.Many2One``
 
-    :var link: Link to study in Orthanc Explorer.
+    :var ohif_viewer_link: Link to study in OHIF Viewer.
+    :vartype link: class: ``trytond.model.fields.Char``
+
+    :var stone_viewer_link: Link to study in Stone Viewer.
+    :vartype link: class: ``trytond.model.fields.Char``
+
+    :var orthanc_explorer_link: Link to study in Orthanc Explorer.
     :vartype link: class: ``trytond.model.fields.Char``
 
     :var imaging_test: Corresponding request from GNU Health HMIS.
@@ -865,13 +847,56 @@ class OrthancStudy(ModelSQL, ModelView):
     server = fields.Many2One(
         "gnuhealth.orthanc.config", "Server", readonly=True)
 
-    link = fields.Function(
+    ohif_viewer_link = fields.Function(
         fields.Char(
-            "URL", help="Link to study in Orthanc Explorer"), "get_link")
+            "OHIF Viewer", help="Link to study in OHIF Viewer."),
+        "get_ohif_viewer_link")
 
-    imaging_test = fields.Many2One("gnuhealth.imaging.test.result", "Study")
+    stone_viewer_link = fields.Function(
+        fields.Char(
+            "Stone Viewer", help="Link to study in Stone Viewer."),
+        "get_stone_viewer_link")
 
-    def get_link(self, name):
+    orthanc_explorer_link = fields.Function(
+        fields.Char(
+            "Orthanc Explorer", help="Link to study in Orthanc Explorer."),
+        "get_orthanc_explorer_link")
+
+    def get_ohif_viewer_link(self, name):
+        """
+        Return a link to the Orthanc study with the specified uuid in the
+        OHIF viewer.
+
+        :param name: Label of the study to get the link for.
+        :type name: str
+
+        :return: URL to the Orthanc study in OHIF viewer.
+        :rtype: str
+        """
+
+        pre = "".join([self.server.domain.rstrip("/"), "/"])
+        add = "ohif/viewer?url=../studies/{}/ohif-dicom-json".format(
+            self.uuid)
+        return urljoin(pre, add)
+
+    def get_stone_viewer_link(self, name):
+        """
+        Return a link to the Orthanc study with the specified uuid in the
+        Stone Viewer.
+
+        :param name: Label of the study to get the link for.
+        :type name: str
+
+        :return: URL to the Orthanc study in Stone Viewer.
+        :rtype: str
+        """
+
+        pre = "".join([self.server.domain.rstrip("/"), "/"])
+        add = "stone-webviewer/index.html?study={}".format(
+            self.instance_uid)
+        return urljoin(pre, add)
+
+    def get_orthanc_explorer_link(self, name):
         """
         Return a link to the Orthanc study with the specified uuid in the
         Orthanc explorer.
@@ -884,17 +909,10 @@ class OrthancStudy(ModelSQL, ModelView):
         """
 
         pre = "".join([self.server.domain.rstrip("/"), "/"])
-        if self.server.use_ohif_viewer:
-            add = "ohif/viewer?url=../studies/{}/ohif-dicom-json".format(
-                self.uuid)
-        elif self.server.use_stone_viewer:
-            add = "stone-webviewer/index.html?study={}".format(
-                self.instance_uid)
-        elif self.server.use_osimis_viewer:
-            add = "osimis-viewer/app/index.html?study={}".format(self.uuid)
-        else:
-            add = "app/explorer.html#study?uuid={}".format(self.uuid)
+        add = "app/explorer.html#study?uuid={}".format(self.uuid)
         return urljoin(pre, add)
+
+    imaging_test = fields.Many2One("gnuhealth.imaging.test.result", "Study")
 
     @classmethod
     def __setup__(cls):
