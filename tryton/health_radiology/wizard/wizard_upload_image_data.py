@@ -10,7 +10,7 @@ from trytond.pool import Pool
 
 from io import BytesIO
 
-__all__ = ['UploadImageDataStart', 'UploadImageData']
+__all__ = ['upload_image_data_start', 'upload_image_data']
 
 logger = logging.getLogger(__name__)
 
@@ -19,13 +19,13 @@ logger = logging.getLogger(__name__)
 #
 
 
-class UploadImageDataStart(ModelView):
+class upload_image_data_start(ModelView):
     "Upload Image Data Start"
-    __name__ = "gnuhealth.imaging.uploadImageData.start"
+    __name__ = "gnuhealth.radiology.upload_image_data.start"
     # The image data needs to be uploaded to the orthanc server.
-    data_to_Upload = fields.Binary("File to upload", required=True)
+    data_to_upload = fields.Binary("File to upload", required=True)
     # The target orthanc server where the image data will be saved
-    server_config = fields.Many2One('gnuhealth.orthanc.configServer', 'Server',
+    server_config = fields.Many2One('gnuhealth.orthanc.config_server', 'Server',  # noqa	E501
                                     select=True,
                                     help='Orthanc server',
                                     required=True)
@@ -35,37 +35,37 @@ class UploadImageDataStart(ModelView):
 #
 
 
-class UploadImageData(Wizard):
+class upload_image_data(Wizard):
     'Upload Image Data'
-    __name__ = 'gnuhealth.imaging.uploadImageData'
-    start = StateView('gnuhealth.imaging.uploadImageData.start',
+    __name__ = 'gnuhealth.radiology.upload_image_data'
+    start = StateView('gnuhealth.radiology.upload_image_data.start',
                       'health_radiology.upload_image_data_start_form',
                       [Button('Cancel', 'end', 'tryton-cancel'),
                        Button('Upload Image Data', 'upload', 'tryton-ok',
                               validate=True)])
     upload = StateTransition()
 
-    def upload_imageData(self, data_to_Upload, server_config):
+    def upload_image_data(self, data_to_upload, server_config):
         # A function to upload image data to the selected server.
-        # data_to_Upload contains the byte data of multiple dicom files.
+        # data_to_upload contains the byte data of multiple dicom files.
         # The format is:
         # 1.the bytes 'M', 'U', 'L', 'T' (ASCII 77,85,76,84)
         # 2.8 bytes containing the length of the file (Little Endian)
         # 3.the data of the file
         # 4.repeat steps 2 and 3 for next file
         try:
-            if (data_to_Upload[0] == 77 and data_to_Upload[1] == 85
-                    and data_to_Upload[2] == 76 and data_to_Upload[3] == 84):
+            if (data_to_upload[0] == 77 and data_to_upload[1] == 85
+                    and data_to_upload[2] == 76 and data_to_upload[3] == 84):
                 pos = 4
-                while pos < len(data_to_Upload):
+                while pos < len(data_to_upload):
                     # get length of file from data
                     data_length = 0
                     for i in range(0, 8):
-                        data_length = data_to_Upload[pos +
+                        data_length = data_to_upload[pos +
                                                      7 - i] + data_length * 256
                     pos = pos + 8
                     # get content of file from data
-                    data = BytesIO(data_to_Upload[pos: pos + data_length])
+                    data = BytesIO(data_to_upload[pos: pos + data_length])
                     pos = pos + data_length
                     # send file to Orthanc
                     client = Orthanc(
@@ -75,7 +75,7 @@ class UploadImageData(Wizard):
                         timeout=600)
                     client.post_instances(data.getvalue())
             else:
-                data = BytesIO(data_to_Upload[4:])
+                data = BytesIO(data_to_upload[4:])
                 client = Orthanc(
                     url=server_config.domain,
                     username=server_config.user,
@@ -90,8 +90,8 @@ class UploadImageData(Wizard):
         # Transitions the upload process by uploading the image data specified
         # in the start view
 
-        self.upload_imageData(self.start.data_to_Upload, self.start.server_config)  # noqa	E501
-        Pool().get('gnuhealth.imaging.imagingStudy').get_new_studies()
+        self.upload_image_data(self.start.data_to_upload, self.start.server_config)  # noqa	E501
+        Pool().get('gnuhealth.radiology.study').get_new_studies()
         return 'end'
 
     def end(self):

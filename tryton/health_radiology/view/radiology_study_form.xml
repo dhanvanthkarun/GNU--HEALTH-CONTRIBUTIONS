@@ -7,13 +7,13 @@
 
 <form>
     <notebook>
-        <page string = 'Study Content' id='imagingstudy_content_page'>
+        <page string = 'Study Content' id='study_content_page'>
             <group colspan="3" id="gnuhealth_info">
                 <label name="patient"/>
                 <field name="patient" colspan="1"/>
             </group>
             <newline/>
-            <group colspan="4" col="6" id="imagingStudy_info">
+            <group colspan="4" col="6" id="study_info">
                 <label name="date"/>
                 <field name="date"/>
                 <label name="institution"/>
@@ -26,7 +26,7 @@
                 <field colspan="5" name="series"/>
             </group>    
             <newline/>
-            <group string="Study Notes" colspan="4" id="imaging_study_notes">
+            <group string="Study Notes" colspan="4" id="study_notes">
                 <field name="notes" colspan="4"/>
             </group>
         </page>

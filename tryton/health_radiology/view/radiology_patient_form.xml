@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 -->
 <form>
-    <group colspan="3" id="imaging_patient">
+    <group colspan="3" id="radiology_patient">
         <label name="name"/>
         <field name="name"/>
         <label name="age"/>
@@ -13,5 +13,5 @@
         <label name="puid"/>
         <field name="puid"/>
     </group>
-        <field colspan="3" name="imaging_studies"/>
+        <field colspan="3" name="studies"/>
 </form>

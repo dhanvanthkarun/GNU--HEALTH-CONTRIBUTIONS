@@ -23,17 +23,17 @@ from trytond.exceptions import UserError
 from trytond.pool import Pool
 import logging
 
-__all__ = ['OrthancServerConfig']
+__all__ = ['server_config']
 
 logger = logging.getLogger(__name__)
 
 
-class OrthancServerConfig(ModelSQL, ModelView):
+class server_config(ModelSQL, ModelView):
     """
     This class is used to connect to an Orthanc DICOM server and
     to check if a connection to the corresponding domain can be established.
     """
-    __name__ = "gnuhealth.orthanc.configServer"
+    __name__ = "gnuhealth.orthanc.config_server"
     _rec_name = "label"
 
     label = fields.Char(
@@ -84,10 +84,10 @@ class OrthancServerConfig(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         """
-        Set up the OrthancServerConfig class for database access.
+        Set up the server_config class for database access.
 
         This method is a class method that initializes various properties
-        and constraints of the OrthancServerConfig model. It sets up a SQL
+        and constraints of the server_config model. It sets up a SQL
         constraint to ensure that the ``label`` coulmn is unique.
         """
         super().__setup__()
@@ -132,9 +132,9 @@ class OrthancServerConfig(ModelSQL, ModelView):
             return False
         except HTTPError as err:
             status_code = err.response.status_code
-            if status_code in OrthancServerConfig.http_error_messages:
+            if status_code in server_config.http_error_messages:
                 error_message = (
-                    OrthancServerConfig.http_error_messages[status_code] +
+                    server_config.http_error_messages[status_code] +
                     f" {domain} not reacheable"
                 )
                 logger.exception(error_message)
@@ -172,7 +172,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
     @classmethod
     @ModelView.button
     def remove_config_server(cls, records):
-        Study = Pool().get("gnuhealth.imaging.imagingStudy")
+        Study = Pool().get("gnuhealth.radiology.study")
 
         # check which configurations we can delete
         failed_domains = []

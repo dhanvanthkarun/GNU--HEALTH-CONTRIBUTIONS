@@ -12,32 +12,32 @@
     <data>
 
 <!-- Default access rights to models -->
-        <record model="ir.model.access" id="access_health_orthanc_configServer">
-            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
+        <record model="ir.model.access" id="access_orthanc_config_server">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config_server')]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="True"/>
         </record>
 
-        <record model="ir.model.access" id="access_health_imaging_imagingStudy">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudy')]"/>
+        <record model="ir.model.access" id="access_radiology_study">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study')]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="True"/>
         </record>
 
-        <record model="ir.model.access" id="access_health_imaging_imagingStudy_series">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudySeries')]"/>
+        <record model="ir.model.access" id="access_radiology_study_series">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study_series')]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_health_imaging_imagingStudy_seriesInstances">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingSeriesInstances')]"/>
+        <record model="ir.model.access" id="access_radiology_series_instances">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.series_instances')]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -48,51 +48,51 @@
 <!-- END OF DEFAULT ACCESS RIGHTS -->
 
 <!-- Create the Health radiology group -->
-        <record model="res.group" id="group_health_radiology">
+        <record model="res.group" id="group_radiology">
             <field name="name">Health Radiology</field>
         </record>
 
-<!-- Create the Health imaging Administration group -->
-        <record model="res.group" id="group_health_radiology_admin">
+<!-- Create the Health radiology Administration group -->
+        <record model="res.group" id="group_radiology_admin">
             <field name="name">Health Radiology Administration</field>
         </record>
 
-<!-- BEGIN imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+<!-- BEGIN radiology ADMINISTRATION GROUP ACCESS RIGHTS -->
 
 <!-- Assign the Group to the "admin" user -->
-        <record model="res.user-res.group" id="user_admin_group_health_radiology">
+        <record model="res.user-res.group" id="user_admin_group_radiology">
             <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+            <field name="group" ref="group_radiology_admin"/>
         </record>
 
 <!-- Access to Menus -->
-        <record model="ir.ui.menu-res.group" id="menu_health_group_health_radiology_admin">
+        <record model="ir.ui.menu-res.group" id="menu_group_radiology_admin">
             <field name="menu" ref="menu_radiology_parent"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+            <field name="group" ref="group_radiology_admin"/>
         </record>
 
 <!-- Access rights to models for the health admin group -->
-        <record model="ir.model.access" id="access_health_radiology_imagingStudy_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudy')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_radiology_study_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study')]"/>
+            <field name="group" ref="group_radiology_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_imagingStudy_series_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudySeries')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_study_series_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study_series')]"/>
+            <field name="group" ref="group_radiology_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_imagingStudy_seriesInstances_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingSeriesInstances')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_series_instances_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.series_instances')]"/>
+            <field name="group" ref="group_radiology_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -100,88 +100,88 @@
         </record>
 
         <record model="ir.model.access" id="access_orthanc_config_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config_server')]"/>
+            <field name="group" ref="group_radiology_admin"/>
             <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
+            <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="True"/>
         </record>
 
-<!-- END imaging ADMINISTRATION GROUP ACCESS RIGHTS -->
+<!-- END radiolog ADMINISTRATION GROUP ACCESS RIGHTS -->
 
-<!-- BEGIN imaging USER GROUP ACCESS RIGHTS -->
+<!-- BEGIN radiology USER GROUP ACCESS RIGHTS -->
 
 <!-- Access to Menus: -->
-        <record model="ir.ui.menu-res.group" id="menu_health_group_health_radiology">
+        <record model="ir.ui.menu-res.group" id="menu_group_radiology">
             <field name="menu" ref="health.gnuhealth_menu"/>
-            <field name="group" ref="group_health_radiology"/>
+            <field name="group" ref="group_radiology"/>
         </record>
 
-        <record model="ir.ui.menu-res.group" id="menu_health_radiology_group_health_radiology">
+        <record model="ir.ui.menu-res.group" id="menu_radiology_group_radiology">
             <field name="menu" ref="menu_radiology_parent"/>
-            <field name="group" ref="group_health_radiology"/>
+            <field name="group" ref="group_radiology"/>
         </record>
 
 
 <!-- Access rights to models for the health radiology group -->
-        <record model="ir.model.access" id="access_group_health_radiology_imagingStudy">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudy')]"/>
-            <field name="group" ref="group_health_radiology"/>
+        <record model="ir.model.access" id="access_group_radiology_study">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study')]"/>
+            <field name="group" ref="group_radiology"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_group_health_radiology_studySeries">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudySeries')]"/>
-            <field name="group" ref="group_health_radiology"/>
+        <record model="ir.model.access" id="access_group_radiology_study_series">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study_series')]"/>
+            <field name="group" ref="group_radiology"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_group_health_radiology_seriesInstances">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingSeriesInstances')]"/>
-            <field name="group" ref="group_health_radiology"/>
+        <record model="ir.model.access" id="access_group_radiology_series_instances">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.series_instances')]"/>
+            <field name="group" ref="group_radiology"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_group_health_radiology_imagingStudy_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudy')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_group_radiology_study_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study')]"/>
+            <field name="group" ref="group_radiology"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_health_radiology_studySeries_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudySeries')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_radiology_study_series_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study_series')]"/>
+            <field name="group" ref="group_radiology"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_health_radiology_studySeriesInstances_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingSeriesInstances')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_radiology_series_instances_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.series_instances')]"/>
+            <field name="group" ref="group_radiology"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
  
-        <record model="ir.model.access" id="access_health_orthanc_config_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
-            <field name="group" ref="group_health_radiology_admin"/>
+        <record model="ir.model.access" id="access_orthanc_config">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config_server')]"/>
+            <field name="group" ref="group_radiology_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -191,8 +191,8 @@
 
 <!-- BEGIN DOCTOR GROUP ACCESS RIGHTS -->
 
-        <record model="ir.model.access" id="access_health_radiology_doctor">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudy')]"/>
+        <record model="ir.model.access" id="access_radiology_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -200,8 +200,8 @@
             <field name="perm_delete" eval="False"/>
         </record>
         
-        <record model="ir.model.access" id="access_health_radiology_studySeries_doctor">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingStudySeries')]"/>
+        <record model="ir.model.access" id="access_radiology_study_series_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.study_series')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -209,8 +209,8 @@
             <field name="perm_delete" eval="False"/>
         </record>
 
-        <record model="ir.model.access" id="access_health_radiology_seriesInstances_doctor">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging.imagingSeriesInstances')]"/>
+        <record model="ir.model.access" id="access_radiology_series_instances_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.series_instances')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
@@ -219,7 +219,7 @@
         </record>
 
         <record model="ir.model.access" id="access_orthanc_config_doctor">
-            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.configServer')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config_server')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>

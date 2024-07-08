@@ -7,28 +7,28 @@ from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool
 import logging
 
-__all__ = ['FullSynchronizeStart', 'FullSynchronize']
+__all__ = ['full_synchronize_start', 'full_synchronize']
 
 logger = logging.getLogger(__name__)
 
 
-class FullSynchronizeStart(ModelView):
+class full_synchronize_start(ModelView):
     """
     Full Synchronize studies Start
     """
-    __name__ = "gnuhealth.imaging.fullSynchronize.start"
+    __name__ = "gnuhealth.radiology.full_synchronize.start"
 
 #
 # This class is responsible for retrieving all
 # saved studies from the Orthanc server.
 
 
-class FullSynchronize(Wizard):
+class full_synchronize(Wizard):
     "Full Synchronize Studies"
-    __name__ = 'gnuhealth.imaging.fullSynchronize'
+    __name__ = 'gnuhealth.radiology.full_synchronize'
 
     start = StateView(
-        'gnuhealth.imaging.fullSynchronize.start',
+        'gnuhealth.radiology.full_synchronize.start',
         'health_radiology.full_synchronize_start_form', [
             Button("Cancel", 'end', 'tryton-cancel'),
             Button("Synchronize", 'synchronize', 'tryton-ok'),
@@ -39,7 +39,7 @@ class FullSynchronize(Wizard):
         """
         Full Synchronize studies and return 'end'.
         """
-        Pool().get('gnuhealth.imaging.imagingStudy').full_synchronize()
+        Pool().get('gnuhealth.radiology.study').full_synchronize()
         return 'end'
 
     def end(self):

@@ -6,20 +6,19 @@
 -->
 
 <form>
-    <group colspan='3' string="Series" id="imaging_study_series_form">
+    <group colspan='3' string="Series" id="study_series_form">
         <label name="series_description"/>
         <field name="series_description"/>
         <label name="modality"/>
         <field name="modality"/>
-        <label name="link"/>
-        <field name="link"/>
+        <field name="stone_viewer_link" widget="url"/>
     </group>
     <newline/>
     <group colspan="3" id="series_instances_group" yexpand = "1">
         <field colspan="3" name="instances"/>
     </group>    
     <newline/>
-    <group string="Series Notes" colspan="3" id="imaging_series_notes">
+    <group string="Series Notes" colspan="3" id="series_notes">
         <field name="notes" colspan="3"/>
     </group>
 </form>

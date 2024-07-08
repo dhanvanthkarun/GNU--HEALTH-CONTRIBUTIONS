@@ -23,21 +23,21 @@ def register():
     """
     Pool.register(
         health_radiology.View,
-        health_radiology.PatientData,
-        health_radiology.PatientOrthancStudy,
-        wizard.wizard_upload_image_data.UploadImageDataStart,
-        wizard.wizard_get_new_studies.GetNewStudiesStart,
-        wizard.wizard_full_synchronize.FullSynchronizeStart,
-        wizard.wizard_orthanc_config.AddOrthancInitData,
-        health_radiology.ImagingStudySeries,
-        health_radiology.ImagingSeriesInstances,
-        health_orthanc_configuration.OrthancServerConfig,
+        health_radiology.patient_data,
+        health_radiology.patient_orthanc_study,
+        wizard.wizard_upload_image_data.upload_image_data_start,
+        wizard.wizard_get_new_studies.get_new_studies_start,
+        wizard.wizard_full_synchronize.full_synchronize_start,
+        wizard.wizard_orthanc_config.add_orthanc_init_data,
+        health_radiology.study_series,
+        health_radiology.series_instances,
+        health_orthanc_configuration.server_config,
         module='health_radiology', type_='model'
     )
     Pool.register(
-        wizard.wizard_full_synchronize.FullSynchronize,
-        wizard.wizard_get_new_studies.GetNewStudies,
-        wizard.wizard_upload_image_data.UploadImageData,
-        wizard.wizard_orthanc_config.ConnectNewOrthancServer,
+        wizard.wizard_full_synchronize.full_synchronize,
+        wizard.wizard_get_new_studies.get_new_studies,
+        wizard.wizard_upload_image_data.upload_image_data,
+        wizard.wizard_orthanc_config.connect_new_orthanc_server,
         module='health_radiology', type_='wizard'
     )

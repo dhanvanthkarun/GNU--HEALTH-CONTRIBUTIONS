@@ -6,28 +6,28 @@ from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool
 import logging
 
-__all__ = ['GetNewStudiesStart', 'GetNewStudies']
+__all__ = ['get_new_studies_start', 'get_new_studies']
 
 logger = logging.getLogger(__name__)
 
 
-class GetNewStudiesStart(ModelView):
+class get_new_studies_start(ModelView):
     """
     Get New Studies Start
     """
-    __name__ = "gnuhealth.imaging.getNewStudies.start"
+    __name__ = "gnuhealth.radiology.get_new_studies.start"
 
 #
 # This class is responsible for retrieving
 # all saved studies from the Orthanc server.
 
 
-class GetNewStudies(Wizard):
+class get_new_studies(Wizard):
     "Get New Studies"
-    __name__ = 'gnuhealth.imaging.getNewStudies'
+    __name__ = 'gnuhealth.radiology.get_new_studies'
 
     start = StateView(
-        'gnuhealth.imaging.getNewStudies.start',
+        'gnuhealth.radiology.get_new_studies.start',
         'health_radiology.get_new_studies_start_form',
         [Button("Cancel", 'end', 'tryton-cancel'),
          Button("Start", 'update', 'tryton-ok'),
@@ -38,7 +38,7 @@ class GetNewStudies(Wizard):
         """
         Get new studies and return 'end'.
         """
-        Pool().get('gnuhealth.imaging.imagingStudy').get_new_studies()
+        Pool().get('gnuhealth.radiology.study').get_new_studies()
         return 'end'
 
     def end(self):

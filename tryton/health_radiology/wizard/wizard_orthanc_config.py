@@ -12,13 +12,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-__all__ = ["AddOrthancInitData", "ConnectNewOrthancServer"]
+__all__ = ["add_orthanc_init_data", "connect_new_orthanc_server"]
 
 
-class AddOrthancInitData(ModelView):
+class add_orthanc_init_data(ModelView):
     """Init data for Orthanc connection"""
 
-    __name__ = "gnuhealth.orthanc.add.initData"
+    __name__ = "gnuhealth.orthanc.add.init_data"
 
     label = fields.Char(
         "Label", required=True,
@@ -38,13 +38,13 @@ class AddOrthancInitData(ModelView):
     )
 
 
-class ConnectNewOrthancServer(Wizard):
+class connect_new_orthanc_server(Wizard):
     "Connect new Orthanc server"
-    __name__ = "gnuhealth.orthanc.wizard.newConnect"
+    __name__ = "gnuhealth.orthanc.wizard.new_connect"
 
     start = StateView(
-        "gnuhealth.orthanc.add.initData",
-        "health_radiology.view_orthanc_add_initData",
+        "gnuhealth.orthanc.add.init_data",
+        "health_radiology.view_orthanc_add_init_data",
         [
             Button("Cancel", "end", "tryton-cancel"),
             Button("Connect", "connect", "tryton-ok", default=True),
@@ -55,7 +55,7 @@ class ConnectNewOrthancServer(Wizard):
 
     def transition_connect(self):
         pool = Pool()
-        Config = pool.get("gnuhealth.orthanc.configServer")
+        Config = pool.get("gnuhealth.orthanc.config_server")
 
         # check if domain already exists
         if len(Config.search([["label", "=", self.start.label]])) > 0 or len(
