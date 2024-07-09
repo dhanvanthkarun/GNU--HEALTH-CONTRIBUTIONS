@@ -11,9 +11,11 @@
             <group colspan="4" id="gnuhealth_info">
                 <label name="patient"/>
                 <field name="patient" colspan="1"/>
+                <label name="patient_name"/>
+                <field name="patient_name"/>
             </group>
             <newline/>
-            <group colspan="4" col="6" id="study_info">
+            <group string="Study Info" colspan="4" col="4" id="study_info">
                 <label name="date"/>
                 <field name="date"/>
                 <label name="institution"/>
