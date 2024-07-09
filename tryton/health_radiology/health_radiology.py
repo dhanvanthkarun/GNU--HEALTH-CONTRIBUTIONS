@@ -290,7 +290,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         "based on the provided study IDs.
         """
         pool = Pool()
-        IStu = pool.get('gnuhealth.radiology.study')
+        Study = pool.get('gnuhealth.radiology.study')
         for orthanc_study_id in orthanc_study_ids:
             orthanc_study = client.get_studies_id(orthanc_study_id)
             dicom_tags = orthanc_study['MainDicomTags']
@@ -298,7 +298,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             study_values = {}
 
             # Create or update?
-            gh_study = IStu.search(
+            gh_study = Study.search(
                 [('study_instance_UID', '=',
                   dicom_tags['StudyInstanceUID']),
                  ('server', '=', server)])
@@ -326,12 +326,12 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     if 'ReferringPhysicianName' else "")  # noqa E501
 
                 study_values['server'] = server
-                IStu.create([study_values])
+                Study.create([study_values])
             else:
                 # DICOM studies are immutable. Only the internal Orthanc ID can
                 # change.
                 study_values['orthanc_UID'] = orthanc_study['ID']
-                IStu.write(gh_study, study_values)
+                Study.write(gh_study, study_values)
 
     @classmethod
     def create_or_update_series_from_orthanc(cls, client, server, orthanc_seriesIDs):  # noqa E501
@@ -341,7 +341,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         """
 
         pool = Pool()
-        IStu = pool.get('gnuhealth.radiology.study')
+        Study = pool.get('gnuhealth.radiology.study')
         ISer = pool.get('gnuhealth.radiology.study_series')
         for orthanc_seriesID in orthanc_seriesIDs:
             orthanc_series = client.get_series_id(orthanc_seriesID)
@@ -369,7 +369,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     dicom_tags['SeriesNumber']
                     if 'SeriesNumber' in dicom_tags else "")  # noqa E501
 
-                gh_study = IStu.search(
+                gh_study = Study.search(
                     [('orthanc_UID', '=', orthanc_series['ParentStudy']),
                      ('server', '=', server)])  # noqa E501  # noqa E501
 
@@ -378,7 +378,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                         "The study with the given Orthanc ID " +
                         "does not exist in the gnuhealth database")  # noqa E501
 
-                IStu.write(gh_study, {'series': [('create', [series_values])]})
+                Study.write(
+                    gh_study, {
+                        'series': [
+                            ('create', [series_values])]})
             else:
                 # DICOM series are immutable. Only the internal Orthanc ID can
                 # change.
@@ -449,12 +452,12 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         """
         try:
             pool = Pool()
-            IStu = pool.get('gnuhealth.radiology.study')
+            Study = pool.get('gnuhealth.radiology.study')
             ISer = pool.get('gnuhealth.radiology.study_series')
             # IInst = pool.get('gnuhealth.radiology.series_instances')
 
             # Get all studies that are already in gnuhealth
-            gh_studies = IStu.search([])
+            gh_studies = Study.search([])
             # Get studies from Orthanc servers
             Config = pool.get('gnuhealth.radiology.orthanc_server_config')
             servers = Config.search([])
@@ -497,7 +500,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
                         study_values['server'] = server.domain
                         logger.error("Creating study")
-                        gh_study = IStu.create([study_values])
+                        gh_study = Study.create([study_values])
                     gh_study = gh_study[0]
 
                     orthanc_seriesIDs = orthanc_study['Series']
@@ -529,7 +532,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                             series_values['study'] = gh_study
                             logger.error("Creating series")
                             gh_series = ISer.create([series_values])
-                            IStu.write(
+                            Study.write(
                                 [gh_study], {
                                     'series': [
                                         ('add', [
@@ -688,10 +691,10 @@ class StudySeries(ModelSQL, ModelView):
         # call original delete
         super(StudySeries, cls).delete(seriess)
         # if the study has no more series, delete the study, too
-        IStu = Pool().get('gnuhealth.radiology.study')
+        Study = Pool().get('gnuhealth.radiology.study')
         for study in studies:
             if study and ((study.series is None) or len(study.series) == 0):
-                IStu.delete([study])
+                Study.delete([study])
 
     @classmethod
     @ModelView.button
