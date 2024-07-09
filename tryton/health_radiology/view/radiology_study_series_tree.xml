@@ -11,5 +11,8 @@
     <field name="modality"/>
     <field name="server" expand="1"/>
     <field name="stone_viewer_link" widget="url"/>
-    <button name="delete_series" help="Delete series from the study" confirm="Do you really want to delete the series from Orthanc? After deleting your selected series, remember to click 'Reload' to refresh the table if there are empty rows left!" string="Delele"/>
+    <button name="delete_series"
+            string="Delele"
+            help="Delete study series from remote orthanc server."
+            confirm="Do you really want to delete the series from remote orthanc server? After deleting your selected series, remember to click 'Reload' to refresh the table if there are empty rows left!"/>
 </tree>
