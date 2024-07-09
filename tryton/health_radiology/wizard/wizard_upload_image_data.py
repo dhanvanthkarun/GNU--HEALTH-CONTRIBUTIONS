@@ -10,7 +10,7 @@ from trytond.pool import Pool
 
 from io import BytesIO
 
-__all__ = ['upload_image_data_start', 'upload_image_data']
+__all__ = ['UploadImageDataStart', 'UploadImageData']
 
 logger = logging.getLogger(__name__)
 
@@ -19,13 +19,13 @@ logger = logging.getLogger(__name__)
 #
 
 
-class upload_image_data_start(ModelView):
+class UploadImageDataStart(ModelView):
     "Upload Image Data Start"
     __name__ = "gnuhealth.radiology.upload_image_data.start"
     # The image data needs to be uploaded to the orthanc server.
     data_to_upload = fields.Binary("File to upload", required=True)
     # The target orthanc server where the image data will be saved
-    server_config = fields.Many2One('gnuhealth.orthanc.config_server', 'Server',  # noqa	E501
+    server_config = fields.Many2One('gnuhealth.radiology.orthanc_config_server', 'Server',  # noqa	E501
                                     select=True,
                                     help='Orthanc server',
                                     required=True)
@@ -35,7 +35,7 @@ class upload_image_data_start(ModelView):
 #
 
 
-class upload_image_data(Wizard):
+class UploadImageData(Wizard):
     'Upload Image Data'
     __name__ = 'gnuhealth.radiology.upload_image_data'
     start = StateView('gnuhealth.radiology.upload_image_data.start',

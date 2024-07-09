@@ -12,13 +12,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-__all__ = ["add_orthanc_init_data", "connect_new_orthanc_server"]
+__all__ = ["AddOrthancInitData", "ConnectNewOrthancServer"]
 
 
-class add_orthanc_init_data(ModelView):
+class AddOrthancInitData(ModelView):
     """Init data for Orthanc connection"""
 
-    __name__ = "gnuhealth.orthanc.add.init_data"
+    __name__ = "gnuhealth.radiology.add.init_data"
 
     label = fields.Char(
         "Label", required=True,
@@ -38,12 +38,12 @@ class add_orthanc_init_data(ModelView):
     )
 
 
-class connect_new_orthanc_server(Wizard):
+class ConnectNewOrthancServer(Wizard):
     "Connect new Orthanc server"
-    __name__ = "gnuhealth.orthanc.wizard.new_connect"
+    __name__ = "gnuhealth.radiology.wizard.new_connect"
 
     start = StateView(
-        "gnuhealth.orthanc.add.init_data",
+        "gnuhealth.radiology.add.init_data",
         "health_radiology.view_orthanc_add_init_data",
         [
             Button("Cancel", "end", "tryton-cancel"),
@@ -55,7 +55,7 @@ class connect_new_orthanc_server(Wizard):
 
     def transition_connect(self):
         pool = Pool()
-        Config = pool.get("gnuhealth.orthanc.config_server")
+        Config = pool.get("gnuhealth.radiology.orthanc_config_server")
 
         # check if domain already exists
         if len(Config.search([["label", "=", self.start.label]])) > 0 or len(
@@ -77,7 +77,7 @@ class connect_new_orthanc_server(Wizard):
                     "Is the URL correct?" + str(err))
             except Exception as err:
                 logger.error(type(err))
-                raise UserError(str(err))
+                raise UserError("Configure Connection Error: Please ensure that the URL provided is the correct Orthanc server URL. To verify, try accessing the URL in a web browser. "+ str(err))
             else:
                 new_server = {
                     "label": self.start.label,

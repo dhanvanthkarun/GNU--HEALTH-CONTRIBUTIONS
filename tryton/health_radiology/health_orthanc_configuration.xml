@@ -19,12 +19,12 @@
 
         <!-- Orthanc config  -->
         <record model="ir.ui.view" id="orthanc_view_config_tree">
-            <field name="model">gnuhealth.orthanc.config_server</field>
+            <field name="model">gnuhealth.radiology.orthanc_config_server</field>
             <field name="type">tree</field>
             <field name="name">orthanc_config_tree</field>
         </record>
         <record model="ir.ui.view" id="orthanc_view_config_form">
-            <field name="model">gnuhealth.orthanc.config_server</field>
+            <field name="model">gnuhealth.radiology.orthanc_config_server</field>
             <field name="type">form</field>
             <field name="name">orthanc_config_form</field>
         </record>
@@ -36,27 +36,27 @@
 
         <record model="ir.action.act_window" id="act_orthanc_server_view">
             <field name="name">Servers</field>
-            <field name="res_model">gnuhealth.orthanc.config_server</field>
+            <field name="res_model">gnuhealth.radiology.orthanc_config_server</field>
         </record>
 
         <menuitem name="Servers" sequence="20" parent="radio_orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_servers_menu" icon="gnuhealth-list"/>
            
         <!-- Wizard and Views to add server -->
         <record model="ir.ui.view" id="view_orthanc_add_init_data">
-            <field name="model">gnuhealth.orthanc.add.init_data</field>
+            <field name="model">gnuhealth.radiology.add.init_data</field>
             <field name="type">form</field>
             <field name="name">add_orthanc_server_init_data</field>
         </record>
 
         <record model="ir.ui.view" id="view_orthanc_add_status">
-            <field name="model">gnuhealth.orthanc.add.status</field>
+            <field name="model">gnuhealth.radiology.add.status</field>
             <field name="type">form</field>
             <field name="name">add_orthanc_server_status</field>
         </record>
         
         <record model="ir.action.wizard" id="orthanc_add_server_init_data">
             <field name="name">Add New Server</field>
-            <field name="wiz_name">gnuhealth.orthanc.wizard.new_connect</field>
+            <field name="wiz_name">gnuhealth.radiology.wizard.new_connect</field>
         </record>
         <menuitem parent="radio_orthanc_config_menu" action="orthanc_add_server_init_data" id="radio_orthanc_add_server_menu" sequence="10" icon="execute"/>
     </data>

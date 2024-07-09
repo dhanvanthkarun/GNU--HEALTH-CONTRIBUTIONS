@@ -23,17 +23,17 @@ from trytond.exceptions import UserError
 from trytond.pool import Pool
 import logging
 
-__all__ = ['server_config']
+__all__ = ['ServerConfig']
 
 logger = logging.getLogger(__name__)
 
 
-class server_config(ModelSQL, ModelView):
+class ServerConfig(ModelSQL, ModelView):
     """
     This class is used to connect to an Orthanc DICOM server and
     to check if a connection to the corresponding domain can be established.
     """
-    __name__ = "gnuhealth.orthanc.config_server"
+    __name__ = "gnuhealth.radiology.orthanc_config_server"
     _rec_name = "label"
 
     label = fields.Char(
@@ -84,10 +84,10 @@ class server_config(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         """
-        Set up the server_config class for database access.
+        Set up the ServerConfig class for database access.
 
         This method is a class method that initializes various properties
-        and constraints of the server_config model. It sets up a SQL
+        and constraints of the ServerConfig model. It sets up a SQL
         constraint to ensure that the ``label`` coulmn is unique.
         """
         super().__setup__()
@@ -132,9 +132,9 @@ class server_config(ModelSQL, ModelView):
             return False
         except HTTPError as err:
             status_code = err.response.status_code
-            if status_code in server_config.http_error_messages:
+            if status_code in ServerConfig.http_error_messages:
                 error_message = (
-                    server_config.http_error_messages[status_code] +
+                    ServerConfig.http_error_messages[status_code] +
                     f" {domain} not reacheable"
                 )
                 logger.exception(error_message)

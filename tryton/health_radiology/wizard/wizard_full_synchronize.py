@@ -7,12 +7,12 @@ from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool
 import logging
 
-__all__ = ['full_synchronize_start', 'full_synchronize']
+__all__ = ['FullSynchronizeStart', 'FullSynchronize']
 
 logger = logging.getLogger(__name__)
 
 
-class full_synchronize_start(ModelView):
+class FullSynchronizeStart(ModelView):
     """
     Full Synchronize studies Start
     """
@@ -23,7 +23,7 @@ class full_synchronize_start(ModelView):
 # saved studies from the Orthanc server.
 
 
-class full_synchronize(Wizard):
+class FullSynchronize(Wizard):
     "Full Synchronize Studies"
     __name__ = 'gnuhealth.radiology.full_synchronize'
 

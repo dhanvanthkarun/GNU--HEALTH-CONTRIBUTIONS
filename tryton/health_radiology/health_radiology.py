@@ -20,10 +20,10 @@ from pyorthanc import Orthanc
 from lxml import etree
 
 __all__ = [
-    'patient_data',
-    'patient_orthanc_study',
-    'study_series',
-    'series_instances']
+    'PatientData',
+    'PatientOrthancStudy',
+    'StudySeries',
+    'SeriesInstances']
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +53,7 @@ class View(metaclass=PoolMeta):
 #
 
 
-class patient_data (metaclass=PoolMeta):
+class PatientData (metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     radiology_studies = fields.One2Many(
@@ -66,7 +66,7 @@ class patient_data (metaclass=PoolMeta):
 #
 
 
-class patient_orthanc_study(ModelSQL, ModelView):
+class PatientOrthancStudy(ModelSQL, ModelView):
     'Patient Orthanc Study'
     __name__ = "gnuhealth.radiology.study"
 
@@ -107,7 +107,7 @@ class patient_orthanc_study(ModelSQL, ModelView):
     def __setup__(cls):
         # Setup the patient orthanc study class with additional buttons
         # for deleting a study and selecting a viewer.
-        super(patient_orthanc_study, cls).__setup__()
+        super(PatientOrthancStudy, cls).__setup__()
         t = cls.__table__()
         cls._buttons.update({
             'delete_study': {}
@@ -162,7 +162,7 @@ class patient_orthanc_study(ModelSQL, ModelView):
         """
         records_to_delete = []
         try:
-            Config = Pool().get('gnuhealth.orthanc.config_server')
+            Config = Pool().get('gnuhealth.radiology.orthanc_config_server')
             servers = Config.search([])
             for record in records:
                 for conf_server in servers:
@@ -202,7 +202,7 @@ class patient_orthanc_study(ModelSQL, ModelView):
         # processing changes to studies, series, and instances.
         try:
             pool = Pool()
-            Config = pool.get('gnuhealth.orthanc.config_server')
+            Config = pool.get('gnuhealth.radiology.orthanc_config_server')
             server_configs = Config.search([])
             for server_config in server_configs:
                 client = Orthanc(
@@ -285,8 +285,7 @@ class patient_orthanc_study(ModelSQL, ModelView):
                 series_values['orthanc_UID'] = orthanc_series['ID']
                 series_values['series_description'] = dicom_tags['SeriesDescription'] if 'SeriesDescription' in dicom_tags else ""  # noqa E501
                 series_values['series_number'] = dicom_tags['SeriesNumber'] if 'SeriesNumber' in dicom_tags else ""  # noqa E501
-                gh_study = IStu.search([('orthanc_UID', '=', orthanc_series['ParentStudy']), ('server', '=', server)])  # noqa E501
-                series_values['series_instance_UID'] = dicom_tags['SeriesInstanceUID']  # noqa E501
+                gh_study = IStu.search([('orthanc_UID', '=', orthanc_series['ParentStudy']), ('server', '=', server)])  # noqa E501  # noqa E501
                 if len(gh_study) == 0:
                     raise UserError("The study with the given Orthanc ID does not exist in the gnuhealth database")  # noqa E501
                 IStu.write(gh_study, {'series': [('create', [series_values])]})
@@ -350,7 +349,7 @@ class patient_orthanc_study(ModelSQL, ModelView):
             # Get all studies that are already in gnuhealth
             gh_studies = IStu.search([])
             # Get studies from Orthanc servers
-            Config = pool.get('gnuhealth.orthanc.config_server')
+            Config = pool.get('gnuhealth.radiology.orthanc_config_server')
             servers = Config.search([])
             for server in servers:
                 client = Orthanc(url=server.domain,
@@ -433,7 +432,7 @@ class patient_orthanc_study(ModelSQL, ModelView):
                 "pleasecheck the Orthanc server")
 
 
-class study_series(ModelSQL, ModelView):
+class StudySeries(ModelSQL, ModelView):
     'Study Series'
     __name__ = 'gnuhealth.radiology.study_series'
     study = fields.Many2One('gnuhealth.radiology.study', 'Study',
@@ -469,7 +468,7 @@ class study_series(ModelSQL, ModelView):
         A description of the entire function, "
         "its parameters, and its return types.
         """
-        super(study_series, cls).__setup__()
+        super(StudySeries, cls).__setup__()
         cls._buttons.update({
             'delete_series': {},
         })
@@ -528,7 +527,7 @@ class study_series(ModelSQL, ModelView):
         """
         studies = [s.study for s in seriess]
         # call original delete
-        super(study_series, cls).delete(seriess)
+        super(StudySeries, cls).delete(seriess)
         # if the study has no more series, delete the study, too
         IStu = Pool().get('gnuhealth.radiology.study')
         for study in studies:
@@ -544,8 +543,9 @@ class study_series(ModelSQL, ModelView):
         Returns 'reload' on successful deletion.
         Raises UserError on failure with an appropriate error message.
         """
+        records_to_delete = []
         try:
-            Config = Pool().get('gnuhealth.orthanc.config_server')
+            Config = Pool().get('gnuhealth.radiology.orthanc_config_server')
             servers = Config.search([])
             for record in records:
                 for conf_server in servers:
@@ -558,30 +558,33 @@ class study_series(ModelSQL, ModelView):
                         response = client.delete_series_id(record.orthanc_UID)
                         if (200 <= response.status_code < 300 or
                                 response.status_code == 404):
-                            cls.delete([record])
+                            records_to_delete.append(record)
                         else:
                             raise UserError(
-                                "Orthanc server returned HTTP code",
-                                f"{response.status_code}, "
-                                f"with content {response.text}",
-                                description="Unable to delete Orthanc study"
-                                " series. It may no longer exist or"
-                                " the Orthanc server could be in "
-                                "read-only mode. "
-                                "Please review your "
-                                "Orthanc server configuration.")
-
-            return 'reload'
+                                'Orthanc server returned HTTP code'
+                                f'{response.status_code}, '
+                                f'with content {response.text}',
+                                description=("Unable to delete Orthanc study"
+                                             " series. It may no longer exist or"  # noqa E501
+                                             " the Orthanc server could be in "
+                                             "read-only mode. "
+                                             "Please review your "
+                                             "Orthanc server configuration."))
         except Exception as exception:
-            logger.error('Delete Orthanc study exception: %s', exception, exc_info=True)  # noqa E501
-            raise UserError(str(exception), description="Unable to delete Orthanc study. It may no longer exist or the Orthanc server could be in read-only mode. Please review your Orthanc server configuration.")  # noqa E501
+            logger.error(
+                'Delete study series exception: %s',
+                exception,
+                exc_info=True)
+            raise UserError(str(exception))
+        finally:
+            cls.delete(records_to_delete)
         return 'reload'
 #
 # All instances in the series of patient's image study.
 #
 
 
-class series_instances(ModelSQL, ModelView):
+class SeriesInstances(ModelSQL, ModelView):
     'Series Instance'
     __name__ = 'gnuhealth.radiology.series_instances'
 
@@ -618,9 +621,9 @@ class series_instances(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         """
-        Set up the series_instances class.
+        Set up the SeriesInstances class.
         """
-        super(series_instances, cls).__setup__()
+        super(SeriesInstances, cls).__setup__()
 
         cls._order.insert(0, ('instance_number', 'ASC'))
 
@@ -651,7 +654,7 @@ class series_instances(ModelSQL, ModelView):
         :return: The image data in PNG format if successful, None otherwise.
         """
         try:
-            Config = Pool().get('gnuhealth.orthanc.config_server')
+            Config = Pool().get('gnuhealth.radiology.orthanc_config_server')
             servers = Config.search([])
             for conf_server in servers:
                 if conf_server.domain == self.server:

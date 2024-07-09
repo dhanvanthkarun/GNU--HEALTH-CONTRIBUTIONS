@@ -13,7 +13,7 @@ import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
 
-class Health_radiology_TestCase(ModuleTestCase):
+class HealthRadiologyTestCase(ModuleTestCase):
     '''
     Test Health Radiology module.
     '''

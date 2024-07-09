@@ -6,12 +6,12 @@ from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool
 import logging
 
-__all__ = ['get_new_studies_start', 'get_new_studies']
+__all__ = ['GetNewStudiesStart', 'GetNewStudies']
 
 logger = logging.getLogger(__name__)
 
 
-class get_new_studies_start(ModelView):
+class GetNewStudiesStart(ModelView):
     """
     Get New Studies Start
     """
@@ -22,7 +22,7 @@ class get_new_studies_start(ModelView):
 # all saved studies from the Orthanc server.
 
 
-class get_new_studies(Wizard):
+class GetNewStudies(Wizard):
     "Get New Studies"
     __name__ = 'gnuhealth.radiology.get_new_studies'
 
