@@ -471,9 +471,11 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 for orthanc_study in orthanc_studies:
                     # Create study in gnuhealth if it does not exist
                     dicom_tags = orthanc_study['MainDicomTags']
-                    gh_study = [s for s in gh_studies
-                                if s.study_instance_UID == dicom_tags['StudyInstanceUID']
-                                and s.server == server.domain]  # noqa E501
+                    gh_study = [
+                        s for s in gh_studies
+                        if s.study_instance_UID == dicom_tags[
+                                'StudyInstanceUID']
+                        and s.server == server.domain]  # noqa E501
                     if len(gh_study) == 0:
                         dicom_tags = orthanc_study['MainDicomTags']
                         patient_main_dicomTags = orthanc_study['PatientMainDicomTags']  # noqa E501
@@ -552,14 +554,16 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                                 instance_values['sop_instance_UID'] = instance_main_dicomTags['SOPInstanceUID']  # noqa E501
                                 instance_values['orthanc_UID'] = orthanc_instance['ID']  # noqa E501
                                 if ('InstanceNumber' in instance_main_dicomTags
-                                    and instance_main_dicomTags['InstanceNumber'] != ''
+                                    and instance_main_dicomTags[
+                                        'InstanceNumber'] != ''
                                     and instance_main_dicomTags['InstanceNumber'] is not None):  # noqa E501
                                     instance_values['instance_number'] = int(
                                         float(instance_main_dicomTags['InstanceNumber']))  # noqa E501
                                 else:
                                     instance_values['instance_number'] = 0
                                 instance_values['image_position_patient'] = (
-                                    instance_main_dicomTags['ImagePositionPatient']
+                                    instance_main_dicomTags[
+                                        'ImagePositionPatient']
                                     if 'ImagePositionPatient' in instance_main_dicomTags else "")  # noqa E501
                                 instance_values_to_create.append(instance_values)  # noqa E501
                         logger.error(
