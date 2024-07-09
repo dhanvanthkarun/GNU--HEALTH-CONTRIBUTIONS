@@ -63,7 +63,7 @@ class server_config(ModelSQL, ModelView):
             help="Link to server in Orthanc Explorer"), "get_link")
 
     last_changed_index = fields.Integer(
-        "LastChangedIndex",
+        "Last Changed Index",
         readonly=True,
         help="Index of last change")
 
