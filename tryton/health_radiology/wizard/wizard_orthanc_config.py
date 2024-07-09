@@ -55,7 +55,7 @@ class ConnectNewOrthancServer(Wizard):
 
     def transition_connect(self):
         pool = Pool()
-        Config = pool.get("gnuhealth.radiology.orthanc_config_server")
+        Config = pool.get("gnuhealth.radiology.orthanc_server_config")
 
         # check if domain already exists
         if len(Config.search([["label", "=", self.start.label]])) > 0 or len(

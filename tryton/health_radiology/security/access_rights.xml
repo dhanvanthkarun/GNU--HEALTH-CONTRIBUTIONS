@@ -13,7 +13,7 @@
 
 <!-- Default access rights to models -->
         <record model="ir.model.access" id="access_orthanc_config_server">
-            <field name="model" search="[('model', '=', 'gnuhealth.radiology.orthanc_config_server')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.orthanc_server_config')]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -100,7 +100,7 @@
         </record>
 
         <record model="ir.model.access" id="access_orthanc_config_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.radiology.orthanc_config_server')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.orthanc_server_config')]"/>
             <field name="group" ref="group_radiology_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -210,7 +210,7 @@
         </record>
 
         <record model="ir.model.access" id="access_orthanc_config_doctor">
-            <field name="model" search="[('model', '=', 'gnuhealth.radiology.orthanc_config_server')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.radiology.orthanc_server_config')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>

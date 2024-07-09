@@ -33,7 +33,7 @@ class ServerConfig(ModelSQL, ModelView):
     This class is used to connect to an Orthanc DICOM server and
     to check if a connection to the corresponding domain can be established.
     """
-    __name__ = "gnuhealth.radiology.orthanc_config_server"
+    __name__ = "gnuhealth.radiology.orthanc_server_config"
     _rec_name = "label"
 
     label = fields.Char(
