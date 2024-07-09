@@ -40,7 +40,7 @@ class AddOrthancInitData(ModelView):
 
 class ConnectNewOrthancServer(Wizard):
     "Connect new Orthanc server"
-    __name__ = "gnuhealth.radiology.wizard.new_connect"
+    __name__ = "gnuhealth.radiology.wizard.orthanc_new_connect"
 
     start = StateView(
         "gnuhealth.radiology.orthanc_add_init_data",

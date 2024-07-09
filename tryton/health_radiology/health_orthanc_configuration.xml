@@ -56,7 +56,7 @@
         
         <record model="ir.action.wizard" id="orthanc_add_server_init_data">
             <field name="name">Add New Server</field>
-            <field name="wiz_name">gnuhealth.radiology.wizard.new_connect</field>
+            <field name="wiz_name">gnuhealth.radiology.wizard.orthanc_new_connect</field>
         </record>
         <menuitem parent="radio_orthanc_config_menu" action="orthanc_add_server_init_data" id="radio_orthanc_add_server_menu" sequence="10" icon="execute"/>
     </data>
