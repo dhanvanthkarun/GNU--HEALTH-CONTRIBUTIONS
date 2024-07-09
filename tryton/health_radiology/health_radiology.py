@@ -615,7 +615,7 @@ class StudySeries(ModelSQL, ModelView):
     instances = fields.One2Many(
         'gnuhealth.radiology.series_instances',
         'series',
-        'Series instance')
+        'Series Instance')
 
     @classmethod
     def __setup__(cls):
