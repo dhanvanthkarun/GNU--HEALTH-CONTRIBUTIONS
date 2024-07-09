@@ -69,8 +69,7 @@ class patient_data (metaclass=PoolMeta):
 class patient_orthanc_study(ModelSQL, ModelView):
     'Patient Orthanc Study'
     __name__ = "gnuhealth.radiology.study"
-    _order_name = 'patient_name'
-    _order = [('patient_name', 'DESC')]
+
     patient = fields.Many2One(
         'gnuhealth.patient',
         'Patient',
@@ -117,6 +116,8 @@ class patient_orthanc_study(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('studyUID_unique', Unique(t, t.study_instance_UID, t.server), "There is already a study with the same UID. Use the \"Get New studies\" action to get the latest list of studies from the Orthanc servers to see whether there is already a study with the same UID.")  # noqa E501
         ]
+
+        cls._order.insert(0, ('patient_name', 'ASC'))
 
     def get_gnu_patient(self, name):
         """
@@ -584,9 +585,6 @@ class series_instances(ModelSQL, ModelView):
     'Series Instance'
     __name__ = 'gnuhealth.radiology.series_instances'
 
-    _order_name = 'instance_number'
-    _order = [('instance_number', 'DESC')]
-
     series = fields.Many2One(
         'gnuhealth.radiology.study_series',
         'Series',
@@ -623,6 +621,8 @@ class series_instances(ModelSQL, ModelView):
         Set up the series_instances class.
         """
         super(series_instances, cls).__setup__()
+
+        cls._order.insert(0, ('instance_number', 'ASC'))
 
     def get_study_server(self, name):
         """
