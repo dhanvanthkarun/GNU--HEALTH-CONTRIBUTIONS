@@ -18,7 +18,7 @@ __all__ = ["AddOrthancInitData", "ConnectNewOrthancServer"]
 class AddOrthancInitData(ModelView):
     """Init data for Orthanc connection"""
 
-    __name__ = "gnuhealth.radiology.add.init_data"
+    __name__ = "gnuhealth.radiology.orthanc_add_init_data"
 
     label = fields.Char(
         "Label", required=True,
@@ -43,7 +43,7 @@ class ConnectNewOrthancServer(Wizard):
     __name__ = "gnuhealth.radiology.wizard.new_connect"
 
     start = StateView(
-        "gnuhealth.radiology.add.init_data",
+        "gnuhealth.radiology.orthanc_add_init_data",
         "health_radiology.view_orthanc_add_init_data",
         [
             Button("Cancel", "end", "tryton-cancel"),
@@ -77,7 +77,9 @@ class ConnectNewOrthancServer(Wizard):
                     "Is the URL correct?" + str(err))
             except Exception as err:
                 logger.error(type(err))
-                raise UserError("Configure Connection Error: Please ensure that the URL provided is the correct Orthanc server URL. To verify, try accessing the URL in a web browser. "+ str(err))
+                raise UserError(
+                    "Configure Connection Error: Please ensure that the URL provided is the correct Orthanc server URL. To verify, try accessing the URL in a web browser. " +
+                    str(err))
             else:
                 new_server = {
                     "label": self.start.label,
