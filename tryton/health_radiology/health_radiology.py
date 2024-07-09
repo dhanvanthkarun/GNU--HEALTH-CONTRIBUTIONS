@@ -342,14 +342,14 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
         pool = Pool()
         Study = pool.get('gnuhealth.radiology.study')
-        ISer = pool.get('gnuhealth.radiology.study_series')
+        Series = pool.get('gnuhealth.radiology.study_series')
         for orthanc_seriesID in orthanc_seriesIDs:
             orthanc_series = client.get_series_id(orthanc_seriesID)
             dicom_tags = orthanc_series['MainDicomTags']
             series_values = {}
 
             # Create or update?
-            gh_series = ISer.search(
+            gh_series = Series.search(
                 [('series_UID', '=', dicom_tags['SeriesInstanceUID']),
                  ('server', '=', server)])  # noqa E501
 
@@ -386,7 +386,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 # DICOM series are immutable. Only the internal Orthanc ID can
                 # change.
                 series_values['orthanc_UID'] = orthanc_series['ID']
-                ISer.write(gh_series, series_values)
+                Series.write(gh_series, series_values)
 
     @classmethod
     def create_or_update_instances_from_orthanc(
@@ -395,7 +395,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         Create or update instances from Orthanc in the GNU Health system.
         """
         pool = Pool()
-        ISer = pool.get('gnuhealth.radiology.study_series')
+        Series = pool.get('gnuhealth.radiology.study_series')
         IInst = pool.get('gnuhealth.radiology.series_instances')
         for orthanc_instance_id in orthanc_instance_ids:
             orthanc_instance = client.get_instances_id(orthanc_instance_id)
@@ -423,7 +423,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     dicom_tags['ImagePositionPatient']
                     if 'ImagePositionPatient' in dicom_tags else "")  # noqa E501
 
-                gh_series = ISer.search(
+                gh_series = Series.search(
                     [('orthanc_UID', '=', orthanc_instance['ParentSeries']),
                      ('server', '=', server)])  # noqa E501
 
@@ -432,7 +432,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                         "The series with the given Orthanc ID "
                         "does not exist in the gnuhealth database")
 
-                ISer.write(gh_series, {'instances': [('create', [instance_values])]})  # noqa E501
+                Series.write(gh_series, {'instances': [('create', [instance_values])]})  # noqa E501
             else:
                 # DICOM instances are immutable. Only the internal Orthanc ID
                 # can change.
@@ -453,7 +453,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         try:
             pool = Pool()
             Study = pool.get('gnuhealth.radiology.study')
-            ISer = pool.get('gnuhealth.radiology.study_series')
+            Series = pool.get('gnuhealth.radiology.study_series')
             # IInst = pool.get('gnuhealth.radiology.series_instances')
 
             # Get all studies that are already in gnuhealth
@@ -531,7 +531,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
                             series_values['study'] = gh_study
                             logger.error("Creating series")
-                            gh_series = ISer.create([series_values])
+                            gh_series = Series.create([series_values])
                             Study.write(
                                 [gh_study], {
                                     'series': [
@@ -565,7 +565,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                             "Creating " +
                             str(len(instance_values_to_create)) +
                             " instances")
-                        ISer.write(
+                        Series.write(
                             [gh_series], {
                                 'instances': [
                                     ('create', instance_values_to_create)]})
