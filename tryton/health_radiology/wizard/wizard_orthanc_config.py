@@ -78,7 +78,10 @@ class ConnectNewOrthancServer(Wizard):
             except Exception as err:
                 logger.error(type(err))
                 raise UserError(
-                    "Configure Connection Error: Please ensure that the URL provided is the correct Orthanc server URL. To verify, try accessing the URL in a web browser. " +
+                    "Configure Connection Error: " +
+                    "Please ensure that the URL provided is " +
+                    "the correct Orthanc server URL. " +
+                    "To verify, try accessing the URL in a web browser. " +
                     str(err))
             else:
                 new_server = {

@@ -38,11 +38,13 @@ class UploadImageDataStart(ModelView):
 class UploadImageData(Wizard):
     'Upload Image Data'
     __name__ = 'gnuhealth.radiology.upload_image_data'
-    start = StateView('gnuhealth.radiology.upload_image_data.start',
-                      'health_radiology.upload_image_data_start_form',
-                      [Button('Cancel', 'end', 'tryton-cancel'),
-                       Button('Upload Image Data', 'upload', 'tryton-ok',
-                              validate=True)])
+    start = StateView(
+        'gnuhealth.radiology.upload_image_data.start',
+        'health_radiology.upload_image_data_start_form',
+        [Button('Cancel', 'end', 'tryton-cancel'),
+         Button('Upload Image Data',
+                'upload', 'tryton-ok',
+                validate=True)])
     upload = StateTransition()
 
     def upload_image_data(self, data_to_upload, server_config):
@@ -54,15 +56,21 @@ class UploadImageData(Wizard):
         # 3.the data of the file
         # 4.repeat steps 2 and 3 for next file
         try:
-            if (data_to_upload[0] == 77 and data_to_upload[1] == 85
-                    and data_to_upload[2] == 76 and data_to_upload[3] == 84):
+            if (data_to_upload[0] == 77
+                and data_to_upload[1] == 85
+                and data_to_upload[2] == 76
+                    and data_to_upload[3] == 84):
                 pos = 4
                 while pos < len(data_to_upload):
                     # get length of file from data
                     data_length = 0
+
                     for i in range(0, 8):
-                        data_length = data_to_upload[pos +
-                                                     7 - i] + data_length * 256
+                        data_length = (
+                            data_to_upload[pos + 7 - i]
+                            + data_length
+                            * 256)
+
                     pos = pos + 8
                     # get content of file from data
                     data = BytesIO(data_to_upload[pos: pos + data_length])
@@ -90,7 +98,10 @@ class UploadImageData(Wizard):
         # Transitions the upload process by uploading the image data specified
         # in the start view
 
-        self.upload_image_data(self.start.data_to_upload, self.start.server_config)  # noqa	E501
+        self.upload_image_data(
+            self.start.data_to_upload,
+            self.start.server_config)  # noqa	E501
+
         Pool().get('gnuhealth.radiology.study').get_new_studies()
         return 'end'
 

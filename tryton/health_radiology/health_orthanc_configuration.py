@@ -40,27 +40,33 @@ class ServerConfig(ModelSQL, ModelView):
         "Label", required=True,
         readonly=True,
         help="Label for server (eg., remote)")
+
     domain = fields.Char(
         "URL",
         required=True,
         readonly=True,
         help="The full URL of the Orthanc server")
+
     user = fields.Char(
         "Username",
         required=True,
         help="Username for Orthanc REST server")
+
     password = fields.Char(
         "Password",
         required=True,
         help="Password for Orthanc REST server")
+
     validated = fields.Boolean(
         "Validated",
         help="Whether the server details have "
         "been successfully checked")
+
     link = fields.Function(
         fields.Char(
             "Link",
-            help="Link to server in Orthanc Explorer"), "get_link")
+            help="Link to server in Orthanc Explorer"),
+        "get_link")
 
     last_changed_index = fields.Integer(
         "Last Changed Index",
@@ -97,8 +103,10 @@ class ServerConfig(ModelSQL, ModelView):
         })
 
         cls._sql_constraints = [
-            ("label_unique", Unique(t, t.label), "The label must be unique."),  # noqa E501
-            ("domain_unique", Unique(t, t.domain), "The domain must be unique."),  # noqa E501
+            ("label_unique", Unique(t, t.label),
+             "The label must be unique."),  # noqa E501
+            ("domain_unique", Unique(t, t.domain),
+             "The domain must be unique."),  # noqa E501
         ]
 
     @staticmethod
@@ -122,7 +130,8 @@ class ServerConfig(ModelSQL, ModelView):
         """
 
         try:
-            client = Orthanc(url=domain, username=user, password=password)
+            client = Orthanc(
+                url=domain, username=user, password=password)
             client.get_changes(last=True)
         except ConnectionError:
             logger.exception(
@@ -185,5 +194,8 @@ class ServerConfig(ModelSQL, ModelView):
                 cls.delete([config])
 
         if len(failed_domains) > 0:
-            raise UserError(("Cannot remove the following servers because there are studies from them: %s") % ", ".join(failed_domains))  # noqa E501
+            raise UserError(
+                ("Cannot remove the following servers "
+                 "because there are studies from them: {}").format(
+                     ", ".join(failed_domains)))  # noqa E501
         return "reload"
