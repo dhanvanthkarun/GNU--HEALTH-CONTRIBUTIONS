@@ -167,7 +167,8 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
     def get_stone_viewer_link(self, name):
         """
-        Get the link for the stone viewer and study, based on the server and study instance UID.  # noqa E501
+        Get the link for the stone viewer and study, based on the
+        server and study instance UID.  # noqa E501
         """
         pre = "".join([self.server.rstrip("/"), "/"])
         url = urljoin(pre, (
@@ -633,7 +634,8 @@ class StudySeries(ModelSQL, ModelView):
 
     def get_stone_viewer_link(self, name):
         """
-        Get the link for the stone viewer and study, based on the server and study instance UID.  # noqa E501
+        Get the link for the stone viewer and study, based on the
+        server and study instance UID.  # noqa E501
         """
         # https://orthanc.uclouvain.be/demo/stone-webviewer/index.html?study=1.2.840.113745.101000.1008000.38179.6792.6324567&series=1.3.12.2.1107.5.1.4.36085.2.0.517109821292363
 
