@@ -10,7 +10,9 @@
         <page string='Study Content' id='study_content_page'>
             <group string="GNU Health" colspan="4" id="gnuhealth_info">
                 <label name="patient"/>
-                <field name="patient" colspan="1"/>
+                <field name="patient"/>
+                <label name="imaging_test"/>
+                <field name="imaging_test"/>
             </group>
             <newline/>
             <group string="Study Info" colspan="4" col="4" id="study_info">

@@ -29,6 +29,13 @@
 
         <!-- Views -->
 
+        <!-- Add Studies to Imaging Result Form -->
+        <record model="ir.ui.view" id="view_radiology_imaging_test_result_form">
+            <field name="model">gnuhealth.imaging.test.result</field>
+            <field name="inherit" ref="health_imaging.view_imaging_test_result_form"/>
+            <field name="name">imaging_form</field>
+        </record>
+
         <record model="ir.ui.view" id="view_radiology_patient_form">
             <field name="model">gnuhealth.patient</field>
             <field name="type">form</field>
@@ -129,4 +136,3 @@
             id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>        
     </data>
 </tryton>
- 

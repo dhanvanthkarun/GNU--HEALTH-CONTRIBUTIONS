@@ -24,6 +24,7 @@ def register():
     Pool.register(
         health_radiology.View,
         health_radiology.PatientData,
+        health_radiology.TestResult,
         health_radiology.PatientOrthancStudy,
         wizard.wizard_upload_image_data.UploadImageDataStart,
         wizard.wizard_get_new_studies.GetNewStudiesStart,

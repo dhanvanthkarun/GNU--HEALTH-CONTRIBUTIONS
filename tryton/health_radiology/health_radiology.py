@@ -21,6 +21,7 @@ from lxml import etree
 
 __all__ = [
     'PatientData',
+    'TestResult',
     'PatientOrthancStudy',
     'StudySeries',
     'SeriesInstances']
@@ -59,6 +60,16 @@ class PatientData (metaclass=PoolMeta):
     radiology_studies = fields.One2Many(
         'gnuhealth.radiology.study', 'patient', 'Study')
 
+
+class TestResult(metaclass=PoolMeta):
+    __name__ = "gnuhealth.imaging.test.result"
+
+    radiology_studies = fields.One2Many(
+        "gnuhealth.radiology.study",
+        "imaging_test", "Radiology studies",
+        readonly=True
+    )
+
 #
 # The image study data. One patient can have multiple studies.
 # In one study, there are several series with different modalities
@@ -74,6 +85,9 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient',
         select=True, help='Patient Name',
         readonly=False)
+
+    imaging_test = fields.Many2One(
+        "gnuhealth.imaging.test.result", "Result")
 
     date = fields.Char('Date', required=False, readonly=True)
 
