@@ -104,9 +104,9 @@ class ServerConfig(ModelSQL, ModelView):
 
         cls._sql_constraints = [
             ("label_unique", Unique(t, t.label),
-             "The label must be unique."),  # noqa E501
+             "The label must be unique."),
             ("domain_unique", Unique(t, t.domain),
-             "The domain must be unique."),  # noqa E501
+             "The domain must be unique."),
         ]
 
     @staticmethod
@@ -197,5 +197,5 @@ class ServerConfig(ModelSQL, ModelView):
             raise UserError(
                 ("Cannot remove the following servers "
                  "because there are studies from them: {}").format(
-                     ", ".join(failed_domains)))  # noqa E501
+                     ", ".join(failed_domains)))
         return "reload"
