@@ -81,6 +81,8 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         'Orthanc Patient',
         required=True, readonly=True)
 
+    patient_id = fields.Char("Patient ID", readonly=True)
+
     study_instance_UID = fields.Char(
         'Study UID',
         required=True, readonly=True)
@@ -318,6 +320,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     patient_main_dicom_tags['PatientName']
                     if 'PatientName' in patient_main_dicom_tags else "")  # noqa E501
 
+                study_values['patient_id'] = (
+                    patient_main_dicom_tags['PatientID']
+                    if 'PatientID' in patient_main_dicom_tags else "")  # noqa E501
+
                 study_values['institution'] = (
                     dicom_tags['InstitutionName']
                     if 'InstitutionName' in dicom_tags else "")  # noqa E501
@@ -492,6 +498,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                         study_values['patient_name'] = (
                             patient_main_dicomTags['PatientName']
                             if 'PatientName' in patient_main_dicomTags else "")  # noqa E501
+
+                        study_values['patient_id'] = (
+                            patient_main_dicomTags['PatientID']
+                            if 'PatientID' in patient_main_dicomTags else "")  # noqa E501
 
                         study_values['institution'] = (
                             dicom_tags['InstitutionName']

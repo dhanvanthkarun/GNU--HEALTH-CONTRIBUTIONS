@@ -8,14 +8,16 @@
 <form>
     <notebook>
         <page string='Study Content' id='study_content_page'>
-            <group colspan="4" id="gnuhealth_info">
+            <group string="GNU Health" colspan="4" id="gnuhealth_info">
                 <label name="patient"/>
                 <field name="patient" colspan="1"/>
-                <label name="patient_name"/>
-                <field name="patient_name"/>
             </group>
             <newline/>
             <group string="Study Info" colspan="4" col="4" id="study_info">
+                <label name="patient_name" string="Patient"/>
+                <field name="patient_name"/>
+                <label name="patient_id"/>
+                <field name="patient_id"/>
                 <label name="date"/>
                 <field name="date"/>
                 <label name="institution"/>
