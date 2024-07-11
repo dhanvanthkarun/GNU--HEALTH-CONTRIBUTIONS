@@ -19,6 +19,7 @@ import os
 import string
 import random
 import pytz
+import importlib.metadata
 
 from dateutil.relativedelta import relativedelta
 from datetime import datetime, timedelta, date
@@ -5744,12 +5745,12 @@ class Commands(ModelSQL, ModelView):
             os_release = f.readlines()
             for line in os_release:
                 os_info = os_info + str(line)
-        # Get relevant environment variables
+        # Get OS user, GH version and Tryton version
         gnuhealth_os_user = f"GNU Health user: {os.environ['USER']}\n"
         gnuhealth_version = f"GNU Health Server version:" \
-                            f"{os.environ['GNUHEALTH_VERSION']}\n"
+                            f"{importlib.metadata.version('gnuhealth')}\n"
 
-        tryton_version = f"Tryton server: {os.environ['TRYTON_VERSION']}\n"
+        tryton_version = f"Tryton server: {importlib.metadata.version('trytond')}\n"
 
         info = f"{info} {gnuhealth_version} {tryton_version}" \
                f"{gnuhealth_os_user}\n{pversion}\n" \
