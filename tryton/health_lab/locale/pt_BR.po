@@ -72,6 +72,10 @@ msgctxt "field:gnuhealth.lab,source_type:"
 msgid "Source"
 msgstr "Origem"
 
+msgctxt "field:gnuhealth.lab,specimen_type:"
+msgid "Specimen"
+msgstr ""
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "Tipo de Exame"
@@ -124,6 +128,11 @@ msgstr "Resultado - Texto"
 msgctxt "field:gnuhealth.lab.test.critearea,sequence:"
 msgid "Sequence"
 msgstr "Sequência"
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test.critearea,test_method:"
+msgid "Method"
+msgstr "Método"
 
 msgctxt "field:gnuhealth.lab.test.critearea,test_type_id:"
 msgid "Test type"
@@ -204,6 +213,10 @@ msgctxt "field:gnuhealth.lab.test_type,report_style:"
 msgid "Report style"
 msgstr ""
 
+msgctxt "field:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen"
+msgstr ""
+
 msgctxt "field:gnuhealth.lab.test_type,tags:"
 msgid "Tags"
 msgstr ""
@@ -263,6 +276,10 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.lab.test,source_type:"
 msgid "Source"
 msgstr "Origem"
+
+msgctxt "field:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
@@ -359,6 +376,10 @@ msgctxt "help:gnuhealth.lab,source_type:"
 msgid "Sample source type."
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "Tipo de Exame Laboratorial"
@@ -386,6 +407,10 @@ msgid ""
 msgstr ""
 "Resultados Não-numéricos. Por exemplo valores qualitativos, morfológicas, "
 "cores ..."
+
+msgctxt "help:gnuhealth.lab.test.critearea,test_method:"
+msgid "Test method, for example: Real-time PCR ..."
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test.critearea,to_integer:"
 msgid "Convert result value to interger in report."
@@ -415,6 +440,10 @@ msgstr ""
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr "Tipo de exame, por exemplo, Raio X, hemograma, biópsia ..."
+
+msgctxt "help:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test_type,tags:"
 msgid ""
@@ -446,6 +475,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test,source_type:"
 msgid "Sample source type."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
@@ -1690,6 +1723,10 @@ msgstr ""
 
 msgctxt "report:patient.labtest.report:"
 msgid "Source:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Specimen:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"

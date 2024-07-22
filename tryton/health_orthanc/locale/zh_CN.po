@@ -94,18 +94,6 @@ msgctxt "field:gnuhealth.orthanc.config,sync_time:"
 msgid "Sync Time"
 msgstr "同步时间"
 
-msgctxt "field:gnuhealth.orthanc.config,use_ohif_viewer:"
-msgid "Use OHIF Viewer"
-msgstr "使用 OHIF 浏览器"
-
-msgctxt "field:gnuhealth.orthanc.config,use_osimis_viewer:"
-msgid "Use Osimis Viewer"
-msgstr "使用 Osimis 浏览器"
-
-msgctxt "field:gnuhealth.orthanc.config,use_stone_viewer:"
-msgid "Use Stone Viewer"
-msgstr "使用 Stone 浏览器"
-
 msgctxt "field:gnuhealth.orthanc.config,user:"
 msgid "Username"
 msgstr "用户名"
@@ -170,13 +158,17 @@ msgctxt "field:gnuhealth.orthanc.study,institution:"
 msgid "Institution"
 msgstr "检查机构"
 
-msgctxt "field:gnuhealth.orthanc.study,link:"
-msgid "URL"
-msgstr "URL"
-
 msgctxt "field:gnuhealth.orthanc.study,merge_id:"
 msgid "Merge ID"
 msgstr "合并 ID"
+
+msgctxt "field:gnuhealth.orthanc.study,ohif_viewer_link:"
+msgid "OHIF Viewer"
+msgstr "OHIF 浏览器"
+
+msgctxt "field:gnuhealth.orthanc.study,orthanc_explorer_link:"
+msgid "Orthanc Explorer"
+msgstr "Orthanc 浏览器"
 
 msgctxt "field:gnuhealth.orthanc.study,patient:"
 msgid "Patient"
@@ -197,6 +189,10 @@ msgstr "RequestedProcedureID"
 msgctxt "field:gnuhealth.orthanc.study,server:"
 msgid "Server"
 msgstr "服务器"
+
+msgctxt "field:gnuhealth.orthanc.study,stone_viewer_link:"
+msgid "Stone Viewer"
+msgstr "Stone 浏览器"
 
 msgctxt "field:gnuhealth.orthanc.study,uuid:"
 msgid "UUID"
@@ -288,18 +284,6 @@ msgctxt "help:gnuhealth.orthanc.config,sync_time:"
 msgid "Time of last server sync"
 msgstr "服务器上次同步时间"
 
-msgctxt "help:gnuhealth.orthanc.config,use_ohif_viewer:"
-msgid "Use OHIF Viewer"
-msgstr "使用 OHIF 浏览器"
-
-msgctxt "help:gnuhealth.orthanc.config,use_osimis_viewer:"
-msgid "Use Osimis Web Viewer"
-msgstr "使用 Osimis Web 浏览器"
-
-msgctxt "help:gnuhealth.orthanc.config,use_stone_viewer:"
-msgid "Use Stone Web Viewer"
-msgstr "使用 Stone Web 浏览器"
-
 msgctxt "help:gnuhealth.orthanc.config,user:"
 msgid "Username for Orthanc REST server"
 msgstr "Orthanc REST 服务器帐户"
@@ -320,15 +304,23 @@ msgctxt "help:gnuhealth.orthanc.study,institution:"
 msgid "Imaging center where study was undertaken"
 msgstr "负责检查的影像中心"
 
-msgctxt "help:gnuhealth.orthanc.study,link:"
-msgid "Link to study in Orthanc Explorer"
-msgstr "链接到 Orthanc 浏览器对应的检查页面"
-
 msgctxt "help:gnuhealth.orthanc.study,merge_id:"
 msgid ""
 "Test result merge id, with it help, gnuhealth test result and orthanc study "
 "can be merged."
 msgstr "检查结果合并 id，通过它可以将 gnuhealth 检查结果和 orthanc study 信息合并。"
+
+msgctxt "help:gnuhealth.orthanc.study,ohif_viewer_link:"
+msgid "Link to study in OHIF Viewer."
+msgstr "链接到 OHIF 浏览器对应的检查页面."
+
+msgctxt "help:gnuhealth.orthanc.study,orthanc_explorer_link:"
+msgid "Link to study in Orthanc Explorer."
+msgstr "链接到 Orthanc 浏览器对应的检查页面."
+
+msgctxt "help:gnuhealth.orthanc.study,stone_viewer_link:"
+msgid "Link to study in Stone Viewer."
+msgstr "链接到 Stone 浏览器对应的检查页面."
 
 msgctxt "help:gnuhealth.orthanc.worklist.template,charset:"
 msgid ""
@@ -532,6 +524,10 @@ msgstr "GNU Health"
 msgctxt "view:gnuhealth.orthanc.study:"
 msgid "Orthanc"
 msgstr "Orthanc"
+
+msgctxt "view:gnuhealth.orthanc.study:"
+msgid "Viewers"
+msgstr "影像浏览器"
 
 msgctxt "wizard_button:gnuhealth.orthanc.wizard.full_sync,result,end:"
 msgid "Close"

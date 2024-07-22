@@ -8,7 +8,7 @@ msgstr "总结"
 
 msgctxt "field:gnuhealth.lab,critearea:"
 msgid "Lab Test Critearea"
-msgstr "实验室检验标准"
+msgstr "实验室检验项目"
 
 msgctxt "field:gnuhealth.lab,date_analysis:"
 msgid "Analysis Date"
@@ -66,6 +66,10 @@ msgctxt "field:gnuhealth.lab,source_type:"
 msgid "Source"
 msgstr "样本来源"
 
+msgctxt "field:gnuhealth.lab,specimen_type:"
+msgid "Specimen"
+msgstr "样本类型"
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "检验类型"
@@ -117,6 +121,10 @@ msgstr "结果（文本）"
 msgctxt "field:gnuhealth.lab.test.critearea,sequence:"
 msgid "Sequence"
 msgstr "序列"
+
+msgctxt "field:gnuhealth.lab.test.critearea,test_method:"
+msgid "Method"
+msgstr "检测方法"
 
 msgctxt "field:gnuhealth.lab.test.critearea,test_type_id:"
 msgid "Test type"
@@ -194,6 +202,10 @@ msgctxt "field:gnuhealth.lab.test_type,report_style:"
 msgid "Report style"
 msgstr "报告样式"
 
+msgctxt "field:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen"
+msgstr "样本类型"
+
 msgctxt "field:gnuhealth.lab.test_type,tags:"
 msgid "Tags"
 msgstr "标签"
@@ -249,6 +261,10 @@ msgstr "来源名称"
 msgctxt "field:gnuhealth.patient.lab.test,source_type:"
 msgid "Source"
 msgstr "样本来源"
+
+msgctxt "field:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen"
+msgstr "样本类型"
 
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
@@ -342,6 +358,10 @@ msgctxt "help:gnuhealth.lab,source_type:"
 msgid "Sample source type."
 msgstr "样本来源类型。"
 
+msgctxt "help:gnuhealth.lab,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr "样本类型，比如：全血、血浆、尿液或粪便 ..."
+
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "实验室检验类型"
@@ -369,6 +389,10 @@ msgid ""
 "..."
 msgstr "非数字的结果。比如：定性结果，形态，颜色..."
 
+msgctxt "help:gnuhealth.lab.test.critearea,test_method:"
+msgid "Test method, for example: Real-time PCR ..."
+msgstr "检测方法，比如：实时荧光定量PCR ..."
+
 msgctxt "help:gnuhealth.lab.test.critearea,to_integer:"
 msgid "Convert result value to interger in report."
 msgstr "在报告中，将结果转换为整数。"
@@ -394,6 +418,10 @@ msgstr "最小年龄(岁), (years x 365 + months x 30.5 + days) / 365"
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr "检验类型，如 X光照射, 血常规, 活体组织检验..."
+
+msgctxt "help:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr "样本类型，比如：全血、血浆、尿液或粪便 ..."
 
 msgctxt "help:gnuhealth.lab.test_type,tags:"
 msgid ""
@@ -427,6 +455,10 @@ msgctxt "help:gnuhealth.patient.lab.test,source_type:"
 msgid "Sample source type."
 msgstr "样本来源类型。"
 
+msgctxt "help:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr "样本类型，比如：全血、血浆、尿液或粪便 ..."
+
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
@@ -455,7 +487,7 @@ msgstr "创建检验报告初始化"
 
 msgctxt "model:gnuhealth.lab.test.critearea,name:"
 msgid "Lab Test Critearea"
-msgstr "实验室检验标准"
+msgstr "实验室检验项目"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_agratio0"
@@ -1479,7 +1511,7 @@ msgstr "检验报告"
 
 msgctxt "model:ir.model.button,string:complete_criteareas_button"
 msgid "Complete Criteareas"
-msgstr "补全检验项目明细"
+msgstr "补全检验项目"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
@@ -1583,7 +1615,7 @@ msgstr "年龄:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Analyte"
-msgstr "分析物"
+msgstr "分析项目"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Comment"
@@ -1652,6 +1684,10 @@ msgstr "签名:"
 msgctxt "report:patient.labtest.report:"
 msgid "Source:"
 msgstr "样本来源:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Specimen:"
+msgstr "样本类型:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Test:"
@@ -1795,11 +1831,11 @@ msgstr "主要信息"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Complete Criteareas"
-msgstr "补全检验项目明细"
+msgstr "补全检验项目"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Complete criteareas of current test type."
-msgstr "补全当前检验项目明细。"
+msgstr "补全当前检验项目。"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Diagnosis"
@@ -1807,7 +1843,7 @@ msgstr "诊断"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Do your want to complete criteareas of current test type?"
-msgstr "你确定要补全当前检验项目明细吗？"
+msgstr "你确定要补全当前检验项目吗？"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"

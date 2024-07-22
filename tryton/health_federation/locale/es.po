@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-07-19 08:11+0000\n"
-"Last-Translator: victorhck <victorhck@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Spanish <https://translate.codeberg.org/projects/gnuhealth/"
-"health_federation/es/>\n"
-"Language: es\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.federation.config,enabled:"
 msgid "Enabled"
@@ -110,7 +101,8 @@ msgstr "Servidor GNU Health Thalamus"
 
 msgctxt "help:gnuhealth.federation.config,password:"
 msgid "Password of the institution admin user in the Federation"
-msgstr "Contraseña del usuario administrador de la institución en la federación"
+msgstr ""
+"Contraseña del usuario administrador de la institución en la federación"
 
 msgctxt "help:gnuhealth.federation.config,port:"
 msgid "Thalamus port"
@@ -141,8 +133,7 @@ msgid ""
 "Contains a list of the local model fields that participate on the federation.\n"
 "Each line will have the format field:endpoint:key"
 msgstr ""
-"Contiene una lista de los campos del modelo local que participan en la "
-"federación.\n"
+"Contiene una lista de los campos del modelo local que participan en la federación.\n"
 "Cada línea tendrá el formato campo:punto final:clave"
 
 msgctxt "help:gnuhealth.federation.object,model:"
@@ -184,7 +175,8 @@ msgstr "sufijo que se pasará a la URL"
 msgctxt "help:gnuhealth.pol,fsync:"
 msgid " If active, this record information will be sent to the Federation"
 msgstr ""
-" Si está activo, la información de este registro será enviada a la federación"
+" Si está activo, la información de este registro será enviada a la "
+"federación"
 
 msgctxt "help:party.party,fsync:"
 msgid "If active, this record information will be sent to the Federation"
@@ -235,13 +227,15 @@ msgctxt ""
 msgid "Sent"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_config"
 msgid "Node Configuration"
-msgstr ""
+msgstr "Configuración del nodo"
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_object"
 msgid "Federation Objects"
-msgstr ""
+msgstr "Objetos de federación"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_queue"
 msgid "Federation Queue Manager"
@@ -296,9 +290,10 @@ msgctxt "view:gnuhealth.federation.config:"
 msgid "Test Thalamus connection"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Arguments"
-msgstr ""
+msgstr "Argumentos"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send"

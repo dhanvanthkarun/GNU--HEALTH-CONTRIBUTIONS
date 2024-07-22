@@ -102,18 +102,6 @@ msgctxt "field:gnuhealth.orthanc.config,sync_time:"
 msgid "Sync Time"
 msgstr ""
 
-msgctxt "field:gnuhealth.orthanc.config,use_ohif_viewer:"
-msgid "Use OHIF Viewer"
-msgstr ""
-
-msgctxt "field:gnuhealth.orthanc.config,use_osimis_viewer:"
-msgid "Use Osimis Viewer"
-msgstr ""
-
-msgctxt "field:gnuhealth.orthanc.config,use_stone_viewer:"
-msgid "Use Stone Viewer"
-msgstr ""
-
 msgctxt "field:gnuhealth.orthanc.config,user:"
 msgid "Username"
 msgstr ""
@@ -184,13 +172,16 @@ msgctxt "field:gnuhealth.orthanc.study,institution:"
 msgid "Institution"
 msgstr "Institusi"
 
-#, fuzzy
-msgctxt "field:gnuhealth.orthanc.study,link:"
-msgid "URL"
-msgstr "URL"
-
 msgctxt "field:gnuhealth.orthanc.study,merge_id:"
 msgid "Merge ID"
+msgstr ""
+
+msgctxt "field:gnuhealth.orthanc.study,ohif_viewer_link:"
+msgid "OHIF Viewer"
+msgstr ""
+
+msgctxt "field:gnuhealth.orthanc.study,orthanc_explorer_link:"
+msgid "Orthanc Explorer"
 msgstr ""
 
 #, fuzzy
@@ -212,6 +203,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.orthanc.study,server:"
 msgid "Server"
+msgstr ""
+
+msgctxt "field:gnuhealth.orthanc.study,stone_viewer_link:"
+msgid "Stone Viewer"
 msgstr ""
 
 msgctxt "field:gnuhealth.orthanc.study,uuid:"
@@ -308,18 +303,6 @@ msgctxt "help:gnuhealth.orthanc.config,sync_time:"
 msgid "Time of last server sync"
 msgstr ""
 
-msgctxt "help:gnuhealth.orthanc.config,use_ohif_viewer:"
-msgid "Use OHIF Viewer"
-msgstr ""
-
-msgctxt "help:gnuhealth.orthanc.config,use_osimis_viewer:"
-msgid "Use Osimis Web Viewer"
-msgstr ""
-
-msgctxt "help:gnuhealth.orthanc.config,use_stone_viewer:"
-msgid "Use Stone Web Viewer"
-msgstr ""
-
 msgctxt "help:gnuhealth.orthanc.config,user:"
 msgid "Username for Orthanc REST server"
 msgstr ""
@@ -340,14 +323,22 @@ msgctxt "help:gnuhealth.orthanc.study,institution:"
 msgid "Imaging center where study was undertaken"
 msgstr ""
 
-msgctxt "help:gnuhealth.orthanc.study,link:"
-msgid "Link to study in Orthanc Explorer"
-msgstr ""
-
 msgctxt "help:gnuhealth.orthanc.study,merge_id:"
 msgid ""
 "Test result merge id, with it help, gnuhealth test result and orthanc study "
 "can be merged."
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.study,ohif_viewer_link:"
+msgid "Link to study in OHIF Viewer."
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.study,orthanc_explorer_link:"
+msgid "Link to study in Orthanc Explorer."
+msgstr ""
+
+msgctxt "help:gnuhealth.orthanc.study,stone_viewer_link:"
+msgid "Link to study in Stone Viewer."
 msgstr ""
 
 msgctxt "help:gnuhealth.orthanc.worklist.template,charset:"
@@ -549,6 +540,10 @@ msgstr ""
 
 msgctxt "view:gnuhealth.orthanc.study:"
 msgid "Orthanc"
+msgstr ""
+
+msgctxt "view:gnuhealth.orthanc.study:"
+msgid "Viewers"
 msgstr ""
 
 #, fuzzy
