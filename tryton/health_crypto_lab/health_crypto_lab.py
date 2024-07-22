@@ -202,6 +202,7 @@ class LabTest(metaclass=PoolMeta):
                    and str(document.requestor.rec_name)
                    or ''),
             'Source_type': str(document.source_type),
+            'Specimen_type': str(document.specimen_type),
             'Patient': (document.patient
                         and str(document.patient.rec_name)
                         or ''),

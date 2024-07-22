@@ -82,10 +82,13 @@ class RequestPatientLabTest(Wizard):
             lab_test['patient_id'] = (self.start.patient
                                       and self.start.patient.id)
             lab_test['other_source'] = self.start.other_source
+            lab_test['specimen_type'] = test.specimen_type
+
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:
                 lab_test['context'] = self.start.context.id
+
             lab_test['date'] = self.start.date
             lab_test['urgent'] = self.start.urgent
 

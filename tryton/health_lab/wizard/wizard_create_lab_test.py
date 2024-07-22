@@ -58,6 +58,7 @@ class CreateLabTestOrder(Wizard):
 
             test_report_data['test'] = lab_test_order.name.id
             test_report_data['source_type'] = lab_test_order.source_type
+            test_report_data['specimen_type'] = lab_test_order.name.specimen_type
             test_report_data['patient'] = (lab_test_order.patient_id
                                            and lab_test_order.patient_id.id)
             test_report_data['other_source'] = lab_test_order.other_source
@@ -181,6 +182,7 @@ class RequestPatientLabTest(Wizard):
             lab_test['patient_id'] = (self.start.patient
                                       and self.start.patient.id)
             lab_test['other_source'] = self.start.other_source
+            lab_test['specimen_type'] = test.specimen_type
             if self.start.doctor:
                 lab_test['doctor_id'] = self.start.doctor.id
             if self.start.context:

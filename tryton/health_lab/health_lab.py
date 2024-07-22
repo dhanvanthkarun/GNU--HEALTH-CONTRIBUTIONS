@@ -52,6 +52,13 @@ class TestType(ModelSQL, ModelView):
     code = fields.Char(
         'Code',
         help="Short name - code for the test", required=True, select=True)
+
+    specimen_type = fields.Char(
+        'Specimen',
+        help='Specimen type, for example: '
+        'whole blood, plasma, urine or feces ...',
+        translate=True)
+
     info = fields.Text('Description')
     product_id = fields.Many2One('product.product', 'Service', required=True)
     critearea = fields.One2Many(
@@ -241,6 +248,11 @@ class Lab(ModelSQL, ModelView):
             return pname + puid_str + gender_str
         else:
             return (self.other_source or '')
+
+    specimen_type = fields.Char(
+        'Specimen',
+        help='Specimen type, for example: '
+        'whole blood, plasma, urine or feces ...')
 
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
@@ -612,6 +624,11 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
             return self.patient_id and self.patient_id.rec_name or ''
         else:
             return (self.other_source or '')
+
+    specimen_type = fields.Char(
+        'Specimen',
+        help='Specimen type, for example: '
+        'whole blood, plasma, urine or feces ...')
 
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',

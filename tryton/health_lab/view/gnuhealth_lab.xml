@@ -25,19 +25,23 @@ SPDX-License-Identifier: GPL-3.0-or-later
               <field name="other_source"/>
             </group>
             <label name="test"/>
-            <field name="test"/>
+            <group id="lab_test_type_and_complete_button" colspan="1" col="0">
+              <field name="test"/>
+              <button colspan="2"
+                      name="complete_criteareas"
+                      string="Complete Criteareas"
+                      icon="tryton-go-next"
+                      help="Complete criteareas of current test type."
+                      confirm="Do your want to complete criteareas of current test type?"/>
+            </group>
+            <label name="specimen_type"/>
+            <field name="specimen_type"/>
             <label name="requestor"/>
             <field name="requestor"/>
             <label name="pathologist"/>
             <field name="pathologist"/>
             <label name="pathology"/>
             <field name="pathology"/>
-            <button colspan="2"
-                    name="complete_criteareas"
-                    string="Complete Criteareas" 
-                    icon="tryton-go-next"
-                    help="Complete criteareas of current test type."
-                    confirm="Do your want to complete criteareas of current test type?"/>
             <newline/>
             <field name="critearea" colspan="4" view_ids="health_lab.test_critearea_view_tree_lab,health_lab.test_critearea_view_form_lab"/>
         </page>
