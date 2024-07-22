@@ -375,6 +375,7 @@ class Lab(ModelSQL, ModelView):
                 'gnuhealth_lab_id': lab.id,
                 'name': critearea.name,
                 'code': critearea.code,
+                'test_method': critearea.test_method,
                 'sequence': critearea.sequence,
                 'limits_verified': critearea.limits_verified,
                 'lower_limit': critearea.lower_limit,
@@ -439,6 +440,12 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     name = fields.Char(
         'Analyte', required=True, select=True,
         translate=True)
+
+    test_method = fields.Char(
+        'Method',
+        help='Test method, for example: Real-time PCR ...',
+        translate=True)
+
     excluded = fields.Boolean(
         'Excluded', help='Select this option when'
         ' this analyte is excluded from the test')

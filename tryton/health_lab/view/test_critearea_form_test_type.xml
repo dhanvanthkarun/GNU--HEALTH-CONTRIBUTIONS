@@ -8,15 +8,17 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
+    <label name="sequence"/>
+    <field name="sequence"/>
+    <newline/>
     <label name="name"/>
     <field name="name"/>
     <label name="code"/>
     <field name="code"/>
+    <label name="test_method"/>
+    <field name="test_method"/>
     <label name="units"/>
     <field name="units"/>
-    <label name="sequence"/>
-    <field name="sequence"/>
-    <newline/>
     <label name="lower_limit"/>
     <field name="lower_limit"/>
     <label name="upper_limit"/>
