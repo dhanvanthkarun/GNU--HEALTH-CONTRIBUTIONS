@@ -1237,8 +1237,14 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return name
 
     def getDicomInstitutionName(self):
-        institution = get_institution()
-        return institution and institution.rec_name or ''
+        # Return the name (string) of the institution
+        institution_id = get_institution()
+        if institution_id:
+            institution = \
+                Pool().get('gnuhealth.institution')(institution_id)
+            return institution
+        else:
+            return ''
 
     def getDicomRequestedProcedureDescription(self):
         test = self.requested_test and self.requested_test.rec_name or ''
