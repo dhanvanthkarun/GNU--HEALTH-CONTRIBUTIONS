@@ -1251,8 +1251,12 @@ class ImagingTestRequest(metaclass=PoolMeta):
 
     def format_dicom_person_name(self, person_id):
         Pname = Pool().get('gnuhealth.person_name')
-        officialname = Pname.search(
-            [("party", "=", person_id), ("use", "=", 'official')])[0]
+
+        try:
+            officialname = Pname.search(
+                [("party", "=", person_id), ("use", "=", 'official')])[0]
+        except BaseException:
+            officialname = None
 
         if officialname:
             family = officialname.family or ''
@@ -1333,8 +1337,14 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return name
 
     def getDicomInstitutionName(self):
-        institution = get_institution()
-        return institution and institution.rec_name or ''
+        # Return the name (string) of the institution
+        institution_id = get_institution()
+        if institution_id:
+            institution = \
+                Pool().get('gnuhealth.institution')(institution_id)
+            return institution.name.rec_name
+        else:
+            return ''
 
     def getDicomRequestedProcedureDescription(self):
         test = self.requested_test and self.requested_test.rec_name or ''
