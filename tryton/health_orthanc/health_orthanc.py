@@ -1158,8 +1158,12 @@ class ImagingTestRequest(metaclass=PoolMeta):
 
     def format_dicom_person_name(self, person_id):
         Pname = Pool().get('gnuhealth.person_name')
-        officialname = Pname.search(
-            [("party", "=", person_id), ("use", "=", 'official')])[0]
+
+        try:
+            officialname = Pname.search(
+                [("party", "=", person_id), ("use", "=", 'official')])[0]
+        except BaseException:
+            officialname = None
 
         if officialname:
             family = officialname.family or ''
