@@ -1242,7 +1242,7 @@ class ImagingTestRequest(metaclass=PoolMeta):
         if institution_id:
             institution = \
                 Pool().get('gnuhealth.institution')(institution_id)
-            return institution
+            return institution.name.rec_name
         else:
             return ''
 
