@@ -3259,7 +3259,8 @@ class PatientData(ModelSQL, ModelView):
         return self.name.age
 
     def get_patient_age_num(self, name):
-        return get_age_for_comparison(self.age, type='y')
+        if self.age:
+            return get_age_for_comparison(self.age, type='y')
 
     def get_childbearing_age(self, name):
         return compute_age_from_dates(
