@@ -45,7 +45,7 @@ https://www.gnuhealth.org
 Documentation
 -------------
 
-Wikibooks: https://en.wikibooks.org/wiki/GNU_Health/
+https://docs.gnuhealth.org
 
 Support GNU Health 
 -------------------
@@ -95,7 +95,7 @@ your NGO or government:
 We will do our best to help you out with the implementation and training
 for the local team, to build local capacity and make your project sustainable.
 
-Please contect us and we'll back to you as soon as possible::
+Please contact us and we'll back to you as soon as possible::
 
 
  Thank you !
@@ -108,7 +108,7 @@ Email
 -----
 info@gnuhealth.org
 
-Twitter: @gnuhealth
+Mastodon: https://mastodon.social/@gnuhealth
 
 License
 --------
