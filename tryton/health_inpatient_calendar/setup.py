@@ -23,7 +23,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname), encoding="UTF-8").read()
 
 config = configparser.ConfigParser()
-config.readfp(open('tryton.cfg'))
+config.read_file(open('tryton.cfg'))
 info = dict(config.items('tryton'))
 
 for key in ('depends', 'extras_depend', 'xml'):
