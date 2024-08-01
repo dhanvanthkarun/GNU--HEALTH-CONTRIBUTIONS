@@ -1,3 +1,101 @@
+commit 08a8980bc586281c853483d1bde5608d76a8d217 (HEAD -> release/v4.4.1, origin/release/v4.4.1)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Thu Aug 1 09:15:37 2024 +0000
+
+    Use read_file instead of readfp to make setup.py python 3.12 compatible
+
+
+commit b13617830abac7416bb86add6c360ef806ed7124
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Thu Aug 1 08:58:46 2024 +0000
+
+    Update README.rst with new documentation and Mastodon URLs
+
+
+
+commit c00f8b2e1dbf27fedf8e62d602a86ef318ffb3eb (HEAD -> release/v4.4.1)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Thu Aug 1 08:04:27 2024 +0000
+
+    Update headers date to 2024
+
+
+commit 015cab2c77677a860f7940a18fb9e34c051aa54e
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Thu Aug 1 07:55:37 2024 +0000
+
+    Update version number to 4.4.1
+
+
+commit e28d3ec5aff3cc56a54de6274a5e6f4ffc13b7a6 (origin/bugfix/issue-33, bugfix/issue-33)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Mon Jul 29 09:24:02 2024 +0000
+
+    issue #33 - Return institution.rec_name
+
+
+commit 31c4784bef4d7d9b2d290dd4a4e3411ef5961b20
+Author: Feng Shu <tumashu@163.com>
+Date:   Mon Jul 29 14:54:39 2024 +0800
+
+    health_orthanc.py: ignore format_dicom_person_name error.
+
+
+commit 156dddbdb9dfb48f977137b2614dcb8b27658a98
+:...skipping...
+commit c00f8b2e1dbf27fedf8e62d602a86ef318ffb3eb (HEAD -> release/v4.4.1)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Thu Aug 1 08:04:27 2024 +0000
+
+    Update headers date to 2024
+
+
+commit 015cab2c77677a860f7940a18fb9e34c051aa54e
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Thu Aug 1 07:55:37 2024 +0000
+
+    Update version number to 4.4.1
+
+
+commit e28d3ec5aff3cc56a54de6274a5e6f4ffc13b7a6 (origin/bugfix/issue-33, bugfix/issue-33)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Mon Jul 29 09:24:02 2024 +0000
+
+    issue #33 - Return institution.rec_name
+
+
+commit 31c4784bef4d7d9b2d290dd4a4e3411ef5961b20
+Author: Feng Shu <tumashu@163.com>
+Date:   Mon Jul 29 14:54:39 2024 +0800
+
+    health_orthanc.py: ignore format_dicom_person_name error.
+
+
+commit 156dddbdb9dfb48f977137b2614dcb8b27658a98
+Author: Feng Shu <tumashu@163.com>
+Date:   Mon Jul 29 14:04:22 2024 +0800
+
+    health_orthanc.py: Return proper value of getDicomInstitutionName
+    
+    Get real instituation name instead of show "gnuhealth.institution,3"
+
+
+commit 34e689cb8a97647041765951a28e888afd24d4d2
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sun Jul 28 18:58:48 2024 +0000
+
+    Fix issue #33 . Return the institution name
+
+
+commit 30ad64913d28c647073cef464342e980d30cbe8e (origin/main, origin/HEAD, main)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sun Jul 28 18:17:05 2024 +0000
+
+    Include gitignore
+
+ create mode 100644 .gitignore
+
+
 changeset:   6343:e53af4e1851c
 tag:         tip
 user:        Luis Falcon <falcon@gnuhealth.org>

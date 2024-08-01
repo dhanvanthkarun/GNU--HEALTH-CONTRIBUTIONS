@@ -1,4 +1,4 @@
-.. SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 

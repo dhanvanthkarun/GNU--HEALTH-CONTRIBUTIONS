@@ -4,8 +4,8 @@
 # SPDX-FileCopyrightText: 2009-2016 B2CK
 # SPDX-FileCopyrightText: 2009-2016 Cédric Krier
 # SPDX-FileCopyrightText: 2009-2016 Tryton Foundation <info@tryton.org>
-# SPDX-FileCopyrightText: 2016-2023 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2016-2023 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2016-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2016-2024 Luis Falcón <falcon@gnuhealth.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -20,7 +20,7 @@ def read(fname):
 
 
 config = configparser.ConfigParser()
-config.readfp(open('tryton.cfg'))
+config.read_file(open('tryton.cfg'))
 info = dict(config.items('tryton'))
 
 for key in ('depends', 'extras_depend', 'xml'):
