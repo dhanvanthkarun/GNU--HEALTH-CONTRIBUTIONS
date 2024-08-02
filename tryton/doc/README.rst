@@ -1,5 +1,5 @@
-.. SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
@@ -45,7 +45,7 @@ https://www.gnuhealth.org
 Documentation
 -------------
 
-Wikibooks: https://en.wikibooks.org/wiki/GNU_Health/
+https://docs.gnuhealth.org
 
 Support GNU Health 
 -------------------
@@ -95,7 +95,7 @@ your NGO or government:
 We will do our best to help you out with the implementation and training
 for the local team, to build local capacity and make your project sustainable.
 
-Please contect us and we'll back to you as soon as possible::
+Please contact us and we'll back to you as soon as possible::
 
 
  Thank you !
@@ -108,15 +108,15 @@ Email
 -----
 info@gnuhealth.org
 
-Twitter: @gnuhealth
+Mastodon: https://mastodon.social/@gnuhealth
 
 License
 --------
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2023 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2023 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
