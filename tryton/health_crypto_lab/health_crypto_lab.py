@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -198,11 +198,11 @@ class LabTest(metaclass=PoolMeta):
         data_to_serialize = {
             'Lab_test': str(document.name) or '',
             'Test': str(document.test.rec_name) or '',
+            'Specimen_type': str(document.specimen_type),
             'HP': (document.requestor
                    and str(document.requestor.rec_name)
                    or ''),
             'Source_type': str(document.source_type),
-            'Specimen_type': str(document.specimen_type),
             'Patient': (document.patient
                         and str(document.patient.rec_name)
                         or ''),

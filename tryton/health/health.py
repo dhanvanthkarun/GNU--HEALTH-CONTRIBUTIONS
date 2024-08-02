@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2015 Cédric Krier <cedric.krier@b2ck.com>
 # SPDX-FileCopyrightText: 2014-2015 Chris Zimmerman <siv@riseup.net>
 #
@@ -3259,7 +3259,8 @@ class PatientData(ModelSQL, ModelView):
         return self.name.age
 
     def get_patient_age_num(self, name):
-        return get_age_for_comparison(self.age, type='y')
+        if self.age:
+            return get_age_for_comparison(self.age, type='y')
 
     def get_childbearing_age(self, name):
         return compute_age_from_dates(
