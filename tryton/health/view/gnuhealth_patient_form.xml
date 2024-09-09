@@ -27,7 +27,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field xfill="0" xexpand="1" name="photo" height="200" width="200" widget="image"/>
         </group>
     </group>
-    <group id="patient_crit_markers" string="Focus on" colspan="4" col="18">
+    <group id="patient_crit_markers" string="Focus on" colspan="4" col="20">
         <label name="crit_allergic"/>
         <field name="crit_allergic"/>
         <label name="crit_cardio"/>
@@ -36,6 +36,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="crit_hbp"/>
         <label name="crit_dbt"/>
         <field name="crit_dbt"/>
+        <label name="crit_mental"/>
+        <field name="crit_mental"/>
         <label name="crit_nutrition"/>
         <field name="crit_nutrition"/>
         <label name="crit_cancer"/>

@@ -3201,6 +3201,9 @@ class PatientData(ModelSQL, ModelView):
         'Cardiovascular',
         help="Cardiovascular disease, excluding HBP, that has "
              " its own field.")
+    crit_mental = fields.Boolean(
+        'Mental',
+        help="Mental Health")
     crit_nutrition = fields.Boolean(
         'Nutrition', help="Issues on nutrition, malnourhisment."
         " Including obesity, famine and eating disorders")
