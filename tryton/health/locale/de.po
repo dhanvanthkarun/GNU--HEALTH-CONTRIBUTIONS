@@ -1,15 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-08-07 15:48+0000\n"
-"Last-Translator: majoh <majoh@users.noreply.translate.codeberg.org>\n"
-"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/"
-"health/de/>\n"
-"Language: de\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1255,6 +1246,10 @@ msgstr "Bluthochdruck"
 msgctxt "field:gnuhealth.patient,crit_immuno:"
 msgid "Immunity"
 msgstr "Immunität"
+
+msgctxt "field:gnuhealth.patient,crit_mental:"
+msgid "Mental"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient,crit_nutrition:"
 msgid "Nutrition"
@@ -3170,6 +3165,10 @@ msgctxt "help:gnuhealth.patient,crit_immuno:"
 msgid "Immunocompromised or autoimmune disorders"
 msgstr "Immunschwäche oder Autoimmunerkrankungen"
 
+msgctxt "help:gnuhealth.patient,crit_mental:"
+msgid "Mental Health"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient,crit_nutrition:"
 msgid ""
 "Issues on nutrition, malnourhisment. Including obesity, famine and eating "
@@ -4026,8 +4025,8 @@ msgid ""
 "person is a relative but will not be part of the health system."
 msgstr ""
 "Standardmäßig wird die betroffene Person, wie z.B. ein Patient, neu "
-"erstellt. Nehmen Sie den Haken für diese Option weg, wenn diese Person nicht "
-"Teil des Systems werden soll und z.B. ein Verwandter eines Patienten ist."
+"erstellt. Nehmen Sie den Haken für diese Option weg, wenn diese Person nicht"
+" Teil des Systems werden soll und z.B. ein Verwandter eines Patienten ist."
 
 msgctxt "help:party.party,deceased:"
 msgid "The information is updated from the Death Certificate"
@@ -8234,9 +8233,10 @@ msgctxt "model:ir.action,name:action_gnuhealth_appointment_view"
 msgid "Appointments"
 msgstr "Termin"
 
+#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_command_view"
 msgid "GNU Health Commands"
-msgstr ""
+msgstr "GNU Health Anweisungen"
 
 msgctxt "model:ir.action,name:action_gnuhealth_hospital_bed_view"
 msgid "Beds"
@@ -8691,9 +8691,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_bol"
 msgid "Books of Life"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_commands"
 msgid "GNU Health Commands"
-msgstr ""
+msgstr "GNU Health Anweisungen"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_dosage"
 msgid "Medication Frequencies"
