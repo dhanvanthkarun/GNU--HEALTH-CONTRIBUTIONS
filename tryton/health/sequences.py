@@ -17,7 +17,7 @@ from trytond.model import (ModelView, ModelSingleton, ModelSQL,
 from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool
-from trytond.tools.multivalue import migrate_property
+# from trytond.tools.multivalue import migrate_property
 
 # Sequences
 # The patient_sequence is no longer used
@@ -112,6 +112,9 @@ class _ConfigurationValue(ModelSQL):
 
         super(_ConfigurationValue, cls).__register__(module_name)
 
+
+"""
+    # Removed in GH 5.0
         if not exist:
             cls._migrate_property([], [], [])
 
@@ -122,6 +125,7 @@ class _ConfigurationValue(ModelSQL):
         migrate_property(
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
+"""
 
 
 class PatientSequence(_ConfigurationValue, ModelSQL, ValueMixin):
