@@ -465,7 +465,7 @@ class Party(metaclass=PoolMeta):
         ('state', 'State'),
         ('labour_union', 'Labour Union / Syndical'),
         ('private', 'Private'),
-    ], 'Insurance Type', select=True)
+    ], 'Insurance Type')
     insurance_plan_ids = fields.One2Many(
         'gnuhealth.insurance.plan', 'company', 'Insurance Plans')
 
@@ -1191,7 +1191,7 @@ class PageOfLife(ModelSQL, ModelView):
 class ContactMechanism(metaclass=PoolMeta):
     __name__ = 'party.contact_mechanism'
 
-    emergency = fields.Boolean('Emergency', select=True)
+    emergency = fields.Boolean('Emergency')
     remarks = fields.Char('Remarks', help="Enter the name of the contact"
                           " or other remarks")
 
@@ -1259,7 +1259,7 @@ class DrugDoseUnits(ModelSQL, ModelView):
     'Drug Dose Unit'
     __name__ = 'gnuhealth.dose.unit'
 
-    name = fields.Char('Unit', required=True, select=True, translate=True)
+    name = fields.Char('Unit', required=True, translate=True)
     desc = fields.Char('Description', translate=True)
 
     @classmethod
@@ -1277,7 +1277,7 @@ class MedicationFrequency(ModelSQL, ModelView):
     __name__ = 'gnuhealth.medication.dosage'
 
     name = fields.Char(
-        'Frequency', required=True, select=True, translate=True,
+        'Frequency', required=True, translate=True,
         help='Common frequency name')
     code = fields.Char(
         'Code', required=True,
@@ -1301,7 +1301,7 @@ class DrugForm(ModelSQL, ModelView):
     'Drug Form'
     __name__ = 'gnuhealth.drug.form'
 
-    name = fields.Char('Form', required=True, select=True, translate=True)
+    name = fields.Char('Form', required=True, translate=True)
     code = fields.Char('Code', required=True,
                        help="Please use CAPITAL LETTERS and no spaces")
 
@@ -1319,7 +1319,7 @@ class DrugRoute(ModelSQL, ModelView):
     'Drug Administration Route'
     __name__ = 'gnuhealth.drug.route'
 
-    name = fields.Char('Route', required=True, select=True, translate=True)
+    name = fields.Char('Route', required=True, translate=True)
     code = fields.Char('Code', required=True,
                        help="Please use CAPITAL LETTERS and no spaces")
 
@@ -1652,8 +1652,7 @@ class HospitalOR(ModelSQL, ModelView):
     building = fields.Many2One(
         'gnuhealth.hospital.building', 'Building',
         domain=[('institution', '=', Eval('institution'))],
-        depends=['institution'],
-        select=True)
+        depends=['institution'])
 
     unit = fields.Many2One(
         'gnuhealth.hospital.unit', 'Unit',
@@ -1918,7 +1917,7 @@ class HealthProfessional(ModelSQL, ModelView):
         fields.Char('PUID', help="Person Unique Identifier"),
         'get_hp_puid', searcher='search_hp_puid')
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -2069,7 +2068,7 @@ class MedicamentCategory(tree(separator=' / '), ModelSQL, ModelView):
     name = fields.Char('Name', required=True, translate=True)
 
     parent = fields.Many2One(
-        'gnuhealth.medicament.category', 'Parent', select=True)
+        'gnuhealth.medicament.category', 'Parent')
 
     childs = fields.One2Many(
         'gnuhealth.medicament.category', 'parent', string='Children')
@@ -2100,7 +2099,7 @@ class Medicament(ModelSQL, ModelView):
         help='Active Component')
 
     category = fields.Many2One(
-        'gnuhealth.medicament.category', 'Category', select=True)
+        'gnuhealth.medicament.category', 'Category')
 
     therapeutic_action = fields.Char(
         'Therapeutic effect', help='Therapeutic action')
@@ -2189,7 +2188,7 @@ class Medicament(ModelSQL, ModelView):
     is_vaccine = fields.Boolean('Vaccine')
     notes = fields.Text('Extra Info')
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -2350,7 +2349,7 @@ class PathologyCategory(tree(separator=' / '), ModelSQL, ModelView):
 
     name = fields.Char('Category Name', required=True, translate=True)
     parent = fields.Many2One(
-        'gnuhealth.pathology.category', 'Parent Category', select=True)
+        'gnuhealth.pathology.category', 'Parent Category')
 
     childs = fields.One2Many(
         'gnuhealth.pathology.category', 'parent', 'Children Category')
@@ -2433,7 +2432,7 @@ class Pathology(ModelSQL, ModelView):
 
     uri = fields.Char('URI', help="Resource / Entity URL address")
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -2661,7 +2660,7 @@ class DeathUnderlyingCondition(ModelSQL, ModelView):
         ('days', 'days'),
         ('months', 'months'),
         ('years', 'years'),
-    ], 'Unit', select=True, sort=False, required=True)
+    ], 'Unit', sort=False, required=True)
 
     unit_of_time_str = unit_of_time.translated('unit_of_time')
 
@@ -2703,7 +2702,7 @@ class Insurance(ModelSQL, ModelView):
 
     company = fields.Many2One(
         'party.party', 'Insurance Company',
-        required=True, select=True,
+        required=True,
         domain=[('is_insurance_company', '=', True)])
 
     member_since = fields.Date('Member since')
@@ -2716,7 +2715,7 @@ class Insurance(ModelSQL, ModelView):
         ('state', 'State'),
         ('labour_union', 'Labour Union / Syndical'),
         ('private', 'Private'),
-    ], 'Insurance Type', select=True)
+    ], 'Insurance Type')
     plan_id = fields.Many2One(
         'gnuhealth.insurance.plan', 'Plan',
         help='Insurance company plan',
@@ -3186,7 +3185,7 @@ class PatientData(ModelSQL, ModelView):
     appointments = fields.One2Many(
         'gnuhealth.appointment', 'patient', 'Appointments')
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     # General key information about the patient, independent
     # from coding systems
@@ -3334,7 +3333,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('1_mi', 'Mild'),
         ('2_mo', 'Moderate'),
         ('3_sv', 'Severe'),
-    ], 'Severity', select=True, sort=False)
+    ], 'Severity', sort=False)
 
     disease_severity_str = disease_severity.translated('disease_severity')
 
@@ -3380,7 +3379,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('fa', 'Food Allergy'),
         ('ma', 'Misc Allergy'),
         ('mc', 'Misc Contraindication'),
-    ], 'Allergy type', select=True, sort=False)
+    ], 'Allergy type', sort=False)
     pcs_code = fields.Many2One(
         'gnuhealth.procedure', 'Code',
         help='Procedure code')
@@ -3396,7 +3395,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         ('h', 'healed'),
         ('i', 'improving'),
         ('w', 'worsening'),
-    ], 'Status', select=True, sort=False)
+    ], 'Status', sort=False)
 
     status_str = status.translated('status')
 
@@ -3573,11 +3572,11 @@ class Appointment(ModelSQL, ModelView):
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
-        select=True, help='Health Professional')
+        help='Health Professional')
 
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        select=True, help='Patient Name',
+        help='Patient Name',
         states={'required': (Eval('state') != 'free')})
 
     appointment_date = fields.DateTime(
@@ -4052,7 +4051,7 @@ class PatientMedication(ModelSQL, ModelView):
         ('days', 'days'),
         ('weeks', 'weeks'),
         ('wr', 'when required'),
-    ], 'unit', select=True, sort=False)
+    ], 'unit', sort=False)
 
     frequency_prn = fields.Boolean(
         'PRN', help='Use it as needed, pro re nata')
@@ -4069,7 +4068,7 @@ class PatientMedication(ModelSQL, ModelView):
         ('mlhr', 'mL/hour'),
     ], 'Unit Rate',
         states={'invisible': Not(Bool(Eval('infusion')))},
-        select=True, sort=False)
+        sort=False)
 
     prescription = fields.Many2One(
         'gnuhealth.prescription.order', 'Prescription', readonly=True,
@@ -4604,7 +4603,7 @@ class PrescriptionLine(ModelSQL, ModelView):
         ('days', 'days'),
         ('weeks', 'weeks'),
         ('wr', 'when required'),
-    ], 'unit', select=True, sort=False)
+    ], 'unit', sort=False)
 
     frequency_unit_str = frequency_unit.translated('frequency_unit')
 
@@ -4680,7 +4679,7 @@ class PrescriptionLine(ModelSQL, ModelView):
         ('mlhr', 'mL/hour'),
     ], 'Unit Rate',
         states={'invisible': Not(Bool(Eval('infusion')))},
-        select=True, sort=False)
+        sort=False)
 
     def get_rec_name(self, name):
         dose = ""
