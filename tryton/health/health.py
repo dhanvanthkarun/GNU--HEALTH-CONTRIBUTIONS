@@ -1888,6 +1888,7 @@ class MedicalSpecialty(ModelSQL, ModelView):
 class HealthProfessional(ModelSQL, ModelView):
     'Health Professional'
     __name__ = 'gnuhealth.healthprofessional'
+    _rec_name = 'code'
 
     name = fields.Many2One(
         'party.party', 'Health Prof', required=True,
