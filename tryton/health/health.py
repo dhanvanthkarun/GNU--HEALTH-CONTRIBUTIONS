@@ -2741,6 +2741,7 @@ class Insurance(ModelSQL, ModelView):
 class AlternativePersonID (ModelSQL, ModelView):
     'Alternative person ID'
     __name__ = 'gnuhealth.person_alternative_identification'
+    _rec_name = 'code'
 
     name = fields.Many2One('party.party', 'Party', readonly=True)
     code = fields.Char('Code', required=True)
