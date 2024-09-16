@@ -5792,7 +5792,7 @@ class Help(ModelSQL, ModelView):
         "Description",
         help="Short description", required=True)
     category = fields.Char("Category")
-    package = fields.Many2One("ir.module", "Package")
+    package = fields.Char("Package(s)")
     keywords = fields.Char("Keywords")
     documentation = fields.Text("Documentation")
 
