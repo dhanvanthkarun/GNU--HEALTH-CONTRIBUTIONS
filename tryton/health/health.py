@@ -2873,6 +2873,7 @@ class BirthCertificate (ModelSQL, ModelView):
 class DeathCertificate (ModelSQL, ModelView):
     'Death Certificate'
     __name__ = 'gnuhealth.death_certificate'
+    _rec_name = 'code'
 
     STATES = {'readonly': Eval('state') == 'done'}
 
