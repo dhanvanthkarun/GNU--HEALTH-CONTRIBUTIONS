@@ -2587,8 +2587,7 @@ class BirthCertExtraInfo (ModelSQL, ModelView):
             'birth_certificate': certificates[0].id})
 
 
-class DeathCertExtraInfo (ModelSQL, ModelView):
-    'Death Certificate'
+class DeathCertExtraInfo (metaclass=PoolMeta):
     __name__ = 'gnuhealth.death_certificate'
 
     STATES = {'readonly': Eval('state') == 'done'}
