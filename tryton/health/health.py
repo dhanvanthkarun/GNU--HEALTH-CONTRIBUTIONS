@@ -3147,7 +3147,7 @@ class PatientData(ModelSQL, ModelView):
         'gnuhealth.patient.medication', 'name', 'Medications')
 
     diseases = fields.One2Many(
-        'gnuhealth.patient.disease', 'name',
+        'gnuhealth.patient.disease', 'patient',
         'Conditions', readonly=True)
 
     critical_summary = fields.Function(fields.Text(
@@ -3325,7 +3325,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     'Patient Conditions History'
     __name__ = 'gnuhealth.patient.disease'
 
-    name = fields.Many2One('gnuhealth.patient', 'Patient')
+    patient = fields.Many2One('gnuhealth.patient', 'Patient')
 
     pathology = fields.Many2One(
         'gnuhealth.pathology', 'Condition', required=True, help='Condition')
@@ -3472,39 +3472,40 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     def default_diagnosed_date():
         return date.today()
 
-    @fields.depends('diagnosed_date', 'age_str', 'name')
+    @fields.depends('diagnosed_date', 'age_str', 'patient')
     def on_change_diagnosed_date(self):
-        if (self.name):
+        if (self.patient):
             self.age_str = compute_age_from_dates(
-                self.name.dob, None, None, None, 'age',
+                self.patient.dob, None, None, None, 'age',
                 self.diagnosed_date)
             self.est_dodx = False
 
-    @fields.depends('age', 'name', 'age_str')
+    @fields.depends('age', 'patient', 'age_str')
     def on_change_age(self):
-        if (self.age and self.name.dob):
+        if (self.age and self.patient.dob):
             self.est_dodx = True
-            self.diagnosed_date = self.name.dob + relativedelta(years=self.age)
+            self.diagnosed_date = self.patient.dob + \
+                relativedelta(years=self.age)
             self.age_str = compute_age_from_dates(
-                self.name.dob, None, None, None, 'age',
+                self.patient.dob, None, None, None, 'age',
                 self.diagnosed_date)
             self.age = None
 
-    @fields.depends('age', 'name', 'diagnosed_date')
+    @fields.depends('age', 'patient', 'diagnosed_date')
     def on_change_with_age_str(self):
-        if (self.name):
-            if (self.diagnosed_date and self.name.dob):
+        if (self.patient):
+            if (self.diagnosed_date and self.patient.dob):
                 return compute_age_from_dates(
-                    self.name.dob, None, None, None, 'age',
+                    self.patient.dob, None, None, None, 'age',
                     self.diagnosed_date)
 
     def get_rec_name(self, name):
         return self.pathology.rec_name
 
     def patient_age_at_dx(self, name):
-        if (self.name.dob and self.diagnosed_date):
+        if (self.patient.dob and self.diagnosed_date):
             return compute_age_from_dates(
-                self.name.dob, None, None, None, 'age',
+                self.patient.dob, None, None, None, 'age',
                 self.diagnosed_date)
 
     @classmethod
@@ -3522,17 +3523,19 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
             elif condition_info.age:
                 age_at_dx = format_years_months_days(
                     years=condition_info.age, months=0, days=0)
-            elif (condition_info.name.dob and condition_info.diagnosed_date):
+            elif (condition_info.patient.dob and
+                  condition_info.diagnosed_date):
                 age_at_dx = compute_age_from_dates(
-                    condition_info.name.dob, None, None, None,
+                    condition_info.patient.dob, None, None, None,
                     'age', condition_info.diagnosed_date)
             return age_at_dx
 
         vals = {
             'page': str(uuid4()),
-            'person': condition_info.name.name.id,
+            'person': condition_info.patient.name.id,
             'age': patient_age_at_dx(),
-            'federation_account': condition_info.name.name.federation_account,
+            'federation_account':
+                condition_info.patient.name.federation_account,
             'page_type': 'medical',
             'medical_context': 'health_condition',
             'relevance': 'important',
@@ -3560,6 +3563,18 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         cls.create_health_condition_pol(health_condition_info[0])
 
         return health_condition_info
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 # PATIENT APPOINTMENT
@@ -4797,7 +4812,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
     related_condition = fields.Many2One(
         'gnuhealth.patient.disease', 'Related condition',
-        domain=[('name', '=', Eval('patient'))], depends=['patient'],
+        domain=[('patient', '=', Eval('patient'))], depends=['patient'],
         help="Related condition related to this follow-up evaluation",
         states={'readonly': (Eval('visit_type') != 'followup')})
 
@@ -5755,7 +5770,8 @@ class Commands(ModelSQL, ModelView):
         gnuhealth_version = f"GNU Health Server version:" \
                             f"{importlib.metadata.version('gnuhealth')}\n"
 
-        tryton_version = f"Tryton server: {importlib.metadata.version('trytond')}\n"
+        tryton_version = \
+            f"Tryton server: {importlib.metadata.version('trytond')}\n"
 
         info = f"{info} {gnuhealth_version} {tryton_version}" \
                f"{gnuhealth_os_user}\n{pversion}\n" \

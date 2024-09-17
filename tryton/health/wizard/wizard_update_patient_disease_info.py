@@ -44,7 +44,7 @@ class UpdatePatientDiseaseInfo(Wizard):
             [Transaction().context.get('active_id')])[0]
 
         existing_disease = Disease.search(
-            [('name', '=', evaluation.patient),
+            [('patient', '=', evaluation.patient),
              ('pathology', '=', evaluation.diagnosis),
              ('diagnosed_date', '=', evaluation.evaluation_endtime.date())])
 
@@ -63,7 +63,7 @@ class UpdatePatientDiseaseInfo(Wizard):
         evaluation = Evaluation.browse(
             [Transaction().context.get('active_id')])[0]
 
-        return {'name': (evaluation.patient
+        return {'patient': (evaluation.patient
                          and evaluation.patient.id),
                 'age': (evaluation.patient
                         and parse_compute_age(evaluation.patient.age)[0]),
