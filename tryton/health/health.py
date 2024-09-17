@@ -1525,8 +1525,8 @@ class HealthInstitutionOperationalSector(ModelSQL, ModelView):
     'Operational Sectors covered by Institution'
     __name__ = 'gnuhealth.institution.operationalsector'
 
-    name = fields.Many2One('gnuhealth.institution', 'Institution',
-                           required=True)
+    institution = fields.Many2One('gnuhealth.institution', 'Institution',
+                                  required=True)
     operational_sector = fields.Many2One('gnuhealth.operational_sector',
                                          'Operational Sector', required=True)
 
@@ -1538,6 +1538,18 @@ class HealthInstitutionOperationalSector(ModelSQL, ModelView):
             ('name_os_uniq', Unique(t, t.name, t.operational_sector),
                 'The Operational Sector already exists for this institution'),
         ]
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to institution
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('institution')):
+            table_h.column_rename('name', 'institution')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class HealthInstitutionO2M(ModelSQL, ModelView):
@@ -1567,7 +1579,7 @@ class HealthInstitutionO2M(ModelSQL, ModelView):
     # Add Specialties to the Health Institution
     operational_sectors = fields.One2Many(
         'gnuhealth.institution.operationalsector',
-        'name', 'Operational Sector',
+        'institution', 'Operational Sector',
         help="Operational Sectors covered by this institution")
 
 
