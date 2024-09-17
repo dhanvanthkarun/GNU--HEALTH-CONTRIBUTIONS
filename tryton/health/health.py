@@ -4355,7 +4355,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
         depends=['state'])
 
     prescription_line = fields.One2Many(
-        'gnuhealth.prescription.line', 'name', 'Prescription line',
+        'gnuhealth.prescription.line', 'presc_order', 'Prescription line',
         states=STATES)
 
     notes = fields.Text('Prescription Notes', states=STATES)
@@ -4561,7 +4561,7 @@ class PrescriptionLine(ModelSQL, ModelView):
 #    template = fields.Many2One('gnuhealth.medication.template',
 #        'Medication Template')
 
-    name = fields.Many2One(
+    presc_order = fields.Many2One(
         'gnuhealth.prescription.order', 'ID',
         help='Prescription ID')
 
@@ -4778,12 +4778,12 @@ class PrescriptionLine(ModelSQL, ModelView):
 
                 # Retrieve the patient ID from the prescription
                 Prescs = Pool().get('gnuhealth.prescription.order')
-                patient = Prescs.browse([values['name']])[0].patient.id
+                patient = Prescs.browse([values['presc_order']])[0].patient.id
 
                 medicament = values['medicament']
                 indication = values['indication']
                 start_treatment = values.get('start_treatment')
-                prescription = values['name']
+                prescription = values['presc_order']
 
                 values = {
                     'name': patient,
@@ -4798,6 +4798,18 @@ class PrescriptionLine(ModelSQL, ModelView):
                 Medication.create(med)
 
         return super(PrescriptionLine, cls).create(vlist)
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to presc_order
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('presc_order')):
+            table_h.column_rename('name', 'presc_order')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
