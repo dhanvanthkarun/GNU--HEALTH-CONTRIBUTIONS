@@ -2421,7 +2421,7 @@ class Pathology(ModelSQL, ModelView):
         ' will be the main category for de disease')
 
     groups = fields.One2Many(
-        'gnuhealth.disease_group.members', 'name',
+        'gnuhealth.disease_group.members', 'disease',
         'Groups', help='Specify the groups this pathology belongs. Some'
         ' automated processes act upon the code of the group')
 
@@ -2470,9 +2470,22 @@ class DiseaseMembers(ModelSQL, ModelView):
     'Disease group members'
     __name__ = 'gnuhealth.disease_group.members'
 
-    name = fields.Many2One('gnuhealth.pathology', 'Condition', readonly=True)
+    disease = fields.Many2One('gnuhealth.pathology',
+                              'Condition', readonly=True)
     disease_group = fields.Many2One(
         'gnuhealth.pathology.group', 'Group', required=True)
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to disease
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('disease')):
+            table_h.column_rename('name', 'disease')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class ProcedureCode(ModelSQL, ModelView):
