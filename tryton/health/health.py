@@ -2048,6 +2048,7 @@ class Family(ModelSQL, ModelView):
 class FamilyMember(ModelSQL, ModelView):
     'Family Member'
     __name__ = 'gnuhealth.family_member'
+    _rec_name = 'role'
 
     name = fields.Many2One(
         'gnuhealth.family', 'Family', required=True, readonly=True,
