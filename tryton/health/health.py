@@ -2552,8 +2552,7 @@ class ProcedureCode(ModelSQL, ModelView):
 
 # Add institution attribute AFTER registering the Health Institution
 # Health Professionals and underlying conditions
-class BirthCertExtraInfo (ModelSQL, ModelView):
-    'Birth Certificate'
+class BirthCertExtraInfo (metaclass=PoolMeta):
     __name__ = 'gnuhealth.birth_certificate'
 
     STATES = {'readonly': Eval('state') == 'done'}
@@ -2820,6 +2819,7 @@ class AlternativePersonID (ModelSQL, ModelView):
 class BirthCertificate (ModelSQL, ModelView):
     'Birth Certificate'
     __name__ = 'gnuhealth.birth_certificate'
+    _rec_name = 'code'
 
     STATES = {'readonly': Eval('state') == 'done'}
 
