@@ -1502,8 +1502,8 @@ class HealthInstitutionSpecialties(ModelSQL, ModelView):
     'Health Institution Specialties'
     __name__ = 'gnuhealth.institution.specialties'
 
-    name = fields.Many2One('gnuhealth.institution', 'Institution',
-                           required=True)
+    institution = fields.Many2One('gnuhealth.institution', 'Institution',
+                                  required=True)
     specialty = fields.Many2One('gnuhealth.specialty', 'Specialty',
                                 required=True)
 
@@ -1512,11 +1512,23 @@ class HealthInstitutionSpecialties(ModelSQL, ModelView):
             return self.specialty.name
 
     @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to institution
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('institution')):
+            table_h.column_rename('name', 'institution')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
+    @classmethod
     def __setup__(cls):
         super(HealthInstitutionSpecialties, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_sp_uniq', Unique(t, t.name, t.specialty),
+            ('name_sp_uniq', Unique(t, t.institution, t.specialty),
              'The Specialty already exists for this institution'),
         ]
 
@@ -1559,13 +1571,13 @@ class HealthInstitutionO2M(ModelSQL, ModelView):
     # Add Specialties to the Health Institution
     specialties = fields.One2Many(
         'gnuhealth.institution.specialties',
-        'name', 'Specialties',
+        'institution', 'Specialties',
         help="Specialties Provided in this Health Institution")
 
     main_specialty = fields.Many2One(
         'gnuhealth.institution.specialties',
         'Specialty',
-        domain=[('name', '=', Eval('id'))],
+        domain=[('institution', '=', Eval('id'))],
         depends=['specialties', 'institution_type', 'id'],
         help="Choose the speciality in the case of Specialized Hospitals"
              " or where this center excels",
