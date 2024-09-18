@@ -2102,6 +2102,7 @@ class MedicamentCategory(tree(separator=' / '), ModelSQL, ModelView):
 class Medicament(ModelSQL, ModelView):
     'Medicament'
     __name__ = 'gnuhealth.medicament'
+    _rec_name = 'active_component'
 
     name = fields.Many2One(
         'product.product', 'Product', required=True,
@@ -4182,6 +4183,7 @@ class PatientMedication(ModelSQL, ModelView):
 class PatientVaccination(ModelSQL, ModelView):
     'Patient Vaccination information'
     __name__ = 'gnuhealth.vaccination'
+    _rec_name = 'vaccine_lot'
 
     name = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
 
