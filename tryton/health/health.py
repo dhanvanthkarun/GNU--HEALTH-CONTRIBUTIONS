@@ -1934,7 +1934,7 @@ class HealthProfessional(ModelSQL, ModelView):
     code = fields.Char('LICENSE ID', help='License ID')
 
     specialties = fields.One2Many(
-        'gnuhealth.hp_specialty', 'name', 'Specialties')
+        'gnuhealth.hp_specialty', 'healthprof', 'Specialties')
 
     info = fields.Text('Extra info')
 
@@ -2004,7 +2004,7 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
     'Health Professional Specialties'
     __name__ = 'gnuhealth.hp_specialty'
 
-    name = fields.Many2One(
+    healthprof = fields.Many2One(
         'gnuhealth.healthprofessional',
         'Health Prof', required=True,
         help='Health Professional')
@@ -2035,6 +2035,18 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
              'This specialty is already assigned to the Health Professional'),
         ]
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to healthprof
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('healthprof')):
+            table_h.column_rename('name', 'healthprof')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class PhysicianSP(ModelSQL, ModelView):
     # Add Main Specialty field after from the Health Professional Speciality
@@ -2043,7 +2055,7 @@ class PhysicianSP(ModelSQL, ModelView):
 
     main_specialty = fields.Many2One(
         'gnuhealth.hp_specialty', 'Main Specialty',
-        domain=[('name', '=', Eval('id'))],
+        domain=[('healthprof', '=', Eval('id'))],
         states={'readonly': Eval('id', 0) < 0},
         depends=['id'])
 
