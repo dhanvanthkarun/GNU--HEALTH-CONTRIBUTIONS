@@ -2720,7 +2720,7 @@ class InsurancePlan(ModelSQL, ModelView):
 
     __name__ = 'gnuhealth.insurance.plan'
 
-    name = fields.Many2One(
+    product = fields.Many2One(
         'product.product', 'Plan', required=True,
         domain=[('is_insurance_plan', '=', True)],
         help='Insurance company plan')
@@ -2737,7 +2737,19 @@ class InsurancePlan(ModelSQL, ModelView):
     notes = fields.Text('Extra info')
 
     def get_rec_name(self, name):
-        return self.name.name
+        return self.product.name
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to product
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('product')):
+            table_h.column_rename('name', 'product')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class Insurance(ModelSQL, ModelView):
