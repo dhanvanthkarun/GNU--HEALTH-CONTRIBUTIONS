@@ -1576,13 +1576,13 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">Patient:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.A1" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.rec_name or &apos;&apos;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.rec_name or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.A1" office:value-type="string">
       <text:p text:style-name="GH-Table-Label-Right-Bold">PUID:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.D1" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.ref or &apos;&apos;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.puid or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Tabla1.1">
@@ -1604,13 +1604,13 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">Tel:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.A2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.phone or &apos;&apos;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.party.phone or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.A2" office:value-type="string">
       <text:p text:style-name="GH-Table-Label-Right-Bold">E-mail:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.D2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.email or &apos;&apos;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.party.email or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Tabla1.1">
@@ -1618,7 +1618,7 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">Address:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla1.D2" table:number-columns-spanned="3" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.du and prescription.patient.name.du.address_street or &apos;&apos;&gt;</text:placeholder><text:s/><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.du and prescription.patient.name.du.address_city and &apos;//&apos;&gt;</text:placeholder><text:s/><text:placeholder text:placeholder-type="text">&lt;prescription.patient.name.du and prescription.patient.name.du.address_city or &apos;&apos;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;prescription.patient.party.du and prescription.patient.party.du.address_street or &apos;&apos;&gt;</text:placeholder><text:s/><text:placeholder text:placeholder-type="text">&lt;prescription.patient.party.du and prescription.patient.party.du.address_city and &apos;//&apos;&gt;</text:placeholder><text:s/><text:placeholder text:placeholder-type="text">&lt;prescription.patient.party.du and prescription.patient.party.du.address_city or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
      <table:covered-table-cell/>

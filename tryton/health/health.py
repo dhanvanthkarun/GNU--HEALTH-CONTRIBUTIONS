@@ -3062,7 +3062,7 @@ class PatientData(ModelSQL, ModelView):
 
         return "\n".join((set(allergies + other_conditions)))
 
-    name = fields.Many2One(
+    party = fields.Many2One(
         'party.party', 'Patient', required=True,
         domain=[
             ('is_patient', '=', True),
@@ -3084,15 +3084,15 @@ class PatientData(ModelSQL, ModelView):
 
     current_insurance = fields.Many2One(
         'gnuhealth.insurance', 'Insurance',
-        domain=[('name', '=', Eval('name'))],
-        depends=['name'],
+        domain=[('name', '=', Eval('party'))],
+        depends=['party'],
         help='Insurance information. You may choose from the different'
         ' insurances belonging to the patient')
 
     current_address = fields.Many2One(
         'party.address', 'Temp. Addr',
-        domain=[('party', '=', Eval('name'))],
-        depends=['name'],
+        domain=[('party', '=', Eval('party'))],
+        depends=['party'],
         help="Use this address for temporary contact information. "
         "For example, if the patient is on vacation, you can put "
         "the hotel address. In the case of a Domiciliary Unit, "
@@ -3291,15 +3291,15 @@ class PatientData(ModelSQL, ModelView):
         super(PatientData, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_uniq', Unique(t, t.name), 'The Patient already exists !'),
+            ('name_uniq', Unique(t, t.party), 'The Patient already exists !'),
         ]
-        cls._order.insert(0, ('name', 'ASC'))
+        cls._order.insert(0, ('party', 'ASC'))
 
     def get_patient_dob(self, name):
-        return self.name.dob
+        return self.party.dob
 
     def get_patient_gender(self, name):
-        gender = self.name.gender
+        gender = self.party.gender
         sex = self.biological_sex
         if sex:
             if (gender != sex and (gender in ['f', 'm'])):
@@ -3311,19 +3311,19 @@ class PatientData(ModelSQL, ModelView):
         return res
 
     def get_patient_photo(self, name):
-        return self.name.photo
+        return self.party.photo
 
     def get_patient_puid(self, name):
-        return self.name.ref
+        return self.party.ref
 
     def get_patient_marital_status(self, name):
-        return self.name.marital_status
+        return self.party.marital_status
 
     def check_is_alive(self, name):
-        return self.name.deceased
+        return self.party.deceased
 
     def get_patient_age(self, name):
-        return self.name.age
+        return self.party.age
 
     def get_patient_age_num(self, name):
         if self.age:
@@ -3335,18 +3335,18 @@ class PatientData(ModelSQL, ModelView):
 
     def get_dod(self, name):
         if (self.deceased):
-            return self.name.death_certificate.dod
+            return self.party.death_certificate.dod
 
     def get_cod(self, name):
         if (self.deceased):
-            return self.name.death_certificate.cod.id
+            return self.party.death_certificate.cod.id
 
     # Show the gender upon entering the individual
-    @fields.depends('name')
+    @fields.depends('party')
     def on_change_name(self):
-        if (self.name):
-            self.gender = self.name.gender
-            self.age = self.name.age
+        if (self.party):
+            self.gender = self.party.gender
+            self.age = self.party.age
 
     @classmethod
     def search_patient_puid(cls, name, clause):
@@ -3356,18 +3356,18 @@ class PatientData(ModelSQL, ModelView):
         return res
 
     def get_patient_lastname(self, name):
-        return self.name.lastname
+        return self.party.lastname
 
     @classmethod
     def search_patient_lastname(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('name.lastname', clause[1], value))
+        res.append(('party.lastname', clause[1], value))
         return res
 
     def get_rec_name(self, name):
-        if self.name:
-            return self.name.rec_name
+        if self.party:
+            return self.party.rec_name
 
     # Search by the patient name, lastname or PUID
     @classmethod
@@ -3378,7 +3378,7 @@ class PatientData(ModelSQL, ModelView):
             bool_op = 'OR'
         return [bool_op,
                 ('puid',) + tuple(clause[1:]),
-                ('name',) + tuple(clause[1:]),
+                ('party',) + tuple(clause[1:]),
                 ('lastname',) + tuple(clause[1:]),
                 ]
 
@@ -3595,10 +3595,10 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
         vals = {
             'page': str(uuid4()),
-            'person': condition_info.patient.name.id,
+            'person': condition_info.patient.party.id,
             'age': patient_age_at_dx(),
             'federation_account':
-                condition_info.patient.name.federation_account,
+                condition_info.patient.party.federation_account,
             'page_type': 'medical',
             'medical_context': 'health_condition',
             'relevance': 'important',
@@ -3815,7 +3815,7 @@ class Appointment(ModelSQL, ModelView):
     def default_institution():
         return get_institution()
 
-    @fields.depends('patient', '_parent_patient.name')
+    @fields.depends('patient', '_parent_patient.party')
     def on_change_patient(self):
         if self.patient:
             self.state = 'confirmed'
@@ -3933,8 +3933,8 @@ class AppointmentReport(ModelSQL, ModelView):
 
     def get_address(self, name):
         res = ''
-        if self.patient.name.addresses:
-            res = self.patient.name.addresses[0].full_address
+        if self.patient.party.addresses:
+            res = self.patient.party.addresses[0].full_address
         return res
 
     def get_insurance(self, name):
@@ -3957,7 +3957,7 @@ class AppointmentReport(ModelSQL, ModelView):
         return res
 
     def get_patient_age(self, name):
-        return self.patient.name.age
+        return self.patient.party.age
 
 
 class OpenAppointmentReportStart(ModelView):
@@ -4521,10 +4521,10 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
 
         vals = {
             'page': str(uuid4()),
-            'person': prescription_info.patient.name.id,
+            'person': prescription_info.patient.party.id,
             'page_date': prescription_info.prescription_date,
             'federation_account':
-                prescription_info.patient.name.federation_account,
+                prescription_info.patient.party.federation_account,
             'page_type': 'medical',
             'medical_context': 'prescription',
             'relevance': 'important',
@@ -4574,7 +4574,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
             'state': 'done', })
 
         # Create prescription PoL if the person has a federation account.
-        if (prescription.patient.name.federation_account):
+        if (prescription.patient.party.federation_account):
             cls.create_prescription_pol(prescription)
 
     @classmethod
@@ -4857,9 +4857,9 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     STATES = {'readonly': Eval('state') == 'signed'}
 
     def patient_age_at_evaluation(self, name):
-        if (self.patient.name.dob and self.evaluation_start):
+        if (self.patient.party.dob and self.evaluation_start):
             return compute_age_from_dates(
-                self.patient.name.dob, None, None, None, 'age',
+                self.patient.party.dob, None, None, None, 'age',
                 self.evaluation_start.date())
 
     def evaluation_duration(self, name):
@@ -5266,7 +5266,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     directions = fields.Text('Plan', states=STATES)
 
     actions = fields.One2Many(
-        'gnuhealth.directions', 'name', 'Procedures',
+        'gnuhealth.directions', 'evaluation', 'Procedures',
         help='Procedures / Actions to take',
         states=STATES)
 
@@ -5308,7 +5308,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     def search_patient_gender(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.gender', clause[1], value))
+        res.append(('patient.party.gender', clause[1], value))
         return res
 
     @classmethod
@@ -5526,7 +5526,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         # It will create the entry at the moment of
         # discharging the patient
         # The patient needs to have a federation account
-        if (evaluation_id.patient.name.federation_account):
+        if (evaluation_id.patient.party.federation_account):
             cls.create_evaluation_pol(evaluation_id)
 
     @classmethod
@@ -5581,10 +5581,10 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
         vals = {
             'page': str(uuid4()),
-            'person': evaluation.patient.name.id,
+            'person': evaluation.patient.party.id,
             'page_date': evaluation.evaluation_start,
             'age': evaluation.computed_age,
-            'federation_account': evaluation.patient.name.federation_account,
+            'federation_account': evaluation.patient.party.federation_account,
             'page_type': 'medical',
             'medical_context': 'encounter',
             'relevance': 'important',
@@ -5626,13 +5626,25 @@ class Directions(ModelSQL, ModelView):
     'Patient Directions'
     __name__ = 'gnuhealth.directions'
 
-    name = fields.Many2One(
+    evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation', readonly=True)
 
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Procedure', required=True)
 
     comments = fields.Char('Comments')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to evaluation
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('evaluation')):
+            table_h.column_rename('name', 'evaluation')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 # SECONDARY CONDITIONS ASSOCIATED TO THE PATIENT IN THE EVALUATION
@@ -5691,7 +5703,7 @@ class PatientECG(ModelSQL, ModelView):
     'Patient ECG'
     __name__ = 'gnuhealth.patient.ecg'
 
-    name = fields.Many2One('gnuhealth.patient',
+    patient = fields.Many2One('gnuhealth.patient',
                            'Patient', required=True)
 
     ecg_date = fields.DateTime('Date', required=True)
@@ -5802,8 +5814,20 @@ class PatientECG(ModelSQL, ModelView):
         else:
             bool_op = 'OR'
         return [bool_op,
-                ('name',) + tuple(clause[1:]),
+                ('patient',) + tuple(clause[1:]),
                 ]
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class ProductTemplate(metaclass=PoolMeta):
