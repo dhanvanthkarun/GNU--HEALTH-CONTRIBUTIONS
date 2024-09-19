@@ -775,7 +775,7 @@ class Party(metaclass=PoolMeta):
         # When entity is a patient
         if (entity == 'patient'):
             Target = Pool().get('gnuhealth.patient')
-            values.append({'name': party.id})
+            values.append({'party': party.id})
 
         # TODO: Add more entities (health prof, institutions)
         # Warning: We have to make sure Target has no required fields
@@ -1548,7 +1548,7 @@ class HealthInstitutionOperationalSector(ModelSQL, ModelView):
         super(HealthInstitutionOperationalSector, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_os_uniq', Unique(t, t.name, t.operational_sector),
+            ('name_os_uniq', Unique(t, t.institution, t.operational_sector),
                 'The Operational Sector already exists for this institution'),
         ]
 
@@ -2032,7 +2032,7 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
         super(HealthProfessionalSpecialties, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_uniq', Unique(t, t.name, t.specialty),
+            ('name_uniq', Unique(t, t.healthprof, t.specialty),
              'This specialty is already assigned to the Health Professional'),
         ]
 
