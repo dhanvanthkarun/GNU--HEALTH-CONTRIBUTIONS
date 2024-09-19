@@ -1425,6 +1425,7 @@ class OperationalSector(ModelSQL, ModelView):
 class HealthInstitution(ModelSQL, ModelView):
     'Health Institution'
     __name__ = 'gnuhealth.institution'
+    _rec_name = 'code'
 
     name = fields.Many2One(
         'party.party', 'Institution',
@@ -3207,7 +3208,7 @@ class PatientData(ModelSQL, ModelView):
     vaccinations = fields.One2Many(
         'gnuhealth.vaccination', 'name', 'Vaccinations', readonly=True)
     medications = fields.One2Many(
-        'gnuhealth.patient.medication', 'name', 'Medications')
+        'gnuhealth.patient.medication', 'patient', 'Medications')
 
     diseases = fields.One2Many(
         'gnuhealth.patient.disease', 'patient',
@@ -4031,7 +4032,7 @@ class PatientMedication(ModelSQL, ModelView):
         help='Choose a disease for this medicament from the disease list. It'
         ' can be an existing disease of the patient or a prophylactic.')
 
-    name = fields.Many2One(
+    patient = fields.Many2One(
         'gnuhealth.patient', 'Patient', readonly=True)
 
     healthprof = fields.Many2One(
@@ -4213,6 +4214,18 @@ class PatientMedication(ModelSQL, ModelView):
                     end_treatment=self.end_treatment
                 )
                 )
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 # PATIENT VACCINATION INFORMATION
@@ -4824,7 +4837,7 @@ class PrescriptionLine(ModelSQL, ModelView):
                 prescription = values['presc_order']
 
                 values = {
-                    'name': patient,
+                    'patient': patient,
                     'medicament': medicament,
                     'indication': indication,
                     'start_treatment': start_treatment,
@@ -5704,7 +5717,7 @@ class PatientECG(ModelSQL, ModelView):
     __name__ = 'gnuhealth.patient.ecg'
 
     patient = fields.Many2One('gnuhealth.patient',
-                           'Patient', required=True)
+                              'Patient', required=True)
 
     ecg_date = fields.DateTime('Date', required=True)
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
