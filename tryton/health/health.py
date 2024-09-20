@@ -3906,7 +3906,7 @@ class AppointmentReport(ModelSQL, ModelView):
         join1 = Join(appointment, patient)
         join1.condition = join1.right.id == appointment.patient
         join2 = Join(join1, party)
-        join2.condition = join2.right.id == join1.right.name
+        join2.condition = join2.right.id == join1.right.party
         where = Literal(True)
         if Transaction().context.get('date_start'):
             where &= (appointment.appointment_date >=
