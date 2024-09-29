@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-29 05:34+0000\n"
+"PO-Revision-Date: 2024-09-29 06:54+0000\n"
 "Last-Translator: tuanlong <tuanlong@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Vietnamese <https://translate.codeberg.org/projects/gnuhealth/"
 "health/vi/>\n"
@@ -342,19 +342,19 @@ msgstr "Đường dùng1"
 
 msgctxt "field:gnuhealth.du,address_city:"
 msgid "City"
-msgstr "Thành phố"
+msgstr "Tỉnh/TP"
 
 msgctxt "field:gnuhealth.du,address_country:"
 msgid "Country"
-msgstr "Quốc gia3"
+msgstr "Quốc gia"
 
 msgctxt "field:gnuhealth.du,address_district:"
 msgid "District"
-msgstr "Quận"
+msgstr "Xã/Phường"
 
 msgctxt "field:gnuhealth.du,address_municipality:"
 msgid "Municipality"
-msgstr "Đô thị"
+msgstr "Quận/Huyện"
 
 msgctxt "field:gnuhealth.du,address_repr:"
 msgid "DU Address"
@@ -366,15 +366,15 @@ msgstr "Đường"
 
 msgctxt "field:gnuhealth.du,address_street_bis:"
 msgid "Unit"
-msgstr "Đơn vị3"
+msgstr "Ngõ"
 
 msgctxt "field:gnuhealth.du,address_street_number:"
 msgid "Number"
-msgstr "Số1"
+msgstr "Số"
 
 msgctxt "field:gnuhealth.du,address_subdivision:"
 msgid "Subdivision"
-msgstr "Khu vực3"
+msgstr "Khu vực"
 
 msgctxt "field:gnuhealth.du,address_zip:"
 msgid "Zip"
@@ -386,19 +386,19 @@ msgstr "Độ cao"
 
 msgctxt "field:gnuhealth.du,bathrooms:"
 msgid "Bathrooms"
-msgstr "Phòng tắm"
+msgstr "Số phòng tắm"
 
 msgctxt "field:gnuhealth.du,bedrooms:"
 msgid "Bedrooms"
-msgstr "Phòng ngủ"
+msgstr "Số phòng ngủ"
 
 msgctxt "field:gnuhealth.du,desc:"
 msgid "Desc"
-msgstr "Desc-96"
+msgstr "Phòng"
 
 msgctxt "field:gnuhealth.du,dwelling:"
 msgid "Type"
-msgstr "Loại3"
+msgstr "Loại nhà"
 
 msgctxt "field:gnuhealth.du,electricity:"
 msgid "Electrical supply"
@@ -406,11 +406,11 @@ msgstr "Cấp điện"
 
 msgctxt "field:gnuhealth.du,gas:"
 msgid "Gas supply"
-msgstr "Cung cấp khí đốt"
+msgstr "Cấp khí đốt"
 
 msgctxt "field:gnuhealth.du,housing:"
 msgid "Conditions"
-msgstr "Tình trạng8"
+msgstr "Tình trạng nhà"
 
 msgctxt "field:gnuhealth.du,internet:"
 msgid "Internet"
@@ -434,7 +434,7 @@ msgstr "Thành viên1"
 
 msgctxt "field:gnuhealth.du,name:"
 msgid "Code"
-msgstr "Mã6"
+msgstr "Mã khu nhà"
 
 msgctxt "field:gnuhealth.du,operational_sector:"
 msgid "Op. Sector"
@@ -458,7 +458,7 @@ msgstr "Điện thoại"
 
 msgctxt "field:gnuhealth.du,television:"
 msgid "Television"
-msgstr "Tivi1"
+msgstr "Tivi"
 
 msgctxt "field:gnuhealth.du,total_surface:"
 msgid "Surface"
@@ -2514,7 +2514,7 @@ msgstr "Giới"
 
 msgctxt "field:party.party,insurance:"
 msgid "Insurances"
-msgstr "Bảo hiểm2"
+msgstr "Các loại bảo hiểm"
 
 msgctxt "field:party.party,insurance_company_type:"
 msgid "Insurance Type"
@@ -2694,19 +2694,19 @@ msgstr "Vui lòng sử dụng CHỮ IN HOA và không có khoảng trắng"
 
 msgctxt "help:gnuhealth.du,address_city:"
 msgid "City"
-msgstr "Thành phố"
+msgstr "Tỉnh, Thành phố"
 
 msgctxt "help:gnuhealth.du,address_country:"
 msgid "Country"
-msgstr "Quốc gia6"
+msgstr "Tên quốc gia"
 
 msgctxt "help:gnuhealth.du,address_district:"
 msgid "Neighborhood, Village, Barrio...."
-msgstr "Khu phố, Làng, Xóm.…"
+msgstr "Xã, Phường, Khu phố, Làng, Xóm..."
 
 msgctxt "help:gnuhealth.du,address_municipality:"
 msgid "Municipality, Township, county .."
-msgstr "Thành phố, Thị trấn, Quận.."
+msgstr "Thành phố, Thị trấn, Quận, Huyện..."
 
 msgctxt "help:gnuhealth.du,altitude:"
 msgid "Altitude in meters"
@@ -8688,7 +8688,7 @@ msgstr "Kê đơn4"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_appointment_menu"
 msgid "Appointments"
-msgstr "Hẹn khám4"
+msgstr "Danh sách hẹn khám"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_bol"
 msgid "Books of Life"
@@ -8880,7 +8880,7 @@ msgstr "Y tế"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
-msgstr "Viện25"
+msgstr "Thông tin bệnh viện"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
 msgid "Online Documentation"
@@ -8892,7 +8892,7 @@ msgstr "Khu vực phẫu thuật5"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
 msgid "Patients"
-msgstr "Bệnh nhân16"
+msgstr "Danh sách bệnh nhân"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_pol"
 msgid "Pages of life"
@@ -8904,7 +8904,7 @@ msgstr "Kê đơn9"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_reporting_menu"
 msgid "Reporting"
-msgstr "Báo cáo 2133"
+msgstr "Báo cáo"
 
 msgctxt "model:ir.ui.menu,name:menu_appointments_report_view_tree"
 msgid "Appointments with Dx Report"
@@ -10038,7 +10038,7 @@ msgstr "Gạch không nung"
 
 msgctxt "selection:gnuhealth.du,materials:"
 msgid "Concrete"
-msgstr "Bê-tông1"
+msgstr "Bê-tông"
 
 msgctxt "selection:gnuhealth.du,materials:"
 msgid "Mud / Straw"
@@ -10046,11 +10046,11 @@ msgstr "Bùn/rơm"
 
 msgctxt "selection:gnuhealth.du,materials:"
 msgid "Stone"
-msgstr "Đá1"
+msgstr "Đá"
 
 msgctxt "selection:gnuhealth.du,materials:"
 msgid "Wood"
-msgstr "Gỗ1"
+msgstr "Gỗ"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Adobe"
@@ -10058,7 +10058,7 @@ msgstr "Ngói không nung"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Concrete"
-msgstr "Bê-tông2"
+msgstr "Bê-tông"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Mud"
@@ -10066,7 +10066,7 @@ msgstr "Bùn"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Stone"
-msgstr "Đá2"
+msgstr "Đá"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Thatched"
@@ -10074,7 +10074,7 @@ msgstr "Mái rạ"
 
 msgctxt "selection:gnuhealth.du,roof_type:"
 msgid "Wood"
-msgstr "Gỗ2"
+msgstr "Gỗ"
 
 msgctxt "selection:gnuhealth.hospital.bed,bed_type:"
 msgid "Circo Electric"
@@ -10919,7 +10919,7 @@ msgstr "Sự miễn dịch"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Prescription"
-msgstr "Kê đơn6"
+msgstr "Kê đơn"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Procedure"
