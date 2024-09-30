@@ -5923,7 +5923,7 @@ class Help(ModelSQL, ModelView):
         "Description",
         help="Short description", required=True)
     category = fields.Char("Category")
-    package = fields.Char("Package(s)")
+    packages = fields.Char("Packages")
     keywords = fields.Char("Keywords")
     documentation = fields.Text("Documentation")
 
@@ -5935,6 +5935,17 @@ class Help(ModelSQL, ModelView):
             ('code_unique', Unique(t, t.name),
              'The help code already exists')
         ]
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: drop field category
+        if (table_h.column_exist('package')):
+            table_h.drop_column('package')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class OnlineDocument(ModelSQL, ModelView):
