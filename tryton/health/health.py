@@ -3383,6 +3383,18 @@ class PatientData(ModelSQL, ModelView):
                 ('lastname',) + tuple(clause[1:]),
                 ]
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 # PATIENT CONDITIONS INFORMATION
 class PatientDiseaseInfo(ModelSQL, ModelView):
