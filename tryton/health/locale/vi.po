@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-06 05:56+0000\n"
+"PO-Revision-Date: 2024-10-06 09:06+0000\n"
 "Last-Translator: tuanlong <tuanlong@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Vietnamese <https://translate.codeberg.org/projects/gnuhealth/"
 "health/vi/>\n"
@@ -166,7 +166,7 @@ msgstr "Trạng thái"
 msgctxt ""
 "field:gnuhealth.check_immunization_status.init,immunization_schedule:"
 msgid "Schedule"
-msgstr "Lịch trình1"
+msgstr "Lịch tiêm chủng1"
 
 msgctxt "field:gnuhealth.command,description:"
 msgid "Description"
@@ -770,7 +770,7 @@ msgstr "Mô tả"
 
 msgctxt "field:gnuhealth.immunization_schedule,sched:"
 msgid "Code"
-msgstr "Mã12"
+msgstr "Mã"
 
 msgctxt "field:gnuhealth.immunization_schedule,vaccines:"
 msgid "Vaccines"
@@ -778,7 +778,7 @@ msgstr "Vắc-xin"
 
 msgctxt "field:gnuhealth.immunization_schedule,year:"
 msgid "Year"
-msgstr "Năm1"
+msgstr "Năm"
 
 msgctxt "field:gnuhealth.immunization_schedule_dose,age_dose:"
 msgid "Age"
@@ -798,7 +798,7 @@ msgstr "Nhận xét"
 
 msgctxt "field:gnuhealth.immunization_schedule_dose,sched:"
 msgid "Schedule"
-msgstr "Lịch trình2"
+msgstr "Lịch tiêm chủng"
 
 msgctxt "field:gnuhealth.immunization_schedule_dose,vaccine:"
 msgid "Vaccine"
@@ -810,11 +810,11 @@ msgstr "Liều lượng"
 
 msgctxt "field:gnuhealth.immunization_schedule_line,remarks:"
 msgid "Remarks"
-msgstr "Nhận xét2"
+msgstr "Nhận xét"
 
 msgctxt "field:gnuhealth.immunization_schedule_line,sched:"
 msgid "Schedule"
-msgstr "Lịch trình3"
+msgstr "Tên lịch"
 
 msgctxt "field:gnuhealth.immunization_schedule_line,scope:"
 msgid "Scope"
@@ -946,7 +946,7 @@ msgstr "Công ty bảo hiểm"
 
 msgctxt "field:gnuhealth.insurance.plan,is_default:"
 msgid "Default plan"
-msgstr "Kế hoạch mặc định"
+msgstr "Chương trình mặc định"
 
 msgctxt "field:gnuhealth.insurance.plan,name:"
 msgid "Plan"
@@ -2152,7 +2152,7 @@ msgstr "Khi cần"
 
 msgctxt "field:gnuhealth.prescription.line,frequency_unit:"
 msgid "unit"
-msgstr "đơn vị10"
+msgstr "Đơn vị"
 
 msgctxt "field:gnuhealth.prescription.line,indication:"
 msgid "Indication"
@@ -2594,7 +2594,7 @@ msgstr "Giường"
 
 msgctxt "field:product.product,is_insurance_plan:"
 msgid "Insurance Plan"
-msgstr "Chương trình bảo hiểm1"
+msgstr "Chương trình bảo hiểm"
 
 msgctxt "field:product.product,is_medical_supply:"
 msgid "Medical Supply"
@@ -2602,11 +2602,11 @@ msgstr "Vật tư y tế"
 
 msgctxt "field:product.product,is_medicament:"
 msgid "Medicament"
-msgstr "Thuốc3"
+msgstr "Thuốc"
 
 msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
-msgstr "Vắc-xin5"
+msgstr "Vắc-xin"
 
 msgctxt "help:gnuhealth.appointment,appointment_date:"
 msgid "Appintmont start date and time."
@@ -2874,7 +2874,7 @@ msgstr "Mã cho lịch tiêm chủng này"
 
 msgctxt "help:gnuhealth.immunization_schedule_dose,vaccine:"
 msgid "Vaccine Name"
-msgstr "Tên vắc-xin1"
+msgstr "Tên của vắc-xin"
 
 msgctxt "help:gnuhealth.immunization_schedule_line,sched:"
 msgid "Schedule Name"
@@ -2882,7 +2882,7 @@ msgstr "Tên lịch trình"
 
 msgctxt "help:gnuhealth.immunization_schedule_line,vaccine:"
 msgid "Vaccine Name"
-msgstr "Tên vắc-xin2"
+msgstr "Tên của vắc-xin"
 
 msgctxt "help:gnuhealth.institution,code:"
 msgid "Institution code"
@@ -2929,8 +2929,8 @@ msgid ""
 "Check if this is the default plan when assigning this insurance company to a"
 " patient"
 msgstr ""
-"Đánh dấu nếu đây là kế hoạch mặc định khi chỉ định công ty bảo hiểm này cho "
-"bệnh nhân"
+"Đánh dấu nếu đây là chương trình mặc định khi chỉ định công ty bảo hiểm này "
+"cho bệnh nhân"
 
 msgctxt "help:gnuhealth.insurance.plan,name:"
 msgid "Insurance company plan"
@@ -5525,7 +5525,7 @@ msgstr "Người đánh bắt cá"
 
 msgctxt "model:gnuhealth.occupation,name:occ207"
 msgid "Fitter"
-msgstr ""
+msgstr "Thợ lắp ráp"
 
 msgctxt "model:gnuhealth.occupation,name:occ208"
 msgid "Flautist"
@@ -5533,23 +5533,23 @@ msgstr "Người thổi sáo"
 
 msgctxt "model:gnuhealth.occupation,name:occ209"
 msgid "Flavorist"
-msgstr ""
+msgstr "Chuyên gia hương vị"
 
 msgctxt "model:gnuhealth.occupation,name:occ21"
 msgid "Cameraman"
-msgstr ""
+msgstr "Người quay phim"
 
 msgctxt "model:gnuhealth.occupation,name:occ211"
 msgid "Flight attendant"
-msgstr ""
+msgstr "Tiếp viên hàng không"
 
 msgctxt "model:gnuhealth.occupation,name:occ212"
 msgid "Flight engineer"
-msgstr ""
+msgstr "Kỹ sư hàng không"
 
 msgctxt "model:gnuhealth.occupation,name:occ213"
 msgid "Flight instructor"
-msgstr ""
+msgstr "Người hướng dẫn bay"
 
 msgctxt "model:gnuhealth.occupation,name:occ214"
 msgid "Floor manager"
@@ -5557,11 +5557,11 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ215"
 msgid "Florist"
-msgstr ""
+msgstr "Người trồng hoa"
 
 msgctxt "model:gnuhealth.occupation,name:occ217"
 msgid "Flutist"
-msgstr ""
+msgstr "Người thổi sáo"
 
 msgctxt "model:gnuhealth.occupation,name:occ218"
 msgid "Foreman"
@@ -5581,11 +5581,11 @@ msgstr "Người bán hoa quả"
 
 msgctxt "model:gnuhealth.occupation,name:occ221"
 msgid "Furrier"
-msgstr ""
+msgstr "Người thuộc da lông thú"
 
 msgctxt "model:gnuhealth.occupation,name:occ222"
 msgid "Gamekeeper"
-msgstr ""
+msgstr "Người coi khu săn bắn"
 
 msgctxt "model:gnuhealth.occupation,name:occ223"
 msgid "Game show host"
@@ -5609,7 +5609,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ228"
 msgid "Gemcutter"
-msgstr ""
+msgstr "Người cắt đá quý"
 
 msgctxt "model:gnuhealth.occupation,name:occ229"
 msgid "Genealogist"
@@ -5617,15 +5617,15 @@ msgstr "Nhà phả hệ học"
 
 msgctxt "model:gnuhealth.occupation,name:occ23"
 msgid "Car designer"
-msgstr ""
+msgstr "Người thiết kế xe hơi"
 
 msgctxt "model:gnuhealth.occupation,name:occ230"
 msgid "General"
-msgstr ""
+msgstr "Tướng"
 
 msgctxt "model:gnuhealth.occupation,name:occ231"
 msgid "Geodesist"
-msgstr ""
+msgstr "Nhà đo đạc"
 
 msgctxt "model:gnuhealth.occupation,name:occ232"
 msgid "Geographer"
@@ -5637,11 +5637,11 @@ msgstr "Nhà địa chất học"
 
 msgctxt "model:gnuhealth.occupation,name:occ234"
 msgid "Geometer"
-msgstr ""
+msgstr "Nhà hình học"
 
 msgctxt "model:gnuhealth.occupation,name:occ235"
 msgid "Geophysicist"
-msgstr ""
+msgstr "Nhà địa vật lý"
 
 msgctxt "model:gnuhealth.occupation,name:occ236"
 msgid "Government agent"
@@ -5649,15 +5649,15 @@ msgstr "Nhân viên chính phủ"
 
 msgctxt "model:gnuhealth.occupation,name:occ237"
 msgid "Governor"
-msgstr ""
+msgstr "Thống đốc"
 
 msgctxt "model:gnuhealth.occupation,name:occ238"
 msgid "Grammarian"
-msgstr ""
+msgstr "Nhà ngữ pháp"
 
 msgctxt "model:gnuhealth.occupation,name:occ239"
 msgid "Graphic artist"
-msgstr ""
+msgstr "Nghệ sĩ đồ họa"
 
 msgctxt "model:gnuhealth.occupation,name:occ24"
 msgid "Cardiologist"
@@ -5665,7 +5665,7 @@ msgstr "Thầy thuốc tim mạch"
 
 msgctxt "model:gnuhealth.occupation,name:occ240"
 msgid "Gravedigger"
-msgstr ""
+msgstr "Người đào huyệt"
 
 msgctxt "model:gnuhealth.occupation,name:occ241"
 msgid "Grenadier"
@@ -5689,7 +5689,7 @@ msgstr "Người chơi guitar"
 
 msgctxt "model:gnuhealth.occupation,name:occ246"
 msgid "Gunsmith"
-msgstr ""
+msgstr "Người làm súng"
 
 msgctxt "model:gnuhealth.occupation,name:occ247"
 msgid "Gynecologist"
@@ -5701,7 +5701,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ249"
 msgid "Haberdasher"
-msgstr ""
+msgstr "Người bán đồ may vá"
 
 msgctxt "model:gnuhealth.occupation,name:occ25"
 msgid "Carpenter"
@@ -5709,11 +5709,11 @@ msgstr "Thợ mộc"
 
 msgctxt "model:gnuhealth.occupation,name:occ250"
 msgid "Harpist"
-msgstr ""
+msgstr "Người chơi đàn hạc"
 
 msgctxt "model:gnuhealth.occupation,name:occ251"
 msgid "Hairdresser"
-msgstr ""
+msgstr "Thợ làm tóc"
 
 msgctxt "model:gnuhealth.occupation,name:occ252"
 msgid "Handyman"
@@ -5721,7 +5721,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ253"
 msgid "Harbourmaster"
-msgstr ""
+msgstr "Người quản lý bến cảng"
 
 msgctxt "model:gnuhealth.occupation,name:occ254"
 msgid "Harper"
@@ -5741,15 +5741,15 @@ msgstr "Hiệu trưởng"
 
 msgctxt "model:gnuhealth.occupation,name:occ259"
 msgid "Herbalist"
-msgstr ""
+msgstr "Người làm nghề thảo dược"
 
 msgctxt "model:gnuhealth.occupation,name:occ26"
 msgid "Cartographer"
-msgstr ""
+msgstr "Người vẽ bản đồ"
 
 msgctxt "model:gnuhealth.occupation,name:occ260"
 msgid "Herder"
-msgstr ""
+msgstr "Người chăn nuôi"
 
 msgctxt "model:gnuhealth.occupation,name:occ261"
 msgid "Historian"
@@ -5761,7 +5761,7 @@ msgstr "Người chép sử"
 
 msgctxt "model:gnuhealth.occupation,name:occ263"
 msgid "Hosier"
-msgstr ""
+msgstr "Người buôn hàng dệt kim"
 
 msgctxt "model:gnuhealth.occupation,name:occ264"
 msgid "Horse trainer"
@@ -7857,7 +7857,7 @@ msgstr "Da liễu"
 
 msgctxt "model:gnuhealth.specialty,name:12"
 msgid "Nutrition"
-msgstr "Dinh dưỡng2"
+msgstr "Dinh dưỡng"
 
 msgctxt "model:gnuhealth.specialty,name:13"
 msgid "Embryology"
@@ -7893,7 +7893,7 @@ msgstr "Giải phẫu"
 
 msgctxt "model:gnuhealth.specialty,name:20"
 msgid "Genetics"
-msgstr "Di truyền học1"
+msgstr "Di truyền học"
 
 msgctxt "model:gnuhealth.specialty,name:21"
 msgid "Geriatrics"
@@ -7981,7 +7981,7 @@ msgstr "Y học thay thế"
 
 msgctxt "model:gnuhealth.specialty,name:40"
 msgid "Pathology"
-msgstr "Bệnh lý3"
+msgstr "Bệnh lý"
 
 msgctxt "model:gnuhealth.specialty,name:41"
 msgid "Pediatrics"
@@ -8125,11 +8125,11 @@ msgstr "Y học răng miệng (Chăm sóc ban đầu)"
 
 msgctxt "model:gnuhealth.specialty,name:74"
 msgid "Child Health (Primary Care)"
-msgstr "Chăm sóc trẻ em (chăm sóc sức khỏe ban đầu)"
+msgstr "Sức khỏe trẻ em (chăm sóc ban đầu)"
 
 msgctxt "model:gnuhealth.specialty,name:75"
 msgid "Woman Health (Primary Care)"
-msgstr "Sức khỏe phụ nữ (chăm sóc sức khỏe ban đầu)"
+msgstr "Sức khỏe phụ nữ (chăm sóc ban đầu)"
 
 msgctxt "model:gnuhealth.specialty,name:8"
 msgid "Cardiovascular surgery"
@@ -8361,7 +8361,7 @@ msgstr "Liều vắc-xin1"
 
 msgctxt "model:ir.action,name:gnuhealth_action_immunization_schedule_line"
 msgid "Schedule Vaccines"
-msgstr "Lịch tiêm vắc-xin1"
+msgstr "Lịch tiêm chủng vắc-xin1"
 
 msgctxt "model:ir.action,name:gnuhealth_action_insurance"
 msgid "Insurances"
@@ -8756,11 +8756,11 @@ msgstr "Lịch tiêm chủng"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_immunization_schedule_dose"
 msgid "Vaccine Doses"
-msgstr "Liều vắc-xin2"
+msgstr "Liều vắc-xin"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_immunization_schedule_line"
 msgid "Schedule Vaccines"
-msgstr "Lịch tiêm vắc-xin"
+msgstr "Lịch tiêm chủng vắc-xin"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_institution"
 msgid "Institutions"
@@ -8792,7 +8792,7 @@ msgstr "Bảo hiểm"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_medicament_category"
 msgid "Medicament categories"
-msgstr "Danh mục thuốc theo đối tượng"
+msgstr "Danh mục thuốc VT theo nhóm"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_medicaments"
 msgid "Medicaments"
