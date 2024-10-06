@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-04 07:32+0000\n"
+"PO-Revision-Date: 2024-10-06 05:56+0000\n"
 "Last-Translator: tuanlong <tuanlong@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Vietnamese <https://translate.codeberg.org/projects/gnuhealth/"
 "health/vi/>\n"
@@ -17,7 +17,7 @@ msgstr "Bắt đầu1"
 
 msgctxt "field:gnuhealth.appointment,appointment_type:"
 msgid "Type"
-msgstr "Loại2"
+msgstr "Loại BN"
 
 msgctxt "field:gnuhealth.appointment,checked_in_date:"
 msgid "Checked-in Time"
@@ -33,7 +33,7 @@ msgstr "Dịch vụ tư vấn1"
 
 msgctxt "field:gnuhealth.appointment,healthprof:"
 msgid "Health Prof"
-msgstr "Chuyên gia y tế2"
+msgstr "Chuyên gia y tế"
 
 msgctxt "field:gnuhealth.appointment,institution:"
 msgid "Institution"
@@ -45,7 +45,7 @@ msgstr "Mã hẹn"
 
 msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
-msgstr "Họ tên bệnh nhân"
+msgstr "Họ tên BN"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -53,15 +53,15 @@ msgstr "Chuyên khoa"
 
 msgctxt "field:gnuhealth.appointment,state:"
 msgid "State"
-msgstr "Tình trạng1"
+msgstr "Trạng thái"
 
 msgctxt "field:gnuhealth.appointment,urgency:"
 msgid "Urgency"
-msgstr "Sự khẩn cấp1"
+msgstr "Tính cấp bách"
 
 msgctxt "field:gnuhealth.appointment,visit_type:"
 msgid "Visit"
-msgstr "Thăm khám1"
+msgstr "Loại thăm khám"
 
 msgctxt "field:gnuhealth.appointment.report,address:"
 msgid "Address"
@@ -1486,7 +1486,7 @@ msgstr "Chuyển đạo"
 
 msgctxt "field:gnuhealth.patient.ecg,name:"
 msgid "Patient"
-msgstr "Họ tên bệnh nhân"
+msgstr "Họ tên BN"
 
 msgctxt "field:gnuhealth.patient.ecg,pacemaker:"
 msgid "Pacemaker"
@@ -1766,7 +1766,7 @@ msgstr "Các tình trạng khác1"
 
 msgctxt "field:gnuhealth.patient.evaluation,signed_by:"
 msgid "Signed by"
-msgstr "Được ký bởi2"
+msgstr "Người ký2"
 
 msgctxt "field:gnuhealth.patient.evaluation,signs_and_symptoms:"
 msgid "Signs and Symptoms"
@@ -1866,7 +1866,7 @@ msgstr "Khoảng thời gian điều trị"
 
 msgctxt "field:gnuhealth.patient.medication,duration_period:"
 msgid "Treatment period"
-msgstr "Giai đoạn điều trị"
+msgstr "Đơn vị"
 
 msgctxt "field:gnuhealth.patient.medication,end_treatment:"
 msgid "End"
@@ -2108,7 +2108,7 @@ msgstr "LS"
 
 msgctxt "field:gnuhealth.prescription.line,admin_times:"
 msgid "Admin hours"
-msgstr "Giờ cho thuốc2"
+msgstr "Giờ dùng thuốc"
 
 msgctxt "field:gnuhealth.prescription.line,allow_substitution:"
 msgid "Allow substitution"
@@ -2120,7 +2120,7 @@ msgstr "Tần số"
 
 msgctxt "field:gnuhealth.prescription.line,dose:"
 msgid "Dose"
-msgstr "Liều lượng"
+msgstr "Hàm lượng"
 
 msgctxt "field:gnuhealth.prescription.line,dose_unit:"
 msgid "dose unit"
@@ -2132,11 +2132,11 @@ msgstr "Khoảng thời gian điều trị"
 
 msgctxt "field:gnuhealth.prescription.line,duration_period:"
 msgid "Treatment period"
-msgstr "Giai đoạn điều trị"
+msgstr "Đơn vị"
 
 msgctxt "field:gnuhealth.prescription.line,end_treatment:"
 msgid "End"
-msgstr "Kết thúc"
+msgstr "Ngày kết thúc"
 
 msgctxt "field:gnuhealth.prescription.line,form:"
 msgid "Form"
@@ -2144,11 +2144,11 @@ msgstr "Dạng thuốc"
 
 msgctxt "field:gnuhealth.prescription.line,frequency:"
 msgid "Frequency"
-msgstr "Tần số5"
+msgstr "Tần số"
 
 msgctxt "field:gnuhealth.prescription.line,frequency_prn:"
 msgid "PRN"
-msgstr "Khi cần2"
+msgstr "Khi cần"
 
 msgctxt "field:gnuhealth.prescription.line,frequency_unit:"
 msgid "unit"
@@ -2160,7 +2160,7 @@ msgstr "Chỉ định"
 
 msgctxt "field:gnuhealth.prescription.line,infusion:"
 msgid "Infusion"
-msgstr "Tiêm truyền2"
+msgstr "Tiêm truyền"
 
 msgctxt "field:gnuhealth.prescription.line,infusion_rate:"
 msgid "Rate"
@@ -2188,7 +2188,7 @@ msgstr "x"
 
 msgctxt "field:gnuhealth.prescription.line,quantity:"
 msgid "Units"
-msgstr "Đơn vị14"
+msgstr "Số lượng"
 
 msgctxt "field:gnuhealth.prescription.line,refills:"
 msgid "Refills #"
@@ -2200,7 +2200,7 @@ msgstr "Có hiệu lực đến"
 
 msgctxt "field:gnuhealth.prescription.line,route:"
 msgid "Administration Route"
-msgstr "Đường dùng3"
+msgstr "Đường dùng"
 
 msgctxt "field:gnuhealth.prescription.line,short_comment:"
 msgid "Comment"
@@ -2208,7 +2208,7 @@ msgstr "Ghi chú"
 
 msgctxt "field:gnuhealth.prescription.line,start_treatment:"
 msgid "Start"
-msgstr "Bắt đầu7"
+msgstr "Ngày bắt đầu"
 
 msgctxt "field:gnuhealth.prescription.order,healthprof:"
 msgid "Prescriber"
@@ -2220,7 +2220,7 @@ msgstr "Ghi chú kê đơn"
 
 msgctxt "field:gnuhealth.prescription.order,patient:"
 msgid "Patient"
-msgstr "Họ tên bệnh nhân"
+msgstr "Họ tên BN"
 
 msgctxt "field:gnuhealth.prescription.order,pharmacy:"
 msgid "Pharmacy"
@@ -2346,7 +2346,7 @@ msgstr "Đường dùng2"
 
 msgctxt "field:gnuhealth.vaccination,admin_site:"
 msgid "Admin Site"
-msgstr "Vị trí dùng thuốc"
+msgstr "Vị trí dùng vắc-xin"
 
 msgctxt "field:gnuhealth.vaccination,amount:"
 msgid "Amount"
@@ -2354,7 +2354,7 @@ msgstr "Lượng 584"
 
 msgctxt "field:gnuhealth.vaccination,date:"
 msgid "Date"
-msgstr "Ngày tháng6"
+msgstr "Ngày tháng"
 
 msgctxt "field:gnuhealth.vaccination,dose:"
 msgid "Dose #"
@@ -2374,7 +2374,7 @@ msgstr "Bệnh nhân10"
 
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
-msgstr "Liều tiếp theo1"
+msgstr "Liều tiếp theo"
 
 msgctxt "field:gnuhealth.vaccination,observations:"
 msgid "Observations"
@@ -2386,7 +2386,7 @@ msgstr "Nhãn2"
 
 msgctxt "field:gnuhealth.vaccination,signed_by:"
 msgid "Signed by"
-msgstr "Được ký bởi3"
+msgstr "Người ký"
 
 msgctxt "field:gnuhealth.vaccination,state:"
 msgid "State"
@@ -2458,7 +2458,7 @@ msgstr "Công dân"
 
 msgctxt "field:party.party,create_target:"
 msgid "Create target"
-msgstr "Tạo ra mục đích"
+msgstr "Tạo cùng mục đích"
 
 msgctxt "field:party.party,death_certificate:"
 msgid "Death Certificate"
@@ -4333,7 +4333,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.drug.form,name:EML"
 msgid "Emulsion"
-msgstr ""
+msgstr "Hỗn dịch"
 
 msgctxt "model:gnuhealth.drug.form,name:ENM"
 msgid "Enema"
@@ -4345,7 +4345,7 @@ msgstr "Viên sủi bọt"
 
 msgctxt "model:gnuhealth.drug.form,name:FLS"
 msgid "Floss"
-msgstr ""
+msgstr "Sợi tơ"
 
 msgctxt "model:gnuhealth.drug.form,name:GAS"
 msgid "Gas"
@@ -4377,7 +4377,7 @@ msgstr "Hạt nhỏ"
 
 msgctxt "model:gnuhealth.drug.form,name:GRT"
 msgid "Graft"
-msgstr ""
+msgstr "Miếng ghép"
 
 msgctxt "model:gnuhealth.drug.form,name:GUM"
 msgid "Gum chewable"
@@ -4409,7 +4409,7 @@ msgstr "Lá"
 
 msgctxt "model:gnuhealth.drug.form,name:LIP"
 msgid "Liposome"
-msgstr ""
+msgstr "Túi liposome"
 
 msgctxt "model:gnuhealth.drug.form,name:LIQ"
 msgid "Liquid"
@@ -4453,7 +4453,7 @@ msgstr "Bột sủi bọt"
 
 msgctxt "model:gnuhealth.drug.form,name:PEN"
 msgid "Pencil"
-msgstr ""
+msgstr "Bút"
 
 msgctxt "model:gnuhealth.drug.form,name:PIC"
 msgid "Piece chewable"
@@ -4521,7 +4521,7 @@ msgstr "Phun định liều"
 
 msgctxt "model:gnuhealth.drug.form,name:SOL"
 msgid "Solution"
-msgstr "Dung dịch1"
+msgstr "Dung dịch"
 
 msgctxt "model:gnuhealth.drug.form,name:SOP"
 msgid "Soap bar"
@@ -4561,11 +4561,11 @@ msgstr "Viên nén giải phóng kéo dài"
 
 msgctxt "model:gnuhealth.drug.form,name:STK"
 msgid "Stick"
-msgstr ""
+msgstr "Que"
 
 msgctxt "model:gnuhealth.drug.form,name:STP"
 msgid "Strip"
-msgstr ""
+msgstr "Dải"
 
 msgctxt "model:gnuhealth.drug.form,name:SUP"
 msgid "Suppository"
@@ -4657,7 +4657,7 @@ msgstr "Trong cột sống (tử cung)"
 
 msgctxt "model:gnuhealth.drug.route,name:route_13"
 msgid "Intradermal"
-msgstr "Trong da1"
+msgstr "Trong da"
 
 msgctxt "model:gnuhealth.drug.route,name:route_14"
 msgid "Inhalation"
@@ -4669,11 +4669,11 @@ msgstr "Trong động mạch gan"
 
 msgctxt "model:gnuhealth.drug.route,name:route_16"
 msgid "Intramuscular"
-msgstr "Bắp thịt1"
+msgstr "Bắp thịt"
 
 msgctxt "model:gnuhealth.drug.route,name:route_17"
 msgid "Intranasal"
-msgstr "Trong mũi1"
+msgstr "Trong mũi"
 
 msgctxt "model:gnuhealth.drug.route,name:route_18"
 msgid "Intraocular"
@@ -4749,7 +4749,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.drug.route,name:route_34"
 msgid "Oral"
-msgstr "Miệng1"
+msgstr "Miệng"
 
 msgctxt "model:gnuhealth.drug.route,name:route_35"
 msgid "Rectal"
@@ -4765,7 +4765,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.drug.route,name:route_38"
 msgid "Subcutaneous"
-msgstr "Dưới da1"
+msgstr "Dưới da"
 
 msgctxt "model:gnuhealth.drug.route,name:route_39"
 msgid "Sublingual"
@@ -4789,7 +4789,7 @@ msgstr "Qua da"
 
 msgctxt "model:gnuhealth.drug.route,name:route_43"
 msgid "Translingual"
-msgstr ""
+msgstr "Qua lưỡi"
 
 msgctxt "model:gnuhealth.drug.route,name:route_44"
 msgid "Urethral"
@@ -4801,7 +4801,7 @@ msgstr "Âm đạo"
 
 msgctxt "model:gnuhealth.drug.route,name:route_46"
 msgid "Ventimask"
-msgstr ""
+msgstr "Mặt nạ thở oxy"
 
 msgctxt "model:gnuhealth.drug.route,name:route_47"
 msgid "Wound"
@@ -5453,7 +5453,7 @@ msgstr "Đặc vụ FBI"
 
 msgctxt "model:gnuhealth.occupation,name:occ191"
 msgid "Fellmonger"
-msgstr ""
+msgstr "Người buôn bán da lông thú"
 
 msgctxt "model:gnuhealth.occupation,name:occ192"
 msgid "Fence"
@@ -5461,7 +5461,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ193"
 msgid "Ferryman"
-msgstr ""
+msgstr "Công nhân phà"
 
 msgctxt "model:gnuhealth.occupation,name:occ194"
 msgid "Film director"
@@ -5497,7 +5497,7 @@ msgstr "Gái gọi"
 
 msgctxt "model:gnuhealth.occupation,name:occ200"
 msgid "Financier"
-msgstr ""
+msgstr "Chuyên gia tài chính"
 
 msgctxt "model:gnuhealth.occupation,name:occ201"
 msgid "Fire marshal"
@@ -5513,15 +5513,15 @@ msgstr "Lính cứu hỏa"
 
 msgctxt "model:gnuhealth.occupation,name:occ204"
 msgid "First Mate"
-msgstr ""
+msgstr "Thuyền phó"
 
 msgctxt "model:gnuhealth.occupation,name:occ205"
 msgid "Fishmonger"
-msgstr ""
+msgstr "Người buôn bán cá"
 
 msgctxt "model:gnuhealth.occupation,name:occ206"
 msgid "Fisherman"
-msgstr ""
+msgstr "Người đánh bắt cá"
 
 msgctxt "model:gnuhealth.occupation,name:occ207"
 msgid "Fitter"
@@ -5529,7 +5529,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ208"
 msgid "Flautist"
-msgstr ""
+msgstr "Người thổi sáo"
 
 msgctxt "model:gnuhealth.occupation,name:occ209"
 msgid "Flavorist"
@@ -7361,7 +7361,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ635"
 msgid "Weaponsmith"
-msgstr ""
+msgstr "Người làm vũ khí"
 
 msgctxt "model:gnuhealth.occupation,name:occ636"
 msgid "Weatherman"
@@ -7373,15 +7373,15 @@ msgstr "Thợ dệt"
 
 msgctxt "model:gnuhealth.occupation,name:occ638"
 msgid "Webmaster"
-msgstr ""
+msgstr "Quản trị web"
 
 msgctxt "model:gnuhealth.occupation,name:occ639"
 msgid "Web developer"
-msgstr ""
+msgstr "Nhà phát triển web"
 
 msgctxt "model:gnuhealth.occupation,name:occ64"
 msgid "Columnist"
-msgstr ""
+msgstr "Người viết chuyên mục"
 
 msgctxt "model:gnuhealth.occupation,name:occ640"
 msgid "Web designer"
@@ -7393,7 +7393,7 @@ msgstr "Thợ hàn"
 
 msgctxt "model:gnuhealth.occupation,name:occ642"
 msgid "Wet nurse"
-msgstr ""
+msgstr "Vú nuôi"
 
 msgctxt "model:gnuhealth.occupation,name:occ643"
 msgid "Woodcarver"
@@ -7409,7 +7409,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ646"
 msgid "Winemaker"
-msgstr ""
+msgstr "Người sản xuất rượu"
 
 msgctxt "model:gnuhealth.occupation,name:occ647"
 msgid "Writer"
@@ -7417,11 +7417,11 @@ msgstr "Nhà văn"
 
 msgctxt "model:gnuhealth.occupation,name:occ648"
 msgid "Xylophonist"
-msgstr ""
+msgstr "Nghệ sĩ chơi đàn Xylophone"
 
 msgctxt "model:gnuhealth.occupation,name:occ649"
 msgid "X-ray technician"
-msgstr ""
+msgstr "Kỹ thuật viên chụp X-quang"
 
 msgctxt "model:gnuhealth.occupation,name:occ65"
 msgid "Comedian"
@@ -7429,11 +7429,11 @@ msgstr "Diễn viên hài"
 
 msgctxt "model:gnuhealth.occupation,name:occ651"
 msgid "Youth worker"
-msgstr ""
+msgstr "Nhân viên công tác thanh thiếu niên"
 
 msgctxt "model:gnuhealth.occupation,name:occ652"
 msgid "Zookeeper"
-msgstr ""
+msgstr "Người trông coi vườn thú"
 
 msgctxt "model:gnuhealth.occupation,name:occ653"
 msgid "Zoologist"
@@ -7445,7 +7445,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ67"
 msgid "Composer"
-msgstr ""
+msgstr "Nhà soạn nhạc"
 
 msgctxt "model:gnuhealth.occupation,name:occ68"
 msgid "Computer engineer"
@@ -7465,7 +7465,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ71"
 msgid "Conductor (music)"
-msgstr ""
+msgstr "Nhạc trưởng"
 
 msgctxt "model:gnuhealth.occupation,name:occ72"
 msgid "Constable"
@@ -7477,7 +7477,7 @@ msgstr "Kỹ sư xây dựng"
 
 msgctxt "model:gnuhealth.occupation,name:occ74"
 msgid "Construction manager"
-msgstr ""
+msgstr "Quản lý xây dựng"
 
 msgctxt "model:gnuhealth.occupation,name:occ75"
 msgid "Construction worker"
@@ -7485,27 +7485,27 @@ msgstr "Công nhân xây dựng"
 
 msgctxt "model:gnuhealth.occupation,name:occ76"
 msgid "Consul"
-msgstr ""
+msgstr "Lãnh sự"
 
 msgctxt "model:gnuhealth.occupation,name:occ77"
 msgid "Consultant"
-msgstr ""
+msgstr "Người tư vấn"
 
 msgctxt "model:gnuhealth.occupation,name:occ78"
 msgid "Contract Manager"
-msgstr ""
+msgstr "Quản lý hợp đồng"
 
 msgctxt "model:gnuhealth.occupation,name:occ79"
 msgid "Controller"
-msgstr ""
+msgstr "Kiểm soát viên"
 
 msgctxt "model:gnuhealth.occupation,name:occ8"
 msgid "Author"
-msgstr ""
+msgstr "Tác giả"
 
 msgctxt "model:gnuhealth.occupation,name:occ80"
 msgid "Coroner"
-msgstr ""
+msgstr "Nhân viên điều tra"
 
 msgctxt "model:gnuhealth.occupation,name:occ81"
 msgid "Corporate executive officer"
@@ -7513,7 +7513,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ82"
 msgid "Correctional Officer"
-msgstr ""
+msgstr "Cán bộ quản giáo"
 
 msgctxt "model:gnuhealth.occupation,name:occ83"
 msgid "Corrector"
@@ -7533,11 +7533,11 @@ msgstr "Nhà du hành vũ trụ"
 
 msgctxt "model:gnuhealth.occupation,name:occ87"
 msgid "Costermonger"
-msgstr ""
+msgstr "Người bán hàng rong trên xe đẩy"
 
 msgctxt "model:gnuhealth.occupation,name:occ88"
 msgid "Costume Designer"
-msgstr ""
+msgstr "Người thiết kế trang phục"
 
 msgctxt "model:gnuhealth.occupation,name:occ89"
 msgid "Courier"
@@ -7553,7 +7553,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ91"
 msgid "Cowherd"
-msgstr ""
+msgstr "Người chăn bò"
 
 msgctxt "model:gnuhealth.occupation,name:occ92"
 msgid "CPA (Certified Public Accountant)"
@@ -7569,19 +7569,19 @@ msgstr "Kỹ sư sáng tạo"
 
 msgctxt "model:gnuhealth.occupation,name:occ95"
 msgid "Crier"
-msgstr ""
+msgstr "Người rao bán hàng"
 
 msgctxt "model:gnuhealth.occupation,name:occ96"
 msgid "Crofter"
-msgstr ""
+msgstr "Chủ trại nhỏ"
 
 msgctxt "model:gnuhealth.occupation,name:occ97"
 msgid "Cryptographer"
-msgstr ""
+msgstr "Người viết mật mã"
 
 msgctxt "model:gnuhealth.occupation,name:occ98"
 msgid "Cryptozoologist"
-msgstr ""
+msgstr "Nhà nghiên cứu sinh vật huyền bí"
 
 msgctxt "model:gnuhealth.occupation,name:occ99"
 msgid "Crystallographer"
@@ -9826,11 +9826,11 @@ msgstr "Cách sử dụng"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Home Care"
-msgstr "Chăm sóc tại nhà1"
+msgstr "Chăm sóc tại nhà"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Inpatient"
-msgstr "Bệnh nhân nội trú1"
+msgstr "Bệnh nhân nội trú"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Outpatient"
@@ -9838,7 +9838,7 @@ msgstr "Bệnh nhân ngoại trú"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Telemedicine"
-msgstr "Khám chữa bệnh từ xa1"
+msgstr "Khám chữa bệnh từ xa"
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Cancelled by Health Center"
@@ -9850,7 +9850,7 @@ msgstr "Bị hủy bởi bệnh nhân"
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Checked in"
-msgstr "Đã ghi tên2"
+msgstr "Đã ghi tên"
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Confirmed"
@@ -9874,11 +9874,11 @@ msgstr "Cấp cứu y tế"
 
 msgctxt "selection:gnuhealth.appointment,urgency:"
 msgid "Normal"
-msgstr "Bình thường1"
+msgstr "Bình thường"
 
 msgctxt "selection:gnuhealth.appointment,urgency:"
 msgid "Urgent"
-msgstr "Khẩn cấp1"
+msgstr "Khẩn cấp"
 
 msgctxt "selection:gnuhealth.appointment,visit_type:"
 msgid "Followup"
@@ -9890,15 +9890,15 @@ msgstr "Tình trạng sức khỏe mới"
 
 msgctxt "selection:gnuhealth.appointment,visit_type:"
 msgid "Well Child visit"
-msgstr "Trẻ khỏe mạnh khám1"
+msgstr "Trẻ khỏe mạnh khám"
 
 msgctxt "selection:gnuhealth.appointment,visit_type:"
 msgid "Well Man visit"
-msgstr "Đàn ông khỏe mạnh khám1"
+msgstr "Đàn ông khỏe mạnh khám"
 
 msgctxt "selection:gnuhealth.appointment,visit_type:"
 msgid "Well Woman visit"
-msgstr "Phụ nữ khỏe mạnh khám1"
+msgstr "Phụ nữ khỏe mạnh khám"
 
 msgctxt "selection:gnuhealth.appointment.report,gender:"
 msgid "Female"
@@ -11063,11 +11063,11 @@ msgstr "năm"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "days"
-msgstr "ngày6"
+msgstr "ngày"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "hours"
-msgstr "giờ5"
+msgstr "giờ"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "minutes"
@@ -11075,15 +11075,15 @@ msgstr "phút"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "seconds"
-msgstr "giây2"
+msgstr "giây"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "weeks"
-msgstr "tuần3"
+msgstr "tuần"
 
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "when required"
-msgstr "khi cần thiết2"
+msgstr "khi cần thiết"
 
 msgctxt "selection:gnuhealth.prescription.line,infusion_rate_units:"
 msgid "mL/hour"
@@ -11259,7 +11259,7 @@ msgstr "Ghi tên2"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Date"
-msgstr "Ngày tháng8"
+msgstr "Ngày hẹn khám"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Information"
@@ -11287,11 +11287,11 @@ msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Time"
-msgstr "Giờ1"
+msgstr "Giờ hẹn khám"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Main"
-msgstr "Chính1"
+msgstr "Thông tin chính"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Observations"
@@ -11663,7 +11663,7 @@ msgstr "Trạng thái"
 
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Treatment duration"
-msgstr "Khoảng thời gian điều trị3"
+msgstr "Khoảng thời gian điều trị"
 
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Treatment period"
@@ -11735,11 +11735,11 @@ msgstr "Hỗn hợp"
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Specific Dosage"
-msgstr "Liều dùng riêng2"
+msgstr "Liều dùng riêng"
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Treatment time"
-msgstr "Thời gian điều trị4"
+msgstr "Thời gian điều trị"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Create"
