@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-07 04:57+0000\n"
+"PO-Revision-Date: 2024-10-07 09:00+0000\n"
 "Last-Translator: tuanlong <tuanlong@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Vietnamese <https://translate.codeberg.org/projects/gnuhealth/"
 "health/vi/>\n"
@@ -1350,7 +1350,7 @@ msgstr "Tiêm chủng"
 
 msgctxt "field:gnuhealth.patient.disease,age:"
 msgid "Years"
-msgstr "Năm2"
+msgstr "Tuổi"
 
 msgctxt "field:gnuhealth.patient.disease,age_str:"
 msgid "Age at dx"
@@ -1362,11 +1362,11 @@ msgstr "Loại dị ứng"
 
 msgctxt "field:gnuhealth.patient.disease,date_start_treatment:"
 msgid "Start"
-msgstr "Bắt đầu4"
+msgstr "Ngày bắt đầu"
 
 msgctxt "field:gnuhealth.patient.disease,date_stop_treatment:"
 msgid "End"
-msgstr "Kết thúc"
+msgstr "Ngày kết thúc"
 
 msgctxt "field:gnuhealth.patient.disease,diagnosed_date:"
 msgid "Dx date"
@@ -1374,11 +1374,11 @@ msgstr "Ngày CĐ"
 
 msgctxt "field:gnuhealth.patient.disease,disease_severity:"
 msgid "Severity"
-msgstr "Mức độ nặng1"
+msgstr "Mức độ nặng"
 
 msgctxt "field:gnuhealth.patient.disease,est_dodx:"
 msgid "Est"
-msgstr "ƯT1"
+msgstr "ƯT"
 
 msgctxt "field:gnuhealth.patient.disease,extra_info:"
 msgid "Extra Info"
@@ -1386,11 +1386,11 @@ msgstr "TT bổ sung12"
 
 msgctxt "field:gnuhealth.patient.disease,healed_date:"
 msgid "Healed"
-msgstr "Khỏi"
+msgstr "Ngày khỏi"
 
 msgctxt "field:gnuhealth.patient.disease,healthprof:"
 msgid "Health Prof"
-msgstr "CG y tế7"
+msgstr "CG y tế"
 
 msgctxt "field:gnuhealth.patient.disease,infectious_disease_icon:"
 msgid "Infect"
@@ -1418,7 +1418,7 @@ msgstr "Hiện tại"
 
 msgctxt "field:gnuhealth.patient.disease,name:"
 msgid "Patient"
-msgstr "Bệnh nhân5"
+msgstr "Họ tên BN"
 
 msgctxt "field:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
@@ -1426,15 +1426,15 @@ msgstr "Tên bệnh"
 
 msgctxt "field:gnuhealth.patient.disease,pcs_code:"
 msgid "Code"
-msgstr "Mã17"
+msgstr "Mã PTTT"
 
 msgctxt "field:gnuhealth.patient.disease,pregnancy_warning:"
 msgid "Pregnancy warning"
-msgstr "Thận trọng khi mang thai2"
+msgstr "Thận trọng khi mang thai"
 
 msgctxt "field:gnuhealth.patient.disease,related_evaluations:"
 msgid "Related Evaluations"
-msgstr "Đánh giá liên quan1"
+msgstr "Đánh giá liên quan"
 
 msgctxt "field:gnuhealth.patient.disease,short_comment:"
 msgid "Remarks"
@@ -1450,7 +1450,7 @@ msgstr "Mô tả"
 
 msgctxt "field:gnuhealth.patient.disease,weeks_of_pregnancy:"
 msgid "Contracted in pregnancy week #"
-msgstr "Thu nhỏ Đã ký hợp đồng vào tuần thai thứ #"
+msgstr "Đã thu nhỏ vào tuần thai thứ #"
 
 msgctxt "field:gnuhealth.patient.ecg,axis:"
 msgid "Axis"
@@ -1618,7 +1618,7 @@ msgstr "Loại BN"
 
 msgctxt "field:gnuhealth.patient.evaluation,gender:"
 msgid "Gender"
-msgstr "Giới5"
+msgstr "Giới"
 
 msgctxt "field:gnuhealth.patient.evaluation,glycemia:"
 msgid "Glycemia"
@@ -1734,7 +1734,7 @@ msgstr "Tập quán"
 
 msgctxt "field:gnuhealth.patient.evaluation,present_illness:"
 msgid "Present Illness"
-msgstr "Bệnh hiện tại1"
+msgstr "Tình trạng bệnh hiện tại1"
 
 msgctxt "field:gnuhealth.patient.evaluation,psychological_assessment:"
 msgid "Psychological Assessment"
@@ -2390,7 +2390,7 @@ msgstr "Người ký"
 
 msgctxt "field:gnuhealth.vaccination,state:"
 msgid "State"
-msgstr "Tình trạng6"
+msgstr "Trạng thái"
 
 msgctxt "field:gnuhealth.vaccination,vaccine:"
 msgid "Vaccine"
@@ -2946,7 +2946,7 @@ msgstr "Thành phần"
 
 msgctxt "help:gnuhealth.medicament,dosage:"
 msgid "Dosage / Indications"
-msgstr "Liều dùng / Chỉ dẫn"
+msgstr "Liều dùng/Chỉ dẫn"
 
 msgctxt "help:gnuhealth.medicament,form:"
 msgid "Drug form, such as tablet, suspension, liquid .."
@@ -3269,7 +3269,7 @@ msgstr "Người có liên quan đến bệnh nhân này"
 
 msgctxt "help:gnuhealth.patient,primary_care_doctor:"
 msgid "Current General Practitioner / Family Doctor"
-msgstr "Bác sĩ đa khoa / bác sĩ gia đình hiện tại"
+msgstr "Bác sĩ đa khoa/bác sĩ gia đình hiện tại"
 
 msgctxt "help:gnuhealth.patient,puid:"
 msgid "Person Unique Identifier"
@@ -3642,7 +3642,7 @@ msgstr "Tác dụng phụ hoặc phản ứng bất lợi mà bệnh nhân gặp
 
 msgctxt "help:gnuhealth.patient.medication,common_dosage:"
 msgid "Common / standard dosage frequency for this medicament"
-msgstr "Tần suất liều dùng thông thường / tiêu chuẩn cho loại thuốc này"
+msgstr "Tần suất liều dùng thông thường/tiêu chuẩn cho loại thuốc này"
 
 msgctxt "help:gnuhealth.patient.medication,discontinued_reason:"
 msgid "Short description for discontinuing the treatment"
@@ -3751,7 +3751,7 @@ msgstr "Gia đình/họ."
 
 msgctxt "help:gnuhealth.person_name,given:"
 msgid "Given / First name. May include middle name"
-msgstr "Tên / Họ. Có thể bao gồm tên đệm"
+msgstr "Tên/Họ. Có thể bao gồm tên đệm"
 
 msgctxt "help:gnuhealth.person_name,party:"
 msgid "Related party (person)"
@@ -3821,7 +3821,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.prescription.line,common_dosage:"
 msgid "Common / standard dosage frequency for this medicament"
-msgstr "Tần suất liều dùng thông thường / tiêu chuẩn cho loại thuốc này"
+msgstr "Tần suất liều dùng thông thường/tiêu chuẩn cho loại thuốc này"
 
 msgctxt "help:gnuhealth.prescription.line,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
@@ -8181,7 +8181,7 @@ msgstr "Báo cáo tình trạng tiêm chủng1"
 
 msgctxt "model:ir.action,name:act_condition_form1"
 msgid "Conditions"
-msgstr "Tình trạng10"
+msgstr "Thông tin về bệnh"
 
 msgctxt "model:ir.action,name:act_create_patient_evaluation"
 msgid "Create Patient Evaluation"
@@ -8217,7 +8217,7 @@ msgstr "Người – 1"
 
 msgctxt "model:ir.action,name:act_prescription_form1"
 msgid "Prescriptions"
-msgstr "Kê đơn7"
+msgstr "Thông tin kê đơn"
 
 msgctxt "model:ir.action,name:act_unit_view"
 msgid "Units"
@@ -8225,7 +8225,7 @@ msgstr "Khoa15"
 
 msgctxt "model:ir.action,name:act_vaccination_form1"
 msgid "Vaccinations"
-msgstr "Tiêm chủng3"
+msgstr "Tiêm chủng"
 
 msgctxt "model:ir.action,name:act_ward_view"
 msgid "Wards"
@@ -8269,7 +8269,7 @@ msgstr "Khu phẫu thuật của bệnh viện1"
 
 msgctxt "model:ir.action,name:action_gnuhealth_institution_specialties"
 msgid "Specialties by institution"
-msgstr "Chuyên khoa bởi bệnh viện 1"
+msgstr "Chuyên khoa của các bệnh viện1"
 
 msgctxt "model:ir.action,name:action_gnuhealth_medicament_category_tree"
 msgid "Medicament categories"
@@ -8349,7 +8349,7 @@ msgstr "Trợ giúp và Tài liệu1"
 
 msgctxt "model:ir.action,name:gnuhealth_action_hp_specialty"
 msgid "Specialties by health professionals"
-msgstr "Chuyên khoa thực hiện bởi chuyên gia y tế1"
+msgstr "Chuyên khoa của các chuyên gia y tế1"
 
 msgctxt "model:ir.action,name:gnuhealth_action_immunization_schedule"
 msgid "Immunization Schedule"
@@ -8656,7 +8656,7 @@ msgstr "Ký3"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_appointment"
 msgid "Appointment"
-msgstr "Hẹn khám2"
+msgstr "Hẹn khám"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient"
 msgid "Patient"
@@ -8856,7 +8856,7 @@ msgstr "Thành viên gia đình"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_edit_hp_specialty"
 msgid "Specialties by health professionals"
-msgstr "Chuyên khoa thực hiện bởi chuyên gia y tế2"
+msgstr "Chuyên khoa của các chuyên gia y tế"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_edit_medicament"
 msgid "Medicaments"
@@ -10650,7 +10650,7 @@ msgstr "Mở rộng đến các kích thích đau - phản ứng mất não -"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Flexion / Withdrawal to painful stimuli"
-msgstr "Uốn cong / Rút trước các kích thích gây đau"
+msgstr "Uốn cong/Rút trước các kích thích gây đau"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Localizes painful stimuli"
@@ -11171,7 +11171,7 @@ msgstr "cơ rộng ngoài phải"
 
 msgctxt "selection:gnuhealth.vaccination,state:"
 msgid "Done"
-msgstr "Đã thực hiện xong5"
+msgstr "Đã thực hiện xong"
 
 msgctxt "selection:gnuhealth.vaccination,state:"
 msgid "In Progress"
@@ -11475,27 +11475,27 @@ msgstr "Thông tin chính"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Allergies"
-msgstr "Những dị ứng"
+msgstr "Dị ứng"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Dates"
-msgstr "Ngày tháng10"
+msgstr "Ngày tháng chẩn đoán"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Extra Info"
-msgstr "TT bổ sung18"
+msgstr "Thông tin bổ sung"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Main"
-msgstr "Chính5"
+msgstr "Thông tin chính"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Pregnancy"
-msgstr "Mang thai2"
+msgstr "Mang thai"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Related Evaluations"
-msgstr "Đánh giá liên quan2"
+msgstr "Đánh giá liên quan"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
@@ -11531,7 +11531,7 @@ msgstr "Khám lâm sàng và thể chất"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
-msgstr "Ngày tháng9"
+msgstr "Ngày đánh giá"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11591,7 +11591,7 @@ msgstr "Thông tin khác liên quan đến đánh giá này"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
-msgstr "Bệnh hiện tại2"
+msgstr "Tình trạng bệnh hiện tại"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Procedures"
@@ -11603,7 +11603,7 @@ msgstr "Đánh giá tâm lý"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
-msgstr "Giờ2"
+msgstr "Giờ"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Treatment Plan"
