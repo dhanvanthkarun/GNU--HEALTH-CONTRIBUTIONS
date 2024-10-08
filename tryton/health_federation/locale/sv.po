@@ -1,6 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-10-08 16:58+0000\n"
+"Last-Translator: Umeaman <Umeaman@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/"
+"health_federation/sv/>\n"
+"Language: sv\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.7.2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.federation.config,enabled:"
 msgid "Enabled"
@@ -8,7 +17,7 @@ msgstr "Aktiverat"
 
 msgctxt "field:gnuhealth.federation.config,host:"
 msgid "Thalamus server"
-msgstr ""
+msgstr "Talamus-server"
 
 msgctxt "field:gnuhealth.federation.config,password:"
 msgid "Password"
@@ -52,7 +61,7 @@ msgstr "Förhandsgranska"
 
 msgctxt "field:gnuhealth.federation.queue,federation_locator:"
 msgid "Fed ID"
-msgstr ""
+msgstr "Fed-ID"
 
 msgctxt "field:gnuhealth.federation.queue,method:"
 msgid "Method"
@@ -64,7 +73,7 @@ msgstr "Modell"
 
 msgctxt "field:gnuhealth.federation.queue,msgid:"
 msgid "Message ID"
-msgstr ""
+msgstr "Meddelande-ID"
 
 msgctxt "field:gnuhealth.federation.queue,node:"
 msgid "Node"
@@ -80,23 +89,23 @@ msgstr "Tidsstämpel"
 
 msgctxt "field:gnuhealth.federation.queue,url_suffix:"
 msgid "URL suffix"
-msgstr ""
+msgstr "URL-ändelse"
 
 msgctxt "field:gnuhealth.pol,fsync:"
 msgid "Fsync"
-msgstr ""
+msgstr "Fsync"
 
 msgctxt "field:party.party,fsync:"
 msgid "Fsync"
-msgstr ""
+msgstr "Fsync"
 
 msgctxt "help:gnuhealth.federation.config,enabled:"
 msgid "Mark if the node is active in the Federation"
-msgstr ""
+msgstr "Markera om noden är aktiv i Federationen"
 
 msgctxt "help:gnuhealth.federation.config,host:"
 msgid "GNU Health Thalamus server"
-msgstr ""
+msgstr "Talamus-servern för GNU Health"
 
 msgctxt "help:gnuhealth.federation.config,password:"
 msgid "Password of the institution admin user in the Federation"
@@ -112,7 +121,7 @@ msgstr "Använd krypterad kommunikation via SSL"
 
 msgctxt "help:gnuhealth.federation.config,user:"
 msgid "Admin associated to this institution"
-msgstr ""
+msgstr "Administrationen som associeras till den här institutionen"
 
 msgctxt "help:gnuhealth.federation.config,verify_ssl:"
 msgid ""
@@ -124,7 +133,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.federation.object,enabled:"
 msgid "Check if the model is active to participate on the Federation"
-msgstr ""
+msgstr "Kontrollera om modellen är aktiv för att delta i Federationen"
 
 msgctxt "help:gnuhealth.federation.object,fields:"
 msgid ""
@@ -152,7 +161,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.federation.queue,msgid:"
 msgid "Message UID"
-msgstr ""
+msgstr "Meddelandets UID"
 
 msgctxt "help:gnuhealth.federation.queue,node:"
 msgid "The originating node id"
@@ -188,7 +197,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_federation_config"
 msgid "Node Configuration"
-msgstr ""
+msgstr "Konfiguration för noden"
 
 msgctxt "model:ir.action,name:gnuhealth_action_federation_object"
 msgid "Federation Objects"
@@ -200,7 +209,7 @@ msgstr ""
 
 msgctxt "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_all"
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_failed"
@@ -219,7 +228,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_config"
 msgid "Node Configuration"
-msgstr ""
+msgstr "Konfiguration för noden"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_object"
 msgid "Federation Objects"
@@ -231,7 +240,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_federation"
 msgid "Federation"
-msgstr ""
+msgstr "Federation"
 
 msgctxt "model:res.group,name:group_health_federation_admin"
 msgid "Health Federation Administration"
@@ -247,7 +256,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "PATCH"
-msgstr ""
+msgstr "PATCH"
 
 msgctxt "selection:gnuhealth.federation.queue,method:"
 msgid "POST"
@@ -267,7 +276,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.federation.config:"
 msgid "Test Connection"
-msgstr ""
+msgstr "Testa anslutningen"
 
 msgctxt "view:gnuhealth.federation.config:"
 msgid "Test Connection to Thalamus server"
@@ -283,8 +292,8 @@ msgstr "Argument"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send"
-msgstr ""
+msgstr "Skicka"
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send the record to the Federation"
-msgstr ""
+msgstr "Skicka protokollet till Federationen"
