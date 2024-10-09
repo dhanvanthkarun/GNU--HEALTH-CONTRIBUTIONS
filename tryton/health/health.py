@@ -288,7 +288,7 @@ class DomiciliaryUnit(ModelSQL, ModelView):
     # Show the resulting Address representation in realtime
     @fields.depends(
         'address_street', 'address_subdivision', 'address_city',
-        'address_zip',
+        'address_zip',  'address_district', 'address_municipality',
         'address_street_number', 'address_country')
     def on_change_with_address_repr(self):
         return self.get_du_address(name=None)
