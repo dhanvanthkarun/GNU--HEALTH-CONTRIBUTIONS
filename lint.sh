@@ -6,10 +6,13 @@
 
 # Following uses PyPi package flake8, run "pipx install flake8" to get it
 echo "Running pycodestyle linting"
-pycodestyle .
+pycodestyle .  || exit_status=$?
 printf "\n\n\nRunning pyflakes linting\n"
-pyflakes .
+pyflakes .  || exit_status=$?
 
 # Following uses PyPI package reuse, run "pipx install reuse" to get it
 printf "\n\n\nRunning reuse linting\n"
-reuse --root tryton/ lint
+reuse --root tryton/ lint  || exit_status=$?
+
+# Don't exit 0 if we had errors
+exit "${exit_status:-0}"
