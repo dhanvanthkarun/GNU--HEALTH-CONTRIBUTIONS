@@ -1,0 +1,80 @@
+version = 1
+SPDX-PackageName = "GNU HEALTH"
+SPDX-PackageSupplier = "Luis Falcón <falcon@gnuhealth.org>"
+SPDX-PackageDownloadLocation = "https://www.gnuhealth.org"
+
+[[annotations]]
+path = "health**/icons/**.svg"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2012-2023 Leonardo D'Acchile <ldacchile@thymbra.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "version"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 Luis Falcón <falcon@gnuhealth.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "REUSE.toml"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 Luis Falcón <falcon@gnuhealth.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "Changelog"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 Luis Falcón <falcon@gnuhealth.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "config/**.conf"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 Luis Falcón <falcon@gnuhealth.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "doc/images/gnuhealth-hmis.png"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2012-2023 Leonardo D'Acchile <ldacchile@thymbra.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "scripts/startup/gnuhealth.service"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 Luis Falcón <falcon@gnuhealth.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "health**/locale/**.po**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 GNU Solidario <health@gnusolidario.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-FileComment = "The GNU Health translation team"
+
+[[annotations]]
+path = ["health**/MANIFEST.in", "health**/tryton.cfg", "health**/Changelog"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2011-2024 GNU Solidario <health@gnusolidario.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-FileComment = "Misc files common for most packages"
+
+[[annotations]]
+path = "health/man/gnuhealth.1"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2008-2024 Luis Falcón <falcon@gnuhealth.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-FileComment = "Man page"
+
+[[annotations]]
+path = ["health**/report/**.fodt", "health**/report/**.odt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = ["2008-2024 Luis Falcón <falcon@gnuhealth.org>", "2011-2024 GNU Solidario <health@gnusolidario.org>"]
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-FileComment = "Reports"
+
+[[annotations]]
+path = "health**/report/**.png"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2012-2023 Leonardo D'Acchile <ldacchile@thymbra.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
