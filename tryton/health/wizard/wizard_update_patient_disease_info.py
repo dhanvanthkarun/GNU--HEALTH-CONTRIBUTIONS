@@ -64,7 +64,7 @@ class UpdatePatientDiseaseInfo(Wizard):
             [Transaction().context.get('active_id')])[0]
 
         return {'patient': (evaluation.patient
-                         and evaluation.patient.id),
+                            and evaluation.patient.id),
                 'age': (evaluation.patient
                         and parse_compute_age(evaluation.patient.age)[0]),
                 'age_str': (evaluation.patient

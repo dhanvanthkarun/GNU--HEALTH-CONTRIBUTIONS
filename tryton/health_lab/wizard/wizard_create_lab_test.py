@@ -58,7 +58,8 @@ class CreateLabTestOrder(Wizard):
 
             test_report_data['test'] = lab_test_order.name.id
             test_report_data['source_type'] = lab_test_order.source_type
-            test_report_data['specimen_type'] = lab_test_order.name.specimen_type
+            test_report_data['specimen_type'] = (lab_test_order
+                                                 .name.specimen_type)
             test_report_data['patient'] = (lab_test_order.patient_id
                                            and lab_test_order.patient_id.id)
             test_report_data['other_source'] = lab_test_order.other_source
