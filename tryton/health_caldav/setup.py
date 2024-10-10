@@ -30,7 +30,7 @@ major_version, minor_version = 6, 0
 
 proteus = 'proteus >= %s.%s, < %s.%s' % (major_version, minor_version,
                                          major_version, minor_version + 1)
-requires = [proteus, 'vobject']
+requires = [proteus, 'vobject', 'caldav']
 
 for dep in info.get('depends', []):
     if (dep == 'health'):
