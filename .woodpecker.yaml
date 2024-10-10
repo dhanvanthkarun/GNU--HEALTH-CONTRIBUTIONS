@@ -4,7 +4,9 @@
 
 steps:
   test:
-    image: gnuhealth/linter:latest
+    image: gnuhealth/linter:1.0.1
+    pull: true
     commands:
       - bash scripts/lint.sh
+      - bash scripts/security.sh
 
