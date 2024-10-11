@@ -3353,7 +3353,7 @@ class PatientData(ModelSQL, ModelView):
     def search_patient_puid(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('name.ref', clause[1], value))
+        res.append(('party.ref', clause[1], value))
         return res
 
     def get_patient_lastname(self, name):
