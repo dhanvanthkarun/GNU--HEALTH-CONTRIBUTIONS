@@ -3548,7 +3548,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     def default_diagnosed_date():
         return date.today()
 
-    @fields.depends('diagnosed_date', 'age_str', 'patient')
+    @fields.depends('diagnosed_date', 'age_str', 'patient', '_parent_patient.dob')
     def on_change_diagnosed_date(self):
         if (self.patient):
             self.age_str = compute_age_from_dates(
@@ -3556,7 +3556,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
                 self.diagnosed_date)
             self.est_dodx = False
 
-    @fields.depends('age', 'patient', 'age_str')
+    @fields.depends('age', 'patient', '_parent_patient.dob', 'age_str')
     def on_change_age(self):
         if (self.age and self.patient.dob):
             self.est_dodx = True
@@ -3567,7 +3567,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
                 self.diagnosed_date)
             self.age = None
 
-    @fields.depends('age', 'patient', 'diagnosed_date')
+    @fields.depends('age', 'patient', '_parent_patient.dob', 'diagnosed_date')
     def on_change_with_age_str(self):
         if (self.patient):
             if (self.diagnosed_date and self.patient.dob):
