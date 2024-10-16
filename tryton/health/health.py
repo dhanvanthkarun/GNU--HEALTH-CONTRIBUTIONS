@@ -17,7 +17,7 @@
 import platform
 import os
 import string
-import random
+import secrets
 import pytz
 import importlib.metadata
 
@@ -577,9 +577,9 @@ class Party(metaclass=PoolMeta):
         puid = ''
         for x in range(STRSIZE):
             if (x < 3 or x > 5):
-                puid = puid + random.choice(string.ascii_uppercase)
+                puid = puid + secrets.choice(string.ascii_uppercase)
             else:
-                puid = puid + random.choice(string.digits)
+                puid = puid + secrets.choice(string.digits)
         return puid
 
     @classmethod
