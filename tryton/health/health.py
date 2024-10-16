@@ -3344,7 +3344,7 @@ class PatientData(ModelSQL, ModelView):
 
     # Show the gender upon entering the individual
     @fields.depends('party')
-    def on_change_name(self):
+    def on_change_party(self):
         if (self.party):
             self.gender = self.party.gender
             self.age = self.party.age
