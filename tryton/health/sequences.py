@@ -14,7 +14,7 @@
 
 from trytond.model import (ModelView, ModelSingleton, ModelSQL,
                            ValueMixin, MultiValueMixin, fields)
-from trytond import backend
+# from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool
 # from trytond.tools.multivalue import migrate_property
@@ -108,7 +108,8 @@ class _ConfigurationValue(ModelSQL):
 
     @classmethod
     def __register__(cls, module_name):
-        exist = backend.TableHandler.table_exist(cls._table)
+        # Removed in GH 5.0
+        # exist = backend.TableHandler.table_exist(cls._table)
 
         super(_ConfigurationValue, cls).__register__(module_name)
 
