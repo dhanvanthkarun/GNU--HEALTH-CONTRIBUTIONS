@@ -4165,8 +4165,8 @@ class PatientMedication(ModelSQL, ModelView):
 
     prescription = fields.Many2One(
         'gnuhealth.prescription.order', 'Prescription', readonly=True,
-        domain=[('patient', '=', Eval('name'))],
-        depends=['name'],
+        domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'],
         help='Related prescription')
 
     @classmethod
