@@ -3548,7 +3548,8 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     def default_diagnosed_date():
         return date.today()
 
-    @fields.depends('diagnosed_date', 'age_str', 'patient', '_parent_patient.dob')
+    @fields.depends('diagnosed_date', 'age_str', 'patient',
+                    '_parent_patient.dob')
     def on_change_diagnosed_date(self):
         if (self.patient):
             self.age_str = compute_age_from_dates(
