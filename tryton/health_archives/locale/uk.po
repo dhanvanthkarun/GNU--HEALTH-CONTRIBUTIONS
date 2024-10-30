@@ -1,16 +1,16 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-27 17:07+0000\n"
+"PO-Revision-Date: 2024-10-31 11:07+0000\n"
 "Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
 "health_archives/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.8.1\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.paper_archive,comments:"
 msgid "Comments"
@@ -38,10 +38,9 @@ msgctxt "field:gnuhealth.paper_archive,location:"
 msgid "Unit"
 msgstr "Одиниця виміру"
 
-#, fuzzy
 msgctxt "field:gnuhealth.paper_archive,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.paper_archive,request_date:"
 msgid "Request Date"
@@ -53,7 +52,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.paper_archive,return_date:"
 msgid "Returned Date"
-msgstr ""
+msgstr "Дата повернення"
 
 msgctxt "help:gnuhealth.paper_archive,current_location:"
 msgid "Location / Unit where this clinical history document should reside."
@@ -79,24 +78,24 @@ msgstr ""
 
 msgctxt "model:gnuhealth.paper_archive,name:"
 msgid "Location of PAPER Patient Clinical History"
-msgstr ""
+msgstr "Місцезнаходження ПАПЕРОВОЇ клінічної історії пацієнта"
 
 msgctxt "model:ir.action,name:gnuhealth_action_paper_archive"
 msgid "Medical Archives"
-msgstr ""
+msgstr "Архіви медичних документів"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_archives"
 msgid "Archives"
-msgstr ""
+msgstr "Архіви"
 
 msgctxt "selection:gnuhealth.paper_archive,hc_status:"
 msgid "Archived"
-msgstr ""
+msgstr "Архівовано"
 
 msgctxt "selection:gnuhealth.paper_archive,hc_status:"
 msgid "Borrowed"
-msgstr ""
+msgstr "Видано"
 
 msgctxt "selection:gnuhealth.paper_archive,hc_status:"
 msgid "Lost"
-msgstr ""
+msgstr "Втрачено"
