@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-29 08:07+0000\n"
+"PO-Revision-Date: 2024-10-31 11:07+0000\n"
 "Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
 "health_webdav3_server/uk/>\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 msgctxt "field:webdav.collection,complete_name:"
 msgid "Complete Name"
-msgstr ""
+msgstr "Повна назва"
 
 msgctxt "field:webdav.collection,domain:"
 msgid "Domain"
@@ -40,7 +40,6 @@ msgctxt "field:webdav.collection,model:"
 msgid "Model"
 msgstr "Модель"
 
-#, fuzzy
 msgctxt "field:webdav.collection,name:"
 msgid "Name"
 msgstr "Назва"
@@ -51,7 +50,7 @@ msgstr ""
 
 msgctxt "field:webdav.share,expiration_date:"
 msgid "Expiration Date"
-msgstr ""
+msgstr "Термін дії"
 
 msgctxt "field:webdav.share,key:"
 msgid "Key"
@@ -90,10 +89,12 @@ msgid ""
 "You can not create a collection named \"%(parent)s\" in collection "
 "\"%(child)s\" because there is already a file with that name."
 msgstr ""
+"Ви не можете створити колекцію з назвою «%(parent)s» у колекції «%(child)s», "
+"оскільки вже існує файл з такою назвою."
 
 msgctxt "model:ir.message,text:msg_collection_unique"
 msgid "The collection name must be unique inside"
-msgstr ""
+msgstr "Назва колекції має бути унікальною всередині"
 
 msgctxt "model:ir.rule.group,name:rule_group_share"
 msgid "share"
