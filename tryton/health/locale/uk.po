@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-29 08:07+0000\n"
+"PO-Revision-Date: 2024-10-31 11:07+0000\n"
 "Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
 "health/uk/>\n"
@@ -46,7 +46,7 @@ msgstr "Ідентифікатор прийому у лікаря"
 
 msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -99,7 +99,7 @@ msgstr "Страхування"
 
 msgctxt "field:gnuhealth.appointment.report,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.appointment.report,ref:"
 msgid "PUID"
@@ -926,7 +926,7 @@ msgstr "Тип страхування"
 
 msgctxt "field:gnuhealth.insurance,member_exp:"
 msgid "Expiration date"
-msgstr ""
+msgstr "Термін дії"
 
 msgctxt "field:gnuhealth.insurance,member_since:"
 msgid "Member since"
@@ -1351,10 +1351,9 @@ msgctxt "field:gnuhealth.patient,medications:"
 msgid "Medications"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient,photo:"
@@ -1450,10 +1449,9 @@ msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
 msgid "Current"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.disease,pathology:"
@@ -1523,10 +1521,9 @@ msgctxt "field:gnuhealth.patient.ecg,lead:"
 msgid "Lead"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.ecg,pacemaker:"
 msgid "Pacemaker"
@@ -1767,10 +1764,9 @@ msgctxt "field:gnuhealth.patient.evaluation,osat:"
 msgid "Oxygen Saturation"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.evaluation,praxis:"
 msgid "Praxis"
@@ -1973,10 +1969,9 @@ msgctxt "field:gnuhealth.patient.medication,medicament:"
 msgid "Medicament"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.medication,notes:"
 msgid "Extra Info"
@@ -2014,7 +2009,7 @@ msgstr "Коментарі"
 
 msgctxt "field:gnuhealth.person_alternative_identification,expiration_date:"
 msgid "Expiration date"
-msgstr ""
+msgstr "Термін дії"
 
 #, fuzzy
 msgctxt "field:gnuhealth.person_alternative_identification,name:"
@@ -2278,10 +2273,9 @@ msgctxt "field:gnuhealth.prescription.order,notes:"
 msgid "Prescription Notes"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.prescription.order,pharmacy:"
 msgid "Pharmacy"
@@ -2436,10 +2430,9 @@ msgctxt "field:gnuhealth.vaccination,institution:"
 msgid "Institution"
 msgstr "Установа"
 
-#, fuzzy
 msgctxt "field:gnuhealth.vaccination,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
@@ -2470,7 +2463,7 @@ msgstr "Вакцина"
 
 msgctxt "field:gnuhealth.vaccination,vaccine_expiration_date:"
 msgid "Expiration date"
-msgstr ""
+msgstr "Термін придатності"
 
 msgctxt "field:gnuhealth.vaccination,vaccine_lot:"
 msgid "Lot Number"
@@ -2616,10 +2609,9 @@ msgctxt "field:party.party,is_insurance_company:"
 msgid "Insurance Company"
 msgstr "Страхова компанія"
 
-#, fuzzy
 msgctxt "field:party.party,is_patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:party.party,is_person:"
 msgid "Person"
@@ -8088,10 +8080,9 @@ msgctxt "model:ir.action,name:act_appointment_form1"
 msgid "Appointments"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_appointment_report_patient"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "model:ir.action,name:act_appointments_report_view_tree"
 msgid "Appointments with Dx Report"
@@ -8582,10 +8573,9 @@ msgctxt "model:ir.sequence,name:seq_gnuhealth_appointment"
 msgid "Appointment"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_evaluation"
 msgid "Patient Evaluation"
@@ -8599,10 +8589,9 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_appointment"
 msgid "Appointment"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_evaluation"
 msgid "Patient Evaluation"
