@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-11-02 16:07+0000\n"
+"PO-Revision-Date: 2024-11-03 21:07+0000\n"
 "Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
 "health_icu/uk/>\n"
@@ -134,7 +134,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction_pressure:"
 msgid "cm H2O"
-msgstr ""
+msgstr "см Н₂O"
 
 msgctxt "field:gnuhealth.icu.glasgow,evaluation_date:"
 msgid "Date"
@@ -142,19 +142,19 @@ msgstr "Дата"
 
 msgctxt "field:gnuhealth.icu.glasgow,glasgow:"
 msgid "Glasgow"
-msgstr ""
+msgstr "Глазго"
 
 msgctxt "field:gnuhealth.icu.glasgow,glasgow_eyes:"
 msgid "Eyes"
-msgstr ""
+msgstr "Розплющування очей"
 
 msgctxt "field:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid "Motor"
-msgstr ""
+msgstr "Рухова реакція"
 
 msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
-msgstr ""
+msgstr "Мовна реакція"
 
 msgctxt "field:gnuhealth.icu.glasgow,name:"
 msgid "Registration Code"
@@ -278,7 +278,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.rounding,gcs:"
 msgid "GCS"
-msgstr ""
+msgstr "ШКГ"
 
 msgctxt "field:gnuhealth.patient.rounding,icu_patient:"
 msgid "ICU"
@@ -314,7 +314,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.rounding,peep_pressure:"
 msgid "cm H2O"
-msgstr ""
+msgstr "см Н₂O"
 
 msgctxt "field:gnuhealth.patient.rounding,peritonitis:"
 msgid "Peritonitis signs"
@@ -397,6 +397,8 @@ msgid ""
 "Last Glasgow Coma Scale You can use the GSC calculator from the Patient "
 "Evaluation Form."
 msgstr ""
+"Остання оцінка за шкалою ком Глазго. Можете скористатися калькулятором ШКГ з "
+"Форми оцінки пацієнта."
 
 msgctxt "help:gnuhealth.icu.apache2,mean_ap:"
 msgid "Mean Arterial Pressure"
@@ -424,6 +426,8 @@ msgid ""
 "Level of Consciousness - on Glasgow Coma Scale :  < 9 severe - 9-12 "
 "Moderate, > 13 minor"
 msgstr ""
+"Стан свідомості за шкалою ком Глазго: < 9 тяжкий, 9-12 середньої тяжкості, > "
+"13 легкий"
 
 msgctxt "help:gnuhealth.icu.ventilation,mv_end:"
 msgid "End of Mechanical Ventilation"
@@ -495,7 +499,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.icu.glasgow,name:"
 msgid "Glasgow Coma Scale"
-msgstr ""
+msgstr "Шкала ком Глазго"
 
 msgctxt "model:gnuhealth.icu.ventilation,name:"
 msgid "Mechanical Ventilation History"
@@ -515,7 +519,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_glasgow_form1"
 msgid "Glasgow Coma Scale"
-msgstr ""
+msgstr "Шкала ком Глазго"
 
 msgctxt "model:ir.action,name:action_gnuhealth_icu_apache2_form"
 msgid "APACHE II Score"
@@ -527,7 +531,7 @@ msgstr "ЕКГ"
 
 msgctxt "model:ir.action,name:action_gnuhealth_icu_glasgow_form"
 msgid "GCS"
-msgstr ""
+msgstr "ШКГ"
 
 msgctxt "model:ir.action,name:action_gnuhealth_inpatient_icu_form"
 msgid "Patient ICU Info"
@@ -556,7 +560,7 @@ msgstr "ЕКГ"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_icu_glasgow_list"
 msgid "GCS"
-msgstr ""
+msgstr "ШКГ"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_inpatient_icu_list"
 msgid "Patient ICU Info"
@@ -600,64 +604,64 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_eyes:"
 msgid "1 : Does not Open Eyes"
-msgstr ""
+msgstr "1 - Не розплющує очей"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_eyes:"
 msgid "2 : Opens eyes in response to painful stimuli"
-msgstr ""
+msgstr "2 - Розплющує очі у відповідь на больові подразники"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_eyes:"
 msgid "3 : Opens eyes in response to voice"
-msgstr ""
+msgstr "3 - Розплющує очі у відповідь на звернену мову"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_eyes:"
 msgid "4 : Opens eyes spontaneously"
-msgstr ""
+msgstr "4 - Довільно розплющує очі"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid "1 : Makes no movement"
-msgstr ""
+msgstr "1 - Не рухається"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid "2 : Extension to painful stimuli - decerebrate response -"
-msgstr ""
+msgstr "2 - Тонічне розгинання на больові подразники (децеребральна реакція)"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid ""
 "3 : Abnormal flexion to painful stimuli             (decorticate response)"
-msgstr ""
+msgstr "3 - Аномальне згинання на больові подразники (декортикальна реакція)"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid "4 : Flexion / Withdrawal to painful stimuli"
-msgstr ""
+msgstr "4 - Згинання / Нецілеспрямована реакція на больові подразники"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid "5 : localizes painful stimuli"
-msgstr ""
+msgstr "5 - Цілеспрямовані рухи, щоб локалізувати больові подразники"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_motor:"
 msgid "6 : Obeys commands"
-msgstr ""
+msgstr "6 - Виконує команди"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "1 : Makes no sounds"
-msgstr ""
+msgstr "1 - Не видає звуків"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "2 : Incomprehensible sounds"
-msgstr ""
+msgstr "2 - Нечленороздільні звуки"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "3 : Utters inappropriate words"
-msgstr ""
+msgstr "3 - Вимовляє незрозумілі слова"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "4 : Confused, disoriented"
-msgstr ""
+msgstr "4 - Розгублений і дезорієнтований, але може відповідати на запитання"
 
 msgctxt "selection:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "5 : Oriented, converses normally"
-msgstr ""
+msgstr "5 - Орієнтується в часі і просторі, нормально розмовляє"
 
 msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
 msgid "ETT"
@@ -817,7 +821,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.icu.glasgow:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 msgctxt "view:gnuhealth.icu.ventilation:"
 msgid "Mechanical Ventilation"
