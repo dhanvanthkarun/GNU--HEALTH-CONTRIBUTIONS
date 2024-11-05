@@ -1,12 +1,12 @@
 # SPDX-FileCopyrightText: 2023 Florian Liermann
+# SPDX-FileContributor: 2024 Modified by Brendan Wills
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from trytond.pool import Pool
 
 from . import health_dhis2, ir
-from .wizard import (
-    data_mapping_wizard, export_wizard, import_wizard, server_wizard)
+from .wizard import data_mapping_wizard, export_wizard, import_wizard, server_wizard
 
 __all__ = ['register']
 
@@ -35,6 +35,9 @@ def register() -> None:
         data_mapping_wizard.DataMappingPresetDisease,
         data_mapping_wizard.DataMappingPresetOperationProcedure,
         data_mapping_wizard.DataMappingPresetRawSQL,
+        data_mapping_wizard.DataMappingPresetDeaths,
+        data_mapping_wizard.DataMappingPresetBirths,
+        data_mapping_wizard.DataMappingPresetVaccination,
 
         # Export Wizard
         export_wizard.Dhis2ExportSelect,

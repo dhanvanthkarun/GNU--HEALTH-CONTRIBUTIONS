@@ -1,5 +1,6 @@
 <!--
 SPDX-FileCopyrightText: 2023 Florian Liermann
+SPDX-FileContributor: 2024 Modified by Brendan Wills
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -14,6 +15,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <newline/>
         <label name="pat"/>
         <field name="pat" widget="password"/>
+        <newline/>
+        <label name="sync_time"/>
+        <field name="sync_time" widget="datetime"/>
     </group>
     <newline/>
     <group string="Children" id="dhis_server_form_children" col="2">

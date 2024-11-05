@@ -1,5 +1,6 @@
 <!--
 SPDX-FileCopyrightText: 2023 Florian Liermann
+SPDX-FileContributor: 2024 Modified by Brendan Wills
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -24,6 +25,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.model.button" id="dhis_server_button">
             <field name="name">sync_button</field>
             <field name="string">Synchronize</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.dhis2.server')]"/>
+        </record>
+        <record model="ir.model.button" id="dhis_server_button_worker">
+            <field name="name">worker_sync_button</field>
+            <field name="string">Synchronize (Worker)</field>
             <field name="model" search="[('model', '=', 'gnuhealth.dhis2.server')]"/>
         </record>
         <record model="ir.model.button" id="dhis_server_button_submit_data">
@@ -163,6 +169,21 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model">gnuhealth.dhis2.data_mapping.wizard.preset_raw_sql</field>
             <field name="type">form</field>
             <field name="name">dhis_data_mapping_wizard_preset_raw_sql_form</field>
+        </record>
+        <record model="ir.ui.view" id="dhis_data_mapping_wizard_preset_deaths_view">
+            <field name="model">gnuhealth.dhis2.data_mapping.wizard.preset_deaths</field>
+            <field name="type">form</field>
+            <field name="name">dhis_data_mapping_wizard_preset_deaths_form</field>
+        </record>
+        <record model="ir.ui.view" id="dhis_data_mapping_wizard_preset_births_view">
+            <field name="model">gnuhealth.dhis2.data_mapping.wizard.preset_births</field>
+            <field name="type">form</field>
+            <field name="name">dhis_data_mapping_wizard_preset_births_form</field>
+        </record>
+        <record model="ir.ui.view" id="dhis_data_mapping_wizard_preset_vaccination_view">
+            <field name="model">gnuhealth.dhis2.data_mapping.wizard.preset_vaccination</field>
+            <field name="type">form</field>
+            <field name="name">dhis_data_mapping_wizard_preset_vaccination_form</field>
         </record>
 
         <!-- Export Wizard -->

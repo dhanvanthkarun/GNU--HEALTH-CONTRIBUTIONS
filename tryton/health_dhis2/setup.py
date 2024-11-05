@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 # SPDX-FileCopyrightText: 2023 Florian Liermann
+# SPDX-FileContributor: 2024 Modified by Brendan Wills
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -50,9 +51,11 @@ setup(
     description=info.get(
         'description',
         'GNU Health DHIS2 Integration'),
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     author='Florian Liermann',
     author_email='f.liermann@stud.uni-hannover.de',
+    maintainer='Brendan Wills',
+    maintainer_email='brendan.wills@stud.uni-hannover.de',
     url='https://www.gnuhealth.org',
     download_url='http://ftp.gnu.org/gnu/health/',
     package_dir={'trytond.modules.health_dhis2': '.'},
@@ -91,5 +94,4 @@ setup(
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-
-    )
+)

@@ -1,25 +1,39 @@
 # SPDX-FileCopyrightText: 2023 Florian Liermann
+# SPDX-FileContributor: 2024 Modified by Brendan Wills
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 from datetime import datetime
 from enum import Enum
 from typing import Dict, List
 
 import requests
-
-from trytond.exceptions import UserError
+from trytond.exceptions import UserError, UserWarning
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 
 from .exceptions import (
-    DHIS2APIError, NotFoundError, UnauthorizedError, UnhandledConflictError)
+    DHIS2APIError,
+    NotFoundError,
+    UnauthorizedError,
+    UnhandledConflictError,
+)
 
 __all__ = ['Dhis2Server', 'Dhis2OrganisationUnit', 'Dhis2CategoryCombo',
            'Dhis2CategoryOptionCombo', 'Dhis2DataSet', 'Dhis2DataElement',
-           'Dhis2DataMapping', 'DataSetPeriodType']
+           'Dhis2DataMapping', 'DataSetPeriodType', 'timing']
 
+def timing(func):
+    """Decorator for function timings. Use with @timing"""
+    def wrapper(*args, **kwargs):
+        start = datetime.now()
+        func_call = func(*args, **kwargs)
+        end = datetime.now()
+        logging.info(f"Function {func.__name__} ran {(end-start).seconds} seconds")
+        return func_call
+    return wrapper
 
 class DataSetPeriodType(Enum):
     """Enum for the supported period types of a data set"""
@@ -73,6 +87,28 @@ class DataSetPeriodType(Enum):
             case _:
                 raise ValueError(f"Period type '{self}' is not supported")
 
+    def format_date(self, date: datetime) -> str:
+        """
+        Formats a date to a better readable String.
+        Will only be used for displaying the Data in GNU Health.
+        :return: string of a date
+        :raises ValueError: if the period type is not supported
+        """
+        match self:
+            case DataSetPeriodType.DAILY:
+                return date.strftime('%Y-%m-%d')
+            case DataSetPeriodType.WEEKLY:
+                return date.strftime('%Y (%V)')
+            case DataSetPeriodType.MONTHLY:
+                return date.strftime('%Y-%m')
+            case DataSetPeriodType.QUARTERLY:
+                return date.strftime('%Y (') + 'Q' + str(
+                    (date.month - 1) // 4 + 1) + ')'
+            case DataSetPeriodType.YEARLY:
+                return date.strftime('%Y')
+            case _:
+                raise ValueError(f"Period type '{self}' is not supported")
+
 
 class Dhis2Server(ModelSQL, ModelView):
     """DHIS2 Server Configuration"""
@@ -107,6 +143,7 @@ class Dhis2Server(ModelSQL, ModelView):
         super().__setup__()
         cls._buttons.update({
             'sync_button': {},
+            'worker_sync_button': {},
             'submit_data_button': {},
         })
 
@@ -114,8 +151,28 @@ class Dhis2Server(ModelSQL, ModelView):
     @ModelView.button
     def sync_button(cls, records) -> None:
         """Synchronize the data with DHIS2"""
+        message = (
+            "This process may take a while and the client will be unresponsive. "
+            "Synchronization continues despite the 504 error."
+        )
         for record in records:
+            name = f"normal_sync_{record}"
+            record.warn(name, message)
             record.sync()
+
+    @classmethod
+    @ModelView.button
+    def worker_sync_button(cls, records) -> None:
+        """Synchronize Data with DHIS2 via tryton worker"""
+        message = (
+            "This process will run in the background "
+            "if the tryton worker node is running. Ohterwise"
+            "nothing will happen. See README file."
+        )
+        for record in records:
+            name = f"worker_sync_{record}"
+            record.warn(name, message)
+            cls.__queue__.sync(record) # sync method
 
     @classmethod
     @ModelView.button
@@ -125,7 +182,26 @@ class Dhis2Server(ModelSQL, ModelView):
             for data_set in record.data_sets:
                 for data_element in data_set.data_elements:
                     for data_mapping in data_element.data_mapping:
-                        data_mapping.submit_data()
+                        if data_mapping.mapping_active:
+                            data_mapping.submit_data()
+
+    def warn(self, name, message):
+        """Method for briefly warning the user. Will not cancel any actions"""
+        pool = Pool()
+        Warning = pool.get('res.user.warning')
+        Warning.name = name
+        if Warning.check(Warning.name):
+            raise UserWarning(Warning.name, message)
+
+        """Ersetze die obere Methode mit der im kommentierten Block ab Tryton 6.2+.
+            Aktuell (in Tryton 6.0) existiert die .format() Methode nicht.
+            Diese stellt die Konsistenz einer Warnung sicher.
+            (Warnung erscheint aktuell manchmal nicht, warum auch immer)"""
+        # pool = Pool()
+        # Warning = pool.get('res.user.warning')
+        # warning_name = Warning.format(name, [self])
+        # if Warning.check(warning_name):
+        #     raise UserWarning(warning_name, message)
 
     def _request(self, http_method: str, endpoint: str,
                  params: Dict = None, data: Dict = None) -> Dict:
@@ -246,86 +322,103 @@ class Dhis2Server(ModelSQL, ModelView):
         """
         return self.get(f'/categoryOptionCombos/{category_option_combo_id}')
 
+    @timing
     def sync(self) -> None:
         """
         Synchronize the server with the DHIS2 server,
-        delete entries that are not in DHIS2 anymore and create new ones
+        delete entries that are not in DHIS2 anymore and create new ones.
+        This method is called by the trytond-worker module or via cron job.
         """
-        pool = Pool()
-        OrgUnit = pool.get('gnuhealth.dhis2.org_unit')
-        CategoryCombo = pool.get('gnuhealth.dhis2.category_combo')
-        DataSet = pool.get('gnuhealth.dhis2.data_set')
+        self.sync_org_units() # Sync all Org Units
+        self.sync_category_combos() # Sync all Category stuff
+        self.sync_data_sets() # Sync all Data Sets, -Elements and -Mappings
 
-        try:
-            # Check if PAT is valid
-            me = self.get_me()
-
-            # Sync organisation units
-            dhis_org_units = me['organisationUnits']
-            for org_unit in self.org_units:
-                for dhis_org_unit in dhis_org_units:
-                    if org_unit.org_unit_id == dhis_org_unit['id']:
-                        org_unit.sync()
-                        dhis_org_units.remove(dhis_org_unit)
-                        break
-                else:
-                    OrgUnit.delete([org_unit])
-            for dhis_org_unit in dhis_org_units:
-                dhis_org_unit_details = self.get_org_unit(dhis_org_unit['id'])
-                OrgUnit.create([{
-                    'server': self.id,
-                    'org_unit_id': dhis_org_unit['id'],
-                    'name': dhis_org_unit_details['displayName'],
-                }])
-
-            # Sync category combos
-            dhis_category_combos = self.get_category_combos()
-            for category_combo in self.category_combos:
-                for dhis_category_combo in dhis_category_combos:
-                    if (dhis_category_combo['id'] ==
-                            category_combo.category_combo_id):
-                        category_combo.sync()
-                        dhis_category_combos.remove(dhis_category_combo)
-                        break
-                else:
-                    CategoryCombo.delete([category_combo])
-            for dhis_category_combo in dhis_category_combos:
-                dhis_category_combo_details = self.get_category_combo(
-                    dhis_category_combo['id'])
-                category_combo = CategoryCombo.create([{
-                    'server': self.id,
-                    'category_combo_id': dhis_category_combo['id'],
-                    'name': dhis_category_combo_details['displayName'],
-                    'data_dimension_type': dhis_category_combo_details[
-                        'dataDimensionType'],
-                }])
-                category_combo[0].sync()
-
-            # Sync data sets
-            dhis_data_sets = self.get_datasets()
-            for data_set in self.data_sets:
-                for dhis_data_set in dhis_data_sets:
-                    if data_set.data_set_id == dhis_data_set['id']:
-                        data_set.sync()
-                        dhis_data_sets.remove(dhis_data_set)
-                        break
-                else:
-                    DataSet.delete([data_set])
-            for dhis_data_set in dhis_data_sets:
-                dhis_data_set_details = self.get_dataset(dhis_data_set['id'])
-                data_set = DataSet.create([{
-                    'server': self.id,
-                    'name': dhis_data_set_details['displayName'],
-                    'data_set_id': dhis_data_set['id'],
-                    'period_type': dhis_data_set_details['periodType'],
-                }])
-                data_set[0].sync()
-        except Exception as e:
-            self.validated = False
-            raise e
-        else:
-            self.validated = True
+        self.validated = True
         self.sync_time = datetime.now()
+
+    @timing
+    def sync_org_units(self) -> None:
+        """Sync all Org Units and create new ones"""
+        OrgUnit = Pool().get('gnuhealth.dhis2.org_unit')
+        # Check if PAT is valid
+        me = self.get_me()
+        dhis_org_units = me['organisationUnits']
+
+        # Sync organisation units
+        logging.info("Synchronizing Category Combinations")
+        for org_unit in self.org_units:
+            for dhis_org_unit in dhis_org_units:
+                if org_unit.org_unit_id == dhis_org_unit['id']:
+                    org_unit.sync()
+                    dhis_org_units.remove(dhis_org_unit)
+                    break
+            else:
+                OrgUnit.delete([org_unit])
+        # Create new organisation units in database
+        logging.info(f"Adding new Organisation Units to database: {dhis_org_units}")
+        for dhis_org_unit in dhis_org_units:
+            dhis_org_unit_details = self.get_org_unit(dhis_org_unit['id'])
+            OrgUnit.create([{
+                'server': self.id,
+                'org_unit_id': dhis_org_unit['id'],
+                'name': dhis_org_unit_details['displayName'],
+            }])
+
+    @timing
+    def sync_category_combos(self) -> None:
+        """Sync all Category Combos and create new ones"""
+        CategoryCombo = Pool().get('gnuhealth.dhis2.category_combo')
+        # Sync category combos
+        logging.info("Synchronizing Category Combinations")
+        dhis_category_combos = self.get_category_combos()
+        for category_combo in self.category_combos:
+            for dhis_category_combo in dhis_category_combos:
+                if (dhis_category_combo['id'] == category_combo.category_combo_id):
+                    category_combo.sync()
+                    dhis_category_combos.remove(dhis_category_combo)
+                    break
+            else:
+                CategoryCombo.delete([category_combo])
+        # Create new category combos in database
+        logging.info(f"Adding new Category Combos to database: {dhis_category_combos}")
+        for dhis_category_combo in dhis_category_combos:
+            dhis_category_combo_details = self.get_category_combo(
+                dhis_category_combo['id'])
+            category_combo = CategoryCombo.create([{
+                'server': self.id,
+                'category_combo_id': dhis_category_combo['id'],
+                'name': dhis_category_combo_details['displayName'],
+                'data_dimension_type': dhis_category_combo_details[
+                    'dataDimensionType'],
+            }])
+            category_combo[0].sync()
+
+    @timing
+    def sync_data_sets(self) -> None:
+        """Sync all Data Sets and Create new ones"""
+        DataSet = Pool().get('gnuhealth.dhis2.data_set')
+        # Sync data sets
+        logging.info("Synchronizing Data Sets")
+        dhis_data_sets = self.get_datasets()
+        for data_set in self.data_sets:
+            for dhis_data_set in dhis_data_sets:
+                if data_set.data_set_id == dhis_data_set['id']:
+                    data_set.sync()
+                    dhis_data_sets.remove(dhis_data_set)
+                    break
+            else:
+                DataSet.delete([data_set])
+        # Create new data set in database
+        logging.info(f"Adding new Data Sets to database: {dhis_data_sets}")
+        for dhis_data_set in dhis_data_sets:
+            dhis_data_set_details = self.get_dataset(dhis_data_set['id'])
+            data_set = DataSet.create([{
+                'server': self.id,
+                'name': dhis_data_set_details['displayName'],
+                'data_set_id': dhis_data_set['id'],
+                'period_type': dhis_data_set_details['periodType'],
+            }])
+            data_set[0].sync()
 
     @classmethod
     def sync_all(cls) -> None:
@@ -348,7 +441,8 @@ class Dhis2Server(ModelSQL, ModelView):
             for data_set in server.data_sets:
                 for data_element in data_set.data_elements:
                     for data_mapping in data_element.data_mapping:
-                        data_mapping.submit_data()
+                        if data_mapping.mapping_active:
+                            data_mapping.submit_data()
 
 
 class Dhis2OrganisationUnit(ModelSQL, ModelView):
@@ -402,6 +496,7 @@ class Dhis2CategoryCombo(ModelSQL, ModelView):
         Synchronize this category combo with DHIS2 and
         update the category options
         """
+        CategoryOptCombo = Pool().get('gnuhealth.dhis2.category_option_combo')
         dhis_category_combo = self.server.get_category_combo(
             self.category_combo_id)
         self.name = dhis_category_combo['displayName']
@@ -412,18 +507,17 @@ class Dhis2CategoryCombo(ModelSQL, ModelView):
         dhis_category_options = dhis_category_combo['categoryOptionCombos']
         for category_option in self.category_options:
             for dhis_category_option in dhis_category_options:
-                if category_option.category_option_combo_id == \
-                        dhis_category_option['id']:
+                if category_option.category_option_combo_id == dhis_category_option['id']:
                     category_option.sync()
                     dhis_category_options.remove(dhis_category_option)
                     break
             else:
-                category_option.delete()
+                CategoryOptCombo.delete([category_option])
         for dhis_category_option in dhis_category_options:
             dhis_category_option_details = (
                 self.server.get_category_option_combo(
                     dhis_category_option['id']))
-            Pool().get('gnuhealth.dhis2.category_option_combo').create([{
+            CategoryOptCombo.create([{
                 'server': self.server.id,
                 'category_combo': self.id,
                 'category_option_combo_id': dhis_category_option['id'],
@@ -507,16 +601,18 @@ class Dhis2DataSet(ModelSQL, ModelView):
         self.save()
 
         # Sync data elements
+        logging.info("Synchronozing Data Elements")
         dhis_data_elements = dhis_data_set['dataSetElements']
         for data_element in self.data_elements:
             for dhis_data_element in dhis_data_elements:
-                if data_element.data_element_id == \
-                        dhis_data_element['dataElement']['id']:
+                if data_element.data_element_id == dhis_data_element['dataElement']['id']:
                     data_element.sync()
                     dhis_data_elements.remove(dhis_data_element)
                     break
             else:
-                data_element.delete()
+                DataElement.delete([data_element])
+        # Create new Data Elements in database
+        logging.info(f"Adding new Data Elements to database: {dhis_data_elements}")
         for dhis_data_element in dhis_data_elements:
             dhis_data_element_details = self.server.get_data_element(
                 dhis_data_element['dataElement']['id'])
@@ -641,7 +737,15 @@ class Dhis2DataMapping(ModelSQL, ModelView):
         help="The SQL query that fetches the data from the database")
     mapping_active = fields.Boolean(
         "Active", help="A flag to indicate if the data mapping is active")
-
+    data_time = fields.DateTime(
+        "Data received at", readonly=True,
+        help="The time the data was fetched")
+    data = fields.Text(
+        "Data received from query", readonly=True,
+        help="The Data received from a query of a data mapping")
+    data_submitted_at = fields.DateTime("Data submitted to DHIS2 at",
+        readonly=True, help="Submit the data via server")
+    
     def sync(self) -> None:
         """Synchronize this data mapping with DHIS2"""
         self.name = f"{self.data_element.name} - {self.category_option.name}"
@@ -653,17 +757,31 @@ class Dhis2DataMapping(ModelSQL, ModelView):
         Executes the given query and returns the column names and the result
         :param query: string of the query to execute
         :return: a tuple of the column names and the result
+        :raises UserError: if the database name or userID is wrong
         """
-        with Transaction().connection.cursor() as cursor:
-            # For some reason double quotation marks get duplicated when
-            # saving the query
-            cursor.execute(query.replace("\"\"", "\""))
-            cursor.execute(query)
-            data = cursor.fetchall()
-            return cursor.description, data
+        # Start a new database Transaction for the query
+        try:
+            transaction = Transaction()
+            transaction.readonly = True
+            transaction.check_access = True
+            context = {
+                'tryton_user': transaction.user,
+                'readonly': transaction.readonly,
+                '_check_access': transaction.check_access,
+                'database': {Pool.database_list()[0]}
+            }
+
+            with transaction.set_context(context): # noqa: SIM117
+                with transaction.connection.cursor() as cursor:
+                    cursor.execute(query)
+                    data = cursor.fetchall()
+                    description = cursor.description
+                    return description, data
+        except Exception as e:
+            UserError(f"Transaction failed with '{e}'")
 
     @staticmethod
-    def test_query(query: str) -> (List, List):
+    def check_valid_query(query: str) -> (List, List):
         """
         Checks if the sql query is valid and the result contains the required
         columns
@@ -676,16 +794,21 @@ class Dhis2DataMapping(ModelSQL, ModelView):
             raise UserError("No query defined")
 
         description, data = Dhis2DataMapping._execute_query(query)
+
+        if not data:
+            raise UserError(
+                "There seems to be no avaialable data for the current selection."
+                )
         for column in description:
             if column.name == 'date':
                 break
         else:
             raise UserError("The query must contain a date column")
         for column in description:
-            if column.name == 'value':
+            if column.name == 'quantity':
                 break
         else:
-            raise UserError("The query must contain a value column")
+            raise UserError("The query must contain a quantity column")
         return description, data
 
     def submit_data(self, dry_run: bool = False) -> None:
@@ -693,19 +816,23 @@ class Dhis2DataMapping(ModelSQL, ModelView):
         Executes the sql query and submits the data to DHIS2
         :param dry_run: if True, the data will not be saved to DHIS2
         """
-        if not self.sql_query or not self.mapping_active:
-            return
+        if not self.sql_query:
+            raise UserError(
+                "No query has been set on an active mapping. "
+                "Please configure a mapping before submitting data."
+            )
         description, data = Dhis2DataMapping._execute_query(self.sql_query)
 
         # Submit data to DHIS2
-        data_value_set = {'dryRun': dry_run,
-                          'dataValues': [],
-                          'attributeOptionCombo':
-                              self.attribute_option.category_option_combo_id}
+        data_value_set = {
+            'dryRun': dry_run,
+            'dataValues': [],
+            'attributeOptionCombo': self.attribute_option.category_option_combo_id
+        }
         for row in data:
             data_value = {
                 'dataElement': self.data_element.data_element_id,
-                'orgUnit': self.data_element.data_set.org_unitorg_unit_id,
+                'orgUnit': self.data_element.data_set.org_unit.org_unit_id,
                 'categoryOptionCombo':
                     self.category_option.category_option_combo_id,
             }
@@ -714,8 +841,10 @@ class Dhis2DataMapping(ModelSQL, ModelView):
                     data_value['period'] = DataSetPeriodType(
                         self.data_element.data_set.period_type).get_date_str(
                         value)
-                elif column.name == 'value':
+                elif column.name == 'quantity':
                     data_value['value'] = value
             data_value_set['dataValues'].append(data_value)
         self.data_element.data_set.server.post(
             '/dataValueSets', data=data_value_set)
+        
+        self.data_submitted_at = datetime.now()

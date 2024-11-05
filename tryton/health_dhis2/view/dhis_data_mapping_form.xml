@@ -1,5 +1,6 @@
 <!--
 SPDX-FileCopyrightText: 2023 Florian Liermann
+SPDX-FileContributor: 2024 Modified by Brendan Wills
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -17,7 +18,17 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="category_option"/>
     </group>
     <newline/>
-    <group string="SQL Query" id="dhis_data_mapping_query_group">
-            <field name="sql_query" widget="text"/>
+    <group string="Query Information" id="dhis_data_mapping_query_group">
+        <label name="data_time"/>
+        <field name="data_time" widget="datetime"/>
+        <newline/>
+        <label name="data_submitted_at"/>
+        <field name="data_submitted_at" widget="datetime"/>
+        <newline/>
+        <label name="data"/>
+        <field name="data" widget="text"/>
+        <newline/>
+        <label name="sql_query"/>
+        <field name="sql_query" widget="text"/>
     </group>
 </form>

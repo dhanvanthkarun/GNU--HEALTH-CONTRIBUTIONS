@@ -1,13 +1,14 @@
 # SPDX-FileCopyrightText: 2023 Florian Liermann
+# SPDX-FileContributor: 2024 Modified by Brendan Wills
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+from datetime import date, datetime
 from enum import Enum
 from typing import Dict
 
 from sql.aggregate import Count
 from sql.functions import DateTrunc
-
 from trytond.exceptions import UserError
 from trytond.model import ModelView, fields
 from trytond.pool import Pool
@@ -17,7 +18,8 @@ from ..health_dhis2 import DataSetPeriodType, Dhis2DataMapping
 
 __all__ = ['DataMappingWizard', 'DataMappingSelect', 'DataMappingResult',
            'DataMappingPresetDisease', 'DataMappingPresetOperationProcedure',
-           'DataMappingPresetRawSQL', 'DataMappingPreset']
+           'DataMappingPresetRawSQL', 'DataMappingPreset', 'DataMappingPresetDeaths',
+           'DataMappingPresetBirths', 'DataMappingPresetVaccination']
 
 
 class DataMappingPreset(Enum):
@@ -25,6 +27,9 @@ class DataMappingPreset(Enum):
     RAW_SQL = "Raw SQL"
     DISEASE = "Disease"
     OPERATION_PROCEDURE = "Operation Procedure"
+    DEATHS = "Deaths"
+    BIRTHS = "Births"
+    VACCINATION = "Vaccination"
 
 
 class DataMappingSelect(ModelView):
@@ -98,7 +103,7 @@ class DataMappingPresetDisease(DataMappingPresetBase):
             DateTrunc(
                 period_type.to_date_trunc(),
                 condition.diagnosed_date).as_('date'),
-            Count(condition.id).as_('value'),
+            Count(condition.id).as_('quantity'),
             where=(condition.pathology == self.disease.id) &
                   (condition.diagnosed_date != None),   # noqa: E711
             group_by=[
@@ -135,9 +140,9 @@ class DataMappingPresetOperationProcedure(DataMappingPresetBase):
             DateTrunc(
                 period_type.to_date_trunc(),
                 surgery.surgery_date).as_('date'),
-            Count(operation.id).as_('value'),
-            where=(surgery.surgery_date != None) &  # noqa: E711
-                  (self.procedure.id == operation.procedure),
+            Count(operation.id).as_('quantity'),
+            where=(surgery.surgery_date != None) # noqa: E711
+                & (self.procedure.id == operation.procedure),
             group_by=[
                 DateTrunc(
                     period_type.to_date_trunc(),
@@ -159,6 +164,126 @@ class DataMappingPresetRawSQL(DataMappingPresetBase):
         """
         return self.sql
 
+
+class DataMappingPresetDeaths(DataMappingPresetBase):
+    """Preset for retrieving the number of deaths"""
+    __name__ = 'gnuhealth.dhis2.data_mapping.wizard.preset_deaths'
+
+    cod = fields.Many2One(
+        'gnuhealth.pathology', "Cause of Death", required=True)
+
+    def get_query(self, period_type: DataSetPeriodType):
+        """
+        Generate the query to retrieve the number of deaths from
+        a certain cause.
+        :param period_type: period type of the data set
+        :return: sql query object
+        """
+
+        Certificate = Pool().get('gnuhealth.death_certificate')
+        certificate = Certificate.__table__()
+        query = certificate.select(
+            DateTrunc(
+                period_type.to_date_trunc(),
+                certificate.dod).as_('date'),
+            Count(certificate.id).as_('quantity'),
+            where=(certificate.cod == self.cod.id),
+            group_by=[
+                DateTrunc(
+                    period_type.to_date_trunc(),
+                    certificate.dod)],
+        )
+        return query
+
+
+class DataMappingPresetVaccination(DataMappingPresetBase):
+    """Retrieves the number of doses with a medicament given"""
+    __name__ = 'gnuhealth.dhis2.data_mapping.wizard.preset_vaccination'
+
+    medicament = fields.Many2One(
+        'gnuhealth.medicament', "Medicament", required=True)
+    dose_number = fields.Integer("Dose #", required=True,
+        help="Nr. of doses recieved")
+
+    def get_query(self, period_type: DataSetPeriodType):
+        """
+        Generate a query to retrieve the number of medicaments/doses
+        given at a certain time
+        :param period_type: period type of the data set
+        :return: sql query object
+        """
+        Vaccination = Pool().get('gnuhealth.vaccination')
+        vaccination = Vaccination.__table__()
+        query = vaccination.select(
+            DateTrunc(
+                period_type.to_date_trunc(),
+                vaccination.date).as_('date'),
+            Count(vaccination.id).as_('quantity'),
+            where=(self.medicament.id == vaccination.vaccine)
+                & (vaccination.dose == self.dose_number)
+                & (vaccination.state == "done"),
+            group_by=[
+                DateTrunc(
+                    period_type.to_date_trunc(),
+                    vaccination.date)],
+        )
+        return query
+
+
+class DataMappingPresetBirths(DataMappingPresetBase):
+    """
+    Preset for retrieving the number of births per period
+    between a selected timespan. The Number '0' represents every record
+    """
+    __name__ = 'gnuhealth.dhis2.data_mapping.wizard.preset_births'
+
+    start_year = fields.Date("Start Year")
+    end_year = fields.Date("End Year")
+
+    @classmethod
+    def default_start_year(cls):
+        """Set default starting date"""
+        return date(1900, 1, 1)
+
+    @classmethod
+    def default_end_year(cls):
+        """Set default end date"""
+        return date(2100, 1, 1)
+
+    def date_to_str(self) -> None:
+        """
+        Format the Date to a certain String.
+        If the date is no string, the query will fail.
+        :return: A date as a string
+        """
+        start = self.start_year.strftime('%Y-%m-%d')
+        end = self.end_year.strftime('%Y-%m-%d')
+
+        return start, end
+
+    def get_query(self, period_type: DataSetPeriodType):
+        """
+        Generate the query to retrieve the number of births
+        :param period_type: period type of the data set
+        :return: sql query object
+        """
+        Certificate = Pool().get('gnuhealth.birth_certificate')
+        certificate = Certificate.__table__()
+        start, end = self.date_to_str()
+
+        query = certificate.select(
+            DateTrunc(
+                period_type.to_date_trunc(),
+                certificate.certification_date).as_('date'),
+            Count(certificate.id).as_('quantity'),
+            where=(certificate.dob >= start)
+                & (certificate.dob <= end),
+            group_by=[
+                DateTrunc(
+                    period_type.to_date_trunc(),
+                    certificate.certification_date)],
+        )
+        return query
 
 class DataMappingResult(ModelView):
     """StateView to show the results of the configured SQL query"""
@@ -199,18 +324,17 @@ class DataMappingWizard(Wizard):
         presets
         """
         for preset in DataMappingPreset:
-            setattr(self, f'preset_{preset.name.lower()}', StateView(
-                f'gnuhealth.dhis2.data_mapping.wizard.preset_'
-                f'{preset.name.lower()}',
-                f'health_dhis2.dhis_data_mapping_wizard_preset_'
-                f'{preset.name.lower()}_view',
+            name_of_preset = preset.name.lower()
+            setattr(self, f'preset_{name_of_preset}', StateView(
+                f'gnuhealth.dhis2.data_mapping.wizard.preset_{name_of_preset}',
+                f'health_dhis2.dhis_data_mapping_wizard_preset_{name_of_preset}_view',
                 [
                     Button("Cancel", 'end', 'tryton-cancel'),
                     Button("Next", 'display_result',
                            'tryton-ok', default=True)
                 ]))
-            self.states[f'preset_{preset.name.lower()}'] = (
-                getattr(self, f'preset_{preset.name.lower()}'))
+            self.states[f'preset_{name_of_preset}'] = (
+                getattr(self, f'preset_{name_of_preset}'))
         super().__init__(*args)
 
     def transition_select_preset(self) -> str:
@@ -228,14 +352,16 @@ class DataMappingWizard(Wizard):
                 self.start.data_mapping.data_element.data_set.period_type)
         except ValueError:
             raise UserError(
-                f"The period type '"
+                "The period type '"
                 f"{self.start.data_mapping.data_element.data_set.period_type}'"
-                f" of the selected data set is not supported.")
+                " of the selected data set is not supported.")
 
         if not self.start.data_mapping.data_element.data_set.org_unit:
+            data_set = self.start.data_mapping.data_element.data_set
             raise UserError(
-                "The data set of the selected data element has no "
-                "organisation unit assigned.")
+                f"The data set '{data_set.name}' of the selected data element "
+                "has no organisation unit assigned. "
+                "Please select one in 'Data Sets' in Gnu Health.")
 
         return f'preset_{self.start.preset.lower()}'
 
@@ -245,19 +371,19 @@ class DataMappingWizard(Wizard):
         :return: name of the next state
         """
         preset = getattr(self, f'preset_{self.start.preset.lower()}')
-        query = preset.get_query_string(DataSetPeriodType(
-            self.start.data_mapping.data_element.data_set.period_type))
-        description, data = Dhis2DataMapping.test_query(query)
-        result_str = ", ".join([column.name for column in description]) + "\n"
+        # Get the period type of the data set
+        p_type = DataSetPeriodType(self.start.data_mapping.data_element.data_set.period_type)
+        # Define query of the preset and get data
+        query = preset.get_query_string(p_type)
+        description, data = Dhis2DataMapping.check_valid_query(query)
+        # Initialize the result string
+        result_str = ", ".join([column.name.title() for column in description]) + "\n"
         for row in data:
             col_strs = []
             for column, value in zip(description, row):
                 if column.name == 'date':
-                    col_strs.append(DataSetPeriodType(
-                        self.start.data_mapping.data_element.data_set
-                        .period_type).get_date_str(
-                        value))
-                elif column.name == 'value':
+                    col_strs.append(p_type.format_date(value))
+                elif column.name == 'quantity':
                     col_strs.append(str(value))
             result_str += ', '.join(col_strs) + '\n'
         self.result.result = result_str
@@ -276,6 +402,8 @@ class DataMappingWizard(Wizard):
         query = preset.get_query_string(DataSetPeriodType(
             self.start.data_mapping.data_element.data_set.period_type))
         self.start.data_mapping.sql_query = query
+        self.start.data_mapping.data = self.result.result
+        self.start.data_mapping.data_time = datetime.now()
         self.start.data_mapping.mapping_active = True
         self.start.data_mapping.save()
         return 'end'

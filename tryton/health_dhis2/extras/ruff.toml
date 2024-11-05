@@ -1,0 +1,46 @@
+output-format = "grouped"
+line-length = 100
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "build",
+    "node_modules",
+    "site-packages",
+    "venv",
+    "LICENSES",
+    "setup.py"
+]
+
+[lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # flake8-warnings
+    "W",
+    # isort
+    "I",
+]
+
+[lint.isort]
+case-sensitive = true
+combine-as-imports = true

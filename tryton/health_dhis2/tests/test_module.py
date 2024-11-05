@@ -9,7 +9,6 @@ import warnings
 import requests.exceptions
 import responses
 from responses import _recorder, matchers
-
 from trytond.pool import Pool
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 
@@ -21,7 +20,7 @@ class HealthDhis2TestCase(ModuleTestCase):
     module = 'health_dhis2'
 
     def setUp(self):
-        super(HealthDhis2TestCase, self).setUp()
+        super().setUp()
         # Ignore ResourceWarning: unclosed <socket.socket...> warnings
         warnings.simplefilter('ignore', ResourceWarning)
 
@@ -235,7 +234,7 @@ class HealthDhis2TestCase(ModuleTestCase):
         server = Server.create([{
             'label': 'test',
             'url': 'http://localhost:8080',
-            'pat': 'd2pat_ajXIs6yoe5erRqisvby4PxZqQCo5d5Lx1092887431',
+            'pat': 'd2pat_2YN2v21D6dd87xHctJBXKeI4bzHt5o601438788820',
         }])[0]
         server.sync()
 
