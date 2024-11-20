@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-11-13 16:01+0000\n"
+"PO-Revision-Date: 2024-11-20 23:48+0000\n"
 "Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
 "health_archives/uk/>\n"
@@ -32,10 +32,9 @@ msgctxt "field:gnuhealth.paper_archive,legacy:"
 msgid "Legacy Code"
 msgstr "Застарілий код"
 
-#, fuzzy
 msgctxt "field:gnuhealth.paper_archive,location:"
 msgid "Unit"
-msgstr "Одиниця виміру"
+msgstr "Відділення"
 
 msgctxt "field:gnuhealth.paper_archive,patient:"
 msgid "Patient"
@@ -56,17 +55,21 @@ msgstr "Дата повернення"
 msgctxt "help:gnuhealth.paper_archive,current_location:"
 msgid "Location / Unit where this clinical history document should reside."
 msgstr ""
+"Місцезнаходження / Відділення, де повинен зберігатися цей документ історії "
+"хвороби."
 
 msgctxt "help:gnuhealth.paper_archive,legacy:"
 msgid ""
 "If existing, please enter the old / legacy code associated to this Clinical "
 "History"
 msgstr ""
-"Якщо у цієї клінічної історії є застарілий код, будь ласка, введіть його тут"
+"Якщо у цієї історії хвороби є застарілий код, будь ласка, введіть його тут"
 
 msgctxt "help:gnuhealth.paper_archive,location:"
 msgid "Location / Unit where this clinical history document should reside."
 msgstr ""
+"Місцезнаходження / Відділення, де повинен зберігатися цей документ історії "
+"хвороби."
 
 msgctxt "help:gnuhealth.paper_archive,patient:"
 msgid "Patient associated to this newborn baby"
@@ -78,7 +81,7 @@ msgstr "Особа, яка останньою зверталася за доку
 
 msgctxt "model:gnuhealth.paper_archive,name:"
 msgid "Location of PAPER Patient Clinical History"
-msgstr "Місцезнаходження ПАПЕРОВОЇ клінічної історії пацієнта"
+msgstr "Місцезнаходження ПАПЕРОВОЇ історії хвороби пацієнта"
 
 msgctxt "model:ir.action,name:gnuhealth_action_paper_archive"
 msgid "Medical Archives"
