@@ -173,12 +173,11 @@ class PatientOrthancStudy(ModelSQL, ModelView):
     def get_ohif_viewer_link(self, name):
         """
         Get the link for the OHIF viewer and study, based on the server,
-        study_instance_UID, and orthanc_UID.
+        study_instance_UID.
         """
         pre = "".join([self.server.rstrip("/"), "/"])
         url = urljoin(pre, (
-            'ohif/viewer?url=../studies/' +
-            f'{self.orthanc_UID}/ohif-dicom-json'))
+            'ohif/viewer?StudyInstanceUIDs=' + f'{self.study_instance_UID}'))
         return url
 
     def get_stone_viewer_link(self, name):
