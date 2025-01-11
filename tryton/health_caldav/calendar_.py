@@ -47,10 +47,10 @@ domimpl = xml.dom.minidom.getDOMImplementation()
 class Calendar(ModelSQL, ModelView):
     "Calendar"
     __name__ = 'calendar.calendar'
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
     description = fields.Text('Description')
     owner = fields.Many2One(
-        'res.user', 'Owner', select=True,
+        'res.user', 'Owner', 
         domain=[('email', '!=', None)],
         help='The user must have an email')
     read_users = fields.Many2Many(
@@ -354,10 +354,10 @@ class ReadUser(ModelSQL):
     __name__ = 'calendar.calendar-read-res.user'
     calendar = fields.Many2One(
         'calendar.calendar', 'Calendar',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
     user = fields.Many2One(
         'res.user', 'User', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
 
 class WriteUser(ModelSQL):
@@ -365,17 +365,17 @@ class WriteUser(ModelSQL):
     __name__ = 'calendar.calendar-write-res.user'
     calendar = fields.Many2One(
         'calendar.calendar', 'Calendar',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
 
     user = fields.Many2One(
         'res.user', 'User', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
 
 class Category(ModelSQL, ModelView):
     "Category"
     __name__ = 'calendar.category'
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
 
     @classmethod
     def __setup__(cls):
@@ -391,7 +391,7 @@ class Category(ModelSQL, ModelView):
 class Location(ModelSQL, ModelView):
     "Location"
     __name__ = 'calendar.location'
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
 
     @classmethod
     def __setup__(cls):
@@ -410,16 +410,16 @@ class Event(ModelSQL, ModelView):
     _rec_name = 'summary'
     uuid = fields.Char(
         'UUID', required=True,
-        help='Universally Unique Identifier', select=True)
+        help='Universally Unique Identifier')
     calendar = fields.Many2One(
         'calendar.calendar', 'Calendar',
-        required=True, select=True, ondelete="CASCADE")
+        required=True, ondelete="CASCADE")
     summary = fields.Char('Summary')
     sequence = fields.Integer('Sequence', required=True)
     description = fields.Text('Description')
     all_day = fields.Boolean('All Day')
-    dtstart = fields.DateTime('Start Date', required=True, select=True)
-    dtend = fields.DateTime('End Date', select=True)
+    dtstart = fields.DateTime('Start Date', required=True)
+    dtend = fields.DateTime('End Date')
     timezone = fields.Selection('timezones', 'Timezone')
     categories = fields.Many2Many(
         'calendar.event-calendar.category',
@@ -488,7 +488,7 @@ class Event(ModelSQL, ModelView):
             ('calendar', '=', Eval('calendar')),
         ],
         ondelete='CASCADE', depends=['uuid', 'calendar'])
-    recurrence = fields.DateTime('Recurrence', select=True, states={
+    recurrence = fields.DateTime('Recurrence', states={
         'invisible': ~Eval('_parent_parent'),
         'required': Bool(Eval('_parent_parent')),
     }, depends=['parent'])
@@ -1212,10 +1212,10 @@ class EventCategory(ModelSQL):
     __name__ = 'calendar.event-calendar.category'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
     category = fields.Many2One(
         'calendar.category', 'Category',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
 
 
 class AlarmMixin:
@@ -1243,7 +1243,7 @@ class EventAlarm(AlarmMixin, ModelSQL, ModelView):
     __name__ = 'calendar.event.alarm'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
@@ -1354,7 +1354,7 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
     __name__ = 'calendar.event.attendee'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
@@ -1561,7 +1561,7 @@ class EventRDate(DateMixin, ModelSQL, ModelView):
 
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        select=True, required=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
@@ -1851,7 +1851,7 @@ class EventRRule(RRuleMixin, ModelSQL, ModelView):
     __name__ = 'calendar.event.rrule'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        select=True, required=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
