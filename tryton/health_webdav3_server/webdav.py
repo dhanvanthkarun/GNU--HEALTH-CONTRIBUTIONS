@@ -53,7 +53,7 @@ def get_webdav_url():
 class Collection(ModelSQL, ModelView):
     "Collection"
     __name__ = "webdav.collection"
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
     parent = fields.Many2One('webdav.collection', 'Parent',
                              ondelete='RESTRICT',
                              domain=[('model', '=', None)])
@@ -647,8 +647,8 @@ class Share(ModelSQL, ModelView):
     __name__ = 'webdav.share'
     _rec_name = 'key'
 
-    path = fields.Char('Path', required=True, select=True)
-    key = fields.Char('Key', required=True, select=True,
+    path = fields.Char('Path', required=True)
+    key = fields.Char('Key', required=True,
                       states={'readonly': True, })
     user = fields.Many2One('res.user', 'User', required=True)
     expiration_date = fields.Date('Expiration Date', required=True)
