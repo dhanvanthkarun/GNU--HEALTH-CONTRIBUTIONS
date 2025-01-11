@@ -28,5 +28,7 @@ class User(metaclass=PoolMeta):
         else:
             cls.email.states['required'] = (
                 cls.email.states['required'] | required)
+        """ # Migration to GH 5.0. 'set' object has no attribute 'append
         if 'calendars' not in cls.email.depends:
             cls.email.depends.append('calendars')
+        """
