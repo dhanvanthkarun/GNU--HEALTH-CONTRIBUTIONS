@@ -170,7 +170,7 @@ class LabTest(metaclass=PoolMeta):
             'state': 'validated', })
 
         # Create lab PoL if the person has a federation account.
-        if (document.patient and document.patient.name.federation_account):
+        if (document.patient and document.patient.party.federation_account):
             cls.create_lab_pol(document)
 
         # Create Health condition to the patient
@@ -208,7 +208,7 @@ class LabTest(metaclass=PoolMeta):
                         or ''),
             'Other_source': str(document.other_source) or '',
             'Patient_ID': (document.patient
-                           and str(document.patient.name.ref)
+                           and str(document.patient.party.ref)
                            or ''),
             'Analyte_line': str(analyte_line),
         }
@@ -291,10 +291,10 @@ class LabTest(metaclass=PoolMeta):
 
             vals = {
                 'page': str(uuid4()),
-                'person': lab_info.patient.name.id,
+                'person': lab_info.patient.party.id,
                 'page_date': lab_info.date_analysis,
                 'federation_account':
-                    lab_info.patient.name.federation_account,
+                    lab_info.patient.party.federation_account,
                 'page_type': 'medical',
                 'medical_context': 'lab',
                 'relevance': 'important',
