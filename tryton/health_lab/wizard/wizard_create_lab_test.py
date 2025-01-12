@@ -56,10 +56,10 @@ class CreateLabTestOrder(Wizard):
                     gettext('health_lab.msg_lab_order_exists')
                 )
 
-            test_report_data['test'] = lab_test_order.name.id
+            test_report_data['test'] = lab_test_order.test_type.id
             test_report_data['source_type'] = lab_test_order.source_type
             test_report_data['specimen_type'] = (lab_test_order
-                                                 .name.specimen_type)
+                                                 .test_type.specimen_type)
             test_report_data['patient'] = (lab_test_order.patient_id
                                            and lab_test_order.patient_id.id)
             test_report_data['other_source'] = lab_test_order.other_source
@@ -68,7 +68,7 @@ class CreateLabTestOrder(Wizard):
             test_report_data['date_requested'] = lab_test_order.date
             test_report_data['request_order'] = lab_test_order.request
 
-            for critearea in lab_test_order.name.critearea:
+            for critearea in lab_test_order.test_type.critearea:
                 test_cases.append(('create', [{
                     'name': critearea.name,
                     'code': critearea.code,
@@ -179,7 +179,7 @@ class RequestPatientLabTest(Wizard):
         for test in self.start.tests:
             lab_test = {}
             lab_test['request'] = request_number
-            lab_test['name'] = test.id
+            lab_test['test_type'] = test.id
             lab_test['source_type'] = self.start.source_type
             lab_test['patient_id'] = (self.start.patient
                                       and self.start.patient.id)

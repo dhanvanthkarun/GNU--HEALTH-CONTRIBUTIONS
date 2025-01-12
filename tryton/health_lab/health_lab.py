@@ -592,7 +592,7 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     'Lab Test Request'
     __name__ = 'gnuhealth.patient.lab.test'
 
-    name = fields.Many2One(
+    test_type = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test Type',
         required=True)
     date = fields.DateTime('Date')
@@ -622,12 +622,6 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     source_name = fields.Function(
         fields.Text('Source name'), 'get_source_name')
 
-    def get_source_name(self, name):
-        if self.is_patient():
-            return self.patient_id and self.patient_id.rec_name or ''
-        else:
-            return (self.other_source or '')
-
     specimen_type = fields.Char(
         'Specimen',
         help='Specimen type, for example: '
@@ -645,12 +639,11 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     request = fields.Integer('Order', readonly=True)
     urgent = fields.Boolean('Urgent')
 
-    @classmethod
-    def __setup__(cls):
-        super(GnuHealthPatientLabTest, cls).__setup__()
-        cls._order.insert(0, ('date', 'DESC'))
-        cls._order.insert(1, ('request', 'DESC'))
-        cls._order.insert(2, ('name', 'ASC'))
+    def get_source_name(self, name):
+        if self.is_patient():
+            return self.patient_id and self.patient_id.rec_name or ''
+        else:
+            return (self.other_source or '')
 
     @staticmethod
     def default_date():
@@ -681,8 +674,8 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
-            if not values.get('name'):
-                values['name'] = cls.generate_code()
+            if not values.get('request'):
+                values['request'] = cls.generate_code()
 
         return super(GnuHealthPatientLabTest, cls).create(vlist)
 
@@ -701,6 +694,25 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
 
     def is_other_source(self):
         return (self.source_type == 'other_source')
+
+    @classmethod
+    def __setup__(cls):
+        super(GnuHealthPatientLabTest, cls).__setup__()
+        cls._order.insert(0, ('date', 'DESC'))
+        cls._order.insert(1, ('request', 'DESC'))
+        cls._order.insert(2, ('test_type', 'ASC'))
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to test_type
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('test_type')):
+            table_h.column_rename('name', 'test_type')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PatientHealthCondition(metaclass=PoolMeta):
