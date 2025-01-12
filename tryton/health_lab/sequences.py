@@ -6,7 +6,6 @@
 # GNU Health HMIS Lab sequences for this package
 
 from trytond.model import (ModelSQL, ValueMixin, fields)
-from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
 # Removed in GH 5.0
@@ -63,13 +62,12 @@ class _ConfigurationValue(ModelSQL):
 
     @classmethod
     def __register__(cls, module_name):
-        exist = backend.TableHandler.table_exist(cls._table)
 
         super(_ConfigurationValue, cls).__register__(module_name)
 
     """
     # Removed in GH 5.0
-    
+
         if not exist:
             cls._migrate_property([], [], [])
 
@@ -81,6 +79,7 @@ class _ConfigurationValue(ModelSQL):
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
     """
+
 
 class LabRequestSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     'Lab Request Sequence setup'
