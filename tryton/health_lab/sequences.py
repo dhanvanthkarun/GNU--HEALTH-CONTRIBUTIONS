@@ -9,7 +9,8 @@ from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
-from trytond.tools.multivalue import migrate_property
+# Removed in GH 5.0
+# from trytond.tools.multivalue import migrate_property
 
 # Sequences
 lab_request_sequence = fields.Many2One(
@@ -66,6 +67,9 @@ class _ConfigurationValue(ModelSQL):
 
         super(_ConfigurationValue, cls).__register__(module_name)
 
+    """
+    # Removed in GH 5.0
+    
         if not exist:
             cls._migrate_property([], [], [])
 
@@ -76,7 +80,7 @@ class _ConfigurationValue(ModelSQL):
         migrate_property(
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
-
+    """
 
 class LabRequestSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     'Lab Request Sequence setup'
