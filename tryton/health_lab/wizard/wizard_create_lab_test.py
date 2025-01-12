@@ -112,7 +112,7 @@ class RequestPatientLabTestStart(ModelView):
         ('other_source', 'Other')
     ], 'Source',
         help='Sample source type.',
-        sort=False, select=True)
+        sort=False)
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')})

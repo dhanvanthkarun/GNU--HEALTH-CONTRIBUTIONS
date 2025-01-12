@@ -48,10 +48,10 @@ class TestType(ModelSQL, ModelView):
     name = fields.Char(
         'Test',
         help="Test type, eg X-Ray, hemogram,biopsy...", required=True,
-        select=True, translate=True)
+        translate=True)
     code = fields.Char(
         'Code',
-        help="Short name - code for the test", required=True, select=True)
+        help="Short name - code for the test", required=True)
 
     specimen_type = fields.Char(
         'Specimen',
@@ -116,7 +116,7 @@ class TestType(ModelSQL, ModelView):
         ('molecular_biology', 'Molecular Biology Testing'),
         ('chromosome_genetic', 'Chromosome and Genetic Disease Detection'),
         ('others', 'Others'),
-    ], 'Category', sort=False, select=True)
+    ], 'Category', sort=False)
 
     @staticmethod
     def default_category():
@@ -132,7 +132,7 @@ class TestType(ModelSQL, ModelView):
          'Table with result column and inline images (no header)'),
         ('no_tbl', 'Do not use table'),
         ('do_not_show', 'Do not show in report'),
-    ], 'Report style', sort=False, select=True)
+    ], 'Report style', sort=False)
 
     @staticmethod
     def default_report_style():
@@ -153,7 +153,7 @@ class TestType(ModelSQL, ModelView):
         tags = self.tags.split(':')
         return (tag in tags)
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -209,19 +209,19 @@ class Lab(ModelSQL, ModelView):
     name = fields.Char('ID', help="Lab result ID", readonly=True)
     test = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test type',
-        help="Lab test type", required=True, select=True)
+        help="Lab test type", required=True)
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other_source', 'Other')
     ], 'Source',
         help='Sample source type.',
-        sort=False, select=True)
+        sort=False)
     source_type_str = source_type.translated('source_type')
 
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
         states={'invisible': (Eval('source_type') != 'patient')},
-        help="Patient", select=True)
+        help="Patient")
 
     other_source = fields.Char(
         'Other',
@@ -256,10 +256,10 @@ class Lab(ModelSQL, ModelView):
 
     pathologist = fields.Many2One(
         'gnuhealth.healthprofessional', 'Pathologist',
-        help="Pathologist", select=True)
+        help="Pathologist")
     requestor = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
-        help="Doctor who requested the test", select=True)
+        help="Doctor who requested the test")
     results = fields.Text('Results')
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
@@ -280,8 +280,8 @@ class Lab(ModelSQL, ModelView):
                          c.remarks is not None for c in self.critearea])
 
     date_requested = fields.DateTime(
-        'Request Date', required=True, select=True)
-    date_analysis = fields.DateTime('Analysis Date', select=True)
+        'Request Date', required=True)
+    date_analysis = fields.DateTime('Analysis Date')
     request_order = fields.Integer('Order', readonly=True)
 
     pathology = fields.Many2One(
@@ -414,10 +414,10 @@ class GnuHealthLabTestUnits(ModelSQL, ModelView):
     __name__ = 'gnuhealth.lab.test.units'
 
     name = fields.Char(
-        'Unit', select=True, translate=True)
+        'Unit', translate=True)
 
     code = fields.Char(
-        'Code', select=True, translate=False)
+        'Code', translate=False)
 
     @classmethod
     def __setup__(cls):
@@ -438,8 +438,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     __name__ = 'gnuhealth.lab.test.critearea'
 
     name = fields.Char(
-        'Analyte', required=True, select=True,
-        translate=True)
+        'Analyte', required=True, translate=True)
 
     test_method = fields.Char(
         'Method',
@@ -476,11 +475,9 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         ' like age, sex, comorbidities, ...')
     units = fields.Many2One('gnuhealth.lab.test.units', 'Units')
     test_type_id = fields.Many2One(
-        'gnuhealth.lab.test_type', 'Test type',
-        select=True)
+        'gnuhealth.lab.test_type', 'Test type')
     gnuhealth_lab_id = fields.Many2One(
-        'gnuhealth.lab', 'Test Cases',
-        select=True)
+        'gnuhealth.lab', 'Test Cases')
     sequence = fields.Integer('Sequence')
 
     # code field is mainly used by interface script, for example:
@@ -496,7 +493,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     # name field is not suitable for interface stript too, for it
     # will be changed when user use different languages.
     code = fields.Char(
-        'Code', select=True, translate=False,
+        'Code', translate=False,
         help="Lab test critearea code, "
         "mainly used by lab interface script.")
 
@@ -597,25 +594,24 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
 
     name = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test Type',
-        required=True, select=True)
-    date = fields.DateTime('Date', select=True)
+        required=True)
+    date = fields.DateTime('Date')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('tested', 'Tested'),
         ('ordered', 'Ordered'),
         ('cancel', 'Cancel'),
-    ], 'State', readonly=True, select=True)
+    ], 'State', readonly=True)
     source_type = fields.Selection([
         ('patient', 'Patient'),
         ('other_source', 'Other')
     ], 'Source',
         help='Sample source type.',
-        sort=False, select=True)
+        sort=False)
 
     patient_id = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        states={'invisible': (Eval('source_type') != 'patient')},
-        select=True)
+        states={'invisible': (Eval('source_type') != 'patient')})
 
     other_source = fields.Char(
         'Other',
@@ -639,12 +635,11 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
 
     doctor_id = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
-        help="Health professional who requests the lab test.", select=True)
+        help="Health professional who requests the lab test.")
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
-             " existing health condition, a regular health checkup, ...",
-             select=True)
+             " existing health condition, a regular health checkup, ...")
 
     comment = fields.Text('Additional Information')
     request = fields.Integer('Order', readonly=True)
