@@ -320,7 +320,7 @@ class AmbulanceSupport (ModelSQL, ModelView):
         domain=[('state', '=', 'available')],)
 
     healthprofs = fields.One2Many(
-        'gnuhealth.ambulance_hp', 'name',
+        'gnuhealth.ambulance_hp', 'sr',
         'Health Professionals')
 
     state = fields.Selection([
@@ -429,11 +429,23 @@ class AmbulanceHealthProfessional(ModelSQL, ModelView):
     'Ambulance Health Professionals'
     __name__ = 'gnuhealth.ambulance_hp'
 
-    name = fields.Many2One('gnuhealth.ambulance.support', 'SR')
+    sr = fields.Many2One('gnuhealth.ambulance.support', 'SR')
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
         help='Health Professional for this ambulance and support request')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to test_type
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('sr')):
+            table_h.column_rename('name', 'sr')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class SupportRequestLog (ModelSQL, ModelView):
