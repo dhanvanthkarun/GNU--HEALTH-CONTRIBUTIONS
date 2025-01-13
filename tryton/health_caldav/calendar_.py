@@ -50,7 +50,7 @@ class Calendar(ModelSQL, ModelView):
     name = fields.Char('Name', required=True)
     description = fields.Text('Description')
     owner = fields.Many2One(
-        'res.user', 'Owner', 
+        'res.user', 'Owner',
         domain=[('email', '!=', None)],
         help='The user must have an email')
     read_users = fields.Many2Many(
