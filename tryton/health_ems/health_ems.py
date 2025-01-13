@@ -71,7 +71,7 @@ class Ambulance (ModelSQL, ModelView):
 
     vehicle_remarks = fields.Text('Remarks')
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
