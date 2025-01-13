@@ -209,23 +209,23 @@ class PatientSESAssessment(ModelSQL, ModelView):
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient', '_parent_patient.name')
+    @fields.depends('patient', '_parent_patient.party')
     def on_change_patient(self):
         self.gender = self.patient.gender
         self.computed_age = self.patient.age
 
         occupation = education = du = housing = None
-        if (self.patient and self.patient.name.occupation):
-            occupation = self.patient.name.occupation
+        if (self.patient and self.patient.party.occupation):
+            occupation = self.patient.party.occupation
 
-        if (self.patient and self.patient.name.education):
-            education = self.patient.name.education
+        if (self.patient and self.patient.party.education):
+            education = self.patient.party.education
 
-        if (self.patient and self.patient.name.du):
-            du = self.patient.name.du
+        if (self.patient and self.patient.party.du):
+            du = self.patient.party.du
 
-        if (self.patient and self.patient.name.du):
-            housing = self.patient.name.du.housing
+        if (self.patient and self.patient.party.du):
+            housing = self.patient.party.du.housing
 
         self.occupation = occupation
         self.education = education
@@ -239,7 +239,7 @@ class PatientSESAssessment(ModelSQL, ModelView):
     def search_patient_gender(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.gender', clause[1], value))
+        res.append(('patient.party.gender', clause[1], value))
         return res
 
     @classmethod
@@ -254,9 +254,9 @@ class PatientSESAssessment(ModelSQL, ModelView):
         })
 
     def patient_age_at_assessment(self, name):
-        if (self.patient.name.dob and self.assessment_date):
+        if (self.patient.party.dob and self.assessment_date):
             rdelta = relativedelta(self.assessment_date.date(),
-                                   self.patient.name.dob)
+                                   self.patient.party.dob)
             return format_years_months_days(
                 years=rdelta.years,
                 months=rdelta.months,
@@ -370,15 +370,15 @@ class GnuHealthPatient(ModelSQL, ModelView):
         "spend outside the house")
 
     def get_patient_occupation(self, name):
-        if (self.name.occupation):
-            return self.name.occupation.id
+        if (self.party.occupation):
+            return self.party.occupation.id
 
     def get_patient_education(self, name):
-        return self.name.education
+        return self.party.education
 
     def get_patient_housing(self, name):
-        if (self.name.du):
-            return self.name.du.housing
+        if (self.party.du):
+            return self.party.du.housing
 
     def get_patient_ses(self, name):
         if (self.ses_assessments):
