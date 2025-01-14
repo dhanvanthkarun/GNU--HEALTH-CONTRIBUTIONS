@@ -305,6 +305,10 @@ class GeneVariant(ModelSQL, ModelView):
                 ('dbsnp',) + tuple(clause[1:]),
                 ]
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
         # Migration from 4.4: rename name to patient
         if (table_h.column_exist('name')
                 and not table_h.column_exist('gene')):
@@ -312,6 +316,7 @@ class GeneVariant(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
+
 
 class GeneVariantPhenotype(ModelSQL, ModelView):
     'Variant Phenotypes'
