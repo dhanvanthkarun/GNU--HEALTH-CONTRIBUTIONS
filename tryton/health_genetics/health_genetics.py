@@ -338,7 +338,7 @@ class GeneVariantPhenotype(ModelSQL, ModelView):
 
     def get_gene(self, name):
         if (self.variant):
-            return self.variant.name.id
+            return self.variant.gene.id
 
     def get_rec_name(self, name):
         if self.phenotype:
