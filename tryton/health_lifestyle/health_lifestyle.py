@@ -243,7 +243,7 @@ class PatientCAGE(ModelSQL, ModelView):
     'Patient CAGE Questionnaire'
     __name__ = 'gnuhealth.patient.cage'
 
-    name = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
 
     evaluation_date = fields.DateTime('Date')
 
@@ -470,4 +470,4 @@ class MedicalPatient(metaclass=PoolMeta):
 
     cage = fields.One2Many(
         'gnuhealth.patient.cage',
-        'name', 'CAGE')
+        'patient', 'CAGE')

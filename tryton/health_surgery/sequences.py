@@ -9,7 +9,8 @@ from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
-from trytond.tools.multivalue import migrate_property
+# Removed in GH 5.0
+# from trytond.tools.multivalue import migrate_property
 
 # Sequences
 surgery_code_sequence = fields.Many2One(
@@ -41,6 +42,7 @@ class _ConfigurationValue(ModelSQL):
 
     _configuration_value_field = None
 
+    """
     @classmethod
     def __register__(cls, module_name):
         exist = backend.TableHandler.table_exist(cls._table)
@@ -58,6 +60,7 @@ class _ConfigurationValue(ModelSQL):
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
 
+    """
 
 class SurgeryCodeSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     'Health Service Request Sequence setup'

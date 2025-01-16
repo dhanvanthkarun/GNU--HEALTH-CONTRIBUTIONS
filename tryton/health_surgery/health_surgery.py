@@ -189,9 +189,9 @@ class Surgery(ModelSQL, ModelView):
             return None
 
     def patient_age_at_surgery(self, name):
-        if (self.patient.name.dob and self.surgery_date):
+        if (self.patient.party.dob and self.surgery_date):
             rdelta = relativedelta(self.surgery_date.date(),
-                                   self.patient.name.dob)
+                                   self.patient.party.dob)
             return format_years_months_days(
                 years=rdelta.years,
                 months=rdelta.months,
@@ -216,11 +216,11 @@ class Surgery(ModelSQL, ModelView):
     discharge_instructions = fields.Text('Discharge Instructions')
 
     procedures = fields.One2Many(
-        'gnuhealth.operation', 'name', 'Procedures',
+        'gnuhealth.operation', 'surgery', 'Procedures',
         help="Procedures / Interventions done in the surgery")
 
     supplies = fields.One2Many(
-        'gnuhealth.surgery_supply', 'name', 'Supplies',
+        'gnuhealth.surgery_supply', 'surgery', 'Supplies',
         help="List of the supplies required for the surgery")
 
     pathology = fields.Many2One(
@@ -432,13 +432,13 @@ class Surgery(ModelSQL, ModelView):
     ], 'Approach', sort=False)
 
     surgery_complications = fields.One2Many(
-        'gnuhealth.surgery.complication', 'name', 'Complications',
+        'gnuhealth.surgery.complication', 'surgery', 'Complications',
         help="Complications related to the surgery")
 
     complications_notes = fields.Text('Complications')
 
     drains = fields.One2Many(
-        'gnuhealth.surgery.drain', 'name', 'Drains',
+        'gnuhealth.surgery.drain', 'surgery', 'Drains',
         help="Drains on this surgery")
 
     extra_info = fields.Text('Extra Info')
@@ -453,7 +453,7 @@ class Surgery(ModelSQL, ModelView):
                                           'get_report_surgery_time')
 
     surgery_team = fields.One2Many(
-        'gnuhealth.surgery_team', 'name', 'Team Members',
+        'gnuhealth.surgery_team', 'surgery', 'Team Members',
         help="Professionals Involved in the surgery")
 
     postoperative_dx = fields.Many2One(
@@ -533,12 +533,12 @@ class Surgery(ModelSQL, ModelView):
     def search_patient_gender(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.gender', clause[1], value))
+        res.append(('patient.party.gender', clause[1], value))
         return res
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient', '_parent_patient.name')
+    @fields.depends('patient', '_parent_patient.party')
     def on_change_patient(self):
         if (self.patient):
             self.gender = self.patient.gender
@@ -583,7 +583,7 @@ class Surgery(ModelSQL, ModelView):
                 institution = values.get('institution')
 
                 values = {
-                    'name': op_room,
+                    'oproom': op_room,
                     'reserve_from': surgery_date,
                     'reserve_to': surgery_end_date,
                     'surgery': surgery,
@@ -834,7 +834,7 @@ class Operation(ModelSQL, ModelView):
     'Operation - Surgical Procedures'
     __name__ = 'gnuhealth.operation'
 
-    name = fields.Many2One('gnuhealth.surgery', 'Surgery')
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
         help="Procedure Code, for example ICD-10-PCS or ICPM")
@@ -848,7 +848,7 @@ class SurgeryDrain(ModelSQL, ModelView):
     'Surgical drain'
     __name__ = 'gnuhealth.surgery.drain'
 
-    name = fields.Many2One('gnuhealth.surgery', 'Surgery')
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
     drain = fields.Selection([
         (None, ''),
         ('penrose', 'Penrose'),
@@ -871,7 +871,7 @@ class SurgerySupply(ModelSQL, ModelView):
     'Supplies related to the surgery'
     __name__ = 'gnuhealth.surgery_supply'
 
-    name = fields.Many2One('gnuhealth.surgery', 'Surgery')
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
     qty = fields.Numeric('Qty', required=True,
                          help="Initial required quantity")
     supply = fields.Many2One(
@@ -892,7 +892,7 @@ class SurgeryTeam(ModelSQL, ModelView):
     'Team Involved in the surgery'
     __name__ = 'gnuhealth.surgery_team'
 
-    name = fields.Many2One('gnuhealth.surgery', 'Surgery')
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
     team_member = fields.Many2One(
         'gnuhealth.healthprofessional', 'Member', required=True,
         help="Health professional that participated on this surgery")
@@ -910,7 +910,7 @@ class SurgeryComplication(ModelSQL, ModelView):
     'Surgery Complication'
     __name__ = 'gnuhealth.surgery.complication'
 
-    name = fields.Many2One('gnuhealth.surgery', 'Surgery')
+    surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
 
     complication = fields.Many2One(
         'gnuhealth.pathology', 'Complication', required=True,
@@ -1292,7 +1292,7 @@ class ORScheduler(ModelSQL, ModelView):
     'Operating Rooms Schedules'
     __name__ = 'gnuhealth.or.schedule'
 
-    name = fields.Many2One(
+    oproom = fields.Many2One(
         'gnuhealth.hospital.or', 'Op. Room',
         required=True, help='Operating Room')
 
@@ -1343,14 +1343,14 @@ class ORScheduler(ModelSQL, ModelView):
 
     # Display Op. Room current state
     def get_or_state(self, name):
-        return self.name.state
+        return self.oproom.state
 
     # Allow searching the state of the Operating Room
     @classmethod
     def search_or_state(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('name.state', clause[1], value))
+        res.append(('oproom.state', clause[1], value))
         return res
 
     @staticmethod
@@ -1362,10 +1362,10 @@ class ORScheduler(ModelSQL, ModelView):
         return datetime.now()
 
     # Update time frame depending on the operating room and start date
-    @fields.depends('name', 'reserve_from', 'reserve_to')
+    @fields.depends('oproom', 'reserve_from', 'reserve_to')
     def on_change_with_reserve_to(self):
-        if (self.name and self.reserve_from):
-            timeslot = self.name.timeslot
+        if (self.oproom and self.reserve_from):
+            timeslot = self.oproom.timeslot
             return self.reserve_from + relativedelta(minutes=+int(timeslot))
 
     # Update specialty based on the health professional

@@ -15,7 +15,9 @@ from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
-from trytond.tools.multivalue import migrate_property
+
+#Removed in GH 5.0
+#from trytond.tools.multivalue import migrate_property
 
 # Sequences
 imaging_req_seq = fields.MultiValue(
@@ -73,6 +75,7 @@ class _ConfigurationValue(ModelSQL):
 
         super(_ConfigurationValue, cls).__register__(module_name)
 
+    """
         if not exist:
             cls._migrate_property([], [], [])
 
@@ -84,7 +87,8 @@ class _ConfigurationValue(ModelSQL):
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
 
-
+    """
+    
 class ImagingRequestSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     'Imaging Request Sequence setup'
     __name__ = 'gnuhealth.sequences.imaging_req_seq'
