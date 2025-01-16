@@ -39,16 +39,16 @@ class PatientPregnancy(ModelSQL, ModelView):
 
     # Show paient age at the moment of LMP
     def patient_age_at_pregnancy(self, name):
-        if (self.name.dob and self.lmp):
-            rdelta = relativedelta(self.lmp, self.name.dob)
+        if (self.patient.dob and self.lmp):
+            rdelta = relativedelta(self.lmp, self.patient.dob)
             years = str(rdelta.years)
             return years
         else:
             return None
 
-    name = fields.Many2One(
+    patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        domain=[('name.gender', '=', 'f')])
+        domain=[('party.gender', '=', 'f')])
 
     gravida = fields.Integer('Pregnancy #', required=True)
 
@@ -87,13 +87,13 @@ class PatientPregnancy(ModelSQL, ModelView):
         'get_pregnancy_data')
 
     prenatal_evaluations = fields.One2Many(
-        'gnuhealth.patient.prenatal.evaluation', 'name',
+        'gnuhealth.patient.prenatal.evaluation', 'pregnancy',
         'Prenatal Evaluations')
     perinatal = fields.One2Many(
-        'gnuhealth.perinatal', 'name', 'Perinatal Info')
+        'gnuhealth.perinatal', 'pregnancy', 'Perinatal Info')
     puerperium_monitor = fields.One2Many(
         'gnuhealth.puerperium.monitor',
-        'name', 'Puerperium monitor')
+        'pregnancy', 'Puerperium monitor')
     current_pregnancy = fields.Boolean(
         'Current Pregnancy', help='This field marks the current pregnancy')
     fetuses = fields.Integer('Fetuses', required=True)
@@ -185,46 +185,36 @@ class PatientPregnancy(ModelSQL, ModelView):
     # Retrieve the info from the patient current GPA status
     def patient_obstetric_info(self, name):
         if (name == "gravidae"):
-            return self.name.gravida
+            return self.patient.gravida
         if (name == "premature"):
-            return self.name.premature
+            return self.patient.premature
         if (name == "abortions"):
-            return self.name.abortions
+            return self.patient.abortions
         if (name == "stillbirths"):
-            return self.name.stillbirths
+            return self.patient.stillbirths
 
     # Retrieve Blood type and Rh and Hemoglobin
     def patient_blood_info(self, name):
         if (name == "blood_type"):
-            return self.name.blood_type
+            return self.patient.blood_type
         if (name == "rh"):
-            return self.name.rh
+            return self.patient.rh
         if (name == "hb"):
-            return self.name.hb
+            return self.patient.hb
 
     # Show the values from patient upon entering the history
-    @fields.depends('name', '_parent_name.name')
+    @fields.depends('patient', '_parent_name.patient')
     def on_change_name(self):
         # Obsterics info
-        self.gravidae = self.name.gravida
-        self.premature = self.name.premature
-        self.abortions = self.name.abortions
-        self.stillbirths = self.name.stillbirths
+        self.gravidae = self.patient.gravida
+        self.premature = self.patient.premature
+        self.abortions = self.patient.abortions
+        self.stillbirths = self.patient.stillbirths
         # Rh
-        self.blood_type = self.name.blood_type
-        self.rh = self.name.rh
+        self.blood_type = self.patient.blood_type
+        self.rh = self.patient.rh
         # Hb
-        self.hb = self.name.hb
-
-    @classmethod
-    def __setup__(cls):
-        super(PatientPregnancy, cls).__setup__()
-        t = cls.__table__()
-        cls._sql_constraints += [
-            ('gravida_uniq', Unique(t, t.name, t.gravida),
-             'This pregnancy code for this patient already exists'),
-        ]
-        cls._order.insert(0, ('lmp', 'DESC'))
+        self.hb = self.patient.hb
 
     @classmethod
     def validate(cls, pregnancies):
@@ -236,10 +226,10 @@ class PatientPregnancy(ModelSQL, ModelView):
         ''' Check for only one current pregnancy in the patient '''
         pregnancy = Table('gnuhealth_patient_pregnancy')
         cursor = Transaction().connection.cursor()
-        patient_id = int(self.name.id)
-        cursor.execute(*pregnancy.select(Count(pregnancy.name),
+        patient_id = int(self.patient.id)
+        cursor.execute(*pregnancy.select(Count(pregnancy.patient),
                        where=(pregnancy.current_pregnancy == 'true') &
-            (pregnancy.name == patient_id)))
+            (pregnancy.patient == patient_id)))
 
         records = cursor.fetchone()[0]
         if records > 1:
@@ -291,12 +281,35 @@ class PatientPregnancy(ModelSQL, ModelView):
         if self.warning:
             return 'gnuhealth-warning'
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientPregnancy, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints += [
+            ('gravida_uniq', Unique(t, t.patient, t.gravida),
+             'This pregnancy code for this patient already exists'),
+        ]
+        cls._order.insert(0, ('lmp', 'DESC'))
+
 
 class PrenatalEvaluation(ModelSQL, ModelView):
     'Prenatal and Antenatal Evaluations'
     __name__ = 'gnuhealth.patient.prenatal.evaluation'
 
-    name = fields.Many2One('gnuhealth.patient.pregnancy', 'Patient Pregnancy')
+    pregnancy = fields.Many2One(
+        'gnuhealth.patient.pregnancy', 'Patient Pregnancy')
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation',
         'Patient Evaluation', readonly=True)
@@ -372,19 +385,32 @@ class PrenatalEvaluation(ModelSQL, ModelView):
     def get_patient_evaluation_data(self, name):
         if name == 'gestational_weeks':
             gestational_age = datetime.datetime.date(self.evaluation_date) - \
-                self.name.lmp
+                self.pregnancy.lmp
             return int((gestational_age.days) / 7)
         if name == 'gestational_days':
             gestational_age = datetime.datetime.date(self.evaluation_date) - \
-                self.name.lmp
+                self.pregnancy.lmp
             return gestational_age.days
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to pregnancy
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('pregnancy')):
+            table_h.column_rename('name', 'pregnancy')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PuerperiumMonitor(ModelSQL, ModelView):
     'Puerperium Monitor'
     __name__ = 'gnuhealth.puerperium.monitor'
 
-    name = fields.Many2One('gnuhealth.patient.pregnancy', 'Patient Pregnancy')
+    pregnancy = fields.Many2One(
+        'gnuhealth.patient.pregnancy', 'Patient Pregnancy')
     date = fields.DateTime('Date and Time', required=True)
     # Deprecated in 1.6.4 All the clinical information will be taken at the
     # main evaluation.
@@ -430,12 +456,25 @@ class PuerperiumMonitor(ModelSQL, ModelView):
     def default_healthprof():
         return get_health_professional()
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to pregnancy
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('pregnancy')):
+            table_h.column_rename('name', 'pregnancy')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class Perinatal(ModelSQL, ModelView):
     'Perinatal Information'
     __name__ = 'gnuhealth.perinatal'
 
-    name = fields.Many2One('gnuhealth.patient.pregnancy', 'Patient Pregnancy')
+    pregnancy = fields.Many2One(
+        'gnuhealth.patient.pregnancy', 'Patient Pregnancy')
     admission_code = fields.Char('Code')
     # 1.6.4 Gravida number and abortion information go now in the pregnancy
     # header. It will be calculated as a function if needed
@@ -482,7 +521,7 @@ class Perinatal(ModelSQL, ModelView):
     vaginal_tearing = fields.Boolean('Vaginal tearing')
     forceps = fields.Boolean('Forceps')
     monitoring = fields.One2Many(
-        'gnuhealth.perinatal.monitor', 'name',
+        'gnuhealth.perinatal.monitor', 'perinatal',
         'Monitors')
     laceration = fields.Selection([
         (None, ''),
@@ -521,15 +560,27 @@ class Perinatal(ModelSQL, ModelView):
     def get_perinatal_information(self, name):
         if name == 'gestational_weeks':
             gestational_age = datetime.datetime.date(self.admission_date) - \
-                self.name.lmp
+                self.pregnancy.lmp
             return int((gestational_age.days) / 7)
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to pregnancy
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('pregnancy')):
+            table_h.column_rename('name', 'pregnancy')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PerinatalMonitor(ModelSQL, ModelView):
     'Perinatal Monitor'
     __name__ = 'gnuhealth.perinatal.monitor'
 
-    name = fields.Many2One(
+    perinatal = fields.Many2One(
         'gnuhealth.perinatal',
         'Patient Perinatal Evaluation')
     date = fields.DateTime('Date and Time')
@@ -550,6 +601,18 @@ class PerinatalMonitor(ModelSQL, ModelView):
         ('t', 'Transverse Lie'),
         ('t', 'Footling Breech'),
     ], 'Fetus Position', sort=False)
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to perinatal
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('perinatal')):
+            table_h.column_rename('name', 'perinatal')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class GnuHealthPatient(metaclass=PoolMeta):
@@ -626,22 +689,24 @@ class GnuHealthPatient(metaclass=PoolMeta):
     #        'Perinatal Info')
     menstrual_history = fields.One2Many(
         'gnuhealth.patient.menstrual_history',
-        'name', 'Menstrual History')
+        'patient', 'Menstrual History')
     mammography_history = fields.One2Many(
-        'gnuhealth.patient.mammography_history', 'name', 'Mammography History',
+        'gnuhealth.patient.mammography_history',
+        'patient', 'Mammography History',
         states={'invisible': Not(Bool(Eval('mammography')))},
     )
     pap_history = fields.One2Many(
-        'gnuhealth.patient.pap_history', 'name',
+        'gnuhealth.patient.pap_history', 'patient',
         'PAP smear History',
         states={'invisible': Not(Bool(Eval('pap_test')))},
     )
     colposcopy_history = fields.One2Many(
-        'gnuhealth.patient.colposcopy_history', 'name', 'Colposcopy History',
+        'gnuhealth.patient.colposcopy_history', 'patient',
+        'Colposcopy History',
         states={'invisible': Not(Bool(Eval('colposcopy')))},
     )
     pregnancy_history = fields.One2Many(
-        'gnuhealth.patient.pregnancy', 'name',
+        'gnuhealth.patient.pregnancy', 'patient',
         'Pregnancies')
 
     def get_pregnancy_info(self, name):
@@ -703,7 +768,7 @@ class PatientMenstrualHistory(ModelSQL, ModelView):
     'Menstrual History'
     __name__ = 'gnuhealth.patient.menstrual_history'
 
-    name = fields.Many2One(
+    patient = fields.Many2One(
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
@@ -754,12 +819,24 @@ class PatientMenstrualHistory(ModelSQL, ModelView):
     def default_volume():
         return 'normal'
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class PatientMammographyHistory(ModelSQL, ModelView):
     'Mammography History'
     __name__ = 'gnuhealth.patient.mammography_history'
 
-    name = fields.Many2One(
+    patient = fields.Many2One(
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
@@ -798,17 +875,29 @@ class PatientMammographyHistory(ModelSQL, ModelView):
     def default_last_mammography():
         return Pool().get('ir.date').today()
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class PatientPAPHistory(ModelSQL, ModelView):
     'PAP Test History'
     __name__ = 'gnuhealth.patient.pap_history'
 
-    name = fields.Many2One(
+    patient = fields.Many2One(
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
-        domain=[('patient', '=', Eval('name'))],
-        depends=['name'])
+        domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'])
     evaluation_date = fields.Date('Date', help="Date", required=True)
     last_pap = fields.Date('Previous', help="Last Papanicolau")
     result = fields.Selection([
@@ -846,12 +935,24 @@ class PatientPAPHistory(ModelSQL, ModelView):
     def default_last_pap():
         return Pool().get('ir.date').today()
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class PatientColposcopyHistory(ModelSQL, ModelView):
     'Colposcopy History'
     __name__ = 'gnuhealth.patient.colposcopy_history'
 
-    name = fields.Many2One(
+    patient = fields.Many2One(
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
@@ -889,3 +990,15 @@ class PatientColposcopyHistory(ModelSQL, ModelView):
     @staticmethod
     def default_last_colposcopy():
         return Pool().get('ir.date').today()
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
