@@ -185,7 +185,7 @@ class ImagingTestResult(ModelSQL, ModelView):
     def patient_age_at_evaluation(self, name):
         if (self.patient.name.dob and self.date):
             return compute_age_from_dates(
-                self.patient.name.dob, None, None, None, 'age',
+                self.patient.party.dob, None, None, None, 'age',
                 self.date.date())
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True)
