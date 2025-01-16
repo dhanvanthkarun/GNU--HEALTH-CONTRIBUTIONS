@@ -74,8 +74,7 @@ class RequestPatientImagingTestStart(ModelView):
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or "
-        "existing health condition, a regular health checkup, ...",
-        select=True)
+        "existing health condition, a regular health checkup, ...")
     tests = fields.Many2Many(
         'gnuhealth.request-imaging-test', 'request',
         'test', 'Tests', required=True)

@@ -53,7 +53,7 @@ class ImagingTest(ModelSQL, ModelView):
         required=True)
     product = fields.Many2One('product.product', 'Product', required=True)
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -90,8 +90,7 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
-             " existing health condition, a regular health checkup, ...",
-             select=True)
+             " existing health condition, a regular health checkup, ...")
 
     comment = fields.Text('Additional Information')
     request = fields.Char('Order', readonly=True)

@@ -836,7 +836,7 @@ class Operation(ModelSQL, ModelView):
 
     name = fields.Many2One('gnuhealth.surgery', 'Surgery')
     procedure = fields.Many2One(
-        'gnuhealth.procedure', 'Code', required=True, select=True,
+        'gnuhealth.procedure', 'Code', required=True,
         help="Procedure Code, for example ICD-10-PCS or ICPM")
     notes = fields.Text('Notes')
 
@@ -894,7 +894,7 @@ class SurgeryTeam(ModelSQL, ModelView):
 
     name = fields.Many2One('gnuhealth.surgery', 'Surgery')
     team_member = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Member', required=True, select=True,
+        'gnuhealth.healthprofessional', 'Member', required=True,
         help="Health professional that participated on this surgery")
 
     role = fields.Many2One(
@@ -921,7 +921,7 @@ class SurgeryComplication(ModelSQL, ModelView):
         ('1_mi', 'Mild'),
         ('2_mo', 'Moderate'),
         ('3_sv', 'Severe'),
-    ], 'Severity', select=True, sort=False)
+    ], 'Severity', sort=False)
 
     severity_str = severity.translated('severity')
 
@@ -1294,7 +1294,7 @@ class ORScheduler(ModelSQL, ModelView):
 
     name = fields.Many2One(
         'gnuhealth.hospital.or', 'Op. Room',
-        select=True, required=True, help='Operating Room')
+        required=True, help='Operating Room')
 
     surgery = fields.Many2One('gnuhealth.surgery', 'Surgery')
 
