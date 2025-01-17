@@ -303,7 +303,6 @@ class RoundingProcedure(ModelSQL, ModelView):
     name = fields.Many2One('gnuhealth.patient.rounding', 'Rounding')
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
-        select=True,
         help="Procedure Code, for example ICD-10-PCS Code 7-character string")
     notes = fields.Text('Notes')
 
@@ -503,6 +502,5 @@ class AmbulatoryCareProcedure(ModelSQL, ModelView):
     name = fields.Many2One('gnuhealth.patient.ambulatory_care', 'Session')
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
-        select=True,
         help="Procedure Code")
     comments = fields.Char('Comments')

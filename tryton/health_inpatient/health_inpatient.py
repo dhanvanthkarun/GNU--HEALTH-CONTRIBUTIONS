@@ -71,10 +71,10 @@ class InpatientRegistration(ModelSQL, ModelView):
         Eval('state') == 'done',
         Eval('state') == 'finished')}
 
-    name = fields.Char('Registration Code', readonly=True, select=True)
+    name = fields.Char('Registration Code', readonly=True)
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        required=True, select=True, states=STATES)
+        required=True, states=STATES)
     admission_type = fields.Selection([
         (None, ''),
         ('routine', 'Routine'),
@@ -82,10 +82,10 @@ class InpatientRegistration(ModelSQL, ModelView):
         ('elective', 'Elective'),
         ('urgent', 'Urgent'),
         ('emergency', 'Emergency'),
-    ], 'Admission type', required=True, select=True, states=STATES)
+    ], 'Admission type', required=True, states=STATES)
     hospitalization_date = fields.DateTime(
         'Hospitalization date',
-        required=True, select=True, states=STATES)
+        required=True, states=STATES)
     discharge_date = fields.DateTime(
         'Expected Discharge Date', required=True,
         states=STATES)
@@ -97,8 +97,7 @@ class InpatientRegistration(ModelSQL, ModelView):
         'Operating Physician', states=STATES)
     admission_reason = fields.Many2One(
         'gnuhealth.pathology',
-        'Reason for Admission', help="Reason for Admission", states=STATES,
-        select=True)
+        'Reason for Admission', help="Reason for Admission", states=STATES)
     bed = fields.Many2One(
         'gnuhealth.hospital.bed', 'Hospital Bed',
         states={
@@ -131,7 +130,7 @@ class InpatientRegistration(ModelSQL, ModelView):
         ('hospitalized', 'hospitalized'),
         ('done', 'Discharged - needs cleaning'),
         ('finished', 'Finished'),
-    ), 'Status', select=True, readonly=True)
+    ), 'Status', readonly=True)
 
     bed_transfers = fields.One2Many(
         'gnuhealth.bed.transfer', 'name',
@@ -532,7 +531,7 @@ class InpatientMedication (ModelSQL, ModelView):
         ('days', 'days'),
         ('weeks', 'weeks'),
         ('wr', 'when required'),
-    ], 'unit', select=True, sort=False)
+    ], 'unit', sort=False)
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
     is_active = fields.Boolean(

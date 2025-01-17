@@ -19,7 +19,7 @@ class CreateBedTransferInit(ModelView):
     __name__ = 'gnuhealth.bed.transfer.init'
     newbed = fields.Many2One(
         'gnuhealth.hospital.bed', 'New Bed',
-        required=True, select=True)
+        required=True)
     reason = fields.Char('Reason', required=True)
 
     orig_bed_state = fields.Selection((
