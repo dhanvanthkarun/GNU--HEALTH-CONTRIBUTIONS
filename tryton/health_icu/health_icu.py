@@ -86,8 +86,8 @@ class InpatientIcu(ModelSQL, ModelView):
         table = self.__class__.__table__()
         cursor.execute(
             *table.select(
-                table.name, where=(
-                    (table.name == self.name.id) &
+                table.registration, where=(
+                    (table.registration == self.registration.id) &
                     (table.admitted))))
         res = cursor.fetchall()
         if len(res) > 1:
@@ -510,10 +510,11 @@ class MechanicalVentilation(ModelSQL, ModelView):
         cursor = Transaction().connection.cursor()
         table = self.__class__.__table__()
         cursor.execute(*table.select(
-            table.name, where=(
-                (table.name == self.name.id)
+            table.admission, where=(
+                (table.admission == self.admission.id)
                 & (table.current_mv))))
-        if cursor.fetchone():
+        res = cursor.fetchall()
+        if len(res) > 1:
             raise PatientAlreadyOnMV(
                 gettext('health_icu.msg_patient_already_on_mv'))
 
