@@ -41,7 +41,7 @@ class PatientRounding(ModelSQL, ModelView):
 
     STATES = {'readonly': Eval('state') == 'done'}
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True, states=STATES)
     code = fields.Char('Code', readonly=True)
@@ -154,7 +154,7 @@ class PatientRounding(ModelSQL, ModelView):
     warning_icon = fields.Function(
         fields.Char('Warning Icon'), 'get_warn_icon')
     procedures = fields.One2Many(
-        'gnuhealth.rounding_procedure', 'name',
+        'gnuhealth.rounding_procedure', 'rounding',
         'Procedures', help="List of the procedures in this rounding. Please "
         "enter the first one as the main procedure", states=STATES)
 
@@ -182,16 +182,6 @@ class PatientRounding(ModelSQL, ModelView):
     @staticmethod
     def default_state():
         return 'draft'
-
-    @classmethod
-    def __setup__(cls):
-        super(PatientRounding, cls).__setup__()
-        cls._buttons.update({
-            'end_rounding': {
-                'invisible': ~Eval('state').in_(['draft']),
-            }})
-
-        cls._order.insert(0, ('evaluation_start', 'DESC'))
 
     @classmethod
     @ModelView.button
@@ -295,16 +285,50 @@ class PatientRounding(ModelSQL, ModelView):
         if self.warning:
             return 'gnuhealth-warning'
 
+    @classmethod
+    def __setup__(cls):
+        super(PatientRounding, cls).__setup__()
+        cls._buttons.update({
+            'end_rounding': {
+                'invisible': ~Eval('state').in_(['draft']),
+            }})
+
+        cls._order.insert(0, ('evaluation_start', 'DESC'))
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class RoundingProcedure(ModelSQL, ModelView):
     'Rounding - Procedure'
     __name__ = 'gnuhealth.rounding_procedure'
 
-    name = fields.Many2One('gnuhealth.patient.rounding', 'Rounding')
+    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Rounding')
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
         help="Procedure Code, for example ICD-10-PCS Code 7-character string")
     notes = fields.Text('Notes')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to rounding
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('rounding')):
+            table_h.column_rename('name', 'rounding')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PatientAmbulatoryCare(ModelSQL, ModelView):
@@ -338,7 +362,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         'gnuhealth.healthprofessional',
         'Health Prof', readonly=True)
     procedures = fields.One2Many(
-        'gnuhealth.ambulatory_care_procedure', 'name',
+        'gnuhealth.ambulatory_care_procedure', 'ambcare',
         'Procedures', states=STATES,
         help="List of the procedures in this session. Please enter the first "
         "one as the main procedure")
@@ -499,8 +523,20 @@ class AmbulatoryCareProcedure(ModelSQL, ModelView):
     'Ambulatory Care Procedure'
     __name__ = 'gnuhealth.ambulatory_care_procedure'
 
-    name = fields.Many2One('gnuhealth.patient.ambulatory_care', 'Session')
+    ambcare = fields.Many2One('gnuhealth.patient.ambulatory_care', 'Session')
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Code', required=True,
         help="Procedure Code")
     comments = fields.Char('Comments')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to ambcare
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('ambcare')):
+            table_h.column_rename('name', 'ambcare')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)

@@ -36,7 +36,7 @@ class InpatientRegistration(metaclass=PoolMeta):
         ' the Intensive Care Unit during the hospitalization period')
     icu_admissions = fields.One2Many(
         'gnuhealth.inpatient.icu',
-        'name', "ICU Admissions")
+        'registration', "ICU Admissions")
 
 
 class InpatientIcu(ModelSQL, ModelView):
@@ -50,7 +50,7 @@ class InpatientIcu(ModelSQL, ModelView):
             end = datetime.now()
         return end.date() - self.icu_admission_date.date()
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
 
@@ -72,7 +72,7 @@ class InpatientIcu(ModelSQL, ModelView):
 
     mv_history = fields.One2Many(
         'gnuhealth.icu.ventilation',
-        'name', "Mechanical Ventilation History")
+        'admission', "Mechanical Ventilation History")
 
     @classmethod
     def validate(cls, inpatients):
@@ -107,12 +107,24 @@ class InpatientIcu(ModelSQL, ModelView):
             res = True
         return res
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class Glasgow(ModelSQL, ModelView):
     'Glasgow Coma Scale'
     __name__ = 'gnuhealth.icu.glasgow'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
 
@@ -180,12 +192,24 @@ class Glasgow(ModelSQL, ModelView):
                 self.glasgow_verbal + ' M' + self.glasgow_motor
         return res
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class ApacheII(ModelSQL, ModelView):
     'Apache II scoring'
     __name__ = 'gnuhealth.icu.apache2'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
     score_date = fields.DateTime(
@@ -412,6 +436,18 @@ class ApacheII(ModelSQL, ModelView):
 
         return total
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class MechanicalVentilation(ModelSQL, ModelView):
     'Mechanical Ventilation History'
@@ -428,7 +464,7 @@ class MechanicalVentilation(ModelSQL, ModelView):
 
         return end.date() - start.date()
 
-    name = fields.Many2One(
+    admission = fields.Many2One(
         'gnuhealth.inpatient.icu', 'Patient ICU Admission',
         required=True)
 
@@ -485,12 +521,24 @@ class MechanicalVentilation(ModelSQL, ModelView):
     def default_current_mv():
         return True
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('admission')):
+            table_h.column_rename('name', 'admission')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class ChestDrainageAssessment(ModelSQL, ModelView):
     'Chest Drainage Asessment'
     __name__ = 'gnuhealth.icu.chest_drainage'
 
-    name = fields.Many2One(
+    rounding = fields.Many2One(
         'gnuhealth.patient.rounding', 'Rounding',
         required=True)
     location = fields.Selection([
@@ -516,6 +564,18 @@ class ChestDrainageAssessment(ModelSQL, ModelView):
     air_leak = fields.Boolean('Air Leak')
     fluid_volume = fields.Integer('Volume')
     remarks = fields.Char('Remarks')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to rounding
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('rounding')):
+            table_h.column_rename('name', 'rounding')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PatientRounding(metaclass=PoolMeta):
@@ -611,7 +671,7 @@ class PatientRounding(metaclass=PoolMeta):
     # Chest Drainages
     chest_drainages = fields.One2Many(
         'gnuhealth.icu.chest_drainage',
-        'name', "Drainages", states=STATES)
+        'rounding', "Drainages", states=STATES)
 
     # Chest X-Ray
     xray = fields.Binary('Xray', states=STATES)

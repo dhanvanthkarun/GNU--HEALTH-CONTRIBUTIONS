@@ -111,10 +111,10 @@ class InpatientRegistration(ModelSQL, ModelView):
         depends=['name'])
     nursing_plan = fields.Text('Nursing Plan', states=STATES)
     medications = fields.One2Many(
-        'gnuhealth.inpatient.medication', 'name',
+        'gnuhealth.inpatient.medication', 'registration',
         'Medications', states=STATES)
     therapeutic_diets = fields.One2Many(
-        'gnuhealth.inpatient.diet', 'name',
+        'gnuhealth.inpatient.diet', 'registration',
         'Meals / Diet Program', states=STATES)
 
     nutrition_notes = fields.Text(
@@ -133,7 +133,7 @@ class InpatientRegistration(ModelSQL, ModelView):
     ), 'Status', readonly=True)
 
     bed_transfers = fields.One2Many(
-        'gnuhealth.bed.transfer', 'name',
+        'gnuhealth.bed.transfer', 'registration',
         'Transfer History', readonly=True)
 
     discharged_by = fields.Many2One(
@@ -378,13 +378,25 @@ class BedTransfer(ModelSQL, ModelView):
     'Bed transfers'
     __name__ = 'gnuhealth.bed.transfer'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code')
     transfer_date = fields.DateTime('Date')
     bed_from = fields.Many2One('gnuhealth.hospital.bed', 'From')
     bed_to = fields.Many2One('gnuhealth.hospital.bed', 'To')
     reason = fields.Char('Reason')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class Appointment(ModelSQL, ModelView):
@@ -481,7 +493,7 @@ class InpatientMedication (ModelSQL, ModelView):
     'Inpatient Medication'
     __name__ = 'gnuhealth.inpatient.medication'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code')
     medicament = fields.Many2One(
@@ -515,9 +527,9 @@ class InpatientMedication (ModelSQL, ModelView):
         help='Common / standard dosage frequency for this medicament')
     admin_times = fields.One2Many(
         'gnuhealth.inpatient.medication.admin_time',
-        'name', "Admin times")
+        'medication', "Admin times")
     log_history = fields.One2Many(
-        'gnuhealth.inpatient.medication.log', 'name',
+        'gnuhealth.inpatient.medication.log', 'medication',
         "Log History")
     frequency = fields.Integer(
         'Frequency',
@@ -570,12 +582,25 @@ class InpatientMedication (ModelSQL, ModelView):
     def default_is_active():
         return True
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMedicationAdminTimes (ModelSQL, ModelView):
     'Inpatient Medication Admin Times'
     __name__ = "gnuhealth.inpatient.medication.admin_time"
 
-    name = fields.Many2One('gnuhealth.inpatient.medication', 'Medication')
+    medication = fields.Many2One(
+        'gnuhealth.inpatient.medication', 'Medication')
     admin_time = fields.Time("Time")
     dose = fields.Float(
         'Dose',
@@ -587,12 +612,25 @@ class InpatientMedicationAdminTimes (ModelSQL, ModelView):
         'Remarks',
         help='specific remarks for this dose')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('medication')):
+            table_h.column_rename('name', 'medication')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMedicationLog (ModelSQL, ModelView):
     'Inpatient Medication Log History'
     __name__ = "gnuhealth.inpatient.medication.log"
 
-    name = fields.Many2One('gnuhealth.inpatient.medication', 'Medication')
+    medication = fields.Many2One(
+        'gnuhealth.inpatient.medication', 'Medication')
     admin_time = fields.DateTime("Date", readonly=True)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
@@ -626,12 +664,24 @@ class InpatientMedicationLog (ModelSQL, ModelView):
     def default_admin_time():
         return datetime.now()
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to medication
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('medication')):
+            table_h.column_rename('name', 'medication')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientDiet (ModelSQL, ModelView):
     'Inpatient Diet'
     __name__ = "gnuhealth.inpatient.diet"
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code')
     diet = fields.Many2One('gnuhealth.diet.therapeutic', 'Diet', required=True)
@@ -639,14 +689,26 @@ class InpatientDiet (ModelSQL, ModelView):
         'Remarks / Directions',
         help='specific remarks for this diet / patient')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMeal (ModelSQL, ModelView):
     'Inpatient Meal'
     __name__ = "gnuhealth.inpatient.meal"
 
-    name = fields.Many2One(
-        'product.product', 'Food', required=True,
-        help='Food')
+    meal = fields.Many2One(
+        'product.product', 'Meal', required=True,
+        help='Meal')
 
     diet_therapeutic = fields.Many2One(
         'gnuhealth.diet.therapeutic',
@@ -668,24 +730,48 @@ class InpatientMeal (ModelSQL, ModelView):
         if self.name:
             return self.name.name
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to meal
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('meal')):
+            table_h.column_rename('name', 'meal')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMealOrderItem (ModelSQL, ModelView):
     'Inpatient Meal Item'
     __name__ = "gnuhealth.inpatient.meal.order.item"
 
-    name = fields.Many2One(
+    meal_order = fields.Many2One(
         'gnuhealth.inpatient.meal.order',
         'Meal Order')
 
     meal = fields.Many2One('gnuhealth.inpatient.meal', 'Meal')
     remarks = fields.Char('Remarks')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to meal_order
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('meal_order')):
+            table_h.column_rename('name', 'meal_order')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMealOrder (ModelSQL, ModelView):
     'Inpatient Meal Order'
     __name__ = "gnuhealth.inpatient.meal.order"
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', domain=[('state', '=', 'hospitalized')],
         required=True)
@@ -700,7 +786,7 @@ class InpatientMealOrder (ModelSQL, ModelView):
     ), 'Meal time', required=True, sort=False)
 
     meal_item = fields.One2Many(
-        'gnuhealth.inpatient.meal.order.item', 'name',
+        'gnuhealth.inpatient.meal.order.item', 'meal_order',
         'Items')
 
     meal_order = fields.Char('Order', readonly=True)
@@ -786,6 +872,18 @@ class InpatientMealOrder (ModelSQL, ModelView):
                     self.name.patient.diet_belief):
                 self.meal_warning = True
                 self.meal_warning_ack = False
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
     @classmethod
     def __setup__(cls):
