@@ -8,10 +8,10 @@
 # GNU Health HMIS sequences for this package
 
 from trytond.model import (ModelSQL, ValueMixin, fields)
-from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
-from trytond.tools.multivalue import migrate_property
+# Removed in GH 5.0
+# from trytond.tools.multivalue import migrate_property
 
 # Sequences
 inpatient_registration_sequence = fields.Many2One(
@@ -63,13 +63,9 @@ class _ConfigurationValue(ModelSQL):
 
     @classmethod
     def __register__(cls, module_name):
-        exist = backend.TableHandler.table_exist(cls._table)
-
         super(_ConfigurationValue, cls).__register__(module_name)
 
-        if not exist:
-            cls._migrate_property([], [], [])
-
+    """
     @classmethod
     def _migrate_property(cls, field_names, value_names, fields):
         field_names.append(cls._configuration_value_field)
@@ -77,6 +73,8 @@ class _ConfigurationValue(ModelSQL):
         migrate_property(
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
+
+    """
 
 
 class InpatientRegistrationSequence(_ConfigurationValue, ModelSQL, ValueMixin):
