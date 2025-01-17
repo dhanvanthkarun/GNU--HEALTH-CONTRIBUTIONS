@@ -168,13 +168,13 @@ class InpatientRegistration(ModelSQL, ModelView):
         return get_institution()
 
     def get_patient_puid(self, name):
-        return self.patient.name.ref
+        return self.patient.party.ref
 
     @classmethod
     def search_patient_puid(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.ref', clause[1], value))
+        res.append(('patient.party.ref', clause[1], value))
         return res
 
     @classmethod
@@ -727,8 +727,8 @@ class InpatientMeal (ModelSQL, ModelView):
         return get_institution()
 
     def get_rec_name(self, name):
-        if self.name:
-            return self.name.name
+        if self.meal:
+            return self.meal.name
 
     @classmethod
     def __register__(cls, module):
@@ -868,8 +868,8 @@ class InpatientMealOrder (ModelSQL, ModelView):
         if self.name:
             # Trigger the warning if the patient
             # has special needs on meals (religion / philosophy )
-            if (self.name.patient.vegetarian_type or
-                    self.name.patient.diet_belief):
+            if (self.registration.patient.vegetarian_type or
+                    self.registration.patient.diet_belief):
                 self.meal_warning = True
                 self.meal_warning_ack = False
 
