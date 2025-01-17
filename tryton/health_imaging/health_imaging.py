@@ -183,7 +183,7 @@ class ImagingTestResult(ModelSQL, ModelView):
     __name__ = 'gnuhealth.imaging.test.result'
 
     def patient_age_at_evaluation(self, name):
-        if (self.patient.name.dob and self.date):
+        if (self.patient.party.dob and self.date):
             return compute_age_from_dates(
                 self.patient.party.dob, None, None, None, 'age',
                 self.date.date())
