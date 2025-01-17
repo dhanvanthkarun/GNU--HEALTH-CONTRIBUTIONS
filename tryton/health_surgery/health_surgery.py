@@ -603,7 +603,7 @@ class Surgery(ModelSQL, ModelView):
                 or_state = 'scheduled'
                 Operatingroom = Pool().get('gnuhealth.hospital.or')
                 operatingroom = Operatingroom.search(
-                    [("id", "=", op_room.id)], limit=1)
+                    [("id", "=", op_room)], limit=1)
                 Operatingroom.write(operatingroom, {'state': or_state})
 
         return surgeries
