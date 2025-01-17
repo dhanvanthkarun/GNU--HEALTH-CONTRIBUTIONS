@@ -6,7 +6,6 @@
 # GNU Health HMIS sequences for this package
 
 from trytond.model import (ModelSQL, ValueMixin, fields)
-from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
 # Removed in GH 5.0
@@ -61,6 +60,7 @@ class _ConfigurationValue(ModelSQL):
             fields=fields)
 
     """
+
 
 class SurgeryCodeSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     'Health Service Request Sequence setup'
