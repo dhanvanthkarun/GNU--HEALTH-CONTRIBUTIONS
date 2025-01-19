@@ -86,7 +86,7 @@ class Newborn(ModelSQL, ModelView):
     apgar1 = fields.Integer('APGAR 1st minute', states=STATES)
     apgar5 = fields.Integer('APGAR 5th minute', states=STATES)
     apgar_scores = fields.One2Many(
-        'gnuhealth.neonatal.apgar', 'name',
+        'gnuhealth.neonatal.apgar', 'newborn',
         'APGAR scores', states=STATES)
     meconium = fields.Boolean('Meconium', states=STATES)
 
@@ -230,7 +230,7 @@ class Newborn(ModelSQL, ModelView):
 
             newborn_patient_id = newborn.patient.id
 
-            person = Patient.browse([newborn_patient_id])[0].name
+            person = Patient.browse([newborn_patient_id])[0].party
             pat = Patient.browse([newborn_patient_id])[0]
 
             # Update the birth date on the party model upon WRITING it on the
@@ -267,7 +267,7 @@ class Newborn(ModelSQL, ModelView):
         for values in vlist:
             newborn_patient_id = values['patient']
 
-            person = Patient.browse([newborn_patient_id])[0].name
+            person = Patient.browse([newborn_patient_id])[0].party
             pat = Patient.browse([newborn_patient_id])[0]
 
             # Update the birth date on the party model upon CREATING it on the
@@ -306,7 +306,7 @@ class NeonatalApgar(ModelSQL, ModelView):
     'Neonatal APGAR Score'
     __name__ = 'gnuhealth.neonatal.apgar'
 
-    name = fields.Many2One('gnuhealth.newborn', 'Newborn')
+    newborn = fields.Many2One('gnuhealth.newborn', 'Newborn')
 
     apgar_minute = fields.Integer('Minute', required=True)
 
@@ -356,6 +356,18 @@ class NeonatalApgar(ModelSQL, ModelView):
             int(apgar_grimace) + int(apgar_activity) + int(apgar_respiration)
 
         return apgar_score
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to newborn
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('newborn')):
+            table_h.column_rename('name', 'newborn')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 # Deprecated in 3.0 - Use the main patient form
