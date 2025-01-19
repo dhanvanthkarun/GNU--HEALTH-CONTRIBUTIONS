@@ -22,7 +22,10 @@ __all__ = ['HospitalBed', 'InpatientRegistration']
 class HospitalBed(metaclass=PoolMeta):
     __name__ = "gnuhealth.hospital.bed"
 
-    calendar = fields.Many2One('calendar.calendar', 'Calendar')
+    calendar = fields.Many2One(
+        'calendar.calendar', 'Calendar',
+        help="A calendar can be associated to a bed. To use this "
+        "functionality, it needs to be created via health -> calendars")
 
 
 class InpatientRegistration(metaclass=PoolMeta):
@@ -30,7 +33,7 @@ class InpatientRegistration(metaclass=PoolMeta):
 
     event = fields.Many2One(
         'calendar.event', 'Calendar Event', readonly=True,
-        help="Calendar Event")
+        help="Calendar Event associated to this hospitalization")
 
     @classmethod
     def confirmed(cls, registrations):
@@ -39,6 +42,7 @@ class InpatientRegistration(metaclass=PoolMeta):
         Event = Pool().get('calendar.event')
 
         for inpatient_registration in registrations:
+            print(inpatient_registration)
             if inpatient_registration.bed.calendar:
                 if not inpatient_registration.event:
                     bed = inpatient_registration.bed.name.code + ": "
@@ -47,7 +51,7 @@ class InpatientRegistration(metaclass=PoolMeta):
                         'dtend': inpatient_registration.discharge_date,
                         'calendar': inpatient_registration.bed.calendar.id,
                         'summary':
-                            bed + inpatient_registration.patient.name.rec_name
+                            bed + inpatient_registration.patient.party.rec_name
                     }])
                     cls.write(
                         [inpatient_registration],
@@ -88,7 +92,7 @@ class InpatientRegistration(metaclass=PoolMeta):
                     patient = Patient(values['patient'])
                     bed = inpatient_registration.bed.name.code + ": "
                     Event.write([inpatient_registration.event], {
-                        'summary': bed + patient.name.rec_name,
+                        'summary': bed + patient.party.rec_name,
                     })
 
         return super(InpatientRegistration, cls).write(registrations, values)
