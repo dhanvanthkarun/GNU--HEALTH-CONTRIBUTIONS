@@ -94,4 +94,4 @@ class HealthService(metaclass=PoolMeta):
     @fields.depends('patient')
     def on_change_patient(self):
         if self.patient:
-            self.insurance_holder = self.patient.name
+            self.insurance_holder = self.patient.party
