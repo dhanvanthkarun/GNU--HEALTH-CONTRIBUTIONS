@@ -20,7 +20,7 @@ class Iss (ModelSQL, ModelView):
     'Injury Surveillance System Registration'
     __name__ = 'gnuhealth.iss'
 
-    name = fields.Many2One(
+    evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation',
         'Evaluation', required=True, help='Related Patient Evaluation')
 
@@ -222,16 +222,16 @@ class Iss (ModelSQL, ModelView):
         help="Place of occurrance", sort=False, required=True)
 
     def get_patient(self, name):
-        return self.name.patient.rec_name
+        return self.evaluation.patient.rec_name
 
     def get_patient_sex(self, name):
-        return self.name.patient.name.gender
+        return self.evaluation.patient.gender_str
 
     def get_patient_age(self, name):
-        return self.name.patient.name.age
+        return self.evaluation.patient.age
 
     def get_patient_complaint(self, name):
-        return self.name.chief_complaint
+        return self.evaluation.chief_complaint
 
     @fields.depends('latitude', 'longitude')
     def on_change_with_urladdr(self):
@@ -251,17 +251,8 @@ class Iss (ModelSQL, ModelView):
     def search_patient(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('name.patient', clause[1], value))
+        res.append(('evaluation.patient', clause[1], value))
         return res
-
-    @classmethod
-    def __setup__(cls):
-        super(Iss, cls).__setup__()
-        t = cls.__table__()
-        cls._sql_constraints = [
-            ('code_uniq', Unique(t, t.code),
-             'This ISS registration Code already exists'),
-        ]
 
     @classmethod
     def view_attributes(cls):
@@ -275,3 +266,24 @@ class Iss (ModelSQL, ModelView):
                     'invisible': Equal(Eval('injury_type'), 'motor_vehicle'),
                 }),
                 ]
+
+    @classmethod
+    def __setup__(cls):
+        super(Iss, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('code_uniq', Unique(t, t.code),
+             'This ISS registration Code already exists'),
+        ]
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to evaluation
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('evaluation')):
+            table_h.column_rename('name', 'evaluation')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
