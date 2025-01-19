@@ -225,7 +225,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         help="Left Intraocular Pressure in mmHg", states=STATES)
 
     findings = fields.One2Many(
-        'gnuhealth.ophthalmology.findings', 'name',
+        'gnuhealth.ophthalmology.findings', 'evaluation',
         'Findings', states=STATES)
 
     state = fields.Selection([
@@ -240,10 +240,10 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         help="Health Professional that finished the patient evaluation")
 
     def patient_age_at_evaluation(self, name):
-        if (self.patient.name.dob and self.visit_date):
+        if (self.patient.party.dob and self.visit_date):
             rdelta = relativedelta(
                 self.visit_date.date(),
-                self.patient.name.dob)
+                self.patient.party.dob)
             return format_years_months_days(
                 years=rdelta.years,
                 months=rdelta.months,
@@ -252,13 +252,13 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
             return None
 
     def get_patient_gender(self, name):
-        return self.patient.gender
+        return self.patient.gender_str
 
     @classmethod
     def search_patient_gender(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.gender', clause[1], value))
+        res.append(('patient.party.gender', clause[1], value))
         return res
 
     @fields.depends('rdva')
@@ -357,7 +357,7 @@ class OphthalmologyFindings(ModelSQL, ModelView):
     # ophthalmologist
 
     # Findings associated to a particular evaluation
-    name = fields.Many2One(
+    evaluation = fields.Many2One(
         'gnuhealth.ophthalmology.evaluation',
         'Evaluation', readonly=True)
 
@@ -394,3 +394,15 @@ class OphthalmologyFindings(ModelSQL, ModelView):
         'Eye', help="Affected eye", sort=False)
 
     finding = fields.Char('Finding')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to evaluation
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('evaluation')):
+            table_h.column_rename('name', 'evaluation')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
