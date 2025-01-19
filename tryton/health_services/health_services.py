@@ -154,14 +154,14 @@ class HealthServiceLine(ModelSQL, ModelView):
             service.validate_invoice_status()
 
     def validate_invoice_status(self):
-        if (self.name):
-            if (self.name.state == 'invoiced'):
+        if (self.service):
+            if (self.service.state == 'invoiced'):
                 raise ServiceAlreadyInvoiced(
                     gettext('health_services.msg_service_already_invoiced'))
 
     def get_rec_name(self, name):
-        if self.name:
-            return f'{self.desc} ({self.name.name})'
+        if self.service:
+            return f'{self.desc} ({self.service.name})'
 
 
 # Add Prescription order charges to service model
