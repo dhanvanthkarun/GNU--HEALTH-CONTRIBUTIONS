@@ -122,7 +122,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
             'Date': str(prescription.prescription_date) or '',
             'HP': str(prescription.healthprof.rec_name),
             'Patient': str(prescription.patient.rec_name),
-            'Patient_ID': str(prescription.patient.name.ref) or '',
+            'Patient_ID': str(prescription.patient.party.ref) or '',
             'Prescription_line': str(presc_line),
             'Notes': str(prescription.notes),
         }
