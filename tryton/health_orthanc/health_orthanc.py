@@ -91,11 +91,11 @@ class OrthancWorklistTemplate(ModelSQL, ModelView):
         '(0008,0005) of worklist, for example: ISO_IR 100, ISO_IR 192,'
         ' GBK ...')
 
+    comment = fields.Text('Comment')
+
     @staticmethod
     def default_charset():
         return 'IS0_IR 192'
-
-    comment = fields.Text('Comment')
 
     @staticmethod
     def default_template_type():
@@ -706,7 +706,7 @@ class OrthancPatient(ModelSQL, ModelView):
                     [("uuid", "=", entry["uuid"]),
                      ("server", "=", server)], limit=1
                 )[0]
-                patient.name = entry["name"]
+                patient.party = entry["name"]
                 patient.bd = entry["bd"]
                 patient.ident = entry["ident"]
                 # don't update unless no patient attached
@@ -1135,9 +1135,9 @@ class ImagingTestRequest(metaclass=PoolMeta):
         'patient_age_at_imaging_request')
 
     def patient_age_at_imaging_request(self, name):
-        if (self.patient.name.dob and self.date):
+        if (self.patient.party.dob and self.date):
             return compute_age_from_dates(
-                self.patient.name.dob, None, None, None, 'age',
+                self.patient.party.dob, None, None, None, 'age',
                 self.date.date())
 
     merge_id = fields.Char("Merge ID")
@@ -1245,7 +1245,7 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return self.merge_id or ''
 
     def getDicomPatientName(self):
-        name = (self.format_dicom_person_name(self.patient.name.id)
+        name = (self.format_dicom_person_name(self.patient.party.id)
                 or (self.patient and self.patient.rec_name) or '')
         return name
 
@@ -1273,7 +1273,7 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return self.patient and self.patient.puid or ''
 
     def getDicomPatientBirthDate(self):
-        dob = self.patient and self.patient.name.dob
+        dob = self.patient and self.patient.party.dob
         if dob:
             return dob.strftime('%Y%m%d')
 
