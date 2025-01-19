@@ -16,7 +16,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_medical_services" model="product.template">
             <field name="name">Medical evaluation service</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
