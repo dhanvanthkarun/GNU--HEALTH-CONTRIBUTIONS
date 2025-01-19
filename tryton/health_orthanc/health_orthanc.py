@@ -198,7 +198,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
     :vartype password: class: ``trytond.model.fields.Char``
 
     :var last: Index of last change. Read-only.
-    :vartype last: class: ``trytond.model.fields.BigInteger``
+    :vartype last: class: ``trytond.model.fields.Integer``
 
     :var sync_time: Time of last server syncronization. Read-only.
     :vartype sync_time: class: ``trytond.model.fields.DateTime``
@@ -241,7 +241,7 @@ class OrthancServerConfig(ModelSQL, ModelView):
     password = fields.Char(
         "Password", required=True, help="Password for Orthanc REST server")
 
-    last = fields.BigInteger(
+    last = fields.Integer(
         "Last Index", readonly=True, help="Index of last change")
 
     sync_time = fields.DateTime(
