@@ -244,7 +244,7 @@ def get_institution():
 
     cursor = Transaction().connection.cursor()
     cursor.execute(*company.join(institution, condition=(
-        institution.name == company.party)).select(
+        institution.party == company.party)).select(
         institution.id,
         where=(company.id == company_id)))
     institution_id = cursor.fetchone()

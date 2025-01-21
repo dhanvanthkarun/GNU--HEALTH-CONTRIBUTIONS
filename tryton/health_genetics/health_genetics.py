@@ -432,7 +432,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
             'author': genetic_info.healthprof and
             genetic_info.healthprof.name.rec_name,
             'node': genetic_info.institution and
-            genetic_info.institution.name.rec_name
+            genetic_info.institution.party.name
         }
         if (genetic_info.variant_phenotype):
             vals['health_condition_text'] = vals['health_condition_text'] = \

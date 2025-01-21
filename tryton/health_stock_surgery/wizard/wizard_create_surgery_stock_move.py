@@ -57,7 +57,7 @@ class CreateSurgeryStockMove(Wizard):
             to_location = surgery.patient.party.customer_location
 
             if surgery.institution:
-                currency = surgery.institution.name.currency
+                currency = surgery.institution.party.currency
 
             for line in surgery.supplies:
                 move = StockMove()

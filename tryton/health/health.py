@@ -1135,7 +1135,7 @@ class PageOfLife(ModelSQL, ModelView):
     @fields.depends('institution')
     def on_change_institution(self):
         if (self.institution):
-            self.node = str(self.institution.name.name)
+            self.node = str(self.institution.party.name)
 
     # Retrieve the federation account
     @fields.depends('person')
@@ -1425,9 +1425,8 @@ class OperationalSector(ModelSQL, ModelView):
 class HealthInstitution(ModelSQL, ModelView):
     'Health Institution'
     __name__ = 'gnuhealth.institution'
-    _rec_name = 'code'
 
-    name = fields.Many2One(
+    party = fields.Many2One(
         'party.party', 'Institution',
         domain=[('is_institution', '=', True)],
         help='Party Associated to this Health Institution',
@@ -1485,19 +1484,30 @@ class HealthInstitution(ModelSQL, ModelView):
     extra_info = fields.Text("Extra Info")
 
     def get_rec_name(self, name):
-        if self.name:
-            return self.name.name
+        if self.party:
+            return self.party.name
 
     @classmethod
     def __setup__(cls):
         super(HealthInstitution, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_uniq', Unique(t, t.name),
+            ('name_uniq', Unique(t, t.party),
              'This Institution already exists !'),
             ('code_uniq', Unique(t, t.code), 'This CODE already exists !'),
         ]
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 class HealthInstitutionSpecialties(ModelSQL, ModelView):
     'Health Institution Specialties'
@@ -2579,12 +2589,12 @@ class BirthCertExtraInfo (metaclass=PoolMeta):
     def on_change_institution(self):
         country = None
         subdivision = None
-        if (self.institution and self.institution.name.addresses[0].country):
-            country = self.institution.name.addresses[0].country.id
+        if (self.institution and self.institution.party.addresses[0].country):
+            country = self.institution.party.addresses[0].country.id
 
-        if (self.institution and self.institution.name.addresses[0].
+        if (self.institution and self.institution.party.addresses[0].
                 subdivision):
-            subdivision = self.institution.name.addresses[0].subdivision.id
+            subdivision = self.institution.party.addresses[0].subdivision.id
 
         self.country = country
         self.country_subdivision = subdivision
@@ -2652,12 +2662,12 @@ class DeathCertExtraInfo (metaclass=PoolMeta):
     def on_change_institution(self):
         country = None
         subdivision = None
-        if (self.institution and self.institution.name.addresses[0].country):
-            country = self.institution.name.addresses[0].country.id
+        if (self.institution and self.institution.party.addresses[0].country):
+            country = self.institution.party.addresses[0].country.id
 
-        if (self.institution and self.institution.name.addresses[0].
+        if (self.institution and self.institution.party.addresses[0].
                 subdivision):
-            subdivision = self.institution.name.addresses[0].subdivision.id
+            subdivision = self.institution.party.addresses[0].subdivision.id
 
         self.country = country
         self.country_subdivision = subdivision
@@ -3621,7 +3631,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
             'author': condition_info.healthprof and
             condition_info.healthprof.name.rec_name,
             'node': condition_info.institution and
-            condition_info.institution.name.rec_name
+            condition_info.institution.party.name
         }
         if (condition_info.pathology):
             vals['health_condition'] = condition_info.pathology
@@ -5638,7 +5648,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
             'author': evaluation.healthprof.name.rec_name,
             'author_acct': evaluation.healthprof.name.federation_account,
             'node': evaluation.institution and
-            evaluation.institution.name.name or ''
+            evaluation.institution.party.name or ''
         }
         if (evaluation.diagnosis):
             vals['health_condition_text'] = evaluation.diagnosis.rec_name

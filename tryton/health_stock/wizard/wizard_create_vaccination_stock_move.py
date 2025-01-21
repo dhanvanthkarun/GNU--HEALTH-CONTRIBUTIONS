@@ -67,7 +67,7 @@ class CreateVaccinationStockMove(Wizard):
                 vaccination.vaccine.name.default_uom.id
             # Use the institution currency in the stock move
             if (vaccination.institution):
-                line_data['currency'] = vaccination.institution.name.currency
+                line_data['currency'] = vaccination.institution.party.currency
             line_data['state'] = 'draft'
             lines.append(line_data)
 
