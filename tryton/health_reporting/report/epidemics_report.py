@@ -409,23 +409,23 @@ class InstitutionEpidemicsReport(Report):
         # Global Condition info
         for confirmed_case in confirmed_cases:
             # Sex distribution
-            if (confirmed_case.name.gender == 'f'):
+            if (confirmed_case.patient.gender == 'f'):
                 cases_f += 1
             else:
                 cases_m += 1
 
             # Ethnic groups distribution
-            if (confirmed_case.name.name.ethnic_group):
-                ethnicity = confirmed_case.name.name.ethnic_group.name
+            if (confirmed_case.patient.party.ethnic_group):
+                ethnicity = confirmed_case.patient.party.ethnic_group.name
                 if (ethnicity in ethnic_groups):
                     ethnic_count[ethnicity] = ethnic_count[ethnicity] + 1
 
             # Socioeconomic groups distribution
-            if (confirmed_case.name.ses):
-                ses_str = confirmed_case.name.ses_str
+            if (confirmed_case.patient.ses):
+                ses_str = confirmed_case.patient.ses_str
                 ses_count[ses_str] += 1
 
-            if not confirmed_case.name.age:
+            if not confirmed_case.patient.age:
                 non_age_cases += 1
 
         total_cases = len(confirmed_cases)
@@ -440,31 +440,31 @@ class InstitutionEpidemicsReport(Report):
 
         for case in confirmed_cases:
 
-            if (case.name.age):
+            if (case.patient.age):
 
                 # Strip to get the raw year
-                age_year = parse_compute_age(case.name.age)[0]
+                age_year = parse_compute_age(case.patient.age)[0]
 
                 # Age groups in this diagnostic
                 if (age_year < 5):
                     group_1 += 1
-                    if (case.name.gender == 'f'):
+                    if (case.patient.gender == 'f'):
                         group_1f += 1
                 if (age_year in range(5, 14)):
                     group_2 += 1
-                    if (case.name.gender == 'f'):
+                    if (case.patient.gender == 'f'):
                         group_2f += 1
                 if (age_year in range(15, 45)):
                     group_3 += 1
-                    if (case.name.gender == 'f'):
+                    if (case.patient.gender == 'f'):
                         group_3f += 1
                 if (age_year in range(46, 60)):
                     group_4 += 1
-                    if (case.name.gender == 'f'):
+                    if (case.patient.gender == 'f'):
                         group_4f += 1
                 if (age_year > 60):
                     group_5 += 1
-                    if (case.name.gender == 'f'):
+                    if (case.patient.gender == 'f'):
                         group_5f += 1
 
         cases = {'diagnosis': health_condition_id,
