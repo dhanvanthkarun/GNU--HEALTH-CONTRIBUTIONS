@@ -1814,9 +1814,8 @@ class HospitalWard(ModelSQL, ModelView):
 class HospitalBed(ModelSQL, ModelView):
     'Hospital Bed'
     __name__ = 'gnuhealth.hospital.bed'
-    _rec_name = 'telephone_number'
 
-    name = fields.Many2One(
+    product = fields.Many2One(
         'product.product', 'Bed', required=True,
         domain=[('is_bed', '=', True)],
         help='Bed Number')
@@ -1898,6 +1897,17 @@ class HospitalBed(ModelSQL, ModelView):
     def fix_bed(cls, beds):
         cls.write(beds, {'state': 'free'})
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to product
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('product')):
+            table_h.column_rename('name', 'product')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 class MedicalSpecialty(ModelSQL, ModelView):
     'Medical Specialty'

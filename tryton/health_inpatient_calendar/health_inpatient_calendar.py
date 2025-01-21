@@ -42,10 +42,9 @@ class InpatientRegistration(metaclass=PoolMeta):
         Event = Pool().get('calendar.event')
 
         for inpatient_registration in registrations:
-            print(inpatient_registration)
             if inpatient_registration.bed.calendar:
                 if not inpatient_registration.event:
-                    bed = inpatient_registration.bed.name.code + ": "
+                    bed = inpatient_registration.bed.product.code + ": "
                     events = Event.create([{
                         'dtstart': inpatient_registration.hospitalization_date,
                         'dtend': inpatient_registration.discharge_date,
@@ -90,7 +89,7 @@ class InpatientRegistration(metaclass=PoolMeta):
                     })
                 if 'patient' in values:
                     patient = Patient(values['patient'])
-                    bed = inpatient_registration.bed.name.code + ": "
+                    bed = inpatient_registration.bed.product.code + ": "
                     Event.write([inpatient_registration.event], {
                         'summary': bed + patient.party.rec_name,
                     })
