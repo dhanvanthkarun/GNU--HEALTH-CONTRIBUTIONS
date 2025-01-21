@@ -77,7 +77,7 @@ class RequestPatientLabTest(Wizard):
         for test in self.start.tests:
             lab_test = {}
             lab_test['request'] = request_number
-            lab_test['name'] = test.id
+            lab_test['test_type'] = test.id
             lab_test['source_type'] = self.start.source_type
             lab_test['patient_id'] = (self.start.patient
                                       and self.start.patient.id)
