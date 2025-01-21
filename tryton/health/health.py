@@ -5494,11 +5494,18 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
                                                Equal(Eval('state'), 'done'))}
         })
 
+        """
+        We should be able to update the patient disease history
+        from evaluations, even if these are signed.
+        In addition, well-person visits can
+        include new health conditions, detected during the
+        evaluation.
+        """
         cls._buttons.update({
-            # XXX: Do we need to show button when state=done?
             'update_patient_disease_info': {
-                'invisible': Not(And(Equal(Eval('visit_type'), 'new'),
-                                     Equal(Eval('state'), 'signed')))}
+                'invisible': Or(Equal(Eval('visit_type'), 'followup'),
+                                Equal(Eval('state'), 'in_progress'),
+                                Not(Eval('diagnosis')))},
         })
 
     @classmethod
