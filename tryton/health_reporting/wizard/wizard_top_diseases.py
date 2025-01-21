@@ -20,7 +20,7 @@ class TopDiseases(ModelSQL, ModelView):
     'Top Diseases'
     __name__ = 'gnuhealth.top_diseases'
 
-    disease = fields.Many2One('gnuhealth.pathology', 'Disease', select=True)
+    disease = fields.Many2One('gnuhealth.pathology', 'Disease')
     cases = fields.Integer('Cases')
 
     @classmethod
