@@ -55,7 +55,7 @@ class CreateVaccinationStockMove(Wizard):
             line_data['from_location'] = \
                 vaccination.location.id
             line_data['to_location'] = \
-                vaccination.name.name.customer_location.id
+                vaccination.name.party.customer_location.id
             line_data['product'] = \
                 vaccination.vaccine.name.id
             line_data['unit_price'] = \
@@ -63,8 +63,11 @@ class CreateVaccinationStockMove(Wizard):
             line_data['cost_price'] = \
                 vaccination.vaccine.name.cost_price
             line_data['quantity'] = 1
-            line_data['uom'] = \
+            line_data['unit'] = \
                 vaccination.vaccine.name.default_uom.id
+            # Use the institution currency in the stock move
+            if (vaccination.institution):
+                line_data['currency'] = vaccination.institution.name.currency
             line_data['state'] = 'draft'
             lines.append(line_data)
 

@@ -59,7 +59,7 @@ class CreatePrescriptionStockMove(Wizard):
             from_location = prescription.pharmacy.warehouse
             if from_location.type == 'warehouse':
                 from_location = from_location.storage_location
-            to_location = prescription.patient.name.customer_location
+            to_location = prescription.patient.party.customer_location
 
             for line in prescription.prescription_line:
                 move = StockMove()
@@ -70,7 +70,8 @@ class CreatePrescriptionStockMove(Wizard):
                 move.unit_price = line.medicament.name.list_price
                 move.cost_price = line.medicament.name.cost_price
                 move.quantity = line.quantity
-                move.uom = line.medicament.name.default_uom
+                move.unit = line.medicament.name.default_uom
+                move.currency = prescription.pharmacy.currency
                 moves.append(move)
         StockMove.save(moves)
         StockMove.do(moves)

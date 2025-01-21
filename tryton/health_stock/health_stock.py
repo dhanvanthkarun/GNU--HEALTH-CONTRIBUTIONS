@@ -85,10 +85,10 @@ class PatientAmbulatoryCare(Workflow, metaclass=PoolMeta):
             'readonly': Eval('state') == 'done',
         }, depends=['state', 'medicaments'])
     medicaments = fields.One2Many(
-        'gnuhealth.patient.ambulatory_care.medicament', 'name',
+        'gnuhealth.patient.ambulatory_care.medicament', 'ambcare',
         'Medicaments', states=_STATES, depends=_DEPENDS)
     medical_supplies = fields.One2Many(
-        'gnuhealth.patient.ambulatory_care.medical_supply', 'name',
+        'gnuhealth.patient.ambulatory_care.medical_supply', 'ambcare',
         'Medical Supplies', states=_STATES, depends=_DEPENDS)
 
     moves = fields.One2Many(
@@ -199,7 +199,7 @@ class PatientAmbulatoryCareMedicament(ModelSQL, ModelView):
     'Patient Ambulatory Care Medicament'
     __name__ = 'gnuhealth.patient.ambulatory_care.medicament'
 
-    name = fields.Many2One(
+    ambcare = fields.Many2One(
         'gnuhealth.patient.ambulatory_care',
         'Ambulatory ID')
     medicament = fields.Many2One(
@@ -231,7 +231,7 @@ class PatientAmbulatoryCareMedicalSupply(ModelSQL, ModelView):
     'Patient Ambulatory Care Medical Supply'
     __name__ = 'gnuhealth.patient.ambulatory_care.medical_supply'
 
-    name = fields.Many2One(
+    ambcare = fields.Many2One(
         'gnuhealth.patient.ambulatory_care',
         'Ambulatory ID')
     product = fields.Many2One(
@@ -266,11 +266,11 @@ class PatientRounding(Workflow, ModelSQL, ModelView):
             'readonly': Eval('state') == 'done',
         }, depends=_DEPENDS)
     medicaments = fields.One2Many(
-        'gnuhealth.patient.rounding.medicament', 'name', 'Medicaments',
+        'gnuhealth.patient.rounding.medicament', 'rounding', 'Medicaments',
         states=_STATES, depends=_DEPENDS)
     medical_supplies = fields.One2Many(
         'gnuhealth.patient.rounding.medical_supply',
-        'name', 'Medical Supplies',
+        'rounding', 'Medical Supplies',
         states=_STATES, depends=_DEPENDS)
     moves = fields.One2Many(
         'stock.move', 'origin', 'Stock Moves',
@@ -379,7 +379,7 @@ class PatientRoundingMedicament(ModelSQL, ModelView):
     'Patient Rounding Medicament'
     __name__ = 'gnuhealth.patient.rounding.medicament'
 
-    name = fields.Many2One('gnuhealth.patient.rounding', 'Ambulatory ID')
+    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Ambulatory ID')
     medicament = fields.Many2One(
         'gnuhealth.medicament', 'Medicament',
         required=True)
@@ -409,7 +409,7 @@ class PatientRoundingMedicalSupply(ModelSQL, ModelView):
     'Patient Rounding Medical Supply'
     __name__ = 'gnuhealth.patient.rounding.medical_supply'
 
-    name = fields.Many2One('gnuhealth.patient.rounding', 'Ambulatory ID')
+    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Ambulatory ID')
     product = fields.Many2One(
         'product.product', 'Medical Supply',
         domain=[('is_medical_supply', '=', True)], required=True)
