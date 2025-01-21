@@ -1405,7 +1405,7 @@
       <text:p text:style-name="GH-Table-RLabel">PUID:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table2.D1" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;interpretation.patient.name.ref if interpretation.patient else &apos;&apos;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;interpretation.patient.party.ref if interpretation.patient else &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Table2.1">
@@ -1413,13 +1413,13 @@
       <text:p text:style-name="GH-Table-RLabel">Gender:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table2.A2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;interpretation.patient and interpretation.patient.name.gender_str&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;interpretation.patient and interpretation.patient.party.gender_str&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table2.A2" office:value-type="string">
       <text:p text:style-name="GH-Table-RLabel">DoB:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table2.D2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;interpretation.patient and interpretation.patient.dob and format_date(interpretation.patient.name.dob, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;interpretation.patient and interpretation.patient.dob and format_date(interpretation.patient.party.dob, user.language)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Table2.1">
