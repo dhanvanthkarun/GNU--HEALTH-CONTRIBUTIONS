@@ -436,7 +436,6 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
     def __setup__(cls):
         super(PatientPrescriptionOrder, cls).__setup__()
         cls.pharmacy.states['readonly'] &= Bool(Eval('moves'))
-        cls.pharmacy.depends.append('moves')
 
     @classmethod
     def copy(cls, prescriptions, default=None):
