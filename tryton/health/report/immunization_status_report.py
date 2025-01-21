@@ -91,7 +91,7 @@ class ImmunizationStatusReport(Report):
         for immunization in immunizations_to_check:
             immunization['status'] = "missing"
             res = Vaccination.search_count([
-                ('name', '=', immunization['patient']),
+                ('patient', '=', immunization['patient']),
                 ('dose', '=', immunization['dose']),
                 ('vaccine.name', '=', immunization['vaccine'].vaccine.name),
             ])

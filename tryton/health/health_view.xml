@@ -1616,7 +1616,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_vaccination_form1">
             <field name="name">Vaccinations</field>
             <field name="res_model">gnuhealth.vaccination</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_vaccination_keyword1">

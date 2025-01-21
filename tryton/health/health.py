@@ -3206,7 +3206,7 @@ class PatientData(ModelSQL, ModelView):
     )
 
     vaccinations = fields.One2Many(
-        'gnuhealth.vaccination', 'name', 'Vaccinations', readonly=True)
+        'gnuhealth.vaccination', 'patient', 'Vaccinations', readonly=True)
     medications = fields.One2Many(
         'gnuhealth.patient.medication', 'patient', 'Medications')
 
@@ -4245,9 +4245,8 @@ class PatientMedication(ModelSQL, ModelView):
 class PatientVaccination(ModelSQL, ModelView):
     'Patient Vaccination information'
     __name__ = 'gnuhealth.vaccination'
-    _rec_name = 'vaccine_lot'
 
-    name = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
 
     vaccine = fields.Many2One(
         'gnuhealth.medicament', 'Vaccine', required=True,
@@ -4345,19 +4344,6 @@ class PatientVaccination(ModelSQL, ModelView):
         return 1
 
     @classmethod
-    def __setup__(cls):
-        super(PatientVaccination, cls).__setup__()
-        t = cls.__table__()
-        cls._sql_constraints = [
-            ('dose_uniq', Unique(t, t.name, t.vaccine, t.dose),
-                'This vaccine dose has been given already to the patient'),
-        ]
-
-        cls._buttons.update({
-            'sign': {'invisible': Equal(Eval('state'), 'done')}
-        })
-
-    @classmethod
     @ModelView.button
     def sign(cls, vaccinations):
         # Change the state of the vaccination to "Done"
@@ -4389,6 +4375,31 @@ class PatientVaccination(ModelSQL, ModelView):
                 raise NextDoseBeforeFirst(
                     gettext('health.msg_next_dose_before_first')
                 )
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientVaccination, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('dose_uniq', Unique(t, t.patient, t.vaccine, t.dose),
+                'This vaccine dose has been given already to the patient'),
+        ]
+
+        cls._buttons.update({
+            'sign': {'invisible': Equal(Eval('state'), 'done')}
+        })
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('patient')):
+            table_h.column_rename('name', 'patient')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PatientPrescriptionOrder(ModelSQL, ModelView):
