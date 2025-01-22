@@ -267,7 +267,7 @@ def get_health_professional(required=True):
     cursor = Transaction().connection.cursor()
     cursor.execute(
         *party.join(professional,
-                    condition=(professional.name == party.id)).select(
+                    condition=(professional.party == party.id)).select(
             professional.id,
             where=(
                 (party.is_healthprof)

@@ -1933,9 +1933,8 @@ class MedicalSpecialty(ModelSQL, ModelView):
 class HealthProfessional(ModelSQL, ModelView):
     'Health Professional'
     __name__ = 'gnuhealth.healthprofessional'
-    _rec_name = 'code'
 
-    name = fields.Many2One(
+    party = fields.Many2One(
         'party.party', 'Health Prof', required=True,
         domain=[
             ('is_healthprof', '=', True),
@@ -1970,7 +1969,7 @@ class HealthProfessional(ModelSQL, ModelView):
         return True
 
     def get_hp_puid(self, name):
-        return self.name.ref
+        return self.party.ref
 
     @staticmethod
     def default_institution():
@@ -1980,7 +1979,7 @@ class HealthProfessional(ModelSQL, ModelView):
     def search_hp_puid(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('name.ref', clause[1], value))
+        res.append(('party.ref', clause[1], value))
         return res
 
     @classmethod
@@ -1988,15 +1987,27 @@ class HealthProfessional(ModelSQL, ModelView):
         super(HealthProfessional, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('hp_uniq', Unique(t, t.name),
+            ('hp_uniq', Unique(t, t.party),
                 'The health professional must be unique'),
             ('code_uniq', Unique(t, t.code),
                 'The LICENSE ID must be unique'),
         ]
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
     def get_rec_name(self, name):
-        if self.name:
-            res = self.name.rec_name
+        if self.party:
+            res = self.party.rec_name
         return res
 
     # Execute when creating a new record
