@@ -26,7 +26,6 @@ class UploadImageDataStart(ModelView):
     data_to_upload = fields.Binary("File to upload", required=True)
     # The target orthanc server where the image data will be saved
     server_config = fields.Many2One('gnuhealth.radiology.orthanc_server_config', 'Server',  # noqa	E501
-                                    select=True,
                                     help='Orthanc server',
                                     required=True)
 

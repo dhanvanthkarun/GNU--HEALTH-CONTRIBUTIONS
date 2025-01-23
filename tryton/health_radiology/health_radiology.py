@@ -83,7 +83,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        select=True, help='Patient Name',
+        help='Patient Name',
         readonly=False)
 
     imaging_test = fields.Many2One(
