@@ -1868,19 +1868,19 @@ class HospitalBed(ModelSQL, ModelView):
         return get_institution()
 
     def get_rec_name(self, name):
-        if self.name:
-            return self.name.name
+        if self.product:
+            return self.product.name
 
     @classmethod
     def search_rec_name(cls, name, clause):
-        return [('name',) + tuple(clause[1:])]
+        return [('product',) + tuple(clause[1:])]
 
     @classmethod
     def __setup__(cls):
         super(HospitalBed, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_uniq', Unique(t, t.name, t.institution),
+            ('name_uniq', Unique(t, t.product, t.institution),
                 'The Bed must be unique per Health Center'),
         ]
         # Show fix button when is in state "needs cleaning" or "NA"
