@@ -1,21 +1,29 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-11-23 19:07+0000\n"
+"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_services/uk/>\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.8.1\n"
 
 msgctxt "field:account.invoice,health_service:"
 msgid "Health Service"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:account.invoice,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.health_service,company:"
 msgid "Company"
-msgstr ""
+msgstr "Компанія"
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service,desc:"
 msgid "Description"
 msgstr "Опис"
@@ -31,14 +39,12 @@ msgstr ""
 
 msgctxt "field:gnuhealth.health_service,name:"
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service,service_date:"
 msgid "Date"
 msgstr "Дата"
@@ -60,7 +66,6 @@ msgctxt "field:gnuhealth.health_service.line,appointment:"
 msgid "Appointment"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service.line,desc:"
 msgid "Description"
 msgstr "Опис"
@@ -79,9 +84,8 @@ msgstr ""
 
 msgctxt "field:gnuhealth.health_service.line,qty:"
 msgid "Qty"
-msgstr ""
+msgstr "К-ть"
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "Зауваження"
@@ -197,12 +201,12 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_all"
 msgid "All"
-msgstr ""
+msgstr "Усі"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_draft"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_service_domain_invoiced"
@@ -285,23 +289,23 @@ msgstr ""
 
 msgctxt "report:health_services.report:"
 msgid "//"
-msgstr ""
+msgstr "//"
 
 msgctxt "report:health_services.report:"
 msgid "Address:"
-msgstr ""
+msgstr "Адреса:"
 
 msgctxt "report:health_services.report:"
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 msgctxt "report:health_services.report:"
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
 msgctxt "report:health_services.report:"
 msgid "E-mail:"
-msgstr ""
+msgstr "Email:"
 
 msgctxt "report:health_services.report:"
 msgid "From"
@@ -329,11 +333,11 @@ msgstr ""
 
 msgctxt "report:health_services.report:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:health_services.report:"
 msgid "Qty"
-msgstr ""
+msgstr "К-ть"
 
 msgctxt "report:health_services.report:"
 msgid "Service"
@@ -345,7 +349,7 @@ msgstr ""
 
 msgctxt "report:health_services.report:"
 msgid "Tel:"
-msgstr ""
+msgstr "Тел.:"
 
 msgctxt "report:health_services.report:"
 msgid "To"
@@ -353,7 +357,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
@@ -361,7 +365,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Unknown"
@@ -369,11 +373,11 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Yes"
-msgstr ""
+msgstr "Так"
 
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "Unknown"
@@ -381,7 +385,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "Yes"
-msgstr ""
+msgstr "Так"
 
 msgctxt "view:account.invoice:"
 msgid "Health"
@@ -434,4 +438,4 @@ msgstr ""
 
 msgctxt "wizard_button:gnuhealth.service.invoice.create,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"

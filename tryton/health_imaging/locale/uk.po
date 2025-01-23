@@ -1,13 +1,22 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-11-20 23:48+0000\n"
+"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_imaging/uk/>\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.8.1\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test,active:"
 msgid "Active"
 msgstr "Активно"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test,code:"
 msgid "Code"
 msgstr "Код"
@@ -21,20 +30,18 @@ msgctxt "field:gnuhealth.imaging.test,product:"
 msgid "Product"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test,test_type:"
 msgid "Type"
 msgstr "Тип"
 
 msgctxt "field:gnuhealth.imaging.test.request,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "Додаткова інформація"
 
 msgctxt "field:gnuhealth.imaging.test.request,context:"
 msgid "Context"
-msgstr ""
+msgstr "Контекст"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "Дата"
@@ -44,10 +51,9 @@ msgctxt "field:gnuhealth.imaging.test.request,doctor:"
 msgid "Health Prof"
 msgstr "Практикуючий лікар"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.imaging.test.request,request:"
 msgid "Order"
@@ -59,7 +65,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.imaging.test.request,requested_test:"
 msgid "Study"
-msgstr ""
+msgstr "Дослідження"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,state:"
@@ -72,14 +78,12 @@ msgstr ""
 
 msgctxt "field:gnuhealth.imaging.test.result,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "Додаткова інформація"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,computed_age:"
 msgid "Age"
 msgstr "Вік"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,date:"
 msgid "Date"
 msgstr "Дата"
@@ -101,10 +105,9 @@ msgctxt "field:gnuhealth.imaging.test.result,order:"
 msgid "Order"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
@@ -112,13 +115,12 @@ msgstr ""
 
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
 msgid "Request Date"
-msgstr ""
+msgstr "Дата запиту"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
 msgid "Study"
-msgstr ""
+msgstr "Дослідження"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.type,code:"
 msgid "Code"
 msgstr "Код"
@@ -130,9 +132,8 @@ msgstr "Назва"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,context:"
 msgid "Context"
-msgstr ""
+msgstr "Контекст"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "Дата"
@@ -142,10 +143,9 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
 msgid "Health Prof"
 msgstr "Практикуючий лікар"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,tests:"
 msgid "Tests"
@@ -161,7 +161,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.request-imaging-test,test:"
 msgid "Study"
-msgstr ""
+msgstr "Дослідження"
 
 msgctxt "field:gnuhealth.sequences,imaging_req_seq:"
 msgid "Imaging Request Sequence"
@@ -316,7 +316,7 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_imaging_test_request_domain_all"
 msgid "All"
-msgstr ""
+msgstr "Усі"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_imaging_test_request_domain_done"
@@ -326,7 +326,7 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_imaging_test_request_domain_draft"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_imaging_test_request_domain_requested"
@@ -419,23 +419,23 @@ msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Context:"
-msgstr ""
+msgstr "Контекст:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "DoB:"
-msgstr ""
+msgstr "ДН:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Evaluated by:"
@@ -467,7 +467,7 @@ msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Print Date:"
@@ -475,7 +475,7 @@ msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Requested by:"
-msgstr ""
+msgstr "Запит від:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Resources:"
@@ -483,11 +483,11 @@ msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Study ID:"
-msgstr ""
+msgstr "ID дослідження:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Study:"
-msgstr ""
+msgstr "Дослідження:"
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Done"
@@ -495,7 +495,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
@@ -519,7 +519,7 @@ msgstr ""
 
 msgctxt "wizard_button:gnuhealth.patient.imaging.test.request,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 msgctxt "wizard_button:gnuhealth.patient.imaging.test.request,start,request:"
 msgid "Request"

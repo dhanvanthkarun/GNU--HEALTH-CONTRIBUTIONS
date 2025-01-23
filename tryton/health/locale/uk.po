@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-12-22 23:22+0000\n"
+"Last-Translator: SomeTr <sometr@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health/uk/>\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -36,7 +46,7 @@ msgstr "Ідентифікатор прийому у лікаря"
 
 msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -44,7 +54,7 @@ msgstr "Спеціальність"
 
 msgctxt "field:gnuhealth.appointment,state:"
 msgid "State"
-msgstr "Держава"
+msgstr "Стан"
 
 msgctxt "field:gnuhealth.appointment,urgency:"
 msgid "Urgency"
@@ -73,7 +83,7 @@ msgstr "Дата й час"
 
 msgctxt "field:gnuhealth.appointment.report,diagnosis:"
 msgid "Main Condition"
-msgstr "Основна кодиція"
+msgstr "Основна кондиція"
 
 msgctxt "field:gnuhealth.appointment.report,gender:"
 msgid "Gender"
@@ -89,7 +99,7 @@ msgstr "Страхування"
 
 msgctxt "field:gnuhealth.appointment.report,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.appointment.report,ref:"
 msgid "PUID"
@@ -137,7 +147,7 @@ msgstr "Установа"
 
 msgctxt "field:gnuhealth.birth_certificate,mother:"
 msgid "Mother"
-msgstr "Матір"
+msgstr "Мати"
 
 msgctxt "field:gnuhealth.birth_certificate,name:"
 msgid "Person"
@@ -371,7 +381,7 @@ msgstr "Підрозділ"
 
 msgctxt "field:gnuhealth.du,address_zip:"
 msgid "Zip"
-msgstr ""
+msgstr "Індекс"
 
 msgctxt "field:gnuhealth.du,altitude:"
 msgid "Altitude"
@@ -498,6 +508,7 @@ msgctxt "field:gnuhealth.family_member,name:"
 msgid "Family"
 msgstr "Сім'я"
 
+#, fuzzy
 msgctxt "field:gnuhealth.family_member,party:"
 msgid "Party"
 msgstr "Партія"
@@ -528,7 +539,7 @@ msgstr "Номер ліцензії"
 
 msgctxt "field:gnuhealth.healthprofessional,info:"
 msgid "Extra info"
-msgstr "Додаткова інформація"
+msgstr "Додаткові дані"
 
 msgctxt "field:gnuhealth.healthprofessional,institution:"
 msgid "Institution"
@@ -557,22 +568,20 @@ msgstr "Спеціалізації"
 
 msgctxt "field:gnuhealth.help,category:"
 msgid "Category"
-msgstr ""
+msgstr "Категорія"
 
-#, fuzzy
 msgctxt "field:gnuhealth.help,description:"
 msgid "Description"
 msgstr "Опис"
 
 msgctxt "field:gnuhealth.help,documentation:"
 msgid "Documentation"
-msgstr ""
+msgstr "Документація"
 
 msgctxt "field:gnuhealth.help,keywords:"
 msgid "Keywords"
-msgstr ""
+msgstr "Ключові слова"
 
-#, fuzzy
 msgctxt "field:gnuhealth.help,name:"
 msgid "Code"
 msgstr "Код"
@@ -587,7 +596,7 @@ msgstr "Тип ліжка"
 
 msgctxt "field:gnuhealth.hospital.bed,extra_info:"
 msgid "Extra Info"
-msgstr "Додаткова інформація"
+msgstr "Додаткові дані"
 
 msgctxt "field:gnuhealth.hospital.bed,institution:"
 msgid "Institution"
@@ -607,7 +616,7 @@ msgstr "Номер телефону"
 
 msgctxt "field:gnuhealth.hospital.bed,ward:"
 msgid "Ward"
-msgstr "Відділення"
+msgstr "Палата"
 
 msgctxt "field:gnuhealth.hospital.building,code:"
 msgid "Code"
@@ -615,7 +624,7 @@ msgstr "Код"
 
 msgctxt "field:gnuhealth.hospital.building,extra_info:"
 msgid "Extra Info"
-msgstr "Додаткова інформація"
+msgstr "Додаткові дані"
 
 msgctxt "field:gnuhealth.hospital.building,institution:"
 msgid "Institution"
@@ -631,7 +640,7 @@ msgstr "Будівля"
 
 msgctxt "field:gnuhealth.hospital.or,extra_info:"
 msgid "Extra Info"
-msgstr "Додаткова інформація"
+msgstr "Додаткові дані"
 
 msgctxt "field:gnuhealth.hospital.or,institution:"
 msgid "Institution"
@@ -659,7 +668,7 @@ msgstr "Код"
 
 msgctxt "field:gnuhealth.hospital.unit,extra_info:"
 msgid "Extra Info"
-msgstr "Додаткова інформація"
+msgstr "Додаткові дані"
 
 msgctxt "field:gnuhealth.hospital.unit,institution:"
 msgid "Institution"
@@ -771,7 +780,7 @@ msgstr "Код"
 
 msgctxt "field:gnuhealth.immunization_schedule,vaccines:"
 msgid "Vaccines"
-msgstr "Щеплення"
+msgstr "Вакцини"
 
 msgctxt "field:gnuhealth.immunization_schedule,year:"
 msgid "Year"
@@ -799,7 +808,7 @@ msgstr "Розклад"
 
 msgctxt "field:gnuhealth.immunization_schedule_dose,vaccine:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "field:gnuhealth.immunization_schedule_line,doses:"
 msgid "Doses"
@@ -819,7 +828,7 @@ msgstr "Масштаб"
 
 msgctxt "field:gnuhealth.immunization_schedule_line,vaccine:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "field:gnuhealth.institution,beds:"
 msgid "Beds"
@@ -905,19 +914,19 @@ msgstr "Спеціальність"
 
 msgctxt "field:gnuhealth.insurance,category:"
 msgid "Category"
-msgstr ""
+msgstr "Категорія"
 
 msgctxt "field:gnuhealth.insurance,company:"
 msgid "Insurance Company"
-msgstr ""
+msgstr "Страхова компанія"
 
 msgctxt "field:gnuhealth.insurance,insurance_type:"
 msgid "Insurance Type"
-msgstr ""
+msgstr "Тип страхування"
 
 msgctxt "field:gnuhealth.insurance,member_exp:"
 msgid "Expiration date"
-msgstr ""
+msgstr "Термін дії"
 
 msgctxt "field:gnuhealth.insurance,member_since:"
 msgid "Member since"
@@ -925,25 +934,23 @@ msgstr ""
 
 msgctxt "field:gnuhealth.insurance,name:"
 msgid "Owner"
-msgstr ""
+msgstr "Власник"
 
-#, fuzzy
 msgctxt "field:gnuhealth.insurance,notes:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
 
-#, fuzzy
 msgctxt "field:gnuhealth.insurance,number:"
 msgid "Number"
 msgstr "Номер"
 
 msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
-msgstr ""
+msgstr "План"
 
 msgctxt "field:gnuhealth.insurance.plan,company:"
 msgid "Insurance Company"
-msgstr ""
+msgstr "Страхова компанія"
 
 msgctxt "field:gnuhealth.insurance.plan,is_default:"
 msgid "Default plan"
@@ -953,10 +960,9 @@ msgctxt "field:gnuhealth.insurance.plan,name:"
 msgid "Plan"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.insurance.plan,notes:"
 msgid "Extra info"
-msgstr "Додаткова інформація"
+msgstr "Додаткові дані"
 
 #, fuzzy
 msgctxt "field:gnuhealth.medicament,active:"
@@ -973,7 +979,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.medicament,category:"
 msgid "Category"
-msgstr ""
+msgstr "Категорія"
 
 msgctxt "field:gnuhealth.medicament,composition:"
 msgid "Composition"
@@ -983,7 +989,6 @@ msgctxt "field:gnuhealth.medicament,dosage:"
 msgid "Dosage Instructions"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.medicament,form:"
 msgid "Form"
 msgstr "Форма"
@@ -992,23 +997,21 @@ msgctxt "field:gnuhealth.medicament,indications:"
 msgid "Indication"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.medicament,is_vaccine:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "field:gnuhealth.medicament,name:"
 msgid "Product"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.medicament,notes:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
 
 msgctxt "field:gnuhealth.medicament,overdosage:"
 msgid "Overdosage"
-msgstr ""
+msgstr "Передозування"
 
 msgctxt "field:gnuhealth.medicament,pregnancy:"
 msgid "Pregnancy and Lactancy"
@@ -1020,7 +1023,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.medicament,pregnancy_category:"
 msgid "Pregnancy Category"
-msgstr ""
+msgstr "Категорія вагітності"
 
 msgctxt "field:gnuhealth.medicament,pregnancy_warning:"
 msgid "Pregnancy Warning"
@@ -1054,7 +1057,7 @@ msgstr "Одиниця виміру"
 
 msgctxt "field:gnuhealth.medicament,storage:"
 msgid "Storage Conditions"
-msgstr ""
+msgstr "Умови зберігання"
 
 msgctxt "field:gnuhealth.medicament,strength:"
 msgid "Strength"
@@ -1070,7 +1073,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.medicament.category,childs:"
 msgid "Children"
-msgstr ""
+msgstr "Діти"
 
 #, fuzzy
 msgctxt "field:gnuhealth.medicament.category,name:"
@@ -1083,9 +1086,8 @@ msgstr ""
 
 msgctxt "field:gnuhealth.medication.dosage,abbreviation:"
 msgid "Abbreviation"
-msgstr ""
+msgstr "Абревіатура"
 
-#, fuzzy
 msgctxt "field:gnuhealth.medication.dosage,code:"
 msgid "Code"
 msgstr "Код"
@@ -1094,7 +1096,6 @@ msgctxt "field:gnuhealth.medication.dosage,name:"
 msgid "Frequency"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.occupation,code:"
 msgid "Code"
 msgstr "Код"
@@ -1111,9 +1112,8 @@ msgstr "Назва"
 
 msgctxt "field:gnuhealth.online_document,uri:"
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
-#, fuzzy
 msgctxt "field:gnuhealth.operational_area,info:"
 msgid "Extra Information"
 msgstr "Додаткова інформація"
@@ -1128,7 +1128,6 @@ msgctxt "field:gnuhealth.operational_area,operational_sector:"
 msgid "Operational Sector"
 msgstr "Операційний сектор"
 
-#, fuzzy
 msgctxt "field:gnuhealth.operational_sector,info:"
 msgid "Extra Information"
 msgstr "Додаткова інформація"
@@ -1149,13 +1148,12 @@ msgstr "Активно"
 
 msgctxt "field:gnuhealth.pathology,category:"
 msgid "Main Category"
-msgstr ""
+msgstr "Основна категорія"
 
 msgctxt "field:gnuhealth.pathology,chromosome:"
 msgid "Affected Chromosome"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pathology,code:"
 msgid "Code"
 msgstr "Код"
@@ -1168,7 +1166,6 @@ msgctxt "field:gnuhealth.pathology,groups:"
 msgid "Groups"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pathology,info:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
@@ -1184,7 +1181,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.pathology,uri:"
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
 msgctxt "field:gnuhealth.pathology.category,childs:"
 msgid "Children Category"
@@ -1192,26 +1189,24 @@ msgstr ""
 
 msgctxt "field:gnuhealth.pathology.category,name:"
 msgid "Category Name"
-msgstr ""
+msgstr "Назва категорії"
 
 msgctxt "field:gnuhealth.pathology.category,parent:"
 msgid "Parent Category"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pathology.group,code:"
 msgid "Code"
 msgstr "Код"
 
 msgctxt "field:gnuhealth.pathology.group,desc:"
 msgid "Short Description"
-msgstr ""
+msgstr "Короткий опис"
 
 msgctxt "field:gnuhealth.pathology.group,info:"
 msgid "Detailed information"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pathology.group,members:"
 msgid "Members"
 msgstr "Члени"
@@ -1226,7 +1221,6 @@ msgctxt "field:gnuhealth.patient,active:"
 msgid "Active"
 msgstr "Активно"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,age:"
 msgid "Age"
 msgstr "Вік"
@@ -1241,11 +1235,11 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient,biological_sex:"
 msgid "Biological Sex"
-msgstr ""
+msgstr "Біологічна стать"
 
 msgctxt "field:gnuhealth.patient,blood_type:"
 msgid "Blood Type"
-msgstr ""
+msgstr "Група крові"
 
 msgctxt "field:gnuhealth.patient,childbearing_age:"
 msgid "Potential for Childbearing"
@@ -1253,7 +1247,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient,cod:"
 msgid "Cause of Death"
-msgstr ""
+msgstr "Причина смерті"
 
 msgctxt "field:gnuhealth.patient,crit_allergic:"
 msgid "Allergic"
@@ -1307,7 +1301,6 @@ msgctxt "field:gnuhealth.patient,current_address:"
 msgid "Temp. Addr"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,current_insurance:"
 msgid "Insurance"
 msgstr "Страхування"
@@ -1323,13 +1316,12 @@ msgstr "Умови"
 
 msgctxt "field:gnuhealth.patient,dob:"
 msgid "DoB"
-msgstr ""
+msgstr "ДН"
 
 msgctxt "field:gnuhealth.patient,dod:"
 msgid "Date of Death"
-msgstr ""
+msgstr "Дата смерті"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "Сім'я"
@@ -1353,16 +1345,15 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
-msgstr ""
+msgstr "Сімейний стан"
 
 msgctxt "field:gnuhealth.patient,medications:"
 msgid "Medications"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient,photo:"
@@ -1380,11 +1371,11 @@ msgstr "PUID"
 
 msgctxt "field:gnuhealth.patient,rh:"
 msgid "Rh"
-msgstr ""
+msgstr "Rh"
 
 msgctxt "field:gnuhealth.patient,vaccinations:"
 msgid "Vaccinations"
-msgstr ""
+msgstr "Щеплення"
 
 msgctxt "field:gnuhealth.patient.disease,age:"
 msgid "Years"
@@ -1396,7 +1387,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.disease,allergy_type:"
 msgid "Allergy type"
-msgstr ""
+msgstr "Тип алергії"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.disease,date_start_treatment:"
@@ -1419,7 +1410,6 @@ msgctxt "field:gnuhealth.patient.disease,est_dodx:"
 msgid "Est"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,extra_info:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
@@ -1459,17 +1449,15 @@ msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
 msgid "Current"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
 msgstr "Умова"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,pcs_code:"
 msgid "Code"
 msgstr "Код"
@@ -1482,7 +1470,6 @@ msgctxt "field:gnuhealth.patient.disease,related_evaluations:"
 msgid "Related Evaluations"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,short_comment:"
 msgid "Remarks"
 msgstr "Зауваження"
@@ -1492,7 +1479,6 @@ msgctxt "field:gnuhealth.patient.disease,status:"
 msgid "Status"
 msgstr "Статус"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,treatment_description:"
 msgid "Description"
 msgstr "Опис"
@@ -1505,7 +1491,6 @@ msgctxt "field:gnuhealth.patient.ecg,axis:"
 msgid "Axis"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,ecg_date:"
 msgid "Date"
 msgstr "Дата"
@@ -1536,10 +1521,9 @@ msgctxt "field:gnuhealth.patient.ecg,lead:"
 msgid "Lead"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.ecg,pacemaker:"
 msgid "Pacemaker"
@@ -1575,7 +1559,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,abdominal_circ:"
 msgid "Waist"
-msgstr ""
+msgstr "Талія"
 
 msgctxt "field:gnuhealth.patient.evaluation,abstraction:"
 msgid "Abstraction"
@@ -1583,7 +1567,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,actions:"
 msgid "Procedures"
-msgstr ""
+msgstr "Процедури"
 
 msgctxt "field:gnuhealth.patient.evaluation,appointment:"
 msgid "Appointment"
@@ -1591,7 +1575,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,bmi:"
 msgid "BMI"
-msgstr ""
+msgstr "ІМТ"
 
 msgctxt "field:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart Rate"
@@ -1609,12 +1593,10 @@ msgctxt "field:gnuhealth.patient.evaluation,cholesterol_total:"
 msgid "Last Cholesterol"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,code:"
 msgid "Code"
 msgstr "Код"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,computed_age:"
 msgid "Age"
 msgstr "Вік"
@@ -1631,10 +1613,9 @@ msgctxt "field:gnuhealth.patient.evaluation,derived_to:"
 msgid "Derived to"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,diagnosis:"
 msgid "Main Condition"
-msgstr "Основна кодиція"
+msgstr "Основна кондиція"
 
 msgctxt "field:gnuhealth.patient.evaluation,diagnostic_hypothesis:"
 msgid "Hypotheses / DDx"
@@ -1642,7 +1623,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
-msgstr ""
+msgstr "Діастолічний тиск"
 
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
 msgid "Plan"
@@ -1669,7 +1650,6 @@ msgctxt "field:gnuhealth.patient.evaluation,evaluation_summary:"
 msgid "Clinical and physical"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,evaluation_type:"
 msgid "Type"
 msgstr "Тип"
@@ -1713,7 +1693,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
-msgstr ""
+msgstr "Джерело"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,institution:"
@@ -1734,19 +1714,19 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,loc:"
 msgid "Glasgow"
-msgstr ""
+msgstr "Глазго"
 
 msgctxt "field:gnuhealth.patient.evaluation,loc_eyes:"
 msgid "Glasgow - Eyes"
-msgstr ""
+msgstr "Розплющування очей"
 
 msgctxt "field:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Glasgow - Motor"
-msgstr ""
+msgstr "Рухова реакція"
 
 msgctxt "field:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Glasgow - Verbal"
-msgstr ""
+msgstr "Мовна реакція"
 
 msgctxt "field:gnuhealth.patient.evaluation,malnutrition:"
 msgid "Malnutrition"
@@ -1764,7 +1744,6 @@ msgctxt "field:gnuhealth.patient.evaluation,next_evaluation:"
 msgid "Next Appointment"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,notes:"
 msgid "Notes"
 msgstr "Примітки"
@@ -1785,10 +1764,9 @@ msgctxt "field:gnuhealth.patient.evaluation,osat:"
 msgid "Oxygen Saturation"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.evaluation,praxis:"
 msgid "Praxis"
@@ -1833,7 +1811,7 @@ msgstr "Підписано"
 
 msgctxt "field:gnuhealth.patient.evaluation,signs_and_symptoms:"
 msgid "Signs and Symptoms"
-msgstr ""
+msgstr "Ознаки та симптоми"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,specialty:"
@@ -1847,7 +1825,7 @@ msgstr "Стан"
 
 msgctxt "field:gnuhealth.patient.evaluation,systolic:"
 msgid "Systolic Pressure"
-msgstr ""
+msgstr "Систолічний тиск"
 
 msgctxt "field:gnuhealth.patient.evaluation,tag:"
 msgid "TAGs"
@@ -1855,7 +1833,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,temperature:"
 msgid "Temperature"
-msgstr ""
+msgstr "Температура"
 
 msgctxt "field:gnuhealth.patient.evaluation,tremor:"
 msgid "Tremor"
@@ -1889,11 +1867,11 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,weight:"
 msgid "Weight"
-msgstr ""
+msgstr "Вага"
 
 msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
-msgstr ""
+msgstr "ІТС"
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -1919,7 +1897,6 @@ msgctxt "field:gnuhealth.patient.medication,discontinued_reason:"
 msgid "Reason for discontinuation"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,dose:"
 msgid "Dose"
 msgstr "Доза"
@@ -1992,12 +1969,10 @@ msgctxt "field:gnuhealth.patient.medication,medicament:"
 msgid "Medicament"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,notes:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
@@ -2024,19 +1999,17 @@ msgctxt ""
 msgid "ID type"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.person_alternative_identification,code:"
 msgid "Code"
 msgstr "Код"
 
-#, fuzzy
 msgctxt "field:gnuhealth.person_alternative_identification,comments:"
 msgid "Comments"
 msgstr "Коментарі"
 
 msgctxt "field:gnuhealth.person_alternative_identification,expiration_date:"
 msgid "Expiration date"
-msgstr ""
+msgstr "Термін дії"
 
 #, fuzzy
 msgctxt "field:gnuhealth.person_alternative_identification,name:"
@@ -2056,7 +2029,6 @@ msgctxt "field:gnuhealth.person_name,date_to:"
 msgid "To"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.person_name,family:"
 msgid "Family"
 msgstr "Сім'я"
@@ -2065,7 +2037,6 @@ msgctxt "field:gnuhealth.person_name,given:"
 msgid "Given"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.person_name,party:"
 msgid "Person"
 msgstr "Особа"
@@ -2082,7 +2053,6 @@ msgctxt "field:gnuhealth.person_name,use:"
 msgid "Use"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pol,age:"
 msgid "Age"
 msgstr "Вік"
@@ -2108,7 +2078,6 @@ msgctxt "field:gnuhealth.pol,health_condition:"
 msgid "Condition"
 msgstr "Умова"
 
-#, fuzzy
 msgctxt "field:gnuhealth.pol,health_condition_code:"
 msgid "Code"
 msgstr "Код"
@@ -2147,16 +2116,14 @@ msgctxt "field:gnuhealth.pol,page:"
 msgid "Page"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pol,page_date:"
 msgid "Date"
 msgstr "Дата"
 
 msgctxt "field:gnuhealth.pol,page_type:"
 msgid "Page type"
-msgstr ""
+msgstr "Тип сторінки"
 
-#, fuzzy
 msgctxt "field:gnuhealth.pol,person:"
 msgid "Person"
 msgstr "Особа"
@@ -2165,16 +2132,14 @@ msgctxt "field:gnuhealth.pol,phenotype:"
 msgid "Phenotype"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.pol,procedure:"
 msgid "Procedure"
 msgstr "Процедура"
 
 msgctxt "field:gnuhealth.pol,procedure_code:"
 msgid "Procedure Code"
-msgstr ""
+msgstr "Код процедури"
 
-#, fuzzy
 msgctxt "field:gnuhealth.pol,procedure_text:"
 msgid "Procedure"
 msgstr "Процедура"
@@ -2207,7 +2172,6 @@ msgctxt "field:gnuhealth.prescription.line,common_dosage:"
 msgid "Frequency"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.line,dose:"
 msgid "Dose"
 msgstr "Доза"
@@ -2228,7 +2192,6 @@ msgctxt "field:gnuhealth.prescription.line,end_treatment:"
 msgid "End"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.line,form:"
 msgid "Form"
 msgstr "Форма"
@@ -2295,7 +2258,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.prescription.line,short_comment:"
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 #, fuzzy
 msgctxt "field:gnuhealth.prescription.line,start_treatment:"
@@ -2310,10 +2273,9 @@ msgctxt "field:gnuhealth.prescription.order,notes:"
 msgid "Prescription Notes"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.prescription.order,pharmacy:"
 msgid "Pharmacy"
@@ -2323,7 +2285,6 @@ msgctxt "field:gnuhealth.prescription.order,pregnancy_warning:"
 msgid "Pregnancy Warning"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,prescription_date:"
 msgid "Date"
 msgstr "Дата"
@@ -2340,7 +2301,6 @@ msgctxt "field:gnuhealth.prescription.order,prescription_warning_ack:"
 msgid "Prescription verified"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Date"
 msgstr "Дата"
@@ -2362,12 +2322,10 @@ msgctxt "field:gnuhealth.procedure,description:"
 msgid "Long Text"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.procedure,name:"
 msgid "Code"
 msgstr "Код"
 
-#, fuzzy
 msgctxt "field:gnuhealth.secondary_condition,comments:"
 msgid "Comments"
 msgstr "Коментарі"
@@ -2377,7 +2335,6 @@ msgctxt "field:gnuhealth.secondary_condition,evaluation:"
 msgid "Evaluation"
 msgstr "Оцінка"
 
-#, fuzzy
 msgctxt "field:gnuhealth.secondary_condition,pathology:"
 msgid "Pathology"
 msgstr "Патологія"
@@ -2418,9 +2375,8 @@ msgstr ""
 
 msgctxt "field:gnuhealth.signs_and_symptoms,clinical:"
 msgid "Sign or Symptom"
-msgstr ""
+msgstr "Ознака або симптом"
 
-#, fuzzy
 msgctxt "field:gnuhealth.signs_and_symptoms,comments:"
 msgid "Comments"
 msgstr "Коментарі"
@@ -2434,7 +2390,6 @@ msgctxt "field:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Subjective / Objective"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.specialty,code:"
 msgid "Code"
 msgstr "Код"
@@ -2457,14 +2412,13 @@ msgctxt "field:gnuhealth.vaccination,amount:"
 msgid "Amount"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.vaccination,date:"
 msgid "Date"
 msgstr "Дата"
 
 msgctxt "field:gnuhealth.vaccination,dose:"
 msgid "Dose #"
-msgstr ""
+msgstr "Доза №"
 
 #, fuzzy
 msgctxt "field:gnuhealth.vaccination,healthprof:"
@@ -2476,21 +2430,19 @@ msgctxt "field:gnuhealth.vaccination,institution:"
 msgid "Institution"
 msgstr "Установа"
 
-#, fuzzy
 msgctxt "field:gnuhealth.vaccination,name:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
-msgstr ""
+msgstr "Наступна доза"
 
 #, fuzzy
 msgctxt "field:gnuhealth.vaccination,observations:"
 msgid "Observations"
 msgstr "Спостереження"
 
-#, fuzzy
 msgctxt "field:gnuhealth.vaccination,picture:"
 msgid "Label"
 msgstr "Мітка"
@@ -2505,31 +2457,29 @@ msgctxt "field:gnuhealth.vaccination,state:"
 msgid "State"
 msgstr "Стан"
 
-#, fuzzy
 msgctxt "field:gnuhealth.vaccination,vaccine:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "field:gnuhealth.vaccination,vaccine_expiration_date:"
 msgid "Expiration date"
-msgstr ""
+msgstr "Термін придатності"
 
 msgctxt "field:gnuhealth.vaccination,vaccine_lot:"
 msgid "Lot Number"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:ir.module,description:"
 msgid "Description"
 msgstr "Опис"
 
 msgctxt "field:party.address,is_school:"
 msgid "School"
-msgstr ""
+msgstr "Школа"
 
 msgctxt "field:party.address,is_work:"
 msgid "Work"
-msgstr ""
+msgstr "Робота"
 
 msgctxt "field:party.address,relationship:"
 msgid "Relationship"
@@ -2537,13 +2487,12 @@ msgstr ""
 
 msgctxt "field:party.address,relative_id:"
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 msgctxt "field:party.contact_mechanism,emergency:"
 msgid "Emergency"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:party.contact_mechanism,remarks:"
 msgid "Remarks"
 msgstr "Зауваження"
@@ -2552,7 +2501,6 @@ msgctxt "field:party.party,activation_date:"
 msgid "Activation date"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:party.party,age:"
 msgid "Age"
 msgstr "Вік"
@@ -2567,7 +2515,7 @@ msgstr ""
 
 msgctxt "field:party.party,birth_certificate:"
 msgid "Birth Certificate"
-msgstr ""
+msgstr "Свідоцтво про народження"
 
 msgctxt "field:party.party,citizenship:"
 msgid "Citizenship"
@@ -2579,7 +2527,7 @@ msgstr ""
 
 msgctxt "field:party.party,death_certificate:"
 msgid "Death Certificate"
-msgstr ""
+msgstr "Свідоцтво про смерть"
 
 msgctxt "field:party.party,deceased:"
 msgid "Deceased"
@@ -2587,11 +2535,11 @@ msgstr ""
 
 msgctxt "field:party.party,dob:"
 msgid "DoB"
-msgstr ""
+msgstr "ДН"
 
 msgctxt "field:party.party,dod:"
 msgid "Date of Death"
-msgstr ""
+msgstr "Дата смерті"
 
 #, fuzzy
 msgctxt "field:party.party,du:"
@@ -2600,7 +2548,7 @@ msgstr "Жилий блок"
 
 msgctxt "field:party.party,du_address:"
 msgid "Main address"
-msgstr ""
+msgstr "Основна адреса"
 
 msgctxt "field:party.party,est_dob:"
 msgid "Est"
@@ -2614,7 +2562,6 @@ msgctxt "field:party.party,ethnic_group:"
 msgid "Ethnicity"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:party.party,father:"
 msgid "Father"
 msgstr "Батько"
@@ -2634,15 +2581,15 @@ msgstr "Стать"
 
 msgctxt "field:party.party,insurance:"
 msgid "Insurances"
-msgstr ""
+msgstr "Страхування"
 
 msgctxt "field:party.party,insurance_company_type:"
 msgid "Insurance Type"
-msgstr ""
+msgstr "Тип страхування"
 
 msgctxt "field:party.party,insurance_plan_ids:"
 msgid "Insurance Plans"
-msgstr ""
+msgstr "Плани страхування"
 
 msgctxt "field:party.party,internal_user:"
 msgid "Internal User"
@@ -2660,14 +2607,12 @@ msgstr "Установа"
 
 msgctxt "field:party.party,is_insurance_company:"
 msgid "Insurance Company"
-msgstr ""
+msgstr "Страхова компанія"
 
-#, fuzzy
 msgctxt "field:party.party,is_patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
-#, fuzzy
 msgctxt "field:party.party,is_person:"
 msgid "Person"
 msgstr "Особа"
@@ -2682,12 +2627,11 @@ msgstr ""
 
 msgctxt "field:party.party,marital_status:"
 msgid "Marital Status"
-msgstr ""
+msgstr "Сімейний стан"
 
-#, fuzzy
 msgctxt "field:party.party,mother:"
 msgid "Mother"
-msgstr "Матір"
+msgstr "Мати"
 
 msgctxt "field:party.party,name_representation:"
 msgid "Name Representation"
@@ -2715,14 +2659,13 @@ msgctxt "field:party.party,unidentified:"
 msgid "Unidentified"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:product.product,is_bed:"
 msgid "Bed"
 msgstr "Ліжко"
 
 msgctxt "field:product.product,is_insurance_plan:"
 msgid "Insurance Plan"
-msgstr ""
+msgstr "План страхування"
 
 msgctxt "field:product.product,is_medical_supply:"
 msgid "Medical Supply"
@@ -2732,10 +2675,9 @@ msgctxt "field:product.product,is_medicament:"
 msgid "Medicament"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "help:gnuhealth.appointment,appointment_date:"
 msgid "Appintmont start date and time."
@@ -2793,7 +2735,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.death_certificate,dod:"
 msgid "Date and time of Death"
-msgstr ""
+msgstr "Дата і час смерті"
 
 msgctxt "help:gnuhealth.death_certificate,du:"
 msgid "Domiciliary Unit"
@@ -2808,8 +2750,8 @@ msgid ""
 "Underlying conditions that initiated the events resulting in death. Please "
 "code them in sequential, chronological order"
 msgstr ""
-"Основні умови, що ініціювали події, що призвели до смерті. Будь ласка,  "
-"запишіть  їх у послідовному, хронологічному порядку"
+"Основні умови, що ініціювали події, які призвели до смерті. Будь ласка, "
+"запишіть їх у послідовному, хронологічному порядку"
 
 msgctxt "help:gnuhealth.death_underlying_condition,interval:"
 msgid "Approx Interval onset to death"
@@ -2823,12 +2765,10 @@ msgctxt "help:gnuhealth.drug.route,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:gnuhealth.du,address_city:"
 msgid "City"
 msgstr "Місто"
 
-#, fuzzy
 msgctxt "help:gnuhealth.du,address_country:"
 msgid "Country"
 msgstr "Країна"
@@ -2876,11 +2816,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.family_member,party:"
 msgid "Family Member"
-msgstr ""
+msgstr "Член сім'ї"
 
 msgctxt "help:gnuhealth.family_member,role:"
 msgid "Father, Mother, sibbling..."
-msgstr ""
+msgstr "Батько, мати, брат, сестра..."
 
 msgctxt "help:gnuhealth.federation.country.config,country:"
 msgid "Country code to be used as the prefix for the FederationID account."
@@ -2894,7 +2834,7 @@ msgid ""
 "the default country code will be the person citizenship.\n"
 "This feature is reserved for future use"
 msgstr ""
-"Якщо цей параметр встановлений\n"
+"Якщо цей параметр увімкнено,\n"
 "кодом країни буде громадянство особи.\n"
 "Ця функція зарезервована для майбутнього використання"
 
@@ -2916,7 +2856,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.help,description:"
 msgid "Short description"
-msgstr ""
+msgstr "Короткий опис"
 
 msgctxt "help:gnuhealth.help,name:"
 msgid "Unique help code"
@@ -2932,11 +2872,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.hospital.bed,telephone_number:"
 msgid "Telephone number / Extension"
-msgstr ""
+msgstr "Номер телефону / Внутрішній номер"
 
 msgctxt "help:gnuhealth.hospital.bed,ward:"
 msgid "Ward or room"
-msgstr ""
+msgstr "Палата або кімната"
 
 msgctxt "help:gnuhealth.hospital.building,institution:"
 msgid "Health Institution of this building"
@@ -2979,11 +2919,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.hospital.ward,name:"
 msgid "Ward / Room code"
-msgstr ""
+msgstr "Код палати / кімнати"
 
 msgctxt "help:gnuhealth.hospital.ward,number_of_beds:"
 msgid "Number of patients per ward"
-msgstr ""
+msgstr "Кількість пацієнтів у палаті"
 
 msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
@@ -3008,7 +2948,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.immunization_schedule_dose,vaccine:"
 msgid "Vaccine Name"
-msgstr ""
+msgstr "Назва вакцини"
 
 msgctxt "help:gnuhealth.immunization_schedule_line,sched:"
 msgid "Schedule Name"
@@ -3016,7 +2956,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.immunization_schedule_line,vaccine:"
 msgid "Vaccine Name"
-msgstr ""
+msgstr "Назва вакцини"
 
 msgctxt "help:gnuhealth.institution,code:"
 msgid "Institution code"
@@ -3050,11 +2990,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.insurance,category:"
 msgid "Insurance company category"
-msgstr ""
+msgstr "Категорія страхової компанії"
 
 msgctxt "help:gnuhealth.insurance,plan_id:"
 msgid "Insurance company plan"
-msgstr ""
+msgstr "План страхової компанії"
 
 msgctxt "help:gnuhealth.insurance.plan,is_default:"
 msgid ""
@@ -3064,7 +3004,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.insurance.plan,name:"
 msgid "Insurance company plan"
-msgstr ""
+msgstr "План страхової компанії"
 
 msgctxt "help:gnuhealth.medicament,active_component:"
 msgid "Active Component"
@@ -3092,7 +3032,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.medicament,overdosage:"
 msgid "Overdosage"
-msgstr ""
+msgstr "Передозування"
 
 msgctxt "help:gnuhealth.medicament,pregnancy:"
 msgid "Warnings for Pregnant Women"
@@ -3157,6 +3097,7 @@ msgstr ""
 msgctxt "help:gnuhealth.medication.dosage,abbreviation:"
 msgid "Dosage abbreviation, such as tid in the US or tds in the UK"
 msgstr ""
+"Абревіатура дозування, наприклад, «tid» у США або «tds» у Великобританії"
 
 msgctxt "help:gnuhealth.medication.dosage,code:"
 msgid ""
@@ -3174,11 +3115,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.online_document,name:"
 msgid "Health Online document name."
-msgstr ""
+msgstr "Назва документа Health Online."
 
 msgctxt "help:gnuhealth.online_document,uri:"
 msgid "Health online document URL address."
-msgstr ""
+msgstr "URL-адреса документа Health Online."
 
 msgctxt "help:gnuhealth.operational_area,name:"
 msgid "Operational Area of the city or region"
@@ -3201,7 +3142,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.pathology,code:"
 msgid "Specific Code for the Disease (eg, ICD-10)"
-msgstr "Конкретний код захворювання (наприклад, ICD-10)"
+msgstr "Точний код захворювання (наприклад, ICD-10)"
 
 msgctxt "help:gnuhealth.pathology,gene:"
 msgid "Name of the gene(s) affected"
@@ -3338,7 +3279,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
-msgstr ""
+msgstr "Сімейний стан"
 
 msgctxt "help:gnuhealth.patient,name:"
 msgid "Person associated to this patient"
@@ -3398,7 +3339,7 @@ msgstr "Умова"
 
 msgctxt "help:gnuhealth.patient.disease,pcs_code:"
 msgid "Procedure code"
-msgstr ""
+msgstr "Код процедури"
 
 msgctxt "help:gnuhealth.patient.disease,short_comment:"
 msgid ""
@@ -3428,7 +3369,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,abdominal_circ:"
 msgid "Waist circumference in centimeters"
-msgstr ""
+msgstr "Обхват талії в сантиметрах"
 
 msgctxt "help:gnuhealth.patient.evaluation,abstraction:"
 msgid ""
@@ -3492,7 +3433,7 @@ msgid ""
 "Presumptive Diagnosis. If no diagnosis can be made, encode the main sign or "
 "symptom."
 msgstr ""
-"Попередній діагноз. Якщо діагноз встановити не вдається, запишіть  основну "
+"Попередній діагноз. Якщо діагноз встановити не вдається, запишіть основну "
 "ознаку або симптом."
 
 msgctxt "help:gnuhealth.patient.evaluation,diagnostic_hypothesis:"
@@ -3501,7 +3442,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic pressure (mmHg)"
-msgstr ""
+msgstr "Діастолічний тиск (мм рт. ст.)"
 
 msgctxt "help:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Reason for patient discharge"
@@ -3517,7 +3458,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,hba1c:"
 msgid "Last Glycated Hemoglobin HbA1c level(mmol/mol)"
-msgstr ""
+msgstr "Останній рівень глікованого гемоглобіну HbA1c (ммоль/моль)"
 
 msgctxt "help:gnuhealth.patient.evaluation,hdl:"
 msgid "Last HDL Cholesterol reading (mg/dL)"
@@ -3545,7 +3486,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
-msgstr ""
+msgstr "Джерело інформації — напр., пацієнт, родич, друг..."
 
 msgctxt "help:gnuhealth.patient.evaluation,judgment:"
 msgid ""
@@ -3566,6 +3507,8 @@ msgid ""
 "Level of Consciousness - on Glasgow Coma Scale :  < 9 severe - 9-12 "
 "Moderate, > 13 minor"
 msgstr ""
+"Стан свідомості за шкалою ком Глазго: < 9 тяжкий, 9-12 середньої тяжкості, > "
+"13 легкий"
 
 msgctxt "help:gnuhealth.patient.evaluation,malnutrition:"
 msgid ""
@@ -3627,7 +3570,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,systolic:"
 msgid "Systolic pressure (mmHg)"
-msgstr ""
+msgstr "Систолічний тиск (мм рт. ст.)"
 
 msgctxt "help:gnuhealth.patient.evaluation,tag:"
 msgid "Last Triglicerides level, (mg/dL)"
@@ -3635,7 +3578,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,temperature:"
 msgid "Temperature in celcius"
-msgstr ""
+msgstr "Температура, °C"
 
 msgctxt "help:gnuhealth.patient.evaluation,tremor:"
 msgid ""
@@ -3658,7 +3601,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,weight:"
 msgid "Weight in kilos"
-msgstr ""
+msgstr "Вага (кг)"
 
 msgctxt "help:gnuhealth.patient.evaluation,whr:"
 msgid ""
@@ -3666,6 +3609,9 @@ msgid ""
 "Men : < 0.9 Normal // 0.9 - 0.99 Overweight // > 1 Obesity \n"
 "Women : < 0.8 Normal // 0.8 - 0.84 Overweight // > 0.85 Obesity"
 msgstr ""
+"Співвідношення обхвату талії до обхвату стегон. Референтні значення:\n"
+"Чоловіки: < 0,9 Норма // 0,9–0,99 Надмірна вага // > 1 Ожиріння\n"
+"Жінки: < 0,8 Норма // 0,8–0,84 Надмірна вага // > 0,85 Ожиріння"
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
@@ -3753,7 +3699,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,qty:"
 msgid "Quantity of units (eg, 2 capsules) of the medicament"
-msgstr ""
+msgstr "Кількість (напр., 2 капсули) лікарського засобу"
 
 msgctxt "help:gnuhealth.patient.medication,route:"
 msgid "Drug administration route code."
@@ -3819,14 +3765,13 @@ msgid ""
 "used in combination withthe person age at that moment"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:gnuhealth.pol,person:"
 msgid "Person"
 msgstr "Особа"
 
 msgctxt "help:gnuhealth.pol,procedure:"
 msgid "Procedure code"
-msgstr ""
+msgstr "Код процедури"
 
 msgctxt "help:gnuhealth.prescription.line,add_to_history:"
 msgid "Include this medication in the patient medication history"
@@ -3906,7 +3851,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.prescription.line,qty:"
 msgid "Quantity of units (eg, 2 capsules) of the medicament"
-msgstr ""
+msgstr "Кількість (напр., 2 капсули) лікарського засобу"
 
 msgctxt "help:gnuhealth.prescription.line,quantity:"
 msgid ""
@@ -4026,7 +3971,6 @@ msgctxt "help:party.party,deceased:"
 msgid "The information is updated from the Death Certificate"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:party.party,dob:"
 msgid "Date of Birth"
 msgstr "Дата народження"
@@ -4049,7 +3993,7 @@ msgstr ""
 
 msgctxt "help:party.party,father:"
 msgid "Father from the Birth Certificate"
-msgstr ""
+msgstr "Батько згідно зі свідоцтвом про народження"
 
 msgctxt "help:party.party,fed_country:"
 msgid ""
@@ -4105,7 +4049,7 @@ msgstr ""
 
 msgctxt "help:party.party,mother:"
 msgid "Mother from the Birth Certificate"
-msgstr ""
+msgstr "Мати згідно зі свідоцтвом про народження"
 
 msgctxt "help:party.party,ref:"
 msgid "Person Unique Identifier"
@@ -4153,7 +4097,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.birth_certificate,name:"
 msgid "Birth Certificate"
-msgstr ""
+msgstr "Свідоцтво про народження"
 
 msgctxt "model:gnuhealth.check_immunization_status.init,name:"
 msgid "Check Immunization Status Init"
@@ -4161,11 +4105,11 @@ msgstr ""
 
 msgctxt "model:gnuhealth.command,name:"
 msgid "GNU Health Commands"
-msgstr ""
+msgstr "Команди GNU Health"
 
 msgctxt "model:gnuhealth.death_certificate,name:"
 msgid "Death Certificate"
-msgstr ""
+msgstr "Свідоцтво про смерть"
 
 #, fuzzy
 msgctxt "model:gnuhealth.death_underlying_condition,name:"
@@ -4186,27 +4130,27 @@ msgstr ""
 
 msgctxt "model:gnuhealth.dose.unit,desc:kg"
 msgid "kilogram"
-msgstr ""
+msgstr "кілограм"
 
 msgctxt "model:gnuhealth.dose.unit,desc:l"
 msgid "liter"
-msgstr ""
+msgstr "літр"
 
 msgctxt "model:gnuhealth.dose.unit,desc:mg"
 msgid "milligram"
-msgstr ""
+msgstr "міліграм"
 
 msgctxt "model:gnuhealth.dose.unit,desc:ml"
 msgid "milliliter"
-msgstr ""
+msgstr "мілілітр"
 
 msgctxt "model:gnuhealth.dose.unit,desc:mmol"
 msgid "millimol"
-msgstr ""
+msgstr "мілімоль"
 
 msgctxt "model:gnuhealth.dose.unit,desc:ug"
 msgid "microgram"
-msgstr ""
+msgstr "мікрограм"
 
 msgctxt "model:gnuhealth.dose.unit,desc:unit"
 msgid "unit"
@@ -4214,31 +4158,31 @@ msgstr ""
 
 msgctxt "model:gnuhealth.dose.unit,name:"
 msgid "Drug Dose Unit"
-msgstr ""
+msgstr "Одиниця вимірювання дози препарату"
 
 msgctxt "model:gnuhealth.dose.unit,name:kg"
 msgid "kg"
-msgstr ""
+msgstr "кг"
 
 msgctxt "model:gnuhealth.dose.unit,name:l"
 msgid "L"
-msgstr ""
+msgstr "л"
 
 msgctxt "model:gnuhealth.dose.unit,name:mg"
 msgid "mg"
-msgstr ""
+msgstr "мг"
 
 msgctxt "model:gnuhealth.dose.unit,name:ml"
 msgid "mL"
-msgstr ""
+msgstr "мл"
 
 msgctxt "model:gnuhealth.dose.unit,name:mmol"
 msgid "mmol"
-msgstr ""
+msgstr "ммоль"
 
 msgctxt "model:gnuhealth.dose.unit,name:ug"
 msgid "ug"
-msgstr ""
+msgstr "мкг"
 
 msgctxt "model:gnuhealth.dose.unit,name:unit"
 msgid "unit"
@@ -4730,7 +4674,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.drug.route,name:route_32"
 msgid "Other/Miscellaneous"
-msgstr ""
+msgstr "Інше/Різне"
 
 msgctxt "model:gnuhealth.drug.route,name:route_33"
 msgid "Perfusion"
@@ -4822,48 +4766,47 @@ msgstr ""
 
 msgctxt "model:gnuhealth.ethnicity,name:"
 msgid "Ethnicity"
-msgstr ""
+msgstr "Етнічність"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth1"
 msgid "Black"
-msgstr ""
+msgstr "Темношкірі"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth2"
 msgid "Asian"
-msgstr ""
+msgstr "Азійці"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth3"
 msgid "White"
-msgstr ""
+msgstr "Європейці"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth4"
 msgid "Middle-East"
-msgstr ""
+msgstr "Близький Схід"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth5"
 msgid "Hispanic"
-msgstr ""
+msgstr "Латиноамериканці"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth6"
 msgid "African American"
-msgstr ""
+msgstr "Афроамериканці"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth7"
 msgid "Indian American"
-msgstr ""
+msgstr "Індійці США"
 
 msgctxt "model:gnuhealth.ethnicity,name:eth8"
 msgid "Native American"
-msgstr ""
+msgstr "Корінні американці"
 
-#, fuzzy
 msgctxt "model:gnuhealth.family,name:"
 msgid "Family"
 msgstr "Сім'я"
 
 msgctxt "model:gnuhealth.family_member,name:"
 msgid "Family Member"
-msgstr ""
+msgstr "Член сім'ї"
 
 msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
@@ -4876,7 +4819,7 @@ msgstr "Медичний працівник"
 
 msgctxt "model:gnuhealth.help,name:"
 msgid "GNU Health Help"
-msgstr ""
+msgstr "Довідка GNU Health"
 
 msgctxt "model:gnuhealth.hospital.bed,name:"
 msgid "Hospital Bed"
@@ -4927,14 +4870,13 @@ msgctxt "model:gnuhealth.institution.specialties,name:"
 msgid "Health Institution Specialties"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:gnuhealth.insurance,name:"
 msgid "Insurance"
 msgstr "Страхування"
 
 msgctxt "model:gnuhealth.insurance.plan,name:"
 msgid "Insurance Plan"
-msgstr ""
+msgstr "План страхування"
 
 msgctxt "model:gnuhealth.medicament,name:"
 msgid "Medicament"
@@ -5162,15 +5104,15 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ127"
 msgid "Doctor (PhD)"
-msgstr ""
+msgstr "Доктор філософії (PhD)"
 
 msgctxt "model:gnuhealth.occupation,name:occ128"
 msgid "Doctor of Education"
-msgstr ""
+msgstr "Доктор освіти (EdD)"
 
 msgctxt "model:gnuhealth.occupation,name:occ129"
 msgid "Doctor (MD)"
-msgstr ""
+msgstr "Доктор медицини (MD)"
 
 msgctxt "model:gnuhealth.occupation,name:occ13"
 msgid "Boilermaker"
@@ -5178,7 +5120,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ130"
 msgid "Doctor of Physical Therapy"
-msgstr ""
+msgstr "Доктор фізичної терапії (DPT)"
 
 msgctxt "model:gnuhealth.occupation,name:occ131"
 msgid "Dog breeder"
@@ -5210,7 +5152,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ138"
 msgid "Draftsman"
-msgstr ""
+msgstr "Кресляр"
 
 msgctxt "model:gnuhealth.occupation,name:occ139"
 msgid "Dramatist"
@@ -6220,7 +6162,6 @@ msgctxt "model:gnuhealth.occupation,name:occ368"
 msgid "Miner"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:gnuhealth.occupation,name:occ369"
 msgid "Model"
 msgstr "Модель"
@@ -6699,7 +6640,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ48"
 msgid "Doctor of Chiropractic"
-msgstr ""
+msgstr "Доктор хіропрактики (DC)"
 
 msgctxt "model:gnuhealth.occupation,name:occ480"
 msgid "Publisher"
@@ -7047,7 +6988,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ562"
 msgid "Student"
-msgstr ""
+msgstr "Студент"
 
 msgctxt "model:gnuhealth.occupation,name:occ564"
 msgid "Stunt coordinator"
@@ -7351,7 +7292,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ634"
 msgid "Warder"
-msgstr ""
+msgstr "Наглядач"
 
 msgctxt "model:gnuhealth.occupation,name:occ635"
 msgid "Weaponsmith"
@@ -7459,7 +7400,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ71"
 msgid "Conductor (music)"
-msgstr ""
+msgstr "Диригент"
 
 msgctxt "model:gnuhealth.occupation,name:occ72"
 msgid "Constable"
@@ -7583,11 +7524,11 @@ msgstr ""
 
 msgctxt "model:gnuhealth.online_document,name:"
 msgid "Health Online Document"
-msgstr ""
+msgstr "Документ Health Online"
 
 msgctxt "model:gnuhealth.online_document,name:gnuhealth_online_document_001"
 msgid "GNU Health Documentation Portal"
-msgstr ""
+msgstr "Портал документації GNU Health"
 
 msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
@@ -7604,7 +7545,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.pathology.category,name:"
 msgid "Disease Categories"
-msgstr ""
+msgstr "Категорії хвороб"
 
 msgctxt "model:gnuhealth.pathology.group,desc:ALLERGIC"
 msgid "Hypersensitivity reactions to environmental - external antigens"
@@ -7686,7 +7627,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.pathology.group,name:"
 msgid "Pathology Groups"
-msgstr ""
+msgstr "Групи патологій"
 
 msgctxt "model:gnuhealth.pathology.group,name:ALLERGIC"
 msgid "ALLERGIC"
@@ -7774,7 +7715,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.patient.ecg,name:"
 msgid "Patient ECG"
-msgstr ""
+msgstr "ЕКГ пацієнта"
 
 msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
@@ -8135,7 +8076,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.vaccination,name:"
 msgid "Patient Vaccination information"
-msgstr ""
+msgstr "Інформація про щеплення пацієнта"
 
 msgctxt "model:ir.action,name:act_app_evaluation"
 msgid "Patient Evaluation"
@@ -8145,27 +8086,25 @@ msgctxt "model:ir.action,name:act_appointment_form1"
 msgid "Appointments"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_appointment_report_patient"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "model:ir.action,name:act_appointments_report_view_tree"
 msgid "Appointments with Dx Report"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_bed_view"
 msgid "Beds"
 msgstr "Ліжка"
 
 msgctxt "model:ir.action,name:act_birth_cert_form"
 msgid "Birth certificates"
-msgstr ""
+msgstr "Свідоцтва про народження"
 
 msgctxt "model:ir.action,name:act_birth_cert_form1"
 msgid "Birth Certificate"
-msgstr ""
+msgstr "Свідоцтво про народження"
 
 msgctxt "model:ir.action,name:act_building_view"
 msgid "Buildings"
@@ -8186,15 +8125,15 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_death_cert_form"
 msgid "Death certificates"
-msgstr ""
+msgstr "Свідоцтва про смерть"
 
 msgctxt "model:ir.action,name:act_death_cert_form1"
 msgid "Death Certificate"
-msgstr ""
+msgstr "Свідоцтво про смерть"
 
 msgctxt "model:ir.action,name:act_ecg_view"
 msgid "ECGs"
-msgstr ""
+msgstr "ЕКГ"
 
 msgctxt "model:ir.action,name:act_evaluation_form1"
 msgid "Evaluations"
@@ -8222,11 +8161,11 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_vaccination_form1"
 msgid "Vaccinations"
-msgstr ""
+msgstr "Щеплення"
 
 msgctxt "model:ir.action,name:act_ward_view"
 msgid "Wards"
-msgstr ""
+msgstr "Палати"
 
 msgctxt "model:ir.action,name:action_gnuhealth_appointment_view"
 msgid "Appointments"
@@ -8234,9 +8173,8 @@ msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_command_view"
 msgid "GNU Health Commands"
-msgstr ""
+msgstr "Команди GNU Health"
 
-#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_hospital_bed_view"
 msgid "Beds"
 msgstr "Ліжка"
@@ -8255,7 +8193,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_hospital_ward_view"
 msgid "Wards"
-msgstr ""
+msgstr "Палати"
 
 msgctxt "model:ir.action,name:action_gnuhealth_institution"
 msgid "Institutions"
@@ -8275,7 +8213,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_pathology_category_tree"
 msgid "Disease categories"
-msgstr ""
+msgstr "Категорії хвороб"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_evaluation_view"
 msgid "Patient Evaluations [readonly]"
@@ -8283,7 +8221,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
-msgstr ""
+msgstr "Пацієнти"
 
 msgctxt "model:ir.action,name:action_gnuhealth_prescription_view"
 msgid "Prescriptions"
@@ -8291,7 +8229,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_procedure_view"
 msgid "Procedures"
-msgstr ""
+msgstr "Процедури"
 
 msgctxt "model:ir.action,name:appointments_report_open"
 msgid "Appointments with Dx Report"
@@ -8323,9 +8261,8 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_family"
 msgid "Families"
-msgstr ""
+msgstr "Сім'ї"
 
-#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_family_member"
 msgid "Family Members"
 msgstr "Члени сім'ї"
@@ -8345,7 +8282,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_help"
 msgid "Help and Documentation"
-msgstr ""
+msgstr "Довідка та документація"
 
 msgctxt "model:ir.action,name:gnuhealth_action_hp_specialty"
 msgid "Specialties by health professionals"
@@ -8357,7 +8294,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_immunization_schedule_dose"
 msgid "Vaccine Doses"
-msgstr ""
+msgstr "Дози вакцини"
 
 msgctxt "model:ir.action,name:gnuhealth_action_immunization_schedule_line"
 msgid "Schedule Vaccines"
@@ -8365,15 +8302,15 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_insurance"
 msgid "Insurances"
-msgstr ""
+msgstr "Страхування"
 
 msgctxt "model:ir.action,name:gnuhealth_action_insurance_company"
 msgid "Insurance Company"
-msgstr ""
+msgstr "Страхова компанія"
 
 msgctxt "model:ir.action,name:gnuhealth_action_insurance_plan"
 msgid "Insurance Plans"
-msgstr ""
+msgstr "Плани страхування"
 
 msgctxt "model:ir.action,name:gnuhealth_action_occupation"
 msgid "Occupations"
@@ -8381,7 +8318,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_online_document"
 msgid "Online Documentation"
-msgstr ""
+msgstr "Документація онлайн"
 
 msgctxt "model:ir.action,name:gnuhealth_action_operational_area"
 msgid "Operational Areas"
@@ -8413,11 +8350,11 @@ msgstr ""
 
 msgctxt "model:ir.action,name:report_birth_certificate"
 msgid "Birth Certificate"
-msgstr ""
+msgstr "Свідоцтво про народження"
 
 msgctxt "model:ir.action,name:report_death_certificate"
 msgid "Death Certificate"
-msgstr ""
+msgstr "Свідоцтво про смерть"
 
 msgctxt "model:ir.action,name:report_immunization_status"
 msgid "Immunization Status Report"
@@ -8445,7 +8382,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:report_patient_vaccination"
 msgid "Vaccinations"
-msgstr ""
+msgstr "Щеплення"
 
 msgctxt "model:ir.action,name:report_prescription_order"
 msgid "Prescription"
@@ -8458,7 +8395,7 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_all"
 msgid "All"
-msgstr ""
+msgstr "Усі"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_checkedin"
@@ -8642,10 +8579,9 @@ msgctxt "model:ir.sequence,name:seq_gnuhealth_appointment"
 msgid "Appointment"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_evaluation"
 msgid "Patient Evaluation"
@@ -8659,10 +8595,9 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_appointment"
 msgid "Appointment"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_evaluation"
 msgid "Patient Evaluation"
@@ -8682,7 +8617,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_commands"
 msgid "GNU Health Commands"
-msgstr ""
+msgstr "Команди GNU Health"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_dosage"
 msgid "Medication Frequencies"
@@ -8702,15 +8637,15 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_insurance"
 msgid "Insurances"
-msgstr ""
+msgstr "Страхування"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_insurance_company"
 msgid "Insurance Company"
-msgstr ""
+msgstr "Страхова компанія"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_insurance_plan"
 msgid "Insurance Plans"
-msgstr ""
+msgstr "Плани страхування"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_operational_area"
 msgid "Operational Areas"
@@ -8742,7 +8677,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_immunization_schedule_dose"
 msgid "Vaccine Doses"
-msgstr ""
+msgstr "Дози вакцини"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_immunization_schedule_line"
 msgid "Schedule Vaccines"
@@ -8752,7 +8687,6 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_institution"
 msgid "Institutions"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_institution_bed_add"
 msgid "Beds"
 msgstr "Ліжка"
@@ -8771,11 +8705,11 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_institution_ward_add"
 msgid "Wards"
-msgstr ""
+msgstr "Палати"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_insurances"
 msgid "Insurances"
-msgstr ""
+msgstr "Страхування"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_medicament_category"
 msgid "Medicament categories"
@@ -8791,7 +8725,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_misc"
 msgid "Misc"
-msgstr ""
+msgstr "Різне"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_occupation"
 msgid "Occupations"
@@ -8804,11 +8738,11 @@ msgstr "Умови"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_categories"
 msgid "Categories"
-msgstr ""
+msgstr "Категорії"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_category"
 msgid "Disease categories"
-msgstr ""
+msgstr "Категорії хвороб"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_pathology_group"
 msgid "Pathology Groups"
@@ -8821,7 +8755,7 @@ msgstr "Умови"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedure"
 msgid "Procedures"
-msgstr ""
+msgstr "Процедури"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_specialty"
 msgid "Medical Specialties"
@@ -8837,9 +8771,8 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_edit_family"
 msgid "Families"
-msgstr ""
+msgstr "Сім'ї"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_edit_family_member"
 msgid "Family Members"
 msgstr "Члени сім'ї"
@@ -8854,7 +8787,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_help"
 msgid "Help and Documentation"
-msgstr ""
+msgstr "Довідка та документація"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_institution_operationalsector"
 msgid "Operational sectors by institution"
@@ -8874,7 +8807,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
 msgid "Online Documentation"
-msgstr ""
+msgstr "Документація онлайн"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
@@ -8882,7 +8815,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
 msgid "Patients"
-msgstr ""
+msgstr "Пацієнти"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_pol"
 msgid "Pages of life"
@@ -8902,11 +8835,11 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_birth_cert"
 msgid "Birth certificates"
-msgstr ""
+msgstr "Свідоцтва про народження"
 
 msgctxt "model:ir.ui.menu,name:menu_death_cert"
 msgid "Death certificates"
-msgstr ""
+msgstr "Свідоцтва про смерть"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_evaluation_list"
 msgid "Patient Evaluations [readonly]"
@@ -8914,7 +8847,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_procedure_list"
 msgid "Procedures"
-msgstr ""
+msgstr "Процедури"
 
 msgctxt "model:ir.ui.menu,name:menu_people"
 msgid "People"
@@ -8922,7 +8855,7 @@ msgstr ""
 
 msgctxt "model:product.category,name:prod_insurance"
 msgid "Insurances"
-msgstr ""
+msgstr "Страхування"
 
 msgctxt "model:res.group,name:group_health_admin"
 msgid "Health Administration"
@@ -8954,11 +8887,11 @@ msgstr ""
 
 msgctxt "report:appointment.receipt:"
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Extra Info:"
-msgstr ""
+msgstr "Додаткові дані:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Health Prof:"
@@ -8974,7 +8907,7 @@ msgstr ""
 
 msgctxt "report:appointment.receipt:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Specialty:"
@@ -8990,18 +8923,16 @@ msgstr ""
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "BIRTH CERTIFICATE"
-msgstr ""
+msgstr "СВІДОЦТВО ПРО НАРОДЖЕННЯ"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Certificate number"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Date of Birth"
 msgstr "Дата народження"
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Father"
 msgstr "Батько"
@@ -9019,10 +8950,9 @@ msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Medical officer"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Mother"
-msgstr "Матір"
+msgstr "Мати"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Name of Birth"
@@ -9030,7 +8960,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Place of Birth"
-msgstr ""
+msgstr "Місце народження"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Printed Date:"
@@ -9038,20 +8968,19 @@ msgstr ""
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Sex"
-msgstr ""
+msgstr "Стать"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid ","
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Age"
 msgstr "Вік"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Autopsy:"
-msgstr ""
+msgstr "Розтин:"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certificate number"
@@ -9059,7 +8988,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certificate of Death"
-msgstr ""
+msgstr "Свідоцтво про смерть"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Certification Date"
@@ -9078,24 +9007,22 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Conditions chronologically ordered leading to the cause of death"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Country"
 msgstr "Країна"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Date / Time of Death"
-msgstr ""
+msgstr "Дата / час смерті"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Date of birth"
-msgstr ""
+msgstr "Дата народження"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Domiciliary Unit"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Father"
 msgstr "Батько"
@@ -9120,16 +9047,15 @@ msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Marital Status"
-msgstr ""
+msgstr "Сімейний стан"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Medical officer"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Mother"
-msgstr "Матір"
+msgstr "Мати"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Name of decedent"
@@ -9141,7 +9067,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Place of Death"
-msgstr ""
+msgstr "Місце смерті"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Printed Date:"
@@ -9153,7 +9079,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Sex"
-msgstr ""
+msgstr "Стать"
 
 #, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
@@ -9162,7 +9088,7 @@ msgstr "Підрозділ"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Type of Death"
-msgstr ""
+msgstr "Тип смерті"
 
 #, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
@@ -9181,27 +9107,25 @@ msgctxt "report:gnuhealth.immunization_status_report:"
 msgid ","
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Age"
 msgstr "Вік"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Dose"
 msgstr "Доза"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Dose #"
-msgstr ""
+msgstr "Доза №"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Gender:"
@@ -9221,13 +9145,12 @@ msgstr ""
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Print Date:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Remarks"
 msgstr "Зауваження"
@@ -9259,10 +9182,9 @@ msgid ""
 "vaccination cards."
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "(Sys / dias)"
@@ -9282,7 +9204,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Allergies and other relevant information"
@@ -9290,7 +9212,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BMI"
-msgstr ""
+msgstr "ІМТ"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BP"
@@ -9310,16 +9232,15 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Code:"
-msgstr ""
+msgstr "Код:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Comments"
 msgstr "Коментарі"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Differential Diagnoses"
@@ -9331,11 +9252,11 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "DoB:"
-msgstr ""
+msgstr "ДН:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "E-Mail:"
-msgstr ""
+msgstr "Email:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Ethnicity:"
@@ -9347,7 +9268,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "GCS"
-msgstr ""
+msgstr "ШКГ"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Gender:"
@@ -9363,20 +9284,19 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Information Source:"
-msgstr ""
+msgstr "Джерело інформації:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Initiated by:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Main Condition"
-msgstr "Основна кодиція"
+msgstr "Основна кондиція"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Marital Status:"
-msgstr ""
+msgstr "Сімейний стан:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "OSAT"
@@ -9400,7 +9320,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Phone:"
@@ -9412,7 +9332,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Procedures"
-msgstr ""
+msgstr "Процедури"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Reliability:"
@@ -9424,17 +9344,16 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Signs and Symptoms"
-msgstr ""
+msgstr "Ознаки та симптоми"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Temperature"
-msgstr ""
+msgstr "Температура"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Treatment Plan"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Type"
 msgstr "Тип"
@@ -9445,7 +9364,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Chief Complaint"
@@ -9457,11 +9376,11 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Code:"
-msgstr ""
+msgstr "Код:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Discharge Reason"
@@ -9469,7 +9388,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "DoB:"
-msgstr ""
+msgstr "ДН:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Gender:"
@@ -9483,10 +9402,9 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Initiated by:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Main Condition"
-msgstr "Основна кодиція"
+msgstr "Основна кондиція"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "PUID:"
@@ -9498,7 +9416,7 @@ msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Print Date:"
@@ -9514,11 +9432,11 @@ msgstr ""
 
 msgctxt "report:patient.card:"
 msgid "Blood Type:"
-msgstr ""
+msgstr "Група крові:"
 
 msgctxt "report:patient.card:"
 msgid "DoB:"
-msgstr ""
+msgstr "ДН:"
 
 msgctxt "report:patient.card:"
 msgid "Gender:"
@@ -9543,7 +9461,7 @@ msgstr "Активно"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Annotations about the patient"
@@ -9585,7 +9503,6 @@ msgctxt "report:patient.conditions_history:"
 msgid "Print Date:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:patient.conditions_history:"
 msgid "Remarks"
 msgstr "Зауваження"
@@ -9610,11 +9527,11 @@ msgstr "Активно"
 
 msgctxt "report:patient.medication:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
 msgctxt "report:patient.medication:"
 msgid "E-Mail:"
-msgstr ""
+msgstr "Email:"
 
 msgctxt "report:patient.medication:"
 msgid "End"
@@ -9642,7 +9559,7 @@ msgstr ""
 
 msgctxt "report:patient.medication:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:patient.medication:"
 msgid "Phone:"
@@ -9667,14 +9584,12 @@ msgstr ""
 
 msgctxt "report:patient.vaccination:"
 msgid "Age:"
-msgstr ""
+msgstr "Вік:"
 
-#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Date"
 msgstr "Дата"
 
-#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Dose"
 msgstr "Доза"
@@ -9685,7 +9600,7 @@ msgstr ""
 
 msgctxt "report:patient.vaccination:"
 msgid "Next Dose"
-msgstr ""
+msgstr "Наступна доза"
 
 #, fuzzy
 msgctxt "report:patient.vaccination:"
@@ -9694,7 +9609,7 @@ msgstr "Спостереження"
 
 msgctxt "report:patient.vaccination:"
 msgid "PATIENT VACCINATION HISTORY"
-msgstr ""
+msgstr "ІСТОРІЯ ЩЕПЛЕНЬ ПАЦІЄНТА"
 
 msgctxt "report:patient.vaccination:"
 msgid "PUID:"
@@ -9702,16 +9617,15 @@ msgstr ""
 
 msgctxt "report:patient.vaccination:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:patient.vaccination:"
 msgid "Print Date:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Vaccine"
-msgstr "Щеплення"
+msgstr "Вакцина"
 
 msgctxt "report:prescription.order:"
 msgid ","
@@ -9719,29 +9633,27 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Address:"
-msgstr ""
+msgstr "Адреса:"
 
 msgctxt "report:prescription.order:"
 msgid "Allowed"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Common:"
-msgstr "Команда"
+msgstr "Загальний:"
 
 msgctxt "report:prescription.order:"
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 msgctxt "report:prescription.order:"
 msgid "DoB:"
-msgstr ""
+msgstr "ДН:"
 
-#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Dose:"
-msgstr "Доза"
+msgstr "Доза:"
 
 msgctxt "report:prescription.order:"
 msgid "Duration:"
@@ -9749,7 +9661,7 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "E-mail:"
-msgstr ""
+msgstr "Email:"
 
 msgctxt "report:prescription.order:"
 msgid "End:"
@@ -9773,13 +9685,12 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Insurance:"
-msgstr ""
+msgstr "Страхування:"
 
 msgctxt "report:prescription.order:"
 msgid "Medicament:"
 msgstr ""
 
-#, fuzzy
 msgctxt "report:prescription.order:"
 msgid "Notes"
 msgstr "Примітки"
@@ -9790,7 +9701,7 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Patient:"
-msgstr ""
+msgstr "Пацієнт:"
 
 msgctxt "report:prescription.order:"
 msgid "Prescriber:"
@@ -9802,11 +9713,11 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Qty:"
-msgstr ""
+msgstr "К-ть:"
 
 msgctxt "report:prescription.order:"
 msgid "Quantity:"
-msgstr ""
+msgstr "Кількість:"
 
 msgctxt "report:prescription.order:"
 msgid "Refills:"
@@ -9814,7 +9725,7 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Remarks:"
-msgstr ""
+msgstr "Зауваження:"
 
 msgctxt "report:prescription.order:"
 msgid "Review:"
@@ -9838,7 +9749,7 @@ msgstr ""
 
 msgctxt "report:prescription.order:"
 msgid "Tel:"
-msgstr ""
+msgstr "Тел.:"
 
 msgctxt "report:prescription.order:"
 msgid "Usage"
@@ -9866,7 +9777,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Cancelled by patient"
-msgstr ""
+msgstr "Скасовано пацієнтом"
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Checked in"
@@ -9934,7 +9845,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt "selection:gnuhealth.birth_certificate,state:"
 msgid "Signed"
@@ -9962,7 +9873,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt "selection:gnuhealth.death_certificate,state:"
 msgid "Signed"
@@ -10167,7 +10078,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.hospital.ward,gender:"
 msgid "Men Ward"
-msgstr ""
+msgstr "Чоловіча палата"
 
 msgctxt "selection:gnuhealth.hospital.ward,gender:"
 msgid "Unisex"
@@ -10175,7 +10086,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.hospital.ward,gender:"
 msgid "Women Ward"
-msgstr ""
+msgstr "Жіноча палата"
 
 msgctxt "selection:gnuhealth.hospital.ward,state:"
 msgid "Beds available"
@@ -10191,19 +10102,19 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "days"
-msgstr ""
+msgstr "днів"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "months"
-msgstr ""
+msgstr "місяців"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "weeks"
-msgstr ""
+msgstr "тижнів"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "years"
-msgstr ""
+msgstr "років"
 
 msgctxt "selection:gnuhealth.immunization_schedule_line,scope:"
 msgid "Recommended"
@@ -10223,7 +10134,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.institution,institution_type:"
 msgid "Doctor office"
-msgstr ""
+msgstr "Кабінет лікаря"
 
 msgctxt "selection:gnuhealth.institution,institution_type:"
 msgid "General Hospital"
@@ -10330,19 +10241,19 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient,blood_type:"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 msgctxt "selection:gnuhealth.patient,blood_type:"
 msgid "AB"
-msgstr ""
+msgstr "AB"
 
 msgctxt "selection:gnuhealth.patient,blood_type:"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 msgctxt "selection:gnuhealth.patient,blood_type:"
 msgid "O"
-msgstr ""
+msgstr "0"
 
 msgctxt "selection:gnuhealth.patient,gender:"
 msgid "Female"
@@ -10430,11 +10341,11 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient,rh:"
 msgid "+"
-msgstr ""
+msgstr "+"
 
 msgctxt "selection:gnuhealth.patient,rh:"
 msgid "-"
-msgstr ""
+msgstr "−"
 
 msgctxt "selection:gnuhealth.patient.disease,allergy_type:"
 msgid "Drug Allergy"
@@ -10442,7 +10353,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.disease,allergy_type:"
 msgid "Food Allergy"
-msgstr ""
+msgstr "Харчова алергія"
 
 msgctxt "selection:gnuhealth.patient.disease,allergy_type:"
 msgid "Misc Allergy"
@@ -10586,7 +10497,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Death"
-msgstr ""
+msgstr "Смерть"
 
 msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Home / Selfcare"
@@ -10650,63 +10561,63 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_eyes:"
 msgid "Does not Open Eyes"
-msgstr ""
+msgstr "Не розплющує очей"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_eyes:"
 msgid "Opens eyes in response to painful stimuli"
-msgstr ""
+msgstr "Розплющує очі у відповідь на больові подразники"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_eyes:"
 msgid "Opens eyes in response to voice"
-msgstr ""
+msgstr "Розплющує очі у відповідь на звернену мову"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_eyes:"
 msgid "Opens eyes spontaneously"
-msgstr ""
+msgstr "Довільно розплющує очі"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Abnormal flexion to painful stimuli (decorticate response)"
-msgstr ""
+msgstr "Аномальне згинання на больові подразники (декортикальна реакція)"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Extension to painful stimuli - decerebrate response -"
-msgstr ""
+msgstr "Тонічне розгинання на больові подразники (децеребральна реакція)"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Flexion / Withdrawal to painful stimuli"
-msgstr ""
+msgstr "Згинання / Нецілеспрямована реакція на больові подразники"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Localizes painful stimuli"
-msgstr ""
+msgstr "Цілеспрямовані рухи, щоб локалізувати больові подразники"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Makes no movement"
-msgstr ""
+msgstr "Не рухається"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_motor:"
 msgid "Obeys commands"
-msgstr ""
+msgstr "Виконує команди"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Confused, disoriented"
-msgstr ""
+msgstr "Розгублений і дезорієнтований, але може відповідати на запитання"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Incomprehensible sounds"
-msgstr ""
+msgstr "Нечленороздільні звуки"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Makes no sounds"
-msgstr ""
+msgstr "Не видає звуків"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Oriented, converses normally"
-msgstr ""
+msgstr "Орієнтується в часі і просторі, нормально розмовляє"
 
 msgctxt "selection:gnuhealth.patient.evaluation,loc_verbal:"
 msgid "Utters inappropriate words"
-msgstr ""
+msgstr "Вимовляє незрозумілі слова"
 
 msgctxt "selection:gnuhealth.patient.evaluation,mood:"
 msgid "Disgust"
@@ -10834,7 +10745,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.medication,infusion_rate_units:"
 msgid "mL/hour"
-msgstr ""
+msgstr "мл/год"
 
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -10859,7 +10770,7 @@ msgstr ""
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
 msgid "Passport"
-msgstr ""
+msgstr "Паспорт"
 
 msgctxt "selection:gnuhealth.person_name,prefix:"
 msgid "Dr"
@@ -10911,7 +10822,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Death"
-msgstr ""
+msgstr "Смерть"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Dx Imaging"
@@ -10923,7 +10834,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Family history"
-msgstr ""
+msgstr "Історія сім'ї"
 
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Genetics"
@@ -10945,7 +10856,6 @@ msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Prescription"
 msgstr ""
 
-#, fuzzy
 msgctxt "selection:gnuhealth.pol,medical_context:"
 msgid "Procedure"
 msgstr "Процедура"
@@ -11004,7 +10914,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Education"
-msgstr ""
+msgstr "Освіта"
 
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Family functionality"
@@ -11016,7 +10926,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Food"
-msgstr ""
+msgstr "Харчування"
 
 msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "Health services"
@@ -11112,7 +11022,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.prescription.line,infusion_rate_units:"
 msgid "mL/hour"
-msgstr ""
+msgstr "мл/год"
 
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Done"
@@ -11120,7 +11030,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"
@@ -11128,11 +11038,11 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Sign"
-msgstr ""
+msgstr "Ознака"
 
 msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Symptom"
-msgstr ""
+msgstr "Симптом"
 
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Intradermal"
@@ -11284,14 +11194,13 @@ msgctxt "view:gnuhealth.appointment:"
 msgid "Check In"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.appointment:"
 msgid "Date"
 msgstr "Дата"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Information"
-msgstr ""
+msgstr "Інформація"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Miss Out"
@@ -11311,7 +11220,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Main"
@@ -11328,13 +11237,12 @@ msgstr ""
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign Birth Certificate ?"
-msgstr ""
+msgstr "Підписати свідоцтво про народження?"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign the certificate"
-msgstr ""
+msgstr "Підписати свідоцтво"
 
-#, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Cause"
 msgstr "Причина"
@@ -11352,7 +11260,6 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Other"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Place"
 msgstr "Місце"
@@ -11363,11 +11270,11 @@ msgstr ""
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign Death Certificate ?"
-msgstr ""
+msgstr "Підписати свідоцтво про смерть?"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign the certificate"
-msgstr ""
+msgstr "Підписати свідоцтво"
 
 msgctxt "view:gnuhealth.du:"
 msgid "Infrastructure"
@@ -11386,24 +11293,21 @@ msgctxt "view:gnuhealth.du:"
 msgid "Position"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.family:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
 
-#, fuzzy
 msgctxt "view:gnuhealth.family:"
 msgid "Members"
 msgstr "Члени"
 
-#, fuzzy
 msgctxt "view:gnuhealth.healthprofessional:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
 
 msgctxt "view:gnuhealth.help:"
 msgid "Documentation"
-msgstr ""
+msgstr "Документація"
 
 msgctxt "view:gnuhealth.hospital.bed:"
 msgid "Click when Bed has been fixed / cleaned"
@@ -11431,14 +11335,12 @@ msgstr ""
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Dosage"
-msgstr ""
+msgstr "Дозування"
 
-#, fuzzy
 msgctxt "view:gnuhealth.medicament:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
 
-#, fuzzy
 msgctxt "view:gnuhealth.medicament:"
 msgid "Form"
 msgstr "Форма"
@@ -11455,7 +11357,6 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "Main Info"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.medicament:"
 msgid "Notes"
 msgstr "Примітки"
@@ -11466,7 +11367,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Pregnancy"
-msgstr ""
+msgstr "Вагітність"
 
 msgctxt "view:gnuhealth.medicament:"
 msgid "Presentation"
@@ -11493,12 +11394,10 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "strength"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.pathology.group:"
 msgid "Extra Information"
 msgstr "Додаткова інформація"
 
-#, fuzzy
 msgctxt "view:gnuhealth.pathology:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
@@ -11517,9 +11416,8 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Dates"
-msgstr ""
+msgstr "Дати"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
@@ -11530,7 +11428,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Pregnancy"
-msgstr ""
+msgstr "Вагітність"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Related Evaluations"
@@ -11546,7 +11444,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.ecg:"
 msgid "Results"
-msgstr ""
+msgstr "Результати"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Administrative"
@@ -11568,7 +11466,6 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Clinical and Physical exam"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "Дата"
@@ -11587,7 +11484,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
-msgstr ""
+msgstr "Шкала ком Глазго"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
@@ -11603,12 +11500,11 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Information on Diagnosis"
-msgstr ""
+msgstr "Інформація про діагноз"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Main Condition"
-msgstr "Основна кодиція"
+msgstr "Основна кондиція"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Main Info"
@@ -11636,7 +11532,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Procedures"
-msgstr ""
+msgstr "Процедури"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Psychological Assessment"
@@ -11644,7 +11540,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Treatment Plan"
@@ -11672,9 +11568,8 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Dosage"
-msgstr ""
+msgstr "Дозування"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Extra Info"
 msgstr "Додаткові дані"
@@ -11687,7 +11582,6 @@ msgctxt "view:gnuhealth.patient.medication:"
 msgid "Medication"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Notes"
 msgstr "Примітки"
@@ -11739,7 +11633,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Misc"
-msgstr ""
+msgstr "Різне"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Notepad"
@@ -11747,7 +11641,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.pol:"
 msgid "Context"
-msgstr ""
+msgstr "Контекст"
 
 msgctxt "view:gnuhealth.pol:"
 msgid "Extended Information"
@@ -11763,7 +11657,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Dosage"
-msgstr ""
+msgstr "Дозування"
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Form and Administration Route"
@@ -11775,7 +11669,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Misc"
-msgstr ""
+msgstr "Різне"
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Specific Dosage"
@@ -11787,7 +11681,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Create prescription ?"
@@ -11805,14 +11699,13 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "Коментарі"
 
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Sign or Symptom"
-msgstr ""
+msgstr "Ознака або симптом"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Administration"
@@ -11826,7 +11719,6 @@ msgctxt "view:gnuhealth.vaccination:"
 msgid "Finish and sign this vaccination ? It will become read-only !"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Notes"
 msgstr "Примітки"
@@ -11841,7 +11733,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Vaccination"
-msgstr ""
+msgstr "Щеплення"
 
 msgctxt "view:party.party:"
 msgid "Demographics"
@@ -11857,11 +11749,11 @@ msgstr ""
 
 msgctxt "wizard_button:gnuhealth.appointment.report.open,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 msgctxt "wizard_button:gnuhealth.appointment.report.open,start,open_:"
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 msgctxt ""
 "wizard_button:gnuhealth.check_immunization_status,start,check_immunization_status:"
@@ -11870,14 +11762,14 @@ msgstr ""
 
 msgctxt "wizard_button:gnuhealth.check_immunization_status,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,save:"
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"

@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2024-10-31 11:07+0000\n"
+"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_genetics/uk/>\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.8.1\n"
 
 msgctxt "field:gnuhealth.gene,aliases:"
 msgid "Aliases"
@@ -56,7 +66,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.gene,protein_uri:"
 msgid "Protein URI"
-msgstr ""
+msgstr "URI білка"
 
 msgctxt "field:gnuhealth.gene,refseq_accession:"
 msgid "RefSeq"
@@ -102,7 +112,6 @@ msgctxt "field:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene & Protein"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.gene.variant.phenotype,name:"
 msgid "Code"
 msgstr "Код"
@@ -117,7 +126,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient,family_history:"
 msgid "Family History"
-msgstr ""
+msgstr "Історія сім'ї"
 
 msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
@@ -128,10 +137,9 @@ msgctxt "field:gnuhealth.patient.family.diseases,name:"
 msgid "Condition"
 msgstr "Умова"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.family.diseases,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.family.diseases,relative:"
 msgid "Relative"
@@ -159,7 +167,6 @@ msgctxt "field:gnuhealth.patient.genetic.risk,natural_variant:"
 msgid "Variant"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,notes:"
 msgid "Notes"
 msgstr "Примітки"
@@ -168,10 +175,9 @@ msgctxt "field:gnuhealth.patient.genetic.risk,onset:"
 msgid "Onset"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,patient:"
 msgid "Patient"
-msgstr "Пацієнт(ка)"
+msgstr "Пацієнт"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
@@ -186,18 +192,17 @@ msgctxt "field:gnuhealth.protein.disease,active:"
 msgid "Active"
 msgstr "Активно"
 
-#, fuzzy
 msgctxt "field:gnuhealth.protein.disease,description:"
 msgid "Description"
 msgstr "Опис"
 
 msgctxt "field:gnuhealth.protein.disease,disease_name:"
 msgid "Disease name"
-msgstr ""
+msgstr "Назва хвороби"
 
 msgctxt "field:gnuhealth.protein.disease,disease_uri:"
 msgid "Disease URI"
-msgstr ""
+msgstr "URI хвороби"
 
 msgctxt "field:gnuhealth.protein.disease,gene_variant:"
 msgid "Natural Variant"
@@ -209,7 +214,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,keywords:"
 msgid "Keywords"
-msgstr ""
+msgstr "Ключові слова"
 
 msgctxt "field:gnuhealth.protein.disease,mim_reference:"
 msgid "MIM"
@@ -217,7 +222,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,name:"
 msgid "Disease"
-msgstr ""
+msgstr "Хвороба"
 
 msgctxt "field:gnuhealth.protein.disease,xrefs:"
 msgid "Xrefs"
@@ -243,7 +248,6 @@ msgctxt "help:gnuhealth.gene,hgnc_id:"
 msgid "HUGO Gene Nomenclature Committee identifier"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:gnuhealth.gene,info:"
 msgid "Extra Information"
 msgstr "Додаткова інформація"
@@ -313,7 +317,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.genetic.risk,onset:"
 msgid "Age in years"
-msgstr ""
+msgstr "Вік у роках"
 
 msgctxt "help:gnuhealth.protein.disease,acronym:"
 msgid "Disease acronym / mnemonics"
@@ -359,7 +363,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.patient.family.diseases,name:"
 msgid "Family History"
-msgstr ""
+msgstr "Історія сім'ї"
 
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
 msgid "Patient Genetic Information"
@@ -527,49 +531,47 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Aunt"
-msgstr ""
+msgstr "Тітка"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Brother"
-msgstr ""
+msgstr "Брат"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Cousin"
 msgstr ""
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Father"
 msgstr "Батько"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Grandfather"
-msgstr ""
+msgstr "Дід"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Grandmother"
-msgstr ""
+msgstr "Баба"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Mother"
-msgstr "Матір"
+msgstr "Мати"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Nephew"
-msgstr ""
+msgstr "Племінник"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Niece"
-msgstr ""
+msgstr "Племінниця"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Sister"
-msgstr ""
+msgstr "Сестра"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Uncle"
-msgstr ""
+msgstr "Дядько"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
 msgid "Maternal"
@@ -613,7 +615,7 @@ msgstr ""
 
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Disease"
-msgstr ""
+msgstr "Хвороба"
 
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Protein and Gene"
