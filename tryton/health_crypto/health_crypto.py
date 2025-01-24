@@ -240,9 +240,9 @@ class BirthCertificate(metaclass=PoolMeta):
             'Date': str(certificate.dob) or '',
             'HP': certificate.signed_by
             and str(certificate.signed_by.rec_name) or '',
-            'Person': str(certificate.name.rec_name),
-            'Person_dob': str(certificate.name.dob) or '',
-            'Person_ID': str(certificate.name.ref) or '',
+            'Person': str(certificate.party.rec_name),
+            'Person_dob': str(certificate.party.dob) or '',
+            'Person_ID': str(certificate.party.ref) or '',
             'Country': str(certificate.country.rec_name) or '',
             'Country_subdivision': certificate.country_subdivision
             and str(certificate.country_subdivision.rec_name) or '',
@@ -375,9 +375,9 @@ class DeathCertificate(metaclass=PoolMeta):
             'Date': str(certificate.dod) or '',
             'HP': certificate.signed_by
             and str(certificate.signed_by.rec_name) or '',
-            'Person': str(certificate.name.rec_name),
-            'Person_dob': str(certificate.name.dob) or '',
-            'Person_ID': str(certificate.name.ref) or '',
+            'Person': str(certificate.party.rec_name),
+            'Person_dob': str(certificate.party.dob) or '',
+            'Person_ID': str(certificate.party.ref) or '',
             'Cod': str(certificate.cod.rec_name),
             'Underlying_conditions': underlying_conds or '',
             'Autopsy': certificate.autopsy,

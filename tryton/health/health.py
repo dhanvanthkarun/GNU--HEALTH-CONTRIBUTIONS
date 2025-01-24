@@ -443,7 +443,7 @@ class Party(metaclass=PoolMeta):
 
     alternative_ids = fields.One2Many(
         'gnuhealth.person_alternative_identification',
-        'name', 'Other IDs',
+        'party', 'Other IDs',
         states={'invisible': Not(Bool(Eval('alternative_identification')))})
 
     insurance = fields.One2Many(
@@ -2661,7 +2661,7 @@ class BirthCertExtraInfo (metaclass=PoolMeta):
             'signed_by': signing_hp,
             'certification_date': datetime.now()})
 
-        party.append(certificates[0].name)
+        party.append(certificates[0].party)
 
         Person.write(party, {
             'birth_certificate': certificates[0].id})
@@ -2737,7 +2737,7 @@ class DeathCertExtraInfo (metaclass=PoolMeta):
             'signed_by': signing_hp,
             'certification_date': datetime.now()})
 
-        party.append(certificates[0].name)
+        party.append(certificates[0].party)
 
         Person.write(party, {
             'deceased': True,
@@ -2869,9 +2869,8 @@ class Insurance(ModelSQL, ModelView):
 class AlternativePersonID (ModelSQL, ModelView):
     'Alternative person ID'
     __name__ = 'gnuhealth.person_alternative_identification'
-    _rec_name = 'code'
 
-    name = fields.Many2One('party.party', 'Party', readonly=True)
+    party = fields.Many2One('party.party', 'Party', readonly=True)
     code = fields.Char('Code', required=True)
     alternative_id_type = fields.Selection(
         [
@@ -2894,17 +2893,29 @@ class AlternativePersonID (ModelSQL, ModelView):
 
     comments = fields.Char('Comments')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class BirthCertificate (ModelSQL, ModelView):
     'Birth Certificate'
     __name__ = 'gnuhealth.birth_certificate'
-    _rec_name = 'code'
 
     STATES = {'readonly': Eval('state') == 'done'}
 
-    name = fields.Many2One('party.party', 'Person',
-                           required=True, domain=[('is_person', '=', True), ],
-                           states={'readonly': Eval('id', 0) > 0})
+    party = fields.Many2One(
+        'party.party', 'Person',
+        required=True, domain=[('is_person', '=', True), ],
+        states={'readonly': Eval('id', 0) > 0})
 
     mother = fields.Many2One('party.party', 'Mother',
                              domain=[('is_person', '=', True), ],
@@ -2940,10 +2951,10 @@ class BirthCertificate (ModelSQL, ModelView):
     def default_state():
         return 'draft'
 
-    @fields.depends('name')
+    @fields.depends('party')
     def on_change_with_dob(self):
-        if (self.name and self.name.dob):
-            dob = self.name.dob
+        if (self.party and self.party.dob):
+            dob = self.party.dob
             return dob
 
     @classmethod
@@ -2951,7 +2962,7 @@ class BirthCertificate (ModelSQL, ModelView):
         super(BirthCertificate, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_uniq', Unique(t, t.name), 'Certificate already exists !'),
+            ('name_uniq', Unique(t, t.party), 'Certificate already exists !'),
             ('code_uniq', Unique(t, t.code), 'Certificate already exists !'),
         ]
 
@@ -2967,22 +2978,33 @@ class BirthCertificate (ModelSQL, ModelView):
             certificate.validate_dob()
 
     def validate_dob(self):
-        if (self.name.dob != self.dob):
+        if (self.party.dob != self.dob):
             raise BirthCertDateMismatch(
                 gettext('health.msg_birth_cert_date_mismatch')
             )
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class DeathCertificate (ModelSQL, ModelView):
     'Death Certificate'
     __name__ = 'gnuhealth.death_certificate'
-    _rec_name = 'code'
 
     STATES = {'readonly': Eval('state') == 'done'}
 
-    name = fields.Many2One('party.party', 'Person', required=True,
-                           domain=[('is_person', '=', True), ],
-                           states=STATES)
+    party = fields.Many2One(
+        'party.party', 'Person', required=True,
+        domain=[('is_person', '=', True), ], states=STATES)
 
     code = fields.Char('Code', required=True, states=STATES)
 
@@ -3069,9 +3091,21 @@ class DeathCertificate (ModelSQL, ModelView):
                                      Equal(Eval('state'), 'done'))}
         })
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
     def get_age_at_death(self, name):
-        if (self.name.dob):
-            delta = relativedelta(self.dod, self.name.dob)
+        if (self.party.dob):
+            delta = relativedelta(self.dod, self.party.dob)
             years_months_days = format_years_months_days(
                 years=delta.years,
                 months=delta.months,
@@ -3685,7 +3719,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
             'summary': condition_info.short_comment,
             'info': condition_info.extra_info,
             'author': condition_info.healthprof and
-            condition_info.healthprof.name.rec_name,
+            condition_info.healthprof.party.rec_name,
             'node': condition_info.institution and
             condition_info.institution.party.name
         }
@@ -4633,7 +4667,7 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
             'relevance': 'important',
             'info': plines,
             'author': prescription_info.healthprof and
-                prescription_info.healthprof.name.rec_name,
+                prescription_info.healthprof.party.rec_name,
         }
 
         pol.append(vals)
@@ -5701,8 +5735,8 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
             'summary': evaluation.chief_complaint,
             'info': soap,
             'measurements': measures,
-            'author': evaluation.healthprof.name.rec_name,
-            'author_acct': evaluation.healthprof.name.federation_account,
+            'author': evaluation.healthprof.party.rec_name,
+            'author_acct': evaluation.healthprof.party.federation_account,
             'node': evaluation.institution and
             evaluation.institution.party.name or ''
         }

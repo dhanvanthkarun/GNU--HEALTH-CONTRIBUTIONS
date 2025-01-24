@@ -1319,7 +1319,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_birth_cert_form1">
             <field name="name">Birth Certificate</field>
             <field name="res_model">gnuhealth.birth_certificate</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('party', '=', Eval('active_id'))]" pyson="1"/>
         </record>
 
         <record model="ir.action.keyword" id="act_open_birth_cert_keyword1">
@@ -1357,7 +1357,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_death_cert_form1">
             <field name="name">Death Certificate</field>
             <field name="res_model">gnuhealth.death_certificate</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('party', '=', Eval('active_id'))]" pyson="1"/>
         </record>
 
         <record model="ir.action.keyword" id="act_open_death_cert_keyword1">

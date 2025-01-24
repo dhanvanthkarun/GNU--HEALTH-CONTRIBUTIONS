@@ -1463,7 +1463,7 @@
     </table:table-row>
     <table:table-row table:style-name="Table4.2">
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name and death_cert.name.rec_name&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party and death_cert.party.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.B2" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.code&gt;</text:placeholder></text:p>
@@ -1492,16 +1492,16 @@
     </table:table-row>
     <table:table-row table:style-name="Table7.1">
      <table:table-cell table:style-name="Table7.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.dob and format_date(death_cert.name.dob, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.dob and format_date(death_cert.party.dob, user.language)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.A2" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.age&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.gender_str&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.gender_str&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.D2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.marital_status_str&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.marital_status_str&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Table7.1">
@@ -1516,11 +1516,11 @@
     </table:table-row>
     <table:table-row table:style-name="Table7.1">
      <table:table-cell table:style-name="Table7.A2" table:number-columns-spanned="2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.mother and death_cert.name.mother.rec_name&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.mother and death_cert.party.mother.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
      <table:table-cell table:style-name="Table7.D2" table:number-columns-spanned="2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.father and death_cert.name.father.rec_name&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.father and death_cert.party.father.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
     </table:table-row>
@@ -1543,13 +1543,13 @@
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.du and death_cert.du.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.citizenship and death_cert.name.citizenship.rec_name&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.citizenship and death_cert.party.citizenship.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.residence and death_cert.name.residence.rec_name&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.residence and death_cert.party.residence.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.D2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.occupation and death_cert.name.occupation.rec_name&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.occupation and death_cert.party.occupation.rec_name&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
@@ -1562,7 +1562,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table7.D2" table:number-columns-spanned="4" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.name.du_address&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.party.du_address&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
      <table:covered-table-cell/>
