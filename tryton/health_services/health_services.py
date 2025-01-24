@@ -217,7 +217,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
 
         for line in prescription.prescription_line:
             service_lines.append(('create', [{
-                'product': line.medicament.name.id,
+                'product': line.medicament.product.id,
                 'desc': 'Prescription Line',
                 'qty': line.quantity
             }]))

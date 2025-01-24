@@ -107,7 +107,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
 
         for line in prescription.prescription_line:
             line_elements = [line.medicament and
-                             line.medicament.name.name or '',
+                             line.medicament.product.name or '',
                              line.dose or '',
                              line.dose_unit and line.dose_unit.name or '',
                              line.route and line.route.name or '',

@@ -152,15 +152,15 @@ class PatientAmbulatoryCare(Workflow, metaclass=PoolMeta):
             for medicament in lines['medicaments']:
                 move_info = {}
                 move_info['origin'] = str(ambulatory)
-                move_info['product'] = medicament.medicament.name.id
-                move_info['uom'] = medicament.medicament.name.default_uom.id
+                move_info['product'] = medicament.medicament.product.id
+                move_info['uom'] = medicament.medicament.product.default_uom.id
                 move_info['quantity'] = medicament.quantity
                 move_info['from_location'] = ambulatory.care_location.id
                 move_info['to_location'] = \
                     ambulatory.patient.name.customer_location.id
                 move_info['unit_price'] = \
-                    medicament.medicament.name.list_price
-                move_info['cost_price'] = medicament.medicament.name.cost_price
+                    medicament.medicament.product.list_price
+                move_info['cost_price'] = medicament.medicament.product.cost_price
                 if medicament.lot:
                     if medicament.lot.expiration_date and \
                             medicament.lot.expiration_date < Date.today():
@@ -221,7 +221,7 @@ class PatientAmbulatoryCareMedicament(ModelSQL, ModelView):
     @fields.depends('medicament')
     def on_change_medicament(self):
         if self.medicament:
-            self.product = self.medicament.name.id
+            self.product = self.medicament.product.id
 
         else:
             self.product = None
@@ -332,15 +332,15 @@ class PatientRounding(Workflow, ModelSQL, ModelView):
             for medicament in lines['medicaments']:
                 move_info = {}
                 move_info['origin'] = str(rounding)
-                move_info['product'] = medicament.medicament.name.id
-                move_info['uom'] = medicament.medicament.name.default_uom.id
+                move_info['product'] = medicament.medicament.product.id
+                move_info['uom'] = medicament.medicament.product.default_uom.id
                 move_info['quantity'] = medicament.quantity
                 move_info['from_location'] = \
                     rounding.hospitalization_location.id
                 move_info['to_location'] = \
                     rounding.name.patient.name.customer_location.id
-                move_info['unit_price'] = medicament.medicament.name.list_price
-                move_info['cost_price'] = medicament.medicament.name.cost_price
+                move_info['unit_price'] = medicament.medicament.product.list_price
+                move_info['cost_price'] = medicament.medicament.product.cost_price
                 if medicament.lot:
                     if medicament.lot.expiration_date \
                             and medicament.lot.expiration_date < Date.today():
@@ -399,7 +399,7 @@ class PatientRoundingMedicament(ModelSQL, ModelView):
     @fields.depends('medicament')
     def on_change_medicament(self):
         if self.medicament:
-            self.product = self.medicament.name.id
+            self.product = self.medicament.product.id
 
         else:
             self.product = None
