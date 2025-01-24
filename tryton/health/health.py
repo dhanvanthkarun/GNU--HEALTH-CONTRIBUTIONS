@@ -447,7 +447,7 @@ class Party(metaclass=PoolMeta):
         states={'invisible': Not(Bool(Eval('alternative_identification')))})
 
     insurance = fields.One2Many(
-        'gnuhealth.insurance', 'name', 'Insurances',
+        'gnuhealth.insurance', 'party', 'Insurances',
         help="Insurance Plans associated to this party")
 
     internal_user = fields.Many2One(
@@ -2811,11 +2811,10 @@ class InsurancePlan(ModelSQL, ModelView):
 class Insurance(ModelSQL, ModelView):
     'Insurance'
     __name__ = 'gnuhealth.insurance'
-    _rec_name = 'number'
 
     # Insurance associated to an individual
 
-    name = fields.Many2One('party.party', 'Owner')
+    party = fields.Many2One('party.party', 'Owner')
     number = fields.Char('Number', required=True)
 
     company = fields.Many2One(
@@ -2853,6 +2852,18 @@ class Insurance(ModelSQL, ModelView):
             ('number_uniq', Unique(t, t.number, t.company),
              'The number must be unique per insurance company'),
         ]
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to party
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('party')):
+            table_h.column_rename('name', 'party')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class AlternativePersonID (ModelSQL, ModelView):
