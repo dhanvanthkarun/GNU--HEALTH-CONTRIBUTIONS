@@ -2171,9 +2171,8 @@ class MedicamentCategory(tree(separator=' / '), ModelSQL, ModelView):
 class Medicament(ModelSQL, ModelView):
     'Medicament'
     __name__ = 'gnuhealth.medicament'
-    _rec_name = 'active_component'
 
-    name = fields.Many2One(
+    product = fields.Many2One(
         'product.product', 'Product', required=True,
         domain=[('is_medicament', '=', True)],
         help='Product Name')
@@ -2289,7 +2288,7 @@ class Medicament(ModelSQL, ModelView):
             return 'gnuhealth-warning'
 
     def get_rec_name(self, name):
-        return self.name.name
+        return self.product.name
 
     # Allow to search by name, active component or category
     @classmethod
@@ -2307,6 +2306,18 @@ class Medicament(ModelSQL, ModelView):
     @classmethod
     def check_xml_record(cls, records, values):
         return True
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to product
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('product')):
+            table_h.column_rename('name', 'product')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class ImmunizationScheduleDose(ModelSQL, ModelView):
