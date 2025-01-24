@@ -1509,6 +1509,7 @@ class HealthInstitution(ModelSQL, ModelView):
         super().__register__(module)
         table_h = cls.__table_handler__(module)
 
+
 class HealthInstitutionSpecialties(ModelSQL, ModelView):
     'Health Institution Specialties'
     __name__ = 'gnuhealth.institution.specialties'
@@ -1909,6 +1910,7 @@ class HospitalBed(ModelSQL, ModelView):
         super().__register__(module)
         table_h = cls.__table_handler__(module)
 
+
 class MedicalSpecialty(ModelSQL, ModelView):
     'Medical Specialty'
     __name__ = 'gnuhealth.specialty'
@@ -2099,7 +2101,7 @@ class Family(ModelSQL, ModelView):
     name = fields.Char('Family', required=True, help='Family code')
 
     members = fields.One2Many(
-        'gnuhealth.family_member', 'name', 'Family Members')
+        'gnuhealth.family_member', 'family', 'Family Members')
 
     info = fields.Text('Extra Information')
 
@@ -2116,9 +2118,8 @@ class Family(ModelSQL, ModelView):
 class FamilyMember(ModelSQL, ModelView):
     'Family Member'
     __name__ = 'gnuhealth.family_member'
-    _rec_name = 'role'
 
-    name = fields.Many2One(
+    family = fields.Many2One(
         'gnuhealth.family', 'Family', required=True, readonly=True,
         help='Family code')
 
@@ -2128,6 +2129,18 @@ class FamilyMember(ModelSQL, ModelView):
         help='Family Member')
 
     role = fields.Char('Role', help='Father, Mother, sibbling...')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to family
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('family')):
+            table_h.column_rename('name', 'family')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 # Use the template as in Product category.
