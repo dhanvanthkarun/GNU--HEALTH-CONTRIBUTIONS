@@ -1,35 +1,28 @@
-# SPDX-FileCopyrightText: 2011-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2011 Cédric Krier <cedric.krier@b2ck.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-[build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "gnuhealth"
 version = "5.0.0a1"
-description = "GNU Health HIS: Hospital and Health Information System"
-requires-python = ">=3.10,<3.13"
+description = "GNU Health Hospital and Health Information System. Core package"
+license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
+keywords = ["health", "hospital", "HIS", "eHealth", "gnuhealth"]
+requires-python = ">=3.10,<3.14"
 authors = [
     {name = "GNU Solidario", email = "info@gnusolidario.org"},
 ]
-classifiers=[
-    'Development Status :: 5 - Production/Stable',
-    'Environment :: Plugins',
-    'Framework :: Tryton',
-    'Intended Audience :: Developers',
-    'Intended Audience :: Healthcare Industry',
-    'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
-    'Natural Language :: English',
-    'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3',
-    'Topic :: Scientific/Engineering :: Bio-Informatics',
-    'Topic :: Scientific/Engineering :: Medical Science Apps.',
+
+dynamic = [ "classifiers" ]
+
+maintainers = [
+    { name = "Luis Falcon", email = "falcon@gnuhealth.org" },
+    { name = "Gerald Wiese", email = "wiese@gnuhealth.org" },
 ]
+
 dependencies = [
     "numpy>=2.1.1,<3",
     'werkzeug>=3.0.4,<4',
@@ -45,13 +38,26 @@ dependencies = [
     'trytond-product>=7.0,<7.1'
 ]
 
-[tool.setuptools]
-packages = [
-    'trytond.modules.health',
-    'trytond.modules.health.tests',
-    'trytond.modules.health.wizard',
-    'trytond.modules.health.report',
+[project.urls]
+homepage = "https://www.gnuhealth.org"
+repository = "https://codeberg.org/gnuhealth/his"
+documentation = "https://docs.gnuhealth.org"
+"Bug Tracker" = "https://codeberg.org/gnuhealth/his/issues"
+
+[tool-poetry]
+classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Plugins',
+    'Framework :: Tryton',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Healthcare Industry',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+    'Topic :: Scientific/Engineering :: Medical Science Apps.',
 ]
-package-dir = { 'trytond.modules.health' = '.' }
-package-data = { 'trytond.modules.health' = ['data/**/*.xml', 'view/*.xml', 'wizard/*.xml', 'security/*.xml', '*.xml', 'locale/*.po', 'report/*.fodt', 'icons/*.svg', 'tryton.cfg'] }
-include-package-data = false
+
+packages = [
+    { include = 'trytond', from = 'modules', to='health' },
+]
