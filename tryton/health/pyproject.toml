@@ -63,5 +63,5 @@ classifiers=[
 ]
 
 packages = [
-    { include = 'trytond', from = 'modules', to='health' },
+    { include = '*', to='trytond/modules/health' },
 ]
