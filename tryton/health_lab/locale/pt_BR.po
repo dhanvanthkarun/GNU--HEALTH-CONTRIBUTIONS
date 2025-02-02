@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.lab,analytes_summary:"
@@ -251,10 +251,6 @@ msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health Prof"
 msgstr "Profissional de Saúde"
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr "Tipo de Exame"
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
@@ -284,6 +280,11 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "Estado"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr "Tipo de Exame"
 
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
@@ -1595,43 +1596,50 @@ msgid "Lab Services"
 msgstr "Serviços Laboratorial"
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
-msgstr "Despesas de teste de exame de sangue"
+msgid "Complete Blood Count"
+msgstr ""
 
 msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
 msgstr "Endocrinologia"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
+msgid "Haematology"
 msgstr "Despesas de hematologia"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
+msgid "Liver Function"
 msgstr "Despesas de exames de funções hepáticas"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
+msgid "Peripheral Smear Examination"
 msgstr "Despesas de Exames de Áreas Periféricas"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
+msgid "Renal Function"
 msgstr "Despesas de Exames de Funções Renais"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
+msgid "Semen Analysis"
 msgstr "Despesas de Análises de Sêmens"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
+msgid "Stool Examination"
 msgstr "Despesas de Exames de Fezes"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
+msgid "Urine Analysis"
 msgstr "Despesas de Análises de Urina"
 
 msgctxt "model:res.group,name:group_health_lab"
@@ -1659,10 +1667,6 @@ msgstr "Comentário"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
-msgstr ""
-
-msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1711,6 +1715,10 @@ msgstr "Referência"
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "Observações"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
+msgstr ""
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"

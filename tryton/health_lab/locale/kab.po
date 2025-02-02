@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.lab,analytes_summary:"
@@ -251,10 +251,6 @@ msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health Prof"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
@@ -285,6 +281,10 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "Aɣir"
+
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
@@ -1570,7 +1570,7 @@ msgid "Lab Services"
 msgstr ""
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
+msgid "Complete Blood Count"
 msgstr ""
 
 msgctxt "model:product.template,name:product_template_endocrinology0"
@@ -1578,35 +1578,35 @@ msgid "Endocrinology"
 msgstr ""
 
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
+msgid "Haematology"
 msgstr ""
 
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
+msgid "Liver Function"
 msgstr ""
 
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
+msgid "Peripheral Smear Examination"
 msgstr ""
 
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
+msgid "Renal Function"
 msgstr ""
 
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
+msgid "Semen Analysis"
 msgstr ""
 
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
+msgid "Stool Examination"
 msgstr ""
 
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
+msgid "Urine Analysis"
 msgstr ""
 
 msgctxt "model:res.group,name:group_health_lab"
@@ -1632,10 +1632,6 @@ msgstr "Awennit"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
-msgstr ""
-
-msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1681,6 +1677,10 @@ msgstr ""
 
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"

@@ -2,15 +2,13 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2024-10-12 17:57+0000\n"
-"Last-Translator: gedankenstuecke <gedankenstuecke@users.noreply.translate."
-"codeberg.org>\n"
-"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/"
-"health_gyneco/de/>\n"
+"Last-Translator: gedankenstuecke <gedankenstuecke@users.noreply.translate.codeberg.org>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/health_gyneco/de/>\n"
 "Language: de\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.7.2\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.patient,abortions:"
 msgid "Abortions"
@@ -124,7 +122,8 @@ msgctxt "field:gnuhealth.patient.colposcopy_history,last_colposcopy:"
 msgid "Previous"
 msgstr "vorige"
 
-msgctxt "field:gnuhealth.patient.colposcopy_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.colposcopy_history,patient:"
 msgid "Patient"
 msgstr "Patient"
 
@@ -156,7 +155,8 @@ msgctxt "field:gnuhealth.patient.mammography_history,last_mammography:"
 msgid "Previous"
 msgstr "vorige"
 
-msgctxt "field:gnuhealth.patient.mammography_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.mammography_history,patient:"
 msgid "Patient"
 msgstr "Patient"
 
@@ -200,7 +200,8 @@ msgctxt "field:gnuhealth.patient.menstrual_history,lmp_length:"
 msgid "Length"
 msgstr "Körperlänge"
 
-msgctxt "field:gnuhealth.patient.menstrual_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.menstrual_history,patient:"
 msgid "Patient"
 msgstr "Patient"
 
@@ -232,7 +233,8 @@ msgctxt "field:gnuhealth.patient.pap_history,last_pap:"
 msgid "Previous"
 msgstr "vorige"
 
-msgctxt "field:gnuhealth.patient.pap_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.pap_history,patient:"
 msgid "Patient"
 msgstr "Patient"
 
@@ -306,7 +308,7 @@ msgid "Monozygotic"
 msgstr "Monozygotisch"
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.pregnancy,name:"
+msgctxt "field:gnuhealth.patient.pregnancy,patient:"
 msgid "Patient"
 msgstr "Patient"
 
@@ -442,10 +444,6 @@ msgctxt "field:gnuhealth.patient.prenatal.evaluation,iugr:"
 msgid "IUGR"
 msgstr "IUGR - intrauterine Wachstumsverzögerung"
 
-msgctxt "field:gnuhealth.patient.prenatal.evaluation,name:"
-msgid "Patient Pregnancy"
-msgstr "Patient Schwangerschaft"
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,notes:"
 msgid "Notes"
@@ -470,6 +468,11 @@ msgstr "Polyhydramnios"
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,preeclampsia:"
 msgid "Preeclampsia"
 msgstr "Präeklampsie"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.prenatal.evaluation,pregnancy:"
+msgid "Patient Pregnancy"
+msgstr "Patient Schwangerschaft"
 
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,urinary_activity_signs:"
 msgid "SUA"
@@ -543,10 +546,6 @@ msgctxt "field:gnuhealth.perinatal,monitoring:"
 msgid "Monitors"
 msgstr "Überwachung"
 
-msgctxt "field:gnuhealth.perinatal,name:"
-msgid "Patient Pregnancy"
-msgstr "Patient Schwangerschaft "
-
 msgctxt "field:gnuhealth.perinatal,notes:"
 msgid "Notes"
 msgstr "Notiz"
@@ -558,6 +557,11 @@ msgstr "Unvollständig"
 msgctxt "field:gnuhealth.perinatal,placenta_retained:"
 msgid "Retained"
 msgstr "retiniert"
+
+#, fuzzy
+msgctxt "field:gnuhealth.perinatal,pregnancy:"
+msgid "Patient Pregnancy"
+msgstr "Patient Schwangerschaft"
 
 msgctxt "field:gnuhealth.perinatal,prenatal_evaluations:"
 msgid "Prenatal evaluations"
@@ -615,7 +619,8 @@ msgctxt "field:gnuhealth.perinatal.monitor,meconium:"
 msgid "Meconium"
 msgstr "Mekonium"
 
-msgctxt "field:gnuhealth.perinatal.monitor,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.perinatal.monitor,perinatal:"
 msgid "Patient Perinatal Evaluation"
 msgstr "Patient Perinatale Untersuchung"
 
@@ -655,7 +660,8 @@ msgctxt "field:gnuhealth.puerperium.monitor,lochia_odor:"
 msgid "Lochia odor"
 msgstr "Geruch der Lochien"
 
-msgctxt "field:gnuhealth.puerperium.monitor,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.puerperium.monitor,pregnancy:"
 msgid "Patient Pregnancy"
 msgstr "Patient Schwangerschaft"
 
@@ -1259,6 +1265,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
 msgid "Occiput / Cephalic Posterior"
+msgstr ""
+
+msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
+msgid "Transverse Lie"
 msgstr ""
 
 msgctxt "selection:gnuhealth.puerperium.monitor,lochia_amount:"

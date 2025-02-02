@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.lab,analytes_summary:"
@@ -253,10 +253,6 @@ msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health Prof"
 msgstr "Professionnel de Santé"
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr "Type de test"
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
@@ -287,6 +283,11 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "Etat"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr "Type de test"
 
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
@@ -1601,43 +1602,50 @@ msgid "Lab Services"
 msgstr "Services de Labo"
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
-msgstr "Frais de la numération formule sanguine"
+msgid "Complete Blood Count"
+msgstr ""
 
 msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
 msgstr "Endocrinologie"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
+msgid "Haematology"
 msgstr "Frais Hématologie"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
+msgid "Liver Function"
 msgstr "Frais des tests de fonction hépatiques"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
+msgid "Peripheral Smear Examination"
 msgstr "Frais d'examen des frottis périphérique"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
-msgstr "Frais des tests de la fonction rénale"
+msgid "Renal Function"
+msgstr "Réaction"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
+msgid "Semen Analysis"
 msgstr "Frais d'analyse de sperme"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
+msgid "Stool Examination"
 msgstr "Frais d'examen de selles"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
+msgid "Urine Analysis"
 msgstr "Frais d'analyse d'urine"
 
 msgctxt "model:res.group,name:group_health_lab"
@@ -1664,10 +1672,6 @@ msgstr "Commentaire"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
-msgstr ""
-
-msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1716,6 +1720,10 @@ msgstr "Référence"
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "Remarques"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
+msgstr ""
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"

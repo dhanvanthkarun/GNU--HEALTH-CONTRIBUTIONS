@@ -1,10 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr "Operationen"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
@@ -13,6 +9,11 @@ msgstr "Notiz"
 msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "Code"
+
+#, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "Operationen"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,comments:"
@@ -35,7 +36,7 @@ msgid "Institution"
 msgstr "Institut"
 
 #, fuzzy
-msgctxt "field:gnuhealth.or.schedule,name:"
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
 msgstr "OP-Saal"
 
@@ -496,11 +497,6 @@ msgid "Complication"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr "Operationen"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
 msgstr "Schweregrad"
@@ -510,19 +506,24 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "Bemerkungen"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "Operationen"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
-msgstr "Operationen"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "Vermerk"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "Operationen"
 
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Anesthesia"
@@ -582,10 +583,6 @@ msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr ""
 
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr "Operation"
-
 msgctxt "field:gnuhealth.surgery_supply,notes:"
 msgid "Notes"
 msgstr "Notiz"
@@ -602,9 +599,10 @@ msgctxt "field:gnuhealth.surgery_supply,supply:"
 msgid "Supply"
 msgstr "Versorgung"
 
-msgctxt "field:gnuhealth.surgery_team,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
-msgstr "Operation"
+msgstr "Operationen"
 
 msgctxt "field:gnuhealth.surgery_team,notes:"
 msgid "Notes"
@@ -613,6 +611,11 @@ msgstr "Notiz"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "Rolle"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "Operationen"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -638,7 +641,7 @@ msgid "Health Care Institution"
 msgstr "Gesundheitseinrichtung"
 
 #, fuzzy
-msgctxt "help:gnuhealth.or.schedule,name:"
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr "OP-Saal"
 
@@ -1717,6 +1720,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"

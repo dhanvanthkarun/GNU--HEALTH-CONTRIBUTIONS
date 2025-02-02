@@ -2,15 +2,13 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2024-11-13 09:03+0000\n"
-"Last-Translator: Barrette4138 <Barrette4138@users.noreply.translate.codeberg."
-"org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.codeberg.org/projects/"
-"gnuhealth/health/pt_BR/>\n"
+"Last-Translator: Barrette4138 <Barrette4138@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.codeberg.org/projects/gnuhealth/health/pt_BR/>\n"
 "Language: pt_BR\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.8.1\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -148,13 +146,14 @@ msgctxt "field:gnuhealth.birth_certificate,mother:"
 msgid "Mother"
 msgstr "Mãe"
 
-msgctxt "field:gnuhealth.birth_certificate,name:"
-msgid "Person"
-msgstr "Pessoa"
-
 msgctxt "field:gnuhealth.birth_certificate,observations:"
 msgid "Observations"
 msgstr "Observações"
+
+#, fuzzy
+msgctxt "field:gnuhealth.birth_certificate,party:"
+msgid "Person"
+msgstr "Pessoa"
 
 msgctxt "field:gnuhealth.birth_certificate,signed_by:"
 msgid "Certifier"
@@ -233,10 +232,6 @@ msgctxt "field:gnuhealth.death_certificate,institution:"
 msgid "Institution"
 msgstr "Instituição"
 
-msgctxt "field:gnuhealth.death_certificate,name:"
-msgid "Person"
-msgstr "Pessoa"
-
 msgctxt "field:gnuhealth.death_certificate,observations:"
 msgid "Observations"
 msgstr "Observações"
@@ -244,6 +239,11 @@ msgstr "Observações"
 msgctxt "field:gnuhealth.death_certificate,operational_sector:"
 msgid "Op. Sector"
 msgstr "Setor Operacional"
+
+#, fuzzy
+msgctxt "field:gnuhealth.death_certificate,party:"
+msgid "Person"
+msgstr "Pessoa"
 
 msgctxt "field:gnuhealth.death_certificate,place_details:"
 msgid "Details"
@@ -301,7 +301,8 @@ msgctxt "field:gnuhealth.directions,comments:"
 msgid "Comments"
 msgstr "Observações"
 
-msgctxt "field:gnuhealth.directions,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.directions,evaluation:"
 msgid "Evaluation"
 msgstr "Avaliação"
 
@@ -309,13 +310,14 @@ msgctxt "field:gnuhealth.directions,procedure:"
 msgid "Procedure"
 msgstr "Procedimento"
 
+#, fuzzy
+msgctxt "field:gnuhealth.disease_group.members,disease:"
+msgid "Condition"
+msgstr "Condição"
+
 msgctxt "field:gnuhealth.disease_group.members,disease_group:"
 msgid "Group"
 msgstr "Grupo"
-
-msgctxt "field:gnuhealth.disease_group.members,name:"
-msgid "Condition"
-msgstr "Condição"
 
 msgctxt "field:gnuhealth.dose.unit,desc:"
 msgid "Description"
@@ -501,7 +503,8 @@ msgctxt "field:gnuhealth.family,name:"
 msgid "Family"
 msgstr "Família"
 
-msgctxt "field:gnuhealth.family_member,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.family_member,family:"
 msgid "Family"
 msgstr "Família"
 
@@ -549,9 +552,10 @@ msgctxt "field:gnuhealth.healthprofessional,main_specialty:"
 msgid "Main Specialty"
 msgstr "Especialidade principal"
 
-msgctxt "field:gnuhealth.healthprofessional,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.healthprofessional,party:"
 msgid "Health Prof"
-msgstr "Profissional de saúde"
+msgstr "Prof. da Saúde"
 
 msgctxt "field:gnuhealth.healthprofessional,puid:"
 msgid "PUID"
@@ -581,8 +585,9 @@ msgctxt "field:gnuhealth.help,name:"
 msgid "Code"
 msgstr "Código"
 
-msgctxt "field:gnuhealth.help,package:"
-msgid "Package"
+#, fuzzy
+msgctxt "field:gnuhealth.help,packages:"
+msgid "Packages"
 msgstr "Pacote"
 
 msgctxt "field:gnuhealth.hospital.bed,bed_type:"
@@ -597,7 +602,8 @@ msgctxt "field:gnuhealth.hospital.bed,institution:"
 msgid "Institution"
 msgstr "Instituição"
 
-msgctxt "field:gnuhealth.hospital.bed,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.hospital.bed,product:"
 msgid "Bed"
 msgstr "Leito"
 
@@ -749,9 +755,10 @@ msgctxt "field:gnuhealth.hospital.ward,unit:"
 msgid "Unit"
 msgstr "Unidade"
 
-msgctxt "field:gnuhealth.hp_specialty,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Prof"
-msgstr "Profissional de saúde"
+msgstr "Prof. da Saúde"
 
 msgctxt "field:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty"
@@ -849,10 +856,6 @@ msgctxt "field:gnuhealth.institution,main_specialty:"
 msgid "Specialty"
 msgstr "Especialidade"
 
-msgctxt "field:gnuhealth.institution,name:"
-msgid "Institution"
-msgstr "Instituição"
-
 msgctxt "field:gnuhealth.institution,operating_room:"
 msgid "Op. Room"
 msgstr "Sala de Operação"
@@ -864,6 +867,11 @@ msgstr "Setor Operacional"
 msgctxt "field:gnuhealth.institution,or_number:"
 msgid "ORs"
 msgstr "Salas de Operação"
+
+#, fuzzy
+msgctxt "field:gnuhealth.institution,party:"
+msgid "Institution"
+msgstr "Instituição"
 
 msgctxt "field:gnuhealth.institution,picture:"
 msgid "Picture"
@@ -889,7 +897,8 @@ msgctxt "field:gnuhealth.institution,trauma_level:"
 msgid "Trauma Level"
 msgstr "Nível de Trauma"
 
-msgctxt "field:gnuhealth.institution.operationalsector,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.institution.operationalsector,institution:"
 msgid "Institution"
 msgstr "Instituição"
 
@@ -897,7 +906,8 @@ msgctxt "field:gnuhealth.institution.operationalsector,operational_sector:"
 msgid "Operational Sector"
 msgstr "Setor Operacional"
 
-msgctxt "field:gnuhealth.institution.specialties,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.institution.specialties,institution:"
 msgid "Institution"
 msgstr "Instituição"
 
@@ -925,10 +935,6 @@ msgctxt "field:gnuhealth.insurance,member_since:"
 msgid "Member since"
 msgstr "Associado desde"
 
-msgctxt "field:gnuhealth.insurance,name:"
-msgid "Owner"
-msgstr "Proprietário"
-
 msgctxt "field:gnuhealth.insurance,notes:"
 msgid "Extra Info"
 msgstr "Informação Extra"
@@ -936,6 +942,11 @@ msgstr "Informação Extra"
 msgctxt "field:gnuhealth.insurance,number:"
 msgid "Number"
 msgstr "Número"
+
+#, fuzzy
+msgctxt "field:gnuhealth.insurance,party:"
+msgid "Owner"
+msgstr "Proprietário"
 
 msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
@@ -949,13 +960,14 @@ msgctxt "field:gnuhealth.insurance.plan,is_default:"
 msgid "Default plan"
 msgstr "Plano padrão"
 
-msgctxt "field:gnuhealth.insurance.plan,name:"
-msgid "Plan"
-msgstr "Plano"
-
 msgctxt "field:gnuhealth.insurance.plan,notes:"
 msgid "Extra info"
 msgstr "Informação Extra"
+
+#, fuzzy
+msgctxt "field:gnuhealth.insurance.plan,product:"
+msgid "Plan"
+msgstr "Plano"
 
 msgctxt "field:gnuhealth.medicament,active:"
 msgid "Active"
@@ -993,10 +1005,6 @@ msgctxt "field:gnuhealth.medicament,is_vaccine:"
 msgid "Vaccine"
 msgstr "Vacina"
 
-msgctxt "field:gnuhealth.medicament,name:"
-msgid "Product"
-msgstr "Produto"
-
 msgctxt "field:gnuhealth.medicament,notes:"
 msgid "Extra Info"
 msgstr "Informação Extra"
@@ -1024,6 +1032,11 @@ msgstr "Advertência de Gravidez"
 msgctxt "field:gnuhealth.medicament,presentation:"
 msgid "Presentation"
 msgstr "Apresentação"
+
+#, fuzzy
+msgctxt "field:gnuhealth.medicament,product:"
+msgid "Product"
+msgstr "Produto"
 
 msgctxt "field:gnuhealth.medicament,route:"
 msgid "Administration Route"
@@ -1329,7 +1342,8 @@ msgctxt "field:gnuhealth.patient,medications:"
 msgid "Medications"
 msgstr "Medicamentos"
 
-msgctxt "field:gnuhealth.patient,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient,party:"
 msgid "Patient"
 msgstr "Paciente"
 
@@ -1421,13 +1435,14 @@ msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
 msgid "Current"
 msgstr "Atual"
 
-msgctxt "field:gnuhealth.patient.disease,name:"
-msgid "Patient"
-msgstr "Paciente"
-
 msgctxt "field:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
 msgstr "Condição"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.disease,patient:"
+msgid "Patient"
+msgstr "Paciente"
 
 msgctxt "field:gnuhealth.patient.disease,pcs_code:"
 msgid "Code"
@@ -1489,13 +1504,14 @@ msgctxt "field:gnuhealth.patient.ecg,lead:"
 msgid "Lead"
 msgstr "Eletrodo"
 
-msgctxt "field:gnuhealth.patient.ecg,name:"
-msgid "Patient"
-msgstr "Paciente"
-
 msgctxt "field:gnuhealth.patient.ecg,pacemaker:"
 msgid "Pacemaker"
 msgstr "Marca-passo"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.ecg,patient:"
+msgid "Patient"
+msgstr "Paciente"
 
 msgctxt "field:gnuhealth.patient.ecg,pr:"
 msgid "PR"
@@ -1926,13 +1942,14 @@ msgctxt "field:gnuhealth.patient.medication,medicament:"
 msgid "Medicament"
 msgstr "Medicamento"
 
-msgctxt "field:gnuhealth.patient.medication,name:"
-msgid "Patient"
-msgstr "Paciente"
-
 msgctxt "field:gnuhealth.patient.medication,notes:"
 msgid "Extra Info"
 msgstr "Informação Extra"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.medication,patient:"
+msgid "Patient"
+msgstr "Paciente"
 
 msgctxt "field:gnuhealth.patient.medication,prescription:"
 msgid "Prescription"
@@ -1968,14 +1985,15 @@ msgctxt "field:gnuhealth.person_alternative_identification,expiration_date:"
 msgid "Expiration date"
 msgstr "Data de Validade"
 
-msgctxt "field:gnuhealth.person_alternative_identification,name:"
-msgid "Party"
-msgstr "Parceiro"
-
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid "Other ID type"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.person_alternative_identification,party:"
+msgid "Party"
+msgstr "Pessoa"
 
 #, fuzzy
 msgctxt "field:gnuhealth.person_name,date_from:"
@@ -2199,7 +2217,8 @@ msgctxt "field:gnuhealth.prescription.line,medicament:"
 msgid "Medicament"
 msgstr "Medicamento"
 
-msgctxt "field:gnuhealth.prescription.line,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.prescription.line,presc_order:"
 msgid "ID"
 msgstr "ID da Prescrição"
 
@@ -2397,10 +2416,6 @@ msgctxt "field:gnuhealth.vaccination,institution:"
 msgid "Institution"
 msgstr "Instituição"
 
-msgctxt "field:gnuhealth.vaccination,name:"
-msgid "Patient"
-msgstr "Paciente"
-
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
 msgstr "Próxima Dose"
@@ -2408,6 +2423,11 @@ msgstr "Próxima Dose"
 msgctxt "field:gnuhealth.vaccination,observations:"
 msgid "Observations"
 msgstr "Observações"
+
+#, fuzzy
+msgctxt "field:gnuhealth.vaccination,patient:"
+msgid "Patient"
+msgstr "Paciente"
 
 msgctxt "field:gnuhealth.vaccination,picture:"
 msgid "Label"
@@ -2773,7 +2793,8 @@ msgctxt "help:gnuhealth.family,name:"
 msgid "Family code"
 msgstr "Código da Familia"
 
-msgctxt "help:gnuhealth.family_member,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.family_member,family:"
 msgid "Family code"
 msgstr "Código da Familia"
 
@@ -2804,7 +2825,8 @@ msgctxt "help:gnuhealth.healthprofessional,institution:"
 msgid "Main institution where she/he works"
 msgstr "Principal instituição onde ela / ele trabalha"
 
-msgctxt "help:gnuhealth.healthprofessional,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.healthprofessional,party:"
 msgid "Health Professional's Name, from the partner list"
 msgstr "Nome do Profissional de Saúde, a partir da lista de parceiros"
 
@@ -2824,7 +2846,8 @@ msgctxt "help:gnuhealth.hospital.bed,institution:"
 msgid "Health Institution"
 msgstr "Instituição de Saúde"
 
-msgctxt "help:gnuhealth.hospital.bed,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.hospital.bed,product:"
 msgid "Bed Number"
 msgstr "Número do Leito"
 
@@ -2888,7 +2911,7 @@ msgid "Check this option for private room"
 msgstr "Marque esta opção para quarto particular"
 
 #, fuzzy
-msgctxt "help:gnuhealth.hp_specialty,name:"
+msgctxt "help:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Professional"
 msgstr "Profissional de saúde"
 
@@ -2928,10 +2951,6 @@ msgstr ""
 "Escolha a especialidade no caso de Hospitais Especializados ou escolha a "
 "especialidade na qual este centro se destaca"
 
-msgctxt "help:gnuhealth.institution,name:"
-msgid "Party Associated to this Health Institution"
-msgstr "Pessoa associada a esta Instituição de Saúde"
-
 msgctxt "help:gnuhealth.institution,operating_room:"
 msgid "Check this box if the institution has operating rooms"
 msgstr "Marque esta caixa se a instituição possui salas de operação"
@@ -2939,6 +2958,11 @@ msgstr "Marque esta caixa se a instituição possui salas de operação"
 msgctxt "help:gnuhealth.institution,operational_sectors:"
 msgid "Operational Sectors covered by this institution"
 msgstr "Setores Operacionais cobertos por esta instituição"
+
+#, fuzzy
+msgctxt "help:gnuhealth.institution,party:"
+msgid "Party Associated to this Health Institution"
+msgstr "Pessoa associada a esta Instituição de Saúde"
 
 msgctxt "help:gnuhealth.institution,specialties:"
 msgid "Specialties Provided in this Health Institution"
@@ -2964,9 +2988,10 @@ msgstr ""
 "Verifique se este é o plano padrão antes de designar esta companhia de "
 "seguro a um paciente"
 
-msgctxt "help:gnuhealth.insurance.plan,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.insurance.plan,product:"
 msgid "Insurance company plan"
-msgstr "Plano da companhia de seguro"
+msgstr "Plano de Seguro da Companhia"
 
 msgctxt "help:gnuhealth.medicament,active_component:"
 msgid "Active Component"
@@ -2987,10 +3012,6 @@ msgstr "Forma do medicamento, como comprimido, suspensão, líquido .."
 msgctxt "help:gnuhealth.medicament,indications:"
 msgid "Indications"
 msgstr "Indicações"
-
-msgctxt "help:gnuhealth.medicament,name:"
-msgid "Product Name"
-msgstr "Nome do Produto"
 
 msgctxt "help:gnuhealth.medicament,overdosage:"
 msgid "Overdosage"
@@ -3035,6 +3056,11 @@ msgstr "A droga representa risco à gestação ou lactação"
 msgctxt "help:gnuhealth.medicament,presentation:"
 msgid "Packaging"
 msgstr "Acondicionamento"
+
+#, fuzzy
+msgctxt "help:gnuhealth.medicament,product:"
+msgid "Product Name"
+msgstr "Nome do Produto"
 
 #, fuzzy
 msgctxt "help:gnuhealth.medicament,route:"
@@ -3265,7 +3291,8 @@ msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
 msgstr "Estado Civil"
 
-msgctxt "help:gnuhealth.patient,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.patient,party:"
 msgid "Person associated to this patient"
 msgstr "Pessoa associada a este paciente"
 
@@ -3888,9 +3915,10 @@ msgctxt "help:gnuhealth.prescription.line,medicament:"
 msgid "Prescribed Medicament"
 msgstr "Medicamento Prescrito"
 
-msgctxt "help:gnuhealth.prescription.line,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.prescription.line,presc_order:"
 msgid "Prescription ID"
-msgstr ""
+msgstr "Prescrição"
 
 msgctxt "help:gnuhealth.prescription.line,prnt:"
 msgid "Check this box to print this line of the prescription."

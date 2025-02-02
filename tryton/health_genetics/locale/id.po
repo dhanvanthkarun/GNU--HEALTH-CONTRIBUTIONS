@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.gene,aliases:"
 msgid "Aliases"
@@ -81,9 +81,10 @@ msgctxt "field:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP"
 msgstr ""
 
-msgctxt "field:gnuhealth.gene.variant,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.gene.variant,gene:"
 msgid "Gene"
-msgstr ""
+msgstr "Genetik"
 
 msgctxt "field:gnuhealth.gene.variant,phenotypes:"
 msgid "Phenotypes / Diseases"
@@ -127,7 +128,7 @@ msgid "Genetic Information"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.family.diseases,name:"
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
 msgid "Condition"
 msgstr "Kondisi"
 
@@ -285,8 +286,8 @@ msgctxt "help:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP (rs) link"
 msgstr ""
 
-msgctxt "help:gnuhealth.gene.variant,name:"
-msgid "Gene and protein product (in parenthesis)"
+msgctxt "help:gnuhealth.gene.variant,gene:"
+msgid "Gene and product (in parenthesis)"
 msgstr ""
 
 msgctxt "help:gnuhealth.gene.variant,protein:"

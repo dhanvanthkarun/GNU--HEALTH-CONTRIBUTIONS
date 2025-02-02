@@ -3,21 +3,21 @@ msgid ""
 msgstr ""
 "PO-Revision-Date: 2024-09-15 20:18+0000\n"
 "Last-Translator: Umeaman <Umeaman@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/"
-"health_nursing/sv/>\n"
+"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/health_nursing/sv/>\n"
 "Language: sv\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.7.2\n"
-"Content-Transfer-Encoding: 8bit\n"
+
+#, fuzzy
+msgctxt "field:gnuhealth.ambulatory_care_procedure,ambcare:"
+msgid "Session"
+msgstr "Session"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,comments:"
 msgid "Comments"
 msgstr "Kommentarer"
-
-msgctxt "field:gnuhealth.ambulatory_care_procedure,name:"
-msgid "Session"
-msgstr "Session"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Code"
@@ -175,10 +175,6 @@ msgctxt "field:gnuhealth.patient.rounding,health_professional:"
 msgid "Health Prof"
 msgstr "Vårdpersonal"
 
-msgctxt "field:gnuhealth.patient.rounding,name:"
-msgid "Registration Code"
-msgstr "Registreringskod"
-
 msgctxt "field:gnuhealth.patient.rounding,osat:"
 msgid "Oxygen Saturation"
 msgstr "Syressättning"
@@ -214,6 +210,11 @@ msgstr "Avstånd"
 msgctxt "field:gnuhealth.patient.rounding,pump:"
 msgid "Pumps"
 msgstr "Pumpar"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,registration:"
+msgid "Registration Code"
+msgstr "Registreringskod"
 
 msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
@@ -271,10 +272,6 @@ msgctxt "field:gnuhealth.patient.rounding,weight:"
 msgid "Weight"
 msgstr "Vikt"
 
-msgctxt "field:gnuhealth.rounding_procedure,name:"
-msgid "Rounding"
-msgstr "Rundning"
-
 msgctxt "field:gnuhealth.rounding_procedure,notes:"
 msgid "Notes"
 msgstr "Anteckningar"
@@ -282,6 +279,11 @@ msgstr "Anteckningar"
 msgctxt "field:gnuhealth.rounding_procedure,procedure:"
 msgid "Code"
 msgstr "Kod"
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,rounding:"
+msgid "Rounding"
+msgstr "Rundning"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"

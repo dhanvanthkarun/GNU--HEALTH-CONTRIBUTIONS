@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
@@ -15,12 +15,12 @@ msgctxt "field:gnuhealth.bed.transfer,bed_to:"
 msgid "To"
 msgstr "Untuk"
 
-msgctxt "field:gnuhealth.bed.transfer,name:"
-msgid "Registration Code"
-msgstr ""
-
 msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
+msgstr ""
+
+msgctxt "field:gnuhealth.bed.transfer,registration:"
+msgid "Registration Code"
 msgstr ""
 
 #, fuzzy
@@ -58,7 +58,7 @@ msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.diet,name:"
+msgctxt "field:gnuhealth.inpatient.diet,registration:"
 msgid "Registration Code"
 msgstr ""
 
@@ -83,10 +83,9 @@ msgctxt "field:gnuhealth.inpatient.meal,institution:"
 msgid "Institution"
 msgstr "Institusi"
 
-#, fuzzy
-msgctxt "field:gnuhealth.inpatient.meal,name:"
-msgid "Food"
-msgstr "Makanan"
+msgctxt "field:gnuhealth.inpatient.meal,meal:"
+msgid "Meal"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,health_professional:"
@@ -113,14 +112,14 @@ msgctxt "field:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Meal time"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal.order,name:"
-msgid "Registration Code"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
 msgstr "Tanggal"
+
+msgctxt "field:gnuhealth.inpatient.meal.order,registration:"
+msgid "Registration Code"
+msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
 msgid "Remarks"
@@ -135,7 +134,7 @@ msgctxt "field:gnuhealth.inpatient.meal.order.item,meal:"
 msgid "Meal"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal.order.item,name:"
+msgctxt "field:gnuhealth.inpatient.meal.order.item,meal_order:"
 msgid "Meal Order"
 msgstr ""
 
@@ -217,12 +216,12 @@ msgctxt "field:gnuhealth.inpatient.medication,medicament:"
 msgid "Medicament"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.medication,name:"
-msgid "Registration Code"
-msgstr ""
-
 msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
+msgstr ""
+
+msgctxt "field:gnuhealth.inpatient.medication,registration:"
+msgid "Registration Code"
 msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.medication,route:"
@@ -249,7 +248,7 @@ msgid "dose unit"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,name:"
+msgctxt "field:gnuhealth.inpatient.medication.admin_time,medication:"
 msgid "Medication"
 msgstr "Medikasi"
 
@@ -277,7 +276,7 @@ msgid "Health Prof"
 msgstr "Profesional Kesehatan"
 
 #, fuzzy
-msgctxt "field:gnuhealth.inpatient.medication.log,name:"
+msgctxt "field:gnuhealth.inpatient.medication.log,medication:"
 msgid "Medication"
 msgstr "Medikasi"
 
@@ -416,10 +415,9 @@ msgctxt "help:gnuhealth.inpatient.diet,remarks:"
 msgid "specific remarks for this diet / patient"
 msgstr ""
 
-#, fuzzy
-msgctxt "help:gnuhealth.inpatient.meal,name:"
-msgid "Food"
-msgstr "Makanan"
+msgctxt "help:gnuhealth.inpatient.meal,meal:"
+msgid "Meal"
+msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.meal.order,meal_warning:"
 msgid "The patient has special needs on meals"

@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -138,13 +138,13 @@ msgctxt "field:gnuhealth.birth_certificate,mother:"
 msgid "Mother"
 msgstr "母亲"
 
-msgctxt "field:gnuhealth.birth_certificate,name:"
-msgid "Person"
-msgstr "人"
-
 msgctxt "field:gnuhealth.birth_certificate,observations:"
 msgid "Observations"
 msgstr "观察结果"
+
+msgctxt "field:gnuhealth.birth_certificate,party:"
+msgid "Person"
+msgstr "人"
 
 msgctxt "field:gnuhealth.birth_certificate,signed_by:"
 msgid "Certifier"
@@ -223,10 +223,6 @@ msgctxt "field:gnuhealth.death_certificate,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.death_certificate,name:"
-msgid "Person"
-msgstr "人"
-
 msgctxt "field:gnuhealth.death_certificate,observations:"
 msgid "Observations"
 msgstr "观察结果"
@@ -234,6 +230,10 @@ msgstr "观察结果"
 msgctxt "field:gnuhealth.death_certificate,operational_sector:"
 msgid "Op. Sector"
 msgstr "卫生子区域"
+
+msgctxt "field:gnuhealth.death_certificate,party:"
+msgid "Person"
+msgstr "人"
 
 msgctxt "field:gnuhealth.death_certificate,place_details:"
 msgid "Details"
@@ -291,7 +291,7 @@ msgctxt "field:gnuhealth.directions,comments:"
 msgid "Comments"
 msgstr "说明"
 
-msgctxt "field:gnuhealth.directions,name:"
+msgctxt "field:gnuhealth.directions,evaluation:"
 msgid "Evaluation"
 msgstr "患者评估"
 
@@ -299,13 +299,13 @@ msgctxt "field:gnuhealth.directions,procedure:"
 msgid "Procedure"
 msgstr "医学操作"
 
+msgctxt "field:gnuhealth.disease_group.members,disease:"
+msgid "Condition"
+msgstr "疾病"
+
 msgctxt "field:gnuhealth.disease_group.members,disease_group:"
 msgid "Group"
 msgstr "疾病分组"
-
-msgctxt "field:gnuhealth.disease_group.members,name:"
-msgid "Condition"
-msgstr "疾病"
 
 msgctxt "field:gnuhealth.dose.unit,desc:"
 msgid "Description"
@@ -491,7 +491,7 @@ msgctxt "field:gnuhealth.family,name:"
 msgid "Family"
 msgstr "家庭"
 
-msgctxt "field:gnuhealth.family_member,name:"
+msgctxt "field:gnuhealth.family_member,family:"
 msgid "Family"
 msgstr "家庭"
 
@@ -539,7 +539,7 @@ msgctxt "field:gnuhealth.healthprofessional,main_specialty:"
 msgid "Main Specialty"
 msgstr "主要专业"
 
-msgctxt "field:gnuhealth.healthprofessional,name:"
+msgctxt "field:gnuhealth.healthprofessional,party:"
 msgid "Health Prof"
 msgstr "医务人员"
 
@@ -571,8 +571,8 @@ msgctxt "field:gnuhealth.help,name:"
 msgid "Code"
 msgstr "代码"
 
-msgctxt "field:gnuhealth.help,package:"
-msgid "Package"
+msgctxt "field:gnuhealth.help,packages:"
+msgid "Packages"
 msgstr "包"
 
 msgctxt "field:gnuhealth.hospital.bed,bed_type:"
@@ -587,7 +587,7 @@ msgctxt "field:gnuhealth.hospital.bed,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.hospital.bed,name:"
+msgctxt "field:gnuhealth.hospital.bed,product:"
 msgid "Bed"
 msgstr "床位"
 
@@ -739,7 +739,7 @@ msgctxt "field:gnuhealth.hospital.ward,unit:"
 msgid "Unit"
 msgstr "科室或病区"
 
-msgctxt "field:gnuhealth.hp_specialty,name:"
+msgctxt "field:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Prof"
 msgstr "医务人员"
 
@@ -839,10 +839,6 @@ msgctxt "field:gnuhealth.institution,main_specialty:"
 msgid "Specialty"
 msgstr "专业"
 
-msgctxt "field:gnuhealth.institution,name:"
-msgid "Institution"
-msgstr "医疗机构"
-
 msgctxt "field:gnuhealth.institution,operating_room:"
 msgid "Op. Room"
 msgstr "手术室"
@@ -854,6 +850,10 @@ msgstr "卫生区域"
 msgctxt "field:gnuhealth.institution,or_number:"
 msgid "ORs"
 msgstr "手术室数"
+
+msgctxt "field:gnuhealth.institution,party:"
+msgid "Institution"
+msgstr "医疗机构"
 
 msgctxt "field:gnuhealth.institution,picture:"
 msgid "Picture"
@@ -879,7 +879,7 @@ msgctxt "field:gnuhealth.institution,trauma_level:"
 msgid "Trauma Level"
 msgstr "创伤中心级别"
 
-msgctxt "field:gnuhealth.institution.operationalsector,name:"
+msgctxt "field:gnuhealth.institution.operationalsector,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
@@ -887,7 +887,7 @@ msgctxt "field:gnuhealth.institution.operationalsector,operational_sector:"
 msgid "Operational Sector"
 msgstr "卫生区域"
 
-msgctxt "field:gnuhealth.institution.specialties,name:"
+msgctxt "field:gnuhealth.institution.specialties,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
@@ -915,10 +915,6 @@ msgctxt "field:gnuhealth.insurance,member_since:"
 msgid "Member since"
 msgstr "注册日期"
 
-msgctxt "field:gnuhealth.insurance,name:"
-msgid "Owner"
-msgstr "所有者"
-
 msgctxt "field:gnuhealth.insurance,notes:"
 msgid "Extra Info"
 msgstr "其它信息"
@@ -926,6 +922,10 @@ msgstr "其它信息"
 msgctxt "field:gnuhealth.insurance,number:"
 msgid "Number"
 msgstr "保险编号"
+
+msgctxt "field:gnuhealth.insurance,party:"
+msgid "Owner"
+msgstr "所有者"
 
 msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
@@ -939,13 +939,13 @@ msgctxt "field:gnuhealth.insurance.plan,is_default:"
 msgid "Default plan"
 msgstr "默认保险计划"
 
-msgctxt "field:gnuhealth.insurance.plan,name:"
-msgid "Plan"
-msgstr "保险计划"
-
 msgctxt "field:gnuhealth.insurance.plan,notes:"
 msgid "Extra info"
 msgstr "其它信息"
+
+msgctxt "field:gnuhealth.insurance.plan,product:"
+msgid "Plan"
+msgstr "保险计划"
 
 msgctxt "field:gnuhealth.medicament,active:"
 msgid "Active"
@@ -983,10 +983,6 @@ msgctxt "field:gnuhealth.medicament,is_vaccine:"
 msgid "Vaccine"
 msgstr "疫苗"
 
-msgctxt "field:gnuhealth.medicament,name:"
-msgid "Product"
-msgstr "药品"
-
 msgctxt "field:gnuhealth.medicament,notes:"
 msgid "Extra Info"
 msgstr "其它信息"
@@ -1014,6 +1010,10 @@ msgstr "妊娠警告"
 msgctxt "field:gnuhealth.medicament,presentation:"
 msgid "Presentation"
 msgstr "产位"
+
+msgctxt "field:gnuhealth.medicament,product:"
+msgid "Product"
+msgstr "药品"
 
 msgctxt "field:gnuhealth.medicament,route:"
 msgid "Administration Route"
@@ -1319,7 +1319,7 @@ msgctxt "field:gnuhealth.patient,medications:"
 msgid "Medications"
 msgstr "药品"
 
-msgctxt "field:gnuhealth.patient,name:"
+msgctxt "field:gnuhealth.patient,party:"
 msgid "Patient"
 msgstr "患者"
 
@@ -1411,13 +1411,13 @@ msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
 msgid "Current"
 msgstr "正在治疗"
 
-msgctxt "field:gnuhealth.patient.disease,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
 msgstr "疾病诊断"
+
+msgctxt "field:gnuhealth.patient.disease,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.patient.disease,pcs_code:"
 msgid "Code"
@@ -1479,13 +1479,13 @@ msgctxt "field:gnuhealth.patient.ecg,lead:"
 msgid "Lead"
 msgstr "导联"
 
-msgctxt "field:gnuhealth.patient.ecg,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.patient.ecg,pacemaker:"
 msgid "Pacemaker"
 msgstr "起博"
+
+msgctxt "field:gnuhealth.patient.ecg,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.patient.ecg,pr:"
 msgid "PR"
@@ -1915,13 +1915,13 @@ msgctxt "field:gnuhealth.patient.medication,medicament:"
 msgid "Medicament"
 msgstr "药品"
 
-msgctxt "field:gnuhealth.patient.medication,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.patient.medication,notes:"
 msgid "Extra Info"
 msgstr "其它信息"
+
+msgctxt "field:gnuhealth.patient.medication,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.patient.medication,prescription:"
 msgid "Prescription"
@@ -1956,14 +1956,14 @@ msgctxt "field:gnuhealth.person_alternative_identification,expiration_date:"
 msgid "Expiration date"
 msgstr "过期日期"
 
-msgctxt "field:gnuhealth.person_alternative_identification,name:"
-msgid "Party"
-msgstr "参与者"
-
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid "Other ID type"
 msgstr "备选证件号其他类型"
+
+msgctxt "field:gnuhealth.person_alternative_identification,party:"
+msgid "Party"
+msgstr "成员"
 
 msgctxt "field:gnuhealth.person_name,date_from:"
 msgid "From"
@@ -2169,7 +2169,7 @@ msgctxt "field:gnuhealth.prescription.line,medicament:"
 msgid "Medicament"
 msgstr "药品"
 
-msgctxt "field:gnuhealth.prescription.line,name:"
+msgctxt "field:gnuhealth.prescription.line,presc_order:"
 msgid "ID"
 msgstr "处方编号"
 
@@ -2363,10 +2363,6 @@ msgctxt "field:gnuhealth.vaccination,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.vaccination,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
 msgstr "下一剂日期"
@@ -2374,6 +2370,10 @@ msgstr "下一剂日期"
 msgctxt "field:gnuhealth.vaccination,observations:"
 msgid "Observations"
 msgstr "观察结果"
+
+msgctxt "field:gnuhealth.vaccination,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.vaccination,picture:"
 msgid "Label"
@@ -2729,7 +2729,7 @@ msgctxt "help:gnuhealth.family,name:"
 msgid "Family code"
 msgstr "家庭代码"
 
-msgctxt "help:gnuhealth.family_member,name:"
+msgctxt "help:gnuhealth.family_member,family:"
 msgid "Family code"
 msgstr "家庭代码"
 
@@ -2763,7 +2763,7 @@ msgctxt "help:gnuhealth.healthprofessional,institution:"
 msgid "Main institution where she/he works"
 msgstr "所在医疗机构"
 
-msgctxt "help:gnuhealth.healthprofessional,name:"
+msgctxt "help:gnuhealth.healthprofessional,party:"
 msgid "Health Professional's Name, from the partner list"
 msgstr "卫生专业人员的名字，来自 partner 列表"
 
@@ -2783,7 +2783,7 @@ msgctxt "help:gnuhealth.hospital.bed,institution:"
 msgid "Health Institution"
 msgstr "医疗机构"
 
-msgctxt "help:gnuhealth.hospital.bed,name:"
+msgctxt "help:gnuhealth.hospital.bed,product:"
 msgid "Bed Number"
 msgstr "床位数"
 
@@ -2846,7 +2846,7 @@ msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr "如果此病房为私人病房，就选中此项"
 
-msgctxt "help:gnuhealth.hp_specialty,name:"
+msgctxt "help:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Professional"
 msgstr "医务人员"
 
@@ -2884,10 +2884,6 @@ msgid ""
 "center excels"
 msgstr "选择医院已设置的专科或专业"
 
-msgctxt "help:gnuhealth.institution,name:"
-msgid "Party Associated to this Health Institution"
-msgstr "与此医疗机构关联的 Party"
-
 msgctxt "help:gnuhealth.institution,operating_room:"
 msgid "Check this box if the institution has operating rooms"
 msgstr "如果此医疗卫生机构有手术室，就选中此项"
@@ -2895,6 +2891,10 @@ msgstr "如果此医疗卫生机构有手术室，就选中此项"
 msgctxt "help:gnuhealth.institution,operational_sectors:"
 msgid "Operational Sectors covered by this institution"
 msgstr "此医疗机构覆盖的卫生子区域"
+
+msgctxt "help:gnuhealth.institution,party:"
+msgid "Party Associated to this Health Institution"
+msgstr "与此医疗机构关联的 Party"
 
 msgctxt "help:gnuhealth.institution,specialties:"
 msgid "Specialties Provided in this Health Institution"
@@ -2918,7 +2918,7 @@ msgid ""
 " patient"
 msgstr "将此保险公司对应到患者时，检查此计划是否为默认保险计划"
 
-msgctxt "help:gnuhealth.insurance.plan,name:"
+msgctxt "help:gnuhealth.insurance.plan,product:"
 msgid "Insurance company plan"
 msgstr "保险公司计划"
 
@@ -2941,10 +2941,6 @@ msgstr "药品剂型，比如片剂、悬浮剂、液体剂 .."
 msgctxt "help:gnuhealth.medicament,indications:"
 msgid "Indications"
 msgstr "适应症"
-
-msgctxt "help:gnuhealth.medicament,name:"
-msgid "Product Name"
-msgstr "药品通用名称"
 
 msgctxt "help:gnuhealth.medicament,overdosage:"
 msgid "Overdosage"
@@ -2989,6 +2985,10 @@ msgstr "孕妇或哺乳期女性使用此药物有风险"
 msgctxt "help:gnuhealth.medicament,presentation:"
 msgid "Packaging"
 msgstr "材质包装"
+
+msgctxt "help:gnuhealth.medicament,product:"
+msgid "Product Name"
+msgstr "药品通用名称"
 
 msgctxt "help:gnuhealth.medicament,route:"
 msgid "Drug administration route code."
@@ -3214,7 +3214,7 @@ msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
 msgstr "婚姻状态"
 
-msgctxt "help:gnuhealth.patient,name:"
+msgctxt "help:gnuhealth.patient,party:"
 msgid "Person associated to this patient"
 msgstr "此患者对应的人"
 
@@ -3769,7 +3769,7 @@ msgctxt "help:gnuhealth.prescription.line,medicament:"
 msgid "Prescribed Medicament"
 msgstr "处方药"
 
-msgctxt "help:gnuhealth.prescription.line,name:"
+msgctxt "help:gnuhealth.prescription.line,presc_order:"
 msgid "Prescription ID"
 msgstr "处方编号"
 

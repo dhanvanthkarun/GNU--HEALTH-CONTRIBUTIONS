@@ -1,14 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#, fuzzy
+msgctxt "field:gnuhealth.ambulatory_care_procedure,ambcare:"
+msgid "Session"
+msgstr "Session"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,comments:"
 msgid "Comments"
 msgstr "Commentaires"
-
-msgctxt "field:gnuhealth.ambulatory_care_procedure,name:"
-msgid "Session"
-msgstr "Session"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Code"
@@ -168,10 +169,6 @@ msgctxt "field:gnuhealth.patient.rounding,health_professional:"
 msgid "Health Prof"
 msgstr "Professionnel de santé"
 
-msgctxt "field:gnuhealth.patient.rounding,name:"
-msgid "Registration Code"
-msgstr "code d'enregistrement"
-
 msgctxt "field:gnuhealth.patient.rounding,osat:"
 msgid "Oxygen Saturation"
 msgstr "Saturation en oxygène"
@@ -207,6 +204,11 @@ msgstr "proximité"
 msgctxt "field:gnuhealth.patient.rounding,pump:"
 msgid "Pumps"
 msgstr "Pompes"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,registration:"
+msgid "Registration Code"
+msgstr "code d'enregistrement"
 
 msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
@@ -264,10 +266,6 @@ msgctxt "field:gnuhealth.patient.rounding,weight:"
 msgid "Weight"
 msgstr "Poids"
 
-msgctxt "field:gnuhealth.rounding_procedure,name:"
-msgid "Rounding"
-msgstr "En ronde"
-
 msgctxt "field:gnuhealth.rounding_procedure,notes:"
 msgid "Notes"
 msgstr "Notes"
@@ -275,6 +273,11 @@ msgstr "Notes"
 msgctxt "field:gnuhealth.rounding_procedure,procedure:"
 msgid "Code"
 msgstr "Code"
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,rounding:"
+msgid "Rounding"
+msgstr "En ronde"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"

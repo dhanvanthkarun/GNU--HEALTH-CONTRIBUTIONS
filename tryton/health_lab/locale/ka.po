@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
@@ -246,10 +246,6 @@ msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health Prof"
 msgstr "ჯანდაცვის პროფესორი"
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr "ტესტის ტიპი"
-
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
 msgstr ""
@@ -278,6 +274,11 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "მდგომარეობა"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr "ტესტის ტიპი"
 
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
@@ -1567,7 +1568,7 @@ msgid "Lab Services"
 msgstr ""
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
+msgid "Complete Blood Count"
 msgstr ""
 
 #, fuzzy
@@ -1575,36 +1576,40 @@ msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
 msgstr "ენდოკრინოლოგია"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
-msgstr ""
+msgid "Haematology"
+msgstr "პათოლოგია"
 
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
+msgid "Liver Function"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
-msgstr ""
+msgid "Peripheral Smear Examination"
+msgstr "ქიმიური გამოკვლევა"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
-msgstr ""
+msgid "Renal Function"
+msgstr "რეაქცია"
 
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
+msgid "Semen Analysis"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
-msgstr ""
+msgid "Stool Examination"
+msgstr "ქიმიური გამოკვლევა"
 
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
+msgid "Urine Analysis"
 msgstr ""
 
 msgctxt "model:res.group,name:group_health_lab"
@@ -1630,10 +1635,6 @@ msgstr "კომენტარი"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
-msgstr ""
-
-msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1681,6 +1682,10 @@ msgstr "შენიშვნა"
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "შენიშვნები"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
+msgstr ""
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"

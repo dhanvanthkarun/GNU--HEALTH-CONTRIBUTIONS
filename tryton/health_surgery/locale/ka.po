@@ -1,10 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.operation,notes:"
@@ -15,6 +11,11 @@ msgstr "ჩანაწერები"
 msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "კოდი"
+
+#, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "ქირურგი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,comments:"
@@ -37,7 +38,7 @@ msgid "Institution"
 msgstr "ინსტიტუცია"
 
 #, fuzzy
-msgctxt "field:gnuhealth.or.schedule,name:"
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
 msgstr "საოპერაციო ოთახი"
 
@@ -500,10 +501,6 @@ msgctxt "field:gnuhealth.surgery.complication,complication:"
 msgid "Complication"
 msgstr ""
 
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
@@ -514,18 +511,24 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "შენიშვნები"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "ქირურგი"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
-msgstr ""
-
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
 msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "ჩანაწერები"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "ქირურგი"
 
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Anesthesia"
@@ -585,10 +588,6 @@ msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr ""
 
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.surgery_supply,notes:"
 msgid "Notes"
@@ -606,9 +605,10 @@ msgctxt "field:gnuhealth.surgery_supply,supply:"
 msgid "Supply"
 msgstr ""
 
-msgctxt "field:gnuhealth.surgery_team,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
-msgstr ""
+msgstr "ქირურგი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery_team,notes:"
@@ -619,6 +619,11 @@ msgstr "ჩანაწერები"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "როლი"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "ქირურგი"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -643,7 +648,7 @@ msgid "Health Care Institution"
 msgstr "ჯანდაცვის დაწესებულება"
 
 #, fuzzy
-msgctxt "help:gnuhealth.or.schedule,name:"
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr "საოპერაციო ოთახი"
 
@@ -1663,6 +1668,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"

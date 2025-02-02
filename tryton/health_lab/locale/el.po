@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
@@ -251,10 +251,6 @@ msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health Prof"
 msgstr "Επαγγ. Υγείας"
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr "Είδος εξέτασης"
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
@@ -284,6 +280,11 @@ msgstr ""
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "Περιοχή"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr "Είδος εξέτασης"
 
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
@@ -1606,43 +1607,50 @@ msgid "Lab Services"
 msgstr "Υπηρεσίες εργαστηρίου"
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
-msgstr "Χρεώσεις για Γεν. αίματος"
+msgid "Complete Blood Count"
+msgstr ""
 
 msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
 msgstr "Ενδοκρινολογία"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
+msgid "Haematology"
 msgstr "Αιματολογικές Χρεώσεις"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
+msgid "Liver Function"
 msgstr "Χρεώσεις για έλεγχο Ηπατ. λειτουργίας"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
+msgid "Peripheral Smear Examination"
 msgstr "Χρέωση για Παπ Τεστ"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
-msgstr "Χρεώσεις για εξέταση νεφρ. λειτουργίας"
+msgid "Renal Function"
+msgstr "Αντίδραση"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
+msgid "Semen Analysis"
 msgstr "Χρεώσεις για Σπερμοδιάγραμμα"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
+msgid "Stool Examination"
 msgstr "Χρεώσεις για Εξέτ. κοπράνων"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
+msgid "Urine Analysis"
 msgstr "Χρεώσεις για Γενική Ούρων"
 
 msgctxt "model:res.group,name:group_health_lab"
@@ -1669,10 +1677,6 @@ msgstr "Σχόλιο"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
-msgstr ""
-
-msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
@@ -1721,6 +1725,10 @@ msgstr "Σημείο αναφοράς"
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "Παρατηρήσεις"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
+msgstr ""
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"

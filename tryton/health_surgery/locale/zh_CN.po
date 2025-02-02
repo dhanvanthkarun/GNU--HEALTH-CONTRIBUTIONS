@@ -1,10 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr "手术"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
@@ -13,6 +9,11 @@ msgstr "说明"
 msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "代码"
+
+#, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "手术"
 
 msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
@@ -30,7 +31,8 @@ msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.or.schedule,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
 msgstr "手术室"
 
@@ -459,10 +461,6 @@ msgctxt "field:gnuhealth.surgery.complication,complication:"
 msgid "Complication"
 msgstr "并发症"
 
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr "手术"
-
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
 msgstr "严重程度"
@@ -471,17 +469,23 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "说明"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "手术"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr "手术引流管"
 
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
-msgstr "手术"
-
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "注意事项"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "手术"
 
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Anesthesia"
@@ -535,10 +539,6 @@ msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr "手术干预"
 
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr "手术"
-
 msgctxt "field:gnuhealth.surgery_supply,notes:"
 msgid "Notes"
 msgstr "说明"
@@ -555,7 +555,8 @@ msgctxt "field:gnuhealth.surgery_supply,supply:"
 msgid "Supply"
 msgstr "外科用品"
 
-msgctxt "field:gnuhealth.surgery_team,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
 msgstr "手术"
 
@@ -566,6 +567,11 @@ msgstr "说明"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "专业"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "手术"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -587,7 +593,8 @@ msgctxt "help:gnuhealth.or.schedule,institution:"
 msgid "Health Care Institution"
 msgstr "医疗机构"
 
-msgctxt "help:gnuhealth.or.schedule,name:"
+#, fuzzy
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr "手术室"
 
@@ -1606,6 +1613,10 @@ msgstr "2"
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
 msgstr "3"
+
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
+msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "5"

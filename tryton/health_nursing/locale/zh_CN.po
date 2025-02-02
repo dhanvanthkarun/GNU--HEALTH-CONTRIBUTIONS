@@ -1,14 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#, fuzzy
+msgctxt "field:gnuhealth.ambulatory_care_procedure,ambcare:"
+msgid "Session"
+msgstr "轮次"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,comments:"
 msgid "Comments"
 msgstr "说明"
-
-msgctxt "field:gnuhealth.ambulatory_care_procedure,name:"
-msgid "Session"
-msgstr "轮次"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Code"
@@ -166,10 +167,6 @@ msgctxt "field:gnuhealth.patient.rounding,health_professional:"
 msgid "Health Prof"
 msgstr "医务人员"
 
-msgctxt "field:gnuhealth.patient.rounding,name:"
-msgid "Registration Code"
-msgstr "住院编号"
-
 msgctxt "field:gnuhealth.patient.rounding,osat:"
 msgid "Oxygen Saturation"
 msgstr "血氧饱和度"
@@ -205,6 +202,11 @@ msgstr "接近"
 msgctxt "field:gnuhealth.patient.rounding,pump:"
 msgid "Pumps"
 msgstr "脉动"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,registration:"
+msgid "Registration Code"
+msgstr "住院编号"
 
 msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
@@ -262,10 +264,6 @@ msgctxt "field:gnuhealth.patient.rounding,weight:"
 msgid "Weight"
 msgstr "体重"
 
-msgctxt "field:gnuhealth.rounding_procedure,name:"
-msgid "Rounding"
-msgstr "查房"
-
 msgctxt "field:gnuhealth.rounding_procedure,notes:"
 msgid "Notes"
 msgstr "注意事项"
@@ -273,6 +271,11 @@ msgstr "注意事项"
 msgctxt "field:gnuhealth.rounding_procedure,procedure:"
 msgid "Code"
 msgstr "护理操作代码"
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,rounding:"
+msgid "Rounding"
+msgstr "查房"
 
 msgctxt "field:gnuhealth.sequences,ambulatory_care_sequence:"
 msgid "Ambulatory Sequence"

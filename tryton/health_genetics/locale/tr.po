@@ -3,13 +3,12 @@ msgid ""
 msgstr ""
 "PO-Revision-Date: 2025-01-31 07:41+0000\n"
 "Last-Translator: polarwood <polarwood@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Turkish <https://translate.codeberg.org/projects/gnuhealth/"
-"health_genetics/tr/>\n"
+"Language-Team: Turkish <https://translate.codeberg.org/projects/gnuhealth/health_genetics/tr/>\n"
 "Language: tr\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.9.2\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.gene,aliases:"
@@ -89,7 +88,7 @@ msgid "Reference SNP"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.gene.variant,name:"
+msgctxt "field:gnuhealth.gene.variant,gene:"
 msgid "Gene"
 msgstr "Gen"
 
@@ -134,7 +133,8 @@ msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
 msgstr "Genetik Bilgi"
 
-msgctxt "field:gnuhealth.patient.family.diseases,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
 msgid "Condition"
 msgstr "Koşul/Hal"
 
@@ -292,8 +292,8 @@ msgctxt "help:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP (rs) link"
 msgstr ""
 
-msgctxt "help:gnuhealth.gene.variant,name:"
-msgid "Gene and protein product (in parenthesis)"
+msgctxt "help:gnuhealth.gene.variant,gene:"
+msgid "Gene and product (in parenthesis)"
 msgstr ""
 
 msgctxt "help:gnuhealth.gene.variant,protein:"

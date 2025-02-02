@@ -1,10 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
@@ -13,6 +9,11 @@ msgstr "Σημειώσεις"
 msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "Κωδικός"
+
+#, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,comments:"
@@ -35,7 +36,7 @@ msgid "Institution"
 msgstr "Ίδρυμα"
 
 #, fuzzy
-msgctxt "field:gnuhealth.or.schedule,name:"
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
 msgstr "Αίθουσα Χειρουργείου"
 
@@ -494,11 +495,6 @@ msgid "Complication"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
 msgstr "Σοβαρότητα"
@@ -508,19 +504,24 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "Παρατηρήσεις"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "Σημειώσεις"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
 
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Anesthesia"
@@ -581,11 +582,6 @@ msgid "Surgical Intervention"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery_supply,notes:"
 msgid "Notes"
 msgstr "Σημειώσεις"
@@ -604,7 +600,7 @@ msgid "Supply"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery_team,name:"
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
 msgstr "Χειρουργείο"
 
@@ -616,6 +612,11 @@ msgstr "Σημειώσεις"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "Ρόλος"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -641,7 +642,7 @@ msgid "Health Care Institution"
 msgstr "Υγειονομικό Ίδρυμα"
 
 #, fuzzy
-msgctxt "help:gnuhealth.or.schedule,name:"
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr "Αίθουσα Χειρουργείου"
 
@@ -1698,6 +1699,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"

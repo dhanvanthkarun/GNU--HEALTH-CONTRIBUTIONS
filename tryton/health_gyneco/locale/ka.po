@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.patient,abortions:"
 msgid "Abortions"
@@ -119,7 +119,7 @@ msgid "Previous"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.colposcopy_history,name:"
+msgctxt "field:gnuhealth.patient.colposcopy_history,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
 
@@ -156,7 +156,7 @@ msgid "Previous"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.mammography_history,name:"
+msgctxt "field:gnuhealth.patient.mammography_history,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
 
@@ -204,7 +204,7 @@ msgid "Length"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.menstrual_history,name:"
+msgctxt "field:gnuhealth.patient.menstrual_history,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
 
@@ -241,7 +241,7 @@ msgid "Previous"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.pap_history,name:"
+msgctxt "field:gnuhealth.patient.pap_history,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
 
@@ -314,7 +314,7 @@ msgid "Monozygotic"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.pregnancy,name:"
+msgctxt "field:gnuhealth.patient.pregnancy,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
 
@@ -453,10 +453,6 @@ msgctxt "field:gnuhealth.patient.prenatal.evaluation,iugr:"
 msgid "IUGR"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient.prenatal.evaluation,name:"
-msgid "Patient Pregnancy"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,notes:"
 msgid "Notes"
@@ -480,6 +476,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,preeclampsia:"
 msgid "Preeclampsia"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.prenatal.evaluation,pregnancy:"
+msgid "Patient Pregnancy"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,urinary_activity_signs:"
@@ -557,10 +557,6 @@ msgctxt "field:gnuhealth.perinatal,monitoring:"
 msgid "Monitors"
 msgstr ""
 
-msgctxt "field:gnuhealth.perinatal,name:"
-msgid "Patient Pregnancy"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.perinatal,notes:"
 msgid "Notes"
@@ -572,6 +568,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.perinatal,placenta_retained:"
 msgid "Retained"
+msgstr ""
+
+msgctxt "field:gnuhealth.perinatal,pregnancy:"
+msgid "Patient Pregnancy"
 msgstr ""
 
 msgctxt "field:gnuhealth.perinatal,prenatal_evaluations:"
@@ -632,9 +632,10 @@ msgctxt "field:gnuhealth.perinatal.monitor,meconium:"
 msgid "Meconium"
 msgstr ""
 
-msgctxt "field:gnuhealth.perinatal.monitor,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.perinatal.monitor,perinatal:"
 msgid "Patient Perinatal Evaluation"
-msgstr ""
+msgstr "პაციენტის შეფასების შეჯამება"
 
 #, fuzzy
 msgctxt "field:gnuhealth.perinatal.monitor,systolic:"
@@ -677,7 +678,7 @@ msgctxt "field:gnuhealth.puerperium.monitor,lochia_odor:"
 msgid "Lochia odor"
 msgstr ""
 
-msgctxt "field:gnuhealth.puerperium.monitor,name:"
+msgctxt "field:gnuhealth.puerperium.monitor,pregnancy:"
 msgid "Patient Pregnancy"
 msgstr ""
 
@@ -1266,6 +1267,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
 msgid "Occiput / Cephalic Posterior"
+msgstr ""
+
+msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
+msgid "Transverse Lie"
 msgstr ""
 
 msgctxt "selection:gnuhealth.puerperium.monitor,lochia_amount:"

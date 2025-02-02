@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
@@ -15,13 +15,14 @@ msgctxt "field:gnuhealth.bed.transfer,bed_to:"
 msgid "To"
 msgstr ""
 
-msgctxt "field:gnuhealth.bed.transfer,name:"
-msgid "Registration Code"
-msgstr ""
-
 msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.bed.transfer,registration:"
+msgid "Registration Code"
+msgstr "ადმინისტრაციული მარშრუტი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.bed.transfer,transfer_date:"
@@ -58,9 +59,10 @@ msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.diet,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.diet,registration:"
 msgid "Registration Code"
-msgstr ""
+msgstr "ადმინისტრაციული მარშრუტი"
 
 msgctxt "field:gnuhealth.inpatient.diet,remarks:"
 msgid "Remarks / Directions"
@@ -83,8 +85,8 @@ msgctxt "field:gnuhealth.inpatient.meal,institution:"
 msgid "Institution"
 msgstr "ინსტიტუცია"
 
-msgctxt "field:gnuhealth.inpatient.meal,name:"
-msgid "Food"
+msgctxt "field:gnuhealth.inpatient.meal,meal:"
+msgid "Meal"
 msgstr ""
 
 #, fuzzy
@@ -113,14 +115,15 @@ msgctxt "field:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Meal time"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal.order,name:"
-msgid "Registration Code"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
 msgstr "თარიღი"
+
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.meal.order,registration:"
+msgid "Registration Code"
+msgstr "ადმინისტრაციული მარშრუტი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
@@ -136,9 +139,10 @@ msgctxt "field:gnuhealth.inpatient.meal.order.item,meal:"
 msgid "Meal"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.meal.order.item,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.meal.order.item,meal_order:"
 msgid "Meal Order"
-msgstr ""
+msgstr "შეკვეთა"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order.item,remarks:"
@@ -227,14 +231,15 @@ msgctxt "field:gnuhealth.inpatient.medication,medicament:"
 msgid "Medicament"
 msgstr "მედიკამენტი"
 
-msgctxt "field:gnuhealth.inpatient.medication,name:"
-msgid "Registration Code"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
 msgstr "x"
+
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.medication,registration:"
+msgid "Registration Code"
+msgstr "ადმინისტრაციული მარშრუტი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,route:"
@@ -261,9 +266,10 @@ msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "dose unit"
 msgstr "დოზის ერთეული"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.medication.admin_time,medication:"
 msgid "Medication"
-msgstr ""
+msgstr "მედიკამენტები"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,remarks:"
@@ -290,9 +296,10 @@ msgctxt "field:gnuhealth.inpatient.medication.log,health_professional:"
 msgid "Health Prof"
 msgstr "ჯანდაცვის პროფესიონალი"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.medication.log,medication:"
 msgid "Medication"
-msgstr ""
+msgstr "მედიკამენტები"
 
 #, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,remarks:"
@@ -433,8 +440,8 @@ msgctxt "help:gnuhealth.inpatient.diet,remarks:"
 msgid "specific remarks for this diet / patient"
 msgstr ""
 
-msgctxt "help:gnuhealth.inpatient.meal,name:"
-msgid "Food"
+msgctxt "help:gnuhealth.inpatient.meal,meal:"
+msgid "Meal"
 msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.meal.order,meal_warning:"
