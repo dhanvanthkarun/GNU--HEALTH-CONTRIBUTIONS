@@ -3082,7 +3082,7 @@ class DeathCertificate (ModelSQL, ModelView):
         super(DeathCertificate, cls).__setup__()
         t = cls.__table__()
         cls._sql_constraints = [
-            ('name_uniq', Unique(t, t.name), 'Certificate already exists !'),
+            ('name_uniq', Unique(t, t.party), 'Certificate already exists !'),
             ('code_uniq', Unique(t, t.code), 'Certificate already exists !'),
         ]
 
