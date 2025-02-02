@@ -1,14 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-11-25 06:29+0000\n"
-"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_pediatrics/uk/>\n"
-"Language: uk\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.1\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.neonatal.apgar,apgar_activity:"
 msgid "Activity"
@@ -55,9 +47,10 @@ msgctxt "field:gnuhealth.newborn,apgar_scores:"
 msgid "APGAR scores"
 msgstr "Критерії шкали Апгар"
 
+#, fuzzy
 msgctxt "field:gnuhealth.newborn,bd:"
 msgid "Stillbirth"
-msgstr ""
+msgstr "Мертвонародження"
 
 msgctxt "field:gnuhealth.newborn,birth_date:"
 msgid "DoB"
@@ -275,13 +268,15 @@ msgctxt "field:gnuhealth.newborn,weight:"
 msgid "Weight"
 msgstr "Вага"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,newborn_id:"
 msgid "Newborn"
-msgstr ""
+msgstr "Новонароджений"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.medication,newborn_id:"
 msgid "Newborn"
-msgstr ""
+msgstr "Новонароджений"
 
 msgctxt "field:gnuhealth.patient.psc,evaluation_date:"
 msgid "Appointment"
@@ -519,9 +514,10 @@ msgctxt "model:ir.action,name:act_psc_form1"
 msgid "PSC"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_newborn"
 msgid "Newborn"
-msgstr ""
+msgstr "Новонароджений"
 
 msgctxt "model:ir.action,name:gnuhealth_action_psc"
 msgid "PSC"
@@ -531,13 +527,15 @@ msgctxt "model:ir.action,name:report_newborn_card"
 msgid "Newborn ID"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:newborn_sign_button"
 msgid "Sign"
-msgstr ""
+msgstr "Ознака"
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_newborn"
 msgid "Newborn"
-msgstr ""
+msgstr "Новонароджений"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_edit_psc"
 msgid "PSC"
@@ -1107,9 +1105,10 @@ msgctxt "view:gnuhealth.newborn:"
 msgid "Notes"
 msgstr "Примітки"
 
+#, fuzzy
 msgctxt "view:gnuhealth.newborn:"
 msgid "Sign"
-msgstr ""
+msgstr "Ознака"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Sign the process"
@@ -1120,9 +1119,10 @@ msgctxt "view:gnuhealth.newborn:"
 msgid "Status"
 msgstr "Статус"
 
+#, fuzzy
 msgctxt "view:gnuhealth.newborn:"
 msgid "Tests"
-msgstr ""
+msgstr "Тести"
 
 msgctxt "view:gnuhealth.newborn:"
 msgid "Time"

@@ -1,14 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-11-23 19:07+0000\n"
-"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_caldav/uk/>\n"
-"Language: uk\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.1\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:calendar.calendar,description:"
 msgid "Description"
@@ -19,9 +11,10 @@ msgctxt "field:calendar.calendar,name:"
 msgid "Name"
 msgstr "Назва"
 
+#, fuzzy
 msgctxt "field:calendar.calendar,owner:"
 msgid "Owner"
-msgstr ""
+msgstr "Власник"
 
 msgctxt "field:calendar.calendar,read_users:"
 msgid "Read Users"
@@ -35,17 +28,19 @@ msgctxt "field:calendar.calendar-read-res.user,calendar:"
 msgid "Calendar"
 msgstr "Календар"
 
+#, fuzzy
 msgctxt "field:calendar.calendar-read-res.user,user:"
 msgid "User"
-msgstr ""
+msgstr "Користувач"
 
 msgctxt "field:calendar.calendar-write-res.user,calendar:"
 msgid "Calendar"
 msgstr "Календар"
 
+#, fuzzy
 msgctxt "field:calendar.calendar-write-res.user,user:"
 msgid "User"
-msgstr ""
+msgstr "Користувач"
 
 #, fuzzy
 msgctxt "field:calendar.category,name:"
@@ -80,13 +75,15 @@ msgctxt "field:calendar.event,description:"
 msgid "Description"
 msgstr "Опис"
 
+#, fuzzy
 msgctxt "field:calendar.event,dtend:"
 msgid "End Date"
-msgstr ""
+msgstr "Кінцева дата"
 
+#, fuzzy
 msgctxt "field:calendar.event,dtstart:"
 msgid "Start Date"
-msgstr ""
+msgstr "Початкова дата"
 
 msgctxt "field:calendar.event,exdates:"
 msgid "Exception Dates"
@@ -108,9 +105,10 @@ msgctxt "field:calendar.event,organizer:"
 msgid "Organizer"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event,parent:"
 msgid "Parent"
-msgstr ""
+msgstr "Батько / Мати"
 
 msgctxt "field:calendar.event,rdates:"
 msgid "Recurrence Dates"
@@ -124,30 +122,34 @@ msgctxt "field:calendar.event,rrules:"
 msgid "Recurrence Rules"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event,sequence:"
 msgid "Sequence"
-msgstr ""
+msgstr "Послідовність"
 
 #, fuzzy
 msgctxt "field:calendar.event,status:"
 msgid "Status"
 msgstr "Статус"
 
+#, fuzzy
 msgctxt "field:calendar.event,summary:"
 msgid "Summary"
-msgstr ""
+msgstr "Підсумок"
 
+#, fuzzy
 msgctxt "field:calendar.event,timezone:"
 msgid "Timezone"
-msgstr ""
+msgstr "Часовий пояс"
 
 msgctxt "field:calendar.event,transp:"
 msgid "Time Transparency"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event,uuid:"
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 msgctxt "field:calendar.event-calendar.category,category:"
 msgid "Category"
@@ -226,17 +228,19 @@ msgctxt "field:calendar.event.exrule,byyearday:"
 msgid "By Year Day"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,count:"
 msgid "Count"
-msgstr ""
+msgstr "Кількість"
 
 msgctxt "field:calendar.event.exrule,event:"
 msgid "Event"
 msgstr "Подія"
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,freq:"
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 #, fuzzy
 msgctxt "field:calendar.event.exrule,interval:"
@@ -303,17 +307,19 @@ msgctxt "field:calendar.event.rrule,byyearday:"
 msgid "By Year Day"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:calendar.event.rrule,count:"
 msgid "Count"
-msgstr ""
+msgstr "Кількість"
 
 msgctxt "field:calendar.event.rrule,event:"
 msgid "Event"
 msgstr "Подія"
 
+#, fuzzy
 msgctxt "field:calendar.event.rrule,freq:"
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 #, fuzzy
 msgctxt "field:calendar.event.rrule,interval:"
@@ -566,9 +572,10 @@ msgctxt "selection:calendar.event.attendee,status:"
 msgid "Tentative"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Daily"
-msgstr ""
+msgstr "Щодня"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Hourly"
@@ -578,53 +585,63 @@ msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Minutely"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Monthly"
-msgstr ""
+msgstr "Щомісяця"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Secondly"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Weekly"
-msgstr ""
+msgstr "Щотижня"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Yearly"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Friday"
-msgstr ""
+msgstr "П'ятниця"
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Monday"
-msgstr ""
+msgstr "Понеділок"
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Saturday"
-msgstr ""
+msgstr "Субота"
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Sunday"
-msgstr ""
+msgstr "Неділя"
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Thursday"
-msgstr ""
+msgstr "Четвер"
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Tuesday"
-msgstr ""
+msgstr "Вівторок"
 
+#, fuzzy
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Wednesday"
-msgstr ""
+msgstr "Середа"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Daily"
-msgstr ""
+msgstr "Щодня"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Hourly"
@@ -634,65 +651,78 @@ msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Minutely"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Monthly"
-msgstr ""
+msgstr "Щомісяця"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Secondly"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Weekly"
-msgstr ""
+msgstr "Щотижня"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Yearly"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Friday"
-msgstr ""
+msgstr "П'ятниця"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Monday"
-msgstr ""
+msgstr "Понеділок"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Saturday"
-msgstr ""
+msgstr "Субота"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Sunday"
-msgstr ""
+msgstr "Неділя"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Thursday"
-msgstr ""
+msgstr "Четвер"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Tuesday"
-msgstr ""
+msgstr "Вівторок"
 
+#, fuzzy
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Wednesday"
-msgstr ""
+msgstr "Середа"
 
+#, fuzzy
 msgctxt "view:calendar.calendar:"
 msgid "Access Permissions"
-msgstr ""
+msgstr "Права доступу"
 
+#, fuzzy
 msgctxt "view:calendar.calendar:"
 msgid "General"
-msgstr ""
+msgstr "Загальний"
 
+#, fuzzy
 msgctxt "view:calendar.event.exdate:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
+#, fuzzy
 msgctxt "view:calendar.event.rdate:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 msgctxt "view:calendar.event:"
 msgid "Attendees"
@@ -706,9 +736,10 @@ msgctxt "view:calendar.event:"
 msgid "End Time"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:calendar.event:"
 msgid "General"
-msgstr ""
+msgstr "Загальний"
 
 msgctxt "view:calendar.event:"
 msgid "Occurences"

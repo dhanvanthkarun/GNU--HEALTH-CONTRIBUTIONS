@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 #, fuzzy
 msgctxt "field:gnuhealth.operation,notes:"
@@ -26,9 +26,10 @@ msgctxt "field:gnuhealth.or.schedule,health_condition:"
 msgid "Condition"
 msgstr "Voorwaarde"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
 msgid "Health Prof"
-msgstr ""
+msgstr "Specialist"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,institution:"
@@ -59,9 +60,10 @@ msgctxt "field:gnuhealth.or.schedule,specialty:"
 msgid "Specialty"
 msgstr "Specialiteit"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,state:"
 msgid "Status"
-msgstr ""
+msgstr "Toestand"
 
 msgctxt "field:gnuhealth.or.schedule,surgery:"
 msgid "Surgery"
@@ -147,13 +149,15 @@ msgctxt "field:gnuhealth.preoperative_assessment,ecg:"
 msgid "ECG"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,evaluation:"
 msgid "Evaluation"
-msgstr ""
+msgstr "Evaluatie"
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,health_professional:"
 msgid "Health Prof"
-msgstr ""
+msgstr "Specialist"
 
 msgctxt "field:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Imaging"
@@ -227,9 +231,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,surgical_wound:"
 msgid "Surgical wound"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.rcri,health_professional:"
 msgid "Health Prof"
-msgstr ""
+msgstr "Specialist"
 
 #, fuzzy
 msgctxt "field:gnuhealth.rcri,patient:"
@@ -346,9 +351,10 @@ msgctxt "field:gnuhealth.surgery,ellapsed_time:"
 msgid "Ellapsed time"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,extra_info:"
 msgid "Extra Info"
-msgstr ""
+msgstr "Aantekeningen"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery,gender:"
@@ -418,9 +424,10 @@ msgctxt "field:gnuhealth.surgery,preop_sterility:"
 msgid "Sterility confirmed"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,procedures:"
 msgid "Procedures"
-msgstr ""
+msgstr "Procedures"
 
 msgctxt "field:gnuhealth.surgery,protocol:"
 msgid "Protocol"
@@ -434,9 +441,10 @@ msgctxt "field:gnuhealth.surgery,report_surgery_time:"
 msgid "Surgery Time"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,signed_by:"
 msgid "Signed by"
-msgstr ""
+msgstr "Getekend door"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery,specialty:"
@@ -491,13 +499,15 @@ msgctxt "field:gnuhealth.surgery.complication,complication:"
 msgid "Complication"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
-msgstr ""
+msgstr "Ernst"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
-msgstr ""
+msgstr "Opmerkingen"
 
 msgctxt "field:gnuhealth.surgery.complication,surgery:"
 msgid "Surgery"
@@ -600,9 +610,10 @@ msgctxt "field:gnuhealth.surgery_team,notes:"
 msgid "Notes"
 msgstr "Aantekeningen"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
 msgctxt "field:gnuhealth.surgery_team,surgery:"
 msgid "Surgery"
@@ -620,21 +631,24 @@ msgctxt "help:gnuhealth.or.schedule,health_condition:"
 msgid "Base Condition / Reason"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
 msgid "Health Professional"
-msgstr ""
+msgstr "Beroepsmedicus"
 
+#, fuzzy
 msgctxt "help:gnuhealth.or.schedule,institution:"
 msgid "Health Care Institution"
-msgstr ""
+msgstr "Gezondheidsinstelling"
 
 msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.or.schedule,patient:"
 msgid "Patient Name"
-msgstr ""
+msgstr "Naam patient"
 
 msgctxt "help:gnuhealth.or.schedule,specialty:"
 msgid "Medical Specialty / Sector"
@@ -1171,9 +1185,10 @@ msgctxt "report:preoperative_assessment:"
 msgid "ECG interpretation"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:preoperative_assessment:"
 msgid "Health Prof"
-msgstr ""
+msgstr "Specialist"
 
 msgctxt "report:preoperative_assessment:"
 msgid "History of present illness"
@@ -1321,9 +1336,10 @@ msgctxt "report:surgery:"
 msgid "Printed Date:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:surgery:"
 msgid "Procedure"
-msgstr ""
+msgstr "Procedure"
 
 msgctxt "report:surgery:"
 msgid "Procedure Code"
@@ -1337,13 +1353,15 @@ msgctxt "report:surgery:"
 msgid "Qty used"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:surgery:"
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
+#, fuzzy
 msgctxt "report:surgery:"
 msgid "Severity"
-msgstr ""
+msgstr "Ernst"
 
 msgctxt "report:surgery:"
 msgid "Sex:"
@@ -1446,9 +1464,10 @@ msgctxt "selection:gnuhealth.or.schedule,state:"
 msgid "Scheduled"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Emergency"
-msgstr ""
+msgstr "Noodgeval"
 
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Optional"
@@ -1646,10 +1665,6 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
-msgid "4"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
@@ -1865,9 +1880,10 @@ msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "other"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Emergency"
-msgstr ""
+msgstr "Noodgeval"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Optional"
@@ -2160,9 +2176,10 @@ msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "other"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Emergency"
-msgstr ""
+msgstr "Noodgeval"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Optional"
@@ -2257,17 +2274,19 @@ msgctxt "view:gnuhealth.or.schedule:"
 msgid "Date"
 msgstr "Vervaldatum"
 
+#, fuzzy
 msgctxt "view:gnuhealth.or.schedule:"
 msgid "Details"
-msgstr ""
+msgstr "Bijzonderheden"
 
 msgctxt "view:gnuhealth.or.schedule:"
 msgid "Main"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.or.schedule:"
 msgid "Remarks"
-msgstr ""
+msgstr "Opmerkingen"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Surgical relevant info"
@@ -2382,9 +2401,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Confirm the surgery and reserve the Operating Room ?"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Details"
-msgstr ""
+msgstr "Bijzonderheden"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Discharge"
@@ -2436,9 +2456,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Preoperative checklist"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Procedures"
-msgstr ""
+msgstr "Procedures"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Sign"

@@ -1,14 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-11-18 02:22+0000\n"
-"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_inpatient/uk/>\n"
-"Language: uk\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.1\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
@@ -18,9 +10,10 @@ msgctxt "field:gnuhealth.bed.transfer,bed_from:"
 msgid "From"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.bed.transfer,bed_to:"
 msgid "To"
-msgstr ""
+msgstr "До"
 
 msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
@@ -156,9 +149,10 @@ msgctxt "field:gnuhealth.inpatient.medication,adverse_reaction:"
 msgid "Adverse Reactions"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,common_dosage:"
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 msgctxt "field:gnuhealth.inpatient.medication,course_completed:"
 msgid "Course Completed"
@@ -180,17 +174,19 @@ msgctxt "field:gnuhealth.inpatient.medication,dose_unit:"
 msgid "dose unit"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,end_treatment:"
 msgid "End"
-msgstr ""
+msgstr "Кінець"
 
 msgctxt "field:gnuhealth.inpatient.medication,form:"
 msgid "Form"
 msgstr "Форма"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,frequency:"
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 msgctxt "field:gnuhealth.inpatient.medication,frequency_prn:"
 msgid "PRN"
@@ -235,9 +231,10 @@ msgctxt "field:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Start"
 msgstr "Дата й час"
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,admin_time:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose:"
 msgid "Dose"
@@ -337,9 +334,10 @@ msgctxt "field:gnuhealth.inpatient.registration,medications:"
 msgid "Medications"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,name:"
 msgid "Registration Code"
-msgstr ""
+msgstr "Скасувати реєстрацію"
 
 msgctxt "field:gnuhealth.inpatient.registration,nursing_plan:"
 msgid "Nursing Plan"
@@ -930,10 +928,11 @@ msgctxt ""
 msgid "All"
 msgstr "Усі"
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_done"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_draft"
@@ -1014,9 +1013,10 @@ msgctxt "model:ir.model.button,string:meal_cancel_button"
 msgid "Cancel"
 msgstr "Скасувати"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:meal_done_button"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "model:ir.model.button,string:meal_generate_button"
 msgid "Generate"
@@ -1034,9 +1034,10 @@ msgctxt "model:ir.model.button,string:registration_cancel_button"
 msgid "Cancel"
 msgstr "Скасувати"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:registration_confirmed_button"
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 msgctxt "model:ir.model.button,string:registration_discharge_button"
 msgid "Discharge"
@@ -1123,9 +1124,10 @@ msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Cancelled"
 msgstr "Скасовано"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Draft"
@@ -1135,13 +1137,15 @@ msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Ordered"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Processing"
-msgstr ""
+msgstr "Обробка"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "days"
-msgstr ""
+msgstr "днів"
 
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "hours"
@@ -1155,9 +1159,10 @@ msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "seconds"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "weeks"
-msgstr ""
+msgstr "тижнів"
 
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "when required"
@@ -1243,9 +1248,10 @@ msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Create order"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Generate"
@@ -1263,9 +1269,10 @@ msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "The meal order will be closed"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Administration"
-msgstr ""
+msgstr "Адміністрування"
 
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Adverse Reactions and Notes"
@@ -1332,9 +1339,10 @@ msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Click when Bed has been cleaned"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm Registration / Make the reservation"

@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -607,9 +607,10 @@ msgctxt "field:gnuhealth.hospital.bed,product:"
 msgid "Bed"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.hospital.bed,state:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 msgctxt "field:gnuhealth.hospital.bed,telephone_number:"
 msgid "Telephone Number"
@@ -654,9 +655,10 @@ msgctxt "field:gnuhealth.hospital.or,name:"
 msgid "Name"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.hospital.or,state:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 msgctxt "field:gnuhealth.hospital.or,timeslot:"
 msgid "Time span"
@@ -747,9 +749,10 @@ msgctxt "field:gnuhealth.hospital.ward,refrigerator:"
 msgid "Refrigerator"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.hospital.ward,state:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 msgctxt "field:gnuhealth.hospital.ward,telephone:"
 msgid "Telephone access"
@@ -1496,9 +1499,10 @@ msgctxt "field:gnuhealth.patient.disease,short_comment:"
 msgid "Remarks"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,status:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.disease,treatment_description:"
@@ -2330,9 +2334,10 @@ msgctxt "field:gnuhealth.prescription.order,prescription_date:"
 msgid "Date"
 msgstr "Dat"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,prescription_id:"
 msgid "ID"
-msgstr ""
+msgstr "PUID"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_line:"
 msgid "Prescription line"
@@ -2743,9 +2748,10 @@ msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
 msgstr "Sèvis Konsiltasyon"
 
+#, fuzzy
 msgctxt "help:gnuhealth.appointment,healthprof:"
 msgid "Health Professional"
-msgstr ""
+msgstr "Pwof Sante"
 
 msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
@@ -3361,9 +3367,10 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
 msgid "Health Professional"
-msgstr ""
+msgstr "Pwof Sante"
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
 msgid "Check this box if the disease is active"
@@ -4853,9 +4860,10 @@ msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
 msgid "Health Professional"
-msgstr ""
+msgstr "Pwof Sante"
 
 msgctxt "model:gnuhealth.help,name:"
 msgid "GNU Health Help"
@@ -9220,9 +9228,10 @@ msgid ""
 " selected schedule"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid ""
@@ -9563,9 +9572,10 @@ msgctxt "report:patient.conditions_history:"
 msgid "Severity"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.conditions_history:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 msgctxt "report:patient.medication:"
 msgid ","
@@ -11647,9 +11657,10 @@ msgctxt "view:gnuhealth.patient.medication:"
 msgid "Specific Dosage"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Status"
-msgstr ""
+msgstr "Estati"
 
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Treatment duration"
@@ -11800,9 +11811,10 @@ msgctxt "view:product.product:"
 msgid "Health"
 msgstr ""
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.appointment.report.open,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Anile"
 
 msgctxt "wizard_button:gnuhealth.appointment.report.open,start,open_:"
 msgid "Open"
@@ -11813,14 +11825,16 @@ msgctxt ""
 msgid "Immunization Status"
 msgstr ""
 
+#, fuzzy
 msgctxt "wizard_button:gnuhealth.check_immunization_status,start,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Anile"
 
+#, fuzzy
 msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,end:"
 msgid "Cancel"
-msgstr ""
+msgstr "Anile"
 
 msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,save:"

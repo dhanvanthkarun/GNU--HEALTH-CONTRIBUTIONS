@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,ambcare:"
 msgid "Session"
@@ -16,9 +16,10 @@ msgctxt "field:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Code"
 msgstr "ohje"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,base_condition:"
 msgid "Condition"
-msgstr ""
+msgstr "Configuration"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,bpm:"
@@ -46,17 +47,19 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,health_professional:"
 msgid "Health Prof"
 msgstr "Terveydenhuollon ammattilainen"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,name:"
 msgid "ID"
-msgstr ""
+msgstr "d"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,next_session:"
 msgid "Next Session"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,ordering_professional:"
 msgid "Requested by"
-msgstr ""
+msgstr "Pyytänyt"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,osat:"
 msgid "Oxygen Saturation"
@@ -107,9 +110,10 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,signed_by:"
 msgid "Signed by"
 msgstr "Allekirjoittanut"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,state:"
 msgid "State"
-msgstr ""
+msgstr "Tree State"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,systolic:"
 msgid "Systolic Pressure"
@@ -226,18 +230,20 @@ msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
 msgstr "eräpäivä"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_end_time:"
 msgid "End Time"
-msgstr ""
+msgstr "Päättymisaika"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_date:"
 msgid "Start Date"
 msgstr "Aloitus päivä"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_time:"
 msgid "Start Time"
-msgstr ""
+msgstr "Aloitusaika"
 
 msgctxt "field:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -252,9 +258,10 @@ msgctxt "field:gnuhealth.patient.rounding,signed_by:"
 msgid "Signed by"
 msgstr "Allekirjoittanut"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,state:"
 msgid "State"
-msgstr ""
+msgstr "Tree State"
 
 msgctxt "field:gnuhealth.patient.rounding,systolic:"
 msgid "Systolic Pressure"
@@ -507,9 +514,10 @@ msgctxt "model:ir.message,text:msg_report_pain_level"
 msgid "Level: %(pain_level)s"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_no"
 msgid "No"
-msgstr ""
+msgstr "Notes"
 
 msgctxt "model:ir.message,text:msg_report_pain_yes"
 msgid "Yes"

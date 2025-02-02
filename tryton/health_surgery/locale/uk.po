@@ -1,14 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-11-20 23:48+0000\n"
-"Last-Translator: SomeTr <SomeTr@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_surgery/uk/>\n"
-"Language: uk\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.1\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
@@ -54,9 +46,10 @@ msgctxt "field:gnuhealth.or.schedule,reserve_from:"
 msgid "From"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,reserve_to:"
 msgid "To"
-msgstr ""
+msgstr "До"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,specialty:"
@@ -89,9 +82,10 @@ msgctxt "field:gnuhealth.patient.evaluation,hernia_ehs:"
 msgid "EHS"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Localization"
-msgstr ""
+msgstr "Локалізація"
 
 msgctxt "field:gnuhealth.patient.evaluation,hernia_side:"
 msgid "Side"
@@ -465,13 +459,15 @@ msgctxt "field:gnuhealth.surgery,surgery_date:"
 msgid "Date"
 msgstr "Дата"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,surgery_end_date:"
 msgid "End"
-msgstr ""
+msgstr "Кінець"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
-msgstr ""
+msgstr "Довжина"
 
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
@@ -538,9 +534,10 @@ msgctxt "field:gnuhealth.surgery.protocol,discharge_instructions:"
 msgid "Discharge Instructions"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,general_info:"
 msgid "General Information"
-msgstr ""
+msgstr "Головна інформація"
 
 msgctxt "field:gnuhealth.surgery.protocol,laterality:"
 msgid "Laterality"
@@ -1017,9 +1014,10 @@ msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_confirmed"
 msgid "Confirmed"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_done"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_draft"
 msgid "Draft"
@@ -1070,21 +1068,24 @@ msgctxt "model:ir.model.button,string:surgery_cancel_button"
 msgid "Cancel"
 msgstr "Скасувати"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:surgery_confirm_button"
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:surgery_done_button"
 msgid "Finnish"
-msgstr ""
+msgstr "Фінська"
 
 msgctxt "model:ir.model.button,string:surgery_sched_button"
 msgid "Schedule Surgery"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:surgery_sign_button"
 msgid "Sign"
-msgstr ""
+msgstr "Ознака"
 
 #, fuzzy
 msgctxt "model:ir.model.button,string:surgery_start_button"
@@ -1119,9 +1120,10 @@ msgctxt "model:res.group,name:group_health_surgery_admin"
 msgid "Health Surgery Administration"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:preoperative_assessment:"
 msgid ","
-msgstr ""
+msgstr ","
 
 msgctxt "report:preoperative_assessment:"
 msgid "ALLERGIC"
@@ -1172,9 +1174,10 @@ msgctxt "report:preoperative_assessment:"
 msgid "Mallampati:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:preoperative_assessment:"
 msgid "Name:"
-msgstr ""
+msgstr "Ім'я:"
 
 msgctxt "report:preoperative_assessment:"
 msgid "Needs blood reserve"
@@ -1204,9 +1207,10 @@ msgctxt "report:preoperative_assessment:"
 msgid "RCRI:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:surgery:"
 msgid ","
-msgstr ""
+msgstr ","
 
 msgctxt "report:surgery:"
 msgid "Age at surgery:"
@@ -1385,9 +1389,10 @@ msgctxt "report:surgery_outpatient:"
 msgid "Institution:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:surgery_outpatient:"
 msgid "Name:"
-msgstr ""
+msgstr "Ім'я:"
 
 msgctxt "report:surgery_outpatient:"
 msgid "Outpatient Surgery: Discharge report"
@@ -1437,9 +1442,10 @@ msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Optional"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Required"
-msgstr ""
+msgstr "Обов'язково"
 
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Urgent"
@@ -1501,13 +1507,15 @@ msgctxt "selection:gnuhealth.patient.evaluation,hernia_localization:"
 msgid "Umbilical"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_side:"
 msgid "Left"
-msgstr ""
+msgstr "Ліворуч"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_side:"
 msgid "Right"
-msgstr ""
+msgstr "Праворуч"
 
 msgctxt "selection:gnuhealth.patient.evaluation,hernia_side:"
 msgid "bilateral"
@@ -1579,9 +1587,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,thyroid_clinical:"
 msgid "Hoarseness"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_clinical:"
 msgid "Other"
-msgstr ""
+msgstr "Інший"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_exploration:"
 msgid "Goiter"
@@ -1628,10 +1637,6 @@ msgid "3"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
-msgid "4"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "5"
 msgstr ""
 
@@ -1639,13 +1644,15 @@ msgctxt "selection:gnuhealth.patient.evaluation,thyroid_side:"
 msgid "Bilateral"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_side:"
 msgid "Left"
-msgstr ""
+msgstr "Ліворуч"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_side:"
 msgid "Right"
-msgstr ""
+msgstr "Праворуч"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_tirads:"
 msgid "TR1"
@@ -1779,13 +1786,15 @@ msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Epidural"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "General"
-msgstr ""
+msgstr "Загальний"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Local"
-msgstr ""
+msgstr "Локальний"
 
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Local + sedation"
@@ -1827,17 +1836,19 @@ msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "Laparoscopic"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "Open"
-msgstr ""
+msgstr "Відкрито"
 
 msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "Robotic"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "other"
-msgstr ""
+msgstr "інше"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Emergency"
@@ -1847,9 +1858,10 @@ msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Optional"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Required"
-msgstr ""
+msgstr "Обов'язково"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Urgent"
@@ -1911,13 +1923,15 @@ msgctxt "selection:gnuhealth.surgery,laterality:"
 msgid "Bilateral"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,laterality:"
 msgid "Left"
-msgstr ""
+msgstr "Ліворуч"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,laterality:"
 msgid "Right"
-msgstr ""
+msgstr "Праворуч"
 
 msgctxt "selection:gnuhealth.surgery,patient_positioning:"
 msgid "Fowlers"
@@ -1947,9 +1961,10 @@ msgctxt "selection:gnuhealth.surgery,patient_positioning:"
 msgid "Lloyd-Davies"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,patient_positioning:"
 msgid "Other"
-msgstr ""
+msgstr "Інший"
 
 msgctxt "selection:gnuhealth.surgery,patient_positioning:"
 msgid "Prone Decubitus"
@@ -1983,9 +1998,10 @@ msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Confirmed"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Draft"
@@ -2063,13 +2079,15 @@ msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Epidural"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "General"
-msgstr ""
+msgstr "Загальний"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Local"
-msgstr ""
+msgstr "Локальний"
 
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Local + sedation"
@@ -2111,17 +2129,19 @@ msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Laparoscopic"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Open"
-msgstr ""
+msgstr "Відкрито"
 
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "Robotic"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "other"
-msgstr ""
+msgstr "інше"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Emergency"
@@ -2131,9 +2151,10 @@ msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Optional"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Required"
-msgstr ""
+msgstr "Обов'язково"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Urgent"
@@ -2143,13 +2164,15 @@ msgctxt "selection:gnuhealth.surgery.protocol,laterality:"
 msgid "Bilateral"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,laterality:"
 msgid "Left"
-msgstr ""
+msgstr "Ліворуч"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,laterality:"
 msgid "Right"
-msgstr ""
+msgstr "Праворуч"
 
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Fowlers"
@@ -2179,9 +2202,10 @@ msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Lloyd-Davies"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Other"
-msgstr ""
+msgstr "Інший"
 
 msgctxt "selection:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Prone Decubitus"
@@ -2289,9 +2313,10 @@ msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "General Info"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Header"
-msgstr ""
+msgstr "Заголовок"
 
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Patient positioning"
@@ -2325,9 +2350,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Complications"
 msgstr "Ускладнення"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Confirm the scheduled surgery"
@@ -2358,9 +2384,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Finish and sign this surgery ? Itwill become read-only !"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish"
-msgstr ""
+msgstr "Фінська"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish the surgery"
@@ -2394,9 +2421,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Procedures"
 msgstr "Процедури"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Sign"
-msgstr ""
+msgstr "Ознака"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Sign this surgery"
@@ -2427,6 +2455,7 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Team"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Time"
-msgstr ""
+msgstr "Час"

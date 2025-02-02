@@ -1,14 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2025-01-07 11:08+0000\n"
-"Last-Translator: Umeaman <umeaman@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/health/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.9.2\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1592,9 +1584,10 @@ msgctxt "field:gnuhealth.patient.evaluation,calculation_ability:"
 msgid "Calculation Ability"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,chief_complaint:"
 msgid "Chief Complaint"
-msgstr ""
+msgstr "Klagomål från chef"
 
 msgctxt "field:gnuhealth.patient.evaluation,cholesterol_total:"
 msgid "Last Cholesterol"
@@ -2252,9 +2245,10 @@ msgctxt "field:gnuhealth.prescription.line,indication:"
 msgid "Indication"
 msgstr "Indikering"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.line,infusion:"
 msgid "Infusion"
-msgstr ""
+msgstr "Infusion"
 
 #, fuzzy
 msgctxt "field:gnuhealth.prescription.line,infusion_rate:"
@@ -2488,9 +2482,10 @@ msgctxt "field:gnuhealth.vaccination,institution:"
 msgid "Institution"
 msgstr "Instutition"
 
+#, fuzzy
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
-msgstr ""
+msgstr "Nästa dos"
 
 #, fuzzy
 msgctxt "field:gnuhealth.vaccination,observations:"
@@ -2554,9 +2549,10 @@ msgctxt "field:party.address,relative_id:"
 msgid "Contact"
 msgstr "Kontakt"
 
+#, fuzzy
 msgctxt "field:party.contact_mechanism,emergency:"
 msgid "Emergency"
-msgstr ""
+msgstr "Akut"
 
 #, fuzzy
 msgctxt "field:party.contact_mechanism,remarks:"
@@ -2746,9 +2742,10 @@ msgctxt "field:product.product,is_insurance_plan:"
 msgid "Insurance Plan"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:product.product,is_medical_supply:"
 msgid "Medical Supply"
-msgstr ""
+msgstr "Medicinska förbrukningsvaror"
 
 #, fuzzy
 msgctxt "field:product.product,is_medicament:"
@@ -2888,9 +2885,10 @@ msgctxt "help:gnuhealth.ethnicity,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.family,name:"
 msgid "Family code"
-msgstr ""
+msgstr "Familj"
 
 #, fuzzy
 msgctxt "help:gnuhealth.family_member,family:"
@@ -3071,9 +3069,10 @@ msgctxt "help:gnuhealth.insurance,category:"
 msgid "Insurance company category"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.insurance,plan_id:"
 msgid "Insurance company plan"
-msgstr ""
+msgstr "Försäkringsföretag"
 
 msgctxt "help:gnuhealth.insurance.plan,is_default:"
 msgid ""
@@ -3480,9 +3479,10 @@ msgctxt "help:gnuhealth.patient.evaluation,calculation_ability:"
 msgid "Check this box if the patient can not do simple arithmetic problems"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,chief_complaint:"
 msgid "Chief Complaint"
-msgstr ""
+msgstr "Klagomål från chef"
 
 msgctxt "help:gnuhealth.patient.evaluation,cholesterol_total:"
 msgid "Last cholesterol reading (mg/dL)"
@@ -3526,9 +3526,10 @@ msgctxt "help:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic pressure (mmHg)"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Reason for patient discharge"
-msgstr ""
+msgstr "Orsak till att patienten skrevs ut"
 
 msgctxt "help:gnuhealth.patient.evaluation,evaluation_length:"
 msgid "Duration of the evaluation"
@@ -3948,9 +3949,10 @@ msgctxt "help:gnuhealth.prescription.line,route:"
 msgid "Drug administration route code."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.prescription.line,short_comment:"
 msgid "Short comment on the specific drug"
-msgstr ""
+msgstr "Kort kommentar gällande den specifika drogen"
 
 msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
@@ -7727,9 +7729,10 @@ msgctxt "model:gnuhealth.pathology.group,name:"
 msgid "Pathology Groups"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:gnuhealth.pathology.group,name:ALLERGIC"
 msgid "ALLERGIC"
-msgstr ""
+msgstr "ALLERGISK"
 
 msgctxt "model:gnuhealth.pathology.group,name:AUTOIMMUNE"
 msgid "AUTOIMMUNE"
@@ -8020,9 +8023,10 @@ msgctxt "model:gnuhealth.specialty,name:40"
 msgid "Pathology"
 msgstr "Patologi"
 
+#, fuzzy
 msgctxt "model:gnuhealth.specialty,name:41"
 msgid "Pediatrics"
-msgstr ""
+msgstr "Pediatrik"
 
 msgctxt "model:gnuhealth.specialty,name:42"
 msgid "Pediatric surgery"
@@ -8392,9 +8396,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_form_pathology"
 msgid "Conditions"
 msgstr "Tillstånd"
 
+#, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_healthprofessional"
 msgid "Health Professionals"
-msgstr ""
+msgstr "Vårdpersonal"
 
 msgctxt "model:ir.action,name:gnuhealth_action_help"
 msgid "Help and Documentation"
@@ -8463,9 +8468,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_view_medicament"
 msgid "Medicaments"
 msgstr "Medikamenter"
 
+#, fuzzy
 msgctxt "model:ir.action,name:report_appointment_receipt"
 msgid "Appointment Receipt"
-msgstr ""
+msgstr "Kvitto för läkartiden"
 
 msgctxt "model:ir.action,name:report_birth_certificate"
 msgid "Birth Certificate"
@@ -8515,10 +8521,11 @@ msgctxt "model:ir.action,name:update_patient_disease_info"
 msgid "Update patient disease"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_all"
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_checkedin"
@@ -8531,10 +8538,11 @@ msgctxt ""
 msgid "Confirmed"
 msgstr "Bekräftades"
 
+#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_free"
 msgid "Free"
-msgstr ""
+msgstr "Ledig"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_noshow"
@@ -8674,13 +8682,15 @@ msgctxt "model:ir.model.button,string:appoinntment_miss_out"
 msgid "Miss Out"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:deathcert_sign_button"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 msgctxt "model:ir.model.button,string:hospital_bed_fix"
 msgid "Fix bed"
@@ -8699,9 +8709,10 @@ msgctxt "model:ir.model.button,string:prescription_create"
 msgid "Create Prescription"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:vaccination_sign"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 #, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_appointment"
@@ -8798,17 +8809,19 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_ethnicity"
 msgid "Ethnicities"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation"
 msgid "Federation"
-msgstr ""
+msgstr "Federation"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_country_config"
 msgid "Federation Country Configuration"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_healthprofessionals"
 msgid "Health Professionals"
-msgstr ""
+msgstr "Vårdpersonal"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_immunization_schedule"
 msgid "Immunization Schedule"
@@ -9029,13 +9042,15 @@ msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "APPT ID:"
-msgstr ""
+msgstr "LÄKARTIDENS ID:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "Appointment Receipt"
-msgstr ""
+msgstr "Kvitto för läkartiden"
 
 #, fuzzy
 msgctxt "report:appointment.receipt:"
@@ -9072,9 +9087,10 @@ msgctxt "report:appointment.receipt:"
 msgid "Specialty:"
 msgstr "Specialitet:"
 
+#, fuzzy
 msgctxt "report:appointment.receipt:"
 msgid "You must present this receipt and your PUID"
-msgstr ""
+msgstr "Du måste presentera det här kvittot och ditt PUID"
 
 #, fuzzy
 msgctxt "report:gnuhealth.birth_certificate:"
@@ -9294,9 +9310,10 @@ msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Age:"
 msgstr "Ålder:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivning:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
@@ -9410,9 +9427,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BP"
 msgstr "BT"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Chief Complaint"
-msgstr ""
+msgstr "Klagomål från chef"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9548,13 +9566,15 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Procedures"
 msgstr "Tillvägagångssätt"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Reliability:"
-msgstr ""
+msgstr "Pålitlighet:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Resp Rate"
-msgstr ""
+msgstr "Andningsfrekvens"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9585,9 +9605,10 @@ msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Age:"
 msgstr "Ålder:"
 
+#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Chief Complaint"
-msgstr ""
+msgstr "Klagomål från chef"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -9858,9 +9879,10 @@ msgctxt "report:patient.vaccination:"
 msgid "Gender:"
 msgstr "Kön:"
 
+#, fuzzy
 msgctxt "report:patient.vaccination:"
 msgid "Next Dose"
-msgstr ""
+msgstr "Nästa dos"
 
 #, fuzzy
 msgctxt "report:patient.vaccination:"
@@ -10068,9 +10090,10 @@ msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Done"
 msgstr "Klar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "Free"
-msgstr ""
+msgstr "Ledig"
 
 msgctxt "selection:gnuhealth.appointment,state:"
 msgid "No show"
@@ -10185,17 +10208,20 @@ msgctxt "selection:gnuhealth.death_certificate,type_of_death:"
 msgid "Undetermined"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
 msgid "hours"
-msgstr ""
+msgstr "timmar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
 msgid "minutes"
-msgstr ""
+msgstr "minuter"
 
 msgctxt "selection:gnuhealth.death_underlying_condition,unit_of_time:"
 msgid "months"
@@ -10324,9 +10350,10 @@ msgctxt "selection:gnuhealth.hospital.bed,bed_type:"
 msgid "Stretcher"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Free"
-msgstr ""
+msgstr "Ledig"
 
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Needs cleaning"
@@ -10337,31 +10364,35 @@ msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Not available"
 msgstr "Ej tillgänglig"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Occupied"
-msgstr ""
+msgstr "Upptagen"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.bed,state:"
 msgid "Reserved"
-msgstr ""
+msgstr "Reserverad"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Confirmed"
 msgstr "Bekräftades"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Free"
-msgstr ""
+msgstr "Ledig"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Not available"
 msgstr "Ej tillgänglig"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Occupied"
-msgstr ""
+msgstr "Upptagen"
 
 msgctxt "selection:gnuhealth.hospital.or,state:"
 msgid "Scheduled"
@@ -10392,17 +10423,19 @@ msgctxt "selection:gnuhealth.hospital.ward,state:"
 msgid "Not available"
 msgstr "Ej tillgänglig"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "months"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "weeks"
-msgstr ""
+msgstr "veckor"
 
 msgctxt "selection:gnuhealth.immunization_schedule_dose,age_unit:"
 msgid "years"
@@ -10808,9 +10841,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Home / Selfcare"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Left against medical advice"
-msgstr ""
+msgstr "Lämnade mot läkarens inrådan"
 
 msgctxt "selection:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Transferred to another institution"
@@ -11008,21 +11042,24 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "hours"
-msgstr ""
+msgstr "timmar"
 
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "indefinite"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "minutes"
-msgstr ""
+msgstr "minuter"
 
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "months"
@@ -11032,29 +11069,35 @@ msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "years"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "hours"
-msgstr ""
+msgstr "timmar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "minutes"
-msgstr ""
+msgstr "minuter"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "seconds"
-msgstr ""
+msgstr "sekunder"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "weeks"
-msgstr ""
+msgstr "veckor"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.medication,frequency_unit:"
 msgid "when required"
-msgstr ""
+msgstr "när så krävs"
 
 msgctxt "selection:gnuhealth.patient.medication,infusion_rate_units:"
 msgid "mL/hour"
@@ -11294,21 +11337,24 @@ msgctxt "selection:gnuhealth.pol,social_context:"
 msgid "uninsured"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "hours"
-msgstr ""
+msgstr "timmar"
 
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "indefinite"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "minutes"
-msgstr ""
+msgstr "minuter"
 
 msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "months"
@@ -11318,29 +11364,35 @@ msgctxt "selection:gnuhealth.prescription.line,duration_period:"
 msgid "years"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "hours"
-msgstr ""
+msgstr "timmar"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "minutes"
-msgstr ""
+msgstr "minuter"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "seconds"
-msgstr ""
+msgstr "sekunder"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "weeks"
-msgstr ""
+msgstr "veckor"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.line,frequency_unit:"
 msgid "when required"
-msgstr ""
+msgstr "när så krävs"
 
 msgctxt "selection:gnuhealth.prescription.line,infusion_rate_units:"
 msgid "mL/hour"
@@ -11360,9 +11412,10 @@ msgctxt "selection:gnuhealth.prescription.order,state:"
 msgid "Validated"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 msgctxt "selection:gnuhealth.signs_and_symptoms,sign_or_symptom:"
 msgid "Symptom"
@@ -11381,9 +11434,10 @@ msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Intranasal"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Oral"
-msgstr ""
+msgstr "Oralt"
 
 msgctxt "selection:gnuhealth.vaccination,admin_route:"
 msgid "Subcutaneous"
@@ -11565,9 +11619,10 @@ msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Observations"
 msgstr "Observationer"
 
+#, fuzzy
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign Birth Certificate ?"
@@ -11601,9 +11656,10 @@ msgctxt "view:gnuhealth.death_certificate:"
 msgid "Place"
 msgstr "Plats"
 
+#, fuzzy
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Sign Death Certificate ?"
@@ -11677,9 +11733,10 @@ msgctxt "view:gnuhealth.medicament:"
 msgid "Composition"
 msgstr "Sammansättning"
 
+#, fuzzy
 msgctxt "view:gnuhealth.medicament:"
 msgid "Dosage"
-msgstr ""
+msgstr "Dosering"
 
 #, fuzzy
 msgctxt "view:gnuhealth.medicament:"
@@ -11808,13 +11865,15 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Administrative"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Anthropometry"
-msgstr ""
+msgstr "Antropometri"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Chief Complaint"
-msgstr ""
+msgstr "Klagomål från chef"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Clinical"
@@ -11920,9 +11979,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Vital Signs"
 msgstr "Livstecken"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Administration"
-msgstr ""
+msgstr "Administrering"
 
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Adverse Reactions and Notes"
@@ -11932,18 +11992,20 @@ msgctxt "view:gnuhealth.patient.medication:"
 msgid "Common Dosage"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Dosage"
-msgstr ""
+msgstr "Dosering"
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Extra Info"
 msgstr "Extra info"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "General Info"
-msgstr ""
+msgstr "Generell info"
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.medication:"
@@ -11986,9 +12048,10 @@ msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient:"
 msgid "General Info"
-msgstr ""
+msgstr "Generell info"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Main"
@@ -12021,17 +12084,19 @@ msgctxt "view:gnuhealth.pol:"
 msgid "Extended Information"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.pol:"
 msgid "Measurements"
-msgstr ""
+msgstr "Mätningar"
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Common Dosage"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Dosage"
-msgstr ""
+msgstr "Dosering"
 
 msgctxt "view:gnuhealth.prescription.line:"
 msgid "Form and Administration Route"
@@ -12085,9 +12150,10 @@ msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Sign or Symptom"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Administration"
-msgstr ""
+msgstr "Administrering"
 
 #, fuzzy
 msgctxt "view:gnuhealth.vaccination:"
@@ -12103,9 +12169,10 @@ msgctxt "view:gnuhealth.vaccination:"
 msgid "Notes"
 msgstr "Anteckningar"
 
+#, fuzzy
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Sign and close the vaccination"

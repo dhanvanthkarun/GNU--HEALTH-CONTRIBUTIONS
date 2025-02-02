@@ -1,14 +1,6 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-09-17 20:18+0000\n"
-"Last-Translator: Umeaman <Umeaman@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/health_surgery/sv/>\n"
-"Language: sv\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
@@ -197,9 +189,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,preop_mallampati:"
 msgid "Mallampati"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_rcri:"
 msgid "RCRI"
-msgstr ""
+msgstr "RCRI"
 
 msgctxt "field:gnuhealth.preoperative_assessment,short_notes:"
 msgid "Notes"
@@ -1011,9 +1004,10 @@ msgctxt "model:ir.action,name:report_surgery_report"
 msgid "Surgery Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_all"
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 #, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_confirmed"
@@ -1452,9 +1446,10 @@ msgctxt "selection:gnuhealth.or.schedule,state:"
 msgid "Confirmed"
 msgstr "Bekräftades"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,state:"
 msgid "Free"
-msgstr ""
+msgstr "Ledig"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,state:"
@@ -1469,9 +1464,10 @@ msgctxt "selection:gnuhealth.or.schedule,state:"
 msgid "Scheduled"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Emergency"
-msgstr ""
+msgstr "Akut"
 
 msgctxt "selection:gnuhealth.or.schedule,urgency:"
 msgid "Optional"
@@ -1604,9 +1600,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,hernia_type:"
 msgid "H4c - Irreducible. Component ing-scrot >20 cm"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,surgical_context:"
 msgid "Hernia"
-msgstr ""
+msgstr "Bråck"
 
 msgctxt "selection:gnuhealth.patient.evaluation,surgical_context:"
 msgid "Thyroid"
@@ -1672,10 +1669,6 @@ msgstr "2"
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
 msgstr "3"
-
-msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
-msgid "4"
-msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
@@ -1826,13 +1819,15 @@ msgctxt "selection:gnuhealth.rcri,rcri_class:"
 msgid "IV"
 msgstr "IV"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Epidural"
-msgstr ""
+msgstr "Epidural"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Local"
@@ -1891,9 +1886,10 @@ msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "other"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Emergency"
-msgstr ""
+msgstr "Akut"
 
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Optional"
@@ -2120,13 +2116,15 @@ msgctxt "selection:gnuhealth.surgery.drain,drain:"
 msgid "Thoracic tube"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Epidural"
-msgstr ""
+msgstr "Epidural"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Local"
@@ -2185,9 +2183,10 @@ msgctxt "selection:gnuhealth.surgery.protocol,approach:"
 msgid "other"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Emergency"
-msgstr ""
+msgstr "Akut"
 
 msgctxt "selection:gnuhealth.surgery.protocol,classification:"
 msgid "Optional"
@@ -2320,9 +2319,10 @@ msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Critical Information"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Decision"
-msgstr ""
+msgstr "Beslut"
 
 #, fuzzy
 msgctxt "view:gnuhealth.preoperative_assessment:"
@@ -2355,9 +2355,10 @@ msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Discharge instructions"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "General Info"
-msgstr ""
+msgstr "Generell info"
 
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Header"
@@ -2398,9 +2399,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Complications"
 msgstr "Komplikationer"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Confirm"
-msgstr ""
+msgstr "Bekräfta"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Confirm the scheduled surgery"
@@ -2431,9 +2433,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Finish and sign this surgery ? Itwill become read-only !"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish"
-msgstr ""
+msgstr "Avsluta"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish the surgery"
@@ -2469,9 +2472,10 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Procedures"
 msgstr "Tillvägagångssätt"
 
+#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Sign"
-msgstr ""
+msgstr "Signera"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Sign this surgery"

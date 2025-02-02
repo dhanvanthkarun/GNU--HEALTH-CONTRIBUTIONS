@@ -1,18 +1,11 @@
 #
 msgid ""
-msgstr ""
-"PO-Revision-Date: 2024-12-22 23:22+0000\n"
-"Last-Translator: SomeTr <sometr@users.noreply.translate.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_nursing/uk/>\n"
-"Language: uk\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9.2\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+#, fuzzy
 msgctxt "field:gnuhealth.ambulatory_care_procedure,ambcare:"
 msgid "Session"
-msgstr ""
+msgstr "Сеанс"
 
 msgctxt "field:gnuhealth.ambulatory_care_procedure,comments:"
 msgid "Comments"
@@ -52,9 +45,10 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,health_professional:"
 msgid "Health Prof"
 msgstr "Медичний працівник"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,name:"
 msgid "ID"
-msgstr ""
+msgstr "PUID"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,next_session:"
 msgid "Next Session"
@@ -88,9 +82,10 @@ msgctxt "field:gnuhealth.patient.ambulatory_care,respiratory_rate:"
 msgid "Respiratory Rate"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,session_end:"
 msgid "End"
-msgstr ""
+msgstr "Кінець"
 
 msgctxt "field:gnuhealth.patient.ambulatory_care,session_notes:"
 msgid "Notes"
@@ -159,9 +154,10 @@ msgctxt "field:gnuhealth.patient.rounding,environmental_assessment:"
 msgid "Environment"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
 msgid "End"
-msgstr ""
+msgstr "Кінець"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
@@ -217,21 +213,24 @@ msgctxt "field:gnuhealth.patient.rounding,pump:"
 msgid "Pumps"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,registration:"
 msgid "Registration Code"
-msgstr ""
+msgstr "Скасувати реєстрацію"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
-msgstr ""
+msgstr "Кінцева дата"
 
 msgctxt "field:gnuhealth.patient.rounding,report_end_time:"
 msgid "End Time"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_date:"
 msgid "Start Date"
-msgstr ""
+msgstr "Початкова дата"
 
 msgctxt "field:gnuhealth.patient.rounding,report_start_time:"
 msgid "Start Time"
@@ -503,13 +502,15 @@ msgctxt "model:ir.message,text:msg_report_pain_level"
 msgid "Level: %(pain_level)s"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_no"
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
+#, fuzzy
 msgctxt "model:ir.message,text:msg_report_pain_yes"
 msgid "Yes"
-msgstr ""
+msgstr "Так"
 
 msgctxt "model:ir.model.button,string:rounding_end_button"
 msgid "End rounding"
@@ -555,9 +556,10 @@ msgctxt "model:res.group,name:group_health_nursing_admin"
 msgid "Health Nursing Administration"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "/"
-msgstr ""
+msgstr "/"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Ambulatory Care Session"
@@ -623,21 +625,24 @@ msgctxt "report:patient.ambulatory_care.report:"
 msgid "Start:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Summary"
-msgstr ""
+msgstr "Підсумок"
 
+#, fuzzy
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Temp. (C)"
-msgstr ""
+msgstr "Темп. (°C)"
 
 msgctxt "report:patient.ambulatory_care.report:"
 msgid "Weight (kg)"
 msgstr "Вага (кг)"
 
+#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "/"
-msgstr ""
+msgstr "/"
 
 msgctxt "report:patient.rounding.report:"
 msgid "BP"
@@ -707,9 +712,10 @@ msgctxt "report:patient.rounding.report:"
 msgid "Start:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.rounding.report:"
 msgid "Summary"
-msgstr ""
+msgstr "Підсумок"
 
 msgctxt "report:patient.rounding.report:"
 msgid "Temp. (C)"
@@ -735,9 +741,10 @@ msgctxt "selection:gnuhealth.patient.ambulatory_care,evolution:"
 msgid "Worsening"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.ambulatory_care,state:"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "selection:gnuhealth.patient.ambulatory_care,state:"
 msgid "In Progress"
@@ -755,9 +762,10 @@ msgctxt "selection:gnuhealth.patient.rounding,evolution:"
 msgid "Worsening"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.rounding,state:"
 msgid "Done"
-msgstr ""
+msgstr "Завершено"
 
 msgctxt "selection:gnuhealth.patient.rounding,state:"
 msgid "In Progress"
@@ -767,9 +775,10 @@ msgctxt "view:gnuhealth.ambulatory_care_procedure:"
 msgid "Procedure Details / Incidents"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "End"
-msgstr ""
+msgstr "Кінець"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "End this session"
@@ -787,9 +796,10 @@ msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Misc"
 msgstr "Різне"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Summary"
-msgstr ""
+msgstr "Підсумок"
 
 msgctxt "view:gnuhealth.patient.ambulatory_care:"
 msgid "Vital Signs"
@@ -815,9 +825,10 @@ msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Main"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Other"
-msgstr ""
+msgstr "Інший"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Procedures"
@@ -831,9 +842,10 @@ msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Six P's"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Vital Signs"
