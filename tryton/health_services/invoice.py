@@ -26,23 +26,26 @@ class Invoice(metaclass=PoolMeta):
 
     def get_patient(self, name):
         try:
-            return self.lines[0].origin.name.patient.id
+            return self.lines[0].origin.service.patient.id
         except BaseException:
             return None
 
     def get_health_service(self, name):
         try:
-            return self.lines[0].origin.name.id
+            return self.lines[0].origin.service.id
         except BaseException:
             return None
 
     @classmethod
     def search_health_service(cls, name, clause):
-        return [
-            ('lines.origin.name.id',
-             clause[1],
-             clause[2],
-             'gnuhealth.health_service.line')]
+        try:
+            return [
+                ('lines.origin.service.id',
+                 clause[1],
+                 clause[2],
+                 'gnuhealth.health_service.line')]
+        except BaseException:
+            return None
 
 
 class InvoiceLine(metaclass=PoolMeta):
