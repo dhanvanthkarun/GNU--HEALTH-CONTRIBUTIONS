@@ -7,4 +7,4 @@ steps:
     image: gnuhealth/linter:1.0.1
     commands:
       - bash scripts/lint.sh
-      # - bash scripts/security.sh
+      - bash scripts/security.sh
