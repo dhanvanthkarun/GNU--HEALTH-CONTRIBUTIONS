@@ -1431,7 +1431,7 @@ class HealthInstitution(ModelSQL, ModelView):
         domain=[('is_institution', '=', True)],
         help='Party Associated to this Health Institution',
         required=True,
-        states={'readonly': Bool(Eval('name'))})
+        states={'readonly': Bool(Eval('party'))})
 
     code = fields.Char('Code', required=True,
                        help="Institution code")
