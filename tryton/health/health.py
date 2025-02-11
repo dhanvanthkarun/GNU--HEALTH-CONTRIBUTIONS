@@ -3185,7 +3185,7 @@ class PatientData(ModelSQL, ModelView):
 
     current_insurance = fields.Many2One(
         'gnuhealth.insurance', 'Insurance',
-        domain=[('name', '=', Eval('party'))],
+        domain=[('party', '=', Eval('party'))],
         depends=['party'],
         help='Insurance information. You may choose from the different'
         ' insurances belonging to the patient')
