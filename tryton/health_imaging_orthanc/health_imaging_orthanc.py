@@ -630,7 +630,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             raise UserError(
                 str(exception),
                 description="Failed to update studies, "
-                "pleasecheck the Orthanc server")
+                "please check the Orthanc server")
 
 
 class StudySeries(ModelSQL, ModelView):
