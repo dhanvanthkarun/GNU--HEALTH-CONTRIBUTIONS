@@ -115,7 +115,7 @@ Patient Orthanc Study
     
     - ``__setup__()``: Sets up the class with additional buttons for deleting a study and selecting a viewer.
 
-    - ``get_gnu_patient()``: Retrieves the GNU patient with the given name.
+    - ``get_gnuhealth_patient()``: Retrieves the GNU patient with the given name.
 
     - ``get_ohif_viewer_link()``: Generates a URL for the OHIF viewer and study.
    

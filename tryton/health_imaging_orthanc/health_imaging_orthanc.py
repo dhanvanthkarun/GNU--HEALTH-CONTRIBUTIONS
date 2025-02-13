@@ -126,9 +126,9 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             help="Link to Orthanc Stone Viewer"),
         "get_stone_viewer_link")
 
-    gnu_patient_name = fields.Function(
+    gnuhealth_patient_name = fields.Function(
         fields.Char('Health Patient'),
-        "get_gnu_patient")
+        "get_gnuhealth_patient")
 
     notes = fields.Text(
         "Study notes",
@@ -155,7 +155,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
         cls._order.insert(0, ('patient_name', 'ASC'))
 
-    def get_gnu_patient(self, name):
+    def get_gnuhealth_patient(self, name):
         """
         Retrieves the GNU patient with the given name.
 
