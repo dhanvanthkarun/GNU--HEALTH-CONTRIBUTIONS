@@ -1431,7 +1431,7 @@ class HealthInstitution(ModelSQL, ModelView):
         domain=[('is_institution', '=', True)],
         help='Party Associated to this Health Institution',
         required=True,
-        states={'readonly': Bool(Eval('name'))})
+        states={'readonly': Bool(Eval('party'))})
 
     code = fields.Char('Code', required=True,
                        help="Institution code")
@@ -3185,7 +3185,7 @@ class PatientData(ModelSQL, ModelView):
 
     current_insurance = fields.Many2One(
         'gnuhealth.insurance', 'Insurance',
-        domain=[('name', '=', Eval('party'))],
+        domain=[('party', '=', Eval('party'))],
         depends=['party'],
         help='Insurance information. You may choose from the different'
         ' insurances belonging to the patient')

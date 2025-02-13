@@ -3,8 +3,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 steps:
-  test:
+  - name: test
     image: gnuhealth/linter:1.0.1
     commands:
       - bash scripts/lint.sh
-      # - bash scripts/security.sh
+      - bash scripts/security.sh
+    when:
+      - event: [push, pull_request, cron, manual]
