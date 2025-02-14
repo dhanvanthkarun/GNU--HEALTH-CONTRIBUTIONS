@@ -51,6 +51,7 @@ logger = logging.getLogger(__name__)
 # gnuhealth, or let org root string configable.
 gnuhealth_org_root = '1.2.836.0.1.3240043.7.198.'
 
+
 class OrthancServerConfig(ModelSQL, ModelView):
     """Orthanc server details"""
 
@@ -1018,6 +1019,7 @@ class OrthancStudy(ModelSQL, ModelView):
 
         cls.create(entries)
 
+
 class TestResult(metaclass=PoolMeta):
     __name__ = "gnuhealth.imaging.test.result"
 
@@ -1041,35 +1043,6 @@ class TestResult(metaclass=PoolMeta):
         "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies",
         readonly=True
     )
-
-    merge_id = fields.Char("Merge ID")
-
-    @classmethod
-    def create(cls, vlist):
-        Request = Pool().get('gnuhealth.imaging.test.request')
-        vlist = [x.copy() for x in vlist]
-
-        for values in vlist:
-            request = Request.search(
-                [("id", "=", values['request'])], limit=1)[0]
-
-            if request:
-                values['merge_id'] = request.merge_id or ''
-
-            studies = cls.find_orthanc_studies(request)
-
-            if studies:
-                values['studies'] = [('add', [x.id for x in studies])]
-
-        return super(TestResult, cls).create(vlist)
-
-    @classmethod
-    def find_orthanc_studies(cls, request):
-        if request and len(request.merge_id) > 0:
-            Study = Pool().get('gnuhealth.orthanc.study')
-            studies = Study.search(
-                [("merge_id", "=", request.merge_id)])
-            return studies
 
 
 class Patient(metaclass=PoolMeta):
