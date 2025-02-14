@@ -37,6 +37,7 @@ __all__ = [
     "WorklistTemplate",
     "ImagingTestRequest",
     "ImagingTest",
+    "TestResult",
 ]
 
 logger = logging.getLogger(__name__)
@@ -409,3 +410,23 @@ class ImagingTest(metaclass=PoolMeta):
     worklist_template = fields.Many2One(
         "gnuhealth.imaging_worklist.worklist_template", "Worklist template"
     )
+
+
+class TestResult(metaclass=PoolMeta):
+    __name__ = "gnuhealth.imaging.test.result"
+
+    merge_id = fields.Char("Merge ID")
+
+    @classmethod
+    def create(cls, vlist):
+        Request = Pool().get('gnuhealth.imaging.test.request')
+        vlist = [x.copy() for x in vlist]
+
+        for values in vlist:
+            request = Request.search(
+                [("id", "=", values['request'])], limit=1)[0]
+
+            if request:
+                values['merge_id'] = request.merge_id or ''
+
+        return super(TestResult, cls).create(vlist)

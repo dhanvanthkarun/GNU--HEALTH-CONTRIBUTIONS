@@ -30,6 +30,7 @@ def register():
         health_imaging_worklist.WorklistTemplate,
         health_imaging_worklist.ImagingTestRequest,
         health_imaging_worklist.ImagingTest,
+        health_imaging_worklist.TestResult,
         module="health_imaging_worklist",
         type_="model",
     )
