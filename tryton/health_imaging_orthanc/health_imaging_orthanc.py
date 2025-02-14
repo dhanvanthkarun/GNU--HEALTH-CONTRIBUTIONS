@@ -19,6 +19,13 @@ from trytond.exceptions import UserError
 from pyorthanc import Orthanc
 from lxml import etree
 
+try:
+    from trytond.modules.health_imaging_worklist.health_imaging_worklist \
+        import gnuhealth_org_root
+except ImportError:
+    gnuhealth_org_root = None
+
+
 __all__ = [
     'PatientData',
     'TestResult',
@@ -67,8 +74,33 @@ class TestResult(metaclass=PoolMeta):
     orthanc_studies = fields.One2Many(
         "gnuhealth.imaging_orthanc.study",
         "imaging_test", "Orthanc studies",
-        readonly=True
-    )
+        readonly=True)
+
+    @classmethod
+    def create(cls, vlist):
+        Request = Pool().get('gnuhealth.imaging.test.request')
+        vlist = [x.copy() for x in vlist]
+
+        for values in vlist:
+            request = Request.search(
+                [("id", "=", values['request'])], limit=1)[0]
+
+            studies = cls.find_orthanc_studies(request)
+
+            if studies:
+                values['orthanc_studies'] = [('add', [x.id for x in studies])]
+
+        return super(TestResult, cls).create(vlist)
+
+    @classmethod
+    def find_orthanc_studies(cls, request):
+        if (request and getattr(request, 'merge_id', None)
+                and len(request.merge_id) > 0):
+            Study = Pool().get('gnuhealth.imaging_orthanc.study')
+            studies = Study.search(
+                [("merge_id", "=", request.merge_id)])
+            return studies
+
 
 #
 # The image study data. One patient can have multiple studies.
@@ -104,6 +136,11 @@ class PatientOrthancStudy(ModelSQL, ModelView):
     orthanc_UID = fields.Char(
         'Orthanc UID',
         readonly=True, required=True)
+
+    merge_id = fields.Char(
+        "Merge ID", readonly=True,
+        help="Test result merge id, with it help, "
+        "gnuhealth test result and orthanc study can be merged.")
 
     institution = fields.Char('Institution', readonly=True)
     performing_physician_name = fields.Char('Physician', readonly=True)
@@ -351,12 +388,50 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     if 'ReferringPhysicianName' else "")
 
                 study_values['server'] = server
+
+                study_values['merge_id'] = cls.get_merge_id(
+                    orthanc_study, server)
+
+                result = cls.find_test_result(study_values)
+                if result:
+                    study_values["imaging_test"] = result.id
+                    study_values["patient"] = \
+                        result.patient and result.patient.id
+
                 Study.create([study_values])
             else:
                 # DICOM studies are immutable. Only the internal Orthanc ID can
                 # change.
                 study_values['orthanc_UID'] = orthanc_study['ID']
                 Study.write(gh_study, study_values)
+
+    @classmethod
+    def get_merge_id(cls, orthanc_study, server):
+        prefix = gnuhealth_org_root
+        dicom_tags = orthanc_study['MainDicomTags']
+
+        if not prefix:
+            return None
+
+        # In most situations, we use 'StudyInstanceUID' to store merge
+        # id.
+        if (dicom_tags['StudyInstanceUID'] or '').startswith(prefix):
+            return dicom_tags['StudyInstanceUID']
+
+        # XXX: for imaging workstation's bugs, sometimes, we use other
+        # study tags instead of 'StudyInstanceUID' to store merge id.
+        for (k, v) in dicom_tags.items():
+            if isinstance(v, str) and v.startswith(prefix):
+                return v
+
+    @classmethod
+    def find_test_result(cls, entry):
+        if entry and entry["merge_id"] and len(entry["merge_id"]) > 0:
+            Result = Pool().get('gnuhealth.imaging.test.result')
+            result = Result.search(
+                [("merge_id", "=", entry["merge_id"])],
+                limit=1)
+            return (result and result[0])
 
     @classmethod
     def create_or_update_series_from_orthanc(
@@ -505,6 +580,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                         s for s in gh_studies
                         if s.study_instance_UID == dicom_tags['StudyInstanceUID']  # noqa E501
                         and s.server == server.domain]
+
                     if len(gh_study) == 0:
                         dicom_tags = orthanc_study['MainDicomTags']
 
@@ -540,6 +616,16 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                             if 'ReferringPhysicianName' else "")
 
                         study_values['server'] = server.domain
+
+                        study_values['merge_id'] = cls.get_merge_id(
+                            orthanc_study, server)
+
+                        result = cls.find_test_result(study_values)
+                        if result:
+                            study_values["imaging_test"] = result.id
+                            study_values["patient"] = \
+                                result.patient and result.patient.id
+
                         logger.error("Creating study")
                         gh_study = Study.create([study_values])
                     gh_study = gh_study[0]
