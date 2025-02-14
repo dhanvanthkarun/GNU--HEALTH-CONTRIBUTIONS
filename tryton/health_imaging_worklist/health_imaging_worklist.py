@@ -164,11 +164,22 @@ class ImagingTestRequest(metaclass=PoolMeta):
         # as StudyInstanceUID.
         return generate_uid(gnuhealth_org_root)
 
-    show_worklist_text = fields.Boolean('Worklist')
+    show_worklist_text = fields.Boolean('Worklist Preview')
 
     @staticmethod
     def default_show_worklist_text():
         return False
+
+    worklist_status = fields.Selection([
+        ('todo', 'Todo'),
+        ('done', 'Done'),
+        ('canceled', 'Canceled'),
+    ], 'Worklist Status', sort=False,
+        help="Worklist processing status.")
+
+    @staticmethod
+    def default_worklist_status():
+        return 'todo'
 
     worklist_text = fields.Function(
         fields.Text("Worklist text",
