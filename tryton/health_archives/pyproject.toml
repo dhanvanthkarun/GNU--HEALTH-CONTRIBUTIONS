@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-archives"
-version = "5.0.0a2"
+version = "5.0.0a3"
 description = "GNU Health Hospital Information System. Package to support legacy and paper based archives"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -51,4 +51,9 @@ classifiers=[
 
 packages = [
     { include = '*', to='trytond/modules/health_archives' },
+]
+
+
+exclude = [
+    "dist"
 ]
