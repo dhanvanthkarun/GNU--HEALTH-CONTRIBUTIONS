@@ -1,44 +1,54 @@
-# SPDX-FileCopyrightText: 2011-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2011 Cédric Krier <cedric.krier@b2ck.com>
+# SPDX-FileCopyrightText: 2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-archives"
-version = "5.0.0a1"
-description = "GNU Health HIS: Hospital and Health Information System"
-requires-python = ">=3.10,<3.13"
+version = "5.0.0a2"
+description = "GNU Health Hospital Information System. Package to support legacy and paper based archives"
+license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
+keywords = ["health", "hospital", "HIS", "eHealth", "gnuhealth"]
+requires-python = ">=3.10,<3.14"
 authors = [
     {name = "GNU Solidario", email = "info@gnusolidario.org"},
 ]
+
+dynamic = [ "classifiers" ]
+
+maintainers = [
+    { name = "Luis Falcon", email = "falcon@gnuhealth.org" },
+    { name = "Gerald Wiese", email = "wiese@gnuhealth.org" },
+]
+
+dependencies = [
+    'gnuhealth==5.0.0a1'
+]
+
+[project.urls]
+homepage = "https://www.gnuhealth.org"
+repository = "https://codeberg.org/gnuhealth/his"
+documentation = "https://docs.gnuhealth.org"
+"Bug Tracker" = "https://codeberg.org/gnuhealth/his/issues"
+
+[tool.poetry]
 classifiers=[
     'Development Status :: 5 - Production/Stable',
     'Environment :: Plugins',
     'Framework :: Tryton',
     'Intended Audience :: Developers',
     'Intended Audience :: Healthcare Industry',
-    'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
     'Natural Language :: English',
     'Operating System :: OS Independent',
     'Programming Language :: Python :: 3',
     'Topic :: Scientific/Engineering :: Bio-Informatics',
     'Topic :: Scientific/Engineering :: Medical Science Apps.',
 ]
-dependencies = [
-    # "gnuhealth>=5.0,<5.1"
-]
 
-[tool.setuptools]
 packages = [
-    'trytond.modules.health_archives',
-    'trytond.modules.health_archives.tests',
+    { include = '*', to='trytond/modules/health_archives' },
 ]
-package-dir = { 'trytond.modules.health_archives' = '.' }
-package-data = { 'trytond.modules.health_archives' = ['view/*.xml', '*.xml', 'locale/*.po', 'icons/*.svg', 'tryton.cfg'] }
-include-package-data = false
