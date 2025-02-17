@@ -432,10 +432,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
     @classmethod
     def find_test_result(cls, entry):
-        if entry and entry["merge_id"] and len(entry["merge_id"]) > 0:
+        if entry and entry.get("merge_id") and len(entry.get("merge_id")) > 0:
             Result = Pool().get('gnuhealth.imaging.test.result')
             result = Result.search(
-                [("merge_id", "=", entry["merge_id"])],
+                [("merge_id", "=", entry.get("merge_id"))],
                 limit=1)
             return (result and result[0])
 
@@ -452,10 +452,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
     @classmethod
     def update_imaging_test_request(cls, entry):
-        if entry and entry["merge_id"] and len(entry["merge_id"]) > 0:
+        if entry and entry.get("merge_id") and len(entry.get("merge_id")) > 0:
             Request = Pool().get('gnuhealth.imaging.test.request')
             request = Request.search(
-                [("merge_id", "=", entry["merge_id"])],
+                [("merge_id", "=", entry.get("merge_id"))],
                 limit=1)
             # If we fetch studies from orthanc successfully, we will
             # set worklist_status field of request to done, with the
@@ -665,7 +665,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                         logger.error("Creating study")
                         gh_study = Study.create([study_values])
 
-                    cls.update_imaging_test_request(study_values)
+                        cls.update_imaging_test_request(study_values)
 
                     gh_study = gh_study[0]
 
