@@ -37,6 +37,13 @@ from requests.exceptions import HTTPError, RequestException
 import logging
 import pendulum
 
+try:
+    from trytond.modules.health_imaging_worklist.health_imaging_worklist \
+        import gnuhealth_org_root
+except ImportError:
+    gnuhealth_org_root = None
+
+
 __all__ = [
     "OrthancServerConfig",
     "OrthancPatient",
@@ -46,10 +53,6 @@ __all__ = [
 ]
 
 logger = logging.getLogger(__name__)
-
-# XXX: Maybe we should find a better org root string for
-# gnuhealth, or let org root string configable.
-gnuhealth_org_root = '1.2.836.0.1.3240043.7.198.'
 
 
 class OrthancServerConfig(ModelSQL, ModelView):
