@@ -11,7 +11,7 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                     HEALTH_IMAGING_WORKLIST package                            #
+#                     HEALTH_IMAGING_WORKLIST package                   #
 #                   setup.py: Setuptools file                           #
 #########################################################################
 from setuptools import setup
