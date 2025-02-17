@@ -383,7 +383,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
     disease_gene = fields.Many2One('gnuhealth.gene',
                                    'Gene', required=True)
     natural_variant = fields.Many2One('gnuhealth.gene.variant', 'Variant',
-                                      domain=[('name', '=',
+                                      domain=[('gene', '=',
                                               Eval('disease_gene'))],
                                       depends=['disease_gene'])
 
