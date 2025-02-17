@@ -397,6 +397,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     study_values["imaging_test"] = result.id
                     study_values["patient"] = \
                         result.patient and result.patient.id
+                else:
+                    study_values['patient'] = \
+                        cls.find_gnuhealth_patient(
+                            study_values['patient_id'])
 
                 Study.create([study_values])
             else:
@@ -432,6 +436,17 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 [("merge_id", "=", entry["merge_id"])],
                 limit=1)
             return (result and result[0])
+
+    @classmethod
+    def find_gnuhealth_patient(cls, patient_id):
+        # The length of PUID is 9, see generate_puid method in
+        # gnuhealth.py
+        if patient_id and len(patient_id) >= 9:
+            Patient = Pool().get('gnuhealth.patient')
+            patient = Patient.search(
+                [("puid", "=", patient_id)],
+                limit=1)
+            return (patient and patient[0])
 
     @classmethod
     def create_or_update_series_from_orthanc(
@@ -625,6 +640,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                             study_values["imaging_test"] = result.id
                             study_values["patient"] = \
                                 result.patient and result.patient.id
+                        else:
+                            study_values['patient'] = \
+                                cls.find_gnuhealth_patient(
+                                    study_values['patient_id'])
 
                         logger.error("Creating study")
                         gh_study = Study.create([study_values])
