@@ -8,37 +8,29 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                       HEALTH ORTHANC package                          #
+#                       HEALTH IMAGING WORKLIST package                 #
 #                  __init__.py: Package declaration file                #
 #########################################################################
 
 """
-Initialization module for the ``health_orthanc`` module.
+Initialization module for the ``health_imaging_worklist`` module.
 
 This module registers the necessary classes and methods of the
-``health_orthanc`` module and its wizard in the Tryton pool.
+``health_imaging_worklist`` module and its wizard in the Tryton pool.
 This allows other modules to access the functionalities provided by
-the ``health_orthanc`` module.
+the ``health_imaging_worklist`` module.
 """
 
 from trytond.pool import Pool
-from . import health_orthanc
-from . import wizard
-from . import ir
+from . import health_imaging_worklist
 
 
 def register():
     Pool.register(
-        wizard.wizard.AddOrthancInit,
-        wizard.wizard.AddOrthancResult,
-        health_orthanc.OrthancServerConfig,
-        health_orthanc.OrthancStudy,
-        health_orthanc.OrthancPatient,
-        health_orthanc.TestResult,
-        health_orthanc.Patient,
-        ir.Cron,
-        module="health_orthanc",
+        health_imaging_worklist.WorklistTemplate,
+        health_imaging_worklist.ImagingTestRequest,
+        health_imaging_worklist.ImagingTest,
+        health_imaging_worklist.TestResult,
+        module="health_imaging_worklist",
         type_="model",
     )
-    Pool.register(
-        wizard.wizard.FullSyncOrthanc, module="health_orthanc", type_="wizard")

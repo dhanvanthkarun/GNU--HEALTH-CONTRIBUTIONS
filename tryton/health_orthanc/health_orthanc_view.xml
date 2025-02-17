@@ -28,13 +28,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">study_form</field>
         </record>
 
-        <!-- Add Worklist_template to Imaging Test Form -->
-        <record model="ir.ui.view" id="view_imaging_test_form_orthanc">
-            <field name="model">gnuhealth.imaging.test</field>
-            <field name="inherit" ref="health_imaging.view_imaging_test_form"/>
-            <field name="name">imaging_test_form</field>
-        </record>
-
         <!-- Add Studies to Imaging Result Form -->
         <record model="ir.ui.view" id="imaging_study_view_orthanc">
             <field name="model">gnuhealth.imaging.test.result</field>
@@ -80,39 +73,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <menuitem name="Servers" sequence="20" parent="orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_server_menu" icon="gnuhealth-list"/>
-
-        <!-- Orthanc worklist template  -->
-        <record model="ir.ui.view" id="orthanc_view_worklist_template_tree">
-            <field name="model">gnuhealth.orthanc.worklist.template</field>
-            <field name="type">tree</field>
-            <field name="name">worklist_template_tree</field>
-        </record>
-
-        <record model="ir.ui.view" id="orthanc_view_worklist_template_form">
-            <field name="model">gnuhealth.orthanc.worklist.template</field>
-            <field name="type">form</field>
-            <field name="name">worklist_template_form</field>
-        </record>
-
-        <!-- Orthanc worklist template menu -->
-        <record model="ir.action.act_window" id="act_orthanc_worklist_template_view">
-            <field name="name">Worklist templates</field>
-            <field name="res_model">gnuhealth.orthanc.worklist.template</field>
-        </record>
-
-        <menuitem name="Worklist templates"
-                  icon="gnuhealth-list"
-                  sequence="80"
-                  parent="health_imaging.menu_imaging_test_parent"
-                  action="act_orthanc_worklist_template_view" 
-                  id="orthanc_worklist_template_menu"/>
-
-        <!-- Add Orthanc worklist to Test Request Form  -->
-       <record model="ir.ui.view" id="view_imaging_test_request_worklist_form">
-           <field name="model">gnuhealth.imaging.test.request</field>
-           <field name="inherit" ref="health_imaging.view_imaging_test_request_form"/>
-           <field name="name">imaging_test_request_form</field>
-        </record>
 
         <!-- Orthanc Menu -->
         <menuitem name="Orthanc" sequence="0" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
