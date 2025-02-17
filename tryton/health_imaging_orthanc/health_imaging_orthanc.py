@@ -409,6 +409,8 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 study_values['orthanc_UID'] = orthanc_study['ID']
                 Study.write(gh_study, study_values)
 
+            cls.update_imaging_test_request(study_values)
+
     @classmethod
     def get_merge_id(cls, orthanc_study, server):
         prefix = gnuhealth_org_root
@@ -447,6 +449,21 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 [("puid", "=", patient_id)],
                 limit=1)
             return (patient and patient[0])
+
+    @classmethod
+    def update_imaging_test_request(cls, entry):
+        if entry and entry["merge_id"] and len(entry["merge_id"]) > 0:
+            Request = Pool().get('gnuhealth.imaging.test.request')
+            request = Request.search(
+                [("merge_id", "=", entry["merge_id"])],
+                limit=1)
+            # If we fetch studies from orthanc successfully, we will
+            # set worklist_status field of request to done, with the
+            # help of this field, we can control worklist process or
+            # not in worklist server.
+            if len(request) > 0 and getattr(
+                    request[0], 'worklist_status', None):
+                Request.write(request, {'worklist_status': 'done'})
 
     @classmethod
     def create_or_update_series_from_orthanc(
@@ -647,6 +664,9 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
                         logger.error("Creating study")
                         gh_study = Study.create([study_values])
+
+                    cls.update_imaging_test_request(study_values)
+
                     gh_study = gh_study[0]
 
                     orthanc_seriesIDs = orthanc_study['Series']
