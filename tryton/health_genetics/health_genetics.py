@@ -348,7 +348,7 @@ class GeneVariantPhenotype(ModelSQL, ModelView):
     def search_gene(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('variant.name', clause[1], value))
+        res.append(('variant.gene', clause[1], value))
         return res
 
     # Allow to search by gene, variant or phenotype
