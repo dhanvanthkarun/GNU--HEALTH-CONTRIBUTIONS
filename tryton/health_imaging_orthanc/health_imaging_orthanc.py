@@ -65,7 +65,8 @@ class PatientData (metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
     orthanc_studies = fields.One2Many(
-        'gnuhealth.imaging_orthanc.study', 'patient', 'Study')
+        'gnuhealth.imaging_orthanc.study',
+        'patient', 'Orthanc Study')
 
 
 class TestResult(metaclass=PoolMeta):
