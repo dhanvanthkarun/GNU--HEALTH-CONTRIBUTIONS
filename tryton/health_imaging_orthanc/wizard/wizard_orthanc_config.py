@@ -28,6 +28,12 @@ class AddOrthancInitData(ModelView):
         "URL", required=True,
         help="The full URL of the Orthanc server. Must be unique"
     )
+    
+    proxy_domain = fields.Char(
+        "Proxy URL", required=False,
+        help="Optional Proxy URL of the Orthanc server. It's only needed when the client cannot connect directly to the Orthanc server."
+    )
+    
     user = fields.Char(
         "Username", required=True,
         help="Username for Orthanc REST server"
@@ -87,6 +93,7 @@ class ConnectNewOrthancServer(Wizard):
                 new_server = {
                     "label": self.start.label,
                     "domain": self.start.domain,
+                    "proxy_domain": self.start.proxy_domain,
                     "user": self.start.user,
                     "password": self.start.password,
                 }

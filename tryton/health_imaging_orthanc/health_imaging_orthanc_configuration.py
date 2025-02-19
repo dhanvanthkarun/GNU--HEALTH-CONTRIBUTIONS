@@ -48,6 +48,18 @@ class ServerConfig(ModelSQL, ModelView):
         required=True,
         readonly=True,
         help="The full URL of the Orthanc server")
+    
+    proxy_domain = fields.Char(
+        "Proxy URL",
+        required=False,
+        readonly=True,
+        help="The proxy URL of the Orthanc server")
+    
+    link_base_url = fields.Function(
+        fields.Char(
+            "Link Base URL",
+            help="Base URL for links"),
+        "get_link_base_url")
 
     user = fields.Char(
         "Username",
@@ -67,7 +79,7 @@ class ServerConfig(ModelSQL, ModelView):
     link = fields.Function(
         fields.Char(
             "Link",
-            help="Link to server in Orthanc Explorer"),
+            help="Link to Orthanc Explorer"),
         "get_link")
 
     last_changed_index = fields.Integer(
@@ -81,13 +93,21 @@ class ServerConfig(ModelSQL, ModelView):
         Class method to return the default last changed index.
         """
         return -1
-
+    
+    def get_link_base_url(self, name):
+        """
+        Get the base URL for links shown in the client
+        """
+        url = self.proxy_domain
+        if url is None or url.strip() == "":
+            url = self.domain
+        return "".join([url.strip().rstrip("/"), "/"])
+    
     def get_link(self, name):
-        """Get the full link"""
-
-        pre = "".join([self.domain.rstrip("/"), "/"])
-        add = "app/explorer.html"
-        return urljoin(pre, add)
+        """
+        Get the full explorer link
+        """
+        return urljoin(self.link_base_url, "app/explorer.html")
 
     @classmethod
     def __setup__(cls):

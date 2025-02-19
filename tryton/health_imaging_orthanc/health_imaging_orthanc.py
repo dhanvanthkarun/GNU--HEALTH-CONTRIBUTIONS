@@ -151,7 +151,13 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         'study', 'Study Series')
 
     server = fields.Char('Orthanc Server', readonly=True, required=True)
-
+    
+    link_base_url = fields.Function(
+        fields.Char(
+            "Link Base URL",
+            help="Base URL for links"),
+        "get_link_base_url")
+    
     ohif_viewer_link = fields.Function(
         fields.Char(
             "OHIF Viewer",
@@ -196,10 +202,6 @@ class PatientOrthancStudy(ModelSQL, ModelView):
     def get_gnuhealth_patient(self, name):
         """
         Retrieves the GNU patient with the given name.
-
-        Parameters:
-            name (str): The name of the patient to retrieve.
-
         Returns:
             str or None: The name of the patient if found, None otherwise.
         """
@@ -207,15 +209,24 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             return None
         else:
             return self.patient.rec_name
+        
+    def get_link_base_url(self, name):
+        pool = Pool()
+        Config = pool.get('gnuhealth.radiology.orthanc_server_config')        
+        server_configs = Config.search([('domain', '=', self.server)])
+        if len(server_configs) == 0:
+            return self.server
+        else:
+            return server_configs[0].link_base_url
 
     def get_ohif_viewer_link(self, name):
         """
         Get the link for the OHIF viewer and study, based on the server,
-        study_instance_UID.
+        study_instance_UID, and orthanc_UID.
         """
-        pre = "".join([self.server.rstrip("/"), "/"])
-        url = urljoin(pre, (
-            'ohif/viewer?StudyInstanceUIDs=' + f'{self.study_instance_UID}'))
+        url = urljoin(self.link_base_url, (
+            'ohif/viewer?' +
+            f'StudyInstanceUIDs={self.study_instance_UID}'))
         return url
 
     def get_stone_viewer_link(self, name):
@@ -223,8 +234,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         Get the link for the stone viewer and study, based on the
         server and study instance UID.
         """
-        pre = "".join([self.server.rstrip("/"), "/"])
-        url = urljoin(pre, (
+        url = urljoin(self.link_base_url, (
             'stone-webviewer/index.html?' +
             f'study={self.study_instance_UID}'))
         return url
@@ -821,9 +831,7 @@ class StudySeries(ModelSQL, ModelView):
         """
         # https://orthanc.uclouvain.be/demo/stone-webviewer/index.html?study=1.2.840.113745.101000.1008000.38179.6792.6324567&series=1.3.12.2.1107.5.1.4.36085.2.0.517109821292363
 
-        pre = "".join([self.server.rstrip("/"), "/"])
-
-        url = urljoin(pre, (
+        url = urljoin(self.study.link_base_url, (
             'stone-webviewer/index.html?' +
             f'study={self.study.study_instance_UID}' +
             f'&series={self.series_UID}'))
