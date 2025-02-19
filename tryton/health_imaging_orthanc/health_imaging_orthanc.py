@@ -149,7 +149,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         'gnuhealth.imaging_orthanc.study_series',
         'study', 'Study Series')
 
-    server = fields.Char('Server', readonly=True, required=True)
+    server = fields.Char('Orthanc Server', readonly=True, required=True)
 
     ohif_viewer_link = fields.Function(
         fields.Char(
