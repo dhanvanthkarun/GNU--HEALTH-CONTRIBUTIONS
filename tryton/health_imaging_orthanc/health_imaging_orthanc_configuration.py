@@ -30,6 +30,8 @@ logger = logging.getLogger(__name__)
 
 class ServerConfig(ModelSQL, ModelView):
     """
+    Orthanc Server Config
+
     This class is used to connect to an Orthanc DICOM server and
     to check if a connection to the corresponding domain can be established.
     """
