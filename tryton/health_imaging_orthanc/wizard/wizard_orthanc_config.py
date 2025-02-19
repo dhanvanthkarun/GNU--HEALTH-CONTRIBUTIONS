@@ -28,12 +28,12 @@ class AddOrthancInitData(ModelView):
         "URL", required=True,
         help="The full URL of the Orthanc server. Must be unique"
     )
-    
+
     proxy_domain = fields.Char(
         "Proxy URL", required=False,
         help="Optional Proxy URL of the Orthanc server. It's only needed when the client cannot connect directly to the Orthanc server."
     )
-    
+
     user = fields.Char(
         "Username", required=True,
         help="Username for Orthanc REST server"

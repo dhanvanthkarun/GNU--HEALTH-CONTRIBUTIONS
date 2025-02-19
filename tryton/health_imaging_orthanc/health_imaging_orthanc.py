@@ -151,13 +151,13 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         'study', 'Study Series')
 
     server = fields.Char('Orthanc Server', readonly=True, required=True)
-    
+
     link_base_url = fields.Function(
         fields.Char(
             "Link Base URL",
             help="Base URL for links"),
         "get_link_base_url")
-    
+
     ohif_viewer_link = fields.Function(
         fields.Char(
             "OHIF Viewer",
@@ -209,10 +209,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             return None
         else:
             return self.patient.rec_name
-        
+
     def get_link_base_url(self, name):
         pool = Pool()
-        Config = pool.get('gnuhealth.radiology.orthanc_server_config')        
+        Config = pool.get('gnuhealth.radiology.orthanc_server_config')
         server_configs = Config.search([('domain', '=', self.server)])
         if len(server_configs) == 0:
             return self.server
