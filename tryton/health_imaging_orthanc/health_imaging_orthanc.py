@@ -215,7 +215,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
     def get_link_base_url(self, name):
         pool = Pool()
-        Config = pool.get('gnuhealth.radiology.orthanc_server_config')
+        Config = pool.get('gnuhealth.imaging_orthanc.server_config')
         server_configs = Config.search([('domain', '=', self.server)])
         if len(server_configs) == 0:
             return self.server
