@@ -107,7 +107,8 @@ class ServerConfig(ModelSQL, ModelView):
         """
         Get the full explorer link
         """
-        return urljoin(self.link_base_url, "app/explorer.html")
+        # return urljoin(self.link_base_url, "app/explorer.html")
+        return urljoin(self.link_base_url, "")
 
     @classmethod
     def __setup__(cls):
