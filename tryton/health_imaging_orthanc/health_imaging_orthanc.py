@@ -569,7 +569,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     instance_values['instance_number'] = 0
 
                 instance_values['image_position_patient'] = (
-                    dicom_tags['ImagePositionPatient']
+                    dicom_tags['ImagePositionPatient'].replace("\\", ", ")
                     if 'ImagePositionPatient' in dicom_tags else "")
 
                 gh_series = Series.search(
@@ -752,7 +752,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                                 else:
                                     instance_values['instance_number'] = 0
                                 instance_values['image_position_patient'] = (
-                                    instance_main_dicomTags['ImagePositionPatient']   # noqa E501
+                                    instance_main_dicomTags['ImagePositionPatient'].replace("\\", ", ")   # noqa E501
                                     if 'ImagePositionPatient' in instance_main_dicomTags  # noqa E501
                                     else "")
                                 instance_values_to_create.append(
