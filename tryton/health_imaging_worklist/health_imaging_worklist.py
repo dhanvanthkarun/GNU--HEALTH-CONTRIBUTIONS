@@ -211,13 +211,15 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return value
 
     def get_worklist_template(self):
-        template = (self.requested_test.worklist_template and
-                    self.requested_test.worklist_template.template)
+        template = (
+            self.requested_test.imaging_worklist_template and
+            self.requested_test.imaging_worklist_template.template)
         return template
 
     def get_worklist_template_type(self):
-        template_type = (self.requested_test.worklist_template and
-                         self.requested_test.worklist_template.template_type)
+        template_type = (
+            self.requested_test.imaging_worklist_template and
+            self.requested_test.imaging_worklist_template.template_type)
         return template_type
 
     def get_worklist_template_data(self):
@@ -258,8 +260,9 @@ class ImagingTestRequest(metaclass=PoolMeta):
         return data
 
     def getDicomSpecificCharacterSet(self):
-        charset = (self.requested_test.worklist_template and
-                   self.requested_test.worklist_template.charset)
+        charset = (
+            self.requested_test.imaging_worklist_template and
+            self.requested_test.imaging_worklist_template.charset)
         return charset
 
     def getDicomAccessionNumber(self):
