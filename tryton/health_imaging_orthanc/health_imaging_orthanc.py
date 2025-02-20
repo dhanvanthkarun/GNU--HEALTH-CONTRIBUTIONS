@@ -569,8 +569,9 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                     instance_values['instance_number'] = 0
 
                 instance_values['image_position_patient'] = (
-                    dicom_tags['ImagePositionPatient'].replace("\\", ", ")
-                    if 'ImagePositionPatient' in dicom_tags else "")
+                    dicom_tags['ImagePositionPatient']
+                    if 'ImagePositionPatient' in dicom_tags
+                    else "").replace("\\", ", ")
 
                 gh_series = Series.search(
                     [('orthanc_UID', '=', orthanc_instance['ParentSeries']),
@@ -622,9 +623,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 for orthanc_study in orthanc_studies:
                     # Create study in gnuhealth if it does not exist
                     dicom_tags = orthanc_study['MainDicomTags']
+                    iuid = dicom_tags['StudyInstanceUID']
                     gh_study = [
                         s for s in gh_studies
-                        if s.study_instance_UID == dicom_tags['StudyInstanceUID']  # noqa E501
+                        if s.study_instance_UID == iuid
                         and s.server == server.domain]
 
                     if len(gh_study) == 0:
@@ -744,17 +746,18 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                                 instance_values['orthanc_UID'] = \
                                     orthanc_instance['ID']
 
-                                if ('InstanceNumber' in instance_main_dicomTags
-                                    and instance_main_dicomTags['InstanceNumber'] != ''  # noqa E501
-                                    and instance_main_dicomTags['InstanceNumber'] is not None):  # noqa E501
+                                itags = instance_main_dicomTags
+                                if ('InstanceNumber' in itags and
+                                    itags['InstanceNumber'] != '' and
+                                        itags['InstanceNumber'] is not None):
                                     instance_values['instance_number'] = int(
-                                        float(instance_main_dicomTags['InstanceNumber']))  # noqa E501
+                                        float(itags['InstanceNumber']))
                                 else:
                                     instance_values['instance_number'] = 0
                                 instance_values['image_position_patient'] = (
-                                    instance_main_dicomTags['ImagePositionPatient'].replace("\\", ", ")   # noqa E501
-                                    if 'ImagePositionPatient' in instance_main_dicomTags  # noqa E501
-                                    else "")
+                                    itags['ImagePositionPatient']
+                                    if 'ImagePositionPatient' in itags
+                                    else "").replace("\\", ", ")
                                 instance_values_to_create.append(
                                     instance_values)
                         logger.error(
