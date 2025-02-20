@@ -18,6 +18,10 @@ msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,password:"
 msgid "Password"
 msgstr ""
 
+msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,proxy_domain:"
+msgid "Proxy URL"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,user:"
 msgid "Username"
 msgstr ""
@@ -67,8 +71,16 @@ msgctxt "field:gnuhealth.imaging_orthanc.server_config,link:"
 msgid "Link"
 msgstr ""
 
+msgctxt "field:gnuhealth.imaging_orthanc.server_config,link_base_url:"
+msgid "Link Base URL"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging_orthanc.server_config,password:"
 msgid "Password"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging_orthanc.server_config,proxy_domain:"
+msgid "Proxy URL"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.server_config,user:"
@@ -94,6 +106,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,institution:"
 msgid "Institution"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,link_base_url:"
+msgid "Link Base URL"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,merge_id:"
@@ -133,7 +149,7 @@ msgid "Study Series"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,server:"
-msgid "Server"
+msgid "Orthanc Server"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,stone_viewer_link:"
@@ -195,7 +211,7 @@ msgid "Server"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient,orthanc_studies:"
-msgid "Study"
+msgid "Orthanc Study"
 msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,domain:"
@@ -208,6 +224,12 @@ msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,password:"
 msgid "Password for Orthanc REST server"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,proxy_domain:"
+msgid ""
+"Optional Proxy URL of the Orthanc server. It's only needed when the client "
+"cannot connect directly to the Orthanc server."
 msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,user:"
@@ -231,11 +253,19 @@ msgid "Index of last change"
 msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.server_config,link:"
-msgid "Link to server in Orthanc Explorer"
+msgid "Link to Orthanc Explorer"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging_orthanc.server_config,link_base_url:"
+msgid "Base URL for links"
 msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.server_config,password:"
 msgid "Password for Orthanc REST server"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging_orthanc.server_config,proxy_domain:"
+msgid "The proxy URL of the Orthanc server"
 msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.server_config,user:"
@@ -244,6 +274,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.server_config,validated:"
 msgid "Whether the server details have been successfully checked"
+msgstr ""
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,link_base_url:"
+msgid "Base URL for links"
 msgstr ""
 
 msgctxt "help:gnuhealth.imaging_orthanc.study,merge_id:"
@@ -302,7 +336,7 @@ msgid "Series Instance"
 msgstr ""
 
 msgctxt "model:gnuhealth.imaging_orthanc.server_config,name:"
-msgid "This class is used to connect to an Orthanc DICOM server and"
+msgid "Orthanc Server Config"
 msgstr ""
 
 msgctxt "model:gnuhealth.imaging_orthanc.study,name:"
@@ -412,7 +446,7 @@ msgid " "
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging_orthanc.server_config:"
-msgid "Do you really want remove the server configuration?"
+msgid "Do you really want to remove the server configuration?"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging_orthanc.server_config:"
@@ -452,6 +486,14 @@ msgid "GNU Health"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "GNU Health Patient"
+msgstr ""
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Orthanc"
+msgstr ""
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
 msgid "Orthanc: Delete Study"
 msgstr ""
 
@@ -461,10 +503,6 @@ msgstr ""
 
 msgctxt "view:gnuhealth.imaging_orthanc.study:"
 msgid "Study Content"
-msgstr ""
-
-msgctxt "view:gnuhealth.imaging_orthanc.study:"
-msgid "Study Info"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging_orthanc.study:"
