@@ -8,5 +8,6 @@ steps:
     commands:
       - bash scripts/lint.sh
       - bash scripts/security.sh
+      # - bash scripts/test_modules.sh
     when:
       - event: [push, pull_request, cron, manual]
