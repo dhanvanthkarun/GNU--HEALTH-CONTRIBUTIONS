@@ -3329,7 +3329,9 @@ class PatientData(ModelSQL, ModelView):
         'General Information',
         help='General information about the patient')
 
-    deceased = fields.Function(fields.Boolean('Deceased'), 'check_is_alive')
+    deceased = fields.Function(
+        fields.Boolean('Deceased'),
+        'check_is_alive', searcher='search_patient_deceased')
 
     dod = fields.Function(fields.DateTime(
         'Date of Death',
@@ -3464,6 +3466,13 @@ class PatientData(ModelSQL, ModelView):
         res = []
         value = clause[2]
         res.append(('party.lastname', clause[1], value))
+        return res
+
+    @classmethod
+    def search_patient_deceased(cls, name, clause):
+        res = []
+        value = clause[2]
+        res.append(('party.deceased', clause[1], value))
         return res
 
     def get_rec_name(self, name):
