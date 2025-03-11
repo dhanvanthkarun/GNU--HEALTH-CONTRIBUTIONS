@@ -27,8 +27,8 @@ from .exceptions import PatientAlreadyPregnant
 
 
 __all__ = [
-    'PatientPregnancy', 'PrenatalEvaluation', 'PuerperiumMonitor',
-    'Perinatal', 'PerinatalMonitor', 'GnuHealthPatient',
+    'PatientPregnancy', 'PregnancyResult', 'PrenatalEvaluation',
+    'PuerperiumMonitor', 'Perinatal', 'PerinatalMonitor', 'GnuHealthPatient',
     'PatientMenstrualHistory', 'PatientMammographyHistory',
     'PatientPAPHistory', 'PatientColposcopyHistory']
 
@@ -47,7 +47,7 @@ class PatientPregnancy(ModelSQL, ModelView):
             return None
 
     patient = fields.Many2One(
-        'gnuhealth.patient', 'Patient',
+        'gnuhealth.patient', 'Patient', required=True,
         domain=[('party.gender', '=', 'f')])
 
     gravida = fields.Integer('Pregnancy #', required=True)
@@ -63,24 +63,29 @@ class PatientPregnancy(ModelSQL, ModelView):
         ' is or was NOT normal')
     warning_icon = fields.Function(fields.Char(
         'Pregnancy warning icon'), 'get_warn_icon')
+    # reverse attribute deprecated in GH 5.0
+    # Use the 'current_pregnancy' attribute for different states
     reverse = fields.Boolean(
-        'Reverse', help="Use this method *only* when the "
+        'Past', help="Past pregnancy.It will calculate the LMP "
+        "from the delivery date and the gestational weeks. "
+        "Set this field when the "
         "pregnancy information is referred by the patient, "
-        "as a history taking procedure. Please keep in mind "
+        "as a history taking procedure. Keep in mind "
         "that the reverse pregnancy data is subjective.",
-        states={
-            'invisible': Bool(Eval('current_pregnancy')),
-        }
-    )
+        )
     reverse_weeks = fields.Integer(
-        "Pr. Weeks", help="Number of weeks at "
-        "the end of pregnancy. Used only with the reverse input method.",
+        "Gest. Weeks", help="Number of weeks at "
+        "the end of pregnancy.",
         states={
-            'invisible': Not(Bool(Eval('reverse'))),
-            'required': Bool(Eval('reverse')),
+            'required': Not(Bool(Eval('current_pregnancy'))),
         }
     )
-    lmp = fields.Date('LMP', help="Last Menstrual Period", required=True)
+
+    lmp = fields.Date(
+        'LMP', help="Last Menstrual Period",
+        states={'readonly': Not(Bool(Eval('current_pregnancy'))),
+                'required': Bool(Eval('current_pregnancy')),
+                })
 
     pdd = fields.Function(
         fields.Date('Due Date', help='Pregnancy Due Date'),
@@ -94,8 +99,13 @@ class PatientPregnancy(ModelSQL, ModelView):
     puerperium_monitor = fields.One2Many(
         'gnuhealth.puerperium.monitor',
         'pregnancy', 'Puerperium monitor')
+    pregnancy_result = fields.One2Many(
+        'gnuhealth.pregnancy.result', 'pregnancy', 'Result')
+
     current_pregnancy = fields.Boolean(
-        'Current Pregnancy', help='This field marks the current pregnancy')
+        'Current Pregnancy',
+        help='This field marks the current pregnancy')
+
     fetuses = fields.Integer('Fetuses', required=True)
     monozygotic = fields.Boolean('Monozygotic')
     pregnancy_end_result = fields.Selection([
@@ -106,13 +116,12 @@ class PatientPregnancy(ModelSQL, ModelView):
         ('status_unknown', 'Status unknown'),
     ], 'Result', sort=False,
         states={
-        'invisible': Bool(Eval('current_pregnancy')),
             'required': Not(Bool(Eval('current_pregnancy'))),
     })
     pregnancy_end_date = fields.DateTime(
         'End of Pregnancy',
         states={
-            'invisible': Bool(Eval('current_pregnancy')),
+            'readonly': Bool(Eval('current_pregnancy')),
             'required': Not(Bool(Eval('current_pregnancy'))),
         })
     bba = fields.Boolean(
@@ -203,8 +212,8 @@ class PatientPregnancy(ModelSQL, ModelView):
             return self.patient.hb
 
     # Show the values from patient upon entering the history
-    @fields.depends('patient', '_parent_name.patient')
-    def on_change_name(self):
+    @fields.depends('patient')
+    def on_change_patient(self):
         # Obsterics info
         self.gravidae = self.patient.gravida
         self.premature = self.patient.premature
@@ -238,7 +247,11 @@ class PatientPregnancy(ModelSQL, ModelView):
 
     @staticmethod
     def default_current_pregnancy():
-        return True
+        """ By default, GH will record the obstetric history of the
+            patient. If we want to enter the information for the current
+            pregnancy, we set the current_pregnancy field
+        """
+        return False
 
     @staticmethod
     def default_institution():
@@ -267,15 +280,16 @@ class PatientPregnancy(ModelSQL, ModelView):
         Period parameter.
         It's not calculated when using the reverse input method
         """
-        if name == 'pdd':
-            return self.lmp + datetime.timedelta(days=280)
-        if name == 'pregnancy_end_age':
-            if self.pregnancy_end_date:
-                gestational_age = datetime.datetime.date(
-                    self.pregnancy_end_date) - self.lmp
-                return int((gestational_age.days) / 7)
-            else:
-                return 0
+        if (self.lmp):
+            if name == 'pdd':
+                return self.lmp + datetime.timedelta(days=280)
+            if name == 'pregnancy_end_age':
+                if self.pregnancy_end_date:
+                    gestational_age = datetime.datetime.date(
+                        self.pregnancy_end_date) - self.lmp
+                    return int((gestational_age.days) / 7)
+                else:
+                    return 0
 
     def get_warn_icon(self, name):
         if self.warning:
@@ -615,6 +629,38 @@ class PerinatalMonitor(ModelSQL, ModelView):
         table_h = cls.__table_handler__(module)
 
 
+class PregnancyResult(ModelSQL, ModelView):
+    'Pregnancy Result'
+    __name__ = 'gnuhealth.pregnancy.result'
+
+    pregnancy = fields.Many2One(
+        'gnuhealth.patient.pregnancy', 'Patient Pregnancy')
+
+    result = fields.Selection([
+        (None, ''),
+        ('live_birth', 'Live birth'),
+        ('abortion', 'Abortion'),
+        ('stillbirth', 'Stillbirth'),
+        ('status_unknown', 'Status unknown'),
+    ], 'Result', sort=False)
+
+    newborn = fields.Many2One('party.party', 'Newborn')
+
+    delivery_mode = fields.Selection([
+        (None, ''),
+        ('v', 'Vaginal - Spontaneous'),
+        ('ve', 'Vaginal - Vacuum Extraction'),
+        ('vf', 'Vaginal - Forceps Extraction'),
+        ('c', 'C-section'),
+    ], 'Delivery mode', sort=False)
+
+    labor_time = fields.Integer(
+        'Labor time', help="Total labor time in hours passive + active")
+
+    short_comment = fields.Char(
+        'Comments', help="Short extra information")
+
+
 class GnuHealthPatient(metaclass=PoolMeta):
 
     """Add to the Medical patient_data class (gnuhealth.patient) the
@@ -730,8 +776,9 @@ class GnuHealthPatient(metaclass=PoolMeta):
             while counter < pregnancies:
                 result = self.pregnancy_history[counter].pregnancy_end_result
                 preg_weeks = self.pregnancy_history[counter].pregnancy_end_age
-                if (result == "live_birth" and preg_weeks < 37):
-                    prematures = prematures + 1
+                if (result == "live_birth" and preg_weeks):
+                    if preg_weeks < 37:
+                        prematures = prematures + 1
                 counter = counter + 1
             return prematures
 
@@ -739,7 +786,6 @@ class GnuHealthPatient(metaclass=PoolMeta):
             abortions = 0
             while counter < pregnancies:
                 result = self.pregnancy_history[counter].pregnancy_end_result
-                preg_weeks = self.pregnancy_history[counter].pregnancy_end_age
                 if (result == "abortion"):
                     abortions = abortions + 1
                 counter = counter + 1
@@ -750,7 +796,6 @@ class GnuHealthPatient(metaclass=PoolMeta):
             stillbirths = 0
             while counter < pregnancies:
                 result = self.pregnancy_history[counter].pregnancy_end_result
-                preg_weeks = self.pregnancy_history[counter].pregnancy_end_age
                 if (result == "stillbirth"):
                     stillbirths = stillbirths + 1
                 counter = counter + 1

@@ -17,6 +17,7 @@ from . import health_gyneco
 def register():
     Pool.register(
         health_gyneco.PatientPregnancy,
+        health_gyneco.PregnancyResult,
         health_gyneco.PrenatalEvaluation,
         health_gyneco.PuerperiumMonitor,
         health_gyneco.Perinatal,

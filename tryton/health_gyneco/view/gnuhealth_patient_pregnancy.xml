@@ -8,27 +8,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group id="group_pregnancy_header" colspan="4" col="10">
+    <group string="Header" id="group_pregnancy_header" colspan="4" col="10">
         <label name="patient"/>
         <field name="patient"/>
-        <label name="healthprof"/>
-        <field name="healthprof"/>
-        <label name="institution"/>
-        <field name="institution"/>
-        <newline/>
-        <label name="gravida"/>
-        <group id="group_gravida_and_current_pregnancy" colspan="1" col="3">
-          <field name="gravida"/>
-          <label name="current_pregnancy"/>
-          <field name="current_pregnancy"/>
-        </group>
-        <label name="lmp"/>
-        <field name="lmp"/>
         <label name="computed_age"/>
         <field name="computed_age"/>        
-        <label name="pdd"/>
-        <field name="pdd"/>
-        <newline/>
+        <label name="blood_type"/>
+        <field name="blood_type"/>
+        <label name="rh"/>
+        <field name="rh"/>
+    </group>
+    <newline/>
+
+    <group id="group_gpa" colspan="4" col="8">
         <label name="gravidae"/>
         <field name="gravidae"/>
         <label name="premature"/>
@@ -37,20 +29,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="abortions"/>
         <label name="stillbirths"/>
         <field name="stillbirths"/>
-        <newline/>
-        <label name="blood_type"/>
-        <field name="blood_type"/>
-        <label name="rh"/>
-        <field name="rh"/>
-        
     </group>
     <newline/>
-    <field colspan="4" name="prenatal_evaluations"/>
-    <newline/>
-    <field name="perinatal"/>
-    <field name="puerperium_monitor"/>
-    <newline/>
-    <group id="group_pregnancy_footer1" colspan="4" col="8">
+
+    <group id="group_pregnancy_details" colspan="4" col="8">
+        <label name="gravida"/>
+        <field name="gravida"/>
         <label name="fetuses"/>
         <field name="fetuses"/>
         <label name="monozygotic"/>
@@ -61,18 +45,52 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="warning"/>
     </group>
     <newline/>
-    <group id="group_pregnancy_footer2" colspan="4" col="12">
+    <group id="group_end_pregnancy" colspan="4" col="8">
+        <!-- Removed in 5.0 // We should be able to manage and record
+             pregnancies states with the current_pregnancy field
         <label name="reverse"/>
         <field name="reverse"/>
+        -->
         <label name="pregnancy_end_date"/>
         <field name="pregnancy_end_date"/>
         <label name="reverse_weeks"/>
         <field name="reverse_weeks"/>
         <label name="pregnancy_end_result"/>
         <field name="pregnancy_end_result"/>
+        <newline/>
+        <field name="pregnancy_result" colspan="8"/>
+        <newline/>
         <label name="home_birth"/>
         <field name="home_birth"/>
         <label name="bba"/>
         <field name="bba"/>
+    </group>
+    <newline/>
+    <group id="group_current_pregnancy" colspan="4" col="6">
+        <label name="current_pregnancy"/>
+        <field name="current_pregnancy"/>
+        <label name="lmp"/>
+        <field name="lmp"/>
+        <label name="pdd"/>
+        <field name="pdd"/>
+    </group>
+    <newline/>
+    <notebook>
+        <page string="Prenatal" id="page_main_prenatal">
+            <field colspan="4" name="prenatal_evaluations"/>
+        </page>
+        <page string="Labor" id="page_main_perinatal">
+            <field colspan="4" name="perinatal"/>
+        </page>
+        <page string="Puerperium" id="page_main_puerperium">
+            <field colspan="4" name="puerperium_monitor"/>
+        </page>
+    </notebook>
+    <newline/>
+    <group id="group_pregnancy_footer" colspan="4" col="4">    
+        <label name="healthprof"/>
+        <field name="healthprof"/>
+        <label name="institution"/>
+        <field name="institution"/>
     </group>
 </form>

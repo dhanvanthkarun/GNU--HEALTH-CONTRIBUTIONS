@@ -7,19 +7,19 @@ SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
-<tree>
+<tree editable="1">
+    <field name="current_pregnancy" expand="1"/>
     <field name="patient"/>
     <field name="gravida"/>
-    <field name="computed_age"/>
+    <field name="fetuses" expand="1"/>
+    <field name="pregnancy_end_date" widget="date"/>
+    <field name="reverse_weeks" expand="1"/>
+    <field name="pregnancy_end_result" expand="1"/>
     <field name="lmp" expand="1"/>
     <field name="pdd" expand="1"/>
-    <field name="current_pregnancy" expand="1"/>
-    <field name="pregnancy_end_date" widget="date"/>
-    <field name="pregnancy_end_age" expand="1"/>
-    <field name="pregnancy_end_result" expand="1"/>
-    <field name="iugr" expand="1"/>
-    <field name="fetuses" expand="1"/>
-    <field name="bba" expand="1"/>
-    <field name="home_birth" expand="1"/>
+    <field name="computed_age"/>
     <field name="warning" icon="warning_icon" expand="1"/>
+    <field name="iugr" expand="1" tree_invisible="1"/>
+    <field name="bba" expand="1" tree_invisible="1"/>
+    <field name="home_birth" tree_invisible="1"/>
 </tree>

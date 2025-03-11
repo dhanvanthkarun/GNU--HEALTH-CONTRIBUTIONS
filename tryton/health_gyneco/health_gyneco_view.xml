@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -100,6 +100,20 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model">gnuhealth.perinatal</field>
             <field name="type">tree</field>
             <field name="name">gnuhealth_perinatal_tree</field>
+        </record>
+
+<!-- Pregnancy Result -->
+
+        <record model="ir.ui.view" id="gnuhealth_pregnancy_result_view">
+            <field name="model">gnuhealth.pregnancy.result</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_pregnancy_result</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_pregnancy_result_tree">
+            <field name="model">gnuhealth.pregnancy.result</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_pregnancy_result_tree</field>
         </record>
 
 <!-- Puerperium -->
