@@ -302,7 +302,6 @@ class PatientPregnancy(ModelSQL, ModelView):
             if name == 'pregnancy_current_week':
                 if self.current_pregnancy:
                     today = datetime.date.today()
-                    rdelta = relativedelta(today, self.lmp)
                     weeks = int(((today - self.lmp).days)/7)
                     return weeks
                 if self.reverse_weeks:
