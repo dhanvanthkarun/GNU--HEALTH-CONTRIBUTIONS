@@ -27,7 +27,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     </group>
 
     <newline/>
-    <group string="Pregnancy" id="group_pregnancy_details" colspan="4" col="12">
+    <group string="Pregnancy" id="group_pregnancy_details" colspan="4" col="14">
         <label name="gravida"/>
         <field name="gravida"/>
         <label name="fetuses"/>
@@ -36,6 +36,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="current_pregnancy"/>
         <label name="lmp"/>
         <field name="lmp"/>
+        <label name="pregnancy_current_week"/>
+        <field name="pregnancy_current_week"/>
         <label name="pdd"/>
         <field name="pdd"/>
         <label name="warning"/>

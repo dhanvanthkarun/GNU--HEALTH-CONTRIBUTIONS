@@ -139,9 +139,8 @@ class PatientPregnancy(ModelSQL, ModelView):
             'readonly': Bool(Eval('current_pregnancy')),
         })
 
-    pregnancy_end_age = fields.Function(fields.Integer(
-        'Weeks', help='Weeks at'
-        ' the end of pregnancy'), 'get_pregnancy_data')
+    pregnancy_current_week = fields.Function(fields.Integer(
+        'Week #', help='Current week'), 'get_pregnancy_data')
     iugr = fields.Selection([
         (None, ''),
         ('symmetric', 'Symmetric'),
@@ -300,8 +299,15 @@ class PatientPregnancy(ModelSQL, ModelView):
         if (self.lmp):
             if name == 'pdd':
                 return self.lmp + datetime.timedelta(days=280)
-            if name == 'pregnancy_end_age':
-                if self.pregnancy_end_date:
+            if name == 'pregnancy_current_week':
+                if self.current_pregnancy:
+                    today = datetime.date.today()
+                    rdelta = relativedelta(today, self.lmp)
+                    weeks = int(((today - self.lmp).days)/7)
+                    return weeks
+                if self.reverse_weeks:
+                    return self.reverse_weeks
+
                     gestational_age = datetime.datetime.date(
                         self.pregnancy_end_date) - self.lmp
                     return int((gestational_age.days) / 7)
@@ -792,7 +798,7 @@ class GnuHealthPatient(metaclass=PoolMeta):
             prematures = 0
             while counter < pregnancies:
                 result = self.pregnancy_history[counter].pregnancy_end_result
-                preg_weeks = self.pregnancy_history[counter].pregnancy_end_age
+                preg_weeks = self.pregnancy_history[counter].reverse_weeks
                 if (result == "live_birth" and preg_weeks):
                     if preg_weeks < 37:
                         prematures = prematures + 1
