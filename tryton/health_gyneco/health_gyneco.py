@@ -50,7 +50,8 @@ class PatientPregnancy(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient', required=True,
         domain=[('party.gender', '=', 'f')])
 
-    gravida = fields.Integer('Pregnancy #', required=True)
+    gravida = fields.Integer(
+            '#', required=True, help="Pregnancy number")
 
     computed_age = fields.Function(
         fields.Char(
@@ -100,11 +101,14 @@ class PatientPregnancy(ModelSQL, ModelView):
         'gnuhealth.puerperium.monitor',
         'pregnancy', 'Puerperium monitor')
     pregnancy_result = fields.One2Many(
-        'gnuhealth.pregnancy.result', 'pregnancy', 'Result')
+        'gnuhealth.pregnancy.result', 'pregnancy', 'Result',
+        states={
+            'readonly': Bool(Eval('current_pregnancy')),
+        })
 
     current_pregnancy = fields.Boolean(
-        'Current Pregnancy',
-        help='This field marks the current pregnancy')
+        'Current',
+        help='Set the field if the patient is currently pregnant')
 
     fetuses = fields.Integer('Fetuses', required=True)
     monozygotic = fields.Boolean('Monozygotic')
@@ -119,7 +123,7 @@ class PatientPregnancy(ModelSQL, ModelView):
             'required': Not(Bool(Eval('current_pregnancy'))),
     })
     pregnancy_end_date = fields.DateTime(
-        'End of Pregnancy',
+        'End',
         states={
             'readonly': Bool(Eval('current_pregnancy')),
             'required': Not(Bool(Eval('current_pregnancy'))),
@@ -127,12 +131,12 @@ class PatientPregnancy(ModelSQL, ModelView):
     bba = fields.Boolean(
         'BBA', help="Born Before Arrival",
         states={
-            'invisible': Bool(Eval('current_pregnancy')),
+            'readonly': Bool(Eval('current_pregnancy')),
         })
     home_birth = fields.Boolean(
         'Home Birth', help="Home Birth",
         states={
-            'invisible': Bool(Eval('current_pregnancy')),
+            'readonly': Bool(Eval('current_pregnancy')),
         })
 
     pregnancy_end_age = fields.Function(fields.Integer(
@@ -225,6 +229,18 @@ class PatientPregnancy(ModelSQL, ModelView):
         # Hb
         self.hb = self.patient.hb
 
+    @fields.depends('current_pregnancy', 'pregnancy_end_date', 'lmp')
+    def on_change_pregnancy_end_date(self):
+        '''Calculates the gestational weeks at the end of pregnancy
+            based on the delivery date
+            and the LMP when the setting the delivery date
+            It works when LMP and pregnancy end date are set.
+        '''
+        if self.pregnancy_end_date and self.lmp:
+            gestational_age = datetime.datetime.date(
+                self.pregnancy_end_date) - self.lmp
+            self.reverse_weeks = int((gestational_age.days) / 7)
+
     @classmethod
     def validate(cls, pregnancies):
         super(PatientPregnancy, cls).validate(pregnancies)
@@ -263,10 +279,11 @@ class PatientPregnancy(ModelSQL, ModelView):
 
     @fields.depends('reverse_weeks', 'pregnancy_end_date')
     def on_change_with_lmp(self):
-        # Calculate the estimate on Last Menstrual Period
-        # using the reverse input method, taking the
-        # end of pregnancy date and number of weeks
-
+        '''
+        Calculates the estimate on Last Menstrual Period
+        using the reverse input method, taking the
+        end of pregnancy date and number of weeks
+        '''
         if (self.reverse_weeks and self.pregnancy_end_date):
             estimated_lmp = datetime.datetime.date(
                 self.pregnancy_end_date -
