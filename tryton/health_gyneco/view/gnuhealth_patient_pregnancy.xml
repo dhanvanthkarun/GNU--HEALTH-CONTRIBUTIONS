@@ -72,6 +72,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     </group>
     <newline/>
     <notebook>
+        <page string="Notes" id="page_main_prenatal">
+            <field name="notes"/>
+        </page>
         <page string="Prenatal" id="page_main_prenatal">
             <field colspan="4" name="prenatal_evaluations"/>
         </page>
@@ -83,9 +86,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </page>
     </notebook>
     <newline/>
-    <group string="Notes" id="group_pregnancy_notes" colspan="4">
-        <field name="notes"/>
-    </group>
     
     <group id="group_pregnancy_footer" colspan="4" col="8">
         <label name="healthprof"/>
