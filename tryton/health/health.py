@@ -3215,14 +3215,6 @@ class PatientData(ModelSQL, ModelView):
 
     age = fields.Function(fields.Char('Age'), 'get_patient_age')
 
-    age_num = fields.Function(
-        fields.Float(
-            'Age number',
-            digits=(3, 3),
-            help='Age year number, '
-            '(years x 365 + months x 30.5 + days) / 365'),
-        'get_patient_age_num')
-
     gender = fields.Function(fields.Selection([
         (None, ''),
         ('m', 'Male'),
@@ -3427,10 +3419,6 @@ class PatientData(ModelSQL, ModelView):
 
     def get_patient_age(self, name):
         return self.party.age
-
-    def get_patient_age_num(self, name):
-        if self.age:
-            return get_age_for_comparison(self.age, type='y')
 
     def get_childbearing_age(self, name):
         return compute_age_from_dates(
