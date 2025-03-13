@@ -194,6 +194,8 @@ class PatientPregnancy(ModelSQL, ModelView):
     ], 'Hb'),
         'patient_blood_info')
 
+    notes = fields.Text("Notes")
+
     # Retrieve the info from the patient current GPA status
     def patient_obstetric_info(self, name):
         if (name == "gravidae"):
