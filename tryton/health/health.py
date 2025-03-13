@@ -51,7 +51,6 @@ from .exceptions import (
 
 from .core import (get_institution,
                    compute_age_from_dates,
-                   get_age_for_comparison,
                    format_years_months_days,
                    estimated_date_from_years,
                    get_health_professional)
