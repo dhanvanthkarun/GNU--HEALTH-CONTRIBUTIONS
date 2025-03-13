@@ -17,7 +17,8 @@ __all__ = [
     'RequestPatientLabTestStart', 'RequestPatientLabTest']
 
 
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         get_age_for_comparison)
 
 
 class CreateLabTestOrderInit(ModelView):
@@ -122,6 +123,18 @@ class RequestPatientLabTestStart(ModelView):
             'invisible': (
                 Eval('source_type') != 'other_source')},
         help="Other sample source.")
+
+    gender_str = fields.Char(
+        'Gender', readonly=True,
+        states={'invisible': (Eval('source_type') != 'patient')})
+
+    age_num = fields.Float(
+        'Age Num',
+        digits=(3, 3), readonly=True,
+        help='Age year number, '
+        '(years x 365 + months x 30.5 + days) / 365',
+        states={'invisible': (Eval('source_type') != 'patient')})
+
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
@@ -150,6 +163,17 @@ class RequestPatientLabTestStart(ModelView):
     @staticmethod
     def default_doctor():
         return get_health_professional()
+
+    # Update age_num and gender_str based on the patient
+    @fields.depends('patient')
+    def on_change_patient(self):
+        if (self.patient):
+            self.gender_str = self.patient.gender_str
+            self.age_num = get_age_for_comparison(
+                self.patient.age, type='y')
+        else:
+            self.gender_str = None
+            self.age_num = None
 
 
 class RequestPatientLabTest(Wizard):

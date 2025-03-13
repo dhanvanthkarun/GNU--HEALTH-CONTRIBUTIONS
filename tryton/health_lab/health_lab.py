@@ -17,7 +17,8 @@ from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
-from trytond.modules.health.core import get_health_professional
+from trytond.modules.health.core import (get_health_professional,
+                                         get_age_for_comparison)
 
 import re
 
@@ -622,6 +623,17 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
     source_name = fields.Function(
         fields.Text('Source name'), 'get_source_name')
 
+    gender_str = fields.Char(
+        'Gender', readonly=True,
+        states={'invisible': (Eval('source_type') != 'patient')})
+
+    age_num = fields.Float(
+        'Age Num',
+        digits=(3, 3), readonly=True,
+        help='Age year number, '
+        '(years x 365 + months x 30.5 + days) / 365',
+        states={'invisible': (Eval('source_type') != 'patient')})
+
     specimen_type = fields.Char(
         'Specimen',
         help='Specimen type, for example: '
@@ -669,6 +681,17 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
             'lab_request_sequence', **pattern)
         if sequence:
             return sequence.get()
+
+    # Update age_num and gender_str based on the patient_id
+    @fields.depends('patient_id')
+    def on_change_patient_id(self):
+        if (self.patient_id):
+            self.gender_str = self.patient_id.gender_str
+            self.age_num = get_age_for_comparison(
+                self.patient_id.age, type='y')
+        else:
+            self.gender_str = None
+            self.age_num = None
 
     @classmethod
     def create(cls, vlist):

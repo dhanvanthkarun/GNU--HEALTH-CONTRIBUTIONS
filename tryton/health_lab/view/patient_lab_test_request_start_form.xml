@@ -12,9 +12,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <field name="date"/>
     <newline/>
     <label name="source_type"/>
-    <group id="lab_sample_source" colspan="1">
+    <group id="lab_sample_source" colspan="1" col="0">
       <field name="source_type"/>
       <field name="patient"/>
+      <field name="gender_str"/>
+      <label name="age_num"/>
+      <field name="age_num"/>
       <field name="other_source"/>
     </group>
     <label name="urgent"/>
