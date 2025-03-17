@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group string="Header" colspan="4" id="evaluation_header">
+    <group string="Patient" colspan="4" id="evaluation_header">
       <label name="patient"/>
       <group colspan="1" id="group_patient">
         <field name="patient"/>
@@ -30,8 +30,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
     <notebook>
         <page string="Main Info" id="page_patient_evaluation_main">
-            <separator colspan="4" id="separator_chief_complaint"/>
-            <newline/>
             <group col="9" colspan="4" string="Chief Complaint" id="eval_chief_complaint">
                 <field name="chief_complaint" colspan="5"/>
                 <label name="information_source"/>
@@ -40,19 +38,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <field name="reliable_info"/>
             </group>
             <newline/>
-            <separator string="Present Illness" colspan="4" id="separator_present_illness"/>
-            <field name="present_illness" colspan="4"/>
+            <separator colspan="2" string="Present Illness" id="separator_present_illness"/>
+            <separator colspan="2" string="Physical exam" id="separator_physical_exam"/>
             <newline/>
-            <separator string="Clinical and Physical exam" colspan="4" id="separator_clinical_physical"/>
-            <field name="evaluation_summary" colspan="4"/>
+            <field colspan="2" name="present_illness"/>
+            <field colspan="2" name="evaluation_summary"/>
             <newline/>
+            <separator colspan="2" string="Diagnostic Judgement" id="separator_diagnostic_judgement"/>
+            <separator colspan="2" string="Therapeutic and Dx Plan" id="separator_plan"/>
+            <newline/>
+            <field name="info_diagnosis" colspan="2"/>
+            <field name="directions" colspan="2"/>
             <group string="Main Condition" colspan="4" id="group_dx">
                 <field name="diagnosis" colspan="4"/>
             </group>
+
             <newline/>
-            <group string="Treatment Plan" colspan="4" id="group_treatment_plan">
-                <field name="directions" colspan="4"/>
-            </group>
         </page>
         <page string="Clinical" id="page_patient_evaluation_signs">
             <group colspan="4" col="6" string="Vital Signs" id="group_patient_evaluation_vital_signs">
@@ -156,8 +157,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <page string="Info Dx" id="page_patient_evaluation_extra_info">
             <separator string="Information on Diagnosis" colspan="2" id="separator_evaluation_diagnosis_1"/>
             <newline/>
-            <field name="info_diagnosis" colspan="4"/>
-            <newline/>
             <field name="secondary_conditions" colspan="2"/>
             <field name="diagnostic_hypothesis" colspan="2"/>
         </page>
@@ -165,42 +164,42 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="actions" colspan="4"/>
         </page>
         <page string="Administrative" id="page_patient_evaluation_administrative">
-            <group id='group_patient_evaluation_appointment' colspan="4" col="6">
+            <group id='group_patient_evaluation_appointment' colspan="4" col="10">
                 <label name="urgency"/>
                 <field name="urgency"/>
+                <label name="wait_time"/>
+                <field name="wait_time"/>
                 <label name="appointment"/>
                 <field name="appointment"/>
-                <label name="next_evaluation"/>
-                <field name="next_evaluation"/>
                 <label name="derived_from"/>
                 <field name="derived_from"/>
                 <label name="derived_to"/>
                 <field name="derived_to"/>
             </group>
-            <separator string="Other information related to this evaluation" colspan="4" id="separator_evaluation_diagnosis_1"/>
+            <separator string="Extra info related to this evaluation" colspan="4" id="separator_evaluation_notes"/>
             <field name="notes" colspan="4"/>
             <newline/>
-            <group id='group_patient_evaluation_institution_info' colspan="4" col="6">
+            <group id='group_patient_evaluation_institution_info' colspan="4" col="8">
                 <label name="institution"/>
                 <field name="institution"/>
                 <label name="specialty"/>
                 <field name="specialty"/>
                 <label name="evaluation_type"/>
                 <field name="evaluation_type"/>
-                <label name="wait_time"/>
-                <field name="wait_time"/>
             </group>
         </page>
 
     </notebook>
     <newline/>
-    <group colspan="4" col="6" id="group_eval_times_and_state">
+    <group colspan="4" col="8" id="group_eval_times_and_state">
       <label name="evaluation_start"/>
       <field name="evaluation_start"/>
       <label name="evaluation_endtime"/>
       <field name="evaluation_endtime"/>
       <label name="state"/>
       <field name="state"/>
+      <label name="next_evaluation"/>
+      <field name="next_evaluation"/>
     </group>
     <newline/>
     <group colspan="4" col="8" id="group_eval_end_button">

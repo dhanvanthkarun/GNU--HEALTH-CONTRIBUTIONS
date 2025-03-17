@@ -5394,13 +5394,15 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
     psychological_assessment = fields.Text("Psychological Assessment",
                                            states=STATES)
 
-    info_diagnosis = fields.Text('Presumptive Diagnosis: Extra Info',
-                                 states=STATES)
-    directions = fields.Text('Plan', states=STATES)
+    info_diagnosis = fields.Text(
+        'Diagnostic Jugdement', help="Diagnostic judegement",
+         states=STATES)
+
+    directions = fields.Text('Therapeutic Plan', states=STATES)
 
     actions = fields.One2Many(
         'gnuhealth.directions', 'evaluation', 'Procedures',
-        help='Procedures / Actions to take',
+        help='Procedures done in the evaluation',
         states=STATES)
 
     notes = fields.Text('Notes', states=STATES)
