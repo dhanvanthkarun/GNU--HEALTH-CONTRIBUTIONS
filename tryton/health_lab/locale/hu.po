@@ -45,9 +45,10 @@ msgctxt "field:gnuhealth.lab,pathology:"
 msgid "Pathology"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 msgctxt "field:gnuhealth.lab,request_order:"
 msgid "Order"
@@ -239,6 +240,10 @@ msgctxt "field:gnuhealth.patient.disease,lab_test:"
 msgid "Lab Test"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test,age_num:"
+msgid "Age Num"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.lab.test,comment:"
 msgid "Additional Information"
 msgstr ""
@@ -256,14 +261,19 @@ msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health Prof"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test,gender_str:"
+msgid "Gender"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
 msgstr "egyéb"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,patient_id:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 msgctxt "field:gnuhealth.patient.lab.test,request:"
 msgid "Order"
@@ -295,6 +305,10 @@ msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test.request.start,age_num:"
+msgid "Age Num"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.lab.test.request.start,context:"
 msgid "Context"
 msgstr ""
@@ -308,14 +322,19 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health Prof"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.lab.test.request.start,gender_str:"
+msgid "Gender"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
 msgid "Other"
 msgstr "egyéb"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,source_type:"
@@ -372,9 +391,10 @@ msgctxt "help:gnuhealth.lab,pathology:"
 msgid "Pathology confirmed / associated to this lab test."
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.lab,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 msgctxt "help:gnuhealth.lab,requestor:"
 msgid "Doctor who requested the test"
@@ -462,6 +482,10 @@ msgctxt "help:gnuhealth.patient.disease,lab_test:"
 msgid "Lab test that confirmed the condition"
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.lab.test,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.lab.test,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
@@ -482,6 +506,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test,specimen_type:"
 msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
@@ -1724,9 +1752,10 @@ msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Other"
 msgstr "egyéb"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Biochemical Testing"
@@ -1801,9 +1830,10 @@ msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
 msgid "Other"
 msgstr "egyéb"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,state:"
@@ -1828,9 +1858,10 @@ msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
 msgid "Other"
 msgstr "egyéb"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test.request.start,source_type:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
 msgctxt "view:gnuhealth.lab.test.create.init:"
 msgid "Create Tests"

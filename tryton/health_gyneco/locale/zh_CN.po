@@ -247,16 +247,16 @@ msgid "Age"
 msgstr "年龄"
 
 msgctxt "field:gnuhealth.patient.pregnancy,current_pregnancy:"
-msgid "Current Pregnancy"
-msgstr "正怀孕"
+msgid "Current"
+msgstr "正在怀孕"
 
 msgctxt "field:gnuhealth.patient.pregnancy,fetuses:"
 msgid "Fetuses"
 msgstr "胎儿"
 
 msgctxt "field:gnuhealth.patient.pregnancy,gravida:"
-msgid "Pregnancy #"
-msgstr "怀孕 #"
+msgid "#"
+msgstr "#"
 
 msgctxt "field:gnuhealth.patient.pregnancy,gravidae:"
 msgid "Pregnancies"
@@ -290,6 +290,10 @@ msgctxt "field:gnuhealth.patient.pregnancy,monozygotic:"
 msgid "Monozygotic"
 msgstr "同卵双生"
 
+msgctxt "field:gnuhealth.patient.pregnancy,notes:"
+msgid "Notes"
+msgstr "注意事项"
+
 msgctxt "field:gnuhealth.patient.pregnancy,patient:"
 msgid "Patient"
 msgstr "患者"
@@ -302,15 +306,19 @@ msgctxt "field:gnuhealth.patient.pregnancy,perinatal:"
 msgid "Perinatal Info"
 msgstr "围产期信息"
 
-msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_end_age:"
-msgid "Weeks"
-msgstr "星期"
+msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_current_week:"
+msgid "Week #"
+msgstr "周 #"
 
 msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_end_date:"
-msgid "End of Pregnancy"
-msgstr "妊娠结束"
+msgid "End"
+msgstr "终止日期"
 
 msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_end_result:"
+msgid "Result"
+msgstr "结果"
+
+msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_result:"
 msgid "Result"
 msgstr "结果"
 
@@ -327,12 +335,12 @@ msgid "Puerperium monitor"
 msgstr "产褥期检测"
 
 msgctxt "field:gnuhealth.patient.pregnancy,reverse:"
-msgid "Reverse"
-msgstr "逆向推算"
+msgid "Past"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.pregnancy,reverse_weeks:"
-msgid "Pr. Weeks"
-msgstr "妊娠末期周数"
+msgid "Gest. Weeks"
+msgstr "孕周"
 
 msgctxt "field:gnuhealth.patient.pregnancy,rh:"
 msgid "Rh"
@@ -603,6 +611,30 @@ msgctxt "field:gnuhealth.perinatal.monitor,systolic:"
 msgid "Systolic Pressure"
 msgstr "收缩压"
 
+msgctxt "field:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Delivery mode"
+msgstr "分娩模式"
+
+msgctxt "field:gnuhealth.pregnancy.result,labor_time:"
+msgid "Labor time"
+msgstr "产程时间"
+
+msgctxt "field:gnuhealth.pregnancy.result,newborn:"
+msgid "Newborn"
+msgstr "新生儿"
+
+msgctxt "field:gnuhealth.pregnancy.result,pregnancy:"
+msgid "Patient Pregnancy"
+msgstr "患者怀孕"
+
+msgctxt "field:gnuhealth.pregnancy.result,result:"
+msgid "Result"
+msgstr "结果"
+
+msgctxt "field:gnuhealth.pregnancy.result,short_comment:"
+msgid "Comments"
+msgstr "说明"
+
 msgctxt "field:gnuhealth.puerperium.monitor,date:"
 msgid "Date and Time"
 msgstr "日期和时间"
@@ -764,8 +796,12 @@ msgid "Computed patient age at the moment of LMP"
 msgstr "患者末次月经时的计算年龄"
 
 msgctxt "help:gnuhealth.patient.pregnancy,current_pregnancy:"
-msgid "This field marks the current pregnancy"
-msgstr "此字段标记当前怀孕"
+msgid "Set the field if the patient is currently pregnant"
+msgstr "如果患者正怀孕，就勾选项"
+
+msgctxt "help:gnuhealth.patient.pregnancy,gravida:"
+msgid "Pregnancy number"
+msgstr "怀孕数"
 
 msgctxt "help:gnuhealth.patient.pregnancy,gravidae:"
 msgid "Number of pregnancies, computed from Obstetric history"
@@ -791,9 +827,9 @@ msgctxt "help:gnuhealth.patient.pregnancy,pdd:"
 msgid "Pregnancy Due Date"
 msgstr "预产期"
 
-msgctxt "help:gnuhealth.patient.pregnancy,pregnancy_end_age:"
-msgid "Weeks at the end of pregnancy"
-msgstr "妊娠末期的几周"
+msgctxt "help:gnuhealth.patient.pregnancy,pregnancy_current_week:"
+msgid "Current week"
+msgstr "当前孕周"
 
 msgctxt "help:gnuhealth.patient.pregnancy,premature:"
 msgid "Preterm < 37 wks live births"
@@ -801,16 +837,15 @@ msgstr "早产儿，小于37周，活产"
 
 msgctxt "help:gnuhealth.patient.pregnancy,reverse:"
 msgid ""
-"Use this method *only* when the pregnancy information is referred by the "
-"patient, as a history taking procedure. Please keep in mind that the reverse"
-" pregnancy data is subjective."
-msgstr "*仅当* 患者参考妊娠信息时使用此方法，作为病史记录程序。请记住，反向妊娠数据是主观的。"
+"Past pregnancy.It will calculate the LMP from the delivery date and the "
+"gestational weeks. Set this field when the pregnancy information is referred"
+" by the patient, as a history taking procedure. Keep in mind that the "
+"reverse pregnancy data is subjective."
+msgstr "患者以前怀孕过。它将根据分娩日期和妊娠周数计算LMP。当患者提及怀孕信息时，可以设置此字段作为病史采集的一个环节。请记住，反向妊娠数据是主观的。"
 
 msgctxt "help:gnuhealth.patient.pregnancy,reverse_weeks:"
-msgid ""
-"Number of weeks at the end of pregnancy. Used only with the reverse input "
-"method."
-msgstr "妊娠结束时的周数。仅与反向输入方法一起使用。"
+msgid "Number of weeks at the end of pregnancy."
+msgstr "怀孕结束时的周数。"
 
 msgctxt "help:gnuhealth.patient.pregnancy,warning:"
 msgid "Check this box if this is pregancy is or was NOT normal"
@@ -905,6 +940,14 @@ msgctxt "help:gnuhealth.perinatal,prenatal_evaluations:"
 msgid "Number of visits to the doctor during pregnancy"
 msgstr "怀孕期间看医生的次数"
 
+msgctxt "help:gnuhealth.pregnancy.result,labor_time:"
+msgid "Total labor time in hours passive + active"
+msgstr "总产程时间（被动期+主动期），以小时为单位。“
+
+msgctxt "help:gnuhealth.pregnancy.result,short_comment:"
+msgid "Short extra information"
+msgstr "简短的其它信息"
+
 msgctxt "help:gnuhealth.puerperium.monitor,healthprof:"
 msgid ""
 "Health Professional in charge, or that who entered the information in the "
@@ -947,6 +990,10 @@ msgstr "围产期信息"
 msgctxt "model:gnuhealth.perinatal.monitor,name:"
 msgid "Perinatal Monitor"
 msgstr "产褥期监测"
+
+msgctxt "model:gnuhealth.pregnancy.result,name:"
+msgid "Pregnancy Result"
+msgstr "妊娠结果"
 
 msgctxt "model:gnuhealth.puerperium.monitor,name:"
 msgid "Puerperium Monitor"
@@ -1216,6 +1263,38 @@ msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
 msgid "Occiput / Cephalic Posterior"
 msgstr "枕/头颅后部"
 
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "C-section"
+msgstr "剖腹产"
+
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Vaginal - Forceps Extraction"
+msgstr "阴道 - 镊子提取"
+
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Vaginal - Spontaneous"
+msgstr "阴道 - 自发"
+
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Vaginal - Vacuum Extraction"
+msgstr "阴道 - 真空抽提"
+
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Abortion"
+msgstr "流产"
+
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Live birth"
+msgstr "活产"
+
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Status unknown"
+msgstr "未知状态"
+
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Stillbirth"
+msgstr "死产"
+
 msgctxt "selection:gnuhealth.puerperium.monitor,lochia_amount:"
 msgid "abundant"
 msgstr "充足的"
@@ -1248,13 +1327,41 @@ msgctxt "selection:gnuhealth.puerperium.monitor,lochia_odor:"
 msgid "offensive"
 msgstr "令人不适"
 
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "End of pregnancy"
+msgstr "妊娠结束"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Labor"
+msgstr "产程"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Notes"
+msgstr "注意事项"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Pregnancy"
+msgstr "怀孕"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Prenatal"
+msgstr "产前"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Puerperium"
+msgstr "产褥期"
+
 msgctxt "view:gnuhealth.patient.prenatal.evaluation:"
 msgid "Fetal Biometry"
 msgstr "胎儿生物测量"
 
 msgctxt "view:gnuhealth.patient.prenatal.evaluation:"
 msgid "Fetus Information"
-msgstr "围产期信息"
+msgstr "胎儿信息"
 
 msgctxt "view:gnuhealth.patient.prenatal.evaluation:"
 msgid "Mother Information"
