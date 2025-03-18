@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1642,9 +1642,10 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "ຄວາມກົດດັນຂອງເລືອດໃນຫົວໃຈ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "ແຜນ"
+msgid "Therapeutic Plan"
+msgstr "ການປະຕິບັດຣັກສາໂລກ"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1704,8 +1705,8 @@ msgid "Hip"
 msgstr "ສະໂພກ"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "ການບົ່ງມະຕິຊົ່ວຄາວ: ຂໍ້ມູນຂ່າວສານເພີ່ມ"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -3417,8 +3418,8 @@ msgstr ""
 "ໃຫ້ຫມາຍເອົາຫ້ອງນີ້ຖ້າຫາກວ່າຄົນເຈັບສະແດງອາການບໍ່ປົກກະຕິໃນການໃຫ້ເຫດຜົນທີ່ແບບໂລເລ"
 
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "ຂັ້ນຕອນການ / ການກະທໍາທີ່ຕ້ອງເຣັດ"
+msgid "Procedures done in the evaluation"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3529,6 +3530,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
@@ -11626,14 +11631,14 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Clinical"
 msgstr "ດ້ານຄຼີນິກ"
 
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr ""
-
 #, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "ວັນທີ:"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11648,17 +11653,16 @@ msgid "Discharge patient / end this evaluation"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "ມັດແທກຄວາມເຊື່ອມເສັຍຂອງສະໝອງ"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "ປະວັດການເປັນມາຂອງເຊື້ອນໍ້າຕານແລະໃຂມັນ"
-
-#, fuzzy
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "ຫົວກະດາດ"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11688,9 +11692,15 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Nutrition"
 msgstr "ອາຫານການກິນ"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr ""
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "ໝໍບຳບັດຣ່າງກາຍ"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11707,12 +11717,13 @@ msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Therapeutic and Dx Plan"
+msgstr "ການປະຕິບັດຣັກສາໂລກ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
 msgstr "ເວລາ"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "ແຜນການການປິ່ນປົວ"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"

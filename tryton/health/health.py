@@ -5395,7 +5395,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
                                            states=STATES)
 
     info_diagnosis = fields.Text(
-        'Diagnostic Jugdement', help="Diagnostic judegement",
+        'Diagnostic Judgement', help="Diagnostic judgement",
          states=STATES)
 
     directions = fields.Text('Therapeutic Plan', states=STATES)

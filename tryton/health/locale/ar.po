@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1598,9 +1598,10 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "الضغط الانبساطي"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "خطة"
+msgid "Therapeutic Plan"
+msgstr "إجراءات علاجية"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1659,8 +1660,8 @@ msgid "Hip"
 msgstr "الورك"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "التشخيص الظني : معلومات اضافية"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -3358,9 +3359,10 @@ msgid ""
 "Check this box if the patient presents abnormalities in abstract reasoning"
 msgstr "حدد هذه الخانة إذا كان المريض لديه شذوذ في التفكير المجرد"
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "إجراءات نافذة"
+msgid "Procedures done in the evaluation"
+msgstr "مدة التقييم"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3470,6 +3472,10 @@ msgstr "الطول بالسنتيمتر"
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
 msgstr "محيط الورك بالسنتيمتر"
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
@@ -11503,12 +11509,12 @@ msgid "Clinical"
 msgstr "الكشف السريرى"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr "فحص سريري"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "تاريخ"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11522,6 +11528,11 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge patient / end this evaluation"
 msgstr "‬تخريج المريض / انهاء التقييم"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr "هناك معلومات اخرى مرتبطة في هذا التقييم"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "مِقياس غيبوبةِ غلاسكو"
@@ -11529,10 +11540,6 @@ msgstr "مِقياس غيبوبةِ غلاسكو"
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "معدل السكر و الدهون"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "الرأسية"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11562,9 +11569,15 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Nutrition"
 msgstr "التغذيه"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr "هناك معلومات اخرى مرتبطة في هذا التقييم"
+msgid "Patient"
+msgstr "المريض"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "المعالج الطبيعي"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11578,13 +11591,14 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Psychological Assessment"
 msgstr "التقييم النفسي"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Therapeutic and Dx Plan"
+msgstr "إجراءات علاجية"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
 msgstr "الوقت"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "خطه العلاج"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"

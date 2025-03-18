@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1597,9 +1597,10 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "Presión Diastólica"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "Plan"
+msgid "Therapeutic Plan"
+msgstr "Acción terapéutica"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1658,8 +1659,8 @@ msgid "Hip"
 msgstr "Cadera"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "Diagnóstico Presuntivo: Información Adicional"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -3371,9 +3372,10 @@ msgstr ""
 "Marque la casilla si el paciente presenta alguna anormalidad en el "
 "razonamiento abstracto"
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "Procedimientos / Acciones a tomar"
+msgid "Procedures done in the evaluation"
+msgstr "Duración de la evaluación"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3492,6 +3494,10 @@ msgstr "Altura en centímetros"
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
 msgstr "Circunferencia de la cadera en centímetros"
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
@@ -11570,12 +11576,12 @@ msgid "Clinical"
 msgstr "Clínico"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr "Examen Clínico y Físico"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "Fecha"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11589,6 +11595,11 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge patient / end this evaluation"
 msgstr "Cerrar / finalizar esta evaluación de paciente"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr "Otra información relacionada a esta evaluación"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "Nivel de Coma de Glasgow"
@@ -11596,10 +11607,6 @@ msgstr "Nivel de Coma de Glasgow"
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "Perfil lipídico y de glucosa"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "Cabecera"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11629,9 +11636,15 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Nutrition"
 msgstr "Nutrición"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr "Otra información relacionada a esta evaluación"
+msgid "Patient"
+msgstr "Paciente"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "Fisioterapeuta"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11645,13 +11658,14 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Psychological Assessment"
 msgstr "Evaluación psicológica"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Therapeutic and Dx Plan"
+msgstr "Acción terapéutica"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
 msgstr "Tiempo"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "Plan de tratamiento"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"

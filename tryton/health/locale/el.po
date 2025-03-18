@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1630,9 +1630,10 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "Διαστολική πίεση"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "Πλάνο"
+msgid "Therapeutic Plan"
+msgstr "Θεραπευτικές ενέργειες"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1691,8 +1692,8 @@ msgid "Hip"
 msgstr "Ισχίο"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "Πιθανή διάγνωση: Πρόσθετες πληροφορίες"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -3410,9 +3411,10 @@ msgstr ""
 "Επιλέξτε αυτό τον κωδικό αν ο ασθενής παρουσιάζει διαταραχές στην αφηρημένη "
 "λογική"
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "Ιατρικές πράξεις / Ενέργειες που πρέπει να γίνουν"
+msgid "Procedures done in the evaluation"
+msgstr "Διάρκεια της αξιολόγησης"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3528,6 +3530,10 @@ msgstr "Ύψος σε εκατοστά"
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
 msgstr "Περίμετρος ισχίων σε εκατοστά"
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
@@ -11659,14 +11665,14 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Clinical"
 msgstr "Κλινικά"
 
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr "Κλινική και φυσική εξέταση"
-
 #, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "Ημερομηνία"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11680,6 +11686,11 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge patient / end this evaluation"
 msgstr "Εξιτήριο ασθενούς / τερματισμός της αξιολόγησης"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr "Άλλες πληροφορίες που σχετίζονται με αυτήν την αξιολόγηση"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "Βαθμολογία Κλίμακας Γλασκώβης"
@@ -11687,10 +11698,6 @@ msgstr "Βαθμολογία Κλίμακας Γλασκώβης"
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "Προφίλ Γλυκόζης και Λιπιδίων"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "Κεφαλίδα"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11721,9 +11728,15 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Nutrition"
 msgstr "Διατροφή"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr "Άλλες πληροφορίες που σχετίζονται με αυτήν την αξιολόγηση"
+msgid "Patient"
+msgstr "Ασθενής"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "Φυσικός Θεραπευτής"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11740,12 +11753,13 @@ msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Therapeutic and Dx Plan"
+msgstr "Θεραπευτικές ενέργειες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
 msgstr "Ώρα"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "Πλάνο θεραπείας"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"

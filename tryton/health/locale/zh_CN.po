@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1580,8 +1580,8 @@ msgid "Diastolic Pressure"
 msgstr "舒张压"
 
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "计划"
+msgid "Therapeutic Plan"
+msgstr "治疗计划"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1640,8 +1640,8 @@ msgid "Hip"
 msgstr "臀围"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "初步诊断：其它信息"
+msgid "Diagnostic Judgement"
+msgstr "诊断性判断"
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -3300,8 +3300,8 @@ msgid ""
 msgstr "如果患者抽象推理能力出现异常，就选中此框"
 
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "采取的行动"
+msgid "Procedures done in the evaluation"
+msgstr "本次评估完成的操作"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3404,6 +3404,10 @@ msgstr "身高（厘米）"
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
 msgstr "臀围（厘米）"
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
+msgstr "诊断性判断"
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
@@ -11361,12 +11365,12 @@ msgid "Clinical"
 msgstr "临床"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr "临床和体格检查"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "日期"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr "诊断性判断"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11381,16 +11385,16 @@ msgid "Discharge patient / end this evaluation"
 msgstr "患者离院/ 评估结束"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr "与本次就诊相关的信息"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "格拉斯哥昏迷评分表"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "血糖和血脂"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "页首信息"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11421,8 +11425,12 @@ msgid "Nutrition"
 msgstr "营养"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr "与此次就诊相关的信息"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "体格检查"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11437,12 +11445,12 @@ msgid "Psychological Assessment"
 msgstr "心理评估"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Time"
-msgstr "时间"
+msgid "Therapeutic and Dx Plan"
+msgstr "治疗与诊断计划"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "治疗方案"
+msgid "Time"
+msgstr "时间"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"
@@ -11626,7 +11634,7 @@ msgstr "签署"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Sign and close the vaccination"
-msgstr "签署和结束此次疫苗接种"
+msgstr "签署和结束本次疫苗接种"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Vaccination"

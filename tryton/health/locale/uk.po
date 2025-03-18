@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1634,10 +1634,9 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "Діастолічний тиск"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "План"
+msgid "Therapeutic Plan"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1699,7 +1698,7 @@ msgid "Hip"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
+msgid "Diagnostic Judgement"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
@@ -3409,9 +3408,10 @@ msgid ""
 "Check this box if the patient presents abnormalities in abstract reasoning"
 msgstr ""
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr ""
+msgid "Procedures done in the evaluation"
+msgstr "Унікальний код, який ідентифікує оцінку"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3515,6 +3515,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
@@ -11569,12 +11573,12 @@ msgid "Clinical"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr ""
-
-msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "Дата"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11589,17 +11593,16 @@ msgid "Discharge patient / end this evaluation"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "Шкала ком Глазго"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr ""
-
-#, fuzzy
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "Заголовок"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11629,8 +11632,13 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Nutrition"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
+msgid "Patient"
+msgstr "Пацієнт"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
@@ -11646,12 +11654,12 @@ msgid "Psychological Assessment"
 msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Time"
-msgstr "Час"
+msgid "Therapeutic and Dx Plan"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr ""
+msgid "Time"
+msgstr "Час"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"

@@ -1218,10 +1218,6 @@ msgctxt "field:gnuhealth.patient,age:"
 msgid "Age"
 msgstr "Tuổi"
 
-msgctxt "field:gnuhealth.patient,age_num:"
-msgid "Age number"
-msgstr "Số tuổi"
-
 msgctxt "field:gnuhealth.patient,appointments:"
 msgid "Appointments"
 msgstr "Hẹn khám"
@@ -1610,9 +1606,10 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "Huyết áp tâm trương"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "Kế hoạch"
+msgid "Therapeutic Plan"
+msgstr "Hành động điều trị"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1671,8 +1668,8 @@ msgid "Hip"
 msgstr "Hông"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "Chẩn đoán sơ bộ: Thông tin bổ sung"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -3159,10 +3156,6 @@ msgctxt "help:gnuhealth.pathology.group,name:"
 msgid "Group name"
 msgstr "Tên nhóm"
 
-msgctxt "help:gnuhealth.patient,age_num:"
-msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
-msgstr "Số năm tuổi, (số năm x 365 + số tháng x 30,5 + số ngày)/365"
-
 msgctxt "help:gnuhealth.patient,biological_sex:"
 msgid ""
 "Biological sex. By defaults it takes the value from the neonatal information"
@@ -3385,9 +3378,10 @@ msgstr ""
 "Đánh dấu vào ô này nếu bệnh nhân có biểu hiện bất thường trong suy luận trừu"
 " tượng"
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "Thủ tục/Hành động cần thực hiện"
+msgid "Procedures done in the evaluation"
+msgstr "Thời gian đánh giá"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3500,6 +3494,10 @@ msgstr "Chiều cao tính bằng cm"
 msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
 msgstr "Vòng hông tính bằng cm"
+
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
@@ -11552,12 +11550,12 @@ msgid "Clinical"
 msgstr "Lâm sàng"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr "Khám lâm sàng và thể chất"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "Ngày đánh giá"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11571,6 +11569,11 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge patient / end this evaluation"
 msgstr "Cho bệnh nhân ra viện/kết thúc đánh giá này"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr "Thông tin khác liên quan đến đánh giá này"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "Thang điểm Glasgow"
@@ -11578,10 +11581,6 @@ msgstr "Thang điểm Glasgow"
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "Hồ sơ Glucose và Lipid"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "Tiêu đề"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11611,9 +11610,15 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Nutrition"
 msgstr "Dinh dưỡng"
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr "Thông tin khác liên quan đến đánh giá này"
+msgid "Patient"
+msgstr "Họ tên BN"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "Nhà vật lý trị liệu"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11627,13 +11632,14 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Psychological Assessment"
 msgstr "Đánh giá tâm lý"
 
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Therapeutic and Dx Plan"
+msgstr "Hành động điều trị"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Time"
 msgstr "Giờ"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "Kế hoạch điều trị"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"
