@@ -5011,7 +5011,8 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'Code',
         help="Unique code that identifies the evaluation")
 
-    patient = fields.Many2One('gnuhealth.patient', 'Patient', states=STATES)
+    patient = fields.Many2One(
+        'gnuhealth.patient', 'Patient', required=True, states=STATES)
 
     appointment = fields.Many2One(
         'gnuhealth.appointment', 'Appointment',
