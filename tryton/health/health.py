@@ -287,7 +287,7 @@ class DomiciliaryUnit(ModelSQL, ModelView):
     # Show the resulting Address representation in realtime
     @fields.depends(
         'address_street', 'address_subdivision', 'address_city',
-        'address_zip',  'address_district', 'address_municipality',
+        'address_zip', 'address_district', 'address_municipality',
         'address_street_number', 'address_country')
     def on_change_with_address_repr(self):
         return self.get_du_address(name=None)
@@ -5396,7 +5396,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
     info_diagnosis = fields.Text(
         'Diagnostic Judgement', help="Diagnostic judgement",
-         states=STATES)
+        states=STATES)
 
     directions = fields.Text('Therapeutic Plan', states=STATES)
 
@@ -6010,15 +6010,15 @@ class Commands(ModelSQL, ModelView):
         # Get OS user, GH version and Tryton version
         gnuhealth_os_user = f"GNU Health user: {os.environ['USER']}\n"
         gnuhealth_version = f"GNU Health Server version:" \
-                            f"{importlib.metadata.version('gnuhealth')}\n"
+            f"{importlib.metadata.version('gnuhealth')}\n"
 
         tryton_version = \
             f"Tryton server: {importlib.metadata.version('trytond')}\n"
 
         info = f"{info} {gnuhealth_version} {tryton_version}" \
-               f"{gnuhealth_os_user}\n{pversion}\n" \
-               f"{os_header}\n{os_info}\n" \
-               f"Platform / Kernel Info: {str(uname)}\n"
+            f"{gnuhealth_os_user}\n{pversion}\n" \
+            f"{os_header}\n{os_info}\n" \
+            f"Platform / Kernel Info: {str(uname)}\n"
 
         return info
 
