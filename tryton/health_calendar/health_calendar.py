@@ -77,8 +77,8 @@ class Appointment(metaclass=PoolMeta):
             if values['state'] == 'confirmed':
                 if values['healthprof']:
                     healthprof = Healthprof(values['healthprof'])
-                    if (healthprof.name.internal_user and
-                            healthprof.name.internal_user.calendar):
+                    if (healthprof.party.internal_user and
+                            healthprof.party.internal_user.calendar):
                         patient = Patient(values['patient'])
                         appointment_date_end = None
                         if values.get('appointment_date_end'):
@@ -88,8 +88,8 @@ class Appointment(metaclass=PoolMeta):
                             'dtstart': values['appointment_date'],
                             'dtend': appointment_date_end,
                             'calendar':
-                                healthprof.name.internal_user.calendar.id,
-                            'summary': patient.name.rec_name,
+                                healthprof.party.internal_user.calendar.id,
+                            'summary': patient.party.rec_name,
                             'description': values['comments'],
                         }])
                         values['event'] = events[0].id
@@ -116,7 +116,7 @@ class Appointment(metaclass=PoolMeta):
                 if 'patient' in values:
                     patient = Patient(values['patient'])
                     Event.write([appointment.event], {
-                        'summary': patient.name.rec_name,
+                        'summary': patient.party.rec_name,
                     })
                 if 'comments' in values:
                     Event.write([appointment.event], {
@@ -127,11 +127,11 @@ class Appointment(metaclass=PoolMeta):
                 # Move the event to the new health professional
                 if appointment.event and ('healthprof' in values):
                     current_event = [appointment.event]
-                    if appointment.healthprof.name.internal_user:
+                    if appointment.healthprof.party.internal_user:
                         healthprof = Healthprof(values['healthprof'])
-                        if healthprof.name.internal_user.calendar:
+                        if healthprof.party.internal_user.calendar:
                             # Health professional has calendar
-                            patient = appointment.patient.name.rec_name
+                            patient = appointment.patient.party.rec_name
                             comments = ''
                             if 'comments' in values:
                                 comments = values['comments']
@@ -151,7 +151,7 @@ class Appointment(metaclass=PoolMeta):
                                 'dtstart': appointment_date,
                                 'dtend': appointment_date_end,
                                 'calendar':
-                                    healthprof.name.internal_user.calendar.id,
+                                    healthprof.party.internal_user.calendar.id,
                                 'summary':
                                     patient,
                                 'description': comments,
