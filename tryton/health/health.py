@@ -5941,7 +5941,7 @@ class PatientECG(ModelSQL, ModelView):
 
     # Return the ECG Interpretation with main components
     def get_rec_name(self, name):
-        if self.name:
+        if self.patient:
             res = str(self.interpretation) + ' // Rate ' + str(self.rate)
         return res
 

@@ -187,7 +187,7 @@ class Glasgow(ModelSQL, ModelView):
 
     # Return the Glasgow Score with each component
     def get_rec_name(self, name):
-        if self.name:
+        if self.registration:
             res = str(self.glasgow) + ': ' + 'E' + self.glasgow_eyes + ' V' + \
                 self.glasgow_verbal + ' M' + self.glasgow_motor
         return res
@@ -593,7 +593,9 @@ class PatientRounding(metaclass=PoolMeta):
     # Neurological assesment
     gcs = fields.Many2One(
         'gnuhealth.icu.glasgow', 'GCS',
-        domain=[('name', '=', Eval('name'))], depends=['name'], states=STATES)
+        domain=[
+            ('registration', '=', Eval('registration'))],
+        depends=['registration'], states=STATES)
 
     pupil_dilation = fields.Selection([
         ('normal', 'Normal'),
@@ -682,8 +684,8 @@ class PatientRounding(metaclass=PoolMeta):
     ecg = fields.Many2One(
         'gnuhealth.patient.ecg', 'Inpatient ECG',
         domain=[
-            ('inpatient_registration_code', '=', Eval('name'))],
-        depends=['name'], states=STATES)
+            ('inpatient_registration_code', '=', Eval('registration'))],
+        depends=['registration'], states=STATES)
 
     venous_access = fields.Selection([
         (None, ''),
