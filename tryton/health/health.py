@@ -2297,7 +2297,7 @@ class Medicament(ModelSQL, ModelView):
         else:
             bool_op = 'OR'
         return [bool_op,
-                ('name',) + tuple(clause[1:]),
+                ('product',) + tuple(clause[1:]),
                 ('active_component',) + tuple(clause[1:]),
                 ('category',) + tuple(clause[1:]),
                 ]
