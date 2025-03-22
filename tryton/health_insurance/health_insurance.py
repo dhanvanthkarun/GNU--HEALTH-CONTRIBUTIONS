@@ -87,7 +87,7 @@ class HealthService(metaclass=PoolMeta):
     insurance_plan = fields.Many2One(
         'gnuhealth.insurance',
         'Plan',
-        domain=[('name', '=', Eval('insurance_holder'))],
+        domain=[('party', '=', Eval('insurance_holder'))],
         depends=['insurance_holder'])
 
     # Set the insurance holder upon entering the patient
