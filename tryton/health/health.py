@@ -2808,7 +2808,7 @@ class InsurancePlan(ModelSQL, ModelView):
 
 
 class Insurance(ModelSQL, ModelView):
-    'Insurance'
+    'Person Insurance'
     __name__ = 'gnuhealth.insurance'
 
     # Insurance associated to an individual
@@ -2841,7 +2841,7 @@ class Insurance(ModelSQL, ModelView):
     notes = fields.Text('Extra Info')
 
     def get_rec_name(self, name):
-        return (self.company.name + ' : ' + self.number)
+        return (f"{self.company.name}: {self.plan_id.rec_name} - {self.number}")
 
     @classmethod
     def __setup__(cls):
