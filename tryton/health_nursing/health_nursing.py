@@ -153,6 +153,18 @@ class PatientRounding(ModelSQL, ModelView):
         "in the rounding list", states=STATES)
     warning_icon = fields.Function(
         fields.Char('Warning Icon'), 'get_warn_icon')
+
+    rounding_procedures = fields.One2Many(
+        'gnuhealth.patient.procedure', 'reference', 'Procedures',
+        domain=[
+            ('patient', '=', Eval('patient')),
+            ('ctx', '=', Eval('rounding')),
+            ('pdate', '=', Eval('evaluation_start')),
+            ],
+        depends=['registration'],
+        help='Procedures done during the rounding')
+
+    # Obsoleted in 5.0 by rounding_procedures
     procedures = fields.One2Many(
         'gnuhealth.rounding_procedure', 'rounding',
         'Procedures', help="List of the procedures in this rounding. Please "
@@ -170,6 +182,14 @@ class PatientRounding(ModelSQL, ModelView):
     report_end_time = fields.Function(
         fields.Time('End Time'),
         'get_report_end_time')
+
+    patient = fields.Function(fields.Many2One(
+        'gnuhealth.patient', 'Patient',
+        depends=['deceased']), 'get_patient')
+
+    def get_patient(self, name):
+        if (self.registration):
+            return self.registration.patient
 
     @staticmethod
     def default_health_professional():
@@ -308,6 +328,7 @@ class PatientRounding(ModelSQL, ModelView):
         table_h = cls.__table_handler__(module)
 
 
+# Obsoleted in GH 5.0 by general health.PatientProcedure
 class RoundingProcedure(ModelSQL, ModelView):
     'Rounding - Procedure'
     __name__ = 'gnuhealth.rounding_procedure'
@@ -332,7 +353,7 @@ class RoundingProcedure(ModelSQL, ModelView):
 
 
 class PatientAmbulatoryCare(ModelSQL, ModelView):
-    'Patient Ambulatory Care'
+    'Ambulatory Care'
     __name__ = 'gnuhealth.patient.ambulatory_care'
 
     STATES = {'readonly': Eval('state') == 'done'}
@@ -361,6 +382,18 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
         'Health Prof', readonly=True)
+
+    ambulatory_procedures = fields.One2Many(
+        'gnuhealth.patient.procedure', 'reference', 'Procedures',
+        domain=[
+            ('patient', '=', Eval('patient')),
+            ('ctx', '=', Eval('ambulatory')),
+            ('pdate', '=', Eval('session_start')),
+            ],
+        depends=['patient'],
+        help='Procedures done during the rounding')
+
+    # Obsoleted in GH 5.0 by ambulatory_procedures
     procedures = fields.One2Many(
         'gnuhealth.ambulatory_care_procedure', 'ambcare',
         'Procedures', states=STATES,

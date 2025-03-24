@@ -82,7 +82,7 @@ __all__ = [
     'PatientDiseaseInfo', 'Appointment', 'AppointmentReport',
     'OpenAppointmentReportStart', 'OpenAppointmentReport',
     'PatientPrescriptionOrder', 'PrescriptionLine', 'PatientMedication',
-    'PatientVaccination', 'PatientEvaluation',
+    'PatientVaccination', 'PatientEvaluation', 'PatientProcedure',
     'Directions', 'SecondaryCondition', 'DiagnosticHypothesis',
     'SignsAndSymptoms', 'PatientECG', 'ProductTemplate', 'PageOfLife',
     'Commands', 'Modules', 'Help', 'OnlineDocument']
@@ -5402,6 +5402,17 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
     directions = fields.Text('Therapeutic Plan', states=STATES)
 
+    procedures = fields.One2Many(
+        'gnuhealth.patient.procedure', 'reference', 'Procedures',
+        domain=[
+            ('patient', '=', Eval('patient')),
+            ('ctx', '=', Eval('evaluation')),
+            ('pdate', '=', Eval('evaluation_start')),
+            ],
+        depends=['patient'],
+        help='Procedures done in the evaluation')
+
+    # Obsoleted in 5.0. Use the "procedures" attribute
     actions = fields.One2Many(
         'gnuhealth.directions', 'evaluation', 'Procedures',
         help='Procedures done in the evaluation',
@@ -5431,7 +5442,6 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
 
     @staticmethod
     def default_institution():
-        # health_inst = HealthInstitution()
         return get_institution()
 
     @staticmethod
@@ -5765,7 +5775,47 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
                 ]
 
 
+# PATIENT PROCEDURES
+class PatientProcedure(ModelSQL, ModelView):
+    'Procedures done on patients'
+    __name__ = 'gnuhealth.patient.procedure'
+
+    procedure = fields.Many2One(
+        'gnuhealth.procedure', 'Procedure', required=True)
+    evaluation = fields.Many2One('gnuhealth.patient.evaluation', 'Evaluation')
+
+    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+    ctx = fields.Selection([
+        (None, ''),
+        ('evaluation', 'Medical Evaluation'),
+        ('ambulatory', 'Ambulatory Care'),
+        ('rounding', 'Nursing Rounding'),
+        ('surgery', 'Surgery'),
+    ], 'Context', sort=False)
+
+    reference = fields.Reference(
+        'Origin', 'get_origin')
+
+    pdate = fields.DateTime('Date')
+
+    comments = fields.Char('Comments')
+
+    @classmethod
+    def _get_origin(cls):
+        'List of Model References. New packages will add to it'
+        return [('gnuhealth.patient.evaluation')]
+
+    @classmethod
+    def get_origin(cls):
+        Model = Pool().get('ir.model')
+        get_name = Model.get_name
+        models = cls._get_origin()
+        print([(None, '')] + [(m, get_name(m)) for m in models])
+        return [(None, '')] + [(m, get_name(m)) for m in models]
+
+
 # PATIENT EVALUATION DIRECTIONS
+# Obsoleted in 5.0 by PatientProcedure class
 class Directions(ModelSQL, ModelView):
     'Patient Directions'
     __name__ = 'gnuhealth.directions'
@@ -5976,6 +6026,7 @@ class PatientECG(ModelSQL, ModelView):
 
 class ProductTemplate(metaclass=PoolMeta):
     __name__ = 'product.template'
+
     """
     Allow to change the values from the product templates
     coming from XML files

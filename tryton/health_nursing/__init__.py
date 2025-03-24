@@ -14,12 +14,14 @@
 from trytond.pool import Pool
 from . import health_nursing
 from . import sequences
+from . import health 
 
 
 def register():
     Pool.register(
         health_nursing.PatientRounding,
         health_nursing.RoundingProcedure,
+        health.PatientProcedure,
         health_nursing.PatientAmbulatoryCare,
         health_nursing.AmbulatoryCareProcedure,
         sequences.GnuHealthSequences,

@@ -13,6 +13,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <group colspan="2" col="4" id="group_admin_data">
                 <label name="registration"/>
                 <field name="registration"/>
+                <label name="patient"/>
+                <field name="patient"/>
                 <label name="code"/>
                 <field name="code"/>
                 <label name="health_professional"/>
@@ -92,7 +94,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         </page>
         <page string="Procedures" id="rounding_procedures">
-            <field name="procedures"/>
+            <field name="rounding_procedures"/>
         </page>
     </notebook>
 </form>

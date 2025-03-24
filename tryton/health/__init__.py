@@ -79,6 +79,7 @@ def register():
         health.PrescriptionLine,
         health.PatientMedication,
         health.PatientVaccination,
+        health.PatientProcedure,
         health.PatientEvaluation,
         health.Directions,
         health.SecondaryCondition,
