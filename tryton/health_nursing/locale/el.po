@@ -16,6 +16,11 @@ msgid "Code"
 msgstr "Κωδικός"
 
 #, fuzzy
+msgctxt "field:gnuhealth.patient.ambulatory_care,ambulatory_procedures:"
+msgid "Procedures"
+msgstr "Procedures"
+
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,base_condition:"
 msgid "Condition"
 msgstr "Πάθηση"
@@ -186,6 +191,11 @@ msgctxt "field:gnuhealth.patient.rounding,pain_level:"
 msgid "Pain level"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,patient:"
+msgid "Patient"
+msgstr "Ασθενής"
+
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
 msgstr "Προσωπικές ανάγκες"
@@ -242,6 +252,11 @@ msgstr "Αναπνευστ. συχνότης"
 msgctxt "field:gnuhealth.patient.rounding,round_summary:"
 msgid "Round Summary"
 msgstr "Περίληψη ιατρικής επίσκεψης"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures"
+msgstr "Procedures"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,signed_by:"
@@ -311,6 +326,10 @@ msgstr ""
 
 msgctxt "help:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Procedure Code"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,ambulatory_procedures:"
+msgid "Procedures done during the rounding"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,bpm:"
@@ -438,6 +457,10 @@ msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
 msgstr "Αναπνευστική συχνότητα σε Αναπνοές ανά λεπτό"
 
+msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.rounding,signed_by:"
 msgid "Health Professional that signed the rounding"
 msgstr ""
@@ -464,9 +487,10 @@ msgctxt "model:gnuhealth.ambulatory_care_procedure,name:"
 msgid "Ambulatory Care Procedure"
 msgstr "Διαδικασία Περιπατητικής φροντίδας"
 
+#, fuzzy
 msgctxt "model:gnuhealth.patient.ambulatory_care,name:"
-msgid "Patient Ambulatory Care"
-msgstr "Περιπατητική φροντίδα ασθενούς"
+msgid "Ambulatory Care"
+msgstr "Περιπατητική φροντίδα"
 
 msgctxt "model:gnuhealth.patient.rounding,name:"
 msgid "Patient Rounding"

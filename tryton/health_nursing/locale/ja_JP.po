@@ -16,6 +16,11 @@ msgid "Code"
 msgstr "コード"
 
 #, fuzzy
+msgctxt "field:gnuhealth.patient.ambulatory_care,ambulatory_procedures:"
+msgid "Procedures"
+msgstr "処置"
+
+#, fuzzy
 msgctxt "field:gnuhealth.patient.ambulatory_care,base_condition:"
 msgid "Condition"
 msgstr "状態"
@@ -186,6 +191,11 @@ msgctxt "field:gnuhealth.patient.rounding,pain_level:"
 msgid "Pain level"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,patient:"
+msgid "Patient"
+msgstr "患者"
+
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
 msgstr "その他、要望"
@@ -242,6 +252,11 @@ msgstr "呼吸数"
 msgctxt "field:gnuhealth.patient.rounding,round_summary:"
 msgid "Round Summary"
 msgstr "回診概要"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures"
+msgstr "処置"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,signed_by:"
@@ -313,6 +328,10 @@ msgstr ""
 msgctxt "help:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Procedure Code"
 msgstr "処置コード"
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,ambulatory_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,bpm:"
 msgid "Heart rate expressed in beats per minute"
@@ -433,6 +452,10 @@ msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
 msgstr "呼吸数（分あたりの呼吸回数）"
 
+msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.rounding,signed_by:"
 msgid "Health Professional that signed the rounding"
 msgstr ""
@@ -459,9 +482,10 @@ msgctxt "model:gnuhealth.ambulatory_care_procedure,name:"
 msgid "Ambulatory Care Procedure"
 msgstr "外来診療手順"
 
+#, fuzzy
 msgctxt "model:gnuhealth.patient.ambulatory_care,name:"
-msgid "Patient Ambulatory Care"
-msgstr "患者の外来診療"
+msgid "Ambulatory Care"
+msgstr "外来診療"
 
 msgctxt "model:gnuhealth.patient.rounding,name:"
 msgid "Patient Rounding"

@@ -15,6 +15,11 @@ msgctxt "field:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Code"
 msgstr "Kod"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.ambulatory_care,ambulatory_procedures:"
+msgid "Procedures"
+msgstr "Förfaranden"
+
 msgctxt "field:gnuhealth.patient.ambulatory_care,base_condition:"
 msgid "Condition"
 msgstr "Tillstånd"
@@ -179,6 +184,11 @@ msgctxt "field:gnuhealth.patient.rounding,pain_level:"
 msgid "Pain level"
 msgstr "Nivå av smärta"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,patient:"
+msgid "Patient"
+msgstr "Patient"
+
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
 msgstr "Personliga behov"
@@ -231,6 +241,11 @@ msgstr "Andningsfrekvens"
 msgctxt "field:gnuhealth.patient.rounding,round_summary:"
 msgid "Round Summary"
 msgstr "Sammanfattning av ronden"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures"
+msgstr "Förfaranden"
 
 msgctxt "field:gnuhealth.patient.rounding,signed_by:"
 msgid "Signed by"
@@ -298,6 +313,10 @@ msgstr "Rundningssekvens för patient"
 msgctxt "help:gnuhealth.ambulatory_care_procedure,procedure:"
 msgid "Procedure Code"
 msgstr "Förfarandekod"
+
+msgctxt "help:gnuhealth.patient.ambulatory_care,ambulatory_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.ambulatory_care,bpm:"
 msgid "Heart rate expressed in beats per minute"
@@ -426,6 +445,10 @@ msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
 msgstr "Andningsfrekvens uttryckt i andetag per minut"
 
+msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.rounding,signed_by:"
 msgid "Health Professional that signed the rounding"
 msgstr "Vårdpersonal som signerade ronderingen"
@@ -454,9 +477,10 @@ msgctxt "model:gnuhealth.ambulatory_care_procedure,name:"
 msgid "Ambulatory Care Procedure"
 msgstr "Förfarande för ambulerande vård"
 
+#, fuzzy
 msgctxt "model:gnuhealth.patient.ambulatory_care,name:"
-msgid "Patient Ambulatory Care"
-msgstr "Ambulerande vård för patienten"
+msgid "Ambulatory Care"
+msgstr "Ambulerande vård"
 
 #, fuzzy
 msgctxt "model:gnuhealth.patient.rounding,name:"

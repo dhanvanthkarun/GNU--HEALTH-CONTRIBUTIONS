@@ -1,6 +1,6 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1792,6 +1792,11 @@ msgctxt "field:gnuhealth.patient.evaluation,present_illness:"
 msgid "Present Illness"
 msgstr "ການເຈັບປັດຈຸບັນ"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,procedures:"
+msgid "Procedures"
+msgstr "ຂັ້ນຕອນ"
+
 msgctxt "field:gnuhealth.patient.evaluation,psychological_assessment:"
 msgid "Psychological Assessment"
 msgstr ""
@@ -2002,6 +2007,40 @@ msgstr "ເສັ້ນທາງການບໍລິຫານ"
 msgctxt "field:gnuhealth.patient.medication,start_treatment:"
 msgid "Start"
 msgstr "ເລີ່ມຕົ້ນ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,comments:"
+msgid "Comments"
+msgstr "ຄໍາເຫັນ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,ctx:"
+msgid "Context"
+msgstr "ຕິດຕໍ່ພົວພັນ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,evaluation:"
+msgid "Evaluation"
+msgstr "ການປະເມີນຜົນ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,patient:"
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,pdate:"
+msgid "Date"
+msgstr "ວັນທີ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,procedure:"
+msgid "Procedure"
+msgstr "ຂໍ້ປະຕິບັດ"
+
+msgctxt "field:gnuhealth.patient.procedure,reference:"
+msgid "Origin"
+msgstr ""
 
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -3601,6 +3640,10 @@ msgctxt "help:gnuhealth.patient.evaluation,praxis:"
 msgid "Check this box if the patient is unable to make voluntarymovements"
 msgstr "ຫມາຍເອົາຫ້ອງທີ່ນີ້ຖ້າຫາກວ່າຄົນເຈັບບໍ່ສາມາດເໜັງຕິງໄດ້ຕາມລຳພັງ."
 
+msgctxt "help:gnuhealth.patient.evaluation,procedures:"
+msgid "Procedures done in the evaluation"
+msgstr ""
+
 msgctxt "help:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition related to this follow-up evaluation"
 msgstr ""
@@ -4970,8 +5013,9 @@ msgctxt "model:gnuhealth.institution.specialties,name:"
 msgid "Health Institution Specialties"
 msgstr "ສະຖາບັນສຸຂພາບສະເພາະ"
 
+#, fuzzy
 msgctxt "model:gnuhealth.insurance,name:"
-msgid "Insurance"
+msgid "Person Insurance"
 msgstr "ປະກັນໄພ"
 
 msgctxt "model:gnuhealth.insurance.plan,name:"
@@ -7824,6 +7868,10 @@ msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "ຢາຂອງຄົນເຈັບ"
 
+msgctxt "model:gnuhealth.patient.procedure,name:"
+msgid "Procedures done on patients"
+msgstr ""
+
 msgctxt "model:gnuhealth.person_alternative_identification,name:"
 msgid "Alternative person ID"
 msgstr "ບັດປະຈຳຕົວອັນອື່ນຂອງຄົນຜູ້ນີ້"
@@ -8317,6 +8365,11 @@ msgstr "ປະເພດພະຍາດ"
 msgctxt "model:ir.action,name:action_gnuhealth_patient_evaluation_view"
 msgid "Patient Evaluations [readonly]"
 msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
+msgid "Patient procedures"
+msgstr "ຂັ້ນຕອນ"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
@@ -8926,6 +8979,11 @@ msgstr ""
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
 msgstr "ຂົງເຂດການປະຕິບັດງານ"
+
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_procedures_menu"
+msgid "Patient procedures"
+msgstr "ຂັ້ນຕອນ"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
 msgid "Patients"
@@ -10905,6 +10963,26 @@ msgctxt "selection:gnuhealth.patient.medication,infusion_rate_units:"
 msgid "mL/hour"
 msgstr "ມລ / ຊົ່ວໂມງ"
 
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Ambulatory Care"
+msgstr "ການປິ່ນປົວຕົ້ນຕໍ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Medical Evaluation"
+msgstr "ການປະເມີນຜົນ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Nursing Rounding"
+msgstr "ໂຣງພະຍາບານຄົນສະລາ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Surgery"
+msgstr "ໝໍຊ່ຽວຊານດ້ານຜ່າຕັດ"
+
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
 msgid "Country of origin ID"
@@ -11785,6 +11863,16 @@ msgstr "ເວລາຂອງການປິ່ນປົວ"
 msgctxt "view:gnuhealth.patient.medication:"
 msgid "Treatment period"
 msgstr "ຊ່ວງຂອງການປິ່ນປົວ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.procedure:"
+msgid "Date"
+msgstr "ວັນທີ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.procedure:"
+msgid "Time"
+msgstr "ເວລາ"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
