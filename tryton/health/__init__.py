@@ -88,6 +88,7 @@ def register():
         health.PatientECG,
         health.ProductTemplate,
         health.PageOfLife,
+        health.ProceduresConfig,
         health.Commands,
         health.Modules,
         health.Help,

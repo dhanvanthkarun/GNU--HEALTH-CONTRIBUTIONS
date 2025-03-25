@@ -2389,5 +2389,40 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="gnuhealth_online_document" sequence="1000" parent="gnuhealth_menu"/>
 
 
+<!-- GNU Health Medical Procedures Config -->
+
+        <record model="ir.ui.view" id="gnuhealth_procedures_config_view">
+            <field name="model">gnuhealth.procedures.config</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_procedures_config</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_procedures_config_tree">
+            <field name="model">gnuhealth.procedures.config</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_procedures_config_tree</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_procedures_config_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_procedures_config_tree"/>
+            <field name="act_window" ref="gnuhealth_action_procedures_config"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_procedures_config_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_procedures_config_view"/>
+            <field name="act_window" ref="gnuhealth_action_procedures_config"/>
+        </record>
+
+
+        <record model="ir.action.act_window" id="gnuhealth_action_procedures_config">
+            <field name="name">Medical Procedures Configuration</field>
+            <field name="res_model">gnuhealth.procedures.config</field>
+        </record>
+
+        <menuitem action="gnuhealth_action_procedures_config" icon="gnuhealth-list"
+            id="gnuhealth_conf_procedures_config" sequence="1"
+            parent="gnuhealth_conf_procedure"/>
+
     </data>
 </tryton>

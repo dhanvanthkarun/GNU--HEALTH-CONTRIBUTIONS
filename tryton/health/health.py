@@ -78,7 +78,7 @@ __all__ = [
     'Pathology', 'DiseaseMembers', 'ProcedureCode',
     'BirthCertExtraInfo', 'DeathCertExtraInfo', 'DeathUnderlyingCondition',
     'InsurancePlan', 'Insurance', 'AlternativePersonID',
-    'Product', 'PatientData',
+    'Product', 'PatientData', 'ProceduresConfig',
     'PatientDiseaseInfo', 'Appointment', 'AppointmentReport',
     'OpenAppointmentReportStart', 'OpenAppointmentReport',
     'PatientPrescriptionOrder', 'PrescriptionLine', 'PatientMedication',
@@ -2085,9 +2085,8 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
         table_h = cls.__table_handler__(module)
 
 
-class PhysicianSP(ModelSQL, ModelView):
+class PhysicianSP(metaclass=PoolMeta):
     # Add Main Specialty field after from the Health Professional Speciality
-    'Health Professional'
     __name__ = 'gnuhealth.healthprofessional'
 
     main_specialty = fields.Many2One(
@@ -6154,3 +6153,22 @@ class OnlineDocument(ModelSQL, ModelView):
             ('code_unique', Unique(t, t.name),
              'The online document name already exists')
         ]
+
+
+class ProceduresConfig(ModelSingleton, ModelSQL, ModelView):
+    'Medical Procedures Config'
+    __name__ = 'gnuhealth.procedures.config'
+
+    medical_evaluation = fields.Many2One(
+        'gnuhealth.procedure', 'Medical Evaluation',
+        help="The code use for the procedure related to a medical"
+             " encounter. If it exist, it will add up to the "
+             "procedure list in the context of the medical evaluation"
+        )
+
+    ambulatory_care = fields.Many2One(
+        'gnuhealth.procedure', 'Ambulatory care',
+        help="The code use for the procedure related to an ambulatory"
+             " care session. If it exist, it will add up to the "
+             "procedure list in the context of ambulatory care"
+        )
