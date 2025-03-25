@@ -49,7 +49,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
                     <label name="marital_status"/>
                     <field name="marital_status"/>
                     <newline/>
-                    <group string="Ethnicity" id="ethnicity_group" colspan="6">
+                    <label name="ethnic_group" string=""/>
+                    <group string="Ethnicity" id="ethnicity_group" colspan="5">
                         <field name="ethnic_group"/>
                         <label name="proclaimed_ethnicity" string="Proclaimed"/>
                         <field name="proclaimed_ethnicity"/>
