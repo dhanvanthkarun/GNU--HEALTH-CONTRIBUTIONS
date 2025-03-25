@@ -12,7 +12,7 @@ class PatientProcedure(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.procedure'
 
     """
-    Include patient surgery reference to 
+    Include patient surgery reference to
     list of allowed procedures
     """
 

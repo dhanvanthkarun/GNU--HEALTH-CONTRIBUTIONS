@@ -50,7 +50,6 @@ def register():
         health.HospitalBed,
         health.HealthProfessional,
         health.HealthProfessionalSpecialties,
-        health.PhysicianSP,
         health.Family,
         health.FamilyMember,
         health.MedicamentCategory,

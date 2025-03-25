@@ -72,7 +72,7 @@ __all__ = [
     'HealthInstitutionOperationalSector', 'HealthInstitutionO2M',
     'HospitalBuilding', 'HospitalUnit', 'HospitalOR', 'HospitalWard',
     'HospitalBed', 'HealthProfessional', 'HealthProfessionalSpecialties',
-    'PhysicianSP', 'Family', 'FamilyMember', 'MedicamentCategory',
+    'Family', 'FamilyMember', 'MedicamentCategory',
     'Medicament', 'ImmunizationSchedule', 'ImmunizationScheduleLine',
     'ImmunizationScheduleDose', 'PathologyCategory', 'PathologyGroup',
     'Pathology', 'DiseaseMembers', 'ProcedureCode',
@@ -1945,7 +1945,7 @@ class HealthProfessional(ModelSQL, ModelView):
             ('is_healthprof', '=', True),
             ('is_person', '=', True),
         ],
-        help='Health Professional\'s Name, from the partner list')
+        help="Health Professional related party")
 
     institution = fields.Many2One(
         'gnuhealth.institution', 'Institution',
@@ -1968,6 +1968,12 @@ class HealthProfessional(ModelSQL, ModelView):
         'get_hp_puid', searcher='search_hp_puid')
 
     active = fields.Boolean('Active')
+
+    main_specialty = fields.Many2One(
+        'gnuhealth.hp_specialty', 'Main Specialty',
+        domain=[('healthprof', '=', Eval('id'))],
+        states={'readonly': Eval('id', 0) < 0},
+        depends=['id'])
 
     @staticmethod
     def default_active():
@@ -2083,17 +2089,6 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
-
-
-class PhysicianSP(metaclass=PoolMeta):
-    # Add Main Specialty field after from the Health Professional Speciality
-    __name__ = 'gnuhealth.healthprofessional'
-
-    main_specialty = fields.Many2One(
-        'gnuhealth.hp_specialty', 'Main Specialty',
-        domain=[('healthprof', '=', Eval('id'))],
-        states={'readonly': Eval('id', 0) < 0},
-        depends=['id'])
 
 
 class Family(ModelSQL, ModelView):
