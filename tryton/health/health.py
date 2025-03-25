@@ -5409,7 +5409,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'gnuhealth.patient.procedure', 'reference', 'Procedures',
         domain=[
             ('patient', '=', Eval('patient')),
-            ('ctx', '=', Eval('evaluation')),
+            ('ctx', '=', 'evaluation'),
             ('pdate', '=', Eval('evaluation_start')),
             ],
         depends=['patient'],
@@ -5442,6 +5442,21 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'Evaluation Date'), 'get_report_evaluation_date')
     report_evaluation_time = fields.Function(fields.Time(
         'Evaluation Time'), 'get_report_evaluation_time')
+
+    @staticmethod
+    def default_procedures():
+        """When creating a new patient medical evaluation / encounter,
+           GNU Health checks if there is one code set on the
+           gnuhealth.procedures.config model, and use it as the first line
+           on the procedure list.
+           The user can remove it or use another in that medical evaluation
+           context.
+        """
+        ProceduresConfig = Pool().get('gnuhealth.procedures.config')(1)
+        if (ProceduresConfig and ProceduresConfig.medical_evaluation):
+            medical_procedure = int(ProceduresConfig.medical_evaluation)
+
+            return [{'procedure': medical_procedure}]
 
     @staticmethod
     def default_institution():
