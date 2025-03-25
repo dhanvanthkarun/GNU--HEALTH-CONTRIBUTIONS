@@ -14,7 +14,7 @@
 from trytond.pool import Pool
 from . import health_nursing
 from . import sequences
-from . import health 
+from . import health
 
 
 def register():
