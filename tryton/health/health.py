@@ -418,7 +418,9 @@ class Party(metaclass=PoolMeta):
     photo = fields.Binary('Picture')
     ethnic_group = fields.Many2One('gnuhealth.ethnicity', 'Ethnicity')
     proclaimed_ethnicity = fields.Many2One(
-        'gnuhealth.ethnicity', 'Proclaimed ethnicity')
+        'gnuhealth.ethnicity', 'Proclaimed ethnicity',
+        help="The ethnic group the person identifies most"
+        )
 
     marital_status = fields.Selection([
         (None, ''),
