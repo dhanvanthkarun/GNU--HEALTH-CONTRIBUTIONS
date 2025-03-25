@@ -215,6 +215,17 @@ class Surgery(ModelSQL, ModelView):
 
     discharge_instructions = fields.Text('Discharge Instructions')
 
+    surgery_procedures = fields.One2Many(
+        'gnuhealth.patient.procedure', 'reference', 'Procedures',
+        domain=[
+            ('patient', '=', Eval('patient')),
+            ('ctx', '=', 'surgery'),
+            ('pdate', '=', Eval('surgery_date')),
+            ],
+        depends=['patient'],
+        help='Procedures done during the Surgery')
+
+    # Deprecated in GH 5.0 use surgery_procedures
     procedures = fields.One2Many(
         'gnuhealth.operation', 'surgery', 'Procedures',
         help="Procedures / Interventions done in the surgery")
@@ -468,6 +479,7 @@ class Surgery(ModelSQL, ModelView):
     surgical_intervention = fields.Many2One(
         'gnuhealth.procedure', 'Surgical Intervention',
         help="This code reflects the main intervention of this surgery."
+             "eg, appendectomy."
              "Additional procedures can be entered on the procedures tab.")
 
     @staticmethod

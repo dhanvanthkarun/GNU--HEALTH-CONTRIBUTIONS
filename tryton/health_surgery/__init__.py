@@ -15,6 +15,7 @@
 
 from trytond.pool import Pool
 from . import health_surgery
+from . import health
 from . import report
 from . import sequences
 
@@ -26,6 +27,7 @@ def register():
         health_surgery.RCRI,
         health_surgery.Surgery,
         health_surgery.Operation,
+        health.PatientProcedure,
         health_surgery.SurgerySupply,
         health_surgery.PatientData,
         health_surgery.SurgeryTeam,
