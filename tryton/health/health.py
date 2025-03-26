@@ -5795,7 +5795,6 @@ class PatientProcedure(ModelSQL, ModelView):
 
     procedure = fields.Many2One(
         'gnuhealth.procedure', 'Procedure', required=True)
-    evaluation = fields.Many2One('gnuhealth.patient.evaluation', 'Evaluation')
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     ctx = fields.Selection([
