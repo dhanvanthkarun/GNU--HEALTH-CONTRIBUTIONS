@@ -473,6 +473,21 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         help="Health Professional that signed the session")
 
     @staticmethod
+    def default_ambulatory_procedures():
+        """When creating a new patient ambulatory session,
+           GNU Health checks if there is one code set on the
+           gnuhealth.procedures.config model, and use it as the first line
+           on the procedure list.
+           The user can remove it or use another in that ambulatory care
+           context.
+        """
+        ProceduresConfig = Pool().get('gnuhealth.procedures.config')(1)
+        if (ProceduresConfig and ProceduresConfig.ambulatory_care):
+            medical_procedure = int(ProceduresConfig.ambulatory_care)
+
+            return [{'procedure': medical_procedure}]
+
+    @staticmethod
     def default_health_professional():
         return get_health_professional()
 

@@ -5410,7 +5410,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         depends=['patient'],
         help='Procedures done in the evaluation')
 
-    # Obsoleted in 5.0. Use the "procedures" attribute
+    # Deprecated in 5.0. Use the "procedures" attribute
     actions = fields.One2Many(
         'gnuhealth.directions', 'evaluation', 'Procedures',
         help='Procedures done in the evaluation',
