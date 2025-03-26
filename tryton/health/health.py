@@ -46,7 +46,7 @@ from .exceptions import (
     MedEndDateBeforeStart, NextDoseBeforeFirst, DrugPregnancySafetyCheck,
     EvaluationEndBeforeStart, MustBeAPerson, NoAssociatedHealthProfessional,
     DupOfficialName, FedAccountMismatch, BirthCertDateMismatch,
-    CanNotModifyVaccination
+    CanNotModifyVaccination, DupMainSP
 )
 
 from .core import (get_institution,
@@ -1969,11 +1969,16 @@ class HealthProfessional(ModelSQL, ModelView):
 
     active = fields.Boolean('Active')
 
+    """
     main_specialty = fields.Many2One(
         'gnuhealth.hp_specialty', 'Main Specialty',
         domain=[('healthprof', '=', Eval('id'))],
         states={'readonly': Eval('id', 0) < 0},
         depends=['id'])
+    """
+    main_specialty = fields.Function(fields.Many2One(
+        'gnuhealth.hp_specialty', 'Main Specialty'),
+        'get_main_specialty')
 
     @staticmethod
     def default_active():
@@ -1982,9 +1987,35 @@ class HealthProfessional(ModelSQL, ModelView):
     def get_hp_puid(self, name):
         return self.party.ref
 
+    def get_main_specialty(self, name):
+        if (len(self.specialties) == 1):
+            return self.specialties[0].id
+        if (len(self.specialties) > 1):
+            index = 0
+            for sp in self.specialties:
+                index = index+1
+                if (sp.mainsp):
+                    return sp
+
     @staticmethod
     def default_institution():
         return get_institution()
+
+    @classmethod
+    def validate(cls, healthprofs):
+        super(HealthProfessional, cls).validate(healthprofs)
+        for hp in healthprofs:
+            hp.validate_specialties()
+
+    def validate_specialties(self):
+        counter = 0
+        for sp in self.specialties:
+            if (sp.mainsp):
+                counter = counter + 1
+            if counter > 1:
+                raise DupMainSP(
+                    gettext('health.msg_dup_mainsp')
+                )
 
     @classmethod
     def search_hp_puid(cls, name, clause):
@@ -2055,6 +2086,10 @@ class HealthProfessionalSpecialties(ModelSQL, ModelView):
     specialty = fields.Many2One(
         'gnuhealth.specialty', 'Specialty', required=True,
         help='Specialty Code')
+
+    mainsp = fields.Boolean(
+        'Main', help="Set this field if this is the main specialty or the one"
+        " used in this health institution")
 
     def get_rec_name(self, name):
         return self.specialty.name

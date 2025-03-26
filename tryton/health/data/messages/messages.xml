@@ -56,6 +56,10 @@ this repository contains the full copyright notices and license terms. -->
         <record model="ir.message" id="msg_patient_disease_already_exists">
             <field name="text">SM-CORE-0015: This disease already exists, do not create it again.</field>
         </record>
+        <record model="ir.message" id="msg_dup_mainsp">
+            <field name="text">SM-CORE-0016: The health professional can have only one main specialty</field>
+        </record>
+
         <record model="ir.message" id="msg_compute_age_from_dates_year_str">
             <field name="text">y </field>
         </record>

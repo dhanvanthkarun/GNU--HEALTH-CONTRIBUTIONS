@@ -64,6 +64,10 @@ class BirthCertDateMismatch(ValidationError):
     pass
 
 
+class DupMainSP(ValidationError):
+    pass
+
+
 class NoAppointmentSelected(UserError):
     pass
 
