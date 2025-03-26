@@ -43,8 +43,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="anesthetist"/>
     </group>
     <newline/>
-    <group string="Surgical Intervention" id="surgical_intervention_group" colspan="4" col="6">
+    <group string="Surgical Intervention" id="surgical_intervention_group" colspan="4" col="7">
         <field name="surgical_intervention"/>
+        <label name="incl_intervention"/>
+        <field name="incl_intervention"/>
         <label name="approach"/>
         <field name="approach"/>
         <label name="anesthesia_type"/>

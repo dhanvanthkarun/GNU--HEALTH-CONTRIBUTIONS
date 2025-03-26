@@ -482,6 +482,17 @@ class Surgery(ModelSQL, ModelView):
              "eg, appendectomy."
              "Additional procedures can be entered on the procedures tab.")
 
+    incl_intervention = fields.Boolean(
+        'Incl. procedure',
+        help="If set, the main surgical intervention will also be "
+        "included in the list of medical procedures for this patient. "
+        "The interventions listed on the procedures section of the surgery "
+        "will always be included.")
+
+    @staticmethod
+    def default_incl_intervention():
+        return True
+
     @staticmethod
     def default_institution():
         return get_institution()
@@ -573,13 +584,35 @@ class Surgery(ModelSQL, ModelView):
             if not values.get('code'):
                 values['code'] = cls.generate_code()
 
-            """ Create the entry in the Operating room scheduler
-                when the surgery includes de OR
-            """
-
             """ Create the surgery first so we get the id """
             surgeries = super(Surgery, cls).create(vlist)
             surgery = surgeries[0].id
+
+            """ Include Surgical Intervention (main) to the
+                patient procedures.
+                It requires to explicitly set 'incl. intervention'
+                as well as the patient, date and main intervention
+            """
+            if values.get('surgical_intervention') \
+                    and values.get('incl_intervention') \
+                    and values.get('patient') \
+                    and values.get('surgery_date'):
+                main_proc = values.get('surgical_intervention')
+                Patproc = Pool().get('gnuhealth.patient.procedure')
+                patproc = []
+                vals = {
+                    'patient': values.get('patient'),
+                    'ctx': 'surgery',
+                    'procedure': main_proc,
+                    'reference': f'gnuhealth.surgery,{surgery}',
+                    'pdate': values.get('surgery_date')
+                    }
+                patproc.append(vals)
+                Patproc.create(patproc)
+
+            """ Create the entry in the Operating room scheduler
+                when the surgery includes de OR
+            """
 
             if values.get('operating_room'):
                 ORsched = Pool().get('gnuhealth.or.schedule')
@@ -842,6 +875,7 @@ class Surgery(ModelSQL, ModelView):
                 ]
 
 
+# Deprecated in GH 5.0 by class PatientProcedures
 class Operation(ModelSQL, ModelView):
     'Operation - Surgical Procedures'
     __name__ = 'gnuhealth.operation'
