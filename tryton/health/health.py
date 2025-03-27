@@ -1991,9 +1991,7 @@ class HealthProfessional(ModelSQL, ModelView):
         if (len(self.specialties) == 1):
             return self.specialties[0].id
         if (len(self.specialties) > 1):
-            index = 0
             for sp in self.specialties:
-                index = index+1
                 if (sp.mainsp):
                     return sp
 
