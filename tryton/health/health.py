@@ -5858,6 +5858,19 @@ class PatientProcedure(ModelSQL, ModelView):
         print([(None, '')] + [(m, get_name(m)) for m in models])
         return [(None, '')] + [(m, get_name(m)) for m in models]
 
+    # Allow to search by patient, procedure or context
+    @classmethod
+    def search_rec_name(cls, name, clause):
+        if clause[1].startswith('!') or clause[1].startswith('not '):
+            bool_op = 'AND'
+        else:
+            bool_op = 'OR'
+        return [bool_op,
+                ('procedure',) + tuple(clause[1:]),
+                ('patient',) + tuple(clause[1:]),
+                ('ctx',) + tuple(clause[1:]),
+                ]
+
 
 # PATIENT EVALUATION DIRECTIONS
 # Obsoleted in 5.0 by PatientProcedure class

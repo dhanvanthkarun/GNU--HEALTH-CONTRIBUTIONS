@@ -138,6 +138,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="internal">False</field>
         </record>
 
+        <record model="gnuhealth.command" id="procs">
+            <field name="name">procs</field>
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="description">Patient procedures</field>
+            <field name="internal">False</field>
+        </record>
+
         <record model="gnuhealth.command" id="sysinfo">
             <field name="name">sysinfo</field>
             <field name="description">Technical information for client and server</field>
