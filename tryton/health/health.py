@@ -3865,13 +3865,6 @@ class Appointment(ModelSQL, ModelView):
         domain=[('type', '=', 'service')],
         help='Consultation Services')
 
-    """
-    insurance = fields.Many2One(
-        'gnuhealth.insurance', 'Insurance',
-        domain=[('party', '=', Eval('rel_party'))],
-        help="Insurance plan used in this procedure")
-    """
-
     insurance = fields.Many2One(
         'gnuhealth.insurance', 'Insurance',
         domain=[('party', '=', Eval('rel_party'))],
@@ -3884,6 +3877,7 @@ class Appointment(ModelSQL, ModelView):
     def on_change_patient(self):
         if self.patient:
             self.rel_party = int(self.patient.party.id)
+            self.state = 'confirmed'
 
     @fields.depends('patient', '_parent_patient.party')
     def get_party(self, name):
