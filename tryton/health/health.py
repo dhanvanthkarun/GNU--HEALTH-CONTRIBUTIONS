@@ -5462,6 +5462,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'evaluation'),
             ('pdate', '=', Eval('evaluation_start')),
+            ('insurance', '=', Eval('insurance')),
             ],
         depends=['patient'],
         help='Procedures done in the evaluation')
