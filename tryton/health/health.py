@@ -3865,6 +3865,31 @@ class Appointment(ModelSQL, ModelView):
         domain=[('type', '=', 'service')],
         help='Consultation Services')
 
+    """
+    insurance = fields.Many2One(
+        'gnuhealth.insurance', 'Insurance',
+        domain=[('party', '=', Eval('rel_party'))],
+        help="Insurance plan used in this procedure")
+    """
+
+    insurance = fields.Many2One(
+        'gnuhealth.insurance', 'Insurance',
+        domain=[('party', '=', Eval('rel_party'))],
+        help="Insurance plan used in this procedure")
+
+    rel_party = fields.Function(
+        fields.Integer('Party ID'), 'get_party')
+
+    @fields.depends('patient', '_parent_patient.party')
+    def on_change_patient(self):
+        if self.patient:
+            self.rel_party = int(self.patient.party.id)
+
+    @fields.depends('patient', '_parent_patient.party')
+    def get_party(self, name):
+        if self.patient:
+            return int(self.patient.party.id)
+
     @classmethod
     def __setup__(cls):
         super(Appointment, cls).__setup__()
@@ -3965,11 +3990,6 @@ class Appointment(ModelSQL, ModelView):
     @staticmethod
     def default_institution():
         return get_institution()
-
-    @fields.depends('patient', '_parent_patient.party')
-    def on_change_patient(self):
-        if self.patient:
-            self.state = 'confirmed'
 
     @fields.depends('healthprof')
     def on_change_with_speciality(self):
@@ -5479,6 +5499,17 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'Evaluation Date'), 'get_report_evaluation_date')
     report_evaluation_time = fields.Function(fields.Time(
         'Evaluation Time'), 'get_report_evaluation_time')
+
+    insurance = fields.Many2One(
+        'gnuhealth.insurance', 'Insurance',
+        domain=[('party', '=', Eval('rel_party'))],
+        help="Insurance plan used in this procedure")
+
+    rel_party = fields.Function(fields.Integer('Party ID'), 'get_party')
+
+    def get_party(self, name):
+        if (self.patient):
+            return int(self.patient.party.id)
 
     @staticmethod
     def default_procedures():

@@ -9,22 +9,26 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <form>
     <group string="Patient" colspan="4" id="evaluation_header">
-      <label name="patient"/>
       <group colspan="1" id="group_patient">
         <field name="patient"/>
         <field name="gender"/>
         <field name="computed_age"/>
       </group>
-      <label name="code"/>
-      <field name="code"/>
+      <group colspan="1" id="group_patient_insurance">
+          <label name="insurance"/>
+          <field name="insurance"/>
+          <field name="code"/>
+      </group>
       <newline/>
-      <label name="visit_type"/>
-      <group colspan="1" id="group_visit_type">
+      <group colspan="4" col="8" id="group_visit_type">
+        <label name="visit_type"/>
         <field name="visit_type"/>
         <field name="related_condition"/>
+        <label name="urgency"/>
+        <field name="urgency"/>
+        <label name="healthprof"/>
+        <field name="healthprof"/>
       </group>
-      <label name="healthprof"/>
-      <field name="healthprof"/>
     </group>
     <newline/>
 
@@ -165,8 +169,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </page>
         <page string="Administrative" id="page_patient_evaluation_administrative">
             <group id='group_patient_evaluation_appointment' colspan="4" col="10">
-                <label name="urgency"/>
-                <field name="urgency"/>
                 <label name="wait_time"/>
                 <field name="wait_time"/>
                 <label name="appointment"/>
