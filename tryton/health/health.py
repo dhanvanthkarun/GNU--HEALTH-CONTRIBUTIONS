@@ -3221,6 +3221,11 @@ class PatientData(ModelSQL, ModelView):
         help='Insurance information. You may choose from the different'
         ' insurances belonging to the patient')
 
+    insurances = fields.Function(
+        fields.One2Many(
+            'gnuhealth.insurance', 'party', 'Insurances',
+            help="Insurance Plans associated to this party"), 'get_insurances')
+
     current_address = fields.Many2One(
         'party.address', 'Temp. Addr',
         domain=[('party', '=', Eval('party'))],
@@ -3423,6 +3428,10 @@ class PatientData(ModelSQL, ModelView):
 
     def get_patient_dob(self, name):
         return self.party.dob
+
+    def get_insurances(self, name):
+        if (self.party):
+            return self.party.insurance
 
     def get_patient_gender(self, name):
         gender = self.party.gender
@@ -5830,6 +5839,14 @@ class PatientProcedure(ModelSQL, ModelView):
         'gnuhealth.procedure', 'Procedure', required=True)
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+
+    rel_party = fields.Function(fields.Integer('Party ID'), 'get_party')
+
+    insurance = fields.Many2One(
+        'gnuhealth.insurance', 'Insurance',
+        domain=[('party', '=', Eval('rel_party'))],
+        help="Insurance plan used in this procedure")
+
     ctx = fields.Selection([
         (None, ''),
         ('evaluation', 'Medical Evaluation'),
@@ -5844,6 +5861,10 @@ class PatientProcedure(ModelSQL, ModelView):
     pdate = fields.DateTime('Date')
 
     comments = fields.Char('Comments')
+
+    def get_party(self, name):
+        if (self.patient):
+            return self.patient.party.id
 
     @classmethod
     def _get_origin(cls):

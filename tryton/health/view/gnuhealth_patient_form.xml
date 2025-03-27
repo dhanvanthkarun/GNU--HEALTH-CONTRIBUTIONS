@@ -65,7 +65,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
                     </group>
                     <newline/>
                     <field name="diseases" colspan="4" yfill="1"/>
-                    
+
                     <group string="Notepad" id="patient_notepad">
                         <field height="100" name="general_info"/>
                     </group>
@@ -87,8 +87,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 </page>
                 <page string="Misc" id="misc_info_page">
                     <group colspan="4" id="misc_info_group">
+                        <field name="insurances" colspan="4"/>
                         <label name="biological_sex"/>
                         <field name="biological_sex"/>
+                        <newline/>
 
                         <!-- Deprecated 
                         <label name="current_address"/>
