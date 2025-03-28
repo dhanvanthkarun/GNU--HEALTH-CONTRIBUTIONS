@@ -91,7 +91,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="text">No</field>
         </record>
         <record model="ir.message" id="msg_matplotlib_rc_config_json_str">
-            <field name="text">{"font.family": ["sans-serif"], "@comment": "Matplotlib rc config used when no matplotlibrc file is found."}</field>
+            <field name="text">{"backend": "Agg", "font.family": ["sans-serif"], "@comment": "Matplotlib rc config used when no matplotlibrc file is found."}</field>
         </record>
     </data>
 </tryton>
