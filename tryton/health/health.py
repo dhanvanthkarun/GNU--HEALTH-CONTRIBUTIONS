@@ -2619,6 +2619,11 @@ class ProcedureCode(ModelSQL, ModelView):
     name = fields.Char('Code', required=True)
     description = fields.Char('Long Text', translate=True)
 
+    product = fields.Many2One(
+        'product.product', 'Product',
+        domain=[('type', '=', 'service')],
+        help='Associated product to the procedure')
+
     # Include code + description in result
     def get_rec_name(self, name):
         return (self.name + ' : ' + self.description)
