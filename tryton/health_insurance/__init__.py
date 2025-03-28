@@ -21,6 +21,7 @@ def register():
         health_insurance.InsurancePlanProductPolicy,
         health_insurance.InsurancePlan,
         health_insurance.HealthService,
+        health_insurance.PatientProcedure,
         module='health_insurance', type_='model')
     Pool.register(
         wizard.wizard_health_insurance.CreateServiceInvoice,

@@ -62,5 +62,19 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_health_service</field>
         </record>
 
+<!-- Patient Procedures -->
+
+        <record model="ir.ui.view" id="view_gnuhealth_patient_procedure_form">
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="inherit" ref="health.gnuhealth_patient_procedure_form"/>
+            <field name="name">gnuhealth_patient_procedure_form</field>
+        </record>
+
+       <record model="ir.ui.view" id="view_gnuhealth_patient_procedure_tree">
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="inherit" ref="health.gnuhealth_patient_procedure_tree"/>
+            <field name="name">gnuhealth_patient_procedure_tree</field>
+        </record>
+
     </data>
 </tryton>

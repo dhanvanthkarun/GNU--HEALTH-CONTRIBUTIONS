@@ -15,13 +15,14 @@ from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval
 from trytond.i18n import gettext
 from trytond.pool import PoolMeta
-
+import decimal
 
 from .exceptions import (DiscountPctOutOfRange, NeedAPolicy,
                          DiscountWithoutElement)
 
 
-__all__ = ['InsurancePlanProductPolicy', 'InsurancePlan', 'HealthService']
+__all__ = ['InsurancePlanProductPolicy', 'InsurancePlan', 'HealthService',
+           'PatientProcedure']
 
 
 class InsurancePlanProductPolicy(ModelSQL, ModelView):
@@ -33,6 +34,11 @@ class InsurancePlanProductPolicy(ModelSQL, ModelView):
         'Plan', required=True)
 
     product = fields.Many2One('product.product', 'Product')
+
+    icode = fields.Char(
+        'Product code',
+        help="Equivalent product code for this plan"
+        )
 
     product_category = fields.Many2One('product.category', 'Category')
 
@@ -95,3 +101,19 @@ class HealthService(metaclass=PoolMeta):
     def on_change_patient(self):
         if self.patient:
             self.insurance_holder = self.patient.party
+
+
+class PatientProcedure(metaclass=PoolMeta):
+    __name__ = 'gnuhealth.patient.procedure'
+
+    price = fields.Function(fields.Numeric('Price'), 'get_price')
+
+    def get_price(self, name):
+        if (self.procedure):
+            if self.procedure.product:
+                prd = self.procedure.product
+                if self.insurance:
+                    for pline in self.insurance.plan_id.product_policy:
+                        if pline.product == prd:
+                            print(f"{prd.name} its a match!")
+                            return decimal.Decimal(pline.price)
