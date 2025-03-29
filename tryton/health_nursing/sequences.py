@@ -17,11 +17,6 @@ ambulatory_care_sequence = fields.Many2One(
     domain=[('sequence_type', '=', Id(
         'health_nursing', 'seq_type_gnuhealth_ambulatory_care'))])
 
-patient_rounding_sequence = fields.Many2One(
-    'ir.sequence', 'Patient Rounding Sequence', required=True,
-    domain=[('sequence_type', '=', Id(
-        'health_nursing', 'seq_type_gnuhealth_patient_rounding'))])
-
 
 # GNU HEALTH SEQUENCES
 class GnuHealthSequences(metaclass=PoolMeta):
@@ -31,8 +26,6 @@ class GnuHealthSequences(metaclass=PoolMeta):
     ambulatory_care_sequence = fields.MultiValue(
         ambulatory_care_sequence)
 
-    patient_rounding_sequence = fields.MultiValue(
-        patient_rounding_sequence)
 
     @classmethod
     def default_ambulatory_care_sequence(cls, **pattern):
@@ -41,16 +34,6 @@ class GnuHealthSequences(metaclass=PoolMeta):
         try:
             return ModelData.get_id('health_nursing',
                                     'seq_gnuhealth_ambulatory_care')
-        except KeyError:
-            return None
-
-    @classmethod
-    def default_patient_rounding_sequence(cls, **pattern):
-        pool = Pool()
-        ModelData = pool.get('ir.model.data')
-        try:
-            return ModelData.get_id('health_nursing',
-                                    'seq_gnuhealth_patient_rounding')
         except KeyError:
             return None
 
@@ -69,17 +52,6 @@ class AmbulatoryCareSequence(_ConfigurationValue, ModelSQL, ValueMixin):
     __name__ = 'gnuhealth.sequences.ambulatory_care_sequence'
     ambulatory_care_sequence = ambulatory_care_sequence
     _configuration_value_field = 'ambulatory_care_sequence'
-
-    @classmethod
-    def check_xml_record(cls, records, values):
-        return True
-
-
-class PatientRoundingSequence(_ConfigurationValue, ModelSQL, ValueMixin):
-    'Patient Evaluation Sequence setup'
-    __name__ = 'gnuhealth.sequences.patient_rounding_sequence'
-    patient_rounding_sequence = patient_rounding_sequence
-    _configuration_value_field = 'patient_rounding_sequence'
 
     @classmethod
     def check_xml_record(cls, records, values):

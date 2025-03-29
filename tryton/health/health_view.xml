@@ -99,6 +99,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/bol.svg</field>
         </record>
 
+<!-- Create the GNU HEALTH NURSING icon -->
+        <record model="ir.ui.icon" id="gnuhealth_nursing_icon">
+            <field name="name">gnuhealth-nursing</field>
+            <field name="path">icons/gnuhealth_nurse.svg</field>
+        </record>
+
+
 <!-- Create the GNU HEALTH Federation icon -->
         <record model="ir.ui.icon" id="gnuhealth_federation_icon">
             <field name="name">health-federation</field>
@@ -116,6 +123,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">health-online-document</field>
             <field name="path">icons/online_document.svg</field>
         </record>
+
+
 
 <!-- Replace default Tryton module icons -->
 
@@ -237,9 +246,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <menuitem name="Insurances" id="gnuhealth_conf_insurances"
             parent="gnuhealth_conf_menu" icon="gnuhealth-open"/>
 
+        <menuitem name="Nursing" id="gnuhealth_nursing_menu"
+            parent="health.gnuhealth_menu" sequence="900" icon="gnuhealth-nursing"/>
+
         <menuitem name="Federation" id="gnuhealth_conf_federation"
             sequence="990" parent="health.gnuhealth_conf_menu" 
             icon="health-federation"/>
+
 
 <!-- Person Names -->
 

@@ -33,9 +33,12 @@ def register():
         health_inpatient.InpatientMeal,
         health_inpatient.InpatientMealOrder,
         health_inpatient.InpatientMealOrderItem,
+        health_inpatient.PatientRounding,
+        health_inpatient.RoundingProcedure,
         sequences.GnuHealthSequences,
         sequences.InpatientRegistrationSequence,
         sequences.InpatientMealOrderSequence,
+        sequences.PatientRoundingSequence,
         module='health_inpatient', type_='model')
 
     Pool.register(

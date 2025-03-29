@@ -19,12 +19,9 @@ from . import health
 
 def register():
     Pool.register(
-        health_nursing.PatientRounding,
-        health_nursing.RoundingProcedure,
         health.PatientProcedure,
         health_nursing.PatientAmbulatoryCare,
         health_nursing.AmbulatoryCareProcedure,
         sequences.GnuHealthSequences,
         sequences.AmbulatoryCareSequence,
-        sequences.PatientRoundingSequence,
         module='health_nursing', type_='model')

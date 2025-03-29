@@ -10,66 +10,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <tryton>
     <data>
 
-<!-- Create the GNU HEALTH NURSING icon -->
-        <record model="ir.ui.icon" id="gnuhealth_nursing_icon">
-            <field name="name">gnuhealth-nursing</field>
-            <field name="path">icons/gnuhealth_nurse.svg</field>
-        </record>
-
-<!-- Initial Menu -->
-        <menuitem name="Nursing" id="gnuhealth_nursing_menu"
-            parent="health.gnuhealth_menu" sequence="900" icon="gnuhealth-nursing"/>
-
-
-<!-- Rounding Procedure-->
-
-        <record model="ir.ui.view" id="gnuhealth_rounding_view">
-            <field name="model">gnuhealth.rounding_procedure</field>
-            <field name="type">form</field>
-            <field name="name">gnuhealth_rounding_procedure</field>
-        </record>
-
-        <record model="ir.ui.view" id="gnuhealth_procedure_tree">
-            <field name="model">gnuhealth.rounding_procedure</field>
-            <field name="type">tree</field>
-            <field name="name">gnuhealth_procedure_tree</field>
-        </record>
-        
-<!-- Rounding view -->
-
-        <record model="ir.ui.view" id="gnuhealth_patient_rounding_view">
-            <field name="model">gnuhealth.patient.rounding</field>
-            <field name="type">form</field>
-            <field name="name">gnuhealth_patient_rounding</field>
-        </record>
-
-        <record model="ir.ui.view" id="gnuhealth_patient_rounding_tree">
-            <field name="model">gnuhealth.patient.rounding</field>
-            <field name="type">tree</field>
-            <field name="name">gnuhealth_patient_rounding_tree</field>
-        </record>
-
-        <record model="ir.action.act_window" id="action_gnuhealth_patient_rounding_view">
-            <field name="name">Roundings</field>
-            <field name="res_model">gnuhealth.patient.rounding</field>
-        </record>
-
-        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_rounding_tree">
-            <field name="sequence" eval="10"/>
-            <field name="view" ref="gnuhealth_patient_rounding_tree"/>
-            <field name="act_window" ref="action_gnuhealth_patient_rounding_view"/>
-        </record>
-
-        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_rounding_form">
-            <field name="sequence" eval="20"/>
-            <field name="view" ref="gnuhealth_patient_rounding_view"/>
-            <field name="act_window" ref="action_gnuhealth_patient_rounding_view"/>
-        </record>
-
-        <menuitem action="action_gnuhealth_patient_rounding_view"
-            id="menu_gnuhealth_patient_rounding_list" icon="gnuhealth-list"
-            parent="gnuhealth_nursing_menu"/>
-
 
 <!-- OUTPATIENT CARE -->
 
@@ -120,12 +60,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="menu_gnuhealth_patient_ambulatory_care_list" icon="gnuhealth-list"
             parent="gnuhealth_nursing_menu"/>
 
-    <!-- Button registration -->
-        <record model="ir.model.button" id="rounding_end_button">
-            <field name="name">end_rounding</field>
-            <field name="string">End rounding</field>
-            <field name="model" search="[('model', '=', 'gnuhealth.patient.rounding')]"/>
-        </record>
+
 
     <!-- Ambulatory care -->
         <record model="ir.model.button" id="session_end_button">

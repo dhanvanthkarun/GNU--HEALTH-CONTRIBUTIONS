@@ -107,12 +107,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record model="ir.ui.view" id="gnuhealth_patient_rounding_tree">
             <field name="model">gnuhealth.patient.rounding</field>
-            <field name="inherit" ref="health_nursing.gnuhealth_patient_rounding_tree"/>
+            <field name="inherit" ref="health_inpatient.gnuhealth_patient_rounding_tree"/>
             <field name="name">gnuhealth_patient_ambulatory_care_tree</field>
         </record>
         <record model="ir.ui.view" id="gnuhealth_patient_rounding_view">
             <field name="model">gnuhealth.patient.rounding</field>
-            <field name="inherit" ref="health_nursing.gnuhealth_patient_rounding_view"/>
+            <field name="inherit" ref="health_inpatient.gnuhealth_patient_rounding_view"/>
             <field name="name">gnuhealth_patient_rounding</field>
         </record>
 
