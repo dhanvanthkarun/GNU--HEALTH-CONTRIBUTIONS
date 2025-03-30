@@ -65,7 +65,6 @@ class GnuHealthSequences(metaclass=PoolMeta):
         except KeyError:
             return None
 
-
     @classmethod
     def default_patient_rounding_sequence(cls, **pattern):
         pool = Pool()
@@ -75,6 +74,7 @@ class GnuHealthSequences(metaclass=PoolMeta):
                                     'seq_gnuhealth_patient_rounding')
         except KeyError:
             return None
+
 
 class _ConfigurationValue(ModelSQL):
 
