@@ -1658,6 +1658,27 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_vaccination_tree</field>
         </record>
 
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_vaccination_view">
+            <field name="name">Patient vaccination</field>
+            <field name="res_model">gnuhealth.vaccination</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_vaccination_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_vaccination_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_vaccination_view"/>
+        </record>
+        
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_vaccination_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_vaccination_form"/>
+            <field name="act_window" ref="action_gnuhealth_patient_vaccination_view"/>
+        </record>
+
+        <menuitem name="Patient vaccinations" action="action_gnuhealth_patient_vaccination_view" 
+            id="gnuhealth_patient_vaccinations_menu"
+            parent="gnuhealth_nursing_menu" icon="gnuhealth-list"/>
+
 
 <!-- Shortcut to the Patient vaccinations from the patient view -->
         <record model="ir.action.act_window" id="act_vaccination_form1">
@@ -1672,7 +1693,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="act_vaccination_form1"/>
         </record>
 
-<!-- PATIENT DIRECTIONS - PROCEDURES / ACTIONS TO TAKE -->
+<!-- DEPRECATED IN GH 5.0 by GNU HElath Procedures - PATIENT DIRECTIONS - PROCEDURES / ACTIONS TO TAKE -->
 
         <record model="ir.ui.view" id="gnuhealth_directions_form">
             <field name="model">gnuhealth.directions</field>
