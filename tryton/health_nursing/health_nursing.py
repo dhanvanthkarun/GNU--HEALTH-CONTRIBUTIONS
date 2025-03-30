@@ -13,11 +13,9 @@
 #                     HEALTH NURSING package                            #
 #                health_nursing.py: main module                         #
 #########################################################################
-import pytz
 from trytond.model import ModelView, ModelSQL, fields
 from datetime import datetime
 from trytond.pool import Pool
-from trytond.transaction import Transaction
 from trytond.pyson import Eval, Equal
 from trytond.i18n import gettext
 from trytond.modules.health.core import get_health_professional
@@ -28,6 +26,7 @@ from .exceptions import (
 
 __all__ = [
     'PatientAmbulatoryCare', 'AmbulatoryCareProcedure']
+
 
 class PatientAmbulatoryCare(ModelSQL, ModelView):
     'Ambulatory Care'

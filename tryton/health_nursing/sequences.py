@@ -26,7 +26,6 @@ class GnuHealthSequences(metaclass=PoolMeta):
     ambulatory_care_sequence = fields.MultiValue(
         ambulatory_care_sequence)
 
-
     @classmethod
     def default_ambulatory_care_sequence(cls, **pattern):
         pool = Pool()
