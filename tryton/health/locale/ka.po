@@ -30,6 +30,11 @@ msgctxt "field:gnuhealth.appointment,institution:"
 msgid "Institution"
 msgstr "დაწესებულება"
 
+#, fuzzy
+msgctxt "field:gnuhealth.appointment,insurance:"
+msgid "Insurance"
+msgstr "დაზღვევა"
+
 msgctxt "field:gnuhealth.appointment,name:"
 msgid "APPT ID"
 msgstr "დანიშვნის აიდი"
@@ -37,6 +42,11 @@ msgstr "დანიშვნის აიდი"
 msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
+
+#, fuzzy
+msgctxt "field:gnuhealth.appointment,rel_party:"
+msgid "Party ID"
+msgstr "ფართი"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -759,6 +769,11 @@ msgctxt "field:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Prof"
 msgstr "ჯანდაცვის პროფესორი"
 
+#, fuzzy
+msgctxt "field:gnuhealth.hp_specialty,mainsp:"
+msgid "Main"
+msgstr "მთავარი ინფორმაცია"
+
 msgctxt "field:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty"
 msgstr "სპეციალობა"
@@ -1328,6 +1343,11 @@ msgctxt "field:gnuhealth.patient,hb:"
 msgid "Hb"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient,insurances:"
+msgid "Insurances"
+msgstr "დაზღვევები"
+
 msgctxt "field:gnuhealth.patient,lastname:"
 msgid "Lastname"
 msgstr "გვარი"
@@ -1682,6 +1702,11 @@ msgctxt "field:gnuhealth.patient.evaluation,institution:"
 msgid "Institution"
 msgstr "დაწესებულება"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,insurance:"
+msgid "Insurance"
+msgstr "დაზღვევა"
+
 msgctxt "field:gnuhealth.patient.evaluation,judgment:"
 msgid "Judgment"
 msgstr "განაჩენი"
@@ -1766,6 +1791,11 @@ msgstr "პროცედურები"
 msgctxt "field:gnuhealth.patient.evaluation,psychological_assessment:"
 msgid "Psychological Assessment"
 msgstr "ფსიქოლოგიური შეფასება"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,rel_party:"
+msgid "Party ID"
+msgstr "ფართი"
 
 msgctxt "field:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition"
@@ -1984,9 +2014,9 @@ msgid "Context"
 msgstr "კონტაქტი"
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.procedure,evaluation:"
-msgid "Evaluation"
-msgstr "შეფასება"
+msgctxt "field:gnuhealth.patient.procedure,insurance:"
+msgid "Insurance"
+msgstr "დაზღვევა"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.procedure,patient:"
@@ -2006,6 +2036,11 @@ msgstr "პროცედურა"
 msgctxt "field:gnuhealth.patient.procedure,reference:"
 msgid "Origin"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,rel_party:"
+msgid "Party ID"
+msgstr "ფართი"
 
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -2335,6 +2370,21 @@ msgstr "გრძელი ტექსტი"
 msgctxt "field:gnuhealth.procedure,name:"
 msgid "Code"
 msgstr "კოდი"
+
+#, fuzzy
+msgctxt "field:gnuhealth.procedure,product:"
+msgid "Product"
+msgstr "პროდუქტი"
+
+#, fuzzy
+msgctxt "field:gnuhealth.procedures.config,ambulatory_care:"
+msgid "Ambulatory care"
+msgstr "პირველადი მოვლა"
+
+#, fuzzy
+msgctxt "field:gnuhealth.procedures.config,medical_evaluation:"
+msgid "Medical Evaluation"
+msgstr "შეფასება"
 
 msgctxt "field:gnuhealth.secondary_condition,comments:"
 msgid "Comments"
@@ -2704,6 +2754,10 @@ msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
 msgstr "ჯანდაცვის დაწესებულება"
 
+msgctxt "help:gnuhealth.appointment,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr ""
+
 msgctxt "help:gnuhealth.appointment,name:"
 msgid "Appointment ID"
 msgstr ""
@@ -2858,8 +2912,8 @@ msgstr "მთავარი დაწესებულება, სადა
 
 #, fuzzy
 msgctxt "help:gnuhealth.healthprofessional,party:"
-msgid "Health Professional's Name, from the partner list"
-msgstr "ჯანდაცვის პროფესიონალის სახელი, პარტნიორთა სიიდან"
+msgid "Health Professional related party"
+msgstr "ჯანმრთელობის პროფესიონალური სპეციალობები"
 
 msgctxt "help:gnuhealth.healthprofessional,puid:"
 msgid "Person Unique Identifier"
@@ -2945,6 +2999,12 @@ msgstr "შეამოწმეთ ეს ვარიანტი კერძ
 msgctxt "help:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Professional"
 msgstr "ჯანდაცვის პროფესიონალი"
+
+msgctxt "help:gnuhealth.hp_specialty,mainsp:"
+msgid ""
+"Set this field if this is the main specialty or the one used in this health "
+"institution"
+msgstr ""
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3312,6 +3372,11 @@ msgstr ""
 "A-THAL = A თალასემიის ჯგუფები\n"
 "B-THAL = B თალასემიის ჯგუფები\n"
 
+#, fuzzy
+msgctxt "help:gnuhealth.patient,insurances:"
+msgid "Insurance Plans associated to this party"
+msgstr "ამ პაციენტთან ასოცირებული პირი"
+
 msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
 msgstr "ოჯახური მდგომარეობა"
@@ -3539,6 +3604,10 @@ msgstr ""
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
 msgstr "ინფორმაციის წყარო, მაგ .: საკუთარი თავი, ნათესავი, მეგობარი ..."
+
+msgctxt "help:gnuhealth.patient.evaluation,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,judgment:"
 msgid ""
@@ -3798,6 +3867,10 @@ msgctxt "help:gnuhealth.patient.medication,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "მკურნალობის დაწყების თარიღი"
 
+msgctxt "help:gnuhealth.patient.procedure,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr ""
+
 msgctxt ""
 "help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid ""
@@ -3994,6 +4067,24 @@ msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
 msgstr ""
 
+msgctxt "help:gnuhealth.procedure,product:"
+msgid "Associated product to the procedure"
+msgstr ""
+
+msgctxt "help:gnuhealth.procedures.config,ambulatory_care:"
+msgid ""
+"The code use for the procedure related to an ambulatory care session. If it "
+"exist, it will add up to the procedure list in the context of ambulatory "
+"care"
+msgstr ""
+
+msgctxt "help:gnuhealth.procedures.config,medical_evaluation:"
+msgid ""
+"The code use for the procedure related to a medical encounter. If it exist, "
+"it will add up to the procedure list in the context of the medical "
+"evaluation"
+msgstr ""
+
 msgctxt "help:gnuhealth.specialty,code:"
 msgid "ie, ADP. Please use CAPITAL LETTERS and no spaces"
 msgstr "ანუ ADP. გთხოვთ გამოიყენეთ დიდი ასოები და არ დატოვოთ სივრცე მათ შორის"
@@ -4165,6 +4256,10 @@ msgstr "ოჯახი ან გვარები"
 msgctxt "help:party.party,mother:"
 msgid "Mother from the Birth Certificate"
 msgstr "დედა დაბადების მოწმობიდან"
+
+msgctxt "help:party.party,proclaimed_ethnicity:"
+msgid "The ethnic group the person identifies most"
+msgstr ""
 
 msgctxt "help:party.party,ref:"
 msgid "Person Unique Identifier"
@@ -7871,6 +7966,11 @@ msgctxt "model:gnuhealth.procedure,name:"
 msgid "Medical Procedures"
 msgstr "სამედიცინო პროცედურები"
 
+#, fuzzy
+msgctxt "model:gnuhealth.procedures.config,name:"
+msgid "Medical Procedures Config"
+msgstr "სამედიცინო პროცედურები"
+
 msgctxt "model:gnuhealth.secondary_condition,name:"
 msgid "Secondary Conditions"
 msgstr ""
@@ -8346,6 +8446,11 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
 msgid "Patient procedures"
 msgstr "პროცედურები"
 
+#, fuzzy
+msgctxt "model:ir.action,name:action_gnuhealth_patient_vaccination_view"
+msgid "Patient vaccination"
+msgstr "პაციენტის შეფასება"
+
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
 msgstr "პაციენტები"
@@ -8463,6 +8568,11 @@ msgctxt "model:ir.action,name:gnuhealth_action_pol"
 msgid "Pages of life"
 msgstr ""
 
+#, fuzzy
+msgctxt "model:ir.action,name:gnuhealth_action_procedures_config"
+msgid "Medical Procedures Configuration"
+msgstr "სამედიცინო პროცედურები"
+
 msgctxt "model:ir.action,name:gnuhealth_action_specialty"
 msgid "Medical Specialties"
 msgstr "სამედიცინო სპეციალობები"
@@ -8575,6 +8685,10 @@ msgid ""
 "SM-CORE-0006: Verify and check for safety in pregnancy the prescribed drugs"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_dup_mainsp"
+msgid "SM-CORE-0016: The health professional can have only one main specialty"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_dup_official_name"
 msgid "SM-CORE-0011: The person can have only one official name"
 msgstr ""
@@ -8603,8 +8717,8 @@ msgstr ""
 
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
-"{\"font.family\": [\"sans-serif\"], \"@comment\": \"Matplotlib rc config "
-"used when no matplotlibrc file is found.\"}"
+"{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
+"\"Matplotlib rc config used when no matplotlibrc file is found.\"}"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_med_end_date_before_start"
@@ -8921,6 +9035,11 @@ msgid "Procedures"
 msgstr "პროცედურები"
 
 #, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedures_config"
+msgid "Medical Procedures Configuration"
+msgstr "სამედიცინო პროცედურები"
+
+#, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_specialty"
 msgid "Medical Specialties"
 msgstr "სამედიცინო სპეციალობები"
@@ -8975,6 +9094,11 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
 msgstr "ინსტიტუცია"
 
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_nursing_menu"
+msgid "Nursing"
+msgstr "საექთნო"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
 msgid "Online Documentation"
 msgstr ""
@@ -8988,6 +9112,11 @@ msgstr "ოპერაციული არეები"
 msgctxt "model:ir.ui.menu,name:gnuhealth_patient_procedures_menu"
 msgid "Patient procedures"
 msgstr "პროცედურები"
+
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_vaccinations_menu"
+msgid "Patient vaccinations"
+msgstr "პაციენტის შეფასება"
 
 #, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
@@ -9056,6 +9185,16 @@ msgstr ""
 msgctxt "model:res.group,name:group_health_frontdesk"
 msgid "Health Front Desk"
 msgstr ""
+
+#, fuzzy
+msgctxt "model:res.group,name:group_health_nursing"
+msgid "Health Nurse"
+msgstr "ჯანდაცვის პროფესორი"
+
+#, fuzzy
+msgctxt "model:res.group,name:group_health_nursing_admin"
+msgid "Health Nurse Administration"
+msgstr "ადმინისტრაცია"
 
 msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
@@ -12021,6 +12160,11 @@ msgid "Patient and Health Professional Information"
 msgstr ""
 
 #, fuzzy
+msgctxt "view:gnuhealth.procedures.config:"
+msgid "Default procedures"
+msgstr "პროცედურები"
+
+#, fuzzy
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "კომენტარები"
@@ -12064,11 +12208,6 @@ msgstr ""
 msgctxt "view:party.party:"
 msgid "Demographics"
 msgstr ""
-
-#, fuzzy
-msgctxt "view:party.party:"
-msgid "Ethnicity"
-msgstr "ეთნიკურობა"
 
 msgctxt "view:party.party:"
 msgid "Health"

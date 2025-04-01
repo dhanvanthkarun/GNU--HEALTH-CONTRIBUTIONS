@@ -362,6 +362,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "Sexe"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "Procédure principale"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "Établissement"
@@ -476,6 +481,11 @@ msgstr "Fin"
 msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "Durée"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "Procédures"
 
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
@@ -845,6 +855,13 @@ msgstr ""
 "est utilisée lorsque la durée de chirurgie calculée automatiquement ne "
 "reflète pas le temps réel ou qu'elle a été enregistrée par la suite."
 
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
 #, fuzzy
 msgctxt "help:gnuhealth.surgery,operating_room:"
 msgid "Operating Room"
@@ -926,14 +943,20 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "Durée de la chirurgie"
 
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr "Procédures / Interventions réalisées au opération"
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr "Professionnels intervenant dans la chirgurgie"
 
+#, fuzzy
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 "Ce code reflète l'intervention principale de cette chirurgie. Des procédures"
 " supplémentaires peuvent être saisies dans l'onglet procédures."

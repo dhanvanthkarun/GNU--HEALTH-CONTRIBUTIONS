@@ -346,6 +346,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "Género"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "Intervención principal"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "Institución"
@@ -459,6 +464,11 @@ msgstr "Fin"
 msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "Duración"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "Procedimientos"
 
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
@@ -819,6 +829,13 @@ msgstr ""
 "valor calculado automáticamente no refleja la duración actual o se ha "
 "registrado posteriormente."
 
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
 #, fuzzy
 msgctxt "help:gnuhealth.surgery,operating_room:"
 msgid "Operating Room"
@@ -900,14 +917,22 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "Duración de la cirugía"
 
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr ""
+"Lista de procedimientos en la cirugía. Introduzca el primero como el "
+"procedimiento principal"
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr "Profesionales que participan en la cirugía"
 
+#, fuzzy
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 "El código refleja la intervención principal de la cirugía. Procedimientos "
 "adicionales pueden introducirse en la pestaña de procedimientos."

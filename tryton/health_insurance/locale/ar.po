@@ -18,6 +18,11 @@ msgctxt "field:gnuhealth.insurance.plan.product.policy,discount:"
 msgid "Discount"
 msgstr "خصم"
 
+#, fuzzy
+msgctxt "field:gnuhealth.insurance.plan.product.policy,icode:"
+msgid "Product code"
+msgstr "منتج"
+
 msgctxt "field:gnuhealth.insurance.plan.product.policy,plan:"
 msgid "Plan"
 msgstr "خطة"
@@ -34,6 +39,11 @@ msgctxt "field:gnuhealth.insurance.plan.product.policy,product_category:"
 msgid "Category"
 msgstr "الفئة"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,price:"
+msgid "Price"
+msgstr "السعر"
+
 msgctxt "help:gnuhealth.health_service,insurance_holder:"
 msgid "Insurance Policy Holder"
 msgstr "سياسة التأمين"
@@ -43,6 +53,10 @@ msgid ""
 "Discount in Percentage. It has higher precedence than the fixed price when "
 "both values coexist"
 msgstr "الحسم بالمئة. الحسم المستخدم في حال كان هناك حسم ثابت"
+
+msgctxt "help:gnuhealth.insurance.plan.product.policy,icode:"
+msgid "Equivalent product code for this plan"
+msgstr ""
 
 msgctxt "help:gnuhealth.insurance.plan.product.policy,price:"
 msgid "Apply a fixed price for this product or category"
@@ -99,3 +113,8 @@ msgctxt ""
 "model:ir.ui.menu,name:menu_gnuhealth_insurance_plan_product_policy_list"
 msgid "Plan Product Policies"
 msgstr "خطة سياسة التأمين"
+
+#, fuzzy
+msgctxt "view:gnuhealth.insurance.plan.product.policy:"
+msgid "discount %"
+msgstr "خصم"

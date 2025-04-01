@@ -333,6 +333,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "الجنس"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "الإجراء الرئيسي"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "مؤسسة"
@@ -444,6 +449,11 @@ msgstr "انهاء"
 msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "طول"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "الإجراءات"
 
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
@@ -795,6 +805,13 @@ msgstr ""
 "الوقت بالدقائق من عملية الجراحة. هذه القيمة اختيارية ويتم استخدامها عندما لا"
 " يعكس طول الجراحة المحسوبة تلقائيًا الوقت الفعلي أو تم تسجيله بعد ذلك."
 
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
 msgctxt "help:gnuhealth.surgery,operating_room:"
 msgid "Operating Room"
 msgstr "غرفة العمليات"
@@ -871,14 +888,20 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "مدة الجراحة"
 
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr "الإجراءات / التدخلات التي تتم في الجراحة"
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr "المتخصصون في الجراحة"
 
+#, fuzzy
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 "يعكس هذا الرمز التدخل الرئيسي لهذه الجراحة. يمكن إدخال إجراءات إضافية في "
 "علامة تبويب الإجراءات."

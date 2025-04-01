@@ -19,6 +19,11 @@ msgid "Discount"
 msgstr ""
 
 #, fuzzy
+msgctxt "field:gnuhealth.insurance.plan.product.policy,icode:"
+msgid "Product code"
+msgstr "Product"
+
+#, fuzzy
 msgctxt "field:gnuhealth.insurance.plan.product.policy,plan:"
 msgid "Plan"
 msgstr "Soort verzekering"
@@ -37,6 +42,10 @@ msgctxt "field:gnuhealth.insurance.plan.product.policy,product_category:"
 msgid "Category"
 msgstr "Categorie"
 
+msgctxt "field:gnuhealth.patient.procedure,price:"
+msgid "Price"
+msgstr ""
+
 msgctxt "help:gnuhealth.health_service,insurance_holder:"
 msgid "Insurance Policy Holder"
 msgstr ""
@@ -45,6 +54,10 @@ msgctxt "help:gnuhealth.insurance.plan.product.policy,discount:"
 msgid ""
 "Discount in Percentage. It has higher precedence than the fixed price when "
 "both values coexist"
+msgstr ""
+
+msgctxt "help:gnuhealth.insurance.plan.product.policy,icode:"
+msgid "Equivalent product code for this plan"
 msgstr ""
 
 msgctxt "help:gnuhealth.insurance.plan.product.policy,price:"
@@ -97,4 +110,8 @@ msgstr ""
 msgctxt ""
 "model:ir.ui.menu,name:menu_gnuhealth_insurance_plan_product_policy_list"
 msgid "Plan Product Policies"
+msgstr ""
+
+msgctxt "view:gnuhealth.insurance.plan.product.policy:"
+msgid "discount %"
 msgstr ""

@@ -19,6 +19,11 @@ msgctxt "field:gnuhealth.insurance.plan.product.policy,discount:"
 msgid "Discount"
 msgstr "Rabatt"
 
+#, fuzzy
+msgctxt "field:gnuhealth.insurance.plan.product.policy,icode:"
+msgid "Product code"
+msgstr "Produkt"
+
 msgctxt "field:gnuhealth.insurance.plan.product.policy,plan:"
 msgid "Plan"
 msgstr "Avtal"
@@ -35,6 +40,11 @@ msgctxt "field:gnuhealth.insurance.plan.product.policy,product_category:"
 msgid "Category"
 msgstr "Kategori"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,price:"
+msgid "Price"
+msgstr "Pris"
+
 msgctxt "help:gnuhealth.health_service,insurance_holder:"
 msgid "Insurance Policy Holder"
 msgstr ""
@@ -46,6 +56,10 @@ msgid ""
 msgstr ""
 "Procent i rabatt. Det har högre prioritet än det fasta priset när båda "
 "värdena samexisterar"
+
+msgctxt "help:gnuhealth.insurance.plan.product.policy,icode:"
+msgid "Equivalent product code for this plan"
+msgstr ""
 
 msgctxt "help:gnuhealth.insurance.plan.product.policy,price:"
 msgid "Apply a fixed price for this product or category"
@@ -98,3 +112,8 @@ msgctxt ""
 "model:ir.ui.menu,name:menu_gnuhealth_insurance_plan_product_policy_list"
 msgid "Plan Product Policies"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.insurance.plan.product.policy:"
+msgid "discount %"
+msgstr "Rabatt"

@@ -381,12 +381,194 @@ msgctxt "field:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "IPC"
 msgstr ""
 
+msgctxt "field:gnuhealth.patient.rounding,bpm:"
+msgid "Heart Rate"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,code:"
+msgid "Code"
+msgstr "コード"
+
+msgctxt "field:gnuhealth.patient.rounding,depression:"
+msgid "Depression signs"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,diastolic:"
+msgid "Diastolic Pressure"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,diuresis:"
+msgid "Diuresis"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,environmental_assessment:"
+msgid "Environment"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
+msgid "End"
+msgstr "終了"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
+msgid "Start"
+msgstr "開始"
+
+msgctxt "field:gnuhealth.patient.rounding,evolution:"
+msgid "Evolution"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,glycemia:"
+msgid "Glycemia"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,health_professional:"
+msgid "Health Prof"
+msgstr "主治医"
+
+msgctxt "field:gnuhealth.patient.rounding,osat:"
+msgid "Oxygen Saturation"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,pain:"
+msgid "Pain"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,pain_level:"
+msgid "Pain level"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,patient:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
+msgid "Personal needs"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,position:"
+msgid "Position"
+msgstr "施設"
+
+msgctxt "field:gnuhealth.patient.rounding,potty:"
+msgid "Potty"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,procedures:"
+msgid "Procedures"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,proximity:"
+msgid "Proximity"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,pump:"
+msgid "Pumps"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,registration:"
+msgid "Registration Code"
+msgstr "登録コード"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
+msgid "End Date"
+msgstr "日"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_end_time:"
+msgid "End Time"
+msgstr "時"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_start_date:"
+msgid "Start Date"
+msgstr "開始"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_start_time:"
+msgid "Start Time"
+msgstr "開始"
+
+msgctxt "field:gnuhealth.patient.rounding,respiratory_rate:"
+msgid "Respiratory Rate"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,round_summary:"
+msgid "Round Summary"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,signed_by:"
+msgid "Signed by"
+msgstr "以下の理由により退院"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,state:"
+msgid "State"
+msgstr "状態"
+
+msgctxt "field:gnuhealth.patient.rounding,systolic:"
+msgid "Systolic Pressure"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,temperature:"
+msgid "Temperature"
+msgstr "作成"
+
+msgctxt "field:gnuhealth.patient.rounding,urinary_catheter:"
+msgid "Urinary Catheter"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,warning:"
+msgid "Warning"
+msgstr "警告"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,warning_icon:"
+msgid "Warning Icon"
+msgstr "警告"
+
+msgctxt "field:gnuhealth.patient.rounding,weight:"
+msgid "Weight"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,notes:"
+msgid "Notes"
+msgstr "備考"
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,procedure:"
+msgid "Code"
+msgstr "コード"
+
+msgctxt "field:gnuhealth.rounding_procedure,rounding:"
+msgid "Rounding"
+msgstr ""
+
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
 msgstr ""
 
 msgctxt "field:gnuhealth.sequences,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
+msgid "Patient Rounding Sequence"
 msgstr ""
 
 msgctxt ""
@@ -397,6 +579,11 @@ msgstr ""
 msgctxt ""
 "field:gnuhealth.sequences.inpatient_registration_sequence,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
+msgstr ""
+
+msgctxt ""
+"field:gnuhealth.sequences.patient_rounding_sequence,patient_rounding_sequence:"
+msgid "Patient Rounding Sequence"
 msgstr ""
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
@@ -542,6 +729,103 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "Inpatient Code, please enter the patient hospitalization code"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,bpm:"
+msgid "Heart rate expressed in beats per minute"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,depression:"
+msgid "Check this if the patient shows signs of depression"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,diuresis:"
+msgid "volume in ml"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,environmental_assessment:"
+msgid "Environment assessment . State any disorder in the room."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,evolution:"
+msgid "Check your judgement of current patient condition"
+msgstr "患者が服薬中ならチェックしてください"
+
+msgctxt "help:gnuhealth.patient.rounding,glycemia:"
+msgid "Blood Glucose level"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,osat:"
+msgid "Oxygen Saturation(arterial)."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,pain:"
+msgid "Check if the patient is in pain"
+msgstr "患者が服薬中ならチェックしてください"
+
+msgctxt "help:gnuhealth.patient.rounding,pain_level:"
+msgid "Enter the pain level, from 1 to 10."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,personal_needs:"
+msgid "Check if the patient requests anything"
+msgstr "患者が服薬中ならチェックしてください"
+
+msgctxt "help:gnuhealth.patient.rounding,position:"
+msgid "Check if the patient needs to be repositioned or is unconfortable"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,potty:"
+msgid "Check if the patient needs to urinate / defecate"
+msgstr "患者が服薬中ならチェックしてください"
+
+msgctxt "help:gnuhealth.patient.rounding,procedures:"
+msgid ""
+"List of the procedures in this rounding. Please enter the first one as the "
+"main procedure"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,proximity:"
+msgid "Check if personal items, water, alarm, ... are not in easy reach"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,pump:"
+msgid "Check if there is any issues with the pumps - IVs ..."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
+msgid "Respiratory rate expressed in breaths per minute"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,signed_by:"
+msgid "Health Professional that signed the rounding"
+msgstr "患者を退院させる医師"
+
+msgctxt "help:gnuhealth.patient.rounding,temperature:"
+msgid "Temperature in celsius"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,warning:"
+msgid ""
+"Check this box to alert the supervisor about this patient rounding. A "
+"warning icon will be shown in the rounding list"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,weight:"
+msgid "Measured weight, in kg"
+msgstr ""
+
+msgctxt "help:gnuhealth.rounding_procedure,procedure:"
+msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
 msgstr ""
 
 msgctxt "model:gnuhealth.bed.transfer,name:"
@@ -898,6 +1182,15 @@ msgctxt "model:gnuhealth.inpatient.registration,name:"
 msgid "Patient admission History"
 msgstr "患者管理記録"
 
+#, fuzzy
+msgctxt "model:gnuhealth.patient.rounding,name:"
+msgid "Patient Rounding"
+msgstr "患者管理"
+
+msgctxt "model:gnuhealth.rounding_procedure,name:"
+msgid "Rounding - Procedure"
+msgstr ""
+
 msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
 msgstr ""
@@ -905,6 +1198,11 @@ msgstr ""
 msgctxt "model:gnuhealth.sequences.inpatient_registration_sequence,name:"
 msgid "Ambulatory Care Sequences setup"
 msgstr ""
+
+#, fuzzy
+msgctxt "model:gnuhealth.sequences.patient_rounding_sequence,name:"
+msgid "Patient Evaluation Sequence setup"
+msgstr "患者査定の生成"
 
 #, fuzzy
 msgctxt "model:ir.action,name:act_create_inpatient_evaluation"
@@ -921,6 +1219,10 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_inpatient_evaluation"
 msgid "Inpatient Evaluation"
+msgstr ""
+
+msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
+msgid "Roundings"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_diet_therapeutic"
@@ -1070,6 +1372,10 @@ msgctxt "model:ir.model.button,string:registration_discharge_button"
 msgid "Discharge"
 msgstr "退院"
 
+msgctxt "model:ir.model.button,string:rounding_end_button"
+msgid "End rounding"
+msgstr ""
+
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
 msgstr ""
@@ -1104,6 +1410,10 @@ msgstr ""
 msgctxt "model:ir.ui.menu,name:gnuhealth_inpatient_menu"
 msgid "Hospitalizations"
 msgstr "入院"
+
+msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
+msgid "Roundings"
+msgstr ""
 
 msgctxt "model:res.group,name:group_health_inpatient_admin"
 msgid "Health Inpatient Administration"
@@ -1259,6 +1569,29 @@ msgstr "空き"
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "hospitalized"
 msgstr "入院中"
+
+msgctxt "selection:gnuhealth.patient.rounding,evolution:"
+msgid "Improving"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.rounding,evolution:"
+msgid "Status Quo"
+msgstr "状態"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.rounding,evolution:"
+msgid "Worsening"
+msgstr "警告"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.rounding,state:"
+msgid "Done"
+msgstr "実施済み"
+
+msgctxt "selection:gnuhealth.patient.rounding,state:"
+msgid "In Progress"
+msgstr ""
 
 msgctxt "view:gnuhealth.diet.therapeutic:"
 msgid "Diet Description and Indications"
@@ -1434,6 +1767,55 @@ msgstr "状態"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "You are about to discharge the patient from the health institution."
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "End rounding"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "End this rounding"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "End this rounding ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Environment"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Main"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Other"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Procedures"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Round summary"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Six P's"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Time"
+msgstr "時"
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Vital Signs"
+msgstr ""
+
+msgctxt "view:gnuhealth.rounding_procedure:"
+msgid "Procedure Details / Incidents"
 msgstr ""
 
 msgctxt ""

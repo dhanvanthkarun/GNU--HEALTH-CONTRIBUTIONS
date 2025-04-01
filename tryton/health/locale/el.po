@@ -30,6 +30,11 @@ msgctxt "field:gnuhealth.appointment,institution:"
 msgid "Institution"
 msgstr "Ίδρυμα"
 
+#, fuzzy
+msgctxt "field:gnuhealth.appointment,insurance:"
+msgid "Insurance"
+msgstr "Ασφάλιση"
+
 msgctxt "field:gnuhealth.appointment,name:"
 msgid "APPT ID"
 msgstr "Κωδικός ραντεβού"
@@ -37,6 +42,11 @@ msgstr "Κωδικός ραντεβού"
 msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
 msgstr "Ασθενής"
+
+#, fuzzy
+msgctxt "field:gnuhealth.appointment,rel_party:"
+msgid "Party ID"
+msgstr "Εμπλεκόμενο μέρος"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -768,6 +778,11 @@ msgctxt "field:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Prof"
 msgstr "Επαγγ. Υγείας"
 
+#, fuzzy
+msgctxt "field:gnuhealth.hp_specialty,mainsp:"
+msgid "Main"
+msgstr "Κύρια"
+
 msgctxt "field:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty"
 msgstr "Ειδικότητα"
@@ -1344,6 +1359,11 @@ msgctxt "field:gnuhealth.patient,hb:"
 msgid "Hb"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient,insurances:"
+msgid "Insurances"
+msgstr "Ασφαλιστικές εταιρείες"
+
 msgctxt "field:gnuhealth.patient,lastname:"
 msgid "Lastname"
 msgstr "Επίθετο"
@@ -1703,6 +1723,11 @@ msgctxt "field:gnuhealth.patient.evaluation,institution:"
 msgid "Institution"
 msgstr "Ίδρυμα"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,insurance:"
+msgid "Insurance"
+msgstr "Ασφάλιση"
+
 msgctxt "field:gnuhealth.patient.evaluation,judgment:"
 msgid "Judgment"
 msgstr "Κρίση"
@@ -1787,6 +1812,11 @@ msgstr "Ιατρικές πράξεις/ διαδικασίες"
 msgctxt "field:gnuhealth.patient.evaluation,psychological_assessment:"
 msgid "Psychological Assessment"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,rel_party:"
+msgid "Party ID"
+msgstr "Εμπλεκόμενο μέρος"
 
 msgctxt "field:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition"
@@ -2005,9 +2035,9 @@ msgid "Context"
 msgstr "Γενικές συνθήκες"
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.procedure,evaluation:"
-msgid "Evaluation"
-msgstr "Εκτίμηση"
+msgctxt "field:gnuhealth.patient.procedure,insurance:"
+msgid "Insurance"
+msgstr "Ασφάλιση"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.procedure,patient:"
@@ -2027,6 +2057,11 @@ msgstr "Ιατρική πράξη/ διαδικασία"
 msgctxt "field:gnuhealth.patient.procedure,reference:"
 msgid "Origin"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.procedure,rel_party:"
+msgid "Party ID"
+msgstr "Εμπλεκόμενο μέρος"
 
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -2371,6 +2406,21 @@ msgstr "Μεγάλο κείμενο"
 msgctxt "field:gnuhealth.procedure,name:"
 msgid "Code"
 msgstr "Κωδικός"
+
+#, fuzzy
+msgctxt "field:gnuhealth.procedure,product:"
+msgid "Product"
+msgstr "Προϊόν"
+
+#, fuzzy
+msgctxt "field:gnuhealth.procedures.config,ambulatory_care:"
+msgid "Ambulatory care"
+msgstr "Πρωτοβάθμια φροντίδα"
+
+#, fuzzy
+msgctxt "field:gnuhealth.procedures.config,medical_evaluation:"
+msgid "Medical Evaluation"
+msgstr "Εκτίμηση"
 
 msgctxt "field:gnuhealth.secondary_condition,comments:"
 msgid "Comments"
@@ -2740,6 +2790,11 @@ msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
 msgstr "Υγειονομικό Ίδρυμα"
 
+#, fuzzy
+msgctxt "help:gnuhealth.appointment,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr "Πλάνα ασφαλιστικής κάλυψης που σχετίζονται με αυτό το άτομο"
+
 msgctxt "help:gnuhealth.appointment,name:"
 msgid "Appointment ID"
 msgstr ""
@@ -2890,8 +2945,8 @@ msgstr "Βασικό ίδρυμα όπου εργάζεται"
 
 #, fuzzy
 msgctxt "help:gnuhealth.healthprofessional,party:"
-msgid "Health Professional's Name, from the partner list"
-msgstr "Όνομα επαγγελματία Υγείας από την λίστα συνεργατών"
+msgid "Health Professional related party"
+msgstr "Ειδικότητες του επαγγελματία υγείας"
 
 msgctxt "help:gnuhealth.healthprofessional,puid:"
 msgid "Person Unique Identifier"
@@ -2978,6 +3033,12 @@ msgstr "Επιλέξτε αυτό αν πρόκειται για μονόκλι�
 msgctxt "help:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Professional"
 msgstr "Επαγγελματίας Υγείας"
+
+msgctxt "help:gnuhealth.hp_specialty,mainsp:"
+msgid ""
+"Set this field if this is the main specialty or the one used in this health "
+"institution"
+msgstr ""
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3351,6 +3412,11 @@ msgid ""
 "B-THAL = B Thalassemia groups\n"
 msgstr ""
 
+#, fuzzy
+msgctxt "help:gnuhealth.patient,insurances:"
+msgid "Insurance Plans associated to this party"
+msgstr "Πλάνα ασφαλιστικής κάλυψης που σχετίζονται με αυτό το άτομο"
+
 msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
 msgstr "Οικογεν. κατάσταση"
@@ -3583,6 +3649,11 @@ msgid "Source of Information, eg : Self, relative, friend ..."
 msgstr ""
 "Πηγή από την οποία ελήφθη η πληροφορία, πχ : Από τον ίδιο/ ίδια, από έναν "
 "φίλο του/ της ..."
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.evaluation,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr "Πλάνα ασφαλιστικής κάλυψης που σχετίζονται με αυτό το άτομο"
 
 msgctxt "help:gnuhealth.patient.evaluation,judgment:"
 msgid ""
@@ -3848,6 +3919,11 @@ msgctxt "help:gnuhealth.patient.medication,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "Ημερομηνία κατά την έναρξη της Αγωγής"
 
+#, fuzzy
+msgctxt "help:gnuhealth.patient.procedure,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr "Πλάνα ασφαλιστικής κάλυψης που σχετίζονται με αυτό το άτομο"
+
 msgctxt ""
 "help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid ""
@@ -4046,6 +4122,24 @@ msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
 msgstr ""
 
+msgctxt "help:gnuhealth.procedure,product:"
+msgid "Associated product to the procedure"
+msgstr ""
+
+msgctxt "help:gnuhealth.procedures.config,ambulatory_care:"
+msgid ""
+"The code use for the procedure related to an ambulatory care session. If it "
+"exist, it will add up to the procedure list in the context of ambulatory "
+"care"
+msgstr ""
+
+msgctxt "help:gnuhealth.procedures.config,medical_evaluation:"
+msgid ""
+"The code use for the procedure related to a medical encounter. If it exist, "
+"it will add up to the procedure list in the context of the medical "
+"evaluation"
+msgstr ""
+
 msgctxt "help:gnuhealth.specialty,code:"
 msgid "ie, ADP. Please use CAPITAL LETTERS and no spaces"
 msgstr ""
@@ -4220,6 +4314,10 @@ msgstr "Επίθετα"
 msgctxt "help:party.party,mother:"
 msgid "Mother from the Birth Certificate"
 msgstr "Μητέρα από το Πιστοποιητικό Γέννησης"
+
+msgctxt "help:party.party,proclaimed_ethnicity:"
+msgid "The ethnic group the person identifies most"
+msgstr ""
 
 msgctxt "help:party.party,ref:"
 msgid "Person Unique Identifier"
@@ -7926,6 +8024,11 @@ msgctxt "model:gnuhealth.procedure,name:"
 msgid "Medical Procedures"
 msgstr "Ιατρικές πράξεις"
 
+#, fuzzy
+msgctxt "model:gnuhealth.procedures.config,name:"
+msgid "Medical Procedures Config"
+msgstr "Ιατρικές πράξεις"
+
 msgctxt "model:gnuhealth.secondary_condition,name:"
 msgid "Secondary Conditions"
 msgstr "Δευτερεύουσες παθολογίες"
@@ -8401,6 +8504,11 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
 msgid "Patient procedures"
 msgstr "Ιατρικές πράξεις/ διαδικασίες"
 
+#, fuzzy
+msgctxt "model:ir.action,name:action_gnuhealth_patient_vaccination_view"
+msgid "Patient vaccination"
+msgstr "Εκτίμηση του ασθενούς"
+
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
 msgstr "Ασθενείς"
@@ -8521,6 +8629,11 @@ msgctxt "model:ir.action,name:gnuhealth_action_pol"
 msgid "Pages of life"
 msgstr ""
 
+#, fuzzy
+msgctxt "model:ir.action,name:gnuhealth_action_procedures_config"
+msgid "Medical Procedures Configuration"
+msgstr "Ιατρικές πράξεις"
+
 msgctxt "model:ir.action,name:gnuhealth_action_specialty"
 msgid "Medical Specialties"
 msgstr "Ιατρικές Ειδικότητες"
@@ -8633,6 +8746,10 @@ msgid ""
 "SM-CORE-0006: Verify and check for safety in pregnancy the prescribed drugs"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_dup_mainsp"
+msgid "SM-CORE-0016: The health professional can have only one main specialty"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_dup_official_name"
 msgid "SM-CORE-0011: The person can have only one official name"
 msgstr ""
@@ -8661,8 +8778,8 @@ msgstr ""
 
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
-"{\"font.family\": [\"sans-serif\"], \"@comment\": \"Matplotlib rc config "
-"used when no matplotlibrc file is found.\"}"
+"{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
+"\"Matplotlib rc config used when no matplotlibrc file is found.\"}"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_med_end_date_before_start"
@@ -8954,6 +9071,11 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedure"
 msgid "Procedures"
 msgstr "Procedures"
 
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedures_config"
+msgid "Medical Procedures Configuration"
+msgstr "Ιατρικές πράξεις"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_specialty"
 msgid "Medical Specialties"
 msgstr "Ιατρικές ειδικότητες"
@@ -9003,6 +9125,11 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
 msgstr "Ιδρύματα"
 
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_nursing_menu"
+msgid "Nursing"
+msgstr "Νοσηλευτική"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
 msgid "Online Documentation"
 msgstr ""
@@ -9015,6 +9142,11 @@ msgstr "Επιχειρησιακοί Τομείς"
 msgctxt "model:ir.ui.menu,name:gnuhealth_patient_procedures_menu"
 msgid "Patient procedures"
 msgstr "Ιατρικές πράξεις/ διαδικασίες"
+
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_vaccinations_menu"
+msgid "Patient vaccinations"
+msgstr "Εκτίμηση του ασθενούς"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
 msgid "Patients"
@@ -9076,6 +9208,16 @@ msgstr ""
 msgctxt "model:res.group,name:group_health_frontdesk"
 msgid "Health Front Desk"
 msgstr ""
+
+#, fuzzy
+msgctxt "model:res.group,name:group_health_nursing"
+msgid "Health Nurse"
+msgstr "Επαγγ. Υγείας"
+
+#, fuzzy
+msgctxt "model:res.group,name:group_health_nursing_admin"
+msgid "Health Nurse Administration"
+msgstr "Διαχείριση Υγείας"
 
 msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
@@ -12008,6 +12150,11 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "Πληροφορίες για τον ασθενή και τον επαγγελματία υγείας"
 
+#, fuzzy
+msgctxt "view:gnuhealth.procedures.config:"
+msgid "Default procedures"
+msgstr "Ιατρικές πράξεις/ διαδικασίες"
+
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "Σχόλια"
@@ -12047,11 +12194,6 @@ msgstr "Εμβολιασμός"
 msgctxt "view:party.party:"
 msgid "Demographics"
 msgstr "Δημογραφικά"
-
-#, fuzzy
-msgctxt "view:party.party:"
-msgid "Ethnicity"
-msgstr "Εθνικότητα"
 
 msgctxt "view:party.party:"
 msgid "Health"

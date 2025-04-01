@@ -331,6 +331,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "性别"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "主过程"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "医疗机构"
@@ -442,6 +447,11 @@ msgstr "结束日期"
 msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "手术时长"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "手术"
 
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
@@ -782,6 +792,13 @@ msgid ""
 "or it has been recorded afterwards."
 msgstr "手术过程对应的时间（分钟）。该值是可选的，自动计算的手术长度不能反映实际时间时或者事后记录时使用该值。"
 
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
 msgctxt "help:gnuhealth.surgery,operating_room:"
 msgid "Operating Room"
 msgstr "手术室"
@@ -854,14 +871,20 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "手术时间"
 
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr "手术中的操作/干预措施"
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr "参与手术的专业人员"
 
+#, fuzzy
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr "此代码反映当前手术的主要干预措施，其他手术操作可以在手术选项卡中输入。"
 
 msgctxt "help:gnuhealth.surgery.complication,complication:"

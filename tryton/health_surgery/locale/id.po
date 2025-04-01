@@ -367,6 +367,11 @@ msgid "Gender"
 msgstr "Kelamin"
 
 #, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "Prosedur"
+
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "Institusi"
@@ -486,6 +491,11 @@ msgstr "Akhir"
 msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "Panjang"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "Prosedur"
 
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
@@ -821,6 +831,13 @@ msgid ""
 "or it has been recorded afterwards."
 msgstr ""
 
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
 msgctxt "help:gnuhealth.surgery,operating_room:"
 msgid "Operating Room"
 msgstr ""
@@ -893,14 +910,18 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr ""
 
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr ""
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery.complication,complication:"
