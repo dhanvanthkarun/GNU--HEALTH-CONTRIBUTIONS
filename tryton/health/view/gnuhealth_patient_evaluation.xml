@@ -91,6 +91,17 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <label name="head_circumference"/>
                 <field name="head_circumference"/>
             </group>
+
+            <group colspan="4" col="8" string="Body Composition" id="group_patient_evaluation_body_composition">
+                <label name="body_water"/>
+                <field name="body_water"/>
+                <label name="body_fat"/>
+                <field name="body_fat"/>
+                <label name="body_muscle"/>
+                <field name="body_muscle"/>
+                <label name="body_bone"/>
+                <field name="body_bone"/>
+            </group>
             <newline/>
             <group colspan="4" string="Nutrition" id="group_patient_evaluation_nutrition">
                 <label name="malnutrition"/>
@@ -101,7 +112,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <newline/>
             <field name="signs_and_symptoms"/>
             <newline/>
-            <group colspan="4" col="6" string="Glucose and Lipids Profile" id="group_patient_evaluation_glucose_lipid">
+            <group colspan="4" col="12" string="Glucose and Lipids Profile" id="group_patient_evaluation_glucose_lipid">
                 <label name="glycemia"/>
                 <field name="glycemia"/>
                 <label name="hba1c"/>

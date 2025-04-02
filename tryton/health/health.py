@@ -5317,6 +5317,13 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         'Women : < 0.8 Normal // 0.8 - 0.84 Overweight // > 0.85 Obesity',
         states=STATES)
 
+    # Include Body composition metrics
+
+    body_water = fields.Float("Water", help="Total body water %")
+    body_fat = fields.Float("Fat", help="Fat composition %")
+    body_muscle = fields.Float("Muscle", help="Skeletal muscle %")
+    body_bone = fields.Float("Bone", help="Body bone composition %")
+
     # DEPRECATION NOTE : SIGNS AND SYMPTOMS FIELDS TO BE REMOVED IN 1.6 .
     # NOW WE USE A O2M OBJECT TO MAKE IT MORE SCALABLE, CLEARER AND FUNCTIONAL
     # TO WORK WITH THE CLINICAL FINDINGS OF THE PATIENT
