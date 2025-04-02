@@ -65,7 +65,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'ambulatory'),
             ('pdate', '=', Eval('session_start')),
-            ],
+        ],
         depends=['patient'],
         help='Procedures done during the rounding')
 
@@ -152,6 +152,8 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
             medical_procedure = int(ProceduresConfig.ambulatory_care)
 
             return [{'procedure': medical_procedure}]
+        else:
+            return []
 
     @staticmethod
     def default_health_professional():
