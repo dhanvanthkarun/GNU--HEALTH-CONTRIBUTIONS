@@ -420,7 +420,7 @@ class Party(metaclass=PoolMeta):
     proclaimed_ethnicity = fields.Many2One(
         'gnuhealth.ethnicity', 'Proclaimed ethnicity',
         help="The ethnic group the person identifies most"
-        )
+    )
 
     marital_status = fields.Selection([
         (None, ''),
@@ -5470,7 +5470,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
             ('ctx', '=', 'evaluation'),
             ('pdate', '=', Eval('evaluation_start')),
             ('insurance', '=', Eval('insurance')),
-            ],
+        ],
         depends=['patient'],
         help='Procedures done in the evaluation')
 
@@ -6273,11 +6273,11 @@ class ProceduresConfig(ModelSingleton, ModelSQL, ModelView):
         help="The code use for the procedure related to a medical"
              " encounter. If it exist, it will add up to the "
              "procedure list in the context of the medical evaluation"
-        )
+    )
 
     ambulatory_care = fields.Many2One(
         'gnuhealth.procedure', 'Ambulatory care',
         help="The code use for the procedure related to an ambulatory"
              " care session. If it exist, it will add up to the "
              "procedure list in the context of ambulatory care"
-        )
+    )
