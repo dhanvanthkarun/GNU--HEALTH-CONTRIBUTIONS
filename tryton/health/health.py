@@ -2877,8 +2877,10 @@ class Insurance(ModelSQL, ModelView):
     notes = fields.Text('Extra Info')
 
     def get_rec_name(self, name):
-        return (
-            f"{self.company.name}: {self.plan_id.rec_name} - {self.number}")
+        company_name = self.company and self.company.name or ''
+        plan_name = self.plan_id and self.plan_id.rec_name or ''
+        num = self.number
+        return f"{company_name}: {plan_name} - {num}"
 
     @classmethod
     def __setup__(cls):
