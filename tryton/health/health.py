@@ -5525,8 +5525,9 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         ProceduresConfig = Pool().get('gnuhealth.procedures.config')(1)
         if (ProceduresConfig and ProceduresConfig.medical_evaluation):
             medical_procedure = int(ProceduresConfig.medical_evaluation)
-
             return [{'procedure': medical_procedure}]
+        else:
+            return []
 
     @staticmethod
     def default_institution():
