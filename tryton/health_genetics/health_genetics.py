@@ -14,7 +14,7 @@
 from trytond import backend
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval
-from trytond.pool import Pool
+from trytond.pool import Pool, PoolMeta
 from uuid import uuid4
 from trytond.modules.health.core import (get_institution,
                                          format_years_months_days)
@@ -518,11 +518,13 @@ class FamilyDiseases(ModelSQL, ModelView):
         table_h = cls.__table_handler__(module)
 
 
-class GnuHealthPatient (ModelSQL, ModelView):
+class GnuHealthPatient (metaclass=PoolMeta):
+    __name__ = 'gnuhealth.patient'
+
     """
     Add to the Medical patient_data class (gnuhealth.patient) the genetic
-    and family risks"""
-    __name__ = 'gnuhealth.patient'
+    and family risks
+    """
 
     genetic_risks = fields.One2Many('gnuhealth.patient.genetic.risk',
                                     'patient', 'Genetic Information')
