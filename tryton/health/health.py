@@ -5917,7 +5917,6 @@ class PatientProcedure(ModelSQL, ModelView):
         Model = Pool().get('ir.model')
         get_name = Model.get_name
         models = cls._get_origin()
-        print([(None, '')] + [(m, get_name(m)) for m in models])
         return [(None, '')] + [(m, get_name(m)) for m in models]
 
     # Allow to search by patient, procedure or context
