@@ -1602,6 +1602,24 @@ msgctxt "field:gnuhealth.patient.evaluation,bmi:"
 msgid "BMI"
 msgstr "IMC"
 
+msgctxt "field:gnuhealth.patient.evaluation,body_bone:"
+msgid "Bone"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,body_fat:"
+msgid "Fat"
+msgstr "Plat"
+
+msgctxt "field:gnuhealth.patient.evaluation,body_muscle:"
+msgid "Muscle"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.evaluation,body_water:"
+msgid "Water"
+msgstr "Matériau"
+
 msgctxt "field:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart Rate"
 msgstr "Fréquence cardiaque"
@@ -3533,6 +3551,23 @@ msgstr ""
 msgctxt "help:gnuhealth.patient.evaluation,bmi:"
 msgid "Body mass index"
 msgstr "Indice de masse corporelle"
+
+msgctxt "help:gnuhealth.patient.evaluation,body_bone:"
+msgid "Body bone composition %"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.evaluation,body_fat:"
+msgid "Fat composition %"
+msgstr "Composition"
+
+msgctxt "help:gnuhealth.patient.evaluation,body_muscle:"
+msgid "Skeletal muscle %"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.evaluation,body_water:"
+msgid "Total body water %"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart rate (beats per minute)"
@@ -9576,6 +9611,14 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BP"
 msgstr ""
 
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Body Composition Metrics (%)"
+msgstr ""
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Bone"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Chief Complaint"
@@ -9630,6 +9673,11 @@ msgstr ""
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Fat"
+msgstr "Plat"
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "GCS"
 msgstr "GCS"
 
@@ -9661,6 +9709,10 @@ msgstr "Diagnostic principal"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Marital Status:"
+msgstr ""
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Muscle"
 msgstr ""
 
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9729,6 +9781,11 @@ msgstr "Plan de traitement"
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Type"
 msgstr "Type"
+
+#, fuzzy
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Water"
+msgstr "Matériau"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -11884,6 +11941,11 @@ msgstr ""
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Anthropometry"
 msgstr "Anthropométrie"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Body Composition"
+msgstr "Composition"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Chief Complaint"
