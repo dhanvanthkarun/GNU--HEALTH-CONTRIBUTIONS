@@ -57,9 +57,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
                     <group colspan="4" col="8" id="general_info">
                         <label name="primary_care_doctor"/>
                         <field name="primary_care_doctor"/>
-                        <label name="family"/>
-                        <field name="family"/>
-                        <field name="marital_status"/>
                         <label name="current_insurance"/>
                         <field name="current_insurance"/>
                     </group>
@@ -114,6 +111,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <page string="Medication" id="patient_medication">
             <field name="medications"/>
             <field name="vaccinations"/>
+        </page>
+
+        <page string="Family" id="patient_family">
+            <label name="family"/>
+            <field name="family"/>
+            <field name="marital_status"/>
+            <newline/>
+            <field name="family_history" colspan="4"/>
         </page>
 
         <!-- Patient Health Conditions 

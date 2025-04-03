@@ -72,7 +72,7 @@ __all__ = [
     'HealthInstitutionOperationalSector', 'HealthInstitutionO2M',
     'HospitalBuilding', 'HospitalUnit', 'HospitalOR', 'HospitalWard',
     'HospitalBed', 'HealthProfessional', 'HealthProfessionalSpecialties',
-    'Family', 'FamilyMember', 'MedicamentCategory',
+    'Family', 'FamilyMember', 'FamilyDiseases', 'MedicamentCategory',
     'Medicament', 'ImmunizationSchedule', 'ImmunizationScheduleLine',
     'ImmunizationScheduleDose', 'PathologyCategory', 'PathologyGroup',
     'Pathology', 'DiseaseMembers', 'ProcedureCode',
@@ -2173,6 +2173,53 @@ class FamilyMember(ModelSQL, ModelView):
         table_h = cls.__table_handler__(module)
 
 
+class FamilyDiseases(ModelSQL, ModelView):
+    'Family History'
+    __name__ = 'gnuhealth.patient.family.diseases'
+
+    patient = fields.Many2One('gnuhealth.patient', 'Patient')
+    disease = fields.Many2One(
+        'gnuhealth.pathology', 'Condition', required=True)
+    xory = fields.Selection([
+        (None, ''),
+        ('m', 'Maternal'),
+        ('f', 'Paternal'),
+        ('s', 'Sibling'),
+    ], 'Maternal or Paternal')
+
+    xory_str = xory.translated('xory')
+
+    relative = fields.Selection([
+        ('mother', 'Mother'),
+        ('father', 'Father'),
+        ('brother', 'Brother'),
+        ('sister', 'Sister'),
+        ('aunt', 'Aunt'),
+        ('uncle', 'Uncle'),
+        ('nephew', 'Nephew'),
+        ('niece', 'Niece'),
+        ('grandfather', 'Grandfather'),
+        ('grandmother', 'Grandmother'),
+        ('cousin', 'Cousin'),
+    ], 'Relative',
+        help='First degree = siblings, mother and father\n'
+             'Second degree = Uncles, nephews and Nieces\n'
+             'Third degree = Grandparents and cousins',
+        required=True)
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to patient
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('disease')):
+            table_h.column_rename('name', 'disease')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
+
 # Use the template as in Product category.
 class MedicamentCategory(tree(separator=' / '), ModelSQL, ModelView):
     'Medicament Category'
@@ -3419,6 +3466,9 @@ class PatientData(ModelSQL, ModelView):
         help="There are serious socio-familiar issues, such as"
              " physical and social barriers, drug addiction, violence "
              " and education")
+
+    family_history = fields.One2Many('gnuhealth.patient.family.diseases',
+                                     'patient', 'Family History')
 
     @staticmethod
     def default_active():

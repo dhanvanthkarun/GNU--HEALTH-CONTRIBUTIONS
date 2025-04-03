@@ -22,6 +22,5 @@ def register():
         health_genetics.GeneVariant,
         health_genetics.GeneVariantPhenotype,
         health_genetics.PatientGeneticRisk,
-        health_genetics.FamilyDiseases,
         health_genetics.GnuHealthPatient,
         module='health_genetics', type_='model')

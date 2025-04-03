@@ -8,10 +8,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <data>
-    <xpath expr="/form/notebook/page[@id=&quot;general_info&quot;]" position="after">
+    <xpath expr="/form/notebook/page[@id=&quot;patient_family&quot;]" position="after">
         <page string="Genetics" id="patient_genetics">
             <field name="genetic_risks"/>
-            <field name="family_history"/>
         </page>
     </xpath>
 </data>

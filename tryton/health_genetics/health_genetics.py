@@ -22,7 +22,7 @@ from trytond.transaction import Transaction
 
 __all__ = ['Gene', 'ProteinDisease', 'GeneVariant',
            'GeneVariantPhenotype',
-           'PatientGeneticRisk', 'FamilyDiseases', 'GnuHealthPatient']
+           'PatientGeneticRisk', 'GnuHealthPatient']
 
 
 class Gene(ModelSQL, ModelView):
@@ -471,53 +471,6 @@ class PatientGeneticRisk(ModelSQL, ModelView):
                 ]
 
 
-class FamilyDiseases(ModelSQL, ModelView):
-    'Family History'
-    __name__ = 'gnuhealth.patient.family.diseases'
-
-    patient = fields.Many2One('gnuhealth.patient', 'Patient')
-    disease = fields.Many2One(
-        'gnuhealth.pathology', 'Condition', required=True)
-    xory = fields.Selection([
-        (None, ''),
-        ('m', 'Maternal'),
-        ('f', 'Paternal'),
-        ('s', 'Sibling'),
-    ], 'Maternal or Paternal')
-
-    xory_str = xory.translated('xory')
-
-    relative = fields.Selection([
-        ('mother', 'Mother'),
-        ('father', 'Father'),
-        ('brother', 'Brother'),
-        ('sister', 'Sister'),
-        ('aunt', 'Aunt'),
-        ('uncle', 'Uncle'),
-        ('nephew', 'Nephew'),
-        ('niece', 'Niece'),
-        ('grandfather', 'Grandfather'),
-        ('grandmother', 'Grandmother'),
-        ('cousin', 'Cousin'),
-    ], 'Relative',
-        help='First degree = siblings, mother and father\n'
-             'Second degree = Uncles, nephews and Nieces\n'
-             'Third degree = Grandparents and cousins',
-        required=True)
-
-    @classmethod
-    def __register__(cls, module):
-        table_h = cls.__table_handler__(module)
-
-        # Migration from 4.4: rename name to patient
-        if (table_h.column_exist('name')
-                and not table_h.column_exist('disease')):
-            table_h.column_rename('name', 'disease')
-
-        super().__register__(module)
-        table_h = cls.__table_handler__(module)
-
-
 class GnuHealthPatient (metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'
 
@@ -528,5 +481,3 @@ class GnuHealthPatient (metaclass=PoolMeta):
 
     genetic_risks = fields.One2Many('gnuhealth.patient.genetic.risk',
                                     'patient', 'Genetic Information')
-    family_history = fields.One2Many('gnuhealth.patient.family.diseases',
-                                     'patient', 'Family History')

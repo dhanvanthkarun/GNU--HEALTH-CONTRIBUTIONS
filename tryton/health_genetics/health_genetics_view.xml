@@ -207,19 +207,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             action="gnuhealth_action_patient_genetics"
             id="gnuhealth_patient_genetics" icon="gnuhealth-list"/>
 
-<!-- Family Diseases -->
-
-        <record model="ir.ui.view" id="gnuhealth_family_diseases_view">
-            <field name="model">gnuhealth.patient.family.diseases</field>
-            <field name="type">form</field>
-            <field name="name">gnuhealth_family_diseases</field>
-        </record>
-
-        <record model="ir.ui.view" id="gnuhealth_family_diseases_tree">
-            <field name="model">gnuhealth.patient.family.diseases</field>
-            <field name="type">tree</field>
-            <field name="name">gnuhealth_family_diseases_tree</field>
-        </record>
 
 <!-- Include Family History and Genetic Risks on the patient chart -->
 

@@ -782,6 +782,20 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="gnuhealth_edit_family_member" parent="gnuhealth_demographics_menu"
             icon="gnuhealth-list" sequence="40"/>
 
+<!-- Family Diseases -->
+
+        <record model="ir.ui.view" id="gnuhealth_family_diseases_view">
+            <field name="model">gnuhealth.patient.family.diseases</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_family_diseases</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_family_diseases_tree">
+            <field name="model">gnuhealth.patient.family.diseases</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_family_diseases_tree</field>
+        </record>
+
 
 <!-- Domiciliary Unit -->
 

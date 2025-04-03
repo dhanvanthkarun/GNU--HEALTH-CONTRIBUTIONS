@@ -52,6 +52,7 @@ def register():
         health.HealthProfessionalSpecialties,
         health.Family,
         health.FamilyMember,
+        health.FamilyDiseases,
         health.MedicamentCategory,
         health.Medicament,
         health.ImmunizationSchedule,
