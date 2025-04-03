@@ -387,6 +387,13 @@ class PatientGeneticRisk(ModelSQL, ModelView):
                                               Eval('disease_gene'))],
                                       depends=['disease_gene'])
 
+    zygosity = fields.Selection([
+        (None, ''),
+        ('homo', 'Homozygosity'),
+        ('hetero', 'Heterozygosity'),
+        ('hemi', 'Hemizygosity'),
+    ], 'Zygosity', sort=False)
+
     variant_phenotype = fields.Many2One('gnuhealth.gene.variant.phenotype',
                                         'Phenotype',
                                         domain=[('variant', '=',
