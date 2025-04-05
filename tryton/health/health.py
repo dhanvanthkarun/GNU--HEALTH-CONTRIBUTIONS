@@ -878,6 +878,7 @@ class Party(metaclass=PoolMeta):
                 ('contact_mechanisms.value',) + tuple(clause[1:]),
                 ('person_names.family',) + tuple(clause[1:]),
                 ('person_names.given',) + tuple(clause[1:]),
+                ('insurance.number',) + tuple(clause[1:]),
                 ('name',) + tuple(clause[1:]),
                 ('lastname',) + tuple(clause[1:]),
                 ]
