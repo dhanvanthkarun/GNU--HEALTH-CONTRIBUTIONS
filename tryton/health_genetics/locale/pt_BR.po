@@ -118,30 +118,9 @@ msgctxt "field:gnuhealth.gene.variant.phenotype,variant:"
 msgid "Variant"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient,family_history:"
-msgid "Family History"
-msgstr "Histórico Familiar"
-
 msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
 msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.family.diseases,disease:"
-msgid "Condition"
-msgstr "Condição"
-
-msgctxt "field:gnuhealth.patient.family.diseases,patient:"
-msgid "Patient"
-msgstr "Paciente"
-
-msgctxt "field:gnuhealth.patient.family.diseases,relative:"
-msgid "Relative"
-msgstr "Parente"
-
-msgctxt "field:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal or Paternal"
-msgstr "Maternal or Paternal"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,disease_gene:"
@@ -176,6 +155,10 @@ msgstr "Paciente"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Zygosity"
 msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
@@ -305,16 +288,6 @@ msgctxt "help:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene and expressing protein (in parenthesis)"
 msgstr ""
 
-msgctxt "help:gnuhealth.patient.family.diseases,relative:"
-msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
-msgstr ""
-"Primeiro grau = irmãos, mãe e pai\n"
-"Segundo grau = Tios, sobrinhos e sobrinhas\n"
-"Terceiro grau = avós e primos"
-
 #, fuzzy
 msgctxt "help:gnuhealth.patient.genetic.risk,healthprof:"
 msgid "Health professional"
@@ -365,11 +338,6 @@ msgstr ""
 msgctxt "model:gnuhealth.gene.variant.phenotype,name:"
 msgid "Variant Phenotypes"
 msgstr ""
-
-#, fuzzy
-msgctxt "model:gnuhealth.patient.family.diseases,name:"
-msgid "Family History"
-msgstr "Doenças Familiares"
 
 #, fuzzy
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
@@ -537,61 +505,17 @@ msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
 msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Aunt"
-msgstr "Tia"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Hemizygosity"
+msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Brother"
-msgstr "Irmão"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Heterozygosity"
+msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Cousin"
-msgstr "Primo"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Father"
-msgstr "Pai"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandfather"
-msgstr "Avô"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandmother"
-msgstr "Avó"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Mother"
-msgstr "Mãe"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Nephew"
-msgstr "Sobrinho"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Niece"
-msgstr "Sobrinha"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Sister"
-msgstr "Irmã"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Uncle"
-msgstr "Tio"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal"
-msgstr "Materno"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Paternal"
-msgstr "Paterno"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Sibling"
-msgstr "Descendente"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Homozygosity"
+msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomal dominant"

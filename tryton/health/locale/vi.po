@@ -1330,6 +1330,11 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "Gia đình"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient,family_history:"
+msgid "Family History"
+msgstr "Lịch sử gia đình"
+
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
 msgstr "Giới"
@@ -1899,6 +1904,24 @@ msgstr "Cân nặng"
 msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
 msgstr "E/H"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
+msgid "Condition"
+msgstr "Tên bệnh"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,patient:"
+msgid "Patient"
+msgstr "Họ tên BN"
+
+msgctxt "field:gnuhealth.patient.family.diseases,relative:"
+msgid "Relative"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal or Paternal"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -3803,6 +3826,13 @@ msgstr ""
 "Tỷ lệ eo/hông. Giá trị tham chiếu:\n"
 "Nam: < 0,9 Bình thường // 0,9 - 0,99 Thừa cân // > 1 Béo phì\n"
 "Nữ: < 0,8 Bình thường // 0,8 - 0,84 Thừa cân // > 0,85 Béo phì"
+
+msgctxt "help:gnuhealth.patient.family.diseases,relative:"
+msgid ""
+"First degree = siblings, mother and father\n"
+"Second degree = Uncles, nephews and Nieces\n"
+"Third degree = Grandparents and cousins"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
@@ -7992,6 +8022,11 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr "Đánh giá bệnh nhân"
 
+#, fuzzy
+msgctxt "model:gnuhealth.patient.family.diseases,name:"
+msgid "Family History"
+msgstr "Lịch sử gia đình"
+
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "Thuốc của bệnh nhân"
@@ -11048,6 +11083,69 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr "Phụ nữ khỏe mạnh khám"
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Aunt"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Brother"
+msgstr "Mẹ"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Cousin"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Father"
+msgstr "Bố"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandfather"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandmother"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Mother"
+msgstr "Mẹ"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Nephew"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Niece"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Sister"
+msgstr "Tấm dán"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Uncle"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal"
+msgstr "Vật liệu"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Paternal"
+msgstr "Nội bộ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Sibling"
+msgstr "Dưới lưỡi"
+
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
 msgstr "ngày"
@@ -12003,6 +12101,11 @@ msgstr "Giờ hẹn khám"
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
 msgstr "Thông tin then chốt"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient:"
+msgid "Family"
+msgstr "Tên gia đình"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"

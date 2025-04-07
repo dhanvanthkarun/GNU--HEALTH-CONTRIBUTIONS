@@ -1311,6 +1311,10 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "家庭"
 
+msgctxt "field:gnuhealth.patient,family_history:"
+msgid "Family History"
+msgstr "家族史"
+
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
 msgstr "性别"
@@ -1870,6 +1874,22 @@ msgstr "体重"
 msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
 msgstr "腰臀比"
+
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
+msgid "Condition"
+msgstr "疾病"
+
+msgctxt "field:gnuhealth.patient.family.diseases,patient:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "field:gnuhealth.patient.family.diseases,relative:"
+msgid "Relative"
+msgstr "亲属"
+
+msgctxt "field:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal or Paternal"
+msgstr "母亲或父亲"
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -3674,6 +3694,16 @@ msgstr ""
 "腰臀比， 参考值：\n"
 "男性：< 0.9 正常 // 0.9-0.99 超重 // > 1 肥胖\n"
 "女性：< 0.8 正常 // 0.8-0.84 超重 // > 0.85 肥胖"
+
+msgctxt "help:gnuhealth.patient.family.diseases,relative:"
+msgid ""
+"First degree = siblings, mother and father\n"
+"Second degree = Uncles, nephews and Nieces\n"
+"Third degree = Grandparents and cousins"
+msgstr ""
+"直系亲属 = 兄弟姐妹、母亲和父亲\n"
+"第二级亲属 = 叔伯（舅）、侄子（外甥）和侄女（外甥女）\n"
+"第三级亲属 = (外）祖父母和堂（表）兄弟姐妹"
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
@@ -7809,6 +7839,10 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr "患者评估"
 
+msgctxt "model:gnuhealth.patient.family.diseases,name:"
+msgid "Family History"
+msgstr "家族史"
+
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "患者用药"
@@ -10835,6 +10869,62 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr "女性日常访视/健康促进/筛查等"
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Aunt"
+msgstr "姑/姨"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Brother"
+msgstr "兄弟"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Cousin"
+msgstr "堂亲/表亲"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Father"
+msgstr "父亲"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandfather"
+msgstr "(外)祖父"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandmother"
+msgstr "(外)祖母"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Mother"
+msgstr "母亲"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Nephew"
+msgstr "侄子/外甥"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Niece"
+msgstr "侄女/外甥女"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Sister"
+msgstr "姐妹"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Uncle"
+msgstr "叔伯/舅"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal"
+msgstr "母系"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Paternal"
+msgstr "父系"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Sibling"
+msgstr "兄弟姐妹"
+
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
 msgstr "天"
@@ -11775,6 +11865,10 @@ msgstr "时间"
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
 msgstr "关键信息"
+
+msgctxt "view:gnuhealth.patient:"
+msgid "Family"
+msgstr "家庭"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"

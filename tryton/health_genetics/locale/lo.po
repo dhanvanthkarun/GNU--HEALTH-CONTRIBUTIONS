@@ -121,30 +121,9 @@ msgctxt "field:gnuhealth.gene.variant.phenotype,variant:"
 msgid "Variant"
 msgstr "ຜະລິດຕະພັນຍ່ອຍ"
 
-msgctxt "field:gnuhealth.patient,family_history:"
-msgid "Family History"
-msgstr "ປະວັດຄອມຄົວ"
-
 msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
 msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.family.diseases,disease:"
-msgid "Condition"
-msgstr "ພາວະ"
-
-msgctxt "field:gnuhealth.patient.family.diseases,patient:"
-msgid "Patient"
-msgstr "ຄົນເຈັບ"
-
-msgctxt "field:gnuhealth.patient.family.diseases,relative:"
-msgid "Relative"
-msgstr "ສາຍສຳພັນ"
-
-msgctxt "field:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal or Paternal"
-msgstr "ທາງແມ່ຫຼືທາງພໍ່"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,disease_gene:"
@@ -180,6 +159,10 @@ msgstr "ຄົນເຈັບ"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Zygosity"
 msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
@@ -309,13 +292,6 @@ msgctxt "help:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene and expressing protein (in parenthesis)"
 msgstr ""
 
-msgctxt "help:gnuhealth.patient.family.diseases,relative:"
-msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
-msgstr ""
-
 msgctxt "help:gnuhealth.patient.genetic.risk,healthprof:"
 msgid "Health professional"
 msgstr ""
@@ -365,11 +341,6 @@ msgstr ""
 msgctxt "model:gnuhealth.gene.variant.phenotype,name:"
 msgid "Variant Phenotypes"
 msgstr ""
-
-#, fuzzy
-msgctxt "model:gnuhealth.patient.family.diseases,name:"
-msgid "Family History"
-msgstr "ໝວດພະຍາດ"
 
 #, fuzzy
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
@@ -537,61 +508,17 @@ msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
 msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Aunt"
-msgstr "ນ້າສາວ"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Hemizygosity"
+msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Brother"
-msgstr "ອ້າຍ"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Heterozygosity"
+msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Cousin"
-msgstr "ພີ່ນ້ອງ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Father"
-msgstr "ພໍ່"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandfather"
-msgstr "ພໍ່ເຖົ້າ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandmother"
-msgstr "ແມ່ເຖົ້າ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Mother"
-msgstr "ແມ່"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Nephew"
-msgstr "ຫຼານຊາຍ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Niece"
-msgstr "ຫຼານສາວ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Sister"
-msgstr "ເອື້ອຍ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Uncle"
-msgstr "ລຸງ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal"
-msgstr "ທາງແມ່"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Paternal"
-msgstr "ທາງພໍ່"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Sibling"
-msgstr "ພີ່ນ້ອງຮ່ວມສາຍເລືອດ"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Homozygosity"
+msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomal dominant"

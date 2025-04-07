@@ -1347,6 +1347,11 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "Οικογένεια"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient,family_history:"
+msgid "Family History"
+msgstr "Οικογενειακός Κωδικός"
+
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
 msgstr "Φύλλο"
@@ -1924,6 +1929,24 @@ msgstr "Βάρος"
 msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
 msgstr "Αναφορά Π.Ο.Υ."
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
+msgid "Condition"
+msgstr "Πάθηση"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,patient:"
+msgid "Patient"
+msgstr "Ασθενής"
+
+msgctxt "field:gnuhealth.patient.family.diseases,relative:"
+msgid "Relative"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal or Paternal"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -3843,6 +3866,13 @@ msgstr ""
 "Αναλογία περιμέτρου Μέσης-Ισχίων. Τιμές αναφοράς:\n"
 "Άνδρες : < 0.9 Φυσιολογικά όρια // 0.9 - 0.99 Υπέρβαροι // > 1 Παχύσαρκοι \n"
 "Γυναίκες : < 0.8 Φυσιολογικά όρια // 0.8 - 0.84 Υπέρβαρες // > 0.85 Παχύσαρκες"
+
+msgctxt "help:gnuhealth.patient.family.diseases,relative:"
+msgid ""
+"First degree = siblings, mother and father\n"
+"Second degree = Uncles, nephews and Nieces\n"
+"Third degree = Grandparents and cousins"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
@@ -8026,6 +8056,11 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr "Εκτίμηση του ασθενούς"
 
+#, fuzzy
+msgctxt "model:gnuhealth.patient.family.diseases,name:"
+msgid "Family History"
+msgstr "Οικογενειακός Κωδικός"
+
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "Φάρμακα του ασθενούς"
@@ -11148,6 +11183,69 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr "Επίσκεψη για υγιή γυναίκα"
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Aunt"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Brother"
+msgstr "Μητέρα"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Cousin"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Father"
+msgstr "Πατέρας"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandfather"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandmother"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Mother"
+msgstr "Μητέρα"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Nephew"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Niece"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Sister"
+msgstr "Γύψος"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Uncle"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal"
+msgstr "Υλικό"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Paternal"
+msgstr "Υλικό"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Sibling"
+msgstr "Υπογλώσσια"
+
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
 msgstr "ημέρες"
@@ -12122,6 +12220,11 @@ msgstr "Ώρα"
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
 msgstr "Κρίσιμες πληροφορίες"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient:"
+msgid "Family"
+msgstr "Οικογένεια"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"

@@ -1318,6 +1318,11 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "Aile"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient,family_history:"
+msgid "Family History"
+msgstr "Aile"
+
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
 msgstr "Cinsiyet"
@@ -1892,6 +1897,24 @@ msgstr "Ağırlık"
 msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
 msgstr "Bel-kalça oranı"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
+msgid "Condition"
+msgstr "Koşul/Hal"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,patient:"
+msgid "Patient"
+msgstr "Hasta"
+
+msgctxt "field:gnuhealth.patient.family.diseases,relative:"
+msgid "Relative"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal or Paternal"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -3748,6 +3771,13 @@ msgid ""
 "Waist to hip ratio . Reference values:\n"
 "Men : < 0.9 Normal // 0.9 - 0.99 Overweight // > 1 Obesity \n"
 "Women : < 0.8 Normal // 0.8 - 0.84 Overweight // > 0.85 Obesity"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.family.diseases,relative:"
+msgid ""
+"First degree = siblings, mother and father\n"
+"Second degree = Uncles, nephews and Nieces\n"
+"Third degree = Grandparents and cousins"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
@@ -7896,6 +7926,11 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr ""
 
+#, fuzzy
+msgctxt "model:gnuhealth.patient.family.diseases,name:"
+msgid "Family History"
+msgstr "Aile"
+
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr ""
@@ -11043,6 +11078,67 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr ""
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Aunt"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Brother"
+msgstr "Annesi"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Cousin"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Father"
+msgstr "Babası"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandfather"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandmother"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Mother"
+msgstr "Annesi"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Nephew"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Niece"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Sister"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Uncle"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal"
+msgstr "Malzeme"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Paternal"
+msgstr "Dahili"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Sibling"
+msgstr ""
+
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
 msgstr ""
@@ -12043,6 +12139,11 @@ msgstr "Time"
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient:"
+msgid "Family"
+msgstr "Aile"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"

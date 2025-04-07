@@ -115,30 +115,9 @@ msgctxt "field:gnuhealth.gene.variant.phenotype,variant:"
 msgid "Variant"
 msgstr "البديل"
 
-msgctxt "field:gnuhealth.patient,family_history:"
-msgid "Family History"
-msgstr "تاريخ الأسرة"
-
 msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
 msgstr "المعلومات الجينية"
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.family.diseases,disease:"
-msgid "Condition"
-msgstr "الحالة"
-
-msgctxt "field:gnuhealth.patient.family.diseases,patient:"
-msgid "Patient"
-msgstr "المريض"
-
-msgctxt "field:gnuhealth.patient.family.diseases,relative:"
-msgid "Relative"
-msgstr "النسبة"
-
-msgctxt "field:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal or Paternal"
-msgstr "الأم أو الأب"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,disease_gene:"
 msgid "Gene"
@@ -171,6 +150,10 @@ msgstr "المريض"
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
 msgstr "النمط الظاهري"
+
+msgctxt "field:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Zygosity"
+msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
 msgid "Mnemonic"
@@ -293,16 +276,6 @@ msgctxt "help:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene and expressing protein (in parenthesis)"
 msgstr "الجين والتعبير عن البروتين (بين قوسين)"
 
-msgctxt "help:gnuhealth.patient.family.diseases,relative:"
-msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
-msgstr ""
-"الدرجة الأولى = الأشقاء والأم والأب\n"
-"الدرجة الثانية = الأعمام وأبناء الإخوة وأبناء الإخوة\n"
-"الدرجة الثالثة = الأجداد وأبناء العمومة"
-
 msgctxt "help:gnuhealth.patient.genetic.risk,healthprof:"
 msgid "Health professional"
 msgstr "الطبيب المختص"
@@ -354,10 +327,6 @@ msgstr "البديل الطبيعي"
 msgctxt "model:gnuhealth.gene.variant.phenotype,name:"
 msgid "Variant Phenotypes"
 msgstr "الظواهر المتغيرة"
-
-msgctxt "model:gnuhealth.patient.family.diseases,name:"
-msgid "Family History"
-msgstr "أمراض الأسرة"
 
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
 msgid "Patient Genetic Information"
@@ -523,61 +492,17 @@ msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
 msgstr "الولايات المتحدة: أهمية غير معروفة"
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Aunt"
-msgstr "عمة"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Hemizygosity"
+msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Brother"
-msgstr "أخ"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Heterozygosity"
+msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Cousin"
-msgstr "ابن عم"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Father"
-msgstr "أب"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandfather"
-msgstr "جد"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandmother"
-msgstr "جدة"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Mother"
-msgstr "أم"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Nephew"
-msgstr "ابن الأخ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Niece"
-msgstr "ابنه"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Sister"
-msgstr "أخت"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Uncle"
-msgstr "عم"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal"
-msgstr "أموميّ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Paternal"
-msgstr "أبويّ"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Sibling"
-msgstr "شَقيق"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Homozygosity"
+msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Autosomal dominant"

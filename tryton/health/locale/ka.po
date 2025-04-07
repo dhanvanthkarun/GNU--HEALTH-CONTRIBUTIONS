@@ -1331,6 +1331,11 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "ოჯახი"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient,family_history:"
+msgid "Family History"
+msgstr "ოჯახის კოდი"
+
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
 msgstr "სქესი"
@@ -1902,6 +1907,24 @@ msgstr "წონა"
 
 msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
+msgid "Condition"
+msgstr "კონდიცია"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.family.diseases,patient:"
+msgid "Patient"
+msgstr "პაციენტი"
+
+msgctxt "field:gnuhealth.patient.family.diseases,relative:"
+msgid "Relative"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal or Paternal"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
@@ -3792,6 +3815,13 @@ msgstr ""
 "წელისა და თეძოს თანაფარდობა. საცნობარო მნიშვნელობები:\n"
 "მამაკაცები: <0,9 ნორმალური // 0,9 - 0,99 ჭარბი წონა //> 1 სიმსუქნე\n"
 "ქალები: <0,8 ნორმალური // 0,8 - 0,84 ჭარბი წონა //> 0,85 სიმსუქნე"
+
+msgctxt "help:gnuhealth.patient.family.diseases,relative:"
+msgid ""
+"First degree = siblings, mother and father\n"
+"Second degree = Uncles, nephews and Nieces\n"
+"Third degree = Grandparents and cousins"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
@@ -7967,6 +7997,11 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr "პაციენტის შეფასება"
 
+#, fuzzy
+msgctxt "model:gnuhealth.patient.family.diseases,name:"
+msgid "Family History"
+msgstr "ოჯახის კოდი"
+
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "პაციენტის წამალი"
@@ -11130,6 +11165,68 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr ""
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Aunt"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Brother"
+msgstr "დედა"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Cousin"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Father"
+msgstr "მამა"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandfather"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandmother"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Mother"
+msgstr "დედა"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Nephew"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Niece"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Sister"
+msgstr "პლასტირი"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Uncle"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal"
+msgstr "მატერიალი"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Paternal"
+msgstr "შინაგანი"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Sibling"
+msgstr ""
+
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
 msgstr ""
@@ -12128,6 +12225,11 @@ msgstr "დრო"
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
 msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient:"
+msgid "Family"
+msgstr "ოჯახი"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"
