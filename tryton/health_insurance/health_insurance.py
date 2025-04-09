@@ -38,7 +38,7 @@ class InsurancePlanProductPolicy(ModelSQL, ModelView):
     icode = fields.Char(
         'Product code',
         help="Equivalent product code for this plan"
-        )
+    )
 
     product_category = fields.Many2One('product.category', 'Category')
 

@@ -51,7 +51,7 @@ class PatientPregnancy(ModelSQL, ModelView):
         domain=[('party.gender', '=', 'f')])
 
     gravida = fields.Integer(
-            '#', required=True, help="Pregnancy number")
+        '#', required=True, help="Pregnancy number")
 
     computed_age = fields.Function(
         fields.Char(
@@ -73,7 +73,7 @@ class PatientPregnancy(ModelSQL, ModelView):
         "pregnancy information is referred by the patient, "
         "as a history taking procedure. Keep in mind "
         "that the reverse pregnancy data is subjective.",
-        )
+    )
     reverse_weeks = fields.Integer(
         "Gest. Weeks", help="Number of weeks at "
         "the end of pregnancy.",
@@ -304,7 +304,7 @@ class PatientPregnancy(ModelSQL, ModelView):
             if name == 'pregnancy_current_week':
                 if self.current_pregnancy:
                     today = datetime.date.today()
-                    weeks = int(((today - self.lmp).days)/7)
+                    weeks = int(((today - self.lmp).days) / 7)
                     return weeks
                 if self.reverse_weeks:
                     return self.reverse_weeks
