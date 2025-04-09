@@ -223,7 +223,7 @@ class Surgery(ModelSQL, ModelView):
         domain=[
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'surgery'),
-            ('pdate', '=', Eval('surgery_date')),
+            # ('pdate', '=', Eval('surgery_date')),
         ],
         depends=['patient'],
         help='Procedures done during the Surgery')

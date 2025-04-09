@@ -1066,7 +1066,7 @@ class PatientRounding(ModelSQL, ModelView):
         domain=[
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'rounding'),
-            ('pdate', '=', Eval('evaluation_start')),
+            # ('pdate', '=', Eval('evaluation_start')),
         ],
         depends=['registration', 'patient'],
         help='Procedures done during the rounding')

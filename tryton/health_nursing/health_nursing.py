@@ -64,7 +64,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
         domain=[
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'ambulatory'),
-            ('pdate', '=', Eval('session_start')),
+            # ('pdate', '=', Eval('session_start')),
         ],
         depends=['patient'],
         help='Procedures done during the rounding')

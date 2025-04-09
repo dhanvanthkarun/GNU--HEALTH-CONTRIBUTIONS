@@ -5553,7 +5553,7 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
         domain=[
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'evaluation'),
-            ('pdate', '=', Eval('evaluation_start')),
+            # ('pdate', '=', Eval('evaluation_start')),
             ('insurance', '=', Eval('insurance')),
         ],
         depends=['patient'],
