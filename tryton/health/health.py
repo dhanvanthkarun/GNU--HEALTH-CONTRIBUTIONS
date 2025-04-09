@@ -3229,6 +3229,23 @@ class PatientData(ModelSQL, ModelView):
     'Patient related information'
     __name__ = 'gnuhealth.patient'
 
+    @fields.depends('diseases', 'critical_summary')
+    def on_change_diseases(self):
+        ''' Update the patient critical information and "Focus on"
+            fields when updating the diseases
+        '''
+        for disease in self.diseases:
+            if (disease.pathology):
+                for member in disease.pathology.groups:
+                    if (member.disease_group.name == "ALLERGIC"):
+                        ''' Set "Focus on allergy" if the health condition
+                            is a member of the ALLERGIC disease group'''
+                        self.crit_allergic = True
+
+                    ''' Update patient critical information'''
+                    self.critical_summary = \
+                        self.patient_critical_summary(name=None)
+
     def patient_critical_summary(self, name):
         # Patient Critical Information Summary
         # The information will be shown in the front page
@@ -3237,18 +3254,19 @@ class PatientData(ModelSQL, ModelView):
         other_conditions = []
         conditions = []
         for disease in self.diseases:
-            for member in disease.pathology.groups:
-                '''Retrieve patient allergies'''
-                if (member.disease_group.name == "ALLERGIC"):
-                    if disease.pathology.name not in conditions:
-                        allergies.append(disease.pathology.rec_name)
-                        conditions.append(disease.pathology.rec_name)
+            if (disease.pathology):
+                for member in disease.pathology.groups:
+                    '''Retrieve patient allergies'''
+                    if (member.disease_group.name == "ALLERGIC"):
+                        if disease.pathology.name not in conditions:
+                            allergies.append(disease.pathology.rec_name)
+                            conditions.append(disease.pathology.rec_name)
 
-            '''Retrieve patient other relevant conditions '''
-            '''Chronic and active'''
-            if (disease.status == "c" or disease.is_active):
-                if disease.pathology.name not in conditions:
-                    other_conditions.append(disease.pathology.rec_name)
+                '''Retrieve patient other relevant conditions '''
+                '''Chronic and active'''
+                if (disease.status == "c" or disease.is_active):
+                    if disease.pathology.name not in conditions:
+                        other_conditions.append(disease.pathology.rec_name)
 
         return "\n".join((set(allergies + other_conditions)))
 
@@ -3398,12 +3416,12 @@ class PatientData(ModelSQL, ModelView):
 
     diseases = fields.One2Many(
         'gnuhealth.patient.disease', 'patient',
-        'Conditions', readonly=True)
+        'Conditions')
 
     critical_summary = fields.Function(fields.Text(
         'Important health conditions related to this patient',
         help='Automated summary of patient important health conditions '
-        'other critical information'),
+        'and other critical information'),
         'patient_critical_summary')
 
     critical_info = fields.Text(
@@ -6210,6 +6228,8 @@ class PatientECG(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(PatientECG, cls).__setup__()
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
         cls._order.insert(0, ('ecg_date', 'DESC'))
 
     @classmethod
@@ -6233,13 +6253,6 @@ class PatientECG(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
-
-    @classmethod
-    def __setup__(cls):
-        super(PatientECG, cls).__setup__()
-
-        # Do not cache default_key as it depends on time
-        cls.__rpc__['default_get'].cache = None
 
 
 class ProductTemplate(metaclass=PoolMeta):
