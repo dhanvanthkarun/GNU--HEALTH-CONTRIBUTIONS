@@ -5988,6 +5988,10 @@ class PatientProcedure(ModelSQL, ModelView):
         if (self.patient):
             return self.patient.party.id
 
+    @staticmethod
+    def default_pdate():
+        return datetime.now()
+
     @classmethod
     def _get_origin(cls):
         'List of Model References. New packages will add to it'
@@ -6012,6 +6016,13 @@ class PatientProcedure(ModelSQL, ModelView):
                 ('patient',) + tuple(clause[1:]),
                 ('ctx',) + tuple(clause[1:]),
                 ]
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientProcedure, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 # PATIENT EVALUATION DIRECTIONS
