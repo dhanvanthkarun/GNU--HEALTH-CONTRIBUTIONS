@@ -123,3 +123,10 @@ class ChagasDUSurvey(ModelSQL, ModelView):
             if not values.get('name'):
                 values['name'] = cls.generate_code()
         return super(ChagasDUSurvey, cls).create(vlist)
+
+    @classmethod
+    def __setup__(cls):
+        super(ChagasDUSurvey, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None

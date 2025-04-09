@@ -93,6 +93,13 @@ class RequestPatientImagingTestStart(ModelView):
     def default_doctor():
         return get_health_professional()
 
+    @classmethod
+    def __setup__(cls):
+        super(RequestPatientImagingTestStart, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class RequestPatientImagingTest(Wizard):
     'Request Patient Imaging Test'

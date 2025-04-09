@@ -677,6 +677,13 @@ class InpatientMedicationLog (ModelSQL, ModelView):
         super().__register__(module)
         table_h = cls.__table_handler__(module)
 
+    @classmethod
+    def __setup__(cls):
+        super(InpatientMedicationLog, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class InpatientDiet (ModelSQL, ModelView):
     'Inpatient Diet'
@@ -909,6 +916,9 @@ class InpatientMealOrder (ModelSQL, ModelView):
                 'The Meal Order code already exists'),
         ]
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     @ModelView.button
     def generate(cls, mealorders):
@@ -1057,7 +1067,7 @@ class PatientRounding(ModelSQL, ModelView):
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'rounding'),
             ('pdate', '=', Eval('evaluation_start')),
-            ],
+        ],
         depends=['registration', 'patient'],
         help='Procedures done during the rounding')
 
@@ -1221,6 +1231,9 @@ class PatientRounding(ModelSQL, ModelView):
             }})
 
         cls._order.insert(0, ('evaluation_start', 'DESC'))
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @classmethod
     def __register__(cls, module):

@@ -168,6 +168,9 @@ class RCRI(ModelSQL, ModelView):
         super(RCRI, cls).__setup__()
         cls._order.insert(0, ('rcri_date', 'DESC'))
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     def search_rec_name(cls, name, clause):
         if clause[1].startswith('!') or clause[1].startswith('not '):
@@ -221,7 +224,7 @@ class Surgery(ModelSQL, ModelView):
             ('patient', '=', Eval('patient')),
             ('ctx', '=', 'surgery'),
             ('pdate', '=', Eval('surgery_date')),
-            ],
+        ],
         depends=['patient'],
         help='Procedures done during the Surgery')
 
@@ -606,7 +609,7 @@ class Surgery(ModelSQL, ModelView):
                     'procedure': main_proc,
                     'reference': f'gnuhealth.surgery,{surgery}',
                     'pdate': values.get('surgery_date')
-                    }
+                }
                 patproc.append(vals)
                 Patproc.create(patproc)
 
@@ -734,6 +737,9 @@ class Surgery(ModelSQL, ModelView):
             },
 
         })
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @classmethod
     def validate(cls, surgeries):
@@ -1148,7 +1154,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
     @fields.depends('patient')
     def on_change_patient(self):
         self.critical_info = f'{self.patient.critical_summary} \n' \
-                             f'{self.patient.critical_info}'
+            f'{self.patient.critical_info}'
 
     def get_rec_name(self, name):
         asa = ''
@@ -1217,6 +1223,9 @@ class PreOperativeAssessment(ModelSQL, ModelView):
                 Equal(Eval('surgical_decision'), 'needs_surgery'),
                 Equal(Eval('surgical_decision'), 'urgent_surgery')))}
         })
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 # SURGERY PROTOCOL TEMPLATE
@@ -1447,6 +1456,9 @@ class ORScheduler(ModelSQL, ModelView):
             ('surgery_uniq', Unique(t, t.surgery),
              'The surgery is already scheduled')
         ]
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class PatientEvaluation (metaclass=PoolMeta):

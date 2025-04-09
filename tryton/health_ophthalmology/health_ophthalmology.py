@@ -348,6 +348,9 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
             'end_evaluation': {'invisible': Equal(Eval('state'), 'done')}
         })
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class OphthalmologyFindings(ModelSQL, ModelView):
     'Ophthalmology Findings'

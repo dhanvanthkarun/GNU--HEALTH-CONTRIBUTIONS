@@ -320,6 +320,9 @@ class Lab(ModelSQL, ModelView):
         cls._order.insert(0, ('date_requested', 'DESC'))
         cls._buttons.update({'complete_criteareas': {}})
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @staticmethod
     def default_date_requested():
         return datetime.now()
@@ -724,6 +727,9 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
         cls._order.insert(0, ('date', 'DESC'))
         cls._order.insert(1, ('request', 'DESC'))
         cls._order.insert(2, ('test_type', 'ASC'))
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @classmethod
     def __register__(cls, module):

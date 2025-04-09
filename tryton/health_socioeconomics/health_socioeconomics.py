@@ -273,6 +273,9 @@ class PatientSESAssessment(ModelSQL, ModelView):
         })
         cls._order.insert(0, ('assessment_date', 'DESC'))
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     def search_rec_name(cls, name, clause):
         if clause[1].startswith('!') or clause[1].startswith('not '):

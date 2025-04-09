@@ -115,6 +115,9 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         cls._order.insert(0, ('date', 'DESC'))
         cls._order.insert(1, ('request', 'DESC'))
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @staticmethod
     def default_date():
         return datetime.now()

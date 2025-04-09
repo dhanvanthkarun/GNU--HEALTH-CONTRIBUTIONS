@@ -204,6 +204,13 @@ class Glasgow(ModelSQL, ModelView):
         super().__register__(module)
         table_h = cls.__table_handler__(module)
 
+    @classmethod
+    def __setup__(cls):
+        super(Glasgow, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class ApacheII(ModelSQL, ModelView):
     'Apache II scoring'

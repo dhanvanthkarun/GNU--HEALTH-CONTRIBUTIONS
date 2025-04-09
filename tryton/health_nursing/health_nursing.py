@@ -186,6 +186,9 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
 
         cls._order.insert(0, ('session_start', 'DESC'))
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     @ModelView.button
     def end_session(cls, sessions):

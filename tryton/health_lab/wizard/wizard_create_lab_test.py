@@ -175,6 +175,13 @@ class RequestPatientLabTestStart(ModelView):
             self.gender_str = None
             self.age_num = None
 
+    @classmethod
+    def __setup__(cls):
+        super(RequestPatientLabTestStart, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class RequestPatientLabTest(Wizard):
     'Request Patient Lab Test'

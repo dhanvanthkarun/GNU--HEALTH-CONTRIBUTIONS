@@ -1191,6 +1191,9 @@ class PageOfLife(ModelSQL, ModelView):
 
         cls._order.insert(0, ('page_date', 'DESC'))
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class ContactMechanism(metaclass=PoolMeta):
     __name__ = 'party.contact_mechanism'
@@ -3955,6 +3958,9 @@ class Appointment(ModelSQL, ModelView):
             'miss_out': {
                 'invisible': Not(Equal(Eval('state'), 'confirmed'))}})
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     @ModelView.button
     def check_in(cls, appointments):
@@ -4201,6 +4207,13 @@ class OpenAppointmentReportStart(ModelView):
     @staticmethod
     def default_healthprof():
         return get_health_professional()
+
+    @classmethod
+    def __setup__(cls):
+        super(OpenAppointmentReportStart, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class OpenAppointmentReport(Wizard):
@@ -4598,6 +4611,9 @@ class PatientVaccination(ModelSQL, ModelView):
             'sign': {'invisible': Equal(Eval('state'), 'done')}
         })
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     def __register__(cls, module):
         table_h = cls.__table_handler__(module)
@@ -4670,7 +4686,11 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
 
         cls._buttons.update({
             'create_prescription': {'invisible': Equal(Eval('state'), 'done')}
+
         })
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @classmethod
     def validate(cls, prescriptions):
@@ -5094,6 +5114,13 @@ class PrescriptionLine(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def __setup__(cls):
+        super(PrescriptionLine, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
@@ -5776,6 +5803,9 @@ class PatientEvaluation(ModelSQL, ModelView, MultiValueMixin):
                                 Not(Eval('diagnosis')))},
         })
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
@@ -6192,6 +6222,13 @@ class PatientECG(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientECG, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class ProductTemplate(metaclass=PoolMeta):

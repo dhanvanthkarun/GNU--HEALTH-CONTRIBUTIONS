@@ -108,3 +108,10 @@ class DengueDUSurvey(ModelSQL, ModelView):
             if not values.get('name'):
                 values['name'] = cls.generate_code()
         return super(DengueDUSurvey, cls).create(vlist)
+
+    @classmethod
+    def __setup__(cls):
+        super(DengueDUSurvey, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None

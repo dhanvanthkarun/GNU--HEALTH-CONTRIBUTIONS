@@ -296,6 +296,13 @@ class PatientCAGE(ModelSQL, ModelView):
     def default_cage_score():
         return 0
 
+    @classmethod
+    def __setup__(cls):
+        super(PatientCAGE, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class MedicalPatient(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient'

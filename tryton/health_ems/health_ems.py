@@ -294,6 +294,9 @@ class SupportRequest (ModelSQL, ModelView):
             'close_support': {'invisible': Equal(Eval('state'), 'closed')},
         })
 
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
     @classmethod
     @ModelView.button
     def open_support(cls, srs):
@@ -475,3 +478,10 @@ class SupportRequestLog (ModelSQL, ModelView):
     @staticmethod
     def default_action():
         return 'general'
+
+    @classmethod
+    def __setup__(cls):
+        super(SupportRequestLog, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
