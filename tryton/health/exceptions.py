@@ -40,6 +40,12 @@ class DrugPregnancySafetyCheck(ValidationError):
     pass
 
 
+class DrugAllergySafetyCheck(ValidationError):
+    pass
+
+class PrescriptionSafetyCheck(ValidationError):
+    pass
+
 class NoAssociatedHealthProfessional(ValidationError):
     pass
 

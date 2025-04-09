@@ -44,6 +44,7 @@ from trytond.i18n import gettext
 from .exceptions import (
     WrongDateofBirth, DateHealedBeforeDx, EndTreatmentDateBeforeStart,
     MedEndDateBeforeStart, NextDoseBeforeFirst, DrugPregnancySafetyCheck,
+    DrugAllergySafetyCheck, PrescriptionSafetyCheck,
     EvaluationEndBeforeStart, MustBeAPerson, NoAssociatedHealthProfessional,
     DupOfficialName, FedAccountMismatch, BirthCertDateMismatch,
     CanNotModifyVaccination, DupMainSP
@@ -4677,9 +4678,18 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
         states=STATES)
 
     notes = fields.Text('Prescription Notes', states=STATES)
-    pregnancy_warning = fields.Boolean('Pregnancy Warning', readonly=True)
-    prescription_warning_ack = fields.Boolean('Prescription verified',
-                                              states=STATES)
+    pregnancy_warning = fields.Boolean(
+        'Pregnancy',
+        help="This field is set when the patient is or might be pregnant")
+
+    allergy_warning = fields.Boolean(
+        'Allergy',
+        help="This field is active when the patient is known to be allergic")
+
+    prescription_warning_ack = fields.Boolean(
+        'Verified', states=STATES,
+        help="This verification field must be set to generate"
+             " the prescription")
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Prescriber', readonly=True)
@@ -4724,9 +4734,17 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
             )
 
     def check_prescription_warning(self):
-        if not self.prescription_warning_ack:
+        if self.pregnancy_warning:
             raise DrugPregnancySafetyCheck(gettext(
                 'health.msg_drug_pregnancy_safety_check')
+            )
+        if self.allergy_warning:
+            raise DrugAllergySafetyCheck(gettext(
+                'health.msg_drug_allergy_safety_check')
+            )
+        if not self.prescription_warning_ack:
+            raise PrescriptionSafetyCheck(gettext(
+                'health.msg_prescription_safety_check')
             )
 
     @staticmethod
@@ -4738,16 +4756,16 @@ class PatientPrescriptionOrder(ModelSQL, ModelView):
 
     @fields.depends('patient')
     def on_change_patient(self):
-        preg_warning = False
-        presc_warning_ack = True
         if self.patient:
             # Trigger the warning if the patient is at a childbearing age
             if (self.patient.childbearing_age):
-                preg_warning = True
-                presc_warning_ack = False
+                self.pregnancy_warning = True
+                self.prescription_warning_ack = False
 
-        self.prescription_warning_ack = presc_warning_ack
-        self.pregnancy_warning = preg_warning
+            # Trigger the warning if the patient is allergic
+            if (self.patient.crit_allergic):
+                self.allergy_warning = True
+                self.prescription_warning_ack = False
 
     @staticmethod
     def default_prescription_date():
