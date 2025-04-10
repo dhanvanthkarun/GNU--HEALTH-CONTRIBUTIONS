@@ -273,7 +273,7 @@ class Lab(ModelSQL, ModelView):
     diagnosis = fields.Text('Diagnosis')
     critearea = fields.One2Many(
         'gnuhealth.lab.test.critearea',
-        'gnuhealth_lab_id', 'Lab Test Critearea')
+        'gnuhealth_lab_id', 'Analytes criteria')
 
     # Mostly used in report template.
     def has_critearea_remarks(self):
