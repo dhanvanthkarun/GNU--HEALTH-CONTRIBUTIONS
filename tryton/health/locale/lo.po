@@ -2405,6 +2405,11 @@ msgctxt "field:gnuhealth.prescription.line,start_treatment:"
 msgid "Start"
 msgstr "ເລີ່ມຕົ້ນວັນທີ"
 
+#, fuzzy
+msgctxt "field:gnuhealth.prescription.order,allergy_warning:"
+msgid "Allergy"
+msgstr "ອາການການແພ້ຢາ"
+
 msgctxt "field:gnuhealth.prescription.order,healthprof:"
 msgid "Prescriber"
 msgstr "ຢາຖືກສັ່ງໂດຍ"
@@ -2421,9 +2426,10 @@ msgctxt "field:gnuhealth.prescription.order,pharmacy:"
 msgid "Pharmacy"
 msgstr "ຮ້ານຂາຍຢາ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,pregnancy_warning:"
-msgid "Pregnancy Warning"
-msgstr "ການເຕືອນສຳລັບແມ່ຖືພາ"
+msgid "Pregnancy"
+msgstr "ການຖືພາ"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_date:"
 msgid "Date"
@@ -2437,9 +2443,10 @@ msgctxt "field:gnuhealth.prescription.order,prescription_line:"
 msgid "Prescription line"
 msgstr "ເສັ້ນຕາມໃບສັ່ງແພດ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,prescription_warning_ack:"
-msgid "Prescription verified"
-msgstr "ໃບສັ່ງແພດທີ່ຖຶກຢັ້ງຢືນ"
+msgid "Verified"
+msgstr "ຜູ້ຢັ້ງຢືນ"
 
 msgctxt "field:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Date"
@@ -3421,7 +3428,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient,critical_summary:"
 msgid ""
-"Automated summary of patient important health conditions other critical "
+"Automated summary of patient important health conditions and other critical "
 "information"
 msgstr ""
 
@@ -4153,6 +4160,14 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "ວັນທີເລີ້ມການປິ່ນປົວ"
 
+msgctxt "help:gnuhealth.prescription.order,allergy_warning:"
+msgid "This field is active when the patient is known to be allergic"
+msgstr ""
+
+msgctxt "help:gnuhealth.prescription.order,pregnancy_warning:"
+msgid "This field is set when the patient is or might be pregnant"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.order,prescription_date:"
 msgid "Prescription Date"
 msgstr ""
@@ -4160,6 +4175,10 @@ msgstr ""
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
 msgstr "ຂຽນນໍ້າເບີໃບສັ່ງແພດໄສ່ນີ້."
+
+msgctxt "help:gnuhealth.prescription.order,prescription_warning_ack:"
+msgid "This verification field must be set to generate the prescription"
+msgstr ""
 
 msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
@@ -8784,9 +8803,15 @@ msgctxt "model:ir.message,text:msg_compute_age_from_dates_year_str"
 msgid "y "
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_drug_allergy_safety_check"
+msgid ""
+"SM-CORE-0017: Our records indicate that this patient is ALLERGIC. Please "
+"verify the prescribed drugs"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_drug_pregnancy_safety_check"
 msgid ""
-"SM-CORE-0006: Verify and check for safety in pregnancy the prescribed drugs"
+"SM-CORE-0006: Verify and check for safety in PREGNANCY the prescribed drugs"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_dup_mainsp"
@@ -8881,6 +8906,11 @@ msgstr ""
 msgctxt "model:ir.message,text:msg_prescription_line_frequency_prn"
 msgid "as needed"
 msgstr "ຕາມຕ້ອງການ"
+
+msgctxt "model:ir.message,text:msg_prescription_safety_check"
+msgid ""
+"SM-CORE-0018: The prescription has not been verified for patient safety"
+msgstr ""
 
 msgctxt "model:ir.message,text:msg_wrong_date_of_birth"
 msgid "SM-CORE-0001: Wrong date of birth for a living person"
@@ -12278,6 +12308,11 @@ msgstr "ຫມາຍເຫດ"
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "ຂໍ້ມູນຂອງຄົນເຈັບແລະທ່ານໝໍ "
+
+#, fuzzy
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Safety warnings"
+msgstr "ການເຕືອນຫຼືຂໍ້ແນ່ນຳເມື່ອຖືພາ"
 
 #, fuzzy
 msgctxt "view:gnuhealth.procedures.config:"

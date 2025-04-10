@@ -2338,6 +2338,11 @@ msgctxt "field:gnuhealth.prescription.line,start_treatment:"
 msgid "Start"
 msgstr "Inicio"
 
+#, fuzzy
+msgctxt "field:gnuhealth.prescription.order,allergy_warning:"
+msgid "Allergy"
+msgstr "Alérgico"
+
 msgctxt "field:gnuhealth.prescription.order,healthprof:"
 msgid "Prescriber"
 msgstr "Recetado por"
@@ -2354,9 +2359,10 @@ msgctxt "field:gnuhealth.prescription.order,pharmacy:"
 msgid "Pharmacy"
 msgstr "Farmacia"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,pregnancy_warning:"
-msgid "Pregnancy Warning"
-msgstr "Advertencia de Embarazo"
+msgid "Pregnancy"
+msgstr "Embarazo"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_date:"
 msgid "Date"
@@ -2370,9 +2376,10 @@ msgctxt "field:gnuhealth.prescription.order,prescription_line:"
 msgid "Prescription line"
 msgstr "Items de la receta"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,prescription_warning_ack:"
-msgid "Prescription verified"
-msgstr "Receta verificada"
+msgid "Verified"
+msgstr "Certificador"
 
 msgctxt "field:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Date"
@@ -3357,9 +3364,10 @@ msgstr ""
 "Escriba cualquier información importante del estado de salud del paciente, "
 "intervenciones quirúrgicas, alergias, ..."
 
+#, fuzzy
 msgctxt "help:gnuhealth.patient,critical_summary:"
 msgid ""
-"Automated summary of patient important health conditions other critical "
+"Automated summary of patient important health conditions and other critical "
 "information"
 msgstr ""
 "Resumen automático de los datos importantes acerca del estado de salud del "
@@ -4145,6 +4153,14 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "Fecha de inicio de Tratamiento"
 
+msgctxt "help:gnuhealth.prescription.order,allergy_warning:"
+msgid "This field is active when the patient is known to be allergic"
+msgstr ""
+
+msgctxt "help:gnuhealth.prescription.order,pregnancy_warning:"
+msgid "This field is set when the patient is or might be pregnant"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.order,prescription_date:"
 msgid "Prescription Date"
 msgstr "Fecha de la receta"
@@ -4152,6 +4168,10 @@ msgstr "Fecha de la receta"
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
 msgstr "Escriba el ID de la receta"
+
+msgctxt "help:gnuhealth.prescription.order,prescription_warning_ack:"
+msgid "This verification field must be set to generate the prescription"
+msgstr ""
 
 msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
@@ -8785,9 +8805,16 @@ msgctxt "model:ir.message,text:msg_compute_age_from_dates_year_str"
 msgid "y "
 msgstr "a. "
 
+msgctxt "model:ir.message,text:msg_drug_allergy_safety_check"
+msgid ""
+"SM-CORE-0017: Our records indicate that this patient is ALLERGIC. Please "
+"verify the prescribed drugs"
+msgstr ""
+
+#, fuzzy
 msgctxt "model:ir.message,text:msg_drug_pregnancy_safety_check"
 msgid ""
-"SM-CORE-0006: Verify and check for safety in pregnancy the prescribed drugs"
+"SM-CORE-0006: Verify and check for safety in PREGNANCY the prescribed drugs"
 msgstr ""
 "SM-CORE-0006: Verificar y comprobar la validez en embarazo de los fármacos "
 "prescritos"
@@ -8902,6 +8929,11 @@ msgstr "»Cada %(frecuency)s %(frequency_unit)s"
 msgctxt "model:ir.message,text:msg_prescription_line_frequency_prn"
 msgid "as needed"
 msgstr "según se necesite"
+
+msgctxt "model:ir.message,text:msg_prescription_safety_check"
+msgid ""
+"SM-CORE-0018: The prescription has not been verified for patient safety"
+msgstr ""
 
 msgctxt "model:ir.message,text:msg_wrong_date_of_birth"
 msgid "SM-CORE-0001: Wrong date of birth for a living person"
@@ -12221,6 +12253,11 @@ msgstr "Notas"
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "Información del Paciente y el Profesional de la Salud"
+
+#, fuzzy
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Safety warnings"
+msgstr "Advertencia de Embarazo"
 
 #, fuzzy
 msgctxt "view:gnuhealth.procedures.config:"

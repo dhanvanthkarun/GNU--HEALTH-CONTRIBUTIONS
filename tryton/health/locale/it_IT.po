@@ -2386,6 +2386,11 @@ msgctxt "field:gnuhealth.prescription.line,start_treatment:"
 msgid "Start"
 msgstr "Inizio"
 
+#, fuzzy
+msgctxt "field:gnuhealth.prescription.order,allergy_warning:"
+msgid "Allergy"
+msgstr "Allergie"
+
 msgctxt "field:gnuhealth.prescription.order,healthprof:"
 msgid "Prescriber"
 msgstr "Prescritto da"
@@ -2402,9 +2407,10 @@ msgctxt "field:gnuhealth.prescription.order,pharmacy:"
 msgid "Pharmacy"
 msgstr "Farmacia"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,pregnancy_warning:"
-msgid "Pregnancy Warning"
-msgstr "Allerta Gravidanza"
+msgid "Pregnancy"
+msgstr "Gravidanza"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_date:"
 msgid "Date"
@@ -2418,9 +2424,10 @@ msgctxt "field:gnuhealth.prescription.order,prescription_line:"
 msgid "Prescription line"
 msgstr "Linea Ricetta"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,prescription_warning_ack:"
-msgid "Prescription verified"
-msgstr "Ricetta verificata"
+msgid "Verified"
+msgstr "Certificatore"
 
 msgctxt "field:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Date"
@@ -3420,7 +3427,7 @@ msgstr ""
 #, fuzzy
 msgctxt "help:gnuhealth.patient,critical_summary:"
 msgid ""
-"Automated summary of patient important health conditions other critical "
+"Automated summary of patient important health conditions and other critical "
 "information"
 msgstr ""
 "Riepilogo automatico delle condizioni di salute importanti del paziente e "
@@ -4166,6 +4173,14 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "Data inizio trattamento"
 
+msgctxt "help:gnuhealth.prescription.order,allergy_warning:"
+msgid "This field is active when the patient is known to be allergic"
+msgstr ""
+
+msgctxt "help:gnuhealth.prescription.order,pregnancy_warning:"
+msgid "This field is set when the patient is or might be pregnant"
+msgstr ""
+
 msgctxt "help:gnuhealth.prescription.order,prescription_date:"
 msgid "Prescription Date"
 msgstr ""
@@ -4173,6 +4188,10 @@ msgstr ""
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
 msgstr "Digitare il Codice di questa ricetta"
+
+msgctxt "help:gnuhealth.prescription.order,prescription_warning_ack:"
+msgid "This verification field must be set to generate the prescription"
+msgstr ""
 
 msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
@@ -8794,9 +8813,15 @@ msgctxt "model:ir.message,text:msg_compute_age_from_dates_year_str"
 msgid "y "
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_drug_allergy_safety_check"
+msgid ""
+"SM-CORE-0017: Our records indicate that this patient is ALLERGIC. Please "
+"verify the prescribed drugs"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_drug_pregnancy_safety_check"
 msgid ""
-"SM-CORE-0006: Verify and check for safety in pregnancy the prescribed drugs"
+"SM-CORE-0006: Verify and check for safety in PREGNANCY the prescribed drugs"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_dup_mainsp"
@@ -8890,6 +8915,11 @@ msgstr ""
 msgctxt "model:ir.message,text:msg_prescription_line_frequency_prn"
 msgid "as needed"
 msgstr "quando è necessario"
+
+msgctxt "model:ir.message,text:msg_prescription_safety_check"
+msgid ""
+"SM-CORE-0018: The prescription has not been verified for patient safety"
+msgstr ""
 
 msgctxt "model:ir.message,text:msg_wrong_date_of_birth"
 msgid "SM-CORE-0001: Wrong date of birth for a living person"
@@ -12285,6 +12315,11 @@ msgstr "Note"
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "Informativa paziente medico"
+
+#, fuzzy
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Safety warnings"
+msgstr "Allerta Gravidanza"
 
 #, fuzzy
 msgctxt "view:gnuhealth.procedures.config:"
