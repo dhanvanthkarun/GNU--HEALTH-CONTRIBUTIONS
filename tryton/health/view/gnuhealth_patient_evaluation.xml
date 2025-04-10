@@ -20,10 +20,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
           <field name="code"/>
       </group>
       <newline/>
-      <group colspan="4" col="8" id="group_visit_type">
+      <group colspan="4" col="10" id="group_visit_type">
         <label name="visit_type"/>
         <field name="visit_type"/>
         <field name="related_condition"/>
+        <label name="evaluation_type"/>
+        <field name="evaluation_type"/>
         <label name="urgency"/>
         <field name="urgency"/>
         <label name="healthprof"/>
@@ -192,13 +194,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <separator string="Extra info related to this evaluation" colspan="4" id="separator_evaluation_notes"/>
             <field name="notes" colspan="4"/>
             <newline/>
-            <group id='group_patient_evaluation_institution_info' colspan="4" col="8">
+            <group id='group_patient_evaluation_institution_info' colspan="4" col="6">
                 <label name="institution"/>
                 <field name="institution"/>
                 <label name="specialty"/>
                 <field name="specialty"/>
-                <label name="evaluation_type"/>
-                <field name="evaluation_type"/>
             </group>
         </page>
 

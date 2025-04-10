@@ -10,7 +10,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <data>
     <!-- Include inpatient registration on evaluation form -->
     
-    <xpath expr="//field[@name=&quot;evaluation_type&quot;]" position="after">
+    <xpath expr="//field[@name=&quot;specialty&quot;]" position="after">
         <label name="inpatient_registration_code"/>
         <field name="inpatient_registration_code"/>
     </xpath>
