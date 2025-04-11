@@ -375,18 +375,29 @@ class Lab(ModelSQL, ModelView):
         test_cases = []
 
         for critearea in (lab and lab.test and lab.test.critearea):
-            test_cases.append({
-                'gnuhealth_lab_id': lab.id,
-                'name': critearea.name,
-                'code': critearea.code,
-                'test_method': critearea.test_method,
-                'sequence': critearea.sequence,
-                'limits_verified': critearea.limits_verified,
-                'lower_limit': critearea.lower_limit,
-                'upper_limit': critearea.upper_limit,
-                'normal_range': critearea.normal_range,
-                "to_integer": critearea.to_integer,
-                'units': critearea.units and critearea.units.id})
+            if not Critearea.search(
+                    [('gnuhealth_lab_id', '=', lab.id),
+                     # NOTE: We do not have 'code' field before, so we
+                     # search 'name' field as fallback in this place,
+                     # but 'name' field will be translated to other
+                     # languages, as search key it is not reliable as
+                     # 'code', so we suggest user maintain critearea's
+                     # code.
+                     ['OR', [('code', '=', critearea.code),
+                             ('name', '=', critearea.name)]]]):
+
+                test_cases.append({
+                    'gnuhealth_lab_id': lab.id,
+                    'name': critearea.name,
+                    'code': critearea.code,
+                    'test_method': critearea.test_method,
+                    'sequence': critearea.sequence,
+                    'limits_verified': critearea.limits_verified,
+                    'lower_limit': critearea.lower_limit,
+                    'upper_limit': critearea.upper_limit,
+                    'normal_range': critearea.normal_range,
+                    "to_integer": critearea.to_integer,
+                    'units': critearea.units and critearea.units.id})
 
         if test_cases:
             Critearea.create(test_cases)
