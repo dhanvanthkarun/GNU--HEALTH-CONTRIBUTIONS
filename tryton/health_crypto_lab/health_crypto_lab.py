@@ -14,8 +14,8 @@
 from datetime import datetime
 from trytond.model import ModelView, fields
 from trytond.rpc import RPC
-from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval, Not, Bool, Equal
+from trytond.pool import PoolMeta
+from trytond.pyson import Eval, Not, Bool
 import hashlib
 import json
 from uuid import uuid4
@@ -27,19 +27,11 @@ __all__ = ['LabTest']
 class LabTest(metaclass=PoolMeta):
     __name__ = 'gnuhealth.lab'
 
-    STATES = {'readonly': Eval('state') == 'validated'}
-
     serializer = fields.Text('Doc String', readonly=True)
 
     document_digest = fields.Char(
         'Digest', readonly=True,
         help="Original Document Digest")
-
-    state = fields.Selection([
-        ('draft', 'Draft'),
-        ('done', 'Done'),
-        ('validated', 'Validated'),
-    ], 'State', readonly=True, sort=False)
 
     digest_status = fields.Function(
         fields.Boolean(
@@ -68,88 +60,13 @@ class LabTest(metaclass=PoolMeta):
 
     digital_signature = fields.Text('Digital Signature', readonly=True)
 
-    done_by = fields.Many2One(
-        'gnuhealth.healthprofessional',
-        'Done by', readonly=True, help='Professional who processes this'
-        ' lab test',
-        states=STATES)
-
-    done_date = fields.DateTime(
-        'Finished on', readonly=True,
-        states=STATES)
-
-    validated_by = fields.Many2One(
-        'gnuhealth.healthprofessional',
-        'Validated by', readonly=True, help='Professional who validates this'
-        ' lab test',
-        states=STATES)
-
-    validation_date = fields.DateTime(
-        'Validated on', readonly=True,
-        states=STATES)
-
-    historize = fields.Boolean(
-        "Historize",
-        states=STATES,
-        depends=['pathology'],
-        help='If this flag is set'
-        ' the a new health condition will be added'
-        ' to the patient history.'
-        ' Unset it if this lab test is in the context'
-        ' of a pre-existing condition of the patient.'
-        ' The condition will be created when the lab test'
-        ' is confirmed and validated')
-
-    @staticmethod
-    def default_state():
-        return 'draft'
-
-    @staticmethod
-    def default_historize():
-        return False
-
-    @fields.depends('pathology')
-    def on_change_with_historize(self):
-        if (self.pathology):
-            return True
-
     @classmethod
     def __setup__(cls):
         super(LabTest, cls).__setup__()
-        cls._buttons.update({
-            'generate_document': {
-                'invisible': Not(Equal(Eval('state'), 'draft')),
-            },
-            'set_to_draft': {
-                'invisible': Not(Equal(Eval('state'), 'done')),
-            },
-            'sign_document': {
-                'invisible': Not(Equal(Eval('state'), 'done')),
-            },
-        })
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
             'set_signature': RPC(readonly=False),
         })
-
-    @classmethod
-    @ModelView.button
-    def generate_document(cls, documents):
-        # Set the document to "Done"
-        # and write the name of the signing health professional
-
-        hp = get_health_professional()
-
-        cls.write(documents, {
-            'done_by': hp,
-            'done_date': datetime.now(),
-            'state': 'done', })
-
-    @classmethod
-    @ModelView.button
-    def set_to_draft(cls, documents):
-        cls.write(documents, {
-            'state': 'draft', })
 
     @classmethod
     @ModelView.button
@@ -168,17 +85,6 @@ class LabTest(metaclass=PoolMeta):
             'validated_by': hp,
             'validation_date': datetime.now(),
             'state': 'validated', })
-
-        # Create lab PoL if the person has a federation account.
-        if (document.patient and document.patient.party.federation_account):
-            cls.create_lab_pol(document)
-
-        # Create Health condition to the patient
-        # if there is a confirmed pathology associated and
-        # validated to the lab test result
-        # The flag historize must also be set
-        if (document.pathology and document.historize):
-            cls.create_health_condition(document)
 
     @classmethod
     def get_serial(cls, document):
@@ -254,57 +160,6 @@ class LabTest(metaclass=PoolMeta):
         return [('//group[@id="document_digest"]', 'states', {
                 'invisible': Not(Eval('state') == 'validated'),
                 })]
-
-    @classmethod
-    def create_health_condition(cls, lab_info):
-        """ Create the health condition when specified and
-            validated in the lab test
-        """
-        HealthCondition = Pool().get('gnuhealth.patient.disease')
-        health_condition = []
-
-        vals = {
-            'name': lab_info.patient.id,
-            'pathology': lab_info.pathology,
-            'diagnosed_date': lab_info.date_analysis.date(),
-            'lab_confirmed': True,
-            'lab_test': lab_info.id,
-            'extra_info': lab_info.diagnosis,
-            'healthprof': lab_info.requestor
-        }
-
-        health_condition.append(vals)
-        HealthCondition.create(health_condition)
-
-    @classmethod
-    def create_lab_pol(cls, lab_info):
-        """ Adds an entry in the person Page of Life
-            related to this person lab
-        """
-        if lab_info.is_patient():
-            Pol = Pool().get('gnuhealth.pol')
-            pol = []
-
-            test_lines = ""
-            for line in lab_info.critearea:
-                test_lines = test_lines + line.rec_name + "\n"
-
-            vals = {
-                'page': str(uuid4()),
-                'person': lab_info.patient.party.id,
-                'page_date': lab_info.date_analysis,
-                'federation_account':
-                    lab_info.patient.party.federation_account,
-                'page_type': 'medical',
-                'medical_context': 'lab',
-                'relevance': 'important',
-                'info': lab_info.analytes_summary,
-                'author': lab_info.requestor and
-                    lab_info.requestor.rec_name
-            }
-
-            pol.append(vals)
-            Pol.create(pol)
 
 
 class HealthCrypto:

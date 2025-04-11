@@ -44,6 +44,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="pathology"/>
             <newline/>
             <field name="critearea" colspan="4" view_ids="health_lab.test_critearea_view_tree_lab,health_lab.test_critearea_view_form_lab"/>
+            <group colspan="4" col="8" id="document_generate">
+                <label name="historize"/>
+                <field name="historize"/>
+                <label name="state"/>
+                <field name="state"/>
+                <button name="generate_document" help="The lab test is done and results are waiting to be validated" string="Done" icon="tryton-go-next" confirm="Are the results ready ?"/>
+                <button name="set_to_draft" help="Reverse the document to draft state." string="Draft" icon="tryton-go-next" confirm="Set to Draft ?"/>
+            </group>
+            <newline/>
+            <group string="Signatures" colspan="4" col="10" id="document_professionals">
+                <label name="done_by"/>
+                <field name="done_by"/>
+                <label name="done_date"/>
+                <field name="done_date"/>
+            </group>
+
         </page>
         <page string="Images" id="lab_images">
           <field name="images"/>

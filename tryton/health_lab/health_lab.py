@@ -16,11 +16,12 @@
 from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval, Not, Bool
+from trytond.pyson import Eval, Not, Bool, Equal
 from trytond.modules.health.core import (get_health_professional,
                                          get_age_for_comparison)
 
 import re
+from uuid import uuid4
 
 try:
     from PIL import Image
@@ -207,6 +208,8 @@ class Lab(ModelSQL, ModelView):
     'Patient Lab Test Results'
     __name__ = 'gnuhealth.lab'
 
+    STATES = {'readonly': Eval('state') == 'validated'}
+
     name = fields.Char('ID', help="Lab result ID", readonly=True)
     test = fields.Many2One(
         'gnuhealth.lab.test_type', 'Test type',
@@ -292,6 +295,70 @@ class Lab(ModelSQL, ModelView):
     analytes_summary = fields.Function(
         fields.Text('Summary'), 'get_analytes_summary')
 
+    # From crypto
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('done', 'Done'),
+        ('validated', 'Validated'),
+    ], 'State', readonly=True, sort=False)
+
+    done_by = fields.Many2One(
+        'gnuhealth.healthprofessional',
+        'Done by', readonly=True, help='Professional who processes this'
+        ' lab test',
+        states=STATES)
+
+    done_date = fields.DateTime(
+        'Finished on', readonly=True,
+        states=STATES)
+
+    validated_by = fields.Many2One(
+        'gnuhealth.healthprofessional',
+        'Validated by', readonly=True, help='Professional who validates this'
+        ' lab test',
+        states=STATES)
+
+    validation_date = fields.DateTime(
+        'Validated on', readonly=True,
+        states=STATES)
+
+    historize = fields.Boolean(
+        "Historize",
+        states=STATES,
+        depends=['pathology'],
+        help='If this flag is set'
+        ' the a new health condition will be added'
+        ' to the patient history.'
+        ' Unset it if this lab test is in the context'
+        ' of a pre-existing condition of the patient.'
+        ' The condition will be created when the lab test'
+        ' is confirmed and validated')
+
+    @staticmethod
+    def default_state():
+        return 'draft'
+
+    @staticmethod
+    def default_historize():
+        return False
+
+    @staticmethod
+    def default_date_requested():
+        return datetime.now()
+
+    @staticmethod
+    def default_date_analysis():
+        return datetime.now()
+
+    @staticmethod
+    def default_source_type():
+        return 'patient'
+
+    @fields.depends('pathology')
+    def on_change_with_historize(self):
+        if (self.pathology):
+            return True
+
     def get_analytes_summary(self, name):
         summ = ""
         for analyte in self.critearea:
@@ -308,32 +375,6 @@ class Lab(ModelSQL, ModelView):
                 summ = summ + analyte.rec_name + "  " + \
                     res + res_text + "\n"
         return summ
-
-    @classmethod
-    def __setup__(cls):
-        super(Lab, cls).__setup__()
-        t = cls.__table__()
-        cls._sql_constraints = [
-            ('id_uniq', Unique(t, t.name),
-             'The test ID code must be unique')
-        ]
-        cls._order.insert(0, ('date_requested', 'DESC'))
-        cls._buttons.update({'complete_criteareas': {}})
-
-        # Do not cache default_key as it depends on time
-        cls.__rpc__['default_get'].cache = None
-
-    @staticmethod
-    def default_date_requested():
-        return datetime.now()
-
-    @staticmethod
-    def default_date_analysis():
-        return datetime.now()
-
-    @staticmethod
-    def default_source_type():
-        return 'patient'
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -402,6 +443,38 @@ class Lab(ModelSQL, ModelView):
         if test_cases:
             Critearea.create(test_cases)
 
+    @classmethod
+    @ModelView.button
+    def generate_document(cls, documents):
+        document = documents[0]
+
+        # Set the document to "Done"
+        # and write the name of the signing health professional
+
+        hp = get_health_professional()
+
+        cls.write(documents, {
+            'done_by': hp,
+            'done_date': datetime.now(),
+            'state': 'done', })
+
+        # Create lab PoL if the person has a federation account.
+        if (document.patient and document.patient.party.federation_account):
+            cls.create_lab_pol(document)
+
+        # Create Health condition to the patient
+        # if there is a confirmed pathology associated and
+        # validated to the lab test result
+        # The flag historize must also be set
+        if (document.pathology and document.historize):
+            cls.create_health_condition(document)
+
+    @classmethod
+    @ModelView.button
+    def set_to_draft(cls, documents):
+        cls.write(documents, {
+            'state': 'draft', })
+
     def is_patient(self):
         return (self.source_type == 'patient')
 
@@ -422,6 +495,82 @@ class Lab(ModelSQL, ModelView):
                  ('description', 'like', search_str)])
 
         return images
+
+    @classmethod
+    def create_health_condition(cls, lab_info):
+        """ Create the health condition when specified and
+            validated in the lab test
+        """
+        HealthCondition = Pool().get('gnuhealth.patient.disease')
+        health_condition = []
+
+        vals = {
+            'patient': lab_info.patient.id,
+            'pathology': lab_info.pathology,
+            'diagnosed_date': lab_info.date_analysis.date(),
+            'lab_confirmed': True,
+            'lab_test': lab_info.id,
+            'extra_info': lab_info.diagnosis,
+            'healthprof': lab_info.requestor
+        }
+
+        health_condition.append(vals)
+        HealthCondition.create(health_condition)
+
+    @classmethod
+    def create_lab_pol(cls, lab_info):
+        """ Adds an entry in the person Page of Life
+            related to this person lab
+        """
+        if lab_info.is_patient():
+            Pol = Pool().get('gnuhealth.pol')
+            pol = []
+
+            test_lines = ""
+            for line in lab_info.critearea:
+                test_lines = test_lines + line.rec_name + "\n"
+
+            vals = {
+                'page': str(uuid4()),
+                'person': lab_info.patient.party.id,
+                'page_date': lab_info.date_analysis,
+                'federation_account':
+                    lab_info.patient.party.federation_account,
+                'page_type': 'medical',
+                'medical_context': 'lab',
+                'relevance': 'important',
+                'info': lab_info.analytes_summary,
+                'author': lab_info.requestor and
+                    lab_info.requestor.rec_name
+            }
+
+            pol.append(vals)
+            Pol.create(pol)
+
+    @classmethod
+    def __setup__(cls):
+        super(Lab, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('id_uniq', Unique(t, t.name),
+             'The test ID code must be unique')
+        ]
+        cls._order.insert(0, ('date_requested', 'DESC'))
+        cls._buttons.update({
+            'complete_criteareas': {},
+            'generate_document': {
+                'invisible': Not(Equal(Eval('state'), 'draft')),
+            },
+            'set_to_draft': {
+                'invisible': Not(Equal(Eval('state'), 'done')),
+            },
+            'sign_document': {
+                'invisible': Not(Equal(Eval('state'), 'done')),
+            },
+        })
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class GnuHealthLabTestUnits(ModelSQL, ModelView):
@@ -767,6 +916,6 @@ class PatientHealthCondition(metaclass=PoolMeta):
 
     lab_test = fields.Many2One(
         'gnuhealth.lab', 'Lab Test',
-        domain=[('patient', '=', Eval('name'))], depends=['name'],
+        domain=[('patient', '=', Eval('patient'))], depends=['patient'],
         states={'invisible': Not(Bool(Eval('lab_confirmed')))},
         help='Lab test that confirmed the condition')

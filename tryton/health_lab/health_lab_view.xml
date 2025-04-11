@@ -194,6 +194,20 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
         </record>
 
+    <!-- Register Buttons -->
+
+        <record model="ir.model.button" id="labtest_setdraft_button">
+            <field name="name">set_to_draft</field>
+            <field name="string">Draft</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
+        </record>
+        <record model="ir.model.button" id="labtest_generate_button">
+            <field name="name">generate_document</field>
+            <field name="string">Done</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.lab')]"/>
+        </record>
+
+
 <!-- Shortcut to the Lab results from the Patient -->
 
         <record model="ir.action.act_window" id="act_patient_lab_history_form1">
