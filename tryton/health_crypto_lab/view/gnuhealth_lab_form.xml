@@ -20,12 +20,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <button name="sign_document" help="Validate and Sign the lab test" string="Validate" icon="tryton-go-next" confirm="Are you sure to sign this lab results ?"/>
         </group>
         <newline/>
-        <group colspan="4" id="document_professionals">
+        <group string="Signatures" colspan="4" col="8" id="document_professionals">
             <label name="done_by"/>
             <field name="done_by"/>
             <label name="done_date"/>
             <field name="done_date"/>
-            <newline/>
             <label name="validated_by"/>
             <field name="validated_by"/>
             <label name="validation_date"/>
