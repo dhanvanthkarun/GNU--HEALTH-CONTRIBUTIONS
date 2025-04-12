@@ -18,7 +18,6 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval, Not, Bool
 import hashlib
 import json
-from uuid import uuid4
 from trytond.modules.health.core import get_health_professional
 
 __all__ = ['LabTest']
