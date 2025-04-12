@@ -2911,6 +2911,13 @@ class Insurance(ModelSQL, ModelView):
 
     member_since = fields.Date('Member since')
     member_exp = fields.Date('Expiration date')
+    status = fields.Function(fields.Selection([
+        (None, ''),
+        ('valid', 'Valid'),
+        ('grace', 'Grace'),
+        ('expired', 'Expired'),
+    ], 'Status'), 'check_insurance_status')
+
     category = fields.Char(
         'Category', help='Insurance company category')
 
@@ -2920,6 +2927,7 @@ class Insurance(ModelSQL, ModelView):
         ('labour_union', 'Labour Union / Syndical'),
         ('private', 'Private'),
     ], 'Insurance Type')
+
     plan_id = fields.Many2One(
         'gnuhealth.insurance.plan', 'Plan',
         help='Insurance company plan',
@@ -2928,11 +2936,17 @@ class Insurance(ModelSQL, ModelView):
 
     notes = fields.Text('Extra Info')
 
+    def check_insurance_status(self, name):
+        if self.member_exp and (self.member_exp < date.today()):
+            return 'expired'
+        else:
+            return 'valid'
+
     def get_rec_name(self, name):
         company_name = self.company and self.company.name or ''
         plan_name = self.plan_id and self.plan_id.rec_name or ''
         num = self.number
-        return f"{company_name}: {plan_name} - {num}"
+        return f"{company_name}: {plan_name} - {num} ({self.status})"
 
     @classmethod
     def __setup__(cls):
@@ -3963,6 +3977,20 @@ class Appointment(ModelSQL, ModelView):
     def get_party(self, name):
         if self.patient:
             return int(self.patient.party.id)
+
+    # Verify Insurance status
+
+    @fields.depends(methods=['_notify_insurance_problem'])
+    def on_change_notify(self):
+        notifications = super().on_change_notify()
+        notifications.extend(self._notify_insurance_problem())
+        return notifications
+
+    @fields.depends('insurance')
+    def _notify_insurance_problem(self):
+        if self.insurance:
+            if self.insurance.status == 'expired':
+                yield ('warning', gettext('health.msg_insurance_invalid'))
 
     @classmethod
     def __setup__(cls):

@@ -68,6 +68,10 @@ this repository contains the full copyright notices and license terms. -->
             <field name="text">SM-CORE-0018: The prescription has not been verified for patient safety</field>
         </record>
 
+        <record model="ir.message" id="msg_insurance_invalid">
+            <field name="text">SM-CORE-0019: The current insurance plan is not valid or it has expired</field>
+        </record>
+
         <record model="ir.message" id="msg_compute_age_from_dates_year_str">
             <field name="text">y </field>
         </record>

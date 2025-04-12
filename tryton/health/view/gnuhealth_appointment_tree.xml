@@ -16,14 +16,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
             help="The patient did not show up, click this button will switch appointment to 'no_show' state." 
             string="Miss Out"/>
     <field name="patient" expand="1"/>
+    <field name="insurance" expand="1"/>
+    <field name="healthprof" expand="1"/>
+    <field name="speciality"/>
     <field name="appointment_date" string="Date" widget="date"/>
     <field name="appointment_date" string="Time" widget="time"/>
     <field name="visit_type" expand="1"/>
-    <field name="appointment_type" expand="1"/>
-    <field name="urgency" expand="1"/>
-    <field name="speciality"/>
-    <field name="healthprof"/>
-    <field name="insurance"/>
-    <field name="institution" tree_invisible="1"/>
+    <field name="appointment_type"/>
+    <field name="urgency"/>
+    <field name="institution"/>
     <field name="name" tree_invisible="1"/>
 </tree>
