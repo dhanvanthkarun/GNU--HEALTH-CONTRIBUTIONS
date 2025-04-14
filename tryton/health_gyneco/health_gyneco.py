@@ -320,6 +320,18 @@ class PatientPregnancy(ModelSQL, ModelView):
             return 'gnuhealth-warning'
 
     @classmethod
+    def search_rec_name(cls, name, clause):
+        """ Include searching by the newborn
+        """
+        if clause[1].startswith('!') or clause[1].startswith('not '):
+            bool_op = 'AND'
+        else:
+            bool_op = 'OR'
+        return [bool_op,
+                ('pregnancy_result.newborn',) + tuple(clause[1:]),
+                ]
+
+    @classmethod
     def __register__(cls, module):
         table_h = cls.__table_handler__(module)
 
