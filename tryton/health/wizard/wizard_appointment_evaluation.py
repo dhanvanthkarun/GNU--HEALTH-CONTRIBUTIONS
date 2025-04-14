@@ -44,7 +44,7 @@ class CreateAppointmentEvaluation(Wizard):
             )
 
         active_model = Transaction().context.get('active_model')
-        action['name'] = f'{action['name']} {self.record.patient.rec_name}'
+        action['name'] = f"{action['name']} {self.record.patient.rec_name}"
 
         Model = Pool().get(active_model)
         record = Model(active_id)
