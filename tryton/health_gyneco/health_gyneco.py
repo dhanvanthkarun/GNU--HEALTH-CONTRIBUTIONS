@@ -713,7 +713,6 @@ class PregnancyResult(ModelSQL, ModelView):
         if (self.pregnancy):
             self.dob = self.pregnancy.pregnancy_end_date.date()
 
-
     @classmethod
     def __setup__(cls):
         super(PregnancyResult, cls).__setup__()
@@ -722,6 +721,7 @@ class PregnancyResult(ModelSQL, ModelView):
             ('newborn_uniq', Unique(t, t.newborn),
              'Our records show that the newborn is from another pregnancy'),
         ]
+
 
 class GnuHealthPatient(metaclass=PoolMeta):
 
