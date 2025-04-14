@@ -951,6 +951,11 @@ msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
 msgstr "保险计划"
 
+#, fuzzy
+msgctxt "field:gnuhealth.insurance,status:"
+msgid "Status"
+msgstr "状态"
+
 msgctxt "field:gnuhealth.insurance.plan,company:"
 msgid "Insurance Company"
 msgstr "保险公司"
@@ -8638,6 +8643,11 @@ msgid ""
 "\"%(diagnosed_date)s\"!"
 msgstr "SM-CORE-0002: 康复日期 \"%(healed_date)s\" 在诊断日期 \"%(diagnosed_date)s\" 之前!"
 
+msgctxt "model:ir.message,text:msg_insurance_invalid"
+msgid ""
+"SM-CORE-0019: The current insurance plan is not valid or it has expired"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
 "{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
@@ -10407,6 +10417,19 @@ msgstr "私立"
 msgctxt "selection:gnuhealth.insurance,insurance_type:"
 msgid "State"
 msgstr "州立"
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Expired"
+msgstr ""
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Grace"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Valid"
+msgstr "已验证"
 
 msgctxt "selection:gnuhealth.medicament,pregnancy_category:"
 msgid "A"

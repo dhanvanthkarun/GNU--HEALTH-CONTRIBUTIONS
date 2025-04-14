@@ -3,13 +3,11 @@ msgid ""
 msgstr ""
 "PO-Revision-Date: 2025-04-10 07:22+0000\n"
 "Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
-"health/uk/>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
@@ -972,6 +970,11 @@ msgstr "Власник"
 msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
 msgstr "План"
+
+#, fuzzy
+msgctxt "field:gnuhealth.insurance,status:"
+msgid "Status"
+msgstr "Статус"
 
 msgctxt "field:gnuhealth.insurance.plan,company:"
 msgid "Insurance Company"
@@ -8777,6 +8780,11 @@ msgid ""
 "\"%(diagnosed_date)s\"!"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_insurance_invalid"
+msgid ""
+"SM-CORE-0019: The current insurance plan is not valid or it has expired"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
 "{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
@@ -10604,6 +10612,19 @@ msgstr "Особиста"
 msgctxt "selection:gnuhealth.insurance,insurance_type:"
 msgid "State"
 msgstr "Стан"
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Expired"
+msgstr ""
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Grace"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Valid"
+msgstr "Перевірено"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.medicament,pregnancy_category:"

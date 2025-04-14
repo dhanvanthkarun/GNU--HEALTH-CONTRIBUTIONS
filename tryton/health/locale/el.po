@@ -975,6 +975,11 @@ msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
 msgstr "Πλάνο"
 
+#, fuzzy
+msgctxt "field:gnuhealth.insurance,status:"
+msgid "Status"
+msgstr "Κατάσταση"
+
 msgctxt "field:gnuhealth.insurance.plan,company:"
 msgid "Insurance Company"
 msgstr "Αφαλιστική Εταιρεία"
@@ -8872,6 +8877,11 @@ msgid ""
 "\"%(diagnosed_date)s\"!"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_insurance_invalid"
+msgid ""
+"SM-CORE-0019: The current insurance plan is not valid or it has expired"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
 "{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
@@ -10714,6 +10724,19 @@ msgstr "Ιδιώτης"
 msgctxt "selection:gnuhealth.insurance,insurance_type:"
 msgid "State"
 msgstr "Κατάσταση"
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Expired"
+msgstr ""
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Grace"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Valid"
+msgstr "Ισχύει μέχρι"
 
 msgctxt "selection:gnuhealth.medicament,pregnancy_category:"
 msgid "A"

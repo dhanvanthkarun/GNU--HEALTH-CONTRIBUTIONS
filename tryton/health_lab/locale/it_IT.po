@@ -8,8 +8,8 @@ msgid "Summary"
 msgstr "Sommario"
 
 msgctxt "field:gnuhealth.lab,critearea:"
-msgid "Lab Test Critearea"
-msgstr "Criterio del test di laboratorio"
+msgid "Analytes criteria"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab,date_analysis:"
 msgid "Analysis Date"
@@ -22,6 +22,18 @@ msgstr "Data richiesta"
 msgctxt "field:gnuhealth.lab,diagnosis:"
 msgid "Diagnosis"
 msgstr "Diagnosi"
+
+msgctxt "field:gnuhealth.lab,done_by:"
+msgid "Done by"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,done_date:"
+msgid "Finished on"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,historize:"
+msgid "Historize"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.lab,images:"
@@ -76,9 +88,22 @@ msgctxt "field:gnuhealth.lab,specimen_type:"
 msgid "Specimen"
 msgstr ""
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab,state:"
+msgid "State"
+msgstr "Stato"
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "Tipo di test"
+
+msgctxt "field:gnuhealth.lab,validated_by:"
+msgid "Validated by"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,validation_date:"
+msgid "Validated on"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,code:"
@@ -369,6 +394,18 @@ msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
 msgid "Lab test sequence"
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,done_by:"
+msgid "Professional who processes this lab test"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab,historize:"
+msgid ""
+"If this flag is set the a new health condition will be added to the patient "
+"history. Unset it if this lab test is in the context of a pre-existing "
+"condition of the patient. The condition will be created when the lab test is"
+" confirmed and validated"
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr "ID risultato laboratorio"
@@ -404,6 +441,10 @@ msgstr ""
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "Tipo do test di laboratorio"
+
+msgctxt "help:gnuhealth.lab,validated_by:"
+msgid "Professional who validates this lab test"
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test.critearea,code:"
 msgid "Lab test critearea code, mainly used by lab interface script."
@@ -1576,8 +1617,17 @@ msgid "Lab Report"
 msgstr "Report Laboratorio"
 
 msgctxt "model:ir.model.button,string:complete_criteareas_button"
-msgid "Complete Criteareas"
+msgid "Load analytes criteria"
 msgstr ""
+
+msgctxt "model:ir.model.button,string:labtest_generate_button"
+msgid "Done"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:labtest_setdraft_button"
+msgid "Draft"
+msgstr "Bozza"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
@@ -1793,6 +1843,19 @@ msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Patient"
 msgstr "Paziente"
 
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Done"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Draft"
+msgstr "Bozza"
+
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Validated"
+msgstr ""
+
 msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Biochemical Testing"
 msgstr ""
@@ -1927,11 +1990,7 @@ msgid "Main Info"
 msgstr "Informazioni principali"
 
 msgctxt "view:gnuhealth.lab:"
-msgid "Complete Criteareas"
-msgstr ""
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Complete criteareas of current test type."
+msgid "Are the results ready ?"
 msgstr ""
 
 #, fuzzy
@@ -1940,18 +1999,36 @@ msgid "Diagnosis"
 msgstr "Diagnosi"
 
 msgctxt "view:gnuhealth.lab:"
-msgid "Do your want to complete criteareas of current test type?"
+msgid ""
+"Do your want to fill in the analytes criteria with this test type template?"
 msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Done"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Draft"
+msgstr "Bozza"
 
 #, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"
 msgstr "Informazioni extra"
 
+msgctxt "view:gnuhealth.lab:"
+msgid "Fill the criteria for current test type analytes"
+msgstr ""
+
 #, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Images"
 msgstr "Immagini"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Load analytes criteria"
+msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.lab:"
@@ -1962,6 +2039,22 @@ msgstr "Informazioni principali"
 msgctxt "view:gnuhealth.lab:"
 msgid "Notes"
 msgstr "Note"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Reverse the document to draft state."
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Set to Draft ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Signatures"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "The lab test is done and results are waiting to be validated"
+msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.disease:"

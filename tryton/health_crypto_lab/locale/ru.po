@@ -18,18 +18,6 @@ msgctxt "field:gnuhealth.lab,document_digest:"
 msgid "Digest"
 msgstr "Дайджест"
 
-msgctxt "field:gnuhealth.lab,done_by:"
-msgid "Done by"
-msgstr "Продолжить"
-
-msgctxt "field:gnuhealth.lab,done_date:"
-msgid "Finished on"
-msgstr "Закончил"
-
-msgctxt "field:gnuhealth.lab,historize:"
-msgid "Historize"
-msgstr "Историк"
-
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
 msgstr "Док Строка"
@@ -37,18 +25,6 @@ msgstr "Док Строка"
 msgctxt "field:gnuhealth.lab,serializer_current:"
 msgid "Current Doc"
 msgstr "Текущий Док"
-
-msgctxt "field:gnuhealth.lab,state:"
-msgid "State"
-msgstr "Страна"
-
-msgctxt "field:gnuhealth.lab,validated_by:"
-msgid "Validated by"
-msgstr "Подтверждение"
-
-msgctxt "field:gnuhealth.lab,validation_date:"
-msgid "Validated on"
-msgstr "Проверено на"
 
 msgctxt "help:gnuhealth.lab,digest_status:"
 msgid ""
@@ -63,53 +39,9 @@ msgctxt "help:gnuhealth.lab,document_digest:"
 msgid "Original Document Digest"
 msgstr "Дайджест оригинальных документов"
 
-msgctxt "help:gnuhealth.lab,done_by:"
-msgid "Professional who processes this lab test"
-msgstr "Профессионал, который обрабатывает этот лабораторный тест"
-
-msgctxt "help:gnuhealth.lab,historize:"
-msgid ""
-"If this flag is set the a new health condition will be added to the patient "
-"history. Unset it if this lab test is in the context of a pre-existing "
-"condition of the patient. The condition will be created when the lab test is"
-" confirmed and validated"
-msgstr ""
-"Если этот флаг установлен, то в историю болезни будет добавлено новое "
-"состояние здоровья. Снимите его, если этот лабораторный тест находится в "
-"контексте уже существующего состояния пациента. Состояние будет создано, "
-"когда лабораторный тест будет подтвержден и валидирован"
-
-msgctxt "help:gnuhealth.lab,validated_by:"
-msgid "Professional who validates this lab test"
-msgstr "Профессионал, который проверяет этот лабораторный тест"
-
-msgctxt "model:ir.model.button,string:labtest_generate_button"
-msgid "Done"
-msgstr "Сделано"
-
-msgctxt "model:ir.model.button,string:labtest_setdraft_button"
-msgid "Draft"
-msgstr "Проект"
-
 msgctxt "model:ir.model.button,string:labtest_sign_button"
 msgid "Validate"
 msgstr "Проверить"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Done"
-msgstr "Сделано"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Draft"
-msgstr "Проект"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Validated"
-msgstr "Проверено"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Are the results ready ?"
-msgstr "Готовы ли результаты?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are you sure to sign this lab results ?"
@@ -122,26 +54,6 @@ msgstr "Цифровая подпись"
 msgctxt "view:gnuhealth.lab:"
 msgid "Document validation"
 msgstr "Проверка документов"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Done"
-msgstr "Сделано"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Draft"
-msgstr "Проект"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Reverse the document to draft state."
-msgstr "Переключить документ на проект состояния."
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Set to Draft ?"
-msgstr "Готовы к проекту?"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "The lab test is done and results are waiting to be validated"
-msgstr "Лабораторный тест выполнен, и результаты ждут подтверждения"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate"

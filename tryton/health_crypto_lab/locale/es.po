@@ -18,18 +18,6 @@ msgctxt "field:gnuhealth.lab,document_digest:"
 msgid "Digest"
 msgstr "Resumen"
 
-msgctxt "field:gnuhealth.lab,done_by:"
-msgid "Done by"
-msgstr "Realizado por"
-
-msgctxt "field:gnuhealth.lab,done_date:"
-msgid "Finished on"
-msgstr "Terminado el"
-
-msgctxt "field:gnuhealth.lab,historize:"
-msgid "Historize"
-msgstr "Historizar"
-
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
 msgstr "Cadena de documentos"
@@ -37,18 +25,6 @@ msgstr "Cadena de documentos"
 msgctxt "field:gnuhealth.lab,serializer_current:"
 msgid "Current Doc"
 msgstr "Documento actual"
-
-msgctxt "field:gnuhealth.lab,state:"
-msgid "State"
-msgstr "Estado"
-
-msgctxt "field:gnuhealth.lab,validated_by:"
-msgid "Validated by"
-msgstr "Validado por"
-
-msgctxt "field:gnuhealth.lab,validation_date:"
-msgid "Validated on"
-msgstr "Validado el"
 
 msgctxt "help:gnuhealth.lab,digest_status:"
 msgid ""
@@ -63,53 +39,9 @@ msgctxt "help:gnuhealth.lab,document_digest:"
 msgid "Original Document Digest"
 msgstr "Resumen del documento original"
 
-msgctxt "help:gnuhealth.lab,done_by:"
-msgid "Professional who processes this lab test"
-msgstr "Profesional que procesa esta prueba de laboratorio"
-
-msgctxt "help:gnuhealth.lab,historize:"
-msgid ""
-"If this flag is set the a new health condition will be added to the patient "
-"history. Unset it if this lab test is in the context of a pre-existing "
-"condition of the patient. The condition will be created when the lab test is"
-" confirmed and validated"
-msgstr ""
-"Si se establece este indicador, se agregará una nueva condición de salud al "
-"historial del paciente. Desactívelo si esta prueba de laboratorio se realiza"
-" en el contexto de una condición preexistente del paciente. La condición se "
-"creará cuando se confirme y valide la prueba de laboratorio"
-
-msgctxt "help:gnuhealth.lab,validated_by:"
-msgid "Professional who validates this lab test"
-msgstr "Profesional que valida esta prueba de laboratorio"
-
-msgctxt "model:ir.model.button,string:labtest_generate_button"
-msgid "Done"
-msgstr "Realizado"
-
-msgctxt "model:ir.model.button,string:labtest_setdraft_button"
-msgid "Draft"
-msgstr "Borrador"
-
 msgctxt "model:ir.model.button,string:labtest_sign_button"
 msgid "Validate"
 msgstr "Validar"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Done"
-msgstr "Realizado"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Draft"
-msgstr "Borrador"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Validated"
-msgstr "Validado"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Are the results ready ?"
-msgstr "¿Están listos los resultados?"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are you sure to sign this lab results ?"
@@ -122,28 +54,6 @@ msgstr "Firma digital"
 msgctxt "view:gnuhealth.lab:"
 msgid "Document validation"
 msgstr "Validación de documento"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Done"
-msgstr "Realizado"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Draft"
-msgstr "Borrador"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Reverse the document to draft state."
-msgstr "Revertir el documento al estado borrador."
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Set to Draft ?"
-msgstr "¿Establecer como borrador?"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "The lab test is done and results are waiting to be validated"
-msgstr ""
-"La prueba de laboratorio está realizada y los resultados están esperando ser"
-" validados"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate"
