@@ -668,8 +668,15 @@ class PregnancyResult(ModelSQL, ModelView):
         ('status_unknown', 'Status unknown'),
     ], 'Result', sort=False)
 
-    newborn = fields.Many2One('party.party', 'Newborn')
+    newborn = fields.Many2One(
+        'party.party', 'Newborn',
+        domain=[
+            ('is_person', '=', True),
+            ('dob', '=', Eval('dob')),
+            ],
+        depends=['name', 'pregnancy'])
 
+    dob = fields.Function(fields.Date('Date of birth'), 'get_dob')
     delivery_mode = fields.Selection([
         (None, ''),
         ('v', 'Vaginal - Spontaneous'),
@@ -683,6 +690,16 @@ class PregnancyResult(ModelSQL, ModelView):
 
     short_comment = fields.Char(
         'Comments', help="Short extra information")
+
+    def get_dob(self, name):
+        if self.pregnancy:
+            return self.pregnancy.pregnancy_end_date.date()
+
+    # Get the baby date of birth from pregnancy end date
+    @fields.depends('result', '_parent_pregnancy.pregnancy_end_date')
+    def on_change_result(self):
+        if (self.pregnancy):
+            self.dob = self.pregnancy.pregnancy_end_date.date()
 
 
 class GnuHealthPatient(metaclass=PoolMeta):
