@@ -1,6 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-04-14 06:11+0000\n"
+"Last-Translator: tumashu <tumashu@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"translate.codeberg.org/projects/gnuhealth/health_lab/zh_Hans/>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
@@ -8,7 +17,7 @@ msgstr "总结"
 
 msgctxt "field:gnuhealth.lab,critearea:"
 msgid "Analytes criteria"
-msgstr ""
+msgstr "分析项目"
 
 msgctxt "field:gnuhealth.lab,date_analysis:"
 msgid "Analysis Date"
@@ -24,15 +33,15 @@ msgstr "诊断"
 
 msgctxt "field:gnuhealth.lab,done_by:"
 msgid "Done by"
-msgstr ""
+msgstr "检验医师"
 
 msgctxt "field:gnuhealth.lab,done_date:"
 msgid "Finished on"
-msgstr ""
+msgstr "完成日期"
 
 msgctxt "field:gnuhealth.lab,historize:"
 msgid "Historize"
-msgstr ""
+msgstr "记入健康档案"
 
 msgctxt "field:gnuhealth.lab,images:"
 msgid "Images"
@@ -82,7 +91,6 @@ msgctxt "field:gnuhealth.lab,specimen_type:"
 msgid "Specimen"
 msgstr "样本类型"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,state:"
 msgid "State"
 msgstr "状态"
@@ -93,11 +101,11 @@ msgstr "检验类型"
 
 msgctxt "field:gnuhealth.lab,validated_by:"
 msgid "Validated by"
-msgstr ""
+msgstr "审核医师"
 
 msgctxt "field:gnuhealth.lab,validation_date:"
 msgid "Validated on"
-msgstr ""
+msgstr "审核日期"
 
 msgctxt "field:gnuhealth.lab.test.critearea,code:"
 msgid "Code"
@@ -371,10 +379,9 @@ msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
 msgid "Lab test sequence"
 msgstr "实验室检验序列"
 
-#, fuzzy
 msgctxt "help:gnuhealth.lab,done_by:"
 msgid "Professional who processes this lab test"
-msgstr "请求检验的医师。"
+msgstr "做这个检验项目的医务人员"
 
 msgctxt "help:gnuhealth.lab,historize:"
 msgid ""
@@ -383,6 +390,8 @@ msgid ""
 "condition of the patient. The condition will be created when the lab test is"
 " confirmed and validated"
 msgstr ""
+"如果勾选此项，那么检验结果确认和验证时，会自动在患者健康档案中会添加一项新健"
+"康状况记录，如果当前检验项目只涉及患者已有的健康状况，那就不要勾选此项"
 
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
@@ -420,10 +429,9 @@ msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "实验室检验类型"
 
-#, fuzzy
 msgctxt "help:gnuhealth.lab,validated_by:"
 msgid "Professional who validates this lab test"
-msgstr "请求检验的医师。"
+msgstr "做这个检验项目的医务人员"
 
 msgctxt "help:gnuhealth.lab.test.critearea,code:"
 msgid "Lab test critearea code, mainly used by lab interface script."
@@ -1578,13 +1586,12 @@ msgstr "检验报告"
 
 msgctxt "model:ir.model.button,string:complete_criteareas_button"
 msgid "Load analytes criteria"
-msgstr ""
+msgstr "加载检验项目"
 
 msgctxt "model:ir.model.button,string:labtest_generate_button"
 msgid "Done"
-msgstr ""
+msgstr "已完成"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:labtest_setdraft_button"
 msgid "Draft"
 msgstr "草案"
@@ -1787,16 +1794,15 @@ msgstr "患者"
 
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Done"
-msgstr ""
+msgstr "完成"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Draft"
 msgstr "草案"
 
 msgctxt "selection:gnuhealth.lab,state:"
 msgid "Validated"
-msgstr ""
+msgstr "已审核"
 
 msgctxt "selection:gnuhealth.lab.test_type,category:"
 msgid "Biochemical Testing"
@@ -1924,23 +1930,21 @@ msgstr "主要信息"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Are the results ready ?"
-msgstr ""
+msgstr "检验结果准备就绪了吗？"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Diagnosis"
 msgstr "诊断"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid ""
 "Do your want to fill in the analytes criteria with this test type template?"
-msgstr "你确定要补全当前检验项目吗？"
+msgstr "你确定要按照当前检验类型填写检验项目吗？"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Done"
-msgstr ""
+msgstr "完成"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Draft"
 msgstr "草案"
@@ -1949,10 +1953,9 @@ msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"
 msgstr "其它信息"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Fill the criteria for current test type analytes"
-msgstr "补全当前检验项目。"
+msgstr "填写当前检验项目。"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Images"
@@ -1960,7 +1963,7 @@ msgstr "图片"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Load analytes criteria"
-msgstr ""
+msgstr "加载检验项目"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Main Info"
@@ -1972,20 +1975,19 @@ msgstr "说明"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Reverse the document to draft state."
-msgstr ""
+msgstr "将当前文档回退为草稿状态。"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Set to Draft ?"
-msgstr ""
+msgstr "设为草案？"
 
-#, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Signatures"
-msgstr "签名:"
+msgstr "签名"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "The lab test is done and results are waiting to be validated"
-msgstr ""
+msgstr "实验室检验项目已经完成，检验结果正在等待审核"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Laboratory"
