@@ -714,6 +714,15 @@ class PregnancyResult(ModelSQL, ModelView):
             self.dob = self.pregnancy.pregnancy_end_date.date()
 
 
+    @classmethod
+    def __setup__(cls):
+        super(PregnancyResult, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints += [
+            ('newborn_uniq', Unique(t, t.newborn),
+             'Our records show that the newborn is from another pregnancy'),
+        ]
+
 class GnuHealthPatient(metaclass=PoolMeta):
 
     """Add to the Medical patient_data class (gnuhealth.patient) the
