@@ -106,14 +106,17 @@ class HealthService(metaclass=PoolMeta):
 class PatientProcedure(metaclass=PoolMeta):
     __name__ = 'gnuhealth.patient.procedure'
 
-    price = fields.Function(fields.Numeric('Price'), 'get_price')
+    price = fields.Numeric('Price')
 
-    def get_price(self, name):
+    """ Set the default price on the procedure
+        based on the patient insurance plan product counterpart
+    """
+    @fields.depends('procedure', 'insurance')
+    def on_change_with_price(self):
         if (self.procedure):
             if self.procedure.product:
                 prd = self.procedure.product
                 if self.insurance:
                     for pline in self.insurance.plan_id.product_policy:
                         if pline.product == prd:
-                            print(f"{prd.name} its a match!")
                             return decimal.Decimal(pline.price)
