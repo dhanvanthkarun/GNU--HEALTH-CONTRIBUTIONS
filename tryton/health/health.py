@@ -6048,6 +6048,11 @@ class PatientProcedure(ModelSQL, ModelView):
 
     comments = fields.Char('Comments')
 
+    @fields.depends('patient')
+    def on_change_with_rel_party(self):
+        if self.patient:
+            return self.patient.party.id
+
     def get_party(self, name):
         if (self.patient):
             return self.patient.party.id
