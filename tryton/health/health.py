@@ -6042,7 +6042,7 @@ class PatientProcedure(ModelSQL, ModelView):
     ], 'Context', sort=False)
 
     reference = fields.Reference(
-        'Origin', 'get_origin')
+        'Origin', 'get_origin', readonly=True)
 
     pdate = fields.DateTime('Date')
 
