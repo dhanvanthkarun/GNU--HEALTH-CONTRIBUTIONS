@@ -40,7 +40,7 @@ def get_print_date():
 
 
 class PatientDiseaseReport(Report):
-    __name__ = 'patient.disease'
+    __name__ = 'patient.conditions_history'
 
     @classmethod
     def get_context(cls, records, header, data):
@@ -50,6 +50,8 @@ class PatientDiseaseReport(Report):
         context['print_date'] = tzdate.date()
         context['print_time'] = tzdate.time()
         context['tz'] = timezone
+
+        return context
 
 
 class PatientMedicationReport(Report):
