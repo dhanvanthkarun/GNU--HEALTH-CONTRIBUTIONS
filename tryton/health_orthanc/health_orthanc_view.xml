@@ -62,7 +62,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Orthanc config menu -->
-        <menuitem name="Orthanc (Old Version)"
+        <menuitem name="Orthanc (Legacy)"
                   sequence="20"
                   parent="health_imaging.menu_imaging_test_parent"
                   id="orthanc_config_menu" icon="orthanc"/>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <menuitem name="Servers" sequence="20" parent="orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_server_menu" icon="gnuhealth-list"/>
 
         <!-- Orthanc Menu -->
-        <menuitem name="Orthanc (Old Version)" sequence="0" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
+        <menuitem name="Orthanc (Legacy)" sequence="0" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
 
         <record model="ir.action.act_window" id="act_orthanc_patient_view">
             <field name="name">Patients</field>
