@@ -72,9 +72,9 @@ class PatientData (metaclass=PoolMeta):
 class TestResult(metaclass=PoolMeta):
     __name__ = "gnuhealth.imaging.test.result"
 
-    # NOTE: health_orthanc which has been removed, has 'studies'
-    # field, so we use 'orthanc_studies' instead, which let database
-    # upgrade a bit easier.
+    # NOTE: health_orthanc has 'studies' field, so we use
+    # 'orthanc_studies' instead, which let database upgrade a bit
+    # easier.
     orthanc_studies = fields.One2Many(
         "gnuhealth.imaging_orthanc.study",
         "imaging_test", "Orthanc studies",

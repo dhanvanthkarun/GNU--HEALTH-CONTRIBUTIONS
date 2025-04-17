@@ -422,9 +422,9 @@ class ImagingTest(metaclass=PoolMeta):
         "ScheduledStationAETitle tag in worklist template."
     )
 
-    # NOTE: health_orthanc which has been removed, has
-    # 'worklist_template' field, so we use 'imaging_worklist_template'
-    # instead, which let database upgrade a bit easier.
+    # NOTE: health_orthanc has 'worklist_template' field, so we use
+    # 'imaging_worklist_template' instead, which let database upgrade
+    # a bit easier.
     imaging_worklist_template = fields.Many2One(
         "gnuhealth.imaging_worklist.worklist_template", "Worklist template"
     )
