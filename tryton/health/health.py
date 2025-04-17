@@ -4096,6 +4096,10 @@ class Appointment(ModelSQL, ModelView):
     def default_institution():
         return get_institution()
 
+    @staticmethod
+    def default_visit_type():
+        return 'new'
+
     @fields.depends('healthprof')
     def on_change_with_speciality(self):
         # Return the Current / Main speciality of the Health Professional
