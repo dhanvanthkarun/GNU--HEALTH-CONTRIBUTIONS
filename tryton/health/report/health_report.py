@@ -26,21 +26,20 @@ __all__ = ['PatientDiseaseReport',
 def get_print_date():
     Company = Pool().get('company.company')
 
-    # Note: trytond always use UTC as timezone.
+    timezone = None
     dt = datetime.now()
-    dt_utc = pytz.utc.localize(dt)
-
-    timezone = pytz.timezone("UTC")
-    dt_local = dt_utc
-
+    utc = dt.astimezone(pytz.UTC)
+    localdate = dt
     company_id = Transaction().context.get('company')
     if company_id:
         company = Company(company_id)
         if company.timezone:
             timezone = pytz.timezone(company.timezone)
-            dt_local = dt_utc.astimezone(timezone)
+            localdate = utc.astimezone(timezone)
+            print(f"Local date {timezone} : {localdate}")
+            print("UTC:", utc)
 
-    return timezone, dt_local
+    return timezone, localdate
 
 
 class PatientDiseaseReport(Report):
@@ -69,7 +68,6 @@ class PatientMedicationReport(Report):
         context['print_date'] = tzdate.date()
         context['print_time'] = tzdate.time()
         context['tz'] = timezone
-
         return context
 
 
@@ -99,5 +97,4 @@ class PatientEvaluationReport(Report):
         context['print_date'] = tzdate.date()
         context['print_time'] = tzdate.time()
         context['tz'] = timezone
-
         return context
