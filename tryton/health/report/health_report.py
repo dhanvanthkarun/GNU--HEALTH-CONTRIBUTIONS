@@ -28,15 +28,15 @@ def get_print_date():
 
     timezone = None
     dt = datetime.now()
+    localdate = dt
     company_id = Transaction().context.get('company')
     if company_id:
         company = Company(company_id)
         if company.timezone:
             timezone = pytz.timezone(company.timezone)
-            return timezone, timezone.localize(dt)
-
-    else:
-        return dt
+            localdate = timezone.localize(dt)
+    
+    return timezone, localdate
 
 
 class PatientDiseaseReport(Report):
