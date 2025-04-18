@@ -26,7 +26,7 @@ __all__ = ['PatientDiseaseReport',
 def get_print_date():
     Company = Pool().get('company.company')
 
-    timezone = None
+    timezone = pytz.UTC
     dt = datetime.now()
     utc = dt.astimezone(pytz.UTC)
     localdate = dt
@@ -36,8 +36,6 @@ def get_print_date():
         if company.timezone:
             timezone = pytz.timezone(company.timezone)
             localdate = utc.astimezone(timezone)
-            print(f"Local date {timezone} : {localdate}")
-            print("UTC:", utc)
 
     return timezone, localdate
 
