@@ -17,7 +17,6 @@ from . import health
 from . import sequences
 from . import wizard
 from . import report
-from . import core
 
 
 def register():

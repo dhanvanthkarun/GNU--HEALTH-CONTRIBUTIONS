@@ -22,7 +22,6 @@ from trytond.i18n import gettext
 from .exceptions import (NoAssociatedHealthProfessional)
 
 import os
-import io
 import json
 
 

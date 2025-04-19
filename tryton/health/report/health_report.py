@@ -15,8 +15,9 @@ import pytz
 from datetime import datetime
 from trytond.pool import Pool
 from trytond.transaction import Transaction
-from trytond.report import Report
 from trytond.i18n import gettext
+
+import io
 
 try:
     from PIL import Image
@@ -51,7 +52,8 @@ class ReportPrintDateAndTimeMixin():
     @classmethod
     def get_context(cls, records, header, data):
         context = super(
-            ReportPrintDateAndTimeMixin, cls).get_context(records, header, data)
+            ReportPrintDateAndTimeMixin, cls).get_context(
+                records, header, data)
         timezone, tzdate = cls.get_print_date()
         context['print_datetime'] = tzdate
         context['print_date'] = tzdate.date()
