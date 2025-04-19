@@ -21,29 +21,30 @@ from trytond.report import Report
 __all__ = ['ReportPrintDateAndTimeMixin']
 
 
-def get_print_date():
-    Company = Pool().get('company.company')
-
-    timezone = pytz.UTC
-    dt = datetime.now()
-    utc = dt.astimezone(pytz.UTC)
-    localdate = dt
-    company_id = Transaction().context.get('company')
-    if company_id:
-        company = Company(company_id)
-        if company.timezone:
-            timezone = pytz.timezone(company.timezone)
-            localdate = utc.astimezone(timezone)
-
-    return timezone, localdate
-
-
 class ReportPrintDateAndTimeMixin():
+
+    @classmethod
+    def get_print_date(cls):
+        Company = Pool().get('company.company')
+
+        timezone = pytz.UTC
+        dt = datetime.now()
+        utc = dt.astimezone(pytz.UTC)
+        localdate = dt
+        company_id = Transaction().context.get('company')
+        if company_id:
+            company = Company(company_id)
+            if company.timezone:
+                timezone = pytz.timezone(company.timezone)
+                localdate = utc.astimezone(timezone)
+
+        return timezone, localdate
+
     @classmethod
     def get_context(cls, records, header, data):
         context = super(
             ReportPrintDateAndTimeMixin, cls).get_context(records, header, data)
-        timezone, tzdate = get_print_date()
+        timezone, tzdate = cls.get_print_date()
         context['print_datetime'] = tzdate
         context['print_date'] = tzdate.date()
         context['print_time'] = tzdate.time()
