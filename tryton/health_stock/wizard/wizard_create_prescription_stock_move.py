@@ -12,6 +12,7 @@ from trytond.model import ModelView
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.i18n import gettext
+from trytond.modules.health.core import get_institution_currency
 from ..exceptions import (StockMoveExists, NoPharmacy)
 
 __all__ = ['CreatePrescriptionStockMoveInit', 'CreatePrescriptionStockMove']
@@ -71,7 +72,9 @@ class CreatePrescriptionStockMove(Wizard):
                 move.cost_price = line.medicament.product.cost_price
                 move.quantity = line.quantity
                 move.unit = line.medicament.product.default_uom
-                move.currency = prescription.pharmacy.currency
+                # Get the Institution (company) currency
+                move.currency = get_institution_currency()
+
                 moves.append(move)
         StockMove.save(moves)
         StockMove.do(moves)

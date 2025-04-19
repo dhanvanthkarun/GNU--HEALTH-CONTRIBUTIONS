@@ -14,10 +14,12 @@ from trytond.pool import Pool
 from . import health_inpatient
 from . import wizard
 from . import sequences
+from . import health
 
 
 def register():
     Pool.register(
+        health.PatientProcedure,
         health_inpatient.DietTherapeutic,
         health_inpatient.InpatientRegistration,
         health_inpatient.BedTransfer,

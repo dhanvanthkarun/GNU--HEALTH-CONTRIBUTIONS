@@ -289,3 +289,13 @@ def matplotlib_setup(matplotlab):
         rc_conf.pop('@comment', None)
         matplotlab.rcParams.update(rc_conf)
         print(f'Matplotlib: Use rcParams: {rc_conf}.')
+
+
+def get_institution_currency():
+    """ Retrieves this health insitution (company) currency.
+    """
+    Company = Pool().get('company.company')
+    company_id = Transaction().context.get('company')
+    company = Company(company_id)
+    if (company.currency):
+        return company.currency.id

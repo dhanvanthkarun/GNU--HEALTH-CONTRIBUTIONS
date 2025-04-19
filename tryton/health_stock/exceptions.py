@@ -18,3 +18,7 @@ class StockMoveExists(ValidationError):
 
 class NoPharmacy(ValidationError):
     pass
+
+
+class NoStockOrigin(ValidationError):
+    pass

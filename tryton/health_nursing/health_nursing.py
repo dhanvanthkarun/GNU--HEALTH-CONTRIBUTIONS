@@ -67,7 +67,7 @@ class PatientAmbulatoryCare(ModelSQL, ModelView):
             # ('pdate', '=', Eval('session_start')),
         ],
         depends=['patient'],
-        help='Procedures done during the rounding')
+        help='Procedures done during the ambulatory care session')
 
     # Deprecated in GH 5.0 by ambulatory_procedures
     procedures = fields.One2Many(

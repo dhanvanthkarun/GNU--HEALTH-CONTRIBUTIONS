@@ -12,8 +12,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <page string="Medication" id="medication">
             <label name="hospitalization_location"/>
             <field name="hospitalization_location"/>
-            <field name="medicaments" colspan="4" view_ids="health_stock.gnuhealth_rounding_medicament_tree"/>
-            <field name="medical_supplies" colspan="4" view_ids="health_stock.gnuhealth_rounding_medical_supply_tree"/>
+            <field name="medicaments" colspan="4" view_ids="health_stock_inpatient.gnuhealth_rounding_medicament_tree"/>
+            <field name="medical_supplies" colspan="4" view_ids="health_stock_inpatient.gnuhealth_rounding_medical_supply_tree"/>
         </page>
         <page string="Stock Moves" id="Stock Moves">
             <field name="moves" colspan="4"/>

@@ -19,6 +19,5 @@ class PatientProcedure(metaclass=PoolMeta):
     @classmethod
     def _get_origin(cls):
         return super(PatientProcedure, cls)._get_origin() + [
-            'gnuhealth.patient.rounding',
             'gnuhealth.patient.ambulatory_care',
         ]
