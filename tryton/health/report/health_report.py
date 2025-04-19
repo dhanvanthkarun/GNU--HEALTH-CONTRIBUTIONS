@@ -17,10 +17,8 @@ from trytond.pool import Pool
 from trytond.transaction import Transaction
 from trytond.report import Report
 
-__all__ = ['PatientDiseaseReport',
-           'PatientMedicationReport',
-           'PatientVaccinationReport',
-           'PatientEvaluationReport']
+
+__all__ = ['ReportPrintDateAndTimeMixin']
 
 
 def get_print_date():
@@ -40,59 +38,15 @@ def get_print_date():
     return timezone, localdate
 
 
-class PatientDiseaseReport(Report):
-    __name__ = 'patient.conditions_history'
-
+class ReportPrintDateAndTimeMixin():
     @classmethod
     def get_context(cls, records, header, data):
         context = super(
-            PatientDiseaseReport, cls).get_context(records, header, data)
+            ReportPrintDateAndTimeMixin, cls).get_context(records, header, data)
         timezone, tzdate = get_print_date()
+        context['print_datetime'] = tzdate
         context['print_date'] = tzdate.date()
         context['print_time'] = tzdate.time()
         context['tz'] = timezone
 
-        return context
-
-
-class PatientMedicationReport(Report):
-    __name__ = 'patient.medication'
-
-    @classmethod
-    def get_context(cls, records, header, data):
-        context = super(
-            PatientMedicationReport, cls).get_context(records, header, data)
-        timezone, tzdate = get_print_date()
-        context['print_date'] = tzdate.date()
-        context['print_time'] = tzdate.time()
-        context['tz'] = timezone
-        return context
-
-
-class PatientVaccinationReport(Report):
-    __name__ = 'patient.vaccination'
-
-    @classmethod
-    def get_context(cls, records, header, data):
-        context = super(
-            PatientVaccinationReport, cls).get_context(records, header, data)
-        timezone, tzdate = get_print_date()
-        context['print_date'] = tzdate.date()
-        context['print_time'] = tzdate.time()
-        context['tz'] = timezone
-
-        return context
-
-
-class PatientEvaluationReport(Report):
-    __name__ = 'gnuhealth.patient_evaluation'
-
-    @classmethod
-    def get_context(cls, records, header, data):
-        context = super(
-            PatientEvaluationReport, cls).get_context(records, header, data)
-        timezone, tzdate = get_print_date()
-        context['print_date'] = tzdate.date()
-        context['print_time'] = tzdate.time()
-        context['tz'] = timezone
         return context

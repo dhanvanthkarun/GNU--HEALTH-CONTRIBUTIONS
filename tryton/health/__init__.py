@@ -109,12 +109,12 @@ def register():
         module='health', type_='wizard')
 
     Pool.register(
-        report.health_report.PatientDiseaseReport,
-        report.health_report.PatientMedicationReport,
-        report.health_report.PatientVaccinationReport,
-        report.health_report.PatientEvaluationReport,
         report.immunization_status_report.ImmunizationStatusReport,
         module='health', type_='report')
+
+    Pool.register_mixin(
+        report.health_report.ReportPrintDateAndTimeMixin, Report,
+        module='health')
 
     Pool.register_mixin(
         core.ImageReportMixin, Report,
