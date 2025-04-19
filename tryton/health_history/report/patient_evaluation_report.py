@@ -22,10 +22,8 @@ class PatientEvaluationReport(Report):
         Module = Pool().get('ir.module')
         module = Module.search([('name', '=', module_name)], limit=1)
         if (module and module[0].state == 'activated'):
-            print(f"{module_name} module is activated")
             return True
         else:
-            print(f"{module_name} module is NOT installed")
             return False
 
     @classmethod
