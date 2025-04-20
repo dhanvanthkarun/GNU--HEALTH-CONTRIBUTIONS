@@ -9,13 +9,13 @@ build-backend = "poetry.core.masonry.api"
 [project]
 name = "gnuhealth-calendar"
 version = "5.0.0a1"
-description = "GNU Health Hospital and Health Information System. Core package"
+description = "Adds CalDAV functionality to the GNU Health HIS appointments"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
-keywords = ["health", "hospital", "HIS", "eHealth", "gnuhealth"]
+keywords = ["health", "hospital", "HIS", "eHealth", "gnuhealth", "calendar", "CalDAV"]
 requires-python = ">=3.10,<3.14"
 authors = [
-    {name = "GNU Solidario", email = "info@gnusolidario.org"},
+    {name = "GNU Solidario", email = "health@gnusolidario.org"},
 ]
 
 dynamic = [ "classifiers" ]
@@ -27,9 +27,8 @@ maintainers = [
 
 dependencies = [
     "gnuhealth==5.0.0a1",
-    "gnuhealth-caldav @ git+https://codeberg.org/gnuhealth/his.git@dev-5.0#subdirectory=tryton/health_caldav"
-    # Todo: take dependency below once it's on PyPI
-    # "gnuhealth-caldav==5.0.0a1"
+    #"gnuhealth-caldav @ git+https://codeberg.org/gnuhealth/his.git@dev-5.0#subdirectory=tryton/health_caldav"
+    "gnuhealth-caldav==5.0.0a1"
 ]
 
 [project.urls]
