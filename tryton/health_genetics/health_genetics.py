@@ -437,7 +437,7 @@ class PatientGeneticRisk(ModelSQL, ModelView):
                                genetic_info.natural_variant.aa_change,
             'summary': genetic_info.notes,
             'author': genetic_info.healthprof and
-            genetic_info.healthprof.name.rec_name,
+            genetic_info.healthprof.party.rec_name,
             'node': genetic_info.institution and
             genetic_info.institution.party.name
         }
