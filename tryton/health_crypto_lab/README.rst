@@ -1,30 +1,62 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health HMIS: Libre Hospital Management and Health Information System
-========================================================================
+Cryptographic Package for GNU Health HIS - LIMS
+###############################################
+
+The package *gnuhealth-crypto-lims* provides cryptographic methods and attributes 
+to the laboratory models (LIMS) of GNU Health. It requires the core gnuhealth-crypto package.
+
+The module intends to enhance the concepts of confidentiality, integrity and non-repudiation
+in GNU Health.
+
+The health_crypto module will provide the following functionality:
+
+ * Document Serialization
+ * Document hashing (MD)
+ * Document signing
+ * Document verification
+ * Document encryption
+
+The module will work on records from models that will need this functionality such as 
+prescription, patient evaluations, surgeries or lab tests.
+
+The Serialization process will include the information in a predefined format
+(JSON) and encoding (UTF8).
+
+There will be a field that will contain the Message digest of the serialization process,
+ and that will check for any changes.
+
+The signing process will be upon that Message Digest field, whereas the encryption
+process will work on row or column level.
+
+Public key / asymmetric cryptography will be used for signing the documents.
+
+
+About GNU Health HIS: The Libre Hospital Management and Health Information System
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-The GNU Health HMIS provides the following functionality:
+The GNU Health HIS provides the following functionality:
 
-#. **Hospital Management Information System (HMIS)**
-#. **Electronic Medical Record (EMR)**
-#. **Health Information System (HIS)**
-#. **Laboratory Information System (LIS)**
+ * Hospital Management Information System
+ * Electronic Medical Record (EMR)
+ * Health Information System
+ * Laboratory Information System
 
-The Hospital and Health Information System component (HMIS) from GNU Health (GH) 
-provides over 40 standard-based packages (primary care, obstetrics & gynecology,
-pediatrics, surgery, lims, genetics, diagnostic imaging, dentisstry, reporting...)
-to fit your institution needs. The GH HMIS combines the socioeconomic determinants of
-health with state-of-the-art technology in bioinformatics and clinical genetics. 
+The Hospital and Health Information System component (HIS) from GNU Health (GH) 
+provides over 50 packages (primary care, obstetrics & gynecology,
+pediatrics, surgery, lims, genetics, diagnostic imaging, dentistry, reporting...)
+to fit your institution needs. The GH HIS combines the socioeconomic determinants of
+health with state-of-the-art technology in bioinformatics and medical genetics. 
 
-The HMIS manages the internal processes of a health institution, such as 
+The HIS manages the internal processes of a health institution, such as 
 financial management, billing, stock management, pharmacies or labs (LIMS). 
 
-The GH HMIS is part of the GNU Health project, the **Libre digital health ecosystem**.
+The GH HIS is part of the GNU Health project, the **Libre digital health ecosystem**.
 
 The GNU Health project combines the daily medical practice with state-of-the-art 
 technology in bioinformatics and genetics. It provides a holistic approach 
@@ -81,13 +113,13 @@ the health of your country or region. We want the project to be a success,
 and since our resources are limited, we need to work together to make a great
 and sustainable project.
 
-In order to be elegible, we need the following information from you,
+In order to be eligible, we need the following information from you,
 your NGO or government:
 
 * An introduction of the current needs
 * The project will use free software, both at the server and workstations
 * There will be a local designated person that will be in charge of  
-  the project and the know-how transfer to the rest of the community.This person 
+  the project and the know-how transfer to the rest of the community. This person 
   must be committed to be from the beginning of the project
   until two years after its completion.
 * There must be a commitment of knowledge transfer to the rest of the team.
@@ -108,15 +140,18 @@ Email
 -----
 info@gnuhealth.org
 
-Mastodon: https://mastodon.social/@gnuhealth
+Mastodon
+--------
+
+https://mastodon.social/@gnuhealth
 
 License
 --------
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
