@@ -12,10 +12,7 @@
 #                           HEALTH package                              #
 #   health_report.py: Disease, Medication and Vaccination reports       #
 #########################################################################
-import pytz
 from datetime import datetime
-from trytond.pool import Pool
-from trytond.transaction import Transaction
 from trytond.i18n import gettext
 
 import io
