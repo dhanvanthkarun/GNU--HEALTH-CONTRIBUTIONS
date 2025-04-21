@@ -1357,7 +1357,7 @@
        <text:p text:style-name="P2">Printed Date:</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table1.A1" office:value-type="string">
-       <text:p text:style-name="GH-Table-Contents-Small"><text:placeholder text:placeholder-type="text">&lt;format_datetime(print_datetime, user.language)&gt;</text:placeholder><text:s/><text:placeholder text:placeholder-type="text">&lt;tz and &apos;(&apos; + str(tz) +&apos;)&apos; or &apos;&apos;&gt;</text:placeholder></text:p>
+       <text:p text:style-name="GH-Table-Contents-Small"><text:placeholder text:placeholder-type="text">&lt;format_datetime(print_datetime, lang=user.language, timezone=tz)&gt;</text:placeholder><text:s/><text:placeholder text:placeholder-type="text">&lt;tz and &apos;(&apos; + str(tz) +&apos;)&apos; or &apos;&apos;&gt;</text:placeholder></text:p>
       </table:table-cell>
      </table:table-row>
     </table:table>

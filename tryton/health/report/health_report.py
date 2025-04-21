@@ -38,10 +38,8 @@ class ReportDateAndTimeMixin():
         context = super(
             ReportDateAndTimeMixin, cls).get_context(
                 records, header, data)
-        tzdate = convert_date_timezone(datetime.now())
-        context['local_datetime'] = convert_date_timezone
-        context['print_datetime'] = tzdate
-        context['local_now'] = tzdate
+
+        context['print_datetime'] = datetime.now()
         context['tz'] = get_institution_timezone()
 
         return context
