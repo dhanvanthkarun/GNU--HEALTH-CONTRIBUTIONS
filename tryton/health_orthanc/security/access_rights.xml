@@ -13,7 +13,7 @@
 
 <!-- Default access rights to models -->
         <record model="ir.model.access" id="access_orthanc_config_server">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.server_config')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -67,7 +67,7 @@
 
 <!-- Access to Menus -->
         <record model="ir.ui.menu-res.group" id="group_imaging_orthanc_menu_admin">
-            <field name="menu" ref="menu_imaging_orthanc_parent"/>
+            <field name="menu" ref="orthanc_menu"/>
             <field name="group" ref="group_imaging_orthanc_admin"/>
         </record>
 
@@ -100,7 +100,7 @@
         </record>
 
         <record model="ir.model.access" id="access_orthanc_config_admin">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.server_config')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
             <field name="group" ref="group_imaging_orthanc_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -119,7 +119,7 @@
         </record>
 
         <record model="ir.ui.menu-res.group" id="menu_group_imaging_orthanc_parent">
-            <field name="menu" ref="menu_imaging_orthanc_parent"/>
+            <field name="menu" ref="orthanc_menu"/>
             <field name="group" ref="group_imaging_orthanc"/>
         </record>
 
@@ -210,7 +210,7 @@
         </record>
 
         <record model="ir.model.access" id="access_orthanc_config_doctor">
-            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.server_config')]"/>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>

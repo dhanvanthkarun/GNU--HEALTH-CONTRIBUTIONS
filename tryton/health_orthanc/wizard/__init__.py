@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
+from . import wizard
 from . import wizard_full_synchronize  # noqa: F401
 from . import wizard_get_new_studies  # noqa: F401
 from . import wizard_upload_image_data  # noqa: F401
