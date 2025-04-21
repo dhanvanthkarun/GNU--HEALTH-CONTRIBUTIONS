@@ -112,7 +112,7 @@ def register():
         module='health', type_='report')
 
     Pool.register_mixin(
-        report.health_report.ReportPrintDateAndTimeMixin, Report,
+        report.health_report.ReportDateAndTimeMixin, Report,
         module='health')
 
     Pool.register_mixin(

@@ -26,12 +26,12 @@ except ImportError:
     Image = None
 
 
-__all__ = ['ReportPrintDateAndTimeMixin',
+__all__ = ['ReportDateAndTimeMixin',
            'ReportGettextMixin',
            'ReportImageToolMixin']
 
 
-class ReportPrintDateAndTimeMixin():
+class ReportDateAndTimeMixin():
 
     @classmethod
     def get_print_date(cls):
@@ -53,7 +53,7 @@ class ReportPrintDateAndTimeMixin():
     @classmethod
     def get_context(cls, records, header, data):
         context = super(
-            ReportPrintDateAndTimeMixin, cls).get_context(
+            ReportDateAndTimeMixin, cls).get_context(
                 records, header, data)
         timezone, tzdate = cls.get_print_date()
         context['print_datetime'] = tzdate
