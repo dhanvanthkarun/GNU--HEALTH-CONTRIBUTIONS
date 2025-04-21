@@ -45,5 +45,11 @@ def register():
         module="health_orthanc",
         type_="model",
     )
+
     Pool.register(
-        wizard.wizard.FullSyncOrthanc, module="health_orthanc", type_="wizard")
+        wizard.wizard_full_synchronize.FullSynchronize,
+        wizard.wizard_get_new_studies.GetNewStudies,
+        wizard.wizard_upload_image_data.UploadImageData,
+        wizard.wizard_orthanc_config.ConnectNewOrthancServer,
+        module='health_orthanc', type_='wizard'
+    )

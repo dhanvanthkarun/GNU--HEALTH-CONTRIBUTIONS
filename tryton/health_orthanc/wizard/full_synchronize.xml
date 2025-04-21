@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <record model="ir.action.wizard" id="act_full_synchronize">
+         <field name="name">Orthanc: Full Synchronize</field>
+         <field name="wiz_name">gnuhealth.imaging_orthanc.full_synchronize</field>
+         <field name="model">gnuhealth.imaging_orthanc.study</field>
+        </record>
+
+        <record model="ir.action.keyword" id="full_synchronize_keyword">
+           <field name="keyword">form_action</field>
+           <field name="model">gnuhealth.imaging_orthanc.study,-1</field>
+           <field name="action" ref="act_full_synchronize"/>
+        </record>
+
+        <record model="ir.ui.view" id="full_synchronize_start_form">
+         <field name="model">gnuhealth.imaging_orthanc.full_synchronize.start</field>
+         <field name="type">form</field>
+         <field name="name">full_synchronize_start_form</field>
+        </record>
+
+    </data>
+</tryton>

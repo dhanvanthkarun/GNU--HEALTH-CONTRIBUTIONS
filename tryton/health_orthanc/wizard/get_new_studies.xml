@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <record model="ir.action.wizard" id="act_get_new_Studies">
+         <field name="name">Orthanc: Get New Studies</field>
+         <field name="wiz_name">gnuhealth.imaging_orthanc.get_new_studies</field>
+         <field name="model">gnuhealth.imaging_orthanc.study</field>
+        </record>
+
+        <record model="ir.action.keyword" id="get_new_studies_keyword">
+           <field name="keyword">form_action</field>
+           <field name="model">gnuhealth.imaging_orthanc.study,-1</field>
+           <field name="action" ref="act_get_new_Studies"/>
+        </record>
+
+        <record model="ir.ui.view" id="get_new_studies_start_form">
+         <field name="model">gnuhealth.imaging_orthanc.get_new_studies.start</field>
+         <field name="type">form</field>
+         <field name="name">get_new_studies_start_form</field>
+        </record>
+
+    </data>
+</tryton>
