@@ -23,7 +23,6 @@ def register():
     """
     Pool.register(
         health_imaging_orthanc.View,
-        health_imaging_orthanc.PatientData,
         health_imaging_orthanc.TestResult,
         health_imaging_orthanc.PatientOrthancStudy,
         wizard.wizard_upload_image_data.UploadImageDataStart,

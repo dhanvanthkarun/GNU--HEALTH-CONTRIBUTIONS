@@ -27,7 +27,6 @@ except ImportError:
 
 
 __all__ = [
-    'PatientData',
     'TestResult',
     'PatientOrthancStudy',
     'StudySeries',
@@ -35,38 +34,10 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
-#
-#  Adding widget "dicombinary" to the server
-#
-
-
-class View(metaclass=PoolMeta):
-    __name__ = 'ir.ui.view'
-
-    @classmethod
-    def get_rng(cls, type_):
-        rng = super(View, cls).get_rng(type_)
-        if type_ in ('form', 'list-form'):
-            widgets = rng.xpath(
-                '//ns:define/ns:optional/ns:attribute'
-                '/ns:name[.="widget"]/following-sibling::ns:choice',
-                namespaces={'ns': 'http://relaxng.org/ns/structure/1.0'})[0]
-            subelem = etree.SubElement(
-                widgets, '{http://relaxng.org/ns/structure/1.0}value')
-            subelem.text = 'dicombinary'
-        return rng
 
 #
 # The GNU Health patient with his image data stored on the orthanc server.
 #
-
-
-class PatientData (metaclass=PoolMeta):
-    __name__ = 'gnuhealth.patient'
-
-    orthanc_studies = fields.One2Many(
-        'gnuhealth.imaging_orthanc.study',
-        'patient', 'Orthanc Study')
 
 
 class TestResult(metaclass=PoolMeta):

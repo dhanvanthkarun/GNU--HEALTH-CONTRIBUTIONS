@@ -27,15 +27,12 @@ given Orthanc DICOM servers.
 
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
-from trytond.transaction import Transaction
-from beren import Orthanc as RestClient
-from requests.auth import HTTPBasicAuth as auth
 from datetime import datetime
 from urllib.parse import urljoin
-from requests.exceptions import HTTPError, RequestException
+from lxml import etree
+
 
 import logging
-import pendulum
 
 try:
     from trytond.modules.health_imaging_worklist.health_imaging_worklist \
@@ -45,7 +42,7 @@ except ImportError:
 
 
 __all__ = [
-    "OrthancServerConfig",
+    "View",
     "OrthancPatient",
     "OrthancStudy",
     "Patient",
@@ -55,393 +52,25 @@ __all__ = [
 logger = logging.getLogger(__name__)
 
 
-class OrthancServerConfig(ModelSQL, ModelView):
-    """Orthanc server details"""
+#
+#  Adding widget "dicombinary" to the server
+#
 
-    """
-    Orthanc server details.
-
-    This class is used to connect to an Orthanc DICOM server. It also
-    provides methods to establish synchronicity between the endpoints
-    and to check if a connection to the corresponding domain
-    can be established.
-
-    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL
-                      database operations.
-    :type ModelSQL: class: ``trytond.model.ModelSQL``
-
-    :param ModelView: Inherit from the Tryton ModelView class
-                      for user interface operations.
-    :type ModelView: class: ``trytond.model.ModelView``
-
-    :var __name__: The unique name ``gnuhealth.orthanc.config`` of the model.
-    :vartype __name__: str
-
-    :var _rec_name: The name ``label`` of the field used as name of records.
-    :vartype _rec_name: str
-
-    :var label: Label for the server that is displayed to the user. Required.
-    :vartype label: class: ``trytond.model.fields.Char``
-
-    :var domain: The full URL for the Orthanc DICOM server. Required.
-    :vartype domain: class: ``trytond.model.fields.Char``
-
-    :var user: Username of an authorized user for the Orthanc DICOM
-        Server. Required.
-    :vartype user: class: ``trytond.model.fields.Char``
-
-    :var password: Password of an authorized user with corresponding name
-        for the Orthanc DICOM Server. Required.
-    :vartype password: class: ``trytond.model.fields.Char``
-
-    :var last: Index of last change. Read-only.
-    :vartype last: class: ``trytond.model.fields.Integer``
-
-    :var sync_time: Time of last server syncronization. Read-only.
-    :vartype sync_time: class: ``trytond.model.fields.DateTime``
-
-    :var validated: Whether the server details have been successfully checked.
-    :vartype validated: class: ``trytond.model.fields.Boolean``
-
-    :var since_sync: Time elapsed since last synchronization (numeric).
-    :vartype since_sync: class: ``trytond.model.fields.TimeDelta``
-
-    :var since_sync_readable: Time elapsed since last synchronization
-        (human readable).
-    :vartype since_sync_readable: class: ``trytond.model.fields.Char``
-
-    :var patients: List of Orthanc patients directly related to the server.
-    :vartype patients: class: ``trytond.model.fields.One2Many``
-
-    :var studies: List of Orthanc studies directly related to the server.
-    :vartype studies: class: ``trytond.model.fields.One2Many``
-
-    :var link: Hyperlink to the server in the Orthanc explorer.
-    :vartype link: class: ``trytond.model.fields.Char``
-
-    :var http_error_messages: A dict of http error and their status codes.
-    :vartype http_error_messages: dict
-    """
-
-    __name__ = "gnuhealth.orthanc.config"
-    _rec_name = "label"
-
-    label = fields.Char(
-        "Label", required=True, help="Label for server (eg., remote1)")
-
-    domain = fields.Char(
-        "URL", required=True, help="The full URL of the Orthanc server")
-
-    user = fields.Char(
-        "Username", required=True, help="Username for Orthanc REST server")
-
-    password = fields.Char(
-        "Password", required=True, help="Password for Orthanc REST server")
-
-    last = fields.Integer(
-        "Last Index", readonly=True, help="Index of last change")
-
-    sync_time = fields.DateTime(
-        "Sync Time", readonly=True, help="Time of last server sync")
-
-    validated = fields.Boolean(
-        "Validated", help="Whether the server details have been "
-        "successfully checked")
-
-    since_sync = fields.Function(
-        fields.TimeDelta("Since last sync", help="Time since last sync"),
-        "get_since_sync",)
-
-    since_sync_readable = fields.Function(
-        fields.Char("Since last sync", help="Time since last sync"),
-        "get_since_sync_readable",
-    )
-    patients = fields.One2Many(
-        "gnuhealth.orthanc.patient", "server", "Patients")
-
-    studies = fields.One2Many("gnuhealth.orthanc.study", "server", "Studies")
-    link = fields.Function(
-        fields.Char(
-            "URL",
-            help="Link to server in Orthanc Explorer"), "get_link")
-
-    def get_link(self, name):
-        pre = "".join([self.domain.rstrip("/"), "/"])
-        add = "app/explorer.html"
-        return urljoin(pre, add)
+class View(metaclass=PoolMeta):
+    __name__ = 'ir.ui.view'
 
     @classmethod
-    def __setup__(cls):
-        """
-        Set up the OrthancServerConfig class for database access.
-
-        This method is a class method that initializes various properties
-        and constraints of the OrthancServerConfig model. It sets up a SQL
-        constraint to ensure that the ``label`` coulmn is unique, and adds
-        a custom button to the form view called ``do_sync``. The ``do_sync``
-        button triggers a synchronization process between the Orthanc DICOM
-        server and the GNU Health HMIS to retrieve and use patient and
-        image information from Orthanc.
-        """
-
-        super().__setup__()
-        t = cls.__table__()
-        cls._sql_constraints = [
-            ("label_unique", Unique(t, t.label), "The label must be unique.")
-        ]
-        cls._buttons.update({"do_sync": {}})
-
-    @classmethod
-    @ModelView.button
-    def do_sync(cls, servers):
-        """
-        Start a synchronization.
-
-        :param servers: A list of Orthanc DICOM servers.
-        :type servers: list
-
-        :raises UserWarning: Triggered when invalid credentials,
-            an invalid domain, a general HTTP error occurs or
-            another request error.
-
-        .. note:: This method follows the Tryton Syntax. The
-                ``@ModelView.button`` decorates the method
-                to check group access and rule.
-        .. seealso:: ``button`` from class: ``trytond.model.ModelView``
-        """
-        try:
-            cls.sync(servers)
-        except ConnectionRefusedError as exc:
-            raise UserWarning(
-                "connection_error",
-                "Connection not possible. Check the user, password,"
-                "URL and port of the server."
-            ) from exc
-        except HTTPError as err:
-            status_code = err.response.status_code
-            if status_code in cls.http_error_messages:
-                raise UserWarning(
-                    "http_error",
-                    cls.http_error_messages[status_code]) from None
-            raise UserWarning(
-                "unhandled_http", "Unhandled HTTP error") from None
-        except RequestException as exc:
-            raise UserWarning(
-                "request_error", "Unhandled request error occured") from exc
-        except Exception as err:
-            raise UserWarning(
-                "unhandled_error", "Unhandled error occured") from err
-
-    @classmethod
-    def sync(cls, servers=None):
-        """
-        Synchronize patient and study data from Orthanc DICOM servers
-        into GNU Health HMIS.
-
-        :param servers: Optional list of ``OrthancServerConfig`` objects,
-            which represent orthanc server to synchronize.
-            If not provided, all validated servers will be synchronized.
-        :type servers: list
-        """
-
-        pool = Pool()
-        patient = pool.get("gnuhealth.orthanc.patient")
-        study = pool.get("gnuhealth.orthanc.study")
-
-        if not servers:
-            servers = cls.search([("domain", "!=", None),
-                                  ("validated", "=", True)])
-
-        logger.info("Starting sync")
-        for server in servers:
-            if not server.validated:
-                continue
-            logger.info("Getting new changes for <{}>".format(server.label))
-            orthanc = RestClient(server.domain,
-                                 auth=auth(server.user, server.password))
-            curr = server.last
-            new_patients = set()
-            update_patients = set()
-            new_studies = set()
-            update_studies = set()
-
-            while True:
-                try:
-                    changes = orthanc.get_changes(since=curr)
-                except ConnectionRefusedError:
-                    server.validated = False
-                    logger.exception(
-                        "No connection to the server can be established."
-                        "Check connectivity and port."
-                    )
-                except HTTPError as err:
-                    server.validated = False
-                    status_code = err.response.status_code
-                    if status_code in cls.http_error_messages:
-                        error_message = (
-                            cls.http_error_messages[status_code] +
-                            f" {server. label} not reacheable"
-                        )
-                        logger.exception(error_message)
-                    else:
-                        logger.exception(
-                            "Unhandled HTTP error for <%s>", server.label)
-                except RequestException:
-                    server.validated = False
-                    logger.exception(
-                        "Unhandled request error occured for <%s>",
-                        server.label)
-                for change in changes["Changes"]:
-                    type_ = change["ChangeType"]
-                    if type_ == "NewStudy":
-                        new_studies.add(change["ID"])
-                    elif type_ == "StableStudy":
-                        update_studies.add(change["ID"])
-                    elif type_ == "NewPatient":
-                        new_patients.add(change["ID"])
-                    elif type_ == "StablePatient":
-                        update_patients.add(change["ID"])
-                    else:
-                        pass
-                curr = changes["Last"]
-
-                if changes["Done"] is True:
-                    logger.info("<{}> at newest change".format(server.label))
-                    break
-
-            update_patients -= new_patients
-            update_studies -= new_studies
-            if new_patients:
-                patient.create_patients(
-                    [orthanc.get_patient(p) for p in new_patients], server
-                )
-            if update_patients:
-                patient.update_patients(
-                    [orthanc.get_patient(p) for p in update_patients], server
-                )
-            if new_studies:
-                study.create_studies(
-                    [orthanc.get_study(s) for s in new_studies], server
-                )
-            if update_studies:
-                study.update_studies(
-                    [orthanc.get_study(s) for s in update_studies], server
-                )
-            server.last = curr
-            server.sync_time = datetime.now()
-            logger.info(
-                f"\n\nOrthanc server synchronization summary "
-                f"from {server.label} :\n"
-                f"Patients: New: {len(new_patients)} | "
-                f"Updated: {len(update_patients)}\n"
-                f"Studies: New: {len(new_studies)} |"
-                f"Updated: {len(update_studies)}\n"
-            )
-
-        cls.save(servers)
-
-    @staticmethod
-    def quick_check(domain, user, password):
-        """
-        Check if the server details are correct.
-
-        :param domain: The domain name or IP address of the Orthanc
-                       DICOM server.
-        :type domain: str
-
-        :param user: The username for authentication.
-        :type user: str
-
-        :param password: The password for authentication.
-        :type password: str
-
-        :return: ``True`` if the server details are valid,
-                 ``False`` otherwise.
-        :rtype: bool
-        """
-
-        try:
-            orthanc = RestClient(domain, auth=auth(user, password))
-            orthanc.get_changes(last=True)
-        except ConnectionError:
-            logger.exception(
-                "No connection to the server can be established."
-                "Check connectivity and port."
-            )
-            return False
-        except HTTPError as err:
-            status_code = err.response.status_code
-            if status_code in OrthancServerConfig.http_error_messages:
-                error_message = (
-                    OrthancServerConfig.http_error_messages[status_code] +
-                    f" {domain} not reacheable"
-                )
-                logger.exception(error_message)
-            else:
-                logger.exception("Unhandled HTTP error for <%s>", domain)
-            return False
-        except RequestException:
-            logger.exception(
-                "Unhandled request error for <%s> occurred", domain)
-            return False
-        return True
-
-    @fields.depends("domain", "user", "password")
-    def on_change_with_validated(self):
-        """
-        Update the ``validated`` field based on the current server details.
-
-        :return: A boolean value indicating whether the update was
-                 successful or not.
-        :rtype: bool
-
-        .. note:: This method follows the Tryton Syntax. The
-                  ``@fields.depends`` decorates the method to indicate
-                    that this field depends on other fields. In addition,
-                    ``on_change_with_`` is appended before the field name
-                    to indicate that the field should change depending on
-                    the parameters after ``@fields.depends``.
-
-        .. seealso:: React to user input and Add computed fields in Tryton
-                     documentation.
-        """
-
-        return self.quick_check(self.domain, self.user, self.password)
-
-    def get_since_sync(self, name):
-        """
-        Returns the time duration since the last synchronization.
-
-        :param name: Label of the server for which sinc time is to be obtained.
-        :type name: string
-
-        :return: The time duration since the last synchronization.
-        :rtype: class: ``trytond.model.fields.TimeDelta``
-        """
-
-        return datetime.now() - self.sync_time
-
-    def get_since_sync_readable(self, name):
-        """
-        Returns a human-readable string representing the time duration
-        since last synchronization.
-
-        :param name: Label of the server for which sinc time is to be obtained.
-        :type name: string
-
-        :return: A string representing the time duration since the last
-            synchronization in a human-readable format.
-        :rtype: str
-        """
-
-        try:
-            d = pendulum.now() - pendulum.instance(self.sync_time)
-            return d.in_words(Transaction().language)
-        except ValueError:
-            logger.exception(f"No locale found for {Transaction().language}")
-            return d.in_words('en')
-        except TypeError:
-            return f"No correct instance of {self.sync_time}!"
+    def get_rng(cls, type_):
+        rng = super(View, cls).get_rng(type_)
+        if type_ in ('form', 'list-form'):
+            widgets = rng.xpath(
+                '//ns:define/ns:optional/ns:attribute'
+                '/ns:name[.="widget"]/following-sibling::ns:choice',
+                namespaces={'ns': 'http://relaxng.org/ns/structure/1.0'})[0]
+            subelem = etree.SubElement(
+                widgets, '{http://relaxng.org/ns/structure/1.0}value')
+            subelem.text = 'dicombinary'
+        return rng
 
 
 class OrthancPatient(ModelSQL, ModelView):
@@ -1069,3 +698,7 @@ class Patient(metaclass=PoolMeta):
     orthanc_patients = fields.One2Many(
         "gnuhealth.orthanc.patient", "patient", "Orthanc patients"
     )
+
+    orthanc_studies = fields.One2Many(
+        'gnuhealth.imaging_orthanc.study',
+        'patient', 'Orthanc Study')

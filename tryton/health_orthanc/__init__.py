@@ -23,20 +23,22 @@ the ``health_orthanc`` module.
 
 from trytond.pool import Pool
 from . import health_orthanc
+from . import health_orthanc_configuration
 from . import wizard
 from . import ir
 
 
 def register():
     Pool.register(
+        health_orthanc.View,
         wizard.wizard.AddOrthancInit,
         wizard.wizard.AddOrthancResult,
-        health_orthanc.OrthancServerConfig,
         health_orthanc.OrthancStudy,
         health_orthanc.OrthancPatient,
         health_orthanc.TestResult,
         health_orthanc.Patient,
         ir.Cron,
+        health_orthanc_configuration.ServerConfig,
         module="health_orthanc",
         type_="model",
     )
