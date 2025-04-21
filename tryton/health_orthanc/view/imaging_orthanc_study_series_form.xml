@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form>
+    <group colspan='4' string="Series" id="study_series_form">
+        <label name="series_description"/>
+        <field name="series_description"/>
+        <label name="modality"/>
+        <field name="modality"/>
+        <group string="Viewers" colspan="4" id="wiewer_links">
+          <label name="stone_viewer_link"/>
+          <field name="stone_viewer_link" widget="url"/>
+        </group>
+    </group>
+    <newline/>
+    <group colspan="4" id="series_instances_group" yexpand = "1">
+        <field colspan="3" name="instances"/>
+    </group>    
+    <newline/>
+    <group string="Series Notes" colspan="4" id="series_notes">
+        <field name="notes" colspan="3"/>
+    </group>
+</form>

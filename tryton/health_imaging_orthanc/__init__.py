@@ -11,16 +11,14 @@
 #########################################################################
 
 
-from trytond.pool import Pool
-from . import health_imaging_orthanc
-from . import health_imaging_orthanc_configuration
-from . import wizard
+# from trytond.pool import Pool
+# from . import health_imaging_orthanc
+# from . import health_imaging_orthanc_configuration
+# from . import wizard
 
-
+"""
 def register():
-    """
-    Registers the models and wizards for the health_imaging_orthanc module.
-    """
+    # Registers the models and wizards for the health_imaging_orthanc module.
     Pool.register(
         health_imaging_orthanc.View,
         health_imaging_orthanc.TestResult,
@@ -41,3 +39,4 @@ def register():
         wizard.wizard_orthanc_config.ConnectNewOrthancServer,
         module='health_imaging_orthanc', type_='wizard'
     )
+"""

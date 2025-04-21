@@ -15,7 +15,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/orthanc_logo.svg</field>
         </record>
 
-        <!-- Orthanc Study -->
+        <!-- Orthanc Menu -->
+        <menuitem name="Orthanc" sequence="0" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
+
+
+        <!-- DEPRECATED IN GH 5.0 Orthanc Study
         <record model="ir.ui.view" id="orthanc_view_study_tree">
             <field name="model">gnuhealth.orthanc.study</field>
             <field name="type">tree</field>
@@ -27,6 +31,48 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="type">form</field>
             <field name="name">study_form</field>
         </record>
+        -->
+
+
+        <!-- Patient Orthanc Studies -->
+
+        <record model="ir.ui.view" id="view_imaging_orthanc_study_form">
+            <field name="model">gnuhealth.imaging_orthanc.study</field>
+            <field name="type">form</field>
+            <field name="name">imaging_orthanc_study_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_imaging_orthanc_study_tree">
+            <field name="model">gnuhealth.imaging_orthanc.study</field>
+            <field name="type">tree</field>
+            <field name="name">imaging_orthanc_study_tree</field>
+        </record>
+
+
+        <!-- New Act_Windows -->
+
+        <record model="ir.action.act_window" id="act_imaging_orthanc_patient_view">
+            <field name="name">Patients</field>
+            <field name="res_model">gnuhealth.patient</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_imaging_orthanc_study_view">
+            <field name="name">Studies</field>
+            <field name="res_model">gnuhealth.imaging_orthanc.study</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_imaging_orthanc_study_series_view">
+            <field name="name">Series</field>
+            <field name="res_model">gnuhealth.imaging_orthanc.study_series</field>
+        </record>
+
+
+        
+        <menuitem parent="orthanc_menu" action="act_imaging_orthanc_patient_view"
+            id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence= "10"/>
+
+        <menuitem parent="orthanc_menu" action="act_imaging_orthanc_study_view"
+            id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>
 
         <!-- Add Studies to Imaging Result Form -->
         <record model="ir.ui.view" id="imaging_study_view_orthanc">
@@ -62,7 +108,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Orthanc config menu -->
-        <menuitem name="Orthanc (Legacy)"
+        <menuitem name="Orthanc"
                   sequence="20"
                   parent="health_imaging.menu_imaging_test_parent"
                   id="orthanc_config_menu" icon="orthanc"/>
@@ -74,13 +120,16 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <menuitem name="Servers" sequence="20" parent="orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_server_menu" icon="gnuhealth-list"/>
 
-        <!-- Orthanc Menu -->
-        <menuitem name="Orthanc (Legacy)" sequence="0" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
-
         <record model="ir.action.act_window" id="act_orthanc_patient_view">
             <field name="name">Patients</field>
             <field name="res_model">gnuhealth.orthanc.patient</field>
         </record>
+
+        <menuitem parent="orthanc_menu" action="act_orthanc_patient_view" id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence="20"/>
+
+        <!-- DEPRECATED in GH 5.0 
+
+        <menuitem parent="orthanc_menu" action="act_orthanc_study_view" id="orthanc_menu_study_view" icon="gnuhealth.imaging" sequence="30"/>
 
         <record model="ir.action.act_window" id="act_orthanc_study_view">
             <field name="name">Studies</field>
@@ -90,7 +139,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <menuitem parent="orthanc_menu" action="act_orthanc_patient_view" id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence="20"/>
         <menuitem parent="orthanc_menu" action="act_orthanc_study_view" id="orthanc_menu_study_view" icon="gnuhealth.imaging" sequence="30"/>
 
-        <!-- Shortcut to related patient studies -->
+        
         <record model="ir.action.act_window" id="act_relate_orthanc_studies">
             <field name="name">Orthanc Studies</field>
             <field name="res_model">gnuhealth.orthanc.study</field>
@@ -102,6 +151,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="act_relate_orthanc_studies"/>
         </record>
 
+        -->
         <!-- Wizard and Views to add server -->
         <record model="ir.ui.view" id="view_orthanc_add_init">
             <field name="model">gnuhealth.orthanc.add.init</field>

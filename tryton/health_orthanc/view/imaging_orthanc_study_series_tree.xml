@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tree>
+    <field name="study" expand="1"/>
+    <field name="modality"/>
+    <field name="server" expand="1"/>
+    <field name="series_description" expand="1"/>
+    <field name="stone_viewer_link" widget="url"/>
+    <button name="delete_series"
+            string="Delele"
+            help="Delete study series from remote orthanc server."
+            confirm="Do you really want to delete the series from remote orthanc server? After deleting your selected series, remember to click 'Reload' to refresh the table if there are empty rows left!"/>
+</tree>
