@@ -20,6 +20,9 @@ from trytond.i18n import gettext
 
 import io
 
+from ..core import (get_institution_timezone,
+                    convert_date_timezone)
+
 try:
     from PIL import Image
 except ImportError:
@@ -34,32 +37,15 @@ __all__ = ['ReportDateAndTimeMixin',
 class ReportDateAndTimeMixin():
 
     @classmethod
-    def get_print_date(cls):
-        Company = Pool().get('company.company')
-
-        timezone = pytz.UTC
-        dt = datetime.now()
-        utc = dt.astimezone(pytz.UTC)
-        localdate = dt
-        company_id = Transaction().context.get('company')
-        if company_id:
-            company = Company(company_id)
-            if company.timezone:
-                timezone = pytz.timezone(company.timezone)
-                localdate = utc.astimezone(timezone)
-
-        return timezone, localdate
-
-    @classmethod
     def get_context(cls, records, header, data):
         context = super(
             ReportDateAndTimeMixin, cls).get_context(
                 records, header, data)
-        timezone, tzdate = cls.get_print_date()
+        tzdate = convert_date_timezone(datetime.now())
+        context['local_datetime'] = convert_date_timezone
         context['print_datetime'] = tzdate
-        context['print_date'] = tzdate.date()
-        context['print_time'] = tzdate.time()
-        context['tz'] = timezone
+        context['local_now'] = tzdate
+        context['tz'] = get_institution_timezone()
 
         return context
 

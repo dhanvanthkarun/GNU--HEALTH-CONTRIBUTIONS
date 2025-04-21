@@ -25,7 +25,26 @@ import os
 import json
 
 
-def convert_date_timezone(sdate, target):
+def get_institution_timezone():
+    """
+    Return timezone of current institution,
+    if not found, return UTC as fallback.
+    """
+
+    Company = Pool().get('company.company')
+
+    timezone = pytz.UTC
+    company_id = Transaction().context.get('company')
+
+    if company_id:
+        company = Company(company_id)
+        if company.timezone:
+            timezone = pytz.timezone(company.timezone)
+
+    return timezone
+
+
+def convert_date_timezone(sdate, target=None):
     """
     Convert dates from UTC to local timezone and viceversa
     Datetime values are stored in UTC, so we need conversion
@@ -33,7 +52,7 @@ def convert_date_timezone(sdate, target):
 
     Company = Pool().get('company.company')
 
-    institution_timezone = None
+    institution_timezone = pytz.UTC
     company_id = Transaction().context.get('company')
     if company_id:
         company = Company(company_id)
