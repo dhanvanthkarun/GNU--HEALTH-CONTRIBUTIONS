@@ -17,8 +17,7 @@ from trytond.i18n import gettext
 
 import io
 
-from ..core import (get_institution_timezone,
-                    convert_date_timezone)
+from ..core import (get_institution_timezone)
 
 try:
     from PIL import Image
