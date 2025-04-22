@@ -186,7 +186,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
 
     def get_link_base_url(self, name):
         pool = Pool()
-        Config = pool.get('gnuhealth.imaging_orthanc.server_config')
+        Config = pool.get('gnuhealth.orthanc.config')
         server_configs = Config.search([('domain', '=', self.server)])
         if len(server_configs) == 0:
             return self.server
@@ -224,7 +224,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         """
         records_to_delete = []
         try:
-            Config = Pool().get('gnuhealth.imaging_orthanc.server_config')
+            Config = Pool().get('gnuhealth.orthanc.config')
             servers = Config.search([])
             for record in records:
                 for conf_server in servers:
@@ -266,7 +266,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         # processing changes to studies, series, and instances.
         try:
             pool = Pool()
-            Config = pool.get('gnuhealth.imaging_orthanc.server_config')
+            Config = pool.get('gnuhealth.orthanc.config')
             server_configs = Config.search([])
             for server_config in server_configs:
                 client = Orthanc(
@@ -583,7 +583,7 @@ class PatientOrthancStudy(ModelSQL, ModelView):
             # Get all studies that are already in gnuhealth
             gh_studies = Study.search([])
             # Get studies from Orthanc servers
-            Config = pool.get('gnuhealth.imaging_orthanc.server_config')
+            Config = pool.get('gnuhealth.orthanc.config')
             servers = Config.search([])
             for server in servers:
                 client = Orthanc(
@@ -876,7 +876,7 @@ class StudySeries(ModelSQL, ModelView):
         """
         records_to_delete = []
         try:
-            Config = Pool().get('gnuhealth.imaging_orthanc.server_config')
+            Config = Pool().get('gnuhealth.orthanc.config')
             servers = Config.search([])
             for record in records:
                 for conf_server in servers:
@@ -993,7 +993,7 @@ class SeriesInstances(ModelSQL, ModelView):
         :return: The image data in PNG format if successful, None otherwise.
         """
         try:
-            Config = Pool().get('gnuhealth.imaging_orthanc.server_config')
+            Config = Pool().get('gnuhealth.orthanc.config')
             servers = Config.search([])
             for conf_server in servers:
                 if conf_server.domain == self.server:

@@ -16,7 +16,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Orthanc Menu -->
-        <menuitem name="Orthanc" sequence="0" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
+        <menuitem name="Orthanc" sequence="200" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
 
 
         <!-- New Act_Windows -->
@@ -138,13 +138,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/delete.svg</field>
         </record> -->
 
-        <!-- Parent menu item -->
-
-        <menuitem name="Orthanc"
-                  sequence="0"
-                  parent="health_imaging.menu_imaging"
-                  id="menu_imaging_orthanc_parent"
-                  icon="orthanc"/>
 
         <!-- Views -->
 
@@ -243,10 +236,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Menu items -->
-        <menuitem parent="menu_imaging_orthanc_parent" action="act_imaging_orthanc_patient_view"
+        <menuitem parent="orthanc_menu" action="act_imaging_orthanc_patient_view"
             id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence= "10"/>
 
-        <menuitem parent="menu_imaging_orthanc_parent" action="act_imaging_orthanc_study_view"
+        <menuitem parent="orthanc_menu" action="act_imaging_orthanc_study_view"
             id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>
 
 

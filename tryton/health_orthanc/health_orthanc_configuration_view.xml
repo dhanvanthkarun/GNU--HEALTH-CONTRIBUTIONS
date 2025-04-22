@@ -29,9 +29,9 @@
             <field name="res_model">gnuhealth.orthanc.config</field>
         </record>
 
-        <!-- Orthanc config menu -->
+        <!-- Orthanc Server configuration menu -->
         <menuitem name="Orthanc"
-                  sequence="20"
+                  sequence="200"
                   parent="health_imaging.menu_imaging_test_parent"
                   id="orthanc_config_menu"
                   icon="orthanc"/>
