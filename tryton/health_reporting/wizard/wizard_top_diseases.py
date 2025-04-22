@@ -46,7 +46,7 @@ class TopDiseases(ModelSQL, ModelView):
             DiseaseGroupMembers = pool.get('gnuhealth.disease_group.members')
             diseasegroupmembers = DiseaseGroupMembers.__table__()
             join = Join(evaluation, diseasegroupmembers)
-            join.condition = join.right.name == evaluation.diagnosis
+            join.condition = join.right.disease == evaluation.diagnosis
             where &= join.right.disease_group == Transaction().context['group']
             source = join
 
