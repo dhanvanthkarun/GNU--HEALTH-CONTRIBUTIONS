@@ -107,7 +107,7 @@ class TestResult(metaclass=PoolMeta):
         "imaging_test", "Orthanc studies",
         readonly=True)
 
-    # Deprecated in GH 5.0 . Use orthanc_studies
+    # Deprecated in GH 5.0 . Use orthanc_studies.
     studies = fields.One2Many(
         "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies",
         readonly=True
@@ -223,9 +223,14 @@ class OrthancPatient(ModelSQL, ModelView):
     bd = fields.Date("Birthdate", readonly=True)
     ident = fields.Char("PatientID", readonly=True)
     uuid = fields.Char("PatientUUID", readonly=True, required=True)
+    patient_studies = fields.One2Many(
+        "gnuhealth.imaging_orthanc.study", "patient", "Studies", readonly=True
+    )
+    #deprecated in GH 5.0 . Use patient_studies
     studies = fields.One2Many(
         "gnuhealth.orthanc.study", "patient", "Studies", readonly=True
     )
+
     server = fields.Many2One(
         "gnuhealth.orthanc.config", "Server", readonly=True)
     link = fields.Function(
