@@ -1462,7 +1462,7 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">DoB:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table1.C2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;newborn.birth_date&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;newborn.birth_date and format_datetime(newborn.birth_date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Table1.1">
@@ -1545,7 +1545,7 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">DoB:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table3.C2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;newborn.birth_date&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;newborn.birth_date and format_datetime(newborn.birth_date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Table3.1">
