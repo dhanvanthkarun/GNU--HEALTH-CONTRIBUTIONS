@@ -31,8 +31,6 @@ from . import ir
 def register():
     Pool.register(
         health_orthanc.View,
-        wizard.wizard.AddOrthancInit,
-        wizard.wizard.AddOrthancResult,
         health_orthanc.PatientOrthancStudy,
         health_orthanc.OrthancPatient,
         health_orthanc.TestResult,
@@ -42,6 +40,10 @@ def register():
         health_orthanc_configuration.ServerConfig,
         health_orthanc.OrthancStudyDEPRECATED,
         ir.Cron,
+        wizard.wizard_upload_image_data.UploadImageDataStart,
+        wizard.wizard_get_new_studies.GetNewStudiesStart,
+        wizard.wizard_full_synchronize.FullSynchronizeStart,
+        wizard.wizard_orthanc_config.AddOrthancInitData,
         module="health_orthanc",
         type_="model",
     )

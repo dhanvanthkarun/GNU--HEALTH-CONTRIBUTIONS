@@ -29,7 +29,7 @@ class FullSynchronize(Wizard):
 
     start = StateView(
         'gnuhealth.imaging_orthanc.full_synchronize.start',
-        'health_imaging_orthanc.full_synchronize_start_form', [
+        'health_orthanc.full_synchronize_start_form', [
             Button("Cancel", 'end', 'tryton-cancel'),
             Button("Synchronize", 'synchronize', 'tryton-ok'),
         ])

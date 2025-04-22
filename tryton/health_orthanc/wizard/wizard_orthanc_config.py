@@ -52,7 +52,7 @@ class ConnectNewOrthancServer(Wizard):
 
     start = StateView(
         "gnuhealth.imaging_orthanc.orthanc_add_init_data",
-        "health_imaging_orthanc.view_orthanc_add_init_data",
+        "health_orthanc.view_orthanc_add_init_data",
         [
             Button("Cancel", "end", "tryton-cancel"),
             Button("Connect", "connect", "tryton-ok", default=True),

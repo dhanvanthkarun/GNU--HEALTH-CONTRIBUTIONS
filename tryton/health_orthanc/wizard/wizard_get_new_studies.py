@@ -28,7 +28,7 @@ class GetNewStudies(Wizard):
 
     start = StateView(
         'gnuhealth.imaging_orthanc.get_new_studies.start',
-        'health_imaging_orthanc.get_new_studies_start_form',
+        'health_orthanc.get_new_studies_start_form',
         [Button("Cancel", 'end', 'tryton-cancel'),
          Button("Start", 'update', 'tryton-ok'),
          ])

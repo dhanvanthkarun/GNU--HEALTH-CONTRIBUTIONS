@@ -41,7 +41,7 @@ class UploadImageData(Wizard):
     __name__ = 'gnuhealth.imaging_orthanc.upload_image_data'
     start = StateView(
         'gnuhealth.imaging_orthanc.upload_image_data.start',
-        'health_imaging_orthanc.upload_image_data_start_form',
+        'health_orthanc.upload_image_data_start_form',
         [Button('Cancel', 'end', 'tryton-cancel'),
          Button('Upload Image Data',
                 'upload', 'tryton-ok',
