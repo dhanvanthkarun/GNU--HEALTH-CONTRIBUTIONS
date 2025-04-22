@@ -1414,7 +1414,7 @@
       <text:p text:style-name="GH-Table-RLabel">Date:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;format_date(interpretation.date, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;format_datetime(interpretation.date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
       <text:p text:style-name="GH-Table-RLabel">Print Date:</text:p>

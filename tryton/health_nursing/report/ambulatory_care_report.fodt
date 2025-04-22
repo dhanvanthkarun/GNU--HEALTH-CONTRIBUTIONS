@@ -1315,13 +1315,13 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">Start:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table1.A2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;session.session_start and format_date(session.session_start, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;session.session_start and format_datetime(session.session_start, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table1.A2" office:value-type="string">
       <text:p text:style-name="GH-Table-Label-Right-Bold">End:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table1.D2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;session.session_end and format_date(session.session_end, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;session.session_end and format_datetime(session.session_end, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="Table1.4">
@@ -1330,7 +1330,7 @@
      </table:table-cell>
      <table:covered-table-cell/>
      <table:table-cell table:style-name="Table1.C4" table:number-columns-spanned="2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;session.next_session and format_date(session.next_session, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;session.next_session and format_datetime(session.next_session, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
     </table:table-row>

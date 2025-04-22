@@ -2241,10 +2241,10 @@
       <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;medication.indication and medication.indication.name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella1.A4" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;medication.start_treatment and format_date(medication.start_treatment, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;medication.start_treatment and format_datetime(medication.start_treatment, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella1.A4" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;medication.end_treatment and format_date(medication.end_treatment, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;medication.end_treatment and format_datetime(medication.end_treatment, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella1.E4" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;medication.is_active and &apos;*&apos; or &apos;&apos;&gt;</text:placeholder></text:p>
@@ -2491,7 +2491,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table18.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;surgery.surgery_date and format_date(surgery.surgery_date, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;surgery.surgery_date and format_datetime(surgery.surgery_date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table18.B2" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;surgery.description&gt;</text:placeholder></text:p>
@@ -2608,10 +2608,10 @@
       <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;vaccination.dose or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla2.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;vaccination.date and format_date(vaccination.date, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;vaccination.date and format_datetime(vaccination.date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla2.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;vaccination.next_dose_date and format_date(vaccination.next_dose_date, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;vaccination.next_dose_date and format_datetime(vaccination.next_dose_date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla2.E2" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center-Small"><text:placeholder text:placeholder-type="text">&lt;vaccination.observations or &apos;&apos;&gt;</text:placeholder></text:p>

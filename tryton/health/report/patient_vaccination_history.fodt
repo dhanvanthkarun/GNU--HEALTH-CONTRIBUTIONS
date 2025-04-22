@@ -1324,10 +1324,10 @@
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;vaccination.dose or &apos;&apos;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla2.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;vaccination.date and format_date(vaccination.date, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;vaccination.date and format_datetime(vaccination.date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla2.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;vaccination.next_dose_date and format_date(vaccination.next_dose_date, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;vaccination.next_dose_date and format_datetime(vaccination.next_dose_date, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabla2.E2" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;vaccination.observations or &apos;&apos;&gt;</text:placeholder></text:p>

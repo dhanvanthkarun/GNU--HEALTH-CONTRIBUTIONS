@@ -1574,7 +1574,7 @@
     </table:table-row>
     <table:table-row table:style-name="Table7.1">
      <table:table-cell table:style-name="Table7.A2" table:number-rows-spanned="2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;format_date(death_cert.dod, user.language)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;format_datetime(death_cert.dod, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.A5" office:value-type="string">
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;death_cert.type_of_death_str&gt;</text:placeholder></text:p>
