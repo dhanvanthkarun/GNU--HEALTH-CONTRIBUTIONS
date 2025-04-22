@@ -18,7 +18,7 @@ printf "\n\n\nRunning reuse linting\n"
 reuse --root tryton/ lint  || exit_status=$?
 
 printf "\n\n\nRunning fodt direct formatting test ...\n\n"
-find $(pwd) -type f -name "*.fodt" -print0 | while IFS= read -r -d '' file; do
+find $PWD -type f -name "*.fodt" -print0 | while IFS= read -r -d '' file; do
     if [[ ! "$file" == *"default_gnuhealth_report_template"* ]]; then
        if grep -q "text:span text:style-name=" "$file" || \
                grep -q "  <text:s/>" "$file" || \
@@ -34,6 +34,19 @@ find $(pwd) -type f -name "*.fodt" -print0 | while IFS= read -r -d '' file; do
            echo ""
            exit_status=1
        fi
+    fi
+done
+
+printf "\n\n\nRunning fodt Date and DateTime field test ...\n\n"
+find $PWD -type f -name "*.fodt" -print0 | while IFS= read -r -d '' file; do
+    if grep -q "date&gt;<" "$file" || \
+            grep -q "time&gt;<" "$file"; then
+        echo ""
+        echo "* WARN: Date and DateTime fields suggest handle by format_date or format_datetime function"
+        echo ""
+        echo "  1. xdg-open $file"
+        echo ""
+        exit_status=1
     fi
 done
 
