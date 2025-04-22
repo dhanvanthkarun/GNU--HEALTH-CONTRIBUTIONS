@@ -1245,7 +1245,7 @@
       <text:p text:style-name="GH-Table-Label-Right-Bold">Date:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table2.A2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;healthservice.service_date&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;healthservice.service_date and format_date(healthservice.service_date, lang=user.language)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table2.A2" office:value-type="string">
       <text:p text:style-name="GH-Table-Label-Right-Bold">PUID:</text:p>
@@ -1350,10 +1350,10 @@
       <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;line.qty&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table1.A2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;line.from_date&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;line.from_date and format_date(line.from_date, lang=user.language)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table1.E2" office:value-type="string">
-      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;line.to_date&gt;</text:placeholder></text:p>
+      <text:p text:style-name="GH-Table-Contents-Center"><text:placeholder text:placeholder-type="text">&lt;line.to_date and format_date(line.to_date, lang=user.language)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
