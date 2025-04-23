@@ -37,10 +37,43 @@ find $PWD -type f -name "*.fodt" -print0 | while IFS= read -r -d '' file; do
     fi
 done
 
+printf "\n\n\nRunning odt direct formatting test ...\n\n"
+find $PWD -type f -name "*.odt" -print0 | while IFS= read -r -d '' file; do
+    unzip_cmd="unzip -p $file content.xml"
+    if  $unzip_cmd | grep -q "text:span text:style-name=" || \
+            $unzip_cmd | grep -q "  <text:s/>" || \
+            $unzip_cmd | grep -q "text:span><text:span" ; then
+        echo "* WARN: Direct formatting found, it MAYBE impact translation ..."
+        echo ""
+        echo "  1. xdg-open $file"
+        echo "  2. Click: Edit -> Select ALL"
+        echo "  3. Click: Format -> Clean Direct Formatting"
+        echo "  4. Save file."
+        echo ""
+        echo "* More info: https://docs.gnuhealth.org/his/techguide/development/reports.html"
+        echo ""
+        exit_status=1
+    fi
+done
+
 printf "\n\n\nRunning fodt Date and DateTime field test ...\n\n"
 find $PWD -type f -name "*.fodt" -print0 | while IFS= read -r -d '' file; do
     if grep -q "date&gt;<" "$file" || \
             grep -q "time&gt;<" "$file"; then
+        echo ""
+        echo "* WARN: Date and DateTime fields suggest handle by format_date or format_datetime function"
+        echo ""
+        echo "  1. xdg-open $file"
+        echo ""
+        exit_status=1
+    fi
+done
+
+printf "Running odt Date and DateTime field test ...\n\n"
+find $PWD -type f -name "*.odt" -print0 | while IFS= read -r -d '' file; do
+    unzip_cmd="unzip -p $file content.xml"
+    if $unzip_cmd | grep -q "date&gt;<" || \
+            $unzip_cmd | grep -q "time&gt;<"; then
         echo ""
         echo "* WARN: Date and DateTime fields suggest handle by format_date or format_datetime function"
         echo ""
