@@ -17,10 +17,11 @@ from trytond.tests.test_tryton import ModuleTestCase
 
 
 class HealthTestCase(ModuleTestCase):
-    '''
-    Test Health module.
-    '''
+    "Test Health package"
     module = 'health'
+
+
+del ModuleTestCase
 
 
 def suite():
