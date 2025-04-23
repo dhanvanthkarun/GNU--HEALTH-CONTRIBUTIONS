@@ -17,7 +17,7 @@ from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import PoolMeta, Pool
 from trytond.exceptions import UserError
 from pyorthanc import Orthanc
-from lxml import etree
+# from lxml import etree
 
 try:
     from trytond.modules.health_imaging_worklist.health_imaging_worklist \
