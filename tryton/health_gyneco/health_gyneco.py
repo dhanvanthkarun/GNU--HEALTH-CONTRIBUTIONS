@@ -217,18 +217,26 @@ class PatientPregnancy(ModelSQL, ModelView):
             return self.patient.hb
 
     # Show the values from patient upon entering the history
-    @fields.depends('patient')
+    @fields.depends(
+        'patient',
+        '_parent_patient.gravida',
+        '_parent_patient.premature',
+        '_parent_patient.abortions',
+        '_parent_patient.stillbirths',
+        '_parent_patient.blood_type',
+        '_parent_patient.rh',
+        '_parent_patient.hb')
     def on_change_patient(self):
         # Obsterics info
-        self.gravidae = self.patient.gravida
-        self.premature = self.patient.premature
-        self.abortions = self.patient.abortions
-        self.stillbirths = self.patient.stillbirths
+        self.gravidae = self.patient and self.patient.gravida
+        self.premature = self.patient and self.patient.premature
+        self.abortions = self.patient and self.patient.abortions
+        self.stillbirths = self.patient and self.patient.stillbirths
         # Rh
-        self.blood_type = self.patient.blood_type
-        self.rh = self.patient.rh
+        self.blood_type = self.patient and self.patient.blood_type
+        self.rh = self.patient and self.patient.rh
         # Hb
-        self.hb = self.patient.hb
+        self.hb = self.patient and self.patient.hb
 
     @fields.depends('current_pregnancy', 'pregnancy_end_date', 'lmp')
     def on_change_pregnancy_end_date(self):
@@ -686,7 +694,7 @@ class PregnancyResult(ModelSQL, ModelView):
             ('is_person', '=', True),
             ('dob', '=', Eval('dob')),
             ],
-        depends=['name', 'pregnancy'])
+        depends=['pregnancy', 'dob'])
 
     dob = fields.Function(fields.Date('Date of birth'), 'get_dob')
     delivery_mode = fields.Selection([
@@ -708,7 +716,8 @@ class PregnancyResult(ModelSQL, ModelView):
             return self.pregnancy.pregnancy_end_date.date()
 
     # Get the baby date of birth from pregnancy end date
-    @fields.depends('result', '_parent_pregnancy.pregnancy_end_date')
+    @fields.depends(
+        'result', 'pregnancy', '_parent_pregnancy.pregnancy_end_date')
     def on_change_result(self):
         if (self.pregnancy):
             self.dob = self.pregnancy.pregnancy_end_date.date()
@@ -879,8 +888,8 @@ class PatientMenstrualHistory(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
-        domain=[('patient', '=', Eval('name'))],
-        depends=['name'])
+        domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'])
     evaluation_date = fields.Date(
         'Date', help="Evaluation Date",
         required=True)
@@ -947,8 +956,8 @@ class PatientMammographyHistory(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
-        domain=[('patient', '=', Eval('name'))],
-        depends=['name'])
+        domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'])
     evaluation_date = fields.Date('Date', help="Date", required=True)
     last_mammography = fields.Date('Previous', help="Last Mammography")
     result = fields.Selection([
@@ -1063,8 +1072,8 @@ class PatientColposcopyHistory(ModelSQL, ModelView):
         'gnuhealth.patient', 'Patient', readonly=True, required=True)
     evaluation = fields.Many2One(
         'gnuhealth.patient.evaluation', 'Evaluation',
-        domain=[('patient', '=', Eval('name'))],
-        depends=['name'])
+        domain=[('patient', '=', Eval('patient'))],
+        depends=['patient'])
     evaluation_date = fields.Date('Date', help="Date", required=True)
     last_colposcopy = fields.Date('Previous', help="Last colposcopy")
     result = fields.Selection([
