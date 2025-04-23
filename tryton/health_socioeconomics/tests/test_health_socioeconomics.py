@@ -15,6 +15,9 @@ class HealthSocioeconomicsTestCase(ModuleTestCase):
     module = 'health_socioeconomics'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

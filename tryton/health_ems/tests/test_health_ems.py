@@ -15,6 +15,9 @@ class HealthISSTestCase(ModuleTestCase):
     module = 'health_iss'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

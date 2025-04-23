@@ -15,6 +15,9 @@ class HealthPediatricsGrowthChartsWHOTestCase(ModuleTestCase):
     module = 'health_pediatrics_growth_charts_who'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

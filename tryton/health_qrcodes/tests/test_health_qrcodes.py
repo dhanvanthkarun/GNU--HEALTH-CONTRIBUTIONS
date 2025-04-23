@@ -15,6 +15,9 @@ class HealthQRcodesTestCase(ModuleTestCase):
     module = 'health_qrcodes'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

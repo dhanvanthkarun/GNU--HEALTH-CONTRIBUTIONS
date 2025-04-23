@@ -15,6 +15,9 @@ class HealthNTDDengueTestCase(ModuleTestCase):
     module = 'health_ntd_dengue'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

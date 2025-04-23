@@ -15,6 +15,9 @@ class HealthMDG6TestCase(ModuleTestCase):
     module = 'health_mdg6'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

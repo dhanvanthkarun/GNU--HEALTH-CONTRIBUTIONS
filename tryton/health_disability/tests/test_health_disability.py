@@ -15,6 +15,9 @@ class HealthDisabilityTestCase(ModuleTestCase):
     module = 'health_disability'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

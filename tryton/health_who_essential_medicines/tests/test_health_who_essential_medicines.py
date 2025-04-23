@@ -15,6 +15,9 @@ class HealthWHOEssentialMedicinesTestCase(ModuleTestCase):
     module = 'health_who_essential_medicines'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(

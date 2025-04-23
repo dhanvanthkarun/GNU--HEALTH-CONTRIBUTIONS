@@ -15,6 +15,9 @@ class HealthSurgeryProtocolsTestCase(ModuleTestCase):
     module = 'health_surgery_protocols'
 
 
+del ModuleTestCase
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
