@@ -28,12 +28,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         
-        <menuitem parent="orthanc_menu" action="act_imaging_orthanc_patient_view"
-            id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence= "10"/>
-
-        <menuitem parent="orthanc_menu" action="act_imaging_orthanc_study_view"
-            id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>
-
         <!-- Add Studies to Imaging Result Form -->
         <record model="ir.ui.view" id="imaging_study_view_orthanc">
             <field name="model">gnuhealth.imaging.test.result</field>
@@ -241,7 +235,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <menuitem parent="orthanc_menu" action="act_imaging_orthanc_study_view"
             id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>
-
 
     </data>
 </tryton>
