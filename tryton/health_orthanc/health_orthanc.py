@@ -165,8 +165,10 @@ class Patient(metaclass=PoolMeta):
         'gnuhealth.imaging_orthanc.study',
         'patient', 'Orthanc Study')
 
+# Deprecated in GH 5.0 in favor of Patient class
 
-class OrthancPatient(ModelSQL, ModelView):
+
+class OrthancPatientDEPRECATED(ModelSQL, ModelView):
     """Orthanc patient information"""
     """
     Defines an Orthanc Patient.
