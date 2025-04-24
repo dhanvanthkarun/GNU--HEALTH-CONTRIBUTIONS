@@ -41,8 +41,8 @@ class Move(metaclass=PoolMeta):
         ]
 
 
-class PatientRounding(Workflow, ModelSQL, ModelView):
-    'Patient Ambulatory Care'
+class PatientRounding(Workflow, metaclass=PoolMeta):
+    'Patient Rounding'
     __name__ = 'gnuhealth.patient.rounding'
 
     hospitalization_location = fields.Many2One(
@@ -173,7 +173,8 @@ class PatientRoundingMedicament(ModelSQL, ModelView):
     'Patient Rounding Medicament'
     __name__ = 'gnuhealth.patient.rounding.medicament'
 
-    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Ambulatory ID')
+    rounding = fields.Many2One(
+        'gnuhealth.patient.rounding', 'Rounding ID', required=True)
     medicament = fields.Many2One(
         'gnuhealth.medicament', 'Medicament',
         required=True)
@@ -190,11 +191,11 @@ class PatientRoundingMedicament(ModelSQL, ModelView):
     def default_quantity():
         return 1
 
-    @fields.depends('medicament')
+    @fields.depends(
+        'medicament', 'product', '_parent_medicament.product')
     def on_change_medicament(self):
         if self.medicament:
             self.product = self.medicament.product.id
-
         else:
             self.product = None
 
@@ -203,7 +204,7 @@ class PatientRoundingMedicalSupply(ModelSQL, ModelView):
     'Patient Rounding Medical Supply'
     __name__ = 'gnuhealth.patient.rounding.medical_supply'
 
-    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Ambulatory ID')
+    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Rounding ID')
     product = fields.Many2One(
         'product.product', 'Medical Supply',
         domain=[('is_medical_supply', '=', True)], required=True)

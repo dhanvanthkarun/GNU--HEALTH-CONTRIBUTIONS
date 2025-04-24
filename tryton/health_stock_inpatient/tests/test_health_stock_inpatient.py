@@ -8,11 +8,9 @@ import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
 
-class HealthStockTestCase(ModuleTestCase):
-    '''
-    Test HealthStock module.
-    '''
-    module = 'health_stock'
+class HealthStockInpatientTestCase(ModuleTestCase):
+    "Test HealthStockInpatient package"
+    module = 'health_stock_inpatient'
 
 
 del ModuleTestCase
@@ -21,5 +19,5 @@ del ModuleTestCase
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        HealthStockTestCase))
+        HealthStockInpatientTestCase))
     return suite
