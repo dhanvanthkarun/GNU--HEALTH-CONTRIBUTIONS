@@ -57,7 +57,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         
         <record model="ir.action.act_window" id="act_orthanc_patient_view">
             <field name="name">Patients</field>
-            <field name="res_model">gnuhealth.orthanc.patient</field>
+            <field name="res_model">gnuhealth.patient</field>
         </record>
 
         <menuitem parent="orthanc_menu" action="act_orthanc_patient_view" id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence="20"/>
