@@ -31,13 +31,13 @@ from . import ir
 def register():
     Pool.register(
         health_orthanc.View,
-        health_orthanc.PatientOrthancStudy,
-        health_orthanc.OrthancPatient,
-        health_orthanc.TestResult,
         health_orthanc.Patient,
+        health_orthanc.TestResult,
+        health_orthanc.PatientOrthancStudy,
         health_orthanc.StudySeries,
         health_orthanc.SeriesInstances,
         health_orthanc_configuration.ServerConfig,
+        health_orthanc.OrthancPatientDEPRECATED,
         health_orthanc.OrthancStudyDEPRECATED,
         ir.Cron,
         wizard.wizard_upload_image_data.UploadImageDataStart,

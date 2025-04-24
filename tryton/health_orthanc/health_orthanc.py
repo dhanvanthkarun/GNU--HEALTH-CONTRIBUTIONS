@@ -48,7 +48,7 @@ except ImportError:
 __all__ = [
     "View",
     "TestResult",
-    "OrthancPatient",
+    "OrthancPatientDEPRECATED",
     "PatientOrthancStudy",
     "Patient",
     'StudySeries',
