@@ -9,9 +9,7 @@ from trytond.tests.test_tryton import ModuleTestCase
 
 
 class HealthStockNursingTestCase(ModuleTestCase):
-    '''
-    Test HealthStock module.
-    '''
+    "Test HealthStockNursing package"
     module = 'health_stock_nursing'
 
 
