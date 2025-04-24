@@ -323,10 +323,11 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient')
+    @fields.depends('patient', 'gender', '_parent_patient.age')
     def on_change_patient(self):
-        self.gender = self.patient.gender
-        self.computed_age = self.patient.age
+        if self.patient:
+            self.gender = self.patient.gender
+            self.computed_age = self.patient.age
 
     @classmethod
     @ModelView.button
