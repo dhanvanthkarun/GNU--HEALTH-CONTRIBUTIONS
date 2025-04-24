@@ -712,7 +712,14 @@ class PregnancyResult(ModelSQL, ModelView):
         'Comments', help="Short extra information")
 
     def get_dob(self, name):
-        if self.pregnancy:
+        if self.pregnancy and self.pregnancy.pregnancy_end_date:
+            return self.pregnancy.pregnancy_end_date.date()
+
+    # Retrieve date of birth upon entering the pregnancy
+    @fields.depends(
+        'pregnancy', '_parent_pregnancy.pregnancy_end_date')
+    def on_change_pregnancy(self):
+        if self.pregnancy and self.pregnancy.pregnancy_end_date:
             return self.pregnancy.pregnancy_end_date.date()
 
     # Get the baby date of birth from pregnancy end date
