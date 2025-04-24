@@ -96,15 +96,14 @@ class PatientVaccination(metaclass=PoolMeta):
         domain=[('product', '=', Eval('product'))],
         help="This field includes the lot number and expiration date")
 
-    @fields.depends('lot')
+    @fields.depends('lot', 'date')
     def on_change_lot(self):
         # Check expiration date on the vaccine lot
-        if self.lot:
+        if self.lot and self.date:
             if self.lot.expiration_date < datetime.date(self.date):
                 raise ExpiredVaccine(
                     gettext('health_stock.msg_expired_vaccine')
                 )
-        return {}
 
     @classmethod
     def copy(cls, vaccinations, default=None):

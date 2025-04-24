@@ -1,19 +1,31 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
+
+GNU Health Stock Module
+#######################
+
+This module adds several links between health center operations and stock
+management.
+
+- Add stock quantity field on Medicaments.
+- Add wizard to create the Pharmacy Stock Moves from the Patient Prescription.
+- Allows to register medicaments, medical supplies and vaccines in core package.
+  Ambulatory care and inpatient have their own packages.
+
 
 GNU Health HMIS: Libre Hospital Management and Health Information System
 ========================================================================
  
 The GNU Health HMIS provides the following functionality:
 
-#. **Hospital Management Information System (HMIS)**
-#. **Electronic Medical Record (EMR)**
-#. **Health Information System (HIS)**
-#. **Laboratory Information System (LIS)**
+#. **Hospital Management Information System**
+#. **Electronic Medical Record**
+#. **Health Information System**
+#. **Laboratory Information System**
 
 The Hospital and Health Information System component (HMIS) from GNU Health (GH) 
 provides over 40 standard-based packages (primary care, obstetrics & gynecology,
@@ -115,8 +127,8 @@ License
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
