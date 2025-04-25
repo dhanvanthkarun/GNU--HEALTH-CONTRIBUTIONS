@@ -1,12 +1,19 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health HIS: Libre Hospital Information System
-=================================================
+CalDAV package for the GNU Health HIS appointments
+##################################################
+
+The health-calendar adds CalDAV functionality to manage patient appointments and
+calendar events.
+
+
+About GNU Health HIS, the Libre Hospital Information System
+============================================================
  
 Welcome to the Hospital Information System (HIS) of GNU Health!
 
@@ -37,9 +44,10 @@ technology in bioinformatics and genetics. It provides a holistic approach
 to the  person, from the biological and molecular basis of disease to 
 the social and environmental determinants of health.
 
-This component is ready to integrate in the **GNU Health Federation**, which
-allows to interconnect heterogeneous nodes and build large federated health 
-networks across a region, province or country.
+The GNU Health Hospital Management component integrates with the
+**GNU Health Federation**, which allows to interconnect heterogeneous
+nodes and build large federated health networks across a province, country or
+region.
 
 
 Homepage
@@ -126,8 +134,8 @@ License
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
