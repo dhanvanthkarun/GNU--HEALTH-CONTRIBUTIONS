@@ -9,25 +9,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <tryton>
     <data>
-        <!-- Orthanc icon -->
-        <record model="ir.ui.icon" id="orthanc_icon">
-            <field name="name">orthanc</field>
-            <field name="path">icons/orthanc_logo.svg</field>
-        </record>
+        <!-- DEPRECATED in GH 5.0 
 
-        <!-- Orthanc Menu -->
-        <menuitem name="Orthanc" sequence="200" id="orthanc_menu" parent="health_imaging.menu_imaging" icon="orthanc"/>
-
-
-        <!-- New Act_Windows -->
-
- 
-        <record model="ir.action.act_window" id="act_imaging_orthanc_study_view">
-            <field name="name">Studies</field>
-            <field name="res_model">gnuhealth.imaging_orthanc.study</field>
-        </record>
-        
-        <!-- Orthanc Patient -->
         <record model="ir.ui.view" id="orthanc_view_patient_tree">
             <field name="model">gnuhealth.orthanc.patient</field>
             <field name="type">tree</field>
@@ -39,8 +22,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="type">form</field>
             <field name="name">patient_form</field>
         </record>
-
-        <!-- Orthanc config  
         
         <record model="ir.ui.view" id="orthanc_view_config_tree">
             <field name="model">gnuhealth.orthanc.config</field>
@@ -53,17 +34,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="type">form</field>
             <field name="name">config_form</field>
         </record>
-        -->
         
-        <record model="ir.action.act_window" id="act_orthanc_patient_view">
-            <field name="name">Patients</field>
-            <field name="res_model">gnuhealth.patient</field>
-        </record>
-
-        <menuitem parent="orthanc_menu" action="act_orthanc_patient_view" id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence="20"/>
-
-        <!-- DEPRECATED in GH 5.0 
-
         <menuitem parent="orthanc_menu" action="act_orthanc_study_view" id="orthanc_menu_study_view" icon="gnuhealth.imaging" sequence="30"/>
 
         <record model="ir.action.act_window" id="act_orthanc_study_view">
@@ -104,30 +75,23 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="wiz_name">gnuhealth.orthanc.wizard.full_sync</field>
         </record>
         <menuitem parent="orthanc_config_menu" action="orthanc_add_server_init" id="orthanc_add_server_menu" sequence="10" icon="gnuhealth-execute"/>
-        -->
         
-        <!-- Buttons -->
         <record model="ir.model.button" id="server_sync_button">
             <field name="name">do_sync</field>
             <field name="string">Sync</field>
             <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
         </record>
+        -->
 
-<!--- NEW -->
+        <!--- NEW -->
+
         <!-- Icons-->
         <record model="ir.ui.icon" id="imaging_orthanc_icon">
             <field name="name">orthanc</field>
             <field name="path">icons/orthanc_logo.svg</field>
         </record>
-        <!-- <record model="ir.ui.icon" id="delete_icon">
-            <field name="name">delete</field>
-            <field name="path">icons/delete.svg</field>
-        </record> -->
-
 
         <!-- Views -->
-
-        <!-- Add Studies to Imaging Result Form -->
         <record model="ir.ui.view" id="view_imaging_orthanc_imaging_test_result_form">
             <field name="model">gnuhealth.imaging.test.result</field>
             <field name="inherit" ref="health_imaging.view_imaging_test_result_form"/>
@@ -183,12 +147,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Act_Windows -->
-
         <record model="ir.action.act_window" id="act_imaging_orthanc_patient_view">
             <field name="name">Patients</field>
             <field name="res_model">gnuhealth.patient</field>
         </record>
 
+       <record model="ir.action.act_window" id="act_imaging_orthanc_study_view">
+            <field name="name">Studies</field>
+            <field name="res_model">gnuhealth.imaging_orthanc.study</field>
+        </record>
 
         <record model="ir.action.act_window" id="act_imaging_orthanc_study_series_view">
             <field name="name">Series</field>
@@ -196,7 +163,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Window views -->
-
         <record model="ir.action.act_window.view" id="act_imaging_orthanc_patient_tree_view">
             <field name="sequence" eval="30"/>
             <field name="view" ref="view_imaging_orthanc_patient_tree"/>
@@ -222,11 +188,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <!-- Menu items -->
+        <menuitem name="Orthanc" sequence="200" id="orthanc_menu"
+                  parent="health_imaging.menu_imaging" icon="orthanc"/>
+
         <menuitem parent="orthanc_menu" action="act_imaging_orthanc_patient_view"
-            id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence= "10"/>
+                  id="orthanc_menu_patient_view" icon="gnuhealth-patient" sequence= "10"/>
 
         <menuitem parent="orthanc_menu" action="act_imaging_orthanc_study_view"
-            id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>
+                  id="orthanc_menu_study_view" icon="orthanc" sequence= "20"/>
 
     </data>
 </tryton>
