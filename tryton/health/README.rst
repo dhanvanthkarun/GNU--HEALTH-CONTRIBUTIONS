@@ -1,12 +1,19 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health HIS: Libre Hospital Information System
-=================================================
+
+Core pacakge for the GNU Health Hospital Information System
+###########################################################
+
+This *health* package provides the core classes and models for the 
+Hospital Management System compoment of GNU Health.
+
+GNU Health HIS: The Libre Hospital Information System
+=====================================================
  
 Welcome to the Hospital Information System (HIS) of GNU Health!
 
@@ -126,8 +133,8 @@ License
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
