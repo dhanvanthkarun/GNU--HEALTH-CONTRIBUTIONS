@@ -1219,6 +1219,7 @@ class EventCategory(ModelSQL):
 
 
 class AlarmMixin:
+    __slots__ = ()
     valarm = fields.Binary('valarm')
 
     @classmethod
@@ -1284,6 +1285,8 @@ class EventAlarm(AlarmMixin, ModelSQL, ModelView):
 
 
 class AttendeeMixin:
+    __slots__ = ()
+
     email = fields.Char('Email', required=True, states={
         'readonly': Eval('id', 0) > 0,
     }, depends=['id'])
@@ -1504,8 +1507,10 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
 
 
 class DateMixin:
+    __slots__ = ()
     # _rec_name = 'datetime'
     # _rec_name needs to be char or  txt
+
     def get_rec_name(self, name):
         if self.datetime:
             return str(self.datetime)
@@ -1609,6 +1614,8 @@ class EventExDate(EventRDate):
 
 class RRuleMixin(Model):
     # _rec_name = 'freq'
+    __slots__ = ()
+
     def get_rec_name(self, name):
         if self.freq:
             return str(self.freq)
