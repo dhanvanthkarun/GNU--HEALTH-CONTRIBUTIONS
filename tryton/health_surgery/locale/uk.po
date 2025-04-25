@@ -1,13 +1,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-03-19 06:08+0000\n"
+"PO-Revision-Date: 2025-04-25 00:16+0000\n"
 "Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_surgery/uk/>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_surgery/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
@@ -441,7 +443,6 @@ msgctxt "field:gnuhealth.surgery,report_surgery_time:"
 msgid "Surgery Time"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.surgery,signed_by:"
 msgid "Signed by"
 msgstr "Підписано"
@@ -1043,7 +1044,6 @@ msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_confirmed"
 msgid "Confirmed"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_done"
 msgid "Done"
 msgstr "Завершено"
@@ -1059,7 +1059,7 @@ msgstr ""
 
 msgctxt "model:ir.action.act_window.domain,name:act_surgery_domain_signed"
 msgid "Signed"
-msgstr ""
+msgstr "Підписано"
 
 msgctxt "model:ir.message,text:msg_end_date_before_start"
 msgid "End time \"%(end_date)s\" BEFORE surgery date \"%(surgery_date)s\""
@@ -1088,6 +1088,8 @@ msgid ""
 "This surgery is at state Done and has been signed. You can no longer modify "
 "it."
 msgstr ""
+"Ця операція знаходиться в стані «Завершено» і була підписана. Ви більше не "
+"можете її змінити."
 
 msgctxt "model:ir.message,text:msg_surgery_rcri_rec_name"
 msgid "Points: %(rcri_total)s (Class %(rcri_class)s)"
@@ -1102,10 +1104,9 @@ msgctxt "model:ir.model.button,string:surgery_confirm_button"
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:surgery_done_button"
 msgid "Finnish"
-msgstr "Фінська"
+msgstr "Завершити"
 
 msgctxt "model:ir.model.button,string:surgery_sched_button"
 msgid "Schedule Surgery"
@@ -1217,7 +1218,7 @@ msgstr ""
 
 msgctxt "report:preoperative_assessment:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:preoperative_assessment:"
 msgid "Patient directions"
@@ -1225,7 +1226,7 @@ msgstr ""
 
 msgctxt "report:preoperative_assessment:"
 msgid "Printed Date:"
-msgstr ""
+msgstr "Дата друку:"
 
 msgctxt "report:preoperative_assessment:"
 msgid "RCRI:"
@@ -1318,7 +1319,7 @@ msgstr ""
 
 msgctxt "report:surgery:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:surgery:"
 msgid "Patient:"
@@ -1330,7 +1331,7 @@ msgstr ""
 
 msgctxt "report:surgery:"
 msgid "Printed Date:"
-msgstr ""
+msgstr "Дата друку:"
 
 msgctxt "report:surgery:"
 msgid "Procedure"
@@ -1424,11 +1425,11 @@ msgstr ""
 
 msgctxt "report:surgery_outpatient:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:surgery_outpatient:"
 msgid "Printed Date:"
-msgstr ""
+msgstr "Дата друку:"
 
 msgctxt "report:surgery_outpatient:"
 msgid "Surgery"
@@ -2027,7 +2028,6 @@ msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Confirmed"
 msgstr ""
 
-#, fuzzy
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Done"
 msgstr "Завершено"
@@ -2042,7 +2042,7 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Signed"
-msgstr ""
+msgstr "Підписано"
 
 msgctxt "selection:gnuhealth.surgery,surgical_wound:"
 msgid "Clean . Class I"
@@ -2268,7 +2268,6 @@ msgctxt "view:gnuhealth.or.schedule:"
 msgid "Date"
 msgstr "Дата"
 
-#, fuzzy
 msgctxt "view:gnuhealth.or.schedule:"
 msgid "Details"
 msgstr "Деталі"
@@ -2392,7 +2391,6 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Confirm the surgery and reserve the Operating Room ?"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Details"
 msgstr "Деталі"
@@ -2413,14 +2411,13 @@ msgctxt "view:gnuhealth.surgery:"
 msgid "Finish and sign this surgery ? Itwill become read-only !"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish"
-msgstr "Фінська"
+msgstr "Завершити"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Finnish the surgery"
-msgstr ""
+msgstr "Завершити операцію"
 
 msgctxt "view:gnuhealth.surgery:"
 msgid "Main"

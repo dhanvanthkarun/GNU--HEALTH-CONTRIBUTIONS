@@ -1,6 +1,16 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-04-25 00:16+0000\n"
+"Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_inpatient/uk/>\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
@@ -19,10 +29,9 @@ msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.bed.transfer,registration:"
 msgid "Registration Code"
-msgstr "Скасувати реєстрацію"
+msgstr "Код реєстрації"
 
 msgctxt "field:gnuhealth.bed.transfer,transfer_date:"
 msgid "Date"
@@ -56,10 +65,9 @@ msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.diet,registration:"
 msgid "Registration Code"
-msgstr "Скасувати реєстрацію"
+msgstr "Код реєстрації"
 
 msgctxt "field:gnuhealth.inpatient.diet,remarks:"
 msgid "Remarks / Directions"
@@ -115,10 +123,9 @@ msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
 msgstr "Дата"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,registration:"
 msgid "Registration Code"
-msgstr "Скасувати реєстрацію"
+msgstr "Код реєстрації"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
 msgid "Remarks"
@@ -217,10 +224,9 @@ msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,registration:"
 msgid "Registration Code"
-msgstr "Скасувати реєстрацію"
+msgstr "Код реєстрації"
 
 msgctxt "field:gnuhealth.inpatient.medication,route:"
 msgid "Administration Route"
@@ -334,10 +340,9 @@ msgctxt "field:gnuhealth.inpatient.registration,medications:"
 msgid "Medications"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,name:"
 msgid "Registration Code"
-msgstr "Скасувати реєстрацію"
+msgstr "Код реєстрації"
 
 msgctxt "field:gnuhealth.inpatient.registration,nursing_plan:"
 msgid "Nursing Plan"
@@ -345,7 +350,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.inpatient.registration,nutrition_notes:"
 msgid "Nutrition notes / directions"
-msgstr ""
+msgstr "Примітки / вказівки щодо харчування"
 
 msgctxt "field:gnuhealth.inpatient.registration,operating_physician:"
 msgid "Operating Physician"
@@ -355,7 +360,6 @@ msgctxt "field:gnuhealth.inpatient.registration,patient:"
 msgid "Patient"
 msgstr "Пацієнт"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,puid:"
 msgid "PUID"
 msgstr "PUID"
@@ -471,30 +475,25 @@ msgctxt "field:gnuhealth.patient.rounding,pump:"
 msgid "Pumps"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,registration:"
 msgid "Registration Code"
-msgstr "Скасувати реєстрацію"
+msgstr "Код реєстрації"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
-msgstr "Дата"
+msgstr "Дата завершення"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_end_time:"
 msgid "End Time"
-msgstr "Час"
+msgstr "Час завершення"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_date:"
 msgid "Start Date"
-msgstr "Дата й час"
+msgstr "Дата початку"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_time:"
 msgid "Start Time"
-msgstr "Дата й час"
+msgstr "Час початку"
 
 msgctxt "field:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -510,7 +509,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.rounding,signed_by:"
 msgid "Signed by"
-msgstr ""
+msgstr "Підписано"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,state:"
@@ -1220,7 +1219,6 @@ msgctxt ""
 msgid "All"
 msgstr "Усі"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_done"
 msgid "Done"
@@ -1305,7 +1303,6 @@ msgctxt "model:ir.model.button,string:meal_cancel_button"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:meal_done_button"
 msgid "Done"
 msgstr "Завершено"
@@ -1434,7 +1431,6 @@ msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Cancelled"
 msgstr "Скасовано"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Done"
 msgstr "Завершено"
@@ -1551,7 +1547,6 @@ msgctxt "selection:gnuhealth.patient.rounding,evolution:"
 msgid "Worsening"
 msgstr ""
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.rounding,state:"
 msgid "Done"
 msgstr "Завершено"
@@ -1580,7 +1575,6 @@ msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Create order"
 msgstr ""
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Done"
 msgstr "Завершено"
@@ -1608,7 +1602,7 @@ msgstr "Адміністрування"
 
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Adverse Reactions and Notes"
-msgstr ""
+msgstr "Побічні реакції та примітки"
 
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Dosage"
@@ -1657,7 +1651,7 @@ msgstr "Скасувати реєстрацію"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel the patient registration process ?"
-msgstr ""
+msgstr "Скасувати реєстрацію пацієнта?"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Care Plan"
@@ -1678,7 +1672,7 @@ msgstr "Підтвердити"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm Registration / Make the reservation"
-msgstr ""
+msgstr "Підтвердити реєстрацію / Оформити заявку"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm that the bed has been cleaned and is now ready to use"
@@ -1714,11 +1708,11 @@ msgstr ""
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Nutrition"
-msgstr ""
+msgstr "Харчування"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Other nutrition notes / directions"
-msgstr ""
+msgstr "Інші примітки / вказівки щодо харчування"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Patient Admission"
