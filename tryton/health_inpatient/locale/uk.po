@@ -1,13 +1,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-25 00:16+0000\n"
+"PO-Revision-Date: 2025-04-25 08:49+0000\n"
 "Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_inpatient/uk/>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_inpatient/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
@@ -550,7 +552,7 @@ msgstr "Код"
 
 msgctxt "field:gnuhealth.rounding_procedure,rounding:"
 msgid "Rounding"
-msgstr ""
+msgstr "Обхід"
 
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
@@ -562,7 +564,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr ""
+msgstr "Послідовність обходу пацієнтів"
 
 msgctxt ""
 "field:gnuhealth.sequences.inpatient_meal_order_sequence,inpatient_meal_order_sequence:"
@@ -577,7 +579,7 @@ msgstr ""
 msgctxt ""
 "field:gnuhealth.sequences.patient_rounding_sequence,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr ""
+msgstr "Послідовність обходу пацієнтів"
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient Registration, please enter the patient hospitalization code."
@@ -776,6 +778,8 @@ msgid ""
 "List of the procedures in this rounding. Please enter the first one as the "
 "main procedure"
 msgstr ""
+"Перелік процедур, що проводилися під час цього обходу. Будь ласка, вказуйте "
+"основну процедуру першою"
 
 msgctxt "help:gnuhealth.patient.rounding,proximity:"
 msgid "Check if personal items, water, alarm, ... are not in easy reach"
@@ -791,7 +795,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
 msgid "Procedures done during the rounding"
-msgstr ""
+msgstr "Процедури, що проводилися під час обходу"
 
 msgctxt "help:gnuhealth.patient.rounding,signed_by:"
 msgid "Health Professional that signed the rounding"
@@ -1155,14 +1159,13 @@ msgctxt "model:gnuhealth.inpatient.registration,name:"
 msgid "Patient admission History"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:gnuhealth.patient.rounding,name:"
 msgid "Patient Rounding"
-msgstr "Пацієнт"
+msgstr "Обхід пацієнтів"
 
 msgctxt "model:gnuhealth.rounding_procedure,name:"
 msgid "Rounding - Procedure"
-msgstr ""
+msgstr "Обхід — Процедура"
 
 msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
@@ -1194,7 +1197,7 @@ msgstr ""
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
-msgstr ""
+msgstr "Обходи"
 
 msgctxt "model:ir.action,name:gnuhealth_action_diet_therapeutic"
 msgid "Therapeutic diets"
@@ -1332,7 +1335,7 @@ msgstr ""
 
 msgctxt "model:ir.model.button,string:rounding_end_button"
 msgid "End rounding"
-msgstr ""
+msgstr "Завершити обхід"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
@@ -1342,10 +1345,9 @@ msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
-msgstr "Пацієнт"
+msgstr "Обхід пацієнтів"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
@@ -1356,10 +1358,9 @@ msgctxt ""
 msgid "Inpatient Registration"
 msgstr ""
 
-#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
-msgstr "Пацієнт"
+msgstr "Обхід пацієнтів"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_diet_therapeutic"
 msgid "Therapeutic diets"
@@ -1379,7 +1380,7 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
 msgid "Roundings"
-msgstr ""
+msgstr "Обходи"
 
 msgctxt "model:res.group,name:group_health_inpatient_admin"
 msgid "Health Inpatient Administration"
@@ -1727,15 +1728,15 @@ msgstr ""
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End rounding"
-msgstr ""
+msgstr "Завершити обхід"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding"
-msgstr ""
+msgstr "Завершити цей обхід"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding ?"
-msgstr ""
+msgstr "Завершити цей обхід?"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Environment"
