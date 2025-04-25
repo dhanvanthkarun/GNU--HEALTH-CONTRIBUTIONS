@@ -38,10 +38,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/meals.svg</field>
         </record>
 
-        <record model="ir.ui.icon" id="gnuhealth_list_icon">
-            <field name="name">gnuhealth-list</field>
-            <field name="path">../health/icons/tryton-list.svg</field>
-        </record>
 
 
 <!-- Patient hospitalization and bed registration (in-patient registration) -->
@@ -487,7 +483,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 
 <!-- Rounding Procedure-->
-
+<!-- DEPRECATED IN GH 5.0 by GNUHEALTH PATIENT PROCEDURES (gnuhealth.patient.procedure)
         <record model="ir.ui.view" id="gnuhealth_rounding_view">
             <field name="model">gnuhealth.rounding_procedure</field>
             <field name="type">form</field>
@@ -499,7 +495,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="type">tree</field>
             <field name="name">gnuhealth_procedure_tree</field>
         </record>
-        
+-->
+
 <!-- Rounding view -->
 
         <record model="ir.ui.view" id="gnuhealth_patient_rounding_view">

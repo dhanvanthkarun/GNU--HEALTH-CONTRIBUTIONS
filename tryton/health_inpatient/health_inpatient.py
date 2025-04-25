@@ -871,9 +871,9 @@ class InpatientMealOrder (ModelSQL, ModelView):
             raise NoAssociatedHealthProfessional(
                 gettext('health.msg_no_associated_health_professional'))
 
-    @fields.depends('name')
-    def on_change_name(self):
-        if self.name:
+    @fields.depends('registration', '_parent_registration.patient')
+    def on_change_registration(self):
+        if self.registration:
             # Trigger the warning if the patient
             # has special needs on meals (religion / philosophy )
             if (self.registration.patient.vegetarian_type or
@@ -1091,8 +1091,7 @@ class PatientRounding(ModelSQL, ModelView):
         'get_report_end_time')
 
     patient = fields.Function(fields.Many2One(
-        'gnuhealth.patient', 'Patient',
-        depends=['deceased']), 'get_patient')
+        'gnuhealth.patient', 'Patient'), 'get_patient')
 
     def get_patient(self, name):
         if (self.registration):

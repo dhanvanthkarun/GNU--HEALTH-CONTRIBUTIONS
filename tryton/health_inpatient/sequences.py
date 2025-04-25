@@ -28,7 +28,7 @@ inpatient_meal_order_sequence = fields.Many2One(
 patient_rounding_sequence = fields.Many2One(
     'ir.sequence', 'Patient Rounding Sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health_nursing', 'seq_type_gnuhealth_patient_rounding'))])
+        'health_inpatient', 'seq_type_gnuhealth_patient_rounding'))])
 
 
 # GNU HEALTH SEQUENCES
@@ -70,7 +70,7 @@ class GnuHealthSequences(metaclass=PoolMeta):
         pool = Pool()
         ModelData = pool.get('ir.model.data')
         try:
-            return ModelData.get_id('health_nursing',
+            return ModelData.get_id('health_inpatient',
                                     'seq_gnuhealth_patient_rounding')
         except KeyError:
             return None
@@ -97,7 +97,7 @@ class _ConfigurationValue(ModelSQL):
 
 
 class InpatientRegistrationSequence(_ConfigurationValue, ModelSQL, ValueMixin):
-    'Ambulatory Care Sequences setup'
+    'Inpatient Care Sequences setup'
     __name__ = 'gnuhealth.sequences.inpatient_registration_sequence'
     inpatient_registration_sequence = inpatient_registration_sequence
     _configuration_value_field = 'inpatient_registration_sequence'
