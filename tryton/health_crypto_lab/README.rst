@@ -37,24 +37,30 @@ process will work on row or column level.
 Public key / asymmetric cryptography will be used for signing the documents.
 
 
-About GNU Health HIS: The Libre Hospital Management and Health Information System
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GNU Health HIS: The Libre Hospital Information System
+=====================================================
  
-The GNU Health HIS provides the following functionality:
+Welcome to the Hospital Information System (HIS) of GNU Health!
 
- * Hospital Management Information System
- * Electronic Medical Record (EMR)
- * Health Information System
- * Laboratory Information System
+The main areas of the HIS are:
 
-The Hospital and Health Information System component (HIS) from GNU Health (GH) 
-provides over 50 packages (primary care, obstetrics & gynecology,
-pediatrics, surgery, lims, genetics, diagnostic imaging, dentistry, reporting...)
-to fit your institution needs. The GH HIS combines the socioeconomic determinants of
-health with state-of-the-art technology in bioinformatics and medical genetics. 
+* **Demographics and Community**: Individuals, domiciliary
+  units, families, socioeconomics, demographic & administrative information
+* **Patient Management**: Health encounters and evaluations,
+  hospitalizations, clinical history and other information that makes up the
+  electronic medical records (EMR)
+* **Health Center**: Finances & billing, stock &
+  pharmacy, staff, suppliers, beds, operating rooms and other relevant tasks
+  to manage the health center
+* **Laboratory and Medical Imaging**: Management of complementary orders such as
+  lab tests, medical and diagnostic imaging requests and workflows
+* **Health Information System**: Statistics, analytical reporting on collected
+  data from the community and participating health institutions, e.g. demographics
+  and epidemiology
 
-The HIS manages the internal processes of a health institution, such as 
-financial management, billing, stock management, pharmacies or labs (LIMS). 
+Functionalities of specific modules are briefly summarized over here:
+
+https://docs.gnuhealth.org/his/features.html#packages
 
 The GH HIS is part of the GNU Health project, the **Libre digital health ecosystem**.
 
@@ -98,9 +104,9 @@ deliver Freedom and Equity in Healthcare around the World.
 
 https://my.gnusolidario.org/join-us/
 
-GNU Solidario hosts IWEEE and GnuHealthCon:
+GNU Solidario hosts IWEEE and GNU Health Con:
 
-The International Workshop on e-Health in Emerging Economies- a good way to
+The International Workshop on e-Health in Emerging Economies - a good way to
 support GNU Solidario and to get the latest on e-Health is to assist
 to the conferences. 
 
@@ -113,13 +119,18 @@ the health of your country or region. We want the project to be a success,
 and since our resources are limited, we need to work together to make a great
 and sustainable project.
 
-In order to be eligible, we need the following information from you,
+First place to ask for support are the mailing lists & matrix chat:
+
+https://docs.gnuhealth.org/his/support.html#online-resources
+
+Feel free to contact us directly if this does not suffice or if you need custom support.
+In order to be elegible, we need the following information from you,
 your NGO or government:
 
 * An introduction of the current needs
 * The project will use free software, both at the server and workstations
 * There will be a local designated person that will be in charge of  
-  the project and the know-how transfer to the rest of the community. This person 
+  the project and the know-how transfer to the rest of the community.This person 
   must be committed to be from the beginning of the project
   until two years after its completion.
 * There must be a commitment of knowledge transfer to the rest of the team.
@@ -140,10 +151,7 @@ Email
 -----
 info@gnuhealth.org
 
-Mastodon
---------
-
-https://mastodon.social/@gnuhealth
+Mastodon: https://mastodon.social/@gnuhealth
 
 License
 --------
