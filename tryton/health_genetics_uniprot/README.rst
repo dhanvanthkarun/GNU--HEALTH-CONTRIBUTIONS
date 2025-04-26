@@ -7,7 +7,8 @@
 
 
 Health Genetics - UniProt package for GNU Health HIS
-====================================================
+####################################################
+
 This module includes proteins, natural variants, phenotypes, 
 associated to genes and their health conditions, from UniProtKB.
 
