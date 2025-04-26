@@ -11,25 +11,24 @@
 #              sequences.py: Sequences for this package                 #
 #########################################################################
 
-from trytond.model import (ModelSQL, ValueMixin, fields)
+# from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
+from trytond.model import (ModelSQL, ValueMixin, fields)
 
 # Removed in GH 5.0
 # from trytond.tools.multivalue import migrate_property
 
 # Sequences
-imaging_req_seq = fields.MultiValue(
-    fields.Many2One(
+imaging_req_seq = fields.Many2One(
         'ir.sequence', 'Imaging Request Sequence', required=True,
         domain=[('sequence_type', '=', Id(
-            'health_imaging', 'seq_type_gnuhealth_imaging_test_request'))]))
+            'health_imaging', 'seq_type_gnuhealth_imaging_test_request'))])
 
-imaging_test_sequence = fields.MultiValue(
-    fields.Many2One(
+imaging_test_sequence = fields.Many2One(
         'ir.sequence', 'Imaging Sequence', required=True,
         domain=[('sequence_type', '=', Id(
-            'health_imaging', 'seq_type_gnuhealth_imaging_test'))]))
+            'health_imaging', 'seq_type_gnuhealth_imaging_test'))])
 
 
 # GNU HEALTH SEQUENCES
@@ -72,20 +71,6 @@ class _ConfigurationValue(ModelSQL):
     def __register__(cls, module_name):
 
         super(_ConfigurationValue, cls).__register__(module_name)
-
-    """
-        if not exist:
-            cls._migrate_property([], [], [])
-
-    @classmethod
-    def _migrate_property(cls, field_names, value_names, fields):
-        field_names.append(cls._configuration_value_field)
-        value_names.append(cls._configuration_value_field)
-        migrate_property(
-            'gnuhealth.sequences', field_names, cls, value_names,
-            fields=fields)
-
-    """
 
 
 class ImagingRequestSequence(_ConfigurationValue, ModelSQL, ValueMixin):
