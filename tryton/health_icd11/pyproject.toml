@@ -7,7 +7,7 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [project]
-name = "gnuhealth-icd10pcs"
+name = "gnuhealth-icd11"
 version = "5.0.0a3"
 description = "ICD11 - WHO International Classification of Diseases, 11th edition for GNU Health HIS"
 
@@ -51,7 +51,7 @@ classifiers=[
 ]
 
 packages = [
-    { include = '*', to='trytond/modules/health_icd10pcs' },
+    { include = '*', to='trytond/modules/health_icd11' },
 ]
 
 
