@@ -564,9 +564,6 @@ class Lab(ModelSQL, ModelView):
             'set_to_draft': {
                 'invisible': Not(Equal(Eval('state'), 'done')),
             },
-            'sign_document': {
-                'invisible': Not(Equal(Eval('state'), 'done')),
-            },
         })
 
         # Do not cache default_key as it depends on time
@@ -846,7 +843,8 @@ class GnuHealthPatientLabTest(ModelSQL, ModelView):
             return sequence.get()
 
     # Update age_num and gender_str based on the patient_id
-    @fields.depends('patient_id')
+    @fields.depends(
+        'patient_id', '_parent_patient_id.age')
     def on_change_patient_id(self):
         if (self.patient_id):
             self.gender_str = self.patient_id.gender_str
