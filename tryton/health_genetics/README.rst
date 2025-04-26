@@ -6,8 +6,8 @@
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
 
-Integration of the Hospital Management with the GNU Health Federation
-#####################################################################
+Medical Genetics package for GNU Health HIS
+###########################################
 
 The *health-genetics* core package provides the main models to record and
 manage the person genetic information, such as:
