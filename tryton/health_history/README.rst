@@ -7,7 +7,8 @@
 
 
 Patient history reporting for GNU Health HIS
-============================================
+############################################
+
 The package *health_history* generates reports for the Patient
 medical and clinical history based on the installed modules 
 (socioeconomics, lifestyle, genetics, surgery... )
