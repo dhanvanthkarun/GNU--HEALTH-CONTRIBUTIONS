@@ -60,7 +60,7 @@ logger = logging.getLogger(__name__)
 
 
 #
-#  Adding widget "dicombinary" to the server
+#  Adding widget "binary_dicom" to the server
 #
 
 class View(metaclass=PoolMeta):
@@ -76,7 +76,7 @@ class View(metaclass=PoolMeta):
                 namespaces={'ns': 'http://relaxng.org/ns/structure/1.0'})[0]
             subelem = etree.SubElement(
                 widgets, '{http://relaxng.org/ns/structure/1.0}value')
-            subelem.text = 'dicombinary'
+            subelem.text = 'binary_dicom'
         return rng
 
 

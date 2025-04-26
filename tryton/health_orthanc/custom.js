@@ -11,7 +11,7 @@
 # 
 */
 
-// The dicombinary widget is based on the existing binary widget of tryton.
+// The binary_dicom widget is based on the existing binary widget of tryton.
 
 // returns the number as Uint8Array with 8 bytes in Little Endian order
 function numToUint8Array(num) {
@@ -23,7 +23,7 @@ function numToUint8Array(num) {
     return arr;
 }
 
-DicomBinaryMixin = Sao.class_(Sao.View.Form.Widget, {
+BinaryDicomMixin = Sao.class_(Sao.View.Form.Widget, {
     /**
      * Initialize the function with a given view and attributes.
      *
@@ -32,7 +32,7 @@ DicomBinaryMixin = Sao.class_(Sao.View.Form.Widget, {
      * @return {type} null or the filename attribute
      */
     init: function (view, attributes) {
-        DicomBinaryMixin._super.init.call(
+        BinaryDicomMixin._super.init.call(
             this, view, attributes);
         this.filename = attributes.filename || null;
     },
@@ -255,8 +255,8 @@ DicomBinaryMixin = Sao.class_(Sao.View.Form.Widget, {
 });
 
 
-DicomBinary = Sao.class_(DicomBinaryMixin, {
-    class_: 'form-dicombinary',
+BinaryDicom = Sao.class_(BinaryDicomMixin, {
+    class_: 'form-binary-dicom',
     blob_url: '',
     /**
      * Initialize the view with the given attributes.
@@ -265,7 +265,7 @@ DicomBinary = Sao.class_(DicomBinaryMixin, {
      * @param {Object} attributes - The attributes to apply.
      */
     init: function(view, attributes) {
-        DicomBinary._super.init.call(this, view, attributes);
+        BinaryDicom._super.init.call(this, view, attributes);
 
         this.el = jQuery('<div/>', {
             'class': this.class_
@@ -311,7 +311,7 @@ DicomBinary = Sao.class_(DicomBinaryMixin, {
      *
      */
     display: function() {
-        DicomBinary._super.display.call(this);
+        BinaryDicom._super.display.call(this);
 
         var record = this.record, field = this.field;
         if (!field) {
@@ -366,13 +366,13 @@ DicomBinary = Sao.class_(DicomBinaryMixin, {
         }
     },
     /**
-     * Set the readonly property of the DicomBinary object and update associated elements accordingly.
+     * Set the readonly property of the BinaryDicom object and update associated elements accordingly.
      *
      * @param {boolean} readonly - The new value for the readonly property
      * @return {void} 
      */
     set_readonly: function(readonly) {
-        DicomBinary._super.set_readonly.call(this, readonly);
+        BinaryDicom._super.set_readonly.call(this, readonly);
         this.but_select.prop('disabled', readonly);
         this.but_clear.prop('disabled', readonly);
         if (this.text) {
@@ -381,4 +381,4 @@ DicomBinary = Sao.class_(DicomBinaryMixin, {
     }
 });
 
-Sao.View.FormXMLViewParser.WIDGETS['dicombinary'] = DicomBinary;
+Sao.View.FormXMLViewParser.WIDGETS['binary_dicom'] = BinaryDicom;
