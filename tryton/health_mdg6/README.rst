@@ -1,30 +1,75 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health HMIS: Libre Hospital Management and Health Information System
-========================================================================
+Millennium Development Goal #6 package for GNU Health HIS 
+#########################################################
+
+The package *health_mdg6* incorporates the Millennium Development
+Goal # 6, to combat HIV/AIDS, malaria and Tuberculosis. Now is part
+of the Sustainable Development Goals (SDG).
+
+The United Nations signed in September 2000 the Millennium Declaration, to
+fight poverty, hunger, disease, illiteracy, environmental degradation, and
+discrimination against women.
+
+The Millennium Development Goals (MDG) has derived from the Millennium
+declaration and it has 8 goals. MDG 6 focuses on HIV/AIDS, Malaria and
+Tuberculosis.
+
+GNU Solidario believes that Free Software is a key factor to accomplish these
+goals. GNU Health, the Free Health and Hospital Information System will help
+the health centers, researches, NGOs and professionals and volunteers to
+eradicate these devastating diseases.
+
+GNU Health will incorporate the specific functionality to help prevent,
+diagnose, treat and control each of these devastating diseases.
+
+The health_mdg6 module will maintain the multi-disciplinary approach, providing
+tools to the social worker, nurse, biochemist, laboratory, pharmacist,
+epidemiologist and physician, integrating the health professional into the
+community.
+
+So, for example, upon a new possible case of active Tuberculosis (TB), GNU
+Health will execute the following actions : Detect and notify the contacts of
+the patient; Start profilaxis treatment on contacts ; Create a new laboratory
+order for culture and antibiogram and check for the strain resistance ; verify
+the DOTS (Direct Observed Treatment Short) on the patient ; Check the stock for
+the PPD test-kits and do a forecast for the existing anti-tuberculosis
+medicaments; Check for availability of special rooms if there is need for
+hospitalization; inform the health authorities of a new case; start a new
+prevention campaign.
+
+
+GNU Health HIS: The Libre Hospital Information System
+=====================================================
  
-The GNU Health HMIS provides the following functionality:
+Welcome to the Hospital Information System (HIS) of GNU Health!
 
-#. **Hospital Management Information System (HMIS)**
-#. **Electronic Medical Record (EMR)**
-#. **Health Information System (HIS)**
-#. **Laboratory Information System (LIS)**
+The main areas of the HIS are:
 
-The Hospital and Health Information System component (HMIS) from GNU Health (GH) 
-provides over 40 standard-based packages (primary care, obstetrics & gynecology,
-pediatrics, surgery, lims, genetics, diagnostic imaging, dentisstry, reporting...)
-to fit your institution needs. The GH HMIS combines the socioeconomic determinants of
-health with state-of-the-art technology in bioinformatics and clinical genetics. 
+* **Demographics and Community**: Individuals, domiciliary
+  units, families, socioeconomics, demographic & administrative information
+* **Patient Management**: Health encounters and evaluations,
+  hospitalizations, clinical history and other information that makes up the
+  electronic medical records (EMR)
+* **Health Center**: Finances & billing, stock &
+  pharmacy, staff, suppliers, beds, operating rooms and other relevant tasks
+  to manage the health center
+* **Laboratory and Medical Imaging**: Management of complementary orders such as
+  lab tests, medical and diagnostic imaging requests and workflows
+* **Health Information System**: Statistics, analytical reporting on collected
+  data from the community and participating health institutions, e.g. demographics
+  and epidemiology
 
-The HMIS manages the internal processes of a health institution, such as 
-financial management, billing, stock management, pharmacies or labs (LIMS). 
+Functionalities of specific modules are briefly summarized over here:
 
-The GH HMIS is part of the GNU Health project, the **Libre digital health ecosystem**.
+https://docs.gnuhealth.org/his/features.html#packages
+
+The GH HIS is part of the GNU Health project, the **Libre digital health ecosystem**.
 
 The GNU Health project combines the daily medical practice with state-of-the-art 
 technology in bioinformatics and genetics. It provides a holistic approach 
@@ -66,9 +111,9 @@ deliver Freedom and Equity in Healthcare around the World.
 
 https://my.gnusolidario.org/join-us/
 
-GNU Solidario hosts IWEEE and GnuHealthCon:
+GNU Solidario hosts IWEEE and GNU Health Con:
 
-The International Workshop on e-Health in Emerging Economies- a good way to
+The International Workshop on e-Health in Emerging Economies - a good way to
 support GNU Solidario and to get the latest on e-Health is to assist
 to the conferences. 
 
@@ -81,6 +126,11 @@ the health of your country or region. We want the project to be a success,
 and since our resources are limited, we need to work together to make a great
 and sustainable project.
 
+First place to ask for support are the mailing lists & matrix chat:
+
+https://docs.gnuhealth.org/his/support.html#online-resources
+
+Feel free to contact us directly if this does not suffice or if you need custom support.
 In order to be elegible, we need the following information from you,
 your NGO or government:
 
@@ -115,8 +165,8 @@ License
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
