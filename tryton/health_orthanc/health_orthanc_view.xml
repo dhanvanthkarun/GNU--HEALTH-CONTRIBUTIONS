@@ -149,6 +149,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <!-- Act_Windows -->
         <record model="ir.action.act_window" id="act_imaging_orthanc_patient_view">
             <field name="name">Patients</field>
+            <field name="domain" eval="[('orthanc_studies', '!=', None)]" pyson="1"/>
             <field name="res_model">gnuhealth.patient</field>
         </record>
 
