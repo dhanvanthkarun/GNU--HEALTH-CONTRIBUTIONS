@@ -37,7 +37,14 @@
                   icon="orthanc"/>
 
         <menuitem name="Servers" sequence="20" parent="orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_servers_menu" icon="gnuhealth-list"/>
-           
+
+        <!-- Remove Config Server button-->
+        <record model="ir.model.button" id="remove_config_server_button">
+            <field name="name">remove_config_server</field>
+            <field name="string">Remove Config Server</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
+        </record>
+
         <!-- Wizard and Views to add server -->
 
         <record model="ir.ui.view" id="view_orthanc_add_init_data">

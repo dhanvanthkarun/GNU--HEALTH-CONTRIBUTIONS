@@ -463,10 +463,10 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         # for deleting a study and selecting a viewer.
         super(PatientOrthancStudy, cls).__setup__()
         t = cls.__table__()
+
         cls._buttons.update({
             'delete_study': {}
         })
-
         cls._sql_constraints = [
             ('studyUID_unique', Unique(t, t.study_instance_UID, t.server),
              ("There is already a study with the same UID. "

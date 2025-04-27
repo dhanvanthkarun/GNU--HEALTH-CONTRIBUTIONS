@@ -84,6 +84,23 @@ SPDX-License-Identifier: GPL-3.0-or-later
         -->
 
         <!--- NEW -->
+        
+        <!-- Register Buttons -->
+        <!-- Delete Study button-->
+        <record model="ir.model.button" id="delete_study_button">
+            <field name="name">delete_study</field>
+            <field name="string">Delete Study</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study')]"/>
+        </record>
+
+        <!-- Delete Series button-->
+        <record model="ir.model.button" id="delete_series_button">
+            <field name="name">delete_series</field>
+            <field name="string">Delete Series</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
+        </record>
+
+
 
         <!-- Icons-->
         <record model="ir.ui.icon" id="imaging_orthanc_icon">
