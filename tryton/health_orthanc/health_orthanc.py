@@ -418,6 +418,9 @@ class PatientOrthancStudy(ModelSQL, ModelView):
         help="Test result merge id, with it help, "
         "gnuhealth test result and orthanc study can be merged.")
 
+    merge_comment = fields.Char(
+        'Merge Comment')
+
     institution = fields.Char('Institution', readonly=True)
     performing_physician_name = fields.Char('Physician', readonly=True)
 
