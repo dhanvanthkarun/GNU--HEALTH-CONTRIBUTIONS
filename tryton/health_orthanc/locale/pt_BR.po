@@ -3,13 +3,12 @@ msgid ""
 msgstr ""
 "PO-Revision-Date: 2025-04-26 09:53+0000\n"
 "Last-Translator: themandalorian <themandalorian@noreply.codeberg.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.codeberg.org/projects/"
-"gnuhealth/health_orthanc/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.codeberg.org/projects/gnuhealth/health_orthanc/pt_BR/>\n"
 "Language: pt_BR\n"
 "Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.10.2\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 msgctxt "field:gnuhealth.imaging.test.result,orthanc_studies:"
 msgid "Orthanc studies"
@@ -93,6 +92,10 @@ msgstr "Instituição"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,link_base_url:"
 msgid "Link Base URL"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,merge_comment:"
+msgid "Merge Comment"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,merge_id:"
@@ -551,11 +554,6 @@ msgctxt "model:ir.action,name:act_imaging_orthanc_study_view"
 msgid "Studies"
 msgstr ""
 
-#, fuzzy
-msgctxt "model:ir.action,name:act_orthanc_patient_view"
-msgid "Patients"
-msgstr "Pacientes"
-
 msgctxt "model:ir.action,name:act_orthanc_server_view"
 msgid "Servers"
 msgstr ""
@@ -566,10 +564,6 @@ msgstr ""
 
 msgctxt "model:ir.action,name:orthanc_add_server_init_data"
 msgid "Add New Server"
-msgstr ""
-
-msgctxt "model:ir.model.button,string:server_sync_button"
-msgid "Sync"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:imaging_orthanc_add_server_menu"
@@ -738,39 +732,6 @@ msgstr "Informação"
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid "User"
 msgstr "Usuário"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid " "
-msgstr ""
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health"
-msgstr ""
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health patient"
-msgstr ""
-
-#, fuzzy
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "General"
-msgstr "Geral"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc"
-msgstr ""
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc PatientID"
-msgstr ""
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc patient"
-msgstr ""
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Studies"
-msgstr ""
 
 #, fuzzy
 msgctxt "wizard_button:gnuhealth.imaging_orthanc.full_synchronize,start,end:"

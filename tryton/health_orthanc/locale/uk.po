@@ -3,13 +3,11 @@ msgid ""
 msgstr ""
 "PO-Revision-Date: 2025-04-26 09:53+0000\n"
 "Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
-"health_orthanc/uk/>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_orthanc/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.imaging.test.result,orthanc_studies:"
@@ -87,6 +85,10 @@ msgstr "Заклад"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,link_base_url:"
 msgid "Link Base URL"
+msgstr ""
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,merge_comment:"
+msgid "Merge Comment"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,merge_id:"
@@ -526,10 +528,6 @@ msgctxt "model:ir.action,name:act_imaging_orthanc_study_view"
 msgid "Studies"
 msgstr "Дослідження"
 
-msgctxt "model:ir.action,name:act_orthanc_patient_view"
-msgid "Patients"
-msgstr "Пацієнти"
-
 msgctxt "model:ir.action,name:act_orthanc_server_view"
 msgid "Servers"
 msgstr "Сервери"
@@ -541,10 +539,6 @@ msgstr "Orthanc: Завантажити файли DICOM"
 msgctxt "model:ir.action,name:orthanc_add_server_init_data"
 msgid "Add New Server"
 msgstr "Додати новий сервер"
-
-msgctxt "model:ir.model.button,string:server_sync_button"
-msgid "Sync"
-msgstr "Синхронізувати"
 
 msgctxt "model:ir.ui.menu,name:imaging_orthanc_add_server_menu"
 msgid "Add New Server"
@@ -706,38 +700,6 @@ msgstr "Інформація про сервер"
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid "User"
 msgstr "Користувач"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid " "
-msgstr " "
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health"
-msgstr "GNU Health"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health patient"
-msgstr "Пацієнт GNU Health"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "General"
-msgstr "Загальне"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc"
-msgstr "Orthanc"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc PatientID"
-msgstr "ID пацієнта Orthanc"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc patient"
-msgstr "Пацієнт Orthanc"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Studies"
-msgstr "Дослідження"
 
 msgctxt "wizard_button:gnuhealth.imaging_orthanc.full_synchronize,start,end:"
 msgid "Cancel"

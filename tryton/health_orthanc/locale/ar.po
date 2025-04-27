@@ -92,6 +92,10 @@ msgctxt "field:gnuhealth.imaging_orthanc.study,link_base_url:"
 msgid "Link Base URL"
 msgstr ""
 
+msgctxt "field:gnuhealth.imaging_orthanc.study,merge_comment:"
+msgid "Merge Comment"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.imaging_orthanc.study,merge_id:"
 msgid "Merge ID"
@@ -575,10 +579,6 @@ msgctxt "model:ir.action,name:act_imaging_orthanc_study_view"
 msgid "Studies"
 msgstr "دراسات"
 
-msgctxt "model:ir.action,name:act_orthanc_patient_view"
-msgid "Patients"
-msgstr "المرضى"
-
 msgctxt "model:ir.action,name:act_orthanc_server_view"
 msgid "Servers"
 msgstr "مخدمات"
@@ -592,10 +592,6 @@ msgstr "مرضى Orthanc"
 msgctxt "model:ir.action,name:orthanc_add_server_init_data"
 msgid "Add New Server"
 msgstr "إضافة خادم أورثانك"
-
-msgctxt "model:ir.model.button,string:server_sync_button"
-msgid "Sync"
-msgstr "تزامن"
 
 #, fuzzy
 msgctxt "model:ir.ui.menu,name:imaging_orthanc_add_server_menu"
@@ -772,38 +768,6 @@ msgstr "معلومات المخدم"
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid "User"
 msgstr "المستخدم"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid " "
-msgstr " "
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health"
-msgstr "GNU Health"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health patient"
-msgstr "GNU Health مريض"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "General"
-msgstr "عام"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc"
-msgstr "Orthanc"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc PatientID"
-msgstr "Orthanc رقم مريض"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc patient"
-msgstr "مريض اورثانك"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Studies"
-msgstr "دراسات"
 
 #, fuzzy
 msgctxt "wizard_button:gnuhealth.imaging_orthanc.full_synchronize,start,end:"

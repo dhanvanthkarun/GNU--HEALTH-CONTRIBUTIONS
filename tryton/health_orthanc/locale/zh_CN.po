@@ -87,6 +87,10 @@ msgctxt "field:gnuhealth.imaging_orthanc.study,link_base_url:"
 msgid "Link Base URL"
 msgstr "基础 URL 链接地址"
 
+msgctxt "field:gnuhealth.imaging_orthanc.study,merge_comment:"
+msgid "Merge Comment"
+msgstr "合并说明"
+
 msgctxt "field:gnuhealth.imaging_orthanc.study,merge_id:"
 msgid "Merge ID"
 msgstr "合并编号"
@@ -524,10 +528,6 @@ msgctxt "model:ir.action,name:act_imaging_orthanc_study_view"
 msgid "Studies"
 msgstr "检查"
 
-msgctxt "model:ir.action,name:act_orthanc_patient_view"
-msgid "Patients"
-msgstr "患者"
-
 msgctxt "model:ir.action,name:act_orthanc_server_view"
 msgid "Servers"
 msgstr "服务器"
@@ -539,10 +539,6 @@ msgstr "Orthanc: 上传 DICOM 文件"
 msgctxt "model:ir.action,name:orthanc_add_server_init_data"
 msgid "Add New Server"
 msgstr "添加新服务器"
-
-msgctxt "model:ir.model.button,string:server_sync_button"
-msgid "Sync"
-msgstr "同步"
 
 msgctxt "model:ir.ui.menu,name:imaging_orthanc_add_server_menu"
 msgid "Add New Server"
@@ -704,38 +700,6 @@ msgstr "服务器信息"
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid "User"
 msgstr "用户"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid " "
-msgstr " "
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health"
-msgstr "GNU Health"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health patient"
-msgstr "GNU Health 患者"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "General"
-msgstr "常规"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc"
-msgstr "Orthanc"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc PatientID"
-msgstr "Orthanc 患者 ID"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc patient"
-msgstr "Orthanc 患者"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Studies"
-msgstr "检查"
 
 msgctxt "wizard_button:gnuhealth.imaging_orthanc.full_synchronize,start,end:"
 msgid "Cancel"
