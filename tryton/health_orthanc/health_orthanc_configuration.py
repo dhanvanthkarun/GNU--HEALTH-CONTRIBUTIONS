@@ -155,7 +155,7 @@ class ServerConfig(ModelSQL, ModelView):
         try:
             client = Orthanc(
                 url=domain, username=user, password=password)
-            client.get_changes({'last':True})
+            client.get_changes({'last': 1})
         except ConnectionError:
             logger.exception(
                 "No connection to the server can be established."
