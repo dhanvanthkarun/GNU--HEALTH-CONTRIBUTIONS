@@ -25,7 +25,6 @@ from trytond.pool import Pool
 from . import health_orthanc
 from . import health_orthanc_configuration
 from . import wizard
-from . import ir
 
 
 def register():
@@ -37,13 +36,13 @@ def register():
         health_orthanc.StudySeries,
         health_orthanc.SeriesInstances,
         health_orthanc_configuration.ServerConfig,
-        health_orthanc.OrthancPatientDEPRECATED,
-        health_orthanc.OrthancStudyDEPRECATED,
-        ir.Cron,
         wizard.wizard_upload_image_data.UploadImageDataStart,
         wizard.wizard_get_new_studies.GetNewStudiesStart,
         wizard.wizard_full_synchronize.FullSynchronizeStart,
         wizard.wizard_orthanc_config.AddOrthancInitData,
+        # DEPRECATED, Used to migrate date.
+        health_orthanc.OrthancPatientDEPRECATED,
+        health_orthanc.OrthancStudyDEPRECATED,
         module="health_orthanc",
         type_="model",
     )

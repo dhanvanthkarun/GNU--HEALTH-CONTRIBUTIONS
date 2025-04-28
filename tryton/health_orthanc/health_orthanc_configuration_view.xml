@@ -36,7 +36,9 @@
                   id="orthanc_config_menu"
                   icon="orthanc"/>
 
-        <menuitem name="Servers" sequence="20" parent="orthanc_config_menu" action="act_orthanc_server_view" id="orthanc_servers_menu" icon="gnuhealth-list"/>
+        <menuitem name="Servers" sequence="20" parent="orthanc_config_menu"
+                  action="act_orthanc_server_view"
+                  id="orthanc_servers_menu" icon="gnuhealth-list"/>
 
         <!-- Remove Config Server button-->
         <record model="ir.model.button" id="remove_config_server_button">
@@ -63,6 +65,8 @@
             <field name="name">Add New Server</field>
             <field name="wiz_name">gnuhealth.imaging_orthanc.wizard.orthanc_new_connect</field>
         </record>
-        <menuitem parent="orthanc_config_menu" action="orthanc_add_server_init_data" id="imaging_orthanc_add_server_menu" sequence="10" icon="execute"/>
+
+        <menuitem parent="orthanc_config_menu" action="orthanc_add_server_init_data"
+                  id="imaging_orthanc_add_server_menu" sequence="10" icon="execute"/>
     </data>
 </tryton>

@@ -48,11 +48,12 @@ except ImportError:
 __all__ = [
     "View",
     "TestResult",
-    "OrthancPatientDEPRECATED",
-    "PatientOrthancStudy",
     "Patient",
+    "PatientOrthancStudy",
     'StudySeries',
     'SeriesInstances',
+    # DEPRECATED, Used to migrate date.
+    "OrthancPatientDEPRECATED",
     "OrthancStudyDEPRECATED"
 ]
 
@@ -85,23 +86,8 @@ class TestResult(metaclass=PoolMeta):
 
     """
     Adds Orthanc imaging studies to imaging test result.
-
-    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL
-                     database operations.
-    :type ModelSQL: class: ``trytond.model.ModelSQL``
-
-    :param ModelView: Inherit from the Tryton ModelView class for user
-                      interface operations.
-    :type ModelView: class: ``trytond.model.ModelView``
-
-    :var __name__: The unique name ``gnuhealth.imaging.test.result``
-                   of the model.
-    :vartype __name__: str
     """
 
-    # NOTE: health_orthanc has 'studies' field, so we use
-    # 'orthanc_studies' instead, which let database upgrade a bit
-    # easier.
     orthanc_studies = fields.One2Many(
         "gnuhealth.imaging_orthanc.study",
         "imaging_test", "Orthanc studies",
@@ -109,9 +95,9 @@ class TestResult(metaclass=PoolMeta):
 
     # Deprecated in GH 5.0 . Use orthanc_studies.
     studies = fields.One2Many(
-        "gnuhealth.orthanc.study", "imaging_test", "Orthanc studies",
-        readonly=True
-    )
+        "gnuhealth.orthanc.study",
+        "imaging_test", "Orthanc studies",
+        readonly=True)
 
     @classmethod
     def create(cls, vlist):
@@ -144,242 +130,15 @@ class Patient(metaclass=PoolMeta):
 
     """
     Adds Orthanc patients to the main patient data.
-
-    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL
-                     database operations.
-    :type ModelSQL: class: ``trytond.model.ModelSQL``
-
-    :param ModelView: Inherit from the Tryton ModelView class for user
-                      interface operations.
-    :type ModelView: class: ``trytond.model.ModelView``
-
-    :var __name__: The unique name ``gnuhealth.patient`` of the model.
-    :vartype __name__: str
     """
 
     orthanc_patients = fields.One2Many(
-        "gnuhealth.orthanc.patient", "patient", "Orthanc patients"
-    )
+        "gnuhealth.orthanc.patient",
+        "patient", "Orthanc patients")
 
     orthanc_studies = fields.One2Many(
         'gnuhealth.imaging_orthanc.study',
         'patient', 'Orthanc Study')
-
-# Deprecated in GH 5.0 in favor of Patient class
-
-
-class OrthancPatientDEPRECATED(ModelSQL, ModelView):
-    """Orthanc patient information"""
-    """
-    Defines an Orthanc Patient.
-
-    This class defines the ``OrthancPatient``. It provides methods to update
-    existing patients or add new patients from the Orthanc DICOM server.
-    Additionally, it allows to extract DICOM tags and automatically generates
-    hyperlinks to the corresponding patients.
-
-    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL
-                     database operations.
-    :type ModelSQL: class: ``trytond.model.ModelSQL``
-
-    :param ModelView: Inherit from the Tryton ModelView class for user
-                      interface operations.
-    :type ModelView: class: ``trytond.model.ModelView``
-
-    :var __name__: The unique name ``gnuhealth.orthanc.patient`` of the model.
-    :vartype __name__: str
-
-    :var patient: Local linked patient from Orthanc into GNU Health HMIS.
-    :vartype patient: class: ``trytond.model.field.Many2One``
-
-    :var name: Name of the patient. Read-only.
-    :vartype name: class: ``trytond.model.field.Char``
-
-    :var bd: Birth date of the patient. Read-only.
-    :vartype bd: class: ``trytond.model.field.Date``
-
-    :var ident: Unique ID for a patient based on the Patient ID DICOM Tag.
-                Read-only.
-    :vartype ident: class: ``trytond.model.field.Char``
-
-    :var uuid: SHA-1 Hash of ``ident``. Read-only and Required.
-    :vartype uuid: class: ``trytond.model.field.Char``
-
-    :var studies: List of Orthanc studies directly related to the patient.
-                  Read-only.
-    :vartype studies: class: ``trytond.model.field.One2Many``
-
-    :var server:  A field to specify the server. Required.
-    :vartype server: class: ``trytond.model.field.Many2One``
-
-    :var link: Link to the patient in the Orthanc Explorer.
-    :vartype link: class: ``trytond.model.field.Char``
-    """
-
-    __name__ = "gnuhealth.orthanc.patient"
-
-    patient = fields.Many2One(
-        "gnuhealth.patient", "Patient", help="Local linked patient"
-    )
-    name = fields.Char("PatientName", readonly=True)
-    bd = fields.Date("Birthdate", readonly=True)
-    ident = fields.Char("PatientID", readonly=True)
-    uuid = fields.Char("PatientUUID", readonly=True, required=True)
-
-    studies = fields.One2Many(
-        "gnuhealth.orthanc.study", "patient", "Studies", readonly=True
-    )
-
-    server = fields.Many2One(
-        "gnuhealth.orthanc.config", "Server", readonly=True)
-    link = fields.Function(
-        fields.Char(
-            "URL", help="Link to patient in Orthanc Explorer"), "get_link"
-    )
-
-    def get_link(self, name):
-        """
-        Return a link to the Orthanc patient with the specified uuid in
-        the Orthanc explorer.
-
-        :param name: Label of the patient to get the link for.
-        :type name: str
-
-        :return: URL to the Orthanc patient in the Orthanc Explorer.
-        :rtype: str
-        """
-
-        pre = "".join([self.server.domain.rstrip("/"), "/"])
-        add = "app/explorer.html#patient?uuid={}".format(self.uuid)
-        return urljoin(pre, add)
-
-    @classmethod
-    def __setup__(cls):
-        """
-        Set up the ``OrthancPatient`` class for database access.
-
-        This method is a class method that initializes various properties
-        and constraints of the ``OrthancPatient`` model. It sets up a SQL
-        constraint to ensure that the ``server`` and  ``uuid`` column
-        are unique.
-        """
-
-        super().__setup__()
-        t = cls.__table__()
-        cls._sql_constraints = [
-            (
-                "uuid_unique",
-                Unique(t, t.server, t.uuid),
-                "UUID must be unique for a given server",
-            )
-        ]
-
-    @staticmethod
-    def get_info_from_dicom(patients):
-        """
-        Extract patient information from DICOM data for writing to database.
-
-        :param patients: List of DICOM data for patients.
-        :type patients: list
-
-        :return: List of dictionaries with patient information.
-        :rtype: list
-        """
-
-        data = []
-        for patient in patients:
-            try:
-                bd = datetime.strptime(
-                    patient["MainDicomTags"]["PatientBirthDate"], "%Y%m%d"
-                ).date()
-
-            except Exception:
-                logger.exception(
-                    "Invalid date format. Please provide the date in "
-                    "the format %Y%m%d"
-                )
-                bd = None
-            data.append(
-                {
-                    "name": patient.get("MainDicomTags").get("PatientName"),
-                    "bd": bd,
-                    "ident": patient.get("MainDicomTags").get("PatientID"),
-                    "uuid": patient.get("ID"),
-                }
-            )
-        return data
-
-    @classmethod
-    def update_patients(cls, patients, server):
-        """
-        Update patients with new information from DICOM files.
-
-        :param patients: A list of patient data in DICOM format.
-        :type patients: list
-
-        :param server: The server to update the patients on.
-        :type server: str
-        """
-
-        entries = cls.get_info_from_dicom(patients)
-        updates = []
-        for entry in entries:
-            try:
-                patient = cls.search(
-                    [("uuid", "=", entry["uuid"]),
-                     ("server", "=", server)], limit=1
-                )[0]
-                patient.party = entry["name"]
-                patient.bd = entry["bd"]
-                patient.ident = entry["ident"]
-                # don't update unless no patient attached
-                if not patient.patient:
-                    try:
-                        g_patient = Patient.search(
-                            [("puid", "=", entry["ident"])], limit=1
-                        )[0]
-                        patient.patient = g_patient
-                        logger.info(
-                            "New Matching PUID found for {}".
-                            format(entry["ident"])
-                        )
-                    except IndexError:
-                        logger.warning(
-                            "No patient from GNU Health HMIS attached")
-                updates.append(patient)
-                logger.info("Updating patient {}".format(entry["uuid"]))
-            except IndexError:
-                continue
-                logger.warning("Unable to update patient {}".
-                               format(entry["uuid"]))
-        cls.save(updates)
-
-    @classmethod
-    def create_patients(cls, patients, server):
-        """
-        Create patients with information from DICOM files.
-
-        :param patients: A list of patient data in DICOM format.
-        :type patients: list
-
-        :param server: The server to update the patients on.
-        :type server: str
-        """
-
-        pool = Pool()
-        Patient = pool.get("gnuhealth.patient")
-
-        entries = cls.get_info_from_dicom(patients)
-        for entry in entries:
-            try:
-                g_patient = Patient.search(
-                    [("puid", "=", entry["ident"])], limit=1)[0]
-                logger.info("Matching PUID found for {}".format(entry["uuid"]))
-            except IndexError:
-                g_patient = None
-            entry["server"] = server
-            entry["patient"] = g_patient
-        cls.create(entries)
 
 
 class PatientOrthancStudy(ModelSQL, ModelView):
@@ -1047,8 +806,497 @@ class PatientOrthancStudy(ModelSQL, ModelView):
                 "please check the Orthanc server")
 
 
-# Deprecated in GH 5.0 in favor or PatientOrchancStudy class
-# and "gnuhealth.imaging_orthanc.study" model
+class StudySeries(ModelSQL, ModelView):
+    'Study Series'
+    __name__ = 'gnuhealth.imaging_orthanc.study_series'
+
+    study = fields.Many2One(
+        'gnuhealth.imaging_orthanc.study', 'Study',
+        help='Patient study series',
+        readonly=True,
+        required=True,
+        ondelete='CASCADE')
+
+    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
+    series_number = fields.Char('Series No.', readonly=True)
+
+    series_description = fields.Char(
+        'Description',
+        readonly=True, required=False)
+
+    series_UID = fields.Char('Series UID', readonly=True, required=True)
+    modality = fields.Char('Modality', required=True, readonly=True)
+
+    server = fields.Function(
+        fields.Char(
+            "Server",
+            readonly=True, required=True),
+        "get_study_server",
+        searcher='search_study_server')
+
+    stone_viewer_link = fields.Function(
+        fields.Char(
+            "Stone Viewer",
+            help="Link to Orthanc Stone Viewer"),
+        "get_stone_viewer_link")
+
+    notes = fields.Text(
+        "Series notes",
+        help='Extra Information',
+        readonly=False)
+
+    instances = fields.One2Many(
+        'gnuhealth.imaging_orthanc.series_instances',
+        'series',
+        'Series Instance')
+
+    @classmethod
+    def __setup__(cls):
+        """
+        A description of the entire function, "
+        "its parameters, and its return types.
+        """
+        super(StudySeries, cls).__setup__()
+        cls._buttons.update({
+            'delete_series': {},
+        })
+
+    def get_stone_viewer_link(self, name):
+        """
+        Get the link for the stone viewer and study, based on the
+        server and study instance UID.
+        """
+        # https://orthanc.uclouvain.be/demo/stone-webviewer/index.html?study=1.2.840.113745.101000.1008000.38179.6792.6324567&series=1.3.12.2.1107.5.1.4.36085.2.0.517109821292363
+
+        url = urljoin(self.study.link_base_url, (
+            'stone-webviewer/index.html?' +
+            f'study={self.study.study_instance_UID}' +
+            f'&series={self.series_UID}'))
+
+        return url
+
+    def get_study_server(self, name):
+        """
+        Get the study server.
+
+        Parameters:
+            name (str): The name of the study.
+
+        Returns:
+            study_server: The server for the given study.
+        """
+        return self.study.server
+
+    @classmethod
+    def search_study_server(cls, name, clause):
+        """
+        Perform a search on the study server "
+        "based on the provided name and clause.
+        """
+        res = []
+        value = clause[2]
+        res.append(('study.server', clause[1], value))
+        return res
+
+    def get_study_patient(self, name):
+        """
+        Returns the name of the patient associated with the given study.
+
+        Parameters:
+            name (str): The name of the study.
+
+        Returns:
+            str: The name of the patient associated with the study.
+        """
+        return self.study.patient.name
+
+    @classmethod
+    def delete(cls, seriess):
+        """
+        Delete a list of series and their associated studies "
+        "if they have no more series.
+        """
+        studies = [s.study for s in seriess]
+        # call original delete
+        super(StudySeries, cls).delete(seriess)
+        # if the study has no more series, delete the study, too
+        Study = Pool().get('gnuhealth.imaging_orthanc.study')
+        for study in studies:
+            if study and ((study.series is None) or len(study.series) == 0):
+                Study.delete([study])
+
+    @classmethod
+    @ModelView.button
+    def delete_series(cls, records):
+        """
+        A class method to delete series from the Orthanc server.
+        Takes a list of records as input.
+        Returns 'reload' on successful deletion.
+        Raises UserError on failure with an appropriate error message.
+        """
+        records_to_delete = []
+        try:
+            Config = Pool().get('gnuhealth.orthanc.config')
+            servers = Config.search([])
+            for record in records:
+                for conf_server in servers:
+                    if (conf_server.domain == record.study.server):
+                        client = Orthanc(
+                            url=conf_server.domain,
+                            username=conf_server.user,
+                            password=conf_server.password,
+                            return_raw_response=True)
+
+                        response = client.delete_series_id(record.orthanc_UID)
+                        if (200 <= response.status_code < 300 or
+                                response.status_code == 404):
+                            records_to_delete.append(record)
+                        else:
+                            raise UserError(
+                                'Orthanc server returned HTTP code'
+                                f'{response.status_code}, '
+                                f'with content {response.text}',
+                                description=(
+                                    "Unable to delete Orthanc study"
+                                    "series. It may no longer exist or "
+                                    "the Orthanc server could be in "
+                                    "read-only mode. "
+                                    "Please review your "
+                                    "Orthanc server configuration."))
+        except Exception as exception:
+            logger.error(
+                'Delete study series exception: %s',
+                exception,
+                exc_info=True)
+            raise UserError(str(exception))
+        finally:
+            cls.delete(records_to_delete)
+        return 'reload'
+
+#
+# All instances in the series of patient's image study.
+#
+
+
+class SeriesInstances(ModelSQL, ModelView):
+    'Series Instance'
+    __name__ = 'gnuhealth.imaging_orthanc.series_instances'
+
+    series = fields.Many2One(
+        'gnuhealth.imaging_orthanc.study_series',
+        'Series',
+        help='Study series instance',
+        readonly=True,
+        required=True,
+        ondelete='CASCADE')
+
+    sop_instance_UID = fields.Char(
+        'SOP Instance UID',
+        readonly=True,
+        required=True)
+
+    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
+
+    instance_number = fields.Integer(
+        'Instance Number',
+        readonly=True,
+        required=False)
+
+    image_position_patient = fields.Char(
+        'Image Position', readonly=True, required=False)
+
+    server = fields.Function(
+        fields.Char(
+            "Server",
+            readonly=True,
+            required=True),
+        "get_study_server",
+        searcher="search_study_server")
+
+    image = fields.Function(
+        fields.Binary("Image"),
+        'get_image',
+        loading='lazy')
+
+    @classmethod
+    def __setup__(cls):
+        """
+        Set up the SeriesInstances class.
+        """
+        super(SeriesInstances, cls).__setup__()
+
+        cls._order.insert(0, ('instance_number', 'ASC'))
+
+    def get_study_server(self, name):
+        """
+        Get the study server for a given name.
+
+        :param name: The name of the study.
+        :return: The server associated with the study.
+        """
+        return self.series.server
+
+    @classmethod
+    def search_study_server(cls, name, clause):
+        """
+        A class method that searches the study server "
+        "based on a given name and clause.
+        """
+        res = []
+        value = clause[2]
+        res.append(('series.server', clause[1], value))
+        return res
+
+    def get_image(self, name):
+        """
+        A method to retrieve an image from an Orthanc server.
+
+        :return: The image data in PNG format if successful, None otherwise.
+        """
+        try:
+            Config = Pool().get('gnuhealth.orthanc.config')
+            servers = Config.search([])
+            for conf_server in servers:
+                if conf_server.domain == self.server:
+                    logger.error(conf_server.domain)
+                    client = Orthanc(
+                        url=conf_server.domain,
+                        username=conf_server.user,
+                        password=conf_server.password,
+                        return_raw_response=True)
+                    response = client.get_instances_id_frames_frame_rendered(
+                        0, self.orthanc_UID, headers={'Accept': 'image/png'})
+                    if 200 <= response.status_code < 300:
+                        image_data = response.read()
+                        return image_data
+                    else:
+                        raise UserError(
+                            "Orthanc server returned HTTP code"
+                            f"{response.status_code},"
+                            f" with content {response.text}")
+            return None
+        except Exception as exception:
+            logger.error('Get image of instance: %s', exception, exc_info=True)
+            return None
+
+
+# ----------------------------------------------------------------------------
+# WARN: The following code will be deprecated in GH 5.0
+# ----------------------------------------------------------------------------
+
+class OrthancPatientDEPRECATED(ModelSQL, ModelView):
+    """Orthanc patient information"""
+    """
+    Defines an Orthanc Patient.
+
+    This class defines the ``OrthancPatient``. It provides methods to update
+    existing patients or add new patients from the Orthanc DICOM server.
+    Additionally, it allows to extract DICOM tags and automatically generates
+    hyperlinks to the corresponding patients.
+
+    :param ModelSQL: Inherit from the Tryton ModelSQL class for SQL
+                     database operations.
+    :type ModelSQL: class: ``trytond.model.ModelSQL``
+
+    :param ModelView: Inherit from the Tryton ModelView class for user
+                      interface operations.
+    :type ModelView: class: ``trytond.model.ModelView``
+
+    :var __name__: The unique name ``gnuhealth.orthanc.patient`` of the model.
+    :vartype __name__: str
+
+    :var patient: Local linked patient from Orthanc into GNU Health HMIS.
+    :vartype patient: class: ``trytond.model.field.Many2One``
+
+    :var name: Name of the patient. Read-only.
+    :vartype name: class: ``trytond.model.field.Char``
+
+    :var bd: Birth date of the patient. Read-only.
+    :vartype bd: class: ``trytond.model.field.Date``
+
+    :var ident: Unique ID for a patient based on the Patient ID DICOM Tag.
+                Read-only.
+    :vartype ident: class: ``trytond.model.field.Char``
+
+    :var uuid: SHA-1 Hash of ``ident``. Read-only and Required.
+    :vartype uuid: class: ``trytond.model.field.Char``
+
+    :var studies: List of Orthanc studies directly related to the patient.
+                  Read-only.
+    :vartype studies: class: ``trytond.model.field.One2Many``
+
+    :var server:  A field to specify the server. Required.
+    :vartype server: class: ``trytond.model.field.Many2One``
+
+    :var link: Link to the patient in the Orthanc Explorer.
+    :vartype link: class: ``trytond.model.field.Char``
+    """
+
+    __name__ = "gnuhealth.orthanc.patient"
+
+    patient = fields.Many2One(
+        "gnuhealth.patient", "Patient", help="Local linked patient"
+    )
+    name = fields.Char("PatientName", readonly=True)
+    bd = fields.Date("Birthdate", readonly=True)
+    ident = fields.Char("PatientID", readonly=True)
+    uuid = fields.Char("PatientUUID", readonly=True, required=True)
+
+    studies = fields.One2Many(
+        "gnuhealth.orthanc.study", "patient", "Studies", readonly=True
+    )
+
+    server = fields.Many2One(
+        "gnuhealth.orthanc.config", "Server", readonly=True)
+    link = fields.Function(
+        fields.Char(
+            "URL", help="Link to patient in Orthanc Explorer"), "get_link"
+    )
+
+    def get_link(self, name):
+        """
+        Return a link to the Orthanc patient with the specified uuid in
+        the Orthanc explorer.
+
+        :param name: Label of the patient to get the link for.
+        :type name: str
+
+        :return: URL to the Orthanc patient in the Orthanc Explorer.
+        :rtype: str
+        """
+
+        pre = "".join([self.server.domain.rstrip("/"), "/"])
+        add = "app/explorer.html#patient?uuid={}".format(self.uuid)
+        return urljoin(pre, add)
+
+    @classmethod
+    def __setup__(cls):
+        """
+        Set up the ``OrthancPatient`` class for database access.
+
+        This method is a class method that initializes various properties
+        and constraints of the ``OrthancPatient`` model. It sets up a SQL
+        constraint to ensure that the ``server`` and  ``uuid`` column
+        are unique.
+        """
+
+        super().__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            (
+                "uuid_unique",
+                Unique(t, t.server, t.uuid),
+                "UUID must be unique for a given server",
+            )
+        ]
+
+    @staticmethod
+    def get_info_from_dicom(patients):
+        """
+        Extract patient information from DICOM data for writing to database.
+
+        :param patients: List of DICOM data for patients.
+        :type patients: list
+
+        :return: List of dictionaries with patient information.
+        :rtype: list
+        """
+
+        data = []
+        for patient in patients:
+            try:
+                bd = datetime.strptime(
+                    patient["MainDicomTags"]["PatientBirthDate"], "%Y%m%d"
+                ).date()
+
+            except Exception:
+                logger.exception(
+                    "Invalid date format. Please provide the date in "
+                    "the format %Y%m%d"
+                )
+                bd = None
+            data.append(
+                {
+                    "name": patient.get("MainDicomTags").get("PatientName"),
+                    "bd": bd,
+                    "ident": patient.get("MainDicomTags").get("PatientID"),
+                    "uuid": patient.get("ID"),
+                }
+            )
+        return data
+
+    @classmethod
+    def update_patients(cls, patients, server):
+        """
+        Update patients with new information from DICOM files.
+
+        :param patients: A list of patient data in DICOM format.
+        :type patients: list
+
+        :param server: The server to update the patients on.
+        :type server: str
+        """
+
+        entries = cls.get_info_from_dicom(patients)
+        updates = []
+        for entry in entries:
+            try:
+                patient = cls.search(
+                    [("uuid", "=", entry["uuid"]),
+                     ("server", "=", server)], limit=1
+                )[0]
+                patient.party = entry["name"]
+                patient.bd = entry["bd"]
+                patient.ident = entry["ident"]
+                # don't update unless no patient attached
+                if not patient.patient:
+                    try:
+                        g_patient = Patient.search(
+                            [("puid", "=", entry["ident"])], limit=1
+                        )[0]
+                        patient.patient = g_patient
+                        logger.info(
+                            "New Matching PUID found for {}".
+                            format(entry["ident"])
+                        )
+                    except IndexError:
+                        logger.warning(
+                            "No patient from GNU Health HMIS attached")
+                updates.append(patient)
+                logger.info("Updating patient {}".format(entry["uuid"]))
+            except IndexError:
+                continue
+                logger.warning("Unable to update patient {}".
+                               format(entry["uuid"]))
+        cls.save(updates)
+
+    @classmethod
+    def create_patients(cls, patients, server):
+        """
+        Create patients with information from DICOM files.
+
+        :param patients: A list of patient data in DICOM format.
+        :type patients: list
+
+        :param server: The server to update the patients on.
+        :type server: str
+        """
+
+        pool = Pool()
+        Patient = pool.get("gnuhealth.patient")
+
+        entries = cls.get_info_from_dicom(patients)
+        for entry in entries:
+            try:
+                g_patient = Patient.search(
+                    [("puid", "=", entry["ident"])], limit=1)[0]
+                logger.info("Matching PUID found for {}".format(entry["uuid"]))
+            except IndexError:
+                g_patient = None
+            entry["server"] = server
+            entry["patient"] = g_patient
+        cls.create(entries)
+
 
 class OrthancStudyDEPRECATED(ModelSQL, ModelView):
     """
@@ -1418,276 +1666,3 @@ class OrthancStudyDEPRECATED(ModelSQL, ModelView):
                 entry["imaging_test"] = result.id
 
         cls.create(entries)
-
-
-class StudySeries(ModelSQL, ModelView):
-    'Study Series'
-    __name__ = 'gnuhealth.imaging_orthanc.study_series'
-
-    study = fields.Many2One(
-        'gnuhealth.imaging_orthanc.study', 'Study',
-        help='Patient study series',
-        readonly=True,
-        required=True,
-        ondelete='CASCADE')
-
-    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
-    series_number = fields.Char('Series No.', readonly=True)
-
-    series_description = fields.Char(
-        'Description',
-        readonly=True, required=False)
-
-    series_UID = fields.Char('Series UID', readonly=True, required=True)
-    modality = fields.Char('Modality', required=True, readonly=True)
-
-    server = fields.Function(
-        fields.Char(
-            "Server",
-            readonly=True, required=True),
-        "get_study_server",
-        searcher='search_study_server')
-
-    stone_viewer_link = fields.Function(
-        fields.Char(
-            "Stone Viewer",
-            help="Link to Orthanc Stone Viewer"),
-        "get_stone_viewer_link")
-
-    notes = fields.Text(
-        "Series notes",
-        help='Extra Information',
-        readonly=False)
-
-    instances = fields.One2Many(
-        'gnuhealth.imaging_orthanc.series_instances',
-        'series',
-        'Series Instance')
-
-    @classmethod
-    def __setup__(cls):
-        """
-        A description of the entire function, "
-        "its parameters, and its return types.
-        """
-        super(StudySeries, cls).__setup__()
-        cls._buttons.update({
-            'delete_series': {},
-        })
-
-    def get_stone_viewer_link(self, name):
-        """
-        Get the link for the stone viewer and study, based on the
-        server and study instance UID.
-        """
-        # https://orthanc.uclouvain.be/demo/stone-webviewer/index.html?study=1.2.840.113745.101000.1008000.38179.6792.6324567&series=1.3.12.2.1107.5.1.4.36085.2.0.517109821292363
-
-        url = urljoin(self.study.link_base_url, (
-            'stone-webviewer/index.html?' +
-            f'study={self.study.study_instance_UID}' +
-            f'&series={self.series_UID}'))
-
-        return url
-
-    def get_study_server(self, name):
-        """
-        Get the study server.
-
-        Parameters:
-            name (str): The name of the study.
-
-        Returns:
-            study_server: The server for the given study.
-        """
-        return self.study.server
-
-    @classmethod
-    def search_study_server(cls, name, clause):
-        """
-        Perform a search on the study server "
-        "based on the provided name and clause.
-        """
-        res = []
-        value = clause[2]
-        res.append(('study.server', clause[1], value))
-        return res
-
-    def get_study_patient(self, name):
-        """
-        Returns the name of the patient associated with the given study.
-
-        Parameters:
-            name (str): The name of the study.
-
-        Returns:
-            str: The name of the patient associated with the study.
-        """
-        return self.study.patient.name
-
-    @classmethod
-    def delete(cls, seriess):
-        """
-        Delete a list of series and their associated studies "
-        "if they have no more series.
-        """
-        studies = [s.study for s in seriess]
-        # call original delete
-        super(StudySeries, cls).delete(seriess)
-        # if the study has no more series, delete the study, too
-        Study = Pool().get('gnuhealth.imaging_orthanc.study')
-        for study in studies:
-            if study and ((study.series is None) or len(study.series) == 0):
-                Study.delete([study])
-
-    @classmethod
-    @ModelView.button
-    def delete_series(cls, records):
-        """
-        A class method to delete series from the Orthanc server.
-        Takes a list of records as input.
-        Returns 'reload' on successful deletion.
-        Raises UserError on failure with an appropriate error message.
-        """
-        records_to_delete = []
-        try:
-            Config = Pool().get('gnuhealth.orthanc.config')
-            servers = Config.search([])
-            for record in records:
-                for conf_server in servers:
-                    if (conf_server.domain == record.study.server):
-                        client = Orthanc(
-                            url=conf_server.domain,
-                            username=conf_server.user,
-                            password=conf_server.password,
-                            return_raw_response=True)
-
-                        response = client.delete_series_id(record.orthanc_UID)
-                        if (200 <= response.status_code < 300 or
-                                response.status_code == 404):
-                            records_to_delete.append(record)
-                        else:
-                            raise UserError(
-                                'Orthanc server returned HTTP code'
-                                f'{response.status_code}, '
-                                f'with content {response.text}',
-                                description=(
-                                    "Unable to delete Orthanc study"
-                                    "series. It may no longer exist or "
-                                    "the Orthanc server could be in "
-                                    "read-only mode. "
-                                    "Please review your "
-                                    "Orthanc server configuration."))
-        except Exception as exception:
-            logger.error(
-                'Delete study series exception: %s',
-                exception,
-                exc_info=True)
-            raise UserError(str(exception))
-        finally:
-            cls.delete(records_to_delete)
-        return 'reload'
-#
-# All instances in the series of patient's image study.
-#
-
-
-class SeriesInstances(ModelSQL, ModelView):
-    'Series Instance'
-    __name__ = 'gnuhealth.imaging_orthanc.series_instances'
-
-    series = fields.Many2One(
-        'gnuhealth.imaging_orthanc.study_series',
-        'Series',
-        help='Study series instance',
-        readonly=True,
-        required=True,
-        ondelete='CASCADE')
-
-    sop_instance_UID = fields.Char(
-        'SOP Instance UID',
-        readonly=True,
-        required=True)
-
-    orthanc_UID = fields.Char('Orthanc UID', readonly=True, required=True)
-
-    instance_number = fields.Integer(
-        'Instance Number',
-        readonly=True,
-        required=False)
-
-    image_position_patient = fields.Char(
-        'Image Position', readonly=True, required=False)
-
-    server = fields.Function(
-        fields.Char(
-            "Server",
-            readonly=True,
-            required=True),
-        "get_study_server",
-        searcher="search_study_server")
-
-    image = fields.Function(
-        fields.Binary("Image"),
-        'get_image',
-        loading='lazy')
-
-    @classmethod
-    def __setup__(cls):
-        """
-        Set up the SeriesInstances class.
-        """
-        super(SeriesInstances, cls).__setup__()
-
-        cls._order.insert(0, ('instance_number', 'ASC'))
-
-    def get_study_server(self, name):
-        """
-        Get the study server for a given name.
-
-        :param name: The name of the study.
-        :return: The server associated with the study.
-        """
-        return self.series.server
-
-    @classmethod
-    def search_study_server(cls, name, clause):
-        """
-        A class method that searches the study server "
-        "based on a given name and clause.
-        """
-        res = []
-        value = clause[2]
-        res.append(('series.server', clause[1], value))
-        return res
-
-    def get_image(self, name):
-        """
-        A method to retrieve an image from an Orthanc server.
-
-        :return: The image data in PNG format if successful, None otherwise.
-        """
-        try:
-            Config = Pool().get('gnuhealth.orthanc.config')
-            servers = Config.search([])
-            for conf_server in servers:
-                if conf_server.domain == self.server:
-                    logger.error(conf_server.domain)
-                    client = Orthanc(
-                        url=conf_server.domain,
-                        username=conf_server.user,
-                        password=conf_server.password,
-                        return_raw_response=True)
-                    response = client.get_instances_id_frames_frame_rendered(
-                        0, self.orthanc_UID, headers={'Accept': 'image/png'})
-                    if 200 <= response.status_code < 300:
-                        image_data = response.read()
-                        return image_data
-                    else:
-                        raise UserError(
-                            "Orthanc server returned HTTP code"
-                            f"{response.status_code},"
-                            f" with content {response.text}")
-            return None
-        except Exception as exception:
-            logger.error('Get image of instance: %s', exception, exc_info=True)
-            return None
