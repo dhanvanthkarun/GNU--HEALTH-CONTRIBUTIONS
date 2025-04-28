@@ -18,7 +18,7 @@ The Configuration of Orthanc DICOM Server.
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from pyorthanc import Orthanc
 from urllib.parse import urljoin
-from requests.exceptions import HTTPError, RequestException, UnsupportedProtocol
+from requests.exceptions import HTTPError, RequestException
 from trytond.exceptions import UserError
 from trytond.pool import Pool
 import logging
