@@ -39,7 +39,7 @@
         <record model="ir.model.access" id="access_imaging_orthanc_series_instances">
             <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
             <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
+            <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
@@ -204,7 +204,7 @@
             <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
             <field name="group" ref="health.group_health_doctor"/>
             <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
+            <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>

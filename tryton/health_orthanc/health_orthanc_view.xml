@@ -125,6 +125,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
         </record>
 
+        <record model="ir.model.button" id="button_imaging_orthanc_series_instances_attach_image_to_imaging_test_report">
+            <field name="name">attach_image_to_imaging_test_report</field>
+            <field name="string">Attach To Report</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
+        </record>
+
         <!-- Menu items -->
         <menuitem name="Orthanc" sequence="200" id="orthanc_menu"
                   parent="health_imaging.menu_imaging" icon="orthanc"/>

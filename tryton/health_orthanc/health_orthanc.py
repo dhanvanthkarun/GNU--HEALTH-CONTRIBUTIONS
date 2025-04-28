@@ -35,7 +35,6 @@ from datetime import datetime
 from urllib.parse import urljoin
 from lxml import etree
 
-
 import logging
 
 try:
@@ -1025,6 +1024,9 @@ class SeriesInstances(ModelSQL, ModelView):
         """
         super(SeriesInstances, cls).__setup__()
 
+        cls._buttons.update({
+            'attach_image_to_imaging_test_report': {}})
+
         cls._order.insert(0, ('instance_number', 'ASC'))
 
     def get_study_server(self, name):
@@ -1079,10 +1081,60 @@ class SeriesInstances(ModelSQL, ModelView):
             logger.error('Get image of instance: %s', exception, exc_info=True)
             return None
 
+    @classmethod
+    @ModelView.button
+    def attach_image_to_imaging_test_report(cls, records):
+        Config = Pool().get('gnuhealth.orthanc.config')
+        Attachment = Pool().get('ir.attachment')
+
+        servers = Config.search([])
+
+        for record in records:
+            imaging_test = record.series.study.imaging_test
+            image_data = None
+
+            if imaging_test:
+                for conf_server in servers:
+                    if (conf_server.domain == record.server):
+                        client = Orthanc(
+                            url=conf_server.domain,
+                            username=conf_server.user,
+                            password=conf_server.password,
+                            return_raw_response=True)
+                        response = \
+                            client.get_instances_id_frames_frame_rendered(
+                                0, record.orthanc_UID,
+                                headers={'Accept': 'image/png'})
+
+                        if 200 <= response.status_code < 300:
+                            image_data = response.read()
+                            if Attachment.search(
+                                    [('resource', '=', imaging_test),
+                                     ('name', '=', record.sop_instance_UID)]):
+                                raise UserError(
+                                    "This image has been attach to "
+                                    "GNU Health imaging test report!")
+                            else:
+                                Attachment.create([{
+                                    'name': record.sop_instance_UID,
+                                    'data': image_data,
+                                    'resource': imaging_test}])
+                        else:
+                            raise UserError(
+                                "Orthanc server returned HTTP code"
+                                f"{response.status_code},"
+                                f" with content {response.text}")
+            else:
+                raise UserError(
+                    "Can not find GNU Health imaging test "
+                    "to attach this image.")
+
+        return "reload"
 
 # ----------------------------------------------------------------------------
 # WARN: The following code will be deprecated in GH 5.0
 # ----------------------------------------------------------------------------
+
 
 class OrthancPatientDEPRECATED(ModelSQL, ModelView):
     """Orthanc patient information"""
