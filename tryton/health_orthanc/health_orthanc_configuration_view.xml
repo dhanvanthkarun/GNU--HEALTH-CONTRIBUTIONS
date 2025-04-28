@@ -55,12 +55,6 @@
             <field name="name">add_orthanc_server_init_data</field>
         </record>
 
-        <record model="ir.ui.view" id="view_orthanc_add_status">
-            <field name="model">gnuhealth.imaging_orthanc.add.status</field>
-            <field name="type">form</field>
-            <field name="name">add_orthanc_server_status</field>
-        </record>
-        
         <record model="ir.action.wizard" id="orthanc_add_server_init_data">
             <field name="name">Add New Server</field>
             <field name="wiz_name">gnuhealth.imaging_orthanc.wizard.orthanc_new_connect</field>
