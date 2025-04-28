@@ -255,10 +255,6 @@ msgctxt "field:gnuhealth.orthanc.patient,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-msgctxt "field:gnuhealth.orthanc.patient,patient_studies:"
-msgid "Studies"
-msgstr ""
-
 msgctxt "field:gnuhealth.orthanc.patient,server:"
 msgid "Server"
 msgstr ""
@@ -560,8 +556,28 @@ msgctxt "model:ir.action,name:orthanc_add_server_init_data"
 msgid "Add New Server"
 msgstr ""
 
+msgctxt "model:ir.model.button,string:button_imaging_orthanc_delete_series"
+msgid "Delete Series"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:button_imaging_orthanc_delete_study"
+msgid "Delete Study"
+msgstr ""
+
+msgctxt "model:ir.model.button,string:remove_config_server_button"
+msgid "Remove Config Server"
+msgstr ""
+
 msgctxt "model:ir.ui.menu,name:imaging_orthanc_add_server_menu"
 msgid "Add New Server"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:imaging_orthanc_menu_patient_view"
+msgid "Patients"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:imaging_orthanc_menu_study_view"
+msgid "Studies"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:orthanc_config_menu"
@@ -570,15 +586,6 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:orthanc_menu"
 msgid "Orthanc"
-msgstr ""
-
-#, fuzzy
-msgctxt "model:ir.ui.menu,name:orthanc_menu_patient_view"
-msgid "Patients"
-msgstr "Patients"
-
-msgctxt "model:ir.ui.menu,name:orthanc_menu_study_view"
-msgid "Studies"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:orthanc_servers_menu"
@@ -591,10 +598,6 @@ msgstr ""
 
 msgctxt "model:res.group,name:group_imaging_orthanc_admin"
 msgid "Health Imaging Orthanc Administration"
-msgstr ""
-
-msgctxt "selection:ir.cron,method:"
-msgid "Orthanc: Sync studies"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.result:"
