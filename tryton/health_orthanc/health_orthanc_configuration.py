@@ -177,6 +177,10 @@ class ServerConfig(ModelSQL, ModelView):
             logger.exception(
                 "Unhandled request error for <%s> occurred", domain)
             return False
+        except BaseException:
+            logger.exception(
+                "Other error for <%s> occurred", domain)
+            return False
         return True
 
     @fields.depends("domain", "user", "password")
