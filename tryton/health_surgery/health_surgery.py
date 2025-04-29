@@ -701,7 +701,7 @@ class Surgery(ModelSQL, ModelView):
             if 'patient' in values:
                 to_update['patient'] = values['patient']
             if 'operating_room' in values:
-                to_update['name'] = values['operating_room']
+                to_update['oproom'] = values['operating_room']
 
             # Update schedule
             Orsched.write(sched_entry, to_update)
@@ -951,7 +951,7 @@ class SurgeryTeam(ModelSQL, ModelView):
 
     role = fields.Many2One(
         'gnuhealth.hp_specialty', 'Role',
-        domain=[('name', '=', Eval('team_member'))],
+        domain=[('healthprof', '=', Eval('team_member'))],
         depends=['team_member'])
 
     notes = fields.Char('Notes')
@@ -1079,7 +1079,7 @@ class PreOperativeAssessment(ModelSQL, ModelView):
     # Include link to patient ECG
     ecg = fields.Many2One(
         'gnuhealth.patient.ecg', 'ECG',
-        domain=[('name', '=', Eval('patient'))],
+        domain=[('patient', '=', Eval('patient'))],
         depends=['patient'],
         help='Link to the associated electrocardiogram')
 
@@ -1151,10 +1151,11 @@ class PreOperativeAssessment(ModelSQL, ModelView):
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient')
+    @fields.depends('patient', '_parent_patient.critical_summary')
     def on_change_patient(self):
-        self.critical_info = f'{self.patient.critical_summary} \n' \
-            f'{self.patient.critical_info}'
+        if self.patient:
+            self.critical_info = f'{self.patient.critical_summary} \n' \
+                f'{self.patient.critical_info}'
 
     def get_rec_name(self, name):
         asa = ''
