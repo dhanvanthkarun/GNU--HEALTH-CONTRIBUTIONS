@@ -1143,7 +1143,8 @@ class SeriesInstances(ModelSQL, ModelView):
                                 f" with content {response.text}")
             else:
                 raise UserError(
-                    gettext('health_orthanc.msg_find_no_gnuhealth_imaging_test'))
+                    gettext(
+                        'health_orthanc.msg_find_no_gnuhealth_imaging_test'))
 
         return "reload"
 
