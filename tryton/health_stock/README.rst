@@ -5,10 +5,10 @@
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health Stock Module
-#######################
+Stock management package for GNU Health HIS
+###########################################
 
-This module adds several links between health center operations and stock
+This *health-stock* adds several links between health center operations and stock
 management.
 
 - Add stock quantity field on Medicaments.
