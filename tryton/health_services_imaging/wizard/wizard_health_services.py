@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from trytond.model import ModelView, fields
-from trytond.pyson import Eval, Equal
+from trytond.pyson import Eval
 from trytond.wizard import Wizard
 from trytond.pool import Pool
 
