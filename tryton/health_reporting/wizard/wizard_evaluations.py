@@ -47,7 +47,7 @@ class OpenEvaluations(Wizard):
     open_sector = StateAction('health_reporting.act_evaluations_sector')
 
     def transition_select(self):
-        return 'open_' + self.start.group_by
+        return f'open_{self.start.group_by}'
 
     def do_open_doctor(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
@@ -93,8 +93,10 @@ class EvaluationsDoctor(ModelSQL, ModelView):
         Evaluation = pool.get('gnuhealth.patient.evaluation')
         evaluation = Evaluation.__table__()
         where = Literal(True)
-        period_start = Transaction().context['start_date']
-        period_end = Transaction().context['end_date']
+
+        period_start = Transaction().context.get('start_date') or None
+        period_end = Transaction().context.get('end_date') or None
+
         if period_start:
             where &= evaluation.evaluation_start >= period_start
         if period_end:
@@ -127,8 +129,9 @@ class EvaluationsSpecialty(ModelSQL, ModelView):
         Evaluation = pool.get('gnuhealth.patient.evaluation')
         evaluation = Evaluation.__table__()
         where = (evaluation.specialty != Null)
-        period_start = Transaction().context['start_date']
-        period_end = Transaction().context['end_date']
+
+        period_start = Transaction().context.get('start_date') or None
+        period_end = Transaction().context.get('end_date') or None
 
         if period_start:
             where &= evaluation.evaluation_start >= period_start
@@ -171,8 +174,9 @@ class EvaluationsSector(ModelSQL, ModelView):
         join4 = Join(join3, sector)
         join4.condition = join4.right.id == join3.right.operational_sector
         where = Literal(True)
-        period_start = Transaction().context['start_date']
-        period_end = Transaction().context['end_date']
+
+        period_start = Transaction().context.get('start_date') or None
+        period_end = Transaction().context.get('end_date') or None
 
         if period_start:
             where &= evaluation.evaluation_start >= period_start
