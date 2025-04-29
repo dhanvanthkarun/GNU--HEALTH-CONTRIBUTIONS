@@ -31,7 +31,6 @@ class RequestPatientImagingTestStart(ModelView):
     service = fields.Many2One(
         'gnuhealth.health_service', 'Service',
         domain=[('patient', '=', Eval('patient'))], depends=['patient'],
-        states={'readonly': Equal(Eval('state'), 'done')},
         help="Service document associated to this Imaging Request")
 
 
