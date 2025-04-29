@@ -1108,16 +1108,24 @@ class SeriesInstances(ModelSQL, ModelView):
 
                         if 200 <= response.status_code < 300:
                             image_data = response.read()
-                            if Attachment.search(
-                                    [('resource', '=', imaging_test),
-                                     ('name', '=', record.sop_instance_UID)]):
-                                raise UserError(
-                                    "This image has been attach to "
-                                    "GNU Health imaging test report!")
+
+                            description = (
+                                f"Instance Number: {record.instance_number}\n"
+                                f"Image Position Patient:\n({record.image_position_patient})")
+
+                            attachment = Attachment.search(
+                                [('resource', '=', imaging_test),
+                                 ('name', '=', record.sop_instance_UID)])
+
+                            if attachment:
+                                Attachment.write(attachment, {
+                                    'data': image_data,
+                                    'description': description})
                             else:
                                 Attachment.create([{
                                     'name': record.sop_instance_UID,
                                     'data': image_data,
+                                    'description': description,
                                     'resource': imaging_test}])
                         else:
                             raise UserError(
@@ -1126,7 +1134,7 @@ class SeriesInstances(ModelSQL, ModelView):
                                 f" with content {response.text}")
             else:
                 raise UserError(
-                    "Can not find GNU Health imaging test "
+                    "Can not find the corresponding GNU Health imaging test "
                     "to attach this image.")
 
         return "reload"

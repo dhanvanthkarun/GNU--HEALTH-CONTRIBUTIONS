@@ -11,11 +11,13 @@
         <field name="instance_number"/>
         <label name="image_position_patient"/>
         <field name="image_position_patient"/>
-        <button name="attach_image_to_imaging_test_report" colspan="4"/>
+        <button name="attach_image_to_imaging_test_report"
+                confirm="Do you want to attach current image to the corresponding GNU Health imaging test report?"
+                colspan="4"/>
     </group>
     <newline/>
-        <group colspan="4" id="series_instances_group" yexpand="1">
-            <field name="image" widget="image" readonly="1"
-                   width="600" height="600"/>
-        </group>    
+    <group colspan="4" id="series_instances_group" yexpand="1">
+      <field name="image" widget="image" readonly="1"
+             width="600" height="600"/>
+    </group>
 </form>
