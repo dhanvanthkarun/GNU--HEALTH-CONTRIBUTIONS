@@ -5,8 +5,8 @@
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health Stock management for hospitalization
-###############################################
+Hospitalization stock management package for GNU Health HIS
+###########################################################
 
 The *health_stock_inpatient* manages stock moves in the hospitalization
 context, including roundings.
