@@ -211,8 +211,9 @@ class PatientSESAssessment(ModelSQL, ModelView):
     # These two are function fields (don't exist at DB level)
     @fields.depends('patient', '_parent_patient.party')
     def on_change_patient(self):
-        self.gender = self.patient.gender
-        self.computed_age = self.patient.age
+        if self.patient:
+            self.gender = self.patient.gender
+            self.computed_age = self.patient.age
 
         occupation = education = du = housing = None
         if (self.patient and self.patient.party.occupation):
@@ -233,7 +234,8 @@ class PatientSESAssessment(ModelSQL, ModelView):
         self.housing = housing
 
     def get_patient_gender(self, name):
-        return self.patient.gender
+        if self.patient:
+            return self.patient.gender
 
     @classmethod
     def search_patient_gender(cls, name, clause):
