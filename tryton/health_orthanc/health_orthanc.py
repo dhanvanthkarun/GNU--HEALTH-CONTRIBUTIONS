@@ -34,6 +34,7 @@ from pyorthanc import Orthanc
 from datetime import datetime
 from urllib.parse import urljoin
 from lxml import etree
+from trytond.i18n import gettext
 
 import logging
 
@@ -1109,9 +1110,17 @@ class SeriesInstances(ModelSQL, ModelView):
                         if 200 <= response.status_code < 300:
                             image_data = response.read()
 
+                            label_instance_number = gettext(
+                                'health_orthanc.msg_label_instance_number')
+
+                            label_image_position = gettext(
+                                'health_orthanc.msg_label_image_position')
+
                             description = (
-                                f"Instance Number: {record.instance_number}\n"
-                                f"Image Position Patient:\n({record.image_position_patient})")
+                                f"{label_instance_number} "
+                                f"{record.instance_number}\n"
+                                f"{label_image_position}\n"
+                                f"... ({record.image_position_patient})")
 
                             attachment = Attachment.search(
                                 [('resource', '=', imaging_test),
@@ -1134,8 +1143,7 @@ class SeriesInstances(ModelSQL, ModelView):
                                 f" with content {response.text}")
             else:
                 raise UserError(
-                    "Can not find the corresponding GNU Health imaging test "
-                    "to attach this image.")
+                    gettext('health_orthanc.msg_find_no_gnuhealth_imaging_test'))
 
         return "reload"
 
