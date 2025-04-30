@@ -220,6 +220,10 @@ class ImagingTestResult(ModelSQL, ModelView):
         ('no_image_comments', 'No Image Comments')
     ], 'Report Style', sort=False)
 
+    @staticmethod
+    def default_report_style():
+        return 'default'
+
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
     # Mostly used in report template.
