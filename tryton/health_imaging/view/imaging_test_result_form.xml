@@ -24,9 +24,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <field name="requested_test"/>
     <label name="doctor"/>
     <field name="doctor"/>
-    <newline/>
     <label name="request"/>
-    <field name="request" colspan="3"/>
+    <field name="request"/>
+    <label name="report_style"/>
+    <field name="report_style"/>
     <notebook>
         <page string="Images" id="images_page">
             <field name="images" colspan="4"/>

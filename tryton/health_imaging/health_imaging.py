@@ -213,13 +213,28 @@ class ImagingTestResult(ModelSQL, ModelView):
         'patient_age_at_evaluation')
 
     comment = fields.Text('Additional Information')
+
+    report_style = fields.Selection([
+        ('default', 'Default'),
+        ('no_images', 'No Images'),
+        ('no_image_comments', 'No Image Comments')
+    ], 'Report Style', sort=False)
+
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
 
     # Mostly used in report template.
-    def has_image_comments(self):
-        return (True in [img.description != '' and
-                         img.description != 'From GNU Health camera' and
-                         img.description is not None for img in self.images])
+    def report_has_images(self):
+        result = (self.images and self.report_style != 'no_images')
+        return result
+
+    # Mostly used in report template.
+    def report_has_image_comments(self):
+        result = (self.report_style != 'no_image_comments' and
+                  (True in [
+                      img.description != '' and
+                      img.description != 'From GNU Health camera' and
+                      img.description is not None for img in self.images]))
+        return result
 
     @classmethod
     def generate_code(cls, **pattern):

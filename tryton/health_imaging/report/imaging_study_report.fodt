@@ -1461,7 +1461,7 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table3.A1" table:number-columns-spanned="2" office:value-type="string">
-       <text:p text:style-name="Standard"><text:placeholder text:placeholder-type="text">&lt;if test=&quot;interpretation.images&quot;&gt;</text:placeholder></text:p>
+       <text:p text:style-name="Standard"><text:placeholder text:placeholder-type="text">&lt;if test=&quot;interpretation.report_has_images()&quot;&gt;</text:placeholder></text:p>
       </table:table-cell>
       <table:covered-table-cell/>
      </table:table-row>
@@ -1474,7 +1474,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table3.A1" table:number-columns-spanned="2" office:value-type="string">
-      <text:p text:style-name="Standard"><text:placeholder text:placeholder-type="text">&lt;if test=&quot;interpretation.has_image_comments()&quot;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Standard"><text:placeholder text:placeholder-type="text">&lt;if test=&quot;interpretation.report_has_image_comments()&quot;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
     </table:table-row>
@@ -1524,7 +1524,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table3.A1" table:number-columns-spanned="2" office:value-type="string">
-      <text:p text:style-name="Standard"><text:placeholder text:placeholder-type="text">&lt;if test=&quot;not interpretation.has_image_comments()&quot;&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Standard"><text:placeholder text:placeholder-type="text">&lt;if test=&quot;not interpretation.report_has_image_comments()&quot;&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:covered-table-cell/>
     </table:table-row>
