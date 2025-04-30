@@ -1,13 +1,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-29 06:29+0000\n"
+"PO-Revision-Date: 2025-04-30 00:34+0000\n"
 "Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
-"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_orthanc/uk/>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/"
+"health_orthanc/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.imaging.test.result,orthanc_studies:"
@@ -49,7 +51,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.imaging_orthanc.series_instances,instance_number:"
 msgid "Instance Number"
-msgstr ""
+msgstr "Номер екземпляра"
 
 msgctxt "field:gnuhealth.imaging_orthanc.series_instances,orthanc_UID:"
 msgid "Orthanc UID"
@@ -57,7 +59,7 @@ msgstr "UID Orthanc"
 
 msgctxt "field:gnuhealth.imaging_orthanc.series_instances,series:"
 msgid "Series"
-msgstr ""
+msgstr "Серія"
 
 msgctxt "field:gnuhealth.imaging_orthanc.series_instances,server:"
 msgid "Server"
@@ -65,7 +67,7 @@ msgstr "Сервер"
 
 msgctxt "field:gnuhealth.imaging_orthanc.series_instances,sop_instance_UID:"
 msgid "SOP Instance UID"
-msgstr ""
+msgstr "UID екземпляра SOP"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,date:"
 msgid "Date"
@@ -121,7 +123,7 @@ msgstr "Пацієнт Orthanc"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,performing_physician_name:"
 msgid "Physician"
-msgstr ""
+msgstr "Лікар"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study,series:"
 msgid "Study Series"
@@ -141,7 +143,7 @@ msgstr "UID дослідження"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study_series,instances:"
 msgid "Series Instance"
-msgstr ""
+msgstr "Екземпляр серії"
 
 msgctxt "field:gnuhealth.imaging_orthanc.study_series,modality:"
 msgid "Modality"
@@ -182,7 +184,7 @@ msgstr "Дослідження"
 msgctxt ""
 "field:gnuhealth.imaging_orthanc.upload_image_data.start,data_to_upload:"
 msgid "File to upload"
-msgstr ""
+msgstr "Файл для завантаження"
 
 msgctxt ""
 "field:gnuhealth.imaging_orthanc.upload_image_data.start,server_config:"
@@ -199,7 +201,7 @@ msgstr "Мітка"
 
 msgctxt "field:gnuhealth.orthanc.config,last_changed_index:"
 msgid "Last Changed Index"
-msgstr ""
+msgstr "Індекс останніх змін"
 
 msgctxt "field:gnuhealth.orthanc.config,link:"
 msgid "Link"
@@ -275,7 +277,7 @@ msgstr "Дослідження"
 
 msgctxt "field:gnuhealth.orthanc.study,instance_uid:"
 msgid "InstanceUID"
-msgstr ""
+msgstr "UID екземпляра"
 
 msgctxt "field:gnuhealth.orthanc.study,institution:"
 msgid "Institution"
@@ -346,6 +348,8 @@ msgid ""
 "Optional Proxy URL of the Orthanc server. It's only needed when the client "
 "cannot connect directly to the Orthanc server."
 msgstr ""
+"Необов'язкова URL-адреса проксі-сервера Orthanc. Потрібна лише тоді, коли "
+"клієнт не може з'єднатися безпосередньо з сервером Orthanc."
 
 msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,user:"
 msgid "Username for Orthanc REST server"
@@ -353,7 +357,7 @@ msgstr "Ім'я користувача для REST-сервера Orthanc"
 
 msgctxt "help:gnuhealth.imaging_orthanc.series_instances,series:"
 msgid "Study series instance"
-msgstr ""
+msgstr "Екземпляр серії досліджень"
 
 msgctxt "help:gnuhealth.imaging_orthanc.study,link_base_url:"
 msgid "Base URL for links"
@@ -436,7 +440,7 @@ msgstr ""
 
 msgctxt "help:gnuhealth.orthanc.patient,link:"
 msgid "Link to patient in Orthanc Explorer"
-msgstr ""
+msgstr "Посилання на пацієнта в Orthanc Explorer"
 
 msgctxt "help:gnuhealth.orthanc.patient,patient:"
 msgid "Local linked patient"
@@ -478,7 +482,7 @@ msgstr ""
 
 msgctxt "model:gnuhealth.imaging_orthanc.series_instances,name:"
 msgid "Series Instance"
-msgstr ""
+msgstr "Екземпляр серії"
 
 msgctxt "model:gnuhealth.imaging_orthanc.study,name:"
 msgid "Patient Orthanc Study"
@@ -547,7 +551,7 @@ msgstr ""
 
 msgctxt "model:ir.message,text:msg_label_instance_number"
 msgid "Instance Number:"
-msgstr ""
+msgstr "Номер екземпляра:"
 
 msgctxt "model:ir.model.button,string:button_imaging_orthanc_delete_series"
 msgid "Delete Series"
@@ -706,7 +710,7 @@ msgstr "Оглядачі"
 
 msgctxt "view:gnuhealth.imaging_orthanc.upload_image_data.start:"
 msgid "Upload the DICOM files to Orthanc?"
-msgstr ""
+msgstr "Завантажити в Orthanc файли DICOM?"
 
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid " "
