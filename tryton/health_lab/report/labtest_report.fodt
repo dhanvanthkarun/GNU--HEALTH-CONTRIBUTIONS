@@ -1683,7 +1683,7 @@
       <text:p text:style-name="GH-Table-Label-Right">Order Date:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.D2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;format_datetime(test.date_requested, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;test.date_requested and format_datetime(test.date_requested, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
@@ -1711,7 +1711,7 @@
       <text:p text:style-name="GH-Table-Label-Right">Test Date:</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.D2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;format_datetime(test.date_analysis, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:placeholder text:placeholder-type="text">&lt;test.date_analysis and format_datetime(test.date_analysis, lang=user.language, timezone=tz)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
