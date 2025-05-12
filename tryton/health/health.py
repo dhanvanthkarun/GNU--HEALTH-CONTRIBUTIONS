@@ -2477,7 +2477,7 @@ class ImmunizationScheduleLine(ModelSQL, ModelView):
                             'vaccine', 'Doses')
 
     def get_rec_name(self, name):
-        return (self.vaccine.name.name)
+        return (self.vaccine.product.name)
 
     @staticmethod
     def default_scope():

@@ -93,7 +93,8 @@ class ImmunizationStatusReport(Report):
             res = Vaccination.search_count([
                 ('patient', '=', immunization['patient']),
                 ('dose', '=', immunization['dose']),
-                ('vaccine.name', '=', immunization['vaccine'].vaccine.name),
+                ('vaccine.product', '=',
+                 immunization['vaccine'].vaccine.product),
             ])
 
             if res:
