@@ -129,7 +129,9 @@ class DomiciliaryUnit(ModelSQL, ModelView):
 
         # Country
         if (self.address_country):
-            du_addr = f"{du_addr}\n{self.address_country.rec_name}"
+            # address_country.rec_name has flag emoji, which will not
+            # show properly when no proper fonts is installed.
+            du_addr = f"{du_addr}\n{self.address_country.name}"
 
         return du_addr
 

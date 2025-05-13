@@ -243,7 +243,9 @@ class BirthCertificate(metaclass=PoolMeta):
             'Person': str(certificate.party.rec_name),
             'Person_dob': str(certificate.party.dob) or '',
             'Person_ID': str(certificate.party.ref) or '',
-            'Country': str(certificate.country.rec_name) or '',
+            # country.rec_name has flag emoji, which will not show
+            # properly when no proper fonts is installed.
+            'Country': str(certificate.country.name) or '',
             'Country_subdivision': certificate.country_subdivision
             and str(certificate.country_subdivision.rec_name) or '',
             'Mother': certificate.mother
@@ -383,7 +385,9 @@ class DeathCertificate(metaclass=PoolMeta):
             'Autopsy': certificate.autopsy,
             'Type_of_death': str(certificate.type_of_death),
             'Place_of_death': str(certificate.place_of_death),
-            'Country': str(certificate.country.rec_name) or '',
+            # country.rec_name has flag emoji, which will not show
+            # properly when no proper fonts is installed.
+            'Country': str(certificate.country.name) or '',
             'Country_subdivision': certificate.country_subdivision
             and str(certificate.country_subdivision.rec_name) or '',
             'Observations': str(certificate.observations),
