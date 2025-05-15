@@ -1585,7 +1585,7 @@ class PatientEvaluation (metaclass=PoolMeta):
         ('gr3', '2'),
         ('gr4a', '3'),
         ('gr5', '4'),
-        ('gr5', '5'),
+        ('gr6', '5'),
     ], 'Goiter classification', sort=False)
 
     @classmethod
