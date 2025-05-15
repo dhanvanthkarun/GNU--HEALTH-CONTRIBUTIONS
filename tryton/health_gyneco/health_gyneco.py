@@ -657,7 +657,7 @@ class PerinatalMonitor(ModelSQL, ModelView):
         ('fb', 'Frank Breech'),
         ('cb', 'Complete Breech'),
         ('t', 'Transverse Lie'),
-        ('t', 'Footling Breech'),
+        ('flb', 'Footling Breech'),
     ], 'Fetus Position', sort=False)
 
     @classmethod
