@@ -1269,6 +1269,7 @@ class DrugDoseUnits(ModelSQL, ModelView):
     'Drug Dose Unit'
     __name__ = 'gnuhealth.dose.unit'
 
+    code = fields.Char('Code', required=True, translate=False)
     name = fields.Char('Unit', required=True, translate=True)
     desc = fields.Char('Description', translate=True)
 
@@ -1279,6 +1280,7 @@ class DrugDoseUnits(ModelSQL, ModelView):
 
         cls._sql_constraints = [
             ('name_uniq', Unique(t, t.name), 'The Unit must be unique !'),
+            ('code_uniq', Unique(t, t.code), 'The Code must be unique !'),
         ]
 
 
