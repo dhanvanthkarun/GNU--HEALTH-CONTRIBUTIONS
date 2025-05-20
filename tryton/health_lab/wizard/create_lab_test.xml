@@ -44,10 +44,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="patient_lab_test_request"/>
         </record>
 
-        <menuitem parent="health_lab.gnuhealth_laboratory_menu"
-            action="patient_lab_test_request"
-            id="menu_patient_lab_test_request" sequence="10"
-            icon="gnuhealth-execute"/>
+        <menuitem name="Lab: New order"
+                  parent="health_lab.gnuhealth_laboratory_menu"
+                  action="patient_lab_test_request"
+                  id="menu_patient_lab_test_request" sequence="10"
+                  icon="gnuhealth-execute"/>
 
     </data>
 </tryton>
