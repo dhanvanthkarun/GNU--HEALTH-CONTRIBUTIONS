@@ -134,6 +134,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             id="menu_imaging" sequence="41" icon="gnuhealth.imaging"/>
 
         <menuitem parent="menu_imaging"
+            name="Medical Imaging Requests"
             action="act_imaging_test_request_view"
             id="menu_imaging_test_request_view" icon="gnuhealth-list"
             sequence="20"/>
@@ -156,6 +157,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <menuitem parent="menu_imaging"
+            name="Medical Imaging Results"
             action="act_imaging_test_result_view"
             id="menu_imaging_test_result_view" icon="gnuhealth-list"
             sequence="30"/>
@@ -194,6 +196,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <menuitem parent="menu_imaging"
+            name="Medical Imaging - New order"
             action="patient_imaging_test_request"
             id="menu_patient_imaging_test_request" sequence="10"
             icon="gnuhealth-execute"/>
