@@ -616,7 +616,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         help='Convert result value to interger in report.')
 
     result_text = fields.Text(
-        'Result - Text',
+        'Qualitative',
         help='Non-numeric results. For '
         'example qualitative values, morphological, colors ...')
     remarks = fields.Text('Remarks')

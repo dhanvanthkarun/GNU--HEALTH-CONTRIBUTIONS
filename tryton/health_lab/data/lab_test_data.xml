@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
-    <data noupdate="0">
+    <data>
 
         <record id="product_category_labservices0" model="product.category">
             <field name="name">Lab Services</field>
@@ -750,11 +750,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record id="gnuhealth_test_critearea_ph0" model="gnuhealth.lab.test.critearea">
-            <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="name"/>
-            <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="code"/>
+            <field eval="&quot;&quot;&quot;pH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;pH&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Acidic&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;4.5-7.5&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="4.5" name="lower_limit"/>
+            <field eval="7.5" name="upper_limit"/>
+
         </record>
 
 
