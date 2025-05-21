@@ -16,7 +16,7 @@
 from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval, Not, Bool, Equal
+from trytond.pyson import Eval, Not, Bool, Equal, If
 from trytond.modules.health.core import (get_health_professional,
                                          get_age_for_comparison)
 
@@ -627,7 +627,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         'Limits verified',
         help='The upper and lower limits have been verified again, '
         'sometimes limits will depend on other indicators of the patient, '
-        'such as: age, pregnancy status, etc, so it is very importent to '
+        'such as: age, pregnancy status, etc, so it is very important to '
         'verify them, because warning status depend on limits values.')
     warning = fields.Boolean(
         'Warn', help='Warns the patient about this '
@@ -717,6 +717,11 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     def default_limits_verified():
         return True
 
+    @fields.depends('result', 'warning')
+    def on_change_with_lab_warning_icon(self):
+        if self.warning:
+            return 'gnuhealth-warning'
+
     @fields.depends('result', 'lower_limit', 'upper_limit')
     def on_change_with_warning(self):
         normal = True
@@ -747,6 +752,13 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     @classmethod
     def check_xml_record(cls, records, values):
         return True
+
+    @classmethod
+    def view_attributes(cls):
+        return super().view_attributes() + [
+            ('/tree', 'visual',
+                If(Eval('warning'), 'danger', '')),
+            ]
 
 
 class GnuHealthPatientLabTest(ModelSQL, ModelView):
