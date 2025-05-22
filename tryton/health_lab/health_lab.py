@@ -757,7 +757,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
     def view_attributes(cls):
         return super().view_attributes() + [
             ('/tree', 'visual',
-                If(Eval('warning'), 'danger', '')),
+                If(Eval('warning'), 'warning', '')),
             ]
 
 
