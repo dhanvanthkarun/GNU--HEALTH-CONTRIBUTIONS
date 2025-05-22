@@ -751,7 +751,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="gnuhealth_test_critearea_ph0" model="gnuhealth.lab.test.critearea">
             <field eval="&quot;&quot;&quot;pH&quot;&quot;&quot;" name="name"/>
-            <field eval="&quot;&quot;&quot;pH&quot;&quot;&quot;" name="code"/>
+            <!-- Code PH has been used before ghis 5.0, it is not
+                 recommended to make changes, if we must change it,
+                 migration scripts need to be written -->
+            <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Acidic&quot;&quot;&quot;" name="normal_range"/>
