@@ -205,7 +205,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <!-- Rounding view -->
 <!-- Update the existing rounding view with information about Intensive Care Unit - ICU -->
 
-        <record model="ir.ui.view" id="gnuhealth_patient_icu_rounding_view">
+        <record model="ir.ui.view" id="gnuhealth_patient_icu_rounding_view_form">
             <field name="model">gnuhealth.patient.rounding</field>
             <field name="inherit" ref="health_inpatient.gnuhealth_patient_rounding_view" />
             <field name="name">gnuhealth_patient_icu_rounding</field>
