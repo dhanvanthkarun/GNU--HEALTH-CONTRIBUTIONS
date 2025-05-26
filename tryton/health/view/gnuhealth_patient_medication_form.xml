@@ -11,6 +11,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <notebook>
         <page string="General Info" id="medication_general_info">
             <group id="medication_header" string="Medication">
+                <label name="patient"/>
+                <field name="patient"/>
                 <label name="medicament"/>
                 <field name="medicament"/>
                 <label name="indication"/>

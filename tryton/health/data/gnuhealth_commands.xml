@@ -141,7 +141,16 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="gnuhealth.command" id="procs">
             <field name="name">procs</field>
             <field name="model">gnuhealth.patient.procedure</field>
+            <field name="label">Patient Procedures</field>
             <field name="description">Patient procedures</field>
+            <field name="internal">False</field>
+        </record>
+
+        <record model="gnuhealth.command" id="pmed">
+            <field name="name">pmed</field>
+            <field name="model">gnuhealth.patient.medication</field>
+            <field name="label">Patient Medications</field>
+            <field name="description">Patient medications</field>
             <field name="internal">False</field>
         </record>
 

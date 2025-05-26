@@ -4365,7 +4365,7 @@ class PatientMedication(ModelSQL, ModelView):
         help='Date of start of Treatment')
 
     end_treatment = fields.DateTime(
-        'End', help='Date of start of Treatment')
+        'End', help='Date of end of Treatment')
 
     dose = fields.Float(
         'Dose',
@@ -4389,7 +4389,7 @@ class PatientMedication(ModelSQL, ModelView):
     duration = fields.Integer(
         'Treatment duration',
         help='Period that the patient must take the medication. in minutes,'
-        ' hours, days, months, years or indefinately')
+        ' hours, days, months, years or indefinitely for chronic conditions')
 
     duration_period = fields.Selection([
         (None, ''),
@@ -4401,7 +4401,7 @@ class PatientMedication(ModelSQL, ModelView):
         ('indefinite', 'indefinite'),
     ], 'Treatment period', sort=False,
         help='Period that the patient must take the medication in minutes,'
-        ' hours, days, months, years or indefinately')
+        ' hours, days, months, years or indefinitely')
 
     common_dosage = fields.Many2One(
         'gnuhealth.medication.dosage', 'Frequency',
