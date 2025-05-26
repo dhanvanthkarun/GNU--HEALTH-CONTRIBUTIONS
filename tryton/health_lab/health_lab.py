@@ -668,6 +668,23 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
             return 'gnuhealth-warning'
 
     # Use by template
+    def get_report_warn_indicator(self):
+        if (self.result is not None and
+            self.lower_limit is not None and
+                self.result < self.lower_limit):
+            indicator = '↓'
+        elif (self.result is not None and
+              self.upper_limit is not None and
+              self.result > self.upper_limit):
+            indicator = '↑'
+        elif self.warning:
+            indicator = '*'
+        else:
+            indicator = ' '
+
+        return indicator
+
+    # Use by template
     def get_report_result(self, unit=True, normal_range=True):
         if (self.result is not None):
             if self.to_integer:
@@ -758,7 +775,7 @@ class GnuHealthTestCritearea(ModelSQL, ModelView):
         return super().view_attributes() + [
             ('/tree', 'visual',
                 If(Eval('warning'), 'warning', '')),
-            ]
+        ]
 
 
 class GnuHealthPatientLabTest(ModelSQL, ModelView):
