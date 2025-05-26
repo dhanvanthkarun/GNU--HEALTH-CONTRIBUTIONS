@@ -475,6 +475,9 @@ class Party(metaclass=PoolMeta):
     insurance_plan_ids = fields.One2Many(
         'gnuhealth.insurance.plan', 'company', 'Insurance Plans')
 
+    homeless = fields.Boolean(
+        "Homeless", help="The person is currently homeless")
+
     du = fields.Many2One('gnuhealth.du', 'DU', help="Domiciliary Unit")
 
     du_address = fields.Function(

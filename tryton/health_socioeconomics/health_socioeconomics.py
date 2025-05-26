@@ -65,6 +65,9 @@ class PatientSESAssessment(ModelSQL, ModelView):
         help="Health professional"
     )
 
+    homeless = fields.Boolean(
+        "Homeless", help="The person is currently homeless")
+
     du = fields.Many2One(
         'gnuhealth.du', 'DU', help="Domiciliary Unit",
         states=STATES)
