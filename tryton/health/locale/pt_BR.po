@@ -2709,6 +2709,10 @@ msgctxt "field:party.party,gender:"
 msgid "Gender"
 msgstr "Gênero"
 
+msgctxt "field:party.party,homeless:"
+msgid "Homeless"
+msgstr ""
+
 msgctxt "field:party.party,insurance:"
 msgid "Insurances"
 msgstr "Seguros"
@@ -3891,22 +3895,18 @@ msgstr "Unidade de medida para a medicação tomada como"
 msgctxt "help:gnuhealth.patient.medication,duration:"
 msgid ""
 "Period that the patient must take the medication. in minutes, hours, days, "
-"months, years or indefinately"
+"months, years or indefinitely for chronic conditions"
 msgstr ""
-"Período em que o paciente deve tomar o medicamento. em minutos, horas, dias,"
-" meses, anos ou indefinidamente"
 
 msgctxt "help:gnuhealth.patient.medication,duration_period:"
 msgid ""
 "Period that the patient must take the medication in minutes, hours, days, "
-"months, years or indefinately"
+"months, years or indefinitely"
 msgstr ""
-"Período em que o paciente deve tomar a medicação em questão de minutos, "
-"horas, dias, meses, anos ou indefinidamente"
 
 msgctxt "help:gnuhealth.patient.medication,end_treatment:"
-msgid "Date of start of Treatment"
-msgstr "Data do início do Tratamento"
+msgid "Date of end of Treatment"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,form:"
 msgid "Drug form, such as tablet or gel"
@@ -4328,6 +4328,10 @@ msgstr ""
 
 msgctxt "help:party.party,federation_account:"
 msgid "Federation Account"
+msgstr ""
+
+msgctxt "help:party.party,homeless:"
+msgid "The person is currently homeless"
 msgstr ""
 
 msgctxt "help:party.party,insurance:"
@@ -8558,6 +8562,10 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_evaluation_view"
 msgid "Patient Evaluations [readonly]"
 msgstr "Avaliações do Paciente [somente leitura]"
 
+msgctxt "model:ir.action,name:action_gnuhealth_patient_medication_view"
+msgid "Patient medications"
+msgstr ""
+
 #, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
 msgid "Patient procedures"
@@ -9207,6 +9215,10 @@ msgstr ""
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
 msgstr "Área Operacional"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_medications_menu"
+msgid "Patient medications"
+msgstr ""
 
 #, fuzzy
 msgctxt "model:ir.ui.menu,name:gnuhealth_patient_procedures_menu"

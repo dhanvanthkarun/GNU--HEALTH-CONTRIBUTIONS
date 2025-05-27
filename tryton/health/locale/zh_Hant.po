@@ -2730,6 +2730,10 @@ msgctxt "field:party.party,gender:"
 msgid "Gender"
 msgstr "性別"
 
+msgctxt "field:party.party,homeless:"
+msgid "Homeless"
+msgstr ""
+
 msgctxt "field:party.party,insurance:"
 msgid "Insurances"
 msgstr ""
@@ -3819,17 +3823,17 @@ msgstr ""
 msgctxt "help:gnuhealth.patient.medication,duration:"
 msgid ""
 "Period that the patient must take the medication. in minutes, hours, days, "
-"months, years or indefinately"
+"months, years or indefinitely for chronic conditions"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,duration_period:"
 msgid ""
 "Period that the patient must take the medication in minutes, hours, days, "
-"months, years or indefinately"
+"months, years or indefinitely"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,end_treatment:"
-msgid "Date of start of Treatment"
+msgid "Date of end of Treatment"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,form:"
@@ -4218,6 +4222,10 @@ msgstr ""
 
 msgctxt "help:party.party,federation_account:"
 msgid "Federation Account"
+msgstr ""
+
+msgctxt "help:party.party,homeless:"
+msgid "The person is currently homeless"
 msgstr ""
 
 msgctxt "help:party.party,insurance:"
@@ -8443,6 +8451,10 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_evaluation_view"
 msgid "Patient Evaluations [readonly]"
 msgstr ""
 
+msgctxt "model:ir.action,name:action_gnuhealth_patient_medication_view"
+msgid "Patient medications"
+msgstr ""
+
 msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
 msgid "Patient procedures"
 msgstr ""
@@ -9074,6 +9086,10 @@ msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_medications_menu"
+msgid "Patient medications"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patient_procedures_menu"
