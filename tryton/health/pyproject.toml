@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth"
-version = "5.0.0a1"
+version = "5.0.0a4"
 description = "GNU Health Hospital and Health Information System. Core package"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -34,6 +34,7 @@ dependencies = [
     'python-magic>=0.4.27,<0.5',
     'pycountry==24.6.1',
     "pytz==2025.1",
+    'trytond>=7.0,<7.1',
     'trytond-company>=7.0,<7.1',
     'trytond-currency>=7.0,<7.1',
     'trytond-party>=7.0,<7.1',
