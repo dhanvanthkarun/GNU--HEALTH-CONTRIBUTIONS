@@ -1,14 +1,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-01 08:53+0000\n"
-"Last-Translator: jak2k <jakob@schwanenberg.name>\n"
-"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/health/de/>\n"
+"PO-Revision-Date: 2025-06-06 09:07+0000\n"
+"Last-Translator: COOGOR <coogor@noreply.codeberg.org>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/"
+"health/de/>\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -51,10 +52,9 @@ msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-#, fuzzy
 msgctxt "field:gnuhealth.appointment,rel_party:"
 msgid "Party ID"
-msgstr "Partei"
+msgstr "Patient"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -320,10 +320,9 @@ msgctxt "field:gnuhealth.directions,procedure:"
 msgid "Procedure"
 msgstr "Prozedur"
 
-#, fuzzy
 msgctxt "field:gnuhealth.disease_group.members,disease:"
 msgid "Condition"
-msgstr "Bedingung"
+msgstr "Zustand"
 
 msgctxt "field:gnuhealth.disease_group.members,disease_group:"
 msgid "Group"
@@ -331,7 +330,7 @@ msgstr "Gruppe"
 
 msgctxt "field:gnuhealth.dose.unit,code:"
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 msgctxt "field:gnuhealth.dose.unit,desc:"
 msgid "Description"
@@ -774,10 +773,9 @@ msgctxt "field:gnuhealth.hp_specialty,healthprof:"
 msgid "Health Prof"
 msgstr "Behandler"
 
-#, fuzzy
 msgctxt "field:gnuhealth.hp_specialty,mainsp:"
 msgid "Main"
-msgstr "Haupt"
+msgstr "Spez."
 
 msgctxt "field:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty"
@@ -1340,10 +1338,9 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "Familie"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient,family_history:"
 msgid "Family History"
-msgstr "Familiencode"
+msgstr "Familienhistorie"
 
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
@@ -1597,19 +1594,17 @@ msgctxt "field:gnuhealth.patient.evaluation,body_bone:"
 msgid "Bone"
 msgstr "Knochen"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,body_fat:"
 msgid "Fat"
-msgstr "Matt"
+msgstr "Fett"
 
 msgctxt "field:gnuhealth.patient.evaluation,body_muscle:"
 msgid "Muscle"
 msgstr "Muskel"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,body_water:"
 msgid "Water"
-msgstr "Material"
+msgstr "Wasser"
 
 msgctxt "field:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart Rate"
@@ -1659,10 +1654,9 @@ msgctxt "field:gnuhealth.patient.evaluation,diastolic:"
 msgid "Diastolic Pressure"
 msgstr "Diastolischer Druck"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
 msgid "Therapeutic Plan"
-msgstr "Wirkungsweise"
+msgstr "Therapieplan"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1722,7 +1716,7 @@ msgstr "Hüfte"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
 msgid "Diagnostic Judgement"
-msgstr ""
+msgstr "Diagnosebewertung"
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -1927,11 +1921,11 @@ msgstr "Patient"
 
 msgctxt "field:gnuhealth.patient.family.diseases,relative:"
 msgid "Relative"
-msgstr ""
+msgstr "Angehöriger"
 
 msgctxt "field:gnuhealth.patient.family.diseases,xory:"
 msgid "Maternal or Paternal"
-msgstr ""
+msgstr "Mütter-/Väterlich"
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -2075,10 +2069,9 @@ msgctxt "field:gnuhealth.patient.procedure,pdate:"
 msgid "Date"
 msgstr "Datum"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.procedure,procedure:"
 msgid "Procedure"
-msgstr "Prozedur"
+msgstr "Therapie"
 
 msgctxt "field:gnuhealth.patient.procedure,reference:"
 msgid "Origin"
@@ -2684,7 +2677,7 @@ msgstr "Geschlecht"
 
 msgctxt "field:party.party,homeless:"
 msgid "Homeless"
-msgstr ""
+msgstr "Wohnungslos"
 
 msgctxt "field:party.party,insurance:"
 msgid "Insurances"
@@ -3055,6 +3048,8 @@ msgid ""
 "Set this field if this is the main specialty or the one used in this health "
 "institution"
 msgstr ""
+"Dieses Feld markieren, wenn es sich um das Hauptfachgebiet oder das "
+"Fachgebiet handelt, das in dieser Gesundheitseinrichtung verwendet wird"
 
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
@@ -3443,10 +3438,9 @@ msgstr ""
 "A-THAL = A Thalassämien\n"
 "B-THAL = B Thalassämien\n"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient,insurances:"
 msgid "Insurance Plans associated to this party"
-msgstr "Versicherungsplan der mit dieser Partei verbunden ist"
+msgstr "Versicherungsplan dieser Partei"
 
 msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
@@ -3552,10 +3546,9 @@ msgid ""
 msgstr ""
 "Ankreuzen, wenn der Patient Auffälligkeiten beim abstrakten Denken zeigt"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
 msgid "Procedures done in the evaluation"
-msgstr "Dauer der Untersuchung"
+msgstr "Bei der Untersuchung angewandte Verfahren"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
@@ -3568,20 +3561,19 @@ msgstr "Body Mass Index"
 
 msgctxt "help:gnuhealth.patient.evaluation,body_bone:"
 msgid "Body bone composition %"
-msgstr ""
+msgstr "Knochenzusammensetzung %"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,body_fat:"
 msgid "Fat composition %"
-msgstr "Zusammensetzung"
+msgstr "Körperfettanteil %"
 
 msgctxt "help:gnuhealth.patient.evaluation,body_muscle:"
 msgid "Skeletal muscle %"
-msgstr ""
+msgstr "Skelettmuskel %"
 
 msgctxt "help:gnuhealth.patient.evaluation,body_water:"
 msgid "Total body water %"
-msgstr ""
+msgstr "Ges. Körperwasseranteil %"
 
 msgctxt "help:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart rate (beats per minute)"
@@ -3687,16 +3679,15 @@ msgstr "Hüftumfang in Zentimetern"
 
 msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
 msgid "Diagnostic judgement"
-msgstr ""
+msgstr "Diagnostische Beurteilung"
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
 msgstr "Quelle der Information, zB.: Patient, Verwandter, Freund.."
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,insurance:"
 msgid "Insurance plan used in this procedure"
-msgstr "Versicherungsplan der mit dieser Partei verbunden ist"
+msgstr "Versicherungsplan für dieses Verfahren"
 
 msgctxt "help:gnuhealth.patient.evaluation,judgment:"
 msgid ""
@@ -3763,10 +3754,9 @@ msgctxt "help:gnuhealth.patient.evaluation,praxis:"
 msgid "Check this box if the patient is unable to make voluntarymovements"
 msgstr "Ankreuzen, wenn der Patient unfähig zu willentlichen Bewegungen ist"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,procedures:"
 msgid "Procedures done in the evaluation"
-msgstr "Dauer der Untersuchung"
+msgstr "Bei der Untersuchung angewandte Verfahren"
 
 msgctxt "help:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition related to this follow-up evaluation"
@@ -3894,16 +3884,20 @@ msgid ""
 "Period that the patient must take the medication. in minutes, hours, days, "
 "months, years or indefinitely for chronic conditions"
 msgstr ""
+"Zeitraum, in dem der Patient das Medikament einnehmen muss. In Minuten, "
+"Stunden, Tagen, Monaten, Jahren oder dauerhaft bei chronischen Erkrankungen"
 
 msgctxt "help:gnuhealth.patient.medication,duration_period:"
 msgid ""
 "Period that the patient must take the medication in minutes, hours, days, "
 "months, years or indefinitely"
 msgstr ""
+"Zeitraum, in dem der Patient das Medikament einnehmen muss. In Minuten, "
+"Stunden, Tagen, Monaten, Jahren oder dauerhaft"
 
 msgctxt "help:gnuhealth.patient.medication,end_treatment:"
 msgid "Date of end of Treatment"
-msgstr ""
+msgstr "Datum des Endes der Medikation"
 
 msgctxt "help:gnuhealth.patient.medication,form:"
 msgid "Drug form, such as tablet or gel"
@@ -3967,10 +3961,9 @@ msgctxt "help:gnuhealth.patient.medication,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "Datum des Behandlungsbeginns"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.procedure,insurance:"
 msgid "Insurance plan used in this procedure"
-msgstr "Versicherungsplan der mit dieser Partei verbunden ist"
+msgstr "Versicherungsplan der bei dieser Behandlung genutzt wird"
 
 msgctxt ""
 "help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
@@ -4165,11 +4158,12 @@ msgstr "Datum des Behandlungsbeginns"
 
 msgctxt "help:gnuhealth.prescription.order,allergy_warning:"
 msgid "This field is active when the patient is known to be allergic"
-msgstr ""
+msgstr "Dieses Feld ist markiert wenn der Patient Allergien aufweist"
 
 msgctxt "help:gnuhealth.prescription.order,pregnancy_warning:"
 msgid "This field is set when the patient is or might be pregnant"
 msgstr ""
+"Dieses Feld ist markiert wenn die Patientin möglicherweise schwanger ist"
 
 msgctxt "help:gnuhealth.prescription.order,prescription_date:"
 msgid "Prescription Date"
@@ -4181,7 +4175,7 @@ msgstr "Geben Sie die ID der Verschreibung an"
 
 msgctxt "help:gnuhealth.prescription.order,prescription_warning_ack:"
 msgid "This verification field must be set to generate the prescription"
-msgstr ""
+msgstr "Dieses Feld muss markiert sein um die Verschreibung zu generieren"
 
 msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
@@ -4189,7 +4183,7 @@ msgstr "Datum der Verschreibung"
 
 msgctxt "help:gnuhealth.procedure,product:"
 msgid "Associated product to the procedure"
-msgstr ""
+msgstr "Verwendetes Produkt bei diesem Verfahren"
 
 msgctxt "help:gnuhealth.procedures.config,ambulatory_care:"
 msgid ""
@@ -4197,6 +4191,9 @@ msgid ""
 "exist, it will add up to the procedure list in the context of ambulatory "
 "care"
 msgstr ""
+"Der Code, der für das Verfahren im Zusammenhang mit einer ambulanten "
+"Behandlung verwendet wird. Wenn er vorhanden ist, wird er in die "
+"Prozedurenliste im Rahmen der ambulanten Pflege aufgenommen"
 
 msgctxt "help:gnuhealth.procedures.config,medical_evaluation:"
 msgid ""
@@ -4204,6 +4201,9 @@ msgid ""
 "it will add up to the procedure list in the context of the medical "
 "evaluation"
 msgstr ""
+"Der Code, der für das Verfahren im Zusammenhang mit einer medizinischen "
+"Behandlung verwendet wird. Wenn er vorhanden ist, wird er in die "
+"Prozedurenliste im Zusammenhang mit der medizinischen Behandlung aufgenommen"
 
 msgctxt "help:gnuhealth.specialty,code:"
 msgid "ie, ADP. Please use CAPITAL LETTERS and no spaces"
@@ -4317,7 +4317,7 @@ msgstr "Wohneinheit"
 
 msgctxt "help:party.party,du_address:"
 msgid "Main Address, based on the associated DU"
-msgstr ""
+msgstr "Hauptadresse in Bezug auf Wohneinheit"
 
 msgctxt "help:party.party,est_dob:"
 msgid "Estimated from referred years"
@@ -4340,15 +4340,21 @@ msgid ""
 " the code of the emiting institution countryRefer to the GNU Health manual "
 "for further information"
 msgstr ""
+"3-Buchstaben-Ländercode im ISO 3166-1 Alpha-3-Standard, der zum Präfix des "
+"Föderationskontos wird. Die folgenden vom Benutzer zugewiesenen Codes können "
+"ebenfalls verwendet werden: AAA bis AAZ, QMA bis QZZ, XAA bis XZZ und ZZA "
+"bis ZZZ. Zum Beispiel ist XXX eine nicht identifizierte Nationalität und XXB "
+"ein Flüchtling. Standardmäßig wird der Code des Landes der sendenden "
+"Institution verwendet. Weitere Informationen finden Sie im GNU Health "
+"Handbuch"
 
-#, fuzzy
 msgctxt "help:party.party,federation_account:"
 msgid "Federation Account"
-msgstr "Föderiertes Konto"
+msgstr "Föderationskonto"
 
 msgctxt "help:party.party,homeless:"
 msgid "The person is currently homeless"
-msgstr ""
+msgstr "Diese Person ist aktuell wohnungslos"
 
 msgctxt "help:party.party,insurance:"
 msgid "Insurance Plans associated to this party"
@@ -5155,12 +5161,11 @@ msgstr "Familienangehöriger"
 
 msgctxt "model:gnuhealth.federation.country.config,name:"
 msgid "Federation Account Country"
-msgstr ""
+msgstr "Land des Föderationskontos"
 
-#, fuzzy
 msgctxt "model:gnuhealth.healthprofessional,name:"
 msgid "Health Professional"
-msgstr "Behandelndes Personal"
+msgstr "Med. Fachkraft"
 
 msgctxt "model:gnuhealth.help,name:"
 msgid "GNU Health Help"
@@ -6581,7 +6586,7 @@ msgstr "Navigator"
 
 msgctxt "model:gnuhealth.occupation,name:occ388"
 msgid "Negociant"
-msgstr ""
+msgstr "Verhandler"
 
 msgctxt "model:gnuhealth.occupation,name:occ389"
 msgid "Negotiator"
@@ -7901,19 +7906,25 @@ msgstr "Reaktionen auf eigene Antigene"
 
 msgctxt "model:gnuhealth.pathology.group,desc:CONNECTIVE"
 msgid "Disorders of the connective tissue and MSDs"
-msgstr ""
+msgstr "Erkrankungen des Bindegewebes"
 
 msgctxt "model:gnuhealth.pathology.group,desc:GASTRO"
 msgid "Diseases related to the Digestive track and accesory organs"
 msgstr ""
+"Krankheiten im Zusammenhang mit dem Verdauungstrakt und den dazugehörigen "
+"Organen"
 
 msgctxt "model:gnuhealth.pathology.group,desc:GENITOURINARY"
 msgid "Renal, Urologic and Male reproductive disorders"
 msgstr ""
+"Nierenerkrankungen, urologische Erkrankungen und Störungen der männlichen "
+"Fortpflanzungsorgane"
 
 msgctxt "model:gnuhealth.pathology.group,desc:HEART"
 msgid "Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias ..."
 msgstr ""
+"Erkrankungen des Herzens. KHK, Herzinsuffizienz, Herzklappenfehler, "
+"Herzrhythmusstörungen ..."
 
 msgctxt "model:gnuhealth.pathology.group,desc:INFECTIOUS"
 msgid "Infectious diseases"
@@ -7925,7 +7936,7 @@ msgstr "metabolische und endokrinologische Störungen"
 
 msgctxt "model:gnuhealth.pathology.group,desc:NEOPLASIC"
 msgid "Neoplasic disorders, both benign and malignant"
-msgstr ""
+msgstr "Neoplasmatische Erkrankungen, sowohl gutartige als auch bösartige"
 
 msgctxt "model:gnuhealth.pathology.group,desc:NEUROLOGIC"
 msgid "Neurological disorders"
@@ -7942,19 +7953,19 @@ msgstr "Ernährungsstörungen"
 
 msgctxt "model:gnuhealth.pathology.group,desc:OBSGYN"
 msgid "Women and pregnancies related disorders"
-msgstr ""
+msgstr "Frauen- und schwangerschaftsbedingte Erkrankungen"
 
 msgctxt "model:gnuhealth.pathology.group,desc:PEDIATRIC"
 msgid "Disorders related to pediatric population"
-msgstr ""
+msgstr "Kinderkrankheiten"
 
 msgctxt "model:gnuhealth.pathology.group,desc:PSYCHIATRIC"
 msgid "Psychiatric disorders"
-msgstr ""
+msgstr "Psychische Erkrankungen"
 
 msgctxt "model:gnuhealth.pathology.group,desc:RESP"
 msgid "Respiratory - Pulmonary Diseases"
-msgstr ""
+msgstr "Atemwegs- und Lungenerkrankungen"
 
 msgctxt "model:gnuhealth.pathology.group,desc:SOCIAL"
 msgid "Diseases related to socio-economic and family environments"
@@ -7962,7 +7973,7 @@ msgstr "Krankheiten aufgrund der sozio-ökonomischen oder familiären Umgebung"
 
 msgctxt "model:gnuhealth.pathology.group,desc:VASCULAR"
 msgid "Disorders of the Circulatory System"
-msgstr ""
+msgstr "Erkrankungen des Kreislaufsystems"
 
 msgctxt "model:gnuhealth.pathology.group,desc:VIOLENCE"
 msgid ""
@@ -8067,19 +8078,17 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr "Untersuchung des Patienten"
 
-#, fuzzy
 msgctxt "model:gnuhealth.patient.family.diseases,name:"
 msgid "Family History"
-msgstr "Familiencode"
+msgstr "Familienhistorie"
 
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "Medikation des Patienten"
 
-#, fuzzy
 msgctxt "model:gnuhealth.patient.procedure,name:"
 msgid "Procedures done on patients"
-msgstr "Dauer der Untersuchung"
+msgstr "Beim Patienten angewandte Verfahren"
 
 msgctxt "model:gnuhealth.person_alternative_identification,name:"
 msgid "Alternative person ID"
@@ -8121,19 +8130,19 @@ msgstr "Standardsequenzen für GNU Health"
 
 msgctxt "model:gnuhealth.sequences.appointment_sequence,name:"
 msgid "Appointment Sequence setup"
-msgstr ""
+msgstr "Einrichtung der Terminserie"
 
 msgctxt "model:gnuhealth.sequences.patient_evaluation_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
-msgstr ""
+msgstr "Einrichtung der Untersuchungstermine"
 
 msgctxt "model:gnuhealth.sequences.patient_sequence,name:"
 msgid "Patient Sequences setup"
-msgstr ""
+msgstr "Einrichtung der Patientensequenz"
 
 msgctxt "model:gnuhealth.sequences.prescription_sequence,name:"
 msgid "Prescription Sequence setup"
-msgstr ""
+msgstr "Einrichtung der Verschreibungssequenz"
 
 msgctxt "model:gnuhealth.signs_and_symptoms,name:"
 msgid "Evaluation Signs and Symptoms"
@@ -8451,10 +8460,9 @@ msgctxt "model:ir.action,name:act_appointment_report_patient"
 msgid "Patient"
 msgstr "Patient"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_appointments_report_view_tree"
 msgid "Appointments with Dx Report"
-msgstr "Bericht des Termins"
+msgstr "Termin mit Dx-Bericht"
 
 msgctxt "model:ir.action,name:act_bed_view"
 msgid "Beds"
@@ -8583,17 +8591,15 @@ msgstr "Untersuchung [nur lesend]"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_medication_view"
 msgid "Patient medications"
-msgstr ""
+msgstr "Medikationen"
 
-#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
 msgid "Patient procedures"
-msgstr "Verfahren"
+msgstr "Behandlungsverfahren"
 
-#, fuzzy
 msgctxt "model:ir.action,name:action_gnuhealth_patient_vaccination_view"
 msgid "Patient vaccination"
-msgstr "Untersuchung des Patienten"
+msgstr "Impfung des Patienten"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
@@ -8607,10 +8613,9 @@ msgctxt "model:ir.action,name:action_gnuhealth_procedure_view"
 msgid "Procedures"
 msgstr "Verfahren"
 
-#, fuzzy
 msgctxt "model:ir.action,name:appointments_report_open"
 msgid "Appointments with Dx Report"
-msgstr "Bericht des Termins"
+msgstr "Termin mit Dx-Bericht"
 
 msgctxt "model:ir.action,name:gnuhealth_action_dosage"
 msgid "Medication Frequencies"
@@ -8646,7 +8651,7 @@ msgstr "Familienangehörige"
 
 msgctxt "model:ir.action,name:gnuhealth_action_federation_country_config"
 msgid "Federation Country Configuration"
-msgstr ""
+msgstr "Federation Länderkonfiguration"
 
 msgctxt "model:ir.action,name:gnuhealth_action_form_pathology"
 msgid "Conditions"
@@ -8711,7 +8716,7 @@ msgstr "Pathologie-Informationen"
 
 msgctxt "model:ir.action,name:gnuhealth_action_pol"
 msgid "Pages of life"
-msgstr ""
+msgstr "Lebensabschnitte"
 
 #, fuzzy
 msgctxt "model:ir.action,name:gnuhealth_action_procedures_config"
@@ -8735,10 +8740,9 @@ msgctxt "model:ir.action,name:report_birth_certificate"
 msgid "Birth Certificate"
 msgstr "Geburtsurkunde"
 
-#, fuzzy
 msgctxt "model:ir.action,name:report_death_certificate"
 msgid "Death Certificate"
-msgstr "Todesschein"
+msgstr "Totenschein"
 
 msgctxt "model:ir.action,name:report_immunization_status"
 msgid "Immunization Status Report"
@@ -8759,7 +8763,7 @@ msgstr "Zusammenfassung der Untersuchung"
 
 msgctxt "model:ir.action,name:report_patient_evaluation_brief"
 msgid "Evaluation Report (brief)"
-msgstr ""
+msgstr "Untersuchungsergebnis (kurz)"
 
 msgctxt "model:ir.action,name:report_patient_medication"
 msgid "Medications"
@@ -8775,7 +8779,7 @@ msgstr "Verschreibung"
 
 msgctxt "model:ir.action,name:update_patient_disease_info"
 msgid "Update patient disease"
-msgstr ""
+msgstr "Update zur Krankheit"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_appointment_domain_all"
@@ -8804,105 +8808,125 @@ msgstr "No Shows"
 
 msgctxt "model:ir.message,text:msg_birth_cert_date_mismatch"
 msgid "SM-CORE-0013: The date on the Party differs from the certificate"
-msgstr ""
+msgstr "SM-CORE-0013: Das Datum der Person weicht von der Geburtsurkunde ab"
 
 msgctxt "model:ir.message,text:msg_can_not_modify_vaccination"
 msgid ""
 "SM-CORE-0014: This vaccination is at state DONE. You can no longer modify it"
 msgstr ""
+"SM-CORE-0014: Die Impfung ist abgeschlossen. Sie können sie nicht mehr ändern"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_compute_age_from_dates_day_str"
 msgid "d"
-msgstr "d"
+msgstr "T"
 
-#, fuzzy
 msgctxt "model:ir.message,text:msg_compute_age_from_dates_month_str"
 msgid "m "
-msgstr "m"
+msgstr "M "
 
 #, fuzzy
 msgctxt "model:ir.message,text:msg_compute_age_from_dates_year_str"
 msgid "y "
-msgstr "J"
+msgstr "J "
 
 msgctxt "model:ir.message,text:msg_drug_allergy_safety_check"
 msgid ""
 "SM-CORE-0017: Our records indicate that this patient is ALLERGIC. Please "
 "verify the prescribed drugs"
 msgstr ""
+"SM-CORE-0017: Der Patient hat Allergien. Prüfen Sie die verordneten "
+"Medikamente"
 
 msgctxt "model:ir.message,text:msg_drug_pregnancy_safety_check"
 msgid ""
 "SM-CORE-0006: Verify and check for safety in PREGNANCY the prescribed drugs"
 msgstr ""
+"SM-CORE-0006: Überprüfen Sie die Unbedenklichkeit der Medikamente bei "
+"Schwangerschaft"
 
 msgctxt "model:ir.message,text:msg_dup_mainsp"
 msgid "SM-CORE-0016: The health professional can have only one main specialty"
-msgstr ""
+msgstr "SM-CORE-0016: Der Arzt kann nur eine Haupt-Spezialisierung haben"
 
 msgctxt "model:ir.message,text:msg_dup_official_name"
 msgid "SM-CORE-0011: The person can have only one official name"
-msgstr ""
+msgstr "SM-CORE-0011: Die Person kann nur einen offiziellen Namen haben"
 
 msgctxt "model:ir.message,text:msg_end_evaluation_time_before_start"
 msgid ""
 "SM-CORE-0008: End time \"%(evaluation_endtime)s\" BEFORE evaluation start "
 "\"%(evaluation_start)s\""
 msgstr ""
+"SM-CORE-0008: Ende der Untersuchung \"%(evaluation_endtime)s\" VOR dem Start "
+"\"%(evaluation_start)s\""
 
 msgctxt "model:ir.message,text:msg_end_treatment_before_start"
 msgid ""
 "SM-CORE-0003: The Treatment END DATE \"%(date_stop_treatment)s\" is BEFORE "
 "the start date \"%(date_start_treatment)s\""
 msgstr ""
+"SM-CORE-0003: Ende der Behandlung \"%(date_stop_treatment)s\" VOR deren "
+"Beginn \"%(date_start_treatment)s\""
 
 msgctxt "model:ir.message,text:msg_fed_account_mismatch"
 msgid "SM-CORE-0012: The account differs from the person federation account"
 msgstr ""
+"SM-CORE-0012: Das Konto der Person stimmt nicht mit deren Federation-Konto "
+"überein"
 
 msgctxt "model:ir.message,text:msg_healed_before_dx"
 msgid ""
 "SM-CORE-0002: The HEALED date \"%(healed_date)s\" is BEFORE DIAGNOSED DATE "
 "\"%(diagnosed_date)s\"!"
 msgstr ""
+"SM-CORE-0002: Datum der Heilung \"%(healed_date)s\" liegt VOR dem "
+"Diagnosedatum\"%(diagnosed_date)s\"!"
 
 msgctxt "model:ir.message,text:msg_insurance_invalid"
 msgid ""
 "SM-CORE-0019: The current insurance plan is not valid or it has expired"
-msgstr ""
+msgstr "SM-CORE-0019: Die aktuelle Versicherung ist ungültig oder abgelaufen"
 
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
 "{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
 "\"Matplotlib rc config used when no matplotlibrc file is found.\"}"
 msgstr ""
+"{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
+"\"Matplotlib rc config genutzt weil keine matplotlibrc Datei gefunden wurde."
+"\"}"
 
 msgctxt "model:ir.message,text:msg_med_end_date_before_start"
 msgid ""
 "SM-CORE-0004: The Medication END DATE \"%(end_treatment)s\" is BEFORE the "
 "start date \"%(start_treatment)s\"!"
 msgstr ""
+"SM-CORE-0004: Das Enddatum der Medikation \"%(end_treatment)s\" liegt VOR "
+"dem Startdatum \"%(start_treatment)s\"!"
 
 msgctxt "model:ir.message,text:msg_must_be_a_person"
 msgid ""
 "SM-CORE-0010: The Person field must be set if the party is a health "
 "professional or a patient"
 msgstr ""
+"SM-CORE-0010: Das 'Person' Feld muß gesetzt sein wenn es sich um eine med. "
+"Fachkraft oder Patienten handelt"
 
 msgctxt "model:ir.message,text:msg_next_dose_before_first"
 msgid "SM-CORE-0005: The vaccine next dose is BEFORE the first one!"
-msgstr ""
+msgstr "SM-CORE-0005: Der Folgetermin der Impfung liegt vor der ersten Impfung!"
 
 msgctxt "model:ir.message,text:msg_no_appointment_selected"
 msgid "SM-CORE-0009: You need to select one appointment"
-msgstr ""
+msgstr "SM-CORE-0009: Wählen Sie einen Termin aus"
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid ""
 "SM-CORE-0007: Currently logged in user is not associated to a health "
 "professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr ""
+"SM-CORE-0007: Der aktuell angemeldete User hat keine med. Fachkraft "
+"hinterlegt. Siehe \"Internal User\" Feld auf der Seite \"Party/Personen\"."
 
 #, fuzzy
 msgctxt "model:ir.message,text:msg_no_str"
