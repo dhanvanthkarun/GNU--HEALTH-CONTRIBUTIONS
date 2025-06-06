@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-06 09:07+0000\n"
+"PO-Revision-Date: 2025-06-06 13:25+0000\n"
 "Last-Translator: COOGOR <coogor@noreply.codeberg.org>\n"
 "Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/"
 "health/de/>\n"
@@ -314,7 +314,7 @@ msgstr "Kommentar"
 #, fuzzy
 msgctxt "field:gnuhealth.directions,evaluation:"
 msgid "Evaluation"
-msgstr "Analyse"
+msgstr "Auswertung"
 
 msgctxt "field:gnuhealth.directions,procedure:"
 msgid "Procedure"
@@ -885,10 +885,9 @@ msgctxt "field:gnuhealth.institution,or_number:"
 msgid "ORs"
 msgstr "OPs"
 
-#, fuzzy
 msgctxt "field:gnuhealth.institution,party:"
 msgid "Institution"
-msgstr "Einrichtung"
+msgstr "Institut"
 
 msgctxt "field:gnuhealth.institution,picture:"
 msgid "Picture"
@@ -914,19 +913,17 @@ msgctxt "field:gnuhealth.institution,trauma_level:"
 msgid "Trauma Level"
 msgstr "Traumagrad"
 
-#, fuzzy
 msgctxt "field:gnuhealth.institution.operationalsector,institution:"
 msgid "Institution"
-msgstr "Einrichtung"
+msgstr "Institut"
 
 msgctxt "field:gnuhealth.institution.operationalsector,operational_sector:"
 msgid "Operational Sector"
 msgstr "Einsatzgebiet"
 
-#, fuzzy
 msgctxt "field:gnuhealth.institution.specialties,institution:"
 msgid "Institution"
-msgstr "Einrichtung"
+msgstr "Institut"
 
 msgctxt "field:gnuhealth.institution.specialties,specialty:"
 msgid "Specialty"
@@ -1816,10 +1813,9 @@ msgctxt "field:gnuhealth.patient.evaluation,psychological_assessment:"
 msgid "Psychological Assessment"
 msgstr "Psychologische Untersuchung"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,rel_party:"
 msgid "Party ID"
-msgstr "Partei"
+msgstr "Patient"
 
 msgctxt "field:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition"
@@ -1912,7 +1908,7 @@ msgstr "WHR"
 #, fuzzy
 msgctxt "field:gnuhealth.patient.family.diseases,disease:"
 msgid "Condition"
-msgstr "Bedingung"
+msgstr "Zustand"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.family.diseases,patient:"
@@ -2077,10 +2073,9 @@ msgctxt "field:gnuhealth.patient.procedure,reference:"
 msgid "Origin"
 msgstr "Ursprung"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.procedure,rel_party:"
 msgid "Party ID"
-msgstr "Partei"
+msgstr "Patient"
 
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -2350,10 +2345,9 @@ msgctxt "field:gnuhealth.prescription.line,start_treatment:"
 msgid "Start"
 msgstr "Anfang"
 
-#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,allergy_warning:"
 msgid "Allergy"
-msgstr "Allergisch"
+msgstr "Allergie"
 
 msgctxt "field:gnuhealth.prescription.order,healthprof:"
 msgid "Prescriber"
@@ -2391,7 +2385,7 @@ msgstr "Rezeptzeile"
 #, fuzzy
 msgctxt "field:gnuhealth.prescription.order,prescription_warning_ack:"
 msgid "Verified"
-msgstr "Zertifizierer"
+msgstr "Überprüft"
 
 msgctxt "field:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Date"
@@ -2427,10 +2421,9 @@ msgctxt "field:gnuhealth.procedures.config,ambulatory_care:"
 msgid "Ambulatory care"
 msgstr "Primärversorgung"
 
-#, fuzzy
 msgctxt "field:gnuhealth.procedures.config,medical_evaluation:"
 msgid "Medical Evaluation"
-msgstr "Analyse"
+msgstr "Medizinische Untersuchung"
 
 msgctxt "field:gnuhealth.secondary_condition,comments:"
 msgid "Comments"
@@ -2798,7 +2791,7 @@ msgstr "Gesundheitseinrichtung"
 #, fuzzy
 msgctxt "help:gnuhealth.appointment,insurance:"
 msgid "Insurance plan used in this procedure"
-msgstr "Versicherungsplan der mit dieser Partei verbunden ist"
+msgstr "Versicherungsplan der bei dieser Behandlung genutzt wird"
 
 msgctxt "help:gnuhealth.appointment,name:"
 msgid "Appointment ID"
@@ -2949,10 +2942,9 @@ msgctxt "help:gnuhealth.healthprofessional,institution:"
 msgid "Main institution where she/he works"
 msgstr "Hauptinstitution wo sie/er arbeitet"
 
-#, fuzzy
 msgctxt "help:gnuhealth.healthprofessional,party:"
 msgid "Health Professional related party"
-msgstr "Fachgebiet der Gesundheitsfachkraft"
+msgstr "Person zur Gesundheitsfachkraft"
 
 msgctxt "help:gnuhealth.healthprofessional,puid:"
 msgid "Person Unique Identifier"
@@ -9570,18 +9562,18 @@ msgctxt "report:gnuhealth.death_certificate:"
 msgid "Subdivision"
 msgstr "Unterteilung"
 
-msgctxt "report:gnuhealth.death_certificate:"
-msgid "Type of Death"
-msgstr ""
-
 #, fuzzy
 msgctxt "report:gnuhealth.death_certificate:"
+msgid "Type of Death"
+msgstr "Todestyp"
+
+msgctxt "report:gnuhealth.death_certificate:"
 msgid "Unit"
-msgstr "Stück"
+msgstr "Einheit"
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Usual Address"
-msgstr ""
+msgstr "übliche Aresse"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "(Complete Listing)"
@@ -9621,7 +9613,7 @@ msgstr "Impfstatusbericht"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Important notice:"
-msgstr ""
+msgstr "Wichtiger Hinweis:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
@@ -9633,7 +9625,6 @@ msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Patient:"
 msgstr "Patient:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Print Date:"
 msgstr "Druckdatum:"
@@ -9644,18 +9635,19 @@ msgstr "Bemerkungen"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Schedule:"
-msgstr ""
+msgstr "Zeitplan:"
 
-#, fuzzy
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Scope"
-msgstr "Ziel"
+msgstr "Umfang"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid ""
 "Showing only the immunization status corresponding to the person age and the"
 " selected schedule"
 msgstr ""
+"Es wird nur der Impfstatus angezeigt, der dem Alter der Person und dem "
+"ausgewählten Impfplan entspricht"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Status"
@@ -9667,6 +9659,9 @@ msgid ""
 "replace the criteria of the health professional. Always verify the person "
 "vaccination cards."
 msgstr ""
+"Dieser automatisch erstellte Bericht ist ein Hilfsmittel, das die Kenntnisse "
+"des medizinischen Fachpersonals nicht ersetzen kann. Überprüfen Sie immer "
+"den Impfausweis der Person."
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Vaccine"
@@ -9674,7 +9669,7 @@ msgstr "Impfstoff"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "(Sys / dias)"
-msgstr ""
+msgstr "(Sys/Dia)"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid ","
@@ -9686,7 +9681,7 @@ msgstr "/"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "/ 15"
-msgstr ""
+msgstr "/ 15"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9703,15 +9698,15 @@ msgstr "BMI"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BP"
-msgstr ""
+msgstr "BD"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Body Composition Metrics (%)"
-msgstr ""
+msgstr "Metriken der Körperzusammensetzung (%)"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Bone"
-msgstr ""
+msgstr "Knochen"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Chief Complaint"
@@ -9727,7 +9722,7 @@ msgstr "klinisches Zeichen"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Code:"
-msgstr ""
+msgstr "Code:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Comments"
@@ -9752,7 +9747,7 @@ msgstr "Geb."
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "E-Mail:"
-msgstr ""
+msgstr "EMail:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Ethnicity:"
@@ -9762,10 +9757,9 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Evaluation Digital Signature"
 msgstr "Digitale Signatur der Untersuchnung"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Fat"
-msgstr "Matt"
+msgstr "Fett"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "GCS"
@@ -9790,7 +9784,7 @@ msgstr "Informationsquelle:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Initiated by:"
-msgstr ""
+msgstr "Veranlasst von:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9799,11 +9793,11 @@ msgstr "Hauptzustand"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Marital Status:"
-msgstr ""
+msgstr "Familienstand:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Muscle"
-msgstr ""
+msgstr "Muskel"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "OSAT"
@@ -9811,7 +9805,7 @@ msgstr "O2Sat"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Occupation:"
-msgstr ""
+msgstr "Beruf:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Other Conditions"
@@ -9824,7 +9818,7 @@ msgstr "PUID:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient Evaluation Report"
-msgstr ""
+msgstr "Untersuchungsbericht"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
@@ -9833,7 +9827,7 @@ msgstr "Patient:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Phone:"
-msgstr ""
+msgstr "Telefon:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Print Date:"
@@ -9846,7 +9840,7 @@ msgstr "Verfahren"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Reliability:"
-msgstr ""
+msgstr "Zuverlässigkeit:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Resp Rate"
@@ -9869,10 +9863,9 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Type"
 msgstr "Typ"
 
-#, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Water"
-msgstr "Material"
+msgstr "Wasser"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -9896,7 +9889,7 @@ msgstr "Klinische und physikalische Untersuchung"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Code:"
-msgstr ""
+msgstr "Code:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
@@ -9925,7 +9918,7 @@ msgstr "Anamnese zur jetzigen Erkrankung"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Initiated by:"
-msgstr ""
+msgstr "Veranlasst von:"
 
 #, fuzzy
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
