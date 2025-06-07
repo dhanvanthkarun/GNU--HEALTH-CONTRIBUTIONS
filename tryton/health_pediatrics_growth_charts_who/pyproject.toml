@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-pediatrics-growth-charts-who"
-version = "5.0.0b1"
+version = "5.0.0b2"
 description = "Pediatrics growth charts  package for GNU Health"
 
 license = { text = "GPL-3.0-or-later" }
@@ -27,7 +27,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth-pediatrics-growth-charts==5.0.0a1',
+    'gnuhealth-pediatrics-growth-charts>=5.0.0b0',
 ]
 
 [project.urls]

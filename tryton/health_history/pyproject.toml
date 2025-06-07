@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-history"
-version = "5.0.0b1"
+version = "5.0.0b2"
 description = "Patient History reports for GNU Health HIS"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -26,7 +26,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth==5.0.0a1'
+    'gnuhealth>=5.0.0b0'
 ]
 
 [project.urls]

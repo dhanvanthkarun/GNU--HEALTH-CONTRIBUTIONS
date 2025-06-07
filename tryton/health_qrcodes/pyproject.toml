@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-qrcodes"
-version = "5.0.0b1"
+version = "5.0.0b2"
 description = "Quick Response (QR) and Bar code functionality for GNU Health HIS"
 
 license = { text = "GPL-3.0-or-later" }
@@ -27,7 +27,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth==5.0.0a1',
+    'gnuhealth>=5.0.0b0',
     'python-barcode',
 ]
 

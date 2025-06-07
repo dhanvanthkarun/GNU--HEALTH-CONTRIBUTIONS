@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-calendar"
-version = "5.0.0b1"
+version = "5.0.0b2"
 description = "Adds CalDAV functionality to the GNU Health HIS appointments"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -26,9 +26,9 @@ maintainers = [
 ]
 
 dependencies = [
-    "gnuhealth==5.0.0a1",
+    "gnuhealth>=5.0.0b0",
     #"gnuhealth-caldav @ git+https://codeberg.org/gnuhealth/his.git@dev-5.0#subdirectory=tryton/health_caldav"
-    "gnuhealth-caldav==5.0.0a1"
+    "gnuhealth-caldav>=5.0.0b0"
 ]
 
 [project.urls]
