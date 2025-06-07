@@ -8,7 +8,7 @@
 Neglected Tropical Diseases: Dengue package for GNU Health HIS
 ##############################################################
 
-The package *health-ntd-dengue- has the funcionality for the prevention,
+The package *health-ntd-dengue* has the funcionality for the prevention,
 detection and treatment of Dengue Fever disease.
 
 It includes :

@@ -5,15 +5,15 @@
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-
 Health Genetics - UniProt package for GNU Health HIS
 ####################################################
 
-This module includes proteins, natural variants, phenotypes, 
+This module includes proteins, natural variantsa and phenotypes 
 associated to genes and their health conditions, from UniProtKB.
 
 Many thanks to the UniProt Consortium for providing the excellent list of
 human variants. GNU Health natural variants database is based on it.
+
 
 GNU Health HIS: The Libre Hospital Information System
 =====================================================
@@ -151,6 +151,7 @@ GNU Health is licensed under GPL v3+::
 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 
 License of the Human Natural variants Database
 ------------------------------------------------
