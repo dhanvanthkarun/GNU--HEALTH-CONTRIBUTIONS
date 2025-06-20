@@ -11,3 +11,18 @@ steps:
       # - bash scripts/test_modules.sh
     when:
       - event: [push, pull_request, cron, manual]
+
+
+deploy-his-git:
+   image: appleboy/drone-git-push
+   settings:
+     path: tmp/his-git
+     remote: git@codeberg.org:gnuhealth/his.git
+     ssh_key:
+       from_secret: ssh_deploy_key
+
+     branch: translate-ci
+     force: true
+     commit: true
+     commit_message: "Update po files with Woodpecker CI"
+
