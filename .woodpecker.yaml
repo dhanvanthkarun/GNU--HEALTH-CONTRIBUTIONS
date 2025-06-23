@@ -88,6 +88,7 @@ steps:
       - branch: [dev-5.0, translate]
         event: [push, manual]
 
+
   push-po-changes-to-his-dev-branch:
     image: appleboy/drone-git-push
     settings:
