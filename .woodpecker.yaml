@@ -4,11 +4,6 @@
 
 # woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
 
-variables:
-  po-export-when: &po-export-when
-    - branch: [dev-5.0, translate]
-      event: [push, manual]
-
 steps:
 
   his-git-code-check:
@@ -35,7 +30,8 @@ steps:
       partial: true
       lfs: false
     when:
-      - <<: *po-export-when
+      - branch: [dev-5.0, translate]
+        event: [push, manual]
 
 
   clone-his-git:
@@ -49,7 +45,8 @@ steps:
       partial: false
       lfs: false
     when:
-      - <<: *po-export-when
+      - branch: [dev-5.0, translate]
+        event: [push, manual]
 
 
   run-po-export-script:
@@ -73,7 +70,8 @@ steps:
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
     when:
-      - <<: *po-export-when
+      - branch: [dev-5.0, translate]
+        event: [push, manual]
 
 
   push-po-changes-to-his-translate-branch:
@@ -87,8 +85,8 @@ steps:
       force: false
       commit: false
     when:
-      - <<: *po-export-when
-
+      - branch: [dev-5.0, translate]
+        event: [push, manual]
 
 
   push-po-changes-to-his-dev-branch:
@@ -102,4 +100,5 @@ steps:
       force: false
       commit: false
     when:
-      - <<: *po-export-when
+      - branch: [dev-5.0, translate]
+        event: [push, manual]
