@@ -6,8 +6,8 @@
 
 variables:
   po-export-when: &po-export-when
-    branch: [dev-5.0, translate]
-    event: [push, manual]
+    - branch: [dev-5.0, translate]
+      event: [push, manual]
 
 steps:
 
