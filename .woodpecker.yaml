@@ -35,7 +35,7 @@ steps:
       partial: true
       lfs: false
     when:
-      - <<: &po-export-when
+      - <<: *po-export-when
 
 
   clone-his-git:
@@ -49,7 +49,7 @@ steps:
       partial: false
       lfs: false
     when:
-      - <<: &po-export-when
+      - <<: *po-export-when
 
 
   run-po-export-script:
@@ -73,7 +73,7 @@ steps:
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
     when:
-      - <<: &po-export-when
+      - <<: *po-export-when
 
 
   push-po-changes-to-his-translate-branch:
@@ -87,7 +87,7 @@ steps:
       force: false
       commit: false
     when:
-      - <<: &po-export-when
+      - <<: *po-export-when
 
 
 
@@ -102,4 +102,4 @@ steps:
       force: false
       commit: false
     when:
-      - <<: &po-export-when
+      - <<: *po-export-when
