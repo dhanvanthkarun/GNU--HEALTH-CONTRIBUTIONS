@@ -142,7 +142,7 @@ class DomiciliaryUnit(ModelSQL, ModelView):
     address_street_bis = fields.Char('Unit')
 
     address_district = fields.Char(
-        'District', help="Neighborhood, Village, Barrio....")
+        'District_TEST', help="Neighborhood, Village, Barrio....")
 
     address_municipality = fields.Char(
         'Municipality', help="Municipality, Township, county ..")
@@ -183,6 +183,9 @@ class DomiciliaryUnit(ModelSQL, ModelView):
         ('townhouse', 'Townhouse'),
         ('factory', 'Factory'),
         ('building', 'Building'),
+        ('building1', 'Building'),
+        ('building', 'Building1'),
+        ('building', 'Building2'),
         ('mobilehome', 'Mobile House'),
     ], 'Type', sort=False)
 
