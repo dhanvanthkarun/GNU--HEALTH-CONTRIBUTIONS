@@ -45,7 +45,22 @@ steps:
       partial: false
       lfs: false
     when:
-      - branch: [dev-5.0, translate, ci-test]
+      - branch: [dev-5.0, translate]
+        event: [push, manual]
+
+
+  clone-his-git-for-ci-test:
+    image: woodpeckerci/plugin-git
+    settings:
+      remote: https://codeberg.org/gnuhealth/his.git
+      branch: ci-test
+      path: tmp/his-git
+      sha: ''
+      ref: 'refs/heads/ci-test'
+      partial: false
+      lfs: false
+    when:
+      - branch: [ci-test]
         event: [push, manual]
 
 
@@ -72,6 +87,7 @@ steps:
     when:
       - branch: [dev-5.0, translate, ci-test]
         event: [push, manual]
+
 
   push-po-changes-to-his-ci-test-output-branch:
     image: appleboy/drone-git-push
