@@ -14,7 +14,7 @@ steps:
       # - bash scripts/test_modules.sh
     when:
       - branch:
-          include: [main, dev-5.0, wip-*]
+          include: [main, dev-5.0, wip-*, ci-test]
           exclude: [translate]
         event: [push, pull_request, manual]
 
@@ -30,7 +30,7 @@ steps:
       partial: true
       lfs: false
     when:
-      - branch: [dev-5.0, translate]
+      - branch: [dev-5.0, translate, ci-test]
         event: [push, manual]
 
 
@@ -45,7 +45,7 @@ steps:
       partial: false
       lfs: false
     when:
-      - branch: [dev-5.0, translate]
+      - branch: [dev-5.0, translate, ci-test]
         event: [push, manual]
 
 
@@ -70,7 +70,21 @@ steps:
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
     when:
-      - branch: [dev-5.0, translate]
+      - branch: [dev-5.0, translate, ci-test]
+        event: [push, manual]
+
+  push-po-changes-to-his-ci-test-output-branch:
+    image: appleboy/drone-git-push
+    settings:
+      path: tmp/his-git
+      remote: git@codeberg.org:gnuhealth/his.git
+      ssh_key:
+        from_secret: ssh_deploy_key
+      branch: ci-test-output
+      force: true
+      commit: false
+    when:
+      - branch: [ci-test]
         event: [push, manual]
 
 
