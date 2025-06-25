@@ -55,7 +55,7 @@ steps:
       - apt-get update -y
       # installing packages in woodpecker of codeberg.org is very
       # slow, so just install packages necessary.
-      - apt-get install -y --no-install-recommends --no-upgrade sqlite3 patch python3-pip python3-venv python3-dev gcc libsasl2-dev libldap2-dev git gettext libmagic1 libgirepository-2.0-dev
+      - apt-get install -y --no-install-recommends --no-upgrade sqlite3 patch python3-pip python3-venv python3-dev gcc libsasl2-dev libldap2-dev git gettext libmagic1
       - git config --global user.email "po-export@po-export.invalid"
       - git config --global user.name "po-export"
       # We git clone his.git and his-utils.git to 'tmp' directory.
