@@ -4,6 +4,19 @@
 
 # woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
 
+# This ci is used to auto update po files of his.git, they do following jobs:
+# 1. clone his.git dev-5.0 branch to tmp/his dir.
+# 2. clone his-utils.git dev-5.0 branch to tmp/his-utils dir.
+# 3. Install gnuhealth to tmp/ghis dir with the help of devel-installer in his-utils.
+# 4. merge origin/translate branch to dev-5.0 branch.
+# 5. Use po-export tool to update po files.
+# 6. push to origin/translate branch.
+# 7. push to origin/dev-5.0 branch.
+
+# we have added ci-test and ci-test-output branch, if we will test ci,
+# we can force push to ci-test, then the changes will be force pushed
+# to ci-test-output branch.
+
 depends_on:
   - lint
 
