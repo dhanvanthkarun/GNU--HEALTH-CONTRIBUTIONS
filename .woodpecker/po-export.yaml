@@ -4,22 +4,12 @@
 
 # woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
 
+depends_on:
+  - lint
+
+
 steps:
-
-  his-git-code-check:
-    image: gnuhealth/linter:1.0.1
-    commands:
-      - bash scripts/lint.sh
-      # - bash scripts/security.sh
-      # - bash scripts/test_modules.sh
-    when:
-      - branch:
-          include: [main, dev-5.0, wip-*, ci-test]
-          exclude: [translate]
-        event: [push, pull_request, manual]
-
-
-  clone-his-utils-git:
+  - name: clone-his-utils-git
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his-utils.git
@@ -33,8 +23,7 @@ steps:
       - branch: [dev-5.0, translate, ci-test]
         event: [push, manual]
 
-
-  clone-his-git:
+  - name: clone-his-git
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his.git
@@ -48,8 +37,7 @@ steps:
       - branch: [dev-5.0, translate]
         event: [push, manual]
 
-
-  clone-his-git-for-ci-test:
+  - name: clone-his-git-for-ci-test
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his.git
@@ -63,8 +51,7 @@ steps:
       - branch: [ci-test]
         event: [push, manual]
 
-
-  run-po-export-script:
+  - name: run-po-export-script
     image: debian
     commands:
       - apt-get update -y
@@ -88,8 +75,7 @@ steps:
       - branch: [dev-5.0, translate, ci-test]
         event: [push, manual]
 
-
-  push-po-changes-to-his-ci-test-output-branch:
+  - name: push-po-changes-to-his-ci-test-output-branch
     image: appleboy/drone-git-push
     settings:
       path: tmp/his-git
@@ -103,8 +89,7 @@ steps:
       - branch: [ci-test]
         event: [push, manual]
 
-
-  push-po-changes-to-his-translate-branch:
+  - name: push-po-changes-to-his-translate-branch
     image: appleboy/drone-git-push
     settings:
       path: tmp/his-git
@@ -118,8 +103,7 @@ steps:
       - branch: [dev-5.0, translate]
         event: [push, manual]
 
-
-  push-po-changes-to-his-dev-branch:
+  - name: push-po-changes-to-his-dev-branch
     image: appleboy/drone-git-push
     settings:
       path: tmp/his-git
