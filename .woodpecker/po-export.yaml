@@ -9,9 +9,6 @@ depends_on:
 
 
 steps:
-  - name: clone
-    skip_clone: true
-
   - name: clone-his-utils-git
     image: woodpeckerci/plugin-git
     settings:
