@@ -26,10 +26,10 @@ maintainers = [
 ]
 
 dependencies = [
-    "vobject>=0.9.9,<0.10",
-    "PyWebDAV3-GNUHealth>= 0.10.1",
-    "gnuhealth_webdav3_server",
-    "gnuhealth>=5.0.0b0"
+    'vobject>=0.9.9,<0.10',
+    'PyWebDAV3-GNUHealth>= 0.10.1',
+    'gnuhealth_webdav3_server>5.0.0b0,<5.1',
+    'gnuhealth>=5.0.0b0,<5.1'
 ]
 
 [project.urls]

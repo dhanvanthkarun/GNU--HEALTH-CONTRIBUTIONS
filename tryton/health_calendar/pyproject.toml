@@ -26,8 +26,8 @@ maintainers = [
 ]
 
 dependencies = [
-    "gnuhealth>=5.0.0b0",
-    "gnuhealth-caldav>=5.0.0b0"
+    'gnuhealth>=5.0.0b0,<5.1',
+    'gnuhealth-caldav>=5.0.0b0,<5.1'
 ]
 
 [project.urls]
