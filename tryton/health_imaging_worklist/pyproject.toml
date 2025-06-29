@@ -9,7 +9,7 @@ build-backend = "poetry.core.masonry.api"
 [project]
 name = "gnuhealth-imaging-worklist"
 version = "5.0.0rc2"
-description = "Medical Imaging DICOM worklist package GNU Health HIS"
+description = "Medical Imaging DICOM worklist package for GNU Health HIS"
 
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -27,7 +27,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth>=5.0.0b0',
+    'gnuhealth>=5.0.0b0,<5.1',
     'pydicom'
 ]
 
