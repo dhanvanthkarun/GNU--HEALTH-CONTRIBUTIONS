@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-contact-tracing"
-version = "5.0.0rc3"
+version = "5.0.0"
 description = "Infectious diseases contact tracing package for the GNU Health HIS"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -26,7 +26,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth>=5.0.0b0,<5.1'
+    'gnuhealth>=5.0.0,<5.1'
 ]
 
 [project.urls]

@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-icd11"
-version = "5.0.0rc3"
+version = "5.0.0"
 description = "ICD11 - WHO International Classification of Diseases, 11th edition for GNU Health HIS"
 
 license = { text = "GPL-3.0-or-later" }
@@ -27,7 +27,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth>=5.0.0b0,<5.1'
+    'gnuhealth>=5.0.0,<5.1'
 ]
 
 [project.urls]

@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-inpatient-calendar"
-version = "5.0.0rc3"
+version = "5.0.0"
 description = "Hospitalization calendar management for GNU Health HIS"
 
 license = { text = "GPL-3.0-or-later" }
@@ -27,7 +27,7 @@ maintainers = [
 ]
 
 dependencies = [
-    'gnuhealth-inpatient>=5.0.0b0,<5.1',
+    'gnuhealth-inpatient>=5.0.0,<5.1',
     'gnuhealth-calendar>=5.0.0.b0,<5.1'
 ]
 

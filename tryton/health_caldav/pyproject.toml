@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "gnuhealth-caldav"
-version = "5.0.0rc3"
+version = "5.0.0"
 description = "CalDAV and WebDAV core package for GNU Health HIS"
 license = { text = "GPL-3.0-or-later" }
 readme = "README.rst"
@@ -29,7 +29,7 @@ dependencies = [
     'vobject>=0.9.9,<0.10',
     'PyWebDAV3-GNUHealth>= 0.10.1',
     'gnuhealth_webdav3_server>5.0.0b0,<5.1',
-    'gnuhealth>=5.0.0b0,<5.1'
+    'gnuhealth>=5.0.0,<5.1'
 ]
 
 [project.urls]
