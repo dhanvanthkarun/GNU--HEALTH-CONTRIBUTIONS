@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -63,7 +63,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_glasgow_form1">
             <field name="name">Glasgow Coma Scale</field>
             <field name="res_model">gnuhealth.icu.glasgow</field>
-            <field name="domain" eval="[('name.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('registration.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_glasgow_keyword1">
@@ -116,7 +116,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_apache_form1">
             <field name="name">APACHE II</field>
             <field name="res_model">gnuhealth.icu.apache2</field>
-            <field name="domain" eval="[('name.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('registration.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_apache_keyword1">
@@ -205,9 +205,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <!-- Rounding view -->
 <!-- Update the existing rounding view with information about Intensive Care Unit - ICU -->
 
-        <record model="ir.ui.view" id="gnuhealth_patient_icu_rounding_view">
+        <record model="ir.ui.view" id="gnuhealth_patient_icu_rounding_view_form">
             <field name="model">gnuhealth.patient.rounding</field>
-            <field name="inherit" ref="health_nursing.gnuhealth_patient_rounding_view" />
+            <field name="inherit" ref="health_inpatient.gnuhealth_patient_rounding_view" />
             <field name="name">gnuhealth_patient_icu_rounding</field>
         </record>
 

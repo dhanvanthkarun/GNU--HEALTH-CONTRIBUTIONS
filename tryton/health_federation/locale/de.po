@@ -50,9 +50,10 @@ msgctxt "field:gnuhealth.federation.queue,args:"
 msgid "Arguments"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,args_preview:"
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 msgctxt "field:gnuhealth.federation.queue,federation_locator:"
 msgid "Fed ID"
@@ -72,9 +73,10 @@ msgctxt "field:gnuhealth.federation.queue,msgid:"
 msgid "Message ID"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,node:"
 msgid "Node"
-msgstr ""
+msgstr "Knoten"
 
 #, fuzzy
 msgctxt "field:gnuhealth.federation.queue,state:"
@@ -222,6 +224,26 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_sent"
 msgid "Sent"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_need_login_credentials"
+msgid "SM-FEDERATION-0001: Please setup the login credentials"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_institution"
+msgid "SM-FEDERATION-0005: You need to create an institution"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_server_authentication_error"
+msgid "SM-FEDERATION-0002: ERROR authenticating to Server"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_thalamus_connection_error"
+msgid "SM-FEDERATION-0004: Thalamus Connection error"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_thalamus_connection_ok"
+msgid "SM-FEDERATION-0003: Connection to Thalamus Server OK!"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_config"

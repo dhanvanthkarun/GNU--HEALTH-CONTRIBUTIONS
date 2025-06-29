@@ -1,8 +1,15 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-05-28 00:01+0000\n"
+"Last-Translator: Marco Ciampa <ciampix@noreply.codeberg.org>\n"
+"Language-Team: Italian <https://translate.codeberg.org/projects/gnuhealth/health_imaging/it/>\n"
+"Language: it_IT\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11.4\n"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test,active:"
 msgid "Active"
 msgstr "Attivo"
@@ -37,9 +44,10 @@ msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "Data"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Paramedico"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
@@ -98,12 +106,16 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "Paziente"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "Data Richiesta"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
@@ -127,9 +139,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "Data"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Paramedico"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
@@ -513,6 +526,18 @@ msgstr "Bozza"
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr "Richiesto"
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Generate Results"

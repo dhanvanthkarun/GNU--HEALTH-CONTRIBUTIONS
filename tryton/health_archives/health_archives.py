@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -38,7 +38,7 @@ class PaperArchive(ModelSQL, ModelView):
         ('archived', 'Archived'),
         ('borrowed', 'Borrowed'),
         ('lost', 'Lost'),
-        ), 'Status', required=True, sort=False)
+    ), 'Status', required=True, sort=False)
 
     current_location = fields.Many2One(
         'gnuhealth.hospital.unit', 'Current Location',
@@ -70,7 +70,7 @@ class PaperArchive(ModelSQL, ModelView):
             ('patient_unique', Unique(t, t.patient),
                 'The patient history already exists'),
 
-            ]
+        ]
 
     @classmethod
     def search_patient_code(cls, name, clause):

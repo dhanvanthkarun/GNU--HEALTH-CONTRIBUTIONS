@@ -6,20 +6,18 @@
 # SPDX-FileCopyrightText: 2020-2024 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
-#########################################################################
-#   Hospital Management Information System (HMIS) component of the      #
-#                       GNU Health project                              #
-#                   https://www.gnuhealth.org                           #
-#########################################################################
-#                         HEALTH DENTISTRY package                      #
-#                odontogram_report.py: odontogram report                #
-#########################################################################
+########################################################################
+#   Hospital Management Information System (HMIS) component of the     #
+#                       GNU Health project                             #
+#                   https://www.gnuhealth.org                          #
+########################################################################
+#                         HEALTH DENTISTRY package                     #
+#                odontogram_report.py: odontogram report               #
+########################################################################
 import io
-import os
 import json
 from PIL import Image, ImageDraw, ImageFont
 from trytond.report import Report
-from trytond.pool import Pool
 
 
 __all__ = ['Odontogram']
@@ -32,55 +30,80 @@ class Odontogram(Report):
     y_distance = 110
 
     __pieces = {
-        '18': ( 1, 1), '17': ( 2, 1), '16': ( 3, 1), '15': ( 4, 1),
-        '14': ( 5, 1), '13': ( 6, 1), '12': ( 7, 1), '11': ( 8, 1),
+        '18': (1, 1), '17': (2, 1), '16': (3, 1), '15': (4, 1),
+        '14': (5, 1), '13': (6, 1), '12': (7, 1), '11': (8, 1),
+
         '21': (10, 1), '22': (11, 1), '23': (12, 1), '24': (13, 1),
         '25': (14, 1), '26': (15, 1), '27': (16, 1), '28': (17, 1),
-        '48': ( 1, 4), '47': ( 2, 4), '46': ( 3, 4), '45': ( 4, 4),
-        '44': ( 5, 4), '43': ( 6, 4), '42': ( 7, 4), '41': ( 8, 4),
+
+        '48': (1, 4), '47': (2, 4), '46': (3, 4), '45': (4, 4),
+        '44': (5, 4), '43': (6, 4), '42': (7, 4), '41': (8, 4),
+
         '31': (10, 4), '32': (11, 4), '33': (12, 4), '34': (13, 4),
         '35': (14, 4), '36': (15, 4), '37': (16, 4), '38': (17, 4),
-        '55': ( 4, 2), '54': ( 5, 2), '53': ( 6, 2), '52': ( 7, 2), '51': ( 8, 2),
-        '61': (10, 2), '62': (11, 2), '63': (12, 2), '64': (13, 2), '65': (14, 2),
-        '85': ( 4, 3), '84': ( 5, 3), '83': ( 6, 3), '82': ( 7, 3), '81': ( 8, 3),
-        '71': (10, 3), '72': (11, 3), '73': (12, 3), '74': (13, 3), '75': (14, 3),
+
+        '55': (4, 2), '54': (5, 2), '53': (6, 2),
+        '52': (7, 2), '51': (8, 2),
+
+        '61': (10, 2), '62': (11, 2), '63': (12, 2),
+        '64': (13, 2), '65': (14, 2),
+
+        '85': (4, 3), '84': (5, 3), '83': (6, 3),
+        '82': (7, 3), '81': (8, 3),
+
+        '71': (10, 3), '72': (11, 3), '73': (12, 3),
+        '74': (13, 3), '75': (14, 3),
     }
 
     pieces = {}
     for key, value in __pieces.items():
-        pieces[key] = (x_distance/2 + x_distance*(value[0]-1),
-                       x_distance/2 + y_distance*(value[1]-1))
-    
+        pieces[key] = (x_distance / 2 + x_distance * (value[0] - 1),
+                       x_distance / 2 + y_distance * (value[1] - 1))
+
     image_size = (x_distance * 17, y_distance * 4)
 
     @classmethod
     def plot_teeth(cls, image, dschema):
         draw = ImageDraw.Draw(image)
-        
+
         for tooth, values in cls.pieces.items():
             width = 3
             color = (0, 0, 0)
 
             x = values[0]
             y = values[1]
-            d1 = cls.x_distance/2 * 0.9
-            d2 = d1/2
-            d3 = d1/1.414
-            d4 = d2/1.414
+            d1 = cls.x_distance / 2 * 0.9
+            d2 = d1 / 2
+            d3 = d1 / 1.414
+            d4 = d2 / 1.414
 
-            draw.ellipse((x - d1, y - d1, x + d1, y + d1), outline=color, width = width)
-            
+            draw.ellipse((x - d1, y - d1, x + d1, y + d1),
+                         outline=color, width=width)
+
             if tooth in dschema.keys():
-                draw.ellipse((x - d2, y - d2, x + d2, y + d2), outline=color, width = width)
-                draw.line((x - d3, y - d3, x - d4, y - d4), fill=color, width=width)
-                draw.line((x + d3, y + d3, x + d4, y + d4), fill=color, width=width)
-                draw.line((x - d3, y + d3, x - d4, y + d4), fill=color, width=width)
-                draw.line((x + d3, y - d3, x + d4, y - d4), fill=color, width=width)
+                draw.ellipse(
+                    (x - d2, y - d2, x + d2, y + d2),
+                    outline=color,
+                    width=width)
 
-            fontsize = cls.x_distance//4
-            # Note: load_default support size argument when pillow-10.1.0
+                draw.line((x - d3, y - d3, x - d4, y - d4),
+                          fill=color, width=width)
+                draw.line((x + d3, y + d3, x + d4, y + d4),
+                          fill=color, width=width)
+                draw.line((x - d3, y + d3, x - d4, y + d4),
+                          fill=color, width=width)
+                draw.line((x + d3, y - d3, x + d4, y - d4),
+                          fill=color, width=width)
+
+            fontsize = cls.x_distance // 4
+            # Note: load_default support size argument when
+            # pillow-10.1.0
             font = ImageFont.load_default(size=fontsize)
-            draw.multiline_text((x - fontsize * 0.65, y + d1 * 1.1), tooth, fill=color, font=font)
+            draw.multiline_text(
+                (x - fontsize * 0.65, y + d1 * 1.1),
+                tooth,
+                fill=color,
+                font=font)
 
     @classmethod
     def plot_extraction(cls, image, piece_center, status):
@@ -92,7 +115,7 @@ class Odontogram(Report):
             color = for_extraction_color
 
         xcenter, ycenter = piece_center
-        num = cls.x_distance/(2*1.414)
+        num = cls.x_distance / (2 * 1.414)
         llc = {'x': xcenter - num, 'y': ycenter + num}
         urc = {'x': xcenter + num, 'y': ycenter - num}
         ulc = {'x': xcenter - num, 'y': ycenter - num}
@@ -119,14 +142,15 @@ class Odontogram(Report):
             color = filling
 
         position = (x, y)  # Center of the tooth
-        draw = ImageDraw.Draw(image)
+        ImageDraw.Draw(image)
 
         tregions = status.copy()
-        tregions.pop('ts')  # Delete ts element and focus on the tooth areas
+        # Delete ts element and focus on the tooth areas
+        tregions.pop('ts')
 
         # Set the section of the filling / decay
         # Maxillar / upper region
-        num = cls.x_distance/(2*1.414)
+        num = cls.x_distance / (2 * 1.414)
 
         if (tooth in range(11, 28) or tooth in range(51, 65)):
             for key in tregions.keys():
@@ -141,7 +165,8 @@ class Odontogram(Report):
                 if (key == 'm'):  # Mesial
                     position = (x + num, y)
 
-                ImageDraw.floodfill(image, xy=position, value=color, thresh=200)
+                ImageDraw.floodfill(
+                    image, xy=position, value=color, thresh=200)
 
         # Mandibular / lower region
         if (tooth in range(31, 48) or tooth in range(71, 85)):
@@ -157,7 +182,8 @@ class Odontogram(Report):
                 if (key == 'd'):  # Distal
                     position = (x + num, y)
 
-                ImageDraw.floodfill(image, xy=position, value=color, thresh=200)
+                ImageDraw.floodfill(
+                    image, xy=position, value=color, thresh=200)
 
         return (image)
 
@@ -182,8 +208,10 @@ class Odontogram(Report):
             # Plot it first to avoid wrong surface filling if overlapping with
             # other symbols
             if (values['ts'] in ('D', 'F')):
-                status = dschema[tooth]  # Get all the keys (ts, o, m, d, ...)
-                cls.plot_decayed(image, int(tooth), cls.pieces[tooth], status)
+                # Get all the keys (ts, o, m, d, ...)
+                status = dschema[tooth]
+                cls.plot_decayed(
+                    image, int(tooth), cls.pieces[tooth], status)
 
             # Missing or set for extraction tooth
             if (values['ts'] in ('M', 'E')):

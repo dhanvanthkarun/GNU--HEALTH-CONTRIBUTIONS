@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2013 Sebastián Marró <smarro@thymbra.com>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -21,6 +21,7 @@ from trytond.pool import Pool
 
 from trytond.modules.health.core import (
     get_health_professional, compute_age_from_dates)
+
 
 __all__ = [
     'ImagingTestType',
@@ -52,7 +53,7 @@ class ImagingTest(ModelSQL, ModelView):
         required=True)
     product = fields.Many2One('product.product', 'Product', required=True)
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -79,18 +80,17 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         'gnuhealth.imaging.test', 'Study',
         required=True)
     doctor = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health prof', required=True)
+        'gnuhealth.healthprofessional', 'Health Prof', required=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('requested', 'Requested'),
         ('done', 'Done'),
-        ], 'State', readonly=True)
+    ], 'State', readonly=True)
 
     context = fields.Many2One(
         'gnuhealth.pathology', 'Context',
         help="Health context for this order. It can be a suspected or"
-             " existing health condition, a regular health checkup, ...",
-             select=True)
+             " existing health condition, a regular health checkup, ...")
 
     comment = fields.Text('Additional Information')
     request = fields.Char('Order', readonly=True)
@@ -107,13 +107,16 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
         cls._buttons.update({
             'requested': {
                 'invisible': ~Eval('state').in_(['draft']),
-                },
+            },
             'generate_results': {
                 'invisible': ~Eval('state').in_(['requested'])
-                }
-            })
+            }
+        })
         cls._order.insert(0, ('date', 'DESC'))
         cls._order.insert(1, ('request', 'DESC'))
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @staticmethod
     def default_date():
@@ -145,7 +148,8 @@ class ImagingTestRequest(Workflow, ModelSQL, ModelView):
             if not values.get('request'):
                 values['request'] = cls.generate_code()
             if not values.get('request_line'):
-                values['request_line'] = f'{values["request"]}-{count:02}-{num:02}'
+                line = f'{values["request"]}-{count:02}-{num:02}'
+                values['request_line'] = line
             num = num + 1
 
         return super(ImagingTestRequest, cls).create(vlist)
@@ -182,15 +186,15 @@ class ImagingTestResult(ModelSQL, ModelView):
     __name__ = 'gnuhealth.imaging.test.result'
 
     def patient_age_at_evaluation(self, name):
-        if (self.patient.name.dob and self.date):
+        if (self.patient.party.dob and self.date):
             return compute_age_from_dates(
-                self.patient.name.dob, None, None, None, 'age',
+                self.patient.party.dob, None, None, None, 'age',
                 self.date.date())
 
     patient = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True)
     number = fields.Char('Number', readonly=True)
     date = fields.DateTime('Date', required=True)
-    request_date = fields.DateTime('Requested Date', readonly=True)
+    request_date = fields.DateTime('Request Date', readonly=True)
     requested_test = fields.Many2One(
         'gnuhealth.imaging.test', 'Study',
         required=True)
@@ -204,12 +208,37 @@ class ImagingTestResult(ModelSQL, ModelView):
         'gnuhealth.healthprofessional', 'Evaluated by', required=True)
 
     computed_age = fields.Function(fields.Char(
-            'Age',
-            help="Computed patient age at the moment of the evaluation"),
-            'patient_age_at_evaluation')
+        'Age',
+        help="Computed patient age at the moment of the evaluation"),
+        'patient_age_at_evaluation')
 
     comment = fields.Text('Additional Information')
+
+    report_style = fields.Selection([
+        ('default', 'Default'),
+        ('no_images', 'No Images'),
+        ('no_image_comments', 'No Image Comments')
+    ], 'Report Style', sort=False)
+
+    @staticmethod
+    def default_report_style():
+        return 'default'
+
     images = fields.One2Many('ir.attachment', 'resource', 'Images')
+
+    # Mostly used in report template.
+    def report_has_images(self):
+        result = (self.images and self.report_style != 'no_images')
+        return result
+
+    # Mostly used in report template.
+    def report_has_image_comments(self):
+        result = (self.report_style != 'no_image_comments' and
+                  (True in [
+                      img.description != '' and
+                      img.description != 'From GNU Health camera' and
+                      img.description is not None for img in self.images]))
+        return result
 
     @classmethod
     def generate_code(cls, **pattern):
@@ -238,7 +267,7 @@ class ImagingTestResult(ModelSQL, ModelView):
             bool_op,
             ('patient',) + tuple(clause[1:]),
             ('number',) + tuple(clause[1:]),
-            ]
+        ]
 
     @classmethod
     def __setup__(cls):

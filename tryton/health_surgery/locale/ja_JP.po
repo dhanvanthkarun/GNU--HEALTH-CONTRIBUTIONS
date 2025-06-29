@@ -2,10 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr "外科"
-
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
 msgstr "備考"
@@ -15,13 +11,19 @@ msgid "Code"
 msgstr "コード"
 
 #, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "外科"
+
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
 msgstr "コメント"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,health_condition:"
-msgid "Health Condition"
-msgstr ""
+msgid "Condition"
+msgstr "状態"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
@@ -33,9 +35,10 @@ msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
 msgstr "施設"
 
-msgctxt "field:gnuhealth.or.schedule,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
-msgstr ""
+msgstr "手術室"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,patient:"
@@ -160,9 +163,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,health_professional:"
 msgid "Health Prof"
 msgstr "健康プロフィール"
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Imaging"
-msgstr ""
+msgstr "画像"
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,institution:"
@@ -183,7 +187,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "手術室"
 
 #, fuzzy
@@ -201,10 +205,9 @@ msgctxt "field:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid "Risk of Massive bleeding"
 msgstr "大量出血のリスク"
 
-#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_mallampati:"
-msgid "Mallampati Score"
-msgstr "マランパチ分類"
+msgid "Mallampati"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -239,11 +242,11 @@ msgid "Surgical wound"
 msgstr ""
 
 msgctxt "field:gnuhealth.rcri,health_professional:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "主治医"
 
 msgctxt "field:gnuhealth.rcri,patient:"
-msgid "Patient ID"
+msgid "Patient"
 msgstr "患者ID"
 
 msgctxt "field:gnuhealth.rcri,rcri_cerebrovascular_history:"
@@ -361,6 +364,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "性別"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "処置"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "施設"
@@ -374,12 +382,13 @@ msgid "Main Procedure"
 msgstr ""
 
 msgctxt "field:gnuhealth.surgery,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "手術室"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,pathology:"
-msgid "Health Condition"
-msgstr ""
+msgid "Condition"
+msgstr "状態"
 
 msgctxt "field:gnuhealth.surgery,patient:"
 msgid "Patient"
@@ -475,6 +484,11 @@ msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "全長"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "手続き"
+
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
 msgstr ""
@@ -492,11 +506,6 @@ msgid "Complication"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr "外科"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
 msgstr "重症度"
@@ -506,19 +515,24 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "注意点"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "外科"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
-msgstr "外科"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "備考"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "外科"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
@@ -562,9 +576,10 @@ msgctxt "field:gnuhealth.surgery.protocol,name:"
 msgid "Name"
 msgstr "氏名"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,pathology:"
-msgid "Health Condition"
-msgstr ""
+msgid "Condition"
+msgstr "状態"
 
 msgctxt "field:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Patient Positioning"
@@ -577,11 +592,6 @@ msgstr ""
 msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr "外科"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery_supply,notes:"
@@ -602,7 +612,7 @@ msgid "Supply"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery_team,name:"
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
 msgstr "外科"
 
@@ -615,6 +625,11 @@ msgstr "備考"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "続柄"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "外科"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -632,7 +647,7 @@ msgstr "基礎状態 / 理由"
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
 msgid "Health Professional"
-msgstr "主治医"
+msgstr "医療従事者"
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,institution:"
@@ -640,7 +655,7 @@ msgid "Health Care Institution"
 msgstr "医療機関"
 
 #, fuzzy
-msgctxt "help:gnuhealth.or.schedule,name:"
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr "手術室"
 
@@ -703,6 +718,11 @@ msgid "The patient is not eligible to be anesthetized"
 msgstr ""
 
 #, fuzzy
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "手術室"
+
+#, fuzzy
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA pre-operative Physical Status"
 msgstr "米国麻酔学会　術前状態分類"
@@ -711,6 +731,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid ""
 "Patient has a risk of losing more than 500 ml in adults of over 7ml/kg in "
 "infants. If so, make sure that intravenous access and fluids are available"
+msgstr ""
+
+msgctxt "help:gnuhealth.preoperative_assessment,preop_mallampati:"
+msgid "Mallampati Score"
 msgstr ""
 
 #, fuzzy
@@ -752,14 +776,12 @@ msgstr "開腹術、開胸術、腸骨動脈以上中枢の血管手術を含む
 
 msgctxt "help:gnuhealth.rcri,rcri_ischemic_history:"
 msgid ""
-"history of MI or a positive exercise test, current         complaint of "
-"chest pain considered to be secondary to myocardial         ischemia, use of"
-" nitrate therapy, or ECG with pathological         Q waves; do not count "
-"prior coronary revascularization procedure         unless one of the other "
-"criteria for ischemic heart disease is         present"
+"history of MI or a positive exercise test, current complaint of chest pain "
+"considered to be secondary to myocardial ischemia, use of nitrate therapy, "
+"or ECG with pathological Q waves; do not count prior coronary "
+"revascularization procedure unless one of the other criteria for ischemic "
+"heart disease is present."
 msgstr ""
-"心筋梗塞の既往もしくは運動負荷試験で陽性, 心筋梗塞により引き起こされている可能性のある胸痛が現在ある,  硝酸薬で治療している, "
-"心電図上、病的なQ波を認める; 虚血性心疾患の可能性が現在存在する限り、以前の冠動脈パイパス術は考慮しない"
 
 msgctxt "help:gnuhealth.rcri,rcri_kidney_history:"
 msgid "Preoperative serum creatinine >2.0 mg/dL (177 mol/L)"
@@ -779,9 +801,8 @@ msgstr ""
 
 msgctxt "help:gnuhealth.surgery,age:"
 msgid ""
-"Use this field for historical purposes,         when no date of surgery is "
-"given"
-msgstr "手術日のデータがない場合に、このフィールドを歴史的名経緯で利用します。"
+"Use this field for historical purposes, when no date of surgery is given"
+msgstr ""
 
 msgctxt "help:gnuhealth.surgery,anesthetist:"
 msgid "Anesthetist in charge"
@@ -822,6 +843,18 @@ msgid ""
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
 msgstr ""
+
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
+msgstr "手術室"
 
 msgctxt "help:gnuhealth.surgery,pathology:"
 msgid "Base Condition / Reason"
@@ -891,14 +924,18 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "外科手術の時間"
 
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr ""
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery.complication,complication:"
@@ -1155,11 +1192,6 @@ msgstr "外科管理"
 
 #, fuzzy
 msgctxt "report:preoperative_assessment:"
-msgid ","
-msgstr ","
-
-#, fuzzy
-msgctxt "report:preoperative_assessment:"
 msgid "ALLERGIC"
 msgstr "アレルギー"
 
@@ -1198,7 +1230,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "report:preoperative_assessment:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "主治医"
 
 msgctxt "report:preoperative_assessment:"
@@ -1691,6 +1723,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "3"
 msgstr "3"
 
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
+msgstr ""
+
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "5"
@@ -1751,12 +1787,11 @@ msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "PS 3 : Patients with severe systemic disease"
 msgstr "PS 3 : 高度の全身疾患を有するが運動不可能ではない"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
 msgid ""
 "PS 4 : Patients with severe systemic disease that is a constant threat to "
-"life "
-msgstr "PS 4 : 生命を脅かす全身疾患を有し、日常生活は不可能"
+"life"
+msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
@@ -1847,9 +1882,10 @@ msgctxt "selection:gnuhealth.rcri,rcri_class:"
 msgid "IV"
 msgstr "Ⅳ"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Epidural"
-msgstr ""
+msgstr "硬膜外"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
@@ -1944,6 +1980,10 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade IIIa"
+msgstr ""
+
+msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
+msgid "Grade IIIb"
 msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
@@ -2140,9 +2180,10 @@ msgctxt "selection:gnuhealth.surgery.drain,drain:"
 msgid "Thoracic tube"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Epidural"
-msgstr ""
+msgstr "硬膜外"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
@@ -2375,18 +2416,6 @@ msgstr ""
 msgctxt "view:gnuhealth.preoperative_assessment:"
 msgid "Surgery schedule"
 msgstr ""
-
-msgctxt "view:gnuhealth.procedure:"
-msgid "Procedure"
-msgstr "処置"
-
-msgctxt "view:gnuhealth.rcri:"
-msgid "RCRI"
-msgstr "RCRI"
-
-msgctxt "view:gnuhealth.rcri:"
-msgid "RCRI : Revised Cardiac Risk Index"
-msgstr "RCRI:心臓リスク指標"
 
 msgctxt "view:gnuhealth.surgery.protocol:"
 msgid "Discharge instructions"

@@ -32,7 +32,7 @@ msgstr "信息"
 
 msgctxt "field:gnuhealth.gene,location:"
 msgid "Location"
-msgstr "位置"
+msgstr "位点"
 
 msgctxt "field:gnuhealth.gene,long_name:"
 msgid "Official Name"
@@ -52,11 +52,11 @@ msgstr "OMIM ID"
 
 msgctxt "field:gnuhealth.gene,protein_name:"
 msgid "Protein Code"
-msgstr "蛋白质编码"
+msgstr "蛋白编码"
 
 msgctxt "field:gnuhealth.gene,protein_uri:"
 msgid "Protein URI"
-msgstr "蛋白质 URI"
+msgstr "蛋白 URI"
 
 msgctxt "field:gnuhealth.gene,refseq_accession:"
 msgid "RefSeq"
@@ -78,7 +78,7 @@ msgctxt "field:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP"
 msgstr "Reference SNP"
 
-msgctxt "field:gnuhealth.gene.variant,name:"
+msgctxt "field:gnuhealth.gene.variant,gene:"
 msgid "Gene"
 msgstr "基因"
 
@@ -87,8 +87,8 @@ msgid "Phenotypes / Diseases"
 msgstr "表型 / 疾病"
 
 msgctxt "field:gnuhealth.gene.variant,protein:"
-msgid "Protein "
-msgstr "蛋白质 "
+msgid "Protein"
+msgstr "蛋白"
 
 msgctxt "field:gnuhealth.gene.variant,significance:"
 msgid "Significance"
@@ -96,11 +96,11 @@ msgstr "基因显著性"
 
 msgctxt "field:gnuhealth.gene.variant,variant:"
 msgid "FTId"
-msgstr "FTId"
+msgstr "变异特征 ID"
 
 msgctxt "field:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene & Protein"
-msgstr "基因 & 蛋白质"
+msgstr "基因&蛋白"
 
 msgctxt "field:gnuhealth.gene.variant.phenotype,name:"
 msgid "Code"
@@ -114,36 +114,16 @@ msgctxt "field:gnuhealth.gene.variant.phenotype,variant:"
 msgid "Variant"
 msgstr "变异"
 
-msgctxt "field:gnuhealth.patient,family_history:"
-msgid "Family History"
-msgstr "家族史"
-
 msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
 msgstr "遗传信息"
-
-msgctxt "field:gnuhealth.patient.family.diseases,name:"
-msgid "Condition"
-msgstr "疾病"
-
-msgctxt "field:gnuhealth.patient.family.diseases,patient:"
-msgid "Patient"
-msgstr "患者"
-
-msgctxt "field:gnuhealth.patient.family.diseases,relative:"
-msgid "Relative"
-msgstr "亲属"
-
-msgctxt "field:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal or Paternal"
-msgstr "母亲或父亲"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,disease_gene:"
 msgid "Gene"
 msgstr "基因"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,healthprof:"
-msgid "Health prof"
+msgid "Health Prof"
 msgstr "医务人员"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,institution:"
@@ -169,6 +149,10 @@ msgstr "患者"
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
 msgstr "表型"
+
+msgctxt "field:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Zygosity"
+msgstr "合子性"
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
 msgid "Mnemonic"
@@ -252,7 +236,7 @@ msgstr "名称别名"
 
 msgctxt "help:gnuhealth.gene,protein_name:"
 msgid "Encoding Protein Code, such as UniProt protein name"
-msgstr "编码蛋白质代码，如 UniProt 蛋白质名称"
+msgstr "编码蛋白代码，如 UniProt 蛋白名称"
 
 msgctxt "help:gnuhealth.gene,refseq_accession:"
 msgid "RefSeq Accession ID"
@@ -270,13 +254,13 @@ msgctxt "help:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP (rs) link"
 msgstr "Reference SNP (rs) 链接"
 
-msgctxt "help:gnuhealth.gene.variant,name:"
-msgid "Gene and protein product (in parenthesis)"
-msgstr "基因和蛋白质产物 (括号内)"
+msgctxt "help:gnuhealth.gene.variant,gene:"
+msgid "Gene and product (in parenthesis)"
+msgstr "基因和蛋白产物 (括号内)"
 
 msgctxt "help:gnuhealth.gene.variant,protein:"
 msgid "Uniprot Protein ID"
-msgstr "Uniprot 蛋白质 ID"
+msgstr "Uniprot 蛋白 ID"
 
 msgctxt "help:gnuhealth.gene.variant,significance:"
 msgid "Category related to the clinical significance of the variant"
@@ -289,16 +273,6 @@ msgstr "变异特征标识符（FTId）"
 msgctxt "help:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene and expressing protein (in parenthesis)"
 msgstr "基因和表达蛋白 (括号内)"
-
-msgctxt "help:gnuhealth.patient.family.diseases,relative:"
-msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
-msgstr ""
-"直系亲属 = 兄弟姐妹、母亲和父亲\n"
-"第二级亲属 = 叔叔（舅父）、侄子（外甥）和侄女（外甥女）\n"
-"第三级亲属 = (外）祖父母和堂（表）兄弟姐妹"
 
 msgctxt "help:gnuhealth.patient.genetic.risk,healthprof:"
 msgid "Health professional"
@@ -316,7 +290,7 @@ msgctxt "help:gnuhealth.protein.disease,active:"
 msgid ""
 "Whether this code is current.If you deactivate it, the code will no longer "
 "show in the protein-related diseases"
-msgstr "此代码是否为最新代码。如果你停用它，该代码将不再显示在与蛋白质相关的疾病中"
+msgstr "此代码是否为最新代码。如果你停用它，该代码将不在蛋白相关疾病中显示"
 
 msgctxt "help:gnuhealth.protein.disease,gene_variant:"
 msgid "Natural variants involved in this condition"
@@ -350,21 +324,13 @@ msgctxt "model:gnuhealth.gene.variant.phenotype,name:"
 msgid "Variant Phenotypes"
 msgstr "变异表型"
 
-msgctxt "model:gnuhealth.patient.family.diseases,name:"
-msgid "Family History"
-msgstr "家族史"
-
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
 msgid "Patient Genetic Information"
 msgstr "患者基因信息"
 
 msgctxt "model:gnuhealth.protein.disease,name:"
 msgid "Protein related disorders"
-msgstr "蛋白质相关疾病"
-
-msgctxt "model:ir.action,name:"
-msgid "Disease Genes"
-msgstr "疾病基因"
+msgstr "蛋白相关疾病"
 
 msgctxt "model:ir.action,name:gnuhealth_action_gene"
 msgid "Genes"
@@ -384,11 +350,7 @@ msgstr "个人遗传信息"
 
 msgctxt "model:ir.action,name:gnuhealth_action_protein_disease"
 msgid "Protein related diseases"
-msgstr "蛋白质相关疾病"
-
-msgctxt "model:ir.ui.menu,name:"
-msgid "Disease Genes"
-msgstr "疾病基因"
+msgstr "蛋白相关疾病"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_gene_variant_phenotypes"
 msgid "Variant Phenotypes"
@@ -408,7 +370,7 @@ msgstr "遗传学"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_protein_diseases"
 msgid "Protein related diseases"
-msgstr "蛋白质相关疾病"
+msgstr "蛋白相关疾病"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_genetics"
 msgid "Genetics"
@@ -500,7 +462,7 @@ msgstr "其他: 病毒整合位点"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "protein-coding gene"
-msgstr "蛋白质编码基因"
+msgstr "蛋白编码基因"
 
 msgctxt "selection:gnuhealth.gene,gene_type:"
 msgid "pseudogene: T cell receptor pseudogene"
@@ -520,75 +482,31 @@ msgstr "LB/B: 可能良性的"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "LP/P: Likely pathogenic or pathogenic"
-msgstr "LP/P: 可能致病性的"
+msgstr "LP/P: 可能致病的"
 
 msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
 msgstr "US: 意义不明确的"
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Aunt"
-msgstr "姨妈"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Hemizygosity"
+msgstr "半合子状态"
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Brother"
-msgstr "兄弟"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Heterozygosity"
+msgstr "杂合性"
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Cousin"
-msgstr "表亲"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Father"
-msgstr "父亲"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandfather"
-msgstr "祖父"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandmother"
-msgstr "祖母"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Mother"
-msgstr "母亲"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Nephew"
-msgstr "侄儿"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Niece"
-msgstr "侄女"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Sister"
-msgstr "姐妹"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Uncle"
-msgstr "叔叔"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal"
-msgstr "母系"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Paternal"
-msgstr "父系"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Sibling"
-msgstr "兄弟姐妹"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Homozygosity"
+msgstr "纯合性"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
-msgid "Autosomic dominant"
-msgstr "常染色体显性的"
+msgid "Autosomal dominant"
+msgstr "常染色体显性遗传"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
-msgid "Autosomic recessive"
-msgstr "常染色体隐性"
+msgid "Autosomal recessive"
+msgstr "常染色体隐性遗传"
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
 msgid "Mitochondrial"
@@ -616,4 +534,4 @@ msgstr "疾病"
 
 msgctxt "view:gnuhealth.protein.disease:"
 msgid "Protein and Gene"
-msgstr "蛋白质和基因"
+msgstr "蛋白和基因"

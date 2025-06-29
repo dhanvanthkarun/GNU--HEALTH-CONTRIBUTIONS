@@ -1,6 +1,14 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-04-02 12:15+0000\n"
+"Last-Translator: tumashu <tumashu@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://translate.codeberg.org/projects/gnuhealth/health_icu/zh_Hans/>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.icu.apache2,aado2:"
 msgid "A-a DO2"
@@ -46,10 +54,6 @@ msgctxt "field:gnuhealth.icu.apache2,mean_ap:"
 msgid "MAP"
 msgstr "平均动脉压"
 
-msgctxt "field:gnuhealth.icu.apache2,name:"
-msgid "Registration Code"
-msgstr "住院编号"
-
 msgctxt "field:gnuhealth.icu.apache2,paco2:"
 msgid "PaCO2"
 msgstr "动脉二氧化碳分压"
@@ -61,6 +65,10 @@ msgstr "动脉氧分压"
 msgctxt "field:gnuhealth.icu.apache2,ph:"
 msgid "pH"
 msgstr "动脉血PH值"
+
+msgctxt "field:gnuhealth.icu.apache2,registration:"
+msgid "Registration Code"
+msgstr "住院编号"
 
 msgctxt "field:gnuhealth.icu.apache2,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -106,10 +114,6 @@ msgctxt "field:gnuhealth.icu.chest_drainage,location:"
 msgid "Location"
 msgstr "位置"
 
-msgctxt "field:gnuhealth.icu.chest_drainage,name:"
-msgid "Rounding"
-msgstr "查房"
-
 msgctxt "field:gnuhealth.icu.chest_drainage,oscillation:"
 msgid "Oscillation"
 msgstr "振荡"
@@ -117,6 +121,10 @@ msgstr "振荡"
 msgctxt "field:gnuhealth.icu.chest_drainage,remarks:"
 msgid "Remarks"
 msgstr "备注"
+
+msgctxt "field:gnuhealth.icu.chest_drainage,rounding:"
+msgid "Rounding"
+msgstr "查房"
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction:"
 msgid "Suction"
@@ -146,9 +154,13 @@ msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
 msgstr "语言反应"
 
-msgctxt "field:gnuhealth.icu.glasgow,name:"
+msgctxt "field:gnuhealth.icu.glasgow,registration:"
 msgid "Registration Code"
 msgstr "住院编号"
+
+msgctxt "field:gnuhealth.icu.ventilation,admission:"
+msgid "Patient ICU Admission"
+msgstr "患者入ICU病房"
 
 msgctxt "field:gnuhealth.icu.ventilation,current_mv:"
 msgid "Current"
@@ -169,10 +181,6 @@ msgstr "持续时间"
 msgctxt "field:gnuhealth.icu.ventilation,mv_start:"
 msgid "From"
 msgstr "原来的床位"
-
-msgctxt "field:gnuhealth.icu.ventilation,name:"
-msgid "Patient ICU Admission"
-msgstr "患者入ICU病房"
 
 msgctxt "field:gnuhealth.icu.ventilation,remarks:"
 msgid "Remarks"
@@ -210,7 +218,7 @@ msgctxt "field:gnuhealth.inpatient.icu,mv_history:"
 msgid "Mechanical Ventilation History"
 msgstr "机械通气史"
 
-msgctxt "field:gnuhealth.inpatient.icu,name:"
+msgctxt "field:gnuhealth.inpatient.icu,registration:"
 msgid "Registration Code"
 msgstr "住院编号"
 
@@ -344,7 +352,7 @@ msgstr "托架"
 
 msgctxt "field:gnuhealth.patient.rounding,swan_ganz:"
 msgid "Swan Ganz"
-msgstr "斯旺 甘兹氏"
+msgstr "Swan-Ganz 导管"
 
 msgctxt "field:gnuhealth.patient.rounding,trachea_alignment:"
 msgid "Tracheal alignment"
@@ -432,8 +440,8 @@ msgstr ""
 "ETT - 气管内导管"
 
 msgctxt "help:gnuhealth.inpatient.icu,admitted:"
-msgid "Will be set when the patient         is currently admitted at ICU"
-msgstr "当患者被正确安置在ICU时此项将被设置"
+msgid "Will be set when the patient is currently admitted at ICU."
+msgstr "患者当前入住ICU时设置。"
 
 msgctxt "help:gnuhealth.inpatient.icu,icu_admission_date:"
 msgid "ICU Admission Date"
@@ -801,7 +809,7 @@ msgstr "呕吐"
 
 msgctxt "view:gnuhealth.icu.apache2:"
 msgid "Chronic"
-msgstr "慢性的"
+msgstr "慢性病"
 
 msgctxt "view:gnuhealth.icu.apache2:"
 msgid "Physiological"

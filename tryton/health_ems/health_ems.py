@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -42,7 +42,7 @@ class Ambulance (ModelSQL, ModelView):
         ('motorcycle', 'Motorcycle'),
         ('bicycle', 'Bicycle'),
         ('drone', 'Drone'),
-        ], 'Type', required=True,
+    ], 'Type', required=True,
         help="Type of vehicle", sort=False)
 
     vehicle_function = fields.Selection([
@@ -50,7 +50,7 @@ class Ambulance (ModelSQL, ModelView):
         ('patient_transport', 'Type A - Patient Transport'),
         ('emergency', 'Type B - Emergency'),
         ('icu', 'Type C - Mobile ICU'),
-        ], 'Function', sort=False, required=True,
+    ], 'Function', sort=False, required=True,
         help="Vehicle main functionality")
 
     vehicle_station = fields.Many2One(
@@ -67,11 +67,11 @@ class Ambulance (ModelSQL, ModelView):
         ('at_hospital', 'At Hospital'),
         ('returning', 'Returning'),
         ('out_of_service', 'Out of service'),
-        ], 'Status', sort=False, readonly=True, help="Vehicle status")
+    ], 'Status', sort=False, readonly=True, help="Vehicle status")
 
     vehicle_remarks = fields.Text('Remarks')
 
-    active = fields.Boolean('Active', select=True)
+    active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
@@ -89,7 +89,7 @@ class Ambulance (ModelSQL, ModelView):
             ('vehicle_uniq',
                 Unique(t, t.vehicle_identifier),
                 'This vehicle ID already exists'),
-            ]
+        ]
 
     def get_rec_name(self, name):
         return (self.vehicle_identifier + ' : ' + self.vehicle_type)
@@ -154,7 +154,7 @@ class SupportRequest (ModelSQL, ModelView):
         ('low', 'Low'),
         ('urgent', 'Urgent'),
         ('emergency', 'Emergency'),
-        ], 'Urgency', sort=False)
+    ], 'Urgency', sort=False)
 
     place_occurrance = fields.Selection([
         (None, ''),
@@ -168,7 +168,7 @@ class SupportRequest (ModelSQL, ModelView):
         ('sports', 'Sports event'),
         ('publicbuilding', 'Public Building'),
         ('unknown', 'Unknown'),
-        ], 'Origin', help="Place of occurrance", sort=False)
+    ], 'Origin', help="Place of occurrance", sort=False)
 
     event_type = fields.Selection([
         (None, ''),
@@ -202,7 +202,7 @@ class SupportRequest (ModelSQL, ModelView):
         ('event28', 'Traumatic Injuries'),
         ('event29', 'Explosion'),
         ('event30', 'Other specified'),
-        ], 'Event type')
+    ], 'Event type')
 
     event_specific = fields.Many2One('gnuhealth.pathology', 'Incident')
 
@@ -222,7 +222,7 @@ class SupportRequest (ModelSQL, ModelView):
         (None, ''),
         ('open', 'Open'),
         ('closed', 'Closed'),
-        ], 'State', sort=False, readonly=True)
+    ], 'State', sort=False, readonly=True)
 
     @staticmethod
     def default_request_date():
@@ -292,7 +292,10 @@ class SupportRequest (ModelSQL, ModelView):
         cls._buttons.update({
             'open_support': {'invisible': Equal(Eval('state'), 'open')},
             'close_support': {'invisible': Equal(Eval('state'), 'closed')},
-            })
+        })
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @classmethod
     @ModelView.button
@@ -320,7 +323,7 @@ class AmbulanceSupport (ModelSQL, ModelView):
         domain=[('state', '=', 'available')],)
 
     healthprofs = fields.One2Many(
-        'gnuhealth.ambulance_hp', 'name',
+        'gnuhealth.ambulance_hp', 'sr',
         'Health Professionals')
 
     state = fields.Selection([
@@ -333,7 +336,7 @@ class AmbulanceSupport (ModelSQL, ModelView):
         ('at_hospital', 'At Hospital'),
         ('returning', 'Returning'),
         ('out_of_service', 'Out of service'),
-        ], 'Status', sort=False, readonly=True, help="Vehicle status")
+    ], 'Status', sort=False, readonly=True, help="Vehicle status")
 
     @staticmethod
     def default_state():
@@ -352,7 +355,7 @@ class AmbulanceSupport (ModelSQL, ModelView):
             'returning': {'invisible': Equal(Eval('state'), 'returning')},
             'out_of_service': {'invisible': Equal(Eval('state'),
                                'out_of_service')},
-            })
+        })
 
     @classmethod
     @ModelView.button
@@ -418,7 +421,7 @@ class AmbulanceSupport (ModelSQL, ModelView):
             'action': 'ambulance',
             'remarks': status,
             'timestamp': timestamp,
-            }
+        }
         values['sr'] = ambulances[0].sr
 
         log.append(values)
@@ -429,11 +432,23 @@ class AmbulanceHealthProfessional(ModelSQL, ModelView):
     'Ambulance Health Professionals'
     __name__ = 'gnuhealth.ambulance_hp'
 
-    name = fields.Many2One('gnuhealth.ambulance.support', 'SR')
+    sr = fields.Many2One('gnuhealth.ambulance.support', 'SR')
 
     healthprof = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof',
         help='Health Professional for this ambulance and support request')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to test_type
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('sr')):
+            table_h.column_rename('name', 'sr')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class SupportRequestLog (ModelSQL, ModelView):
@@ -452,7 +467,7 @@ class SupportRequestLog (ModelSQL, ModelView):
         (None, ''),
         ('ambulance', 'Ambulance'),
         ('general', 'General'),
-        ], 'Activity', sort=False, help="Activity log")
+    ], 'Activity', sort=False, help="Activity log")
 
     remarks = fields.Char('Remarks', help="Remarks for this item")
 
@@ -463,3 +478,10 @@ class SupportRequestLog (ModelSQL, ModelView):
     @staticmethod
     def default_action():
         return 'general'
+
+    @classmethod
+    def __setup__(cls):
+        super(SupportRequestLog, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None

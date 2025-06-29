@@ -8,20 +8,37 @@ msgid "Summary"
 msgstr "Resumen"
 
 msgctxt "field:gnuhealth.lab,critearea:"
-msgid "Lab Test Critearea"
-msgstr "Criterio de Test de Laboratorio"
+msgid "Analytes criteria"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab,date_analysis:"
-msgid "Date of the Analysis"
+msgid "Analysis Date"
 msgstr "Fecha del Análisis"
 
 msgctxt "field:gnuhealth.lab,date_requested:"
-msgid "Date requested"
+msgid "Request Date"
 msgstr "Fecha requerida"
 
 msgctxt "field:gnuhealth.lab,diagnosis:"
 msgid "Diagnosis"
 msgstr "Diagnóstico"
+
+msgctxt "field:gnuhealth.lab,done_by:"
+msgid "Done by"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,done_date:"
+msgid "Finished on"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,historize:"
+msgid "Historize"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab,images:"
+msgid "Images"
+msgstr "Imágenes"
 
 msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
@@ -50,9 +67,10 @@ msgctxt "field:gnuhealth.lab,request_order:"
 msgid "Order"
 msgstr "Orden"
 
+#, fuzzy
 msgctxt "field:gnuhealth.lab,requestor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Prof Salud"
 
 msgctxt "field:gnuhealth.lab,results:"
 msgid "Results"
@@ -67,9 +85,26 @@ msgctxt "field:gnuhealth.lab,source_type:"
 msgid "Source"
 msgstr "Original"
 
+msgctxt "field:gnuhealth.lab,specimen_type:"
+msgid "Specimen"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab,state:"
+msgid "State"
+msgstr "Estado"
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "Tipo de test"
+
+msgctxt "field:gnuhealth.lab,validated_by:"
+msgid "Validated by"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab,validation_date:"
+msgid "Validated on"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.lab.test.critearea,code:"
@@ -87,6 +122,10 @@ msgstr "Casos de Test"
 msgctxt "field:gnuhealth.lab.test.critearea,lab_warning_icon:"
 msgid "Lab Warning Icon"
 msgstr "Icono de advertencia de Laboratorio"
+
+msgctxt "field:gnuhealth.lab.test.critearea,limits_verified:"
+msgid "Limits verified"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,lower_limit:"
 msgid "Lower Limit"
@@ -109,16 +148,25 @@ msgid "Value"
 msgstr "Valor"
 
 msgctxt "field:gnuhealth.lab.test.critearea,result_text:"
-msgid "Result - Text"
-msgstr "Resultado - Texto"
+msgid "Qualitative"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,sequence:"
 msgid "Sequence"
 msgstr "Sequencia"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test.critearea,test_method:"
+msgid "Method"
+msgstr "Método"
+
 msgctxt "field:gnuhealth.lab.test.critearea,test_type_id:"
 msgid "Test type"
 msgstr "Tipo de Test"
+
+msgctxt "field:gnuhealth.lab.test.critearea,to_integer:"
+msgid "To integer"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test.critearea,units:"
 msgid "Units"
@@ -145,6 +193,15 @@ msgctxt "field:gnuhealth.lab.test_type,active:"
 msgid "Active"
 msgstr "Activo"
 
+msgctxt "field:gnuhealth.lab.test_type,age_range:"
+msgid "Age range"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,category:"
+msgid "Category"
+msgstr "Categoría"
+
 msgctxt "field:gnuhealth.lab.test_type,code:"
 msgid "Code"
 msgstr "Código"
@@ -153,9 +210,22 @@ msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr "Casos de Test"
 
+#, fuzzy
+msgctxt "field:gnuhealth.lab.test_type,gender:"
+msgid "Gender"
+msgstr "Género"
+
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
 msgstr "Descripción"
+
+msgctxt "field:gnuhealth.lab.test_type,max_age:"
+msgid "Max age"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab.test_type,min_age:"
+msgid "Min age"
+msgstr ""
 
 msgctxt "field:gnuhealth.lab.test_type,name:"
 msgid "Test"
@@ -164,6 +234,18 @@ msgstr "Test"
 msgctxt "field:gnuhealth.lab.test_type,product_id:"
 msgid "Service"
 msgstr "Servicio"
+
+msgctxt "field:gnuhealth.lab.test_type,report_style:"
+msgid "Report style"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen"
+msgstr ""
+
+msgctxt "field:gnuhealth.lab.test_type,tags:"
+msgid "Tags"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient,lab_test_ids:"
 msgid "Lab Tests Required"
@@ -178,6 +260,15 @@ msgctxt "field:gnuhealth.patient.disease,lab_test:"
 msgid "Lab Test"
 msgstr "Test de laboratorio"
 
+msgctxt "field:gnuhealth.patient.lab.test,age_num:"
+msgid "Age Num"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,comment:"
+msgid "Additional Information"
+msgstr "Información Adicional"
+
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,context:"
 msgid "Context"
@@ -187,13 +278,15 @@ msgctxt "field:gnuhealth.patient.lab.test,date:"
 msgid "Date"
 msgstr "Fecha"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Health prof."
-msgstr ""
+msgid "Health Prof"
+msgstr "Prof Salud"
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr "Tipo de Test"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,gender_str:"
+msgid "Gender"
+msgstr "Género"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
@@ -218,13 +311,26 @@ msgctxt "field:gnuhealth.patient.lab.test,source_type:"
 msgid "Source"
 msgstr "Original"
 
+msgctxt "field:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen"
+msgstr ""
+
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "Estado"
 
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr "Tipo de Test"
+
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
 msgstr "Urgente"
+
+msgctxt "field:gnuhealth.patient.lab.test.request.start,age_num:"
+msgid "Age Num"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,context:"
@@ -235,9 +341,15 @@ msgctxt "field:gnuhealth.patient.lab.test.request.start,date:"
 msgid "Date"
 msgstr "Fecha"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Prof Salud"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.lab.test.request.start,gender_str:"
+msgid "Gender"
+msgstr "Género"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
@@ -285,6 +397,18 @@ msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
 msgid "Lab test sequence"
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,done_by:"
+msgid "Professional who processes this lab test"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab,historize:"
+msgid ""
+"If this flag is set the a new health condition will be added to the patient "
+"history. Unset it if this lab test is in the context of a pre-existing "
+"condition of the patient. The condition will be created when the lab test is"
+" confirmed and validated"
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr "ID de resultado de Laboratorio"
@@ -302,7 +426,7 @@ msgid "Pathology confirmed / associated to this lab test."
 msgstr ""
 
 msgctxt "help:gnuhealth.lab,patient:"
-msgid "Patient ID"
+msgid "Patient"
 msgstr "ID de paciente"
 
 msgctxt "help:gnuhealth.lab,requestor:"
@@ -313,9 +437,17 @@ msgctxt "help:gnuhealth.lab,source_type:"
 msgid "Sample source type."
 msgstr ""
 
+msgctxt "help:gnuhealth.lab,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr ""
+
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "Tipo de Test de Laboratorio"
+
+msgctxt "help:gnuhealth.lab,validated_by:"
+msgid "Professional who validates this lab test"
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test.critearea,code:"
 msgid "Lab test critearea code, mainly used by lab interface script."
@@ -325,6 +457,14 @@ msgctxt "help:gnuhealth.lab.test.critearea,excluded:"
 msgid "Select this option when this analyte is excluded from the test"
 msgstr "Seleccione esta opción cuando este analito es excluído del test"
 
+msgctxt "help:gnuhealth.lab.test.critearea,limits_verified:"
+msgid ""
+"The upper and lower limits have been verified again, sometimes limits will "
+"depend on other indicators of the patient, such as: age, pregnancy status, "
+"etc, so it is very important to verify them, because warning status depend "
+"on limits values."
+msgstr ""
+
 msgctxt "help:gnuhealth.lab.test.critearea,result_text:"
 msgid ""
 "Non-numeric results. For example qualitative values, morphological, colors "
@@ -332,6 +472,14 @@ msgid ""
 msgstr ""
 "Resultados no numéricos. Por ejemplo, valores cualitativos, morphologicos, "
 "colores...."
+
+msgctxt "help:gnuhealth.lab.test.critearea,test_method:"
+msgid "Test method, for example: Real-time PCR ..."
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test.critearea,to_integer:"
+msgid "Convert result value to interger in report."
+msgstr ""
 
 msgctxt "help:gnuhealth.lab.test.critearea,warning:"
 msgid ""
@@ -346,9 +494,27 @@ msgctxt "help:gnuhealth.lab.test_type,code:"
 msgid "Short name - code for the test"
 msgstr "Nombre corto - Código para el test"
 
+msgctxt "help:gnuhealth.lab.test_type,max_age:"
+msgid "Max age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test_type,min_age:"
+msgid "Min age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr "Tipo de test, por ejemplo, Rayos-X, hemograma, biopsia..."
+
+msgctxt "help:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr ""
+
+msgctxt "help:gnuhealth.lab.test_type,tags:"
+msgid ""
+"Tags of test type, which can be used in if directive of report template "
+"file, tags use letters and numbers, separated by colon."
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,lab_confirmed:"
 msgid "Confirmed by laboratory test"
@@ -358,11 +524,18 @@ msgctxt "help:gnuhealth.patient.disease,lab_test:"
 msgid "Lab test that confirmed the condition"
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.lab.test,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
+#, fuzzy
 msgctxt "help:gnuhealth.patient.lab.test,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"Contexto de salud para este pedido. Puede tratarse de un diagnóstico "
+"presuntivo o definitivo, un chequeo médico regular etc."
 
 msgctxt "help:gnuhealth.patient.lab.test,doctor_id:"
 msgid "Health professional who requests the lab test."
@@ -376,11 +549,22 @@ msgctxt "help:gnuhealth.patient.lab.test,source_type:"
 msgid "Sample source type."
 msgstr ""
 
+msgctxt "help:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
+msgstr ""
+
+#, fuzzy
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"Contexto de salud para este pedido. Puede tratarse de un diagnóstico "
+"presuntivo o definitivo, un chequeo médico regular etc."
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,doctor:"
 msgid "Health professional who ordered the lab tests."
@@ -709,8 +893,8 @@ msgid "PDWsd"
 msgstr ""
 
 msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_ph0"
-msgid "PH"
-msgstr "PH"
+msgid "pH"
+msgstr ""
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_physicalexamination0"
@@ -899,9 +1083,444 @@ msgctxt ""
 msgid "WBCs"
 msgstr "WBCs"
 
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_agratio0"
+msgid "1.5:1-2.5:1"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_albumin0"
+msgid "3.5-5.5"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_alkalinephosphatase0"
+msgid "<270"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_bas"
+msgid "0-0.15"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_bas0"
+msgid "0-2"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_bilirubin0"
+msgid "Negative"
+msgstr "Negativo"
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_blood0"
+msgid "Negative"
+msgstr "Negativo"
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_blood1"
+msgid "Negative"
+msgstr "Negativo"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_clarityappearance0"
+msgid "Clear"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_color1"
+msgid "Yellow"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_color2"
+msgid "Brown"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_consistency0"
+msgid "Well formed"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_creatinine0"
+msgid "0.8-1.3"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_directbilirubin0"
+msgid "<0.2"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_eo"
+msgid "0-0.5"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_eos0"
+msgid "1-6"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_esr0"
+msgid "Up to 15"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_fsh0"
+msgid ""
+"Follicular Phase: 3.0-12.0; \n"
+"Midcycle: 8.0-22.0; \n"
+"Luteal phase: 2.0-12.0; \n"
+"Post menopausal: 35.0-151;"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_gammagt0"
+msgid "<55"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_globulin0"
+msgid "1.5-3.5"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_glucose0"
+msgid "Negative"
+msgstr "Negativo"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_gra0"
+msgid "2.0-7.5"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_haemoglobin0"
+msgid "11-16.0"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_hct0"
+msgid "37.0-50"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_indirectbilirubin0"
+msgid "Up to 0.8"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_ketonebodies0"
+msgid "Negative"
+msgstr "Negativo"
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_leucocytes0"
+msgid "Negative"
+msgstr "Negativo"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_lh0"
+msgid ""
+"Follicular Phase: 0.8-10.5; \n"
+"Midcycle: 18.4-61.2; \n"
+"Luteal phase: 0.8-10.5; \n"
+"Post menopausal: 8.2-40.8;"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_lym0"
+msgid "20-45"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_lym1"
+msgid "1.5-4.0"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mch0"
+msgid "27-31"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mchc0"
+msgid "32.0-36.0"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mcv0"
+msgid "82-95"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mon"
+msgid "0.15-0.70"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mon0"
+msgid "2-10"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mpv"
+msgid "6.3-15.0"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mucus0"
+msgid "Negative"
+msgstr "Negativo"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_neu"
+msgid "2-7"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_neu0"
+msgid "45-70"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_nitrites0"
+msgid "Negative"
+msgstr "Negativo"
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_ovacyst0"
+msgid "Absent"
+msgstr "Ausente"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_pct"
+msgid "0.13-0.43"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_ph0"
+msgid "4.5-7.5"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_plt0"
+msgid "150-450"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_prolactin0"
+msgid ""
+"Women, non pregnant: 1.2-19.5; \n"
+"Postmenopausal: 1.5-18.5;"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_protein0"
+msgid "Negative"
+msgstr "Negativo"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_puscells0"
+msgid "0-1"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_puscells2"
+msgid "1-2"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rbc0"
+msgid "3.5-5.50"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rbcs1"
+msgid "0-1"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rbcs3"
+msgid "0-2"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rdwcv0"
+msgid "11.5-14.5"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rdwsd0"
+msgid "35-56"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_sgot0"
+msgid "<40"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_sgpt0"
+msgid "<40"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_specificgravity0"
+msgid "103-130"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_testosterone0"
+msgid ""
+"Sexually mature women: 0.6; \n"
+"Postmenopause: 0.8;"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_totalbilirubin0"
+msgid "0.3-1.2"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_totalcount0"
+msgid "60-150"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_totalprotein0"
+msgid "6.4-8.3"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_tsh0"
+msgid "0.3-6.2"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_urea0"
+msgid "13-43"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_uricacid0"
+msgid "3.5-7.2"
+msgstr ""
+
+#, fuzzy
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_urobilinogen0"
+msgid "Negative"
+msgstr "Negativo"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_wbc0"
+msgid "4.5-11"
+msgstr ""
+
 msgctxt "model:gnuhealth.lab.test.units,name:"
 msgid "Lab Test Units"
 msgstr "Unidades de Tests de Laboratorio"
+
+#, fuzzy
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_0"
+msgid "%"
+msgstr "%"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_Tera_L"
+msgid "10^12/L"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_aTU_ml"
+msgid "aTU/ml"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_fl0"
+msgid "fl"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_g_L"
+msgid "g/L"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_giga_L"
+msgid "10^9/L"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_gmdl0"
+msgid "g/dL"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_hpf0"
+msgid "/hpf"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_iul0"
+msgid "IU/l"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mgdl0"
+msgid "mg/dl"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_millionscc0"
+msgid "Millions/cc"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_miul0"
+msgid "mIU/l"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mmhr0"
+msgid "mm/hr"
+msgstr ""
+
+msgctxt ""
+"model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mmol_24h"
+msgid "mmol/24h"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mmol_L"
+msgid "mmol/L"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ngml0"
+msgid "ng/ml"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_pg0"
+msgid "pg"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_pgml0"
+msgid "pg/ml"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ul0"
+msgid "10^6/uL"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ul1"
+msgid "10^3/uL"
+msgstr ""
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ul2"
+msgid "U/L"
+msgstr ""
 
 msgctxt "model:gnuhealth.lab.test_type,name:"
 msgid "Type of Lab test"
@@ -1003,8 +1622,17 @@ msgid "Lab Report"
 msgstr "Reporte de Laboratorio"
 
 msgctxt "model:ir.model.button,string:complete_criteareas_button"
-msgid "Complete Criteareas"
+msgid "Load analytes criteria"
 msgstr ""
+
+msgctxt "model:ir.model.button,string:labtest_generate_button"
+msgid "Done"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:labtest_setdraft_button"
+msgid "Draft"
+msgstr "Borrador"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
@@ -1057,43 +1685,50 @@ msgid "Lab Services"
 msgstr "Servicios de Laboratorio"
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
-msgstr "Cargos por test de conteo de sangre"
+msgid "Complete Blood Count"
+msgstr ""
 
 msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
 msgstr "Endocrinología"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
+msgid "Haematology"
 msgstr "Cargos por hematología"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
+msgid "Liver Function"
 msgstr "Cargos por test de función hepática"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
+msgid "Peripheral Smear Examination"
 msgstr "Cargos por examinación de formas de cuerpos sanguíneos"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
-msgstr "Cargos por test de función renal"
+msgid "Renal Function"
+msgstr "Reacción"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
+msgid "Semen Analysis"
 msgstr "Cargos por análisis de semen"
 
+#, fuzzy
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
+msgid "Stool Examination"
 msgstr "Cargos por examinación de heces"
 
+#, fuzzy
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
+msgid "Urine Analysis"
 msgstr "Cargos por análisis de orina"
 
 msgctxt "model:res.group,name:group_health_lab"
@@ -1104,9 +1739,10 @@ msgctxt "model:res.group,name:group_health_lab_admin"
 msgid "Health lab Administration"
 msgstr "Administración de Laboratorio de Salud"
 
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Age:"
-msgstr ""
+msgstr "Edad:"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
@@ -1115,20 +1751,26 @@ msgstr "Analito"
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
-msgid "Date:"
-msgstr "Fecha:"
+msgid "Comment"
+msgstr "Comentario"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
 msgstr ""
 
-msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
-msgstr ""
-
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "Gender:"
+msgstr "Género:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Hosp. Unit:"
 msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Image"
+msgstr "Imagen"
 
 msgctxt "report:patient.labtest.report:"
 msgid "LABORATORY REPORT"
@@ -1140,12 +1782,18 @@ msgid "Name:"
 msgstr "Nombre:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Order:"
+msgid "Order Date:"
 msgstr ""
 
+#, fuzzy
+msgctxt "report:patient.labtest.report:"
+msgid "Order:"
+msgstr "Orden:"
+
+#, fuzzy
 msgctxt "report:patient.labtest.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Pathologist:"
@@ -1160,6 +1808,10 @@ msgstr "Referencia"
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "Observaciones"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
+msgstr ""
 
 #, fuzzy
 msgctxt "report:patient.labtest.report:"
@@ -1179,6 +1831,10 @@ msgid "Source:"
 msgstr ""
 
 msgctxt "report:patient.labtest.report:"
+msgid "Test Date:"
+msgstr ""
+
+msgctxt "report:patient.labtest.report:"
 msgid "Test:"
 msgstr ""
 
@@ -1186,11 +1842,6 @@ msgstr ""
 msgctxt "report:patient.labtest.report:"
 msgid "Unit"
 msgstr "Unidad"
-
-#, fuzzy
-msgctxt "report:patient.labtest.report:"
-msgid "Value"
-msgstr "Valor"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.lab,source_type:"
@@ -1201,6 +1852,90 @@ msgstr "Otro"
 msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Patient"
 msgstr "Paciente"
+
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Done"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Draft"
+msgstr "Borrador"
+
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Validated"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Biochemical Testing"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Body Fluid and Excreta Examination"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Chromosome and Genetic Disease Detection"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Hematology Testing"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Immunological Testing"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Microbiological Testing"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Molecular Biology Testing"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Others"
+msgstr "Otros"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Female"
+msgstr "Mujer"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Male"
+msgstr "Masculino"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Do not show in report"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Do not use table"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result and normal_range columns"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result column"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result column (no header)"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result column and inline images (no header)"
+msgstr ""
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result, unit and normal_range columns"
+msgstr ""
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
@@ -1247,7 +1982,15 @@ msgid "Do you want to generate the test(s) ?"
 msgstr ""
 
 msgctxt "view:gnuhealth.lab.test.critearea:"
+msgid "Excl"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test.critearea:"
 msgid "Reference Value / Range"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Age range:"
 msgstr ""
 
 #, fuzzy
@@ -1261,11 +2004,7 @@ msgid "Main Info"
 msgstr "Información Principal"
 
 msgctxt "view:gnuhealth.lab:"
-msgid "Complete Criteareas"
-msgstr ""
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Complete criteareas of current test type."
+msgid "Are the results ready ?"
 msgstr ""
 
 #, fuzzy
@@ -1274,13 +2013,36 @@ msgid "Diagnosis"
 msgstr "Diagnóstico"
 
 msgctxt "view:gnuhealth.lab:"
-msgid "Do your want to complete criteareas of current test type?"
+msgid ""
+"Do your want to fill in the analytes criteria with this test type template?"
 msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Done"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Draft"
+msgstr "Borrador"
 
 #, fuzzy
 msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"
 msgstr "Información Adicional"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Fill the criteria for current test type analytes"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.lab:"
+msgid "Images"
+msgstr "Imágenes"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Load analytes criteria"
+msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.lab:"
@@ -1291,6 +2053,22 @@ msgstr "Información Principal"
 msgctxt "view:gnuhealth.lab:"
 msgid "Notes"
 msgstr "Notas"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Reverse the document to draft state."
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Set to Draft ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Signatures"
+msgstr ""
+
+msgctxt "view:gnuhealth.lab:"
+msgid "The lab test is done and results are waiting to be validated"
+msgstr ""
 
 #, fuzzy
 msgctxt "view:gnuhealth.patient.disease:"

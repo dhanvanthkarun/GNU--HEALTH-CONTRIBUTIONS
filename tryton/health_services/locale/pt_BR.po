@@ -64,10 +64,6 @@ msgctxt "field:gnuhealth.health_service.line,from_date:"
 msgid "From"
 msgstr "De"
 
-msgctxt "field:gnuhealth.health_service.line,name:"
-msgid "Service"
-msgstr "Serviço"
-
 msgctxt "field:gnuhealth.health_service.line,product:"
 msgid "Product"
 msgstr "Produto"
@@ -81,6 +77,11 @@ msgstr "Qtd"
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "Observações"
+
+#, fuzzy
+msgctxt "field:gnuhealth.health_service.line,service:"
+msgid "Service"
+msgstr "Serviço"
 
 #, fuzzy
 msgctxt "field:gnuhealth.health_service.line,to_date:"
@@ -316,10 +317,6 @@ msgid "From"
 msgstr "De"
 
 msgctxt "report:health_services.report:"
-msgid "Health Service ID:"
-msgstr ""
-
-msgctxt "report:health_services.report:"
 msgid "Health Service Report"
 msgstr ""
 
@@ -339,9 +336,10 @@ msgctxt "report:health_services.report:"
 msgid "PUID:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Patient:"
-msgstr ""
+msgstr "Paciente:"
 
 #, fuzzy
 msgctxt "report:health_services.report:"
@@ -352,6 +350,10 @@ msgstr "Qtd"
 msgctxt "report:health_services.report:"
 msgid "Service"
 msgstr "Serviço"
+
+msgctxt "report:health_services.report:"
+msgid "Service ID:"
+msgstr ""
 
 msgctxt "report:health_services.report:"
 msgid "Tel:"

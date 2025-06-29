@@ -1,16 +1,18 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <data>
     <xpath expr="/form/notebook/page[@id=&quot;images_page&quot;]" position="before">
-        <page string="Studies" id="orthanc_studies_page">
-            <field name="studies" colspan="4"/>
+        <page string="Orthanc" id="orthanc_studies_page">
+            <field name="orthanc_studies" colspan="4"/>
+            <!-- The legacy field "studies" still contains the information
+                 but it has been deprecated in GH 5.0, and will be removed in 5.2 -->
         </page>
     </xpath>
 </data>

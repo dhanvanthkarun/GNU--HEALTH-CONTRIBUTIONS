@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -135,6 +135,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">help</field>
             <field name="model">gnuhealth.help</field>
             <field name="description">Offline, contextual help</field>
+            <field name="internal">False</field>
+        </record>
+
+        <record model="gnuhealth.command" id="procs">
+            <field name="name">procs</field>
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="label">Patient Procedures</field>
+            <field name="description">Patient procedures</field>
+            <field name="internal">False</field>
+        </record>
+
+        <record model="gnuhealth.command" id="pmed">
+            <field name="name">pmed</field>
+            <field name="model">gnuhealth.patient.medication</field>
+            <field name="label">Patient Medications</field>
+            <field name="description">Patient medications</field>
             <field name="internal">False</field>
         </record>
 

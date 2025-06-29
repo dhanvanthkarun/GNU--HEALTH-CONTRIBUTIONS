@@ -1,155 +1,29 @@
-# 
+#
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "error:calendar.calendar:"
-msgid "A user can have only one calendar."
 msgstr ""
-
-msgctxt "error:calendar.calendar:"
-msgid "Calendar name \"%s\" can not end with .ics"
-msgstr ""
-
-msgctxt "error:calendar.calendar:"
-msgid "The name of calendar must be unique."
-msgstr ""
-
-msgctxt "error:calendar.category:"
-msgid "The name of calendar category must be unique."
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Day\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Hour\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Minute\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Month Day\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Month\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Position\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Second\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Week Number\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Invalid \"By Year Day\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.exrule:"
-msgid "Only one of \"until\" and \"count\" can be set."
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Day\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Hour\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Minute\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Month Day\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Month\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Position\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Second\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Week Number\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Invalid \"By Year Day\" in recurrence rule \"%s\""
-msgstr ""
-
-msgctxt "error:calendar.event.rrule:"
-msgid "Only one of \"until\" and \"count\" can be set."
-msgstr ""
-
-msgctxt "error:calendar.event:"
-msgid "Recurrence \"%s\" can not be recurrent."
-msgstr ""
-
-msgctxt "error:calendar.event:"
-msgid "UUID and recurrence must be unique in a calendar."
-msgstr ""
-
-msgctxt "error:calendar.location:"
-msgid "The name of calendar location must be unique."
-msgstr ""
-
-msgctxt "field:calendar.calendar,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.calendar,create_uid:"
-msgid "Create User"
-msgstr ""
+"PO-Revision-Date: 2024-11-22 09:44+0000\n"
+"Last-Translator: Blesk <Blesk@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Czech <https://translate.codeberg.org/projects/gnuhealth/health_caldav/cs/>\n"
+"Language: cs\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 5.8.1\n"
 
 msgctxt "field:calendar.calendar,description:"
 msgid "Description"
-msgstr ""
+msgstr "Popisek"
 
-msgctxt "field:calendar.calendar,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
 msgctxt "field:calendar.calendar,name:"
 msgid "Name"
-msgstr "Namu"
+msgstr "Jméno"
 
 msgctxt "field:calendar.calendar,owner:"
 msgid "Owner"
-msgstr ""
+msgstr "Majitel"
 
 msgctxt "field:calendar.calendar,read_users:"
 msgid "Read Users"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.calendar,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.calendar,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.calendar,write_uid:"
-msgid "Write User"
 msgstr ""
 
 msgctxt "field:calendar.calendar,write_users:"
@@ -158,139 +32,56 @@ msgstr ""
 
 msgctxt "field:calendar.calendar-read-res.user,calendar:"
 msgid "Calendar"
-msgstr ""
-
-msgctxt "field:calendar.calendar-read-res.user,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.calendar-read-res.user,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:calendar.calendar-read-res.user,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.calendar-read-res.user,rec_name:"
-msgid "Name"
-msgstr "Namu"
+msgstr "Kalendář"
 
 msgctxt "field:calendar.calendar-read-res.user,user:"
 msgid "User"
-msgstr ""
-
-msgctxt "field:calendar.calendar-read-res.user,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.calendar-read-res.user,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Uživatel"
 
 msgctxt "field:calendar.calendar-write-res.user,calendar:"
 msgid "Calendar"
-msgstr ""
-
-msgctxt "field:calendar.calendar-write-res.user,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.calendar-write-res.user,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:calendar.calendar-write-res.user,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.calendar-write-res.user,rec_name:"
-msgid "Name"
-msgstr "Namu"
+msgstr "Kalendář"
 
 msgctxt "field:calendar.calendar-write-res.user,user:"
 msgid "User"
-msgstr ""
+msgstr "Uživatel"
 
-msgctxt "field:calendar.calendar-write-res.user,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.calendar-write-res.user,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:calendar.category,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.category,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:calendar.category,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
 msgctxt "field:calendar.category,name:"
 msgid "Name"
-msgstr "Namu"
-
-#, fuzzy
-msgctxt "field:calendar.category,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.category,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.category,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Jméno"
 
 msgctxt "field:calendar.event,alarms:"
 msgid "Alarms"
-msgstr ""
+msgstr "Alarmy"
 
 msgctxt "field:calendar.event,all_day:"
 msgid "All Day"
-msgstr ""
+msgstr "Celý den"
 
 msgctxt "field:calendar.event,attendees:"
 msgid "Attendees"
-msgstr ""
+msgstr "Účastníci"
 
 msgctxt "field:calendar.event,calendar:"
 msgid "Calendar"
-msgstr ""
+msgstr "Kalendář"
 
 msgctxt "field:calendar.event,categories:"
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 msgctxt "field:calendar.event,classification:"
 msgid "Classification"
-msgstr ""
-
-msgctxt "field:calendar.event,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "Klasifikace"
 
 msgctxt "field:calendar.event,description:"
 msgid "Description"
-msgstr ""
+msgstr "Popisek"
 
+#, fuzzy
 msgctxt "field:calendar.event,dtend:"
 msgid "End Date"
-msgstr ""
+msgstr "Konečné datum"
 
 msgctxt "field:calendar.event,dtstart:"
 msgid "Start Date"
@@ -304,38 +95,31 @@ msgctxt "field:calendar.event,exrules:"
 msgid "Exception Rules"
 msgstr ""
 
-msgctxt "field:calendar.event,id:"
-msgid "ID"
-msgstr ""
-
 msgctxt "field:calendar.event,location:"
 msgid "Location"
-msgstr ""
+msgstr "Lokace"
 
 msgctxt "field:calendar.event,occurences:"
 msgid "Occurences"
-msgstr ""
+msgstr "Výskyty"
 
+#, fuzzy
 msgctxt "field:calendar.event,organizer:"
 msgid "Organizer"
-msgstr ""
+msgstr "Organizér"
 
 msgctxt "field:calendar.event,parent:"
 msgid "Parent"
-msgstr ""
+msgstr "Rodič"
 
 msgctxt "field:calendar.event,rdates:"
 msgid "Recurrence Dates"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:calendar.event,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
 msgctxt "field:calendar.event,recurrence:"
 msgid "Recurrence"
-msgstr ""
+msgstr "Opakování"
 
 msgctxt "field:calendar.event,rrules:"
 msgid "Recurrence Rules"
@@ -343,154 +127,55 @@ msgstr ""
 
 msgctxt "field:calendar.event,sequence:"
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvence"
 
 msgctxt "field:calendar.event,status:"
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgctxt "field:calendar.event,summary:"
 msgid "Summary"
-msgstr ""
+msgstr "Shrnutí"
 
 msgctxt "field:calendar.event,timezone:"
 msgid "Timezone"
-msgstr ""
+msgstr "Časové pásmo"
 
 msgctxt "field:calendar.event,transp:"
 msgid "Time Transparency"
-msgstr ""
+msgstr "Časová transparentnost"
 
 msgctxt "field:calendar.event,uuid:"
 msgid "UUID"
-msgstr ""
-
-msgctxt "field:calendar.event,vevent:"
-msgid "vevent"
-msgstr ""
-
-msgctxt "field:calendar.event,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "UUID"
 
 msgctxt "field:calendar.event-calendar.category,category:"
 msgid "Category"
-msgstr ""
-
-msgctxt "field:calendar.event-calendar.category,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event-calendar.category,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "Kategorie"
 
 msgctxt "field:calendar.event-calendar.category,event:"
 msgid "Event"
-msgstr ""
-
-msgctxt "field:calendar.event-calendar.category,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event-calendar.category,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.event-calendar.category,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event-calendar.category,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:calendar.event.alarm,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event.alarm,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "field:calendar.event.alarm,event:"
 msgid "Event"
-msgstr ""
-
-msgctxt "field:calendar.event.alarm,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event.alarm,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.event.alarm,valarm:"
-msgid "valarm"
-msgstr ""
-
-msgctxt "field:calendar.event.alarm,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event.alarm,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "field:calendar.event.attendee,attendee:"
 msgid "attendee"
-msgstr ""
-
-msgctxt "field:calendar.event.attendee,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event.attendee,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "účastník"
 
 msgctxt "field:calendar.event.attendee,email:"
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 msgctxt "field:calendar.event.attendee,event:"
 msgid "Event"
-msgstr ""
-
-msgctxt "field:calendar.event.attendee,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event.attendee,rec_name:"
-msgid "Name"
-msgstr "Namu"
+msgstr "Událost"
 
 msgctxt "field:calendar.event.attendee,status:"
 msgid "Participation Status"
-msgstr ""
-
-msgctxt "field:calendar.event.attendee,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event.attendee,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:calendar.event.exdate,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event.exdate,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "Stav účasti"
 
 msgctxt "field:calendar.event.exdate,date:"
 msgid "Is Date"
@@ -498,585 +183,539 @@ msgstr ""
 
 msgctxt "field:calendar.event.exdate,datetime:"
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 msgctxt "field:calendar.event.exdate,event:"
 msgid "Event"
-msgstr ""
-
-msgctxt "field:calendar.event.exdate,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event.exdate,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.event.exdate,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event.exdate,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "field:calendar.event.exrule,byday:"
 msgid "By Day"
-msgstr ""
+msgstr "Podle dne"
 
 msgctxt "field:calendar.event.exrule,byhour:"
 msgid "By Hour"
-msgstr ""
+msgstr "Podle hodiny"
 
 msgctxt "field:calendar.event.exrule,byminute:"
 msgid "By Minute"
-msgstr ""
+msgstr "Podle minuty"
 
 msgctxt "field:calendar.event.exrule,bymonth:"
 msgid "By Month"
-msgstr ""
+msgstr "Podle měsíce"
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,bymonthday:"
 msgid "By Month Day"
-msgstr ""
+msgstr "Podle dne v měsíci"
 
 msgctxt "field:calendar.event.exrule,bysecond:"
 msgid "By Second"
-msgstr ""
+msgstr "Podle sekundy"
 
 msgctxt "field:calendar.event.exrule,bysetpos:"
 msgid "By Position"
-msgstr ""
+msgstr "Podle pozice"
 
 msgctxt "field:calendar.event.exrule,byweekno:"
 msgid "By Week Number"
-msgstr ""
+msgstr "Podle čísla týdne"
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,byyearday:"
 msgid "By Year Day"
-msgstr ""
+msgstr "Podle dne v roce"
 
 msgctxt "field:calendar.event.exrule,count:"
 msgid "Count"
-msgstr ""
-
-msgctxt "field:calendar.event.exrule,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event.exrule,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "Počet"
 
 msgctxt "field:calendar.event.exrule,event:"
 msgid "Event"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "field:calendar.event.exrule,freq:"
 msgid "Frequency"
-msgstr ""
-
-msgctxt "field:calendar.event.exrule,id:"
-msgid "ID"
-msgstr ""
+msgstr "Frekvence"
 
 msgctxt "field:calendar.event.exrule,interval:"
 msgid "Interval"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event.exrule,rec_name:"
-msgid "Name"
-msgstr "Namu"
+msgstr "Interval"
 
 msgctxt "field:calendar.event.exrule,until:"
 msgid "Until Date"
-msgstr ""
+msgstr "Do data"
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,until_date:"
 msgid "Is Date"
-msgstr ""
+msgstr "Je datum"
 
+#, fuzzy
 msgctxt "field:calendar.event.exrule,wkst:"
 msgid "Week Day"
-msgstr ""
+msgstr "Den v týdnu"
 
-msgctxt "field:calendar.event.exrule,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event.exrule,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:calendar.event.rdate,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event.rdate,create_uid:"
-msgid "Create User"
-msgstr ""
-
+#, fuzzy
 msgctxt "field:calendar.event.rdate,date:"
 msgid "Is Date"
-msgstr ""
+msgstr "Je datum"
 
 msgctxt "field:calendar.event.rdate,datetime:"
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 msgctxt "field:calendar.event.rdate,event:"
 msgid "Event"
-msgstr ""
-
-msgctxt "field:calendar.event.rdate,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event.rdate,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.event.rdate,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event.rdate,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "field:calendar.event.rrule,byday:"
 msgid "By Day"
-msgstr ""
+msgstr "Podle dne"
 
 msgctxt "field:calendar.event.rrule,byhour:"
 msgid "By Hour"
-msgstr ""
+msgstr "Podle hodiny"
 
 msgctxt "field:calendar.event.rrule,byminute:"
 msgid "By Minute"
-msgstr ""
+msgstr "Podle minuty"
 
 msgctxt "field:calendar.event.rrule,bymonth:"
 msgid "By Month"
-msgstr ""
+msgstr "Podle měsíce"
 
+#, fuzzy
 msgctxt "field:calendar.event.rrule,bymonthday:"
 msgid "By Month Day"
-msgstr ""
+msgstr "Podle dne v měsíci"
 
 msgctxt "field:calendar.event.rrule,bysecond:"
 msgid "By Second"
-msgstr ""
+msgstr "Podle sekundy"
 
 msgctxt "field:calendar.event.rrule,bysetpos:"
 msgid "By Position"
-msgstr ""
+msgstr "Podle pozice"
 
 msgctxt "field:calendar.event.rrule,byweekno:"
 msgid "By Week Number"
-msgstr ""
+msgstr "Podle čísla týdne"
 
+#, fuzzy
 msgctxt "field:calendar.event.rrule,byyearday:"
 msgid "By Year Day"
-msgstr ""
+msgstr "Podle dnu  v roce"
 
 msgctxt "field:calendar.event.rrule,count:"
 msgid "Count"
-msgstr ""
-
-msgctxt "field:calendar.event.rrule,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.event.rrule,create_uid:"
-msgid "Create User"
-msgstr ""
+msgstr "Počet"
 
 msgctxt "field:calendar.event.rrule,event:"
 msgid "Event"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "field:calendar.event.rrule,freq:"
 msgid "Frequency"
-msgstr ""
-
-msgctxt "field:calendar.event.rrule,id:"
-msgid "ID"
-msgstr ""
+msgstr "Frekvence"
 
 msgctxt "field:calendar.event.rrule,interval:"
 msgid "Interval"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:calendar.event.rrule,rec_name:"
-msgid "Name"
-msgstr "Namu"
+msgstr "Interval"
 
 msgctxt "field:calendar.event.rrule,until:"
 msgid "Until Date"
-msgstr ""
+msgstr "Do data"
 
 msgctxt "field:calendar.event.rrule,until_date:"
 msgid "Is Date"
-msgstr ""
+msgstr "Je datum"
 
+#, fuzzy
 msgctxt "field:calendar.event.rrule,wkst:"
 msgid "Week Day"
-msgstr ""
+msgstr "Den v týdnu"
 
-msgctxt "field:calendar.event.rrule,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.event.rrule,write_uid:"
-msgid "Write User"
-msgstr ""
-
-msgctxt "field:calendar.location,create_date:"
-msgid "Create Date"
-msgstr ""
-
-msgctxt "field:calendar.location,create_uid:"
-msgid "Create User"
-msgstr ""
-
-msgctxt "field:calendar.location,id:"
-msgid "ID"
-msgstr ""
-
-#, fuzzy
 msgctxt "field:calendar.location,name:"
 msgid "Name"
-msgstr "Namu"
-
-#, fuzzy
-msgctxt "field:calendar.location,rec_name:"
-msgid "Name"
-msgstr "Namu"
-
-msgctxt "field:calendar.location,write_date:"
-msgid "Write Date"
-msgstr ""
-
-msgctxt "field:calendar.location,write_uid:"
-msgid "Write User"
-msgstr ""
+msgstr "Jméno"
 
 msgctxt "field:res.user,calendars:"
 msgid "Calendars"
-msgstr ""
+msgstr "Kalendáře"
 
 msgctxt "help:calendar.calendar,owner:"
 msgid "The user must have an email"
-msgstr ""
+msgstr "Uživatel musí mít email"
 
 msgctxt "help:calendar.event,uuid:"
 msgid "Universally Unique Identifier"
-msgstr ""
+msgstr "Univerzální unikátní identifikátor"
 
+#, fuzzy
 msgctxt "help:calendar.event.exdate,date:"
 msgid "Ignore time of field \"Date\", but handle as date only."
-msgstr ""
+msgstr "Ignorovat čas pole „Datum“, ale zpracovat pouze jako datum."
 
+#, fuzzy
 msgctxt "help:calendar.event.exrule,until_date:"
 msgid "Ignore time of field \"Until Date\", but handle as date only."
-msgstr ""
+msgstr "Ignorovat čas pole „Do data“, ale zpracovávat pouze jako datum."
 
+#, fuzzy
 msgctxt "help:calendar.event.rdate,date:"
 msgid "Ignore time of field \"Date\", but handle as date only."
-msgstr ""
+msgstr "Ignorovat čas pole „Datum“, ale zpracovat pouze jako datum."
 
+#, fuzzy
 msgctxt "help:calendar.event.rrule,until_date:"
 msgid "Ignore time of field \"Until Date\", but handle as date only."
-msgstr ""
+msgstr "Ignorovat čas pole „Do data“, ale zpracovat pouze jako datum."
 
 msgctxt "model:calendar.calendar,name:"
 msgid "Calendar"
-msgstr ""
+msgstr "Kalendář"
 
+#, fuzzy
 msgctxt "model:calendar.calendar-read-res.user,name:"
 msgid "Calendar - read - User"
-msgstr ""
+msgstr "Kalendář - přečíst - Uživatel"
 
+#, fuzzy
 msgctxt "model:calendar.calendar-write-res.user,name:"
 msgid "Calendar - write - User"
-msgstr ""
+msgstr "Kalendář - napsat - uživatel"
 
 msgctxt "model:calendar.category,name:"
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 msgctxt "model:calendar.event,name:"
 msgid "Event"
-msgstr ""
+msgstr "Událost"
 
 msgctxt "model:calendar.event-calendar.category,name:"
 msgid "Event - Category"
-msgstr ""
+msgstr "Událost - Kategorie"
 
 msgctxt "model:calendar.event.alarm,name:"
 msgid "Alarm"
-msgstr ""
+msgstr "Alarm"
 
 msgctxt "model:calendar.event.attendee,name:"
 msgid "Attendee"
-msgstr ""
+msgstr "Účastník"
 
 msgctxt "model:calendar.event.exdate,name:"
 msgid "Exception Date"
-msgstr ""
+msgstr "Datum výjimky"
 
 msgctxt "model:calendar.event.exrule,name:"
 msgid "Exception Rule"
-msgstr ""
+msgstr "Pravidlo výjimky"
 
+#, fuzzy
 msgctxt "model:calendar.event.rdate,name:"
 msgid "Recurrence Date"
-msgstr ""
+msgstr "Datum opakování"
 
+#, fuzzy
 msgctxt "model:calendar.event.rrule,name:"
 msgid "Recurrence Rule"
-msgstr ""
+msgstr "Pravidlo opakování"
 
 msgctxt "model:calendar.location,name:"
 msgid "Location"
-msgstr ""
+msgstr "Lokace"
 
 msgctxt "model:ir.action,name:act_calendar_form"
 msgid "Calendars"
-msgstr ""
+msgstr "Kalendáře"
 
 msgctxt "model:ir.action,name:act_event_form"
 msgid "Events"
-msgstr ""
+msgstr "Události"
 
 msgctxt "model:ir.action,name:act_event_form3"
 msgid "Events"
+msgstr "Události"
+
+msgctxt "model:ir.message,text:msg_invalid_byday"
+msgid "Invalid *By Day* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_byhour"
+msgid "Invalid *By Hour* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_byminute"
+msgid "Invalid *By Minute* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_bymonth"
+msgid "Invalid *By Month* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_bymonthday"
+msgid "Invalid *By Month Day* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_bysecond"
+msgid "Invalid *By Second* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_bysetpos"
+msgid "Invalid *By Position* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_byweeknumber"
+msgid "Invalid *By Week Number* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_invalid_byyearday"
+msgid "Invalid *By Year Day* in recurrence rule \"%(self.rec_name,)s\""
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_invalid_calendar_extension"
+msgid "The calendar name can not have the icd extension"
+msgstr "Jméno kalendáře nemůže mít icd koncovku"
+
+msgctxt "model:ir.message,text:msg_invalid_recurrence"
+msgid "This recurrence can not be recurrent"
+msgstr "Tato recidiva se nemůže opakovat"
+
+#, fuzzy
+msgctxt "model:ir.rule.group,name:rule_group_calendar_admin"
+msgid "Calendar rule group"
+msgstr "Skupina pravidel kalendáře"
+
+msgctxt "model:ir.rule.group,name:rule_group_event_admin"
+msgid "Event rule group - admin"
+msgstr "Skupina pravidel události - admin"
+
+msgctxt "model:ir.rule.group,name:rule_group_read_calendar"
+msgid "Calendar rule group - read"
+msgstr ""
+
+msgctxt "model:ir.rule.group,name:rule_group_read_event"
+msgid "Event rule group - read"
+msgstr ""
+
+msgctxt "model:ir.rule.group,name:rule_group_write_calendar"
+msgid "Calendar rule group - write"
+msgstr ""
+
+msgctxt "model:ir.rule.group,name:rule_group_write_event"
+msgid "Event rule group - write"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:menu_calendar"
 msgid "Calendar"
-msgstr ""
+msgstr "Kalendář"
 
 msgctxt "model:ir.ui.menu,name:menu_calendar_form"
 msgid "Calendars"
-msgstr ""
+msgstr "Kalendáře"
 
 msgctxt "model:ir.ui.menu,name:menu_event_form"
 msgid "Events"
-msgstr ""
+msgstr "Události"
 
+#, fuzzy
 msgctxt "model:res.group,name:group_calendar_admin"
-msgid "Calendar Administration"
-msgstr ""
+msgid "Calendar Group Administration"
+msgstr "Správa skupiny kalendářů"
 
 msgctxt "selection:calendar.event,classification:"
 msgid "Confidential"
-msgstr ""
+msgstr "Tajný"
 
 msgctxt "selection:calendar.event,classification:"
 msgid "Private"
-msgstr ""
+msgstr "Soukromý"
 
 msgctxt "selection:calendar.event,classification:"
 msgid "Public"
-msgstr ""
-
-msgctxt "selection:calendar.event,status:"
-msgid ""
-msgstr ""
+msgstr "Veřejný"
 
 msgctxt "selection:calendar.event,status:"
 msgid "Cancelled"
-msgstr ""
+msgstr "Zrušený"
 
 msgctxt "selection:calendar.event,status:"
 msgid "Confirmed"
-msgstr ""
+msgstr "Potvrzený"
 
 msgctxt "selection:calendar.event,status:"
 msgid "Tentative"
-msgstr ""
+msgstr "Provizorní"
 
 msgctxt "selection:calendar.event,transp:"
 msgid "Opaque"
-msgstr ""
+msgstr "Neprůhledný"
 
 msgctxt "selection:calendar.event,transp:"
 msgid "Transparent"
-msgstr ""
-
-msgctxt "selection:calendar.event.attendee,status:"
-msgid ""
-msgstr ""
+msgstr "Transparentní"
 
 msgctxt "selection:calendar.event.attendee,status:"
 msgid "Accepted"
-msgstr ""
+msgstr "Přijato"
 
 msgctxt "selection:calendar.event.attendee,status:"
 msgid "Declined"
-msgstr ""
+msgstr "Zamítnuto"
 
 msgctxt "selection:calendar.event.attendee,status:"
 msgid "Delegated"
-msgstr ""
+msgstr "Delegované"
 
+#, fuzzy
 msgctxt "selection:calendar.event.attendee,status:"
 msgid "Needs Action"
-msgstr ""
+msgstr "Potřebuje zásah"
 
 msgctxt "selection:calendar.event.attendee,status:"
 msgid "Tentative"
-msgstr ""
+msgstr "Provizorní"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Daily"
-msgstr ""
+msgstr "Denní"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Hourly"
-msgstr ""
+msgstr "Hodinový"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Minutely"
-msgstr ""
+msgstr "Minutový"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Monthly"
-msgstr ""
+msgstr "Měsíčně"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Secondly"
-msgstr ""
+msgstr "Za druhé"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Weekly"
-msgstr ""
+msgstr "Týdně"
 
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Yearly"
-msgstr ""
-
-msgctxt "selection:calendar.event.exrule,wkst:"
-msgid ""
-msgstr ""
+msgstr "Ročně"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Friday"
-msgstr ""
+msgstr "Pátek"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Monday"
-msgstr ""
+msgstr "Pondělí"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Saturday"
-msgstr ""
+msgstr "Sobota"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Sunday"
-msgstr ""
+msgstr "Neděle"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Thursday"
-msgstr ""
+msgstr "Čtvrtek"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Tuesday"
-msgstr ""
+msgstr "Úterý"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Wednesday"
-msgstr ""
+msgstr "Středa"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Daily"
-msgstr ""
+msgstr "Denně"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Hourly"
-msgstr ""
+msgstr "Hodinově"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Minutely"
-msgstr ""
+msgstr "Minutově"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Monthly"
-msgstr ""
+msgstr "Měsíčně"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Secondly"
-msgstr ""
+msgstr "Za druhé"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Weekly"
-msgstr ""
+msgstr "Týdně"
 
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Yearly"
-msgstr ""
-
-msgctxt "selection:calendar.event.rrule,wkst:"
-msgid ""
-msgstr ""
+msgstr "Ročně"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Friday"
-msgstr ""
+msgstr "Pátek"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Monday"
-msgstr ""
+msgstr "Pondělí"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Saturday"
-msgstr ""
+msgstr "Sobota"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Sunday"
-msgstr ""
+msgstr "Neděle"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Thursday"
-msgstr ""
+msgstr "Čtvrtek"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Tuesday"
-msgstr ""
+msgstr "Úterý"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Wednesday"
-msgstr ""
+msgstr "Středa"
 
 msgctxt "view:calendar.calendar:"
 msgid "Access Permissions"
-msgstr ""
+msgstr "Přístupová práva"
 
 msgctxt "view:calendar.calendar:"
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 msgctxt "view:calendar.event.exdate:"
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 msgctxt "view:calendar.event.rdate:"
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 msgctxt "view:calendar.event:"
 msgid "Attendees"
-msgstr ""
+msgstr "Účastníci"
 
 msgctxt "view:calendar.event:"
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 msgctxt "view:calendar.event:"
 msgid "End Time"
@@ -1084,11 +723,11 @@ msgstr ""
 
 msgctxt "view:calendar.event:"
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 msgctxt "view:calendar.event:"
 msgid "Occurences"
-msgstr ""
+msgstr "Výskyty"
 
 msgctxt "view:calendar.event:"
 msgid "Start Time"

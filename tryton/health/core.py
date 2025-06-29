@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -11,7 +11,6 @@
 #                           HEALTH package                              #
 #               core.py: commonly used ojects and methods               #
 #########################################################################
-
 import pytz
 
 from dateutil.relativedelta import relativedelta
@@ -23,10 +22,29 @@ from trytond.i18n import gettext
 from .exceptions import (NoAssociatedHealthProfessional)
 
 import os
-import io
 import json
 
-def convert_date_timezone(sdate, target):
+
+def get_institution_timezone():
+    """
+    Return timezone of current institution,
+    if not found, return UTC as fallback.
+    """
+
+    Company = Pool().get('company.company')
+
+    timezone = pytz.UTC
+    company_id = Transaction().context.get('company')
+
+    if company_id:
+        company = Company(company_id)
+        if company.timezone:
+            timezone = pytz.timezone(company.timezone)
+
+    return timezone
+
+
+def convert_date_timezone(sdate, target=None):
     """
     Convert dates from UTC to local timezone and viceversa
     Datetime values are stored in UTC, so we need conversion
@@ -34,7 +52,7 @@ def convert_date_timezone(sdate, target):
 
     Company = Pool().get('company.company')
 
-    institution_timezone = None
+    institution_timezone = pytz.UTC
     company_id = Transaction().context.get('company')
     if company_id:
         company = Company(company_id)
@@ -84,7 +102,7 @@ def compute_age_from_dates(dob, deceased, dod, gender, caller, extra_date):
 
         if deceased and dod:
             end = datetime.strptime(
-                        str(dod), '%Y-%m-%d %H:%M:%S')
+                str(dod), '%Y-%m-%d %H:%M:%S')
 
         rdelta = relativedelta(end, start)
 
@@ -123,7 +141,7 @@ def format_years_months_days(years=None, months=None, days=None):
 
     return ymd_format.format(
         sep='\u200b',  # Zero width space
-        # Make sure output.split(sep)[0, 2, 4] = [years, months, days], 
+        # Make sure output.split(sep)[0, 2, 4] = [years, months, days],
         # and we use '\u200d' (zero width joiner) as placeholder.
         years=isinstance(years, int) and str(years) or '\u200d',
         year_str=isinstance(years, int) and year_str or '\u200d',
@@ -131,6 +149,33 @@ def format_years_months_days(years=None, months=None, days=None):
         month_str=isinstance(months, int) and month_str or '\u200d',
         days=isinstance(days, int) and str(days) or '\u200d',
         day_str=isinstance(days, int) and day_str or '\u200d')
+
+
+def get_age_for_comparison(age, type='y'):
+    """ Get a age number used to conparison age."""
+    (y, m, d) = parse_compute_age(age)
+
+    if not isinstance(y, int):
+        y = 0
+
+    if not isinstance(m, int):
+        m = 0
+
+    if not isinstance(d, int):
+        d = 0
+
+    days = y * 365 + m * 30.5 + d
+    months = days / 30.5
+    years = days / 365
+
+    if type == 'y':
+        return years
+    elif type == 'm':
+        return months
+    elif type == 'd':
+        return days
+    else:
+        return years
 
 
 def parse_compute_age(age):
@@ -164,15 +209,15 @@ def parse_compute_age_str_with_zero_width_space(age_str):
     age = age_str.split(sep)
     try:
         years = int(age[0])
-    except:
+    except BaseException:
         years = None
     try:
         months = int(age[2])
-    except:
+    except BaseException:
         months = None
     try:
         days = int(age[4])
-    except:
+    except BaseException:
         days = None
     return [years, months, days]
 
@@ -195,7 +240,7 @@ def parse_compute_age_str_with_one_char_string(age_str):
         month = int(age_str.split(' ')[1][:-1])
         day = int(age_str.split(' ')[2][:-1])
         return [year, month, day]
-    except:
+    except BaseException:
         return [None, None, None]
 
 
@@ -212,9 +257,9 @@ def get_institution():
 
     cursor = Transaction().connection.cursor()
     cursor.execute(*company.join(institution, condition=(
-                institution.name == company.party)).select(
-            institution.id,
-            where=(company.id == company_id)))
+        institution.party == company.party)).select(
+        institution.id,
+        where=(company.id == company_id)))
     institution_id = cursor.fetchone()
     if institution_id:
         return int(institution_id[0])
@@ -235,7 +280,7 @@ def get_health_professional(required=True):
     cursor = Transaction().connection.cursor()
     cursor.execute(
         *party.join(professional,
-                    condition=(professional.name == party.id)).select(
+                    condition=(professional.party == party.id)).select(
             professional.id,
             where=(
                 (party.is_healthprof)
@@ -249,48 +294,27 @@ def get_health_professional(required=True):
                 ('health.msg_no_associated_health_professional'))
             )
 
-def image_crop_to_ratio(plt, image, ratio):
-    """ Center-crop an image, make it conform to the ratio,
-    This function is useful to adjust ID card photo.
-    """
-    img = plt.open(io.BytesIO(image))
-    orig_width, orig_height = img.size
-    orig_ratio = float(orig_height / orig_width)
-
-    if orig_ratio >= ratio:
-        width = orig_width
-        height = int(width * ratio)
-        x = 0
-        y = (orig_height - height) / 2
-    else:
-        height = orig_height
-        width = int(height / ratio)
-        x = (orig_width - width) / 2
-        y = 0
-        
-    regin = (x, y, width + x, height + y)
-
-    new_img = img.crop(regin)
-
-    # Make a PNG image from PIL without the need to create a temp
-    # file.
-    holder = io.BytesIO()
-    new_img.save(holder, format='png')
-    new_img_png = holder.getvalue()
-    holder.close()
-
-    return bytearray(new_img_png)
-
 
 # Matplotlib will be used by many report.py in the future, so we add a
 # setup function to here.
 def matplotlib_setup(matplotlab):
     matplotlibrc = os.path.join(matplotlab.get_configdir(), 'matplotlibrc')
     if os.path.exists(matplotlibrc):
-        print(f'Matplotlib: RC file: {matplotlibrc} is found, just use it.')
+        print(f'Matplotlib: RC file: {matplotlibrc} '
+              'is found, just use it.')
     else:
         rc_conf_json = gettext('health.msg_matplotlib_rc_config_json_str')
         rc_conf = json.loads(rc_conf_json)
         rc_conf.pop('@comment', None)
         matplotlab.rcParams.update(rc_conf)
         print(f'Matplotlib: Use rcParams: {rc_conf}.')
+
+
+def get_institution_currency():
+    """ Retrieves this health insitution (company) currency.
+    """
+    Company = Pool().get('company.company')
+    company_id = Transaction().context.get('company')
+    company = Company(company_id)
+    if (company.currency):
+        return company.currency.id

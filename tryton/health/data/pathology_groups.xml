@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record model="gnuhealth.pathology.group" id="INFECTIOUS">
             <field name="name">INFECTIOUS</field>
@@ -23,7 +23,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="gnuhealth.pathology.group" id="HEART">
             <field name="name">HEART</field>
             <field name="code">HEART</field>
-            <field name="desc">Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias.. </field>
+            <field name="desc">Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias ...</field>
         </record>
         <record model="gnuhealth.pathology.group" id="VASCULAR">
             <field name="name">VASCULAR</field>

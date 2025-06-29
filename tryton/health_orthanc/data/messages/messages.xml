@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<!-- This file is part of GNU Health.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+
+<tryton>
+  <data grouped="1">
+    <record model="ir.message" id="msg_find_no_gnuhealth_imaging_test">
+      <field name="text">Can not find the corresponding GNU Health imaging test to attach this image.</field>
+    </record>
+    <record model="ir.message" id="msg_label_instance_number">
+      <field name="text">Instance Number:</field>
+    </record>
+    <record model="ir.message" id="msg_label_image_position">
+      <field name="text">Image Position Patient:</field>
+    </record>
+  </data>
+</tryton>

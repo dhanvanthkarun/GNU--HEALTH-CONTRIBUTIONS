@@ -46,10 +46,6 @@ msgctxt "field:gnuhealth.icu.apache2,mean_ap:"
 msgid "MAP"
 msgstr "MAP"
 
-msgctxt "field:gnuhealth.icu.apache2,name:"
-msgid "Registration Code"
-msgstr "Código de registro"
-
 msgctxt "field:gnuhealth.icu.apache2,paco2:"
 msgid "PaCO2"
 msgstr "PaCO2"
@@ -61,6 +57,11 @@ msgstr "PaO2"
 msgctxt "field:gnuhealth.icu.apache2,ph:"
 msgid "pH"
 msgstr "pH"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.apache2,registration:"
+msgid "Registration Code"
+msgstr "Código de registro"
 
 msgctxt "field:gnuhealth.icu.apache2,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -106,10 +107,6 @@ msgctxt "field:gnuhealth.icu.chest_drainage,location:"
 msgid "Location"
 msgstr "Ubicación"
 
-msgctxt "field:gnuhealth.icu.chest_drainage,name:"
-msgid "Rounding"
-msgstr "Rondas de enfermería"
-
 msgctxt "field:gnuhealth.icu.chest_drainage,oscillation:"
 msgid "Oscillation"
 msgstr "Oscilación"
@@ -117,6 +114,11 @@ msgstr "Oscilación"
 msgctxt "field:gnuhealth.icu.chest_drainage,remarks:"
 msgid "Remarks"
 msgstr "Observaciones"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.chest_drainage,rounding:"
+msgid "Rounding"
+msgstr "Rondas de enfermería"
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction:"
 msgid "Suction"
@@ -146,9 +148,15 @@ msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
 msgstr "Oral"
 
-msgctxt "field:gnuhealth.icu.glasgow,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.icu.glasgow,registration:"
 msgid "Registration Code"
 msgstr "Código de registro"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.ventilation,admission:"
+msgid "Patient ICU Admission"
+msgstr "Ingreso en UCI del paciente"
 
 msgctxt "field:gnuhealth.icu.ventilation,current_mv:"
 msgid "Current"
@@ -169,10 +177,6 @@ msgstr "Duración"
 msgctxt "field:gnuhealth.icu.ventilation,mv_start:"
 msgid "From"
 msgstr "Desde"
-
-msgctxt "field:gnuhealth.icu.ventilation,name:"
-msgid "Patient ICU Admission"
-msgstr "Ingreso en UCI del paciente"
 
 msgctxt "field:gnuhealth.icu.ventilation,remarks:"
 msgid "Remarks"
@@ -210,7 +214,8 @@ msgctxt "field:gnuhealth.inpatient.icu,mv_history:"
 msgid "Mechanical Ventilation History"
 msgstr "Historia de Ventilación Mecánica"
 
-msgctxt "field:gnuhealth.inpatient.icu,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.icu,registration:"
 msgid "Registration Code"
 msgstr "Código de registro"
 
@@ -436,8 +441,8 @@ msgstr ""
 "TE - Tubo endotraqueal"
 
 msgctxt "help:gnuhealth.inpatient.icu,admitted:"
-msgid "Will be set when the patient         is currently admitted at ICU"
-msgstr "Se activará al admitir al paciente en UCI"
+msgid "Will be set when the patient is currently admitted at ICU."
+msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.icu,icu_admission_date:"
 msgid "ICU Admission Date"
@@ -834,9 +839,10 @@ msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Blood and Skin"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Cardiovascular"
-msgstr ""
+msgstr "Cardiovascular"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Chest Expansion"

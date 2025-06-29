@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -19,27 +19,50 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <label name="date_requested"/>
             <field name="date_requested"/>
             <label name="source_type"/>
-            <group id="lab_sample_source" colspan="1">
+            <group id="lab_sample_source" colspan="1" col="0">
               <field name="source_type"/>
               <field name="patient"/>
               <field name="other_source"/>
             </group>
             <label name="test"/>
-            <field name="test"/>
+            <group id="lab_test_type_and_complete_button" colspan="1" col="0">
+              <field name="test"/>
+              <button colspan="2"
+                      name="complete_criteareas"
+                      string="Load analytes criteria"
+                      icon="tryton-go-next"
+                      help="Fill the criteria for current test type analytes"
+                      confirm="Do your want to fill in the analytes criteria with this test type template?"/>
+            </group>
+            <label name="specimen_type"/>
+            <field name="specimen_type"/>
             <label name="requestor"/>
             <field name="requestor"/>
             <label name="pathologist"/>
             <field name="pathologist"/>
             <label name="pathology"/>
             <field name="pathology"/>
-            <button colspan="2"
-                    name="complete_criteareas"
-                    string="Complete Criteareas" 
-                    icon="tryton-go-next"
-                    help="Complete criteareas of current test type."
-                    confirm="Do your want to complete criteareas of current test type?"/>
             <newline/>
             <field name="critearea" colspan="4" view_ids="health_lab.test_critearea_view_tree_lab,health_lab.test_critearea_view_form_lab"/>
+            <group colspan="4" col="8" id="document_generate">
+                <label name="historize"/>
+                <field name="historize"/>
+                <label name="state"/>
+                <field name="state"/>
+                <button name="generate_document" help="The lab test is done and results are waiting to be validated" string="Done" icon="tryton-go-next" confirm="Are the results ready ?"/>
+                <button name="set_to_draft" help="Reverse the document to draft state." string="Draft" icon="tryton-go-next" confirm="Set to Draft ?"/>
+            </group>
+            <newline/>
+            <group string="Signatures" colspan="4" col="10" id="document_professionals">
+                <label name="done_by"/>
+                <field name="done_by"/>
+                <label name="done_date"/>
+                <field name="done_date"/>
+            </group>
+
+        </page>
+        <page string="Images" id="lab_images">
+          <field name="images"/>
         </page>
         <page string="Extra Info" id="lab_extra_info">
             <group id="lab_result_extra_info" colspan="4">
@@ -48,7 +71,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <newline/>
                 <separator colspan="4" string="Diagnosis" id="separator_diagnosis"/>
                 <field name="diagnosis"/>
-        </group>
+            </group>
         </page>
     </notebook>
 </form>

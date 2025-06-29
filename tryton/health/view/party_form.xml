@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -42,20 +42,30 @@ SPDX-License-Identifier: GPL-3.0-or-later
                       <label name="est_dob"/>
                       <field name="est_dob"/>
                     </group>
+                    <!-- We can see it from the birth certificate of family
                     <label name="mother"/>
                     <field name="mother"/>
                     <label name="father"/>
                     <field name="father"/>
+                    -->
+                    <newline/>
+                    <label name="ethnic_group"/>
+                    <group string="" id="ethnicity_group" colspan="5">
+                        <field name="ethnic_group"/>
+                        <label name="proclaimed_ethnicity" string="Proclaimed"/>
+                        <field name="proclaimed_ethnicity"/>
+                    </group>
                     <label name="marital_status"/>
                     <field name="marital_status"/>
+                    <label name="homeless"/>
+                    <field name="homeless"/>
                     <label name="du"/>
                     <field name="du"/>
-                    <label name="citizenship"/>
-                    <field name="citizenship"/>
                     <label name="residence"/>
                     <field name="residence"/>
-                    <label name="ethnic_group"/>
-                    <field name="ethnic_group"/>
+                    <label name="citizenship"/>
+                    <field name="citizenship"/>
+                    <newline/>
                     <label name="du_address"/>
                     <field name="du_address" colspan="5" widget="char"/>
                 </group>

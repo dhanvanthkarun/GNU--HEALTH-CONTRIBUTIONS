@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -18,7 +18,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_dengue_elisa_igm_analysischarges0" model="product.template">
             <field name="name">Dengue ELISA MAC Ig-M Charges</field>
-            <field eval="1" name="list_price"/>
+
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -55,7 +55,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_dengue_elisa_igg_analysischarges0" model="product.template">
             <field name="name">Dengue IgG Charges</field>
-            <field eval="1" name="list_price"/>
+
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -91,7 +91,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_dengue_pcr_analysischarges0" model="product.template">
             <field name="name">Dengue PCR Charges</field>
-            <field eval="1" name="list_price"/>
+
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -127,7 +127,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_dengue_prnt_analysischarges0" model="product.template">
             <field name="name">Dengue PRNT Charges</field>
-            <field eval="1" name="list_price"/>
+
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>

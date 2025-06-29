@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -12,7 +12,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <group string="Main Info" id="patient_main_info">
         <group colspan="3" id="patient_main_info_name">
             <group colspan="3" col="9" id="patient_main_info_3">
-                <field colspan="4" name="name"/>
+                <field colspan="4" name="party"/>
                 <field name="gender" width="60"/>
                 <label name="age"/>
                 <field name="age" width="80"/>
@@ -27,7 +27,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field xfill="0" xexpand="1" name="photo" height="200" width="200" widget="image"/>
         </group>
     </group>
-    <group id="patient_crit_markers" string="Focus on" colspan="4" col="18">
+    <group id="patient_crit_markers" string="Focus on" colspan="4" col="20">
         <label name="crit_allergic"/>
         <field name="crit_allergic"/>
         <label name="crit_cardio"/>
@@ -36,6 +36,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="crit_hbp"/>
         <label name="crit_dbt"/>
         <field name="crit_dbt"/>
+        <label name="crit_mental"/>
+        <field name="crit_mental"/>
         <label name="crit_nutrition"/>
         <field name="crit_nutrition"/>
         <label name="crit_cancer"/>
@@ -55,15 +57,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
                     <group colspan="4" col="8" id="general_info">
                         <label name="primary_care_doctor"/>
                         <field name="primary_care_doctor"/>
-                        <label name="family"/>
-                        <field name="family"/>
-                        <field name="marital_status"/>
                         <label name="current_insurance"/>
                         <field name="current_insurance"/>
                     </group>
                     <newline/>
                     <field name="diseases" colspan="4" yfill="1"/>
-                    
+
                     <group string="Notepad" id="patient_notepad">
                         <field height="100" name="general_info"/>
                     </group>
@@ -85,8 +84,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 </page>
                 <page string="Misc" id="misc_info_page">
                     <group colspan="4" id="misc_info_group">
+                        <field name="insurances" colspan="4"/>
                         <label name="biological_sex"/>
                         <field name="biological_sex"/>
+                        <newline/>
 
                         <!-- Deprecated 
                         <label name="current_address"/>
@@ -110,6 +111,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <page string="Medication" id="patient_medication">
             <field name="medications"/>
             <field name="vaccinations"/>
+        </page>
+
+        <page string="Family" id="patient_family">
+            <label name="family"/>
+            <field name="family"/>
+            <field name="marital_status"/>
+            <newline/>
+            <field name="family_history" colspan="4"/>
         </page>
 
         <!-- Patient Health Conditions 

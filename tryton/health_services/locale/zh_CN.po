@@ -62,10 +62,6 @@ msgctxt "field:gnuhealth.health_service.line,from_date:"
 msgid "From"
 msgstr "开始日期"
 
-msgctxt "field:gnuhealth.health_service.line,name:"
-msgid "Service"
-msgstr "服务"
-
 msgctxt "field:gnuhealth.health_service.line,product:"
 msgid "Product"
 msgstr "产品"
@@ -77,6 +73,10 @@ msgstr "数量"
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "说明"
+
+msgctxt "field:gnuhealth.health_service.line,service:"
+msgid "Service"
+msgstr "服务"
 
 msgctxt "field:gnuhealth.health_service.line,to_date:"
 msgid "To"
@@ -136,7 +136,7 @@ msgstr "此可选字段用于服务明细验证相关内容，如果需要有任
 msgctxt "help:gnuhealth.health_service.line,appointment:"
 msgid ""
 "Enter or select the date / ID of the appointment related to this evaluation"
-msgstr "输入或者选择与此评估相关的预约日期或预约编号"
+msgstr "输入或者选择与此评估相关的预约日期或预约号"
 
 msgctxt "help:gnuhealth.patient.evaluation,service:"
 msgid "Service document associated to this evaluation"
@@ -300,10 +300,6 @@ msgid "From"
 msgstr "开始日期"
 
 msgctxt "report:health_services.report:"
-msgid "Health Service ID:"
-msgstr "健康服务号:"
-
-msgctxt "report:health_services.report:"
 msgid "Health Service Report"
 msgstr "健康服务报告"
 
@@ -321,7 +317,7 @@ msgstr "发票:"
 
 msgctxt "report:health_services.report:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:health_services.report:"
 msgid "Patient:"
@@ -334,6 +330,10 @@ msgstr "数量"
 msgctxt "report:health_services.report:"
 msgid "Service"
 msgstr "健康服务"
+
+msgctxt "report:health_services.report:"
+msgid "Service ID:"
+msgstr "健康服务号:"
 
 msgctxt "report:health_services.report:"
 msgid "Tel:"

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -26,23 +26,26 @@ class Invoice(metaclass=PoolMeta):
 
     def get_patient(self, name):
         try:
-            return self.lines[0].origin.name.patient.id
-        except:
+            return self.lines[0].origin.service.patient.id
+        except BaseException:
             return None
 
     def get_health_service(self, name):
         try:
-            return self.lines[0].origin.name.id
-        except:
+            return self.lines[0].origin.service.id
+        except BaseException:
             return None
 
     @classmethod
     def search_health_service(cls, name, clause):
-        return [
-            ('lines.origin.name.id',
-             clause[1],
-             clause[2],
-             'gnuhealth.health_service.line')]
+        try:
+            return [
+                ('lines.origin.service.id',
+                 clause[1],
+                 clause[2],
+                 'gnuhealth.health_service.line')]
+        except BaseException:
+            return None
 
 
 class InvoiceLine(metaclass=PoolMeta):
@@ -52,4 +55,4 @@ class InvoiceLine(metaclass=PoolMeta):
     def _get_origin(cls):
         return super(InvoiceLine, cls)._get_origin() + [
             'gnuhealth.health_service.line'
-            ]
+        ]

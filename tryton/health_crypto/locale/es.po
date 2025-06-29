@@ -20,7 +20,7 @@ msgstr "Resumen"
 
 msgctxt "field:gnuhealth.birth_certificate,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Cadena de documentos"
 
 msgctxt "field:gnuhealth.birth_certificate,serializer_current:"
 msgid "Current Doc"
@@ -44,7 +44,7 @@ msgstr "Resumen"
 
 msgctxt "field:gnuhealth.death_certificate,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Cadena de documentos"
 
 msgctxt "field:gnuhealth.death_certificate,serializer_current:"
 msgid "Current Doc"
@@ -68,11 +68,11 @@ msgstr "Resumen"
 
 msgctxt "field:gnuhealth.patient.evaluation,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Cadena de documentos"
 
 msgctxt "field:gnuhealth.patient.evaluation,serializer_current:"
 msgid "Current Doc"
-msgstr "Doc Actual"
+msgstr "Documento Actual"
 
 msgctxt "field:gnuhealth.prescription.order,digest_current:"
 msgid "Current Hash"
@@ -92,7 +92,7 @@ msgstr "Resumen"
 
 msgctxt "field:gnuhealth.prescription.order,serializer:"
 msgid "Doc String"
-msgstr ""
+msgstr "Cadena de documentos"
 
 msgctxt "field:gnuhealth.prescription.order,serializer_current:"
 msgid "Current Doc"
@@ -104,6 +104,9 @@ msgid ""
 " changed. Please note that the verification is done only on selected  "
 "fields."
 msgstr ""
+"Este campo se establecerá siempre que se hayan modificado partes del "
+"documento original principal. Tenga en cuenta que la verificación sólo se "
+"realiza en los campos seleccionados."
 
 msgctxt "help:gnuhealth.birth_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -115,6 +118,9 @@ msgid ""
 " changed. Please note that the verification is done  only on selected "
 "fields."
 msgstr ""
+"Este campo se establecerá siempre que se hayan modificado partes del "
+"documento original principal. Tenga en cuenta que la verificación sólo se "
+"realiza en los campos seleccionados."
 
 msgctxt "help:gnuhealth.death_certificate,document_digest:"
 msgid "Original Document Digest"
@@ -126,7 +132,7 @@ msgid ""
 " changed. Please note that the verification is done only on selected fields."
 msgstr ""
 "Este campo se establecerá siempre que se modifiquen partes del documento "
-"original principal.  Por favor, tenga en cuenta que la verificación se "
+"original principal. Por favor, tenga en cuenta que la verificación se "
 "realiza solo en los campos seleccionados."
 
 msgctxt "help:gnuhealth.patient.evaluation,document_digest:"
@@ -139,40 +145,32 @@ msgid ""
 " changed. Please note that the verification is done only on selected fields."
 msgstr ""
 "Este campo se establecerá siempre que se modifiquen partes del documento "
-"original principal.  Por favor, tenga en cuenta que la verificación se "
+"original principal. Por favor, tenga en cuenta que la verificación se "
 "realiza solo en los campos seleccionados."
 
 msgctxt "help:gnuhealth.prescription.order,document_digest:"
 msgid "Original Document Digest"
 msgstr "Resumen del Documento Original"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:birthcert_generate_button"
 msgid "Generate"
 msgstr "Generar"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:deathcert_generate_button"
 msgid "Generate"
 msgstr "Generar"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:evaluation_sign_button"
 msgid "Close"
 msgstr "Cerrar"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:prescription_generate_button"
 msgid "Generate"
 msgstr "Generar"
 
-msgctxt "selection:gnuhealth.prescription.order,state:"
-msgid "Validated"
-msgstr "Validado"
-
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Altered / current String"
-msgstr ""
+msgstr "Cadena alterada / actual"
 
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Digital Signature"
@@ -204,7 +202,7 @@ msgstr "Cadena original"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Altered / current String"
-msgstr ""
+msgstr "Cadena alterada / actual"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Digital Signature"
@@ -236,7 +234,7 @@ msgstr "Cadena Original"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Altered / current String"
-msgstr ""
+msgstr "Cadena alterada / actual"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Close Evaluation"
@@ -268,7 +266,7 @@ msgstr "Firmar esta evaluación del paciente"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Validation"
-msgstr "Validación "
+msgstr "Validación"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Document validation"

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -15,12 +15,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <newline/>
     <label name="natural_variant"/>
     <field name="natural_variant"/>
+    <label name="zygosity"/>
+    <field name="zygosity"/>
     <label name="variant_phenotype"/>
     <field name="variant_phenotype"/>
     <label name="onset"/>
     <field name="onset"/>
     <newline/>
-    <label name="notes" colspan="4"/>
+    <label name="notes" colspan="4" xalign="0.0"/>
     <field name="notes" colspan="4"/>
     <newline/>
     <group id="genetics_info_footer" colspan="4">

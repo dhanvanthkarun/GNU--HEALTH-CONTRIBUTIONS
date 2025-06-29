@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -60,6 +60,20 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model">gnuhealth.health_service</field>
             <field name="inherit" ref="health_services.gnuhealth_health_service_view"/>
             <field name="name">gnuhealth_health_service</field>
+        </record>
+
+<!-- Patient Procedures -->
+
+        <record model="ir.ui.view" id="view_gnuhealth_patient_procedure_form">
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="inherit" ref="health.gnuhealth_patient_procedure_form"/>
+            <field name="name">gnuhealth_patient_procedure_form</field>
+        </record>
+
+       <record model="ir.ui.view" id="view_gnuhealth_patient_procedure_tree">
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="inherit" ref="health.gnuhealth_patient_procedure_tree"/>
+            <field name="name">gnuhealth_patient_procedure_tree</field>
         </record>
 
     </data>

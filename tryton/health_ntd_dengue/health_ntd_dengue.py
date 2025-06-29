@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -37,7 +37,7 @@ class DengueDUSurvey(ModelSQL, ModelView):
         ('unchanged', 'Unchanged'),
         ('better', 'Improved'),
         ('worse', 'Worsen'),
-        ], 'Status',
+    ], 'Status',
         help="DU status compared to last visit", required=True, sort=False)
 
     # Surveillance traps (ovitraps)
@@ -108,3 +108,10 @@ class DengueDUSurvey(ModelSQL, ModelView):
             if not values.get('name'):
                 values['name'] = cls.generate_code()
         return super(DengueDUSurvey, cls).create(vlist)
+
+    @classmethod
+    def __setup__(cls):
+        super(DengueDUSurvey, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None

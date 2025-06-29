@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -40,6 +40,14 @@ class DrugPregnancySafetyCheck(ValidationError):
     pass
 
 
+class DrugAllergySafetyCheck(ValidationError):
+    pass
+
+
+class PrescriptionSafetyCheck(ValidationError):
+    pass
+
+
 class NoAssociatedHealthProfessional(ValidationError):
     pass
 
@@ -61,6 +69,10 @@ class FedAccountMismatch(ValidationError):
 
 
 class BirthCertDateMismatch(ValidationError):
+    pass
+
+
+class DupMainSP(ValidationError):
     pass
 
 

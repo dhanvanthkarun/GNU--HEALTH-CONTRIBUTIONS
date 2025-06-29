@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form col="2">
+    <label id='upload_image_data' string="Upload the DICOM files to Orthanc?" colspan="2" xalign="0"/>
+    <label name="data_to_upload"/>
+    <field name="data_to_upload" widget="binary_dicom"/>
+    <label name="server_config"/>
+    <field name="server_config" widget="selection"/>
+</form>

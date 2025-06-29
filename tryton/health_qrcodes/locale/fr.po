@@ -1,8 +1,19 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-05-03 14:53+0000\n"
+"Last-Translator: milimarg <milimarg@noreply.codeberg.org>\n"
+"Language-Team: French <https://translate.codeberg.org/projects/gnuhealth/health_qrcodes/fr/>\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
-#, fuzzy
+msgctxt "field:gnuhealth.appointment,barcode:"
+msgid "Code39"
+msgstr ""
+
 msgctxt "field:gnuhealth.appointment,qr:"
 msgid "QR Code"
 msgstr "Code QR"
@@ -11,7 +22,6 @@ msgctxt "field:gnuhealth.lab,bar:"
 msgid "Bar Code39"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,qr:"
 msgid "QR Code"
 msgstr "Code QR"
@@ -60,14 +70,14 @@ msgctxt "model:ir.action,name:report_patient_wristband"
 msgid "Wristbands"
 msgstr ""
 
+msgctxt "report:appointment.qrcodel:"
+msgid "APPT ID:"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:appointment.qrcodel:"
 msgid "Appointment Receipt"
 msgstr "Reçu de rendez-vous"
-
-msgctxt "report:appointment.qrcodel:"
-msgid "Apporintment #"
-msgstr ""
 
 #, fuzzy
 msgctxt "report:appointment.qrcodel:"
@@ -75,15 +85,15 @@ msgid "Date:"
 msgstr "Date :"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Health Prof:"
 msgstr ""
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Institution:"
-msgstr ""
-
-msgctxt "report:appointment.qrcodel:"
-msgid "Instructions / Notes:"
 msgstr ""
 
 msgctxt "report:appointment.qrcodel:"
@@ -158,13 +168,10 @@ msgctxt "report:newborn.qrcard:"
 msgid "photo"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:party.wristband:"
-msgid "("
-msgstr ""
-
-msgctxt "report:party.wristband:"
-msgid ")"
-msgstr ""
+msgid ","
+msgstr ","
 
 msgctxt "report:patient.qrcard:"
 msgid "Blood Type:"
@@ -189,3 +196,8 @@ msgstr ""
 msgctxt "report:patient.qrcard:"
 msgid "photo"
 msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.wristband:"
+msgid ","
+msgstr ","

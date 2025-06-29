@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -23,13 +23,14 @@ def register():
         health_imaging.ImagingTest,
         health_imaging.ImagingTestRequest,
         health_imaging.ImagingTestResult,
-        wizard.RequestImagingTest,
-        wizard.RequestPatientImagingTestStart,
+        wizard.wizard_health_imaging.RequestImagingTest,
+        wizard.wizard_health_imaging.RequestPatientImagingTestStart,
         sequences.GnuHealthSequences,
         sequences.ImagingRequestSequence,
         sequences.ImagingTestSequence,
         module='health_imaging', type_='model')
+
     Pool.register(
-        wizard.WizardGenerateResult,
-        wizard.RequestPatientImagingTest,
+        wizard.wizard_health_imaging.WizardGenerateResult,
+        wizard.wizard_health_imaging.RequestPatientImagingTest,
         module='health_imaging', type_='wizard')

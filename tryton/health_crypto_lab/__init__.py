@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
@@ -12,10 +12,10 @@
 #                 __init__.py Package declaration file                  #
 #########################################################################
 from trytond.pool import Pool
-from .health_crypto_lab import *
+from . import health_crypto_lab
 
 
 def register():
     Pool.register(
-	LabTest,
+        health_crypto_lab.LabTest,
         module='health_crypto_lab', type_='model')

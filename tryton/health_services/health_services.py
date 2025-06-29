@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2011  Adrián Bernardi, Mario Puntin (health_invoice)
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -45,11 +45,11 @@ class HealthService(ModelSQL, ModelView):
     service_date = fields.Date('Date')
     service_line = fields.One2Many(
         'gnuhealth.health_service.line',
-        'name', 'Service Line', help="Service Line")
+        'service', 'Service Line', help="Service Line")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('invoiced', 'Invoiced'),
-        ], 'State', readonly=True)
+    ], 'State', readonly=True)
     invoice_to = fields.Many2One('party.party', 'Invoice to')
 
     @classmethod
@@ -60,11 +60,11 @@ class HealthService(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_unique', Unique(t, t.name),
                 'The Service ID must be unique'),
-            ]
+        ]
         cls._buttons.update({
             'button_set_to_draft': {
                 'invisible': Equal(Eval('state'), 'draft')}
-            })
+        })
 
         cls._order.insert(0, ('state', 'ASC'))
         cls._order.insert(1, ('name', 'DESC'))
@@ -112,7 +112,7 @@ class HealthServiceLine(ModelSQL, ModelView):
     'Health Service'
     __name__ = 'gnuhealth.health_service.line'
 
-    name = fields.Many2One(
+    service = fields.Many2One(
         'gnuhealth.health_service', 'Service',
         readonly=True)
     desc = fields.Char('Description', required=True)
@@ -154,14 +154,14 @@ class HealthServiceLine(ModelSQL, ModelView):
             service.validate_invoice_status()
 
     def validate_invoice_status(self):
-        if (self.name):
-            if (self.name.state == 'invoiced'):
+        if (self.service):
+            if (self.service.state == 'invoiced'):
                 raise ServiceAlreadyInvoiced(
                     gettext('health_services.msg_service_already_invoiced'))
 
     def get_rec_name(self, name):
-        if self.name:
-            return f'{self.desc} ({self.name.name})'
+        if self.service:
+            return f'{self.desc} ({self.service.name})'
 
 
 # Add Prescription order charges to service model
@@ -178,7 +178,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
         ('yes', 'Yes'),
         ('no', 'No'),
         ('unknown', 'Unknown'),
-        ), 'Service updated', sort=False)
+    ), 'Service updated', sort=False)
 
     @classmethod
     def default_service_updated(self):
@@ -191,7 +191,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
             'update_service': {
                 'readonly': Equal(Eval('state'), 'done'),
             },
-            })
+        })
 
     @classmethod
     @ModelView.button
@@ -204,11 +204,11 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
 
         if not prescription.service:
             raise NoServiceAssociated(
-                    gettext('health_services.msg_no_service_associated'))
+                gettext('health_services.msg_no_service_associated'))
 
         if prescription.service_updated == 'yes':
             raise ServiceHasBeenUpdated(
-                    gettext('health_services.msg_service_has_been_updated'))
+                gettext('health_services.msg_service_has_been_updated'))
 
         service_data = {}
         service_lines = []
@@ -217,10 +217,10 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
 
         for line in prescription.prescription_line:
             service_lines.append(('create', [{
-                'product': line.medicament.name.id,
+                'product': line.medicament.product.id,
                 'desc': 'Prescription Line',
                 'qty': line.quantity
-                }]))
+            }]))
 
         hservice.append(prescription.service)
 
@@ -231,7 +231,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
         service_data['service_line'] = service_lines
 
         HealthService.write(hservice, service_data)
-        
+
         cls.write(prescriptions, {'service_updated': 'yes'})
 
 
@@ -249,7 +249,7 @@ class PatientEvaluation(metaclass=PoolMeta):
         ('yes', 'Yes'),
         ('no', 'No'),
         ('unknown', 'Unknown'),
-        ), 'Service updated', sort=False)
+    ), 'Service updated', sort=False)
 
     product = fields.Many2One('product.product', 'Product')
 
@@ -264,7 +264,7 @@ class PatientEvaluation(metaclass=PoolMeta):
             'update_service': {
                 'readonly': Equal(Eval('state'), 'done'),
             },
-            })
+        })
 
     @classmethod
     @ModelView.button
@@ -277,16 +277,15 @@ class PatientEvaluation(metaclass=PoolMeta):
 
         if not evaluation.service:
             raise NoServiceAssociated(
-                    gettext('health_services.msg_no_service_associated'))
+                gettext('health_services.msg_no_service_associated'))
 
         if not evaluation.product:
             raise NoProductAssociated(
-                    gettext('health_services.msg_no_product_associated'))
+                gettext('health_services.msg_no_product_associated'))
 
         if evaluation.service_updated == 'yes':
             raise ServiceHasBeenUpdated(
-                    gettext('health_services.msg_service_has_been_updated'))
-
+                gettext('health_services.msg_service_has_been_updated'))
 
         service_data = {}
         service_lines = []
@@ -297,7 +296,7 @@ class PatientEvaluation(metaclass=PoolMeta):
             'product': evaluation.product.id,
             'desc': 'Medical evaluation services',
             'qty': 1
-            }]))
+        }]))
 
         hservice.append(evaluation.service)
 

@@ -1,14 +1,20 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tree>
-    <field name="name" expand="1"/>
     <field name="code" expand="1"/>
+    <field name="name" expand="1"/>
+    <field name="category" tree_invisible="1"/>
+    <field name="gender" expand="1"/>
+    <field name="min_age" tree_invisible="1"/>
+    <field name="max_age" tree_invisible="1"/>
+    <field name="age_range" expand="1"/>
+    <field name="tags" expand="1"/>
     <field name="active" tree_invisible="1"/>
 </tree>

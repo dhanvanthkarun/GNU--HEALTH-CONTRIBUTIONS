@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -13,6 +13,9 @@ class HealthWHOEssentialMedicinesTestCase(ModuleTestCase):
     Test Health WHO Essential Medicines module.
     '''
     module = 'health_who_essential_medicines'
+
+
+del ModuleTestCase
 
 
 def suite():

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2023 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2023 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<!-- This file is part of GNU Health.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.message" id="msg_indicator_length_or_height_for_age">
+            <field name="text">Length/height for age {gender}</field>
+        </record>
+        <record model="ir.message" id="msg_indicator_weight_for_age">
+            <field name="text">Weight for age {gender}</field>
+        </record>
+        <record model="ir.message" id="msg_indicator_bmi_for_age">
+            <field name="text">Body mass index for age (BMI for age) {gender}</field>
+        </record>
+        <record model="ir.message" id="msg_gender_girls">
+            <field name="text">Girls</field>
+        </record>
+        <record model="ir.message" id="msg_gender_boys">
+            <field name="text">Boys</field>
+        </record>
+        <record model="ir.message" id="msg_subtitle">
+            <field name="text">Birth to 5 years ({measure})</field>
+        </record>
+        <record model="ir.message" id="msg_measure_percentiles">
+            <field name="text">percentiles</field>
+        </record>
+        <record model="ir.message" id="msg_measure_z_scores">
+            <field name="text">z-scores</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_percentile_p3">
+            <field name="text">3rd</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_percentile_p15">
+            <field name="text">15th</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_percentile_p50">
+            <field name="text">50th</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_percentile_p85">
+            <field name="text">85th</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_percentile_p97">
+            <field name="text">97th</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_z_score_p3">
+            <field name="text">-3</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_z_score_p15">
+            <field name="text">-2</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_z_score_p50">
+            <field name="text">0</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_z_score_p85">
+            <field name="text">2</field>
+        </record>
+        <record model="ir.message" id="msg_table_header_z_score_p97">
+            <field name="text">3</field>
+        </record>
+    </data>
+</tryton>

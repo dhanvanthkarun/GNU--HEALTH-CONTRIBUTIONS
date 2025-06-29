@@ -47,10 +47,10 @@ domimpl = xml.dom.minidom.getDOMImplementation()
 class Calendar(ModelSQL, ModelView):
     "Calendar"
     __name__ = 'calendar.calendar'
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
     description = fields.Text('Description')
     owner = fields.Many2One(
-        'res.user', 'Owner', select=True,
+        'res.user', 'Owner',
         domain=[('email', '!=', None)],
         help='The user must have an email')
     read_users = fields.Many2Many(
@@ -70,7 +70,7 @@ class Calendar(ModelSQL, ModelView):
                 'The name of calendar must be unique.'),
             ('owner_uniq', Unique(t, t.owner),
                 'A user can have only one calendar.'),
-            ]
+        ]
         cls._order.insert(0, ('name', 'ASC'))
 
     @classmethod
@@ -115,7 +115,7 @@ class Calendar(ModelSQL, ModelView):
         if calendar_id == -1:
             calendars = cls.search([
                 ('name', '=', name),
-                ], limit=1)
+            ], limit=1)
             if calendars:
                 calendar_id = calendars[0].id
             else:
@@ -133,9 +133,9 @@ class Calendar(ModelSQL, ModelView):
         ical = vobject.iCalendar()
         ical.vevent_list = []
         events = Event.search([
-                ('calendar', '=', self.id),
-                ('parent', '=', None),
-                ])
+            ('calendar', '=', self.id),
+            ('parent', '=', None),
+        ])
         for event in events:
             ical2 = event.event2ical()
             ical.vevent_list.extend(ical2.vevent_list)
@@ -167,24 +167,24 @@ class Calendar(ModelSQL, ModelView):
 
         with Transaction().set_user(0):
             events = Event.search([
-                    ['OR',
-                        [('dtstart', '<=', dtstart),
-                            ('dtend', '>=', dtstart)],
-                        [('dtstart', '<=', dtend),
-                            ('dtend', '>=', dtend)],
-                        [('dtstart', '>=', dtstart),
-                            ('dtend', '<=', dtend)],
-                        [('dtstart', '>=', dtstart),
-                            ('dtstart', '<=', dtend),
-                            ('dtend', '=', None)]],
-                    ('parent', '=', None),
-                    ('rdates', '=', None),
-                    ('rrules', '=', None),
-                    ('exdates', '=', None),
-                    ('exrules', '=', None),
-                    ('occurences', '=', None),
-                    ('calendar', '=', calendar_id),
-                    ])
+                ['OR',
+                 [('dtstart', '<=', dtstart),
+                  ('dtend', '>=', dtstart)],
+                 [('dtstart', '<=', dtend),
+                  ('dtend', '>=', dtend)],
+                 [('dtstart', '>=', dtstart),
+                  ('dtend', '<=', dtend)],
+                 [('dtstart', '>=', dtstart),
+                  ('dtstart', '<=', dtend),
+                  ('dtend', '=', None)]],
+                ('parent', '=', None),
+                ('rdates', '=', None),
+                ('rrules', '=', None),
+                ('exdates', '=', None),
+                ('exrules', '=', None),
+                ('occurences', '=', None),
+                ('calendar', '=', calendar_id),
+            ])
 
         for event in events:
             # Don't group freebusy as sunbird doesn't handle it
@@ -204,17 +204,17 @@ class Calendar(ModelSQL, ModelView):
 
         with Transaction().set_user(0):
             events = Event.search([
-                    ('parent', '=', None),
-                    ('dtstart', '<=', dtend),
-                    ['OR',
-                        ('rdates', '!=', None),
-                        ('rrules', '!=', None),
-                        ('exdates', '!=', None),
-                        ('exrules', '!=', None),
-                        ('occurences', '!=', None),
-                     ],
-                    ('calendar', '=', calendar_id),
-                    ])
+                ('parent', '=', None),
+                ('dtstart', '<=', dtend),
+                ['OR',
+                 ('rdates', '!=', None),
+                 ('rrules', '!=', None),
+                 ('exdates', '!=', None),
+                 ('exrules', '!=', None),
+                 ('occurences', '!=', None),
+                 ],
+                ('calendar', '=', calendar_id),
+            ])
 
         for event in events:
             event_ical = event.event2ical()
@@ -260,9 +260,9 @@ class Calendar(ModelSQL, ModelView):
                         freebusy_dtend = dtend
                     if all_day:
                         freebusy.value = [(
-                                f_dtstart_tz.astimezone(tzutc),
-                                f_dtend_tz.astimezone(tzutc),
-                                )]
+                            f_dtstart_tz.astimezone(tzutc),
+                            f_dtend_tz.astimezone(tzutc),
+                        )]
                     else:
                         freebusy.value = [(
                             freebusy_dtstart.astimezone(tzutc),
@@ -323,8 +323,8 @@ class Calendar(ModelSQL, ModelView):
                     email = attendee.value[7:]
                 with Transaction().set_user(0):
                     calendars = cls.search([
-                            ('owner.email', '=', email),
-                            ])
+                        ('owner.email', '=', email),
+                    ])
                 if calendars:
                     vfreebusy = cls.freebusy(calendars[0].id, dtstart, dtend)
                     vfreebusy.vfreebusy.add('dtstamp').value = \
@@ -354,10 +354,10 @@ class ReadUser(ModelSQL):
     __name__ = 'calendar.calendar-read-res.user'
     calendar = fields.Many2One(
         'calendar.calendar', 'Calendar',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
     user = fields.Many2One(
         'res.user', 'User', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
 
 class WriteUser(ModelSQL):
@@ -365,17 +365,17 @@ class WriteUser(ModelSQL):
     __name__ = 'calendar.calendar-write-res.user'
     calendar = fields.Many2One(
         'calendar.calendar', 'Calendar',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
 
     user = fields.Many2One(
         'res.user', 'User', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
 
 class Category(ModelSQL, ModelView):
     "Category"
     __name__ = 'calendar.category'
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
 
     @classmethod
     def __setup__(cls):
@@ -384,14 +384,14 @@ class Category(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_uniq', Unique(t, t.name),
                 'The name of calendar category must be unique.'),
-            ]
+        ]
         cls._order.insert(0, ('name', 'ASC'))
 
 
 class Location(ModelSQL, ModelView):
     "Location"
     __name__ = 'calendar.location'
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
 
     @classmethod
     def __setup__(cls):
@@ -400,7 +400,7 @@ class Location(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_uniq', Unique(t, t.name),
                 'The name of calendar location must be unique.'),
-            ]
+        ]
         cls._order.insert(0, ('name', 'ASC'))
 
 
@@ -410,16 +410,16 @@ class Event(ModelSQL, ModelView):
     _rec_name = 'summary'
     uuid = fields.Char(
         'UUID', required=True,
-        help='Universally Unique Identifier', select=True)
+        help='Universally Unique Identifier')
     calendar = fields.Many2One(
         'calendar.calendar', 'Calendar',
-        required=True, select=True, ondelete="CASCADE")
+        required=True, ondelete="CASCADE")
     summary = fields.Char('Summary')
     sequence = fields.Integer('Sequence', required=True)
     description = fields.Text('Description')
     all_day = fields.Boolean('All Day')
-    dtstart = fields.DateTime('Start Date', required=True, select=True)
-    dtend = fields.DateTime('End Date', select=True)
+    dtstart = fields.DateTime('Start Date', required=True)
+    dtend = fields.DateTime('End Date')
     timezone = fields.Selection('timezones', 'Timezone')
     categories = fields.Many2Many(
         'calendar.event-calendar.category',
@@ -428,70 +428,70 @@ class Event(ModelSQL, ModelView):
         ('public', 'Public'),
         ('private', 'Private'),
         ('confidential', 'Confidential'),
-        ], 'Classification', required=True)
+    ], 'Classification', required=True)
     location = fields.Many2One('calendar.location', 'Location')
     status = fields.Selection([
         ('', ''),
         ('tentative', 'Tentative'),
         ('confirmed', 'Confirmed'),
         ('cancelled', 'Cancelled'),
-        ], 'Status')
+    ], 'Status')
     organizer = fields.Char('Organizer', states={
-            'required': If(Bool(Eval('attendees')), ~Eval('parent'), False),
-            }, depends=['attendees', 'parent'])
+        'required': If(Bool(Eval('attendees')), ~Eval('parent'), False),
+    }, depends=['attendees', 'parent'])
     attendees = fields.One2Many(
         'calendar.event.attendee', 'event',
         'Attendees')
     transp = fields.Selection([
         ('opaque', 'Opaque'),
         ('transparent', 'Transparent'),
-        ], 'Time Transparency', required=True)
+    ], 'Time Transparency', required=True)
     alarms = fields.One2Many('calendar.event.alarm', 'event', 'Alarms')
     rdates = fields.One2Many(
         'calendar.event.rdate', 'event',
         'Recurrence Dates',
         states={
             'invisible': Bool(Eval('parent')),
-            }, depends=['parent'])
+        }, depends=['parent'])
     rrules = fields.One2Many(
         'calendar.event.rrule', 'event',
         'Recurrence Rules',
         states={
             'invisible': Bool(Eval('parent')),
-            }, depends=['parent'])
+        }, depends=['parent'])
     exdates = fields.One2Many(
         'calendar.event.exdate', 'event',
         'Exception Dates',
         states={
             'invisible': Bool(Eval('parent')),
-            }, depends=['parent'])
+        }, depends=['parent'])
     exrules = fields.One2Many(
         'calendar.event.exrule', 'event',
         'Exception Rules',
         states={
             'invisible': Bool(Eval('parent')),
-            }, depends=['parent'])
+        }, depends=['parent'])
     occurences = fields.One2Many(
         'calendar.event', 'parent', 'Occurences',
         domain=[
             ('uuid', '=', Eval('uuid')),
             ('calendar', '=', Eval('calendar')),
-            ],
+        ],
         states={
             'invisible': Bool(Eval('parent')),
-            }, depends=['uuid', 'calendar', 'parent'])
+        }, depends=['uuid', 'calendar', 'parent'])
     parent = fields.Many2One(
         'calendar.event', 'Parent',
         domain=[
             ('uuid', '=', Eval('uuid')),
             ('parent', '=', None),
             ('calendar', '=', Eval('calendar')),
-            ],
+        ],
         ondelete='CASCADE', depends=['uuid', 'calendar'])
-    recurrence = fields.DateTime('Recurrence', select=True, states={
-            'invisible': ~Eval('_parent_parent'),
-            'required': Bool(Eval('_parent_parent')),
-            }, depends=['parent'])
+    recurrence = fields.DateTime('Recurrence', states={
+        'invisible': ~Eval('_parent_parent'),
+        'required': Bool(Eval('_parent_parent')),
+    }, depends=['parent'])
     vevent = fields.Binary('vevent')
 
     @classmethod
@@ -502,7 +502,7 @@ class Event(ModelSQL, ModelView):
             ('uuid_recurrence_uniq',
                 Unique(t, t.uuid, t.calendar, t.recurrence),
                 'UUID and recurrence must be unique in a calendar.'),
-            ]
+        ]
 
     @staticmethod
     def default_uuid():
@@ -564,8 +564,8 @@ class Event(ModelSQL, ModelView):
     @classmethod
     def view_attributes(cls):
         return [('//page[@id="occurences"]', 'states', {
-                    'invisible': Bool(Eval('_parent_parent')),
-                    })]
+            'invisible': Bool(Eval('_parent_parent')),
+        })]
 
     @classmethod
     def create(cls, vlist):
@@ -591,35 +591,35 @@ class Event(ModelSQL, ModelView):
                 if attendee_emails:
                     with Transaction().set_user(0):
                         calendars = Calendar.search([
-                                ('owner.email', 'in', attendee_emails),
-                                ])
+                            ('owner.email', 'in', attendee_emails),
+                        ])
                         if not event.recurrence:
                             for calendar in calendars:
                                 new_event, = cls.copy([event], default={
-                                        'calendar': calendar.id,
-                                        'occurences': None,
-                                        'uuid': event.uuid,
-                                        })
+                                    'calendar': calendar.id,
+                                    'occurences': None,
+                                    'uuid': event.uuid,
+                                })
                                 for occurence in event.occurences:
                                     cls.copy([occurence], default={
                                         'calendar': calendar.id,
                                         'parent': new_event.id,
                                         'uuid': occurence.uuid,
-                                        })
+                                    })
                         else:
                             parents = cls.search([
-                                    ('uuid', '=', event.uuid),
-                                    ('calendar.owner.email', 'in',
-                                        attendee_emails),
-                                    ('id', '!=', event.id),
-                                    ('recurrence', '=', None),
-                                    ])
+                                ('uuid', '=', event.uuid),
+                                ('calendar.owner.email', 'in',
+                                 attendee_emails),
+                                ('id', '!=', event.id),
+                                ('recurrence', '=', None),
+                            ])
                             for parent in parents:
                                 cls.copy([event], default={
-                                        'calendar': parent.calendar.id,
-                                        'parent': parent.id,
-                                        'uuid': event.uuid,
-                                        })
+                                    'calendar': parent.calendar.id,
+                                    'parent': parent.id,
+                                    'uuid': event.uuid,
+                                })
         # Restart the cache for event
         Collection._event_cache.clear()
         return events
@@ -646,7 +646,7 @@ class Event(ModelSQL, ModelView):
             'exrules': [('delete', [r.id for r in self.exrules])]
             + [('create', [exrule._date2update()
                            for exrule in self.exrules])],
-            }
+        }
 
     @classmethod
     def write(cls, *args):
@@ -670,9 +670,9 @@ class Event(ModelSQL, ModelView):
         for sub_ids in grouped_slice(events, transaction.database.IN_MAX):
             red_sql = reduce_ids(table.id, sub_ids)
             cursor.execute(*table.update(
-                    columns=[table.sequence],
-                    values=[table.sequence + 1],
-                    where=red_sql))
+                columns=[table.sequence],
+                values=[table.sequence + 1],
+                where=red_sql))
 
         actions = iter(args)
         for events, values in zip(actions, actions):
@@ -696,14 +696,14 @@ class Event(ModelSQL, ModelView):
                                            event.parent.organizer]
                     with Transaction().set_user(0):
                         events2 = cls.search([
-                                ('uuid', '=', event.uuid),
-                                ('id', '!=', event.id),
-                                ('recurrence', '=', event.recurrence),
-                                ])
+                            ('uuid', '=', event.uuid),
+                            ('id', '!=', event.id),
+                            ('recurrence', '=', event.recurrence),
+                        ])
                         for event2 in events2[:]:
                             if event2.calendar.owner.email in attendee_emails:
                                 attendee_emails.remove(
-                                        event2.calendar.owner.email)
+                                    event2.calendar.owner.email)
                             else:
                                 events2.remove(event2)
                                 cls.delete([event2])
@@ -712,35 +712,35 @@ class Event(ModelSQL, ModelView):
                     if attendee_emails:
                         with Transaction().set_user(0):
                             calendars = Calendar.search([
-                                    ('owner.email', 'in', attendee_emails),
-                                    ])
+                                ('owner.email', 'in', attendee_emails),
+                            ])
                             if not event.recurrence:
                                 for calendar in calendars:
                                     new_event, = cls.copy([event], default={
-                                            'calendar': calendar.id,
-                                            'occurences': None,
-                                            'uuid': event.uuid,
-                                            })
+                                        'calendar': calendar.id,
+                                        'occurences': None,
+                                        'uuid': event.uuid,
+                                    })
                                     for occurence in event.occurences:
                                         cls.copy([occurence], default={
-                                                'calendar': calendar.id,
-                                                'parent': new_event.id,
-                                                'uuid': occurence.uuid,
-                                                })
+                                            'calendar': calendar.id,
+                                            'parent': new_event.id,
+                                            'uuid': occurence.uuid,
+                                        })
                             else:
                                 parents = cls.search([
-                                        ('uuid', '=', event.uuid),
-                                        ('calendar.owner.email', 'in',
-                                            attendee_emails),
-                                        ('id', '!=', event.id),
-                                        ('recurrence', '=', None),
-                                        ])
+                                    ('uuid', '=', event.uuid),
+                                    ('calendar.owner.email', 'in',
+                                     attendee_emails),
+                                    ('id', '!=', event.id),
+                                    ('recurrence', '=', None),
+                                ])
                                 for parent in parents:
                                     cls.copy([event], default={
-                                            'calendar': parent.calendar.id,
-                                            'parent': parent.id,
-                                            'uuid': event.uuid,
-                                            })
+                                        'calendar': parent.calendar.id,
+                                        'parent': parent.id,
+                                        'uuid': event.uuid,
+                                    })
         # Restart the cache for event
         Collection._event_cache.clear()
 
@@ -778,12 +778,12 @@ class Event(ModelSQL, ModelView):
                 if attendee_emails:
                     with Transaction().set_user(0):
                         cls.delete(cls.search([
-                                    ('uuid', '=', event.uuid),
-                                    ('calendar.owner.email', 'in',
-                                        attendee_emails),
-                                    ('id', '!=', event.id),
-                                    ('recurrence', '=', event.recurrence),
-                                    ]))
+                            ('uuid', '=', event.uuid),
+                            ('calendar.owner.email', 'in',
+                             attendee_emails),
+                            ('id', '!=', event.id),
+                            ('recurrence', '=', event.recurrence),
+                        ]))
             elif event.organizer \
                     or (event.parent and event.parent.organizer):
                 if event.organizer:
@@ -792,18 +792,18 @@ class Event(ModelSQL, ModelView):
                     organizer = event.parent.organizer
                 with Transaction().set_user(0):
                     events2 = cls.search([
-                            ('uuid', '=', event.uuid),
-                            ('calendar.owner.email', '=', organizer),
-                            ('id', '!=', event.id),
-                            ('recurrence', '=', event.recurrence),
-                            ], limit=1)
+                        ('uuid', '=', event.uuid),
+                        ('calendar.owner.email', '=', organizer),
+                        ('id', '!=', event.id),
+                        ('recurrence', '=', event.recurrence),
+                    ], limit=1)
                     if events2:
                         event2, = events2
                         for attendee in event2.attendees:
                             if attendee.email == event.calendar.owner.email:
                                 Attendee.write([attendee], {
-                                        'status': 'declined',
-                                        })
+                                    'status': 'declined',
+                                })
         super(Event, cls).delete(events)
         # Restart the cache for event
         Collection._event_cache.clear()
@@ -878,8 +878,8 @@ class Event(ModelSQL, ModelView):
         if hasattr(vevent, 'recurrence-id'):
             if not isinstance(vevent.recurrence_id.value, datetime.datetime):
                 res['recurrence'] = datetime.datetime.combine(
-                        vevent.recurrence_id.value, datetime.time()
-                        ).replace(tzinfo=tzlocal)
+                    vevent.recurrence_id.value, datetime.time()
+                ).replace(tzinfo=tzlocal)
             else:
                 if vevent.recurrence_id.value.tzinfo:
                     res['recurrence'] = \
@@ -897,8 +897,8 @@ class Event(ModelSQL, ModelView):
         if hasattr(vevent, 'categories'):
             with Transaction().set_context(active_test=False):
                 categories = Category.search([
-                        ('name', 'in', [x for x in vevent.categories.value]),
-                        ])
+                    ('name', 'in', [x for x in vevent.categories.value]),
+                ])
             category_names2ids = {}
             for category in categories:
                 category_names2ids[category.name] = category.id
@@ -906,8 +906,8 @@ class Event(ModelSQL, ModelView):
             for category in vevent.categories.value:
                 if category not in category_names2ids:
                     to_create.append({
-                            'name': category,
-                            })
+                        'name': category,
+                    })
             if to_create:
                 categories += Category.create(to_create)
             res['categories'] += [('add', list(map(int, categories)))]
@@ -922,12 +922,12 @@ class Event(ModelSQL, ModelView):
         if hasattr(vevent, 'location'):
             with Transaction().set_context(active_test=False):
                 locations = Location.search([
-                        ('name', '=', vevent.location.value),
-                        ], limit=1)
+                    ('name', '=', vevent.location.value),
+                ], limit=1)
             if not locations:
                 location, = Location.create([{
-                            'name': vevent.location.value,
-                            }])
+                    'name': vevent.location.value,
+                }])
             else:
                 location, = locations
             res['location'] = location.id
@@ -1212,13 +1212,14 @@ class EventCategory(ModelSQL):
     __name__ = 'calendar.event-calendar.category'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
     category = fields.Many2One(
         'calendar.category', 'Category',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
 
 
 class AlarmMixin:
+    __slots__ = ()
     valarm = fields.Binary('valarm')
 
     @classmethod
@@ -1228,7 +1229,7 @@ class AlarmMixin:
         '''
         return {
             'valarm': valarm.serialize(),
-            }
+        }
 
     def alarm2valarm(self):
         '''
@@ -1243,7 +1244,7 @@ class EventAlarm(AlarmMixin, ModelSQL, ModelView):
     __name__ = 'calendar.event.alarm'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
@@ -1284,9 +1285,11 @@ class EventAlarm(AlarmMixin, ModelSQL, ModelView):
 
 
 class AttendeeMixin:
+    __slots__ = ()
+
     email = fields.Char('Email', required=True, states={
         'readonly': Eval('id', 0) > 0,
-        }, depends=['id'])
+    }, depends=['id'])
     status = fields.Selection([
         ('', ''),
         ('needs-action', 'Needs Action'),
@@ -1294,7 +1297,7 @@ class AttendeeMixin:
         ('declined', 'Declined'),
         ('tentative', 'Tentative'),
         ('delegated', 'Delegated'),
-        ], 'Participation Status')
+    ], 'Participation Status')
     attendee = fields.Binary('attendee')
 
     @staticmethod
@@ -1304,7 +1307,7 @@ class AttendeeMixin:
     def _attendee2update(self):
         return {
             'status': self.status,
-            }
+        }
 
     @classmethod
     def attendee2values(cls, attendee):
@@ -1330,7 +1333,7 @@ class AttendeeMixin:
         res = None
         if self.attendee:
             res = vobject.base.textLineToContentLine(
-                    self.attendee.decode('utf-8').replace('\r\n ', ''))
+                self.attendee.decode('utf-8').replace('\r\n ', ''))
         else:
             res = vobject.base.ContentLine('ATTENDEE', [], '')
 
@@ -1354,7 +1357,7 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
     __name__ = 'calendar.event.attendee'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
@@ -1384,16 +1387,16 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
                 if attendee_emails:
                     with Transaction().set_user(0):
                         events = Event.search([
-                                ('uuid', '=', event.uuid),
-                                ('calendar.owner.email', 'in',
-                                    attendee_emails),
-                                ('id', '!=', event.id),
-                                ('recurrence', '=', event.recurrence),
-                                ])
+                            ('uuid', '=', event.uuid),
+                            ('calendar.owner.email', 'in',
+                             attendee_emails),
+                            ('id', '!=', event.id),
+                            ('recurrence', '=', event.recurrence),
+                        ])
                         for event in events:
                             cls.copy([event_attendee], default={
-                                    'event': event.id,
-                                    })
+                                'event': event.id,
+                            })
         return event_attendees
 
     @classmethod
@@ -1434,14 +1437,14 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
                 if attendee_emails:
                     with Transaction().set_user(0):
                         other_attendees = cls.search([
-                                ('event.uuid', '=', event.uuid),
-                                ('event.calendar.owner.email', 'in',
-                                    attendee_emails),
-                                ('id', '!=', event_attendee.id),
-                                ('event.recurrence', '=',
-                                    event.recurrence),
-                                ('email', '=', event_attendee.email),
-                                ])
+                            ('event.uuid', '=', event.uuid),
+                            ('event.calendar.owner.email', 'in',
+                             attendee_emails),
+                            ('id', '!=', event_attendee.id),
+                            ('event.recurrence', '=',
+                             event.recurrence),
+                            ('email', '=', event_attendee.email),
+                        ])
                         cls.write(other_attendees,
                                   event_attendee._attendee2update())
 
@@ -1471,14 +1474,14 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
                 if attendee_emails:
                     with Transaction().set_user(0):
                         attendees = cls.search([
-                                ('event.uuid', '=', event.uuid),
-                                ('event.calendar.owner.email', 'in',
-                                    attendee_emails),
-                                ('id', '!=', attendee.id),
-                                ('event.recurrence', '=',
-                                    event.recurrence),
-                                ('email', '=', attendee.email),
-                                ])
+                            ('event.uuid', '=', event.uuid),
+                            ('event.calendar.owner.email', 'in',
+                             attendee_emails),
+                            ('id', '!=', attendee.id),
+                            ('event.recurrence', '=',
+                             event.recurrence),
+                            ('email', '=', attendee.email),
+                        ])
                         cls.delete(attendees)
             elif (event.calendar.owner
                     and ((event.organizer
@@ -1490,22 +1493,24 @@ class EventAttendee(AttendeeMixin, ModelSQL, ModelView):
                     organizer = event.parent.organizer
                 with Transaction().set_user(0):
                     attendees = cls.search([
-                            ('event.uuid', '=', event.uuid),
-                            ('event.calendar.owner.email', '=', organizer),
-                            ('id', '!=', attendee.id),
-                            ('event.recurrence', '=', event.recurrence),
-                            ('email', '=', attendee.email),
-                            ])
+                        ('event.uuid', '=', event.uuid),
+                        ('event.calendar.owner.email', '=', organizer),
+                        ('id', '!=', attendee.id),
+                        ('event.recurrence', '=', event.recurrence),
+                        ('email', '=', attendee.email),
+                    ])
                     if attendees:
                         cls.write(attendees, {
-                                'status': 'declined',
-                                })
+                            'status': 'declined',
+                        })
         super(EventAttendee, cls).delete(event_attendees)
 
 
 class DateMixin:
+    __slots__ = ()
     # _rec_name = 'datetime'
     # _rec_name needs to be char or  txt
+
     def get_rec_name(self, name):
         if self.datetime:
             return str(self.datetime)
@@ -1519,7 +1524,7 @@ class DateMixin:
         return {
             'date': self.date,
             'datetime': self.datetime,
-            }
+        }
 
     @staticmethod
     def date2values(date):
@@ -1561,7 +1566,7 @@ class EventRDate(DateMixin, ModelSQL, ModelView):
 
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        select=True, required=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):
@@ -1609,6 +1614,8 @@ class EventExDate(EventRDate):
 
 class RRuleMixin(Model):
     # _rec_name = 'freq'
+    __slots__ = ()
+
     def get_rec_name(self, name):
         if self.freq:
             return str(self.freq)
@@ -1621,7 +1628,7 @@ class RRuleMixin(Model):
         ('weekly', 'Weekly'),
         ('monthly', 'Monthly'),
         ('yearly', 'Yearly'),
-        ], 'Frequency', required=True)
+    ], 'Frequency', required=True)
     until_date = fields.Boolean(
         'Is Date',
         help='Ignore time of field "Until Date", but handle as date only.')
@@ -1646,7 +1653,7 @@ class RRuleMixin(Model):
         ('th', 'Thursday'),
         ('fr', 'Friday'),
         ('sa', 'Saturday'),
-        ], 'Week Day', sort=False)
+    ], 'Week Day', sort=False)
 
     @classmethod
     def __setup__(cls):
@@ -1657,7 +1664,7 @@ class RRuleMixin(Model):
                 Check(t,
                       (t.until == Null) | (t.count == Null) | (t.count == 0)),
                 'Only one of "until" and "count" can be set.'),
-            ]
+        ]
 
     @classmethod
     def validate(cls, rules):
@@ -1851,7 +1858,7 @@ class EventRRule(RRuleMixin, ModelSQL, ModelView):
     __name__ = 'calendar.event.rrule'
     event = fields.Many2One(
         'calendar.event', 'Event', ondelete='CASCADE',
-        select=True, required=True)
+        required=True)
 
     @classmethod
     def create(cls, vlist):

@@ -37,9 +37,10 @@ msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "日"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "主治医"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
@@ -98,12 +99,16 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "患者"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "希望日"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
@@ -127,9 +132,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "日"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "主治医"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
@@ -514,6 +520,18 @@ msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr "依頼ずみ"
 
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr ""
+
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Generate Results"
 msgstr "結果報告書を作成"
@@ -529,18 +547,6 @@ msgstr "画像"
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Interpretation / Report"
 msgstr ""
-
-msgctxt "view:gnuhealth.imaging.test.type:"
-msgid "Imaging Test Type"
-msgstr "画像検査種別"
-
-msgctxt "view:gnuhealth.imaging.test:"
-msgid "Imaging Test"
-msgstr "画像検査"
-
-msgctxt "view:gnuhealth.patient.imaging.test.request.start:"
-msgid "Request Imaging Test"
-msgstr "画像検査を依頼する"
 
 msgctxt "wizard_button:gnuhealth.patient.imaging.test.request,start,end:"
 msgid "Cancel"

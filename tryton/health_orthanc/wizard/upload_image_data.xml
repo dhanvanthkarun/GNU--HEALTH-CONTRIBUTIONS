@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <record model="ir.action.wizard" id="act_upload_image_data">
+         <field name="name">Orthanc: Upload DICOM Files</field>
+         <field name="wiz_name">gnuhealth.imaging_orthanc.upload_image_data</field>
+         <field name="model">gnuhealth.imaging_orthanc.study</field>
+        </record>
+
+        <record model="ir.action.keyword" id="upload_image_data_keyword">
+           <field name="keyword">form_action</field>
+           <field name="model">gnuhealth.imaging_orthanc.study,-1</field>
+           <field name="action" ref="act_upload_image_data"/>
+        </record>
+
+        <record model="ir.ui.view" id="upload_image_data_start_form">
+         <field name="model">gnuhealth.imaging_orthanc.upload_image_data.start</field>
+         <field name="type">form</field>
+         <field name="name">upload_image_data_start_form</field>
+        </record>
+    </data>
+</tryton>

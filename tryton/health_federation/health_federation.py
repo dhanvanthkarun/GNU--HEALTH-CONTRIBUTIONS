@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -96,8 +96,8 @@ class FederationNodeConfig(ModelSingleton, ModelSQL, ModelView):
         super(FederationNodeConfig, cls).__setup__()
 
         cls._buttons.update({
-                'test_connection': {}
-                    }),
+            'test_connection': {}
+        }),
 
     @classmethod
     @ModelView.button
@@ -120,7 +120,7 @@ class FederationNodeConfig(ModelSingleton, ModelSQL, ModelView):
         if (not user or not password):
             raise NeedLoginCredentials(
                 gettext('health_federation.msg_need_login_credentials')
-                )
+            )
 
         url = protocol + host + ':' + str(port) + '/people/' + user
 
@@ -129,20 +129,20 @@ class FederationNodeConfig(ModelSingleton, ModelSQL, ModelView):
                 url,
                 auth=(user, password), verify=verify_ssl)
 
-        except:
+        except BaseException:
             raise ServerAuthenticationError(
                 gettext('health_federation.msg_server_authentication_error')
-                )
+            )
 
         if conn:
             raise ThalamusConnectionOK(
                 gettext('health_federation.msg_thalamus_connection_ok')
-                )
+            )
 
         else:
             raise ThalamusConnectionError(
                 gettext('health_federation.msg_thalamus_connection_error')
-                )
+            )
 
     @classmethod
     def get_conn_params(cls):
@@ -198,7 +198,7 @@ class FederationQueue(ModelSQL, ModelView):
         try:
             data = json.loads(self.args)
             return json.dumps(data, indent=4, ensure_ascii=False)
-        except:
+        except BaseException:
             return "Fail to parse json string of args field."
 
     method = fields.Selection([
@@ -207,14 +207,14 @@ class FederationQueue(ModelSQL, ModelView):
         ('PATCH', 'PATCH'),
         ('DELETE', 'DELETE'),
         ('GET', 'GET'),
-        ], 'Method', required=True, sort=False)
+    ], 'Method', required=True, sort=False)
 
     state = fields.Selection([
         (None, ''),
         ('queued', 'Queued'),
         ('sent', 'Sent'),
         ('failed', 'Failed'),
-        ], 'Status', sort=False)
+    ], 'Status', sort=False)
 
     url_suffix = fields.Char(
         'URL suffix',
@@ -233,7 +233,7 @@ class FederationQueue(ModelSQL, ModelView):
         else:
             raise NoInstitution(
                 gettext('health_federation.msg_no_institution')
-                )
+            )
 
         return institution_code
 
@@ -265,7 +265,7 @@ class FederationQueue(ModelSQL, ModelView):
 
                     url = protocol + host + ':' + str(port)
 
-                    resource, fields = arg['resource'],\
+                    resource, fields = arg['resource'], \
                         arg['fields']
 
                     # Add resource and instance to URL
@@ -307,7 +307,7 @@ class FederationQueue(ModelSQL, ModelView):
 
                     url = protocol + host + ':' + str(port)
 
-                    resource, fields = arg['resource'],\
+                    resource, fields = arg['resource'], \
                         arg['fields']
 
                     # Add resource and instance to URL
@@ -370,7 +370,7 @@ class FederationQueue(ModelSQL, ModelView):
                                 "name": fed_field,
                                 "value": values[field]
                             }]
-                        }
+                    }
 
                     resources.append(fed_resource)
                     fedvals.append(fed_key)
@@ -385,7 +385,7 @@ class FederationQueue(ModelSQL, ModelView):
                             fedvals[n]['fields'].append(
                                 {"name": fed_field,
                                  "value": values[field]})
-                        n = n+1
+                        n = n + 1
 
         return fedvals
 
@@ -431,7 +431,7 @@ class FederationQueue(ModelSQL, ModelView):
 
         cls._buttons.update({
             'send': {'invisible': Equal(Eval('state'), 'sent')}
-            })
+        })
 
     @classmethod
     @ModelView.button
@@ -489,8 +489,8 @@ class FederationObject(ModelSQL, ModelView):
              'The Model is already defined !')
         ]
         cls.__rpc__.update({
-                'get_object_fields': RPC(check_access=False),
-                })
+            'get_object_fields': RPC(check_access=False),
+        })
 
 
 class PartyFed(ModelSQL):

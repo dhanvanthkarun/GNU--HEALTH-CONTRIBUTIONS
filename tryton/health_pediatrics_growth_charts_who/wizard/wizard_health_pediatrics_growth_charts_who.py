@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2013 Sebastian Marro <smarro@thymbra.com>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 from trytond.model import ModelView, fields
@@ -20,11 +20,11 @@ class OpenPediatricsGrowthChartsWHOReportStart(ModelView):
         ('l/h-f-a', 'Length/height for age'),
         ('w-f-a', 'Weight for age'),
         ('bmi-f-a', 'Body mass index for age (BMI for age)'),
-        ], 'Indicator', sort=False, required=True)
+    ], 'Indicator', sort=False, required=True)
     measure = fields.Selection([
         ('p', 'percentiles'),
         ('z', 'z-scores'),
-        ], 'Measure', required=True)
+    ], 'Measure', required=True)
 
 
 class OpenPediatricsGrowthChartsWHOReport(Wizard):
@@ -37,7 +37,7 @@ class OpenPediatricsGrowthChartsWHOReport(Wizard):
         'growth_charts_who_open_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Open', 'choose', 'tryton-ok', default=True),
-            ])
+        ])
     choose = StateTransition()
     print_wfa = StateAction(
         'health_pediatrics_growth_charts_who.'
@@ -62,7 +62,7 @@ class OpenPediatricsGrowthChartsWHOReport(Wizard):
             'patient': Transaction().context.get('active_id'),
             'indicator': self.start.indicator,
             'measure': self.start.measure,
-            }
+        }
 
     def do_print_wfa(self, action):
         return action, self.fill_data()

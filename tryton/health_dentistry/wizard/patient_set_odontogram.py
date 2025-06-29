@@ -31,28 +31,28 @@ permanent = [
     '21', '22', '23', '24', '25', '26', '27', '28',
     '31', '32', '33', '34', '35', '36', '37', '38',
     '41', '42', '43', '44', '45', '46', '47', '48'
-    ]
+]
 
 primary = [
     '51', '52', '53', '54', '55',
     '61', '62', '63', '64', '65',
     '71', '72', '73', '74', '75',
     '81', '82', '83', '84', '85'
-    ]
+]
 
 permanent_surfaces = [
     ('vimdp', ['11', '12', '13', '21', '22', '23']),
     ('vomdp', ['14', '15', '16', '17', '18', '24', '25', '26', '27', '28']),
     ('vimdl', ['31', '32', '33', '41', '42', '43']),
     ('vomdl', ['34', '35', '36', '37', '38', '44', '45', '46', '47', '48'])
-    ]
+]
 
 primary_surfaces = [
     ('vimdp', ['51', '52', '53', '61', '62', '63']),
     ('vomdp', ['54', '55', '64', '65']),
     ('vimdl', ['71', '72', '73', '81', '82', '83']),
     ('vomdl', ['74', '75', '84', '85'])
-    ]
+]
 
 
 def tooth_surface(label, help, tooth):
@@ -383,8 +383,8 @@ class SetOdontogramStart(ModelView):
     def view_attributes(cls):
         return super(SetOdontogramStart, cls).view_attributes() + [
             ('//page[@id="primary"]', 'states', {
-                    'invisible': ~Eval('include_primary'),
-                    })]
+                'invisible': ~Eval('include_primary'),
+            })]
 
 
 class SetOdontogram(Wizard):
@@ -425,7 +425,7 @@ class SetOdontogram(Wizard):
             't61': '', 't62': '', 't63': '', 't64': '', 't65': '',
             't71': '', 't72': '', 't73': '', 't74': '', 't75': '',
             't81': '', 't82': '', 't83': '', 't84': '', 't85': '',
-            }
+        }
         patient = Patient.browse([patient_id])
         if patient:
             if patient[0].use_primary_schema:

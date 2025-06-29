@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -22,10 +22,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <label name="is_school"/>
         <field name="is_school"/>
     </xpath>
-    <xpath expr="/form/field[@name=&quot;country&quot;]" position="replace_attributes">
+    <xpath expr="/form/notebook/page/field[@name=&quot;country&quot;]" position="replace_attributes">
         <field name="country" widget="many2one"/>
     </xpath>
-    <xpath expr="/form/field[@name=&quot;subdivision&quot;]" position="replace_attributes">
+    <xpath expr="/form/notebook/page/field[@name=&quot;subdivision&quot;]" position="replace_attributes">
         <field name="subdivision" widget="many2one"/>
     </xpath>
 

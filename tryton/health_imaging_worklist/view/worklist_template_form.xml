@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form>
+  <label name="name" xalign="0.0"/>
+  <newline/>
+  <field name="name"/>
+  <newline/>
+  <label name="template_type" xalign="0.0"/>
+  <newline/>
+  <field name="template_type" colspan="4"/>
+  <newline/>
+  <label name="charset" xalign="0.0"/>
+  <newline/>
+  <field name="charset" colspan="4"/>
+  <newline/>
+  <label name="template" xalign="0.0"/>
+  <newline/>
+  <field name="template" colspan="4"/>
+  <newline/>
+  <label name="comment" xalign="0.0"/>
+  <newline/>
+  <field name="comment" colspan="4"/>
+</form>

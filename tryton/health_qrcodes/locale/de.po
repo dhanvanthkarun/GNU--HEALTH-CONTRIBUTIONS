@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:gnuhealth.appointment,barcode:"
+msgid "Code39"
+msgstr ""
+
 #, fuzzy
 msgctxt "field:gnuhealth.appointment,qr:"
 msgid "QR Code"
@@ -60,14 +64,14 @@ msgctxt "model:ir.action,name:report_patient_wristband"
 msgid "Wristbands"
 msgstr ""
 
+msgctxt "report:appointment.qrcodel:"
+msgid "APPT ID:"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:appointment.qrcodel:"
 msgid "Appointment Receipt"
 msgstr "Quittung zum Termin"
-
-msgctxt "report:appointment.qrcodel:"
-msgid "Apporintment #"
-msgstr ""
 
 #, fuzzy
 msgctxt "report:appointment.qrcodel:"
@@ -75,24 +79,26 @@ msgid "Date:"
 msgstr "Datum:"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr ""
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Health Prof:"
 msgstr ""
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Institution:"
 msgstr ""
 
-msgctxt "report:appointment.qrcodel:"
-msgid "Instructions / Notes:"
-msgstr ""
-
+#, fuzzy
 msgctxt "report:appointment.qrcodel:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
+#, fuzzy
 msgctxt "report:appointment.qrcodel:"
 msgid "Patient:"
-msgstr ""
+msgstr "Patient:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Specialty:"
@@ -118,13 +124,15 @@ msgctxt "report:labtest.qrlabel:"
 msgid "Req by:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:labtest.qrlabel:"
 msgid "Source:"
-msgstr ""
+msgstr "Quelle:"
 
+#, fuzzy
 msgctxt "report:labtest.qrlabel:"
 msgid "Test:"
-msgstr ""
+msgstr "Test:"
 
 #, fuzzy
 msgctxt "report:newborn.qrcard:"
@@ -148,9 +156,10 @@ msgctxt "report:newborn.qrcard:"
 msgid "Name:"
 msgstr "Name:"
 
+#, fuzzy
 msgctxt "report:newborn.qrcard:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Sex:"
@@ -162,13 +171,8 @@ msgstr ""
 
 #, fuzzy
 msgctxt "report:party.wristband:"
-msgid "("
-msgstr "("
-
-#, fuzzy
-msgctxt "report:party.wristband:"
-msgid ")"
-msgstr ")"
+msgid ","
+msgstr ","
 
 msgctxt "report:patient.qrcard:"
 msgid "Blood Type:"
@@ -179,19 +183,26 @@ msgctxt "report:patient.qrcard:"
 msgid "DoB:"
 msgstr "Geb.dat."
 
+#, fuzzy
 msgctxt "report:patient.qrcard:"
 msgid "Gender:"
-msgstr ""
+msgstr "Geschlecht:"
 
 #, fuzzy
 msgctxt "report:patient.qrcard:"
 msgid "Name:"
 msgstr "Name:"
 
+#, fuzzy
 msgctxt "report:patient.qrcard:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.qrcard:"
 msgid "photo"
 msgstr ""
+
+#, fuzzy
+msgctxt "report:patient.wristband:"
+msgid ","
+msgstr ","

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -53,7 +53,7 @@ class DietBelief (ModelSQL, ModelView):
         cls._sql_constraints = [
             ('code_unique', Unique(t, t.code),
                 'The Diet code already exists'),
-            ]
+        ]
 
 
 class DrugsRecreational(ModelSQL, ModelView):
@@ -76,7 +76,7 @@ class DrugsRecreational(ModelSQL, ModelView):
         ('1', 'Low'),
         ('2', 'High'),
         ('3', 'Extreme'),
-        ], 'Toxicity', sort=False)
+    ], 'Toxicity', sort=False)
 
     addiction_level = fields.Selection([
         (None, ''),
@@ -84,13 +84,13 @@ class DrugsRecreational(ModelSQL, ModelView):
         ('1', 'Low'),
         ('2', 'High'),
         ('3', 'Extreme'),
-        ], 'Dependence', sort=False)
+    ], 'Dependence', sort=False)
 
     legal_status = fields.Selection([
         (None, ''),
         ('0', 'Legal'),
         ('1', 'Illegal'),
-        ], 'Legal Status', sort=False)
+    ], 'Legal Status', sort=False)
 
     category = fields.Selection([
         (None, ''),
@@ -101,7 +101,7 @@ class DrugsRecreational(ModelSQL, ModelView):
         ('opioid', 'Opioids'),
         ('stimulant', 'Stimulants'),
         ('other', 'Others'),
-        ], 'Category', sort=False)
+    ], 'Category', sort=False)
 
     withdrawal_level = fields.Integer(
         'Withdrawal',
@@ -147,7 +147,7 @@ class DrugsRecreational(ModelSQL, ModelView):
 
     route_sniffing = fields.Boolean(
         'Sniffing',
-        help="Also called snorting - inhaling through the nares  ")
+        help="Also called snorting - inhaling through the nares")
 
     route_injection = fields.Boolean(
         'Injection',
@@ -213,7 +213,7 @@ class DrugsRecreational(ModelSQL, ModelView):
         "refills in 6 months, and may be ordered orally. "
         "Some Schedule V drugs are available over the counter")
 
-    info = fields.Text('Extra Info')
+    info = fields.Text('Extra Info', translate=True)
 
     @classmethod
     def __setup__(cls):
@@ -225,7 +225,7 @@ class DrugsRecreational(ModelSQL, ModelView):
                 'The Recreational Drug name must be unique'),
             ('code_unique', Unique(t, t.code),
                 'The Recreational Drug CODE must be unique'),
-            ]
+        ]
 
 
 class PatientRecreationalDrugs(ModelSQL, ModelView):
@@ -243,7 +243,7 @@ class PatientCAGE(ModelSQL, ModelView):
     'Patient CAGE Questionnaire'
     __name__ = 'gnuhealth.patient.cage'
 
-    name = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
+    patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
 
     evaluation_date = fields.DateTime('Date')
 
@@ -295,6 +295,13 @@ class PatientCAGE(ModelSQL, ModelView):
     @staticmethod
     def default_cage_score():
         return 0
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientCAGE, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class MedicalPatient(metaclass=PoolMeta):
@@ -349,10 +356,10 @@ class MedicalPatient(metaclass=PoolMeta):
         help="Age of quitting smoking")
     alcohol = fields.Boolean('Drinks Alcohol')
     age_start_drinking = fields.Integer(
-        'Age started to drink ',
+        'Age started to drink',
         help="Date to start drinking")
     age_quit_drinking = fields.Integer(
-        'Age quit drinking ',
+        'Age quit drinking',
         help="Date to stop drinking")
     ex_alcoholic = fields.Boolean('Ex alcoholic')
     alcohol_beer_number = fields.Integer('Beer / day')
@@ -364,10 +371,10 @@ class MedicalPatient(metaclass=PoolMeta):
         'IV drug user',
         help="Check this option if the patient injects drugs")
     age_start_drugs = fields.Integer(
-        'Age started drugs ',
+        'Age started drugs',
         help="Age of start drugs")
     age_quit_drugs = fields.Integer(
-        'Age quit drugs ',
+        'Age quit drugs',
         help="Date of quitting drugs")
     recreational_drugs = fields.One2Many(
         'gnuhealth.patient.recreational_drugs', 'patient', 'Drugs')
@@ -403,15 +410,16 @@ class MedicalPatient(metaclass=PoolMeta):
         ('g', 'Homosexual'),
         ('b', 'Bisexual'),
         ('t', 'Transexual'),
-        ], 'Sexual Preferences', sort=False)
+    ], 'Sexual Preferences', sort=False)
 
-    sexual_preferences_str = sexual_preferences.translated('sexual_preferences')
+    sexual_preferences_str = sexual_preferences.translated(
+        'sexual_preferences')
 
     sexual_practices = fields.Selection([
         (None, ''),
         ('s', 'Safe / Protected sex'),
         ('r', 'Risky / Unprotected sex'),
-        ], 'Sexual Practices', sort=False)
+    ], 'Sexual Practices', sort=False)
 
     sexual_practices_str = sexual_practices.translated('sexual_practices')
 
@@ -419,8 +427,8 @@ class MedicalPatient(metaclass=PoolMeta):
         (None, ''),
         ('m', 'Monogamous'),
         ('t', 'Polygamous'),
-        ], 'Sexual Partners', sort=False)
-    
+    ], 'Sexual Partners', sort=False)
+
     sexual_partners_str = sexual_partners.translated('sexual_partners')
 
     sexual_partners_number = fields.Integer('Number of sexual partners')
@@ -440,7 +448,7 @@ class MedicalPatient(metaclass=PoolMeta):
         ('8', 'Contraceptive injection'),
         ('9', 'Skin Patch'),
         ('10', 'Female condom'),
-        ], 'Contraceptive Method', sort=False)
+    ], 'Contraceptive Method', sort=False)
 
     sex_oral = fields.Selection([
         (None, ''),
@@ -448,7 +456,7 @@ class MedicalPatient(metaclass=PoolMeta):
         ('1', 'Active'),
         ('2', 'Passive'),
         ('3', 'Both'),
-        ], 'Oral Sex', sort=False)
+    ], 'Oral Sex', sort=False)
 
     sex_anal = fields.Selection([
         (None, ''),
@@ -456,7 +464,7 @@ class MedicalPatient(metaclass=PoolMeta):
         ('1', 'Active'),
         ('2', 'Passive'),
         ('3', 'Both'),
-        ], 'Anal Sex', sort=False)
+    ], 'Anal Sex', sort=False)
 
     prostitute = fields.Boolean(
         'Prostitute',
@@ -469,4 +477,4 @@ class MedicalPatient(metaclass=PoolMeta):
 
     cage = fields.One2Many(
         'gnuhealth.patient.cage',
-        'name', 'CAGE')
+        'patient', 'CAGE')

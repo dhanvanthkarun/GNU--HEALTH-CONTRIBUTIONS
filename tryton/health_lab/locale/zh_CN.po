@@ -1,26 +1,50 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-04-14 06:11+0000\n"
+"Last-Translator: tumashu <tumashu@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://translate.codeberg.org/projects/gnuhealth/health_lab/zh_Hans/>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.lab,analytes_summary:"
 msgid "Summary"
 msgstr "总结"
 
 msgctxt "field:gnuhealth.lab,critearea:"
-msgid "Lab Test Critearea"
-msgstr "实验室检验标准"
+msgid "Analytes criteria"
+msgstr "分析项目"
 
 msgctxt "field:gnuhealth.lab,date_analysis:"
-msgid "Date of the Analysis"
+msgid "Analysis Date"
 msgstr "分析日期"
 
 msgctxt "field:gnuhealth.lab,date_requested:"
-msgid "Date requested"
+msgid "Request Date"
 msgstr "申请日期"
 
 msgctxt "field:gnuhealth.lab,diagnosis:"
 msgid "Diagnosis"
 msgstr "诊断"
+
+msgctxt "field:gnuhealth.lab,done_by:"
+msgid "Done by"
+msgstr "检验医师"
+
+msgctxt "field:gnuhealth.lab,done_date:"
+msgid "Finished on"
+msgstr "完成日期"
+
+msgctxt "field:gnuhealth.lab,historize:"
+msgid "Historize"
+msgstr "记入健康档案"
+
+msgctxt "field:gnuhealth.lab,images:"
+msgid "Images"
+msgstr "图片"
 
 msgctxt "field:gnuhealth.lab,name:"
 msgid "ID"
@@ -47,7 +71,7 @@ msgid "Order"
 msgstr "申请编号"
 
 msgctxt "field:gnuhealth.lab,requestor:"
-msgid "Health prof"
+msgid "Health Prof"
 msgstr "申请医师"
 
 msgctxt "field:gnuhealth.lab,results:"
@@ -62,9 +86,25 @@ msgctxt "field:gnuhealth.lab,source_type:"
 msgid "Source"
 msgstr "样本来源"
 
+msgctxt "field:gnuhealth.lab,specimen_type:"
+msgid "Specimen"
+msgstr "样本类型"
+
+msgctxt "field:gnuhealth.lab,state:"
+msgid "State"
+msgstr "状态"
+
 msgctxt "field:gnuhealth.lab,test:"
 msgid "Test type"
 msgstr "检验类型"
+
+msgctxt "field:gnuhealth.lab,validated_by:"
+msgid "Validated by"
+msgstr "审核医师"
+
+msgctxt "field:gnuhealth.lab,validation_date:"
+msgid "Validated on"
+msgstr "审核日期"
 
 msgctxt "field:gnuhealth.lab.test.critearea,code:"
 msgid "Code"
@@ -81,6 +121,10 @@ msgstr "检验用例"
 msgctxt "field:gnuhealth.lab.test.critearea,lab_warning_icon:"
 msgid "Lab Warning Icon"
 msgstr "实验室警告图标"
+
+msgctxt "field:gnuhealth.lab.test.critearea,limits_verified:"
+msgid "Limits verified"
+msgstr "上下限已核实"
 
 msgctxt "field:gnuhealth.lab.test.critearea,lower_limit:"
 msgid "Lower Limit"
@@ -103,16 +147,24 @@ msgid "Value"
 msgstr "测量值"
 
 msgctxt "field:gnuhealth.lab.test.critearea,result_text:"
-msgid "Result - Text"
-msgstr "结果（文本）"
+msgid "Qualitative"
+msgstr "定性结果"
 
 msgctxt "field:gnuhealth.lab.test.critearea,sequence:"
 msgid "Sequence"
 msgstr "序列"
 
+msgctxt "field:gnuhealth.lab.test.critearea,test_method:"
+msgid "Method"
+msgstr "检测方法"
+
 msgctxt "field:gnuhealth.lab.test.critearea,test_type_id:"
 msgid "Test type"
 msgstr "检验类型"
+
+msgctxt "field:gnuhealth.lab.test.critearea,to_integer:"
+msgid "To integer"
+msgstr "转换为整数"
 
 msgctxt "field:gnuhealth.lab.test.critearea,units:"
 msgid "Units"
@@ -138,6 +190,14 @@ msgctxt "field:gnuhealth.lab.test_type,active:"
 msgid "Active"
 msgstr "启用"
 
+msgctxt "field:gnuhealth.lab.test_type,age_range:"
+msgid "Age range"
+msgstr "年龄区间"
+
+msgctxt "field:gnuhealth.lab.test_type,category:"
+msgid "Category"
+msgstr "类别"
+
 msgctxt "field:gnuhealth.lab.test_type,code:"
 msgid "Code"
 msgstr "检验类型代码"
@@ -146,9 +206,21 @@ msgctxt "field:gnuhealth.lab.test_type,critearea:"
 msgid "Test Cases"
 msgstr "检验用例"
 
+msgctxt "field:gnuhealth.lab.test_type,gender:"
+msgid "Gender"
+msgstr "性别"
+
 msgctxt "field:gnuhealth.lab.test_type,info:"
 msgid "Description"
 msgstr "描述"
+
+msgctxt "field:gnuhealth.lab.test_type,max_age:"
+msgid "Max age"
+msgstr "最大年龄"
+
+msgctxt "field:gnuhealth.lab.test_type,min_age:"
+msgid "Min age"
+msgstr "最小年龄"
 
 msgctxt "field:gnuhealth.lab.test_type,name:"
 msgid "Test"
@@ -157,6 +229,18 @@ msgstr "实验室检验"
 msgctxt "field:gnuhealth.lab.test_type,product_id:"
 msgid "Service"
 msgstr "服务"
+
+msgctxt "field:gnuhealth.lab.test_type,report_style:"
+msgid "Report style"
+msgstr "报告样式"
+
+msgctxt "field:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen"
+msgstr "样本类型"
+
+msgctxt "field:gnuhealth.lab.test_type,tags:"
+msgid "Tags"
+msgstr "标签"
 
 msgctxt "field:gnuhealth.patient,lab_test_ids:"
 msgid "Lab Tests Required"
@@ -170,6 +254,14 @@ msgctxt "field:gnuhealth.patient.disease,lab_test:"
 msgid "Lab Test"
 msgstr "实验室检验"
 
+msgctxt "field:gnuhealth.patient.lab.test,age_num:"
+msgid "Age Num"
+msgstr "年龄数"
+
+msgctxt "field:gnuhealth.patient.lab.test,comment:"
+msgid "Additional Information"
+msgstr "附加信息"
+
 msgctxt "field:gnuhealth.patient.lab.test,context:"
 msgid "Context"
 msgstr "相关信息"
@@ -179,12 +271,12 @@ msgid "Date"
 msgstr "日期"
 
 msgctxt "field:gnuhealth.patient.lab.test,doctor_id:"
-msgid "Health prof."
+msgid "Health Prof"
 msgstr "医务人员"
 
-msgctxt "field:gnuhealth.patient.lab.test,name:"
-msgid "Test Type"
-msgstr "检验类型"
+msgctxt "field:gnuhealth.patient.lab.test,gender_str:"
+msgid "Gender"
+msgstr "性别"
 
 msgctxt "field:gnuhealth.patient.lab.test,other_source:"
 msgid "Other"
@@ -206,13 +298,25 @@ msgctxt "field:gnuhealth.patient.lab.test,source_type:"
 msgid "Source"
 msgstr "样本来源"
 
+msgctxt "field:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen"
+msgstr "样本类型"
+
 msgctxt "field:gnuhealth.patient.lab.test,state:"
 msgid "State"
 msgstr "状态"
 
+msgctxt "field:gnuhealth.patient.lab.test,test_type:"
+msgid "Test Type"
+msgstr "检验类型"
+
 msgctxt "field:gnuhealth.patient.lab.test,urgent:"
 msgid "Urgent"
 msgstr "紧急"
+
+msgctxt "field:gnuhealth.patient.lab.test.request.start,age_num:"
+msgid "Age Num"
+msgstr "年龄数"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,context:"
 msgid "Context"
@@ -223,8 +327,12 @@ msgid "Date"
 msgstr "日期"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,doctor:"
-msgid "Health prof"
+msgid "Health Prof"
 msgstr "医务人员"
+
+msgctxt "field:gnuhealth.patient.lab.test.request.start,gender_str:"
+msgid "Gender"
+msgstr "性别"
 
 msgctxt "field:gnuhealth.patient.lab.test.request.start,other_source:"
 msgid "Other"
@@ -270,6 +378,19 @@ msgctxt "field:gnuhealth.sequences.lab_test_sequence,lab_test_sequence:"
 msgid "Lab test sequence"
 msgstr "实验室检验序列"
 
+msgctxt "help:gnuhealth.lab,done_by:"
+msgid "Professional who processes this lab test"
+msgstr "做这个检验项目的医务人员"
+
+msgctxt "help:gnuhealth.lab,historize:"
+msgid ""
+"If this flag is set the a new health condition will be added to the patient "
+"history. Unset it if this lab test is in the context of a pre-existing "
+"condition of the patient. The condition will be created when the lab test is"
+" confirmed and validated"
+msgstr ""
+"如果勾选此项，那么检验结果确认和验证时，会自动在患者健康档案中会添加一项新健康状况记录，如果当前检验项目只涉及患者已有的健康状况，那就不要勾选此项"
+
 msgctxt "help:gnuhealth.lab,name:"
 msgid "Lab result ID"
 msgstr "实验室检验结果编号"
@@ -287,7 +408,7 @@ msgid "Pathology confirmed / associated to this lab test."
 msgstr "病理学证实/与本实验室试验相关。"
 
 msgctxt "help:gnuhealth.lab,patient:"
-msgid "Patient ID"
+msgid "Patient"
 msgstr "患者代码"
 
 msgctxt "help:gnuhealth.lab,requestor:"
@@ -298,9 +419,17 @@ msgctxt "help:gnuhealth.lab,source_type:"
 msgid "Sample source type."
 msgstr "样本来源类型。"
 
+msgctxt "help:gnuhealth.lab,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr "样本类型，比如：全血、血浆、尿液或粪便 ..."
+
 msgctxt "help:gnuhealth.lab,test:"
 msgid "Lab test type"
 msgstr "实验室检验类型"
+
+msgctxt "help:gnuhealth.lab,validated_by:"
+msgid "Professional who validates this lab test"
+msgstr "做这个检验项目的医务人员"
 
 msgctxt "help:gnuhealth.lab.test.critearea,code:"
 msgid "Lab test critearea code, mainly used by lab interface script."
@@ -310,11 +439,28 @@ msgctxt "help:gnuhealth.lab.test.critearea,excluded:"
 msgid "Select this option when this analyte is excluded from the test"
 msgstr "选中后忽略此项"
 
+msgctxt "help:gnuhealth.lab.test.critearea,limits_verified:"
+msgid ""
+"The upper and lower limits have been verified again, sometimes limits will "
+"depend on other indicators of the patient, such as: age, pregnancy status, "
+"etc, so it is very important to verify them, because warning status depend "
+"on limits values."
+msgstr ""
+"参考值上下限的取值已经再次核实，有时候参考值上下限的取值依赖于患者的其他指标，如：年龄、妊娠状态等，因此验证它们非常重要，因为警告状态的设置依赖参考值上下限的取值。"
+
 msgctxt "help:gnuhealth.lab.test.critearea,result_text:"
 msgid ""
 "Non-numeric results. For example qualitative values, morphological, colors "
 "..."
 msgstr "非数字的结果。比如：定性结果，形态，颜色..."
+
+msgctxt "help:gnuhealth.lab.test.critearea,test_method:"
+msgid "Test method, for example: Real-time PCR ..."
+msgstr "检测方法，比如：实时荧光定量PCR ..."
+
+msgctxt "help:gnuhealth.lab.test.critearea,to_integer:"
+msgid "Convert result value to interger in report."
+msgstr "在报告中，将结果转换为整数。"
 
 msgctxt "help:gnuhealth.lab.test.critearea,warning:"
 msgid ""
@@ -326,9 +472,27 @@ msgctxt "help:gnuhealth.lab.test_type,code:"
 msgid "Short name - code for the test"
 msgstr "简称 - 检验项目编码"
 
+msgctxt "help:gnuhealth.lab.test_type,max_age:"
+msgid "Max age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr "最大年龄(岁)，(years x 365 + months x 30.5 + days) / 365"
+
+msgctxt "help:gnuhealth.lab.test_type,min_age:"
+msgid "Min age year, (years x 365 + months x 30.5 + days) / 365"
+msgstr "最小年龄(岁), (years x 365 + months x 30.5 + days) / 365"
+
 msgctxt "help:gnuhealth.lab.test_type,name:"
 msgid "Test type, eg X-Ray, hemogram,biopsy..."
 msgstr "检验类型，如 X光照射, 血常规, 活体组织检验..."
+
+msgctxt "help:gnuhealth.lab.test_type,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr "样本类型，比如：全血、血浆、尿液或粪便 ..."
+
+msgctxt "help:gnuhealth.lab.test_type,tags:"
+msgid ""
+"Tags of test type, which can be used in if directive of report template "
+"file, tags use letters and numbers, separated by colon."
+msgstr "检验类型的标签，这些标签可以在报告模板文件IF指令中使用，标签使用字母和数字，用冒号分隔。"
 
 msgctxt "help:gnuhealth.patient.disease,lab_confirmed:"
 msgid "Confirmed by laboratory test"
@@ -337,6 +501,10 @@ msgstr "实验室检验已确认"
 msgctxt "help:gnuhealth.patient.disease,lab_test:"
 msgid "Lab test that confirmed the condition"
 msgstr "实验室测试证实了这种情况"
+
+msgctxt "help:gnuhealth.patient.lab.test,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
+msgstr "年龄数（年），(years x 365 + months x 30.5 + days) / 365"
 
 msgctxt "help:gnuhealth.patient.lab.test,context:"
 msgid ""
@@ -355,6 +523,14 @@ msgstr "其它样本来源。"
 msgctxt "help:gnuhealth.patient.lab.test,source_type:"
 msgid "Sample source type."
 msgstr "样本来源类型。"
+
+msgctxt "help:gnuhealth.patient.lab.test,specimen_type:"
+msgid "Specimen type, for example: whole blood, plasma, urine or feces ..."
+msgstr "样本类型，比如：全血、血浆、尿液或粪便 ..."
+
+msgctxt "help:gnuhealth.patient.lab.test.request.start,age_num:"
+msgid "Age year number, (years x 365 + months x 30.5 + days) / 365"
+msgstr "年龄数（年），(years x 365 + months x 30.5 + days) / 365"
 
 msgctxt "help:gnuhealth.patient.lab.test.request.start,context:"
 msgid ""
@@ -384,7 +560,7 @@ msgstr "创建检验报告初始化"
 
 msgctxt "model:gnuhealth.lab.test.critearea,name:"
 msgid "Lab Test Critearea"
-msgstr "实验室检验标准"
+msgstr "实验室检验项目"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_agratio0"
@@ -685,8 +861,8 @@ msgid "PDWsd"
 msgstr "红细胞分布宽度标准差"
 
 msgctxt "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_ph0"
-msgid "PH"
-msgstr "PH值"
+msgid "pH"
+msgstr "pH值"
 
 msgctxt ""
 "model:gnuhealth.lab.test.critearea,name:gnuhealth_test_critearea_physicalexamination0"
@@ -873,9 +1049,444 @@ msgctxt ""
 msgid "WBCs"
 msgstr "白细胞计数(WBCs)"
 
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_agratio0"
+msgid "1.5:1-2.5:1"
+msgstr "1.5:1-2.5:1"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_albumin0"
+msgid "3.5-5.5"
+msgstr "3.5-5.5"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_alkalinephosphatase0"
+msgid "<270"
+msgstr "<270"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_bas"
+msgid "0-0.15"
+msgstr "0-0.15"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_bas0"
+msgid "0-2"
+msgstr "0-2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_bilirubin0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_blood0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_blood1"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_clarityappearance0"
+msgid "Clear"
+msgstr "清彻"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_color1"
+msgid "Yellow"
+msgstr "黄色"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_color2"
+msgid "Brown"
+msgstr "棕色"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_consistency0"
+msgid "Well formed"
+msgstr "成形良好"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_creatinine0"
+msgid "0.8-1.3"
+msgstr "0.8-1.3"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_directbilirubin0"
+msgid "<0.2"
+msgstr "<0.2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_eo"
+msgid "0-0.5"
+msgstr "0-0.5"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_eos0"
+msgid "1-6"
+msgstr "1-6"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_esr0"
+msgid "Up to 15"
+msgstr "最多15"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_fsh0"
+msgid ""
+"Follicular Phase: 3.0-12.0; \n"
+"Midcycle: 8.0-22.0; \n"
+"Luteal phase: 2.0-12.0; \n"
+"Post menopausal: 35.0-151;"
+msgstr ""
+"卵泡期: 3.0-12.0; \n"
+"周期中期: 8.0-22.0; \n"
+"黄体期: 2.0-12.0; \n"
+"绝经后: 35.0-151;"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_gammagt0"
+msgid "<55"
+msgstr "<55"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_globulin0"
+msgid "1.5-3.5"
+msgstr "1.5-3.5"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_glucose0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_gra0"
+msgid "2.0-7.5"
+msgstr "2.0-7.5"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_haemoglobin0"
+msgid "11-16.0"
+msgstr "11-16.0"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_hct0"
+msgid "37.0-50"
+msgstr "37.0-50"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_indirectbilirubin0"
+msgid "Up to 0.8"
+msgstr "最多 0.8"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_ketonebodies0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_leucocytes0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_lh0"
+msgid ""
+"Follicular Phase: 0.8-10.5; \n"
+"Midcycle: 18.4-61.2; \n"
+"Luteal phase: 0.8-10.5; \n"
+"Post menopausal: 8.2-40.8;"
+msgstr ""
+"卵泡期: 0.8-10.5; \n"
+"周期中期: 18.4-61.2; \n"
+"黄体期: 0.8-10.5; \n"
+"绝经后: 8.2-40.8;"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_lym0"
+msgid "20-45"
+msgstr "20-45"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_lym1"
+msgid "1.5-4.0"
+msgstr "1.5-4.0"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mch0"
+msgid "27-31"
+msgstr "27-31"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mchc0"
+msgid "32.0-36.0"
+msgstr "32.0-36.0"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mcv0"
+msgid "82-95"
+msgstr "82-95"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mon"
+msgid "0.15-0.70"
+msgstr "0.15-0.70"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mon0"
+msgid "2-10"
+msgstr "2-10"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mpv"
+msgid "6.3-15.0"
+msgstr "6.3-15.0"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_mucus0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_neu"
+msgid "2-7"
+msgstr "2-7"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_neu0"
+msgid "45-70"
+msgstr "45-70"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_nitrites0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_ovacyst0"
+msgid "Absent"
+msgstr "无"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_pct"
+msgid "0.13-0.43"
+msgstr "0.13-0.43"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_ph0"
+msgid "4.5-7.5"
+msgstr "4.5-7.5"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_plt0"
+msgid "150-450"
+msgstr "150-450"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_prolactin0"
+msgid ""
+"Women, non pregnant: 1.2-19.5; \n"
+"Postmenopausal: 1.5-18.5;"
+msgstr ""
+"未怀孕妇女: 1.2-19.5; \n"
+"绝经后: 1.5-18.5;"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_protein0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_puscells0"
+msgid "0-1"
+msgstr "0-1"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_puscells2"
+msgid "1-2"
+msgstr "1-2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rbc0"
+msgid "3.5-5.50"
+msgstr "3.5-5.50"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rbcs1"
+msgid "0-1"
+msgstr "0-1"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rbcs3"
+msgid "0-2"
+msgstr "0-2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rdwcv0"
+msgid "11.5-14.5"
+msgstr "11.5-14.5"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_rdwsd0"
+msgid "35-56"
+msgstr "35-56"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_sgot0"
+msgid "<40"
+msgstr "<40"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_sgpt0"
+msgid "<40"
+msgstr "<40"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_specificgravity0"
+msgid "103-130"
+msgstr "103-130"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_testosterone0"
+msgid ""
+"Sexually mature women: 0.6; \n"
+"Postmenopause: 0.8;"
+msgstr ""
+"性成熟女性: 0.6; \n"
+"绝经后: 0.8;"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_totalbilirubin0"
+msgid "0.3-1.2"
+msgstr "0.3-1.2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_totalcount0"
+msgid "60-150"
+msgstr "60-150"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_totalprotein0"
+msgid "6.4-8.3"
+msgstr "6.4-8.3"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_tsh0"
+msgid "0.3-6.2"
+msgstr "0.3-6.2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_urea0"
+msgid "13-43"
+msgstr "13-43"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_uricacid0"
+msgid "3.5-7.2"
+msgstr "3.5-7.2"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_urobilinogen0"
+msgid "Negative"
+msgstr "阴性"
+
+msgctxt ""
+"model:gnuhealth.lab.test.critearea,normal_range:gnuhealth_test_critearea_wbc0"
+msgid "4.5-11"
+msgstr "4.5-11"
+
 msgctxt "model:gnuhealth.lab.test.units,name:"
 msgid "Lab Test Units"
 msgstr "实验室检验计量单位"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_0"
+msgid "%"
+msgstr "%"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_Tera_L"
+msgid "10^12/L"
+msgstr "10^12/L"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_aTU_ml"
+msgid "aTU/ml"
+msgstr "aTU/ml"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_fl0"
+msgid "fl"
+msgstr "fl"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_g_L"
+msgid "g/L"
+msgstr "g/L"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_giga_L"
+msgid "10^9/L"
+msgstr "10^9/L"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_gmdl0"
+msgid "g/dL"
+msgstr "g/dL"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_hpf0"
+msgid "/hpf"
+msgstr "/hpf"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_iul0"
+msgid "IU/l"
+msgstr "IU/l"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mgdl0"
+msgid "mg/dl"
+msgstr "mg/dl"
+
+msgctxt ""
+"model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_millionscc0"
+msgid "Millions/cc"
+msgstr "Millions/cc"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_miul0"
+msgid "mIU/l"
+msgstr "mIU/l"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mmhr0"
+msgid "mm/hr"
+msgstr "mm/hr"
+
+msgctxt ""
+"model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mmol_24h"
+msgid "mmol/24h"
+msgstr "mmol/24h"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_mmol_L"
+msgid "mmol/L"
+msgstr "mmol/L"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ngml0"
+msgid "ng/ml"
+msgstr "ng/ml"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_pg0"
+msgid "pg"
+msgstr "pg"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_pgml0"
+msgid "pg/ml"
+msgstr "pg/ml"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ul0"
+msgid "10^6/uL"
+msgstr "10^6/uL"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ul1"
+msgid "10^3/uL"
+msgstr "10^3/uL"
+
+msgctxt "model:gnuhealth.lab.test.units,name:gnuhealth_lab_test_units_ul2"
+msgid "U/L"
+msgstr "U/L"
 
 msgctxt "model:gnuhealth.lab.test_type,name:"
 msgid "Type of Lab test"
@@ -972,8 +1583,16 @@ msgid "Lab Report"
 msgstr "检验报告"
 
 msgctxt "model:ir.model.button,string:complete_criteareas_button"
-msgid "Complete Criteareas"
-msgstr "补全检验项目明细"
+msgid "Load analytes criteria"
+msgstr "加载检验项目"
+
+msgctxt "model:ir.model.button,string:labtest_generate_button"
+msgid "Done"
+msgstr "已完成"
+
+msgctxt "model:ir.model.button,string:labtest_setdraft_button"
+msgid "Draft"
+msgstr "草案"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_lab_request"
 msgid "Lab Request"
@@ -1024,44 +1643,44 @@ msgid "Lab Services"
 msgstr "实验室检验服务"
 
 msgctxt "model:product.template,name:product_template_bloodcounttestcharges0"
-msgid "Blood count test charges"
-msgstr "血球计数检验费"
+msgid "Complete Blood Count"
+msgstr "全血细胞计数"
 
 msgctxt "model:product.template,name:product_template_endocrinology0"
 msgid "Endocrinology"
 msgstr "内分泌"
 
 msgctxt "model:product.template,name:product_template_haematologycharges0"
-msgid "Haematology Charges"
-msgstr "血液收费"
+msgid "Haematology"
+msgstr "血液学"
 
 msgctxt ""
 "model:product.template,name:product_template_liverfunctiontestcharges0"
-msgid "Liver Function test charges"
-msgstr "肝功能检验费"
+msgid "Liver Function"
+msgstr "肝功能"
 
 msgctxt ""
 "model:product.template,name:product_template_peripheralsmearexaminationcharges0"
-msgid "Peripheral Smear Examination Charges"
-msgstr "外周血涂片检验费"
+msgid "Peripheral Smear Examination"
+msgstr "外周血涂片检查"
 
 msgctxt ""
 "model:product.template,name:product_template_renalfunctiontestcharges0"
-msgid "Renal Function test charges"
-msgstr "肾功能检验费"
+msgid "Renal Function"
+msgstr "肾功能"
 
 msgctxt "model:product.template,name:product_template_semenanalysischarges0"
-msgid "Semen Analysis Charges"
-msgstr "精液分析费"
+msgid "Semen Analysis"
+msgstr "精液分析"
 
 msgctxt ""
 "model:product.template,name:product_template_stoolexaminationcharges0"
-msgid "Stool Examination Charges"
-msgstr "粪便检验费"
+msgid "Stool Examination"
+msgstr "粪便检查"
 
 msgctxt "model:product.template,name:product_template_urineanalysischarges0"
-msgid "Urine Analysis charges"
-msgstr "尿液分析费"
+msgid "Urine Analysis"
+msgstr "尿液分析"
 
 msgctxt "model:res.group,name:group_health_lab"
 msgid "Health Lab"
@@ -1077,23 +1696,27 @@ msgstr "年龄:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Analyte"
-msgstr "分析物"
+msgstr "分析项目"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Date:"
-msgstr "日期:"
+msgid "Comment"
+msgstr "说明"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Diagnosis:"
 msgstr "诊断:"
 
 msgctxt "report:patient.labtest.report:"
-msgid "Doctor:"
-msgstr "医师:"
-
-msgctxt "report:patient.labtest.report:"
 msgid "Gender:"
 msgstr "性别:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Hosp. Unit:"
+msgstr "科室/病区:"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Image"
+msgstr "图片"
 
 msgctxt "report:patient.labtest.report:"
 msgid "LABORATORY REPORT"
@@ -1104,12 +1727,16 @@ msgid "Name:"
 msgstr "姓名:"
 
 msgctxt "report:patient.labtest.report:"
+msgid "Order Date:"
+msgstr "申请日期:"
+
+msgctxt "report:patient.labtest.report:"
 msgid "Order:"
 msgstr "申请编号:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Pathologist:"
@@ -1122,6 +1749,10 @@ msgstr "参考值范围"
 msgctxt "report:patient.labtest.report:"
 msgid "Remarks"
 msgstr "备注"
+
+msgctxt "report:patient.labtest.report:"
+msgid "Req. by:"
+msgstr "申请人:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Results"
@@ -1140,16 +1771,16 @@ msgid "Source:"
 msgstr "样本来源:"
 
 msgctxt "report:patient.labtest.report:"
+msgid "Test Date:"
+msgstr "检验日期:"
+
+msgctxt "report:patient.labtest.report:"
 msgid "Test:"
 msgstr "检验项目:"
 
 msgctxt "report:patient.labtest.report:"
 msgid "Unit"
 msgstr "计量单位"
-
-msgctxt "report:patient.labtest.report:"
-msgid "Value"
-msgstr "测量值"
 
 msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Other"
@@ -1158,6 +1789,86 @@ msgstr "其它"
 msgctxt "selection:gnuhealth.lab,source_type:"
 msgid "Patient"
 msgstr "患者"
+
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Done"
+msgstr "完成"
+
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Draft"
+msgstr "草案"
+
+msgctxt "selection:gnuhealth.lab,state:"
+msgid "Validated"
+msgstr "已审核"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Biochemical Testing"
+msgstr "生物化学检验"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Body Fluid and Excreta Examination"
+msgstr "体液和排泄物检查"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Chromosome and Genetic Disease Detection"
+msgstr "染色体和遗传性疾病基因检测"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Hematology Testing"
+msgstr "血液学检验"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Immunological Testing"
+msgstr "免疫学检验"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Microbiological Testing"
+msgstr "微生物学检验"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Molecular Biology Testing"
+msgstr "分子生物学检验"
+
+msgctxt "selection:gnuhealth.lab.test_type,category:"
+msgid "Others"
+msgstr "其它"
+
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Female"
+msgstr "女性"
+
+msgctxt "selection:gnuhealth.lab.test_type,gender:"
+msgid "Male"
+msgstr "男性"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Do not show in report"
+msgstr "在报告中不显示"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Do not use table"
+msgstr "不使用表格"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result and normal_range columns"
+msgstr "表格，包含结果列和参考值范围列"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result column"
+msgstr "表格，包含结果列"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result column (no header)"
+msgstr "表格，包含结果列 (无表头)"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result column and inline images (no header)"
+msgstr "表格，包含结果列并配图片 (无表头)"
+
+msgctxt "selection:gnuhealth.lab.test_type,report_style:"
+msgid "Table with result, unit and normal_range columns"
+msgstr "表格，包含结果列、计量单位列和参考值范围列"
 
 msgctxt "selection:gnuhealth.patient.lab.test,source_type:"
 msgid "Other"
@@ -1200,8 +1911,16 @@ msgid "Do you want to generate the test(s) ?"
 msgstr "是否要创建检验项目？"
 
 msgctxt "view:gnuhealth.lab.test.critearea:"
+msgid "Excl"
+msgstr "忽略此项"
+
+msgctxt "view:gnuhealth.lab.test.critearea:"
 msgid "Reference Value / Range"
 msgstr "参考值 / 范围"
+
+msgctxt "view:gnuhealth.lab.test_type:"
+msgid "Age range:"
+msgstr "年龄区间:"
 
 msgctxt "view:gnuhealth.lab.test_type:"
 msgid "Extra Info"
@@ -1212,24 +1931,41 @@ msgid "Main Info"
 msgstr "主要信息"
 
 msgctxt "view:gnuhealth.lab:"
-msgid "Complete Criteareas"
-msgstr "补全检验项目明细"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Complete criteareas of current test type."
-msgstr "补全当前检验项目明细。"
+msgid "Are the results ready ?"
+msgstr "检验结果准备就绪了吗？"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Diagnosis"
 msgstr "诊断"
 
 msgctxt "view:gnuhealth.lab:"
-msgid "Do your want to complete criteareas of current test type?"
-msgstr "你确定要补全当前检验项目明细吗？"
+msgid ""
+"Do your want to fill in the analytes criteria with this test type template?"
+msgstr "你确定要按照当前检验类型填写检验项目吗？"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Done"
+msgstr "完成"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Draft"
+msgstr "草案"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Extra Info"
 msgstr "其它信息"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Fill the criteria for current test type analytes"
+msgstr "填写当前检验项目。"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Images"
+msgstr "图片"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Load analytes criteria"
+msgstr "加载检验项目"
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Main Info"
@@ -1238,6 +1974,22 @@ msgstr "主要信息"
 msgctxt "view:gnuhealth.lab:"
 msgid "Notes"
 msgstr "说明"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Reverse the document to draft state."
+msgstr "将当前文档回退为草稿状态。"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Set to Draft ?"
+msgstr "设为草案？"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "Signatures"
+msgstr "签名"
+
+msgctxt "view:gnuhealth.lab:"
+msgid "The lab test is done and results are waiting to be validated"
+msgstr "实验室检验项目已经完成，检验结果正在等待审核"
 
 msgctxt "view:gnuhealth.patient.disease:"
 msgid "Laboratory"

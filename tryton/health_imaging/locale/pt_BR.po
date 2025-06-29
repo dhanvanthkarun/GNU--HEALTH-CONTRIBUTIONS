@@ -36,9 +36,10 @@ msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "Data"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Profissional de Saúde"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
@@ -98,13 +99,17 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "Paciente"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "Data Solicitada"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
@@ -127,9 +132,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "Data"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Profissional de Saúde"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
@@ -422,9 +428,10 @@ msgctxt "model:res.group,name:group_health_imaging_admin"
 msgid "Health Imaging Administration"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.imaging_report_results:"
 msgid "Age:"
-msgstr ""
+msgstr "Idade:"
 
 #, fuzzy
 msgctxt "report:patient.imaging_report_results:"
@@ -471,9 +478,10 @@ msgctxt "report:patient.imaging_report_results:"
 msgid "PUID:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:patient.imaging_report_results:"
 msgid "Patient:"
-msgstr ""
+msgstr "Paciente:"
 
 #, fuzzy
 msgctxt "report:patient.imaging_report_results:"
@@ -506,6 +514,18 @@ msgstr "Rascunho"
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.request:"

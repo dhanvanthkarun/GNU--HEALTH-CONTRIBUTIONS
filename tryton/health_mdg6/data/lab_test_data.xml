@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -14,14 +14,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_bacilloscopy_ZN_analysischarges0" model="product.template">
             <field name="name">Ziehl Neelsen Bacilloscopy Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_bacilloscopy_FL_analysischarges0" model="product.template">
             <field name="name">Fluorescent Bacilloscopy Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -29,28 +27,24 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_culture_lj_analysischarges0" model="product.template">
             <field name="name">Lowenstein-Jensen Culture Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_bactec_culture_analysischarges0" model="product.template">
             <field name="name">BACTEC Culture Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_xpert_mtb_rif_analysischarges0" model="product.template">
             <field name="name">Xpert MTB-RIF Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_ppd_analysischarges0" model="product.template">
             <field name="name">Purified Protein Derivative - PPD Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -60,14 +54,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record id="product_template_western_blot_analysischarges0" model="product.template">
             <field name="name">Western Blot Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_ELISA_analysischarges0" model="product.template">
             <field name="name">HIV ELISA Analysis Charges</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -189,12 +181,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field eval="&quot;&quot;&quot;Induration Size&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_ppd_analysis0"/>
-            <field eval="&quot;&quot;&quot;
-Immunocompetent              : &lt; 15 mm
-Immunocompromised        : &lt; 5 mm
-&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Immunocompetent: 15 mm;
+\nImmunocompromised: 5 mm;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="15" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_mm"/>
         </record>
 
@@ -312,13 +303,12 @@ Immunocompromised        : &lt; 5 mm
             <field eval="&quot;&quot;&quot;HIV-1&quot;&quot;&quot;" name="name"/>
             <field eval="&quot;&quot;&quot;HIV-1&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
-            <field eval="&quot;&quot;&quot;
-Negative              : &lt; 1 s/co
-Borderline        : 0-4 s/co
-Positive          : &gt; 4 s/co
-&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Negative: 1 s/co;
+\nBorderline: 0-4 s/co;
+\nPositive: 4 s/co;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="1" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
             <field name="test_type_id" ref="gnuhealth_test_ELISA_CMIA_analysis0"/>
         </record>
@@ -327,12 +317,11 @@ Positive          : &gt; 4 s/co
             <field eval="&quot;&quot;&quot;HIV-2&quot;&quot;&quot;" name="name"/>
             <field eval="&quot;&quot;&quot;HIV-2&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
-            <field eval="&quot;&quot;&quot;
-Negative              : &lt; 1 s/co
-Borderline        : &lt; 0-4 s/co
-&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Negative: 1 s/co;
+\nBorderline: 0-4 s/co;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="1" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
             <field name="test_type_id" ref="gnuhealth_test_ELISA_CMIA_analysis0"/>
         </record>

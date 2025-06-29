@@ -35,7 +35,7 @@ msgid "Date"
 msgstr "日期"
 
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
+msgid "Health Prof"
 msgstr "医生"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
@@ -94,12 +94,16 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "患者"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr "报告样式"
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr "申请信息"
 
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "申请日期"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
@@ -123,7 +127,7 @@ msgid "Date"
 msgstr "日期"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
+msgid "Health Prof"
 msgstr "医生"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
@@ -213,7 +217,7 @@ msgstr "医学影像检查类型"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_cr"
 msgid "Computed Radiography"
-msgstr ""
+msgstr "计算机射线成像系统"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ctscan"
 msgid "Computed Tomography"
@@ -221,7 +225,7 @@ msgstr "计算机断层扫描"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_dx"
 msgid "Digital Radiography"
-msgstr ""
+msgstr "数字放射摄影系统"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_mri"
 msgid "Magnetic Resonance"
@@ -238,12 +242,11 @@ msgstr "超声"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xa"
 msgid "X-Ray Angiography"
-msgstr ""
+msgstr "X射线血管造影"
 
-#, fuzzy
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
 msgid "X-ray"
-msgstr "X射线血管造影"
+msgstr "X射线"
 
 msgctxt "model:gnuhealth.patient.imaging.test.request.start,name:"
 msgid "Request Patient Imaging Test Start"
@@ -447,7 +450,7 @@ msgstr "申请编号:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Patient:"
@@ -484,6 +487,18 @@ msgstr "草案"
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr "已申请"
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr "默认"
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr "无图片说明"
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr "无图片"
 
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Generate Results"

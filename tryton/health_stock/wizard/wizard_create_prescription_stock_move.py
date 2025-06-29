@@ -1,8 +1,8 @@
-# Copyright (C) 2008-2024 Luis Falcon <lfalcon@gnusolidario.org>
-# Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2025 Luis Falcon <lfalcon@gnusolidario.org>
+# Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 # Copyright (C) 2013  Sebastian Marro <smarro@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2013 Sebastian Marro <smarro@thymbra.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -12,6 +12,7 @@ from trytond.model import ModelView
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.i18n import gettext
+from trytond.modules.health.core import get_institution_currency
 from ..exceptions import (StockMoveExists, NoPharmacy)
 
 __all__ = ['CreatePrescriptionStockMoveInit', 'CreatePrescriptionStockMove']
@@ -49,28 +50,31 @@ class CreatePrescriptionStockMove(Wizard):
             if prescription.moves:
                 raise StockMoveExists(
                     gettext('health_stock.msg_stock_move_exists')
-                    )
+                )
 
             if not prescription.pharmacy:
                 raise NoPharmacy(
                     gettext('health_stock.msg_no_pharmacy')
-                    )
+                )
 
             from_location = prescription.pharmacy.warehouse
             if from_location.type == 'warehouse':
                 from_location = from_location.storage_location
-            to_location = prescription.patient.name.customer_location
+            to_location = prescription.patient.party.customer_location
 
             for line in prescription.prescription_line:
                 move = StockMove()
                 move.origin = prescription
                 move.from_location = from_location
                 move.to_location = to_location
-                move.product = line.medicament.name
-                move.unit_price = line.medicament.name.list_price
-                move.cost_price = line.medicament.name.cost_price
+                move.product = line.medicament.product
+                move.unit_price = line.medicament.product.list_price
+                move.cost_price = line.medicament.product.cost_price
                 move.quantity = line.quantity
-                move.uom = line.medicament.name.default_uom
+                move.unit = line.medicament.product.default_uom
+                # Get the Institution (company) currency
+                move.currency = get_institution_currency()
+
                 moves.append(move)
         StockMove.save(moves)
         StockMove.do(moves)

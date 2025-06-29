@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -28,9 +28,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     </group>
     <group string="Risk assessment" id="group_preop_risk" colspan="4">
         <label name="preop_asa"/>
-        <field name="preop_asa"/>
+        <field name="preop_asa" colspan="3"/>
         <label name="preop_mallampati"/>
-        <field name="preop_mallampati"/>
+        <field name="preop_mallampati" colspan="3"/>
         <label name="preop_rcri"/>
         <field name="preop_rcri"/>
         <label name="surgical_wound"/>

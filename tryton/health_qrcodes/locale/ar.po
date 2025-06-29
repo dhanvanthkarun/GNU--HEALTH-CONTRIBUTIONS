@@ -2,16 +2,18 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-#, fuzzy
+msgctxt "field:gnuhealth.appointment,barcode:"
+msgid "Code39"
+msgstr "الرمز39"
+
 msgctxt "field:gnuhealth.appointment,qr:"
 msgid "QR Code"
 msgstr "رمز QR"
 
 msgctxt "field:gnuhealth.lab,bar:"
 msgid "Bar Code39"
-msgstr ""
+msgstr "باركود39"
 
-#, fuzzy
 msgctxt "field:gnuhealth.lab,qr:"
 msgid "QR Code"
 msgstr "رمز QR"
@@ -22,7 +24,7 @@ msgstr "رمز QR"
 
 msgctxt "field:gnuhealth.patient,barcode:"
 msgid "Code39"
-msgstr ""
+msgstr "الرمز39"
 
 msgctxt "field:gnuhealth.patient,qr:"
 msgid "QR Code"
@@ -30,19 +32,19 @@ msgstr "رمز QR"
 
 msgctxt "field:party.party,barcode:"
 msgid "Code39"
-msgstr ""
+msgstr "الرمز39"
 
 msgctxt "model:ir.action,name:report_appointment_qrcode"
 msgid "Appointment QRCODE"
-msgstr ""
+msgstr "رمز QR للموعد"
 
 msgctxt "model:ir.action,name:report_labtest_barcode39"
 msgid "Code39 barcode label"
-msgstr ""
+msgstr "عنوان رمز باركود39"
 
 msgctxt "model:ir.action,name:report_labtest_qrcode"
 msgid "Test Labels"
-msgstr ""
+msgstr "عناوين الفحوصات"
 
 msgctxt "model:ir.action,name:report_newborn_qrcard"
 msgid "Newborn ID - QR"
@@ -50,7 +52,7 @@ msgstr "معرف المولود - QR"
 
 msgctxt "model:ir.action,name:report_party_wristband"
 msgid "Wristbands"
-msgstr ""
+msgstr "السوارات اليدوية"
 
 msgctxt "model:ir.action,name:report_patient_qrcard"
 msgid "ID Cards - QR"
@@ -58,139 +60,132 @@ msgstr "بطاقات الهوية - QR"
 
 msgctxt "model:ir.action,name:report_patient_wristband"
 msgid "Wristbands"
-msgstr ""
+msgstr "السوارات اليدوية"
 
-#, fuzzy
+msgctxt "report:appointment.qrcodel:"
+msgid "APPT ID:"
+msgstr "رقم الموعد:"
+
 msgctxt "report:appointment.qrcodel:"
 msgid "Appointment Receipt"
 msgstr "إيصال الموعد"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Apporintment #"
-msgstr ""
-
-msgctxt "report:appointment.qrcodel:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Health Professional:"
-msgstr ""
+msgid "Extra Info:"
+msgstr "معلومات اضافية:"
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Health Prof:"
+msgstr "الطبيب المختص:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Institution:"
-msgstr ""
-
-msgctxt "report:appointment.qrcodel:"
-msgid "Instructions / Notes:"
-msgstr ""
+msgstr "المؤسسة:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Specialty:"
-msgstr ""
+msgstr "الاختصاص:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "You must present this receipt and your PUID"
-msgstr ""
+msgstr "يجب تقديم هذا الايصال ورقم المريض"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "Cap label"
-msgstr ""
+msgstr "عنوان Cap"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "Extraction date:"
-msgstr ""
+msgstr "تاريخ الاستخراج:"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "ID:"
-msgstr ""
+msgstr "الرقم:"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "Req by:"
-msgstr ""
+msgstr "طلب من قبل:"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "Source:"
-msgstr ""
+msgstr "المصدر:"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "Test:"
-msgstr ""
+msgstr "التحليل:"
 
-#, fuzzy
 msgctxt "report:newborn.qrcard:"
 msgid "DoB:"
 msgstr "تاريخ الميلاد:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Ht / Wt:"
-msgstr ""
+msgstr "الطول/الوزن:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Mother ID:"
-msgstr ""
+msgstr "رقم الام:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Mother:"
-msgstr ""
+msgstr "الام:"
 
-#, fuzzy
 msgctxt "report:newborn.qrcard:"
 msgid "Name:"
 msgstr "الاسم:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Sex:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "photo"
-msgstr ""
+msgstr "الصورة"
 
-#, fuzzy
 msgctxt "report:party.wristband:"
-msgid "("
-msgstr ")"
-
-#, fuzzy
-msgctxt "report:party.wristband:"
-msgid ")"
-msgstr "("
+msgid ","
+msgstr ","
 
 msgctxt "report:patient.qrcard:"
 msgid "Blood Type:"
-msgstr ""
+msgstr "زمرة الدم:"
 
-#, fuzzy
 msgctxt "report:patient.qrcard:"
 msgid "DoB:"
 msgstr "تاريخ الميلاد:"
 
 msgctxt "report:patient.qrcard:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
-#, fuzzy
 msgctxt "report:patient.qrcard:"
 msgid "Name:"
 msgstr "الاسم:"
 
 msgctxt "report:patient.qrcard:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:patient.qrcard:"
 msgid "photo"
-msgstr ""
+msgstr "الصورة"
+
+msgctxt "report:patient.wristband:"
+msgid ","
+msgstr ","

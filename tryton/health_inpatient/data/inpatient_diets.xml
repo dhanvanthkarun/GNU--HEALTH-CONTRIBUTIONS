@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record model="gnuhealth.diet.therapeutic" id="NPO">
-            <field name="name">Nothing by Mouth / NPO </field>
+            <field name="name">Nothing by Mouth / NPO</field>
             <field name="code">NPO</field>
             <field name="description">Nil per Os. Withhold oral food and fluids from the patient</field>
         </record>

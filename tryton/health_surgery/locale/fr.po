@@ -1,10 +1,14 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr "Chirurgie"
+msgstr ""
+"PO-Revision-Date: 2025-05-03 14:53+0000\n"
+"Last-Translator: milimarg <milimarg@noreply.codeberg.org>\n"
+"Language-Team: French <https://translate.codeberg.org/projects/gnuhealth/health_surgery/fr/>\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
@@ -14,15 +18,18 @@ msgctxt "field:gnuhealth.operation,procedure:"
 msgid "Code"
 msgstr "Code"
 
-#, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "Chirurgie"
+
 msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
 msgstr "Commentaires"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,health_condition:"
-msgid "Health Condition"
-msgstr "Affection"
+msgid "Condition"
+msgstr "Maladie"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
@@ -34,9 +41,10 @@ msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
 msgstr "Institution"
 
-msgctxt "field:gnuhealth.or.schedule,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
-msgstr ""
+msgstr "Salle d'Opération"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,patient:"
@@ -183,7 +191,7 @@ msgstr "N'utilisez PAS d'anesthésie"
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "Salle d'Opération"
 
 #, fuzzy
@@ -201,10 +209,9 @@ msgctxt "field:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid "Risk of Massive bleeding"
 msgstr "Risque de saignement massif"
 
-#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_mallampati:"
-msgid "Mallampati Score"
-msgstr "Score de Mallampati"
+msgid "Mallampati"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -240,11 +247,11 @@ msgid "Surgical wound"
 msgstr "Plaie chirurgicale"
 
 msgctxt "field:gnuhealth.rcri,health_professional:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "Professionnel de santé"
 
 msgctxt "field:gnuhealth.rcri,patient:"
-msgid "Patient ID"
+msgid "Patient"
 msgstr "ID Patient"
 
 msgctxt "field:gnuhealth.rcri,rcri_cerebrovascular_history:"
@@ -361,6 +368,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "Sexe"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "Procédure principale"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "Établissement"
@@ -374,13 +386,13 @@ msgid "Main Procedure"
 msgstr "Procédure principale"
 
 msgctxt "field:gnuhealth.surgery,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "Salle d'Opération"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery,pathology:"
-msgid "Health Condition"
-msgstr "Affection"
+msgid "Condition"
+msgstr "Maladie"
 
 msgctxt "field:gnuhealth.surgery,patient:"
 msgid "Patient"
@@ -476,6 +488,11 @@ msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "Durée"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "Procédures"
+
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
 msgstr "Membres de l'équipe"
@@ -493,11 +510,6 @@ msgid "Complication"
 msgstr "Complication"
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr "Chirurgie"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
 msgstr "Gravité"
@@ -507,19 +519,24 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "Remarques"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "Chirurgie"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr "Drainage"
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
-msgstr "Chirurgie"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "Notes"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "Chirurgie"
 
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Anesthesia"
@@ -564,8 +581,8 @@ msgstr "Nom"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,pathology:"
-msgid "Health Condition"
-msgstr "Affection"
+msgid "Condition"
+msgstr "Maladie"
 
 msgctxt "field:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Patient Positioning"
@@ -578,10 +595,6 @@ msgstr "Directives postopératoires"
 msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr "Intervention chirurgicale"
-
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr "Chirurgie"
 
 msgctxt "field:gnuhealth.surgery_supply,notes:"
 msgid "Notes"
@@ -599,7 +612,8 @@ msgctxt "field:gnuhealth.surgery_supply,supply:"
 msgid "Supply"
 msgstr "Matériel"
 
-msgctxt "field:gnuhealth.surgery_team,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
 msgstr "Chirurgie"
 
@@ -610,6 +624,11 @@ msgstr "Notes"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "Rôle"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "Chirurgie"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -627,7 +646,7 @@ msgstr "Affection de base / Raison"
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,healthprof:"
 msgid "Health Professional"
-msgstr "Professionnel de Santé"
+msgstr "Professionnel de santé"
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,institution:"
@@ -635,9 +654,9 @@ msgid "Health Care Institution"
 msgstr "Établissement de santé"
 
 #, fuzzy
-msgctxt "help:gnuhealth.or.schedule,name:"
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
-msgstr "Salle d'Opération"
+msgstr "Salle d'opération"
 
 #, fuzzy
 msgctxt "help:gnuhealth.or.schedule,patient:"
@@ -698,6 +717,11 @@ msgid "The patient is not eligible to be anesthetized"
 msgstr "Le patient n'est pas éligible à l'anesthésie"
 
 #, fuzzy
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "Salle d'opération"
+
+#, fuzzy
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA pre-operative Physical Status"
 msgstr "ASA Statut Physique Préopératoire"
@@ -711,6 +735,10 @@ msgstr ""
 "Le patient a un risque de perdre plus de 500 ml chez les adultes, et plus de"
 " 7 ml / kg chez les nourrissons. Si c'est les cas, assurez-vous que l'accès "
 "intraveineux et les liquides sont disponibles"
+
+msgctxt "help:gnuhealth.preoperative_assessment,preop_mallampati:"
+msgid "Mallampati Score"
+msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -753,18 +781,12 @@ msgstr ""
 
 msgctxt "help:gnuhealth.rcri,rcri_ischemic_history:"
 msgid ""
-"history of MI or a positive exercise test, current         complaint of "
-"chest pain considered to be secondary to myocardial         ischemia, use of"
-" nitrate therapy, or ECG with pathological         Q waves; do not count "
-"prior coronary revascularization procedure         unless one of the other "
-"criteria for ischemic heart disease is         present"
+"history of MI or a positive exercise test, current complaint of chest pain "
+"considered to be secondary to myocardial ischemia, use of nitrate therapy, "
+"or ECG with pathological Q waves; do not count prior coronary "
+"revascularization procedure unless one of the other criteria for ischemic "
+"heart disease is present."
 msgstr ""
-"antécédents d'infarctus du myocarde ou test d’exercice positif, en "
-"cours..........plainte de douleur à la poitrine considérée comme secondaire "
-"au myocarde ............ischémie, traitement par les nitrates ou ECG avec "
-"pathologie .......... Ondes Q; ne comptez pas la procédure antérieure de "
-"revascularisation coronaire ......... sauf si l'un des autres critères de "
-"cardiopathie ischémique est ......... présent"
 
 msgctxt "help:gnuhealth.rcri,rcri_kidney_history:"
 msgid "Preoperative serum creatinine >2.0 mg/dL (177 mol/L)"
@@ -784,11 +806,8 @@ msgstr ""
 
 msgctxt "help:gnuhealth.surgery,age:"
 msgid ""
-"Use this field for historical purposes,         when no date of surgery is "
-"given"
+"Use this field for historical purposes, when no date of surgery is given"
 msgstr ""
-"Utilisez ce champ à des fins historiques, lorsque aucune date d'opération "
-"n'est donnée"
 
 msgctxt "help:gnuhealth.surgery,anesthetist:"
 msgid "Anesthetist in charge"
@@ -841,6 +860,18 @@ msgstr ""
 "Temps en minutes du processus chirurgical. Cette valeur est facultative et "
 "est utilisée lorsque la durée de chirurgie calculée automatiquement ne "
 "reflète pas le temps réel ou qu'elle a été enregistrée par la suite."
+
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
+msgstr "Salle d'opération"
 
 msgctxt "help:gnuhealth.surgery,pathology:"
 msgid "Base Condition / Reason"
@@ -918,14 +949,20 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "Durée de la chirurgie"
 
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr "Procédures / Interventions réalisées au opération"
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr "Professionnels intervenant dans la chirgurgie"
 
+#, fuzzy
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 "Ce code reflète l'intervention principale de cette chirurgie. Des procédures"
 " supplémentaires peuvent être saisies dans l'onglet procédures."
@@ -1182,10 +1219,6 @@ msgctxt "model:res.group,name:group_health_surgery_admin"
 msgid "Health Surgery Administration"
 msgstr "Administration Chirurgie"
 
-msgctxt "report:preoperative_assessment:"
-msgid ","
-msgstr ","
-
 #, fuzzy
 msgctxt "report:preoperative_assessment:"
 msgid "ALLERGIC"
@@ -1226,7 +1259,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "report:preoperative_assessment:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "Professionnel de Santé"
 
 msgctxt "report:preoperative_assessment:"
@@ -1728,6 +1761,10 @@ msgid "3"
 msgstr "3"
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "5"
 msgstr "5"
 
@@ -1785,14 +1822,11 @@ msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "PS 3 : Patients with severe systemic disease"
 msgstr "PS 3 : Patients présentant une maladie systémique sévère"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
 msgid ""
 "PS 4 : Patients with severe systemic disease that is a constant threat to "
-"life "
+"life"
 msgstr ""
-"PS 4 : Patients présentant une maladie systémique sévère mettant sa vie en "
-"danger "
 
 #, fuzzy
 msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
@@ -1867,11 +1901,6 @@ msgstr "Contaminé . Catégorie III"
 msgctxt "selection:gnuhealth.preoperative_assessment,surgical_wound:"
 msgid "Dirty-Infected . Class IV"
 msgstr "Sale - infecté . Catégorie IV"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.rcri,rcri_class:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.rcri,rcri_class:"
 msgid "I"
@@ -1956,11 +1985,6 @@ msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "other"
 msgstr "autre"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.surgery,classification:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Emergency"
 msgstr "Urgence"
@@ -1994,6 +2018,10 @@ msgid "Grade IIIa"
 msgstr "Classe IIIa"
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
+msgid "Grade IIIb"
+msgstr ""
+
+msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade IV"
 msgstr "Classe IV"
 
@@ -2008,11 +2036,6 @@ msgstr "Classé IVb"
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade V"
 msgstr "Classe V"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.surgery,gender:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.surgery,gender:"
 msgid "Female"
@@ -2122,11 +2145,6 @@ msgstr "En Cours"
 msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Signed"
 msgstr "Signé"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.surgery,surgical_wound:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.surgery,surgical_wound:"
 msgid "Clean . Class I"

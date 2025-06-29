@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -78,6 +78,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
         <record model="ir.model.access" id="access_health_appointment_admin">
             <field name="model" search="[('model', '=', 'gnuhealth.appointment')]"/>
+            <field name="group" ref="group_health_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_procedures_config_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.procedures.config')]"/>
             <field name="group" ref="group_health_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -393,6 +402,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_delete" eval="True"/>
         </record>
 
+        <record model="ir.model.access" id="access_online_document_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.online_document')]"/>
+            <field name="group" ref="group_health_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
 
 <!-- END OF ADMINISTRATION GROUP ACCESS RIGHTS -->
 
@@ -683,7 +700,94 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_delete" eval="False"/>
         </record>
 
+        <record model="ir.model.access" id="access_health_online_document">
+            <field name="model" search="[('model', '=', 'gnuhealth.online_document')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
 <!-- END OF DEFAULT ACCESS RIGHTS -->
+
+<!-- BEGIN NURSING GROUP ACCESS RIGHTS -->
+
+<!-- BEGIN NURSING ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+<!-- Create the Health Nursing Administration group -->
+        <record model="res.group" id="group_health_nursing_admin">
+            <field name="name">Health Nurse Administration</field>
+        </record>
+
+<!-- Create the Nurse group -->
+        <record model="res.group" id="group_health_nursing">
+            <field name="name">Health Nurse</field>
+        </record>
+
+
+<!-- Assign the Group to the "admin" user -->
+
+        <record model="res.user-res.group" id="user_admin_group_health_nursing">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_health_nursing_admin"/>
+        </record>
+
+<!-- Access to Menus -->
+        <record model="ir.ui.menu-res.group" id="menu_health_group_health_nursing">
+            <field name="menu" ref="health.gnuhealth_menu"/>
+            <field name="group" ref="group_health_nursing"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_patients_group_health_nursing">
+            <field name="menu" ref="health.gnuhealth_patients_menu"/>
+            <field name="group" ref="group_health_nursing"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_health_group_health_nursing_admin">
+            <field name="menu" ref="gnuhealth_nursing_menu"/>
+            <field name="group" ref="group_health_nursing_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_health_nursing_group_health_nursing">
+            <field name="menu" ref="gnuhealth_nursing_menu"/>
+            <field name="group" ref="group_health_nursing"/>
+        </record>
+
+<!-- Create the demo_nurse user -->
+        <record model="res.user" id="user_demo_nurse">
+            <field name="name">Health Nurse</field>
+            <field name="login">demo_nurses</field>
+            <field name="password">gnusolidario</field>
+            <field name="active" eval="False"></field>
+        </record>
+
+
+<!-- Assign the Group to the "demo_nurse" user -->
+
+        <record model="res.user-res.group" id="user_nurse_group_health_nursing">
+            <field name="user" ref="user_demo_nurse"/>
+            <field name="group" ref="group_health_nursing"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_vaccination_nursing">
+            <field name="model" search="[('model', '=', 'gnuhealth.vaccination')]"/>
+            <field name="group" ref="group_health_nursing"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_procedure_nursing">
+            <field name="model" search="[('model', '=', 'gnuhealth.procedure')]"/>
+            <field name="group" ref="group_health_nursing"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+
+<!-- END OF NURSING MENU -->
 
 
 <!-- BEGIN FRONT DESK GROUP ACCESS RIGHTS -->

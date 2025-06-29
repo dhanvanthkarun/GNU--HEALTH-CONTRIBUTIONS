@@ -2,7 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test,active:"
 msgid "Active"
 msgstr "نشيط"
@@ -15,7 +14,6 @@ msgctxt "field:gnuhealth.imaging.test,name:"
 msgid "Name"
 msgstr "الاسم"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test,product:"
 msgid "Product"
 msgstr "منتج"
@@ -26,37 +24,35 @@ msgstr "النوع"
 
 msgctxt "field:gnuhealth.imaging.test.request,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "معلومات اضافية"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,context:"
 msgid "Context"
-msgstr "الحالة"
+msgstr "المضمون"
 
 msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "تاريخ"
 
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "بروفسور صحي"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
 msgstr "المريض"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,request:"
 msgid "Order"
 msgstr "الترتيب"
 
 msgctxt "field:gnuhealth.imaging.test.request,request_line:"
 msgid "Order line"
-msgstr ""
+msgstr "سطر الاوامر"
 
 msgctxt "field:gnuhealth.imaging.test.request,requested_test:"
 msgid "Study"
-msgstr ""
+msgstr "الدراسة"
 
 msgctxt "field:gnuhealth.imaging.test.request,state:"
 msgid "State"
@@ -68,9 +64,8 @@ msgstr "مٌستعجل"
 
 msgctxt "field:gnuhealth.imaging.test.result,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "معلومات اضافية"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,computed_age:"
 msgid "Age"
 msgstr "العمر"
@@ -81,7 +76,7 @@ msgstr "تاريخ"
 
 msgctxt "field:gnuhealth.imaging.test.result,doctor:"
 msgid "Evaluated by"
-msgstr ""
+msgstr "تطوير من قبل"
 
 msgctxt "field:gnuhealth.imaging.test.result,images:"
 msgid "Images"
@@ -91,7 +86,6 @@ msgctxt "field:gnuhealth.imaging.test.result,number:"
 msgid "Number"
 msgstr "رقم"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,order:"
 msgid "Order"
 msgstr "الترتيب"
@@ -100,17 +94,21 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "المريض"
 
-msgctxt "field:gnuhealth.imaging.test.result,request:"
-msgid "Request Info"
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
 msgstr ""
 
+msgctxt "field:gnuhealth.imaging.test.result,request:"
+msgid "Request Info"
+msgstr "معلومات الطلب"
+
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "تاريخ الطلب"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
 msgid "Study"
-msgstr ""
+msgstr "الدراسة"
 
 msgctxt "field:gnuhealth.imaging.test.type,code:"
 msgid "Code"
@@ -120,7 +118,6 @@ msgctxt "field:gnuhealth.imaging.test.type,name:"
 msgid "Name"
 msgstr "الاسم"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,context:"
 msgid "Context"
 msgstr "الحالة"
@@ -130,8 +127,8 @@ msgid "Date"
 msgstr "تاريخ"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "بروفسور صحي"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
@@ -151,110 +148,109 @@ msgstr "طلب"
 
 msgctxt "field:gnuhealth.request-imaging-test,test:"
 msgid "Study"
-msgstr ""
+msgstr "دراسة"
 
 msgctxt "field:gnuhealth.sequences,imaging_req_seq:"
 msgid "Imaging Request Sequence"
-msgstr ""
+msgstr "تسلسل طلبات التصوير"
 
 msgctxt "field:gnuhealth.sequences,imaging_test_sequence:"
 msgid "Imaging Sequence"
-msgstr ""
+msgstr "تسلسل التصوير"
 
 msgctxt "field:gnuhealth.sequences.imaging_req_seq,imaging_req_seq:"
 msgid "Imaging Request Sequence"
-msgstr ""
+msgstr "تسلسل طلبات التصوير"
 
 msgctxt ""
 "field:gnuhealth.sequences.imaging_test_sequence,imaging_test_sequence:"
 msgid "Imaging Sequence"
-msgstr ""
+msgstr "تسلسل التصوير"
 
 msgctxt "help:gnuhealth.imaging.test.request,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"السياق الصحي لهذا الطلب. يمكن أن تكون حالة صحية مشتبه بها أو موجودة، أو فحص "
+"طبي منتظم، ..."
 
-#, fuzzy
 msgctxt "help:gnuhealth.imaging.test.result,computed_age:"
 msgid "Computed patient age at the moment of the evaluation"
 msgstr "عمر المريض المحسوب في لحظة التقييم"
 
 msgctxt "help:gnuhealth.imaging.test.result,order:"
 msgid "The order ID containing this particular imaging study"
-msgstr ""
+msgstr "معرف الطلب الذي يحتوي على دراسة التصوير المحددة هذه"
 
 msgctxt "help:gnuhealth.imaging.test.type,code:"
 msgid "Suggest use values of DICOM Modality (0008,0060) tag."
-msgstr ""
+msgstr "اقترح استخدام قيم علامة DICOM Modality (0008,0060)."
 
 msgctxt "help:gnuhealth.imaging.test.type,name:"
 msgid "Suggest use descriptions of DICOM Modality (0008,0060) tag."
-msgstr ""
+msgstr "أقترح استخدام أوصاف علامة DICOM Modality (0008,0060)."
 
 msgctxt "help:gnuhealth.patient.imaging.test.request.start,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"السياق الصحي لهذا الطلب. يمكن أن تكون حالة صحية مشتبه بها أو موجودة، أو فحص "
+"طبي منتظم، ..."
 
 msgctxt "help:gnuhealth.patient.imaging.test.request.start,doctor:"
 msgid "Health professionalwho requests the study."
-msgstr ""
+msgstr "المهني الصحي الذي يطلب الدراسة."
 
-#, fuzzy
 msgctxt "model:gnuhealth.imaging.test,name:"
 msgid "Medical Imaging Study"
 msgstr "فحض شعاعي"
 
-#, fuzzy
 msgctxt "model:gnuhealth.imaging.test.request,name:"
 msgid "Medical Imaging Study Request"
 msgstr "طلب فحص شعاعي"
 
-#, fuzzy
 msgctxt "model:gnuhealth.imaging.test.result,name:"
 msgid "Medical Imaging Study Result"
 msgstr "نتيجة فحص شعاعي"
 
-#, fuzzy
 msgctxt "model:gnuhealth.imaging.test.type,name:"
 msgid "Medical Imaging Study Type"
 msgstr "نوع الفحص الشعاعي"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_cr"
 msgid "Computed Radiography"
-msgstr ""
+msgstr "التصوير الشعاعي المحوسب"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ctscan"
 msgid "Computed Tomography"
-msgstr ""
+msgstr "التصوير المقطعي"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_dx"
 msgid "Digital Radiography"
-msgstr ""
+msgstr "التصوير الشعاعي الرقمي"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_mri"
 msgid "Magnetic Resonance"
-msgstr ""
+msgstr "الرنين المغناطيسي"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_petscan"
 msgid "Positron emission tomography (PET)"
-msgstr ""
+msgstr "التصوير المقطعي بالإصدار البوزيتروني (PET)"
 
 msgctxt ""
 "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ultrasound"
 msgid "Ultrasound"
-msgstr ""
+msgstr "امواج فوق صوتية"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xa"
 msgid "X-Ray Angiography"
-msgstr ""
+msgstr "تصوير الأوعية بالأشعة السينية"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
 msgid "X-ray"
-msgstr ""
+msgstr "الاشعة السينية"
 
 msgctxt "model:gnuhealth.patient.imaging.test.request.start,name:"
 msgid "Request Patient Imaging Test Start"
@@ -266,53 +262,44 @@ msgstr "طلب - اختبار"
 
 msgctxt "model:gnuhealth.sequences.imaging_req_seq,name:"
 msgid "Imaging Request Sequence setup"
-msgstr ""
+msgstr "إعداد تسلسل طلب التصوير"
 
 msgctxt "model:gnuhealth.sequences.imaging_test_sequence,name:"
 msgid "Imaging Test Sequence setup"
-msgstr ""
+msgstr "إعداد تسلسل اختبار التصوير"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_imaging_test_request_view"
 msgid "Medical Imaging Requests"
 msgstr "طلب فحص شعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_imaging_test_request_view2"
 msgid "Medical Imaging Requests"
 msgstr "طلب فحص شعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_imaging_test_result_view"
 msgid "Medical Imaging Results"
 msgstr "نتيجة الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_imaging_test_result_view2"
 msgid "Medical Imaging Results"
 msgstr "نتيجة الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_imaging_test_type_view"
 msgid "Medical Imaging Types"
 msgstr "نمط الفحض الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:act_imaging_test_view"
 msgid "Medical Imaging Studies"
 msgstr "الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:imaging_result_report"
 msgid "Medical Imaging Study"
 msgstr "فحض شعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:patient_imaging_test_request"
 msgid "Medical Imaging - New order"
 msgstr "طلب الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.action,name:wizard_generate_result"
 msgid "Medical Imaging - Generate Result"
 msgstr "انشاء النتيجة"
@@ -339,9 +326,8 @@ msgstr "مطلوب"
 
 msgctxt "model:ir.model.button,string:image_generateresults_button"
 msgid "Generate Results"
-msgstr ""
+msgstr "انشاء النتيجة"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:image_request_button"
 msgid "Request"
 msgstr "طلب"
@@ -362,37 +348,30 @@ msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_imaging_test_request"
 msgid "Imaging Test Request"
 msgstr "طلب الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_imaging"
 msgid "Medical Imaging"
 msgstr "الاشعة"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_parent"
 msgid "Medical Imaging"
 msgstr "الاشعة"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_request_view"
 msgid "Medical Imaging Requests"
 msgstr "طلب الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_result_view"
 msgid "Medical Imaging Results"
 msgstr "نتيجة الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_type"
 msgid "Medical Imaging Types"
 msgstr "نمط الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_imaging_test_view"
 msgid "Medical Imaging Studies"
 msgstr "الفحص الشعاعي"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_patient_imaging_test_request"
 msgid "Medical Imaging - New order"
 msgstr "طلب الفحص الشعاعي"
@@ -423,86 +402,83 @@ msgstr "تكلفة الاشعة البسيطة"
 
 msgctxt "model:res.group,name:group_health_imaging"
 msgid "Health Imaging"
-msgstr ""
+msgstr "تصوير طبي"
 
 msgctxt "model:res.group,name:group_health_imaging_admin"
 msgid "Health Imaging Administration"
-msgstr ""
+msgstr "إدارة التصوير الصحي"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Age:"
-msgstr ""
+msgstr "العمر:"
 
-#, fuzzy
 msgctxt "report:patient.imaging_report_results:"
 msgid "Comment"
 msgstr "تعليق"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Context:"
-msgstr ""
+msgstr "مضمون:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Date:"
-msgstr ""
+msgstr "التاريخ:"
 
-#, fuzzy
 msgctxt "report:patient.imaging_report_results:"
 msgid "DoB:"
 msgstr "تاريخ الميلاد:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Evaluated by:"
-msgstr ""
+msgstr "شخص من قبل:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Gender:"
-msgstr ""
+msgstr "الجنس:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Image"
-msgstr ""
+msgstr "صورة"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Imaging Study Report"
-msgstr ""
+msgstr "تقرير الدراسة المصورة"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Interpretation:"
-msgstr ""
+msgstr "تفسير:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Order:"
-msgstr ""
+msgstr "امر:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "PUID:"
-msgstr ""
+msgstr "رقم المريض:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Patient:"
-msgstr ""
+msgstr "المريض:"
 
-#, fuzzy
 msgctxt "report:patient.imaging_report_results:"
 msgid "Print Date:"
 msgstr "تاريخ الطباعة:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Requested by:"
-msgstr ""
+msgstr "طلب من قبل:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Resources:"
-msgstr ""
+msgstr "مصادر:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Study ID:"
-msgstr ""
+msgstr "رقم الدراسة:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Study:"
-msgstr ""
+msgstr "الدراسة:"
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Done"
@@ -516,23 +492,33 @@ msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr "مطلوب"
 
-msgctxt "view:gnuhealth.imaging.test.request:"
-msgid "Generate Results"
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
 msgstr ""
 
-#, fuzzy
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr ""
+
+msgctxt "view:gnuhealth.imaging.test.request:"
+msgid "Generate Results"
+msgstr "توليد النتائح"
+
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Request"
 msgstr "طلب"
 
-#, fuzzy
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Images"
 msgstr "الصور"
 
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Interpretation / Report"
-msgstr ""
+msgstr "تفسير / تقرير"
 
 msgctxt "wizard_button:gnuhealth.patient.imaging.test.request,start,end:"
 msgid "Cancel"

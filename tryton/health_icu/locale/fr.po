@@ -46,10 +46,6 @@ msgctxt "field:gnuhealth.icu.apache2,mean_ap:"
 msgid "MAP"
 msgstr "MAP"
 
-msgctxt "field:gnuhealth.icu.apache2,name:"
-msgid "Registration Code"
-msgstr "Code d'enregistrement"
-
 msgctxt "field:gnuhealth.icu.apache2,paco2:"
 msgid "PaCO2"
 msgstr "PaCO2"
@@ -61,6 +57,11 @@ msgstr "PaO2"
 msgctxt "field:gnuhealth.icu.apache2,ph:"
 msgid "pH"
 msgstr "pH"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.apache2,registration:"
+msgid "Registration Code"
+msgstr "Code d'enregistrement"
 
 msgctxt "field:gnuhealth.icu.apache2,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -106,10 +107,6 @@ msgctxt "field:gnuhealth.icu.chest_drainage,location:"
 msgid "Location"
 msgstr "Emplacement"
 
-msgctxt "field:gnuhealth.icu.chest_drainage,name:"
-msgid "Rounding"
-msgstr "En ronde"
-
 msgctxt "field:gnuhealth.icu.chest_drainage,oscillation:"
 msgid "Oscillation"
 msgstr "Oscillation"
@@ -117,6 +114,11 @@ msgstr "Oscillation"
 msgctxt "field:gnuhealth.icu.chest_drainage,remarks:"
 msgid "Remarks"
 msgstr "Remarques"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.chest_drainage,rounding:"
+msgid "Rounding"
+msgstr "En ronde"
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction:"
 msgid "Suction"
@@ -146,9 +148,15 @@ msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
 msgstr "Verbal"
 
-msgctxt "field:gnuhealth.icu.glasgow,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.icu.glasgow,registration:"
 msgid "Registration Code"
 msgstr "Code d'enregistrement"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.ventilation,admission:"
+msgid "Patient ICU Admission"
+msgstr "Patients admis aux soins intensifs"
 
 msgctxt "field:gnuhealth.icu.ventilation,current_mv:"
 msgid "Current"
@@ -169,10 +177,6 @@ msgstr "Durée"
 msgctxt "field:gnuhealth.icu.ventilation,mv_start:"
 msgid "From"
 msgstr "De"
-
-msgctxt "field:gnuhealth.icu.ventilation,name:"
-msgid "Patient ICU Admission"
-msgstr "Patients admis aux soins intensifs"
 
 msgctxt "field:gnuhealth.icu.ventilation,remarks:"
 msgid "Remarks"
@@ -210,7 +214,8 @@ msgctxt "field:gnuhealth.inpatient.icu,mv_history:"
 msgid "Mechanical Ventilation History"
 msgstr "Historique de ventilation mécanique"
 
-msgctxt "field:gnuhealth.inpatient.icu,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.icu,registration:"
 msgid "Registration Code"
 msgstr "Code d'enregistrement"
 
@@ -437,10 +442,8 @@ msgstr ""
 " ETT - Tube endotrachéal"
 
 msgctxt "help:gnuhealth.inpatient.icu,admitted:"
-msgid "Will be set when the patient         is currently admitted at ICU"
+msgid "Will be set when the patient is currently admitted at ICU."
 msgstr ""
-"sera renseigné lorsque le patient est actuellement admin au service de soins"
-" intensif"
 
 msgctxt "help:gnuhealth.inpatient.icu,icu_admission_date:"
 msgid "ICU Admission Date"
@@ -563,11 +566,6 @@ msgctxt "model:ir.ui.menu,name:menu_gnuhealth_inpatient_icu_list"
 msgid "Patient ICU Info"
 msgstr "Information pour les patients aux soins intensifs"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.icu.apache2,hospital_admission_type:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.icu.apache2,hospital_admission_type:"
 msgid "Medical or emergency postoperative"
 msgstr "Médical ou urgence post-opératoire"
@@ -575,10 +573,6 @@ msgstr "Médical ou urgence post-opératoire"
 msgctxt "selection:gnuhealth.icu.apache2,hospital_admission_type:"
 msgid "elective postoperative"
 msgstr "Urgence postopératoire"
-
-msgctxt "selection:gnuhealth.icu.chest_drainage,fluid_aspect:"
-msgid ""
-msgstr " "
 
 msgctxt "selection:gnuhealth.icu.chest_drainage,fluid_aspect:"
 msgid "Bloody"
@@ -595,10 +589,6 @@ msgstr "Purulent"
 msgctxt "selection:gnuhealth.icu.chest_drainage,fluid_aspect:"
 msgid "Serous"
 msgstr "Séreux"
-
-msgctxt "selection:gnuhealth.icu.chest_drainage,location:"
-msgid ""
-msgstr " "
 
 msgctxt "selection:gnuhealth.icu.chest_drainage,location:"
 msgid "Left Pleura"
@@ -674,10 +664,6 @@ msgid "5 : Oriented, converses normally"
 msgstr "5 : Orienté, converse normalement"
 
 msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
-msgid ""
-msgstr " "
-
-msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
 msgid "ETT"
 msgstr "ETT"
 
@@ -692,11 +678,6 @@ msgstr "Aucun - Se maintient seul"
 msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
 msgid "Tracheostomy"
 msgstr "Trachéotomie"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,bowel_sounds:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.rounding,bowel_sounds:"
 msgid "Absent"
@@ -714,11 +695,6 @@ msgctxt "selection:gnuhealth.patient.rounding,bowel_sounds:"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,chest_expansion:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.patient.rounding,chest_expansion:"
 msgid "Asymmetrical"
 msgstr "Asymétrique"
@@ -726,11 +702,6 @@ msgstr "Asymétrique"
 msgctxt "selection:gnuhealth.patient.rounding,chest_expansion:"
 msgid "Symmetrical"
 msgstr "Symétrique"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,edema:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.rounding,edema:"
 msgid "Anasarca"
@@ -756,11 +727,6 @@ msgctxt "selection:gnuhealth.patient.rounding,pupil_dilation:"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,pupillary_reactivity:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.patient.rounding,pupillary_reactivity:"
 msgid "Brisk"
 msgstr "Rapide"
@@ -772,11 +738,6 @@ msgstr "Non réactive"
 msgctxt "selection:gnuhealth.patient.rounding,pupillary_reactivity:"
 msgid "Sluggish"
 msgstr "Léthargique"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,respiration_type:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.rounding,respiration_type:"
 msgid "Deep"
@@ -798,11 +759,6 @@ msgctxt "selection:gnuhealth.patient.rounding,respiration_type:"
 msgid "Shallow"
 msgstr "Superficiel"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,stools:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.patient.rounding,stools:"
 msgid "Constipation"
 msgstr "Constipation"
@@ -819,11 +775,6 @@ msgctxt "selection:gnuhealth.patient.rounding,stools:"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,trachea_alignment:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.patient.rounding,trachea_alignment:"
 msgid "Deviated left"
 msgstr "Dévié à gauche"
@@ -836,11 +787,6 @@ msgctxt "selection:gnuhealth.patient.rounding,trachea_alignment:"
 msgid "Midline"
 msgstr "Ligne médiane"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,venous_access:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.patient.rounding,venous_access:"
 msgid "Central catheter"
 msgstr "Cathéter central"
@@ -852,11 +798,6 @@ msgstr "Aucun"
 msgctxt "selection:gnuhealth.patient.rounding,venous_access:"
 msgid "Peripheral"
 msgstr "Périphérique"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,vomiting:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.patient.rounding,vomiting:"
 msgid "Hematemesis"

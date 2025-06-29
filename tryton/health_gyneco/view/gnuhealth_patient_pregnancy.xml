@@ -1,76 +1,96 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <group id="group_pregnancy_header" colspan="4" col="10">
-        <label name="name"/>
-        <field name="name"/>
-        <label name="healthprof"/>
-        <field name="healthprof"/>
-        <label name="institution"/>
-        <field name="institution"/>
-        <newline/>
-        <label name="gravida"/>
-        <field name="gravida"/>
-        <label name="lmp"/>
-        <field name="lmp"/>
+    <group string="Patient" id="group_pregnancy_header" colspan="4" col="16">
+        <field name="patient"/>
         <label name="computed_age"/>
         <field name="computed_age"/>        
-        <label name="pdd"/>
-        <field name="pdd"/>
-        <label name="current_pregnancy"/>
-        <field name="current_pregnancy"/>
-        <newline/>
-        <label name="gravidae"/>
-        <field name="gravidae"/>
-        <label name="premature"/>
-        <field name="premature"/>
-        <label name="abortions"/>
-        <field name="abortions"/>
-        <label name="stillbirths"/>
-        <field name="stillbirths"/>
-        <newline/>
         <label name="blood_type"/>
         <field name="blood_type"/>
         <label name="rh"/>
         <field name="rh"/>
-        
+        <label name="gravidae"/>
+        <field name="gravidae"/>
+        <label name="abortions"/>
+        <field name="abortions"/>
+        <label name="stillbirths"/>
+        <field name="stillbirths"/>
+        <label name="premature"/>
+        <field name="premature"/>
     </group>
+
     <newline/>
-    <field colspan="4" name="prenatal_evaluations"/>
-    <newline/>
-    <field name="perinatal"/>
-    <field name="puerperium_monitor"/>
-    <newline/>
-    <group id="group_pregnancy_footer1" colspan="4" col="8">
+    <group string="Pregnancy" id="group_pregnancy_details" colspan="4" col="14">
+        <label name="gravida"/>
+        <field name="gravida"/>
         <label name="fetuses"/>
         <field name="fetuses"/>
-        <label name="monozygotic"/>
-        <field name="monozygotic"/>
-        <label name="iugr"/>
-        <field name="iugr"/>
+        <label name="current_pregnancy"/>
+        <field name="current_pregnancy"/>
+        <label name="lmp"/>
+        <field name="lmp"/>
+        <label name="pregnancy_current_week"/>
+        <field name="pregnancy_current_week"/>
+        <label name="pdd"/>
+        <field name="pdd"/>
         <label name="warning"/>
         <field name="warning"/>
     </group>
     <newline/>
-    <group id="group_pregnancy_footer2" colspan="4" col="12">
+    <group string="End of pregnancy" id="group_end_pregnancy" colspan="4" col="8">
+        <!-- Removed in 5.0 // We should be able to manage and record
+             pregnancies states with the current_pregnancy field
         <label name="reverse"/>
         <field name="reverse"/>
+        -->
         <label name="pregnancy_end_date"/>
         <field name="pregnancy_end_date"/>
         <label name="reverse_weeks"/>
         <field name="reverse_weeks"/>
         <label name="pregnancy_end_result"/>
         <field name="pregnancy_end_result"/>
+    </group>
+    <newline/>
+    <field name="pregnancy_result" colspan="8"/>
+    <newline/>
+    <group id="group_pregnancy_misc" colspan="4" col="8">
+        <label name="monozygotic"/>
+        <field name="monozygotic"/>
+        <label name="iugr"/>
+        <field name="iugr"/>
         <label name="home_birth"/>
         <field name="home_birth"/>
         <label name="bba"/>
         <field name="bba"/>
+    </group>
+    <newline/>
+    <notebook>
+        <page string="Notes" id="page_main_prenatal">
+            <field name="notes"/>
+        </page>
+        <page string="Prenatal" id="page_main_prenatal">
+            <field colspan="4" name="prenatal_evaluations"/>
+        </page>
+        <page string="Labor" id="page_main_perinatal">
+            <field colspan="4" name="perinatal"/>
+        </page>
+        <page string="Puerperium" id="page_main_puerperium">
+            <field colspan="4" name="puerperium_monitor"/>
+        </page>
+    </notebook>
+    <newline/>
+    
+    <group id="group_pregnancy_footer" colspan="4" col="8">
+        <label name="healthprof"/>
+        <field name="healthprof"/>
+        <label name="institution"/>
+        <field name="institution"/>
     </group>
 </form>

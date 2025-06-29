@@ -62,7 +62,8 @@ msgctxt "field:gnuhealth.ambulance_hp,healthprof:"
 msgid "Health Prof"
 msgstr "Professionnel de santé"
 
-msgctxt "field:gnuhealth.ambulance_hp,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.ambulance_hp,sr:"
 msgid "SR"
 msgstr "DA"
 
@@ -305,7 +306,7 @@ msgstr "Professionnels de santé de l'ambulance"
 
 #, fuzzy
 msgctxt "model:gnuhealth.sequences.support_request_code_sequence,name:"
-msgid "Health Service Request Sequence setup"
+msgid "Health Support Request Sequence setup"
 msgstr "Configuration de la séquence de demande de service de santé"
 
 msgctxt "model:gnuhealth.support_request,name:"
@@ -348,11 +349,6 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_support_request"
 msgid "Support Center"
 msgstr "Centre de prise en charge"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.ambulance,state:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "At Hospital"
 msgstr "À l’hôpital"
@@ -385,11 +381,6 @@ msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "To Hospital"
 msgstr "Vers l’hôpital"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
 msgid "Type A - Patient Transport"
 msgstr "Type A - Transport de patient"
@@ -401,11 +392,6 @@ msgstr "Type B - Urgence"
 msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
 msgid "Type C - Mobile ICU"
 msgstr "Type C - USI mobile"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.ambulance,vehicle_type:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.ambulance,vehicle_type:"
 msgid "Airplane"
@@ -439,11 +425,6 @@ msgctxt "selection:gnuhealth.ambulance,vehicle_type:"
 msgid "Van"
 msgstr "Van"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.ambulance.support,state:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "At Hospital"
 msgstr "À l’hôpital"
@@ -475,11 +456,6 @@ msgstr "De retour"
 msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "To Hospital"
 msgstr "Vers l’hôpital"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.support_request,event_type:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.support_request,event_type:"
 msgid "Acute Coronary Syndrome"
@@ -603,11 +579,6 @@ msgctxt "selection:gnuhealth.support_request,event_type:"
 msgid "Traumatic Injuries"
 msgstr "Lésions traumatiques"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.support_request,place_occurrance:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.support_request,place_occurrance:"
 msgid "Commercial Area"
 msgstr "Zone commerciale"
@@ -648,11 +619,6 @@ msgctxt "selection:gnuhealth.support_request,place_occurrance:"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.support_request,state:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
-
 msgctxt "selection:gnuhealth.support_request,state:"
 msgid "Closed"
 msgstr "Fermée"
@@ -660,11 +626,6 @@ msgstr "Fermée"
 msgctxt "selection:gnuhealth.support_request,state:"
 msgid "Open"
 msgstr "Ouverte"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.support_request,urgency:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.support_request,urgency:"
 msgid "Emergency"
@@ -677,11 +638,6 @@ msgstr "Faible"
 msgctxt "selection:gnuhealth.support_request,urgency:"
 msgid "Urgent"
 msgstr "Urgent"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.support_request.log,action:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:gnuhealth.support_request.log,action:"
 msgid "Ambulance"

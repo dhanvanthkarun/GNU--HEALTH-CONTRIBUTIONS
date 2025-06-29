@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -12,14 +12,17 @@
 #########################################################################
 
 from trytond.pool import Pool
+from trytond.report import Report
 from . import health
 from . import sequences
 from . import wizard
 from . import report
+from . import country
 
 
 def register():
     Pool.register(
+        country.Subdivision,
         health.OperationalArea,
         health.OperationalSector,
         health.DomiciliaryUnit,
@@ -48,9 +51,9 @@ def register():
         health.HospitalBed,
         health.HealthProfessional,
         health.HealthProfessionalSpecialties,
-        health.PhysicianSP,
         health.Family,
         health.FamilyMember,
+        health.FamilyDiseases,
         health.MedicamentCategory,
         health.Medicament,
         health.ImmunizationSchedule,
@@ -77,6 +80,7 @@ def register():
         health.PrescriptionLine,
         health.PatientMedication,
         health.PatientVaccination,
+        health.PatientProcedure,
         health.PatientEvaluation,
         health.Directions,
         health.SecondaryCondition,
@@ -85,9 +89,11 @@ def register():
         health.PatientECG,
         health.ProductTemplate,
         health.PageOfLife,
+        health.ProceduresConfig,
         health.Commands,
         health.Modules,
         health.Help,
+        health.OnlineDocument,
         wizard.wizard_check_immunization_status.CheckImmunizationStatusInit,
         sequences.GnuHealthSequences,
         sequences.PatientSequence,
@@ -102,9 +108,19 @@ def register():
         wizard.wizard_appointment_evaluation.CreateAppointmentEvaluation,
         wizard.wizard_check_immunization_status.CheckImmunizationStatus,
         module='health', type_='wizard')
+
     Pool.register(
-        report.health_report.PatientDiseaseReport,
-        report.health_report.PatientMedicationReport,
-        report.health_report.PatientVaccinationReport,
         report.immunization_status_report.ImmunizationStatusReport,
         module='health', type_='report')
+
+    Pool.register_mixin(
+        report.health_report.ReportDateAndTimeMixin, Report,
+        module='health')
+
+    Pool.register_mixin(
+        report.health_report.ReportImageToolMixin, Report,
+        module='health')
+
+    Pool.register_mixin(
+        report.health_report.ReportGettextMixin, Report,
+        module='health')

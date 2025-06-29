@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024- Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form>
+    <group string="Server Information" yfill="1" id="orthanc_group_add_server">
+        <label name="label"/>
+        <field name="label"/>
+        <newline/>
+        <label name="domain"/>
+        <field name="domain"/>
+        <newline/>
+        <label name="proxy_domain"/>
+        <field name="proxy_domain"/>
+    </group>
+    <newline/>
+    <separator string=" " id="blank_line"/>
+    <newline/>
+    <group string="User credentials" yfill="1" id="orthanc_group_add_credentials">
+        <label name="user"/>
+        <field name="user"/>
+        <newline/>
+        <label name="password"/>
+        <field name="password" widget="password"/>
+    </group>
+</form>

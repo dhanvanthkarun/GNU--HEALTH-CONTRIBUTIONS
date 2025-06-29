@@ -3,7 +3,7 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date_end:"
-msgid "End Date and Time"
+msgid "End"
 msgstr "تاريخ ووقت الانتهاء"
 
 msgctxt "field:gnuhealth.appointment,event:"
@@ -77,7 +77,11 @@ msgstr "التقويم"
 
 msgctxt "field:res.user,use_caldav:"
 msgid "CalDAV"
-msgstr ""
+msgstr "بروتوكول مزامنة التقويم"
+
+msgctxt "help:gnuhealth.appointment,appointment_date_end:"
+msgid "Appointment end date and time."
+msgstr "وقت وتاريخ نهاية الموعد."
 
 msgctxt "help:gnuhealth.appointment,event:"
 msgid "Calendar Event"
@@ -85,7 +89,7 @@ msgstr "أحداث التقويم"
 
 msgctxt "help:res.user,use_caldav:"
 msgid "The user has a CalDav account"
-msgstr ""
+msgstr "المستخدم لديه حساب مزامنة التقويم CalDav"
 
 msgctxt "model:gnuhealth.calendar.create.appointment.start,name:"
 msgid "Create Appointments Start"
@@ -104,20 +108,22 @@ msgid ""
 "SM-CALENDAR-0004: The Appointment END date \"%(appointment_date_end)s\" is "
 "BEFORE the start date \"%(appointment_date)s\""
 msgstr ""
+"SM-CALENDAR-0004: تاريخ انتهاء الموعد \"%(appointment_date_end)s\" قبل تاريخ"
+" البدء \"%(appointment_date)s\""
 
 msgctxt "model:ir.message,text:msg_end_before_start"
 msgid "SM-CALENDAR-002: End date before start"
-msgstr ""
+msgstr "SM-CALENDAR-002: الانتهاء قبل البدء"
 
 msgctxt "model:ir.message,text:msg_no_company_timezone"
 msgid ""
 "SM-CALENDAR-001: You need to define a timezone for this company before "
 "creating a work schedule"
-msgstr ""
+msgstr "SM-CALENDAR-001: يجب تحديد المنطقة للشركة قبل انشاء جدول عمل"
 
 msgctxt "model:ir.message,text:msg_period_too_long"
 msgid "SM-CALENDAR-003: The schedule period should be less than 31 days"
-msgstr ""
+msgstr "SM-CALENDAR-003: مدة الجدول يجب ان تكون اقل من 31"
 
 msgctxt "model:ir.ui.menu,name:menu_create_appointments"
 msgid "New Work Schedule"
@@ -126,14 +132,6 @@ msgstr "جدول عمل جديد"
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_appointment_calendar"
 msgid "Appointments Calendar"
 msgstr "تقويم المواعيد"
-
-msgctxt "view:gnuhealth.appointment:"
-msgid "Patient appointments"
-msgstr "مواعيد المرضى"
-
-msgctxt "view:gnuhealth.calendar.create.appointment.start:"
-msgid "New Work Schedule"
-msgstr "جدول عمل جديد"
 
 msgctxt "wizard_button:gnuhealth.calendar.create.appointment,start,create_:"
 msgid "Create"

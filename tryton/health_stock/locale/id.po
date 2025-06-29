@@ -2,135 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:gnuhealth.patient.ambulatory_care,care_location:"
-msgid "Care Location"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care,medical_supplies:"
-msgid "Medical Supplies"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care,medicaments:"
-msgid "Medicaments"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.ambulatory_care,moves:"
-msgid "Stock Moves"
-msgstr "Perpindahan Keluar"
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medical_supply,lot:"
-msgid "Lot"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medical_supply,name:"
-msgid "Ambulatory ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medical_supply,product:"
-msgid "Medical Supply"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medical_supply,quantity:"
-msgid "Quantity"
-msgstr ""
-
-#, fuzzy
-msgctxt ""
-"field:gnuhealth.patient.ambulatory_care.medical_supply,short_comment:"
-msgid "Comment"
-msgstr "Komentar"
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,lot:"
-msgid "Lot"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,medicament:"
-msgid "Medicament"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,name:"
-msgid "Ambulatory ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,product:"
-msgid "Product"
-msgstr "Produk"
-
-msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,quantity:"
-msgid "Quantity"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.ambulatory_care.medicament,short_comment:"
-msgid "Comment"
-msgstr "Komentar"
-
-msgctxt "field:gnuhealth.patient.rounding,hospitalization_location:"
-msgid "Hospitalization Location"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding,medical_supplies:"
-msgid "Medical Supplies"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding,medicaments:"
-msgid "Medicaments"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.rounding,moves:"
-msgid "Stock Moves"
-msgstr "Perpindahan Keluar"
-
-msgctxt "field:gnuhealth.patient.rounding.medical_supply,lot:"
-msgid "Lot"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding.medical_supply,name:"
-msgid "Ambulatory ID"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding.medical_supply,product:"
-msgid "Medical Supply"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding.medical_supply,quantity:"
-msgid "Quantity"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.rounding.medical_supply,short_comment:"
-msgid "Comment"
-msgstr "Komentar"
-
-msgctxt "field:gnuhealth.patient.rounding.medicament,lot:"
-msgid "Lot"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding.medicament,medicament:"
-msgid "Medicament"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.rounding.medicament,name:"
-msgid "Ambulatory ID"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.rounding.medicament,product:"
-msgid "Product"
-msgstr "Produk"
-
-msgctxt "field:gnuhealth.patient.rounding.medicament,quantity:"
-msgid "Quantity"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.rounding.medicament,short_comment:"
-msgid "Comment"
-msgstr "Komentar"
-
 #, fuzzy
 msgctxt "field:gnuhealth.prescription.order,moves:"
 msgid "Moves"
@@ -163,40 +34,8 @@ msgctxt "field:stock.lot,expiration_date:"
 msgid "Expiration Date"
 msgstr ""
 
-msgctxt "help:gnuhealth.patient.ambulatory_care.medical_supply,short_comment:"
-msgid "Short comment on the specific drug"
-msgstr ""
-
-msgctxt "help:gnuhealth.patient.ambulatory_care.medicament,short_comment:"
-msgid "Short comment on the specific drug"
-msgstr ""
-
-msgctxt "help:gnuhealth.patient.rounding.medical_supply,short_comment:"
-msgid "Short comment on the specific drug"
-msgstr ""
-
-msgctxt "help:gnuhealth.patient.rounding.medicament,short_comment:"
-msgid "Short comment on the specific drug"
-msgstr ""
-
 msgctxt "help:gnuhealth.vaccination,lot:"
 msgid "This field includes the lot number and expiration date"
-msgstr ""
-
-msgctxt "model:gnuhealth.patient.ambulatory_care.medical_supply,name:"
-msgid "Patient Ambulatory Care Medical Supply"
-msgstr ""
-
-msgctxt "model:gnuhealth.patient.ambulatory_care.medicament,name:"
-msgid "Patient Ambulatory Care Medicament"
-msgstr ""
-
-msgctxt "model:gnuhealth.patient.rounding.medical_supply,name:"
-msgid "Patient Rounding Medical Supply"
-msgstr ""
-
-msgctxt "model:gnuhealth.patient.rounding.medicament,name:"
-msgid "Patient Rounding Medicament"
 msgstr ""
 
 msgctxt "model:gnuhealth.prescription.stock.move.init,name:"
@@ -229,6 +68,10 @@ msgid ""
 "IT !!!"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_no_location_origin"
+msgid "You need to select a stock location"
+msgstr ""
+
 msgctxt "model:ir.message,text:msg_no_pharmacy"
 msgid "You need to select a pharmacy"
 msgstr ""
@@ -236,46 +79,6 @@ msgstr ""
 msgctxt "model:ir.message,text:msg_stock_move_exists"
 msgid "Stock move already exists"
 msgstr ""
-
-msgctxt "model:ir.model.button,string:ambcaresess_end_button"
-msgid "End Session"
-msgstr ""
-
-msgctxt "model:ir.model.button,string:rounding_end_button"
-msgid "End Rounding"
-msgstr ""
-
-msgctxt "view:gnuhealth.patient.ambulatory_care:"
-msgid "Done / Create Stock moves"
-msgstr ""
-
-#, fuzzy
-msgctxt "view:gnuhealth.patient.ambulatory_care:"
-msgid "Medication"
-msgstr "Medikasi"
-
-#, fuzzy
-msgctxt "view:gnuhealth.patient.ambulatory_care:"
-msgid "Stock Moves"
-msgstr "Perpindahan Keluar"
-
-msgctxt "view:gnuhealth.patient.rounding:"
-msgid "Done / Create Stock moves"
-msgstr ""
-
-#, fuzzy
-msgctxt "view:gnuhealth.patient.rounding:"
-msgid "Medication"
-msgstr "Medikasi"
-
-msgctxt "view:gnuhealth.patient.rounding:"
-msgid "Six P's"
-msgstr ""
-
-#, fuzzy
-msgctxt "view:gnuhealth.patient.rounding:"
-msgid "Stock Moves"
-msgstr "Perpindahan Keluar"
 
 msgctxt "view:gnuhealth.prescription.stock.move.init:"
 msgid "Create Stock Move?"

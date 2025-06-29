@@ -22,18 +22,6 @@ msgctxt "field:gnuhealth.lab,document_digest:"
 msgid "Digest"
 msgstr "ダイジェスト"
 
-msgctxt "field:gnuhealth.lab,done_by:"
-msgid "Done by"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,done_date:"
-msgid "Finished on"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,historize:"
-msgid "Historize"
-msgstr ""
-
 #, fuzzy
 msgctxt "field:gnuhealth.lab,serializer:"
 msgid "Doc String"
@@ -43,19 +31,6 @@ msgstr "文書の文字列"
 msgctxt "field:gnuhealth.lab,serializer_current:"
 msgid "Current Doc"
 msgstr "現在の文書"
-
-#, fuzzy
-msgctxt "field:gnuhealth.lab,state:"
-msgid "State"
-msgstr "州"
-
-msgctxt "field:gnuhealth.lab,validated_by:"
-msgid "Validated by"
-msgstr ""
-
-msgctxt "field:gnuhealth.lab,validation_date:"
-msgid "Validated on"
-msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.lab,digest_status:"
@@ -70,52 +45,8 @@ msgctxt "help:gnuhealth.lab,document_digest:"
 msgid "Original Document Digest"
 msgstr "元のドキュメントのダイジェスト"
 
-msgctxt "help:gnuhealth.lab,done_by:"
-msgid "Professional who processes this lab test"
-msgstr ""
-
-msgctxt "help:gnuhealth.lab,historize:"
-msgid ""
-"If this flag is set the a new health condition will be added to the patient "
-"history. Unset it if this lab test is in the context of a pre-existing "
-"condition of the patient. The condition will be created when the lab test is"
-" confirmed and validated"
-msgstr ""
-
-msgctxt "help:gnuhealth.lab,validated_by:"
-msgid "Professional who validates this lab test"
-msgstr ""
-
-#, fuzzy
-msgctxt "model:ir.model.button,string:labtest_generate_button"
-msgid "Done"
-msgstr "実施済み"
-
-#, fuzzy
-msgctxt "model:ir.model.button,string:labtest_setdraft_button"
-msgid "Draft"
-msgstr "ドラフト"
-
 msgctxt "model:ir.model.button,string:labtest_sign_button"
 msgid "Validate"
-msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Done"
-msgstr "実施済み"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Draft"
-msgstr "ドラフト"
-
-msgctxt "selection:gnuhealth.lab,state:"
-msgid "Validated"
-msgstr ""
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Are the results ready ?"
 msgstr ""
 
 msgctxt "view:gnuhealth.lab:"
@@ -131,28 +62,6 @@ msgstr "電子署名"
 msgctxt "view:gnuhealth.lab:"
 msgid "Document validation"
 msgstr "ドキュメントの確認"
-
-#, fuzzy
-msgctxt "view:gnuhealth.lab:"
-msgid "Done"
-msgstr "実施済み"
-
-#, fuzzy
-msgctxt "view:gnuhealth.lab:"
-msgid "Draft"
-msgstr "ドラフト"
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Reverse the document to draft state."
-msgstr ""
-
-msgctxt "view:gnuhealth.lab:"
-msgid "Set to Draft ?"
-msgstr ""
-
-msgctxt "view:gnuhealth.lab:"
-msgid "The lab test is done and results are waiting to be validated"
-msgstr ""
 
 msgctxt "view:gnuhealth.lab:"
 msgid "Validate"

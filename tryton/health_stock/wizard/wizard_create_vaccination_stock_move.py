@@ -1,8 +1,8 @@
-# Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
-# Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+# Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 # Copyright (C) 2013  Sebastian Marro <smarro@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2013 Sebastian Marro <smarro@thymbra.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -12,7 +12,9 @@ from trytond.model import ModelView
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.i18n import gettext
-from ..exceptions import (StockMoveExists)
+from trytond.modules.health.core import get_institution_currency
+
+from ..exceptions import (StockMoveExists, NoStockOrigin)
 
 __all__ = ['CreateVaccinationStockMoveInit', 'CreateVaccinationStockMove']
 
@@ -46,7 +48,12 @@ class CreateVaccinationStockMove(Wizard):
             if vaccination.moves:
                 raise StockMoveExists(
                     gettext('health_stock.msg_stock_move_exists')
-                    )
+                )
+
+            if not vaccination.location:
+                raise NoStockOrigin(
+                    gettext('health_stock.msg_no_location_origin')
+                )
 
             lines = []
 
@@ -55,16 +62,18 @@ class CreateVaccinationStockMove(Wizard):
             line_data['from_location'] = \
                 vaccination.location.id
             line_data['to_location'] = \
-                vaccination.name.name.customer_location.id
+                vaccination.patient.party.customer_location.id
             line_data['product'] = \
-                vaccination.vaccine.name.id
+                vaccination.vaccine.product.id
             line_data['unit_price'] = \
-                vaccination.vaccine.name.list_price
+                vaccination.vaccine.product.list_price
             line_data['cost_price'] = \
-                vaccination.vaccine.name.cost_price
+                vaccination.vaccine.product.cost_price
             line_data['quantity'] = 1
-            line_data['uom'] = \
-                vaccination.vaccine.name.default_uom.id
+            line_data['unit'] = \
+                vaccination.vaccine.product.default_uom.id
+            # Use the institution currency in the stock move
+            line_data['currency'] = get_institution_currency()
             line_data['state'] = 'draft'
             lines.append(line_data)
 

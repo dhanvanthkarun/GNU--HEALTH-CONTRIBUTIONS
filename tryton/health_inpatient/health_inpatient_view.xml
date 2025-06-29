@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -38,10 +38,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/meals.svg</field>
         </record>
 
-        <record model="ir.ui.icon" id="gnuhealth_list_icon">
-            <field name="name">gnuhealth-list</field>
-            <field name="path">../health/icons/tryton-list.svg</field>
-        </record>
 
 
 <!-- Patient hospitalization and bed registration (in-patient registration) -->
@@ -484,6 +480,65 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="string">Done</field>
             <field name="model" search="[('model', '=', 'gnuhealth.inpatient.meal.order')]"/>
         </record>
+
+
+<!-- Rounding Procedure-->
+<!-- DEPRECATED IN GH 5.0 by GNUHEALTH PATIENT PROCEDURES (gnuhealth.patient.procedure)
+        <record model="ir.ui.view" id="gnuhealth_rounding_view">
+            <field name="model">gnuhealth.rounding_procedure</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_rounding_procedure</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_procedure_tree">
+            <field name="model">gnuhealth.rounding_procedure</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_procedure_tree</field>
+        </record>
+-->
+
+<!-- Rounding view -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_rounding_view">
+            <field name="model">gnuhealth.patient.rounding</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_rounding</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_rounding_tree">
+            <field name="model">gnuhealth.patient.rounding</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_rounding_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_rounding_view">
+            <field name="name">Roundings</field>
+            <field name="res_model">gnuhealth.patient.rounding</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_rounding_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_patient_rounding_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_rounding_view"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_rounding_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_patient_rounding_view"/>
+            <field name="act_window" ref="action_gnuhealth_patient_rounding_view"/>
+        </record>
+
+    <!-- Button registration -->
+        <record model="ir.model.button" id="rounding_end_button">
+            <field name="name">end_rounding</field>
+            <field name="string">End rounding</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.rounding')]"/>
+        </record>
+        
+        <menuitem name="Roundings" action="action_gnuhealth_patient_rounding_view"
+            id="menu_gnuhealth_patient_rounding_list" icon="gnuhealth-list"
+            parent="gnuhealth_inpatient_menu"/>
+
 
     </data>
 </tryton>

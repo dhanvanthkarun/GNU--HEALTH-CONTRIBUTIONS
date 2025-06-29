@@ -62,18 +62,19 @@ msgctxt "field:gnuhealth.ambulance_hp,healthprof:"
 msgid "Health Prof"
 msgstr "البروفسور الصحي"
 
-msgctxt "field:gnuhealth.ambulance_hp,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.ambulance_hp,sr:"
 msgid "SR"
 msgstr "-SR-"
 
 msgctxt "field:gnuhealth.sequences,support_request_code_sequence:"
 msgid "Support Request sequence"
-msgstr ""
+msgstr "تسلسل طلب الدعم"
 
 msgctxt ""
 "field:gnuhealth.sequences.support_request_code_sequence,support_request_code_sequence:"
 msgid "Support Request sequence"
-msgstr ""
+msgstr "تسلسل طلب الدعم"
 
 msgctxt "field:gnuhealth.support_request,address:"
 msgid "Address"
@@ -303,9 +304,10 @@ msgctxt "model:gnuhealth.ambulance_hp,name:"
 msgid "Ambulance Health Professionals"
 msgstr "طبيب الاسعاف المشرف"
 
+#, fuzzy
 msgctxt "model:gnuhealth.sequences.support_request_code_sequence,name:"
-msgid "Health Service Request Sequence setup"
-msgstr ""
+msgid "Health Support Request Sequence setup"
+msgstr "إعداد تسلسل طلب الخدمة الصحية"
 
 msgctxt "model:gnuhealth.support_request,name:"
 msgid "Support Request Registration"
@@ -348,10 +350,6 @@ msgid "Support Center"
 msgstr "مركز الدعم"
 
 msgctxt "selection:gnuhealth.ambulance,state:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.ambulance,state:"
 msgid "At Hospital"
 msgstr "في المستشفى"
 
@@ -384,10 +382,6 @@ msgid "To Hospital"
 msgstr "نحو المستشفى"
 
 msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
 msgid "Type A - Patient Transport"
 msgstr "النوع أ - نقل المرضى"
 
@@ -398,10 +392,6 @@ msgstr "النوع ب - طوارئ"
 msgctxt "selection:gnuhealth.ambulance,vehicle_function:"
 msgid "Type C - Mobile ICU"
 msgstr "النوع ج - وحدة عناية مركزة متنقلة"
-
-msgctxt "selection:gnuhealth.ambulance,vehicle_type:"
-msgid ""
-msgstr "-"
 
 msgctxt "selection:gnuhealth.ambulance,vehicle_type:"
 msgid "Airplane"
@@ -436,10 +426,6 @@ msgid "Van"
 msgstr "فان"
 
 msgctxt "selection:gnuhealth.ambulance.support,state:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "At Hospital"
 msgstr "في المستشفى"
 
@@ -470,10 +456,6 @@ msgstr "في العودة"
 msgctxt "selection:gnuhealth.ambulance.support,state:"
 msgid "To Hospital"
 msgstr "إلى المستشفى"
-
-msgctxt "selection:gnuhealth.support_request,event_type:"
-msgid ""
-msgstr "-"
 
 msgctxt "selection:gnuhealth.support_request,event_type:"
 msgid "Acute Coronary Syndrome"
@@ -596,10 +578,6 @@ msgid "Traumatic Injuries"
 msgstr "إصابات جرحية"
 
 msgctxt "selection:gnuhealth.support_request,place_occurrance:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.support_request,place_occurrance:"
 msgid "Commercial Area"
 msgstr "منطقة تجارية"
 
@@ -640,20 +618,12 @@ msgid "Unknown"
 msgstr "غير معروف"
 
 msgctxt "selection:gnuhealth.support_request,state:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.support_request,state:"
 msgid "Closed"
 msgstr "مغلق"
 
 msgctxt "selection:gnuhealth.support_request,state:"
 msgid "Open"
 msgstr "مفتوح"
-
-msgctxt "selection:gnuhealth.support_request,urgency:"
-msgid ""
-msgstr "-"
 
 msgctxt "selection:gnuhealth.support_request,urgency:"
 msgid "Emergency"
@@ -668,10 +638,6 @@ msgid "Urgent"
 msgstr "عاجل"
 
 msgctxt "selection:gnuhealth.support_request.log,action:"
-msgid ""
-msgstr "-"
-
-msgctxt "selection:gnuhealth.support_request.log,action:"
 msgid "Ambulance"
 msgstr "سيارة إسعاف"
 
@@ -679,184 +645,170 @@ msgctxt "selection:gnuhealth.support_request.log,action:"
 msgid "General"
 msgstr "عام"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "At Hospital"
 msgstr "في المستشفى"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Available"
-msgstr ""
+msgstr "متوفر"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Confirm arrival to the incident location ?"
-msgstr ""
+msgstr "تأكيد الوصول إلى موقع الحادث؟"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Dispatch ambulance ?"
-msgstr ""
+msgstr "إرسال سيارة إسعاف؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Dispatched"
 msgstr "أرسل"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "En Route"
 msgstr "في الطريق"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Going to hospital from incident location ?"
-msgstr ""
+msgstr "الذهاب للمستشفى من موقع الحادث ؟"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Has the ambulance arrived to hospital ?"
-msgstr ""
+msgstr "هل وصلت سيارة الإسعاف إلى المستشفى؟"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Is the ambulance returning to the station ?"
-msgstr ""
+msgstr "هل سيارة الإسعاف عائدة إلى المحطة؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Main"
 msgstr "الاساسيات"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Mark vehicle as available ?"
-msgstr ""
+msgstr "وضع علامة فارغ على المركبة ؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "On Location"
-msgstr "في عين المكان"
+msgstr "في المكان"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Out of Service"
-msgstr ""
+msgstr "خارجة عن الخدمة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Returning"
 msgstr "في العودة"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Set as En Route to the incident ?"
-msgstr ""
+msgstr "وضع علامة في الطريق الى الحادث ؟"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Set the ambulance as Out of Service ?"
-msgstr ""
+msgstr "وضع علامة خارج الخدمة على سيارة الاسعاف ؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "Status"
-msgstr "الوضع"
+msgstr "الحالة"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance going to the hospital from the incident location"
-msgstr ""
+msgstr "سيارة الإسعاف تتوجه إلى المستشفى من مكان الحادث"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has arrived at the incident location"
-msgstr ""
+msgstr "وصلت سيارة الإسعاف إلى موقع الحادث"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has arrived to base / is available"
-msgstr ""
+msgstr "وقد وصلت سيارة الإسعاف إلى القاعدة/ متوفرة"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has arrived to hospital"
-msgstr ""
+msgstr "سيارة الإسعاف وصلت إلى المستشفى"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance has been dispatched"
-msgstr ""
+msgstr "تم إرسال سيارة الإسعاف"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance is going to the incident"
-msgstr ""
+msgstr "سيارة الإسعاف في طريقها إلى الحادث"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance is out of service"
-msgstr ""
+msgstr "سيارة الإسعاف خارج الخدمة"
 
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "The ambulance is returning to base"
-msgstr ""
+msgstr "سيارة الإسعاف عائدة إلى القاعدة"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance.support:"
 msgid "To Hospital"
 msgstr "نحو المستشفى"
 
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Functionality"
-msgstr ""
+msgstr "وظيفياً"
 
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Identification"
-msgstr ""
+msgstr "تحديد الهوية"
 
-#, fuzzy
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Remarks"
 msgstr "ملاحظات"
 
 msgctxt "view:gnuhealth.ambulance:"
 msgid "Station and Status"
-msgstr ""
+msgstr "المحطة والوضع"
 
-#, fuzzy
 msgctxt "view:gnuhealth.support_request.log:"
 msgid "Date"
 msgstr "تاريخ"
 
-#, fuzzy
 msgctxt "view:gnuhealth.support_request:"
 msgid "Address"
 msgstr "عنوان"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Close"
-msgstr ""
+msgstr "اغلاق"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Close the request ?"
-msgstr ""
+msgstr "اغلاق الطلب ؟"
 
-#, fuzzy
 msgctxt "view:gnuhealth.support_request:"
 msgid "Details"
 msgstr "تفاصيل"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Evaluation Specifics"
-msgstr ""
+msgstr "مواصفات التقييم"
 
-#, fuzzy
 msgctxt "view:gnuhealth.support_request:"
 msgid "Location"
 msgstr "الموقع"
 
-#, fuzzy
 msgctxt "view:gnuhealth.support_request:"
 msgid "Open"
 msgstr "مفتوح"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Open the request ?"
-msgstr ""
+msgstr "فتح الطلب ؟"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Patient Demographics"
-msgstr ""
+msgstr "التركيبة السكانية للمرضى"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Set this support request to closed"
-msgstr ""
+msgstr "قم بتعيين طلب الدعم هذا على مغلق"
 
 msgctxt "view:gnuhealth.support_request:"
 msgid "Set this support request to open"
-msgstr ""
+msgstr "قم بتعيين طلب الدعم هذا على مفتوح"

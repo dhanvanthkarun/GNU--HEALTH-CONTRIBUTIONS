@@ -1,20 +1,22 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
-    <label name="institution"/>
-    <field name="institution"/>
-    <newline/>
-    <label name="healthprof"/>
-    <field name="healthprof"/>
-    <label name="specialty"/>
-    <field name="specialty"/>
+    <group id="header" colspan="4">
+        <label name="institution"/>
+        <field name="institution"/>
+        <newline/>
+        <label name="healthprof"/>
+        <field name="healthprof"/>
+        <label name="specialty"/>
+        <field name="specialty"/>
+    </group>
     <group id="date" col="8" colspan="4">
         <label name="date_start"/>
         <field name="date_start"/>
@@ -39,6 +41,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <label name="sunday"/>
         <field name="sunday"/>
     </group>
-    <label name="appointment_minutes"/>
-    <field name="appointment_minutes"/>
+    <group id="footer" colspan="4">
+        <label name="appointment_minutes"/>
+        <field name="appointment_minutes"/>
+    </group>
 </form>

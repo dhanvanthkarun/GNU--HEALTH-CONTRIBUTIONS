@@ -25,6 +25,11 @@ msgid "Other Drugs"
 msgstr ""
 
 #, fuzzy
+msgctxt "field:gnuhealth.iss,evaluation:"
+msgid "Evaluation"
+msgstr "ການປະເມີນຜົນ"
+
+#, fuzzy
 msgctxt "field:gnuhealth.iss,healthcenter:"
 msgid "Institution"
 msgstr "ສະຖາບັນ"
@@ -67,11 +72,6 @@ msgstr ""
 msgctxt "field:gnuhealth.iss,mva_position:"
 msgid "User Position"
 msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.iss,name:"
-msgid "Evaluation"
-msgstr "ການປະເມີນຜົນ"
 
 msgctxt "field:gnuhealth.iss,operational_sector:"
 msgid "O. Sector"
@@ -139,6 +139,10 @@ msgid ""
 "the accident ?"
 msgstr ""
 
+msgctxt "help:gnuhealth.iss,evaluation:"
+msgid "Related Patient Evaluation"
+msgstr ""
+
 msgctxt "help:gnuhealth.iss,injury_date:"
 msgid "Usually the same as the Evaluation"
 msgstr ""
@@ -157,10 +161,6 @@ msgstr ""
 
 msgctxt "help:gnuhealth.iss,mva_position:"
 msgid "Motor Vehicle Accident user position"
-msgstr ""
-
-msgctxt "help:gnuhealth.iss,name:"
-msgid "Related Patient Evaluation"
 msgstr ""
 
 msgctxt "help:gnuhealth.iss,operational_sector:"
@@ -203,9 +203,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_report_iss"
 msgid "Injury Surveillance System Registration"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid "No"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
 msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid "Suspected"
@@ -247,9 +248,10 @@ msgctxt "selection:gnuhealth.iss,disposition:"
 msgid "Treated and Sent Home"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,drugs:"
 msgid "No"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
 msgctxt "selection:gnuhealth.iss,drugs:"
 msgid "Suspected"
@@ -487,9 +489,10 @@ msgctxt "selection:gnuhealth.iss,place_occurrance:"
 msgid "Unknown"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.iss,safety_gear:"
 msgid "No"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
 msgctxt "selection:gnuhealth.iss,safety_gear:"
 msgid "Unknown"

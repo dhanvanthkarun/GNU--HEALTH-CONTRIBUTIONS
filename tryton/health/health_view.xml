@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -99,6 +99,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/bol.svg</field>
         </record>
 
+<!-- Create the GNU HEALTH NURSING icon -->
+        <record model="ir.ui.icon" id="gnuhealth_nursing_icon">
+            <field name="name">gnuhealth-nursing</field>
+            <field name="path">icons/gnuhealth_nurse.svg</field>
+        </record>
+
+
 <!-- Create the GNU HEALTH Federation icon -->
         <record model="ir.ui.icon" id="gnuhealth_federation_icon">
             <field name="name">health-federation</field>
@@ -110,6 +117,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">health-help</field>
             <field name="path">icons/help.svg</field>
         </record>
+
+<!-- Create the GNU HEALTH Online document icon -->
+        <record model="ir.ui.icon" id="gnuhealth_online_document_icon">
+            <field name="name">health-online-document</field>
+            <field name="path">icons/online_document.svg</field>
+        </record>
+
+
 
 <!-- Replace default Tryton module icons -->
 
@@ -155,17 +170,16 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="model" search="[('model', '=', 'gnuhealth.death_certificate')]"/>
         </record>
 
-
         <!-- Appointment -->
-        <record model="ir.model.button" id="appoinntment_checked_in">
-            <field name="name">checked_in</field>
+        <record model="ir.model.button" id="appoinntment_check_in">
+            <field name="name">check_in</field>
             <field name="string">Check In</field>
             <field name="model" search="[('model', '=', 'gnuhealth.appointment')]"/>
         </record>
 
-        <record model="ir.model.button" id="appoinntment_no_show">
-            <field name="name">no_show</field>
-            <field name="string">No show</field>
+        <record model="ir.model.button" id="appoinntment_miss_out">
+            <field name="name">miss_out</field>
+            <field name="string">Miss Out</field>
             <field name="model" search="[('model', '=', 'gnuhealth.appointment')]"/>
         </record>
 
@@ -230,11 +244,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <menuitem name="Misc" id="gnuhealth_conf_misc"
             parent="gnuhealth_conf_menu" sequence="999" icon="gnuhealth-open"/>
         <menuitem name="Insurances" id="gnuhealth_conf_insurances"
-            parent="gnuhealth_conf_misc" icon="gnuhealth-open"/>
+            parent="gnuhealth_conf_menu" icon="gnuhealth-open"/>
+
+        <menuitem name="Nursing" id="gnuhealth_nursing_menu"
+            parent="health.gnuhealth_menu" sequence="900" icon="gnuhealth-nursing"/>
 
         <menuitem name="Federation" id="gnuhealth_conf_federation"
             sequence="990" parent="health.gnuhealth_conf_menu" 
             icon="health-federation"/>
+
 
 <!-- Person Names -->
 
@@ -507,7 +525,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.ui.view" id="gnuhealth_drug_form_tree">
             <field name="model">gnuhealth.drug.form</field>
             <field name="type">tree</field>
-            <field name="name">gnuhealth_drug_route_tree</field>
+            <field name="name">gnuhealth_drug_form_tree</field>
         </record>
 
         <record model="ir.action.act_window" id="gnuhealth_action_drug_form">
@@ -763,6 +781,20 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <menuitem action="gnuhealth_action_family_member"
             id="gnuhealth_edit_family_member" parent="gnuhealth_demographics_menu"
             icon="gnuhealth-list" sequence="40"/>
+
+<!-- Family Diseases -->
+
+        <record model="ir.ui.view" id="gnuhealth_family_diseases_view">
+            <field name="model">gnuhealth.patient.family.diseases</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_family_diseases</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_family_diseases_tree">
+            <field name="model">gnuhealth.patient.family.diseases</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_family_diseases_tree</field>
+        </record>
 
 
 <!-- Domiciliary Unit -->
@@ -1314,7 +1346,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_birth_cert_form1">
             <field name="name">Birth Certificate</field>
             <field name="res_model">gnuhealth.birth_certificate</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('party', '=', Eval('active_id'))]" pyson="1"/>
         </record>
 
         <record model="ir.action.keyword" id="act_open_birth_cert_keyword1">
@@ -1352,7 +1384,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_death_cert_form1">
             <field name="name">Death Certificate</field>
             <field name="res_model">gnuhealth.death_certificate</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('party', '=', Eval('active_id'))]" pyson="1"/>
         </record>
 
         <record model="ir.action.keyword" id="act_open_death_cert_keyword1">
@@ -1438,6 +1470,61 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="type">tree</field>
             <field name="name">gnuhealth_patient_medication_tree</field>
         </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_medication_view">
+            <field name="name">Patient medications</field>
+            <field name="res_model">gnuhealth.patient.medication</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_medication_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_patient_medication_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_medication_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_medication_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_patient_medication_form"/>
+            <field name="act_window" ref="action_gnuhealth_patient_medication_view"/>
+        </record>
+
+        <menuitem name="Patient medications" action="action_gnuhealth_patient_medication_view"
+            id="gnuhealth_patient_medications_menu"
+            parent="gnuhealth_menu" sequence="20" icon="gnuhealth-medicament"/>
+
+
+<!-- PATIENT PROCEDURES -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_procedure_form">
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_procedure_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_procedure_tree">
+            <field name="model">gnuhealth.patient.procedure</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_procedure_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_procedure_view">
+            <field name="name">Patient procedures</field>
+            <field name="res_model">gnuhealth.patient.procedure</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_procedure_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_patient_procedure_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_procedure_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_procedure_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_patient_procedure_form"/>
+            <field name="act_window" ref="action_gnuhealth_patient_procedure_view"/>
+        </record>
+
+        <menuitem name="Patient procedures" action="action_gnuhealth_patient_procedure_view" 
+            id="gnuhealth_patient_procedures_menu"
+            parent="gnuhealth_menu" sequence="20" icon="gnuhealth-list"/>
 
 
 <!-- PATIENT APPOINTMENTS -->
@@ -1606,12 +1693,33 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="name">gnuhealth_vaccination_tree</field>
         </record>
 
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_vaccination_view">
+            <field name="name">Patient vaccination</field>
+            <field name="res_model">gnuhealth.vaccination</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_vaccination_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_vaccination_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_vaccination_view"/>
+        </record>
+        
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_vaccination_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_vaccination_form"/>
+            <field name="act_window" ref="action_gnuhealth_patient_vaccination_view"/>
+        </record>
+
+        <menuitem name="Patient vaccinations" action="action_gnuhealth_patient_vaccination_view" 
+            id="gnuhealth_patient_vaccinations_menu"
+            parent="gnuhealth_nursing_menu" icon="gnuhealth-list"/>
+
 
 <!-- Shortcut to the Patient vaccinations from the patient view -->
         <record model="ir.action.act_window" id="act_vaccination_form1">
             <field name="name">Vaccinations</field>
             <field name="res_model">gnuhealth.vaccination</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_vaccination_keyword1">
@@ -1620,7 +1728,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="act_vaccination_form1"/>
         </record>
 
-<!-- PATIENT DIRECTIONS - PROCEDURES / ACTIONS TO TAKE -->
+<!-- DEPRECATED IN GH 5.0 by GNU HElath Procedures - PATIENT DIRECTIONS - PROCEDURES / ACTIONS TO TAKE -->
 
         <record model="ir.ui.view" id="gnuhealth_directions_form">
             <field name="model">gnuhealth.directions</field>
@@ -1658,7 +1766,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.ui.view" id="gnuhealth_diagnostic_hypothesis_form">
             <field name="model">gnuhealth.diagnostic_hypothesis</field>
             <field name="type">form</field>
-            <field name="name">gnuhealth_secondary_condition_form</field>
+            <field name="name">gnuhealth_diagnostic_hypothesis_form</field>
         </record>
 
         <record model="ir.ui.view" id="gnuhealth_diagnostic_hypothesis_tree">
@@ -1699,7 +1807,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_ecg_view">
             <field name="name">ECGs</field>
             <field name="res_model">gnuhealth.patient.ecg</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
         </record>
         <record model="ir.action.keyword" id="act_open_ecg_keyword">
             <field name="keyword">form_relate</field>
@@ -1725,7 +1833,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="act_condition_form1">
             <field name="name">Conditions</field>
             <field name="res_model">gnuhealth.patient.disease</field>
-            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_condition_keyword1">
@@ -2311,10 +2419,79 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="act_window" ref="gnuhealth_action_help"/>
         </record>
 
-        <!-- Place  the menu entrey as the last item, 
-             after the configuration menu (999) -->
         <menuitem action="gnuhealth_action_help" icon="health-help"
-            id="gnuhealth_help" sequence="1000" parent="gnuhealth_menu"/>
+            id="gnuhealth_help" sequence="999" parent="gnuhealth_menu"/>
+
+<!-- Online documentation -->
+        <record model="ir.ui.view" id="gnuhealth_online_document_view">
+            <field name="model">gnuhealth.online_document</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_online_document_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_online_document_tree">
+            <field name="model">gnuhealth.online_document</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_online_document_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_online_document">
+            <field name="name">Online Documentation</field>
+            <field name="res_model">gnuhealth.online_document</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_online_document_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_online_document_tree"/>
+            <field name="act_window" ref="gnuhealth_action_online_document"/>
+        </record>
+
+       <record model="ir.action.act_window.view" id="act_online_document_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_online_document_view"/>
+            <field name="act_window" ref="gnuhealth_action_online_document"/>
+        </record>
+
+        <!-- Place  the menu entry as the last item, 
+             after the configuration menu (999) -->
+        <menuitem action="gnuhealth_action_online_document" icon="health-online-document"
+            id="gnuhealth_online_document" sequence="1000" parent="gnuhealth_menu"/>
+
+
+<!-- GNU Health Medical Procedures Config -->
+
+        <record model="ir.action.act_window" id="gnuhealth_action_procedures_config">
+            <field name="name">Medical Procedures Configuration</field>
+            <field name="res_model">gnuhealth.procedures.config</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_procedures_config_view">
+            <field name="model">gnuhealth.procedures.config</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_procedures_config</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_procedures_config_tree">
+            <field name="model">gnuhealth.procedures.config</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_procedures_config_tree</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_procedures_config_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_procedures_config_tree"/>
+            <field name="act_window" ref="gnuhealth_action_procedures_config"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_procedures_config_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_procedures_config_view"/>
+            <field name="act_window" ref="gnuhealth_action_procedures_config"/>
+        </record>
+
+
+        <menuitem action="gnuhealth_action_procedures_config" icon="gnuhealth-list"
+            id="gnuhealth_conf_procedures_config" sequence="1"
+            parent="gnuhealth_conf_procedure"/>
 
     </data>
 </tryton>

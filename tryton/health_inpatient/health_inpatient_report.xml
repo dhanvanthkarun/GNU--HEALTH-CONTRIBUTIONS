@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <!-- Rounding report -->
+        <record model="ir.action.report" id="report_round_nursing">
+            <field name="name">Nursing rounds</field>
+            <field name="model">gnuhealth.patient.rounding</field>
+            <field name="report_name">patient.rounding.report</field>
+            <field name="report">health_inpatient/report/round_report.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record model="ir.action.keyword" id="report_nursing_round">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient.rounding,-1</field>
+            <field name="action" ref="report_round_nursing"/>
+        </record>
+
+
+    </data>
+</tryton>

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -14,10 +14,10 @@
 
 from trytond.model import (ModelView, ModelSingleton, ModelSQL,
                            ValueMixin, MultiValueMixin, fields)
-from trytond import backend
+# from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool
-from trytond.tools.multivalue import migrate_property
+# from trytond.tools.multivalue import migrate_property
 
 # Sequences
 # The patient_sequence is no longer used
@@ -108,10 +108,14 @@ class _ConfigurationValue(ModelSQL):
 
     @classmethod
     def __register__(cls, module_name):
-        exist = backend.TableHandler.table_exist(cls._table)
+        # Removed in GH 5.0
+        # exist = backend.TableHandler.table_exist(cls._table)
 
         super(_ConfigurationValue, cls).__register__(module_name)
 
+
+"""
+    # Removed in GH 5.0
         if not exist:
             cls._migrate_property([], [], [])
 
@@ -122,6 +126,7 @@ class _ConfigurationValue(ModelSQL):
         migrate_property(
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
+"""
 
 
 class PatientSequence(_ConfigurationValue, ModelSQL, ValueMixin):

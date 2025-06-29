@@ -40,9 +40,10 @@ msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "თარიღი"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "ჯანდაცვის პროფესორი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
@@ -109,13 +110,18 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "პაციენტი"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
-msgstr ""
+msgid "Request Date"
+msgstr "მოთხოვნის თარიღი"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
 msgid "Study"
@@ -140,9 +146,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "თარიღი"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "ჯანდაცვის პროფესორი"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
@@ -508,6 +515,18 @@ msgstr ""
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
 msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.request:"

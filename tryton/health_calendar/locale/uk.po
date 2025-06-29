@@ -1,0 +1,154 @@
+#
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-04-26 09:53+0000\n"
+"Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
+"Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health_calendar/uk/>\n"
+"Language: uk\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.10.2\n"
+
+msgctxt "field:gnuhealth.appointment,appointment_date_end:"
+msgid "End"
+msgstr "Завершення"
+
+msgctxt "field:gnuhealth.appointment,event:"
+msgid "CalDAV Event"
+msgstr "Подія CalDAV"
+
+msgctxt ""
+"field:gnuhealth.calendar.create.appointment.start,appointment_minutes:"
+msgid "Appointment Minutes"
+msgstr "Хвилини прийому"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,date_end:"
+msgid "End Date"
+msgstr "Дата завершення"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,date_start:"
+msgid "Start Date"
+msgstr "Дата початку"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,friday:"
+msgid "Friday"
+msgstr "П'ятниця"
+
+#, fuzzy
+msgctxt "field:gnuhealth.calendar.create.appointment.start,healthprof:"
+msgid "Health Prof"
+msgstr "Практикуючий лікар"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,institution:"
+msgid "Institution"
+msgstr "Заклад"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,monday:"
+msgid "Monday"
+msgstr "Понеділок"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,saturday:"
+msgid "Saturday"
+msgstr "Субота"
+
+#, fuzzy
+msgctxt "field:gnuhealth.calendar.create.appointment.start,specialty:"
+msgid "Specialty"
+msgstr "Спеціальність"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,sunday:"
+msgid "Sunday"
+msgstr "Неділя"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,thursday:"
+msgid "Thursday"
+msgstr "Четвер"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,time_end:"
+msgid "End Time"
+msgstr "Час завершення"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,time_start:"
+msgid "Start Time"
+msgstr "Час початку"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,tuesday:"
+msgid "Tuesday"
+msgstr "Вівторок"
+
+msgctxt "field:gnuhealth.calendar.create.appointment.start,wednesday:"
+msgid "Wednesday"
+msgstr "Середа"
+
+msgctxt "field:res.user,calendar:"
+msgid "Calendar"
+msgstr "Календар"
+
+msgctxt "field:res.user,use_caldav:"
+msgid "CalDAV"
+msgstr "CalDAV"
+
+msgctxt "help:gnuhealth.appointment,appointment_date_end:"
+msgid "Appointment end date and time."
+msgstr "Дата і час завершення прийому."
+
+msgctxt "help:gnuhealth.appointment,event:"
+msgid "Calendar Event"
+msgstr "Подія календаря"
+
+msgctxt "help:res.user,use_caldav:"
+msgid "The user has a CalDav account"
+msgstr "Цей користувач має обліковий запис CalDav"
+
+msgctxt "model:gnuhealth.calendar.create.appointment.start,name:"
+msgid "Create Appointments Start"
+msgstr "Створити початок прийому"
+
+msgctxt "model:ir.action,name:action_gnuhealth_appointment_calendar"
+msgid "Appointments Calendar"
+msgstr "Календар прийомів"
+
+msgctxt "model:ir.action,name:wizard_create_appointments"
+msgid "New Work Schedule"
+msgstr "Новий розклад роботи"
+
+msgctxt "model:ir.message,text:msg_appointment_end_date_before_start"
+msgid ""
+"SM-CALENDAR-0004: The Appointment END date \"%(appointment_date_end)s\" is "
+"BEFORE the start date \"%(appointment_date)s\""
+msgstr ""
+"SM-CALENDAR-0004: Дата ЗАВЕРШЕННЯ прийому \"%(appointment_date_end)s\" "
+"ВИПЕРЕДЖАЄ дату його початку \"%(appointment_date)s\""
+
+msgctxt "model:ir.message,text:msg_end_before_start"
+msgid "SM-CALENDAR-002: End date before start"
+msgstr "SM-CALENDAR-002: Дата завершення до початку"
+
+msgctxt "model:ir.message,text:msg_no_company_timezone"
+msgid ""
+"SM-CALENDAR-001: You need to define a timezone for this company before "
+"creating a work schedule"
+msgstr ""
+"SM-CALENDAR-001: Перш ніж створювати розклад роботи, потрібно вказати "
+"часовий пояс для цієї установи"
+
+msgctxt "model:ir.message,text:msg_period_too_long"
+msgid "SM-CALENDAR-003: The schedule period should be less than 31 days"
+msgstr "SM-CALENDAR-003: Період розкладу не повинен перевищувати 31 день"
+
+msgctxt "model:ir.ui.menu,name:menu_create_appointments"
+msgid "New Work Schedule"
+msgstr "Новий розклад роботи"
+
+msgctxt "model:ir.ui.menu,name:menu_gnuhealth_appointment_calendar"
+msgid "Appointments Calendar"
+msgstr "Календар прийомів"
+
+msgctxt "wizard_button:gnuhealth.calendar.create.appointment,start,create_:"
+msgid "Create"
+msgstr "Створити"
+
+msgctxt "wizard_button:gnuhealth.calendar.create.appointment,start,end:"
+msgid "Cancel"
+msgstr "Скасувати"

@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2011-2014 Sebastian Marro <smarro@thymbra.com>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -28,7 +28,7 @@ class OpenEvaluationsStart(ModelView):
         ('doctor', 'Doctor'),
         ('specialty', 'Specialty'),
         ('sector', 'Sector'),
-        ], 'Group By', sort=False, required=True)
+    ], 'Group By', sort=False, required=True)
 
 
 class OpenEvaluations(Wizard):
@@ -40,34 +40,34 @@ class OpenEvaluations(Wizard):
         'health_reporting.evaluations_open_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Open', 'select', 'tryton-ok', default=True),
-            ])
+        ])
     select = StateTransition()
     open_doctor = StateAction('health_reporting.act_evaluations_doctor')
     open_specialty = StateAction('health_reporting.act_evaluations_specialty')
     open_sector = StateAction('health_reporting.act_evaluations_sector')
 
     def transition_select(self):
-        return 'open_' + self.start.group_by
+        return f'open_{self.start.group_by}'
 
     def do_open_doctor(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+        })
         return action, {}
 
     def do_open_specialty(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+        })
         return action, {}
 
     def do_open_sector(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+        })
         return action, {}
 
     def transition_open_doctor(self):
@@ -93,8 +93,10 @@ class EvaluationsDoctor(ModelSQL, ModelView):
         Evaluation = pool.get('gnuhealth.patient.evaluation')
         evaluation = Evaluation.__table__()
         where = Literal(True)
-        period_start = Transaction().context['start_date']
-        period_end = Transaction().context['end_date']
+
+        period_start = Transaction().context.get('start_date') or None
+        period_end = Transaction().context.get('end_date') or None
+
         if period_start:
             where &= evaluation.evaluation_start >= period_start
         if period_end:
@@ -127,8 +129,9 @@ class EvaluationsSpecialty(ModelSQL, ModelView):
         Evaluation = pool.get('gnuhealth.patient.evaluation')
         evaluation = Evaluation.__table__()
         where = (evaluation.specialty != Null)
-        period_start = Transaction().context['start_date']
-        period_end = Transaction().context['end_date']
+
+        period_start = Transaction().context.get('start_date') or None
+        period_end = Transaction().context.get('end_date') or None
 
         if period_start:
             where &= evaluation.evaluation_start >= period_start
@@ -171,8 +174,9 @@ class EvaluationsSector(ModelSQL, ModelView):
         join4 = Join(join3, sector)
         join4.condition = join4.right.id == join3.right.operational_sector
         where = Literal(True)
-        period_start = Transaction().context['start_date']
-        period_end = Transaction().context['end_date']
+
+        period_start = Transaction().context.get('start_date') or None
+        period_end = Transaction().context.get('end_date') or None
 
         if period_start:
             where &= evaluation.evaluation_start >= period_start

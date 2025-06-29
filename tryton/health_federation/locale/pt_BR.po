@@ -1,10 +1,18 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-04-26 09:53+0000\n"
+"Last-Translator: themandalorian <themandalorian@noreply.codeberg.org>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.codeberg.org/projects/gnuhealth/health_federation/pt_BR/>\n"
+"Language: pt_BR\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.federation.config,enabled:"
 msgid "Enabled"
-msgstr ""
+msgstr "Habilitado"
 
 msgctxt "field:gnuhealth.federation.config,host:"
 msgid "Thalamus server"
@@ -12,7 +20,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.federation.config,password:"
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 msgctxt "field:gnuhealth.federation.config,port:"
 msgid "Port"
@@ -29,11 +37,11 @@ msgstr "Usuário"
 
 msgctxt "field:gnuhealth.federation.config,verify_ssl:"
 msgid "Verify SSL cert"
-msgstr ""
+msgstr "Verificar o certificado SSL"
 
 msgctxt "field:gnuhealth.federation.object,enabled:"
 msgid "Enabled"
-msgstr ""
+msgstr "Habilitado"
 
 msgctxt "field:gnuhealth.federation.object,fields:"
 msgid "Fields"
@@ -221,6 +229,26 @@ msgctxt ""
 msgid "Sent"
 msgstr ""
 
+msgctxt "model:ir.message,text:msg_need_login_credentials"
+msgid "SM-FEDERATION-0001: Please setup the login credentials"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_institution"
+msgid "SM-FEDERATION-0005: You need to create an institution"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_server_authentication_error"
+msgid "SM-FEDERATION-0002: ERROR authenticating to Server"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_thalamus_connection_error"
+msgid "SM-FEDERATION-0004: Thalamus Connection error"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_thalamus_connection_ok"
+msgid "SM-FEDERATION-0003: Connection to Thalamus Server OK!"
+msgstr ""
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_config"
 msgid "Node Configuration"
 msgstr ""
@@ -291,4 +319,4 @@ msgstr ""
 
 msgctxt "view:gnuhealth.federation.queue:"
 msgid "Send the record to the Federation"
-msgstr ""
+msgstr "Enviar o registro para a Federação"

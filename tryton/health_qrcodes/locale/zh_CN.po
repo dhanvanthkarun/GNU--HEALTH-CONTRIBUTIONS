@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:gnuhealth.appointment,barcode:"
+msgid "Code39"
+msgstr "Code39"
+
 msgctxt "field:gnuhealth.appointment,qr:"
 msgid "QR Code"
 msgstr "二维码"
@@ -44,7 +48,7 @@ msgstr "检验项目标签"
 
 msgctxt "model:ir.action,name:report_newborn_qrcard"
 msgid "Newborn ID - QR"
-msgstr "新生儿ID（二维码）"
+msgstr "新生儿信息卡(带二维码)"
 
 msgctxt "model:ir.action,name:report_party_wristband"
 msgid "Wristbands"
@@ -59,19 +63,23 @@ msgid "Wristbands"
 msgstr "腕带"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Appointment Receipt"
-msgstr "预约凭证"
+msgid "APPT ID:"
+msgstr "预约号:"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Apporintment #"
-msgstr "预约号 #"
+msgid "Appointment Receipt"
+msgstr "预约凭证"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Date:"
 msgstr "日期:"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr "其它信息:"
+
+msgctxt "report:appointment.qrcodel:"
+msgid "Health Prof:"
 msgstr "医务人员:"
 
 msgctxt "report:appointment.qrcodel:"
@@ -79,12 +87,8 @@ msgid "Institution:"
 msgstr "医疗机构:"
 
 msgctxt "report:appointment.qrcodel:"
-msgid "Instructions / Notes:"
-msgstr "说明 / 注意事项:"
-
-msgctxt "report:appointment.qrcodel:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "Patient:"
@@ -96,7 +100,7 @@ msgstr "专业:"
 
 msgctxt "report:appointment.qrcodel:"
 msgid "You must present this receipt and your PUID"
-msgstr "你必须出示这张预约单和证件号码"
+msgstr "你必须出示这张预约单和健康号"
 
 msgctxt "report:labtest.qrlabel:"
 msgid "Cap label"
@@ -132,7 +136,7 @@ msgstr "身长 / 体重:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Mother ID:"
-msgstr "母亲证件号:"
+msgstr "母亲健康号:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Mother:"
@@ -144,7 +148,7 @@ msgstr "姓名:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:newborn.qrcard:"
 msgid "Sex:"
@@ -155,12 +159,8 @@ msgid "photo"
 msgstr "照片"
 
 msgctxt "report:party.wristband:"
-msgid "("
-msgstr "("
-
-msgctxt "report:party.wristband:"
-msgid ")"
-msgstr ")"
+msgid ","
+msgstr ","
 
 msgctxt "report:patient.qrcard:"
 msgid "Blood Type:"
@@ -180,8 +180,12 @@ msgstr "姓名:"
 
 msgctxt "report:patient.qrcard:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.qrcard:"
 msgid "photo"
 msgstr "照片"
+
+msgctxt "report:patient.wristband:"
+msgid ","
+msgstr ","

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <data>
-    <xpath expr="/form/field[@name=&quot;name&quot;]" position="after">
+    <xpath expr="/form/field[@name=&quot;patient&quot;]" position="after">
         <label name="inpatient_registration_code"/>
         <field name="inpatient_registration_code"/>
     </xpath>

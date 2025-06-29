@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tree>
+    <field name="patient" string="GNU Health Patient" expand="1"/>
+    <field name="patient_name" expand="1"/>
+    <field name="server" expand="1"/>
+    <field name="ohif_viewer_link" widget="url"/>
+    <field name="stone_viewer_link" widget="url"/>
+    <button name="delete_study"
+            help="Delete study from remote orthanc server."
+            confirm="Do you really want to delete the study from remote orthanc server?"
+            string="Orthanc: Delete Study"
+            tree_invisible="1"/>
+</tree>

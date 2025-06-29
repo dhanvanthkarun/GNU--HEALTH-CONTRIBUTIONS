@@ -1,6 +1,14 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-05-03 14:52+0000\n"
+"Last-Translator: milimarg <milimarg@noreply.codeberg.org>\n"
+"Language-Team: French <https://translate.codeberg.org/projects/gnuhealth/health_federation/fr/>\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.federation.config,enabled:"
 msgid "Enabled"
@@ -10,7 +18,6 @@ msgctxt "field:gnuhealth.federation.config,host:"
 msgid "Thalamus server"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.federation.config,password:"
 msgid "Password"
 msgstr "Mot de passe"
@@ -50,9 +57,10 @@ msgctxt "field:gnuhealth.federation.queue,args:"
 msgid "Arguments"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.federation.queue,args_preview:"
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 msgctxt "field:gnuhealth.federation.queue,federation_locator:"
 msgid "Fed ID"
@@ -222,6 +230,26 @@ msgstr ""
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_gnuhealth_fedq_domain_sent"
 msgid "Sent"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_need_login_credentials"
+msgid "SM-FEDERATION-0001: Please setup the login credentials"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_no_institution"
+msgid "SM-FEDERATION-0005: You need to create an institution"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_server_authentication_error"
+msgid "SM-FEDERATION-0002: ERROR authenticating to Server"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_thalamus_connection_error"
+msgid "SM-FEDERATION-0004: Thalamus Connection error"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_thalamus_connection_ok"
+msgid "SM-FEDERATION-0003: Connection to Thalamus Server OK!"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_federation_config"

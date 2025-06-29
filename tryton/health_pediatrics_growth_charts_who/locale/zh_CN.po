@@ -50,7 +50,7 @@ msgstr "儿童生长曲线"
 
 msgctxt "model:ir.action,name:report_pediatrics_growth_charts_who_bmifa"
 msgid "Pediatrics Growth Charts WHO - BMI for age"
-msgstr "儿科成长图标 - 体质指数/年龄"
+msgstr "儿童生长曲线 - 体质指数/年龄"
 
 msgctxt "model:ir.action,name:report_pediatrics_growth_charts_who_lhfa"
 msgid "Pediatrics Growth Charts WHO - Length/Height for age"
@@ -63,6 +63,78 @@ msgstr "儿童生长曲线 - 体重/年龄"
 msgctxt "model:ir.action,name:wizard_pediatrics_growth_charts_who"
 msgid "Pediatrics Growth Charts WHO"
 msgstr "儿童生长曲线"
+
+msgctxt "model:ir.message,text:msg_gender_boys"
+msgid "Boys"
+msgstr "男童"
+
+msgctxt "model:ir.message,text:msg_gender_girls"
+msgid "Girls"
+msgstr "女童"
+
+msgctxt "model:ir.message,text:msg_indicator_bmi_for_age"
+msgid "Body mass index for age (BMI for age) {gender}"
+msgstr "{gender}年龄别体质指数(BMI)报告"
+
+msgctxt "model:ir.message,text:msg_indicator_length_or_height_for_age"
+msgid "Length/height for age {gender}"
+msgstr "{gender}年龄别身长/身高报告"
+
+msgctxt "model:ir.message,text:msg_indicator_weight_for_age"
+msgid "Weight for age {gender}"
+msgstr "{gender}年龄别体重报告"
+
+msgctxt "model:ir.message,text:msg_measure_percentiles"
+msgid "percentiles"
+msgstr "百分位数"
+
+msgctxt "model:ir.message,text:msg_measure_z_scores"
+msgid "z-scores"
+msgstr "z-分数"
+
+msgctxt "model:ir.message,text:msg_subtitle"
+msgid "Birth to 5 years ({measure})"
+msgstr "出生至5岁 ({measure})"
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p15"
+msgid "15th"
+msgstr "15th"
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p3"
+msgid "3rd"
+msgstr "3rd"
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p50"
+msgid "50th"
+msgstr "50th"
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p85"
+msgid "85th"
+msgstr "85th"
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p97"
+msgid "97th"
+msgstr "97th"
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p15"
+msgid "-2"
+msgstr "-2"
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p3"
+msgid "-3"
+msgstr "-3"
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p50"
+msgid "0"
+msgstr "0"
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p85"
+msgid "2"
+msgstr "2"
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p97"
+msgid "3"
+msgstr "3"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_growth_charts_who"
 msgid "Pediatrics Growth Charts WHO"
@@ -313,8 +385,16 @@ msgid "9"
 msgstr "9"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
+msgid "Age (completed months and years)"
+msgstr "年龄（完成的月份和年份）"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Age:"
 msgstr "年龄:"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
+msgid "BMI (kg/m2)"
+msgstr "体质指数 (kg/m2)"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Date:"
@@ -329,16 +409,16 @@ msgid "Name:"
 msgstr "姓名:"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
+msgid "PUID:"
+msgstr "健康号:"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Patient"
 msgstr "患者"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Patient BMI for Age Information"
 msgstr "患者年龄别体质指数信息"
-
-msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
-msgid "Patient ID:"
-msgstr "患者证件号:"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "chart"
@@ -589,12 +669,20 @@ msgid "9"
 msgstr "9"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
+msgid "Age (completed months and years)"
+msgstr "年龄（完成的月份和年份）"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Age:"
 msgstr "年龄:"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Date:"
 msgstr "日期:"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
+msgid "Length/Height (cm)"
+msgstr "身长/身高 (cm)"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Month"
@@ -605,12 +693,12 @@ msgid "Name:"
 msgstr "姓名:"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
-msgid "Patient"
-msgstr "患者"
+msgid "PUID:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
-msgid "Patient ID:"
-msgstr "患者证件号:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Patient Length/Height for Age Information"
@@ -865,6 +953,10 @@ msgid "9"
 msgstr "9"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
+msgid "Age (completed months and years)"
+msgstr "年龄（完成的月份和年份）"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "Age:"
 msgstr "年龄:"
 
@@ -881,16 +973,20 @@ msgid "Name:"
 msgstr "姓名:"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
+msgid "PUID:"
+msgstr "健康号:"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "Patient"
 msgstr "患者"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
-msgid "Patient ID:"
-msgstr "患者证件号:"
-
-msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "Patient Weight for Age Information"
 msgstr "患者年龄别体重信息"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
+msgid "Weight (kg)"
+msgstr "体重 (kg)"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "chart"

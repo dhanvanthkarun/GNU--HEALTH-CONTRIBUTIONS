@@ -1,6 +1,14 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-05-08 09:53+0000\n"
+"Last-Translator: milimarg <milimarg@noreply.codeberg.org>\n"
+"Language-Team: French <https://translate.codeberg.org/projects/gnuhealth/health_caldav/fr/>\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:calendar.calendar,description:"
 msgid "Description"
@@ -422,71 +430,76 @@ msgstr "Événement"
 
 msgctxt "model:ir.message,text:msg_invalid_byday"
 msgid "Invalid *By Day* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Règle invalide pour la récurrence *Par jour* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byhour"
 msgid "Invalid *By Hour* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Règle invalide pour la récurrence *Par heure* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byminute"
 msgid "Invalid *By Minute* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Règle invalide pour la récurrence *Par minute* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bymonth"
 msgid "Invalid *By Month* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Règle invalide pour la récurrence *Par mois* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bymonthday"
 msgid "Invalid *By Month Day* in recurrence rule \"%(self.rec_name,)s\""
 msgstr ""
+"Règle invalide pour la récurrence *Par jour du mois* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bysecond"
 msgid "Invalid *By Second* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Règle invalide pour la récurrence *Par seconde* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bysetpos"
 msgid "Invalid *By Position* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Règle invalide pour la récurrence *Par position* \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byweeknumber"
 msgid "Invalid *By Week Number* in recurrence rule \"%(self.rec_name,)s\""
 msgstr ""
+"Règle invalide pour la récurrence *Par numéro de semaine* "
+"\"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byyearday"
 msgid "Invalid *By Year Day* in recurrence rule \"%(self.rec_name,)s\""
 msgstr ""
+"Règle invalide pour la récurrence *Par jour de l'année* "
+"\"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_calendar_extension"
 msgid "The calendar name can not have the icd extension"
-msgstr ""
+msgstr "Le nom calendrier ne peut pas avoir l'extension icd"
 
 msgctxt "model:ir.message,text:msg_invalid_recurrence"
 msgid "This recurrence can not be recurrent"
-msgstr ""
+msgstr "Récurrence invalide"
 
 msgctxt "model:ir.rule.group,name:rule_group_calendar_admin"
 msgid "Calendar rule group"
-msgstr ""
+msgstr "Groupe de règle de calendrier"
 
 msgctxt "model:ir.rule.group,name:rule_group_event_admin"
 msgid "Event rule group - admin"
-msgstr ""
+msgstr "Groupe de règle d’événement - administration"
 
 msgctxt "model:ir.rule.group,name:rule_group_read_calendar"
 msgid "Calendar rule group - read"
-msgstr ""
+msgstr "Groupe de règle de calendrier - lecture"
 
 msgctxt "model:ir.rule.group,name:rule_group_read_event"
 msgid "Event rule group - read"
-msgstr ""
+msgstr "Groupe de règle d’événement - lecture"
 
 msgctxt "model:ir.rule.group,name:rule_group_write_calendar"
 msgid "Calendar rule group - write"
-msgstr ""
+msgstr "Groupe de règle de calendrier - écriture"
 
 msgctxt "model:ir.rule.group,name:rule_group_write_event"
 msgid "Event rule group - write"
-msgstr ""
+msgstr "Groupe de règle d’événement - écriture"
 
 msgctxt "model:ir.ui.menu,name:menu_calendar"
 msgid "Calendar"
@@ -500,10 +513,9 @@ msgctxt "model:ir.ui.menu,name:menu_event_form"
 msgid "Events"
 msgstr "Événement"
 
-#, fuzzy
 msgctxt "model:res.group,name:group_calendar_admin"
-msgid "Calendar Group Administration "
-msgstr "Administration du Calendrier"
+msgid "Calendar Group Administration"
+msgstr "Administration du calendrier"
 
 msgctxt "selection:calendar.event,classification:"
 msgid "Confidential"
@@ -516,11 +528,6 @@ msgstr "Privé"
 msgctxt "selection:calendar.event,classification:"
 msgid "Public"
 msgstr "Publique"
-
-#, fuzzy
-msgctxt "selection:calendar.event,status:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:calendar.event,status:"
 msgid "Cancelled"
@@ -541,11 +548,6 @@ msgstr "Opaque"
 msgctxt "selection:calendar.event,transp:"
 msgid "Transparent"
 msgstr "transparent"
-
-#, fuzzy
-msgctxt "selection:calendar.event.attendee,status:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:calendar.event.attendee,status:"
 msgid "Accepted"
@@ -594,11 +596,6 @@ msgstr "Hebdomadaire"
 msgctxt "selection:calendar.event.exrule,freq:"
 msgid "Yearly"
 msgstr "Annuel"
-
-#, fuzzy
-msgctxt "selection:calendar.event.exrule,wkst:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:calendar.event.exrule,wkst:"
 msgid "Friday"
@@ -655,11 +652,6 @@ msgstr "Hebdomadaire"
 msgctxt "selection:calendar.event.rrule,freq:"
 msgid "Yearly"
 msgstr "Annuel"
-
-#, fuzzy
-msgctxt "selection:calendar.event.rrule,wkst:"
-msgid ""
-msgstr "retard de croissance intra-utérine (RCIU)"
 
 msgctxt "selection:calendar.event.rrule,wkst:"
 msgid "Friday"
@@ -728,11 +720,3 @@ msgstr "Occurrences"
 msgctxt "view:calendar.event:"
 msgid "Start Time"
 msgstr "Heure de début"
-
-msgctxt "view:calendar.location:"
-msgid "Location"
-msgstr "Emplacement"
-
-msgctxt "view:calendar.location:"
-msgid "Locations"
-msgstr "Emplacements"

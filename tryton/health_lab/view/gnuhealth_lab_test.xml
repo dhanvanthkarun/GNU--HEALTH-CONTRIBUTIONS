@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -15,6 +15,21 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <field name="name"/>
                 <label name="code"/>
                 <field name="code"/>
+                <label name="specimen_type"/>
+                <field name="specimen_type"/>
+                <label name="category"/>
+                <field name="category"/>
+                <label name="gender"/>
+                <field name="gender"/>
+                <label string="Age range:" id="age_range_label"/>
+                <group id="age_range" col="2" colspan="1">
+                  <field name="min_age"/>
+                  <field name="max_age"/>
+                </group>
+                <label name="report_style"/>
+                <field name="report_style"/>
+                <label name="tags"/>
+                <field name="tags" colspan="3"/>
                 <label name="active"/>
                 <field name="active"/>
             </group>

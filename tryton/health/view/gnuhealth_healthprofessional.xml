@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
     <group col="8" colspan="4" id="hp_header">
-        <label name="name"/>
-        <field name="name" colspan="3"/>
+        <label name="party"/>
+        <field name="party" colspan="3"/>
         <label name="code"/>
         <field name="code"/>
         <label name="active"/>
@@ -23,9 +23,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <newline/>
     <field name="info" colspan="4"/>
     <newline/>
-    <group col="6" colspan="4" id="hp_footer">
+    <group col="8" colspan="4" id="hp_footer">
         <label name="institution"/>
         <field name="institution"/>
+        <label name="institution_unit"/>
+        <field name="institution_unit"/>
         <label name="main_specialty"/>
         <field name="main_specialty"/>
         <label name="puid"/>

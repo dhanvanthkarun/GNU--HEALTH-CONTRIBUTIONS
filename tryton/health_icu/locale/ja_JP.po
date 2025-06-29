@@ -46,10 +46,6 @@ msgctxt "field:gnuhealth.icu.apache2,mean_ap:"
 msgid "MAP"
 msgstr "MAP"
 
-msgctxt "field:gnuhealth.icu.apache2,name:"
-msgid "Registration Code"
-msgstr "登録コード"
-
 msgctxt "field:gnuhealth.icu.apache2,paco2:"
 msgid "PaCO2"
 msgstr "PaCO2"
@@ -61,6 +57,11 @@ msgstr "PaO2"
 msgctxt "field:gnuhealth.icu.apache2,ph:"
 msgid "pH"
 msgstr "pH"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.apache2,registration:"
+msgid "Registration Code"
+msgstr "登録コード"
 
 msgctxt "field:gnuhealth.icu.apache2,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -106,10 +107,6 @@ msgctxt "field:gnuhealth.icu.chest_drainage,location:"
 msgid "Location"
 msgstr "場所"
 
-msgctxt "field:gnuhealth.icu.chest_drainage,name:"
-msgid "Rounding"
-msgstr "回診"
-
 msgctxt "field:gnuhealth.icu.chest_drainage,oscillation:"
 msgid "Oscillation"
 msgstr "変動"
@@ -117,6 +114,11 @@ msgstr "変動"
 msgctxt "field:gnuhealth.icu.chest_drainage,remarks:"
 msgid "Remarks"
 msgstr "注意点"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.chest_drainage,rounding:"
+msgid "Rounding"
+msgstr "回診"
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction:"
 msgid "Suction"
@@ -146,9 +148,15 @@ msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
 msgstr "言語機能"
 
-msgctxt "field:gnuhealth.icu.glasgow,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.icu.glasgow,registration:"
 msgid "Registration Code"
 msgstr "登録コード"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.ventilation,admission:"
+msgid "Patient ICU Admission"
+msgstr "ICU入室"
 
 msgctxt "field:gnuhealth.icu.ventilation,current_mv:"
 msgid "Current"
@@ -169,10 +177,6 @@ msgstr "期間"
 msgctxt "field:gnuhealth.icu.ventilation,mv_start:"
 msgid "From"
 msgstr "から"
-
-msgctxt "field:gnuhealth.icu.ventilation,name:"
-msgid "Patient ICU Admission"
-msgstr "ICU入室"
 
 msgctxt "field:gnuhealth.icu.ventilation,remarks:"
 msgid "Remarks"
@@ -210,7 +214,8 @@ msgctxt "field:gnuhealth.inpatient.icu,mv_history:"
 msgid "Mechanical Ventilation History"
 msgstr "機械的人工呼吸管理歴"
 
-msgctxt "field:gnuhealth.inpatient.icu,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.icu,registration:"
 msgid "Registration Code"
 msgstr "登録コード"
 
@@ -432,8 +437,8 @@ msgstr ""
 "ETT - 気管内チューブ"
 
 msgctxt "help:gnuhealth.inpatient.icu,admitted:"
-msgid "Will be set when the patient         is currently admitted at ICU"
-msgstr "患者がICUに入ったときにセットされます"
+msgid "Will be set when the patient is currently admitted at ICU."
+msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.icu,icu_admission_date:"
 msgid "ICU Admission Date"
@@ -497,10 +502,6 @@ msgctxt "model:gnuhealth.inpatient.icu,name:"
 msgid "Patient ICU Information"
 msgstr "患者のICU情報"
 
-msgctxt "model:ir.action,name:"
-msgid "ECG"
-msgstr "ECG"
-
 msgctxt "model:ir.action,name:act_apache_form1"
 msgid "APACHE II"
 msgstr "APACHE II"
@@ -538,10 +539,6 @@ msgctxt "model:ir.message,text:msg_patient_already_on_mv"
 msgid ""
 "Our records indicate that the patient is already on Mechanical Ventilation"
 msgstr ""
-
-msgctxt "model:ir.ui.menu,name:"
-msgid "ECG"
-msgstr "ECG"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_icu_menu"
 msgid "Intensive Care"
@@ -815,10 +812,6 @@ msgstr "慢性"
 msgctxt "view:gnuhealth.icu.apache2:"
 msgid "Physiological"
 msgstr "生理的"
-
-msgctxt "view:gnuhealth.icu.chest_drainage:"
-msgid "Patient Chest Drainage Assesment"
-msgstr "患者の胸腔ドレナージ評価"
 
 #, fuzzy
 msgctxt "view:gnuhealth.icu.glasgow:"

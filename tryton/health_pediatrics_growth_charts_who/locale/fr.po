@@ -64,6 +64,83 @@ msgctxt "model:ir.action,name:wizard_pediatrics_growth_charts_who"
 msgid "Pediatrics Growth Charts WHO"
 msgstr "Courbes de croissance pédiatriques de l'OMS"
 
+msgctxt "model:ir.message,text:msg_gender_boys"
+msgid "Boys"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_gender_girls"
+msgid "Girls"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_indicator_bmi_for_age"
+msgid "Body mass index for age (BMI for age) {gender}"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_indicator_length_or_height_for_age"
+msgid "Length/height for age {gender}"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_indicator_weight_for_age"
+msgid "Weight for age {gender}"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_measure_percentiles"
+msgid "percentiles"
+msgstr "centiles"
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_measure_z_scores"
+msgid "z-scores"
+msgstr "Variable centré réduite Z"
+
+msgctxt "model:ir.message,text:msg_subtitle"
+msgid "Birth to 5 years ({measure})"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p15"
+msgid "15th"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p3"
+msgid "3rd"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p50"
+msgid "50th"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p85"
+msgid "85th"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_percentile_p97"
+msgid "97th"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p15"
+msgid "-2"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_table_header_z_score_p3"
+msgid "-3"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_table_header_z_score_p50"
+msgid "0"
+msgstr "0"
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_table_header_z_score_p85"
+msgid "2"
+msgstr "2"
+
+#, fuzzy
+msgctxt "model:ir.message,text:msg_table_header_z_score_p97"
+msgid "3"
+msgstr "3"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_growth_charts_who"
 msgid "Pediatrics Growth Charts WHO"
 msgstr "Courbes de croissance pédiatriques de l'OMS"
@@ -355,7 +432,15 @@ msgid "9"
 msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
+msgid "Age (completed months and years)"
+msgstr ""
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Age:"
+msgstr ""
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
+msgid "BMI (kg/m2)"
 msgstr ""
 
 #, fuzzy
@@ -372,6 +457,10 @@ msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Name:"
 msgstr ""
 
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
+msgid "PUID:"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Patient"
@@ -379,10 +468,6 @@ msgstr "Patient"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
 msgid "Patient BMI for Age Information"
-msgstr ""
-
-msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
-msgid "Patient ID:"
 msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.bmifa.report:"
@@ -676,6 +761,10 @@ msgid "9"
 msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
+msgid "Age (completed months and years)"
+msgstr ""
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Age:"
 msgstr ""
 
@@ -683,6 +772,10 @@ msgstr ""
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Date:"
 msgstr "Date :"
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
+msgid "Length/Height (cm)"
+msgstr ""
 
 #, fuzzy
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
@@ -693,14 +786,14 @@ msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Name:"
 msgstr ""
 
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
+msgid "PUID:"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Patient"
 msgstr "Patient"
-
-msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
-msgid "Patient ID:"
-msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.lhfa.report:"
 msgid "Patient Length/Height for Age Information"
@@ -997,6 +1090,10 @@ msgid "9"
 msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
+msgid "Age (completed months and years)"
+msgstr ""
+
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "Age:"
 msgstr ""
 
@@ -1014,17 +1111,21 @@ msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "Name:"
 msgstr ""
 
+msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
+msgid "PUID:"
+msgstr ""
+
 #, fuzzy
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
 msgid "Patient"
 msgstr "Patient"
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
-msgid "Patient ID:"
+msgid "Patient Weight for Age Information"
 msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"
-msgid "Patient Weight for Age Information"
+msgid "Weight (kg)"
 msgstr ""
 
 msgctxt "report:gnuhealth.pediatrics.growth.charts.who.wfa.report:"

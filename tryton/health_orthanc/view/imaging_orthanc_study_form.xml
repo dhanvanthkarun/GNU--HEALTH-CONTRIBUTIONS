@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<form>
+    <notebook>
+        <page string='Study Content' id='study_content_page'>
+            <group string="GNU Health" colspan="4" id="gnuhealth_info">
+                <label name="patient"/>
+                <field name="patient"/>
+                <label name="imaging_test"/>
+                <field name="imaging_test"/>
+                <label name="merge_id"/>
+                <field name="merge_id"/>
+                <label name="merge_comment"/>
+                <field name="merge_comment"/>
+            </group>
+            <newline/>
+            <group string="Orthanc" colspan="4" col="4" id="orthanc_info">
+                <label name="patient_name" string="Patient:"/>
+                <field name="patient_name"/>
+                <label name="patient_id"/>
+                <field name="patient_id"/>
+                <label name="date"/>
+                <field name="date"/>
+                <label name="institution"/>
+                <field name="institution"/>
+                <label name="performing_physician_name"/>
+                <field name="performing_physician_name"/>
+            </group>
+            <newline/>
+            <group colspan="4" id="study_series_group" yexpand="1">
+                <field colspan="5" name="series"/>
+            </group>    
+            <newline/>
+            <group string="Study Notes" colspan="4" id="study_notes">
+                <field name="notes" colspan="4"/>
+            </group>
+        </page>
+     </notebook>
+</form>

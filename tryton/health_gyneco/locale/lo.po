@@ -114,7 +114,8 @@ msgctxt "field:gnuhealth.patient.colposcopy_history,last_colposcopy:"
 msgid "Previous"
 msgstr "ກ່ອນໜ້ານີ້"
 
-msgctxt "field:gnuhealth.patient.colposcopy_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.colposcopy_history,patient:"
 msgid "Patient"
 msgstr "ຄົນເຈັບ"
 
@@ -146,7 +147,8 @@ msgctxt "field:gnuhealth.patient.mammography_history,last_mammography:"
 msgid "Previous"
 msgstr "ກ່ອນໜ້ານີ້"
 
-msgctxt "field:gnuhealth.patient.mammography_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.mammography_history,patient:"
 msgid "Patient"
 msgstr "ຄົນເຈັບ"
 
@@ -190,7 +192,8 @@ msgctxt "field:gnuhealth.patient.menstrual_history,lmp_length:"
 msgid "Length"
 msgstr "ຄວາມຍາວ"
 
-msgctxt "field:gnuhealth.patient.menstrual_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.menstrual_history,patient:"
 msgid "Patient"
 msgstr "ຄົນເຈັບ"
 
@@ -222,7 +225,8 @@ msgctxt "field:gnuhealth.patient.pap_history,last_pap:"
 msgid "Previous"
 msgstr "ກ່ອນໜ້ານີ້"
 
-msgctxt "field:gnuhealth.patient.pap_history,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.patient.pap_history,patient:"
 msgid "Patient"
 msgstr "ຄົນເຈັບ"
 
@@ -249,17 +253,18 @@ msgctxt "field:gnuhealth.patient.pregnancy,computed_age:"
 msgid "Age"
 msgstr "ອາຍຸ"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.pregnancy,current_pregnancy:"
-msgid "Current Pregnancy"
-msgstr "ການຖືພາປັດຈຸບັນ"
+msgid "Current"
+msgstr "ສະກຸນເງິນ"
 
 msgctxt "field:gnuhealth.patient.pregnancy,fetuses:"
 msgid "Fetuses"
 msgstr "ເດັກອ່ອນ"
 
 msgctxt "field:gnuhealth.patient.pregnancy,gravida:"
-msgid "Pregnancy #"
-msgstr "ການຖືພາທີ #"
+msgid "#"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.pregnancy,gravidae:"
@@ -295,29 +300,40 @@ msgid "Monozygotic"
 msgstr "ແຝດຈາກໄຂ່ໜ່ວຍດຽວ"
 
 #, fuzzy
-msgctxt "field:gnuhealth.patient.pregnancy,name:"
+msgctxt "field:gnuhealth.patient.pregnancy,notes:"
+msgid "Notes"
+msgstr "ໝາຍເຫດ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.pregnancy,patient:"
 msgid "Patient"
 msgstr "ຄົນເຈັບ"
 
 msgctxt "field:gnuhealth.patient.pregnancy,pdd:"
-msgid "Pregnancy Due Date"
+msgid "Due Date"
 msgstr "ການຖືພາຕາມກຳນົດ"
 
 msgctxt "field:gnuhealth.patient.pregnancy,perinatal:"
 msgid "Perinatal Info"
 msgstr "ຂໍ້ມູນກ່ອນແລະຫຼັງເກີດ"
 
-msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_end_age:"
-msgid "Weeks"
-msgstr "ອາທິດ"
+msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_current_week:"
+msgid "Week #"
+msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_end_date:"
-msgid "End of Pregnancy"
-msgstr "ຕອນທ້າຍຂອງການຖືພາ"
+msgid "End"
+msgstr "ທ້າຍສຸດ"
 
 msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_end_result:"
 msgid "Result"
 msgstr "ຜົນກວດ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.pregnancy,pregnancy_result:"
+msgid "Result"
+msgstr "ຜົນຮັບ"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.pregnancy,premature:"
@@ -333,12 +349,12 @@ msgid "Puerperium monitor"
 msgstr "ການຕິດຕາມກວດກາຫຼັງເກີດລູກ"
 
 msgctxt "field:gnuhealth.patient.pregnancy,reverse:"
-msgid "Reverse"
-msgstr "ຢ້ອນກັບ"
+msgid "Past"
+msgstr ""
 
 msgctxt "field:gnuhealth.patient.pregnancy,reverse_weeks:"
-msgid "Pr. Weeks"
-msgstr "ອາທິດທີ່ຜ່ານມາ"
+msgid "Gest. Weeks"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.pregnancy,rh:"
@@ -431,10 +447,6 @@ msgctxt "field:gnuhealth.patient.prenatal.evaluation,iugr:"
 msgid "IUGR"
 msgstr "IUGR (ເດັກໃນທ້ອງຂະຫຽາຍໂຕຊ້າ)"
 
-msgctxt "field:gnuhealth.patient.prenatal.evaluation,name:"
-msgid "Patient Pregnancy"
-msgstr "ການຖືພາຂອງຄົນເຈັບ"
-
 #, fuzzy
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,notes:"
 msgid "Notes"
@@ -459,6 +471,11 @@ msgstr "ນໍ້າຄາວປາຫຼາຍໂພດ"
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,preeclampsia:"
 msgid "Preeclampsia"
 msgstr "ກຽມຊັກກະຕຸກ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.prenatal.evaluation,pregnancy:"
+msgid "Patient Pregnancy"
+msgstr "ການຖືພາຂອງຄົນເຈັບ"
 
 msgctxt "field:gnuhealth.patient.prenatal.evaluation,urinary_activity_signs:"
 msgid "SUA"
@@ -532,10 +549,6 @@ msgctxt "field:gnuhealth.perinatal,monitoring:"
 msgid "Monitors"
 msgstr "ຕິດຕາມກວດກາ"
 
-msgctxt "field:gnuhealth.perinatal,name:"
-msgid "Patient Pregnancy"
-msgstr "ການຖືພາຂອງຄົນເຈັບ"
-
 msgctxt "field:gnuhealth.perinatal,notes:"
 msgid "Notes"
 msgstr "ໝາຍເຫດ"
@@ -547,6 +560,11 @@ msgstr "ບໍ່ຄົບຖ້ວນ"
 msgctxt "field:gnuhealth.perinatal,placenta_retained:"
 msgid "Retained"
 msgstr "ເດັກຕາຍຄ້າງໃນທ້ອງ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.perinatal,pregnancy:"
+msgid "Patient Pregnancy"
+msgstr "ການຖືພາຂອງຄົນເຈັບ"
 
 msgctxt "field:gnuhealth.perinatal,prenatal_evaluations:"
 msgid "Prenatal evaluations"
@@ -604,13 +622,47 @@ msgctxt "field:gnuhealth.perinatal.monitor,meconium:"
 msgid "Meconium"
 msgstr "ຂີ້ເທົາ"
 
-msgctxt "field:gnuhealth.perinatal.monitor,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.perinatal.monitor,perinatal:"
 msgid "Patient Perinatal Evaluation"
 msgstr "ການປະເມີນຜົນຄົນເຈັບກ່ອນແລະຫຼັງເກີດ"
 
 msgctxt "field:gnuhealth.perinatal.monitor,systolic:"
 msgid "Systolic Pressure"
 msgstr "ຄວາມດັນເລືອດເທິງ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Delivery mode"
+msgstr "ວິທີການເກີດລູກ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.pregnancy.result,dob:"
+msgid "Date of birth"
+msgstr "ເດັກເກີດມີຊີວິດ"
+
+msgctxt "field:gnuhealth.pregnancy.result,labor_time:"
+msgid "Labor time"
+msgstr ""
+
+msgctxt "field:gnuhealth.pregnancy.result,newborn:"
+msgid "Newborn"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.pregnancy.result,pregnancy:"
+msgid "Patient Pregnancy"
+msgstr "ການຖືພາຂອງຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.pregnancy.result,result:"
+msgid "Result"
+msgstr "ຜົນຮັບ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.pregnancy.result,short_comment:"
+msgid "Comments"
+msgstr "ຄໍາເຫັນ"
 
 msgctxt "field:gnuhealth.puerperium.monitor,date:"
 msgid "Date and Time"
@@ -644,7 +696,8 @@ msgctxt "field:gnuhealth.puerperium.monitor,lochia_odor:"
 msgid "Lochia odor"
 msgstr "ກິ່ນ ນໍ້າຄາວປາ"
 
-msgctxt "field:gnuhealth.puerperium.monitor,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.puerperium.monitor,pregnancy:"
 msgid "Patient Pregnancy"
 msgstr "ການຖືພາຂອງຄົນເຈັບ"
 
@@ -717,9 +770,8 @@ msgid "Last colposcopy"
 msgstr "ການກວດຊ່ອງຄອດເທື່ອລ້າສຸດ"
 
 msgctxt "help:gnuhealth.patient.colposcopy_history,result:"
-msgid ""
-"Please check the lab test results if the module is             installed"
-msgstr "ກະລຸນາໝາຍເອົາຜົນກວດທາງຫ້ອງວິເຄາະ ຖ້າຫາກວ່າໂມດູນນີ້ໄດ້ຮັບການຕິດຕັ້ງ."
+msgid "Please check the lab test results if the module is installed"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.mammography_history,evaluation_date:"
 msgid "Date"
@@ -734,9 +786,8 @@ msgid "Last Mammography"
 msgstr "ການກວດເຕົ້ານົມຄັ້ງລ້າສຸດ"
 
 msgctxt "help:gnuhealth.patient.mammography_history,result:"
-msgid ""
-"Please check the lab test results if the module is             installed"
-msgstr "ກະລຸນາໝາຍເອົາຜົນກວດທາງຫ້ອງວິເຄາະ ຖ້າຫາກວ່າໂມດູນນີ້ໄດ້ຮັບການຕິດຕັ້ງ."
+msgid "Please check the lab test results if the module is installed"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.menstrual_history,evaluation_date:"
 msgid "Evaluation Date"
@@ -763,8 +814,8 @@ msgid "Last Papanicolau"
 msgstr "ການກວດສອບຫາເຊື້ອມະເຮັງເທື່ອລ້າສຸດ"
 
 msgctxt "help:gnuhealth.patient.pap_history,result:"
-msgid "Please check the lab results if the module is             installed"
-msgstr "ໝາຍເອົາຫ້ອງ ຜົນກວດວິເຄາະ ຖ້າວ່າໂມດູນນີ້ໄດ້ຕິດຕັ້ງແລ້ວ."
+msgid "Please check the lab results if the module is installed"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.pregnancy,bba:"
 msgid "Born Before Arrival"
@@ -775,8 +826,12 @@ msgid "Computed patient age at the moment of LMP"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.pregnancy,current_pregnancy:"
-msgid "This field marks the current pregnancy"
-msgstr "ປ່ອງນີ້ໝາຍບອກການຖືພາໃນປັດຈຸບັນ"
+msgid "Set the field if the patient is currently pregnant"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.pregnancy,gravida:"
+msgid "Pregnancy number"
+msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.pregnancy,gravidae:"
@@ -799,9 +854,13 @@ msgctxt "help:gnuhealth.patient.pregnancy,lmp:"
 msgid "Last Menstrual Period"
 msgstr "ໄລຍະມີປະຈໍາເດືອນເທື່ອລ້າສຸດ"
 
-msgctxt "help:gnuhealth.patient.pregnancy,pregnancy_end_age:"
-msgid "Weeks at the end of pregnancy"
-msgstr "ອາທິດຕອນທ້າຍຂອງການຖືພາ"
+msgctxt "help:gnuhealth.patient.pregnancy,pdd:"
+msgid "Pregnancy Due Date"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.pregnancy,pregnancy_current_week:"
+msgid "Current week"
+msgstr ""
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.pregnancy,premature:"
@@ -810,19 +869,14 @@ msgstr "ເກີດກ່ອນກຳນົດ < 37 ອາທິດ ເດັ�
 
 msgctxt "help:gnuhealth.patient.pregnancy,reverse:"
 msgid ""
-"Use this method *only* when the         pregnancy information is referred by"
-" the patient, as a history taking         procedure. Please keep in mind "
-"that the reverse pregnancy data is         subjective"
+"Past pregnancy.It will calculate the LMP from the delivery date and the "
+"gestational weeks. Set this field when the pregnancy information is referred"
+" by the patient, as a history taking procedure. Keep in mind that the "
+"reverse pregnancy data is subjective."
 msgstr ""
-"ໃຫ້ໃຊ້ວິທີການນີ້ *ພຽງ* "
-"ເມື່ອໄດ້ຮັບຂໍ້ມູນຂ່າວສານການຖືພາທີ່ບອກເລົ່າໂດຍຄົນເຈັບເອງເທົ່ານັ້ນ "
-"ເພື່ອເປັນວິທີການໃນການເກັບກຳປະຫວັດການຖືພາ. ຈົ່ງຈື່ສະເໝີວ່າ "
-"ຂໍ້ມູນໃນທາງກົງກັນຂ້າມຂອງການຖືພາກໍເປັນຂໍ້ມູນທີ່ຄວນຄໍານຶງ."
 
 msgctxt "help:gnuhealth.patient.pregnancy,reverse_weeks:"
-msgid ""
-"Number of weeks at the end of pregnancy. Used only with the reverse input "
-"method."
+msgid "Number of weeks at the end of pregnancy."
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.pregnancy,warning:"
@@ -868,9 +922,9 @@ msgstr "ໄລຍະຫ່າງລະຫວ່າງຮອຍຕໍ່ດູກ
 
 msgctxt "help:gnuhealth.patient.prenatal.evaluation,healthprof:"
 msgid ""
-"Health Professional in charge, or that who entered the             "
-"information in the system"
-msgstr "ທ່ານໝໍຜູ້ຮັບຜິດຊອບ, ຫຼື ຜູ້ທີ່ປ້ອນຂໍ້ມູນເຂົ້າລະບົບ"
+"Health Professional in charge, or that who entered the information in the "
+"system."
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.prenatal.evaluation,hypertension:"
 msgid "Check this box if the mother has hypertension"
@@ -902,9 +956,9 @@ msgstr "ວັນທີທີ່ເຂົ້າໂຮງໝໍເພື່ອເ
 
 msgctxt "help:gnuhealth.perinatal,healthprof:"
 msgid ""
-"Health Professional in charge, or that who entered the             "
-"information in the system"
-msgstr "ທ່ານໝໍຜູ້ຮັບຜິດຊອບ, ຫຼື ຜູ້ທີ່ປ້ອນຂໍ້ມູນເຂົ້າລະບົບ"
+"Health Professional in charge, or that who entered the information in the "
+"system."
+msgstr ""
 
 msgctxt "help:gnuhealth.perinatal,placenta_incomplete:"
 msgid "Incomplete Placenta"
@@ -918,11 +972,19 @@ msgctxt "help:gnuhealth.perinatal,prenatal_evaluations:"
 msgid "Number of visits to the doctor during pregnancy"
 msgstr "ຈໍານວນເທື່ອໄປກວດທ້ອງຕະຫຼອດໄລຍະການຖືພາ."
 
+msgctxt "help:gnuhealth.pregnancy.result,labor_time:"
+msgid "Total labor time in hours passive + active"
+msgstr ""
+
+msgctxt "help:gnuhealth.pregnancy.result,short_comment:"
+msgid "Short extra information"
+msgstr ""
+
 msgctxt "help:gnuhealth.puerperium.monitor,healthprof:"
 msgid ""
-"Health Professional in charge, or that who entered the             "
-"information in the system"
-msgstr "ທ່ານໝໍຜູ້ຮັບຜິດຊອບ, ຫຼື ຜູ້ທີ່ປ້ອນຂໍ້ມູນເຂົ້າລະບົບ"
+"Health Professional in charge, or that who entered the information in the "
+"system."
+msgstr ""
 
 msgctxt "help:gnuhealth.puerperium.monitor,uterus_involution:"
 msgid ""
@@ -960,6 +1022,10 @@ msgstr "ຂໍ້ມູນກ່ອນແລະຫຼັງເກີດ"
 msgctxt "model:gnuhealth.perinatal.monitor,name:"
 msgid "Perinatal Monitor"
 msgstr "ການຕິດຕາມກວດກາກ່ອນແລະຫຼັງເກີດ"
+
+msgctxt "model:gnuhealth.pregnancy.result,name:"
+msgid "Pregnancy Result"
+msgstr ""
 
 msgctxt "model:gnuhealth.puerperium.monitor,name:"
 msgid "Puerperium Monitor"
@@ -1236,6 +1302,50 @@ msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
 msgid "Occiput / Cephalic Posterior"
 msgstr "ທ່າງ່ອນ / ຫົວດ້ານຫຼັງ"
 
+msgctxt "selection:gnuhealth.perinatal.monitor,fetus_position:"
+msgid "Transverse Lie"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "C-section"
+msgstr "ການຜ່າຕັດເອົາລູກອອກ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Vaginal - Forceps Extraction"
+msgstr "ຊ່ອງຄອດ - ຄີມຖ່າງ "
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Vaginal - Spontaneous"
+msgstr "ຊ່ອງຄອດ - ຢ່າງທຳມະຊາດ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,delivery_mode:"
+msgid "Vaginal - Vacuum Extraction"
+msgstr "ຊ່ອງຄອດ - ໂຖດູດສູນຍາກາດ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Abortion"
+msgstr "ການທໍາແທ້ງ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Live birth"
+msgstr "ເດັກເກີດມີຊີວິດ"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Status unknown"
+msgstr "ສະຖານະບໍ່ຮູ້"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.pregnancy.result,result:"
+msgid "Stillbirth"
+msgstr "ເດັກຕາຍເກີດ"
+
 msgctxt "selection:gnuhealth.puerperium.monitor,lochia_amount:"
 msgid "abundant"
 msgstr "ຫຼາຍໆ"
@@ -1267,6 +1377,37 @@ msgstr "ປົກກະຕິ"
 msgctxt "selection:gnuhealth.puerperium.monitor,lochia_odor:"
 msgid "offensive"
 msgstr "ອາການຕ້ານ"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "End of pregnancy"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Labor"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Notes"
+msgstr "ໝາຍເຫດ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Patient"
+msgstr "ຄົນເຈັບ"
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Pregnancy"
+msgstr "ການຖືພາ"
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Prenatal"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.pregnancy:"
+msgid "Puerperium"
+msgstr ""
 
 msgctxt "view:gnuhealth.patient.prenatal.evaluation:"
 msgid "Fetal Biometry"

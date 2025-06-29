@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -17,10 +17,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="path">icons/folder-documents.svg</field>
         </record>
 
-        <record model="ir.ui.icon" id="gnuhealth_list_icon">
-            <field name="name">gnuhealth-list</field>
-            <field name="path">../health/icons/tryton-list.svg</field>
-        </record>
 
 
 <!-- Replace icons -->
@@ -95,7 +91,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <record model="ir.action.act_window" id="gnuhealth_action_health_service_invoices">
             <field name="name">Service invoices (last month)</field>
             <field name="res_model">account.invoice</field>
-            <field name="domain" eval="[('health_service', '!=', None), ('invoice_date', '>=', Date(delta_months=-1))]" pyson="1"/>
+            <field name="domain" eval="[('type', '=', 'out'), ('health_service', '!=', None), ('invoice_date', '>=', Date(delta_months=-1))]" pyson="1"/>
         </record>
 
         <menuitem parent="gnuhealth_services_menu"

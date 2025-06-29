@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -17,6 +17,7 @@ from . import health_gyneco
 def register():
     Pool.register(
         health_gyneco.PatientPregnancy,
+        health_gyneco.PregnancyResult,
         health_gyneco.PrenatalEvaluation,
         health_gyneco.PuerperiumMonitor,
         health_gyneco.Perinatal,

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -22,6 +22,5 @@ def register():
         health_genetics.GeneVariant,
         health_genetics.GeneVariantPhenotype,
         health_genetics.PatientGeneticRisk,
-        health_genetics.FamilyDiseases,
         health_genetics.GnuHealthPatient,
         module='health_genetics', type_='model')

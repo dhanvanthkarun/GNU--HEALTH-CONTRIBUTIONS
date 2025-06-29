@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -33,20 +33,20 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
     visit_date = fields.DateTime('Date', help="Date of Consultation")
     computed_age = fields.Function(fields.Char(
-            'Age',
-            help="Computed patient age at the moment of the evaluation"),
-            'patient_age_at_evaluation')
+        'Age',
+        help="Computed patient age at the moment of the evaluation"),
+        'patient_age_at_evaluation')
 
     gender = fields.Function(fields.Selection([
         (None, ''),
         ('m', 'Male'),
         ('f', 'Female'),
-        ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
+    ], 'Gender'), 'get_patient_gender', searcher='search_patient_gender')
 
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
         help="Health professional / Ophthalmologist / OptoMetrist"
-        )
+    )
 
     # there are two types of charts, a meter chart.. 6/.. val
     # and ft chart.. 200/...
@@ -68,7 +68,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ('1_2_meter_fc', '1/2 Meter FC'),
         ('hmfc', 'HMCF'),
         ('p_l', 'P/L'),
-        ]
+    ]
 
     # Near vision chart
     near_vision_chart = [
@@ -80,7 +80,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ('N24', 'N24'),
         ('N36', 'N36'),
         ('N60', 'N60'),
-        ]
+    ]
     # vision test using snellen chart
     rdva = fields.Selection(
         snellen_chart, 'RDVA',
@@ -213,7 +213,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         ('nct', 'Non-contact tonometry'),
         ('schiotz', 'Schiotz tonometry'),
         ('goldmann', 'Goldman tonometry'),
-        ], 'Method', help='Tonometry / Intraocular pressure reading method',
+    ], 'Method', help='Tonometry / Intraocular pressure reading method',
         states=STATES)
 
     riop = fields.Float(
@@ -225,14 +225,14 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         help="Left Intraocular Pressure in mmHg", states=STATES)
 
     findings = fields.One2Many(
-        'gnuhealth.ophthalmology.findings', 'name',
-        'Findings',  states=STATES)
+        'gnuhealth.ophthalmology.findings', 'evaluation',
+        'Findings', states=STATES)
 
     state = fields.Selection([
         (None, ''),
         ('in_progress', 'In progress'),
         ('done', 'Done'),
-        ], 'State', readonly=True, sort=False)
+    ], 'State', readonly=True, sort=False)
 
     signed_by = fields.Many2One(
         'gnuhealth.healthprofessional', 'Signed by', readonly=True,
@@ -240,10 +240,10 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         help="Health Professional that finished the patient evaluation")
 
     def patient_age_at_evaluation(self, name):
-        if (self.patient.name.dob and self.visit_date):
+        if (self.patient.party.dob and self.visit_date):
             rdelta = relativedelta(
                 self.visit_date.date(),
-                self.patient.name.dob)
+                self.patient.party.dob)
             return format_years_months_days(
                 years=rdelta.years,
                 months=rdelta.months,
@@ -252,13 +252,13 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
             return None
 
     def get_patient_gender(self, name):
-        return self.patient.gender
+        return self.patient.gender_str
 
     @classmethod
     def search_patient_gender(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.gender', clause[1], value))
+        res.append(('patient.party.gender', clause[1], value))
         return res
 
     @fields.depends('rdva')
@@ -323,10 +323,11 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
 
     # Show the gender and age upon entering the patient
     # These two are function fields (don't exist at DB level)
-    @fields.depends('patient')
+    @fields.depends('patient', 'gender', '_parent_patient.age')
     def on_change_patient(self):
-        self.gender = self.patient.gender
-        self.computed_age = self.patient.age
+        if self.patient:
+            self.gender = self.patient.gender
+            self.computed_age = self.patient.age
 
     @classmethod
     @ModelView.button
@@ -338,7 +339,7 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
         cls.write(evaluations, {
             'state': 'done',
             'signed_by': signing_hp,
-            })
+        })
 
     @classmethod
     def __setup__(cls):
@@ -346,7 +347,10 @@ class OphthalmologyEvaluation(ModelSQL, ModelView):
 
         cls._buttons.update({
             'end_evaluation': {'invisible': Equal(Eval('state'), 'done')}
-            })
+        })
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class OphthalmologyFindings(ModelSQL, ModelView):
@@ -357,7 +361,7 @@ class OphthalmologyFindings(ModelSQL, ModelView):
     # ophthalmologist
 
     # Findings associated to a particular evaluation
-    name = fields.Many2One(
+    evaluation = fields.Many2One(
         'gnuhealth.ophthalmology.evaluation',
         'Evaluation', readonly=True)
 
@@ -378,7 +382,7 @@ class OphthalmologyFindings(ModelSQL, ModelView):
         ('fundus_background', 'Fundus background'),
         ('fundus_vessels', 'Fundus vessels'),
         ('other', 'Other'),
-        ]
+    ]
 
     eye_structure = fields.Selection(
         structure,
@@ -394,3 +398,15 @@ class OphthalmologyFindings(ModelSQL, ModelView):
         'Eye', help="Affected eye", sort=False)
 
     finding = fields.Char('Finding')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to evaluation
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('evaluation')):
+            table_h.column_rename('name', 'evaluation')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)

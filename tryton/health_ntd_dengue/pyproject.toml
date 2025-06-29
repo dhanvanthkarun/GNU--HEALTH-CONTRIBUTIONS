@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2025 GNU Solidario <health@gnusolidario.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "gnuhealth-ntd-dengue"
+version = "5.0.0"
+description = "Neglected Tropical Diseases - Dengue fever package for GNU Health"
+
+license = { text = "GPL-3.0-or-later" }
+readme = "README.rst"
+keywords = ["health", "NTD", "HIS", "dengue", "eHealth", "gnuhealth"]
+requires-python = ">=3.10,<3.14"
+authors = [
+    {name = "GNU Solidario", email = "health@gnusolidario.org"},
+]
+
+dynamic = [ "classifiers" ]
+
+maintainers = [
+    { name = "Luis Falcon", email = "falcon@gnuhealth.org" },
+    { name = "Gerald Wiese", email = "wiese@gnuhealth.org" },
+]
+
+dependencies = [
+    'gnuhealth-ntd>=5.0.0,<5.1',
+]
+
+[project.urls]
+homepage = "https://www.gnuhealth.org"
+repository = "https://codeberg.org/gnuhealth/his"
+documentation = "https://docs.gnuhealth.org"
+"Bug Tracker" = "https://codeberg.org/gnuhealth/his/issues"
+
+[tool.poetry]
+classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Plugins',
+    'Framework :: Tryton',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Healthcare Industry',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+    'Topic :: Scientific/Engineering :: Medical Science Apps.',
+]
+
+packages = [
+    { include = '*', to='trytond/modules/health_ntd_dengue' },
+]
+
+
+exclude = [
+    "dist"
+]

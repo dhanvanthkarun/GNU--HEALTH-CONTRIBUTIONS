@@ -1,9 +1,17 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-06-06 09:07+0000\n"
+"Last-Translator: COOGOR <coogor@noreply.codeberg.org>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/gnuhealth/health_inpatient/de/>\n"
+"Language: de\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11.4\n"
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
-msgid "Inpatient Registration"
+msgid "Inpatient"
 msgstr "Anmeldung stationärer Patient"
 
 msgctxt "field:gnuhealth.bed.transfer,bed_from:"
@@ -14,13 +22,14 @@ msgctxt "field:gnuhealth.bed.transfer,bed_to:"
 msgid "To"
 msgstr "zu"
 
-msgctxt "field:gnuhealth.bed.transfer,name:"
-msgid "Registration Code"
-msgstr "Anmeldecode"
-
 msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
 msgstr "Grund"
+
+#, fuzzy
+msgctxt "field:gnuhealth.bed.transfer,registration:"
+msgid "Registration Code"
+msgstr "Anmeldecode"
 
 msgctxt "field:gnuhealth.bed.transfer,transfer_date:"
 msgid "Date"
@@ -54,7 +63,8 @@ msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr "Ernährung"
 
-msgctxt "field:gnuhealth.inpatient.diet,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.diet,registration:"
 msgid "Registration Code"
 msgstr "Anmeldecode"
 
@@ -78,12 +88,13 @@ msgctxt "field:gnuhealth.inpatient.meal,institution:"
 msgid "Institution"
 msgstr "Einrichtung"
 
-msgctxt "field:gnuhealth.inpatient.meal,name:"
-msgid "Food"
-msgstr "Essen"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.meal,meal:"
+msgid "Meal"
+msgstr "Gericht"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,health_professional:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "Behandler"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_item:"
@@ -106,13 +117,14 @@ msgctxt "field:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Meal time"
 msgstr "Essenszeit"
 
-msgctxt "field:gnuhealth.inpatient.meal.order,name:"
-msgid "Registration Code"
-msgstr "Anmeldecode"
-
 msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
 msgstr "Datum"
+
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.meal.order,registration:"
+msgid "Registration Code"
+msgstr "Anmeldecode"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
 msgid "Remarks"
@@ -127,7 +139,7 @@ msgid "Meal"
 msgstr "Gericht"
 
 #, fuzzy
-msgctxt "field:gnuhealth.inpatient.meal.order.item,name:"
+msgctxt "field:gnuhealth.inpatient.meal.order.item,meal_order:"
 msgid "Meal Order"
 msgstr "Menübestellung"
 
@@ -203,13 +215,14 @@ msgctxt "field:gnuhealth.inpatient.medication,medicament:"
 msgid "Medicament"
 msgstr "Medikament"
 
-msgctxt "field:gnuhealth.inpatient.medication,name:"
-msgid "Registration Code"
-msgstr "Anmeldecode"
-
 msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
 msgstr "x"
+
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.medication,registration:"
+msgid "Registration Code"
+msgstr "Anmeldecode"
 
 msgctxt "field:gnuhealth.inpatient.medication,route:"
 msgid "Administration Route"
@@ -231,7 +244,8 @@ msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "dose unit"
 msgstr "Dosierungseinheit"
 
-msgctxt "field:gnuhealth.inpatient.medication.admin_time,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.medication.admin_time,medication:"
 msgid "Medication"
 msgstr "Medikation"
 
@@ -252,10 +266,11 @@ msgid "dose unit"
 msgstr "Dosierungseinheit"
 
 msgctxt "field:gnuhealth.inpatient.medication.log,health_professional:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "Behandler"
 
-msgctxt "field:gnuhealth.inpatient.medication.log,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.medication.log,medication:"
 msgid "Medication"
 msgstr "Medikation"
 
@@ -356,12 +371,190 @@ msgid "Hospitalized"
 msgstr "stationär"
 
 msgctxt "field:gnuhealth.patient.ecg,inpatient_registration_code:"
-msgid "Inpatient Registration"
+msgid "Inpatient"
 msgstr "Stationäre Anmeldung"
 
 msgctxt "field:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "IPC"
 msgstr "IPC"
+
+msgctxt "field:gnuhealth.patient.rounding,bpm:"
+msgid "Heart Rate"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,code:"
+msgid "Code"
+msgstr "Code"
+
+msgctxt "field:gnuhealth.patient.rounding,depression:"
+msgid "Depression signs"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,diastolic:"
+msgid "Diastolic Pressure"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,diuresis:"
+msgid "Diuresis"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,environmental_assessment:"
+msgid "Environment"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
+msgid "End"
+msgstr "Ende"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
+msgid "Start"
+msgstr "Anfang"
+
+msgctxt "field:gnuhealth.patient.rounding,evolution:"
+msgid "Evolution"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,glycemia:"
+msgid "Glycemia"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,health_professional:"
+msgid "Health Prof"
+msgstr "Behandler"
+
+msgctxt "field:gnuhealth.patient.rounding,osat:"
+msgid "Oxygen Saturation"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,pain:"
+msgid "Pain"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,pain_level:"
+msgid "Pain level"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,patient:"
+msgid "Patient"
+msgstr "Patient"
+
+msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
+msgid "Personal needs"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,position:"
+msgid "Position"
+msgstr "Einrichtung"
+
+msgctxt "field:gnuhealth.patient.rounding,potty:"
+msgid "Potty"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,procedures:"
+msgid "Procedures"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,proximity:"
+msgid "Proximity"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,pump:"
+msgid "Pumps"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,registration:"
+msgid "Registration Code"
+msgstr "Anmeldecode"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
+msgid "End Date"
+msgstr "Datum"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_end_time:"
+msgid "End Time"
+msgstr "Zeit"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_start_date:"
+msgid "Start Date"
+msgstr "Anfang"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,report_start_time:"
+msgid "Start Time"
+msgstr "Anfang"
+
+msgctxt "field:gnuhealth.patient.rounding,respiratory_rate:"
+msgid "Respiratory Rate"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,round_summary:"
+msgid "Round Summary"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,signed_by:"
+msgid "Signed by"
+msgstr "Entlassen von"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,state:"
+msgid "State"
+msgstr "Status"
+
+msgctxt "field:gnuhealth.patient.rounding,systolic:"
+msgid "Systolic Pressure"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,temperature:"
+msgid "Temperature"
+msgstr "Erzeugen"
+
+msgctxt "field:gnuhealth.patient.rounding,urinary_catheter:"
+msgid "Urinary Catheter"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,warning:"
+msgid "Warning"
+msgstr "Warnung"
+
+#, fuzzy
+msgctxt "field:gnuhealth.patient.rounding,warning_icon:"
+msgid "Warning Icon"
+msgstr "Warnung"
+
+msgctxt "field:gnuhealth.patient.rounding,weight:"
+msgid "Weight"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,notes:"
+msgid "Notes"
+msgstr "Notiz"
+
+#, fuzzy
+msgctxt "field:gnuhealth.rounding_procedure,procedure:"
+msgid "Code"
+msgstr "Code"
+
+msgctxt "field:gnuhealth.rounding_procedure,rounding:"
+msgid "Rounding"
+msgstr ""
 
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
@@ -369,6 +562,10 @@ msgstr ""
 
 msgctxt "field:gnuhealth.sequences,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
+msgstr ""
+
+msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
+msgid "Patient Rounding Sequence"
 msgstr ""
 
 msgctxt ""
@@ -381,17 +578,23 @@ msgctxt ""
 msgid "Inpatient Registration Sequence"
 msgstr ""
 
+msgctxt ""
+"field:gnuhealth.sequences.patient_rounding_sequence,patient_rounding_sequence:"
+msgid "Patient Rounding Sequence"
+msgstr ""
+
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
-msgid "Enter the patient hospitalization code"
-msgstr "Patientenaufnahmecode eingeben"
+msgid "Inpatient Registration, please enter the patient hospitalization code."
+msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.diet,remarks:"
 msgid "specific remarks for this diet / patient"
 msgstr "spezifische Anmerkungen für diese Diät / Patienten"
 
-msgctxt "help:gnuhealth.inpatient.meal,name:"
-msgid "Food"
-msgstr "Essen"
+#, fuzzy
+msgctxt "help:gnuhealth.inpatient.meal,meal:"
+msgid "Meal"
+msgstr "Gericht"
 
 msgctxt "help:gnuhealth.inpatient.meal.order,meal_warning:"
 msgid "The patient has special needs on meals"
@@ -525,12 +728,109 @@ msgid "Show the hospitalization status of the patient"
 msgstr "Zeige Aufnahmestatus des Patienten"
 
 msgctxt "help:gnuhealth.patient.ecg,inpatient_registration_code:"
-msgid "Enter the patient hospitalization code"
-msgstr "Patientenaufnahmecode eingeben"
+msgid "Inpatient Registration, please enter the patient hospitalization code"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,inpatient_registration_code:"
-msgid "Enter the patient hospitalization code"
-msgstr "Patientenaufnahmecode eingeben"
+msgid "Inpatient Code, please enter the patient hospitalization code"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,bpm:"
+msgid "Heart rate expressed in beats per minute"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,depression:"
+msgid "Check this if the patient shows signs of depression"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,diuresis:"
+msgid "volume in ml"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,environmental_assessment:"
+msgid "Environment assessment . State any disorder in the room."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,evolution:"
+msgid "Check your judgement of current patient condition"
+msgstr "Ankreuzen, wenn der Patient die Medikation zur Zeit einnimmt"
+
+msgctxt "help:gnuhealth.patient.rounding,glycemia:"
+msgid "Blood Glucose level"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,osat:"
+msgid "Oxygen Saturation(arterial)."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,pain:"
+msgid "Check if the patient is in pain"
+msgstr "Ankreuzen, wenn der Patient die Medikation zur Zeit einnimmt"
+
+msgctxt "help:gnuhealth.patient.rounding,pain_level:"
+msgid "Enter the pain level, from 1 to 10."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,personal_needs:"
+msgid "Check if the patient requests anything"
+msgstr "Ankreuzen, wenn der Patient die Medikation zur Zeit einnimmt"
+
+msgctxt "help:gnuhealth.patient.rounding,position:"
+msgid "Check if the patient needs to be repositioned or is unconfortable"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,potty:"
+msgid "Check if the patient needs to urinate / defecate"
+msgstr "Ankreuzen, wenn der Patient die Medikation zur Zeit einnimmt"
+
+msgctxt "help:gnuhealth.patient.rounding,procedures:"
+msgid ""
+"List of the procedures in this rounding. Please enter the first one as the "
+"main procedure"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,proximity:"
+msgid "Check if personal items, water, alarm, ... are not in easy reach"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,pump:"
+msgid "Check if there is any issues with the pumps - IVs ..."
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
+msgid "Respiratory rate expressed in breaths per minute"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
+msgid "Procedures done during the rounding"
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.patient.rounding,signed_by:"
+msgid "Health Professional that signed the rounding"
+msgstr "Diensthabender Arzt der Patient entlassen hat"
+
+msgctxt "help:gnuhealth.patient.rounding,temperature:"
+msgid "Temperature in celsius"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,warning:"
+msgid ""
+"Check this box to alert the supervisor about this patient rounding. A "
+"warning icon will be shown in the rounding list"
+msgstr ""
+
+msgctxt "help:gnuhealth.patient.rounding,weight:"
+msgid "Measured weight, in kg"
+msgstr ""
+
+msgctxt "help:gnuhealth.rounding_procedure,procedure:"
+msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
+msgstr ""
 
 msgctxt "model:gnuhealth.bed.transfer,name:"
 msgid "Bed transfers"
@@ -830,7 +1130,7 @@ msgid "Neutropenic"
 msgstr "neutropenisch"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:NPO"
-msgid "Nothing by Mouth / NPO "
+msgid "Nothing by Mouth / NPO"
 msgstr "nichts peroral / NPO"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:PGMY"
@@ -889,13 +1189,27 @@ msgctxt "model:gnuhealth.inpatient.registration,name:"
 msgid "Patient admission History"
 msgstr "Patientenaufnahmenverlauf"
 
+#, fuzzy
+msgctxt "model:gnuhealth.patient.rounding,name:"
+msgid "Patient Rounding"
+msgstr "Patient"
+
+msgctxt "model:gnuhealth.rounding_procedure,name:"
+msgid "Rounding - Procedure"
+msgstr ""
+
 msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
 msgstr ""
 
 msgctxt "model:gnuhealth.sequences.inpatient_registration_sequence,name:"
-msgid "Ambulatory Care Sequences setup"
+msgid "Inpatient Care Sequences setup"
 msgstr ""
+
+#, fuzzy
+msgctxt "model:gnuhealth.sequences.patient_rounding_sequence,name:"
+msgid "Patient Evaluation Sequence setup"
+msgstr "Erzeuge Patientenuntersuchung"
 
 #, fuzzy
 msgctxt "model:ir.action,name:act_create_inpatient_evaluation"
@@ -912,6 +1226,10 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_inpatient_evaluation"
 msgid "Inpatient Evaluation"
+msgstr ""
+
+msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
+msgid "Roundings"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_diet_therapeutic"
@@ -1010,8 +1328,12 @@ msgid "Need timezone"
 msgstr ""
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
-msgid "There is no health professional associated to this user"
+msgid ""
+"SM-CORE-0007: Currently logged in user is not associated to a health "
+"professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr ""
+"SM-CORE-0007: Der aktuell angemeldete User hat keine med. Fachkraft "
+"hinterlegt. Siehe \"Internal User\" Feld auf der Seite \"Party/Personen\"."
 
 msgctxt "model:ir.message,text:msg_no_record_selected"
 msgid "You need to select one record"
@@ -1060,13 +1382,23 @@ msgctxt "model:ir.model.button,string:registration_discharge_button"
 msgid "Discharge"
 msgstr "Entlassung"
 
+msgctxt "model:ir.model.button,string:rounding_end_button"
+msgid "End rounding"
+msgstr ""
+
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
 msgstr "Anmeldung stationärer Patient"
+
+#, fuzzy
+msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_rounding"
+msgid "Patient Rounding"
+msgstr "Patient"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
@@ -1077,6 +1409,11 @@ msgctxt ""
 "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
 msgstr "Stationäre Anmeldung"
+
+#, fuzzy
+msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_rounding"
+msgid "Patient Rounding"
+msgstr "Patient"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_diet_therapeutic"
 msgid "Therapeutic diets"
@@ -1094,14 +1431,13 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_inpatient_menu"
 msgid "Hospitalizations"
 msgstr "Krankenhausaufenthalte"
 
+msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
+msgid "Roundings"
+msgstr ""
+
 msgctxt "model:res.group,name:group_health_inpatient_admin"
 msgid "Health Inpatient Administration"
 msgstr "Health Stationär Administration"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
-msgid ""
-msgstr "  "
 
 #, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
@@ -1128,11 +1464,6 @@ msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Reserved"
 msgstr "Reserviert"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
-msgid ""
-msgstr "  "
-
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Breakfast"
 msgstr ""
@@ -1152,11 +1483,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Special order"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
-msgid ""
-msgstr "  "
 
 #, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
@@ -1183,11 +1509,6 @@ msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Processing"
 msgstr "In Ausführung"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
-msgid ""
-msgstr "  "
-
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "days"
 msgstr "Tage"
@@ -1212,11 +1533,6 @@ msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "when required"
 msgstr "wenn nötig"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
-msgid ""
-msgstr "  "
-
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Elective"
 msgstr "elektiv"
@@ -1239,11 +1555,6 @@ msgstr "Dringlich"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
-msgid ""
-msgstr "  "
-
-#, fuzzy
-msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Death"
 msgstr "Tod"
 
@@ -1261,11 +1572,6 @@ msgstr "entlassen gegen Revers"
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Transferred to another institution"
 msgstr "transferiert"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.inpatient.registration,state:"
-msgid ""
-msgstr "  "
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "Discharged - needs cleaning"
@@ -1290,6 +1596,29 @@ msgstr "frei"
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "hospitalized"
 msgstr "aufgenommen"
+
+msgctxt "selection:gnuhealth.patient.rounding,evolution:"
+msgid "Improving"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.rounding,evolution:"
+msgid "Status Quo"
+msgstr "Status"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.rounding,evolution:"
+msgid "Worsening"
+msgstr "Warnung"
+
+#, fuzzy
+msgctxt "selection:gnuhealth.patient.rounding,state:"
+msgid "Done"
+msgstr "Fertig"
+
+msgctxt "selection:gnuhealth.patient.rounding,state:"
+msgid "In Progress"
+msgstr ""
 
 msgctxt "view:gnuhealth.diet.therapeutic:"
 msgid "Diet Description and Indications"
@@ -1477,6 +1806,51 @@ msgstr "Status"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "You are about to discharge the patient from the health institution."
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "End rounding"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "End this rounding"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "End this rounding ?"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Environment"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Main"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Other"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Procedures"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Round summary"
+msgstr ""
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Six P's"
+msgstr ""
+
+#, fuzzy
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Time"
+msgstr "Zeit"
+
+msgctxt "view:gnuhealth.patient.rounding:"
+msgid "Vital Signs"
 msgstr ""
 
 msgctxt ""

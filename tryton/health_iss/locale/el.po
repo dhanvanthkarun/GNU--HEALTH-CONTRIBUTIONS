@@ -22,6 +22,11 @@ msgctxt "field:gnuhealth.iss,drugs:"
 msgid "Other Drugs"
 msgstr "Άλλα φάρμακα"
 
+#, fuzzy
+msgctxt "field:gnuhealth.iss,evaluation:"
+msgid "Evaluation"
+msgstr "Εκτίμηση"
+
 msgctxt "field:gnuhealth.iss,healthcenter:"
 msgid "Institution"
 msgstr "Ίδρυμα"
@@ -61,10 +66,6 @@ msgstr "Τρόπος"
 msgctxt "field:gnuhealth.iss,mva_position:"
 msgid "User Position"
 msgstr "Θέση του χρήστη"
-
-msgctxt "field:gnuhealth.iss,name:"
-msgid "Evaluation"
-msgstr "Εκτίμηση"
 
 msgctxt "field:gnuhealth.iss,operational_sector:"
 msgid "O. Sector"
@@ -131,6 +132,11 @@ msgstr ""
 "Υπάρχουν ενδείξεις χρήσης φαρμάκων από τον παθόντα, στις 6 ώρες αμέσως πριν "
 "το ατύχημα;"
 
+#, fuzzy
+msgctxt "help:gnuhealth.iss,evaluation:"
+msgid "Related Patient Evaluation"
+msgstr "Σχετική εκτίμηση ασθενούς"
+
 msgctxt "help:gnuhealth.iss,injury_date:"
 msgid "Usually the same as the Evaluation"
 msgstr "Συνήθως το ίδιο όπως στην Εκτίμηση"
@@ -150,10 +156,6 @@ msgstr "Τρόπος Αυτοκινητιστικού Ατυχήματος"
 msgctxt "help:gnuhealth.iss,mva_position:"
 msgid "Motor Vehicle Accident user position"
 msgstr "Θέση χρήστη στο αυτοκινητιστικό ατύχημα"
-
-msgctxt "help:gnuhealth.iss,name:"
-msgid "Related Patient Evaluation"
-msgstr "Σχετική εκτίμηση ασθενούς"
 
 msgctxt "help:gnuhealth.iss,operational_sector:"
 msgid "Operational Sector in which happened the injury"
@@ -195,13 +197,6 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_report_iss"
 msgid "Injury Surveillance System Registration"
 msgstr "Καταχώρηση στο Σύστημα Επιτήρησης Ατυχημάτων"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,alcohol:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid "No"
 msgstr "Όχι"
@@ -217,13 +212,6 @@ msgstr "Άγνωστο"
 msgctxt "selection:gnuhealth.iss,alcohol:"
 msgid "Yes"
 msgstr "Ναι"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,disposition:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.iss,disposition:"
 msgid "Admitted to Observation"
@@ -253,13 +241,6 @@ msgctxt "selection:gnuhealth.iss,disposition:"
 msgid "Treated and Sent Home"
 msgstr "Χορηγήθηκε θεραπεία και στάλθηκε στο σπίτι"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,drugs:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.iss,drugs:"
 msgid "No"
 msgstr "Όχι"
@@ -275,13 +256,6 @@ msgstr "Άγνωστο"
 msgctxt "selection:gnuhealth.iss,drugs:"
 msgid "Yes"
 msgstr "Ναι"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,injury_method:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.iss,injury_method:"
 msgid "Blunt object"
@@ -315,13 +289,6 @@ msgctxt "selection:gnuhealth.iss,injury_method:"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,injury_type:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.iss,injury_type:"
 msgid "Accidental / Unintentional"
 msgstr "Τυχαίο / Μη ηθελημένο"
@@ -338,13 +305,6 @@ msgctxt "selection:gnuhealth.iss,injury_type:"
 msgid "Violence"
 msgstr "Βία"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,mva_counterpart:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.iss,mva_counterpart:"
 msgid "Aircraft"
 msgstr "Αεροπλάνο"
@@ -397,13 +357,6 @@ msgctxt "selection:gnuhealth.iss,mva_counterpart:"
 msgid "Van / Pickup / Jeep"
 msgstr "Φορτηγάκι / Pickup / Jeep"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,mva_mode:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.iss,mva_mode:"
 msgid "Aircraft"
 msgstr "Αεροπλάνο"
@@ -455,13 +408,6 @@ msgstr "Άγνωστο"
 msgctxt "selection:gnuhealth.iss,mva_mode:"
 msgid "Van / Pickup / Jeep"
 msgstr "Φορτηγάκι / Pickup / Jeep"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,mva_position:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.iss,mva_position:"
 msgid "Bystander"
@@ -486,13 +432,6 @@ msgstr "Άγνωστο"
 msgctxt "selection:gnuhealth.iss,mva_position:"
 msgid "Unspecified vehicle"
 msgstr "Αδιευκρίνιστο όχημα"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,place_occurrance:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.iss,place_occurrance:"
 msgid "Commercial Area"
@@ -534,13 +473,6 @@ msgctxt "selection:gnuhealth.iss,place_occurrance:"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,safety_gear:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.iss,safety_gear:"
 msgid "No"
 msgstr "Όχι"
@@ -552,13 +484,6 @@ msgstr "Άγνωστο"
 msgctxt "selection:gnuhealth.iss,safety_gear:"
 msgid "Yes"
 msgstr "Ναι"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,victim_perpetrator:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.iss,victim_perpetrator:"
 msgid "Acquaintance / Friend"
@@ -591,13 +516,6 @@ msgstr "Σύζυγος"
 msgctxt "selection:gnuhealth.iss,victim_perpetrator:"
 msgid "other"
 msgstr "άλλος"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.iss,violence_circumstances:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 msgctxt "selection:gnuhealth.iss,violence_circumstances:"
 msgid "Committing a crime (other)"

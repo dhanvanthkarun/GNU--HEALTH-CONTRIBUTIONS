@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+
+<!-- Main views -->
+
+        <record model="ir.ui.view" id="gnuhealth_rounding_medicament_tree">
+            <field name="model">gnuhealth.patient.rounding.medicament</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_rounding_medicament_tree</field>
+        </record>
+        <record model="ir.ui.view" id="gnuhealth_rounding_medicament_form">
+            <field name="model">gnuhealth.patient.rounding.medicament</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_rounding_medicament_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_rounding_medical_supply_tree">
+            <field name="model">gnuhealth.patient.rounding.medical_supply</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_rounding_medical_supply_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_rounding_tree">
+            <field name="model">gnuhealth.patient.rounding</field>
+            <field name="inherit" ref="health_inpatient.gnuhealth_patient_rounding_tree"/>
+            <field name="name">gnuhealth_patient_rounding_tree</field>
+        </record>
+        <record model="ir.ui.view" id="gnuhealth_patient_rounding_view">
+            <field name="model">gnuhealth.patient.rounding</field>
+            <field name="inherit" ref="health_inpatient.gnuhealth_patient_rounding_view"/>
+            <field name="name">gnuhealth_patient_rounding</field>
+        </record>
+
+
+    <!-- Buttons -->
+        <record model="ir.model.button" id="rounding_end_button">
+            <field name="name">done</field>
+            <field name="string">End Rounding</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.rounding')]"/>
+        </record>
+
+
+    </data>
+</tryton>

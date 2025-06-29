@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
-    <data>
+    <data grouped="1">
         <record model="gnuhealth.help" id="SM-CORE-0006">
             <field name="name">SM-CORE-0006</field>
             <field name="description">Verify and check for safety in pregnancy the prescribed drug</field>
-            <field name="package" search="[('name', '=', 'health')]"/>
+            <field name="packages">Core package</field>
+            <field name="keywords">pregnancy, prescription</field>
             <field name="documentation">
 <![CDATA[
 <div align="left"><b><font size="7" face="normal">Verify and check for safety in pregnancy the prescribed drug</font></b></div>

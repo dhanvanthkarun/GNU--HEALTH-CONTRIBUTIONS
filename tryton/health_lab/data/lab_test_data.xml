@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -15,64 +15,55 @@ SPDX-License-Identifier: GPL-3.0-or-later
         </record>
 
         <record id="product_template_semenanalysischarges0" model="product.template">
-            <field name="name">Semen Analysis Charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Semen Analysis</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_bloodcounttestcharges0" model="product.template">
-            <field name="name">Blood count test charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Complete Blood Count</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_liverfunctiontestcharges0" model="product.template">
-            <field name="name">Liver Function test charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Liver Function</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_stoolexaminationcharges0" model="product.template">
-            <field name="name">Stool Examination Charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Stool Examination</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_renalfunctiontestcharges0" model="product.template">
-            <field name="name">Renal Function test charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Renal Function</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_haematologycharges0" model="product.template">
-            <field name="name">Haematology Charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Haematology</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_peripheralsmearexaminationcharges0" model="product.template">
-            <field name="name">Peripheral Smear Examination Charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Peripheral Smear Examination</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_urineanalysischarges0" model="product.template">
-            <field name="name">Urine Analysis charges</field>
-            <field eval="1" name="list_price"/>
+            <field name="name">Urine Analysis</field>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
 
         <record id="product_template_endocrinology0" model="product.template">
             <field name="name">Endocrinology</field>
-            <field eval="1" name="list_price"/>
             <field name="default_uom" ref="product.uom_unit"/>
             <field name="type">service</field>
         </record>
@@ -319,12 +310,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field eval="&quot;&quot;&quot;FSH&quot;&quot;&quot;" name="code"/>
             <field eval="1" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
-            <field eval="&quot;&quot;&quot;Follicular Phase   : 3.0-12.0
-Midcycle              : 8.0-22.0
-Luteal phase        : 2.0-12.0
-Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Follicular Phase: 3.0-12.0;
+\nMidcycle: 8.0-22.0;
+\nLuteal phase: 2.0-12.0;
+\nPost menopausal: 35.0-151;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="2.0" name="lower_limit"/>
             <field eval="151" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_iul0"/>
         </record>
 
@@ -421,12 +413,13 @@ Post menopausal : 35.0-151 &quot;&quot;&quot;" name="normal_range"/>
             <field eval="&quot;&quot;&quot;LH&quot;&quot;&quot;" name="code"/>
             <field eval="2" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
-            <field eval="&quot;&quot;&quot;Follicular Phase   : 0.8-10.5
-Midcycle              : 18.4-61.2
-Luteal phase        : 0.8-10.5
-Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Follicular Phase: 0.8-10.5;
+\nMidcycle: 18.4-61.2;
+\nLuteal phase: 0.8-10.5;
+\nPost menopausal: 8.2-40.8;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0.8" name="lower_limit"/>
             <field eval="40.8" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_iul0"/>
         </record>
 
@@ -599,10 +592,11 @@ Post menopausal : 8.2-40.8&quot;&quot;&quot;" name="normal_range"/>
             <field eval="&quot;&quot;&quot;PROLACTIN&quot;&quot;&quot;" name="code"/>
             <field eval="4" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
-            <field eval="&quot;&quot;&quot;Women, non pregnant : 1.2-19.5
-Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Women, non pregnant: 1.2-19.5;
+\nPostmenopausal: 1.5-18.5;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="1.2" name="lower_limit"/>
             <field eval="19.5" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_ngml0"/>
         </record>
 
@@ -673,10 +667,11 @@ Postmenopausal  : 1.5-18.5&quot;&quot;&quot;" name="normal_range"/>
             <field eval="&quot;&quot;&quot;TESTOSTERONE&quot;&quot;&quot;" name="code"/>
             <field eval="5" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_endocrinology0"/>
-            <field eval="&quot;&quot;&quot;Sexually mature women : &lt; 0.6
-Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;Sexually mature women: 0.6;
+\nPostmenopause: 0.8;&quot;&quot;&quot;" name="normal_range"/>
             <field eval="0" name="lower_limit"/>
             <field eval="0.6" name="upper_limit"/>
+            <field eval="False" name="limits_verified"/>
             <field name="units" ref="gnuhealth_lab_test_units_ngml0"/>
         </record>
 
@@ -755,11 +750,18 @@ Postmenopause : &lt; 0.8&quot;&quot;&quot;" name="normal_range"/>
         </record>
 
         <record id="gnuhealth_test_critearea_ph0" model="gnuhealth.lab.test.critearea">
-            <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;pH&quot;&quot;&quot;" name="name"/>
+            <!-- Code PH has been used before ghis 5.0, it is not
+                 recommended to make changes, if we must change it,
+                 migration scripts need to be written -->
             <field eval="&quot;&quot;&quot;PH&quot;&quot;&quot;" name="code"/>
             <field eval="6" name="sequence"/>
             <field name="test_type_id" ref="gnuhealth_test_urineanalysis0"/>
             <field eval="&quot;&quot;&quot;Acidic&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="&quot;&quot;&quot;4.5-7.5&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="4.5" name="lower_limit"/>
+            <field eval="7.5" name="upper_limit"/>
+
         </record>
 
 

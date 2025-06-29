@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -13,6 +13,9 @@ class HealthPediatricsGrowthChartsTestCase(ModuleTestCase):
     Test Health Pediatrics Growth Charts module.
     '''
     module = 'health_pediatrics_growth_charts'
+
+
+del ModuleTestCase
 
 
 def suite():

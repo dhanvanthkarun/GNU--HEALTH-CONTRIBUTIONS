@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -14,15 +14,14 @@
 from trytond.pool import Pool
 from . import health_nursing
 from . import sequences
+from . import health
 
 
 def register():
     Pool.register(
-        health_nursing.PatientRounding,
-        health_nursing.RoundingProcedure,
+        health.PatientProcedure,
         health_nursing.PatientAmbulatoryCare,
         health_nursing.AmbulatoryCareProcedure,
         sequences.GnuHealthSequences,
         sequences.AmbulatoryCareSequence,
-        sequences.PatientRoundingSequence,
         module='health_nursing', type_='model')

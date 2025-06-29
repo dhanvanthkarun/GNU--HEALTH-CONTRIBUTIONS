@@ -1,7 +1,7 @@
-# Copyright (C) 2008-2024 Luis Falcon <lfalcon@gnusolidario.org>
-# Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2025 Luis Falcon <lfalcon@gnusolidario.org>
+# Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -42,7 +42,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
     digest_status = fields.Function(
         fields.Boolean('Altered',
                        states={
-                        'invisible': Not(Equal(Eval('state'), 'done')), },
+                           'invisible': Not(Equal(Eval('state'), 'done')), },
                        help="This field will be set whenever parts of"
                             " the main original document has been changed."
                             " Please note that the verification is done only "
@@ -52,15 +52,15 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
     serializer_current = fields.Function(
         fields.Text('Current Doc',
                     states={
-                            'invisible': Not(Bool(Eval('digest_status'))),
-                            }),
+                        'invisible': Not(Bool(Eval('digest_status'))),
+                    }),
         'check_digest')
 
     digest_current = fields.Function(
         fields.Char('Current Hash',
                     states={
-                     'invisible': Not(Bool(Eval('digest_status'))),
-                     }),
+                        'invisible': Not(Bool(Eval('digest_status'))),
+                    }),
         'check_digest')
 
     digital_signature = fields.Text('Digital Signature', readonly=True)
@@ -81,11 +81,11 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
                                 Equal(Eval('state'), 'validated'))
             },
 
-            })
+        })
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
-                'set_signature': RPC(readonly=False),
-                })
+            'set_signature': RPC(readonly=False),
+        })
 
     @classmethod
     @ModelView.button
@@ -107,7 +107,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
 
         for line in prescription.prescription_line:
             line_elements = [line.medicament and
-                             line.medicament.name.name or '',
+                             line.medicament.product.name or '',
                              line.dose or '',
                              line.dose_unit and line.dose_unit.name or '',
                              line.route and line.route.name or '',
@@ -122,10 +122,10 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
             'Date': str(prescription.prescription_date) or '',
             'HP': str(prescription.healthprof.rec_name),
             'Patient': str(prescription.patient.rec_name),
-            'Patient_ID': str(prescription.patient.name.ref) or '',
+            'Patient_ID': str(prescription.patient.party.ref) or '',
             'Prescription_line': str(presc_line),
             'Notes': str(prescription.notes),
-             }
+        }
 
         serialized_doc = str(HealthCrypto().serialize(data_to_serialize))
 
@@ -141,7 +141,7 @@ class PatientPrescriptionOrder(metaclass=PoolMeta):
 
         cls.write([cls(doc_id)], {
             'digital_signature': signature,
-            })
+        })
 
     def check_digest(self, name):
         result = ''
@@ -181,7 +181,7 @@ class BirthCertificate(metaclass=PoolMeta):
     digest_status = fields.Function(
         fields.Boolean('Altered',
                        states={
-                        'invisible': Not(Equal(Eval('state'), 'done')),
+                           'invisible': Not(Equal(Eval('state'), 'done')),
                        },
                        help="This field will be set whenever parts of"
                        " the main original document has been changed."
@@ -193,8 +193,8 @@ class BirthCertificate(metaclass=PoolMeta):
     serializer_current = fields.Function(
         fields.Text('Current Doc',
                     states={
-                            'invisible': Not(Bool(Eval('digest_status'))),
-                           }),
+                        'invisible': Not(Bool(Eval('digest_status'))),
+                    }),
         'check_digest')
 
     digest_current = fields.Function(
@@ -212,11 +212,11 @@ class BirthCertificate(metaclass=PoolMeta):
         cls._buttons.update({
             'generate_birth_certificate': {
                 'invisible': Not(Equal(Eval('state'), 'signed'))},
-            })
+        })
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
-                'set_signature': RPC(readonly=False),
-                })
+            'set_signature': RPC(readonly=False),
+        })
 
     @classmethod
     @ModelView.button
@@ -240,10 +240,12 @@ class BirthCertificate(metaclass=PoolMeta):
             'Date': str(certificate.dob) or '',
             'HP': certificate.signed_by
             and str(certificate.signed_by.rec_name) or '',
-            'Person': str(certificate.name.rec_name),
-            'Person_dob': str(certificate.name.dob) or '',
-            'Person_ID': str(certificate.name.ref) or '',
-            'Country': str(certificate.country.rec_name) or '',
+            'Person': str(certificate.party.rec_name),
+            'Person_dob': str(certificate.party.dob) or '',
+            'Person_ID': str(certificate.party.ref) or '',
+            # country.rec_name has flag emoji, which will not show
+            # properly when no proper fonts is installed.
+            'Country': str(certificate.country.name) or '',
             'Country_subdivision': certificate.country_subdivision
             and str(certificate.country_subdivision.rec_name) or '',
             'Mother': certificate.mother
@@ -251,7 +253,7 @@ class BirthCertificate(metaclass=PoolMeta):
             'Father': certificate.father
             and str(certificate.father.rec_name) or '',
             'Observations': str(certificate.observations),
-             }
+        }
 
         serialized_doc = str(HealthCrypto().serialize(data_to_serialize))
 
@@ -266,7 +268,7 @@ class BirthCertificate(metaclass=PoolMeta):
 
         cls.write([cls(doc_id)], {
             'digital_signature': signature,
-            })
+        })
 
     def check_digest(self, name):
         result = ''
@@ -306,8 +308,8 @@ class DeathCertificate(metaclass=PoolMeta):
     digest_status = fields.Function(
         fields.Boolean('Altered',
                        states={
-                        'invisible': Not(Equal(Eval('state'), 'done')),
-                        },
+                           'invisible': Not(Equal(Eval('state'), 'done')),
+                       },
                        help="This field will be set whenever parts of"
                        " the main original document has been changed."
                        " Please note that the verification is done "
@@ -317,14 +319,14 @@ class DeathCertificate(metaclass=PoolMeta):
     serializer_current = fields.Function(
         fields.Text('Current Doc',
                     states={
-                     'invisible': Not(Bool(Eval('digest_status'))),
+                        'invisible': Not(Bool(Eval('digest_status'))),
                     }),
         'check_digest')
 
     digest_current = fields.Function(
         fields.Char('Current Hash',
                     states={
-                     'invisible': Not(Bool(Eval('digest_status'))),
+                        'invisible': Not(Bool(Eval('digest_status'))),
                     }),
         'check_digest')
 
@@ -336,12 +338,12 @@ class DeathCertificate(metaclass=PoolMeta):
         cls._buttons.update({
             'generate_death_certificate': {
                 'invisible': Not(Equal(Eval('state'), 'signed')),
-                },
-            })
+            },
+        })
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
-                'set_signature': RPC(readonly=False),
-                })
+            'set_signature': RPC(readonly=False),
+        })
 
     @classmethod
     @ModelView.button
@@ -375,19 +377,21 @@ class DeathCertificate(metaclass=PoolMeta):
             'Date': str(certificate.dod) or '',
             'HP': certificate.signed_by
             and str(certificate.signed_by.rec_name) or '',
-            'Person': str(certificate.name.rec_name),
-            'Person_dob': str(certificate.name.dob) or '',
-            'Person_ID': str(certificate.name.ref) or '',
+            'Person': str(certificate.party.rec_name),
+            'Person_dob': str(certificate.party.dob) or '',
+            'Person_ID': str(certificate.party.ref) or '',
             'Cod': str(certificate.cod.rec_name),
             'Underlying_conditions': underlying_conds or '',
             'Autopsy': certificate.autopsy,
             'Type_of_death': str(certificate.type_of_death),
             'Place_of_death': str(certificate.place_of_death),
-            'Country': str(certificate.country.rec_name) or '',
+            # country.rec_name has flag emoji, which will not show
+            # properly when no proper fonts is installed.
+            'Country': str(certificate.country.name) or '',
             'Country_subdivision': certificate.country_subdivision
             and str(certificate.country_subdivision.rec_name) or '',
             'Observations': str(certificate.observations),
-             }
+        }
 
         serialized_doc = str(HealthCrypto().serialize(data_to_serialize))
 
@@ -402,7 +406,7 @@ class DeathCertificate(metaclass=PoolMeta):
 
         cls.write([cls(doc_id)], {
             'digital_signature': signature,
-            })
+        })
 
     def check_digest(self, name):
         result = ''
@@ -441,8 +445,8 @@ class PatientEvaluation(metaclass=PoolMeta):
     digest_status = fields.Function(
         fields.Boolean('Altered',
                        states={
-                        'invisible': Not(Equal(Eval('state'), 'signed')),
-                        },
+                           'invisible': Not(Equal(Eval('state'), 'signed')),
+                       },
                        help="This field will be set whenever parts of"
                             " the main original document has been changed."
                             " Please note that the verification is done"
@@ -452,15 +456,15 @@ class PatientEvaluation(metaclass=PoolMeta):
     serializer_current = fields.Function(
         fields.Text('Current Doc',
                     states={
-                            'invisible': Not(Bool(Eval('digest_status'))),
-                            }),
+                        'invisible': Not(Bool(Eval('digest_status'))),
+                    }),
         'check_digest')
 
     digest_current = fields.Function(
         fields.Char('Current Hash',
                     states={
-                            'invisible': Not(Bool(Eval('digest_status'))),
-                            }),
+                        'invisible': Not(Bool(Eval('digest_status'))),
+                    }),
         'check_digest')
 
     digital_signature = fields.Text('Digital Signature', readonly=True)
@@ -471,12 +475,12 @@ class PatientEvaluation(metaclass=PoolMeta):
         cls._buttons.update({
             'sign_evaluation': {
                 'invisible': Not(Equal(Eval('state'), 'done')),
-                },
-            })
+            },
+        })
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
-                'set_signature': RPC(readonly=False),
-                })
+            'set_signature': RPC(readonly=False),
+        })
 
     @classmethod
     @ModelView.button
@@ -593,7 +597,7 @@ class PatientEvaluation(metaclass=PoolMeta):
             str(evaluation.derived_from.rec_name) or '',
             'Derived_to': evaluation.derived_to and
             str(evaluation.derived_to.rec_name) or '',
-             }
+        }
 
         serialized_doc = str(HealthCrypto().serialize(data_to_serialize))
 
@@ -608,7 +612,7 @@ class PatientEvaluation(metaclass=PoolMeta):
 
         cls.write([cls(doc_id)], {
             'digital_signature': signature,
-            })
+        })
 
     def check_digest(self, name):
         result = ''

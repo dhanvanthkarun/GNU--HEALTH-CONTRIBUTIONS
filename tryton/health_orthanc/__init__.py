@@ -23,25 +23,34 @@ the ``health_orthanc`` module.
 
 from trytond.pool import Pool
 from . import health_orthanc
+from . import health_orthanc_configuration
 from . import wizard
-from . import ir
 
 
 def register():
     Pool.register(
-        wizard.wizard.AddOrthancInit,
-        wizard.wizard.AddOrthancResult,
-        health_orthanc.OrthancServerConfig,
-        health_orthanc.OrthancWorklistTemplate,
-        health_orthanc.OrthancStudy,
-        health_orthanc.OrthancPatient,
-        health_orthanc.ImagingTestRequest,
-        health_orthanc.ImagingTest,
-        health_orthanc.TestResult,
+        health_orthanc.View,
         health_orthanc.Patient,
-        ir.Cron,
+        health_orthanc.TestResult,
+        health_orthanc.PatientOrthancStudy,
+        health_orthanc.StudySeries,
+        health_orthanc.SeriesInstances,
+        health_orthanc_configuration.ServerConfig,
+        wizard.wizard_upload_image_data.UploadImageDataStart,
+        wizard.wizard_get_new_studies.GetNewStudiesStart,
+        wizard.wizard_full_synchronize.FullSynchronizeStart,
+        wizard.wizard_orthanc_config.AddOrthancInitData,
+        # DEPRECATED, Used to migrate date.
+        health_orthanc.OrthancPatientDEPRECATED,
+        health_orthanc.OrthancStudyDEPRECATED,
         module="health_orthanc",
         type_="model",
     )
+
     Pool.register(
-        wizard.wizard.FullSyncOrthanc, module="health_orthanc", type_="wizard")
+        wizard.wizard_full_synchronize.FullSynchronize,
+        wizard.wizard_get_new_studies.GetNewStudies,
+        wizard.wizard_upload_image_data.UploadImageData,
+        wizard.wizard_orthanc_config.ConnectNewOrthancServer,
+        module='health_orthanc', type_='wizard'
+    )

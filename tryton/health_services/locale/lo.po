@@ -73,11 +73,6 @@ msgid "From"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.health_service.line,name:"
-msgid "Service"
-msgstr "ບໍລິການ"
-
-#, fuzzy
 msgctxt "field:gnuhealth.health_service.line,product:"
 msgid "Product"
 msgstr "ຜະລິດຕະພັນ"
@@ -91,6 +86,11 @@ msgstr "ຈຳນວນ"
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "ຂໍ້ສັງເກດ"
+
+#, fuzzy
+msgctxt "field:gnuhealth.health_service.line,service:"
+msgid "Service"
+msgstr "ບໍລິການ"
 
 #, fuzzy
 msgctxt "field:gnuhealth.health_service.line,to_date:"
@@ -323,10 +323,6 @@ msgid "From"
 msgstr ""
 
 msgctxt "report:health_services.report:"
-msgid "Health Service ID:"
-msgstr ""
-
-msgctxt "report:health_services.report:"
 msgid "Health Service Report"
 msgstr ""
 
@@ -362,6 +358,10 @@ msgid "Service"
 msgstr "ບໍລິການ"
 
 msgctxt "report:health_services.report:"
+msgid "Service ID:"
+msgstr ""
+
+msgctxt "report:health_services.report:"
 msgid "Tel:"
 msgstr ""
 
@@ -379,9 +379,10 @@ msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "No"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Unknown"
@@ -391,9 +392,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Yes"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "No"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "Unknown"
@@ -448,10 +450,11 @@ msgctxt "view:gnuhealth.service.invoice.init:"
 msgid "Do you want to generate the Invoice(s) ?"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "wizard_button:gnuhealth.service.invoice.create,start,create_service_invoice:"
 msgid "Create Invoice"
-msgstr ""
+msgstr "ໃບເກັບເງິນ"
 
 #, fuzzy
 msgctxt "wizard_button:gnuhealth.service.invoice.create,start,end:"

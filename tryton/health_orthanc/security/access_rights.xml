@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024- Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<!-- This file is part of GNU Health. GPL v3+ -->
+<!-- Default template for permission groups -->
+
+<tryton>
+    <data>
+
+<!-- Default access rights to models -->
+        <record model="ir.model.access" id="access_orthanc_config_server">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_imaging_orthanc_study">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_imaging_orthanc_study_series">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_imaging_orthanc_series_instances">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+
+<!-- END OF DEFAULT ACCESS RIGHTS -->
+
+<!-- Create the Health imaging_orthanc group -->
+        <record model="res.group" id="group_imaging_orthanc">
+            <field name="name">Health Imaging Orthanc</field>
+        </record>
+
+<!-- Create the Health imaging_orthanc Administration group -->
+        <record model="res.group" id="group_imaging_orthanc_admin">
+            <field name="name">Health Imaging Orthanc Administration</field>
+        </record>
+
+<!-- BEGIN imaging_orthanc ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="group_imaging_orthanc_user_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+        </record>
+
+<!-- Access to Menus -->
+        <record model="ir.ui.menu-res.group" id="group_imaging_orthanc_menu_admin">
+            <field name="menu" ref="orthanc_menu"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+        </record>
+
+<!-- Access rights to models for the health admin group -->
+        <record model="ir.model.access" id="access_imaging_orthanc_study_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_study_series_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_series_instances_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_orthanc_config_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+<!-- END radiolog ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+<!-- BEGIN imaging_orthanc USER GROUP ACCESS RIGHTS -->
+
+<!-- Access to Menus: -->
+        <record model="ir.ui.menu-res.group" id="menu_group_imaging_orthanc">
+            <field name="menu" ref="health.gnuhealth_menu"/>
+            <field name="group" ref="group_imaging_orthanc"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_group_imaging_orthanc_parent">
+            <field name="menu" ref="orthanc_menu"/>
+            <field name="group" ref="group_imaging_orthanc"/>
+        </record>
+
+
+<!-- Access rights to models for the health imaging_orthanc group -->
+        <record model="ir.model.access" id="access_group_imaging_orthanc_study">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study')]"/>
+            <field name="group" ref="group_imaging_orthanc"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_group_imaging_orthanc_study_series">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
+            <field name="group" ref="group_imaging_orthanc"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_group_imaging_orthanc_series_instances">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
+            <field name="group" ref="group_imaging_orthanc"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_group_imaging_orthanc_study_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_imaging_orthanc_study_series_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_imaging_orthanc_series_instances_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
+            <field name="group" ref="group_imaging_orthanc_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+
+<!-- BEGIN DOCTOR GROUP ACCESS RIGHTS -->
+
+        <record model="ir.model.access" id="access_imaging_orthanc_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        
+        <record model="ir.model.access" id="access_imaging_orthanc_study_series_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.study_series')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_imaging_orthanc_series_instances_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.imaging_orthanc.series_instances')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_orthanc_config_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+<!-- END OF IMAGING_ORTHANC GROUP ACCESS RIGHTS -->
+
+    </data>
+</tryton>

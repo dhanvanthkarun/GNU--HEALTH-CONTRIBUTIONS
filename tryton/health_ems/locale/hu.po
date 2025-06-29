@@ -66,7 +66,7 @@ msgctxt "field:gnuhealth.ambulance_hp,healthprof:"
 msgid "Health Prof"
 msgstr ""
 
-msgctxt "field:gnuhealth.ambulance_hp,name:"
+msgctxt "field:gnuhealth.ambulance_hp,sr:"
 msgid "SR"
 msgstr ""
 
@@ -134,13 +134,15 @@ msgctxt "field:gnuhealth.support_request,operator:"
 msgid "Operator"
 msgstr "Művelet"
 
+#, fuzzy
 msgctxt "field:gnuhealth.support_request,patient:"
 msgid "Patient"
-msgstr ""
+msgstr "Páciens"
 
+#, fuzzy
 msgctxt "field:gnuhealth.support_request,patient_age:"
 msgid "Age"
-msgstr ""
+msgstr "Kor"
 
 msgctxt "field:gnuhealth.support_request,patient_sex:"
 msgid "Sex"
@@ -173,9 +175,10 @@ msgctxt "field:gnuhealth.support_request,state:"
 msgid "State"
 msgstr "Állapot"
 
+#, fuzzy
 msgctxt "field:gnuhealth.support_request,urgency:"
 msgid "Urgency"
-msgstr ""
+msgstr "Sürgősség"
 
 msgctxt "field:gnuhealth.support_request,urladdr:"
 msgid "OSM Map"
@@ -315,7 +318,7 @@ msgid "Ambulance Health Professionals"
 msgstr ""
 
 msgctxt "model:gnuhealth.sequences.support_request_code_sequence,name:"
-msgid "Health Service Request Sequence setup"
+msgid "Health Support Request Sequence setup"
 msgstr ""
 
 msgctxt "model:gnuhealth.support_request,name:"
@@ -594,9 +597,10 @@ msgctxt "selection:gnuhealth.support_request,place_occurrance:"
 msgid "Home"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.support_request,place_occurrance:"
 msgid "Institution"
-msgstr ""
+msgstr "Intézmény"
 
 msgctxt "selection:gnuhealth.support_request,place_occurrance:"
 msgid "Public Building"

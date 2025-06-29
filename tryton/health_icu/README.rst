@@ -1,30 +1,83 @@
-.. SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-.. SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 ..
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
 .. image:: https://www.gnuhealth.org/downloads/artwork/logos/isologo-gnu-health.png
 
-GNU Health HMIS: Libre Hospital Management and Health Information System
-========================================================================
+
+GNU Health Intensive Care Unit package for GNU Health HIS
+#########################################################
+
+Health ICU includes functionality in a Intensive Care Unit.
+
+It incorporates scoring systems, such :
+
+- GSC : Glasgow Coma Scale
+- APACHE II : Acute Physiology and Chronic Health Evaluation II
+
+The functionality is divided into two major sections :
+
+- Patient ICU Information
+- Patient Roundings
+
+1) Patient ICU Information : Health -> Hospitalization -> Intensive Care -> Patient ICU Info
+All the information is linked to the Inpatient record. This form allows you to have an idea of the patient status, days since admission at ICU and use of mechanical ventilation, among other functionalities.
+From this form, you can directly create and evaluate :
+
+- Electrocardiograms
+- APACHE II Scoring
+- Glasgow Coma Scale scoring
+
+This is the preferred method to create new tests and evaluations on the patient, since it automatically takes the Inpatient Registration number and the patient information associated to it. This eliminates the error of assigning another inpatient record.
+
+2) Patient Rounding : Health -> Nursing -> Roundings
+All the ICU related information is on the new "ICU" tab. The assessment is divided in different systems :
+
+- Neurological
+- Respiratory
+- Cardiovascular
+- Blood and Skin
+- Digestive
+
+In this assesment (that can have different frequencies, depending on the center policies ), you should enter the information starting at the left tab (Main) and once you are done with this section, switch to the ICU tab.
+
+The information in for the Glasgow Coma Scale and Electrocardiogram can be entered at that very same moment (if the EKG is done at bed side at evaluation time), or can be selected from the list. Please ask to put a short interpretation on the EKG.
+For each EKG, in addition to fill in as much information as possible, please take a picture or scan the ECG strip, since it can provide valuable information for further evaluations ! The information related to the ECG in the rounding will be the Interpretation, so please be clear.
+Of course, you can access to the rest of the information related to the ECG by opening the resource.
+
+Xray picture : The ICU rounding allows to place an Xray (or other imaging diagnosis image). Unlike attachments related to the object, that you can also use, this image is even more contextual and graphic. Of course, this image should be very recent to the evaluation itself.
+
+Drainages : Chest drainages are input  from a One2Many widget. This permits to have as many as in the patient, and with their own characteristics.
+
+
+
+GNU Health HIS: The Libre Hospital Information System
+=====================================================
  
-The GNU Health HMIS provides the following functionality:
+Welcome to the Hospital Information System (HIS) of GNU Health!
 
-#. **Hospital Management Information System (HMIS)**
-#. **Electronic Medical Record (EMR)**
-#. **Health Information System (HIS)**
-#. **Laboratory Information System (LIS)**
+The main areas of the HIS are:
 
-The Hospital and Health Information System component (HMIS) from GNU Health (GH) 
-provides over 40 standard-based packages (primary care, obstetrics & gynecology,
-pediatrics, surgery, lims, genetics, diagnostic imaging, dentisstry, reporting...)
-to fit your institution needs. The GH HMIS combines the socioeconomic determinants of
-health with state-of-the-art technology in bioinformatics and clinical genetics. 
+* **Demographics and Community**: Individuals, domiciliary
+  units, families, socioeconomics, demographic & administrative information
+* **Patient Management**: Health encounters and evaluations,
+  hospitalizations, clinical history and other information that makes up the
+  electronic medical records (EMR)
+* **Health Center**: Finances & billing, stock &
+  pharmacy, staff, suppliers, beds, operating rooms and other relevant tasks
+  to manage the health center
+* **Laboratory and Medical Imaging**: Management of complementary orders such as
+  lab tests, medical and diagnostic imaging requests and workflows
+* **Health Information System**: Statistics, analytical reporting on collected
+  data from the community and participating health institutions, e.g. demographics
+  and epidemiology
 
-The HMIS manages the internal processes of a health institution, such as 
-financial management, billing, stock management, pharmacies or labs (LIMS). 
+Functionalities of specific modules are briefly summarized over here:
 
-The GH HMIS is part of the GNU Health project, the **Libre digital health ecosystem**.
+https://docs.gnuhealth.org/his/features.html#packages
+
+The GH HIS is part of the GNU Health project, the **Libre digital health ecosystem**.
 
 The GNU Health project combines the daily medical practice with state-of-the-art 
 technology in bioinformatics and genetics. It provides a holistic approach 
@@ -66,9 +119,9 @@ deliver Freedom and Equity in Healthcare around the World.
 
 https://my.gnusolidario.org/join-us/
 
-GNU Solidario hosts IWEEE and GnuHealthCon:
+GNU Solidario hosts IWEEE and GNU Health Con:
 
-The International Workshop on e-Health in Emerging Economies- a good way to
+The International Workshop on e-Health in Emerging Economies - a good way to
 support GNU Solidario and to get the latest on e-Health is to assist
 to the conferences. 
 
@@ -81,6 +134,11 @@ the health of your country or region. We want the project to be a success,
 and since our resources are limited, we need to work together to make a great
 and sustainable project.
 
+First place to ask for support are the mailing lists & matrix chat:
+
+https://docs.gnuhealth.org/his/support.html#online-resources
+
+Feel free to contact us directly if this does not suffice or if you need custom support.
 In order to be elegible, we need the following information from you,
 your NGO or government:
 
@@ -115,8 +173,8 @@ License
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -130,3 +188,9 @@ GNU Health is licensed under GPL v3+::
 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+License of the Human Natural variants Database
+------------------------------------------------
+
+ Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+ Distributed under the Creative Commons Attribution (CC BY 4.0) License

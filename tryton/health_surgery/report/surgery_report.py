@@ -1,7 +1,7 @@
-# Copyright (C) 2008-2024 Luis Falcon <falcon@gnuhealth.org>
-# Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
+# Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -30,5 +30,8 @@ class SurgeryReport(Report):
 
         dt = datetime.now()
 
-        return super(SurgeryReport, cls).parse(report, objects, data, 
-            localcontext)
+        localcontext['timezone'] = timezone
+        localcontext['datetime_now'] = dt
+
+        return super(SurgeryReport, cls).parse(
+            report, objects, data, localcontext)

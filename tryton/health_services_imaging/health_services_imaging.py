@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -38,7 +38,7 @@ class ImagingTestRequest(metaclass=PoolMeta):
         ('yes', 'Yes'),
         ('no', 'No'),
         ('unknown', 'Unknown'),
-        ), 'Service updated', sort=False)
+    ), 'Service updated', sort=False)
 
     @classmethod
     def default_service_updated(self):
@@ -51,7 +51,7 @@ class ImagingTestRequest(metaclass=PoolMeta):
             'update_service': {
                 'readonly': Equal(Eval('state'), 'done'),
             },
-            })
+        })
 
     @classmethod
     @ModelView.button
@@ -60,12 +60,13 @@ class ImagingTestRequest(metaclass=PoolMeta):
 
         if not imaging_order.service:
             raise NoServiceAssociated(
-                gettext('health_services_imaging.msg_no_service_associated')
-                )
+                gettext('health_services_imaging.'
+                        'msg_no_service_associated'))
 
         if imaging_order.service_updated == 'yes':
             raise ServiceHasBeenUpdated(
-                gettext('health_services_imaging.msg_service_has_been_updated'))
+                gettext('health_services_imaging.'
+                        'msg_service_has_been_updated'))
 
         pool = Pool()
         HealthService = pool.get('gnuhealth.health_service')
@@ -80,7 +81,7 @@ class ImagingTestRequest(metaclass=PoolMeta):
             'product': imaging_order.requested_test.product.id,
             'desc': imaging_order.requested_test.product.rec_name,
             'qty': 1
-            }]))
+        }]))
 
         hservice.append(imaging_order.service)
 

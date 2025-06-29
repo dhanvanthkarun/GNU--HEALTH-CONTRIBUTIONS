@@ -64,10 +64,6 @@ msgctxt "field:gnuhealth.health_service.line,from_date:"
 msgid "From"
 msgstr "Desde"
 
-msgctxt "field:gnuhealth.health_service.line,name:"
-msgid "Service"
-msgstr "Servicio"
-
 msgctxt "field:gnuhealth.health_service.line,product:"
 msgid "Product"
 msgstr "Producto"
@@ -80,6 +76,11 @@ msgstr "Ctdad"
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "Observaciones"
+
+#, fuzzy
+msgctxt "field:gnuhealth.health_service.line,service:"
+msgid "Service"
+msgstr "Servicio"
 
 msgctxt "field:gnuhealth.health_service.line,to_date:"
 msgid "To"
@@ -99,18 +100,20 @@ msgctxt "field:gnuhealth.patient.evaluation,service:"
 msgid "Service"
 msgstr "Servicios"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,service_updated:"
 msgid "Service updated"
-msgstr ""
+msgstr "Servicio actualizado"
 
 #, fuzzy
 msgctxt "field:gnuhealth.prescription.order,service:"
 msgid "Service"
 msgstr "Servicios"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,service_updated:"
 msgid "Service updated"
-msgstr ""
+msgstr "Servicio actualizado"
 
 msgctxt "field:gnuhealth.sequences,health_service_sequence:"
 msgid "Health service sequence"
@@ -247,13 +250,15 @@ msgctxt "model:ir.model.button,string:service_draft_button"
 msgid "Set to Draft"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:serviceevaluation_update_button"
 msgid "Update Services"
-msgstr ""
+msgstr "Actualizar servicios"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:servicepresc_update_button"
 msgid "Update Services"
-msgstr ""
+msgstr "Actualizar servicios"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_health_service"
 msgid "Health Service"
@@ -291,9 +296,10 @@ msgctxt "report:health_services.report:"
 msgid "//"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Address:"
-msgstr ""
+msgstr "Dirección:"
 
 #, fuzzy
 msgctxt "report:health_services.report:"
@@ -305,9 +311,10 @@ msgctxt "report:health_services.report:"
 msgid "Description:"
 msgstr "Descripción:"
 
+#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "E-mail:"
-msgstr ""
+msgstr "Correo electrónico:"
 
 #, fuzzy
 msgctxt "report:health_services.report:"
@@ -315,16 +322,13 @@ msgid "From"
 msgstr "Desde"
 
 msgctxt "report:health_services.report:"
-msgid "Health Service ID:"
-msgstr ""
-
-msgctxt "report:health_services.report:"
 msgid "Health Service Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Institution:"
-msgstr ""
+msgstr "Institución:"
 
 #, fuzzy
 msgctxt "report:health_services.report:"
@@ -335,13 +339,15 @@ msgctxt "report:health_services.report:"
 msgid "Invoice to:"
 msgstr ""
 
+#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
+#, fuzzy
 msgctxt "report:health_services.report:"
 msgid "Patient:"
-msgstr ""
+msgstr "Paciente:"
 
 #, fuzzy
 msgctxt "report:health_services.report:"
@@ -354,8 +360,13 @@ msgid "Service"
 msgstr "Servicios"
 
 msgctxt "report:health_services.report:"
-msgid "Tel:"
+msgid "Service ID:"
 msgstr ""
+
+#, fuzzy
+msgctxt "report:health_services.report:"
+msgid "Tel:"
+msgstr "Tfno.:"
 
 #, fuzzy
 msgctxt "report:health_services.report:"
@@ -421,9 +432,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Service document with this evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Services"
-msgstr ""
+msgstr "Actualizar servicios"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Transfer medicaments to services ?"
@@ -433,9 +445,10 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Update Service document with this prescription lines"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Update Services"
-msgstr ""
+msgstr "Actualizar servicios"
 
 msgctxt "view:gnuhealth.service.invoice.init:"
 msgid "Create Invoices"

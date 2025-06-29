@@ -1,126 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
 <tryton>
 <data grouped="1">
-<record model="gnuhealth.gene" id="APOBEC3A_B">
-	<field name="hgnc_id">HGNC:44196</field>
-	<field name="name">APOBEC3A_B</field>
-	<field name="long_name">APOBEC3A and APOBEC3B deletion hybrid</field>
-	<field name="gene_type">protein_coding</field>
-	<field name="chromosome">22</field>
-	<field name="location">22q13 alternate reference locus</field>
-	<field name="aliases"></field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">100913187</field>
-	<field name="ensembl_id"></field>
-	<field name="refseq_accession">NM_001193289</field>
-	<field name="protein_name"></field>
-	<field name="omim_id"></field>
-</record>
-<record model="gnuhealth.gene" id="BAGE5">
-	<field name="hgnc_id">HGNC:15732</field>
-	<field name="name">BAGE5</field>
-	<field name="long_name">BAGE family member 5</field>
-	<field name="gene_type">protein_coding</field>
-	<field name="chromosome">13</field>
-	<field name="location">13cen, GRCh38 novel patch</field>
-	<field name="aliases">CT2.5</field>
-	<field name="name_aliases">cancer/testis antigen family 2, member 5</field>
-	<field name="gene_id">85316</field>
-	<field name="ensembl_id"></field>
-	<field name="refseq_accession">NM_182484</field>
-	<field name="protein_name">Q86Y27</field>
-	<field name="omim_id"></field>
-</record>
-<record model="gnuhealth.gene" id="C4B_2">
-	<field name="hgnc_id">HGNC:42398</field>
-	<field name="name">C4B_2</field>
-	<field name="long_name">complement component 4B (Chido blood group), copy 2</field>
-	<field name="gene_type">protein_coding</field>
-	<field name="chromosome">6</field>
-	<field name="location">6p21.3 alternate reference locus</field>
-	<field name="aliases"></field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">100293534</field>
-	<field name="ensembl_id">ENSG00000233312</field>
-	<field name="refseq_accession">NM_001242823</field>
-	<field name="protein_name">P0C0L5</field>
-	<field name="omim_id"></field>
-</record>
-<record model="gnuhealth.gene" id="CCL3L1">
-	<field name="hgnc_id">HGNC:10628</field>
-	<field name="name">CCL3L1</field>
-	<field name="long_name">C-C motif chemokine ligand 3 like 1</field>
-	<field name="gene_type">protein_coding</field>
-	<field name="chromosome">17</field>
-	<field name="location">17q12 alternate reference locus</field>
-	<field name="aliases">G0S19-2|LD78BETA</field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">6349</field>
-	<field name="ensembl_id">ENSG00000277796</field>
-	<field name="refseq_accession">NM_021006</field>
-	<field name="protein_name">P16619</field>
-	<field name="omim_id">601395.0</field>
-</record>
-<record model="gnuhealth.gene" id="CCL3P1">
-	<field name="hgnc_id">HGNC:10629</field>
-	<field name="name">CCL3P1</field>
-	<field name="long_name">C-C motif chemokine ligand 3 pseudogene 1</field>
-	<field name="gene_type">pseudogene_pseudogene</field>
-	<field name="chromosome">17</field>
-	<field name="location">17q12 alternate reference locus</field>
-	<field name="aliases">LD78gamma</field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">390788</field>
-	<field name="ensembl_id"></field>
-	<field name="refseq_accession">NG_004113</field>
-	<field name="protein_name"></field>
-	<field name="omim_id">609467.0</field>
-</record>
-<record model="gnuhealth.gene" id="CCL4L1">
-	<field name="hgnc_id">HGNC:10631</field>
-	<field name="name">CCL4L1</field>
-	<field name="long_name">C-C motif chemokine ligand 4 like 1</field>
-	<field name="gene_type">protein_coding</field>
-	<field name="chromosome">17</field>
-	<field name="location">17q12 alternate reference locus</field>
-	<field name="aliases">AT744.2|LAG-1</field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">388372</field>
-	<field name="ensembl_id"></field>
-	<field name="refseq_accession">NM_207007</field>
-	<field name="protein_name">Q8NHW4</field>
-	<field name="omim_id">603782.0</field>
-</record>
-<record model="gnuhealth.gene" id="CSPG4P9">
-	<field name="hgnc_id">HGNC:48360</field>
-	<field name="name">CSPG4P9</field>
-	<field name="long_name">chondroitin sulfate proteoglycan 4 pseudogene 9</field>
-	<field name="gene_type">pseudogene_pseudogene</field>
-	<field name="chromosome">15</field>
-	<field name="location">15q25.2 alternate reference locus</field>
-	<field name="aliases"></field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">642288</field>
-	<field name="ensembl_id"></field>
-	<field name="refseq_accession"></field>
-	<field name="protein_name"></field>
-	<field name="omim_id"></field>
-</record>
-<record model="gnuhealth.gene" id="EIF4EBP1P2">
-	<field name="hgnc_id">HGNC:44047</field>
-	<field name="name">EIF4EBP1P2</field>
-	<field name="long_name">eukaryotic translation initiation factor 4E binding protein 1 pseudogene 2</field>
-	<field name="gene_type">pseudogene_pseudogene</field>
-	<field name="chromosome">22</field>
-	<field name="location">22q11.23 alternate reference locus</field>
-	<field name="aliases"></field>
-	<field name="name_aliases"></field>
-	<field name="gene_id">768328</field>
-	<field name="ensembl_id"></field>
-	<field name="refseq_accession">NG_005781</field>
-	<field name="protein_name"></field>
-	<field name="omim_id"></field>
-</record>
 <record model="gnuhealth.gene" id="FAM8A5P">
 	<field name="hgnc_id">HGNC:16376</field>
 	<field name="name">FAM8A5P</field>
@@ -191,7 +77,7 @@
 	<field name="aliases"></field>
 	<field name="name_aliases"></field>
 	<field name="gene_id">653399</field>
-	<field name="ensembl_id"></field>
+	<field name="ensembl_id">ENSG00000281310</field>
 	<field name="refseq_accession">NR_003082</field>
 	<field name="protein_name"></field>
 	<field name="omim_id"></field>
@@ -419,7 +305,7 @@
 	<field name="ensembl_id">ENSG00000275434</field>
 	<field name="refseq_accession">NM_001083539</field>
 	<field name="protein_name">Q14943</field>
-	<field name="omim_id"></field>
+	<field name="omim_id">620778.0</field>
 </record>
 <record model="gnuhealth.gene" id="LILRA3">
 	<field name="hgnc_id">HGNC:6604</field>
@@ -435,6 +321,21 @@
 	<field name="refseq_accession">NM_001172654</field>
 	<field name="protein_name">Q8N6C8</field>
 	<field name="omim_id">604818.0</field>
+</record>
+<record model="gnuhealth.gene" id="APOBEC3A_B">
+	<field name="hgnc_id">HGNC:44196</field>
+	<field name="name">APOBEC3A_B</field>
+	<field name="long_name">APOBEC3A and APOBEC3B deletion hybrid</field>
+	<field name="gene_type">protein_coding</field>
+	<field name="chromosome">22</field>
+	<field name="location">22q13 alternate reference locus</field>
+	<field name="aliases"></field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">100913187</field>
+	<field name="ensembl_id"></field>
+	<field name="refseq_accession">NM_001193289</field>
+	<field name="protein_name"></field>
+	<field name="omim_id"></field>
 </record>
 <record model="gnuhealth.gene" id="MTND1P13">
 	<field name="hgnc_id">HGNC:42096</field>
@@ -541,6 +442,36 @@
 	<field name="protein_name">Q8NHM4</field>
 	<field name="omim_id"></field>
 </record>
+<record model="gnuhealth.gene" id="PRSS3P5">
+	<field name="hgnc_id">HGNC:51828</field>
+	<field name="name">PRSS3P5</field>
+	<field name="long_name">PRSS3 pseudogene 5</field>
+	<field name="gene_type">pseudogene_pseudogene</field>
+	<field name="chromosome">7</field>
+	<field name="location">7q34 alternate reference locus</field>
+	<field name="aliases">TRY7</field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">207148</field>
+	<field name="ensembl_id">ENSG00000282565</field>
+	<field name="refseq_accession">NG_001333</field>
+	<field name="protein_name"></field>
+	<field name="omim_id"></field>
+</record>
+<record model="gnuhealth.gene" id="BAGE5">
+	<field name="hgnc_id">HGNC:15732</field>
+	<field name="name">BAGE5</field>
+	<field name="long_name">BAGE family member 5</field>
+	<field name="gene_type">protein_coding</field>
+	<field name="chromosome">13</field>
+	<field name="location">13cen, GRCh38 novel patch</field>
+	<field name="aliases">CT2.5</field>
+	<field name="name_aliases">cancer/testis antigen family 2, member 5</field>
+	<field name="gene_id">85316</field>
+	<field name="ensembl_id"></field>
+	<field name="refseq_accession">NM_182484</field>
+	<field name="protein_name">Q86Y27</field>
+	<field name="omim_id"></field>
+</record>
 <record model="gnuhealth.gene" id="RNU1-79P">
 	<field name="hgnc_id">HGNC:48421</field>
 	<field name="name">RNU1-79P</field>
@@ -571,6 +502,66 @@
 	<field name="protein_name"></field>
 	<field name="omim_id"></field>
 </record>
+<record model="gnuhealth.gene" id="C4B_2">
+	<field name="hgnc_id">HGNC:42398</field>
+	<field name="name">C4B_2</field>
+	<field name="long_name">complement component 4B (Chido/Rodgers blood group), copy 2</field>
+	<field name="gene_type">protein_coding</field>
+	<field name="chromosome">6</field>
+	<field name="location">6p21.3 alternate reference locus</field>
+	<field name="aliases"></field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">100293534</field>
+	<field name="ensembl_id">ENSG00000233312</field>
+	<field name="refseq_accession">NM_001242823</field>
+	<field name="protein_name">P0C0L5</field>
+	<field name="omim_id"></field>
+</record>
+<record model="gnuhealth.gene" id="CCL3L1">
+	<field name="hgnc_id">HGNC:10628</field>
+	<field name="name">CCL3L1</field>
+	<field name="long_name">C-C motif chemokine ligand 3 like 1</field>
+	<field name="gene_type">protein_coding</field>
+	<field name="chromosome">17</field>
+	<field name="location">17q12 alternate reference locus</field>
+	<field name="aliases">G0S19-2|LD78BETA</field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">6349</field>
+	<field name="ensembl_id">ENSG00000277796</field>
+	<field name="refseq_accession">NM_021006</field>
+	<field name="protein_name">P16619</field>
+	<field name="omim_id">601395.0</field>
+</record>
+<record model="gnuhealth.gene" id="CCL3P1">
+	<field name="hgnc_id">HGNC:10629</field>
+	<field name="name">CCL3P1</field>
+	<field name="long_name">C-C motif chemokine ligand 3 pseudogene 1</field>
+	<field name="gene_type">pseudogene_pseudogene</field>
+	<field name="chromosome">17</field>
+	<field name="location">17q12 alternate reference locus</field>
+	<field name="aliases">LD78gamma</field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">390788</field>
+	<field name="ensembl_id"></field>
+	<field name="refseq_accession">NG_004113</field>
+	<field name="protein_name"></field>
+	<field name="omim_id">609467.0</field>
+</record>
+<record model="gnuhealth.gene" id="CCL4L1">
+	<field name="hgnc_id">HGNC:10631</field>
+	<field name="name">CCL4L1</field>
+	<field name="long_name">C-C motif chemokine ligand 4 like 1</field>
+	<field name="gene_type">protein_coding</field>
+	<field name="chromosome">17</field>
+	<field name="location">17q12 alternate reference locus</field>
+	<field name="aliases">AT744.2|LAG-1</field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">388372</field>
+	<field name="ensembl_id"></field>
+	<field name="refseq_accession">NM_207007</field>
+	<field name="protein_name">Q8NHW4</field>
+	<field name="omim_id">603782.0</field>
+</record>
 <record model="gnuhealth.gene" id="TAS2R45">
 	<field name="hgnc_id">HGNC:18876</field>
 	<field name="name">TAS2R45</field>
@@ -581,7 +572,7 @@
 	<field name="aliases">ZG24P</field>
 	<field name="name_aliases"></field>
 	<field name="gene_id">259291</field>
-	<field name="ensembl_id"></field>
+	<field name="ensembl_id">ENSG00000261936</field>
 	<field name="refseq_accession">NM_176886</field>
 	<field name="protein_name">P59539</field>
 	<field name="omim_id">613967.0</field>
@@ -596,7 +587,7 @@
 	<field name="aliases">T2R68P|PS7</field>
 	<field name="name_aliases"></field>
 	<field name="gene_id">100653053</field>
-	<field name="ensembl_id"></field>
+	<field name="ensembl_id">ENSG00000262829</field>
 	<field name="refseq_accession">NG_004699</field>
 	<field name="protein_name"></field>
 	<field name="omim_id"></field>
@@ -703,6 +694,36 @@
 	<field name="gene_id">100421766</field>
 	<field name="ensembl_id"></field>
 	<field name="refseq_accession">NG_025343</field>
+	<field name="protein_name"></field>
+	<field name="omim_id"></field>
+</record>
+<record model="gnuhealth.gene" id="CSPG4P9">
+	<field name="hgnc_id">HGNC:48360</field>
+	<field name="name">CSPG4P9</field>
+	<field name="long_name">chondroitin sulfate proteoglycan 4 pseudogene 9</field>
+	<field name="gene_type">pseudogene_pseudogene</field>
+	<field name="chromosome">15</field>
+	<field name="location">15q25.2 alternate reference locus</field>
+	<field name="aliases"></field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">642288</field>
+	<field name="ensembl_id"></field>
+	<field name="refseq_accession"></field>
+	<field name="protein_name"></field>
+	<field name="omim_id"></field>
+</record>
+<record model="gnuhealth.gene" id="EIF4EBP1P2">
+	<field name="hgnc_id">HGNC:44047</field>
+	<field name="name">EIF4EBP1P2</field>
+	<field name="long_name">eukaryotic translation initiation factor 4E binding protein 1 pseudogene 2</field>
+	<field name="gene_type">pseudogene_pseudogene</field>
+	<field name="chromosome">22</field>
+	<field name="location">22q11.23 alternate reference locus</field>
+	<field name="aliases"></field>
+	<field name="name_aliases"></field>
+	<field name="gene_id">768328</field>
+	<field name="ensembl_id"></field>
+	<field name="refseq_accession">NG_005781</field>
 	<field name="protein_name"></field>
 	<field name="omim_id"></field>
 </record>

@@ -78,7 +78,7 @@ msgctxt "field:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP"
 msgstr ""
 
-msgctxt "field:gnuhealth.gene.variant,name:"
+msgctxt "field:gnuhealth.gene.variant,gene:"
 msgid "Gene"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgid "Phenotypes / Diseases"
 msgstr ""
 
 msgctxt "field:gnuhealth.gene.variant,protein:"
-msgid "Protein "
+msgid "Protein"
 msgstr ""
 
 msgctxt "field:gnuhealth.gene.variant,significance:"
@@ -115,39 +115,18 @@ msgctxt "field:gnuhealth.gene.variant.phenotype,variant:"
 msgid "Variant"
 msgstr ""
 
-msgctxt "field:gnuhealth.patient,family_history:"
-msgid "Family History"
-msgstr ""
-
 msgctxt "field:gnuhealth.patient,genetic_risks:"
 msgid "Genetic Information"
-msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.family.diseases,name:"
-msgid "Condition"
-msgstr "Стање"
-
-#, fuzzy
-msgctxt "field:gnuhealth.patient.family.diseases,patient:"
-msgid "Patient"
-msgstr "Пацијент"
-
-msgctxt "field:gnuhealth.patient.family.diseases,relative:"
-msgid "Relative"
-msgstr ""
-
-msgctxt "field:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal or Paternal"
 msgstr ""
 
 msgctxt "field:gnuhealth.patient.genetic.risk,disease_gene:"
 msgid "Gene"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,healthprof:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Здравствени радник"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.genetic.risk,institution:"
@@ -174,6 +153,10 @@ msgstr "Пацијент"
 
 msgctxt "field:gnuhealth.patient.genetic.risk,variant_phenotype:"
 msgid "Phenotype"
+msgstr ""
+
+msgctxt "field:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Zygosity"
 msgstr ""
 
 msgctxt "field:gnuhealth.protein.disease,acronym:"
@@ -279,8 +262,8 @@ msgctxt "help:gnuhealth.gene.variant,dbsnp_url:"
 msgid "Reference SNP (rs) link"
 msgstr ""
 
-msgctxt "help:gnuhealth.gene.variant,name:"
-msgid "Gene and protein product (in parenthesis)"
+msgctxt "help:gnuhealth.gene.variant,gene:"
+msgid "Gene and product (in parenthesis)"
 msgstr ""
 
 msgctxt "help:gnuhealth.gene.variant,protein:"
@@ -297,13 +280,6 @@ msgstr ""
 
 msgctxt "help:gnuhealth.gene.variant.phenotype,gene:"
 msgid "Gene and expressing protein (in parenthesis)"
-msgstr ""
-
-msgctxt "help:gnuhealth.patient.family.diseases,relative:"
-msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.genetic.risk,healthprof:"
@@ -356,20 +332,12 @@ msgctxt "model:gnuhealth.gene.variant.phenotype,name:"
 msgid "Variant Phenotypes"
 msgstr ""
 
-msgctxt "model:gnuhealth.patient.family.diseases,name:"
-msgid "Family History"
-msgstr ""
-
 msgctxt "model:gnuhealth.patient.genetic.risk,name:"
 msgid "Patient Genetic Information"
 msgstr ""
 
 msgctxt "model:gnuhealth.protein.disease,name:"
 msgid "Protein related disorders"
-msgstr ""
-
-msgctxt "model:ir.action,name:"
-msgid "Disease Genes"
 msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_gene"
@@ -390,10 +358,6 @@ msgstr ""
 
 msgctxt "model:ir.action,name:gnuhealth_action_protein_disease"
 msgid "Protein related diseases"
-msgstr ""
-
-msgctxt "model:ir.ui.menu,name:"
-msgid "Disease Genes"
 msgstr ""
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_gene_variant_phenotypes"
@@ -532,70 +496,24 @@ msgctxt "selection:gnuhealth.gene.variant,significance:"
 msgid "US: Unknown significance"
 msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Aunt"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Hemizygosity"
 msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Brother"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Heterozygosity"
 msgstr ""
 
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Cousin"
-msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Father"
-msgstr "Отац"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandfather"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Grandmother"
-msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Mother"
-msgstr "Мајка"
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Nephew"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Niece"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Sister"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
-msgid "Uncle"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Maternal"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Paternal"
-msgstr ""
-
-msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
-msgid "Sibling"
+msgctxt "selection:gnuhealth.patient.genetic.risk,zygosity:"
+msgid "Homozygosity"
 msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
-msgid "Autosomic dominant"
+msgid "Autosomal dominant"
 msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"
-msgid "Autosomic recessive"
+msgid "Autosomal recessive"
 msgstr ""
 
 msgctxt "selection:gnuhealth.protein.disease,inheritance_pattern:"

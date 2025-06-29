@@ -1,10 +1,18 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-06-25 08:47+0000\n"
+"Last-Translator: tumashu <tumashu@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://translate.codeberg.org/projects/gnuhealth/health/zh_Hans/>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.11.4\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
-msgid "Date and Time"
-msgstr "预约时间"
+msgid "Start"
+msgstr "开始时间"
 
 msgctxt "field:gnuhealth.appointment,appointment_type:"
 msgid "Type"
@@ -30,13 +38,21 @@ msgctxt "field:gnuhealth.appointment,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
+msgctxt "field:gnuhealth.appointment,insurance:"
+msgid "Insurance"
+msgstr "保险"
+
 msgctxt "field:gnuhealth.appointment,name:"
-msgid "Appointment ID"
-msgstr "预约编号"
+msgid "APPT ID"
+msgstr "预约号"
 
 msgctxt "field:gnuhealth.appointment,patient:"
 msgid "Patient"
 msgstr "患者"
+
+msgctxt "field:gnuhealth.appointment,rel_party:"
+msgid "Party ID"
+msgstr "参与者 ID"
 
 msgctxt "field:gnuhealth.appointment,speciality:"
 msgid "Specialty"
@@ -63,15 +79,15 @@ msgid "Age"
 msgstr "年龄"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
-msgid "Date"
-msgstr "日期"
+msgid "Start"
+msgstr "预约开始"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
-msgid "Date and Time"
-msgstr "预约时间"
+msgid "Start"
+msgstr "开始时间"
 
 msgctxt "field:gnuhealth.appointment.report,diagnosis:"
-msgid "Main Codition"
+msgid "Main Condition"
 msgstr "主要诊断"
 
 msgctxt "field:gnuhealth.appointment.report,gender:"
@@ -92,7 +108,7 @@ msgstr "患者"
 
 msgctxt "field:gnuhealth.appointment.report,ref:"
 msgid "PUID"
-msgstr "证件号码"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.appointment.report.open.start,date_end:"
 msgid "Date End"
@@ -138,13 +154,13 @@ msgctxt "field:gnuhealth.birth_certificate,mother:"
 msgid "Mother"
 msgstr "母亲"
 
-msgctxt "field:gnuhealth.birth_certificate,name:"
-msgid "Person"
-msgstr "人"
-
 msgctxt "field:gnuhealth.birth_certificate,observations:"
 msgid "Observations"
 msgstr "观察结果"
+
+msgctxt "field:gnuhealth.birth_certificate,party:"
+msgid "Person"
+msgstr "人"
 
 msgctxt "field:gnuhealth.birth_certificate,signed_by:"
 msgid "Certifier"
@@ -223,10 +239,6 @@ msgctxt "field:gnuhealth.death_certificate,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.death_certificate,name:"
-msgid "Person"
-msgstr "人"
-
 msgctxt "field:gnuhealth.death_certificate,observations:"
 msgid "Observations"
 msgstr "观察结果"
@@ -234,6 +246,10 @@ msgstr "观察结果"
 msgctxt "field:gnuhealth.death_certificate,operational_sector:"
 msgid "Op. Sector"
 msgstr "卫生子区域"
+
+msgctxt "field:gnuhealth.death_certificate,party:"
+msgid "Person"
+msgstr "人"
 
 msgctxt "field:gnuhealth.death_certificate,place_details:"
 msgid "Details"
@@ -291,7 +307,7 @@ msgctxt "field:gnuhealth.directions,comments:"
 msgid "Comments"
 msgstr "说明"
 
-msgctxt "field:gnuhealth.directions,name:"
+msgctxt "field:gnuhealth.directions,evaluation:"
 msgid "Evaluation"
 msgstr "患者评估"
 
@@ -299,13 +315,17 @@ msgctxt "field:gnuhealth.directions,procedure:"
 msgid "Procedure"
 msgstr "医学操作"
 
+msgctxt "field:gnuhealth.disease_group.members,disease:"
+msgid "Condition"
+msgstr "疾病"
+
 msgctxt "field:gnuhealth.disease_group.members,disease_group:"
 msgid "Group"
 msgstr "疾病分组"
 
-msgctxt "field:gnuhealth.disease_group.members,name:"
-msgid "Condition"
-msgstr "疾病"
+msgctxt "field:gnuhealth.dose.unit,code:"
+msgid "Code"
+msgstr "代码"
 
 msgctxt "field:gnuhealth.dose.unit,desc:"
 msgid "Description"
@@ -421,14 +441,14 @@ msgstr "房屋材料"
 
 msgctxt "field:gnuhealth.du,members:"
 msgid "Members"
-msgstr "此处居住的其他人员"
+msgstr "居住人员"
 
 msgctxt "field:gnuhealth.du,name:"
 msgid "Code"
 msgstr "代码"
 
 msgctxt "field:gnuhealth.du,operational_sector:"
-msgid "Operational Sector"
+msgid "Op. Sector"
 msgstr "卫生子区域"
 
 msgctxt "field:gnuhealth.du,picture:"
@@ -491,7 +511,7 @@ msgctxt "field:gnuhealth.family,name:"
 msgid "Family"
 msgstr "家庭"
 
-msgctxt "field:gnuhealth.family_member,name:"
+msgctxt "field:gnuhealth.family_member,family:"
 msgid "Family"
 msgstr "家庭"
 
@@ -531,17 +551,21 @@ msgctxt "field:gnuhealth.healthprofessional,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
+msgctxt "field:gnuhealth.healthprofessional,institution_unit:"
+msgid "Unit"
+msgstr "科室或病区"
+
 msgctxt "field:gnuhealth.healthprofessional,main_specialty:"
 msgid "Main Specialty"
 msgstr "主要专业"
 
-msgctxt "field:gnuhealth.healthprofessional,name:"
-msgid "Health Professional"
+msgctxt "field:gnuhealth.healthprofessional,party:"
+msgid "Health Prof"
 msgstr "医务人员"
 
 msgctxt "field:gnuhealth.healthprofessional,puid:"
 msgid "PUID"
-msgstr "证件号码"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.healthprofessional,specialties:"
 msgid "Specialties"
@@ -567,8 +591,8 @@ msgctxt "field:gnuhealth.help,name:"
 msgid "Code"
 msgstr "代码"
 
-msgctxt "field:gnuhealth.help,package:"
-msgid "Package"
+msgctxt "field:gnuhealth.help,packages:"
+msgid "Packages"
 msgstr "包"
 
 msgctxt "field:gnuhealth.hospital.bed,bed_type:"
@@ -583,7 +607,7 @@ msgctxt "field:gnuhealth.hospital.bed,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.hospital.bed,name:"
+msgctxt "field:gnuhealth.hospital.bed,product:"
 msgid "Bed"
 msgstr "床位"
 
@@ -735,9 +759,13 @@ msgctxt "field:gnuhealth.hospital.ward,unit:"
 msgid "Unit"
 msgstr "科室或病区"
 
-msgctxt "field:gnuhealth.hp_specialty,name:"
-msgid "Health Professional"
+msgctxt "field:gnuhealth.hp_specialty,healthprof:"
+msgid "Health Prof"
 msgstr "医务人员"
+
+msgctxt "field:gnuhealth.hp_specialty,mainsp:"
+msgid "Main"
+msgstr "主专业"
 
 msgctxt "field:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty"
@@ -835,12 +863,8 @@ msgctxt "field:gnuhealth.institution,main_specialty:"
 msgid "Specialty"
 msgstr "专业"
 
-msgctxt "field:gnuhealth.institution,name:"
-msgid "Institution"
-msgstr "医疗机构"
-
 msgctxt "field:gnuhealth.institution,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "手术室"
 
 msgctxt "field:gnuhealth.institution,operational_sectors:"
@@ -850,6 +874,10 @@ msgstr "卫生区域"
 msgctxt "field:gnuhealth.institution,or_number:"
 msgid "ORs"
 msgstr "手术室数"
+
+msgctxt "field:gnuhealth.institution,party:"
+msgid "Institution"
+msgstr "医疗机构"
 
 msgctxt "field:gnuhealth.institution,picture:"
 msgid "Picture"
@@ -875,7 +903,7 @@ msgctxt "field:gnuhealth.institution,trauma_level:"
 msgid "Trauma Level"
 msgstr "创伤中心级别"
 
-msgctxt "field:gnuhealth.institution.operationalsector,name:"
+msgctxt "field:gnuhealth.institution.operationalsector,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
@@ -883,7 +911,7 @@ msgctxt "field:gnuhealth.institution.operationalsector,operational_sector:"
 msgid "Operational Sector"
 msgstr "卫生区域"
 
-msgctxt "field:gnuhealth.institution.specialties,name:"
+msgctxt "field:gnuhealth.institution.specialties,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
@@ -911,10 +939,6 @@ msgctxt "field:gnuhealth.insurance,member_since:"
 msgid "Member since"
 msgstr "注册日期"
 
-msgctxt "field:gnuhealth.insurance,name:"
-msgid "Owner"
-msgstr "所有者"
-
 msgctxt "field:gnuhealth.insurance,notes:"
 msgid "Extra Info"
 msgstr "其它信息"
@@ -923,9 +947,17 @@ msgctxt "field:gnuhealth.insurance,number:"
 msgid "Number"
 msgstr "保险编号"
 
+msgctxt "field:gnuhealth.insurance,party:"
+msgid "Owner"
+msgstr "所有者"
+
 msgctxt "field:gnuhealth.insurance,plan_id:"
 msgid "Plan"
 msgstr "保险计划"
+
+msgctxt "field:gnuhealth.insurance,status:"
+msgid "Status"
+msgstr "状态"
 
 msgctxt "field:gnuhealth.insurance.plan,company:"
 msgid "Insurance Company"
@@ -935,17 +967,17 @@ msgctxt "field:gnuhealth.insurance.plan,is_default:"
 msgid "Default plan"
 msgstr "默认保险计划"
 
-msgctxt "field:gnuhealth.insurance.plan,name:"
-msgid "Plan"
-msgstr "保险计划"
-
 msgctxt "field:gnuhealth.insurance.plan,notes:"
 msgid "Extra info"
 msgstr "其它信息"
 
+msgctxt "field:gnuhealth.insurance.plan,product:"
+msgid "Plan"
+msgstr "保险计划"
+
 msgctxt "field:gnuhealth.medicament,active:"
 msgid "Active"
-msgstr "启用"
+msgstr "用药中"
 
 msgctxt "field:gnuhealth.medicament,active_component:"
 msgid "Active component"
@@ -979,10 +1011,6 @@ msgctxt "field:gnuhealth.medicament,is_vaccine:"
 msgid "Vaccine"
 msgstr "疫苗"
 
-msgctxt "field:gnuhealth.medicament,name:"
-msgid "Product"
-msgstr "药品"
-
 msgctxt "field:gnuhealth.medicament,notes:"
 msgid "Extra Info"
 msgstr "其它信息"
@@ -1010,6 +1038,10 @@ msgstr "妊娠警告"
 msgctxt "field:gnuhealth.medicament,presentation:"
 msgid "Presentation"
 msgstr "产位"
+
+msgctxt "field:gnuhealth.medicament,product:"
+msgid "Product"
+msgstr "药品"
 
 msgctxt "field:gnuhealth.medicament,route:"
 msgid "Administration Route"
@@ -1078,6 +1110,14 @@ msgstr "代码"
 msgctxt "field:gnuhealth.occupation,name:"
 msgid "Name"
 msgstr "名称"
+
+msgctxt "field:gnuhealth.online_document,name:"
+msgid "Name"
+msgstr "名称"
+
+msgctxt "field:gnuhealth.online_document,uri:"
+msgid "URI"
+msgstr "网址"
 
 msgctxt "field:gnuhealth.operational_area,info:"
 msgid "Extra Information"
@@ -1231,6 +1271,10 @@ msgctxt "field:gnuhealth.patient,crit_immuno:"
 msgid "Immunity"
 msgstr "免疫问题"
 
+msgctxt "field:gnuhealth.patient,crit_mental:"
+msgid "Mental"
+msgstr "精神"
+
 msgctxt "field:gnuhealth.patient,crit_nutrition:"
 msgid "Nutrition"
 msgstr "营养问题"
@@ -1275,6 +1319,10 @@ msgctxt "field:gnuhealth.patient,family:"
 msgid "Family"
 msgstr "家庭"
 
+msgctxt "field:gnuhealth.patient,family_history:"
+msgid "Family History"
+msgstr "家族史"
+
 msgctxt "field:gnuhealth.patient,gender:"
 msgid "Gender"
 msgstr "性别"
@@ -1286,6 +1334,10 @@ msgstr "一般信息"
 msgctxt "field:gnuhealth.patient,hb:"
 msgid "Hb"
 msgstr "血红蛋白"
+
+msgctxt "field:gnuhealth.patient,insurances:"
+msgid "Insurances"
+msgstr "保险"
 
 msgctxt "field:gnuhealth.patient,lastname:"
 msgid "Lastname"
@@ -1299,7 +1351,7 @@ msgctxt "field:gnuhealth.patient,medications:"
 msgid "Medications"
 msgstr "药品"
 
-msgctxt "field:gnuhealth.patient,name:"
+msgctxt "field:gnuhealth.patient,party:"
 msgid "Patient"
 msgstr "患者"
 
@@ -1313,7 +1365,7 @@ msgstr "家庭医生"
 
 msgctxt "field:gnuhealth.patient,puid:"
 msgid "PUID"
-msgstr "证件号码"
+msgstr "健康号"
 
 msgctxt "field:gnuhealth.patient,rh:"
 msgid "Rh"
@@ -1369,7 +1421,7 @@ msgstr "医务人员"
 
 msgctxt "field:gnuhealth.patient.disease,infectious_disease_icon:"
 msgid "Infect"
-msgstr "感染"
+msgstr "可传染"
 
 msgctxt "field:gnuhealth.patient.disease,institution:"
 msgid "Institution"
@@ -1391,13 +1443,13 @@ msgctxt "field:gnuhealth.patient.disease,is_on_treatment:"
 msgid "Current"
 msgstr "正在治疗"
 
-msgctxt "field:gnuhealth.patient.disease,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.patient.disease,pathology:"
 msgid "Condition"
 msgstr "疾病诊断"
+
+msgctxt "field:gnuhealth.patient.disease,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.patient.disease,pcs_code:"
 msgid "Code"
@@ -1443,6 +1495,10 @@ msgctxt "field:gnuhealth.patient.ecg,healthprof:"
 msgid "Health Prof"
 msgstr "医务人员"
 
+msgctxt "field:gnuhealth.patient.ecg,images:"
+msgid "Images"
+msgstr "心电图"
+
 msgctxt "field:gnuhealth.patient.ecg,institution:"
 msgid "Institution"
 msgstr "医疗机构"
@@ -1455,13 +1511,13 @@ msgctxt "field:gnuhealth.patient.ecg,lead:"
 msgid "Lead"
 msgstr "导联"
 
-msgctxt "field:gnuhealth.patient.ecg,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.patient.ecg,pacemaker:"
 msgid "Pacemaker"
 msgstr "起博"
+
+msgctxt "field:gnuhealth.patient.ecg,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.patient.ecg,pr:"
 msgid "PR"
@@ -1510,6 +1566,22 @@ msgstr "预约"
 msgctxt "field:gnuhealth.patient.evaluation,bmi:"
 msgid "BMI"
 msgstr "体质指数(BMI)"
+
+msgctxt "field:gnuhealth.patient.evaluation,body_bone:"
+msgid "Bone"
+msgstr "骨骼"
+
+msgctxt "field:gnuhealth.patient.evaluation,body_fat:"
+msgid "Fat"
+msgstr "脂肪"
+
+msgctxt "field:gnuhealth.patient.evaluation,body_muscle:"
+msgid "Muscle"
+msgstr "肌肉"
+
+msgctxt "field:gnuhealth.patient.evaluation,body_water:"
+msgid "Water"
+msgstr "水分"
 
 msgctxt "field:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart Rate"
@@ -1560,8 +1632,8 @@ msgid "Diastolic Pressure"
 msgstr "舒张压"
 
 msgctxt "field:gnuhealth.patient.evaluation,directions:"
-msgid "Plan"
-msgstr "计划"
+msgid "Therapeutic Plan"
+msgstr "治疗计划"
 
 msgctxt "field:gnuhealth.patient.evaluation,discharge_reason:"
 msgid "Discharge Reason"
@@ -1620,8 +1692,8 @@ msgid "Hip"
 msgstr "臀围"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
-msgid "Presumptive Diagnosis: Extra Info"
-msgstr "初步诊断：其它信息"
+msgid "Diagnostic Judgement"
+msgstr "诊断性判断"
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -1630,6 +1702,10 @@ msgstr "信息来源"
 msgctxt "field:gnuhealth.patient.evaluation,institution:"
 msgid "Institution"
 msgstr "医疗机构"
+
+msgctxt "field:gnuhealth.patient.evaluation,insurance:"
+msgid "Insurance"
+msgstr "保险"
 
 msgctxt "field:gnuhealth.patient.evaluation,judgment:"
 msgid "Judgment"
@@ -1707,9 +1783,17 @@ msgctxt "field:gnuhealth.patient.evaluation,present_illness:"
 msgid "Present Illness"
 msgstr "现在的病史"
 
+msgctxt "field:gnuhealth.patient.evaluation,procedures:"
+msgid "Procedures"
+msgstr "医学操作"
+
 msgctxt "field:gnuhealth.patient.evaluation,psychological_assessment:"
 msgid "Psychological Assessment"
 msgstr "心理评估"
+
+msgctxt "field:gnuhealth.patient.evaluation,rel_party:"
+msgid "Party ID"
+msgstr "参与者 ID"
 
 msgctxt "field:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition"
@@ -1799,6 +1883,22 @@ msgctxt "field:gnuhealth.patient.evaluation,whr:"
 msgid "WHR"
 msgstr "腰臀比"
 
+msgctxt "field:gnuhealth.patient.family.diseases,disease:"
+msgid "Condition"
+msgstr "疾病"
+
+msgctxt "field:gnuhealth.patient.family.diseases,patient:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "field:gnuhealth.patient.family.diseases,relative:"
+msgid "Relative"
+msgstr "亲属"
+
+msgctxt "field:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal or Paternal"
+msgstr "母亲或父亲"
+
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
 msgstr "用药时间点"
@@ -1885,19 +1985,19 @@ msgstr "医疗机构"
 
 msgctxt "field:gnuhealth.patient.medication,is_active:"
 msgid "Active"
-msgstr "正在用药"
+msgstr "用药中"
 
 msgctxt "field:gnuhealth.patient.medication,medicament:"
 msgid "Medicament"
 msgstr "药品"
 
-msgctxt "field:gnuhealth.patient.medication,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.patient.medication,notes:"
 msgid "Extra Info"
 msgstr "其它信息"
+
+msgctxt "field:gnuhealth.patient.medication,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.patient.medication,prescription:"
 msgid "Prescription"
@@ -1915,14 +2015,46 @@ msgctxt "field:gnuhealth.patient.medication,start_treatment:"
 msgid "Start"
 msgstr "开始"
 
+msgctxt "field:gnuhealth.patient.procedure,comments:"
+msgid "Comments"
+msgstr "说明"
+
+msgctxt "field:gnuhealth.patient.procedure,ctx:"
+msgid "Context"
+msgstr "内容"
+
+msgctxt "field:gnuhealth.patient.procedure,insurance:"
+msgid "Insurance"
+msgstr "保险"
+
+msgctxt "field:gnuhealth.patient.procedure,patient:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "field:gnuhealth.patient.procedure,pdate:"
+msgid "Date"
+msgstr "日期"
+
+msgctxt "field:gnuhealth.patient.procedure,procedure:"
+msgid "Procedure"
+msgstr "医学操作"
+
+msgctxt "field:gnuhealth.patient.procedure,reference:"
+msgid "Origin"
+msgstr "起因"
+
+msgctxt "field:gnuhealth.patient.procedure,rel_party:"
+msgid "Party ID"
+msgstr "参与者 ID"
+
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,alternative_id_type:"
 msgid "ID type"
-msgstr "证件号码类型"
+msgstr "备选证件号类型"
 
 msgctxt "field:gnuhealth.person_alternative_identification,code:"
 msgid "Code"
-msgstr "证件号码"
+msgstr "备选证件号"
 
 msgctxt "field:gnuhealth.person_alternative_identification,comments:"
 msgid "Comments"
@@ -1932,14 +2064,14 @@ msgctxt "field:gnuhealth.person_alternative_identification,expiration_date:"
 msgid "Expiration date"
 msgstr "过期日期"
 
-msgctxt "field:gnuhealth.person_alternative_identification,name:"
-msgid "Party"
-msgstr "参与者"
-
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid "Other ID type"
-msgstr "证件号码其他类型"
+msgstr "备选证件号其他类型"
+
+msgctxt "field:gnuhealth.person_alternative_identification,party:"
+msgid "Party"
+msgstr "成员"
 
 msgctxt "field:gnuhealth.person_name,date_from:"
 msgid "From"
@@ -1994,7 +2126,7 @@ msgid "Gene"
 msgstr "基因"
 
 msgctxt "field:gnuhealth.pol,health_condition:"
-msgid "Health Condition"
+msgid "Condition"
 msgstr "健康状况"
 
 msgctxt "field:gnuhealth.pol,health_condition_code:"
@@ -2002,7 +2134,7 @@ msgid "Code"
 msgstr "代码"
 
 msgctxt "field:gnuhealth.pol,health_condition_text:"
-msgid "Health Condition"
+msgid "Condition"
 msgstr "健康状况"
 
 msgctxt "field:gnuhealth.pol,info:"
@@ -2145,8 +2277,8 @@ msgctxt "field:gnuhealth.prescription.line,medicament:"
 msgid "Medicament"
 msgstr "药品"
 
-msgctxt "field:gnuhealth.prescription.line,name:"
-msgid "Prescription ID"
+msgctxt "field:gnuhealth.prescription.line,presc_order:"
+msgid "ID"
 msgstr "处方编号"
 
 msgctxt "field:gnuhealth.prescription.line,prnt:"
@@ -2181,8 +2313,12 @@ msgctxt "field:gnuhealth.prescription.line,start_treatment:"
 msgid "Start"
 msgstr "开始"
 
+msgctxt "field:gnuhealth.prescription.order,allergy_warning:"
+msgid "Allergy"
+msgstr "过敏"
+
 msgctxt "field:gnuhealth.prescription.order,healthprof:"
-msgid "Prescribed by"
+msgid "Prescriber"
 msgstr "处方医师"
 
 msgctxt "field:gnuhealth.prescription.order,notes:"
@@ -2198,15 +2334,15 @@ msgid "Pharmacy"
 msgstr "药房"
 
 msgctxt "field:gnuhealth.prescription.order,pregnancy_warning:"
-msgid "Pregnancy Warning"
-msgstr "妊娠警告"
+msgid "Pregnancy"
+msgstr "怀孕"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_date:"
-msgid "Prescription Date"
+msgid "Date"
 msgstr "处方日期"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_id:"
-msgid "Prescription ID"
+msgid "ID"
 msgstr "处方编号"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_line:"
@@ -2214,11 +2350,11 @@ msgid "Prescription line"
 msgstr "处方明细"
 
 msgctxt "field:gnuhealth.prescription.order,prescription_warning_ack:"
-msgid "Prescription verified"
-msgstr "处方已审核"
+msgid "Verified"
+msgstr "已核实"
 
 msgctxt "field:gnuhealth.prescription.order,report_prescription_date:"
-msgid "Prescription Date"
+msgid "Date"
 msgstr "处方日期"
 
 msgctxt "field:gnuhealth.prescription.order,report_prescription_time:"
@@ -2240,6 +2376,18 @@ msgstr "内容"
 msgctxt "field:gnuhealth.procedure,name:"
 msgid "Code"
 msgstr "代码"
+
+msgctxt "field:gnuhealth.procedure,product:"
+msgid "Product"
+msgstr "产品"
+
+msgctxt "field:gnuhealth.procedures.config,ambulatory_care:"
+msgid "Ambulatory care"
+msgstr "门诊医疗"
+
+msgctxt "field:gnuhealth.procedures.config,medical_evaluation:"
+msgid "Medical Evaluation"
+msgstr "医学评估"
 
 msgctxt "field:gnuhealth.secondary_condition,comments:"
 msgid "Comments"
@@ -2339,10 +2487,6 @@ msgctxt "field:gnuhealth.vaccination,institution:"
 msgid "Institution"
 msgstr "医疗机构"
 
-msgctxt "field:gnuhealth.vaccination,name:"
-msgid "Patient"
-msgstr "患者"
-
 msgctxt "field:gnuhealth.vaccination,next_dose_date:"
 msgid "Next Dose"
 msgstr "下一剂日期"
@@ -2350,6 +2494,10 @@ msgstr "下一剂日期"
 msgctxt "field:gnuhealth.vaccination,observations:"
 msgid "Observations"
 msgstr "观察结果"
+
+msgctxt "field:gnuhealth.vaccination,patient:"
+msgid "Patient"
+msgstr "患者"
 
 msgctxt "field:gnuhealth.vaccination,picture:"
 msgid "Label"
@@ -2413,11 +2561,11 @@ msgstr "年龄"
 
 msgctxt "field:party.party,alternative_identification:"
 msgid "Other IDs"
-msgstr "其他证件号"
+msgstr "备选证件号"
 
 msgctxt "field:party.party,alternative_ids:"
 msgid "Other IDs"
-msgstr "其他证件号"
+msgstr "备选证件号"
 
 msgctxt "field:party.party,birth_certificate:"
 msgid "Birth Certificate"
@@ -2483,6 +2631,10 @@ msgctxt "field:party.party,gender:"
 msgid "Gender"
 msgstr "性别"
 
+msgctxt "field:party.party,homeless:"
+msgid "Homeless"
+msgstr "无家可归"
+
 msgctxt "field:party.party,insurance:"
 msgid "Insurances"
 msgstr "保险"
@@ -2547,9 +2699,13 @@ msgctxt "field:party.party,photo:"
 msgid "Picture"
 msgstr "图片"
 
+msgctxt "field:party.party,proclaimed_ethnicity:"
+msgid "Proclaimed ethnicity"
+msgstr "宣称族裔"
+
 msgctxt "field:party.party,ref:"
 msgid "PUID"
-msgstr "证件号码"
+msgstr "健康号"
 
 msgctxt "field:party.party,residence:"
 msgid "Residence"
@@ -2579,6 +2735,10 @@ msgctxt "field:product.product,is_vaccine:"
 msgid "Vaccine"
 msgstr "疫苗"
 
+msgctxt "help:gnuhealth.appointment,appointment_date:"
+msgid "Appintmont start date and time."
+msgstr "预约开始日期和时间。"
+
 msgctxt "help:gnuhealth.appointment,consultations:"
 msgid "Consultation Services"
 msgstr "咨询服务"
@@ -2591,6 +2751,14 @@ msgctxt "help:gnuhealth.appointment,institution:"
 msgid "Health Care Institution"
 msgstr "医疗机构"
 
+msgctxt "help:gnuhealth.appointment,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr "此操作使用的保险计划"
+
+msgctxt "help:gnuhealth.appointment,name:"
+msgid "Appointment ID"
+msgstr "预约号"
+
 msgctxt "help:gnuhealth.appointment,patient:"
 msgid "Patient Name"
 msgstr "患者姓名"
@@ -2598,6 +2766,14 @@ msgstr "患者姓名"
 msgctxt "help:gnuhealth.appointment,speciality:"
 msgid "Medical Specialty / Sector"
 msgstr "医学专业 / 科室或病区"
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date:"
+msgid "Appointment start date."
+msgstr "预约开始日期。"
+
+msgctxt "help:gnuhealth.appointment.report,appointment_date_time:"
+msgid "Appointment start time."
+msgstr "预约开始日期。"
 
 msgctxt "help:gnuhealth.birth_certificate,signed_by:"
 msgid "Person who certifies this birth document"
@@ -2669,6 +2845,10 @@ msgctxt "help:gnuhealth.du,housing:"
 msgid "Housing and sanitary living conditions"
 msgstr "住房条件和卫生状况"
 
+msgctxt "help:gnuhealth.du,operational_sector:"
+msgid "Operational Sector"
+msgstr "卫生子区域"
+
 msgctxt "help:gnuhealth.du,total_surface:"
 msgid "Surface in sq. meters"
 msgstr "房屋总面积（平方米）"
@@ -2685,7 +2865,7 @@ msgctxt "help:gnuhealth.family,name:"
 msgid "Family code"
 msgstr "家庭代码"
 
-msgctxt "help:gnuhealth.family_member,name:"
+msgctxt "help:gnuhealth.family_member,family:"
 msgid "Family code"
 msgstr "家庭代码"
 
@@ -2698,7 +2878,7 @@ msgid "Father, Mother, sibbling..."
 msgstr "父亲，母亲，兄弟..."
 
 msgctxt "help:gnuhealth.federation.country.config,country:"
-msgid "Country code to be use as the prefix for the FederationID account."
+msgid "Country code to be used as the prefix for the FederationID account."
 msgstr "国家代码，作为 GNU Health 信息平台帐号前缀使用。"
 
 msgctxt "help:gnuhealth.federation.country.config,use_citizenship:"
@@ -2719,13 +2899,13 @@ msgctxt "help:gnuhealth.healthprofessional,institution:"
 msgid "Main institution where she/he works"
 msgstr "所在医疗机构"
 
-msgctxt "help:gnuhealth.healthprofessional,name:"
-msgid "Health Professional's Name, from the partner list"
-msgstr "卫生专业人员的名字，来自 partner 列表"
+msgctxt "help:gnuhealth.healthprofessional,party:"
+msgid "Health Professional related party"
+msgstr "与参与者关联的医务人员"
 
 msgctxt "help:gnuhealth.healthprofessional,puid:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，个人身份证件号码"
+msgstr "GNU Health 系统中使用的个人唯一标识号"
 
 msgctxt "help:gnuhealth.help,description:"
 msgid "Short description"
@@ -2739,7 +2919,7 @@ msgctxt "help:gnuhealth.hospital.bed,institution:"
 msgid "Health Institution"
 msgstr "医疗机构"
 
-msgctxt "help:gnuhealth.hospital.bed,name:"
+msgctxt "help:gnuhealth.hospital.bed,product:"
 msgid "Bed Number"
 msgstr "床位数"
 
@@ -2802,6 +2982,16 @@ msgctxt "help:gnuhealth.hospital.ward,private:"
 msgid "Check this option for private room"
 msgstr "如果此病房为私人病房，就选中此项"
 
+msgctxt "help:gnuhealth.hp_specialty,healthprof:"
+msgid "Health Professional"
+msgstr "医务人员"
+
+msgctxt "help:gnuhealth.hp_specialty,mainsp:"
+msgid ""
+"Set this field if this is the main specialty or the one used in this health "
+"institution"
+msgstr "如果这是主专业或此医疗机构使用的专业，请设置此字段"
+
 msgctxt "help:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty Code"
 msgstr "专业代码"
@@ -2836,10 +3026,6 @@ msgid ""
 "center excels"
 msgstr "选择医院已设置的专科或专业"
 
-msgctxt "help:gnuhealth.institution,name:"
-msgid "Party Associated to this Health Institution"
-msgstr "与此医疗机构关联的 Party"
-
 msgctxt "help:gnuhealth.institution,operating_room:"
 msgid "Check this box if the institution has operating rooms"
 msgstr "如果此医疗卫生机构有手术室，就选中此项"
@@ -2847,6 +3033,10 @@ msgstr "如果此医疗卫生机构有手术室，就选中此项"
 msgctxt "help:gnuhealth.institution,operational_sectors:"
 msgid "Operational Sectors covered by this institution"
 msgstr "此医疗机构覆盖的卫生子区域"
+
+msgctxt "help:gnuhealth.institution,party:"
+msgid "Party Associated to this Health Institution"
+msgstr "与此医疗机构关联的 Party"
 
 msgctxt "help:gnuhealth.institution,specialties:"
 msgid "Specialties Provided in this Health Institution"
@@ -2870,7 +3060,7 @@ msgid ""
 " patient"
 msgstr "将此保险公司对应到患者时，检查此计划是否为默认保险计划"
 
-msgctxt "help:gnuhealth.insurance.plan,name:"
+msgctxt "help:gnuhealth.insurance.plan,product:"
 msgid "Insurance company plan"
 msgstr "保险公司计划"
 
@@ -2893,10 +3083,6 @@ msgstr "药品剂型，比如片剂、悬浮剂、液体剂 .."
 msgctxt "help:gnuhealth.medicament,indications:"
 msgid "Indications"
 msgstr "适应症"
-
-msgctxt "help:gnuhealth.medicament,name:"
-msgid "Product Name"
-msgstr "药品通用名称"
 
 msgctxt "help:gnuhealth.medicament,overdosage:"
 msgid "Overdosage"
@@ -2941,6 +3127,10 @@ msgstr "孕妇或哺乳期女性使用此药物有风险"
 msgctxt "help:gnuhealth.medicament,presentation:"
 msgid "Packaging"
 msgstr "材质包装"
+
+msgctxt "help:gnuhealth.medicament,product:"
+msgid "Product Name"
+msgstr "药品通用名称"
 
 msgctxt "help:gnuhealth.medicament,route:"
 msgid "Drug administration route code."
@@ -2991,6 +3181,14 @@ msgstr "通用名"
 msgctxt "help:gnuhealth.occupation,code:"
 msgid "Please use CAPITAL LETTERS and no spaces"
 msgstr "请使用大写字母，不要带空格"
+
+msgctxt "help:gnuhealth.online_document,name:"
+msgid "Health Online document name."
+msgstr "Health 在线文档名称。"
+
+msgctxt "help:gnuhealth.online_document,uri:"
+msgid "Health online document URL address."
+msgstr "Health 在线文档 URL 地址。"
 
 msgctxt "help:gnuhealth.operational_area,name:"
 msgid "Operational Area of the city or region"
@@ -3080,6 +3278,10 @@ msgctxt "help:gnuhealth.patient,crit_immuno:"
 msgid "Immunocompromised or autoimmune disorders"
 msgstr "免疫受损或自身免疫障碍"
 
+msgctxt "help:gnuhealth.patient,crit_mental:"
+msgid "Mental Health"
+msgstr "精神健康"
+
 msgctxt "help:gnuhealth.patient,crit_nutrition:"
 msgid ""
 "Issues on nutrition, malnourhisment. Including obesity, famine and eating "
@@ -3100,16 +3302,16 @@ msgstr "填写患者的患病情况，手术，过敏等重要信息。"
 
 msgctxt "help:gnuhealth.patient,critical_summary:"
 msgid ""
-"Automated summary of patient important health conditions other critical "
+"Automated summary of patient important health conditions and other critical "
 "information"
 msgstr "自动汇总患者重要的健康状况以及其它重要信息"
 
 msgctxt "help:gnuhealth.patient,current_address:"
 msgid ""
-"Use this address for temporary contact information. For example         if "
-"the patient is on vacation, you can put the hotel address.         In the "
-"case of a Domiciliary Unit, just link it to the name of the         contact "
-"in the address form."
+"Use this address for temporary contact information. For example, if the "
+"patient is on vacation, you can put the hotel address. In the case of a "
+"Domiciliary Unit, just link it to the name of the contact in the address "
+"form."
 msgstr "这个地址用于临时联络，如果患者正在度假，可以填写酒店地址。如患者在现住址，可以直接关联现住址。"
 
 msgctxt "help:gnuhealth.patient,current_insurance:"
@@ -3146,11 +3348,15 @@ msgstr ""
 "A-THAL=A 地中海贫血组\n"
 "B-THAL=B 地中海贫血组\n"
 
+msgctxt "help:gnuhealth.patient,insurances:"
+msgid "Insurance Plans associated to this party"
+msgstr "与此人相关的保险计划"
+
 msgctxt "help:gnuhealth.patient,marital_status:"
 msgid "Marital Status"
 msgstr "婚姻状态"
 
-msgctxt "help:gnuhealth.patient,name:"
+msgctxt "help:gnuhealth.patient,party:"
 msgid "Person associated to this patient"
 msgstr "此患者对应的人"
 
@@ -3160,7 +3366,7 @@ msgstr "当前患者的全科医生/家庭医生"
 
 msgctxt "help:gnuhealth.patient,puid:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，个人身份证件号码"
+msgstr "GNU Health 系统中使用的个人唯一标识号"
 
 msgctxt "help:gnuhealth.patient.disease,age:"
 msgid "Estimated age of the diagnosis"
@@ -3244,17 +3450,33 @@ msgid ""
 msgstr "如果患者抽象推理能力出现异常，就选中此框"
 
 msgctxt "help:gnuhealth.patient.evaluation,actions:"
-msgid "Procedures / Actions to take"
-msgstr "采取的行动"
+msgid "Procedures done in the evaluation"
+msgstr "本次评估完成的操作"
 
 msgctxt "help:gnuhealth.patient.evaluation,appointment:"
 msgid ""
 "Enter or select the date / ID of the appointment related to this evaluation"
-msgstr "填写或选择与此评估相对应的预约日期或预约编号"
+msgstr "填写或选择与此评估相对应的预约日期或预约号"
 
 msgctxt "help:gnuhealth.patient.evaluation,bmi:"
 msgid "Body mass index"
 msgstr "体质指数"
+
+msgctxt "help:gnuhealth.patient.evaluation,body_bone:"
+msgid "Body bone composition %"
+msgstr "体骨成分 %"
+
+msgctxt "help:gnuhealth.patient.evaluation,body_fat:"
+msgid "Fat composition %"
+msgstr "脂肪成分 %"
+
+msgctxt "help:gnuhealth.patient.evaluation,body_muscle:"
+msgid "Skeletal muscle %"
+msgstr "骨骼肌 %"
+
+msgctxt "help:gnuhealth.patient.evaluation,body_water:"
+msgid "Total body water %"
+msgstr "人体总水量 %"
 
 msgctxt "help:gnuhealth.patient.evaluation,bpm:"
 msgid "Heart rate (beats per minute)"
@@ -3273,7 +3495,7 @@ msgid "Last cholesterol reading (mg/dL)"
 msgstr "最近一次胆固醇检测读数（mg/dl）"
 
 msgctxt "help:gnuhealth.patient.evaluation,code:"
-msgid "Unique code that         identifies the evaluation"
+msgid "Unique code that identifies the evaluation"
 msgstr "评估编号，不能重复"
 
 msgctxt "help:gnuhealth.patient.evaluation,computed_age:"
@@ -3349,9 +3571,17 @@ msgctxt "help:gnuhealth.patient.evaluation,hip:"
 msgid "Hip circumference in centimeters"
 msgstr "臀围（厘米）"
 
+msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
+msgid "Diagnostic judgement"
+msgstr "诊断性判断"
+
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
-msgid "Source ofInformation, eg : Self, relative, friend ..."
+msgid "Source of Information, eg : Self, relative, friend ..."
 msgstr "信息来源, 比如: 自己, 亲戚, 朋友 ..."
+
+msgctxt "help:gnuhealth.patient.evaluation,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr "此操作使用的保险计划"
 
 msgctxt "help:gnuhealth.patient.evaluation,judgment:"
 msgid ""
@@ -3404,6 +3634,10 @@ msgstr "动脉血氧饱和度(%)"
 msgctxt "help:gnuhealth.patient.evaluation,praxis:"
 msgid "Check this box if the patient is unable to make voluntarymovements"
 msgstr "如果患者无法随意运动，请选中此项"
+
+msgctxt "help:gnuhealth.patient.evaluation,procedures:"
+msgid "Procedures done in the evaluation"
+msgstr "本次评估完成的操作"
 
 msgctxt "help:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition related to this follow-up evaluation"
@@ -3477,6 +3711,16 @@ msgstr ""
 "男性：< 0.9 正常 // 0.9-0.99 超重 // > 1 肥胖\n"
 "女性：< 0.8 正常 // 0.8-0.84 超重 // > 0.85 肥胖"
 
+msgctxt "help:gnuhealth.patient.family.diseases,relative:"
+msgid ""
+"First degree = siblings, mother and father\n"
+"Second degree = Uncles, nephews and Nieces\n"
+"Third degree = Grandparents and cousins"
+msgstr ""
+"直系亲属 = 兄弟姐妹、母亲和父亲\n"
+"第二级亲属 = 叔伯（舅）、侄子（外甥）和侄女（外甥女）\n"
+"第三级亲属 = (外）祖父母和堂（表）兄弟姐妹"
+
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
 "Suggested administration hours. For example, at 08:00, 13:00 and 18:00 can "
@@ -3506,18 +3750,18 @@ msgstr "待使用药品的计量单位"
 msgctxt "help:gnuhealth.patient.medication,duration:"
 msgid ""
 "Period that the patient must take the medication. in minutes, hours, days, "
-"months, years or indefinately"
-msgstr "患者必须用药的时间段，分钟，小时，天，几个月，几年或无限期"
+"months, years or indefinitely for chronic conditions"
+msgstr "患者必须用药的时间段，分钟，小时，天，几个月，几年或慢性病无限期服药"
 
 msgctxt "help:gnuhealth.patient.medication,duration_period:"
 msgid ""
 "Period that the patient must take the medication in minutes, hours, days, "
-"months, years or indefinately"
+"months, years or indefinitely"
 msgstr "患者必须用药的时间段，分钟，小时，天，几个月，几年或无限期"
 
 msgctxt "help:gnuhealth.patient.medication,end_treatment:"
-msgid "Date of start of Treatment"
-msgstr "治疗开始日期"
+msgid "Date of end of Treatment"
+msgstr "治疗结束日期"
 
 msgctxt "help:gnuhealth.patient.medication,form:"
 msgid "Drug form, such as tablet or gel"
@@ -3573,12 +3817,16 @@ msgctxt "help:gnuhealth.patient.medication,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "治疗开始时间"
 
+msgctxt "help:gnuhealth.patient.procedure,insurance:"
+msgid "Insurance plan used in this procedure"
+msgstr "此操作使用的保险计划"
+
 msgctxt ""
 "help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid ""
 "Other Alternative ID type, user can customize an ID type when 'ID type' = "
-"'other', "
-msgstr "其他可选ID类型，当 'ID type' = 'other' 时，用户可以自定义一个ID类型。 "
+"'other'."
+msgstr "备选证件号其它自定义类型，当 'ID type' = 'other' 时，用户可以自定义一个备选证件号类型。"
 
 msgctxt "help:gnuhealth.person_name,family:"
 msgid "Family / Surname."
@@ -3603,6 +3851,14 @@ msgstr "GNU Health 信息平台帐号"
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
 msgstr "基因/蛋白质"
+
+msgctxt "help:gnuhealth.pol,health_condition:"
+msgid "Health Condition"
+msgstr "健康状况"
+
+msgctxt "help:gnuhealth.pol,health_condition_text:"
+msgid "Health Condition"
+msgstr "健康状况"
 
 msgctxt "help:gnuhealth.pol,measurements:"
 msgid ""
@@ -3697,6 +3953,10 @@ msgctxt "help:gnuhealth.prescription.line,medicament:"
 msgid "Prescribed Medicament"
 msgstr "处方药"
 
+msgctxt "help:gnuhealth.prescription.line,presc_order:"
+msgid "Prescription ID"
+msgstr "处方编号"
+
 msgctxt "help:gnuhealth.prescription.line,prnt:"
 msgid "Check this box to print this line of the prescription."
 msgstr "如果需要打印当前处方，请选中此项。"
@@ -3728,9 +3988,47 @@ msgctxt "help:gnuhealth.prescription.line,start_treatment:"
 msgid "Date of start of Treatment"
 msgstr "治疗开始时间"
 
+msgctxt "help:gnuhealth.prescription.order,allergy_warning:"
+msgid "This field is active when the patient is known to be allergic"
+msgstr "当得知患者过敏时，就勾选此项"
+
+msgctxt "help:gnuhealth.prescription.order,pregnancy_warning:"
+msgid "This field is set when the patient is or might be pregnant"
+msgstr "当患者已经或者可能怀孕时，就勾选此项"
+
+msgctxt "help:gnuhealth.prescription.order,prescription_date:"
+msgid "Prescription Date"
+msgstr "处方日期"
+
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
 msgstr "填写处方编号"
+
+msgctxt "help:gnuhealth.prescription.order,prescription_warning_ack:"
+msgid "This verification field must be set to generate the prescription"
+msgstr "这是确认项，勾选此项后才可以生成处方"
+
+msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
+msgid "Prescription Date"
+msgstr "处方日期"
+
+msgctxt "help:gnuhealth.procedure,product:"
+msgid "Associated product to the procedure"
+msgstr "此操作关联的产品"
+
+msgctxt "help:gnuhealth.procedures.config,ambulatory_care:"
+msgid ""
+"The code use for the procedure related to an ambulatory care session. If it "
+"exist, it will add up to the procedure list in the context of ambulatory "
+"care"
+msgstr "与门诊护理相关操作的代码。如果存在，它将被添加到门诊护理中操作列表的前面"
+
+msgctxt "help:gnuhealth.procedures.config,medical_evaluation:"
+msgid ""
+"The code use for the procedure related to a medical encounter. If it exist, "
+"it will add up to the procedure list in the context of the medical "
+"evaluation"
+msgstr "与医疗就诊相关操作的代码。如果存在，它将被添加到医学评估中操作列表的前面"
 
 msgctxt "help:gnuhealth.specialty,code:"
 msgid "ie, ADP. Please use CAPITAL LETTERS and no spaces"
@@ -3742,15 +4040,14 @@ msgstr "例如，成瘾精神病"
 
 msgctxt "help:gnuhealth.vaccination,amount:"
 msgid ""
-"Amount of vaccine administered, in mL . The dose per mL             (eg, "
-"mcg, EL.U ..) can be found at the related medicament"
-msgstr "接种疫苗的量，单位为毫升。每毫升的剂量（例如mcg、EL.U.）可在相关药物中找到"
+"Amount of vaccine administered, in mL . The dose per mL (eg, mcg, EL.U ..) "
+"can be found at the related medicament."
+msgstr "接种疫苗的量，单位为毫升。每毫升的剂量（例如mcg、EL.U.）可在相关药物中找到。"
 
 msgctxt "help:gnuhealth.vaccination,healthprof:"
 msgid ""
-"Health Professional who administered or reviewed the vaccine          "
-"information"
-msgstr "注射疫苗或者核对疫苗的医务人员"
+"Health Professional who administered or reviewed the vaccine information."
+msgstr "注射疫苗或者核对疫苗的医务人员。"
 
 msgctxt "help:gnuhealth.vaccination,signed_by:"
 msgid "Health Professional that signed the vaccination document"
@@ -3799,7 +4096,7 @@ msgctxt "help:party.party,alternative_identification:"
 msgid ""
 "Other types of identification, not the official PUID . Examples : Passport, "
 "foreign ID,.."
-msgstr "其他类型的证件号码，不是身份证号。比如： 护照，外国身份证 ..."
+msgstr "其他可供选择使用的证件号，不是 GNU Health 健康号。比如： 护照，外国身份证 ..."
 
 msgctxt "help:party.party,citizenship:"
 msgid "Country of Citizenship"
@@ -3858,6 +4155,10 @@ msgctxt "help:party.party,federation_account:"
 msgid "Federation Account"
 msgstr "GNU Health 信息平台帐号"
 
+msgctxt "help:party.party,homeless:"
+msgid "The person is currently homeless"
+msgstr "此人目前无家可归"
+
 msgctxt "help:party.party,insurance:"
 msgid "Insurance Plans associated to this party"
 msgstr "与此人相关的保险计划"
@@ -3900,9 +4201,13 @@ msgctxt "help:party.party,mother:"
 msgid "Mother from the Birth Certificate"
 msgstr "出生证明上的母亲记录"
 
+msgctxt "help:party.party,proclaimed_ethnicity:"
+msgid "The ethnic group the person identifies most"
+msgstr "此人最认同的族群"
+
 msgctxt "help:party.party,ref:"
 msgid "Person Unique Identifier"
-msgstr "个人唯一标识，身份证证件号码"
+msgstr "GNU Health 系统中使用的个人唯一标识号"
 
 msgctxt "help:party.party,residence:"
 msgid "Country of Residence"
@@ -4042,23 +4347,23 @@ msgstr "剂型"
 
 msgctxt "model:gnuhealth.drug.form,name:AEM"
 msgid "Aerosol metered-dose"
-msgstr "气雾剂计量剂量"
+msgstr "定量气雾剂"
 
 msgctxt "model:gnuhealth.drug.form,name:AER"
 msgid "Aerosol with propellants"
-msgstr "大气气溶胶推进剂"
+msgstr "含抛射剂气雾剂"
 
 msgctxt "model:gnuhealth.drug.form,name:BAR"
 msgid "Bar chewable"
-msgstr "酒吧咀嚼片"
+msgstr "咀嚼棒"
 
 msgctxt "model:gnuhealth.drug.form,name:BEA"
 msgid "Bead"
-msgstr "丸剂"
+msgstr "小珠"
 
 msgctxt "model:gnuhealth.drug.form,name:BIS"
 msgid "Biscuit"
-msgstr "饼干"
+msgstr "饼干剂型"
 
 msgctxt "model:gnuhealth.drug.form,name:BLS"
 msgid "Bolus"
@@ -4066,15 +4371,15 @@ msgstr "大丸剂"
 
 msgctxt "model:gnuhealth.drug.form,name:CAP"
 msgid "Capsule"
-msgstr "胶囊"
+msgstr "胶囊剂"
 
 msgctxt "model:gnuhealth.drug.form,name:CART"
 msgid "Cartridge"
-msgstr "药筒"
+msgstr "预充式药筒"
 
 msgctxt "model:gnuhealth.drug.form,name:CDR"
 msgid "Capsule delayed release"
-msgstr "缓释胶囊"
+msgstr "延迟释放胶囊"
 
 msgctxt "model:gnuhealth.drug.form,name:CMT"
 msgid "Cement"
@@ -4082,15 +4387,15 @@ msgstr "接合剂"
 
 msgctxt "model:gnuhealth.drug.form,name:COR"
 msgid "Cord"
-msgstr "索（带）"
+msgstr "控释剂"
 
 msgctxt "model:gnuhealth.drug.form,name:CRM"
 msgid "Cream"
-msgstr "乳膏剂"
+msgstr "霜剂"
 
 msgctxt "model:gnuhealth.drug.form,name:DCH"
 msgid "Douche"
-msgstr "灌洗"
+msgstr "灌注剂"
 
 msgctxt "model:gnuhealth.drug.form,name:DPS"
 msgid "Drops"
@@ -4110,23 +4415,23 @@ msgstr "肠溶片"
 
 msgctxt "model:gnuhealth.drug.form,name:ELX"
 msgid "Elixir"
-msgstr "灵丹妙药"
+msgstr "酏剂"
 
 msgctxt "model:gnuhealth.drug.form,name:EML"
 msgid "Emulsion"
-msgstr "乳浊液"
+msgstr "乳剂"
 
 msgctxt "model:gnuhealth.drug.form,name:ENM"
 msgid "Enema"
-msgstr "灌肠"
+msgstr "灌肠剂"
 
 msgctxt "model:gnuhealth.drug.form,name:EVT"
 msgid "Tablet effervescent"
-msgstr "泡腾片剂"
+msgstr "泡腾片"
 
 msgctxt "model:gnuhealth.drug.form,name:FLS"
 msgid "Floss"
-msgstr "丝线"
+msgstr "快速崩解‌剂"
 
 msgctxt "model:gnuhealth.drug.form,name:GAS"
 msgid "Gas"
@@ -4134,11 +4439,11 @@ msgstr "气体"
 
 msgctxt "model:gnuhealth.drug.form,name:GDR"
 msgid "Granule for suspension delayed release"
-msgstr "颗粒悬浮延迟释放"
+msgstr "配缓释混悬液用颗粒剂"
 
 msgctxt "model:gnuhealth.drug.form,name:GEF"
 msgid "Granule effervescent"
-msgstr "颗粒泡腾片"
+msgstr "泡腾颗粒剂"
 
 msgctxt "model:gnuhealth.drug.form,name:GEL"
 msgid "Gel"
@@ -4146,7 +4451,7 @@ msgstr "凝胶"
 
 msgctxt "model:gnuhealth.drug.form,name:GER"
 msgid "Gel controlled release"
-msgstr "凝胶控释"
+msgstr "凝胶控释剂"
 
 msgctxt "model:gnuhealth.drug.form,name:GLO"
 msgid "Globules"
@@ -4154,39 +4459,39 @@ msgstr "小球"
 
 msgctxt "model:gnuhealth.drug.form,name:GRA"
 msgid "Granules"
-msgstr "颗粒状物"
+msgstr "颗粒剂"
 
 msgctxt "model:gnuhealth.drug.form,name:GRT"
 msgid "Graft"
-msgstr "接枝"
+msgstr "接枝共聚物剂型"
 
 msgctxt "model:gnuhealth.drug.form,name:GUM"
 msgid "Gum chewable"
-msgstr "口香糖咀嚼"
+msgstr "咀嚼胶"
 
 msgctxt "model:gnuhealth.drug.form,name:IER"
 msgid "Insert extended release"
-msgstr "插入延长释放"
+msgstr "缓释插入剂"
 
 msgctxt "model:gnuhealth.drug.form,name:IMP"
 msgid "Implant"
-msgstr "移植"
+msgstr "植入剂"
 
 msgctxt "model:gnuhealth.drug.form,name:INS"
 msgid "Insert"
-msgstr "插入"
+msgstr "插入剂"
 
 msgctxt "model:gnuhealth.drug.form,name:JAM"
 msgid "Jam"
-msgstr "果酱"
+msgstr "果酱制剂"
 
 msgctxt "model:gnuhealth.drug.form,name:KIT"
 msgid "Kit"
-msgstr "工具箱"
+msgstr "药包"
 
 msgctxt "model:gnuhealth.drug.form,name:LEF"
 msgid "Leaf"
-msgstr "叶子、浑身发抖"
+msgstr "叶片剂型"
 
 msgctxt "model:gnuhealth.drug.form,name:LIP"
 msgid "Liposome"
@@ -4198,11 +4503,11 @@ msgstr "液体"
 
 msgctxt "model:gnuhealth.drug.form,name:LOT"
 msgid "Lotion"
-msgstr "护肤液"
+msgstr "洗剂"
 
 msgctxt "model:gnuhealth.drug.form,name:LOZ"
 msgid "Lozenge"
-msgstr "润喉糖"
+msgstr "糖锭剂"
 
 msgctxt "model:gnuhealth.drug.form,name:MWH"
 msgid "Mouthwash gargle"
@@ -4210,31 +4515,31 @@ msgstr "漱口水"
 
 msgctxt "model:gnuhealth.drug.form,name:ONT"
 msgid "Ointment"
-msgstr "药膏"
+msgstr "软膏剂"
 
 msgctxt "model:gnuhealth.drug.form,name:OVU"
 msgid "Ovules"
-msgstr "胚珠"
+msgstr "阴道栓剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PAD"
 msgid "Pad"
-msgstr "垫"
+msgstr "贴剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PATCH"
 msgid "Patch"
-msgstr "补丁"
+msgstr "贴片"
 
 msgctxt "model:gnuhealth.drug.form,name:PEC"
 msgid "Powder enteric coated"
-msgstr "粉肠溶"
+msgstr "肠溶粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PEF"
 msgid "Powder effervescent"
-msgstr "粉泡腾片"
+msgstr "泡腾粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PEN"
 msgid "Pencil"
-msgstr "铅笔"
+msgstr "压片剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PIC"
 msgid "Piece chewable"
@@ -4242,51 +4547,51 @@ msgstr "咀嚼片"
 
 msgctxt "model:gnuhealth.drug.form,name:PLS"
 msgid "Plaster"
-msgstr "石膏"
+msgstr "橡皮膏"
 
 msgctxt "model:gnuhealth.drug.form,name:PMD"
 msgid "Metered dose pump"
-msgstr "咪表剂量泵"
+msgstr "定量泵剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PMX"
 msgid "Drug premix"
-msgstr "药物预混料"
+msgstr "药物预混剂"
 
 msgctxt "model:gnuhealth.drug.form,name:POR"
 msgid "Pellet (oral)"
-msgstr "佩莱（口服）"
+msgstr "小丸（口服）"
 
 msgctxt "model:gnuhealth.drug.form,name:POW"
 msgid "Powder"
-msgstr "粉"
+msgstr "粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PSS"
 msgid "Powder sustained release"
-msgstr "缓释粉"
+msgstr "缓释粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PSSR"
 msgid "Powder for suspension sustained release"
-msgstr "暂停缓释粉"
+msgstr "配缓释混悬液用粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PST"
 msgid "Paste"
-msgstr "软膏"
+msgstr "膏状剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PSU"
 msgid "Powder for suspension"
-msgstr "暂停用粉剂"
+msgstr "配混悬液用粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:PWSO"
 msgid "Powder for solution"
-msgstr "溶液用的粉剂"
+msgstr "配溶液用粉剂"
 
 msgctxt "model:gnuhealth.drug.form,name:RING"
 msgid "Ring slow release"
-msgstr "环缓释"
+msgstr "缓释环"
 
 msgctxt "model:gnuhealth.drug.form,name:SDR"
 msgid "Suspension delayed release"
-msgstr "暂停延迟释放"
+msgstr "缓释混悬剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SHP"
 msgid "Shampoo"
@@ -4294,23 +4599,23 @@ msgstr "洗发水"
 
 msgctxt "model:gnuhealth.drug.form,name:SLT"
 msgid "Tablet sublingual"
-msgstr "舌下片"
+msgstr "舌下片剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SMD"
 msgid "Spray metered dose"
-msgstr "喷雾计量剂量"
+msgstr "定量喷雾剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SOL"
 msgid "Solution"
-msgstr "溶液"
+msgstr "溶液剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SOP"
 msgid "Soap bar"
-msgstr "肥皂"
+msgstr "皂剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SPCAP"
 msgid "Sprinkle capsule"
-msgstr "撒胶囊"
+msgstr "微丸胶囊"
 
 msgctxt "model:gnuhealth.drug.form,name:SPG"
 msgid "Sponge"
@@ -4318,11 +4623,11 @@ msgstr "海绵"
 
 msgctxt "model:gnuhealth.drug.form,name:SPR"
 msgid "Spray"
-msgstr "喷雾"
+msgstr "喷雾剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SPS"
 msgid "Suppository sustained release"
-msgstr "栓持续释放"
+msgstr "缓释栓剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SRC"
 msgid "Sustained release capsule"
@@ -4330,11 +4635,11 @@ msgstr "缓释胶囊"
 
 msgctxt "model:gnuhealth.drug.form,name:SRD"
 msgid "Disc sustained release"
-msgstr "光碟缓释"
+msgstr "缓释圆盘给药器"
 
 msgctxt "model:gnuhealth.drug.form,name:SRS"
 msgid "Syrup sustained release"
-msgstr "糖浆缓释"
+msgstr "糖浆缓释剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SRT"
 msgid "Sustained release tablet"
@@ -4342,11 +4647,11 @@ msgstr "缓释片"
 
 msgctxt "model:gnuhealth.drug.form,name:STK"
 msgid "Stick"
-msgstr "棒子"
+msgstr "棒剂"
 
 msgctxt "model:gnuhealth.drug.form,name:STP"
 msgid "Strip"
-msgstr "剥开"
+msgstr "条剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SUP"
 msgid "Suppository"
@@ -4354,39 +4659,39 @@ msgstr "栓剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SUS"
 msgid "Suspension"
-msgstr "悬浮液"
+msgstr "混悬剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SUT"
 msgid "Suture"
-msgstr "缝合"
+msgstr "缝合线剂"
 
 msgctxt "model:gnuhealth.drug.form,name:SWA"
 msgid "Swab"
-msgstr "拖把"
+msgstr "药签"
 
 msgctxt "model:gnuhealth.drug.form,name:SYR"
 msgid "Syrup"
-msgstr "糖浆"
+msgstr "糖浆剂"
 
 msgctxt "model:gnuhealth.drug.form,name:TAB"
 msgid "Tablet"
-msgstr "片"
+msgstr "片剂"
 
 msgctxt "model:gnuhealth.drug.form,name:TABC"
 msgid "Tablet chewable"
-msgstr "平板咀嚼片"
+msgstr "咀嚼片"
 
 msgctxt "model:gnuhealth.drug.form,name:TAP"
 msgid "Tape"
-msgstr "胶带"
+msgstr "带、条"
 
 msgctxt "model:gnuhealth.drug.form,name:TDIS"
 msgid "Tablet dispersible"
-msgstr "平板分散"
+msgstr "分散片"
 
 msgctxt "model:gnuhealth.drug.form,name:TDL"
 msgid "Teat dilator"
-msgstr "乳头扩张"
+msgstr "乳头扩张器"
 
 msgctxt "model:gnuhealth.drug.form,name:TDR"
 msgid "Tablet delayed release"
@@ -4394,7 +4699,7 @@ msgstr "缓释片"
 
 msgctxt "model:gnuhealth.drug.form,name:TEA"
 msgid "Tea herbal"
-msgstr "茶草药"
+msgstr "草药茶"
 
 msgctxt "model:gnuhealth.drug.form,name:TPT"
 msgid "Toothpaste"
@@ -4406,119 +4711,119 @@ msgstr "速溶片"
 
 msgctxt "model:gnuhealth.drug.form,name:UNS"
 msgid "Unassigned"
-msgstr "未分配"
+msgstr "未分配剂型"
 
 msgctxt "model:gnuhealth.drug.form,name:WAF"
 msgid "Wafer"
-msgstr "圆片"
+msgstr "糯米纸囊剂"
 
 msgctxt "model:gnuhealth.drug.form,name:WIP"
-msgid "Wipe "
-msgstr "擦拭 "
+msgid "Wipe"
+msgstr "擦拭剂"
 
 msgctxt "model:gnuhealth.drug.route,name:"
 msgid "Drug Administration Route"
 msgstr "药品管理途径"
 
 msgctxt "model:gnuhealth.drug.route,name:route_1"
-msgid "Apply Externally "
-msgstr "外用 "
+msgid "Apply Externally"
+msgstr "外敷"
 
 msgctxt "model:gnuhealth.drug.route,name:route_10"
-msgid "Intrabursal "
-msgstr "内服 "
+msgid "Intrabursal"
+msgstr "颊内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_11"
-msgid "Intracardiac "
-msgstr "腔内 "
+msgid "Intracardiac"
+msgstr "心脏（贲门）内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_12"
-msgid "Intracervical (uterus) "
-msgstr "颈管内的 "
+msgid "Intracervical (uterus)"
+msgstr "子宫内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_13"
-msgid "Intradermal "
-msgstr "皮层内的 "
+msgid "Intradermal"
+msgstr "皮内注射"
 
 msgctxt "model:gnuhealth.drug.route,name:route_14"
-msgid "Inhalation "
-msgstr "吸入剂 "
+msgid "Inhalation"
+msgstr "吸入给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_15"
-msgid "Intrahepatic Artery "
-msgstr "肝动脉 "
+msgid "Intrahepatic Artery"
+msgstr "肝内动脉给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_16"
-msgid "Intramuscular "
-msgstr "肌肉注射 "
+msgid "Intramuscular"
+msgstr "肌肉注射"
 
 msgctxt "model:gnuhealth.drug.route,name:route_17"
-msgid "Intranasal "
-msgstr "鼻内 "
+msgid "Intranasal"
+msgstr "鼻内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_18"
-msgid "Intraocular "
-msgstr "眼 "
+msgid "Intraocular"
+msgstr "眼内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_19"
-msgid "Intraperitoneal "
-msgstr "腹腔 "
+msgid "Intraperitoneal"
+msgstr "腹腔注射"
 
 msgctxt "model:gnuhealth.drug.route,name:route_2"
-msgid "Buccal "
-msgstr "颊 "
+msgid "Buccal"
+msgstr "口腔给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_20"
-msgid "Intrasynovial "
-msgstr "滑膜[腔]内的 "
+msgid "Intrasynovial"
+msgstr "滑膜内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_21"
-msgid "Intrathecal "
-msgstr "膜内的 "
+msgid "Intrathecal"
+msgstr "鞘内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_22"
-msgid "Intrauterine "
-msgstr "子宫内的 "
+msgid "Intrauterine"
+msgstr "子宫内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_23"
-msgid "Intravenous "
-msgstr "静脉注射的 "
+msgid "Intravenous"
+msgstr "静脉注射"
 
 msgctxt "model:gnuhealth.drug.route,name:route_24"
-msgid "Mouth/Throat "
-msgstr "口腔/喉科制剂 "
+msgid "Mouth/Throat"
+msgstr "口腔/喉咙给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_25"
 msgid "Mucous Membrane"
-msgstr "粘膜"
+msgstr "粘膜下给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_26"
 msgid "Nasal"
-msgstr "鼻音"
+msgstr "鼻腔给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_27"
 msgid "Nasogastric"
-msgstr "鼻胃管"
+msgstr "鼻饲给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_28"
 msgid "Nasal Prongs"
-msgstr "鼻塞"
+msgstr "鼻翼管给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_29"
 msgid "Nasotrachial Tube"
-msgstr "经鼻管"
+msgstr "鼻胃管给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_3"
-msgid "Dental "
-msgstr "牙科 "
+msgid "Dental"
+msgstr "牙冠内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_30"
 msgid "Ophthalmic"
-msgstr "眼药"
+msgstr "眼内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_31"
 msgid "Otic"
-msgstr "耳的"
+msgstr "耳内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_32"
 msgid "Other/Miscellaneous"
@@ -4526,7 +4831,7 @@ msgstr "其它"
 
 msgctxt "model:gnuhealth.drug.route,name:route_33"
 msgid "Perfusion"
-msgstr "灌注"
+msgstr "灌注给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_34"
 msgid "Oral"
@@ -4553,60 +4858,60 @@ msgid "Sublingual"
 msgstr "舌下给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_4"
-msgid "Epidural "
-msgstr "硬膜外 "
+msgid "Epidural"
+msgstr "硬膜外给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_40"
 msgid "Topical"
-msgstr "专题"
+msgstr "局部给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_41"
 msgid "Tracheostomy"
-msgstr "气管切开术"
+msgstr "气管内给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_42"
 msgid "Transdermal"
-msgstr "透皮"
+msgstr "透皮给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_43"
 msgid "Translingual"
-msgstr "跨语言"
+msgstr "经舌给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_44"
 msgid "Urethral"
-msgstr "尿道"
+msgstr "尿道给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_45"
 msgid "Vaginal"
-msgstr "阴道"
+msgstr "阴道给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_46"
 msgid "Ventimask"
-msgstr "通气面罩"
+msgstr "通气面罩给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_47"
 msgid "Wound"
-msgstr "敷伤口"
+msgstr "伤口给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_5"
 msgid "Endotrachial Tube"
-msgstr "气管导管"
+msgstr "气管导管给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_6"
-msgid "Gastrostomy Tube "
-msgstr "胃管 "
+msgid "Gastrostomy Tube"
+msgstr "胃管给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_7"
-msgid "GU Irrigant "
-msgstr "顾冲洗 "
+msgid "GU Irrigant"
+msgstr "胃管冲洗"
 
 msgctxt "model:gnuhealth.drug.route,name:route_8"
-msgid "Immerse (Soak) Body Part "
-msgstr "浸泡身体部分 "
+msgid "Immerse (Soak) Body Part"
+msgstr "浸泡身体部分给药"
 
 msgctxt "model:gnuhealth.drug.route,name:route_9"
-msgid "Intra-arterial "
-msgstr "动脉内 "
+msgid "Intra-arterial"
+msgstr "动脉内给药"
 
 msgctxt "model:gnuhealth.du,name:"
 msgid "Domiciliary Unit"
@@ -4717,8 +5022,8 @@ msgid "Health Institution Specialties"
 msgstr "医疗机构专科"
 
 msgctxt "model:gnuhealth.insurance,name:"
-msgid "Insurance"
-msgstr "保险"
+msgid "Person Insurance"
+msgstr "个人保险"
 
 msgctxt "model:gnuhealth.insurance.plan,name:"
 msgid "Insurance Plan"
@@ -4838,7 +5143,7 @@ msgstr "馆长"
 
 msgctxt "model:gnuhealth.occupation,name:occ101"
 msgid "Currier"
-msgstr "柯里尔"
+msgstr "制革工"
 
 msgctxt "model:gnuhealth.occupation,name:occ102"
 msgid "Custodian"
@@ -4858,7 +5163,7 @@ msgstr "舞蹈家"
 
 msgctxt "model:gnuhealth.occupation,name:occ106"
 msgid "Dance instructor"
-msgstr "舞蹈教室"
+msgstr "舞蹈教练"
 
 msgctxt "model:gnuhealth.occupation,name:occ107"
 msgid "Database administrator (DBA)"
@@ -4866,15 +5171,15 @@ msgstr "数据库管理员"
 
 msgctxt "model:gnuhealth.occupation,name:occ108"
 msgid "Deputy (law enforcement)"
-msgstr "副主管（法律）"
+msgstr "副职（法律）"
 
 msgctxt "model:gnuhealth.occupation,name:occ109"
 msgid "Deputy (parliamentary)"
-msgstr "副主管（国会）"
+msgstr "副职（国会）"
 
 msgctxt "model:gnuhealth.occupation,name:occ11"
 msgid "Bassist"
-msgstr "低音歌手"
+msgstr "低音提琴手"
 
 msgctxt "model:gnuhealth.occupation,name:occ110"
 msgid "Demographer"
@@ -4882,7 +5187,7 @@ msgstr "人口统计学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ111"
 msgid "Demolitionist"
-msgstr "破坏者"
+msgstr "爆破专家"
 
 msgctxt "model:gnuhealth.occupation,name:occ112"
 msgid "Dentist"
@@ -4910,7 +5215,7 @@ msgstr "独裁者"
 
 msgctxt "model:gnuhealth.occupation,name:occ118"
 msgid "Dietician"
-msgstr "营养师"
+msgstr "饮食学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ119"
 msgid "Diplomat"
@@ -4918,7 +5223,7 @@ msgstr "外交官"
 
 msgctxt "model:gnuhealth.occupation,name:occ12"
 msgid "Boatswain"
-msgstr "商船甲板长"
+msgstr "水手长"
 
 msgctxt "model:gnuhealth.occupation,name:occ120"
 msgid "Director"
@@ -4934,7 +5239,7 @@ msgstr "调度员"
 
 msgctxt "model:gnuhealth.occupation,name:occ123"
 msgid "Distiller"
-msgstr "蒸馏酒者"
+msgstr "酿酒者"
 
 msgctxt "model:gnuhealth.occupation,name:occ124"
 msgid "Diver"
@@ -4962,7 +5267,7 @@ msgstr "博士（博士）"
 
 msgctxt "model:gnuhealth.occupation,name:occ13"
 msgid "Boilermaker"
-msgstr "制造或修理汽锅的人"
+msgstr "金属制造维修工"
 
 msgctxt "model:gnuhealth.occupation,name:occ130"
 msgid "Doctor of Physical Therapy"
@@ -4974,7 +5279,7 @@ msgstr "狗饲养员"
 
 msgctxt "model:gnuhealth.occupation,name:occ132"
 msgid "Dogcatcher"
-msgstr "狗的守望者"
+msgstr "捕狗人"
 
 msgctxt "model:gnuhealth.occupation,name:occ133"
 msgid "Dog walker"
@@ -4982,19 +5287,19 @@ msgstr "遛狗师"
 
 msgctxt "model:gnuhealth.occupation,name:occ134"
 msgid "Domestic worker"
-msgstr "家庭佣工"
+msgstr "佣人"
 
 msgctxt "model:gnuhealth.occupation,name:occ135"
 msgid "Dominatrix"
-msgstr "支配欲很强的女子"
+msgstr "虐恋女主人"
 
 msgctxt "model:gnuhealth.occupation,name:occ136"
 msgid "Donkey Trainer"
-msgstr "驴师"
+msgstr "驴训练师"
 
 msgctxt "model:gnuhealth.occupation,name:occ137"
 msgid "Doorman"
-msgstr "看门人"
+msgstr "门卫"
 
 msgctxt "model:gnuhealth.occupation,name:occ138"
 msgid "Draftsman"
@@ -5002,7 +5307,7 @@ msgstr "起草者"
 
 msgctxt "model:gnuhealth.occupation,name:occ139"
 msgid "Dramatist"
-msgstr "戏剧家"
+msgstr "编剧"
 
 msgctxt "model:gnuhealth.occupation,name:occ14"
 msgid "Bookseller"
@@ -5014,7 +5319,7 @@ msgstr "戏剧编剧"
 
 msgctxt "model:gnuhealth.occupation,name:occ141"
 msgid "Draper"
-msgstr "服装商"
+msgstr "布料零售商"
 
 msgctxt "model:gnuhealth.occupation,name:occ142"
 msgid "Drayman"
@@ -5022,7 +5327,7 @@ msgstr "车夫"
 
 msgctxt "model:gnuhealth.occupation,name:occ143"
 msgid "Dressmaker"
-msgstr "裁缝师"
+msgstr "裁缝"
 
 msgctxt "model:gnuhealth.occupation,name:occ144"
 msgid "Drill instructor"
@@ -5058,7 +5363,7 @@ msgstr "清洁工"
 
 msgctxt "model:gnuhealth.occupation,name:occ151"
 msgid "Dyer"
-msgstr "染房工"
+msgstr "染色工"
 
 msgctxt "model:gnuhealth.occupation,name:occ152"
 msgid "Ecologist"
@@ -5082,15 +5387,15 @@ msgstr "教师"
 
 msgctxt "model:gnuhealth.occupation,name:occ157"
 msgid "Egyptologist"
-msgstr "埃及古物学者"
+msgstr "埃及学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ158"
 msgid "Electrical engineer"
-msgstr "电机工程师"
+msgstr "电气工程师"
 
 msgctxt "model:gnuhealth.occupation,name:occ159"
 msgid "Electrician"
-msgstr "电气技师"
+msgstr "电工"
 
 msgctxt "model:gnuhealth.occupation,name:occ16"
 msgid "Cab driver"
@@ -5102,7 +5407,7 @@ msgstr "电梯技工"
 
 msgctxt "model:gnuhealth.occupation,name:occ161"
 msgid "Embalmer"
-msgstr "尸体防腐者"
+msgstr "入殓师"
 
 msgctxt "model:gnuhealth.occupation,name:occ162"
 msgid "Embryologist"
@@ -5110,7 +5415,7 @@ msgstr "胚胎学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ163"
 msgid "Emergency Medical Technician (EMT)"
-msgstr "紧急医疗技术员"
+msgstr "救护技术员"
 
 msgctxt "model:gnuhealth.occupation,name:occ164"
 msgid "Engine-driver"
@@ -5126,11 +5431,11 @@ msgstr "雕刻师"
 
 msgctxt "model:gnuhealth.occupation,name:occ167"
 msgid "Enologist"
-msgstr "葡萄酒酿制术研究者"
+msgstr "葡萄酒学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ168"
 msgid "Entertainer"
-msgstr "艺人"
+msgstr "演员"
 
 msgctxt "model:gnuhealth.occupation,name:occ169"
 msgid "Entomologist"
@@ -5150,7 +5455,7 @@ msgstr "环境科学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ172"
 msgid "Ergonomist"
-msgstr "工作学者"
+msgstr "生物工程学者"
 
 msgctxt "model:gnuhealth.occupation,name:occ173"
 msgid "Escort"
@@ -5162,7 +5467,7 @@ msgstr "房地产经纪人"
 
 msgctxt "model:gnuhealth.occupation,name:occ175"
 msgid "Esthetician"
-msgstr "美学家"
+msgstr "美容师"
 
 msgctxt "model:gnuhealth.occupation,name:occ176"
 msgid "Ethnologist"
@@ -5174,11 +5479,11 @@ msgstr "生态学研究者"
 
 msgctxt "model:gnuhealth.occupation,name:occ178"
 msgid "Etymologist"
-msgstr "语源学者"
+msgstr "词源学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ179"
 msgid "Evangelist"
-msgstr "福音传教士"
+msgstr "布道者"
 
 msgctxt "model:gnuhealth.occupation,name:occ18"
 msgid "Cabinet-maker"
@@ -5194,15 +5499,15 @@ msgstr "执行官"
 
 msgctxt "model:gnuhealth.occupation,name:occ182"
 msgid "Exotic dancer"
-msgstr "脱衣舞舞女"
+msgstr "脱衣舞女"
 
 msgctxt "model:gnuhealth.occupation,name:occ183"
 msgid "Expressman"
-msgstr "递送工人"
+msgstr "快递员"
 
 msgctxt "model:gnuhealth.occupation,name:occ184"
 msgid "Exterminator"
-msgstr "灭虫的人"
+msgstr "消灭害虫者"
 
 msgctxt "model:gnuhealth.occupation,name:occ185"
 msgid "Extra"
@@ -5246,7 +5551,7 @@ msgstr "渡船夫"
 
 msgctxt "model:gnuhealth.occupation,name:occ194"
 msgid "Film director"
-msgstr "导演"
+msgstr "电影导演"
 
 msgctxt "model:gnuhealth.occupation,name:occ195"
 msgid "Film producer"
@@ -5478,7 +5783,7 @@ msgstr "妇科医生"
 
 msgctxt "model:gnuhealth.occupation,name:occ248"
 msgid "Garrett"
-msgstr "Garrett"
+msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ249"
 msgid "Haberdasher"
@@ -5737,8 +6042,8 @@ msgid "Laborer"
 msgstr "工人"
 
 msgctxt "model:gnuhealth.occupation,name:occ307"
-msgid "Landlord "
-msgstr "房东 "
+msgid "Landlord"
+msgstr "房东"
 
 msgctxt "model:gnuhealth.occupation,name:occ308"
 msgid "Landscaper"
@@ -5909,8 +6214,8 @@ msgid "Mason"
 msgstr "泥瓦工"
 
 msgctxt "model:gnuhealth.occupation,name:occ346"
-msgid "Massage therapist "
-msgstr "按摩师 "
+msgid "Massage therapist"
+msgstr "按摩师"
 
 msgctxt "model:gnuhealth.occupation,name:occ347"
 msgid "Master of Ceremony (MC)"
@@ -5997,8 +6302,8 @@ msgid "Midwife"
 msgstr "接生婆"
 
 msgctxt "model:gnuhealth.occupation,name:occ366"
-msgid "Milkman "
-msgstr "送牛奶的人 "
+msgid "Milkman"
+msgstr "送牛奶的人"
 
 msgctxt "model:gnuhealth.occupation,name:occ367"
 msgid "Miller"
@@ -6081,7 +6386,7 @@ msgid "Navigator"
 msgstr "航海家"
 
 msgctxt "model:gnuhealth.occupation,name:occ388"
-msgid "Négociant"
+msgid "Negociant"
 msgstr "酒商"
 
 msgctxt "model:gnuhealth.occupation,name:occ389"
@@ -6133,8 +6438,8 @@ msgid "Astronaut"
 msgstr "宇航员"
 
 msgctxt "model:gnuhealth.occupation,name:occ40"
-msgid "Chef "
-msgstr "厨师 "
+msgid "Chef"
+msgstr "厨师"
 
 msgctxt "model:gnuhealth.occupation,name:occ400"
 msgid "Nursemaid"
@@ -6606,7 +6911,7 @@ msgstr "锯木工"
 
 msgctxt "model:gnuhealth.occupation,name:occ508"
 msgid "Scabbardmaker"
-msgstr "Scabbardmaker"
+msgstr "拾荒者"
 
 msgctxt "model:gnuhealth.occupation,name:occ509"
 msgid "School-bus driver"
@@ -7222,7 +7527,7 @@ msgstr "动物学家"
 
 msgctxt "model:gnuhealth.occupation,name:occ66"
 msgid "Compasssmith"
-msgstr "Compasssmith"
+msgstr ""
 
 msgctxt "model:gnuhealth.occupation,name:occ67"
 msgid "Composer"
@@ -7341,8 +7646,8 @@ msgid "CPA (Certified Public Accountant)"
 msgstr "注册会计师"
 
 msgctxt "model:gnuhealth.occupation,name:occ93"
-msgid "Craftsman "
-msgstr "手工业工人 "
+msgid "Craftsman"
+msgstr "手工业工人"
 
 msgctxt "model:gnuhealth.occupation,name:occ94"
 msgid "Creative engineering"
@@ -7367,6 +7672,14 @@ msgstr "动物学家"
 msgctxt "model:gnuhealth.occupation,name:occ99"
 msgid "Crystallographer"
 msgstr "晶体学"
+
+msgctxt "model:gnuhealth.online_document,name:"
+msgid "Health Online Document"
+msgstr "Health 在线文档"
+
+msgctxt "model:gnuhealth.online_document,name:gnuhealth_online_document_001"
+msgid "GNU Health Documentation Portal"
+msgstr "GNU Health 官方文档"
 
 msgctxt "model:gnuhealth.operational_area,name:"
 msgid "Operational Area"
@@ -7405,7 +7718,7 @@ msgid "Renal, Urologic and Male reproductive disorders"
 msgstr "肾脏，泌尿和男性生殖疾病"
 
 msgctxt "model:gnuhealth.pathology.group,desc:HEART"
-msgid "Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias.. "
+msgid "Diseases of the Heart. CAD, CHF, valvulopathies, arrhythmias ..."
 msgstr "心脏疾病。冠心病、心衰、瓣膜病、心律失常 ..."
 
 msgctxt "model:gnuhealth.pathology.group,desc:INFECTIOUS"
@@ -7558,13 +7871,21 @@ msgctxt "model:gnuhealth.patient.evaluation,name:"
 msgid "Patient Evaluation"
 msgstr "患者评估"
 
+msgctxt "model:gnuhealth.patient.family.diseases,name:"
+msgid "Family History"
+msgstr "家族史"
+
 msgctxt "model:gnuhealth.patient.medication,name:"
 msgid "Patient Medication"
 msgstr "患者用药"
 
+msgctxt "model:gnuhealth.patient.procedure,name:"
+msgid "Procedures done on patients"
+msgstr "本次评估完成的操作"
+
 msgctxt "model:gnuhealth.person_alternative_identification,name:"
 msgid "Alternative person ID"
-msgstr "其它证件号"
+msgstr "备选证件号"
 
 msgctxt "model:gnuhealth.person_name,name:"
 msgid "Person Name"
@@ -7585,6 +7906,10 @@ msgstr "处方单"
 msgctxt "model:gnuhealth.procedure,name:"
 msgid "Medical Procedures"
 msgstr "医学操作"
+
+msgctxt "model:gnuhealth.procedures.config,name:"
+msgid "Medical Procedures Config"
+msgstr "医学操作设置"
 
 msgctxt "model:gnuhealth.secondary_condition,name:"
 msgid "Secondary Conditions"
@@ -8054,6 +8379,18 @@ msgctxt "model:ir.action,name:action_gnuhealth_patient_evaluation_view"
 msgid "Patient Evaluations [readonly]"
 msgstr "患者评估[只读]"
 
+msgctxt "model:ir.action,name:action_gnuhealth_patient_medication_view"
+msgid "Patient medications"
+msgstr "患者用药史"
+
+msgctxt "model:ir.action,name:action_gnuhealth_patient_procedure_view"
+msgid "Patient procedures"
+msgstr "患者相关操作"
+
+msgctxt "model:ir.action,name:action_gnuhealth_patient_vaccination_view"
+msgid "Patient vaccination"
+msgstr "患者疫苗接种"
+
 msgctxt "model:ir.action,name:action_gnuhealth_patient_view"
 msgid "Patients"
 msgstr "患者"
@@ -8150,6 +8487,10 @@ msgctxt "model:ir.action,name:gnuhealth_action_occupation"
 msgid "Occupations"
 msgstr "职业"
 
+msgctxt "model:ir.action,name:gnuhealth_action_online_document"
+msgid "Online Documentation"
+msgstr "在线文档"
+
 msgctxt "model:ir.action,name:gnuhealth_action_operational_area"
 msgid "Operational Areas"
 msgstr "卫生区域"
@@ -8165,6 +8506,10 @@ msgstr "疾病诊断分组"
 msgctxt "model:ir.action,name:gnuhealth_action_pol"
 msgid "Pages of life"
 msgstr "健康档案页"
+
+msgctxt "model:ir.action,name:gnuhealth_action_procedures_config"
+msgid "Medical Procedures Configuration"
+msgstr "医学操作设置"
 
 msgctxt "model:ir.action,name:gnuhealth_action_specialty"
 msgid "Medical Specialties"
@@ -8268,10 +8613,20 @@ msgctxt "model:ir.message,text:msg_compute_age_from_dates_year_str"
 msgid "y "
 msgstr "岁 "
 
+msgctxt "model:ir.message,text:msg_drug_allergy_safety_check"
+msgid ""
+"SM-CORE-0017: Our records indicate that this patient is ALLERGIC. Please "
+"verify the prescribed drugs"
+msgstr "SM-CORE-0017: 记录显示患者过敏, 请核实处方"
+
 msgctxt "model:ir.message,text:msg_drug_pregnancy_safety_check"
 msgid ""
-"SM-CORE-0006: Verify and check for safety in pregnancy the prescribed drugs"
-msgstr "SM-CORE-0006：验证并检查处方药物在怀孕期间的安全性"
+"SM-CORE-0006: Verify and check for safety in PREGNANCY the prescribed drugs"
+msgstr "SM-CORE-0006：检查核实处方药物在怀孕期使用的安全性"
+
+msgctxt "model:ir.message,text:msg_dup_mainsp"
+msgid "SM-CORE-0016: The health professional can have only one main specialty"
+msgstr "SM-CORE-0016: 医务人员只允许有一个主专业"
 
 msgctxt "model:ir.message,text:msg_dup_official_name"
 msgid "SM-CORE-0011: The person can have only one official name"
@@ -8303,13 +8658,18 @@ msgid ""
 "\"%(diagnosed_date)s\"!"
 msgstr "SM-CORE-0002: 康复日期 \"%(healed_date)s\" 在诊断日期 \"%(diagnosed_date)s\" 之前!"
 
+msgctxt "model:ir.message,text:msg_insurance_invalid"
+msgid ""
+"SM-CORE-0019: The current insurance plan is not valid or it has expired"
+msgstr "SM-CORE-0019: 当前保险计划无效或已过期"
+
 msgctxt "model:ir.message,text:msg_matplotlib_rc_config_json_str"
 msgid ""
-"{\"font.family\": [\"sans-serif\"], \"@comment\": \"Matplotlib rc config "
-"used when no matplotlibrc file is found.\"}"
+"{\"backend\": \"Agg\", \"font.family\": [\"sans-serif\"], \"@comment\": "
+"\"Matplotlib rc config used when no matplotlibrc file is found.\"}"
 msgstr ""
-"{\"font.family\": [\"Noto Serif CJK SC\", \"WenQuanYi Micro Hei\", "
-"\"Unifont\", \"sans-serif\"]}"
+"{\"backend\": \"Agg\", \"font.family\": [\"Noto Serif CJK SC\", \"WenQuanYi "
+"Micro Hei\", \"Unifont\", \"sans-serif\"]}"
 
 msgctxt "model:ir.message,text:msg_med_end_date_before_start"
 msgid ""
@@ -8337,6 +8697,10 @@ msgid ""
 "professional. See \"Internal User\" field of \"Parties/People\" form."
 msgstr "SM-CORE-0007: 当前登录用户没有关联到某个医务人员，请查看“参与者/人”界面的“内部用户”字段。"
 
+msgctxt "model:ir.message,text:msg_no_str"
+msgid "No"
+msgstr "否"
+
 msgctxt "model:ir.message,text:msg_patient_disease_already_exists"
 msgid "SM-CORE-0015: This disease already exists, do not create it again."
 msgstr "SM-CORE-0015: 患病记录已经存在, 不要重复创建。"
@@ -8346,6 +8710,14 @@ msgctxt ""
 msgid "Self"
 msgstr "患者本人"
 
+msgctxt "model:ir.message,text:msg_patient_evaluation_reliable_info_is_false"
+msgid "Seems unreliable"
+msgstr "看起来不可靠"
+
+msgctxt "model:ir.message,text:msg_patient_evaluation_reliable_info_is_true"
+msgid "Seems reliable"
+msgstr "看起来可靠"
+
 msgctxt "model:ir.message,text:msg_prescription_line_frequency_and_unit"
 msgid "Every %(frequency)s %(frequency_unit)s"
 msgstr "每 %(frequency)s %(frequency_unit)s"
@@ -8354,17 +8726,26 @@ msgctxt "model:ir.message,text:msg_prescription_line_frequency_prn"
 msgid "as needed"
 msgstr "需要时使用"
 
+msgctxt "model:ir.message,text:msg_prescription_safety_check"
+msgid ""
+"SM-CORE-0018: The prescription has not been verified for patient safety"
+msgstr "SM-CORE-0018: 尚未核实当前处方是否对患者安全"
+
 msgctxt "model:ir.message,text:msg_wrong_date_of_birth"
 msgid "SM-CORE-0001: Wrong date of birth for a living person"
 msgstr "SM-CORE-0001: 对活人来说，这个出生日期不对"
 
-msgctxt "model:ir.model.button,string:appoinntment_checked_in"
-msgid "Check In"
-msgstr "已签到"
+msgctxt "model:ir.message,text:msg_yes_str"
+msgid "Yes"
+msgstr "是"
 
-msgctxt "model:ir.model.button,string:appoinntment_no_show"
-msgid "No show"
-msgstr "已爽约"
+msgctxt "model:ir.model.button,string:appoinntment_check_in"
+msgid "Check In"
+msgstr "签到"
+
+msgctxt "model:ir.model.button,string:appoinntment_miss_out"
+msgid "Miss Out"
+msgstr "记爽约"
 
 msgctxt "model:ir.model.button,string:birthcert_sign_button"
 msgid "Sign"
@@ -8575,6 +8956,10 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedure"
 msgid "Procedures"
 msgstr "医学操作"
 
+msgctxt "model:ir.ui.menu,name:gnuhealth_conf_procedures_config"
+msgid "Medical Procedures Configuration"
+msgstr "医学操作设置"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_specialty"
 msgid "Medical Specialties"
 msgstr "医学专科"
@@ -8623,9 +9008,29 @@ msgctxt "model:ir.ui.menu,name:gnuhealth_menu_institution"
 msgid "Institutions"
 msgstr "医疗机构"
 
+msgctxt "model:ir.ui.menu,name:gnuhealth_nursing_menu"
+msgid "Nursing"
+msgstr "护理"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_online_document"
+msgid "Online Documentation"
+msgstr "在线文档"
+
 msgctxt "model:ir.ui.menu,name:gnuhealth_operational_areas"
 msgid "Operational Areas"
 msgstr "卫生区域"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_medications_menu"
+msgid "Patient medications"
+msgstr "患者用药史"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_procedures_menu"
+msgid "Patient procedures"
+msgstr "患者相关操作"
+
+msgctxt "model:ir.ui.menu,name:gnuhealth_patient_vaccinations_menu"
+msgid "Patient vaccinations"
+msgstr "患者疫苗接种"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_patients_menu"
 msgid "Patients"
@@ -8687,24 +9092,36 @@ msgctxt "model:res.group,name:group_health_frontdesk"
 msgid "Health Front Desk"
 msgstr "Health 前台"
 
+msgctxt "model:res.group,name:group_health_nursing"
+msgid "Health Nurse"
+msgstr "Health 护理"
+
+msgctxt "model:res.group,name:group_health_nursing_admin"
+msgid "Health Nurse Administration"
+msgstr "Health 护理管理"
+
 msgctxt "model:res.group,name:group_health_social_worker"
 msgid "Health Social Worker"
 msgstr "Health 社会工作者"
+
+msgctxt "report:appointment.receipt:"
+msgid "APPT ID:"
+msgstr "预约号:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Appointment Receipt"
 msgstr "预约凭证"
 
 msgctxt "report:appointment.receipt:"
-msgid "Apporintment #"
-msgstr "预约号 #"
-
-msgctxt "report:appointment.receipt:"
 msgid "Date:"
 msgstr "日期:"
 
 msgctxt "report:appointment.receipt:"
-msgid "Health Professional:"
+msgid "Extra Info:"
+msgstr "其它信息:"
+
+msgctxt "report:appointment.receipt:"
+msgid "Health Prof:"
 msgstr "医务人员:"
 
 msgctxt "report:appointment.receipt:"
@@ -8712,12 +9129,8 @@ msgid "Institution:"
 msgstr "医疗机构:"
 
 msgctxt "report:appointment.receipt:"
-msgid "Instructions / Notes:"
-msgstr "说明 / 注释:"
-
-msgctxt "report:appointment.receipt:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:appointment.receipt:"
 msgid "Patient:"
@@ -8729,11 +9142,7 @@ msgstr "专业:"
 
 msgctxt "report:appointment.receipt:"
 msgid "You must present this receipt and your PUID"
-msgstr "您必须出示此预约单和证件号码"
-
-msgctxt "report:gnuhealth.birth_certificate:"
-msgid ","
-msgstr ","
+msgstr "您必须出示此预约单和健康号"
 
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "BIRTH CERTIFICATE"
@@ -8782,10 +9191,6 @@ msgstr "打印日期:"
 msgctxt "report:gnuhealth.birth_certificate:"
 msgid "Sex"
 msgstr "性别"
-
-msgctxt "report:gnuhealth.death_certificate:"
-msgid ","
-msgstr ","
 
 msgctxt "report:gnuhealth.death_certificate:"
 msgid "Age"
@@ -8912,10 +9317,6 @@ msgid "(Complete Listing)"
 msgstr "(完整列表)"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
-msgid ","
-msgstr ","
-
-msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Age"
 msgstr "年龄"
 
@@ -8949,7 +9350,7 @@ msgstr "重要通知:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.immunization_status_report:"
 msgid "Patient:"
@@ -8994,7 +9395,7 @@ msgstr "疫苗"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "(Sys / dias)"
-msgstr "(收缩压 / 舒张压)"
+msgstr "(收缩压/舒张压)"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid ","
@@ -9023,6 +9424,14 @@ msgstr "体质指数(BMI)"
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "BP"
 msgstr "血压"
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Body Composition Metrics (%)"
+msgstr "身体成分指标 (%)"
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Bone"
+msgstr "骨骼"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Chief Complaint"
@@ -9073,6 +9482,10 @@ msgid "Evaluation Digital Signature"
 msgstr "评估数字签名"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Fat"
+msgstr "脂肪"
+
+msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "GCS"
 msgstr "格拉斯哥评分"
 
@@ -9094,7 +9507,7 @@ msgstr "信息来源:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Initiated by:"
-msgstr "评估发起人:"
+msgstr "发起人:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Main Condition"
@@ -9103,6 +9516,10 @@ msgstr "主要诊断"
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Marital Status:"
 msgstr "婚姻状况:"
+
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Muscle"
+msgstr "肌肉"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "OSAT"
@@ -9118,7 +9535,7 @@ msgstr "其它诊断"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Patient Evaluation Report"
@@ -9164,6 +9581,10 @@ msgctxt "report:gnuhealth.patient_evaluation:"
 msgid "Type"
 msgstr "患者类型"
 
+msgctxt "report:gnuhealth.patient_evaluation:"
+msgid "Water"
+msgstr "水分"
+
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid ","
 msgstr ","
@@ -9206,7 +9627,7 @@ msgstr "现病史"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Initiated by:"
-msgstr "评估发起人:"
+msgstr "发起人:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Main Condition"
@@ -9214,7 +9635,7 @@ msgstr "主要诊断"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:gnuhealth.patient_evaluation_brief:"
 msgid "Patient Evaluation Brief Report"
@@ -9254,7 +9675,7 @@ msgstr "姓名:"
 
 msgctxt "report:patient.card:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.card:"
 msgid "photo"
@@ -9262,7 +9683,7 @@ msgstr "照片"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Active"
-msgstr "启用"
+msgstr "活动期"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Age:"
@@ -9278,7 +9699,7 @@ msgstr "患者健康状况（自动生成）"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Diagnosed"
-msgstr "已诊断"
+msgstr "诊断日期"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Gender:"
@@ -9290,7 +9711,7 @@ msgstr "健康状况"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Infectious"
-msgstr "感染"
+msgstr "可传染"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Name:"
@@ -9302,7 +9723,7 @@ msgstr "患者健康状况总结"
 
 msgctxt "report:patient.conditions_history:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.conditions_history:"
 msgid "Print Date:"
@@ -9321,12 +9742,8 @@ msgid "Status"
 msgstr "治疗转归"
 
 msgctxt "report:patient.medication:"
-msgid ","
-msgstr ","
-
-msgctxt "report:patient.medication:"
 msgid "Active"
-msgstr "启用"
+msgstr "用药中"
 
 msgctxt "report:patient.medication:"
 msgid "Age:"
@@ -9358,7 +9775,7 @@ msgstr "患者用药史"
 
 msgctxt "report:patient.medication:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.medication:"
 msgid "Patient:"
@@ -9369,7 +9786,7 @@ msgid "Phone:"
 msgstr "电话:"
 
 msgctxt "report:patient.medication:"
-msgid "Prescribed by"
+msgid "Prescriber"
 msgstr "处方医师"
 
 msgctxt "report:patient.medication:"
@@ -9379,10 +9796,6 @@ msgstr "打印日期:"
 msgctxt "report:patient.medication:"
 msgid "Start"
 msgstr "开始"
-
-msgctxt "report:patient.vaccination:"
-msgid ","
-msgstr ","
 
 msgctxt "report:patient.vaccination:"
 msgid "Age:"
@@ -9414,7 +9827,7 @@ msgstr "患者疫苗接种史"
 
 msgctxt "report:patient.vaccination:"
 msgid "PUID:"
-msgstr "证件号码:"
+msgstr "健康号:"
 
 msgctxt "report:patient.vaccination:"
 msgid "Patient:"
@@ -9433,24 +9846,28 @@ msgid ","
 msgstr ","
 
 msgctxt "report:prescription.order:"
+msgid "Address:"
+msgstr "患者地址:"
+
+msgctxt "report:prescription.order:"
 msgid "Allowed"
 msgstr "允许"
 
 msgctxt "report:prescription.order:"
-msgid "Common Usage"
-msgstr "常规用法"
+msgid "Common:"
+msgstr "一般用法:"
 
 msgctxt "report:prescription.order:"
-msgid "Directions"
-msgstr "用药途径"
+msgid "Date:"
+msgstr "处方日期:"
 
 msgctxt "report:prescription.order:"
 msgid "DoB:"
 msgstr "出生日期:"
 
 msgctxt "report:prescription.order:"
-msgid "Dose"
-msgstr "剂量"
+msgid "Dose:"
+msgstr "剂量:"
 
 msgctxt "report:prescription.order:"
 msgid "Duration:"
@@ -9469,8 +9886,12 @@ msgid "Form:"
 msgstr "剂型:"
 
 msgctxt "report:prescription.order:"
-msgid "Health Professional Signature"
+msgid "Health Prof Signature"
 msgstr "医务人员签名"
+
+msgctxt "report:prescription.order:"
+msgid "ID:"
+msgstr "处方编号:"
 
 msgctxt "report:prescription.order:"
 msgid "Indication:"
@@ -9481,8 +9902,8 @@ msgid "Insurance:"
 msgstr "保险:"
 
 msgctxt "report:prescription.order:"
-msgid "Medicament"
-msgstr "药品"
+msgid "Medicament:"
+msgstr "药品:"
 
 msgctxt "report:prescription.order:"
 msgid "Notes"
@@ -9490,18 +9911,14 @@ msgstr "注意事项"
 
 msgctxt "report:prescription.order:"
 msgid "PUID:"
-msgstr "证件号码:"
-
-msgctxt "report:prescription.order:"
-msgid "Patient Address:"
-msgstr "患者地址:"
+msgstr "健康号:"
 
 msgctxt "report:prescription.order:"
 msgid "Patient:"
 msgstr "患者:"
 
 msgctxt "report:prescription.order:"
-msgid "Prescribed by:"
+msgid "Prescriber:"
 msgstr "处方医生:"
 
 msgctxt "report:prescription.order:"
@@ -9509,16 +9926,8 @@ msgid "Prescription"
 msgstr "处方"
 
 msgctxt "report:prescription.order:"
-msgid "Prescription ID:"
-msgstr "处方编号:"
-
-msgctxt "report:prescription.order:"
-msgid "Prescription date:"
-msgstr "处方日期:"
-
-msgctxt "report:prescription.order:"
-msgid "Qty"
-msgstr "数量"
+msgid "Qty:"
+msgstr "数量:"
 
 msgctxt "report:prescription.order:"
 msgid "Quantity:"
@@ -9541,8 +9950,8 @@ msgid "Route:"
 msgstr "用药途径:"
 
 msgctxt "report:prescription.order:"
-msgid "Specific Usage"
-msgstr "具体用法"
+msgid "Specific:"
+msgstr "具体用法:"
 
 msgctxt "report:prescription.order:"
 msgid "Start:"
@@ -9557,8 +9966,32 @@ msgid "Tel:"
 msgstr "电话:"
 
 msgctxt "report:prescription.order:"
-msgid "Unit"
-msgstr "单位"
+msgid "Usage"
+msgstr "用法"
+
+msgctxt "selection:country.subdivision,type:"
+msgid "First Nations Reserve"
+msgstr "原住民保留地"
+
+msgctxt "selection:country.subdivision,type:"
+msgid "Hamlet"
+msgstr "小村落/小社区"
+
+msgctxt "selection:country.subdivision,type:"
+msgid "Native American Reserve"
+msgstr "美国原住民保留地"
+
+msgctxt "selection:country.subdivision,type:"
+msgid "Neighborhood"
+msgstr "街区"
+
+msgctxt "selection:country.subdivision,type:"
+msgid "Resort"
+msgstr "度假胜地"
+
+msgctxt "selection:country.subdivision,type:"
+msgid "Village"
+msgstr "村庄"
 
 msgctxt "selection:gnuhealth.appointment,appointment_type:"
 msgid "Home Care"
@@ -10008,6 +10441,18 @@ msgctxt "selection:gnuhealth.insurance,insurance_type:"
 msgid "State"
 msgstr "州立"
 
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Expired"
+msgstr "已过期"
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Grace"
+msgstr "宽限期"
+
+msgctxt "selection:gnuhealth.insurance,status:"
+msgid "Valid"
+msgstr "有效"
+
 msgctxt "selection:gnuhealth.medicament,pregnancy_category:"
 msgid "A"
 msgstr "A"
@@ -10254,15 +10699,15 @@ msgstr "V6"
 
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "aVF"
-msgstr "动静脉瘘"
+msgstr "aVF"
 
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "aVL"
-msgstr "动静脉环"
+msgstr "aVL"
 
 msgctxt "selection:gnuhealth.patient.ecg,lead:"
 msgid "aVR"
-msgstr "动静脉宽度之比"
+msgstr "aVR"
 
 msgctxt "selection:gnuhealth.patient.ecg,pacemaker:"
 msgid "Atrioventricular"
@@ -10496,6 +10941,62 @@ msgctxt "selection:gnuhealth.patient.evaluation,visit_type:"
 msgid "Well Woman visit"
 msgstr "女性日常访视/健康促进/筛查等"
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Aunt"
+msgstr "姑/姨"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Brother"
+msgstr "兄弟"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Cousin"
+msgstr "堂亲/表亲"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Father"
+msgstr "父亲"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandfather"
+msgstr "(外)祖父"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Grandmother"
+msgstr "(外)祖母"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Mother"
+msgstr "母亲"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Nephew"
+msgstr "侄子/外甥"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Niece"
+msgstr "侄女/外甥女"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Sister"
+msgstr "姐妹"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Uncle"
+msgstr "叔伯/舅"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Maternal"
+msgstr "母系"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Paternal"
+msgstr "父系"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,xory:"
+msgid "Sibling"
+msgstr "兄弟姐妹"
+
 msgctxt "selection:gnuhealth.patient.medication,duration_period:"
 msgid "days"
 msgstr "天"
@@ -10547,6 +11048,22 @@ msgstr "必要时"
 msgctxt "selection:gnuhealth.patient.medication,infusion_rate_units:"
 msgid "mL/hour"
 msgstr "毫升/小时"
+
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Ambulatory Care"
+msgstr "初级保健"
+
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Medical Evaluation"
+msgstr "患者评估"
+
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Nursing Rounding"
+msgstr "护士办公室"
+
+msgctxt "selection:gnuhealth.patient.procedure,ctx:"
+msgid "Surgery"
+msgstr "手术"
 
 msgctxt ""
 "selection:gnuhealth.person_alternative_identification,alternative_id_type:"
@@ -10990,8 +11507,8 @@ msgid "Prefix Given Family, Suffix"
 msgstr "前缀+名 姓+后缀"
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "Checked in"
-msgstr "设为已候诊"
+msgid "Check In"
+msgstr "签到"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Date"
@@ -11002,16 +11519,20 @@ msgid "Information"
 msgstr "相关信息"
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "No show"
-msgstr "设为已爽约"
+msgid "Miss Out"
+msgstr "记爽约"
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "The patient did not show up"
-msgstr "患者没有按照约定就诊"
+msgid ""
+"The patient did not show up, click this button will switch appointment to "
+"'no_show' state."
+msgstr "患者没有出现，点击这个按钮可以将预约状态转换为 '已爽约' 状态。"
 
 msgctxt "view:gnuhealth.appointment:"
-msgid "The patient has arrived and is waiting"
-msgstr "患者在这里候诊"
+msgid ""
+"The patient has arrived and is waiting, click this button will switch "
+"appointment to 'checked_in' state."
+msgstr "患者已到达，正在候诊，点击这个按钮可以将预约状态转换为 '已候诊' 状态。"
 
 msgctxt "view:gnuhealth.appointment:"
 msgid "Time"
@@ -11036,10 +11557,6 @@ msgstr "签署出生证明 ?"
 msgctxt "view:gnuhealth.birth_certificate:"
 msgid "Sign the certificate"
 msgstr "签署出生证明"
-
-msgctxt "view:gnuhealth.check_immunization_status.init:"
-msgid "Immunization status Report"
-msgstr "免疫状况报告"
 
 msgctxt "view:gnuhealth.death_certificate:"
 msgid "Cause"
@@ -11233,6 +11750,14 @@ msgctxt "view:gnuhealth.patient.disease:"
 msgid "Therapy"
 msgstr "治疗"
 
+msgctxt "view:gnuhealth.patient.ecg:"
+msgid "Interpretation"
+msgstr "解释"
+
+msgctxt "view:gnuhealth.patient.ecg:"
+msgid "Results"
+msgstr "结果"
+
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Administrative"
 msgstr "管理"
@@ -11240,6 +11765,10 @@ msgstr "管理"
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Anthropometry"
 msgstr "人体测量"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Body Composition"
+msgstr "身体成分"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Chief Complaint"
@@ -11250,12 +11779,12 @@ msgid "Clinical"
 msgstr "临床"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Clinical and Physical exam"
-msgstr "临床和体格检查"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Date"
 msgstr "日期"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Diagnostic Judgement"
+msgstr "诊断性判断"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Discharge"
@@ -11270,16 +11799,16 @@ msgid "Discharge patient / end this evaluation"
 msgstr "患者离院/ 评估结束"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Extra info related to this evaluation"
+msgstr "与本次就诊相关的信息"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glasgow Coma Scale"
 msgstr "格拉斯哥昏迷评分表"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Glucose and Lipids Profile"
 msgstr "血糖和血脂"
-
-msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Header"
-msgstr "页首信息"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Info Dx"
@@ -11310,8 +11839,12 @@ msgid "Nutrition"
 msgstr "营养"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Other information related to this evaluation"
-msgstr "与此次就诊相关的信息"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "view:gnuhealth.patient.evaluation:"
+msgid "Physical exam"
+msgstr "体格检查"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Present Illness"
@@ -11326,12 +11859,12 @@ msgid "Psychological Assessment"
 msgstr "心理评估"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Time"
-msgstr "时间"
+msgid "Therapeutic and Dx Plan"
+msgstr "治疗与诊断计划"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
-msgid "Treatment Plan"
-msgstr "治疗方案"
+msgid "Time"
+msgstr "时间"
 
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Patient Disease Info"
@@ -11393,9 +11926,21 @@ msgctxt "view:gnuhealth.patient.medication:"
 msgid "Treatment period"
 msgstr "治疗期间"
 
+msgctxt "view:gnuhealth.patient.procedure:"
+msgid "Date"
+msgstr "日期"
+
+msgctxt "view:gnuhealth.patient.procedure:"
+msgid "Time"
+msgstr "时间"
+
 msgctxt "view:gnuhealth.patient:"
 msgid "Critical Information"
 msgstr "关键信息"
+
+msgctxt "view:gnuhealth.patient:"
+msgid "Family"
+msgstr "家庭"
 
 msgctxt "view:gnuhealth.patient:"
 msgid "Focus on"
@@ -11485,6 +12030,14 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Patient and Health Professional Information"
 msgstr "患者与医师信息"
 
+msgctxt "view:gnuhealth.prescription.order:"
+msgid "Safety warnings"
+msgstr "安全警告"
+
+msgctxt "view:gnuhealth.procedures.config:"
+msgid "Default procedures"
+msgstr "默认操作"
+
 msgctxt "view:gnuhealth.signs_and_symptoms:"
 msgid "Comments"
 msgstr "说明"
@@ -11515,7 +12068,7 @@ msgstr "签署"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Sign and close the vaccination"
-msgstr "签署和结束此次疫苗接种"
+msgstr "签署和结束本次疫苗接种"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Vaccination"
@@ -11528,6 +12081,10 @@ msgstr "基本信息"
 msgctxt "view:party.party:"
 msgid "Health"
 msgstr "健康"
+
+msgctxt "view:party.party:"
+msgid "Proclaimed"
+msgstr "宣称族裔"
 
 msgctxt "view:product.product:"
 msgid "Health"

@@ -1,6 +1,14 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-05-03 14:53+0000\n"
+"Last-Translator: milimarg <milimarg@noreply.codeberg.org>\n"
+"Language-Team: French <https://translate.codeberg.org/projects/gnuhealth/health_services/fr/>\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:account.invoice,health_service:"
 msgid "Health Service"
@@ -10,7 +18,6 @@ msgctxt "field:account.invoice,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-#, fuzzy
 msgctxt "field:gnuhealth.health_service,company:"
 msgid "Company"
 msgstr "Société"
@@ -63,10 +70,6 @@ msgctxt "field:gnuhealth.health_service.line,from_date:"
 msgid "From"
 msgstr "De"
 
-msgctxt "field:gnuhealth.health_service.line,name:"
-msgid "Service"
-msgstr "Service"
-
 msgctxt "field:gnuhealth.health_service.line,product:"
 msgid "Product"
 msgstr "Produit"
@@ -79,6 +82,11 @@ msgstr "Qté"
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "Remarques"
+
+#, fuzzy
+msgctxt "field:gnuhealth.health_service.line,service:"
+msgid "Service"
+msgstr "Service"
 
 msgctxt "field:gnuhealth.health_service.line,to_date:"
 msgid "To"
@@ -98,17 +106,19 @@ msgctxt "field:gnuhealth.patient.evaluation,service:"
 msgid "Service"
 msgstr "Service"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,service_updated:"
 msgid "Service updated"
-msgstr ""
+msgstr "Service mis à jour"
 
 msgctxt "field:gnuhealth.prescription.order,service:"
 msgid "Service"
 msgstr "Service"
 
+#, fuzzy
 msgctxt "field:gnuhealth.prescription.order,service_updated:"
 msgid "Service updated"
-msgstr ""
+msgstr "Service mis à jour"
 
 msgctxt "field:gnuhealth.sequences,health_service_sequence:"
 msgid "Health service sequence"
@@ -246,13 +256,15 @@ msgctxt "model:ir.model.button,string:service_draft_button"
 msgid "Set to Draft"
 msgstr ""
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:serviceevaluation_update_button"
 msgid "Update Services"
-msgstr ""
+msgstr "Mise à jour des Services"
 
+#, fuzzy
 msgctxt "model:ir.model.button,string:servicepresc_update_button"
 msgid "Update Services"
-msgstr ""
+msgstr "Mise à jour des Services"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_health_service"
 msgid "Health Service"
@@ -315,10 +327,6 @@ msgid "From"
 msgstr "Depuis"
 
 msgctxt "report:health_services.report:"
-msgid "Health Service ID:"
-msgstr ""
-
-msgctxt "report:health_services.report:"
 msgid "Health Service Report"
 msgstr ""
 
@@ -352,6 +360,10 @@ msgstr "Qté"
 msgctxt "report:health_services.report:"
 msgid "Service"
 msgstr "Service"
+
+msgctxt "report:health_services.report:"
+msgid "Service ID:"
+msgstr ""
 
 msgctxt "report:health_services.report:"
 msgid "Tel:"
@@ -421,9 +433,10 @@ msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Service document with this evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.evaluation:"
 msgid "Update Services"
-msgstr ""
+msgstr "Mise à jour des Services"
 
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Transfer medicaments to services ?"
@@ -433,9 +446,10 @@ msgctxt "view:gnuhealth.prescription.order:"
 msgid "Update Service document with this prescription lines"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.prescription.order:"
 msgid "Update Services"
-msgstr ""
+msgstr "Mise à jour des Services"
 
 msgctxt "view:gnuhealth.service.invoice.init:"
 msgid "Create Invoices"

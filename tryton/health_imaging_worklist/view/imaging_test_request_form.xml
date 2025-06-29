@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<data>
+  <xpath expr="//field[@name=&quot;comment&quot;]" position="after">
+    <field name="worklist_text" colspan="4"/>
+  </xpath>
+  <xpath expr="//field[@name=&quot;comment&quot;]" position="after">
+    <group colspan="2" id="imaging_test_request_worklist_group">
+      <label name="show_worklist_text" xalign="0.0"/>
+      <field name="show_worklist_text"/>
+      <label name="worklist_status"/>
+      <field name="worklist_status"/>
+    </group>
+  </xpath>
+</data>

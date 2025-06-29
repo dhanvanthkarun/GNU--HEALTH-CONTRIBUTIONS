@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -18,6 +18,11 @@ from trytond.pool import PoolMeta
 
 
 __all__ = ['Party', 'Patient', 'Appointment', 'Newborn', 'LabTest']
+
+
+# Remove text of barcode.
+from barcode.base import Barcode
+Barcode.default_writer_options['write_text'] = False
 
 
 class Party(metaclass=PoolMeta):
@@ -59,14 +64,14 @@ class Patient(metaclass=PoolMeta):
         patient_puid = self.puid or ''
         patient_blood_type = self.blood_type or ''
         patient_rh = self.rh or ''
-        patient_gender = self.name.gender_str or ''
+        patient_gender = self.party.gender_str or ''
         patient_dob = ''
 
         if (self.dob):
             patient_dob = str(self.dob)
 
         qr_string = f'{patient_puid}\n' \
-            f'Name: {self.name.rec_name}\n' \
+            f'Name: {self.party.rec_name}\n' \
             f'Gender: {patient_gender}\n' \
             f'DoB: {patient_dob}\n' \
             f'Blood Type: {patient_blood_type} {patient_rh}'
@@ -83,7 +88,7 @@ class Patient(metaclass=PoolMeta):
         return bytearray(qr_png)
 
     def make_code39(self, name):
-        # Create the Code39 bar code to encode the Patient ID
+        # Create the Code39 bar code to encode the patient's PUID
 
         patient_puid = self.puid or ''
         puid = f'{patient_puid}'
@@ -107,6 +112,7 @@ class Appointment(metaclass=PoolMeta):
 
     # Add the QR Code to the Appointment
     qr = fields.Function(fields.Binary('QR Code'), 'make_qrcode')
+    barcode = fields.Function(fields.Binary('Code39'), 'make_code39')
 
     def make_qrcode(self, name):
         # Create the QR code
@@ -151,6 +157,27 @@ class Appointment(metaclass=PoolMeta):
         holder.close()
 
         return bytearray(qr_png)
+
+    def make_code39(self, name):
+        if (self.name):
+            appointment = f'{self.name}'
+        else:
+            # Use ' ' instead '', for the barcode of '' can not be
+            # recognized by the barcode scanner.
+            appointment = ' '
+
+        CODE39 = barcode.get_barcode_class('code39')
+
+        code39 = CODE39(appointment, add_checksum=False)
+
+        # Make a PNG image from PIL without the need to create a temp file
+
+        holder = io.BytesIO()
+        code39.write(holder)
+        code39_png = holder.getvalue()
+        holder.close()
+
+        return bytearray(code39_png)
 
 
 class Newborn(metaclass=PoolMeta):
@@ -212,7 +239,7 @@ class LabTest(metaclass=PoolMeta):
         if self.is_patient():
             qr_string = f'{labtest_id}\n' \
                 f'Test: {labtest_type.rec_name}\n' \
-                f'Patient ID: {patient_puid}\n' \
+                f'PUID: {patient_puid}\n' \
                 f'Patient: {patient_name}\n' \
                 f'Requestor: {requestor_name}'
         else:

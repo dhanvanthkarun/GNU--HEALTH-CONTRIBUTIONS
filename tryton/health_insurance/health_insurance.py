@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -15,13 +15,14 @@ from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval
 from trytond.i18n import gettext
 from trytond.pool import PoolMeta
-
+import decimal
 
 from .exceptions import (DiscountPctOutOfRange, NeedAPolicy,
                          DiscountWithoutElement)
 
 
-__all__ = ['InsurancePlanProductPolicy', 'InsurancePlan', 'HealthService']
+__all__ = ['InsurancePlanProductPolicy', 'InsurancePlan', 'HealthService',
+           'PatientProcedure']
 
 
 class InsurancePlanProductPolicy(ModelSQL, ModelView):
@@ -33,6 +34,11 @@ class InsurancePlanProductPolicy(ModelSQL, ModelView):
         'Plan', required=True)
 
     product = fields.Many2One('product.product', 'Product')
+
+    icode = fields.Char(
+        'Product code',
+        help="Equivalent product code for this plan"
+    )
 
     product_category = fields.Many2One('product.category', 'Category')
 
@@ -56,17 +62,17 @@ class InsurancePlanProductPolicy(ModelSQL, ModelView):
             if (self.discount < 0 or self.discount > 100):
                 raise DiscountPctOutOfRange(
                     gettext('health_insurance.msg_pct_out_of_range')
-                    )
+                )
         if (not self.discount and not self.price):
             raise NeedAPolicy(
                 gettext('health_insurance.msg_need_a_policy')
-                )
+            )
 
     def validate_policy_elements(self):
         if (not self.product and not self.product_category):
             raise DiscountWithoutElement(
                 gettext('health_insurance.msg_discount_without_element')
-                )
+            )
 
 
 class InsurancePlan(metaclass=PoolMeta):
@@ -81,17 +87,36 @@ class HealthService(metaclass=PoolMeta):
     __name__ = 'gnuhealth.health_service'
 
     insurance_holder = fields.Many2One(
-        'party.party', 'Insurance Holder',
+        'party.party', 'Insurance of',
         help="Insurance Policy Holder")
 
     insurance_plan = fields.Many2One(
         'gnuhealth.insurance',
         'Plan',
-        domain=[('name', '=', Eval('insurance_holder'))],
+        domain=[('party', '=', Eval('insurance_holder'))],
         depends=['insurance_holder'])
 
     # Set the insurance holder upon entering the patient
     @fields.depends('patient')
     def on_change_patient(self):
         if self.patient:
-            self.insurance_holder = self.patient.name
+            self.insurance_holder = self.patient.party
+
+
+class PatientProcedure(metaclass=PoolMeta):
+    __name__ = 'gnuhealth.patient.procedure'
+
+    price = fields.Numeric('Price')
+
+    """ Set the default price on the procedure
+        based on the patient insurance plan product counterpart
+    """
+    @fields.depends('procedure', 'insurance')
+    def on_change_with_price(self):
+        if (self.procedure):
+            if self.procedure.product:
+                prd = self.procedure.product
+                if self.insurance:
+                    for pline in self.insurance.plan_id.product_policy:
+                        if pline.product == prd:
+                            return decimal.Decimal(pline.price)

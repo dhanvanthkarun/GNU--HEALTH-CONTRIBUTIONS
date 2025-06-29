@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2011 Cédric Krier <cedric.krier@b2ck.com>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -36,7 +36,7 @@ class InpatientRegistration(metaclass=PoolMeta):
         ' the Intensive Care Unit during the hospitalization period')
     icu_admissions = fields.One2Many(
         'gnuhealth.inpatient.icu',
-        'name', "ICU Admissions")
+        'registration', "ICU Admissions")
 
 
 class InpatientIcu(ModelSQL, ModelView):
@@ -50,27 +50,29 @@ class InpatientIcu(ModelSQL, ModelView):
             end = datetime.now()
         return end.date() - self.icu_admission_date.date()
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
 
-    admitted = fields.Boolean('Admitted', help="Will be set when the patient \
-        is currently admitted at ICU")
+    admitted = fields.Boolean(
+        'Admitted',
+        help="Will be set when the patient "
+        "is currently admitted at ICU.")
 
     icu_admission_date = fields.DateTime(
         'ICU Admission',
         help="ICU Admission Date", required=True)
     discharged_from_icu = fields.Boolean('Discharged')
     icu_discharge_date = fields.DateTime('Discharge', states={
-            'invisible': Not(Bool(Eval('discharged_from_icu'))),
-            'required': Bool(Eval('discharged_from_icu')),
-            },
+        'invisible': Not(Bool(Eval('discharged_from_icu'))),
+        'required': Bool(Eval('discharged_from_icu')),
+    },
         depends=['discharged_from_icu'])
     icu_stay = fields.Function(fields.TimeDelta('Duration'), 'icu_duration')
 
     mv_history = fields.One2Many(
         'gnuhealth.icu.ventilation',
-        'name', "Mechanical Ventilation History")
+        'admission', "Mechanical Ventilation History")
 
     @classmethod
     def validate(cls, inpatients):
@@ -84,8 +86,8 @@ class InpatientIcu(ModelSQL, ModelView):
         table = self.__class__.__table__()
         cursor.execute(
             *table.select(
-                table.name, where=(
-                    (table.name == self.name.id) &
+                table.registration, where=(
+                    (table.registration == self.registration.id) &
                     (table.admitted))))
         res = cursor.fetchall()
         if len(res) > 1:
@@ -105,12 +107,24 @@ class InpatientIcu(ModelSQL, ModelView):
             res = True
         return res
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class Glasgow(ModelSQL, ModelView):
     'Glasgow Coma Scale'
     __name__ = 'gnuhealth.icu.glasgow'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
 
@@ -127,14 +141,14 @@ class Glasgow(ModelSQL, ModelView):
         ('2', '2 : Opens eyes in response to painful stimuli'),
         ('3', '3 : Opens eyes in response to voice'),
         ('4', '4 : Opens eyes spontaneously'),
-        ], 'Eyes', sort=False)
+    ], 'Eyes', sort=False)
     glasgow_verbal = fields.Selection([
         ('1', '1 : Makes no sounds'),
         ('2', '2 : Incomprehensible sounds'),
         ('3', '3 : Utters inappropriate words'),
         ('4', '4 : Confused, disoriented'),
         ('5', '5 : Oriented, converses normally'),
-        ], 'Verbal', sort=False)
+    ], 'Verbal', sort=False)
     glasgow_motor = fields.Selection([
         ('1', '1 : Makes no movement'),
         ('2', '2 : Extension to painful stimuli - decerebrate response -'),
@@ -143,7 +157,7 @@ class Glasgow(ModelSQL, ModelView):
         ('4', '4 : Flexion / Withdrawal to painful stimuli'),
         ('5', '5 : localizes painful stimuli'),
         ('6', '6 : Obeys commands'),
-        ], 'Motor', sort=False)
+    ], 'Motor', sort=False)
 
     @staticmethod
     def default_glasgow_eyes():
@@ -173,17 +187,36 @@ class Glasgow(ModelSQL, ModelView):
 
     # Return the Glasgow Score with each component
     def get_rec_name(self, name):
-        if self.name:
+        if self.registration:
             res = str(self.glasgow) + ': ' + 'E' + self.glasgow_eyes + ' V' + \
                 self.glasgow_verbal + ' M' + self.glasgow_motor
         return res
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def __setup__(cls):
+        super(Glasgow, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
 
 class ApacheII(ModelSQL, ModelView):
     'Apache II scoring'
     __name__ = 'gnuhealth.icu.apache2'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', required=True)
     score_date = fields.DateTime(
@@ -410,6 +443,18 @@ class ApacheII(ModelSQL, ModelView):
 
         return total
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class MechanicalVentilation(ModelSQL, ModelView):
     'Mechanical Ventilation History'
@@ -426,7 +471,7 @@ class MechanicalVentilation(ModelSQL, ModelView):
 
         return end.date() - start.date()
 
-    name = fields.Many2One(
+    admission = fields.Many2One(
         'gnuhealth.inpatient.icu', 'Patient ICU Admission',
         required=True)
 
@@ -442,10 +487,10 @@ class MechanicalVentilation(ModelSQL, ModelView):
         "ETT - Endotracheal Tube", sort=False)
 
     ett_size = fields.Integer('ETT Size', states={
-            'invisible': Not(Equal(Eval('ventilation'), 'ett'))})
+        'invisible': Not(Equal(Eval('ventilation'), 'ett'))})
 
     tracheostomy_size = fields.Integer('Tracheostomy size', states={
-            'invisible': Not(Equal(Eval('ventilation'), 'tracheostomy'))})
+        'invisible': Not(Equal(Eval('ventilation'), 'tracheostomy'))})
 
     mv_start = fields.DateTime(
         'From', help="Start of Mechanical Ventilation",
@@ -455,7 +500,7 @@ class MechanicalVentilation(ModelSQL, ModelView):
         states={
             'invisible': Bool(Eval('current_mv')),
             'required': Not(Bool(Eval('current_mv'))),
-            },
+        },
         depends=['current_mv'])
     mv_period = fields.Function(fields.TimeDelta('Duration'), 'mv_duration')
     current_mv = fields.Boolean('Current')
@@ -472,10 +517,11 @@ class MechanicalVentilation(ModelSQL, ModelView):
         cursor = Transaction().connection.cursor()
         table = self.__class__.__table__()
         cursor.execute(*table.select(
-                table.name, where=(
-                    (table.name == self.name.id)
-                    & (table.current_mv))))
-        if cursor.fetchone():
+            table.admission, where=(
+                (table.admission == self.admission.id)
+                & (table.current_mv))))
+        res = cursor.fetchall()
+        if len(res) > 1:
             raise PatientAlreadyOnMV(
                 gettext('health_icu.msg_patient_already_on_mv'))
 
@@ -483,12 +529,24 @@ class MechanicalVentilation(ModelSQL, ModelView):
     def default_current_mv():
         return True
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('admission')):
+            table_h.column_rename('name', 'admission')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class ChestDrainageAssessment(ModelSQL, ModelView):
     'Chest Drainage Asessment'
     __name__ = 'gnuhealth.icu.chest_drainage'
 
-    name = fields.Many2One(
+    rounding = fields.Many2One(
         'gnuhealth.patient.rounding', 'Rounding',
         required=True)
     location = fields.Selection([
@@ -506,14 +564,26 @@ class ChestDrainageAssessment(ModelSQL, ModelView):
         'Aspect', sort=False)
     suction = fields.Boolean('Suction')
     suction_pressure = fields.Integer('cm H2O', states={
-            'invisible': Not(Bool(Eval('suction'))),
-            'required': Bool(Eval('suction')),
-            },
+        'invisible': Not(Bool(Eval('suction'))),
+        'required': Bool(Eval('suction')),
+    },
         depends=['suction'])
     oscillation = fields.Boolean('Oscillation')
     air_leak = fields.Boolean('Air Leak')
     fluid_volume = fields.Integer('Volume')
     remarks = fields.Char('Remarks')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to rounding
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('rounding')):
+            table_h.column_rename('name', 'rounding')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class PatientRounding(metaclass=PoolMeta):
@@ -530,7 +600,9 @@ class PatientRounding(metaclass=PoolMeta):
     # Neurological assesment
     gcs = fields.Many2One(
         'gnuhealth.icu.glasgow', 'GCS',
-        domain=[('name', '=', Eval('name'))], depends=['name'], states=STATES)
+        domain=[
+            ('registration', '=', Eval('registration'))],
+        depends=['registration'], states=STATES)
 
     pupil_dilation = fields.Selection([
         ('normal', 'Normal'),
@@ -576,10 +648,10 @@ class PatientRounding(metaclass=PoolMeta):
     peep = fields.Boolean('PEEP', states=STATES)
 
     peep_pressure = fields.Integer('cm H2O', help="Pressure", states={
-            'invisible': Not(Bool(Eval('peep'))),
-            'required': Bool(Eval('peep')),
-            'readonly': Eval('state') == 'done',
-            },
+        'invisible': Not(Bool(Eval('peep'))),
+        'required': Bool(Eval('peep')),
+        'readonly': Eval('state') == 'done',
+    },
         depends=['peep'])
 
     sce = fields.Boolean(
@@ -609,7 +681,7 @@ class PatientRounding(metaclass=PoolMeta):
     # Chest Drainages
     chest_drainages = fields.One2Many(
         'gnuhealth.icu.chest_drainage',
-        'name', "Drainages", states=STATES)
+        'rounding', "Drainages", states=STATES)
 
     # Chest X-Ray
     xray = fields.Binary('Xray', states=STATES)
@@ -619,8 +691,8 @@ class PatientRounding(metaclass=PoolMeta):
     ecg = fields.Many2One(
         'gnuhealth.patient.ecg', 'Inpatient ECG',
         domain=[
-            ('inpatient_registration_code', '=', Eval('name'))],
-        depends=['name'], states=STATES)
+            ('inpatient_registration_code', '=', Eval('registration'))],
+        depends=['registration'], states=STATES)
 
     venous_access = fields.Selection([
         (None, ''),

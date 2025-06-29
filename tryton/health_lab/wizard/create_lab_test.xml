@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -44,10 +44,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="action" ref="patient_lab_test_request"/>
         </record>
 
-        <menuitem parent="health_lab.gnuhealth_laboratory_menu"
-            action="patient_lab_test_request"
-            id="menu_patient_lab_test_request" sequence="10"
-            icon="gnuhealth-execute"/>
+        <menuitem name="Lab: New order"
+                  parent="health_lab.gnuhealth_laboratory_menu"
+                  action="patient_lab_test_request"
+                  id="menu_patient_lab_test_request" sequence="10"
+                  icon="gnuhealth-execute"/>
 
     </data>
 </tryton>

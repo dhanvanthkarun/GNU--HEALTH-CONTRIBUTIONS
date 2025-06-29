@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -11,6 +11,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <notebook>
         <page string="General Info" id="medication_general_info">
             <group id="medication_header" string="Medication">
+                <label name="patient"/>
+                <field name="patient"/>
                 <label name="medicament"/>
                 <field name="medicament"/>
                 <label name="indication"/>

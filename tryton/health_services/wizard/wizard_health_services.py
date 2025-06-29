@@ -1,7 +1,7 @@
-# Copyright (C) 2008-2024 Luis Falcon <lfalcon@gnusolidario.org>
-# Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2025 Luis Falcon <lfalcon@gnusolidario.org>
+# Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -18,7 +18,7 @@ __all__ = ['CreateServiceInvoiceInit', 'CreateServiceInvoice']
 from ..exceptions import (
     ServiceAlreadyInvoiced, NoInvoiceAddress,
     NoPaymentTerm, NoAccountReceivable
-    )
+)
 
 
 class CreateServiceInvoiceInit(ModelView):
@@ -36,7 +36,7 @@ class CreateServiceInvoice(Wizard):
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Create Invoice', 'create_service_invoice',
                    'tryton-ok', True),
-            ])
+        ])
     create_service_invoice = StateTransition()
 
     def transition_create_service_invoice(self):
@@ -63,7 +63,7 @@ class CreateServiceInvoice(Wizard):
             if service.invoice_to:
                 party = service.invoice_to
             else:
-                party = service.patient.name
+                party = service.patient.party
             invoice_data = {}
             invoice_data['description'] = service.desc
             invoice_data['party'] = party.id
@@ -98,7 +98,7 @@ class CreateServiceInvoice(Wizard):
 
             journals = Journal.search([
                 ('type', '=', 'revenue'),
-                ], limit=1)
+            ], limit=1)
 
             if journals:
                 journal, = journals
@@ -151,16 +151,16 @@ class CreateServiceInvoice(Wizard):
                         taxes.append(product_tax_line.id)
 
                     invoice_lines.append(('create', [{
-                            'origin': str(line),
-                            'product': line.product.id,
-                            'description': line.desc,
-                            'quantity': line.qty,
-                            'account': account,
-                            'unit': line.product.default_uom.id,
-                            'unit_price': unit_price,
-                            'sequence': seq,
-                            'taxes': [('add', taxes)],
-                        }]))
+                        'origin': str(line),
+                        'product': line.product.id,
+                        'description': line.desc,
+                        'quantity': line.qty,
+                        'account': account,
+                        'unit': line.product.default_uom.id,
+                        'unit_price': unit_price,
+                        'sequence': seq,
+                        'taxes': [('add', taxes)],
+                    }]))
                 invoice_data['lines'] = invoice_lines
 
             invoices.append(invoice_data)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -15,6 +15,7 @@
 
 from trytond.pool import Pool
 from . import health_surgery
+from . import health
 from . import report
 from . import sequences
 
@@ -26,6 +27,7 @@ def register():
         health_surgery.RCRI,
         health_surgery.Surgery,
         health_surgery.Operation,
+        health.PatientProcedure,
         health_surgery.SurgerySupply,
         health_surgery.PatientData,
         health_surgery.SurgeryTeam,
@@ -37,5 +39,5 @@ def register():
         health_surgery.ORScheduler,
         module='health_surgery', type_='model')
     Pool.register(
-        report.SurgeryReport,
+        report.surgery_report.SurgeryReport,
         module='health_surgery', type_='report')

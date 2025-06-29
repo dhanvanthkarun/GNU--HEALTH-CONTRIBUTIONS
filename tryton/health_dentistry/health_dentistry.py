@@ -34,7 +34,7 @@ TOOTH_STATE = [
     ('M', 'Missing'),
     ('F', 'Filled'),
     ('E', 'For Extraction'),
-    ]
+]
 
 STATE_LEGENDS = {
     '': '      ',
@@ -42,7 +42,7 @@ STATE_LEGENDS = {
     'M': '  X  ',
     'F': '  #  ',
     'E': '  =  '
-    }
+}
 
 TEETH = [
     ('11', '11'), ('12', '12'), ('13', '13'), ('14', '14'),
@@ -57,7 +57,7 @@ TEETH = [
     ('61', '61'), ('62', '62'), ('63', '63'), ('64', '64'), ('65', '65'),
     ('71', '71'), ('72', '72'), ('73', '73'), ('74', '74'), ('75', '75'),
     ('81', '81'), ('82', '82'), ('83', '83'), ('84', '84'), ('85', '85'),
-    ]
+]
 
 TREATMENT_TEETH = TEETH + [(None, '')]
 
@@ -91,10 +91,10 @@ class PatientData (metaclass=PoolMeta):
     def __setup__(cls):
         super(PatientData, cls).__setup__()
         cls._buttons.update({
-                'set_odontogram_wizard': {
-                    'readonly': Eval('deceased'),
-                    },
-                })
+            'set_odontogram_wizard': {
+                'readonly': Eval('deceased'),
+            },
+        })
 
     @classmethod
     def view_attributes(cls):
@@ -103,7 +103,7 @@ class PatientData (metaclass=PoolMeta):
             ('///group[@id="dental_main_info"]/'
                 'group[@id="dental_schema_primary"]',
              'states', {'invisible': ~Eval('use_primary_schema')})
-            ])
+        ])
         return attributes
 
     @staticmethod
@@ -197,7 +197,7 @@ class DentistryTreatment(ModelSQL, ModelView):
     state = fields.Selection([
         ('pending', 'Pending'),
         ('done', 'Done'),
-        ], 'State', readonly=True, sort=False)
+    ], 'State', readonly=True, sort=False)
     state_string = state.translated('state')
 
     @classmethod
@@ -207,14 +207,14 @@ class DentistryTreatment(ModelSQL, ModelView):
         cls._buttons.update({
             'load_procedure': {
                 'readonly': ~Eval('state').in_(['pending']),
-                },
+            },
             'set_odontogram': {
                 'readonly': ~Eval('state').in_(['pending']),
-                    },
+            },
             'end_treatment': {
                 'invisible': Equal(Eval('state'), 'done')
-                },
-            })
+            },
+        })
 
     @classmethod
     @ModelView.button_action('health_dentistry.load_procedure')
@@ -222,7 +222,8 @@ class DentistryTreatment(ModelSQL, ModelView):
         pass
 
     @classmethod
-    @ModelView.button_action('health_dentistry.wizard_set_odontogram_from_treatment')
+    @ModelView.button_action(
+        'health_dentistry.wizard_set_odontogram_from_treatment')
     def set_odontogram(cls, treatments):
         pass
 
@@ -242,7 +243,7 @@ class DentistryTreatment(ModelSQL, ModelView):
     def get_procedures_info(cls, treatments, names):
         result = {
             'procedures_info': {}
-            }
+        }
         for t in treatments:
             data = defaultdict(list)
             info = []
@@ -260,7 +261,7 @@ class DentistryTreatment(ModelSQL, ModelView):
         cls.write(treatments, {
             'state': 'done',
             'signed_by': signing_hp,
-            })
+        })
 
 
 class DentistryProcedure(ModelSQL, ModelView):

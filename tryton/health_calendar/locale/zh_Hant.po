@@ -3,8 +3,8 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date_end:"
-msgid "End Date and Time"
-msgstr ""
+msgid "End"
+msgstr "結束"
 
 msgctxt "field:gnuhealth.appointment,event:"
 msgid "CalDAV Event"
@@ -31,9 +31,10 @@ msgctxt "field:gnuhealth.calendar.create.appointment.start,healthprof:"
 msgid "Health Prof"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,institution:"
 msgid "Institution"
-msgstr ""
+msgstr "機構"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,monday:"
 msgid "Monday"
@@ -43,9 +44,10 @@ msgctxt "field:gnuhealth.calendar.create.appointment.start,saturday:"
 msgid "Saturday"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,specialty:"
 msgid "Specialty"
-msgstr ""
+msgstr "專業"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,sunday:"
 msgid "Sunday"
@@ -71,17 +73,23 @@ msgctxt "field:gnuhealth.calendar.create.appointment.start,wednesday:"
 msgid "Wednesday"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:res.user,calendar:"
 msgid "Calendar"
-msgstr ""
+msgstr "日曆"
 
 msgctxt "field:res.user,use_caldav:"
 msgid "CalDAV"
 msgstr ""
 
+msgctxt "help:gnuhealth.appointment,appointment_date_end:"
+msgid "Appointment end date and time."
+msgstr ""
+
+#, fuzzy
 msgctxt "help:gnuhealth.appointment,event:"
 msgid "Calendar Event"
-msgstr ""
+msgstr "日曆事件"
 
 msgctxt "help:res.user,use_caldav:"
 msgid "The user has a CalDav account"

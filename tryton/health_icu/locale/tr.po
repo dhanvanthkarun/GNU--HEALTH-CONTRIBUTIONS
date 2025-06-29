@@ -48,10 +48,6 @@ msgctxt "field:gnuhealth.icu.apache2,mean_ap:"
 msgid "MAP"
 msgstr ""
 
-msgctxt "field:gnuhealth.icu.apache2,name:"
-msgid "Registration Code"
-msgstr ""
-
 msgctxt "field:gnuhealth.icu.apache2,paco2:"
 msgid "PaCO2"
 msgstr ""
@@ -63,6 +59,11 @@ msgstr ""
 msgctxt "field:gnuhealth.icu.apache2,ph:"
 msgid "pH"
 msgstr ""
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.apache2,registration:"
+msgid "Registration Code"
+msgstr "Uygulama Yolu"
 
 #, fuzzy
 msgctxt "field:gnuhealth.icu.apache2,respiratory_rate:"
@@ -113,10 +114,6 @@ msgctxt "field:gnuhealth.icu.chest_drainage,location:"
 msgid "Location"
 msgstr "Locations"
 
-msgctxt "field:gnuhealth.icu.chest_drainage,name:"
-msgid "Rounding"
-msgstr ""
-
 msgctxt "field:gnuhealth.icu.chest_drainage,oscillation:"
 msgid "Oscillation"
 msgstr ""
@@ -125,6 +122,10 @@ msgstr ""
 msgctxt "field:gnuhealth.icu.chest_drainage,remarks:"
 msgid "Remarks"
 msgstr "Açıklamalar"
+
+msgctxt "field:gnuhealth.icu.chest_drainage,rounding:"
+msgid "Rounding"
+msgstr ""
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction:"
 msgid "Suction"
@@ -156,8 +157,13 @@ msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
 msgstr ""
 
-msgctxt "field:gnuhealth.icu.glasgow,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.icu.glasgow,registration:"
 msgid "Registration Code"
+msgstr "Uygulama Yolu"
+
+msgctxt "field:gnuhealth.icu.ventilation,admission:"
+msgid "Patient ICU Admission"
 msgstr ""
 
 msgctxt "field:gnuhealth.icu.ventilation,current_mv:"
@@ -181,10 +187,6 @@ msgstr ""
 msgctxt "field:gnuhealth.icu.ventilation,mv_start:"
 msgid "From"
 msgstr "İtibaren"
-
-msgctxt "field:gnuhealth.icu.ventilation,name:"
-msgid "Patient ICU Admission"
-msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.icu.ventilation,remarks:"
@@ -224,9 +226,10 @@ msgctxt "field:gnuhealth.inpatient.icu,mv_history:"
 msgid "Mechanical Ventilation History"
 msgstr ""
 
-msgctxt "field:gnuhealth.inpatient.icu,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.icu,registration:"
 msgid "Registration Code"
-msgstr ""
+msgstr "Uygulama Yolu"
 
 msgctxt "field:gnuhealth.inpatient.registration,icu:"
 msgid "ICU"
@@ -337,9 +340,10 @@ msgctxt "field:gnuhealth.patient.rounding,pupillary_reactivity:"
 msgid "Pupillary Reactivity"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,respiration_type:"
 msgid "Respiration"
-msgstr ""
+msgstr "Solunum"
 
 msgctxt "field:gnuhealth.patient.rounding,right_pupil:"
 msgid "R"
@@ -445,7 +449,7 @@ msgid ""
 msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.icu,admitted:"
-msgid "Will be set when the patient         is currently admitted at ICU"
+msgid "Will be set when the patient is currently admitted at ICU."
 msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.icu,icu_admission_date:"

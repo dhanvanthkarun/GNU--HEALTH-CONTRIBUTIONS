@@ -1,8 +1,8 @@
-# Copyright (C) 2008-2024 Luis Falcon <lfalcon@gnusolidario.org>
-# Copyright (C) 2011-2024 GNU Solidario <health@gnusolidario.org>
+# Copyright (C) 2008-2025 Luis Falcon <lfalcon@gnusolidario.org>
+# Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
 # Copyright (C) 2013  Sebastian Marro <smarro@gnusolidario.org>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2013 Sebastian Marro <smarro@thymbra.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -49,12 +49,15 @@ class CreateSurgeryStockMove(Wizard):
             if surgery.moves:
                 raise StockMoveExists(
                     gettext('health_stock_surgery.msg_stock_move_exists')
-                    )
+                )
 
             from_location = surgery.location
             if from_location.type == 'warehouse':
                 from_location = from_location.storage_location
-            to_location = surgery.patient.name.customer_location
+            to_location = surgery.patient.party.customer_location
+
+            if surgery.institution:
+                currency = surgery.institution.party.currency
 
             for line in surgery.supplies:
                 move = StockMove()
@@ -67,7 +70,8 @@ class CreateSurgeryStockMove(Wizard):
 
                 # Use the actual amount of supply quantity used
                 move.quantity = int(line.qty_used)
-                move.uom = line.supply.default_uom
+                move.unit = line.supply.default_uom
+                move.currency = currency
                 moves.append(move)
         StockMove.save(moves)
         StockMove.do(moves)

@@ -46,10 +46,6 @@ msgctxt "field:gnuhealth.icu.apache2,mean_ap:"
 msgid "MAP"
 msgstr "MAP"
 
-msgctxt "field:gnuhealth.icu.apache2,name:"
-msgid "Registration Code"
-msgstr "Código de registro"
-
 msgctxt "field:gnuhealth.icu.apache2,paco2:"
 msgid "PaCO2"
 msgstr "PaCO2"
@@ -61,6 +57,11 @@ msgstr "PaO2"
 msgctxt "field:gnuhealth.icu.apache2,ph:"
 msgid "pH"
 msgstr "pH"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.apache2,registration:"
+msgid "Registration Code"
+msgstr "Código de registro"
 
 msgctxt "field:gnuhealth.icu.apache2,respiratory_rate:"
 msgid "Respiratory Rate"
@@ -106,10 +107,6 @@ msgctxt "field:gnuhealth.icu.chest_drainage,location:"
 msgid "Location"
 msgstr "Localização"
 
-msgctxt "field:gnuhealth.icu.chest_drainage,name:"
-msgid "Rounding"
-msgstr "Ciclos"
-
 msgctxt "field:gnuhealth.icu.chest_drainage,oscillation:"
 msgid "Oscillation"
 msgstr "Oscilação"
@@ -117,6 +114,11 @@ msgstr "Oscilação"
 msgctxt "field:gnuhealth.icu.chest_drainage,remarks:"
 msgid "Remarks"
 msgstr "Observação"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.chest_drainage,rounding:"
+msgid "Rounding"
+msgstr "Ciclos"
 
 msgctxt "field:gnuhealth.icu.chest_drainage,suction:"
 msgid "Suction"
@@ -146,9 +148,15 @@ msgctxt "field:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "Verbal"
 msgstr "Verbal"
 
-msgctxt "field:gnuhealth.icu.glasgow,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.icu.glasgow,registration:"
 msgid "Registration Code"
 msgstr "Código de registro"
+
+#, fuzzy
+msgctxt "field:gnuhealth.icu.ventilation,admission:"
+msgid "Patient ICU Admission"
+msgstr "Admissão de Paciente na UTI"
 
 msgctxt "field:gnuhealth.icu.ventilation,current_mv:"
 msgid "Current"
@@ -169,10 +177,6 @@ msgstr "Duração"
 msgctxt "field:gnuhealth.icu.ventilation,mv_start:"
 msgid "From"
 msgstr "De"
-
-msgctxt "field:gnuhealth.icu.ventilation,name:"
-msgid "Patient ICU Admission"
-msgstr "Admissão de Paciente na UTI"
 
 msgctxt "field:gnuhealth.icu.ventilation,remarks:"
 msgid "Remarks"
@@ -210,7 +214,8 @@ msgctxt "field:gnuhealth.inpatient.icu,mv_history:"
 msgid "Mechanical Ventilation History"
 msgstr "Histórico da Ventilação Mecânica"
 
-msgctxt "field:gnuhealth.inpatient.icu,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.inpatient.icu,registration:"
 msgid "Registration Code"
 msgstr "Código de registro"
 
@@ -436,7 +441,7 @@ msgid ""
 msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.icu,admitted:"
-msgid "Will be set when the patient         is currently admitted at ICU"
+msgid "Will be set when the patient is currently admitted at ICU."
 msgstr ""
 
 msgctxt "help:gnuhealth.inpatient.icu,icu_admission_date:"
@@ -562,11 +567,6 @@ msgctxt "model:ir.ui.menu,name:menu_gnuhealth_inpatient_icu_list"
 msgid "Patient ICU Info"
 msgstr "Informação paciente UTI"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.icu.apache2,hospital_admission_type:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.icu.apache2,hospital_admission_type:"
 msgid "Medical or emergency postoperative"
 msgstr ""
@@ -574,11 +574,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.icu.apache2,hospital_admission_type:"
 msgid "elective postoperative"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.icu.chest_drainage,fluid_aspect:"
-msgid ""
-msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.icu.chest_drainage,fluid_aspect:"
 msgid "Bloody"
@@ -595,11 +590,6 @@ msgstr "Purulento"
 msgctxt "selection:gnuhealth.icu.chest_drainage,fluid_aspect:"
 msgid "Serous"
 msgstr "Seroso"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.icu.chest_drainage,location:"
-msgid ""
-msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.icu.chest_drainage,location:"
 msgid "Left Pleura"
@@ -674,11 +664,6 @@ msgctxt "selection:gnuhealth.icu.glasgow,glasgow_verbal:"
 msgid "5 : Oriented, converses normally"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
 msgid "ETT"
 msgstr "ETT"
@@ -694,11 +679,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.icu.ventilation,ventilation:"
 msgid "Tracheostomy"
 msgstr "Traqueostomia"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,bowel_sounds:"
-msgid ""
-msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.rounding,bowel_sounds:"
 msgid "Absent"
@@ -716,11 +696,6 @@ msgctxt "selection:gnuhealth.patient.rounding,bowel_sounds:"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,chest_expansion:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.patient.rounding,chest_expansion:"
 msgid "Asymmetrical"
 msgstr ""
@@ -728,11 +703,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.rounding,chest_expansion:"
 msgid "Symmetrical"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,edema:"
-msgid ""
-msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.rounding,edema:"
 msgid "Anasarca"
@@ -758,11 +728,6 @@ msgctxt "selection:gnuhealth.patient.rounding,pupil_dilation:"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,pupillary_reactivity:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.patient.rounding,pupillary_reactivity:"
 msgid "Brisk"
 msgstr ""
@@ -774,11 +739,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.rounding,pupillary_reactivity:"
 msgid "Sluggish"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,respiration_type:"
-msgid ""
-msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.rounding,respiration_type:"
 msgid "Deep"
@@ -800,11 +760,6 @@ msgctxt "selection:gnuhealth.patient.rounding,respiration_type:"
 msgid "Shallow"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,stools:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.patient.rounding,stools:"
 msgid "Constipation"
 msgstr "Constipação"
@@ -821,11 +776,6 @@ msgctxt "selection:gnuhealth.patient.rounding,stools:"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,trachea_alignment:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.patient.rounding,trachea_alignment:"
 msgid "Deviated left"
 msgstr ""
@@ -838,11 +788,6 @@ msgctxt "selection:gnuhealth.patient.rounding,trachea_alignment:"
 msgid "Midline"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,venous_access:"
-msgid ""
-msgstr "Português (Brasil)"
-
 msgctxt "selection:gnuhealth.patient.rounding,venous_access:"
 msgid "Central catheter"
 msgstr ""
@@ -854,11 +799,6 @@ msgstr "Nenhum"
 msgctxt "selection:gnuhealth.patient.rounding,venous_access:"
 msgid "Peripheral"
 msgstr "Periférico"
-
-#, fuzzy
-msgctxt "selection:gnuhealth.patient.rounding,vomiting:"
-msgid ""
-msgstr "Português (Brasil)"
 
 msgctxt "selection:gnuhealth.patient.rounding,vomiting:"
 msgid "Hematemesis"
@@ -897,9 +837,10 @@ msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Blood and Skin"
 msgstr ""
 
+#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Cardiovascular"
-msgstr ""
+msgstr "Cardiovascular"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Chest Expansion"

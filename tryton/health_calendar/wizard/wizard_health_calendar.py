@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2014 Sebastian Marro <smarro@thymbra.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -8,7 +8,7 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                       HEALTH CALENDAR PACKAGE                         # 
+#                       HEALTH CALENDAR PACKAGE                         #
 #               wizard_health_calendar: main wizard file                #
 #########################################################################
 
@@ -29,7 +29,7 @@ from ..exceptions import (
     NoCompanyTimezone,
     EndDateBeforeStart,
     PeriodTooLong
-    )
+)
 
 
 class CreateAppointmentStart(ModelView):
@@ -80,7 +80,7 @@ class CreateAppointment(Wizard):
         'health_calendar.create_appointment_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Create', 'create_', 'tryton-ok', default=True),
-            ])
+        ])
     create_ = StateTransition()
     open_ = StateAction('health.action_gnuhealth_appointment_view')
 
@@ -98,7 +98,7 @@ class CreateAppointment(Wizard):
             else:
                 raise NoCompanyTimezone(
                     gettext('health_calendar.no_company_timezone')
-                        )
+                )
 
         appointments = []
 
@@ -110,12 +110,12 @@ class CreateAppointment(Wizard):
             if (self.start.date_end < self.start.date_start):
                 raise EndDateBeforeStart(
                     gettext('health_calendar.msg_end_before_start')
-                    )
+                )
 
             if (day_count > 31):
                 raise PeriodTooLong(
                     gettext('health_calendar.msg_period_too_long')
-                    )
+                )
 
         for single_date in (
             self.start.date_start + timedelta(n)
@@ -145,7 +145,7 @@ class CreateAppointment(Wizard):
                         'appointment_date_end': dt +
                         timedelta(minutes=self.start.appointment_minutes),
                         'state': 'free',
-                        }
+                    }
                     appointments.append(appointment)
                     dt += timedelta(minutes=self.start.appointment_minutes)
         if appointments:
@@ -159,7 +159,7 @@ class CreateAppointment(Wizard):
                 datetime.combine(self.start.date_start, time())),
             ('appointment_date', '<=',
                 datetime.combine(self.start.date_end, time())),
-            ]
+        ]
         action['pyson_domain'] = PYSONEncoder().encode(action['pyson_domain'])
         action['name'] += ' - %s, %s' % (self.start.healthprof.name.lastname,
                                          self.start.healthprof.name.name)

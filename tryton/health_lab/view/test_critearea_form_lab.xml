@@ -1,33 +1,44 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <form>
+  <group col="8" colspan="4" id="header">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="code"/>
+    <field name="code"/>
     <label name="warning"/>
     <field name="warning"/>
     <label name="excluded"/>
     <field name="excluded"/>
-    <label name="code"/>
-    <field name="code"/>
-    <label name="name"/>
-    <field name="name"/>
+    <label name="test_method"/>
+    <field name="test_method"/>
+  </group>
+  <group colspan="4" col="2" id="text_result_and_remarks">
+    <label name="result_text" xalign="0.0"/>
+    <label name="remarks" xalign="0.0"/>
+    <field name="result_text"/>
+    <field name="remarks"/>
+  </group>
+  <group col="6" colspan="4" id="numeric_result">
     <label name="result"/>
     <field name="result"/>
     <label name="units"/>
     <field name="units"/>
-    <label name="result_text"/>
-    <field name="result_text"/>
+    <label name="to_integer"/>
+    <field name="to_integer"/>
     <label name="lower_limit"/>
     <field name="lower_limit"/>
     <label name="upper_limit"/>
     <field name="upper_limit"/>
-    <label name="normal_range"/>
-    <field name="normal_range"/>
-    <label name="remarks"/>
-    <field name="remarks"/>
+    <label name="limits_verified"/>
+    <field name="limits_verified"/>
+    <field name="normal_range" colspan="10"/>
+  </group>
 </form>

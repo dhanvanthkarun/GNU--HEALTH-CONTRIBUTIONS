@@ -37,9 +37,10 @@ msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "Ημερομηνία"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Επαγγ. Υγείας"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
@@ -98,12 +99,16 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "Ασθενής"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr ""
 
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "Ημερομηνία αιτήματος"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
@@ -127,9 +132,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "Ημερομηνία"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Επαγγ. Υγείας"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
@@ -512,6 +518,18 @@ msgstr "Πρόχειρο/ προσχέδιο"
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr "Ζητήθηκε"
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr ""
 
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Generate Results"

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -10,8 +10,7 @@
 #                           HEALTH package                              #
 #              wizard_update_patient_disease_info.py: wizard            #
 #########################################################################
-from trytond.wizard import Wizard, StateView, Button, StateAction, StateTransition
-from trytond.model import ModelView, fields
+from trytond.wizard import Wizard, StateView, Button, StateTransition
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 
@@ -45,7 +44,7 @@ class UpdatePatientDiseaseInfo(Wizard):
             [Transaction().context.get('active_id')])[0]
 
         existing_disease = Disease.search(
-            [('name', '=', evaluation.patient),
+            [('patient', '=', evaluation.patient),
              ('pathology', '=', evaluation.diagnosis),
              ('diagnosed_date', '=', evaluation.evaluation_endtime.date())])
 
@@ -64,15 +63,19 @@ class UpdatePatientDiseaseInfo(Wizard):
         evaluation = Evaluation.browse(
             [Transaction().context.get('active_id')])[0]
 
-        return {'name': evaluation.patient and evaluation.patient.id,
-                'age': evaluation.patient and parse_compute_age(evaluation.patient.age)[0],
-                'age_str': evaluation.patient and evaluation.patient.age,
-                'pathology': evaluation.diagnosis and evaluation.diagnosis.id,
-                'institution': evaluation.institution and evaluation.institution.id,
+        return {'patient': (evaluation.patient
+                            and evaluation.patient.id),
+                'age': ((evaluation.patient and evaluation.patient.age)
+                        and parse_compute_age(evaluation.patient.age)[0]),
+                'age_str': (evaluation.patient
+                            and evaluation.patient.age),
+                'pathology': (evaluation.diagnosis
+                              and evaluation.diagnosis.id),
+                'institution': (evaluation.institution
+                                and evaluation.institution.id),
                 'diagnosed_date': evaluation.evaluation_endtime}
 
     def transition_save(self):
-        pool = Pool()
         Disease = Pool().get('gnuhealth.patient.disease')
         Disease.save([self.update_disease])
         return 'end'

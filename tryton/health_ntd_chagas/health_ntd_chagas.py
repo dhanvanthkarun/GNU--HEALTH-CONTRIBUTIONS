@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -37,7 +37,7 @@ class ChagasDUSurvey(ModelSQL, ModelView):
         ('unchanged', 'Unchanged'),
         ('better', 'Improved'),
         ('worse', 'Worsen'),
-        ], 'Status',
+    ], 'Status',
         help="DU status compared to last visit", required=True, sort=False)
 
     # Findings of Triatomines in the DU
@@ -50,7 +50,7 @@ class ChagasDUSurvey(ModelSQL, ModelView):
         ('r_prolixus', 'R. prolixus'),
         ('t_dimidiata', 'T. dimidiata'),
         ('p_megistus', 'P. megistus'),
-        ], 'Vector', help="Vector", sort=False)
+    ], 'Vector', help="Vector", sort=False)
 
     nymphs = fields.Boolean(
         'Nymphs', "Check this box if triatomine nymphs were found")
@@ -123,3 +123,10 @@ class ChagasDUSurvey(ModelSQL, ModelView):
             if not values.get('name'):
                 values['name'] = cls.generate_code()
         return super(ChagasDUSurvey, cls).create(vlist)
+
+    @classmethod
+    def __setup__(cls):
+        super(ChagasDUSurvey, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None

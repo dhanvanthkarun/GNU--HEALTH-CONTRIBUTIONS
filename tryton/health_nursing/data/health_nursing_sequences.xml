@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <tryton>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!-- Sequences for ambulatory_care -->
         <record id="seq_type_gnuhealth_ambulatory_care" model="ir.sequence.type">
@@ -19,17 +19,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="sequence_type" ref="seq_type_gnuhealth_ambulatory_care"></field>
             <field name="prefix">AC ${year}/</field>
             <field name="padding">3</field>
-        </record>
-
-        <!-- Sequences for patient_rounding -->
-        <record id="seq_type_gnuhealth_patient_rounding" model="ir.sequence.type">
-            <field name="name">Patient Rounding</field>
-        </record>
-        <record id="seq_gnuhealth_patient_rounding" model="ir.sequence">
-            <field name="name">Patient Rounding</field>
-            <field name="sequence_type" ref="seq_type_gnuhealth_patient_rounding"></field>
-            <field name="prefix">ROUND ${year}/</field>
-            <field name="padding">4</field>
         </record>
 
     </data>

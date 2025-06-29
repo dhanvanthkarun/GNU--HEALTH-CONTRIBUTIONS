@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -32,10 +32,10 @@ class CheckImmunizationStatus(Wizard):
     start = StateView(
         'gnuhealth.check_immunization_status.init',
         'health.view_check_immunization_status', [
-         Button('Cancel', 'end', 'tryton-cancel'),
-         Button('Immunization Status', 'check_immunization_status',
-                'tryton-ok', True),
-            ])
+            Button('Cancel', 'end', 'tryton-cancel'),
+            Button('Immunization Status', 'check_immunization_status',
+                   'tryton-ok', True),
+        ])
     check_immunization_status = StateAction(
         'health.report_immunization_status')
 
@@ -47,7 +47,7 @@ class CheckImmunizationStatus(Wizard):
         return {
             'patient_id': Transaction().context.get('active_id'),
             'immunization_schedule_id': self.start.immunization_schedule.id
-            }
+        }
 
     def transition_check_immunization_status(self):
         return 'end'

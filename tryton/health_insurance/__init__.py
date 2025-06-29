@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #########################################################################
@@ -21,6 +21,7 @@ def register():
         health_insurance.InsurancePlanProductPolicy,
         health_insurance.InsurancePlan,
         health_insurance.HealthService,
+        health_insurance.PatientProcedure,
         module='health_insurance', type_='model')
     Pool.register(
         wizard.wizard_health_insurance.CreateServiceInvoice,

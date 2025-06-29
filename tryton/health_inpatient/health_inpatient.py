@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -31,7 +31,7 @@ from .exceptions import (
     DischargeReasonNeeded, DischargeBeforeAdmission,
     BedIsNotAvailable, NeedTimeZone,
     AdmissionMustBeToday, SpecialMealNeeds
-    )
+)
 
 
 __all__ = [
@@ -39,7 +39,8 @@ __all__ = [
     'BedTransfer', 'Appointment', 'PatientEvaluation', 'PatientData',
     'InpatientMedication', 'InpatientMedicationAdminTimes',
     'InpatientMedicationLog', 'InpatientDiet', 'InpatientMeal',
-    'InpatientMealOrder', 'InpatientMealOrderItem', 'ECG']
+    'InpatientMealOrder', 'InpatientMealOrderItem', 'ECG',
+    'PatientRounding', 'RoundingProcedure']
 
 # Therapeutic Diet types
 
@@ -60,7 +61,7 @@ class DietTherapeutic (ModelSQL, ModelView):
         cls._sql_constraints = [
             ('code_unique', Unique(t, t.code),
                 'The Diet code already exists'),
-            ]
+        ]
 
 
 class InpatientRegistration(ModelSQL, ModelView):
@@ -71,10 +72,10 @@ class InpatientRegistration(ModelSQL, ModelView):
         Eval('state') == 'done',
         Eval('state') == 'finished')}
 
-    name = fields.Char('Registration Code', readonly=True, select=True)
+    name = fields.Char('Registration Code', readonly=True)
     patient = fields.Many2One(
         'gnuhealth.patient', 'Patient',
-        required=True, select=True, states=STATES)
+        required=True, states=STATES)
     admission_type = fields.Selection([
         (None, ''),
         ('routine', 'Routine'),
@@ -82,23 +83,22 @@ class InpatientRegistration(ModelSQL, ModelView):
         ('elective', 'Elective'),
         ('urgent', 'Urgent'),
         ('emergency', 'Emergency'),
-        ], 'Admission type', required=True, select=True, states=STATES)
+    ], 'Admission type', required=True, states=STATES)
     hospitalization_date = fields.DateTime(
         'Hospitalization date',
-        required=True, select=True, states=STATES)
+        required=True, states=STATES)
     discharge_date = fields.DateTime(
         'Expected Discharge Date', required=True,
         states=STATES)
     attending_physician = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Attending Physician',  states=STATES)
+        'Attending Physician', states=STATES)
     operating_physician = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Operating Physician',  states=STATES)
+        'Operating Physician', states=STATES)
     admission_reason = fields.Many2One(
         'gnuhealth.pathology',
-        'Reason for Admission', help="Reason for Admission", states=STATES,
-        select=True)
+        'Reason for Admission', help="Reason for Admission", states=STATES)
     bed = fields.Many2One(
         'gnuhealth.hospital.bed', 'Hospital Bed',
         states={
@@ -107,15 +107,15 @@ class InpatientRegistration(ModelSQL, ModelView):
                 Eval('state') == 'done',
                 Eval('state') == 'finished',
                 Bool(Eval('name')),
-                        )
-            },
+            )
+        },
         depends=['name'])
     nursing_plan = fields.Text('Nursing Plan', states=STATES)
     medications = fields.One2Many(
-        'gnuhealth.inpatient.medication', 'name',
+        'gnuhealth.inpatient.medication', 'registration',
         'Medications', states=STATES)
     therapeutic_diets = fields.One2Many(
-        'gnuhealth.inpatient.diet', 'name',
+        'gnuhealth.inpatient.diet', 'registration',
         'Meals / Diet Program', states=STATES)
 
     nutrition_notes = fields.Text(
@@ -131,10 +131,10 @@ class InpatientRegistration(ModelSQL, ModelView):
         ('hospitalized', 'hospitalized'),
         ('done', 'Discharged - needs cleaning'),
         ('finished', 'Finished'),
-        ), 'Status', select=True, readonly=True)
+    ), 'Status', readonly=True)
 
     bed_transfers = fields.One2Many(
-        'gnuhealth.bed.transfer', 'name',
+        'gnuhealth.bed.transfer', 'registration',
         'Transfer History', readonly=True)
 
     discharged_by = fields.Many2One(
@@ -169,13 +169,13 @@ class InpatientRegistration(ModelSQL, ModelView):
         return get_institution()
 
     def get_patient_puid(self, name):
-        return self.patient.name.ref
+        return self.patient.party.ref
 
     @classmethod
     def search_patient_puid(cls, name, clause):
         res = []
         value = clause[2]
-        res.append(('patient.name.ref', clause[1], value))
+        res.append(('patient.party.ref', clause[1], value))
         return res
 
     @classmethod
@@ -185,27 +185,27 @@ class InpatientRegistration(ModelSQL, ModelView):
         cls._sql_constraints = [
             ('name_unique', Unique(t, t.name),
                 'The Registration code already exists'),
-            ]
+        ]
 
         cls._buttons.update({
-                'confirmed': {
-                    'invisible': And(
-                        Not(Equal(Eval('state'), 'free')),
-                        Not(Equal(Eval('state'), 'cancelled'))),
-                    },
-                'cancel': {
-                    'invisible': Not(Equal(Eval('state'), 'confirmed')),
-                    },
-                'admission': {
-                    'invisible': Not(Equal(Eval('state'), 'confirmed')),
-                    },
-                'discharge': {
-                    'invisible': Not(Equal(Eval('state'), 'hospitalized')),
-                    },
-                'bedclean': {
-                    'invisible': Not(Equal(Eval('state'), 'done')),
-                    },
-                })
+            'confirmed': {
+                'invisible': And(
+                    Not(Equal(Eval('state'), 'free')),
+                    Not(Equal(Eval('state'), 'cancelled'))),
+            },
+            'cancel': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed')),
+            },
+            'admission': {
+                'invisible': Not(Equal(Eval('state'), 'confirmed')),
+            },
+            'discharge': {
+                'invisible': Not(Equal(Eval('state'), 'hospitalized')),
+            },
+            'bedclean': {
+                'invisible': Not(Equal(Eval('state'), 'done')),
+            },
+        })
 
     # Method to check for availability and make the hospital bed reservation
     # Checks that there are not overlapping dates and status of the bed / room
@@ -225,23 +225,23 @@ class InpatientRegistration(ModelSQL, ModelView):
                 raise DischargeBeforeAdmission(
                     gettext('health_inpatient.msg_discharge_befor_admission'))
             cursor.execute(*table.select(
-                    table.id,
-                    where=((
-                            (table.hospitalization_date <=
-                             registration.hospitalization_date) &
-                            (table.discharge_date >=
-                             registration.hospitalization_date)
-                            ) |
-                           ((table.hospitalization_date
-                            <= registration.discharge_date)
-                            & (table.discharge_date
-                                >= registration.discharge_date)) |
-                           ((table.hospitalization_date
-                            >= registration.hospitalization_date)
-                            & (table.discharge_date
-                                <= registration.discharge_date)))
-                    & table.state.in_(['confirmed', 'hospitalized', 'done'])
-                    & (table.bed == registration.bed.id)))
+                table.id,
+                where=((
+                    (table.hospitalization_date <=
+                     registration.hospitalization_date) &
+                    (table.discharge_date >=
+                     registration.hospitalization_date)
+                ) |
+                    ((table.hospitalization_date
+                      <= registration.discharge_date)
+                        & (table.discharge_date
+                           >= registration.discharge_date)) |
+                    ((table.hospitalization_date
+                      >= registration.hospitalization_date)
+                     & (table.discharge_date
+                        <= registration.discharge_date)))
+                & table.state.in_(['confirmed', 'hospitalized', 'done'])
+                & (table.bed == registration.bed.id)))
 
             if cursor.fetchone():
                 raise BedIsNotAvailable(
@@ -263,7 +263,7 @@ class InpatientRegistration(ModelSQL, ModelView):
                         'msg_no_associated_health_professional'))
 
         cls.write(registrations, {
-                    'state': 'done', 'discharged_by': signing_hp})
+            'state': 'done', 'discharged_by': signing_hp})
 
         Bed.write([registration_id.bed], {'state': 'to_clean'})
 
@@ -379,7 +379,7 @@ class BedTransfer(ModelSQL, ModelView):
     'Bed transfers'
     __name__ = 'gnuhealth.bed.transfer'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code')
     transfer_date = fields.DateTime('Date')
@@ -387,13 +387,26 @@ class BedTransfer(ModelSQL, ModelView):
     bed_to = fields.Many2One('gnuhealth.hospital.bed', 'To')
     reason = fields.Char('Reason')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class Appointment(ModelSQL, ModelView):
     __name__ = 'gnuhealth.appointment'
 
     inpatient_registration_code = fields.Many2One(
-        'gnuhealth.inpatient.registration', 'Inpatient Registration',
-        help="Enter the patient hospitalization code")
+        'gnuhealth.inpatient.registration', 'Inpatient',
+        help="Inpatient Registration, "
+        "please enter the patient hospitalization code.")
 
 
 class PatientEvaluation(ModelSQL, ModelView):
@@ -401,15 +414,17 @@ class PatientEvaluation(ModelSQL, ModelView):
 
     inpatient_registration_code = fields.Many2One(
         'gnuhealth.inpatient.registration', 'IPC',
-        help="Enter the patient hospitalization code")
+        help="Inpatient Code, "
+        "please enter the patient hospitalization code")
 
 
 class ECG(ModelSQL, ModelView):
     __name__ = 'gnuhealth.patient.ecg'
 
     inpatient_registration_code = fields.Many2One(
-        'gnuhealth.inpatient.registration', 'Inpatient Registration',
-        help="Enter the patient hospitalization code")
+        'gnuhealth.inpatient.registration', 'Inpatient',
+        help="Inpatient Registration, "
+        "please enter the patient hospitalization code")
 
 
 class PatientData(ModelSQL, ModelView):
@@ -479,7 +494,7 @@ class InpatientMedication (ModelSQL, ModelView):
     'Inpatient Medication'
     __name__ = 'gnuhealth.inpatient.medication'
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code')
     medicament = fields.Many2One(
@@ -513,9 +528,9 @@ class InpatientMedication (ModelSQL, ModelView):
         help='Common / standard dosage frequency for this medicament')
     admin_times = fields.One2Many(
         'gnuhealth.inpatient.medication.admin_time',
-        'name', "Admin times")
+        'medication', "Admin times")
     log_history = fields.One2Many(
-        'gnuhealth.inpatient.medication.log', 'name',
+        'gnuhealth.inpatient.medication.log', 'medication',
         "Log History")
     frequency = fields.Integer(
         'Frequency',
@@ -529,7 +544,7 @@ class InpatientMedication (ModelSQL, ModelView):
         ('days', 'days'),
         ('weeks', 'weeks'),
         ('wr', 'when required'),
-        ], 'unit', select=True, sort=False)
+    ], 'unit', sort=False)
     frequency_prn = fields.Boolean('PRN', help='Use it as needed, pro re nata')
 
     is_active = fields.Boolean(
@@ -542,7 +557,7 @@ class InpatientMedication (ModelSQL, ModelView):
         states={
             'invisible': Not(Bool(Eval('discontinued'))),
             'required': Bool(Eval('discontinued')),
-            },
+        },
         depends=['discontinued'],
         help='Short description for discontinuing the treatment')
     adverse_reaction = fields.Text(
@@ -568,12 +583,25 @@ class InpatientMedication (ModelSQL, ModelView):
     def default_is_active():
         return True
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMedicationAdminTimes (ModelSQL, ModelView):
     'Inpatient Medication Admin Times'
     __name__ = "gnuhealth.inpatient.medication.admin_time"
 
-    name = fields.Many2One('gnuhealth.inpatient.medication', 'Medication')
+    medication = fields.Many2One(
+        'gnuhealth.inpatient.medication', 'Medication')
     admin_time = fields.Time("Time")
     dose = fields.Float(
         'Dose',
@@ -585,16 +613,29 @@ class InpatientMedicationAdminTimes (ModelSQL, ModelView):
         'Remarks',
         help='specific remarks for this dose')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('medication')):
+            table_h.column_rename('name', 'medication')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMedicationLog (ModelSQL, ModelView):
     'Inpatient Medication Log History'
     __name__ = "gnuhealth.inpatient.medication.log"
 
-    name = fields.Many2One('gnuhealth.inpatient.medication', 'Medication')
+    medication = fields.Many2One(
+        'gnuhealth.inpatient.medication', 'Medication')
     admin_time = fields.DateTime("Date", readonly=True)
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional', readonly=True)
+        'Health Prof', readonly=True)
     dose = fields.Float(
         'Dose',
         help='Amount of medication (eg, 250 mg) per dose')
@@ -624,12 +665,31 @@ class InpatientMedicationLog (ModelSQL, ModelView):
     def default_admin_time():
         return datetime.now()
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to medication
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('medication')):
+            table_h.column_rename('name', 'medication')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def __setup__(cls):
+        super(InpatientMedicationLog, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
 
 class InpatientDiet (ModelSQL, ModelView):
     'Inpatient Diet'
     __name__ = "gnuhealth.inpatient.diet"
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code')
     diet = fields.Many2One('gnuhealth.diet.therapeutic', 'Diet', required=True)
@@ -637,14 +697,26 @@ class InpatientDiet (ModelSQL, ModelView):
         'Remarks / Directions',
         help='specific remarks for this diet / patient')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMeal (ModelSQL, ModelView):
     'Inpatient Meal'
     __name__ = "gnuhealth.inpatient.meal"
 
-    name = fields.Many2One(
-        'product.product', 'Food', required=True,
-        help='Food')
+    meal = fields.Many2One(
+        'product.product', 'Meal', required=True,
+        help='Meal')
 
     diet_therapeutic = fields.Many2One(
         'gnuhealth.diet.therapeutic',
@@ -663,27 +735,51 @@ class InpatientMeal (ModelSQL, ModelView):
         return get_institution()
 
     def get_rec_name(self, name):
-        if self.name:
-            return self.name.name
+        if self.meal:
+            return self.meal.name
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to meal
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('meal')):
+            table_h.column_rename('name', 'meal')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
 
 class InpatientMealOrderItem (ModelSQL, ModelView):
     'Inpatient Meal Item'
     __name__ = "gnuhealth.inpatient.meal.order.item"
 
-    name = fields.Many2One(
+    meal_order = fields.Many2One(
         'gnuhealth.inpatient.meal.order',
         'Meal Order')
 
     meal = fields.Many2One('gnuhealth.inpatient.meal', 'Meal')
     remarks = fields.Char('Remarks')
 
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to meal_order
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('meal_order')):
+            table_h.column_rename('name', 'meal_order')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
 
 class InpatientMealOrder (ModelSQL, ModelView):
     'Inpatient Meal Order'
     __name__ = "gnuhealth.inpatient.meal.order"
 
-    name = fields.Many2One(
+    registration = fields.Many2One(
         'gnuhealth.inpatient.registration',
         'Registration Code', domain=[('state', '=', 'hospitalized')],
         required=True)
@@ -695,17 +791,17 @@ class InpatientMealOrder (ModelSQL, ModelView):
         ('dinner', 'Dinner'),
         ('snack', 'Snack'),
         ('special', 'Special order'),
-        ), 'Meal time', required=True, sort=False)
+    ), 'Meal time', required=True, sort=False)
 
     meal_item = fields.One2Many(
-        'gnuhealth.inpatient.meal.order.item', 'name',
+        'gnuhealth.inpatient.meal.order.item', 'meal_order',
         'Items')
 
     meal_order = fields.Char('Order', readonly=True)
 
     health_professional = fields.Many2One(
         'gnuhealth.healthprofessional',
-        'Health Professional')
+        'Health Prof')
 
     remarks = fields.Text('Remarks')
 
@@ -727,7 +823,7 @@ class InpatientMealOrder (ModelSQL, ModelView):
         ('ordered', 'Ordered'),
         ('processing', 'Processing'),
         ('done', 'Done'),
-        ), 'Status', readonly=True)
+    ), 'Status', readonly=True)
 
     @staticmethod
     def default_order_date():
@@ -775,38 +871,53 @@ class InpatientMealOrder (ModelSQL, ModelView):
             raise NoAssociatedHealthProfessional(
                 gettext('health.msg_no_associated_health_professional'))
 
-    @fields.depends('name')
-    def on_change_name(self):
-        if self.name:
+    @fields.depends('registration', '_parent_registration.patient')
+    def on_change_registration(self):
+        if self.registration:
             # Trigger the warning if the patient
             # has special needs on meals (religion / philosophy )
-            if (self.name.patient.vegetarian_type or
-                    self.name.patient.diet_belief):
+            if (self.registration.patient.vegetarian_type or
+                    self.registration.patient.diet_belief):
                 self.meal_warning = True
                 self.meal_warning_ack = False
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
 
     @classmethod
     def __setup__(cls):
         super(InpatientMealOrder, cls).__setup__()
         cls._buttons.update({
             'cancel': {'invisible': Not(Equal(Eval('state'), 'ordered'))}
-            })
+        })
 
         cls._buttons.update({
             'generate': {
                 'invisible': Or(Equal(Eval('state'), 'ordered'),
                                 Equal(Eval('state'), 'done'))},
-            })
+        })
 
         cls._buttons.update({
             'done': {'invisible': Not(Equal(Eval('state'), 'ordered'))}
-            })
+        })
 
         t = cls.__table__()
         cls._sql_constraints = [
             ('meal_order_uniq', Unique(t, t.meal_order),
                 'The Meal Order code already exists'),
-            ]
+        ]
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
 
     @classmethod
     @ModelView.button
@@ -825,3 +936,336 @@ class InpatientMealOrder (ModelSQL, ModelView):
     def done(cls, mealorders):
         cls.write(mealorders, {
             'state': 'done'})
+
+
+# Class : PatientRounding
+# Assess the patient and evironment periodically
+# Usually done by nurses
+
+class PatientRounding(ModelSQL, ModelView):
+    'Patient Rounding'
+    __name__ = 'gnuhealth.patient.rounding'
+
+    STATES = {'readonly': Eval('state') == 'done'}
+
+    registration = fields.Many2One(
+        'gnuhealth.inpatient.registration',
+        'Registration Code', required=True, states=STATES)
+    code = fields.Char('Code', readonly=True)
+    health_professional = fields.Many2One(
+        'gnuhealth.healthprofessional',
+        'Health Prof', readonly=True)
+    evaluation_start = fields.DateTime('Start', required=True, states=STATES)
+    evaluation_end = fields.DateTime('End', readonly=True)
+
+    state = fields.Selection([
+        (None, ''),
+        ('draft', 'In Progress'),
+        ('done', 'Done'),
+    ], 'State', readonly=True)
+
+    environmental_assessment = fields.Char(
+        'Environment', help="Environment"
+        " assessment . State any disorder in the room.", states=STATES)
+
+    weight = fields.Integer(
+        'Weight',
+        help="Measured weight, in kg", states=STATES)
+
+    # The 6 P's of rounding
+    pain = fields.Boolean(
+        'Pain',
+        help="Check if the patient is in pain", states=STATES)
+
+    pain_level = fields.Integer(
+        'Pain level',
+        help="Enter the pain level, from 1 to 10.",
+        states={'readonly': Eval('state') == 'done'})
+
+    # Use by round_report template
+    def get_report_pain_and_level(self):
+        if self.pain and self.pain_level:
+            return gettext('health_nursing.msg_report_pain_level',
+                           pain_level=str(self.pain_level))
+        elif self.pain:
+            return gettext('health_nursing.msg_report_pain_yes')
+        else:
+            return gettext('health_nursing.msg_report_pain_no')
+
+    potty = fields.Boolean(
+        'Potty', help="Check if the patient needs to "
+        "urinate / defecate", states=STATES)
+    position = fields.Boolean(
+        'Position', help="Check if the patient needs to "
+        "be repositioned or is unconfortable", states=STATES)
+    proximity = fields.Boolean(
+        'Proximity', help="Check if personal items, "
+        "water, alarm, ... are not in easy reach", states=STATES)
+    pump = fields.Boolean(
+        'Pumps', help="Check if there is any issues with "
+        "the pumps - IVs ...", states=STATES)
+    personal_needs = fields.Boolean(
+        'Personal needs', help="Check if the "
+        "patient requests anything", states=STATES)
+
+    # Vital Signs
+    systolic = fields.Integer('Systolic Pressure', states=STATES)
+    diastolic = fields.Integer('Diastolic Pressure', states=STATES)
+    bpm = fields.Integer(
+        'Heart Rate',
+        help='Heart rate expressed in beats per minute', states=STATES)
+    respiratory_rate = fields.Integer(
+        'Respiratory Rate',
+        help='Respiratory rate expressed in breaths per minute', states=STATES)
+    osat = fields.Integer(
+        'Oxygen Saturation',
+        help='Oxygen Saturation(arterial).', states=STATES)
+    temperature = fields.Float(
+        'Temperature',
+        help='Temperature in celsius', states=STATES)
+
+    # Diuresis
+
+    diuresis = fields.Integer('Diuresis', help="volume in ml", states=STATES)
+    urinary_catheter = fields.Boolean('Urinary Catheter', states=STATES)
+
+    # Glycemia
+    glycemia = fields.Integer(
+        'Glycemia', help='Blood Glucose level', states=STATES)
+
+    depression = fields.Boolean(
+        'Depression signs', help="Check this if the "
+        "patient shows signs of depression", states=STATES)
+    evolution = fields.Selection(
+        [
+            (None, ''),
+            ('n', 'Status Quo'),
+            ('i', 'Improving'),
+            ('w', 'Worsening'),
+        ], 'Evolution', help="Check your judgement of current "
+        "patient condition", sort=False, states=STATES)
+
+    evolution_str = evolution.translated('evolution')
+
+    round_summary = fields.Text('Round Summary', states=STATES)
+
+    signed_by = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Signed by', readonly=True,
+        states={'invisible': Equal(Eval('state'), 'draft')},
+        help="Health Professional that signed the rounding")
+
+    warning = fields.Boolean(
+        'Warning', help="Check this box to alert the "
+        "supervisor about this patient rounding. A warning icon will be shown "
+        "in the rounding list", states=STATES)
+    warning_icon = fields.Function(
+        fields.Char('Warning Icon'), 'get_warn_icon')
+
+    rounding_procedures = fields.One2Many(
+        'gnuhealth.patient.procedure', 'reference', 'Procedures',
+        domain=[
+            ('patient', '=', Eval('patient')),
+            ('ctx', '=', 'rounding'),
+            # ('pdate', '=', Eval('evaluation_start')),
+        ],
+        depends=['registration', 'patient'],
+        help='Procedures done during the rounding')
+
+    # Deprecated in 5.0 by rounding_procedures
+    procedures = fields.One2Many(
+        'gnuhealth.rounding_procedure', 'rounding',
+        'Procedures', help="List of the procedures in this rounding. Please "
+        "enter the first one as the main procedure", states=STATES)
+
+    report_start_date = fields.Function(
+        fields.Date('Start Date'),
+        'get_report_start_date')
+    report_start_time = fields.Function(
+        fields.Time('Start Time'),
+        'get_report_start_time')
+    report_end_date = fields.Function(
+        fields.Date('End Date'),
+        'get_report_end_date')
+    report_end_time = fields.Function(
+        fields.Time('End Time'),
+        'get_report_end_time')
+
+    patient = fields.Function(fields.Many2One(
+        'gnuhealth.patient', 'Patient'), 'get_patient')
+
+    def get_patient(self, name):
+        if (self.registration):
+            return self.registration.patient
+
+    # Show patient upon entering the registration
+    @fields.depends('registration')
+    def on_change_registration(self):
+        if (self.registration):
+            self.patient = self.registration.patient
+
+    @staticmethod
+    def default_health_professional():
+        return get_health_professional()
+
+    @staticmethod
+    def default_evaluation_start():
+        return datetime.now()
+
+    @staticmethod
+    def default_state():
+        return 'draft'
+
+    @classmethod
+    @ModelView.button
+    def end_rounding(cls, roundings):
+        # End the rounding
+
+        # Change the state of the rounding to "Done"
+        signing_hp = get_health_professional()
+
+        cls.write(roundings, {
+            'state': 'done',
+            'signed_by': signing_hp,
+            'evaluation_end': datetime.now()
+        })
+
+    @classmethod
+    def generate_code(cls, **pattern):
+        Config = Pool().get('gnuhealth.sequences')
+        config = Config(1)
+        sequence = config.get_multivalue(
+            'patient_rounding_sequence', **pattern)
+        if sequence:
+            return sequence.get()
+
+    def get_rec_name(self, name):
+        if self.code:
+            return f"{self.code}"
+
+    @classmethod
+    def create(cls, vlist):
+        vlist = [x.copy() for x in vlist]
+        for values in vlist:
+            if not values.get('code'):
+                values['code'] = cls.generate_code()
+        return super(PatientRounding, cls).create(vlist)
+
+    @classmethod
+    def validate(cls, roundings):
+        super(PatientRounding, cls).validate(roundings)
+        for rounding in roundings:
+            rounding.check_health_professional()
+
+    def check_health_professional(self):
+        if not self.health_professional:
+            raise NoAssociatedHealthProfessional(
+                gettext('health.msg_no_associated_health_professional'))
+
+    def get_report_start_date(self, name):
+        Company = Pool().get('company.company')
+
+        timezone = None
+        company_id = Transaction().context.get('company')
+        if company_id:
+            company = Company(company_id)
+            if company.timezone:
+                timezone = pytz.timezone(company.timezone)
+
+        dt = self.evaluation_start
+        return datetime.astimezone(
+            dt.replace(tzinfo=pytz.utc), timezone).date()
+
+    def get_report_start_time(self, name):
+        Company = Pool().get('company.company')
+
+        timezone = None
+        company_id = Transaction().context.get('company')
+        if company_id:
+            company = Company(company_id)
+            if company.timezone:
+                timezone = pytz.timezone(company.timezone)
+
+        dt = self.evaluation_start
+        return datetime.astimezone(
+            dt.replace(tzinfo=pytz.utc), timezone).time()
+
+    def get_report_end_date(self, name):
+        Company = Pool().get('company.company')
+
+        timezone = None
+        company_id = Transaction().context.get('company')
+        if company_id:
+            company = Company(company_id)
+            if company.timezone:
+                timezone = pytz.timezone(company.timezone)
+
+        dt = self.evaluation_end
+        return datetime.astimezone(
+            dt.replace(tzinfo=pytz.utc), timezone).date()
+
+    def get_report_end_time(self, name):
+        Company = Pool().get('company.company')
+
+        timezone = None
+        company_id = Transaction().context.get('company')
+        if company_id:
+            company = Company(company_id)
+            if company.timezone:
+                timezone = pytz.timezone(company.timezone)
+
+        dt = self.evaluation_end
+        return datetime.astimezone(
+            dt.replace(tzinfo=pytz.utc), timezone).time()
+
+    def get_warn_icon(self, name):
+        if self.warning:
+            return 'gnuhealth-warning'
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientRounding, cls).__setup__()
+        cls._buttons.update({
+            'end_rounding': {
+                'invisible': ~Eval('state').in_(['draft']),
+            }})
+
+        cls._order.insert(0, ('evaluation_start', 'DESC'))
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to registration
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('registration')):
+            table_h.column_rename('name', 'registration')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)
+
+
+# Deprecated in GH 5.0 by general health.PatientProcedure
+class RoundingProcedure(ModelSQL, ModelView):
+    'Rounding - Procedure'
+    __name__ = 'gnuhealth.rounding_procedure'
+
+    rounding = fields.Many2One('gnuhealth.patient.rounding', 'Rounding')
+    procedure = fields.Many2One(
+        'gnuhealth.procedure', 'Code', required=True,
+        help="Procedure Code, for example ICD-10-PCS Code 7-character string")
+    notes = fields.Text('Notes')
+
+    @classmethod
+    def __register__(cls, module):
+        table_h = cls.__table_handler__(module)
+
+        # Migration from 4.4: rename name to rounding
+        if (table_h.column_exist('name')
+                and not table_h.column_exist('rounding')):
+            table_h.column_rename('name', 'rounding')
+
+        super().__register__(module)
+        table_h = cls.__table_handler__(module)

@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2024 Gerald Wiese
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
+
+steps:
+  - name: his-git-code-check
+    image: gnuhealth/linter:1.0.1
+    commands:
+      - bash scripts/lint.sh
+      # - bash scripts/security.sh
+      # - bash scripts/test_modules.sh
+    when:
+      - branch:
+          include: [main, dev-5.0, wip-*, ci-test]
+          exclude: [translate]
+        event: [push, pull_request, manual]
+

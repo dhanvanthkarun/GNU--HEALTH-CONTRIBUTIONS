@@ -2,7 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test,active:"
 msgid "Active"
 msgstr "Aktiv"
@@ -26,7 +25,7 @@ msgstr "Typ"
 
 msgctxt "field:gnuhealth.imaging.test.request,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "Zusätzliche Informationen"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,context:"
@@ -38,25 +37,25 @@ msgid "Date"
 msgstr "Datum"
 
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Medizinische Fachkraft"
 
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,request:"
 msgid "Order"
-msgstr "Reihenfolge"
+msgstr "Anforderung"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,request_line:"
 msgid "Order line"
-msgstr ""
+msgstr "Anforderungszeile"
 
 msgctxt "field:gnuhealth.imaging.test.request,requested_test:"
 msgid "Study"
-msgstr ""
+msgstr "Untersuchung"
 
 msgctxt "field:gnuhealth.imaging.test.request,state:"
 msgid "State"
@@ -68,7 +67,7 @@ msgstr "Dringlich"
 
 msgctxt "field:gnuhealth.imaging.test.result,comment:"
 msgid "Additional Information"
-msgstr ""
+msgstr "Zusätzliche Informationen"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,computed_age:"
@@ -81,36 +80,39 @@ msgstr "Datum"
 
 msgctxt "field:gnuhealth.imaging.test.result,doctor:"
 msgid "Evaluated by"
-msgstr ""
+msgstr "Überprüft durch"
 
 msgctxt "field:gnuhealth.imaging.test.result,images:"
 msgid "Images"
-msgstr "Aufnahme"
+msgstr "Bilder"
 
 msgctxt "field:gnuhealth.imaging.test.result,number:"
 msgid "Number"
 msgstr "Nummer"
 
-#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,order:"
 msgid "Order"
-msgstr "Reihenfolge"
+msgstr "Anforderung"
 
 msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "Patient"
 
-msgctxt "field:gnuhealth.imaging.test.result,request:"
-msgid "Request Info"
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
 msgstr ""
 
+msgctxt "field:gnuhealth.imaging.test.result,request:"
+msgid "Request Info"
+msgstr "Anforderung"
+
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
+msgid "Request Date"
 msgstr "Anforderungsdatum"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
 msgid "Study"
-msgstr ""
+msgstr "Untersuchung"
 
 msgctxt "field:gnuhealth.imaging.test.type,code:"
 msgid "Code"
@@ -129,9 +131,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "Datum"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Rettungskraft"
 
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
 msgid "Patient"
@@ -151,30 +154,33 @@ msgstr "Anforderung"
 
 msgctxt "field:gnuhealth.request-imaging-test,test:"
 msgid "Study"
-msgstr ""
+msgstr "Untersuchung"
 
 msgctxt "field:gnuhealth.sequences,imaging_req_seq:"
 msgid "Imaging Request Sequence"
-msgstr ""
+msgstr "Bildgebungsreihenfolge"
 
 msgctxt "field:gnuhealth.sequences,imaging_test_sequence:"
 msgid "Imaging Sequence"
-msgstr ""
+msgstr "Untersuchungsreihenfolge"
 
 msgctxt "field:gnuhealth.sequences.imaging_req_seq,imaging_req_seq:"
 msgid "Imaging Request Sequence"
-msgstr ""
+msgstr "Bildgebungsreihenfolge"
 
 msgctxt ""
 "field:gnuhealth.sequences.imaging_test_sequence,imaging_test_sequence:"
 msgid "Imaging Sequence"
-msgstr ""
+msgstr "Untersuchungsreihenfolge"
 
 msgctxt "help:gnuhealth.imaging.test.request,context:"
 msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"Gesundheitlicher Kontext für diese Anforderung. Es kann sich um einen "
+"Vedacht, eine Vorerkrankung, eine regelmäßige Vorsorgeuntersuchen, etc. "
+"handeln."
 
 #, fuzzy
 msgctxt "help:gnuhealth.imaging.test.result,computed_age:"
@@ -183,7 +189,7 @@ msgstr "Berechnetes Patientenalter zum Zeitpunkt der Auswertung"
 
 msgctxt "help:gnuhealth.imaging.test.result,order:"
 msgid "The order ID containing this particular imaging study"
-msgstr ""
+msgstr "Die Anforderungs-ID dieser spezifischen Bildgebungsreihe"
 
 msgctxt "help:gnuhealth.imaging.test.type,code:"
 msgid "Suggest use values of DICOM Modality (0008,0060) tag."
@@ -198,10 +204,13 @@ msgid ""
 "Health context for this order. It can be a suspected or existing health "
 "condition, a regular health checkup, ..."
 msgstr ""
+"Gesundheitlicher Kontext für diese Anforderung. Es kann sich um einen "
+"Vedacht, eine Vorerkrankung, eine regelmäßige Vorsorgeuntersuchen, etc. "
+"handeln."
 
 msgctxt "help:gnuhealth.patient.imaging.test.request.start,doctor:"
 msgid "Health professionalwho requests the study."
-msgstr ""
+msgstr "Medizinische Fachkraft, die die Bildgebungsreihe angefordert hat."
 
 #, fuzzy
 msgctxt "model:gnuhealth.imaging.test,name:"
@@ -225,36 +234,36 @@ msgstr "Bildgebung Untersuchung Typ"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_cr"
 msgid "Computed Radiography"
-msgstr ""
+msgstr "Computertomografie"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ctscan"
 msgid "Computed Tomography"
-msgstr ""
+msgstr "Computertomografie"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_dx"
 msgid "Digital Radiography"
-msgstr ""
+msgstr "Digitales Röntgen"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_mri"
 msgid "Magnetic Resonance"
-msgstr ""
+msgstr "Magnetresonanztomografie"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_petscan"
 msgid "Positron emission tomography (PET)"
-msgstr ""
+msgstr "Positronen-Emissions-Tomographie (PET)"
 
 msgctxt ""
 "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_ultrasound"
 msgid "Ultrasound"
-msgstr ""
+msgstr "Ultraschall"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xa"
 msgid "X-Ray Angiography"
-msgstr ""
+msgstr "Röntgenangiografie"
 
 msgctxt "model:gnuhealth.imaging.test.type,name:gnuhealth_test_type_xray"
 msgid "X-ray"
-msgstr ""
+msgstr "Röntgen"
 
 msgctxt "model:gnuhealth.patient.imaging.test.request.start,name:"
 msgid "Request Patient Imaging Test Start"
@@ -266,7 +275,7 @@ msgstr "Anforderung - Untersuchung"
 
 msgctxt "model:gnuhealth.sequences.imaging_req_seq,name:"
 msgid "Imaging Request Sequence setup"
-msgstr ""
+msgstr "Einrichtung der Bildgebungsserie"
 
 msgctxt "model:gnuhealth.sequences.imaging_test_sequence,name:"
 msgid "Imaging Test Sequence setup"
@@ -339,7 +348,7 @@ msgstr "Angefordert"
 
 msgctxt "model:ir.model.button,string:image_generateresults_button"
 msgid "Generate Results"
-msgstr ""
+msgstr "Ergebnisse Erstellen"
 
 #, fuzzy
 msgctxt "model:ir.model.button,string:image_request_button"
@@ -423,7 +432,7 @@ msgstr "Röntgen Gebühren"
 
 msgctxt "model:res.group,name:group_health_imaging"
 msgid "Health Imaging"
-msgstr ""
+msgstr "Bildgebung"
 
 msgctxt "model:res.group,name:group_health_imaging_admin"
 msgid "Health Imaging Administration"
@@ -431,7 +440,7 @@ msgstr ""
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Age:"
-msgstr ""
+msgstr "Alter:"
 
 #, fuzzy
 msgctxt "report:patient.imaging_report_results:"
@@ -440,7 +449,7 @@ msgstr "Kommentar"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Context:"
-msgstr ""
+msgstr "Kontext:"
 
 #, fuzzy
 msgctxt "report:patient.imaging_report_results:"
@@ -454,11 +463,11 @@ msgstr "Geb.dat."
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Evaluated by:"
-msgstr ""
+msgstr "Überprüft durch:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Gender:"
-msgstr ""
+msgstr "Geschlecht:"
 
 #, fuzzy
 msgctxt "report:patient.imaging_report_results:"
@@ -467,23 +476,23 @@ msgstr "Bild"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Imaging Study Report"
-msgstr ""
+msgstr "Bildgebungsbericht"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Interpretation:"
-msgstr ""
+msgstr "Deutung:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Order:"
-msgstr ""
+msgstr "Anforderung:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "PUID:"
-msgstr ""
+msgstr "PUID:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Patient:"
-msgstr ""
+msgstr "Patient:"
 
 #, fuzzy
 msgctxt "report:patient.imaging_report_results:"
@@ -492,19 +501,19 @@ msgstr "Druckdatum:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Requested by:"
-msgstr ""
+msgstr "Angefordert von:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Resources:"
-msgstr ""
+msgstr "Resourcen:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Study ID:"
-msgstr ""
+msgstr "Bildgebungs-ID:"
 
 msgctxt "report:patient.imaging_report_results:"
 msgid "Study:"
-msgstr ""
+msgstr "Bildgebungsreihe:"
 
 msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Done"
@@ -518,9 +527,21 @@ msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr "Angefordert"
 
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr ""
+
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Generate Results"
-msgstr ""
+msgstr "Ergebnisse Erstellen"
 
 #, fuzzy
 msgctxt "view:gnuhealth.imaging.test.request:"
@@ -534,7 +555,7 @@ msgstr "Aufnahme"
 
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Interpretation / Report"
-msgstr ""
+msgstr "Deutung / Bericht"
 
 msgctxt "wizard_button:gnuhealth.patient.imaging.test.request,start,end:"
 msgid "Cancel"

@@ -1,7 +1,7 @@
-# Copyright (C) 2008-2024 Luis Falcon <lfalcon@gnuhealth.org>
+# Copyright (C) 2008-2025 Luis Falcon <lfalcon@gnuhealth.org>
 # Copyright (C) 2013  Sebastián Marro <smarro@thymbra.com>
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -16,7 +16,7 @@ from trytond.pool import Pool
 from trytond.modules.health.core import get_health_professional
 
 __all__ = ['WizardGenerateResult', 'RequestImagingTest',
-    'RequestPatientImagingTestStart', 'RequestPatientImagingTest']
+           'RequestPatientImagingTestStart', 'RequestPatientImagingTest']
 
 
 class WizardGenerateResult(Wizard):
@@ -56,7 +56,8 @@ class RequestImagingTest(ModelView):
     __name__ = 'gnuhealth.request-imaging-test'
     _table = 'gnuhealth_request_imaging_test'
 
-    request = fields.Many2One('gnuhealth.patient.imaging.test.request.start',
+    request = fields.Many2One(
+        'gnuhealth.patient.imaging.test.request.start',
         'Request', required=True)
     test = fields.Many2One('gnuhealth.imaging.test', 'Study', required=True)
 
@@ -67,13 +68,15 @@ class RequestPatientImagingTestStart(ModelView):
 
     date = fields.DateTime('Date')
     patient = fields.Many2One('gnuhealth.patient', 'Patient', required=True)
-    doctor = fields.Many2One('gnuhealth.healthprofessional', 'Health prof',
+    doctor = fields.Many2One(
+        'gnuhealth.healthprofessional', 'Health Prof',
         required=True, help="Health professionalwho requests the study.")
-    context = fields.Many2One('gnuhealth.pathology', 'Context',
-        help="Health context for this order. It can be a suspected or"
-             " existing health condition, a regular health checkup, ...",
-             select=True)
-    tests = fields.Many2Many('gnuhealth.request-imaging-test', 'request',
+    context = fields.Many2One(
+        'gnuhealth.pathology', 'Context',
+        help="Health context for this order. It can be a suspected or "
+        "existing health condition, a regular health checkup, ...")
+    tests = fields.Many2Many(
+        'gnuhealth.request-imaging-test', 'request',
         'test', 'Tests', required=True)
     urgent = fields.Boolean('Urgent')
 
@@ -90,15 +93,24 @@ class RequestPatientImagingTestStart(ModelView):
     def default_doctor():
         return get_health_professional()
 
+    @classmethod
+    def __setup__(cls):
+        super(RequestPatientImagingTestStart, cls).__setup__()
+
+        # Do not cache default_key as it depends on time
+        cls.__rpc__['default_get'].cache = None
+
+
 class RequestPatientImagingTest(Wizard):
     'Request Patient Imaging Test'
     __name__ = 'gnuhealth.patient.imaging.test.request'
 
-    start = StateView('gnuhealth.patient.imaging.test.request.start',
+    start = StateView(
+        'gnuhealth.patient.imaging.test.request.start',
         'health_imaging.patient_imaging_test_request_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Request', 'request', 'tryton-ok', default=True),
-            ])
+        ])
     request = StateTransition()
 
     def generate_code(self, **pattern):
@@ -109,7 +121,6 @@ class RequestPatientImagingTest(Wizard):
         if sequence:
             return sequence.get()
 
-
     def transition_request(self):
         ImagingTestRequest = Pool().get('gnuhealth.imaging.test.request')
         request_number = self.generate_code()
@@ -119,7 +130,8 @@ class RequestPatientImagingTest(Wizard):
         for test in self.start.tests:
             imaging_test = {}
             imaging_test['request'] = request_number
-            imaging_test['request_line'] = f'{request_number}-{count:02}-{num:02}'
+            request_line = f'{request_number}-{count:02}-{num:02}'
+            imaging_test['request_line'] = request_line
             imaging_test['requested_test'] = test.id
             imaging_test['patient'] = self.start.patient.id
             if self.start.doctor:

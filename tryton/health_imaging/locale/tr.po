@@ -40,9 +40,10 @@ msgctxt "field:gnuhealth.imaging.test.request,date:"
 msgid "Date"
 msgstr "Tarih"
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Sağlık Uzmanı"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.request,patient:"
@@ -88,9 +89,10 @@ msgctxt "field:gnuhealth.imaging.test.result,doctor:"
 msgid "Evaluated by"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,images:"
 msgid "Images"
-msgstr ""
+msgstr "Görseller"
 
 #, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,number:"
@@ -106,13 +108,18 @@ msgctxt "field:gnuhealth.imaging.test.result,patient:"
 msgid "Patient"
 msgstr "Hasta"
 
+msgctxt "field:gnuhealth.imaging.test.result,report_style:"
+msgid "Report Style"
+msgstr ""
+
 msgctxt "field:gnuhealth.imaging.test.result,request:"
 msgid "Request Info"
 msgstr ""
 
+#, fuzzy
 msgctxt "field:gnuhealth.imaging.test.result,request_date:"
-msgid "Requested Date"
-msgstr ""
+msgid "Request Date"
+msgstr "İstek Tarihi"
 
 msgctxt "field:gnuhealth.imaging.test.result,requested_test:"
 msgid "Study"
@@ -137,9 +144,10 @@ msgctxt "field:gnuhealth.patient.imaging.test.request.start,date:"
 msgid "Date"
 msgstr "Tarih"
 
+#, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,doctor:"
-msgid "Health prof"
-msgstr ""
+msgid "Health Prof"
+msgstr "Sağlık Uzmanı"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.imaging.test.request.start,patient:"
@@ -511,6 +519,18 @@ msgctxt "selection:gnuhealth.imaging.test.request,state:"
 msgid "Requested"
 msgstr ""
 
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "Default"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Image Comments"
+msgstr ""
+
+msgctxt "selection:gnuhealth.imaging.test.result,report_style:"
+msgid "No Images"
+msgstr ""
+
 msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Generate Results"
 msgstr ""
@@ -520,9 +540,10 @@ msgctxt "view:gnuhealth.imaging.test.request:"
 msgid "Request"
 msgstr "Requests"
 
+#, fuzzy
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Images"
-msgstr ""
+msgstr "Görseller"
 
 msgctxt "view:gnuhealth.imaging.test.result:"
 msgid "Interpretation / Report"

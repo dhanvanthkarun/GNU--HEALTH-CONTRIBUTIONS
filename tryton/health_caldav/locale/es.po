@@ -328,11 +328,11 @@ msgstr "Calendarios"
 
 msgctxt "help:calendar.calendar,owner:"
 msgid "The user must have an email"
-msgstr "El usuario debe tener un correo electrónico."
+msgstr "El usuario debe tener un correo electrónico"
 
 msgctxt "help:calendar.event,uuid:"
 msgid "Universally Unique Identifier"
-msgstr "Identificador universal único."
+msgstr "Identificador universal único"
 
 msgctxt "help:calendar.event.exdate,date:"
 msgid "Ignore time of field \"Date\", but handle as date only."
@@ -416,71 +416,73 @@ msgstr "Eventos"
 
 msgctxt "model:ir.message,text:msg_invalid_byday"
 msgid "Invalid *By Day* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválido *Por día* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byhour"
 msgid "Invalid *By Hour* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválido *Por hora* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byminute"
 msgid "Invalid *By Minute* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválido *Por minuto* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bymonth"
 msgid "Invalid *By Month* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválido *Por mes* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bymonthday"
 msgid "Invalid *By Month Day* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválido *Por día del mes* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bysecond"
 msgid "Invalid *By Second* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválido *Por segundo* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_bysetpos"
 msgid "Invalid *By Position* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválida *Por posición* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byweeknumber"
 msgid "Invalid *By Week Number* in recurrence rule \"%(self.rec_name,)s\""
 msgstr ""
+"Inválido *Por número de la semana* en regla de recurrencia "
+"\"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_byyearday"
 msgid "Invalid *By Year Day* in recurrence rule \"%(self.rec_name,)s\""
-msgstr ""
+msgstr "Inválida *Por día del año* en regla de recurrencia \"%(self.rec_name,)s\""
 
 msgctxt "model:ir.message,text:msg_invalid_calendar_extension"
 msgid "The calendar name can not have the icd extension"
-msgstr ""
+msgstr "El nombre del calendario no puede tener la extensión icd"
 
 msgctxt "model:ir.message,text:msg_invalid_recurrence"
 msgid "This recurrence can not be recurrent"
-msgstr ""
+msgstr "Esta recurrencia no puede ser recurrente"
 
 msgctxt "model:ir.rule.group,name:rule_group_calendar_admin"
 msgid "Calendar rule group"
-msgstr ""
+msgstr "Grupo de reglas del calendario"
 
 msgctxt "model:ir.rule.group,name:rule_group_event_admin"
 msgid "Event rule group - admin"
-msgstr ""
+msgstr "Grupo de reglas de eventos - administrador"
 
 msgctxt "model:ir.rule.group,name:rule_group_read_calendar"
 msgid "Calendar rule group - read"
-msgstr ""
+msgstr "Grupo de reglas de calendario - leer"
 
 msgctxt "model:ir.rule.group,name:rule_group_read_event"
 msgid "Event rule group - read"
-msgstr ""
+msgstr "Grupo de reglas de sucesos - leer"
 
 msgctxt "model:ir.rule.group,name:rule_group_write_calendar"
 msgid "Calendar rule group - write"
-msgstr ""
+msgstr "Grupo de reglas de calendario - escribir"
 
 msgctxt "model:ir.rule.group,name:rule_group_write_event"
 msgid "Event rule group - write"
-msgstr ""
+msgstr "Grupo de reglas de eventos - escritura"
 
 msgctxt "model:ir.ui.menu,name:menu_calendar"
 msgid "Calendar"
@@ -494,10 +496,9 @@ msgctxt "model:ir.ui.menu,name:menu_event_form"
 msgid "Events"
 msgstr "Eventos"
 
-#, fuzzy
 msgctxt "model:res.group,name:group_calendar_admin"
-msgid "Calendar Group Administration "
-msgstr "Administración de calendarios"
+msgid "Calendar Group Administration"
+msgstr "Administración de grupos de calendarios"
 
 msgctxt "selection:calendar.event,classification:"
 msgid "Confidential"
@@ -702,11 +703,3 @@ msgstr "Ocurrencias"
 msgctxt "view:calendar.event:"
 msgid "Start Time"
 msgstr "Hora de inicio"
-
-msgctxt "view:calendar.location:"
-msgid "Location"
-msgstr "Ubicación"
-
-msgctxt "view:calendar.location:"
-msgid "Locations"
-msgstr "Ubicaciones"

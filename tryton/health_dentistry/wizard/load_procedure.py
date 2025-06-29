@@ -93,8 +93,8 @@ class LoadProcedureStart(ModelView):
     def view_attributes(cls):
         return super(LoadProcedureStart, cls).view_attributes() + [
             ('//group[@id="primary"]', 'states', {
-                    'invisible': ~Eval('include_primary'),
-                    })]
+                'invisible': ~Eval('include_primary'),
+            })]
 
 
 class LoadProcedure(Wizard):
@@ -133,7 +133,7 @@ class LoadProcedure(Wizard):
             '61', '62', '63', '64', '65'
             '71', '72', '73', '74', '75'
             '81', '82', '83', '84', '85',
-            ]
+        ]
         procedures = []
         no_tooth = True
         for number in teeth:
@@ -149,13 +149,13 @@ class LoadProcedure(Wizard):
                     'lingual': self.start.lingual,
                     'mesial': self.start.mesial,
                     'distal': self.start.distal,
-                    }
+                }
                 procedures.append(data)
         if no_tooth is True and self.start.procedure:
             data = {
                 'treatment': Transaction().context['active_id'],
                 'procedure': self.start.procedure,
-                }
+            }
             procedures.append(data)
 
         Procedure.create(procedures)

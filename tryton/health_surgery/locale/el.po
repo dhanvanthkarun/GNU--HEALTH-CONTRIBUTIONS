@@ -2,10 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:gnuhealth.operation,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
-
 msgctxt "field:gnuhealth.operation,notes:"
 msgid "Notes"
 msgstr "Σημειώσεις"
@@ -15,13 +11,19 @@ msgid "Code"
 msgstr "Κωδικός"
 
 #, fuzzy
+msgctxt "field:gnuhealth.operation,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
+
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,comments:"
 msgid "Comments"
 msgstr "Σχόλια"
 
+#, fuzzy
 msgctxt "field:gnuhealth.or.schedule,health_condition:"
-msgid "Health Condition"
-msgstr ""
+msgid "Condition"
+msgstr "Πάθηση"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,healthprof:"
@@ -33,9 +35,10 @@ msgctxt "field:gnuhealth.or.schedule,institution:"
 msgid "Institution"
 msgstr "Ίδρυμα"
 
-msgctxt "field:gnuhealth.or.schedule,name:"
+#, fuzzy
+msgctxt "field:gnuhealth.or.schedule,oproom:"
 msgid "Op. Room"
-msgstr ""
+msgstr "Αίθουσα Χειρουργείου"
 
 #, fuzzy
 msgctxt "field:gnuhealth.or.schedule,patient:"
@@ -161,9 +164,10 @@ msgctxt "field:gnuhealth.preoperative_assessment,health_professional:"
 msgid "Health Prof"
 msgstr "Επαγγ. Υγείας"
 
+#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,imaging_test:"
 msgid "Imaging"
-msgstr ""
+msgstr "Απεικόνιση"
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,institution:"
@@ -184,7 +188,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "Αίθουσα Χειρουργείου"
 
 #, fuzzy
@@ -201,10 +205,9 @@ msgctxt "field:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid "Risk of Massive bleeding"
 msgstr "Κίνδυνος μαζικής αιμορραγίας"
 
-#, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_mallampati:"
-msgid "Mallampati Score"
-msgstr "Βαθμολογία Mallampati"
+msgid "Mallampati"
+msgstr ""
 
 #, fuzzy
 msgctxt "field:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -239,11 +242,11 @@ msgid "Surgical wound"
 msgstr ""
 
 msgctxt "field:gnuhealth.rcri,health_professional:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "Επαγγελματίας Υγείας"
 
 msgctxt "field:gnuhealth.rcri,patient:"
-msgid "Patient ID"
+msgid "Patient"
 msgstr "ID Ασθενούς"
 
 msgctxt "field:gnuhealth.rcri,rcri_cerebrovascular_history:"
@@ -360,6 +363,11 @@ msgctxt "field:gnuhealth.surgery,gender:"
 msgid "Gender"
 msgstr "Φύλο"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,incl_intervention:"
+msgid "Incl. procedure"
+msgstr "Ιατρική πράξη/ Διαδικασία"
+
 msgctxt "field:gnuhealth.surgery,institution:"
 msgid "Institution"
 msgstr "Ίδρυμα"
@@ -373,12 +381,13 @@ msgid "Main Procedure"
 msgstr ""
 
 msgctxt "field:gnuhealth.surgery,operating_room:"
-msgid "Operating Room"
+msgid "Op. Room"
 msgstr "Αίθουσα Χειρουργείου"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery,pathology:"
-msgid "Health Condition"
-msgstr ""
+msgid "Condition"
+msgstr "Πάθηση"
 
 msgctxt "field:gnuhealth.surgery,patient:"
 msgid "Patient"
@@ -474,6 +483,11 @@ msgctxt "field:gnuhealth.surgery,surgery_length:"
 msgid "Length"
 msgstr "Μήκος Σώματος"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures"
+msgstr "Procedures"
+
 msgctxt "field:gnuhealth.surgery,surgery_team:"
 msgid "Team Members"
 msgstr ""
@@ -491,11 +505,6 @@ msgid "Complication"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.complication,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.complication,severity:"
 msgid "Severity"
 msgstr "Σοβαρότητα"
@@ -505,19 +514,24 @@ msgctxt "field:gnuhealth.surgery.complication,short_comment:"
 msgid "Remarks"
 msgstr "Παρατηρήσεις"
 
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.complication,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
+
 msgctxt "field:gnuhealth.surgery.drain,drain:"
 msgid "Drain"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery.drain,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
-
-#, fuzzy
 msgctxt "field:gnuhealth.surgery.drain,notes:"
 msgid "Notes"
 msgstr "Σημειώσεις"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery.drain,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
 
 msgctxt "field:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Anesthesia"
@@ -560,9 +574,10 @@ msgctxt "field:gnuhealth.surgery.protocol,name:"
 msgid "Name"
 msgstr "Όνομα"
 
+#, fuzzy
 msgctxt "field:gnuhealth.surgery.protocol,pathology:"
-msgid "Health Condition"
-msgstr ""
+msgid "Condition"
+msgstr "Πάθηση"
 
 msgctxt "field:gnuhealth.surgery.protocol,patient_positioning:"
 msgid "Patient Positioning"
@@ -575,11 +590,6 @@ msgstr ""
 msgctxt "field:gnuhealth.surgery.protocol,surgical_intervention:"
 msgid "Surgical Intervention"
 msgstr ""
-
-#, fuzzy
-msgctxt "field:gnuhealth.surgery_supply,name:"
-msgid "Surgery"
-msgstr "Χειρουργείο"
 
 #, fuzzy
 msgctxt "field:gnuhealth.surgery_supply,notes:"
@@ -600,7 +610,7 @@ msgid "Supply"
 msgstr ""
 
 #, fuzzy
-msgctxt "field:gnuhealth.surgery_team,name:"
+msgctxt "field:gnuhealth.surgery_supply,surgery:"
 msgid "Surgery"
 msgstr "Χειρουργείο"
 
@@ -612,6 +622,11 @@ msgstr "Σημειώσεις"
 msgctxt "field:gnuhealth.surgery_team,role:"
 msgid "Role"
 msgstr "Ρόλος"
+
+#, fuzzy
+msgctxt "field:gnuhealth.surgery_team,surgery:"
+msgid "Surgery"
+msgstr "Χειρουργείο"
 
 msgctxt "field:gnuhealth.surgery_team,team_member:"
 msgid "Member"
@@ -637,7 +652,7 @@ msgid "Health Care Institution"
 msgstr "Υγειονομικό Ίδρυμα"
 
 #, fuzzy
-msgctxt "help:gnuhealth.or.schedule,name:"
+msgctxt "help:gnuhealth.or.schedule,oproom:"
 msgid "Operating Room"
 msgstr "Αίθουσα Χειρουργείου"
 
@@ -700,6 +715,11 @@ msgid "The patient is not eligible to be anesthetized"
 msgstr ""
 
 #, fuzzy
+msgctxt "help:gnuhealth.preoperative_assessment,operating_room:"
+msgid "Operating Room"
+msgstr "Αίθουσα Χειρουργείου"
+
+#, fuzzy
 msgctxt "help:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "ASA pre-operative Physical Status"
 msgstr "Προεγχειρητική φυσική κατάσταση κατά ASA"
@@ -708,6 +728,10 @@ msgctxt "help:gnuhealth.preoperative_assessment,preop_bleeding_risk:"
 msgid ""
 "Patient has a risk of losing more than 500 ml in adults of over 7ml/kg in "
 "infants. If so, make sure that intravenous access and fluids are available"
+msgstr ""
+
+msgctxt "help:gnuhealth.preoperative_assessment,preop_mallampati:"
+msgid "Mallampati Score"
 msgstr ""
 
 msgctxt "help:gnuhealth.preoperative_assessment,preop_rcri:"
@@ -745,17 +769,12 @@ msgstr ""
 
 msgctxt "help:gnuhealth.rcri,rcri_ischemic_history:"
 msgid ""
-"history of MI or a positive exercise test, current         complaint of "
-"chest pain considered to be secondary to myocardial         ischemia, use of"
-" nitrate therapy, or ECG with pathological         Q waves; do not count "
-"prior coronary revascularization procedure         unless one of the other "
-"criteria for ischemic heart disease is         present"
+"history of MI or a positive exercise test, current complaint of chest pain "
+"considered to be secondary to myocardial ischemia, use of nitrate therapy, "
+"or ECG with pathological Q waves; do not count prior coronary "
+"revascularization procedure unless one of the other criteria for ischemic "
+"heart disease is present."
 msgstr ""
-"ιστορικό Εμφράγματος Μυοκαρδίου ή μια θετική δοκιμασία κοπώσεως, με τρέχον "
-"σύμπτωμα ένα προκάρδιο άλγος που θεωρείται  δευτερογενές από την μυοκαρδιακή"
-" ισχαιμία, χρήση αγωγής με νιτρώδη, ή ΗΚΓ με παθολογικά Q. Να μη ληφθούν υπ'"
-" όψιν προηγούμενες παρεμβάσεις επαναγγείωσης των στεφανιαίων, εκτός και αν "
-"υπάρχει ένα ή περισσότερα κριτήρια ισχαιμικής στεφανιαίας νόσου"
 
 msgctxt "help:gnuhealth.rcri,rcri_kidney_history:"
 msgid "Preoperative serum creatinine >2.0 mg/dL (177 mol/L)"
@@ -775,11 +794,8 @@ msgstr ""
 
 msgctxt "help:gnuhealth.surgery,age:"
 msgid ""
-"Use this field for historical purposes,         when no date of surgery is "
-"given"
+"Use this field for historical purposes, when no date of surgery is given"
 msgstr ""
-"Χρησιμοποιήστε αυτό το πεδίο για λόγους ιστορικού, όταν δεν παρέχεται καμία "
-"ημερομηνία για τις χειρουργικές επεμβάσεις."
 
 msgctxt "help:gnuhealth.surgery,anesthetist:"
 msgid "Anesthetist in charge"
@@ -820,6 +836,18 @@ msgid ""
 "when the automatic computed surgery length does not reflect the actual time "
 "or it has been recorded afterwards."
 msgstr ""
+
+msgctxt "help:gnuhealth.surgery,incl_intervention:"
+msgid ""
+"If set, the main surgical intervention will also be included in the list of "
+"medical procedures for this patient. The interventions listed on the "
+"procedures section of the surgery will always be included."
+msgstr ""
+
+#, fuzzy
+msgctxt "help:gnuhealth.surgery,operating_room:"
+msgid "Operating Room"
+msgstr "Αίθουσα Χειρουργείου"
 
 msgctxt "help:gnuhealth.surgery,pathology:"
 msgid "Base Condition / Reason"
@@ -890,14 +918,18 @@ msgctxt "help:gnuhealth.surgery,surgery_length:"
 msgid "Length of the surgery"
 msgstr "Διάρκεια Χειρουργικής επέμβασης"
 
+msgctxt "help:gnuhealth.surgery,surgery_procedures:"
+msgid "Procedures done during the Surgery"
+msgstr ""
+
 msgctxt "help:gnuhealth.surgery,surgery_team:"
 msgid "Professionals Involved in the surgery"
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery,surgical_intervention:"
 msgid ""
-"This code reflects the main intervention of this surgery.Additional "
-"procedures can be entered on the procedures tab."
+"This code reflects the main intervention of this surgery.eg, "
+"appendectomy.Additional procedures can be entered on the procedures tab."
 msgstr ""
 
 msgctxt "help:gnuhealth.surgery.complication,complication:"
@@ -1153,11 +1185,6 @@ msgstr "Διαχείριση Χειρουργικής υγείας"
 
 #, fuzzy
 msgctxt "report:preoperative_assessment:"
-msgid ","
-msgstr ","
-
-#, fuzzy
-msgctxt "report:preoperative_assessment:"
 msgid "ALLERGIC"
 msgstr "ΑΛΛΕΡΓΙΚΟΣ/Η"
 
@@ -1196,7 +1223,7 @@ msgstr ""
 
 #, fuzzy
 msgctxt "report:preoperative_assessment:"
-msgid "Health Professional"
+msgid "Health Prof"
 msgstr "Επαγγελματίας Υγείας"
 
 msgctxt "report:preoperative_assessment:"
@@ -1691,6 +1718,10 @@ msgid "3"
 msgstr ""
 
 msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
+msgid "4"
+msgstr ""
+
+msgctxt "selection:gnuhealth.patient.evaluation,thyroid_goiter_class:"
 msgid "5"
 msgstr ""
 
@@ -1749,14 +1780,11 @@ msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
 msgid "PS 3 : Patients with severe systemic disease"
 msgstr "PS 3 : Ασθενείς με σοβαρή συστημική νόσο"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
 msgid ""
 "PS 4 : Patients with severe systemic disease that is a constant threat to "
-"life "
+"life"
 msgstr ""
-"PS 4 : Ασθενείς με σοβαρή συστημική νόσο που αποτελεί μόνιμη απειλή για τη "
-"ζωή"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.preoperative_assessment,preop_asa:"
@@ -1840,13 +1868,6 @@ msgctxt "selection:gnuhealth.preoperative_assessment,surgical_wound:"
 msgid "Dirty-Infected . Class IV"
 msgstr ""
 
-#, fuzzy
-msgctxt "selection:gnuhealth.rcri,rcri_class:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.rcri,rcri_class:"
 msgid "I"
 msgstr "I"
@@ -1863,9 +1884,10 @@ msgctxt "selection:gnuhealth.rcri,rcri_class:"
 msgid "IV"
 msgstr "IV"
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
 msgid "Epidural"
-msgstr ""
+msgstr "Επισκληρίδιος "
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery,anesthesia_type:"
@@ -1930,13 +1952,6 @@ msgctxt "selection:gnuhealth.surgery,approach:"
 msgid "other"
 msgstr "άλλος"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.surgery,classification:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.surgery,classification:"
 msgid "Emergency"
 msgstr "Επείγουσα"
@@ -1970,6 +1985,10 @@ msgid "Grade IIIa"
 msgstr ""
 
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
+msgid "Grade IIIb"
+msgstr ""
+
+msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade IV"
 msgstr ""
 
@@ -1984,13 +2003,6 @@ msgstr ""
 msgctxt "selection:gnuhealth.surgery,clavien_dindo:"
 msgid "Grade V"
 msgstr ""
-
-#, fuzzy
-msgctxt "selection:gnuhealth.surgery,gender:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery,gender:"
@@ -2109,13 +2121,6 @@ msgctxt "selection:gnuhealth.surgery,state:"
 msgid "Signed"
 msgstr "Υπεγράφη"
 
-#, fuzzy
-msgctxt "selection:gnuhealth.surgery,surgical_wound:"
-msgid ""
-msgstr ""
-"\n"
-"Πρόσωπο που ζήτησε τελευταία το έγγραφο"
-
 msgctxt "selection:gnuhealth.surgery,surgical_wound:"
 msgid "Clean . Class I"
 msgstr ""
@@ -2179,9 +2184,10 @@ msgctxt "selection:gnuhealth.surgery.drain,drain:"
 msgid "Thoracic tube"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"
 msgid "Epidural"
-msgstr ""
+msgstr "Επισκληρίδιος "
 
 #, fuzzy
 msgctxt "selection:gnuhealth.surgery.protocol,anesthesia_type:"

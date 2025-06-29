@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <record model="ir.ui.icon" id="excute_icon">
+            <field name="name">execute</field>
+            <field name="path">icons/execute_icon.svg</field>
+        </record>
+
+        <!-- Orthanc config -->
+        <record model="ir.ui.view" id="orthanc_view_config_tree">
+            <field name="model">gnuhealth.orthanc.config</field>
+            <field name="type">tree</field>
+            <field name="name">orthanc_config_tree</field>
+        </record>
+        <record model="ir.ui.view" id="orthanc_view_config_form">
+            <field name="model">gnuhealth.orthanc.config</field>
+            <field name="type">form</field>
+            <field name="name">orthanc_config_form</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_orthanc_server_view">
+            <field name="name">Servers</field>
+            <field name="res_model">gnuhealth.orthanc.config</field>
+        </record>
+
+        <!-- Orthanc Server configuration menu -->
+        <menuitem name="Orthanc"
+                  sequence="200"
+                  parent="health_imaging.menu_imaging_test_parent"
+                  id="orthanc_config_menu"
+                  icon="orthanc"/>
+
+        <menuitem name="Servers" sequence="20" parent="orthanc_config_menu"
+                  action="act_orthanc_server_view"
+                  id="orthanc_servers_menu" icon="gnuhealth-list"/>
+
+        <!-- Remove Config Server button-->
+        <record model="ir.model.button" id="remove_config_server_button">
+            <field name="name">remove_config_server</field>
+            <field name="string">Remove Config Server</field>
+            <field name="model" search="[('model', '=', 'gnuhealth.orthanc.config')]"/>
+        </record>
+
+        <!-- Wizard and Views to add server -->
+
+        <record model="ir.ui.view" id="view_orthanc_add_init_data">
+            <field name="model">gnuhealth.imaging_orthanc.orthanc_add_init_data</field>
+            <field name="type">form</field>
+            <field name="name">add_orthanc_server_init_data</field>
+        </record>
+
+        <record model="ir.action.wizard" id="orthanc_add_server_init_data">
+            <field name="name">Add New Server</field>
+            <field name="wiz_name">gnuhealth.imaging_orthanc.wizard.orthanc_new_connect</field>
+        </record>
+
+        <menuitem parent="orthanc_config_menu" action="orthanc_add_server_init_data"
+                  id="imaging_orthanc_add_server_menu" sequence="10" icon="execute"/>
+    </data>
+</tryton>

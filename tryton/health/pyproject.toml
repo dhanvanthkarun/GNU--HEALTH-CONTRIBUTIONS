@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: 2025 GNU Solidario <health@gnusolidario.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "gnuhealth"
+version = "5.0.0"
+description = "GNU Health Hospital and Health Information System. Core package"
+license = { text = "GPL-3.0-or-later" }
+readme = "README.rst"
+keywords = ["health", "hospital", "HIS", "eHealth", "gnuhealth"]
+requires-python = ">=3.10,<3.14"
+authors = [
+    {name = "GNU Solidario", email = "info@gnusolidario.org"},
+]
+
+dynamic = [ "classifiers" ]
+
+maintainers = [
+    { name = "Luis Falcon", email = "falcon@gnuhealth.org" },
+    { name = "Gerald Wiese", email = "wiese@gnuhealth.org" },
+]
+
+dependencies = [
+    'gnuhealth-control>=5.0.0b1,<5.1',
+    'psycopg2>=2.9.10,<3',
+    'numpy>=2.2.2,<3',
+    'werkzeug>=3.1.3,<4',
+    'pillow>=11.1.0,<12',
+    'pydot>=3.0.4,<4',
+    'bcrypt>=4.2.1,<5',
+    'python-magic>=0.4.27,<0.5',
+    'pycountry==24.6.1',
+    'pytz==2025.1',
+    'trytond>=7.0,<7.1',
+    'trytond-company>=7.0,<7.1',
+    'trytond-currency>=7.0,<7.1',
+    'trytond-party>=7.0,<7.1',
+    'trytond-product>=7.0,<7.1'
+]
+
+[project.urls]
+homepage = "https://www.gnuhealth.org"
+repository = "https://codeberg.org/gnuhealth/his"
+documentation = "https://docs.gnuhealth.org"
+"Bug Tracker" = "https://codeberg.org/gnuhealth/his/issues"
+
+[tool.poetry]
+classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Plugins',
+    'Framework :: Tryton',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Healthcare Industry',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+    'Topic :: Scientific/Engineering :: Medical Science Apps.',
+]
+
+packages = [
+    { include = '*', to='trytond/modules/health' },
+]
+
+exclude = [
+    "dist"
+]
+

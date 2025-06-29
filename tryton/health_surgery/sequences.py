@@ -1,15 +1,15 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # GNU Health HMIS sequences for this package
 
 from trytond.model import (ModelSQL, ValueMixin, fields)
-from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
-from trytond.tools.multivalue import migrate_property
+# Removed in GH 5.0
+# from trytond.tools.multivalue import migrate_property
 
 # Sequences
 surgery_code_sequence = fields.Many2One(
@@ -41,6 +41,7 @@ class _ConfigurationValue(ModelSQL):
 
     _configuration_value_field = None
 
+    """
     @classmethod
     def __register__(cls, module_name):
         exist = backend.TableHandler.table_exist(cls._table)
@@ -57,6 +58,8 @@ class _ConfigurationValue(ModelSQL):
         migrate_property(
             'gnuhealth.sequences', field_names, cls, value_names,
             fields=fields)
+
+    """
 
 
 class SurgeryCodeSequence(_ConfigurationValue, ModelSQL, ValueMixin):

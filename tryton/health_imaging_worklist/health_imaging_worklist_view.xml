@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!--
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tryton>
+    <data>
+        <!-- Add Worklist_template to Imaging Test Form -->
+        <record model="ir.ui.view" id="view_imaging_test_form_worklist">
+            <field name="model">gnuhealth.imaging.test</field>
+            <field name="inherit" ref="health_imaging.view_imaging_test_form"/>
+            <field name="name">imaging_test_form</field>
+        </record>
+
+        <!-- Imaging worklist template  -->
+        <record model="ir.ui.view" id="imaging_worklist_view_worklist_template_tree">
+            <field name="model">gnuhealth.imaging_worklist.worklist_template</field>
+            <field name="type">tree</field>
+            <field name="name">worklist_template_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="imaging_worklist_view_worklist_template_form">
+            <field name="model">gnuhealth.imaging_worklist.worklist_template</field>
+            <field name="type">form</field>
+            <field name="name">worklist_template_form</field>
+        </record>
+
+        <!-- Imaging worklist template menu -->
+        <record model="ir.action.act_window" id="act_imaging_worklist_template_view">
+            <field name="name">Worklist templates</field>
+            <field name="res_model">gnuhealth.imaging_worklist.worklist_template</field>
+        </record>
+
+        <menuitem name="Worklist templates"
+                  icon="gnuhealth-list"
+                  sequence="80"
+                  parent="health_imaging.menu_imaging_test_parent"
+                  action="act_imaging_worklist_template_view"
+                  id="imaging_worklist_template_menu"/>
+
+        <!-- Add worklist to Test Request Form  -->
+       <record model="ir.ui.view" id="view_imaging_test_request_worklist_form">
+           <field name="model">gnuhealth.imaging.test.request</field>
+           <field name="inherit" ref="health_imaging.view_imaging_test_request_form"/>
+           <field name="name">imaging_test_request_form</field>
+        </record>
+
+    </data>
+</tryton>

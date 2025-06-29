@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tree>
+    <field name="label" expand="1"/>
+    <field name="domain" expand="1"/>
+    <field name="link" widget="url"/>
+    <field name="validated"/>
+    <button name="remove_config_server" help="Remove the server configuration" confirm="Do you really want to remove the server configuration?" string="Remove Configured Server" tree_invisible="1"/>
+</tree>

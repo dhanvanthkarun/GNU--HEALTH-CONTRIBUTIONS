@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2012-2014 Sebastian Marro <smarro@thymbra.com>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -20,7 +20,7 @@ class TopDiseases(ModelSQL, ModelView):
     'Top Diseases'
     __name__ = 'gnuhealth.top_diseases'
 
-    disease = fields.Many2One('gnuhealth.pathology', 'Disease', select=True)
+    disease = fields.Many2One('gnuhealth.pathology', 'Disease')
     cases = fields.Integer('Cases')
 
     @classmethod
@@ -46,7 +46,7 @@ class TopDiseases(ModelSQL, ModelView):
             DiseaseGroupMembers = pool.get('gnuhealth.disease_group.members')
             diseasegroupmembers = DiseaseGroupMembers.__table__()
             join = Join(evaluation, diseasegroupmembers)
-            join.condition = join.right.name == evaluation.diagnosis
+            join.condition = join.right.disease == evaluation.diagnosis
             where &= join.right.disease_group == Transaction().context['group']
             source = join
 
@@ -90,16 +90,16 @@ class OpenTopDiseases(Wizard):
         'health_reporting.top_diseases_open_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
             Button('Open', 'open_', 'tryton-ok', default=True),
-            ])
+        ])
     open_ = StateAction('health_reporting.act_top_diseases_form')
 
     def do_open_(self, action):
         action['pyson_context'] = PYSONEncoder().encode({
-                'start_date': self.start.start_date,
-                'end_date': self.start.end_date,
-                'group': self.start.group.id if self.start.group else None,
-                'number_records': self.start.number_records,
-                })
+            'start_date': self.start.start_date,
+            'end_date': self.start.end_date,
+            'group': self.start.group.id if self.start.group else None,
+            'number_records': self.start.number_records,
+        })
         return action, {}
 
     def transition_open_(self):

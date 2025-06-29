@@ -1,142 +1,152 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-03-25 00:33+0000\n"
+"Last-Translator: nurikucukler <nurikucukler@noreply.codeberg.org>\n"
+"Language-Team: Turkish <https://translate.codeberg.org/projects/gnuhealth/health_calendar/tr/>\n"
+"Language: tr\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date_end:"
-msgid "End Date and Time"
-msgstr ""
+msgid "End"
+msgstr "Son"
 
 msgctxt "field:gnuhealth.appointment,event:"
 msgid "CalDAV Event"
-msgstr ""
+msgstr "Caldav Etkinliği"
 
 msgctxt ""
 "field:gnuhealth.calendar.create.appointment.start,appointment_minutes:"
 msgid "Appointment Minutes"
-msgstr ""
+msgstr "Randevu Dakikaları"
 
-#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,date_end:"
 msgid "End Date"
-msgstr "Aged Balance"
+msgstr "Bitiş Tarihi"
 
-#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,date_start:"
 msgid "Start Date"
-msgstr "Yazım Tarihi"
+msgstr "Başlangıç Tarihi"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,friday:"
 msgid "Friday"
-msgstr ""
+msgstr "Cuma"
 
-#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,healthprof:"
 msgid "Health Prof"
 msgstr "Sağlık Uzmanı"
 
-#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,institution:"
 msgid "Institution"
 msgstr "Kurum"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,monday:"
 msgid "Monday"
-msgstr ""
+msgstr "Pazartesi"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,saturday:"
 msgid "Saturday"
-msgstr ""
+msgstr "Cumartesi"
 
-#, fuzzy
 msgctxt "field:gnuhealth.calendar.create.appointment.start,specialty:"
 msgid "Specialty"
 msgstr "Uzmanlık"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,sunday:"
 msgid "Sunday"
-msgstr ""
+msgstr "Pazar"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,thursday:"
 msgid "Thursday"
-msgstr ""
+msgstr "Perşembe"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,time_end:"
 msgid "End Time"
-msgstr ""
+msgstr "Bitiş Zamanı"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,time_start:"
 msgid "Start Time"
-msgstr ""
+msgstr "Başlangıç Zamanı"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,tuesday:"
 msgid "Tuesday"
-msgstr ""
+msgstr "Salı"
 
 msgctxt "field:gnuhealth.calendar.create.appointment.start,wednesday:"
 msgid "Wednesday"
-msgstr ""
+msgstr "Çarşamba"
 
 msgctxt "field:res.user,calendar:"
 msgid "Calendar"
-msgstr ""
+msgstr "Takvim"
 
 msgctxt "field:res.user,use_caldav:"
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
+
+msgctxt "help:gnuhealth.appointment,appointment_date_end:"
+msgid "Appointment end date and time."
+msgstr "Randevu bitiş tarihi ve zamanı."
 
 msgctxt "help:gnuhealth.appointment,event:"
 msgid "Calendar Event"
-msgstr ""
+msgstr "Takvim Etkinliği"
 
 msgctxt "help:res.user,use_caldav:"
 msgid "The user has a CalDav account"
-msgstr ""
+msgstr "Kullanıcı CalDav hesabına sahip"
 
 msgctxt "model:gnuhealth.calendar.create.appointment.start,name:"
 msgid "Create Appointments Start"
-msgstr ""
+msgstr "Randevu Başlangıcı Yarat"
 
 msgctxt "model:ir.action,name:action_gnuhealth_appointment_calendar"
 msgid "Appointments Calendar"
-msgstr ""
+msgstr "Randevu Takvimi"
 
 msgctxt "model:ir.action,name:wizard_create_appointments"
 msgid "New Work Schedule"
-msgstr ""
+msgstr "Yeni Çalışma Planı"
 
 msgctxt "model:ir.message,text:msg_appointment_end_date_before_start"
 msgid ""
 "SM-CALENDAR-0004: The Appointment END date \"%(appointment_date_end)s\" is "
 "BEFORE the start date \"%(appointment_date)s\""
 msgstr ""
+"SM-CALENDAR-0004: Randevu son tarihi \"%(appointment_date_end)s\" başlangıç "
+"tarihinden \"%(appointment_date)s\" önce"
 
 msgctxt "model:ir.message,text:msg_end_before_start"
 msgid "SM-CALENDAR-002: End date before start"
-msgstr ""
+msgstr "SM-CALENDAR-002: Son tarih başlangıçtan önce"
 
 msgctxt "model:ir.message,text:msg_no_company_timezone"
 msgid ""
 "SM-CALENDAR-001: You need to define a timezone for this company before "
 "creating a work schedule"
 msgstr ""
+"SM-CALENDAR-001: İş tarifesi oluşturmadan önce bu firma için bir saat dilimi"
+" tanımlamalısınız"
 
 msgctxt "model:ir.message,text:msg_period_too_long"
 msgid "SM-CALENDAR-003: The schedule period should be less than 31 days"
-msgstr ""
+msgstr "SM-CALENDAR-003: Tarife periyodu 31 günden az olmalıdır"
 
 msgctxt "model:ir.ui.menu,name:menu_create_appointments"
 msgid "New Work Schedule"
-msgstr ""
+msgstr "Yeni Çalışma Planı"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_appointment_calendar"
 msgid "Appointments Calendar"
-msgstr ""
+msgstr "Randevu Takvimi"
 
 msgctxt "wizard_button:gnuhealth.calendar.create.appointment,start,create_:"
 msgid "Create"
-msgstr ""
+msgstr "Oluştur"
 
-#, fuzzy
 msgctxt "wizard_button:gnuhealth.calendar.create.appointment,start,end:"
 msgid "Cancel"
-msgstr "Cancel Moves"
+msgstr "İptal"

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -20,5 +20,9 @@ this repository contains the full copyright notices and license terms. -->
         <record model="ir.message" id="msg_no_pharmacy">
             <field name="text">You need to select a pharmacy</field>
         </record>
+        <record model="ir.message" id="msg_no_location_origin">
+            <field name="text">You need to select a stock location</field>
+        </record>
+
     </data>
 </tryton>

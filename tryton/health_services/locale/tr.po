@@ -74,11 +74,6 @@ msgid "From"
 msgstr "İtibaren"
 
 #, fuzzy
-msgctxt "field:gnuhealth.health_service.line,name:"
-msgid "Service"
-msgstr "Servis"
-
-#, fuzzy
 msgctxt "field:gnuhealth.health_service.line,product:"
 msgid "Product"
 msgstr "Ürün"
@@ -91,6 +86,11 @@ msgstr ""
 msgctxt "field:gnuhealth.health_service.line,remarks:"
 msgid "Remarks"
 msgstr "Açıklamalar"
+
+#, fuzzy
+msgctxt "field:gnuhealth.health_service.line,service:"
+msgid "Service"
+msgstr "Servis"
 
 #, fuzzy
 msgctxt "field:gnuhealth.health_service.line,to_date:"
@@ -323,10 +323,6 @@ msgid "From"
 msgstr "İtibaren"
 
 msgctxt "report:health_services.report:"
-msgid "Health Service ID:"
-msgstr ""
-
-msgctxt "report:health_services.report:"
 msgid "Health Service Report"
 msgstr ""
 
@@ -361,6 +357,10 @@ msgid "Service"
 msgstr "Servis"
 
 msgctxt "report:health_services.report:"
+msgid "Service ID:"
+msgstr ""
+
+msgctxt "report:health_services.report:"
 msgid "Tel:"
 msgstr ""
 
@@ -378,9 +378,10 @@ msgctxt "selection:gnuhealth.health_service,state:"
 msgid "Invoiced"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "No"
-msgstr ""
+msgstr "Notes"
 
 msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Unknown"
@@ -390,9 +391,10 @@ msgctxt "selection:gnuhealth.patient.evaluation,service_updated:"
 msgid "Yes"
 msgstr ""
 
+#, fuzzy
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "No"
-msgstr ""
+msgstr "Notes"
 
 msgctxt "selection:gnuhealth.prescription.order,service_updated:"
 msgid "Unknown"
@@ -447,10 +449,11 @@ msgctxt "view:gnuhealth.service.invoice.init:"
 msgid "Do you want to generate the Invoice(s) ?"
 msgstr ""
 
+#, fuzzy
 msgctxt ""
 "wizard_button:gnuhealth.service.invoice.create,start,create_service_invoice:"
 msgid "Create Invoice"
-msgstr ""
+msgstr "Invoices"
 
 #, fuzzy
 msgctxt "wizard_button:gnuhealth.service.invoice.create,start,end:"

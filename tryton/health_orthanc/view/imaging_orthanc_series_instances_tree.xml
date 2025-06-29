@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!--
+# SPDX-FileCopyrightText:  2024 - Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<tree>
+    <field name="instance_number"/>
+    <field name="image_position_patient" expand="1"/>
+    <field name="sop_instance_UID" expand="1"/>
+    <button name="attach_image_to_imaging_test_report"
+            help="Attach current image to the corresponding GNU Health imaging test report."
+            confirm="Do you want to attach current image to the corresponding GNU Health imaging test report?"
+            string="Add To RPT"/>
+</tree>

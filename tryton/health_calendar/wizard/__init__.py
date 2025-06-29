@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2014 Sebastian Marro <smarro@thymbra.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
@@ -8,7 +8,10 @@
 #                       GNU Health project                              #
 #                   https://www.gnuhealth.org                           #
 #########################################################################
-#                       HEALTH CALENDAR PACKAGE                         # 
+#                       HEALTH CALENDAR PACKAGE                         #
 #                __init__.py: Wizard declaration file                   #
 #########################################################################
-from .wizard_health_calendar import *
+from . import wizard_health_calendar
+
+
+__all__ = ['wizard_health_calendar']

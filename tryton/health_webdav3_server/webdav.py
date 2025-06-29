@@ -13,6 +13,7 @@ import encodings
 import uuid
 import datetime
 import socket
+import gettext
 from ast import literal_eval
 
 from dateutil.relativedelta import relativedelta
@@ -31,7 +32,7 @@ from .exceptions import InvalidAttachmentName
 
 __all__ = [
     'Collection', 'Share', 'Attachment',
-    ]
+]
 
 
 def get_webdav_url():
@@ -42,15 +43,17 @@ def get_webdav_url():
     hostname = config.get('webdav', 'hostname') or socket.getfqdn()
     hostname = '.'.join(encodings.idna.ToASCII(part).decode() for
                         part in hostname.split('.'))
-    return urllib.parse.urlunsplit((protocol, hostname,
-                                    urllib.parse.quote(Transaction().database.name + '/'),
-                                    '', ''))
+    return urllib.parse.urlunsplit(
+        (protocol, hostname,
+         urllib.parse.quote(
+             Transaction().database.name + '/'),
+         '', ''))
 
 
 class Collection(ModelSQL, ModelView):
     "Collection"
     __name__ = "webdav.collection"
-    name = fields.Char('Name', required=True, select=True)
+    name = fields.Char('Name', required=True)
     parent = fields.Many2One('webdav.collection', 'Parent',
                              ondelete='RESTRICT',
                              domain=[('model', '=', None)])
@@ -102,7 +105,7 @@ class Collection(ModelSQL, ModelView):
                 attachments = Attachment.search([
                     ('resource', '=', '%s,%s' %
                         (cls.__name__, collection.parent.id)),
-                    ])
+                ])
                 for attachment in attachments:
                     if attachment.name == collection.name:
                         raise InvalidAttachmentName(
@@ -139,7 +142,7 @@ class Collection(ModelSQL, ModelView):
             if collection_ids is None:
                 collections = cls.search([
                     ('parent', '=', object_id),
-                    ])
+                ])
                 collection_ids = []
                 if cache is not None:
                     cache['_parent2collection_ids'].setdefault(object_id, {})
@@ -190,7 +193,7 @@ class Collection(ModelSQL, ModelView):
                 if attachment_ids is None:
                     attachments = Attachment.search([
                         ('resource', '=', '%s,%s' % (object_name, object_id)),
-                        ])
+                    ])
                     key = (object_name, object_id)
                     attachment_ids = []
                     if cache is not None:
@@ -200,7 +203,7 @@ class Collection(ModelSQL, ModelView):
                             cache.setdefault('_model&id&name2attachment_ids',
                                              {})
                             cache['_model&id&name2attachment_ids'].setdefault(
-                                    key, {})
+                                key, {})
                             cache['_model&id&name2attachment_ids'][key]\
                                 .setdefault(attachment.name, [])
                             cache['_model&id&name2attachment_ids'][key][
@@ -233,7 +236,7 @@ class Collection(ModelSQL, ModelView):
                     return None, 0
                 reports = Report.search([
                     ('model', '=', object_name),
-                    ])
+                ])
                 for report in reports:
                     report_name = (report.name + '-' + str(report.id)
                                    + '.' + report.extension)
@@ -253,7 +256,7 @@ class Collection(ModelSQL, ModelView):
                 if attachment_ids is None:
                     attachments = Attachment.search([
                         ('resource', '=', '%s,%s' % (object_name, object_id)),
-                        ])
+                    ])
                     key = (object_name, object_id)
                     attachment_ids = []
                     if cache is not None:
@@ -294,7 +297,7 @@ class Collection(ModelSQL, ModelView):
         if not uri:
             collections = cls.search([
                 ('parent', '=', None),
-                ])
+            ])
             for collection in collections:
                 if '/' in collection.name:
                     continue
@@ -331,7 +334,7 @@ class Collection(ModelSQL, ModelView):
         if object_name not in ('ir.attachment', 'ir.action.report'):
             reports = Report.search([
                 ('model', '=', object_name),
-                ])
+            ])
             for report in reports:
                 report_name = (report.name + '-' + str(report.id)
                                + '.' + report.extension)
@@ -344,8 +347,8 @@ class Collection(ModelSQL, ModelView):
 
             Attachment = pool.get('ir.attachment')
             attachments = Attachment.search([
-                    ('resource', '=', '%s,%s' % (object_name, object_id)),
-                    ])
+                ('resource', '=', '%s,%s' % (object_name, object_id)),
+            ])
             for attachment in attachments:
                 if attachment.name and not attachment.link:
                     if '/' in attachment.name:
@@ -562,17 +565,17 @@ class Collection(ModelSQL, ModelView):
             name = get_urifilename(uri)
             try:
                 Attachment.create([{
-                            'name': name,
-                            'data': data,
-                            'resource': '%s,%s' % (object_name, object_id),
-                            }])
+                    'name': name,
+                    'data': data,
+                    'resource': '%s,%s' % (object_name, object_id),
+                }])
             except Exception:
                 raise DAV_Forbidden
         else:
             try:
                 Attachment.write(object_id2, {
                     'data': data,
-                    })
+                })
             except Exception:
                 raise DAV_Forbidden
         return
@@ -644,8 +647,8 @@ class Share(ModelSQL, ModelView):
     __name__ = 'webdav.share'
     _rec_name = 'key'
 
-    path = fields.Char('Path', required=True, select=True)
-    key = fields.Char('Key', required=True, select=True,
+    path = fields.Char('Path', required=True)
+    key = fields.Char('Key', required=True,
                       states={'readonly': True, })
     user = fields.Many2One('res.user', 'User', required=True)
     expiration_date = fields.Date('Expiration Date', required=True)
@@ -669,7 +672,8 @@ class Share(ModelSQL, ModelView):
                                     urllib.parse.urlunsplit(
                                         ('', '', urllib.
                                          parse.quote(self.path),
-                                         urllib.parse.urlencode([('key', self.key)]),
+                                         urllib.parse.urlencode(
+                                             [('key', self.key)]),
                                          '')))
 
     @staticmethod
@@ -685,8 +689,8 @@ class Share(ModelSQL, ModelView):
         Return the user id if succeed or None
         """
         shares = cls.search([
-                ('key', '=', key),
-                ])
+            ('key', '=', key),
+        ])
         if not shares:
             return None
         for share in shares:
@@ -702,9 +706,9 @@ class Attachment(ModelSQL, ModelView):
     url = fields.Function(fields.Char('URL'), 'get_url')
     shares = fields.Function(fields.One2Many('webdav.share', None, 'Shares',
                                              domain=[
-                                                    ('path', '=',
+                                                 ('path', '=',
                                                      Eval('path')),
-                                                    ],
+                                             ],
                                              depends=['path']),
                              'get_shares', 'set_shares')
 
@@ -749,8 +753,8 @@ class Attachment(ModelSQL, ModelView):
             resource2attachments.setdefault((model_name, record_id),
                                             []).append(attachment)
         collections = Collection.search([
-                ('model.model', 'in', list(resources.keys())),
-                ])
+            ('model.model', 'in', list(resources.keys())),
+        ])
         for collection in collections:
             model_name = collection.model.model
             Model = pool.get(model_name)
@@ -785,8 +789,8 @@ class Attachment(ModelSQL, ModelView):
         result = dict((a.id, []) for a in attachments)
         path2attachement = dict((a.path, a) for a in attachments)
         shares = Share.search([
-                ('path', 'in', list(path2attachement.keys())),
-                ])
+            ('path', 'in', list(path2attachement.keys())),
+        ])
         for share in shares:
             attachment = path2attachement[share.path]
             result[attachment.id].append(share.id)
@@ -819,7 +823,7 @@ class Attachment(ModelSQL, ModelView):
             'create': create,
             'write': write,
             'delete': delete,
-            }
+        }
         for value in values:
             action = value[0]
             args = value[1:]

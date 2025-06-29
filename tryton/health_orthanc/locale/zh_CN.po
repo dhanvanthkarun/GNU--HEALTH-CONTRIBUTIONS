@@ -1,106 +1,221 @@
 #
 msgid ""
-msgstr "Content-Type: text/plain; charset=utf-8\n"
+msgstr ""
+"PO-Revision-Date: 2025-04-24 00:33+0000\n"
+"Last-Translator: tumashu <tumashu@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://translate.codeberg.org/projects/gnuhealth/health_orthanc/zh_Hans/>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.2\n"
 
-msgctxt "field:gnuhealth.imaging.test,aetitle:"
-msgid "AETitle"
-msgstr "AETitle"
-
-msgctxt "field:gnuhealth.imaging.test,worklist_template:"
-msgid "Worklist template"
-msgstr "Worklist 模板"
-
-msgctxt "field:gnuhealth.imaging.test.request,computed_age:"
-msgid "Age"
-msgstr "年龄"
-
-msgctxt "field:gnuhealth.imaging.test.request,merge_id:"
-msgid "Merge ID"
-msgstr "合并ID"
-
-msgctxt "field:gnuhealth.imaging.test.request,show_worklist_text:"
-msgid "Worklist"
-msgstr "Worklist"
-
-msgctxt "field:gnuhealth.imaging.test.request,worklist_text:"
-msgid "Worklist text"
-msgstr "Worklist 文本"
-
-msgctxt "field:gnuhealth.imaging.test.result,merge_id:"
-msgid "Merge ID"
-msgstr "合并ID"
+msgctxt "field:gnuhealth.imaging.test.result,orthanc_studies:"
+msgid "Orthanc studies"
+msgstr "Orthanc 检查"
 
 msgctxt "field:gnuhealth.imaging.test.result,studies:"
 msgid "Orthanc studies"
 msgstr "Orthanc 检查"
 
-msgctxt "field:gnuhealth.orthanc.add.init,domain:"
+msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,domain:"
 msgid "URL"
-msgstr "URL"
+msgstr "URL地址"
 
-msgctxt "field:gnuhealth.orthanc.add.init,label:"
+msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,label:"
 msgid "Label"
 msgstr "标签"
 
-msgctxt "field:gnuhealth.orthanc.add.init,password:"
+msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,password:"
 msgid "Password"
 msgstr "密码"
 
-msgctxt "field:gnuhealth.orthanc.add.init,user:"
+msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,proxy_domain:"
+msgid "Proxy URL"
+msgstr "代理URL"
+
+msgctxt "field:gnuhealth.imaging_orthanc.orthanc_add_init_data,user:"
 msgid "Username"
 msgstr "用户名"
 
-msgctxt "field:gnuhealth.orthanc.add.result,result:"
+msgctxt "field:gnuhealth.imaging_orthanc.series_instances,image:"
+msgid "Image"
+msgstr "影像图片"
+
+msgctxt ""
+"field:gnuhealth.imaging_orthanc.series_instances,image_position_patient:"
+msgid "Image Position"
+msgstr "图像位置"
+
+msgctxt "field:gnuhealth.imaging_orthanc.series_instances,instance_number:"
+msgid "Instance Number"
+msgstr "实例编号"
+
+msgctxt "field:gnuhealth.imaging_orthanc.series_instances,orthanc_UID:"
+msgid "Orthanc UID"
+msgstr "Orthanc UID"
+
+msgctxt "field:gnuhealth.imaging_orthanc.series_instances,series:"
+msgid "Series"
+msgstr "序列"
+
+msgctxt "field:gnuhealth.imaging_orthanc.series_instances,server:"
+msgid "Server"
+msgstr "服务器"
+
+msgctxt "field:gnuhealth.imaging_orthanc.series_instances,sop_instance_UID:"
+msgid "SOP Instance UID"
+msgstr "SOP 实例 UID"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,date:"
+msgid "Date"
+msgstr "日期"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,gnuhealth_patient_name:"
+msgid "Health Patient"
+msgstr "Health 患者"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,imaging_test:"
 msgid "Result"
-msgstr "结果"
+msgstr "检查结果"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,institution:"
+msgid "Institution"
+msgstr "医疗机构"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,link_base_url:"
+msgid "Link Base URL"
+msgstr "基础 URL 链接地址"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,merge_comment:"
+msgid "Merge Comment"
+msgstr "合并说明"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,merge_id:"
+msgid "Merge ID"
+msgstr "合并编号"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,notes:"
+msgid "Study notes"
+msgstr "检查记录"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,ohif_viewer_link:"
+msgid "OHIF Viewer"
+msgstr "OHIF 浏览器"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,orthanc_UID:"
+msgid "Orthanc UID"
+msgstr "Orthanc UID"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,patient:"
+msgid "Patient"
+msgstr "患者"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,patient_id:"
+msgid "Patient ID"
+msgstr "患者编号"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,patient_name:"
+msgid "Orthanc Patient"
+msgstr "Orthanc 患者"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,performing_physician_name:"
+msgid "Physician"
+msgstr "医生"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,series:"
+msgid "Study Series"
+msgstr "检查序列"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,server:"
+msgid "Orthanc Server"
+msgstr "Orthanc 服务器"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,stone_viewer_link:"
+msgid "Stone Viewer"
+msgstr "Stone 浏览器"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study,study_instance_UID:"
+msgid "Study UID"
+msgstr "检查 UID"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,instances:"
+msgid "Series Instance"
+msgstr "序列实例"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,modality:"
+msgid "Modality"
+msgstr "成像设备"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,notes:"
+msgid "Series notes"
+msgstr "序列记录"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,orthanc_UID:"
+msgid "Orthanc UID"
+msgstr "Orthanc UID"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,series_UID:"
+msgid "Series UID"
+msgstr "序列 UID"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,series_description:"
+msgid "Description"
+msgstr "序列说明"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,series_number:"
+msgid "Series No."
+msgstr "序列编号"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,server:"
+msgid "Server"
+msgstr "服务器"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,stone_viewer_link:"
+msgid "Stone Viewer"
+msgstr "Stone 浏览器"
+
+msgctxt "field:gnuhealth.imaging_orthanc.study_series,study:"
+msgid "Study"
+msgstr "检查"
+
+msgctxt ""
+"field:gnuhealth.imaging_orthanc.upload_image_data.start,data_to_upload:"
+msgid "File to upload"
+msgstr "待上传文件"
+
+msgctxt ""
+"field:gnuhealth.imaging_orthanc.upload_image_data.start,server_config:"
+msgid "Server"
+msgstr "服务器"
 
 msgctxt "field:gnuhealth.orthanc.config,domain:"
 msgid "URL"
-msgstr "URL"
+msgstr "URL地址"
 
 msgctxt "field:gnuhealth.orthanc.config,label:"
 msgid "Label"
 msgstr "标签"
 
-msgctxt "field:gnuhealth.orthanc.config,last:"
-msgid "Last Index"
-msgstr "最近一次索引"
+msgctxt "field:gnuhealth.orthanc.config,last_changed_index:"
+msgid "Last Changed Index"
+msgstr "上次更改索引"
 
 msgctxt "field:gnuhealth.orthanc.config,link:"
-msgid "URL"
-msgstr "URL"
+msgid "Link"
+msgstr "链接"
+
+msgctxt "field:gnuhealth.orthanc.config,link_base_url:"
+msgid "Link Base URL"
+msgstr "基地址 URL"
 
 msgctxt "field:gnuhealth.orthanc.config,password:"
 msgid "Password"
 msgstr "密码"
 
-msgctxt "field:gnuhealth.orthanc.config,patients:"
-msgid "Patients"
-msgstr "患者"
-
-msgctxt "field:gnuhealth.orthanc.config,since_sync:"
-msgid "Since last sync"
-msgstr "上次同步后"
-
-msgctxt "field:gnuhealth.orthanc.config,since_sync_readable:"
-msgid "Since last sync"
-msgstr "上次同步后"
-
-msgctxt "field:gnuhealth.orthanc.config,studies:"
-msgid "Studies"
-msgstr "检查"
-
-msgctxt "field:gnuhealth.orthanc.config,sync_time:"
-msgid "Sync Time"
-msgstr "同步时间"
-
-msgctxt "field:gnuhealth.orthanc.config,use_osimis_viewer:"
-msgid "Use Osimis Viewer"
-msgstr "使用 Osimis 浏览器"
-
-msgctxt "field:gnuhealth.orthanc.config,use_stone_viewer:"
-msgid "Use Stone Viewer"
-msgstr "使用 Stone 浏览器"
+msgctxt "field:gnuhealth.orthanc.config,proxy_domain:"
+msgid "Proxy URL"
+msgstr "代理 URL"
 
 msgctxt "field:gnuhealth.orthanc.config,user:"
 msgid "Username"
@@ -166,13 +281,17 @@ msgctxt "field:gnuhealth.orthanc.study,institution:"
 msgid "Institution"
 msgstr "检查机构"
 
-msgctxt "field:gnuhealth.orthanc.study,link:"
-msgid "URL"
-msgstr "URL"
-
 msgctxt "field:gnuhealth.orthanc.study,merge_id:"
 msgid "Merge ID"
 msgstr "合并 ID"
+
+msgctxt "field:gnuhealth.orthanc.study,ohif_viewer_link:"
+msgid "OHIF Viewer"
+msgstr "OHIF 浏览器"
+
+msgctxt "field:gnuhealth.orthanc.study,orthanc_explorer_link:"
+msgid "Orthanc Explorer"
+msgstr "Orthanc 浏览器"
 
 msgctxt "field:gnuhealth.orthanc.study,patient:"
 msgid "Patient"
@@ -194,99 +313,118 @@ msgctxt "field:gnuhealth.orthanc.study,server:"
 msgid "Server"
 msgstr "服务器"
 
+msgctxt "field:gnuhealth.orthanc.study,stone_viewer_link:"
+msgid "Stone Viewer"
+msgstr "Stone 浏览器"
+
 msgctxt "field:gnuhealth.orthanc.study,uuid:"
 msgid "UUID"
 msgstr "检查 UUID"
-
-msgctxt "field:gnuhealth.orthanc.worklist.template,comment:"
-msgid "Comment"
-msgstr "说明"
-
-msgctxt "field:gnuhealth.orthanc.worklist.template,dump_file_encoding:"
-msgid "Encoding"
-msgstr "编码"
-
-msgctxt "field:gnuhealth.orthanc.worklist.template,name:"
-msgid "Name"
-msgstr "名称"
-
-msgctxt "field:gnuhealth.orthanc.worklist.template,template:"
-msgid "Template"
-msgstr "模版"
 
 msgctxt "field:gnuhealth.patient,orthanc_patients:"
 msgid "Orthanc patients"
 msgstr "Orthanc 患者"
 
-msgctxt "help:gnuhealth.imaging.test,aetitle:"
-msgid ""
-"AETitle string, used as (0040,0001) ScheduledStationAETitle tag in worklist "
-"template."
-msgstr "AETitle字符串, 用于 worklist 模板中 (0040,0001) ScheduledStationAETitle tag。"
+msgctxt "field:gnuhealth.patient,orthanc_studies:"
+msgid "Orthanc Study"
+msgstr "Orthanc 检查"
 
-msgctxt "help:gnuhealth.imaging.test.request,computed_age:"
-msgid "Computed patient age at image request."
-msgstr "申请年龄。"
+msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,domain:"
+msgid "The full URL of the Orthanc server. Must be unique"
+msgstr "Orthanc 服务器完整 URL 地址，此地址不能重复"
 
-msgctxt "help:gnuhealth.orthanc.add.init,domain:"
-msgid "The full URL of the Orthanc server"
-msgstr "Orthanc 服务器完整 URL"
-
-msgctxt "help:gnuhealth.orthanc.add.init,label:"
+msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,label:"
 msgid "The label of the Orthanc server. Must be unique"
-msgstr "Orthanc 服务器标签，不能重复"
+msgstr "Orthanc 服务器标签，此地址不能重复"
 
-msgctxt "help:gnuhealth.orthanc.add.init,password:"
+msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,password:"
 msgid "Password for Orthanc REST server"
 msgstr "Orthanc REST 服务器密码"
 
-msgctxt "help:gnuhealth.orthanc.add.init,user:"
+msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,proxy_domain:"
+msgid ""
+"Optional Proxy URL of the Orthanc server. It's only needed when the client "
+"cannot connect directly to the Orthanc server."
+msgstr "Orthanc 服务器的代理 URL 地址(可选项)。当客户端无法直接连接到 Orthanc 服务器时，可能需要设置此选项。"
+
+msgctxt "help:gnuhealth.imaging_orthanc.orthanc_add_init_data,user:"
 msgid "Username for Orthanc REST server"
 msgstr "Orthanc REST 服务器用户名"
 
-msgctxt "help:gnuhealth.orthanc.add.result,result:"
-msgid "Information"
-msgstr "信息"
+msgctxt "help:gnuhealth.imaging_orthanc.series_instances,series:"
+msgid "Study series instance"
+msgstr "检查序列实例"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,link_base_url:"
+msgid "Base URL for links"
+msgstr "基础 URL 链接地址"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,merge_id:"
+msgid ""
+"Test result merge id, with it help, gnuhealth test result and orthanc study "
+"can be merged."
+msgstr "检查结果合并编号, 这个编号可以让 gnuhealth 检查结果和 orthanc 检查合并。"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,notes:"
+msgid "Extra Information"
+msgstr "其它信息"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,ohif_viewer_link:"
+msgid "Link to Orthanc OHIF Viewer"
+msgstr "到 Orthanc OHIF 浏览器的链接"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,patient:"
+msgid "Patient Name"
+msgstr "患者姓名"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study,stone_viewer_link:"
+msgid "Link to Orthanc Stone Viewer"
+msgstr "到 Orthanc Stone 浏览器的链接"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study_series,notes:"
+msgid "Extra Information"
+msgstr "其它信息"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study_series,stone_viewer_link:"
+msgid "Link to Orthanc Stone Viewer"
+msgstr "到 Orthanc Stone 浏览器的链接"
+
+msgctxt "help:gnuhealth.imaging_orthanc.study_series,study:"
+msgid "Patient study series"
+msgstr "患者检查序列"
+
+msgctxt ""
+"help:gnuhealth.imaging_orthanc.upload_image_data.start,server_config:"
+msgid "Orthanc server"
+msgstr "Orthanc 服务器"
 
 msgctxt "help:gnuhealth.orthanc.config,domain:"
 msgid "The full URL of the Orthanc server"
-msgstr "Orthanc 服务器完整 URL"
+msgstr "Orthanc 服务器完整 URL 地址，此地址不能重复"
 
 msgctxt "help:gnuhealth.orthanc.config,label:"
-msgid "Label for server (eg., remote1)"
-msgstr "服务器标签（比如： remote1）"
+msgid "Label for server (eg., remote)"
+msgstr "服务器标签（比如：remote）"
 
-msgctxt "help:gnuhealth.orthanc.config,last:"
+msgctxt "help:gnuhealth.orthanc.config,last_changed_index:"
 msgid "Index of last change"
-msgstr "上次更改的索引"
+msgstr "上次更改索引"
 
 msgctxt "help:gnuhealth.orthanc.config,link:"
-msgid "Link to server in Orthanc Explorer"
-msgstr "Orthanc 浏览器链接"
+msgid "Link to Orthanc Explorer"
+msgstr "链接到 Orthanc 浏览器"
+
+msgctxt "help:gnuhealth.orthanc.config,link_base_url:"
+msgid "Base URL for links"
+msgstr "基础 URL 链接地址"
 
 msgctxt "help:gnuhealth.orthanc.config,password:"
 msgid "Password for Orthanc REST server"
 msgstr "Orthanc REST 服务器密码"
 
-msgctxt "help:gnuhealth.orthanc.config,since_sync:"
-msgid "Time since last sync"
-msgstr "距离上次同步的时间"
-
-msgctxt "help:gnuhealth.orthanc.config,since_sync_readable:"
-msgid "Time since last sync"
-msgstr "距离上次同步的时间"
-
-msgctxt "help:gnuhealth.orthanc.config,sync_time:"
-msgid "Time of last server sync"
-msgstr "服务器上次同步时间"
-
-msgctxt "help:gnuhealth.orthanc.config,use_osimis_viewer:"
-msgid "Use Osimis Web Viewer"
-msgstr "使用 Osimis Web 浏览器"
-
-msgctxt "help:gnuhealth.orthanc.config,use_stone_viewer:"
-msgid "Use Stone Web Viewer"
-msgstr "使用 Stone Web 浏览器"
+msgctxt "help:gnuhealth.orthanc.config,proxy_domain:"
+msgid "The proxy URL of the Orthanc server"
+msgstr "Orthanc 服务器代理 URL 地址"
 
 msgctxt "help:gnuhealth.orthanc.config,user:"
 msgid "Username for Orthanc REST server"
@@ -294,7 +432,7 @@ msgstr "Orthanc REST 服务器帐户"
 
 msgctxt "help:gnuhealth.orthanc.config,validated:"
 msgid "Whether the server details have been successfully checked"
-msgstr "是否已成功检查服务器详细信息"
+msgstr "服务器设置测试成功与否。"
 
 msgctxt "help:gnuhealth.orthanc.patient,link:"
 msgid "Link to patient in Orthanc Explorer"
@@ -308,98 +446,137 @@ msgctxt "help:gnuhealth.orthanc.study,institution:"
 msgid "Imaging center where study was undertaken"
 msgstr "负责检查的影像中心"
 
-msgctxt "help:gnuhealth.orthanc.study,link:"
-msgid "Link to study in Orthanc Explorer"
-msgstr "链接到 Orthanc 浏览器对应的检查页面"
-
 msgctxt "help:gnuhealth.orthanc.study,merge_id:"
 msgid ""
 "Test result merge id, with it help, gnuhealth test result and orthanc study "
 "can be merged."
 msgstr "检查结果合并 id，通过它可以将 gnuhealth 检查结果和 orthanc study 信息合并。"
 
-msgctxt "help:gnuhealth.orthanc.worklist.template,dump_file_encoding:"
-msgid ""
-"Encoding used to save worklist text to dump file by python script, it should"
-" work well with (0008,0005) dicom tag of worklist template, for example: if "
-"(0008,0005) = [ISO_IR 192], encoding should be \"utf-8\", if (0008,0005) = "
-"[GBK], encoding should be \"gbk\". "
-msgstr ""
-"python脚本将 worklist文本保存为 dump 文件时使用的编码，这个编码需要与 worklist 模板中的 (0008,0005) "
-"dicom tag 配合使用，比如：如果 (0008,0005) = [ISO_IR 192], 那么编码应该使用 \"utf-8\", 如果 "
-"(0008,0005) = [GBK], 那么编码应该使用 \"gbk\"。 "
+msgctxt "help:gnuhealth.orthanc.study,ohif_viewer_link:"
+msgid "Link to study in OHIF Viewer."
+msgstr "链接到 OHIF 浏览器对应的检查页面."
 
-msgctxt "help:gnuhealth.orthanc.worklist.template,name:"
-msgid "Worklist template name"
-msgstr "Worklist 模板名称"
+msgctxt "help:gnuhealth.orthanc.study,orthanc_explorer_link:"
+msgid "Link to study in Orthanc Explorer."
+msgstr "链接到 Orthanc 浏览器对应的检查页面."
 
-msgctxt "help:gnuhealth.orthanc.worklist.template,template:"
-msgid ""
-"Genshi syntax template used to create worklist text, with dump2dcm command "
-"of dcmtk help, worklist text file can be converted to a .wl file."
-msgstr ""
-"生成 worklist 文本的 Genshi 语法模板，使用 dcmtk 包中的 dump2dcm 命令，可以将生成的 worklist "
-"文本文件转换为对应的 .wl 文件。"
+msgctxt "help:gnuhealth.orthanc.study,stone_viewer_link:"
+msgid "Link to study in Stone Viewer."
+msgstr "链接到 Stone 浏览器对应的检查页面."
 
-msgctxt "model:gnuhealth.orthanc.add.init,name:"
-msgid "Init Full Orthanc Sync"
-msgstr "Orthanc 全量同步初始化"
+msgctxt "model:gnuhealth.imaging_orthanc.full_synchronize.start,name:"
+msgid "Full Synchronize studies Start"
+msgstr "检查数据完全同步开始"
 
-msgctxt "model:gnuhealth.orthanc.add.result,name:"
-msgid "Display Result"
-msgstr "显示结果"
+msgctxt "model:gnuhealth.imaging_orthanc.get_new_studies.start,name:"
+msgid "Get New Studies Start"
+msgstr "获取新检查数据开始"
+
+msgctxt "model:gnuhealth.imaging_orthanc.orthanc_add_init_data,name:"
+msgid "Init data for Orthanc connection"
+msgstr "Orthanc 连接的初始化数据"
+
+msgctxt "model:gnuhealth.imaging_orthanc.series_instances,name:"
+msgid "Series Instance"
+msgstr "序列实例"
+
+msgctxt "model:gnuhealth.imaging_orthanc.study,name:"
+msgid "Patient Orthanc Study"
+msgstr "患者 Orthanc 检查"
+
+msgctxt "model:gnuhealth.imaging_orthanc.study_series,name:"
+msgid "Study Series"
+msgstr "检查序列"
+
+msgctxt "model:gnuhealth.imaging_orthanc.upload_image_data.start,name:"
+msgid "Upload Image Data Start"
+msgstr "上传影像图片开始"
 
 msgctxt "model:gnuhealth.orthanc.config,name:"
-msgid "Orthanc server details"
-msgstr "Orthanc 服务器详细信息"
+msgid "Orthanc Server Config"
+msgstr "Orthanc 服务器设置"
 
 msgctxt "model:gnuhealth.orthanc.patient,name:"
 msgid "Orthanc patient information"
 msgstr "Orthanc 患者信息"
 
 msgctxt "model:gnuhealth.orthanc.study,name:"
-msgid "Defines an Orthanc Study."
-msgstr "定义一个 Orthanc Study."
+msgid "DEPRECATED IN GH 5.0 by PatientOrthancStudy"
+msgstr "PatientOrthancStudy 类 GH 5.0 时废弃"
 
-msgctxt "model:gnuhealth.orthanc.worklist.template,name:"
-msgid "Orthanc Worklist Template"
-msgstr "Orthanc Worklist 模板"
+msgctxt "model:ir.action,name:act_full_synchronize"
+msgid "Orthanc: Full Synchronize"
+msgstr "Orthanc: 全量同步"
 
-msgctxt "model:ir.action,name:act_orthanc_patient_view"
+msgctxt "model:ir.action,name:act_get_new_Studies"
+msgid "Orthanc: Get New Studies"
+msgstr "Orthanc: 获取新检查"
+
+msgctxt "model:ir.action,name:act_imaging_orthanc_patient_view"
 msgid "Patients"
 msgstr "患者"
 
-msgctxt "model:ir.action,name:act_orthanc_server_view"
-msgid "Servers"
-msgstr "服务器列表"
+msgctxt "model:ir.action,name:act_imaging_orthanc_study_series_view"
+msgid "Series"
+msgstr "序列"
 
-msgctxt "model:ir.action,name:act_orthanc_study_view"
+msgctxt "model:ir.action,name:act_imaging_orthanc_study_view"
 msgid "Studies"
 msgstr "检查"
 
-msgctxt "model:ir.action,name:act_orthanc_worklist_template_view"
-msgid "Worklist templates"
-msgstr "Worklist 模板"
+msgctxt "model:ir.action,name:act_orthanc_server_view"
+msgid "Servers"
+msgstr "服务器"
 
-msgctxt "model:ir.action,name:act_relate_orthanc_studies"
-msgid "Orthanc Studies"
-msgstr "Orthanc 检查"
+msgctxt "model:ir.action,name:act_upload_image_data"
+msgid "Orthanc: Upload DICOM Files"
+msgstr "Orthanc: 上传 DICOM 文件"
 
-msgctxt "model:ir.action,name:orthanc_add_server_init"
-msgid "Add Orthanc Server"
-msgstr "添加 Orthanc 服务器"
+msgctxt "model:ir.action,name:orthanc_add_server_init_data"
+msgid "Add New Server"
+msgstr "添加新服务器"
 
-msgctxt "model:ir.cron,name:"
-msgid "Sync Orthanc servers"
-msgstr "同步 Orthanc 服务器"
+msgctxt "model:ir.message,text:msg_find_no_gnuhealth_imaging_test"
+msgid ""
+"Can not find the corresponding GNU Health imaging test to attach this image."
+msgstr "没有找到相应的 GNU Health 影像检查来附加当前影像图片。"
 
-msgctxt "model:ir.model.button,string:server_sync_button"
-msgid "Sync"
-msgstr "同步"
+msgctxt "model:ir.message,text:msg_label_image_position"
+msgid "Image Position Patient:"
+msgstr "影像图片患者位置:"
 
-msgctxt "model:ir.ui.menu,name:orthanc_add_server_menu"
-msgid "Add Orthanc Server"
-msgstr "添加 Orthanc 服务器"
+msgctxt "model:ir.message,text:msg_label_instance_number"
+msgid "Instance Number:"
+msgstr "序列实例号:"
+
+msgctxt "model:ir.model.button,string:button_imaging_orthanc_delete_series"
+msgid "Delete Series"
+msgstr "删除序列"
+
+msgctxt "model:ir.model.button,string:button_imaging_orthanc_delete_study"
+msgid "Delete Study"
+msgstr "删除检查"
+
+msgctxt ""
+"model:ir.model.button,string:button_imaging_orthanc_series_instances_attach_image_to_imaging_test_report"
+msgid "Attach To Report"
+msgstr "附加到报告"
+
+msgctxt "model:ir.model.button,string:remove_config_server_button"
+msgid "Remove Config Server"
+msgstr "删除服务器配置"
+
+msgctxt "model:ir.ui.menu,name:imaging_orthanc_add_server_menu"
+msgid "Add New Server"
+msgstr "添加新服务器"
+
+msgctxt "model:ir.ui.menu,name:imaging_orthanc_menu_patient_view"
+msgid "Patients"
+msgstr "患者"
+
+msgctxt "model:ir.ui.menu,name:imaging_orthanc_menu_study_view"
+msgid "Studies"
+msgstr "检查"
 
 msgctxt "model:ir.ui.menu,name:orthanc_config_menu"
 msgid "Orthanc"
@@ -409,122 +586,191 @@ msgctxt "model:ir.ui.menu,name:orthanc_menu"
 msgid "Orthanc"
 msgstr "Orthanc 集成"
 
-msgctxt "model:ir.ui.menu,name:orthanc_menu_patient_view"
-msgid "Patients"
-msgstr "患者"
-
-msgctxt "model:ir.ui.menu,name:orthanc_menu_study_view"
-msgid "Studies"
-msgstr "检查"
-
-msgctxt "model:ir.ui.menu,name:orthanc_server_menu"
+msgctxt "model:ir.ui.menu,name:orthanc_servers_menu"
 msgid "Servers"
-msgstr "服务器列表"
+msgstr "服务器"
 
-msgctxt "model:ir.ui.menu,name:orthanc_worklist_template_menu"
-msgid "Worklist templates"
-msgstr "Worklist 模板"
+msgctxt "model:res.group,name:group_imaging_orthanc"
+msgid "Health Imaging Orthanc"
+msgstr "Health 影像 Orthanc 集成"
 
-msgctxt "selection:ir.cron,method:"
-msgid "Orthanc: Sync studies"
-msgstr "Orthanc: 同步 studies"
+msgctxt "model:res.group,name:group_imaging_orthanc_admin"
+msgid "Health Imaging Orthanc Administration"
+msgstr "Health 影像 Orthanc 管理"
 
 msgctxt "view:gnuhealth.imaging.test.result:"
-msgid "Studies"
-msgstr "检查"
+msgid "Orthanc"
+msgstr "Orthanc 集成"
 
-msgctxt "view:gnuhealth.orthanc.add.init:"
+msgctxt "view:gnuhealth.imaging_orthanc.full_synchronize.start:"
+msgid ""
+"Full Synchronize Studies? Please be patient as this process may take some "
+"time!"
+msgstr "是否启动检查数据全量同步？注意，同步过程比较耗时，请耐心等待！"
+
+msgctxt "view:gnuhealth.imaging_orthanc.get_new_studies.start:"
+msgid "Get updated image data that has changed since the last update?"
+msgstr "是否获取上次更新之后的所有影像图片数据？"
+
+msgctxt "view:gnuhealth.imaging_orthanc.orthanc_add_init_data:"
 msgid " "
 msgstr " "
 
-msgctxt "view:gnuhealth.orthanc.add.init:"
-msgid "Server information"
+msgctxt "view:gnuhealth.imaging_orthanc.orthanc_add_init_data:"
+msgid "Server Information"
 msgstr "服务器信息"
 
-msgctxt "view:gnuhealth.orthanc.add.init:"
+msgctxt "view:gnuhealth.imaging_orthanc.orthanc_add_init_data:"
 msgid "User credentials"
 msgstr "用户凭证"
 
+msgctxt "view:gnuhealth.imaging_orthanc.series_instances:"
+msgid "Add To RPT"
+msgstr "附到报告"
+
+msgctxt "view:gnuhealth.imaging_orthanc.series_instances:"
+msgid ""
+"Attach current image to the corresponding GNU Health imaging test report."
+msgstr "将当前影像图片附加到相应的 GNU Health 影像检查报告中。"
+
+msgctxt "view:gnuhealth.imaging_orthanc.series_instances:"
+msgid ""
+"Do you want to attach current image to the corresponding GNU Health imaging "
+"test report?"
+msgstr "是否将当前影像图片附加到相应的 GNU Health 影像检查报告中？"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Delete study from remote orthanc server."
+msgstr "从远程 orthanc 服务器中删除此检查数据"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Do you really want to delete the study from remote orthanc server?"
+msgstr "确定要从远程 orthanc 服务器中删除此检查数据吗？"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "GNU Health"
+msgstr "GNU Health"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "GNU Health Patient"
+msgstr "GNU Health 患者"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Orthanc"
+msgstr "Orthanc"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Orthanc: Delete Study"
+msgstr "Orthanc: 删除检查"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Patient:"
+msgstr "患者:"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Study Content"
+msgstr "检查内容"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study:"
+msgid "Study Notes"
+msgstr "检查记录"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study_series:"
+msgid "Delele"
+msgstr "删除"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study_series:"
+msgid "Delete study series from remote orthanc server."
+msgstr "从远程 orthanc 服务器中删除检查序列。"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study_series:"
+msgid ""
+"Do you really want to delete the series from remote orthanc server? After "
+"deleting your selected series, remember to click 'Reload' to refresh the "
+"table if there are empty rows left!"
+msgstr "确定要从远程 orthanc 服务器中删除这些检查序列吗？删除后如果不界面显示，请点击“刷新”按钮。"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study_series:"
+msgid "Series"
+msgstr "序列"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study_series:"
+msgid "Series Notes"
+msgstr "序列记录"
+
+msgctxt "view:gnuhealth.imaging_orthanc.study_series:"
+msgid "Viewers"
+msgstr "浏览器"
+
+msgctxt "view:gnuhealth.imaging_orthanc.upload_image_data.start:"
+msgid "Upload the DICOM files to Orthanc?"
+msgstr "确定要将这些 DICOM 文件上传到 Orthanc 服务器？"
+
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid " "
 msgstr " "
 
 msgctxt "view:gnuhealth.orthanc.config:"
+msgid "Do you really want to remove the server configuration?"
+msgstr "确定要删除服务器设置吗？"
+
+msgctxt "view:gnuhealth.orthanc.config:"
 msgid "General"
-msgstr "常规"
+msgstr "一般情况"
 
 msgctxt "view:gnuhealth.orthanc.config:"
-msgid "Server information"
+msgid "Link"
+msgstr "链接"
+
+msgctxt "view:gnuhealth.orthanc.config:"
+msgid "Remove Configured Server"
+msgstr "删除服务器设置"
+
+msgctxt "view:gnuhealth.orthanc.config:"
+msgid "Remove the server configuration"
+msgstr "删除服务器设置"
+
+msgctxt "view:gnuhealth.orthanc.config:"
+msgid "Server Information"
 msgstr "服务器信息"
-
-msgctxt "view:gnuhealth.orthanc.config:"
-msgid "Sync"
-msgstr "同步"
-
-msgctxt "view:gnuhealth.orthanc.config:"
-msgid "Synchronize from Orthanc server"
-msgstr "与 Orthanc 服务器同步"
-
-msgctxt "view:gnuhealth.orthanc.config:"
-msgid "Synchronize?"
-msgstr "是否同步?"
 
 msgctxt "view:gnuhealth.orthanc.config:"
 msgid "User"
 msgstr "用户"
 
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid " "
-msgstr " "
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health"
-msgstr "GNU Health"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "GNU Health patient"
-msgstr "GNU Health 患者"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "General"
-msgstr "常规"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc"
-msgstr "Orthanc"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc PatientID"
-msgstr "Orthanc 患者 ID"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Orthanc patient"
-msgstr "Orthanc 患者"
-
-msgctxt "view:gnuhealth.orthanc.patient:"
-msgid "Studies"
-msgstr "检查"
-
-msgctxt "view:gnuhealth.orthanc.study:"
-msgid " "
-msgstr " "
-
-msgctxt "view:gnuhealth.orthanc.study:"
-msgid "GNU Health"
-msgstr "GNU Health"
-
-msgctxt "view:gnuhealth.orthanc.study:"
-msgid "Orthanc"
-msgstr "Orthanc"
-
-msgctxt "wizard_button:gnuhealth.orthanc.wizard.full_sync,result,end:"
-msgid "Close"
-msgstr "关闭"
-
-msgctxt "wizard_button:gnuhealth.orthanc.wizard.full_sync,start,end:"
+msgctxt "wizard_button:gnuhealth.imaging_orthanc.full_synchronize,start,end:"
 msgid "Cancel"
 msgstr "取消"
 
-msgctxt "wizard_button:gnuhealth.orthanc.wizard.full_sync,start,first_sync:"
-msgid "Begin"
+msgctxt ""
+"wizard_button:gnuhealth.imaging_orthanc.full_synchronize,start,synchronize:"
+msgid "Synchronize"
+msgstr "同步"
+
+msgctxt "wizard_button:gnuhealth.imaging_orthanc.get_new_studies,start,end:"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt ""
+"wizard_button:gnuhealth.imaging_orthanc.get_new_studies,start,update:"
+msgid "Start"
 msgstr "开始"
+
+msgctxt "wizard_button:gnuhealth.imaging_orthanc.upload_image_data,start,end:"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt ""
+"wizard_button:gnuhealth.imaging_orthanc.upload_image_data,start,upload:"
+msgid "Upload Image Data"
+msgstr "上传影像图片"
+
+msgctxt ""
+"wizard_button:gnuhealth.imaging_orthanc.wizard.orthanc_new_connect,start,connect:"
+msgid "Connect"
+msgstr "连接"
+
+msgctxt ""
+"wizard_button:gnuhealth.imaging_orthanc.wizard.orthanc_new_connect,start,end:"
+msgid "Cancel"
+msgstr "取消"

@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2024 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2024 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <data>
-    <xpath expr="/form/notebook/page[@id=&quot;general_info&quot;]" position="after">
+    <xpath expr="/form/notebook/page[@id=&quot;patient_family&quot;]" position="after">
         <page string="Genetics" id="patient_genetics">
             <field name="genetic_risks"/>
-            <field name="family_history"/>
         </page>
     </xpath>
 </data>
