@@ -6,8 +6,8 @@
 
 # This ci is used to backport po files in devel branch to main branch.
 
-# depends_on:
-#   - po-export
+depends_on:
+  - po-export
 
 
 steps:
@@ -73,7 +73,7 @@ steps:
   - name: push-po-changes-to-po-backport-branch
     image: appleboy/drone-git-push
     settings:
-      path: tmp/his-git
+      path: tmp/his-main-git
       remote: git@codeberg.org:gnuhealth/his.git
       ssh_key:
         from_secret: ssh_deploy_key
