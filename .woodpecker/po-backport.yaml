@@ -6,8 +6,8 @@
 
 # This ci is used to backport po files in devel branch to main branch.
 
-depends_on:
-  - po-export
+# depends_on:
+#   - po-export
 
 
 steps:
@@ -59,7 +59,7 @@ steps:
       - apt-get update -y
       # installing packages in woodpecker of codeberg.org is very
       # slow, so just install packages necessary.
-      - apt-get install -y --no-install-recommends git gettext
+      - apt-get install -y --no-install-recommends git gettext python
       - git config --global user.email "po-backport@po-backport.invalid"
       - git config --global user.name "po-backport"
       # We git clone his.git and his-utils.git to 'tmp' directory.
@@ -81,5 +81,5 @@ steps:
       force: true
       commit: false
     when:
-      - branch: [po-backport]
+      - branch: [devel, translate]
         event: [push, manual]
