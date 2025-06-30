@@ -22,7 +22,7 @@ steps:
       partial: true
       lfs: false
     when:
-      - branch: [devel, translate, ci-test]
+      - branch: [translate]
         event: [push, manual]
 
   - name: clone-his-main-branch
@@ -36,7 +36,7 @@ steps:
       partial: false
       lfs: false
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
 
   - name: clone-his-devel-branch
@@ -50,7 +50,7 @@ steps:
       partial: false
       lfs: false
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
 
   - name: run-backport-po-files-script
@@ -67,7 +67,7 @@ steps:
       # Backport po files from devel branch to main branch.
       - his-utils-git/scripts/po-export/backport-po-files.sh --main-dir his-main-git --devel-dir his-devel-git 
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
 
   - name: push-po-changes-to-po-backport-branch
@@ -81,5 +81,5 @@ steps:
       force: true
       commit: false
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
