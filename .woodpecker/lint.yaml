@@ -13,7 +13,7 @@ steps:
       # - bash scripts/test_modules.sh
     when:
       - branch:
-          include: [main, dev-5.0, wip-*, ci-test]
+          include: [main, devel, wip-*, ci-test]
           exclude: [translate]
         event: [push, pull_request, manual]
 

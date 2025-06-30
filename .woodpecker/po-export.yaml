@@ -5,13 +5,13 @@
 # woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
 
 # This ci is used to auto update po files of his.git, they do following jobs:
-# 1. clone his.git dev-5.0 branch to tmp/his dir.
-# 2. clone his-utils.git dev-5.0 branch to tmp/his-utils dir.
+# 1. clone his.git devel branch to tmp/his dir.
+# 2. clone his-utils.git devel branch to tmp/his-utils dir.
 # 3. Install gnuhealth to tmp/ghis dir with the help of devel-installer in his-utils.
-# 4. merge origin/translate branch to dev-5.0 branch.
+# 4. merge origin/translate branch to devel branch.
 # 5. Use po-export tool to update po files.
 # 6. push to origin/translate branch.
-# 7. push to origin/dev-5.0 branch.
+# 7. push to origin/devel branch.
 
 # we have added ci-test and ci-test-output branch, if we will test ci,
 # we can force push to ci-test, then the changes will be force pushed
@@ -26,28 +26,28 @@ steps:
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his-utils.git
-      branch: dev-5.0
+      branch: devel
       path: tmp/his-utils-git
       sha: ''
-      ref: 'refs/heads/dev-5.0'
+      ref: 'refs/heads/devel'
       partial: true
       lfs: false
     when:
-      - branch: [dev-5.0, translate, ci-test]
+      - branch: [devel, translate, ci-test]
         event: [push, manual]
 
   - name: clone-his-git
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his.git
-      branch: dev-5.0
+      branch: devel
       path: tmp/his-git
       sha: ''
-      ref: 'refs/heads/dev-5.0'
+      ref: 'refs/heads/devel'
       partial: false
       lfs: false
     when:
-      - branch: [dev-5.0, translate]
+      - branch: [devel, translate]
         event: [push, manual]
 
   - name: clone-his-git-for-ci-test
@@ -85,7 +85,7 @@ steps:
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
     when:
-      - branch: [dev-5.0, translate, ci-test]
+      - branch: [devel, translate, ci-test]
         event: [push, manual]
 
   - name: push-po-changes-to-his-ci-test-output-branch
@@ -113,7 +113,7 @@ steps:
       force: false
       commit: false
     when:
-      - branch: [dev-5.0, translate]
+      - branch: [devel, translate]
         event: [push, manual]
 
   - name: push-po-changes-to-his-dev-branch
@@ -123,9 +123,9 @@ steps:
       remote: git@codeberg.org:gnuhealth/his.git
       ssh_key:
         from_secret: ssh_deploy_key
-      branch: dev-5.0
+      branch: devel
       force: false
       commit: false
     when:
-      - branch: [dev-5.0, translate]
+      - branch: [devel, translate]
         event: [push, manual]
