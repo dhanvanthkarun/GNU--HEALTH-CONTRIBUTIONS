@@ -59,7 +59,7 @@ steps:
       - apt-get update -y
       # installing packages in woodpecker of codeberg.org is very
       # slow, so just install packages necessary.
-      - apt-get install -y --no-install-recommends git gettext python
+      - apt-get install -y --no-install-recommends git gettext python3
       - git config --global user.email "po-backport@po-backport.invalid"
       - git config --global user.name "po-backport"
       # We git clone his.git and his-utils.git to 'tmp' directory.
