@@ -41,7 +41,7 @@ steps:
         event: [push, manual]
       - branch: [devel]
         event: [push, manual]
-        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
   - name: clone-his-git
     image: woodpeckerci/plugin-git
@@ -58,7 +58,7 @@ steps:
         event: [push, manual]
       - branch: [devel]
         event: [push, manual]
-        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
 
   - name: clone-his-git-for-ci-test
@@ -100,7 +100,7 @@ steps:
         event: [push, manual]
       - branch: [devel]
         event: [push, manual]
-        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
   - name: push-po-changes-to-his-ci-test-output-branch
     image: appleboy/drone-git-push
@@ -131,7 +131,7 @@ steps:
         event: [push, manual]
       - branch: [devel]
         event: [push, manual]
-        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
   - name: push-po-changes-to-his-dev-branch
     image: appleboy/drone-git-push
@@ -148,5 +148,5 @@ steps:
         event: [push, manual]
       - branch: [devel]
         event: [push, manual]
-        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
