@@ -17,6 +17,10 @@
 # we can force push to ci-test, then the changes will be force pushed
 # to ci-test-output branch.
 
+# As for 'devel' branch, we should include "UPDATE PO" in commit
+# string to trigger po-export ci, the reason is that po-export ci will
+# consume more resources and has a longer running time (> 10 min).
+
 depends_on:
   - lint
 
