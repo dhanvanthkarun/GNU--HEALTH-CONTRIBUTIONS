@@ -4,28 +4,16 @@
 
 # woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
 
-# This ci is used to auto update po files of his.git, they do following jobs:
-# 1. clone his.git devel branch to tmp/his dir.
-# 2. clone his-utils.git devel branch to tmp/his-utils dir.
-# 3. Install gnuhealth to tmp/ghis dir with the help of devel-installer in his-utils.
-# 4. merge origin/translate branch to devel branch.
-# 5. Use po-export tool to update po files.
-# 6. push to origin/translate branch.
-# 7. push to origin/devel branch.
-
-# As for 'devel' branch, we should include "UPDATE PO" in commit
-# string to trigger po-export ci, the reason is that po-export ci will
-# consume more resources and has a longer running time (> 10 min).
+# we have added ci-test and ci-test-output branch, if we will test
+# po-export ci, we can force push to ci-test, then the changes will be
+# force pushed to ci-test-output branch.
 
 depends_on:
   - lint
 
 when:
-  - branch: [translate]
+  - branch: [ci-test]
     event: [push, manual]
-  - branch: [devel]
-    event: [push, manual]
-    evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
 steps:
   - name: clone-his-utils-git
@@ -43,10 +31,10 @@ steps:
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his.git
-      branch: devel
+      branch: ci-test
       path: tmp/his-git
       sha: ''
-      ref: 'refs/heads/devel'
+      ref: 'refs/heads/ci-test'
       partial: false
       lfs: false
 
@@ -71,24 +59,13 @@ steps:
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
 
-  - name: push-po-changes-to-his-translate-branch
+  - name: push-po-changes-to-his-ci-test-output-branch
     image: appleboy/drone-git-push
     settings:
       path: tmp/his-git
       remote: git@codeberg.org:gnuhealth/his.git
       ssh_key:
         from_secret: ssh_deploy_key
-      branch: translate
-      force: false
-      commit: false
-
-  - name: push-po-changes-to-his-dev-branch
-    image: appleboy/drone-git-push
-    settings:
-      path: tmp/his-git
-      remote: git@codeberg.org:gnuhealth/his.git
-      ssh_key:
-        from_secret: ssh_deploy_key
-      branch: devel
-      force: false
+      branch: ci-test-output
+      force: true
       commit: false
