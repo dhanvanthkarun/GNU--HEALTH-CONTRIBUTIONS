@@ -24,6 +24,12 @@
 depends_on:
   - lint
 
+when:
+  - branch: [translate, ci-test]
+    event: [push, manual]
+  - branch: [devel]
+    event: [push, manual]
+    evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
 steps:
   - name: clone-his-utils-git
@@ -36,12 +42,6 @@ steps:
       ref: 'refs/heads/devel'
       partial: true
       lfs: false
-    when:
-      - branch: [translate, ci-test]
-        event: [push, manual]
-      - branch: [devel]
-        event: [push, manual]
-        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
   - name: clone-his-git
     image: woodpeckerci/plugin-git
@@ -53,13 +53,6 @@ steps:
       ref: 'refs/heads/devel'
       partial: false
       lfs: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
-      - branch: [devel]
-        event: [push, manual]
-        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
-
 
   - name: clone-his-git-for-ci-test
     image: woodpeckerci/plugin-git
@@ -95,12 +88,6 @@ steps:
       # po-export.sh in our own machine without --fast-export
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
-    when:
-      - branch: [translate, ci-test]
-        event: [push, manual]
-      - branch: [devel]
-        event: [push, manual]
-        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
   - name: push-po-changes-to-his-ci-test-output-branch
     image: appleboy/drone-git-push
@@ -126,12 +113,6 @@ steps:
       branch: translate
       force: false
       commit: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
-      - branch: [devel]
-        event: [push, manual]
-        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 
   - name: push-po-changes-to-his-dev-branch
     image: appleboy/drone-git-push
@@ -143,10 +124,4 @@ steps:
       branch: devel
       force: false
       commit: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
-      - branch: [devel]
-        event: [push, manual]
-        evaluate: 'CI_COMMIT_MESSAGE contains "UPDATE PO"'
 

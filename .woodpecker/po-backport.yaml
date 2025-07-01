@@ -9,6 +9,9 @@
 depends_on:
   - po-export
 
+when:
+  - branch: [translate]
+    event: [push, manual]
 
 steps:
   - name: clone-his-utils-git
@@ -21,9 +24,6 @@ steps:
       ref: 'refs/heads/devel'
       partial: true
       lfs: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
 
   - name: clone-his-main-branch
     image: woodpeckerci/plugin-git
@@ -35,9 +35,6 @@ steps:
       ref: 'refs/heads/main'
       partial: false
       lfs: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
 
   - name: clone-his-devel-branch
     image: woodpeckerci/plugin-git
@@ -49,9 +46,6 @@ steps:
       ref: 'refs/heads/devel'
       partial: false
       lfs: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
 
   - name: run-backport-po-files-script
     image: debian
@@ -66,9 +60,6 @@ steps:
       - cd tmp
       # Backport po files from devel branch to main branch.
       - his-utils-git/scripts/po-export/backport-po-files.sh --main-dir his-main-git --devel-dir his-devel-git 
-    when:
-      - branch: [translate]
-        event: [push, manual]
 
   - name: push-po-changes-to-po-backport-branch
     image: appleboy/drone-git-push
@@ -80,6 +71,3 @@ steps:
       branch: po-backport
       force: true
       commit: false
-    when:
-      - branch: [translate]
-        event: [push, manual]
