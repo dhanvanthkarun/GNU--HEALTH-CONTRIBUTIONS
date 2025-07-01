@@ -33,8 +33,11 @@ steps:
       partial: true
       lfs: false
     when:
-      - branch: [devel, translate, ci-test]
+      - branch: [translate, ci-test]
         event: [push, manual]
+      - branch: [devel]
+        event: [push, manual]
+        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
 
   - name: clone-his-git
     image: woodpeckerci/plugin-git
@@ -47,8 +50,12 @@ steps:
       partial: false
       lfs: false
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
+      - branch: [devel]
+        event: [push, manual]
+        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+
 
   - name: clone-his-git-for-ci-test
     image: woodpeckerci/plugin-git
@@ -85,8 +92,11 @@ steps:
       # argument.
       - ghis/ghis_env his-utils-git/scripts/po-export/update-his-repo.sh his-git --use-sqlite --database po-export-db --fast-export
     when:
-      - branch: [devel, translate, ci-test]
+      - branch: [translate, ci-test]
         event: [push, manual]
+      - branch: [devel]
+        event: [push, manual]
+        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
 
   - name: push-po-changes-to-his-ci-test-output-branch
     image: appleboy/drone-git-push
@@ -113,8 +123,11 @@ steps:
       force: false
       commit: false
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
+      - branch: [devel]
+        event: [push, manual]
+        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
 
   - name: push-po-changes-to-his-dev-branch
     image: appleboy/drone-git-push
@@ -127,5 +140,9 @@ steps:
       force: false
       commit: false
     when:
-      - branch: [devel, translate]
+      - branch: [translate]
         event: [push, manual]
+      - branch: [devel]
+        event: [push, manual]
+        evaluate: '(CI_COMMIT_MESSAGE contains "UPDATE PO")'
+
