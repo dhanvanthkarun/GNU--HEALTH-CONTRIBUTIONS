@@ -5,9 +5,7 @@
 # woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
 
 when:
-  - branch:
-      include: [main, devel, wip-*, ci-test]
-      exclude: [translate]
+  - branch: [main, devel, translate, wip-*, ci-test]
     event: [push, pull_request, manual]
 
 steps:
