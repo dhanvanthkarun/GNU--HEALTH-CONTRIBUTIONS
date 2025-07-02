@@ -10,7 +10,7 @@ depends_on:
   - po-export
 
 when:
-  - branch: [translate]
+  - branch: [main, translate]
     event: [push, manual]
 
 steps:
