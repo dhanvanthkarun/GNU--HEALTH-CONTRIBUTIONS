@@ -11,8 +11,6 @@
 #                           HEALTH package                              #
 #                test_health.py health unittest file                    #
 #########################################################################
-import unittest
-import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
 
@@ -22,10 +20,3 @@ class HealthTestCase(ModuleTestCase):
 
 
 del ModuleTestCase
-
-
-def suite():
-    suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        HealthTestCase))
-    return suite

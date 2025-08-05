@@ -11,7 +11,3 @@
 #                           HEALTH package                              #
 #               __init__.py health test initialization                  #
 #########################################################################
-from .test_health import suite
-
-
-__all__ = ['suite']
