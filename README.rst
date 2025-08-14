@@ -71,15 +71,15 @@ support GNU Solidario and to get the latest on e-Health is to assist
 to the conferences. 
 
 
-Need help to implement GNU Health? 
+Need help implementing GNU Health? 
 ----------------------------------
 
 We are committed to do our best in helping out projects that can improve
-the health of your country or region. We want the project to be a success,
+public health of your country or region. We want the project to be a success,
 and since our resources are limited, we need to work together to make a great
 and sustainable project.
 
-In order to be eligible, we need the following information from you,
+To be eligible, we need the following information from you,
 your NGO or government:
 
 * An introduction of the current needs.
@@ -102,14 +102,14 @@ Please contact us and we'll get back to you as soon as possible::
  falcon@gnuhealth.org
 
 
-Email
------
-info@gnuhealth.org
+Contact
+-------
+Email: info@gnuhealth.org
 
 Mastodon: https://mastodon.social/@gnuhealth
 
 License
---------
+-------
 
 GNU Health is licensed under GPL v3+::
 
