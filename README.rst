@@ -16,27 +16,28 @@ The GNU Health HMIS provides the following functionality:
 #. **Laboratory Information System (LIS)**
 
 The Hospital and Health Information System component (HMIS) from GNU Health (GH) 
-provides over 40 standard-based packages (primary care, obstetrics & gynecology,
+provides over 40 standard-based packages (primary care, obstetrics and gynecology,
 pediatrics, surgery, laboratory information management system, genetics, diagnostic imaging, dentistry, reporting)
-to fit your institution needs. The GH HMIS combines the socioeconomic determinants of
-health with state-of-the-art technology in bioinformatics and clinical genetics. 
+to fit your institution needs. 
 
 The HMIS manages the internal processes of a health institution, such as 
 financial management, billing, stock management, pharmacies or labs (LIMS). 
 
 The GH HMIS is part of the GNU Health project, the **Libre digital health ecosystem**. 
-This project combines the daily medical practice with state-of-the-art 
+This project combines daily medical practice with state-of-the-art 
 technology in bioinformatics and genetics. It provides a holistic approach 
 to the person, from the biological and molecular basis of disease to 
 the social and environmental determinants of health.
 
 This component is ready to be integrated in the **GNU Health Federation**, which
-allows to interconnect heterogeneous nodes and build large federated health 
+allows the interconnection of heterogeneous nodes and build large federated health 
 networks across a region, province or country.
 
 
 Homepage
 --------
+
+The GNU Health homepage is located at:
 
 https://www.gnuhealth.org
 
@@ -44,13 +45,15 @@ https://www.gnuhealth.org
 Documentation
 -------------
 
+Documentation for GNU Health is located at:
+
 https://docs.gnuhealth.org
 
 Support GNU Health 
 -------------------
 
 GNU Health is a project of `GNU Solidario<https://my.gnusolidario.org/join-us/>`_, which is a 
-non-for-profit organization that works globally, focused on **Social Medicine**.
+not-for-profit organization that works globally, focused on **Social Medicine**.
 
 Health and education are the basis for the development and dignity of societies. 
 **Advancing Social Medicine is the mission from GNU Solidario.**
@@ -68,15 +71,15 @@ support GNU Solidario and to get the latest on e-Health is to assist
 to the conferences. 
 
 
-Need help to implement GNU Health? 
+Need help implementing GNU Health? 
 ----------------------------------
 
 We are committed to do our best in helping out projects that can improve
-the health of your country or region. We want the project to be a success,
+public health of your country or region. We want the project to be a success,
 and since our resources are limited, we need to work together to make a great
 and sustainable project.
 
-In order to be eligible, we need the following information from you,
+To be eligible, we need the following information from you,
 your NGO or government:
 
 * An introduction of the current needs.
@@ -90,7 +93,7 @@ your NGO or government:
 We will do our best to help you out with the implementation and training
 for the local team, to build local capacity and make your project sustainable.
 
-Please contact us and we'll back to you as soon as possible::
+Please contact us and we'll get back to you as soon as possible::
 
 
  Thank you !
@@ -99,14 +102,14 @@ Please contact us and we'll back to you as soon as possible::
  falcon@gnuhealth.org
 
 
-Email
------
-info@gnuhealth.org
+Contact
+-------
+Email: info@gnuhealth.org
 
 Mastodon: https://mastodon.social/@gnuhealth
 
 License
---------
+-------
 
 GNU Health is licensed under GPL v3+::
 
