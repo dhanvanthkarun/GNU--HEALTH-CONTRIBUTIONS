@@ -2206,6 +2206,8 @@ class FamilyDiseases(ModelSQL, ModelView):
         ('father', 'Father'),
         ('brother', 'Brother'),
         ('sister', 'Sister'),
+        ('daughter', 'Daughter'),
+        ('son', 'Son'),
         ('aunt', 'Aunt'),
         ('uncle', 'Uncle'),
         ('nephew', 'Nephew'),
@@ -2214,9 +2216,10 @@ class FamilyDiseases(ModelSQL, ModelView):
         ('grandmother', 'Grandmother'),
         ('cousin', 'Cousin'),
     ], 'Relative',
-        help='First degree = siblings, mother and father\n'
-             'Second degree = Uncles, nephews and Nieces\n'
-             'Third degree = Grandparents and cousins',
+        help='First degree = siblings, parents and children '
+             '(sons/daughters)\n'
+             'Second degree = Grandparents, aunts/uncles, nephews and nieces\n'
+             'Third degree = Great-grandparents and first cousins',
         required=True)
 
     @classmethod
