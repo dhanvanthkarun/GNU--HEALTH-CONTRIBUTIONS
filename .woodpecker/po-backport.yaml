@@ -25,14 +25,14 @@ steps:
       partial: true
       lfs: false
 
-  - name: clone-his-patchset-branch
+  - name: clone-his-main-branch
     image: woodpeckerci/plugin-git
     settings:
       remote: https://codeberg.org/gnuhealth/his.git
-      branch: patchset/5.0.3
-      path: tmp/his-patchset-git
+      branch: main
+      path: tmp/his-main-git
       sha: ''
-      ref: 'refs/heads/patchset/5.0.3'
+      ref: 'refs/heads/main'
       partial: false
       lfs: false
 
@@ -59,12 +59,12 @@ steps:
       # We git clone his.git and his-utils.git to 'tmp' directory.
       - cd tmp
       # Backport po files from devel branch to main branch.
-      - his-utils-git/scripts/po-export/backport-po-files.sh --main-dir his-patchset-git --devel-dir his-devel-git
+      - his-utils-git/scripts/po-export/backport-po-files.sh --main-dir his-main-git --devel-dir his-devel-git 
 
   - name: push-po-changes-to-po-backport-branch
     image: appleboy/drone-git-push
     settings:
-      path: tmp/his-patchset-git
+      path: tmp/his-main-git
       remote: git@codeberg.org:gnuhealth/his.git
       ssh_key:
         from_secret: ssh_deploy_key
