@@ -2083,6 +2083,18 @@ class HealthProfessional(ModelSQL, ModelView):
                 values['code'] = None
         return super(HealthProfessional, cls).write(healthprofs, values)
 
+    # Allow to search by party attributes and license ID
+    @classmethod
+    def search_rec_name(cls, name, clause):
+        if clause[1].startswith('!') or clause[1].startswith('not '):
+            bool_op = 'AND'
+        else:
+            bool_op = 'OR'
+        return [bool_op,
+                ('code',) + tuple(clause[1:]),
+                ('party',) + tuple(clause[1:]),
+                ]
+
 
 class HealthProfessionalSpecialties(ModelSQL, ModelView):
     'Health Professional Specialties'
@@ -3730,14 +3742,6 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
     def default_institution():
         return get_institution()
 
-    @classmethod
-    def __setup__(cls):
-        super(PatientDiseaseInfo, cls).__setup__()
-        cls._order.insert(0, ('is_active', 'DESC'))
-        cls._order.insert(1, ('disease_severity', 'DESC'))
-        cls._order.insert(2, ('is_infectious', 'DESC'))
-        cls._order.insert(3, ('diagnosed_date', 'DESC'))
-
     @staticmethod
     def default_is_active():
         return True
@@ -3878,6 +3882,19 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
         return health_condition_info
 
+    # Search by the patient name, lastname or PUID
+    @classmethod
+    def search_rec_name(cls, name, clause):
+        if clause[1].startswith('!') or clause[1].startswith('not '):
+            bool_op = 'AND'
+        else:
+            bool_op = 'OR'
+        return [bool_op,
+                ('patient',) + tuple(clause[1:]),
+                ('pathology',) + tuple(clause[1:]),
+                ('healthprof',) + tuple(clause[1:]),
+                ]
+
     @classmethod
     def __register__(cls, module):
         table_h = cls.__table_handler__(module)
@@ -3889,6 +3906,14 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def __setup__(cls):
+        super(PatientDiseaseInfo, cls).__setup__()
+        cls._order.insert(0, ('is_active', 'DESC'))
+        cls._order.insert(1, ('disease_severity', 'DESC'))
+        cls._order.insert(2, ('is_infectious', 'DESC'))
+        cls._order.insert(3, ('diagnosed_date', 'DESC'))
 
 
 # PATIENT APPOINTMENT
