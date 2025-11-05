@@ -3720,10 +3720,6 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
 
     extra_info = fields.Text('Extra Info')
 
-    healthprof = fields.Many2One(
-        'gnuhealth.healthprofessional', 'Health Prof', readonly=True,
-        help='Health Professional')
-
     related_evaluations = fields.One2Many(
         'gnuhealth.patient.evaluation', 'related_condition',
         'Related Evaluations', readonly=True)
