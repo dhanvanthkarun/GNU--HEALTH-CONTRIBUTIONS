@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-11-06 08:12+0000\n"
+"PO-Revision-Date: 2025-11-07 00:13+0000\n"
 "Last-Translator: Marco Ciampa <ciampix@noreply.codeberg.org>\n"
 "Language-Team: Italian <https://translate.codeberg.org/projects/gnuhealth/health/it/>\n"
 "Language: it_IT\n"
@@ -12,7 +12,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
-msgstr "Data e ora"
+msgstr "Inizio"
 
 msgctxt "field:gnuhealth.appointment,appointment_type:"
 msgid "Type"
@@ -38,7 +38,6 @@ msgctxt "field:gnuhealth.appointment,institution:"
 msgid "Institution"
 msgstr "Istituzione"
 
-#, fuzzy
 msgctxt "field:gnuhealth.appointment,insurance:"
 msgid "Insurance"
 msgstr "Assicurazione"
@@ -80,18 +79,17 @@ msgctxt "field:gnuhealth.appointment.report,age:"
 msgid "Age"
 msgstr "Età"
 
-#, fuzzy
 msgctxt "field:gnuhealth.appointment.report,appointment_date:"
 msgid "Start"
 msgstr "Inizio"
 
 msgctxt "field:gnuhealth.appointment.report,appointment_date_time:"
 msgid "Start"
-msgstr "Data e Ora"
+msgstr "Inizio"
 
 msgctxt "field:gnuhealth.appointment.report,diagnosis:"
 msgid "Main Condition"
-msgstr "Condizione principale"
+msgstr "Patologia principale"
 
 msgctxt "field:gnuhealth.appointment.report,gender:"
 msgid "Gender"
@@ -161,10 +159,9 @@ msgctxt "field:gnuhealth.birth_certificate,observations:"
 msgid "Observations"
 msgstr "Osservazioni"
 
-#, fuzzy
 msgctxt "field:gnuhealth.birth_certificate,party:"
 msgid "Person"
-msgstr "Persona"
+msgstr "Individuo"
 
 msgctxt "field:gnuhealth.birth_certificate,signed_by:"
 msgid "Certifier"
@@ -179,12 +176,10 @@ msgctxt ""
 msgid "Schedule"
 msgstr "Programma"
 
-#, fuzzy
 msgctxt "field:gnuhealth.command,description:"
 msgid "Description"
 msgstr "Descrizione"
 
-#, fuzzy
 msgctxt "field:gnuhealth.command,domain:"
 msgid "Domain"
 msgstr "Dominio"
@@ -193,12 +188,10 @@ msgctxt "field:gnuhealth.command,internal:"
 msgid "Internal"
 msgstr "Interno"
 
-#, fuzzy
 msgctxt "field:gnuhealth.command,label:"
 msgid "Label"
 msgstr "Etichetta"
 
-#, fuzzy
 msgctxt "field:gnuhealth.command,model:"
 msgid "Model"
 msgstr "Modello"
@@ -253,12 +246,11 @@ msgstr "Osservazioni"
 
 msgctxt "field:gnuhealth.death_certificate,operational_sector:"
 msgid "Op. Sector"
-msgstr "Settore Operativo"
+msgstr "Settore Op."
 
-#, fuzzy
 msgctxt "field:gnuhealth.death_certificate,party:"
 msgid "Person"
-msgstr "Persona"
+msgstr "Individuo"
 
 msgctxt "field:gnuhealth.death_certificate,place_details:"
 msgid "Details"
@@ -3737,11 +3729,11 @@ msgstr "Livello di glucosio nel sangue (mg/dL)"
 
 msgctxt "help:gnuhealth.patient.evaluation,hba1c:"
 msgid "Last Glycated Hemoglobin HbA1c level(mmol/mol)"
-msgstr ""
+msgstr "Ultimo livello di emoglobina glicata HbA1c (mmol/mol)"
 
 msgctxt "help:gnuhealth.patient.evaluation,hdl:"
 msgid "Last HDL Cholesterol reading (mg/dL)"
-msgstr ""
+msgstr "Ultima lettura del colesterolo HDL (mg/dL)"
 
 msgctxt "help:gnuhealth.patient.evaluation,head_circumference:"
 msgid "Head circumference in centimeters"
@@ -3769,7 +3761,7 @@ msgstr "Circonferenza fianchi in centimetri"
 
 msgctxt "help:gnuhealth.patient.evaluation,info_diagnosis:"
 msgid "Diagnostic judgement"
-msgstr ""
+msgstr "Giudizio diagnostico"
 
 msgctxt "help:gnuhealth.patient.evaluation,information_source:"
 msgid "Source of Information, eg : Self, relative, friend ..."
@@ -3777,7 +3769,7 @@ msgstr "Fonde dell`informaziione, esempio: se stesso, parente, amico ..."
 
 msgctxt "help:gnuhealth.patient.evaluation,insurance:"
 msgid "Insurance plan used in this procedure"
-msgstr ""
+msgstr "Piano assicurativo utilizzato in questa procedura"
 
 msgctxt "help:gnuhealth.patient.evaluation,judgment:"
 msgid ""
@@ -3793,7 +3785,7 @@ msgstr "Selezionare se il paziente non reagisce a eventi pubblici noti"
 
 msgctxt "help:gnuhealth.patient.evaluation,ldl:"
 msgid "Last LDL Cholesterol reading (mg/dL)"
-msgstr ""
+msgstr "Ultima lettura del colesterolo LDL (mg/dL)"
 
 msgctxt "help:gnuhealth.patient.evaluation,loc:"
 msgid ""
@@ -3848,7 +3840,7 @@ msgstr "Durata della valutazione"
 
 msgctxt "help:gnuhealth.patient.evaluation,related_condition:"
 msgid "Related condition related to this follow-up evaluation"
-msgstr ""
+msgstr "Condizione correlata a questa valutazione della visita di controllo"
 
 msgctxt "help:gnuhealth.patient.evaluation,reliable_info:"
 msgid ""
@@ -3866,6 +3858,7 @@ msgctxt "help:gnuhealth.patient.evaluation,secondary_conditions:"
 msgid ""
 "Other  conditions found on the patient in the context of this evaluation"
 msgstr ""
+"Altre condizioni riscontrate sul paziente nel contesto di questa valutazione"
 
 #, fuzzy
 msgctxt "help:gnuhealth.patient.evaluation,signed_by:"
@@ -3878,11 +3871,11 @@ msgstr "Inserire segni e sintomi nella valutazione del paziente."
 
 msgctxt "help:gnuhealth.patient.evaluation,systolic:"
 msgid "Systolic pressure (mmHg)"
-msgstr ""
+msgstr "Pressione sistolica (mmHg)"
 
 msgctxt "help:gnuhealth.patient.evaluation,tag:"
 msgid "Last Triglicerides level, (mg/dL)"
-msgstr ""
+msgstr "Ultimo livello di trigliceridi (mg/dL)"
 
 msgctxt "help:gnuhealth.patient.evaluation,temperature:"
 msgid "Temperature in celcius"
@@ -3909,11 +3902,11 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.evaluation,wait_time:"
 msgid "How long the patient waited"
-msgstr ""
+msgstr "Quanto tempo ha aspettato il paziente"
 
 msgctxt "help:gnuhealth.patient.evaluation,weight:"
 msgid "Weight in kilos"
-msgstr ""
+msgstr "Peso in chili"
 
 msgctxt "help:gnuhealth.patient.evaluation,whr:"
 msgid ""
@@ -3921,6 +3914,9 @@ msgid ""
 "Men : < 0.9 Normal // 0.9 - 0.99 Overweight // > 1 Obesity \n"
 "Women : < 0.8 Normal // 0.8 - 0.84 Overweight // > 0.85 Obesity"
 msgstr ""
+"Rapporto vita-fianchi. Valori di riferimento:\n"
+"Uomini: < 0,9 Normale // 0,9 - 0,99 Sovrappeso // > 1 Obesità\n"
+"Donne: < 0,8 Normale // 0,8 - 0,84 Sovrappeso // > 0,85 Obesità"
 
 msgctxt "help:gnuhealth.patient.family.diseases,relative:"
 msgid ""
@@ -3928,6 +3924,9 @@ msgid ""
 "Second degree = Grandparents, aunts/uncles, nephews and nieces\n"
 "Third degree = Great-grandparents and first cousins"
 msgstr ""
+"Primo grado = fratelli, genitori e figli\n"
+"Secondo grado = nonni, zii/zie, nipoti\n"
+"Terzo grado = bisnonni e cugini di primo grado"
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
 msgid ""
@@ -3963,16 +3962,20 @@ msgid ""
 "Period that the patient must take the medication. in minutes, hours, days, "
 "months, years or indefinitely for chronic conditions"
 msgstr ""
+"Periodo in cui il paziente deve assumere il farmaco. In minuti, ore, giorni, "
+"mesi, anni o indefinitamente per patologie croniche"
 
 msgctxt "help:gnuhealth.patient.medication,duration_period:"
 msgid ""
 "Period that the patient must take the medication in minutes, hours, days, "
 "months, years or indefinitely"
 msgstr ""
+"Periodo in cui il paziente deve assumere il farmaco in minuti, ore, giorni, "
+"mesi, anni o indefinitamente"
 
 msgctxt "help:gnuhealth.patient.medication,end_treatment:"
 msgid "Date of end of Treatment"
-msgstr ""
+msgstr "Data di fine trattamento"
 
 msgctxt "help:gnuhealth.patient.medication,form:"
 msgid "Drug form, such as tablet or gel"
@@ -4020,7 +4023,7 @@ msgstr "Medicamento prescritto"
 
 msgctxt "help:gnuhealth.patient.medication,prescription:"
 msgid "Related prescription"
-msgstr ""
+msgstr "Prescrizione correlata"
 
 msgctxt "help:gnuhealth.patient.medication,qty:"
 msgid "Quantity of units (eg, 2 capsules) of the medicament"
@@ -4036,7 +4039,7 @@ msgstr "Data inizio trattamento"
 
 msgctxt "help:gnuhealth.patient.procedure,insurance:"
 msgid "Insurance plan used in this procedure"
-msgstr ""
+msgstr "Piano assicurativo usato in questa procedura"
 
 msgctxt ""
 "help:gnuhealth.person_alternative_identification,other_alternative_id_type:"
@@ -4044,18 +4047,20 @@ msgid ""
 "Other Alternative ID type, user can customize an ID type when 'ID type' = "
 "'other'."
 msgstr ""
+"Altro tipo di ID alternativo, l'utente può personalizzare un tipo di ID "
+"quando 'Tipo ID' = 'altro'."
 
 msgctxt "help:gnuhealth.person_name,family:"
 msgid "Family / Surname."
-msgstr ""
+msgstr "Famiglia / Cognome."
 
 msgctxt "help:gnuhealth.person_name,given:"
 msgid "Given / First name. May include middle name"
-msgstr ""
+msgstr "Nome di battesimo. Può includere il secondo nome"
 
 msgctxt "help:gnuhealth.person_name,party:"
 msgid "Related party (person)"
-msgstr ""
+msgstr "Parte correlata (persona)"
 
 msgctxt "help:gnuhealth.pol,age:"
 msgid "Age at the moment of this page of life"
@@ -4067,21 +4072,23 @@ msgstr ""
 
 msgctxt "help:gnuhealth.pol,gene:"
 msgid "Gene / protein"
-msgstr ""
+msgstr "Gene / proteina"
 
 msgctxt "help:gnuhealth.pol,health_condition:"
 msgid "Health Condition"
-msgstr ""
+msgstr "Condizioni di salute"
 
 msgctxt "help:gnuhealth.pol,health_condition_text:"
 msgid "Health Condition"
-msgstr ""
+msgstr "Condizioni di salute"
 
 msgctxt "help:gnuhealth.pol,measurements:"
 msgid ""
 "Automatically included measurements such vital signs, HR, RR and "
 "anthropometrics"
 msgstr ""
+"Misurazioni incluse automaticamente come segni vitali, FC, RR e dati "
+"antropometrici"
 
 msgctxt "help:gnuhealth.pol,page:"
 msgid "Page of Life"
@@ -4101,11 +4108,11 @@ msgstr "Persona"
 
 msgctxt "help:gnuhealth.pol,procedure:"
 msgid "Procedure code"
-msgstr ""
+msgstr "Codice di procedura"
 
 msgctxt "help:gnuhealth.prescription.line,add_to_history:"
 msgid "Include this medication in the patient medication history"
-msgstr ""
+msgstr "Includere questo farmaco nella storia farmacologica del paziente"
 
 msgctxt "help:gnuhealth.prescription.line,admin_times:"
 msgid ""
@@ -4207,6 +4214,8 @@ msgid ""
 "Until this date, the patientusually can ask for a refill / reorder of this "
 "medicament"
 msgstr ""
+"Fino a questa data, il paziente può solitamente chiedere una ricarica/"
+"riordino di questo farmaco"
 
 msgctxt "help:gnuhealth.prescription.line,route:"
 msgid "Drug administration route code."
@@ -4222,15 +4231,16 @@ msgstr "Data inizio trattamento"
 
 msgctxt "help:gnuhealth.prescription.order,allergy_warning:"
 msgid "This field is active when the patient is known to be allergic"
-msgstr ""
+msgstr "Questo campo è attivo quando è noto che il paziente è allergico"
 
 msgctxt "help:gnuhealth.prescription.order,pregnancy_warning:"
 msgid "This field is set when the patient is or might be pregnant"
 msgstr ""
+"Questo campo viene impostato quando la paziente è o potrebbe essere incinta"
 
 msgctxt "help:gnuhealth.prescription.order,prescription_date:"
 msgid "Prescription Date"
-msgstr ""
+msgstr "Data prescrizione"
 
 msgctxt "help:gnuhealth.prescription.order,prescription_id:"
 msgid "Type in the ID of this prescription"
@@ -4239,14 +4249,15 @@ msgstr "Digitare il Codice di questa ricetta"
 msgctxt "help:gnuhealth.prescription.order,prescription_warning_ack:"
 msgid "This verification field must be set to generate the prescription"
 msgstr ""
+"Questo campo di verifica deve essere impostato per generare la prescrizione"
 
 msgctxt "help:gnuhealth.prescription.order,report_prescription_date:"
 msgid "Prescription Date"
-msgstr ""
+msgstr "Data prescrizione"
 
 msgctxt "help:gnuhealth.procedure,product:"
 msgid "Associated product to the procedure"
-msgstr ""
+msgstr "Prodotto associato alla procedura"
 
 msgctxt "help:gnuhealth.procedures.config,ambulatory_care:"
 msgid ""
