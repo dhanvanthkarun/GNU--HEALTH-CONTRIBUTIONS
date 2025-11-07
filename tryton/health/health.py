@@ -3698,7 +3698,7 @@ class PatientDiseaseInfo(ModelSQL, ModelView):
         'in most situations, this value is derived from patient evalution.'),
         'patient_age_at_dx',)
 
-    est_dodx = fields.Boolean('Est', help="Estimated date of diagnosis"
+    est_dodx = fields.Boolean('Est', help="Estimated date of diagnosis "
                               "from referred years")
 
     pregnancy_warning = fields.Boolean('Pregnancy warning')
