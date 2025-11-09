@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-11-09 20:42+0000\n"
+"PO-Revision-Date: 2025-11-09 22:12+0000\n"
 "Last-Translator: iosifidis <iosifidis@noreply.codeberg.org>\n"
 "Language-Team: Greek <https://translate.codeberg.org/projects/gnuhealth/health_inpatient/el/>\n"
 "Language: el\n"
@@ -12,7 +12,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient"
-msgstr "Εγγραφή εσωτερικού ασθενούς"
+msgstr "Εσωτερικός Ασθενής"
 
 msgctxt "field:gnuhealth.bed.transfer,bed_from:"
 msgid "From"
@@ -26,10 +26,9 @@ msgctxt "field:gnuhealth.bed.transfer,reason:"
 msgid "Reason"
 msgstr "Αιτία"
 
-#, fuzzy
 msgctxt "field:gnuhealth.bed.transfer,registration:"
 msgid "Registration Code"
-msgstr "Κωδικός εγγραφής"
+msgstr "Κωδικός Εγγραφής"
 
 msgctxt "field:gnuhealth.bed.transfer,transfer_date:"
 msgid "Date"
@@ -37,11 +36,11 @@ msgstr "Ημερομηνία"
 
 msgctxt "field:gnuhealth.bed.transfer.init,newbed:"
 msgid "New Bed"
-msgstr "Νέα κλίνη"
+msgstr "Νέα Κλίνη"
 
 msgctxt "field:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Bed of origin Status"
-msgstr ""
+msgstr "Κατάσταση Κλίνης Προέλευσης"
 
 msgctxt "field:gnuhealth.bed.transfer.init,reason:"
 msgid "Reason"
@@ -57,25 +56,23 @@ msgstr "Ενδείξεις"
 
 msgctxt "field:gnuhealth.diet.therapeutic,name:"
 msgid "Diet type"
-msgstr "Είδος δίαιτας"
+msgstr "Τύπος Δίαιτας"
 
 msgctxt "field:gnuhealth.inpatient.diet,diet:"
 msgid "Diet"
 msgstr "Δίαιτα"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.diet,registration:"
 msgid "Registration Code"
-msgstr "Κωδικός εγγραφής"
+msgstr "Κωδικός Εγγραφής"
 
 msgctxt "field:gnuhealth.inpatient.diet,remarks:"
 msgid "Remarks / Directions"
-msgstr "Παρατηρήσεις / Κατευθύνσεις"
+msgstr "Παρατηρήσεις / Οδηγίες"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal,diet_belief:"
 msgid "Belief"
-msgstr "Πίστη"
+msgstr "Πεποιθήσεις"
 
 msgctxt "field:gnuhealth.inpatient.meal,diet_therapeutic:"
 msgid "Diet"
@@ -83,7 +80,7 @@ msgstr "Δίαιτα"
 
 msgctxt "field:gnuhealth.inpatient.meal,diet_vegetarian:"
 msgid "Vegetarian"
-msgstr "Χορτοφάγος"
+msgstr "Χορτοφαγική"
 
 msgctxt "field:gnuhealth.inpatient.meal,institution:"
 msgid "Institution"
@@ -91,73 +88,67 @@ msgstr "Ίδρυμα"
 
 msgctxt "field:gnuhealth.inpatient.meal,meal:"
 msgid "Meal"
-msgstr ""
+msgstr "Γεύμα"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,health_professional:"
 msgid "Health Prof"
-msgstr "Επαγγελματίας Υγείας"
+msgstr "Επαγγ. Υγείας"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_item:"
 msgid "Items"
-msgstr ""
+msgstr "Είδη"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_order:"
 msgid "Order"
-msgstr ""
+msgstr "Παραγγελία"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_warning:"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,meal_warning_ack:"
 msgid "Ack"
-msgstr ""
+msgstr "Επιβεβαίωση"
 
 msgctxt "field:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Meal time"
-msgstr ""
+msgstr "Ώρα Γεύματος"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,registration:"
 msgid "Registration Code"
-msgstr "Κωδικός εγγραφής"
+msgstr "Κωδικός Εγγραφής"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,remarks:"
 msgid "Remarks"
 msgstr "Παρατηρήσεις"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order,state:"
 msgid "Status"
 msgstr "Κατάσταση"
 
 msgctxt "field:gnuhealth.inpatient.meal.order.item,meal:"
 msgid "Meal"
-msgstr ""
+msgstr "Γεύμα"
 
 msgctxt "field:gnuhealth.inpatient.meal.order.item,meal_order:"
 msgid "Meal Order"
-msgstr ""
+msgstr "Παραγγελία Γεύματος"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.meal.order.item,remarks:"
 msgid "Remarks"
 msgstr "Παρατηρήσεις"
 
 msgctxt "field:gnuhealth.inpatient.medication,admin_times:"
 msgid "Admin times"
-msgstr "Διοικητικοί χρόνοι"
+msgstr "Ώρες Χορήγησης"
 
 msgctxt "field:gnuhealth.inpatient.medication,adverse_reaction:"
 msgid "Adverse Reactions"
-msgstr "Ανεπιθύμητες ενέργειες"
+msgstr "Ανεπιθύμητες Ενέργειες"
 
 msgctxt "field:gnuhealth.inpatient.medication,common_dosage:"
 msgid "Frequency"
@@ -165,11 +156,11 @@ msgstr "Συχνότητα"
 
 msgctxt "field:gnuhealth.inpatient.medication,course_completed:"
 msgid "Course Completed"
-msgstr "Συμπληρώθηκε η θεραπεία"
+msgstr "Η Θεραπεία Ολοκληρώθηκε"
 
 msgctxt "field:gnuhealth.inpatient.medication,discontinued:"
 msgid "Discontinued"
-msgstr "Έχει διακοπεί"
+msgstr "Διακόπηκε"
 
 msgctxt "field:gnuhealth.inpatient.medication,discontinued_reason:"
 msgid "Reason for discontinuation"
@@ -181,15 +172,15 @@ msgstr "Δόση"
 
 msgctxt "field:gnuhealth.inpatient.medication,dose_unit:"
 msgid "dose unit"
-msgstr "μονάδες δοσολογίας"
+msgstr "μονάδα δόσης"
 
 msgctxt "field:gnuhealth.inpatient.medication,end_treatment:"
 msgid "End"
-msgstr "Τέλος"
+msgstr "Λήξη"
 
 msgctxt "field:gnuhealth.inpatient.medication,form:"
 msgid "Form"
-msgstr "Φόρμα"
+msgstr "Μορφή"
 
 msgctxt "field:gnuhealth.inpatient.medication,frequency:"
 msgid "Frequency"
@@ -197,11 +188,11 @@ msgstr "Συχνότητα"
 
 msgctxt "field:gnuhealth.inpatient.medication,frequency_prn:"
 msgid "PRN"
-msgstr "Επί ανάγκης"
+msgstr "PRN (κατ' επίκληση)"
 
 msgctxt "field:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "unit"
-msgstr "Μονάδα"
+msgstr "μονάδα"
 
 msgctxt "field:gnuhealth.inpatient.medication,indication:"
 msgid "Indication"
@@ -213,7 +204,7 @@ msgstr "Ενεργό"
 
 msgctxt "field:gnuhealth.inpatient.medication,log_history:"
 msgid "Log History"
-msgstr "Ιστορικό αρχείου καταγραφής"
+msgstr "Ιστορικό Καταγραφής"
 
 msgctxt "field:gnuhealth.inpatient.medication,medicament:"
 msgid "Medicament"
@@ -223,22 +214,21 @@ msgctxt "field:gnuhealth.inpatient.medication,qty:"
 msgid "x"
 msgstr "x"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication,registration:"
 msgid "Registration Code"
-msgstr "Κωδικός εγγραφής"
+msgstr "Κωδικός Εγγραφής"
 
 msgctxt "field:gnuhealth.inpatient.medication,route:"
 msgid "Administration Route"
-msgstr "Οδός χορήγησης"
+msgstr "Οδός Χορήγησης"
 
 msgctxt "field:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Start"
-msgstr "Αρχή"
+msgstr "Έναρξη"
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,admin_time:"
 msgid "Time"
-msgstr "Χρόνος"
+msgstr "Ώρα"
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose:"
 msgid "Dose"
@@ -246,12 +236,11 @@ msgstr "Δόση"
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "dose unit"
-msgstr "μονάδες δοσολογίας"
+msgstr "μονάδα δόσης"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,medication:"
 msgid "Medication"
-msgstr "Φάρμακα"
+msgstr "Φαρμακευτική αγωγή"
 
 msgctxt "field:gnuhealth.inpatient.medication.admin_time,remarks:"
 msgid "Remarks"
@@ -267,16 +256,15 @@ msgstr "Δόση"
 
 msgctxt "field:gnuhealth.inpatient.medication.log,dose_unit:"
 msgid "dose unit"
-msgstr "μονάδες δοσολογίας"
+msgstr "μονάδα δόσης"
 
 msgctxt "field:gnuhealth.inpatient.medication.log,health_professional:"
 msgid "Health Prof"
-msgstr "Επαγγελματίας Υγείας"
+msgstr "Επαγγ. Υγείας"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.medication.log,medication:"
 msgid "Medication"
-msgstr "Φάρμακα"
+msgstr "Φαρμακευτική αγωγή"
 
 msgctxt "field:gnuhealth.inpatient.medication.log,remarks:"
 msgid "Remarks"
@@ -284,11 +272,11 @@ msgstr "Παρατηρήσεις"
 
 msgctxt "field:gnuhealth.inpatient.registration,admission_reason:"
 msgid "Reason for Admission"
-msgstr "Αιτία εισαγωγής"
+msgstr "Αιτία Εισαγωγής"
 
 msgctxt "field:gnuhealth.inpatient.registration,admission_type:"
 msgid "Admission type"
-msgstr "Είδος εισαγωγής"
+msgstr "Τύπος Εισαγωγής"
 
 msgctxt "field:gnuhealth.inpatient.registration,attending_physician:"
 msgid "Attending Physician"
@@ -296,38 +284,36 @@ msgstr "Θεράπων Ιατρός"
 
 msgctxt "field:gnuhealth.inpatient.registration,bed:"
 msgid "Hospital Bed"
-msgstr "Νοσοκομειακή κλίνη"
+msgstr "Νοσοκομειακή Κλίνη"
 
 msgctxt "field:gnuhealth.inpatient.registration,bed_transfers:"
 msgid "Transfer History"
-msgstr "Ιστορικό μεταφοράς"
+msgstr "Ιστορικό Μεταφορών"
 
 msgctxt "field:gnuhealth.inpatient.registration,discharge_date:"
 msgid "Expected Discharge Date"
-msgstr "Αναμενόμενη ημερομ. εξιτηρίου"
+msgstr "Αναμενόμενη Ημερομηνία Εξιτηρίου"
 
 msgctxt "field:gnuhealth.inpatient.registration,discharge_dx:"
 msgid "Discharge Dx"
-msgstr ""
+msgstr "Διάγνωση Εξιτηρίου"
 
 msgctxt "field:gnuhealth.inpatient.registration,discharge_plan:"
 msgid "Discharge Plan"
-msgstr "Πλάνο εξιτηρίου"
+msgstr "Πλάνο Εξιτηρίου"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Discharge Reason"
-msgstr "Λόγος εξιτηρίου"
+msgstr "Αιτία Εξιτηρίου"
 
 msgctxt "field:gnuhealth.inpatient.registration,discharged_by:"
 msgid "Discharged by"
-msgstr "Πήρε εξιτήριο από"
+msgstr "Εξιτήριο από"
 
 msgctxt "field:gnuhealth.inpatient.registration,hospitalization_date:"
 msgid "Hospitalization date"
-msgstr "Ημερομηνία νοσοκομειακής νοσηλείας"
+msgstr "Ημερομηνία Νοσηλείας"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,info:"
 msgid "Notes"
 msgstr "Σημειώσεις"
@@ -338,32 +324,31 @@ msgstr "Ίδρυμα"
 
 msgctxt "field:gnuhealth.inpatient.registration,medications:"
 msgid "Medications"
-msgstr "Φάρμακα"
+msgstr "Φαρμακευτική Αγωγή"
 
 msgctxt "field:gnuhealth.inpatient.registration,name:"
 msgid "Registration Code"
-msgstr "Κωδικός εγγραφής"
+msgstr "Κωδικός Εγγραφής"
 
 msgctxt "field:gnuhealth.inpatient.registration,nursing_plan:"
 msgid "Nursing Plan"
-msgstr "Νοσηλευτικό πλάνο"
+msgstr "Νοσηλευτικό Πλάνο"
 
 msgctxt "field:gnuhealth.inpatient.registration,nutrition_notes:"
 msgid "Nutrition notes / directions"
-msgstr "Σημειώσεις διατροφής / κατευθύνσεις"
+msgstr "Σημειώσεις / οδηγίες διατροφής"
 
 msgctxt "field:gnuhealth.inpatient.registration,operating_physician:"
 msgid "Operating Physician"
-msgstr "Ιατρός Χειρουργείου"
+msgstr "Χειρουργός Ιατρός"
 
 msgctxt "field:gnuhealth.inpatient.registration,patient:"
 msgid "Patient"
 msgstr "Ασθενής"
 
-#, fuzzy
 msgctxt "field:gnuhealth.inpatient.registration,puid:"
 msgid "PUID"
-msgstr "Ατομικός Κωδικός Ταυτοποίησης"
+msgstr "PUID"
 
 msgctxt "field:gnuhealth.inpatient.registration,state:"
 msgid "Status"
@@ -371,504 +356,494 @@ msgstr "Κατάσταση"
 
 msgctxt "field:gnuhealth.inpatient.registration,therapeutic_diets:"
 msgid "Meals / Diet Program"
-msgstr "Γεύματα / Πρόγραμμα δίαιτας"
+msgstr "Γεύματα / Πρόγραμμα Δίαιτας"
 
 msgctxt "field:gnuhealth.patient,patient_status:"
 msgid "Hospitalized"
-msgstr "Νοσηλευόμενος"
+msgstr "Νοσηλευόμενος/η"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,inpatient_registration_code:"
 msgid "Inpatient"
-msgstr "Εγγραφή εσωτερικού ασθενούς"
+msgstr "Εσωτερικός Ασθενής"
 
 msgctxt "field:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "IPC"
-msgstr ""
+msgstr "IPC"
 
 msgctxt "field:gnuhealth.patient.rounding,bpm:"
 msgid "Heart Rate"
-msgstr ""
+msgstr "Καρδιακή Συχνότητα"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,code:"
 msgid "Code"
 msgstr "Κωδικός"
 
 msgctxt "field:gnuhealth.patient.rounding,depression:"
 msgid "Depression signs"
-msgstr ""
+msgstr "Σημάδια κατάθλιψης"
 
 msgctxt "field:gnuhealth.patient.rounding,diastolic:"
 msgid "Diastolic Pressure"
-msgstr ""
+msgstr "Διαστολική Πίεση"
 
 msgctxt "field:gnuhealth.patient.rounding,diuresis:"
 msgid "Diuresis"
-msgstr ""
+msgstr "Διούρηση"
 
 msgctxt "field:gnuhealth.patient.rounding,environmental_assessment:"
 msgid "Environment"
-msgstr ""
+msgstr "Περιβάλλον"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,evaluation_end:"
 msgid "End"
-msgstr "Τέλος"
+msgstr "Λήξη"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,evaluation_start:"
 msgid "Start"
-msgstr "Αρχή"
+msgstr "Έναρξη"
 
 msgctxt "field:gnuhealth.patient.rounding,evolution:"
 msgid "Evolution"
-msgstr ""
+msgstr "Εξέλιξη"
 
 msgctxt "field:gnuhealth.patient.rounding,glycemia:"
 msgid "Glycemia"
-msgstr ""
+msgstr "Γλυκαιμία"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,health_professional:"
 msgid "Health Prof"
-msgstr "Επαγγελματίας Υγείας"
+msgstr "Επαγγ. Υγείας"
 
 msgctxt "field:gnuhealth.patient.rounding,osat:"
 msgid "Oxygen Saturation"
-msgstr ""
+msgstr "Κορεσμός Οξυγόνου"
 
 msgctxt "field:gnuhealth.patient.rounding,pain:"
 msgid "Pain"
-msgstr ""
+msgstr "Πόνος"
 
 msgctxt "field:gnuhealth.patient.rounding,pain_level:"
 msgid "Pain level"
-msgstr ""
+msgstr "Επίπεδο πόνου"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,patient:"
 msgid "Patient"
 msgstr "Ασθενής"
 
 msgctxt "field:gnuhealth.patient.rounding,personal_needs:"
 msgid "Personal needs"
-msgstr ""
+msgstr "Προσωπικές ανάγκες"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,position:"
 msgid "Position"
-msgstr "Ίδρυμα"
+msgstr "Θέση"
 
 msgctxt "field:gnuhealth.patient.rounding,potty:"
 msgid "Potty"
-msgstr ""
+msgstr "Δοχείο νυκτός"
 
 msgctxt "field:gnuhealth.patient.rounding,procedures:"
 msgid "Procedures"
-msgstr ""
+msgstr "Διαδικασίες"
 
 msgctxt "field:gnuhealth.patient.rounding,proximity:"
 msgid "Proximity"
-msgstr ""
+msgstr "Εγγύτητα"
 
 msgctxt "field:gnuhealth.patient.rounding,pump:"
 msgid "Pumps"
-msgstr ""
+msgstr "Αντλίες"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,registration:"
 msgid "Registration Code"
-msgstr "Κωδικός εγγραφής"
+msgstr "Κωδικός Εγγραφής"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_end_date:"
 msgid "End Date"
-msgstr "Ημερομηνία"
+msgstr "Ημερομηνία Λήξης"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_end_time:"
 msgid "End Time"
-msgstr "Χρόνος"
+msgstr "Ώρα Λήξης"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_date:"
 msgid "Start Date"
-msgstr "Αρχή"
+msgstr "Ημερομηνία Έναρξης"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,report_start_time:"
 msgid "Start Time"
-msgstr "Αρχή"
+msgstr "Ώρα Έναρξης"
 
 msgctxt "field:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory Rate"
-msgstr ""
+msgstr "Ρυθμός Αναπνοής"
 
 msgctxt "field:gnuhealth.patient.rounding,round_summary:"
 msgid "Round Summary"
-msgstr ""
+msgstr "Σύνοψη Επίσκεψης"
 
 msgctxt "field:gnuhealth.patient.rounding,rounding_procedures:"
 msgid "Procedures"
-msgstr ""
+msgstr "Διαδικασίες"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,signed_by:"
 msgid "Signed by"
-msgstr "Πήρε εξιτήριο από"
+msgstr "Υπογραφή από"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,state:"
 msgid "State"
 msgstr "Κατάσταση"
 
 msgctxt "field:gnuhealth.patient.rounding,systolic:"
 msgid "Systolic Pressure"
-msgstr ""
+msgstr "Συστολική Πίεση"
 
 msgctxt "field:gnuhealth.patient.rounding,temperature:"
 msgid "Temperature"
-msgstr ""
+msgstr "Θερμοκρασία"
 
 msgctxt "field:gnuhealth.patient.rounding,urinary_catheter:"
 msgid "Urinary Catheter"
-msgstr ""
+msgstr "Ουροκαθετήρας"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,warning:"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.rounding,warning_icon:"
 msgid "Warning Icon"
-msgstr "Προειδοποίηση"
+msgstr "Εικονίδιο Προειδοποίησης"
 
 msgctxt "field:gnuhealth.patient.rounding,weight:"
 msgid "Weight"
-msgstr ""
+msgstr "Βάρος"
 
-#, fuzzy
 msgctxt "field:gnuhealth.rounding_procedure,notes:"
 msgid "Notes"
 msgstr "Σημειώσεις"
 
-#, fuzzy
 msgctxt "field:gnuhealth.rounding_procedure,procedure:"
 msgid "Code"
 msgstr "Κωδικός"
 
 msgctxt "field:gnuhealth.rounding_procedure,rounding:"
 msgid "Rounding"
-msgstr ""
+msgstr "Επίσκεψη"
 
 msgctxt "field:gnuhealth.sequences,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
-msgstr ""
+msgstr "Ακολουθία Παραγγελίας Γεύματος Νοσηλευόμενου"
 
 msgctxt "field:gnuhealth.sequences,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
-msgstr ""
+msgstr "Ακολουθία Εγγραφής Εσωτερικού Ασθενούς"
 
 msgctxt "field:gnuhealth.sequences,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr ""
+msgstr "Ακολουθία Επίσκεψης Ασθενούς"
 
 msgctxt ""
 "field:gnuhealth.sequences.inpatient_meal_order_sequence,inpatient_meal_order_sequence:"
 msgid "Inpatient Meal order Sequence"
-msgstr ""
+msgstr "Ακολουθία Παραγγελίας Γεύματος Νοσηλευόμενου"
 
 msgctxt ""
 "field:gnuhealth.sequences.inpatient_registration_sequence,inpatient_registration_sequence:"
 msgid "Inpatient Registration Sequence"
-msgstr ""
+msgstr "Ακολουθία Εγγραφής Εσωτερικού Ασθενούς"
 
 msgctxt ""
 "field:gnuhealth.sequences.patient_rounding_sequence,patient_rounding_sequence:"
 msgid "Patient Rounding Sequence"
-msgstr ""
+msgstr "Ακολουθία Επίσκεψης Ασθενούς"
 
 msgctxt "help:gnuhealth.appointment,inpatient_registration_code:"
 msgid "Inpatient Registration, please enter the patient hospitalization code."
 msgstr ""
+"Εγγραφή Εσωτερικού Ασθενούς, παρακαλώ εισάγετε τον κωδικό νοσηλείας του "
+"ασθενούς."
 
 msgctxt "help:gnuhealth.inpatient.diet,remarks:"
 msgid "specific remarks for this diet / patient"
-msgstr "ειδκές παρατηρήσεις για αυτή τη δίαιτα / αυτόν τον ασθενή"
+msgstr "ειδικές παρατηρήσεις για αυτή τη δίαιτα / ασθενή"
 
 msgctxt "help:gnuhealth.inpatient.meal,meal:"
 msgid "Meal"
-msgstr ""
+msgstr "Γεύμα"
 
 msgctxt "help:gnuhealth.inpatient.meal.order,meal_warning:"
 msgid "The patient has special needs on meals"
-msgstr ""
+msgstr "Ο ασθενής έχει ειδικές ανάγκες στα γεύματα"
 
 msgctxt "help:gnuhealth.inpatient.meal.order,meal_warning_ack:"
 msgid "Check if you have verified the warnings on the patient meal items"
 msgstr ""
+"Ελέγξτε εάν έχετε επαληθεύσει τις προειδοποιήσεις στα είδη γεύματος του "
+"ασθενούς"
 
 msgctxt "help:gnuhealth.inpatient.meal.order,order_date:"
 msgid "Order date"
-msgstr ""
+msgstr "Ημερομηνία παραγγελίας"
 
 msgctxt "help:gnuhealth.inpatient.medication,adverse_reaction:"
 msgid "Side effects or adverse reactions that the patient experienced"
-msgstr "Παρενέργειες που υπέστη ο ασθενής"
+msgstr "Παρενέργειες ή ανεπιθύμητες ενέργειες που εμφάνισε ο ασθενής"
 
 msgctxt "help:gnuhealth.inpatient.medication,common_dosage:"
 msgid "Common / standard dosage frequency for this medicament"
-msgstr "Κοινή / συνηθισμένη συχνότητα χορήγησης για το φάρμακο αυτό"
+msgstr "Συνήθης / τυπική συχνότητα δοσολογίας για αυτό το φάρμακο"
 
 msgctxt "help:gnuhealth.inpatient.medication,discontinued_reason:"
 msgid "Short description for discontinuing the treatment"
-msgstr "Σύντομη περιγραφή για τη διακοπή της αγωγής"
+msgstr "Σύντομη περιγραφή για τη διακοπή της θεραπείας"
 
 msgctxt "help:gnuhealth.inpatient.medication,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
-msgstr "Ποσότητα φαρμάκου (πχ, 250 mg) ανά δόση"
+msgstr "Ποσότητα φαρμάκου (π.χ. 250 mg) ανά δόση"
 
 msgctxt "help:gnuhealth.inpatient.medication,dose_unit:"
 msgid "Unit of measure for the medication to be taken"
-msgstr "Μονάδα μέτρησης για το φάρμακο που πρέπει να ληφθεί"
+msgstr "Μονάδα μέτρησης για το φάρμακο που θα ληφθεί"
 
 msgctxt "help:gnuhealth.inpatient.medication,end_treatment:"
 msgid "Date of start of Treatment"
-msgstr "Ημερομηνία κατά την έναρξη της Αγωγής"
+msgstr "Ημερομηνία λήξης της Θεραπείας"
 
 msgctxt "help:gnuhealth.inpatient.medication,form:"
 msgid "Drug form, such as tablet or gel"
-msgstr "Μορφή του φαρμάκου, όπως δισκίο ή γέλη"
+msgstr "Φαρμακευτική μορφή, όπως δισκίο ή γέλη"
 
 msgctxt "help:gnuhealth.inpatient.medication,frequency:"
 msgid ""
 "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
 "put here 8 and select \"hours\" in the unit field"
 msgstr ""
-"Χρονικό διάστημα ανάμεσα στις δόσεις, που ο ασθενής πρέπει να περιμένει (πχ,"
-" για 1 χάπι κάθε 8 ώρες, βάλτε εδώ το 8 και, στο πεδίο των μονάδων, επιλέξτε"
-" \"ώρες\""
+"Χρόνος μεταξύ των δόσεων που πρέπει να περιμένει ο ασθενής (π.χ. για 1 χάπι "
+"κάθε 8 ώρες, βάλτε εδώ 8 και επιλέξτε \"ώρες\" στο πεδίο μονάδας)"
 
 msgctxt "help:gnuhealth.inpatient.medication,frequency_prn:"
 msgid "Use it as needed, pro re nata"
-msgstr "Να χρησιμοποιείται επί ανάγκης, Pro Re Nata"
+msgstr "Χρήση κατά βούληση, pro re nata"
 
 msgctxt "help:gnuhealth.inpatient.medication,indication:"
 msgid ""
 "Choose a disease for this medicament from the disease list. It can be an "
 "existing disease of the patient or a prophylactic."
 msgstr ""
-"Από τον κατάλογο ασθενειών, επιλέξτε μία ασθένεια για το φάρμακο αυτό. "
-"Μπορεί να είναι κάποιο προϋπάρχον νόσημα του ασθενούς, ή ακόμη και "
-"προφυλακτικό."
+"Επιλέξτε μια ασθένεια για αυτό το φάρμακο από τη λίστα ασθενειών. Μπορεί να "
+"είναι μια υπάρχουσα ασθένεια του ασθενούς ή προφυλακτική."
 
 msgctxt "help:gnuhealth.inpatient.medication,is_active:"
 msgid "Check if the patient is currently taking the medication"
-msgstr "Ελέγξτε αν ο σθενής λαμβάνει τρεχόντως την αγωγή"
+msgstr "Ελέγξτε εάν ο ασθενής λαμβάνει επί του παρόντος τη φαρμακευτική αγωγή"
 
 msgctxt "help:gnuhealth.inpatient.medication,medicament:"
 msgid "Prescribed Medicament"
-msgstr "Φάρμακο που συνταγογραφήθηκε"
+msgstr "Συνταγογραφούμενο Φάρμακο"
 
 msgctxt "help:gnuhealth.inpatient.medication,qty:"
 msgid "Quantity of units (eg, 2 capsules) of the medicament"
-msgstr "Ποσότητα μονάδων (πχ, 2 καψούλες) του φαρμάκου"
+msgstr "Ποσότητα μονάδων (π.χ. 2 κάψουλες) του φαρμάκου"
 
 msgctxt "help:gnuhealth.inpatient.medication,route:"
 msgid "Drug administration route code."
-msgstr "Κωδικός για την οδό χορήγησης του φαρμάκου"
+msgstr "Κωδικός οδού χορήγησης φαρμάκου."
 
 msgctxt "help:gnuhealth.inpatient.medication,start_treatment:"
 msgid "Date of start of Treatment"
-msgstr "Ημερομηνία κατά την έναρξη της Αγωγής"
+msgstr "Ημερομηνία έναρξης της Θεραπείας"
 
 msgctxt "help:gnuhealth.inpatient.medication.admin_time,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
-msgstr "Ποσότητα φαρμάκου (πχ, 250 mg) ανά δόση"
+msgstr "Ποσότητα φαρμάκου (π.χ. 250 mg) ανά δόση"
 
 msgctxt "help:gnuhealth.inpatient.medication.admin_time,dose_unit:"
 msgid "Unit of measure for the medication to be taken"
-msgstr "Μονάδα μέτρησης για το φάρμακο που πρέπει να ληφθεί"
+msgstr "Μονάδα μέτρησης για το φάρμακο που θα ληφθεί"
 
 msgctxt "help:gnuhealth.inpatient.medication.admin_time,remarks:"
 msgid "specific remarks for this dose"
-msgstr "ειδκές παρατηρήσεις για αυτή τη δόση"
+msgstr "ειδικές παρατηρήσεις για αυτή τη δόση"
 
 msgctxt "help:gnuhealth.inpatient.medication.log,dose:"
 msgid "Amount of medication (eg, 250 mg) per dose"
-msgstr "Ποσότητα φαρμάκου (πχ, 250 mg) ανά δόση"
+msgstr "Ποσότητα φαρμάκου (π.χ. 250 mg) ανά δόση"
 
 msgctxt "help:gnuhealth.inpatient.medication.log,dose_unit:"
 msgid "Unit of measure for the medication to be taken"
-msgstr "Μονάδα μέτρησης για το φάρμακο που πρέπει να ληφθεί"
+msgstr "Μονάδα μέτρησης για το φάρμακο που θα ληφθεί"
 
 msgctxt "help:gnuhealth.inpatient.medication.log,remarks:"
 msgid "specific remarks for this dose"
-msgstr "ειδκές παρατηρήσεις για αυτή τη δόση"
+msgstr "ειδικές παρατηρήσεις για αυτή τη δόση"
 
 msgctxt "help:gnuhealth.inpatient.registration,admission_reason:"
 msgid "Reason for Admission"
-msgstr "Αιτία εισαγωγής"
+msgstr "Αιτία Εισαγωγής"
 
 msgctxt "help:gnuhealth.inpatient.registration,discharge_dx:"
 msgid "Code for Discharge Diagnosis"
-msgstr ""
+msgstr "Κωδικός Διάγνωσης Εξιτηρίου"
 
-#, fuzzy
 msgctxt "help:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Reason for patient discharge"
-msgstr "Λόγος εξιτηρίου ασθενή"
+msgstr "Αιτία εξιτηρίου ασθενούς"
 
 msgctxt "help:gnuhealth.inpatient.registration,discharged_by:"
 msgid "Health Professional that discharged the patient"
 msgstr "Επαγγελματίας υγείας που έδωσε εξιτήριο στον ασθενή"
 
-#, fuzzy
 msgctxt "help:gnuhealth.inpatient.registration,puid:"
 msgid "Person Unique Identifier"
-msgstr "Μοναδικός Κωδικός Ταυτοποίησης Ατόμου"
+msgstr "Μοναδικό Αναγνωριστικό Προσώπου"
 
 msgctxt "help:gnuhealth.patient,patient_status:"
 msgid "Show the hospitalization status of the patient"
-msgstr "Προβολή της κατάστασης νοσηλείας του ασθενούς"
+msgstr "Εμφάνιση της κατάστασης νοσηλείας του ασθενούς"
 
 msgctxt "help:gnuhealth.patient.ecg,inpatient_registration_code:"
 msgid "Inpatient Registration, please enter the patient hospitalization code"
 msgstr ""
+"Εγγραφή Εσωτερικού Ασθενούς, παρακαλώ εισάγετε τον κωδικό νοσηλείας του "
+"ασθενούς"
 
 msgctxt "help:gnuhealth.patient.evaluation,inpatient_registration_code:"
 msgid "Inpatient Code, please enter the patient hospitalization code"
 msgstr ""
+"Κωδικός Εσωτερικού Ασθενούς, παρακαλώ εισάγετε τον κωδικό νοσηλείας του "
+"ασθενούς"
 
 msgctxt "help:gnuhealth.patient.rounding,bpm:"
 msgid "Heart rate expressed in beats per minute"
-msgstr ""
+msgstr "Καρδιακή συχνότητα εκφρασμένη σε παλμούς ανά λεπτό"
 
 msgctxt "help:gnuhealth.patient.rounding,depression:"
 msgid "Check this if the patient shows signs of depression"
-msgstr ""
+msgstr "Επιλέξτε αυτό εάν ο ασθενής παρουσιάζει σημάδια κατάθλιψης"
 
 msgctxt "help:gnuhealth.patient.rounding,diuresis:"
 msgid "volume in ml"
-msgstr ""
+msgstr "όγκος σε ml"
 
 msgctxt "help:gnuhealth.patient.rounding,environmental_assessment:"
 msgid "Environment assessment . State any disorder in the room."
-msgstr ""
+msgstr "Αξιολόγηση περιβάλλοντος. Αναφέρετε οποιαδήποτε αταξία στο δωμάτιο."
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.rounding,evolution:"
 msgid "Check your judgement of current patient condition"
-msgstr "Ελέγξτε αν ο σθενής λαμβάνει τρεχόντως την αγωγή"
+msgstr "Αξιολογήστε την τρέχουσα κατάσταση του ασθενούς"
 
 msgctxt "help:gnuhealth.patient.rounding,glycemia:"
 msgid "Blood Glucose level"
-msgstr ""
+msgstr "Επίπεδο Γλυκόζης Αίματος"
 
 msgctxt "help:gnuhealth.patient.rounding,osat:"
 msgid "Oxygen Saturation(arterial)."
-msgstr ""
+msgstr "Κορεσμός Οξυγόνου (αρτηριακός)."
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.rounding,pain:"
 msgid "Check if the patient is in pain"
-msgstr "Ελέγξτε αν ο σθενής λαμβάνει τρεχόντως την αγωγή"
+msgstr "Ελέγξτε εάν ο ασθενής πονάει"
 
 msgctxt "help:gnuhealth.patient.rounding,pain_level:"
 msgid "Enter the pain level, from 1 to 10."
-msgstr ""
+msgstr "Εισαγάγετε το επίπεδο πόνου, από 1 έως 10."
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.rounding,personal_needs:"
 msgid "Check if the patient requests anything"
-msgstr "Ελέγξτε αν ο σθενής λαμβάνει τρεχόντως την αγωγή"
+msgstr "Ελέγξτε εάν ο ασθενής ζητά οτιδήποτε"
 
 msgctxt "help:gnuhealth.patient.rounding,position:"
 msgid "Check if the patient needs to be repositioned or is unconfortable"
-msgstr ""
+msgstr "Ελέγξτε εάν ο ασθενής χρειάζεται αλλαγή θέσης ή αισθάνεται άβολα"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.rounding,potty:"
 msgid "Check if the patient needs to urinate / defecate"
-msgstr "Ελέγξτε αν ο σθενής λαμβάνει τρεχόντως την αγωγή"
+msgstr "Ελέγξτε εάν ο ασθενής χρειάζεται να ουρήσει / αφοδεύσει"
 
 msgctxt "help:gnuhealth.patient.rounding,procedures:"
 msgid ""
 "List of the procedures in this rounding. Please enter the first one as the "
 "main procedure"
 msgstr ""
+"Λίστα των διαδικασιών σε αυτή την επίσκεψη. Παρακαλώ εισαγάγετε την πρώτη ως "
+"την κύρια διαδικασία"
 
 msgctxt "help:gnuhealth.patient.rounding,proximity:"
 msgid "Check if personal items, water, alarm, ... are not in easy reach"
 msgstr ""
+"Ελέγξτε εάν προσωπικά αντικείμενα, νερό, συναγερμός, ... δεν είναι σε "
+"κοντινή απόσταση"
 
 msgctxt "help:gnuhealth.patient.rounding,pump:"
 msgid "Check if there is any issues with the pumps - IVs ..."
-msgstr ""
+msgstr "Ελέγξτε εάν υπάρχουν προβλήματα με τις αντλίες - ενδοφλέβιες..."
 
 msgctxt "help:gnuhealth.patient.rounding,respiratory_rate:"
 msgid "Respiratory rate expressed in breaths per minute"
-msgstr ""
+msgstr "Ρυθμός αναπνοής εκφρασμένος σε αναπνοές ανά λεπτό"
 
 msgctxt "help:gnuhealth.patient.rounding,rounding_procedures:"
 msgid "Procedures done during the rounding"
-msgstr ""
+msgstr "Διαδικασίες που έγιναν κατά τη διάρκεια της επίσκεψης"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.rounding,signed_by:"
 msgid "Health Professional that signed the rounding"
-msgstr "Επαγγελματίας υγείας που έδωσε εξιτήριο στον ασθενή"
+msgstr "Επαγγελματίας Υγείας που υπέγραψε την επίσκεψη"
 
 msgctxt "help:gnuhealth.patient.rounding,temperature:"
 msgid "Temperature in celsius"
-msgstr ""
+msgstr "Θερμοκρασία σε βαθμούς Κελσίου"
 
 msgctxt "help:gnuhealth.patient.rounding,warning:"
 msgid ""
 "Check this box to alert the supervisor about this patient rounding. A "
 "warning icon will be shown in the rounding list"
 msgstr ""
+"Επιλέξτε αυτό το πλαίσιο για να ειδοποιήσετε τον επόπτη σχετικά με αυτή την "
+"επίσκεψη ασθενούς. Ένα εικονίδιο προειδοποίησης θα εμφανιστεί στη λίστα "
+"επισκέψεων"
 
 msgctxt "help:gnuhealth.patient.rounding,weight:"
 msgid "Measured weight, in kg"
-msgstr ""
+msgstr "Μετρημένο βάρος, σε kg"
 
 msgctxt "help:gnuhealth.rounding_procedure,procedure:"
 msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
-msgstr ""
+msgstr "Κωδικός Διαδικασίας, για παράδειγμα 7ψήφιος κωδικός ICD-10-PCS"
 
 msgctxt "model:gnuhealth.bed.transfer,name:"
 msgid "Bed transfers"
-msgstr "Μεταφορές κλίνης"
+msgstr "Μεταφορές Κλινών"
 
 msgctxt "model:gnuhealth.bed.transfer.init,name:"
 msgid "Create Bed Transfer Init"
-msgstr "Δημιουργία Init για Μεταφορά Κλίνης"
+msgstr "Έναρξη Δημιουργίας Μεταφοράς Κλίνης"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:2GS"
 msgid ""
 "Used in the treatment of conditions characterized by edema, including the following: cirrhosis of the\n"
 "liver with ascites, Congested Heart Failure - CHF, essential hypertension and renal disease."
 msgstr ""
-"Χρησιμοποιείται στη θεραπεία καταστάσεων που χαρακτηρίζονται από οίδημα και περιλαμβάνει τα εξής: κίρρωση του\n"
-"ήπατος με ασκίτη, Συμφορητική καρδιακή ανεπάρκεια - Ιδιοπαθή υπέρταση και Νεφρική νόσο."
+"Χρησιμοποιείται στη θεραπεία παθήσεων που χαρακτηρίζονται από οίδημα, "
+"συμπεριλαμβανομένων των εξής: κίρρωση του\n"
+"ήπατος με ασκίτη, Συμφορητική Καρδιακή Ανεπάρκεια - CHF, ιδιοπαθής υπέρταση "
+"και νεφρική νόσος."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:BLAND"
 msgid ""
 "The diet eliminates seasoned foods and condiments that may stimulate gastric"
 " discomfort and GERD"
 msgstr ""
-"Η δίαιτα αποκλείει συντηρημένες τροφές και καρυκεύματα που μπορούν να "
-"προκαλέσουν γαστρικό ερεθισμό και ΓΟΠ."
+"Η δίαιτα αποκλείει καρυκευμένα φαγητά και αρτύματα που μπορεί να προκαλέσουν "
+"γαστρική δυσφορία και ΓΟΠ"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:CARDIAC"
 msgid ""
 "Provides controlled amounts of sodium, cholesterol, saturated and total fat"
 msgstr ""
-"Προσφέρει ελεγχόμενες ποσότητες νατρίου, χοληστερίνης, κορεσμένου και "
-"συνολικού λίπους"
+"Παρέχει ελεγχόμενες ποσότητες νατρίου, χοληστερόλης, κορεσμένων και ολικών "
+"λιπαρών"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:CCH"
 msgid ""
@@ -877,10 +852,10 @@ msgid ""
 "provides a Bedtime snack for all calorie levels. (45% CHO, 25% protein, 30% "
 "fat)"
 msgstr ""
-"1200-3000 cal/ημέρα. Η δίαιτα παρέχει μεγάλες ποσότητες υδατανθράκων, "
-"βασισμένων σε ένα επίπεδο θερμίδων για τον βέλτιστο έλεγχο της γλυκόζης "
-"αίματος. Η δίαιτα προβλέπει ένα σνακ κατά την ώρα της κατάκλισης για όλα τα "
-"επίπεδα θερμίδων. (45% CHO, 25% protein, 30% fat)"
+"1200-3000 cal/ημέρα. Η δίαιτα παρέχει σταθερή ποσότητα υδατανθράκων με βάση "
+"το θερμιδικό επίπεδο για να επιτρέψει τον βέλτιστο έλεγχο της γλυκόζης στο "
+"αίμα. Η δίαιτα παρέχει ένα σνακ πριν τον ύπνο για όλα τα επίπεδα θερμίδων. "
+"(45% Υδατάνθρακες, 25% πρωτεΐνη, 30% λιπαρά)"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:CDD"
 msgid ""
@@ -888,10 +863,10 @@ msgid ""
 " on caloric level to allow for optimal blood glucose control. Snacks "
 "provided between meals to provide approximately 35-40% of Kcal from CHO."
 msgstr ""
-"1800-3000 cal/ημέρα. Η δίαιτα παρέχει σημαντικό ποσό υδατανθράκων, "
-"βασισμένων σε ένα επίπεδο θερμίδων που επιτρέπει τον βέλτιστο έλεγχο "
-"γλυκόζης αίματος. Προβλέπονται σνακς μετξύ των γευμάτων, για να παρέχουν "
-"περίπου 35-40% of Kcal από τους CHO."
+"1800-3000 cal/ημέρα. Η δίαιτα παρέχει σταθερή ποσότητα υδατανθράκων με βάση "
+"το θερμιδικό επίπεδο για να επιτρέψει τον βέλτιστο έλεγχο της γλυκόζης στο "
+"αίμα. Παρέχονται σνακ μεταξύ των γευμάτων για την παροχή περίπου 35-40% των "
+"θερμίδων από υδατάνθρακες."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:CLIQUID"
 msgid ""
@@ -899,43 +874,48 @@ msgid ""
 "surgery causes intolerance to food; or to temporarily restrict undigested "
 "material in the GI tract. The diet is not nutritionally adequate."
 msgstr ""
-"Η δίαιτα ενδείκνυται για βραχυπρόθεσμη χρήση, όποτε μία οξεία νόσος ή ένα "
-"χειρουργείο προκαλεί δυσανεξία στην τροφή. Ή για τον παροδικό περιορισμό "
-"άπεπτων συστατικών στο γαστρεντερικό σύστημα. Η δίαιτα δεν είναι διατροφικά "
-"κατάλληλη."
+"Η δίαιτα ενδείκνυται για βραχυπρόθεσμη χρήση όποτε μια οξεία ασθένεια ή "
+"χειρουργική επέμβαση προκαλεί δυσανεξία στην τροφή· ή για τον προσωρινό "
+"περιορισμό του άπεπτου υλικού στον γαστρεντερικό σωλήνα. Η δίαιτα δεν είναι "
+"διατροφικά επαρκής."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:CLIQUIDNCS"
 msgid ""
 "Clear liquid diet providing sugar-free products only (No Concentrated "
 "Sugar). This diet provides very limited amounts of carbohydrate."
 msgstr ""
-"Δίαιτα καθαρών υγρών που προβλέπει μόνον προϊόντα χωρίς ζάχαρη (Όχι "
-"συμπυκνωμένη ζάχαρη). Αυτή η δίαιτα προσφέρει πολύ περορισμένες ποσότητες "
-"υδατανθράκων."
+"Δίαιτα με διαυγή υγρά που παρέχει μόνο προϊόντα χωρίς ζάχαρη "
+"(Χωρίς Συμπυκνωμένη Ζάχαρη). Αυτή η δίαιτα παρέχει πολύ περιορισμένες "
+"ποσότητες υδατανθράκων."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:DYSA"
 msgid ""
 "Mechanically altered. Meats are ground or minced. Foods are moist, soft-textured, and easily formed into a bolus. All vegetables\n"
 "are fork-mashable. Liquids must be ordered separately as regular, nectar, or honey."
 msgstr ""
-"Με μηχανική αλλοίωση. Τα κρέατα είναι αλεσμένα. Οι τροφές είναι υγρές, με μαλακή υφή, και μετατρέπονται εύκολα σε μπουκιές. Όλα τα χορταρικά\n"
-"μπορούν να πατηθούν με το πηρούνι. Τα υγρά πρέπει να παραγγέλλονται χωριστά, σαν κανονικό νέκταρ ή μέλι."
+"Μηχανικά αλλοιωμένο. Τα κρέατα είναι αλεσμένα ή ψιλοκομμένα. Τα τρόφιμα "
+"είναι υγρά, μαλακής υφής και σχηματίζονται εύκολα σε μπουκιά. Όλα τα "
+"λαχανικά είναι πολτοποιήσιμα με πιρούνι. Τα υγρά πρέπει να παραγγέλνονται "
+"ξεχωριστά ως κανονικά, νέκταρ ή μέλι."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:DYSAD"
 msgid ""
 "Foods are nearly regular textures with the exception of hard, sticky, or crunchy foods. Foods are moist, bite-sized pieces. All\n"
 "vegetables are fork-mashable. Liquids must be ordered separately as regular, nectar, or honey."
 msgstr ""
-"Οι τροφές έχουν σχεδόν κανονική υφή, εκτός από τις σκληρές, κολλώδιες ή τραγανιστές τροφές.΄Οι τροφές είναι υγρές, σε κομματάκια μεγέθους μπουκιάς. Όλα\n"
-"τα λαχανικά και χόρτα είναι συμπιέσιμα με το πηρούνι. Τα υγρά πρέπει να παραγγέλλονται χωριστά, όπως το συνηθισμένο μέλι, ή ο βασιλικός πολτός."
+"Τα τρόφιμα έχουν σχεδόν κανονική υφή, με εξαίρεση τα σκληρά, κολλώδη ή "
+"τραγανά τρόφιμα. Τα τρόφιμα είναι υγρά, σε κομμάτια μεγέθους μπουκιάς. Όλα "
+"τα λαχανικά είναι πολτοποιήσιμα με πιρούνι. Τα υγρά πρέπει να παραγγέλνονται "
+"ξεχωριστά ως κανονικά, νέκταρ ή μέλι."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:DYSP"
 msgid ""
 "For patients with problems chewing and swallowing or esophageal inflammation or varices. Food consistency is blended. Liquids must be ordered\n"
 "separately as regular, nectar, or honey."
 msgstr ""
-"Για ασθενείς με προβλήματα μάσησης και κατάποσης, ή με οισοφαγίτιδα ή κιρσούς. Η τροφή έχει υφή αλεσμένου πολτού. Τα υγρά πρέπει να παραγέλλονται\n"
-"χωριστά, σαν το συνηθισμένο μέλι, ή τον βασιλικό πολτό."
+"Για ασθενείς με προβλήματα μάσησης και κατάποσης ή φλεγμονή του οισοφάγου ή "
+"κιρσούς. Η σύσταση του φαγητού είναι πολτοποιημένη. Τα υγρά πρέπει να "
+"παραγγέλνονται ξεχωριστά ως κανονικά, νέκταρ ή μέλι."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:EMESIS"
 msgid ""
@@ -944,29 +924,28 @@ msgid ""
 "feel can be tolerated. Patients are encouraged to separate their intake of "
 "food and drink"
 msgstr ""
-"Η δίαιτα προσφέρεται σε ήπια θερμοκρασία δωματίου ή και υπό μορφή κρύας "
-"τροφής, σε στερεά και υγρά. Οι ασθενείς που είναι σε αυτή τη δίαιτα "
-"δικαιούται να ζητήσουν πρόσθετες τροφές που νοιώθουν ότι μπορούν να "
-"ανεχθούν. Οι ασθενείς ενθαρρύνονται να κάνουν διαχωρισμούς στην πρόσληψη της"
-" τροφής και των ποτών τους."
+"Η δίαιτα παρέχει ήπια, σε θερμοκρασία δωματίου ή κρύα τρόφιμα, χωρισμένα σε "
+"στερεά και υγρά. Οι ασθενείς σε αυτή τη δίαιτα μπορούν να ζητήσουν πρόσθετα "
+"τρόφιμα που αισθάνονται ότι μπορούν να ανεχθούν. Οι ασθενείς ενθαρρύνονται "
+"να διαχωρίζουν την πρόσληψη τροφής και ποτών"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:FINGERFOOD"
 msgid ""
 "Indicated for patients who may not be able to use utensils or for patients "
 "confined to a flat-lying position who require heart healthy foods."
 msgstr ""
-"Ενδείκνυται για ασθενείς που δεν είναι σε θέση να χειρίζονται σκεύη, ή για "
-"ασθενείς που βρίσκονται σε υποχρεωτική κατάκλιση και χρειάζονται τροφές "
-"κατάλληλες για την καρδιοαγγειακή τους υγεία."
+"Ενδείκνυται για ασθενείς που ενδέχεται να μην μπορούν να χρησιμοποιήσουν "
+"μαχαιροπίρουνα ή για ασθενείς που είναι κλινήρεις σε ύπτια θέση και απαιτούν "
+"υγιεινά για την καρδιά τρόφιμα."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:FLLF"
 msgid ""
 "This diet is frequently used for GYN surgical patients. Provides foods such "
 "as non-cream based soups, Jell-O, juice, lactaid milk, tea and coffee"
 msgstr ""
-"Αυτή η δίαιτα χρησιμοποιείται συχνά για περιστατικά Γυναικολογικών "
-"χειρουργείων. Προσφέρει τροφές όπως μη-κρεμοειδείς σούπες, ζελέ, χυμούς, "
-"ξυνόγαλα, τσάι και καφέ."
+"Αυτή η δίαιτα χρησιμοποιείται συχνά για γυναικολογικούς χειρουργικούς "
+"ασθενείς. Παρέχει τρόφιμα όπως σούπες χωρίς κρέμα, ζελέ, χυμό, γάλα χωρίς "
+"λακτόζη, τσάι και καφέ"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:FULLLIQUID"
 msgid ""
@@ -974,9 +953,9 @@ msgid ""
 "easy to digest and provide minimal stimulation to the GI tract. The diet is "
 "not nutritionally adequate."
 msgstr ""
-"Η δίαιτα περιλαμβάνει τροφές που είνι υγρές σε θερμοκρασία σώματος. Οι "
-"τροφές είναι ευκολόπεπτες και προσφέρουν ελάχιστο γαστρεντερικό ερεθισμό. Η "
-"δίαιτα δεν είναι διατροφικά άρτια."
+"Η δίαιτα αποτελείται από τρόφιμα που είναι υγρά σε θερμοκρασία σώματος. Τα "
+"τρόφιμα είναι εύπεπτα και παρέχουν ελάχιστη διέγερση στον γαστρεντερικό "
+"σωλήνα. Η δίαιτα δεν είναι διατροφικά επαρκής."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:GB1"
 msgid "Sugar-Free fluids"
@@ -985,91 +964,87 @@ msgstr "Υγρά χωρίς ζάχαρη"
 msgctxt "model:gnuhealth.diet.therapeutic,description:GB2"
 msgid "Easily digested, semi-liquid foods to be consumed in small amounts."
 msgstr ""
-"Ευκολόπεπτες, ημίυγρες τροφές, που να καταναλώνονται σε μικρές ποσότητες."
+"Εύπεπτα, ημίρρευστα τρόφιμα που πρέπει να καταναλώνονται σε μικρές ποσότητες."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:GB3"
 msgid "Soft or pureed foods that are easy to chew and digest"
-msgstr ""
-"Μαλακές πολτοποιημένες τροφές σε πουρέ, οι οποίες είναι εύκολες στη μάσηση "
-"και στην πέψη"
+msgstr "Μαλακά ή πολτοποιημένα τρόφιμα που είναι εύκολα στη μάσηση και την πέψη"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:GB4"
 msgid "Soft foods such as cooked vegetables and soft or ground meats"
-msgstr "Μαλακές τροφές όπως βρασμένα λαχανικά και κρέατα μαλακά ή σε κιμά"
+msgstr "Μαλακά τρόφιμα όπως μαγειρεμένα λαχανικά και μαλακά ή αλεσμένα κρέατα"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:GISOFT"
 msgid ""
 "The diet limits most raw, highly-seasoned and fried foods. The diet contains"
 " only moderate amounts of fiber"
 msgstr ""
-"Η δίαιτα περιορίζει τις περισσότερες ωμές, συντηρημένες ή εποχιακές τροφές. "
-"Η δίαιτα περιλαμβάνει μόνο περιορισμένη ποσότητα ινών."
+"Η δίαιτα περιορίζει τα περισσότερα ωμά, πολύ καρυκευμένα και τηγανητά "
+"τρόφιμα. Η δίαιτα περιέχει μόνο μέτριες ποσότητες φυτικών ινών"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:GLUTENFREE"
 msgid ""
 "The diet omits foods processed with Gluten. The diet is the primary means of"
 " treatment for celiac sprue"
 msgstr ""
-"Η δίαιτα αποκλείει τις τροφές που περιλαμβάνουν στη σύστασή τους την "
-"γλουτένη. Η δίαιτα αυτή είναι το βασικό μέσο θεραπείας της κοιλιοκάκης."
+"Η δίαιτα παραλείπει τρόφιμα που έχουν υποστεί επεξεργασία με γλουτένη. Η "
+"δίαιτα είναι το κύριο μέσο θεραπείας της κοιλιοκάκης"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:LOWFAT"
 msgid "Provides less than 30% energy from fat."
-msgstr "Παρέχει λιγότερο από το 30% energy από το λίπος."
+msgstr "Παρέχει λιγότερο από 30% ενέργεια από λιπαρά."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:MS"
 msgid "For patients who have difficulty in chewing or swallowing"
-msgstr "Για ασθενείς που έχουν δυσκολίες στη μάσηση ή στην κατάποση"
+msgstr "Για ασθενείς που έχουν δυσκολία στη μάσηση ή την κατάποση"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:NAS"
 msgid ""
 "4 grams Sodium. Provides a moderate sodium restriction by eliminating foods "
 "and condiments high in sodium"
 msgstr ""
-"4 γραμμάρια Νάτριο. Προσφέρει έναν μέτριο περιορισμό σε Νάτριο, αφαιρώντας "
-"τις τροφές και τα καρυκεύματα που έχουν υψηλή περιεκτικότητα σε Νάτριο."
+"4 γραμμάρια Νάτριο. Παρέχει μέτριο περιορισμό νατρίου, εξαλείφοντας τρόφιμα "
+"και καρυκεύματα με υψηλή περιεκτικότητα σε νάτριο"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:NEUTROPENIC"
 msgid ""
 "The diet eliminates certain foods to provide a lower level of bacteria than "
 "is present in a typical hospital diet."
 msgstr ""
-"Η δίαιτα αφαιρεί ορισμένες τροφές για να προσφέρει ένα χαμηλότερο επίπεδο "
-"βακτηρίων που είναι παρόν σε μία τυπική νοσοκομειακή δίαιτα."
+"Η δίαιτα εξαλείφει ορισμένα τρόφιμα για να παρέχει χαμηλότερο επίπεδο "
+"βακτηρίων από αυτό που υπάρχει σε μια τυπική νοσοκομειακή δίαιτα."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:NPO"
 msgid "Nil per Os. Withhold oral food and fluids from the patient"
-msgstr ""
-"Ουδέν από του στόματος. Απαγορεύονται η τροφή και τα υγρά από του στόματος "
-"για τον ασθνεή"
+msgstr "Ουδέν από του στόματος. Αποχή από τη λήψη τροφής και υγρών από το στόμα"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:PGMY"
 msgid ""
 "Low sugar, low fat, low lactose foods. No fluids with meals. Small frequent "
 "feedings"
 msgstr ""
-"Τροφές χαμηλές σε ζάχαρη, σε λίπος και σε λακτόζη. Καθόλου υγρά με τα "
-"γεύματα. Μικρές και συχνές σιτίσεις"
+"Τρόφιμα με χαμηλή περιεκτικότητα σε ζάχαρη, λιπαρά και λακτόζη. Χωρίς υγρά "
+"με τα γεύματα. Μικρά συχνά γεύματα"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:PRERENAL"
 msgid ""
 "Provides limited amounts of protein (40-60g/d), potassium (2g/d), and sodium"
 " (2g/d) for the pre-dialyzed patient."
 msgstr ""
-"Προσφέρει περιορισμένες ποσότητες πρωτείνης (40-60 g/d), καλλίου (2g/d) και "
-"νατρίου (2g/d) για τον ασθενή πριν το στάδιο της διάλυσης."
+"Παρέχει περιορισμένες ποσότητες πρωτεΐνης (40-60g/ημέρα), καλίου (2g/ημέρα) "
+"και νατρίου (2g/ημέρα) για τον προ-αιμοκαθαιρόμενο ασθενή."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:REG"
 msgid "No dietary modifications required"
-msgstr "Δεν απαιτούνται διαιτητικές μεταβολές"
+msgstr "Δεν απαιτούνται διατροφικές τροποποιήσεις"
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:RENAL"
 msgid ""
 "Provides adequate protein (80 - 100g/d) and limited amounts of potassium "
 "(2g) and sodium (2g) for the dialyzed patient."
 msgstr ""
-"Προσφέρει κατάλληλη ποσότητα πρωτείνης (80 - 100g/d) και περιορισμένες "
-"ποσότητες καλλίου (2g) και νατρίου (2g) για τον ασθενή σε διάλυση."
+"Παρέχει επαρκή πρωτεΐνη (80 - 100g/ημέρα) και περιορισμένες ποσότητες καλίου "
+"(2g) και νατρίου (2g) για τον αιμοκαθαιρόμενο ασθενή."
 
 msgctxt "model:gnuhealth.diet.therapeutic,description:SFM"
 msgid "The diet provides 6 small meals daily"
@@ -1078,12 +1053,12 @@ msgstr "Η δίαιτα παρέχει 6 μικρά γεύματα ημερησ�
 msgctxt "model:gnuhealth.diet.therapeutic,description:SLL"
 msgid "Soft bland foods that have low fiber content. Lactose is limited."
 msgstr ""
-"Μαλακές ήπιες τροφές που έχουν χαμηλή περιεκτικότητα σε ίνα. Η λακτόζη είναι"
-" περιορισμένη."
+"Μαλακά ήπια τρόφιμα με χαμηλή περιεκτικότητα σε φυτικές ίνες. Η λακτόζη "
+"είναι περιορισμένη."
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:"
 msgid "Diet Therapy"
-msgstr "Θεραπευτική δίαιτα"
+msgstr "Θεραπευτική Δίαιτα"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:2GS"
 msgid "2 gram Sodium"
@@ -1095,35 +1070,35 @@ msgstr "Ήπια"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:CARDIAC"
 msgid "Cardiac"
-msgstr "Καρδιακή"
+msgstr "Καρδιολογική"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:CCH"
 msgid "Consistent Carbohydrate"
-msgstr "Συνεπής Υδατανθράκων"
+msgstr "Σταθερών Υδατανθράκων"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:CDD"
 msgid "Gestational Diabetic Diet"
-msgstr "Δίαιτα για διαβήτη κυήσεως"
+msgstr "Δίαιτα Διαβήτη Κύησης"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:CLIQUID"
 msgid "Clear Liquid"
-msgstr "Καθαρά υγρά"
+msgstr "Διαυγή Υγρά"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:CLIQUIDNCS"
 msgid "Clear Liquid / NCS"
-msgstr "Καθαρά υγρά / NCS"
+msgstr "Διαυγή Υγρά / Χωρίς Συμπυκνωμένη Ζάχαρη"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:DYSA"
 msgid "Dysphagia Altered"
-msgstr "Εναλλακτική Δυσφαγίας"
+msgstr "Δυσφαγία - Αλλοιωμένη"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:DYSAD"
 msgid "Dysphagia Advanced"
-msgstr "Προχωρημένη δυσφαγία"
+msgstr "Δυσφαγία - Προχωρημένη"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:DYSP"
 msgid "Dysphagia Puree"
-msgstr "Πουρές για δυσφαγία"
+msgstr "Δυσφαγία - Πουρές"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:EMESIS"
 msgid "Hyperemesis"
@@ -1131,63 +1106,63 @@ msgstr "Υπερέμεση"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:FINGERFOOD"
 msgid "Finger Food"
-msgstr "Finger Food"
+msgstr "Τροφή που τρώγεται με τα χέρια"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:FLLF"
 msgid "Full Liquid Lactose Free"
-msgstr "Πλήρως υγρή, Ελεύθερη λακτόζης"
+msgstr "Πλήρης Υγρή Χωρίς Λακτόζη"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:FULLLIQUID"
 msgid "Full Liquid"
-msgstr "Πλήρως υγρή"
+msgstr "Πλήρης Υγρή"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:GB1"
 msgid "Gastric Bypass Stage 1"
-msgstr "Γαστρική αναστόμωση Στάδιο 1"
+msgstr "Γαστρική Παράκαμψη Στάδιο 1"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:GB2"
 msgid "Gastric Bypass Stage 2"
-msgstr "Γαστρική αναστόμωση Στάδιο 2"
+msgstr "Γαστρική Παράκαμψη Στάδιο 2"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:GB3"
 msgid "Gastric Bypass Stage 3"
-msgstr "Γαστρική αναστόμωση Στάδιο 3"
+msgstr "Γαστρική Παράκαμψη Στάδιο 3"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:GB4"
 msgid "Gastric Bypass Stage 4"
-msgstr "Γαστρική αναστόμωση Στάδιο 4"
+msgstr "Γαστρική Παράκαμψη Στάδιο 4"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:GISOFT"
 msgid "GI Soft - Low Residue"
-msgstr "Μαλακό - χαμηλό υπόλοιπο στο Γαστρεντερικό"
+msgstr "Μαλακή Γαστρεντερική - Χαμηλού Υπολείμματος"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:GLUTENFREE"
 msgid "Gluten Free"
-msgstr "Ελεύθερη γλουτένης"
+msgstr "Χωρίς Γλουτένη"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:LOWFAT"
 msgid "Low-Fat"
-msgstr "Χαμηλή σε λίπος"
+msgstr "Χαμηλή σε Λιπαρά"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:MS"
 msgid "Mechanical Soft / Dental Soft"
-msgstr "Μηχανικά ελαφριά / Οδοντικά ελαφριά"
+msgstr "Μηχανικά Μαλακή / Οδοντιατρικά Μαλακή"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:NAS"
 msgid "Not Added Salt - NAS"
-msgstr "Χωρίς προσθήκη άλατος"
+msgstr "Χωρίς Πρόσθετο Αλάτι"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:NEUTROPENIC"
 msgid "Neutropenic"
-msgstr "Ουδετεροπενικός"
+msgstr "Ουδετεροπενική"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:NPO"
 msgid "Nothing by Mouth / NPO"
-msgstr "Ουδέν από του στόματος "
+msgstr "Ουδέν από του στόματος / NPO"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:PGMY"
 msgid "Post-Gastrectomy"
-msgstr "Μετά από γαστρεκτομή"
+msgstr "Μετα-Γαστρεκτομή"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:PRERENAL"
 msgid "PRERENAL"
@@ -1203,178 +1178,171 @@ msgstr "ΝΕΦΡΙΚΗ"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:SFM"
 msgid "Small Frequent Meals"
-msgstr "Μικρά συχνά γεύματα"
+msgstr "Μικρά Συχνά Γεύματα"
 
 msgctxt "model:gnuhealth.diet.therapeutic,name:SLL"
 msgid "Surgical Low Lactose"
-msgstr "Χειρουργική με χαμηλή λακτόζη"
+msgstr "Χειρουργική Χαμηλής Λακτόζης"
 
 msgctxt "model:gnuhealth.inpatient.diet,name:"
 msgid "Inpatient Diet"
-msgstr "Δίαιτα νοσηλευομένου"
+msgstr "Δίαιτα Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.meal,name:"
 msgid "Inpatient Meal"
-msgstr ""
+msgstr "Γεύμα Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.meal.order,name:"
 msgid "Inpatient Meal Order"
-msgstr ""
+msgstr "Παραγγελία Γεύματος Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.meal.order.item,name:"
 msgid "Inpatient Meal Item"
-msgstr ""
+msgstr "Είδος Γεύματος Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.medication,name:"
 msgid "Inpatient Medication"
-msgstr "Φάρμακα νοσηλευομένου"
+msgstr "Φαρμακευτική Αγωγή Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.medication.admin_time,name:"
 msgid "Inpatient Medication Admin Times"
-msgstr "Χρόνοι χορήγησης φαρμάκων νοσηλευομένου"
+msgstr "Ώρες Χορήγησης Φαρμάκων Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.medication.log,name:"
 msgid "Inpatient Medication Log History"
-msgstr "Καταγραφή ιστορικού φαρμάκων νοσηλευομένου"
+msgstr "Ιστορικό Καταγραφής Φαρμάκων Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.inpatient.registration,name:"
 msgid "Patient admission History"
-msgstr "Ιστορικό εισαγωγής του Ασθενούς "
+msgstr "Ιστορικό Εισαγωγής Ασθενούς"
 
-#, fuzzy
 msgctxt "model:gnuhealth.patient.rounding,name:"
 msgid "Patient Rounding"
-msgstr "Ασθενής"
+msgstr "Επίσκεψη Ασθενούς"
 
 msgctxt "model:gnuhealth.rounding_procedure,name:"
 msgid "Rounding - Procedure"
-msgstr ""
+msgstr "Επίσκεψη - Διαδικασία"
 
 msgctxt "model:gnuhealth.sequences.inpatient_meal_order_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
-msgstr ""
+msgstr "Ρύθμιση Ακολουθίας Αξιολόγησης Ασθενούς"
 
 msgctxt "model:gnuhealth.sequences.inpatient_registration_sequence,name:"
 msgid "Inpatient Care Sequences setup"
-msgstr ""
+msgstr "Ρύθμιση Ακολουθιών Φροντίδας Εσωτερικού Ασθενούς"
 
 msgctxt "model:gnuhealth.sequences.patient_rounding_sequence,name:"
 msgid "Patient Evaluation Sequence setup"
-msgstr ""
+msgstr "Ρύθμιση Ακολουθίας Αξιολόγησης Ασθενούς"
 
 msgctxt "model:ir.action,name:act_create_inpatient_evaluation"
 msgid "Create Patient Evaluation"
-msgstr ""
+msgstr "Δημιουργία Αξιολόγησης Ασθενούς"
 
 msgctxt "model:ir.action,name:act_create_patient_bed_transfer"
 msgid "Bed Transfer"
-msgstr "Μεταφορά κλίνης"
+msgstr "Μεταφορά Κλίνης"
 
 msgctxt "model:ir.action,name:act_evaluation_form1"
 msgid "Inpatient Evaluations"
-msgstr ""
+msgstr "Αξιολογήσεις Εσωτερικών Ασθενών"
 
 msgctxt "model:ir.action,name:act_inpatient_evaluation"
 msgid "Inpatient Evaluation"
-msgstr ""
+msgstr "Αξιολόγηση Εσωτερικού Ασθενούς"
 
 msgctxt "model:ir.action,name:action_gnuhealth_patient_rounding_view"
 msgid "Roundings"
-msgstr ""
+msgstr "Επισκέψεις"
 
 msgctxt "model:ir.action,name:gnuhealth_action_diet_therapeutic"
 msgid "Therapeutic diets"
-msgstr ""
+msgstr "Θεραπευτικές δίαιτες"
 
 msgctxt "model:ir.action,name:gnuhealth_action_inpatient_meal"
 msgid "Inpatient Meal"
-msgstr ""
+msgstr "Γεύμα Εσωτερικού Ασθενούς"
 
 msgctxt "model:ir.action,name:gnuhealth_action_inpatient_meal_order"
 msgid "Meal Orders"
-msgstr ""
+msgstr "Παραγγελίες Γευμάτων"
 
 msgctxt "model:ir.action,name:gnuhealth_action_inpatient_registration"
 msgid "Hospitalizations"
-msgstr "Νοσοκομ. Νοσηλείες"
+msgstr "Νοσηλείες"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_all"
 msgid "All"
-msgstr "Όλα"
+msgstr "Όλες"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_done"
 msgid "Done"
-msgstr "Ολοκληρώθηκε"
+msgstr "Ολοκληρωμένες"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_draft"
 msgid "Draft"
-msgstr "Πρόχειρο/ προσχέδιο"
+msgstr "Πρόχειρες"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_inpatient_meal_order_domain_ordered"
 msgid "Ordered"
-msgstr "Ζητήθηκε"
+msgstr "Παραγγελθείσες"
 
-#, fuzzy
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_all"
 msgid "All"
-msgstr "Όλα"
+msgstr "Όλες"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_confirmed"
 msgid "Confirmed"
-msgstr "Επιβεβαιώθηκε"
+msgstr "Επιβεβαιωμένες"
 
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_done"
 msgid "To clean"
-msgstr ""
+msgstr "Προς καθαρισμό"
 
 msgctxt "model:ir.action.act_window.domain,name:act_registration_domain_draft"
 msgid "Cancelled"
-msgstr ""
+msgstr "Ακυρωμένες"
 
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_finished"
 msgid "Finished"
-msgstr ""
+msgstr "Ολοκληρωμένες"
 
-#, fuzzy
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_registration_domain_hospitalized"
 msgid "Hospitalized"
-msgstr "Νοσηλευόμενος"
+msgstr "Νοσηλευόμενοι"
 
 msgctxt "model:ir.message,text:msg_bed_is_not_available"
 msgid "Bed is not available"
-msgstr ""
+msgstr "Η κλίνη δεν είναι διαθέσιμη"
 
 msgctxt "model:ir.message,text:msg_destination_bed_not_available"
 msgid "Destination bed is not available"
-msgstr ""
+msgstr "Η κλίνη προορισμού δεν είναι διαθέσιμη"
 
 msgctxt "model:ir.message,text:msg_discharge_befor_admission"
 msgid "The Discharge date must later than the admission"
-msgstr ""
+msgstr "Η ημερομηνία εξιτηρίου πρέπει να είναι μεταγενέστερη της εισαγωγής"
 
 msgctxt "model:ir.message,text:msg_discharge_reason_needed"
 msgid "Admission and Discharge reasons as well as Discharge Dx are needed"
 msgstr ""
+"Απαιτούνται οι λόγοι εισαγωγής και εξιτηρίου, καθώς και η διάγνωση εξιτηρίου"
 
 msgctxt "model:ir.message,text:msg_many_records_chosen"
 msgid "You have chosen more than 1 record. Please choose only one"
-msgstr ""
+msgstr "Έχετε επιλέξει περισσότερες από 1 εγγραφές. Παρακαλώ επιλέξτε μόνο μία"
 
 msgctxt "model:ir.message,text:msg_need_timezone"
 msgid "Need timezone"
-msgstr ""
+msgstr "Απαιτείται ζώνη ώρας"
 
 msgctxt "model:ir.message,text:msg_no_associated_health_professional"
 msgid ""
@@ -1387,172 +1355,156 @@ msgstr ""
 
 msgctxt "model:ir.message,text:msg_no_record_selected"
 msgid "You need to select one record"
-msgstr ""
+msgstr "Πρέπει να επιλέξετε μία εγγραφή"
 
 msgctxt "model:ir.message,text:msg_special_meal_needs"
 msgid "This patient has special meal needs"
-msgstr ""
+msgstr "Αυτός ο ασθενής έχει ειδικές διατροφικές ανάγκες"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:meal_cancel_button"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:meal_done_button"
 msgid "Done"
-msgstr "Ολοκληρώθηκε"
+msgstr "Ολοκλήρωση"
 
 msgctxt "model:ir.model.button,string:meal_generate_button"
 msgid "Generate"
-msgstr ""
+msgstr "Δημιουργία"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:registration_admission_button"
 msgid "Admission"
 msgstr "Εισαγωγή"
 
 msgctxt "model:ir.model.button,string:registration_bedclean_button"
 msgid "Clean Bed"
-msgstr ""
+msgstr "Καθαρισμός Κλίνης"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:registration_cancel_button"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
 
 msgctxt "model:ir.model.button,string:registration_confirmed_button"
 msgid "Confirm"
-msgstr ""
+msgstr "Επιβεβαίωση"
 
-#, fuzzy
 msgctxt "model:ir.model.button,string:registration_discharge_button"
 msgid "Discharge"
 msgstr "Εξιτήριο"
 
 msgctxt "model:ir.model.button,string:rounding_end_button"
 msgid "End rounding"
-msgstr ""
+msgstr "Λήξη επίσκεψης"
 
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
-msgstr ""
+msgstr "Παραγγελία Γεύματος Εσωτερικού Ασθενούς"
 
-#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
-msgstr "Εγγραφή Εσωτερ. Ασθενών"
+msgstr "Εγγραφή Εσωτερικού Ασθενούς"
 
-#, fuzzy
 msgctxt "model:ir.sequence,name:seq_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
-msgstr "Ασθενής"
+msgstr "Επίσκεψη Ασθενούς"
 
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_meal_order"
 msgid "Inpatient Meal Order"
-msgstr ""
+msgstr "Παραγγελία Γεύματος Εσωτερικού Ασθενούς"
 
-#, fuzzy
 msgctxt ""
 "model:ir.sequence.type,name:seq_type_gnuhealth_inpatient_registration"
 msgid "Inpatient Registration"
-msgstr "Εγγραφή Εσωτερ. Ασθενών"
+msgstr "Εγγραφή Εσωτερικού Ασθενούς"
 
-#, fuzzy
 msgctxt "model:ir.sequence.type,name:seq_type_gnuhealth_patient_rounding"
 msgid "Patient Rounding"
-msgstr "Ασθενής"
+msgstr "Επίσκεψη Ασθενούς"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_diet_therapeutic"
 msgid "Therapeutic diets"
-msgstr ""
+msgstr "Θεραπευτικές δίαιτες"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_conf_inpatient_meal"
 msgid "Inpatient Meals"
-msgstr ""
+msgstr "Γεύματα Εσωτερικών Ασθενών"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_inpatient_meal_order"
 msgid "Meal Orders"
-msgstr ""
+msgstr "Παραγγελίες Γευμάτων"
 
 msgctxt "model:ir.ui.menu,name:gnuhealth_inpatient_menu"
 msgid "Hospitalizations"
-msgstr "Νοσοκομ. Νοσηλείες"
+msgstr "Νοσηλείες"
 
 msgctxt "model:ir.ui.menu,name:menu_gnuhealth_patient_rounding_list"
 msgid "Roundings"
-msgstr ""
+msgstr "Επισκέψεις"
 
 msgctxt "model:res.group,name:group_health_inpatient_admin"
 msgid "Health Inpatient Administration"
-msgstr "Διαχείριση Εσωτερικού ασθενούς"
+msgstr "Διαχείριση Εσωτερικών Ασθενών"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Free"
-msgstr "Δωρεάν"
+msgstr "Ελεύθερη"
 
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Needs cleaning"
-msgstr ""
+msgstr "Χρειάζεται καθαρισμό"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Not available"
-msgstr "Μη διαθέσιμο"
+msgstr "Μη διαθέσιμη"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Occupied"
-msgstr "Κατειλημμένο"
+msgstr "Κατειλημμένη"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.bed.transfer.init,orig_bed_state:"
 msgid "Reserved"
-msgstr "Προκρατημένο"
+msgstr "Κρατημένη"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Breakfast"
-msgstr ""
+msgstr "Πρωινό"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Dinner"
-msgstr ""
+msgstr "Δείπνο"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Lunch"
-msgstr ""
+msgstr "Μεσημεριανό"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Snack"
-msgstr ""
+msgstr "Σνακ"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,mealtime:"
 msgid "Special order"
-msgstr ""
+msgstr "Ειδική παραγγελία"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Cancelled"
-msgstr ""
+msgstr "Ακυρωμένη"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Done"
-msgstr "Ολοκληρώθηκε"
+msgstr "Ολοκληρωμένη"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Draft"
-msgstr "Πρόχειρο/ προσχέδιο"
+msgstr "Πρόχειρη"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Ordered"
-msgstr "Ζητήθηκε"
+msgstr "Παραγγελθείσα"
 
 msgctxt "selection:gnuhealth.inpatient.meal.order,state:"
 msgid "Processing"
-msgstr ""
+msgstr "Σε επεξεργασία"
 
 msgctxt "selection:gnuhealth.inpatient.medication,frequency_unit:"
 msgid "days"
@@ -1580,7 +1532,7 @@ msgstr "όταν απαιτείται"
 
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Elective"
-msgstr "Επιλεκτικά"
+msgstr "Προγραμματισμένη"
 
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Emergency"
@@ -1588,48 +1540,47 @@ msgstr "Επείγουσα"
 
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Maternity"
-msgstr "Μητρότητα"
+msgstr "Μαιευτική"
 
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Routine"
-msgstr "Ρουτίνα"
+msgstr "Τακτική"
 
 msgctxt "selection:gnuhealth.inpatient.registration,admission_type:"
 msgid "Urgent"
-msgstr "Επειγόντως"
+msgstr "Επείγουσα"
 
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Death"
-msgstr ""
+msgstr "Θάνατος"
 
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Home / Selfcare"
-msgstr ""
+msgstr "Οικία / Αυτοφροντίδα"
 
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Left against medical advice"
-msgstr ""
+msgstr "Αποχώρηση παρά ιατρική συμβουλή"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.inpatient.registration,discharge_reason:"
 msgid "Transferred to another institution"
 msgstr "Μεταφέρθηκε σε άλλο ίδρυμα"
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "Discharged - needs cleaning"
-msgstr ""
+msgstr "Εξιτήριο - χρειάζεται καθαρισμό"
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "Finished"
-msgstr ""
+msgstr "Ολοκληρώθηκε"
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "cancelled"
-msgstr "έχει διαγραφεί"
+msgstr "Ακυρώθηκε"
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "confirmed"
-msgstr "επιβεβαιώθηκε"
+msgstr "Επιβεβαιώθηκε"
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "free"
@@ -1637,266 +1588,245 @@ msgstr "Ελεύθερος/η"
 
 msgctxt "selection:gnuhealth.inpatient.registration,state:"
 msgid "hospitalized"
-msgstr "Σε νοσοκομειακή νοσηλεία"
+msgstr "Νοσηλεύεται"
 
 msgctxt "selection:gnuhealth.patient.rounding,evolution:"
 msgid "Improving"
-msgstr ""
+msgstr "Βελτιώνεται"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.rounding,evolution:"
 msgid "Status Quo"
-msgstr "Κατάσταση"
+msgstr "Αμετάβλητη"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.rounding,evolution:"
 msgid "Worsening"
-msgstr "Προειδοποίηση"
+msgstr "Επιδεινώνεται"
 
-#, fuzzy
 msgctxt "selection:gnuhealth.patient.rounding,state:"
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
 msgctxt "selection:gnuhealth.patient.rounding,state:"
 msgid "In Progress"
-msgstr ""
+msgstr "Σε Εξέλιξη"
 
 msgctxt "view:gnuhealth.diet.therapeutic:"
 msgid "Diet Description and Indications"
-msgstr ""
+msgstr "Περιγραφή Δίαιτας και Ενδείξεις"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Cancel order"
-msgstr ""
+msgstr "Ακύρωση παραγγελίας"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Cancel the this meal order ?"
-msgstr ""
+msgstr "Ακύρωση αυτής της παραγγελίας γεύματος;"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Create order"
-msgstr ""
+msgstr "Δημιουργία παραγγελίας"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Done"
-msgstr "Ολοκληρώθηκε"
+msgstr "Ολοκλήρωση"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Generate"
-msgstr ""
+msgstr "Δημιουργία"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "Generate the meal order ?"
-msgstr ""
+msgstr "Δημιουργία της παραγγελίας γεύματος;"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "The meal order is done"
-msgstr ""
+msgstr "Η παραγγελία του γεύματος έχει ολοκληρωθεί"
 
 msgctxt "view:gnuhealth.inpatient.meal.order:"
 msgid "The meal order will be closed"
-msgstr ""
+msgstr "Η παραγγελία του γεύματος θα κλείσει"
 
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Administration"
-msgstr ""
+msgstr "Χορήγηση"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Adverse Reactions and Notes"
-msgstr "Ανεπιθύμητες ενέργειες και Σημειώσεις"
+msgstr "Ανεπιθύμητες Ενέργειες και Σημειώσεις"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Dosage"
 msgstr "Δοσολογία"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Extra Info"
-msgstr "Πρόσθετες ππληροφορίες"
+msgstr "Πρόσθετες Πληροφορίες"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "General Info"
-msgstr "Γενικές πληροφορίες"
+msgstr "Γενικές Πληροφορίες"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Medication"
-msgstr "Φάρμακα"
+msgstr "Φαρμακευτική Αγωγή"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Status"
 msgstr "Κατάσταση"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.medication:"
 msgid "Treatment period"
 msgstr "Περίοδος θεραπείας"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Administrative data"
-msgstr ""
+msgstr "Διοικητικά δεδομένα"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Admission"
 msgstr "Εισαγωγή"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Admit the patient in the health institution and assign the bed"
-msgstr ""
+msgstr "Εισαγωγή του ασθενούς στο ίδρυμα υγείας και ανάθεση της κλίνης"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel Registration"
-msgstr ""
+msgstr "Ακύρωση Εγγραφής"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Cancel the patient registration process ?"
-msgstr ""
+msgstr "Ακύρωση της διαδικασίας εγγραφής του ασθενούς;"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Care Plan"
-msgstr ""
+msgstr "Πλάνο Φροντίδας"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Clean Bed"
-msgstr ""
+msgstr "Καθαρισμός Κλίνης"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Click when Bed has been cleaned"
-msgstr ""
+msgstr "Κάντε κλικ όταν η κλίνη έχει καθαριστεί"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm"
-msgstr ""
+msgstr "Επιβεβαίωση"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm Registration / Make the reservation"
-msgstr ""
+msgstr "Επιβεβαίωση Εγγραφής / Πραγματοποίηση της κράτησης"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Confirm that the bed has been cleaned and is now ready to use"
-msgstr ""
+msgstr "Επιβεβαιώστε ότι η κλίνη έχει καθαριστεί και είναι έτοιμη για χρήση"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge"
 msgstr "Εξιτήριο"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Info"
-msgstr ""
+msgstr "Πληροφορίες Εξιτηρίου"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Patient"
-msgstr ""
+msgstr "Εξιτήριο Ασθενούς"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Discharge Plan"
-msgstr "Πλάνο εξιτηρίου"
+msgstr "Πλάνο Εξιτηρίου"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Medication Plan"
-msgstr ""
+msgstr "Πλάνο Φαρμακευτικής Αγωγής"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Notes"
 msgstr "Σημειώσεις"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Nursing Plan"
-msgstr "Νοσηλευτικό πλάνο"
+msgstr "Νοσηλευτικό Πλάνο"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Nutrition"
 msgstr "Διατροφή"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Other nutrition notes / directions"
-msgstr ""
+msgstr "Άλλες σημειώσεις / οδηγίες διατροφής"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Patient Admission"
-msgstr ""
+msgstr "Εισαγωγή Ασθενούς"
 
-#, fuzzy
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "Status"
 msgstr "Κατάσταση"
 
 msgctxt "view:gnuhealth.inpatient.registration:"
 msgid "You are about to discharge the patient from the health institution."
-msgstr ""
+msgstr "Πρόκειται να δώσετε εξιτήριο στον ασθενή από το ίδρυμα υγείας."
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End rounding"
-msgstr ""
+msgstr "Λήξη επίσκεψης"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding"
-msgstr ""
+msgstr "Τερματισμός αυτής της επίσκεψης"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "End this rounding ?"
-msgstr ""
+msgstr "Τερματισμός αυτής της επίσκεψης;"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Environment"
-msgstr ""
+msgstr "Περιβάλλον"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Main"
-msgstr ""
+msgstr "Κύρια"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Other"
-msgstr ""
+msgstr "Άλλα"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Procedures"
-msgstr ""
+msgstr "Διαδικασίες"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Round summary"
-msgstr ""
+msgstr "Σύνοψη επίσκεψης"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Six P's"
-msgstr ""
+msgstr "Έξι P"
 
-#, fuzzy
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Time"
-msgstr "Χρόνος"
+msgstr "Ώρα"
 
 msgctxt "view:gnuhealth.patient.rounding:"
 msgid "Vital Signs"
-msgstr ""
+msgstr "Ζωτικά Σημεία"
 
 msgctxt ""
 "wizard_button:gnuhealth.bed.transfer.create,start,create_bed_transfer:"
 msgid "Transfer Patient"
-msgstr "Μεταφορά σθενούς"
+msgstr "Μεταφορά Ασθενούς"
 
 msgctxt "wizard_button:gnuhealth.bed.transfer.create,start,end:"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
