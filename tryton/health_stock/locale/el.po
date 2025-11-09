@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-11-09 22:34+0000\n"
+"PO-Revision-Date: 2025-11-10 00:12+0000\n"
 "Last-Translator: iosifidis <iosifidis@noreply.codeberg.org>\n"
 "Language-Team: Greek <https://translate.codeberg.org/projects/gnuhealth/health_stock/el/>\n"
 "Language: el\n"
@@ -12,19 +12,19 @@ msgstr ""
 
 msgctxt "field:gnuhealth.prescription.order,moves:"
 msgid "Moves"
-msgstr "Μετακινήσεις "
+msgstr "Κινήσεις Αποθέματος"
 
 msgctxt "field:gnuhealth.vaccination,location:"
 msgid "Stock Location"
-msgstr "Τοποθεσία  αποθήκης"
+msgstr "Τοποθεσία Αποθέματος"
 
 msgctxt "field:gnuhealth.vaccination,lot:"
 msgid "Lot"
-msgstr "Παρτίδα/ Lot"
+msgstr "Παρτίδα"
 
 msgctxt "field:gnuhealth.vaccination,moves:"
 msgid "Moves"
-msgstr "Μετακινήσεις "
+msgstr "Κινήσεις Αποθέματος"
 
 msgctxt "field:gnuhealth.vaccination,product:"
 msgid "Product"
@@ -36,36 +36,36 @@ msgstr "Αποθήκη"
 
 msgctxt "field:stock.lot,expiration_date:"
 msgid "Expiration Date"
-msgstr "Ημερομηνία λήξης"
+msgstr "Ημερομηνία Λήξης"
 
 msgctxt "help:gnuhealth.vaccination,lot:"
 msgid "This field includes the lot number and expiration date"
 msgstr ""
-"Αυτό το πεδίο περιλαμβάνει τον αριθμό παρτίδας/Lot και την Ημερομ. λήξης"
+"Αυτό το πεδίο περιλαμβάνει τον αριθμό παρτίδας και την ημερομηνία λήξης."
 
 msgctxt "model:gnuhealth.prescription.stock.move.init,name:"
 msgid "Create Prescription Stock Move Init"
-msgstr "Δημιουργία Init μετακίνησης συνταγογραφικού υλικού αποθήκης"
+msgstr "Έναρξη Δημιουργίας Κίνησης Αποθέματος Συνταγής"
 
 msgctxt "model:gnuhealth.vaccination.stock.move.init,name:"
 msgid "Create Vaccination Stock Move Init"
-msgstr "Δημιουργία init για Κίνηση αποθεμάτων αποθήκης για Εμβόλια"
+msgstr "Έναρξη Δημιουργίας Κίνησης Αποθέματος Εμβολιασμού"
 
 msgctxt "model:ir.action,name:act_create_prescription_stock_move"
 msgid "Create Prescription Stock Move"
-msgstr "Δημιουργία Μετακίνησης συνταγογραφικού υλικού αποθήκης"
+msgstr "Δημιουργία Κίνησης Αποθέματος Συνταγής"
 
 msgctxt "model:ir.action,name:act_create_vaccination_stock_move"
 msgid "Create Vaccination Stock Move"
-msgstr "Δημιουργία κίνησης Αποθεμάτων Εμβολίων"
+msgstr "Δημιουργία Κίνησης Αποθέματος Εμβολιασμού"
 
 msgctxt "model:ir.action,name:act_prescription_move_form1"
 msgid "Stock Moves [readonly]"
-msgstr "Κινήσεις αποθεμάτων αποθήκης [μόνο για ανάγνωση]"
+msgstr "Κινήσεις Αποθέματος [Μόνο για ανάγνωση]"
 
 msgctxt "model:ir.action,name:act_vaccination_move_form1"
 msgid "Stock Moves [readonly]"
-msgstr "Κινήσεις αποθεμάτων αποθήκης [μόνο για ανάγνωση]"
+msgstr "Κινήσεις Αποθέματος [Μόνο για ανάγνωση]"
 
 msgctxt "model:ir.message,text:msg_expired_vaccine"
 msgid ""
@@ -77,7 +77,7 @@ msgstr ""
 
 msgctxt "model:ir.message,text:msg_no_location_origin"
 msgid "You need to select a stock location"
-msgstr ""
+msgstr "Πρέπει να επιλέξετε μια τοποθεσία αποθέματος"
 
 msgctxt "model:ir.message,text:msg_no_pharmacy"
 msgid "You need to select a pharmacy"
@@ -89,30 +89,30 @@ msgstr "Η κίνηση αποθέματος υπάρχει ήδη"
 
 msgctxt "view:gnuhealth.prescription.stock.move.init:"
 msgid "Create Stock Move?"
-msgstr ""
+msgstr "Δημιουργία Κίνησης Αποθέματος;"
 
 msgctxt "view:gnuhealth.vaccination.stock.move.init:"
 msgid "Create Stock Move?"
-msgstr ""
+msgstr "Δημιουργία Κίνησης Αποθέματος;"
 
 msgctxt "view:gnuhealth.vaccination:"
 msgid "Stock"
-msgstr ""
+msgstr "Απόθεμα"
 
 msgctxt ""
 "wizard_button:gnuhealth.prescription.stock.move.create,start,create_stock_move:"
 msgid "Create Stock Move"
-msgstr "Δημιουργία Κίνησης υλικού αποθήκης"
+msgstr "Δημιουργία Κίνησης Αποθέματος"
 
 msgctxt "wizard_button:gnuhealth.prescription.stock.move.create,start,end:"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
 
 msgctxt ""
 "wizard_button:gnuhealth.vaccination.stock.move.create,start,create_stock_move:"
 msgid "Create Stock Move"
-msgstr "Δημιουργία μετακίνησης υλικού"
+msgstr "Δημιουργία Κίνησης Αποθέματος"
 
 msgctxt "wizard_button:gnuhealth.vaccination.stock.move.create,start,end:"
 msgid "Cancel"
-msgstr "Διαγραφή"
+msgstr "Ακύρωση"
