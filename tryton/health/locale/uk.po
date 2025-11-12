@@ -1,14 +1,14 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-08 00:58+0000\n"
+"PO-Revision-Date: 2025-10-28 13:39+0000\n"
 "Last-Translator: SomeTr <sometr@noreply.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/gnuhealth/health/uk/>\n"
 "Language: uk\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -2446,7 +2446,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.procedures.config,ambulatory_care:"
 msgid "Ambulatory care"
-msgstr ""
+msgstr "Амбулаторне лікування"
 
 #, fuzzy
 msgctxt "field:gnuhealth.procedures.config,medical_evaluation:"
@@ -3469,10 +3469,9 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Professional"
-msgstr "Медичний працівник"
+msgid "Health Professional who treated or diagnosed the patient"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
 msgid "Check this box if the disease is active"
@@ -3799,9 +3798,9 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.family.diseases,relative:"
 msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
+"First degree = siblings, parents and children (sons/daughters)\n"
+"Second degree = Grandparents, aunts/uncles, nephews and nieces\n"
+"Third degree = Great-grandparents and first cousins"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
@@ -11077,6 +11076,10 @@ msgid "Cousin"
 msgstr "Двоюрідний брат/сестра"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Daughter"
+msgstr "Дочка"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Father"
 msgstr "Батько"
 
@@ -11103,6 +11106,10 @@ msgstr "Племінниця"
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Sister"
 msgstr "Сестра"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Son"
+msgstr "Син"
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Uncle"
@@ -11174,7 +11181,7 @@ msgstr "мл/год"
 
 msgctxt "selection:gnuhealth.patient.procedure,ctx:"
 msgid "Ambulatory Care"
-msgstr ""
+msgstr "Амбулаторне лікування"
 
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.procedure,ctx:"

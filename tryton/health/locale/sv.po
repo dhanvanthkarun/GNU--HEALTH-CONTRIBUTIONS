@@ -1,14 +1,14 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-18 01:04+0000\n"
+"PO-Revision-Date: 2025-10-13 01:57+0000\n"
 "Last-Translator: Umeaman <umeaman@noreply.codeberg.org>\n"
 "Language-Team: Swedish <https://translate.codeberg.org/projects/gnuhealth/health/sv/>\n"
 "Language: sv\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -569,7 +569,6 @@ msgctxt "field:gnuhealth.healthprofessional,party:"
 msgid "Health Prof"
 msgstr "Vårdpersonal"
 
-#, fuzzy
 msgctxt "field:gnuhealth.healthprofessional,puid:"
 msgid "PUID"
 msgstr "PUID"
@@ -778,10 +777,9 @@ msgctxt "field:gnuhealth.hp_specialty,mainsp:"
 msgid "Main"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:gnuhealth.hp_specialty,specialty:"
 msgid "Specialty"
-msgstr "Specialitet"
+msgstr "Specialområde"
 
 msgctxt "field:gnuhealth.immunization_schedule,active:"
 msgid "Active"
@@ -871,10 +869,9 @@ msgctxt "field:gnuhealth.institution,institution_type:"
 msgid "Type"
 msgstr "Typ"
 
-#, fuzzy
 msgctxt "field:gnuhealth.institution,main_specialty:"
 msgid "Specialty"
-msgstr "Specialitet"
+msgstr "Specialområde"
 
 msgctxt "field:gnuhealth.institution,operating_room:"
 msgid "Op. Room"
@@ -901,10 +898,9 @@ msgctxt "field:gnuhealth.institution,public_level:"
 msgid "Public Level"
 msgstr "Publik nivå"
 
-#, fuzzy
 msgctxt "field:gnuhealth.institution,specialties:"
 msgid "Specialties"
-msgstr "Specialiteter"
+msgstr "Specialområden"
 
 msgctxt "field:gnuhealth.institution,teaching:"
 msgid "Teaching"
@@ -933,10 +929,9 @@ msgctxt "field:gnuhealth.institution.specialties,institution:"
 msgid "Institution"
 msgstr "Instutition"
 
-#, fuzzy
 msgctxt "field:gnuhealth.institution.specialties,specialty:"
 msgid "Specialty"
-msgstr "Specialitet"
+msgstr "Specialområde"
 
 msgctxt "field:gnuhealth.insurance,category:"
 msgid "Category"
@@ -1451,7 +1446,6 @@ msgctxt "field:gnuhealth.patient.disease,infectious_disease_icon:"
 msgid "Infect"
 msgstr "Infekt"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.disease,institution:"
 msgid "Institution"
 msgstr "Instutition"
@@ -1530,7 +1524,6 @@ msgctxt "field:gnuhealth.patient.ecg,images:"
 msgid "Images"
 msgstr "Bilder"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.ecg,institution:"
 msgid "Institution"
 msgstr "Instutition"
@@ -3551,10 +3544,9 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr ""
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Professional"
-msgstr "Vårdpersonal"
+msgid "Health Professional who treated or diagnosed the patient"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
 msgid "Check this box if the disease is active"
@@ -3877,9 +3869,9 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.family.diseases,relative:"
 msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
+"First degree = siblings, parents and children (sons/daughters)\n"
+"Second degree = Grandparents, aunts/uncles, nephews and nieces\n"
+"Third degree = Great-grandparents and first cousins"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
@@ -4676,7 +4668,7 @@ msgstr "Lotion"
 
 msgctxt "model:gnuhealth.drug.form,name:LOZ"
 msgid "Lozenge"
-msgstr ""
+msgstr "Lozenge"
 
 msgctxt "model:gnuhealth.drug.form,name:MWH"
 msgid "Mouthwash gargle"
@@ -11410,6 +11402,10 @@ msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Cousin"
 msgstr ""
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Daughter"
+msgstr ""
+
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Father"
@@ -11440,6 +11436,10 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Sister"
 msgstr "Gips"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Son"
+msgstr ""
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Uncle"

@@ -1,14 +1,14 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-25 06:11+0000\n"
+"PO-Revision-Date: 2025-07-20 13:00+0000\n"
 "Last-Translator: themandalorian <themandalorian@noreply.codeberg.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.codeberg.org/projects/gnuhealth/health/pt_BR/>\n"
 "Language: pt_BR\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 msgctxt "field:gnuhealth.appointment,appointment_date:"
 msgid "Start"
@@ -1593,16 +1593,15 @@ msgstr "IMC"
 
 msgctxt "field:gnuhealth.patient.evaluation,body_bone:"
 msgid "Bone"
-msgstr ""
+msgstr "Osso"
 
-#, fuzzy
 msgctxt "field:gnuhealth.patient.evaluation,body_fat:"
 msgid "Fat"
-msgstr "Plano"
+msgstr "Gordura"
 
 msgctxt "field:gnuhealth.patient.evaluation,body_muscle:"
 msgid "Muscle"
-msgstr ""
+msgstr "Músculo"
 
 msgctxt "field:gnuhealth.patient.evaluation,body_water:"
 msgid "Water"
@@ -1699,7 +1698,7 @@ msgstr ""
 
 msgctxt "field:gnuhealth.patient.evaluation,hdl:"
 msgid "HDL"
-msgstr ""
+msgstr "HDL"
 
 msgctxt "field:gnuhealth.patient.evaluation,head_circumference:"
 msgid "Head"
@@ -1719,7 +1718,7 @@ msgstr "Quadril"
 
 msgctxt "field:gnuhealth.patient.evaluation,info_diagnosis:"
 msgid "Diagnostic Judgement"
-msgstr ""
+msgstr "Avaliação diagnóstica"
 
 msgctxt "field:gnuhealth.patient.evaluation,information_source:"
 msgid "Source"
@@ -1744,7 +1743,7 @@ msgstr "Conhecimento dos Eventos Atuais"
 
 msgctxt "field:gnuhealth.patient.evaluation,ldl:"
 msgid "LDL"
-msgstr ""
+msgstr "LDL"
 
 msgctxt "field:gnuhealth.patient.evaluation,loc:"
 msgid "Glasgow"
@@ -1903,7 +1902,7 @@ msgstr "Vocabulário"
 
 msgctxt "field:gnuhealth.patient.evaluation,wait_time:"
 msgid "Patient wait time"
-msgstr ""
+msgstr "Tempo de espera do paciente"
 
 msgctxt "field:gnuhealth.patient.evaluation,weight:"
 msgid "Weight"
@@ -1925,11 +1924,11 @@ msgstr "Paciente"
 
 msgctxt "field:gnuhealth.patient.family.diseases,relative:"
 msgid "Relative"
-msgstr ""
+msgstr "Parente"
 
 msgctxt "field:gnuhealth.patient.family.diseases,xory:"
 msgid "Maternal or Paternal"
-msgstr ""
+msgstr "Maternal ou paternal"
 
 msgctxt "field:gnuhealth.patient.medication,admin_times:"
 msgid "Admin hours"
@@ -2080,7 +2079,7 @@ msgstr "Procedimento"
 
 msgctxt "field:gnuhealth.patient.procedure,reference:"
 msgid "Origin"
-msgstr ""
+msgstr "Origem"
 
 #, fuzzy
 msgctxt "field:gnuhealth.patient.procedure,rel_party:"
@@ -2108,7 +2107,7 @@ msgstr "Data de Validade"
 msgctxt ""
 "field:gnuhealth.person_alternative_identification,other_alternative_id_type:"
 msgid "Other ID type"
-msgstr ""
+msgstr "Outro tipo de identificação"
 
 #, fuzzy
 msgctxt "field:gnuhealth.person_alternative_identification,party:"
@@ -2212,7 +2211,7 @@ msgstr "Variante natural"
 
 msgctxt "field:gnuhealth.pol,node:"
 msgid "Node"
-msgstr ""
+msgstr "Nó"
 
 msgctxt "field:gnuhealth.pol,page:"
 msgid "Page"
@@ -3490,10 +3489,9 @@ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
 msgid "Estimated date of diagnosisfrom referred years"
 msgstr "Data estimada do diagnóstico a partir dos anos mencionados"
 
-#, fuzzy
 msgctxt "help:gnuhealth.patient.disease,healthprof:"
-msgid "Health Professional"
-msgstr "Profissional de saúde"
+msgid "Health Professional who treated or diagnosed the patient"
+msgstr ""
 
 msgctxt "help:gnuhealth.patient.disease,is_active:"
 msgid "Check this box if the disease is active"
@@ -3859,9 +3857,9 @@ msgstr ""
 
 msgctxt "help:gnuhealth.patient.family.diseases,relative:"
 msgid ""
-"First degree = siblings, mother and father\n"
-"Second degree = Uncles, nephews and Nieces\n"
-"Third degree = Grandparents and cousins"
+"First degree = siblings, parents and children (sons/daughters)\n"
+"Second degree = Grandparents, aunts/uncles, nephews and nieces\n"
+"Third degree = Great-grandparents and first cousins"
 msgstr ""
 
 msgctxt "help:gnuhealth.patient.medication,admin_times:"
@@ -11227,6 +11225,10 @@ msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Cousin"
 msgstr ""
 
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Daughter"
+msgstr ""
+
 #, fuzzy
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Father"
@@ -11257,6 +11259,10 @@ msgstr ""
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Sister"
 msgstr "Gesso"
+
+msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
+msgid "Son"
+msgstr ""
 
 msgctxt "selection:gnuhealth.patient.family.diseases,relative:"
 msgid "Uncle"
@@ -12442,3 +12448,7 @@ msgctxt ""
 "wizard_button:gnuhealth.update_patient_disease_info,update_disease,save:"
 msgid "Save"
 msgstr "Salvar"
+
+#~ msgctxt "help:gnuhealth.patient.disease,est_dodx:"
+#~ msgid "Estimated date of diagnosis from referred years"
+#~ msgstr "Data estimada do diagnóstico a partir dos anos mencionados"
