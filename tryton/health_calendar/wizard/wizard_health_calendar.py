@@ -161,8 +161,8 @@ class CreateAppointment(Wizard):
                 datetime.combine(self.start.date_end, time())),
         ]
         action['pyson_domain'] = PYSONEncoder().encode(action['pyson_domain'])
-        action['name'] += ' - %s, %s' % (self.start.healthprof.name.lastname,
-                                         self.start.healthprof.name.name)
+        action['name'] += ' - %s, %s' % (self.start.healthprof.party.lastname,
+                                         self.start.healthprof.party.name)
         return action, {}
 
     def transition_open_(self):
