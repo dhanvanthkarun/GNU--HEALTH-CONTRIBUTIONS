@@ -79,7 +79,7 @@ class WorklistTemplate(ModelSQL, ModelView):
 
     @staticmethod
     def default_charset():
-        return 'IS0_IR 192'
+        return 'ISO_IR 192'
 
     @staticmethod
     def default_template_type():
