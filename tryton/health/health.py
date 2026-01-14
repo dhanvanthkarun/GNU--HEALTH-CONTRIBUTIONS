@@ -763,12 +763,20 @@ class Party(metaclass=PoolMeta):
                 # If the party creation was ok
                 # and create_target is checked (default), then create
                 # the related entity
-                entity = None
-                if values.get('is_patient'):
-                    entity = 'patient'
+                entity_list = []
 
-                if entity:
-                    cls.generate_target(party, entity)
+                if values.get('is_patient'):
+                    entity_list.append('patient')
+
+                if values.get('is_healthprof'):
+                    entity_list.append('healthprof')
+
+                if values.get('is_institution'):
+                    entity_list.append('institution')
+
+                if entity_list:
+                    for entity in entity_list:
+                        cls.generate_target(party, entity)
 
         return parties
 
@@ -786,7 +794,14 @@ class Party(metaclass=PoolMeta):
             Target = Pool().get('gnuhealth.patient')
             values.append({'party': party.id})
 
-        # TODO: Add more entities (health prof, institutions)
+        if (entity == 'healthprof'):
+            Target = Pool().get('gnuhealth.healthprofessional')
+            values.append({'party': party.id})
+
+        if (entity == 'institution'):
+            Target = Pool().get('gnuhealth.institution')
+            values.append({'party': party.id})
+
         # Warning: We have to make sure Target has no required fields
         # (like the insitution code) In that case, we need to provide it
 
