@@ -1448,8 +1448,7 @@ class HealthInstitution(ModelSQL, ModelView):
         required=True,
         states={'readonly': Bool(Eval('party'))})
 
-    code = fields.Char('Code', required=True,
-                       help="Institution code")
+    code = fields.Char('Code', help="Institution code")
 
     picture = fields.Binary('Picture')
 
@@ -1463,7 +1462,7 @@ class HealthInstitution(ModelSQL, ModelView):
         ('nursing_home', 'Nursing Home'),
         ('hospice', 'Hospice'),
         ('rural', 'Rural facility'),
-    ), 'Type', required=True, sort=False)
+    ), 'Type', sort=False)
 
     beds = fields.Integer("Beds")
 
@@ -1480,7 +1479,7 @@ class HealthInstitution(ModelSQL, ModelView):
         ('private', 'Private'),
         ('public', 'Public'),
         ('mixed', 'Private - State'),
-    ), 'Public Level', required=True, sort=False)
+    ), 'Public Level', sort=False)
 
     teaching = fields.Boolean("Teaching", help="Mark if this is a"
                               " teaching institution")
@@ -1523,6 +1522,25 @@ class HealthInstitution(ModelSQL, ModelView):
 
         super().__register__(module)
         table_h = cls.__table_handler__(module)
+
+    @classmethod
+    def create(cls, vlist):
+        vlist = [x.copy() for x in vlist]
+        # Use None instead of '' to allow null values in code
+        # yet enforcing the unique constraint on the institution code.
+        for values in vlist:
+            if values.get('code') == '':
+                values['code'] = None
+        return super(HealthInstitution, cls).create(vlist)
+
+    @classmethod
+    def write(cls, health_institutions, values):
+        # Use None instead of '' to allow null values in code
+        # yet enforcing the unique constraint on the institution code.
+        for health_institution in health_institutions:
+            if values.get('code') == '':
+                values['code'] = None
+        return super(HealthInstitution, cls).write(health_institutions, values)
 
 
 class HealthInstitutionSpecialties(ModelSQL, ModelView):

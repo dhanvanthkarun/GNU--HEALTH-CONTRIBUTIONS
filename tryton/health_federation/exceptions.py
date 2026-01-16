@@ -24,3 +24,7 @@ class ThalamusConnectionOK(UserError):
 
 class NoInstitution(UserError):
     pass
+
+
+class InstitutionHaveNoCode(UserError):
+    pass

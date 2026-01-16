@@ -26,7 +26,7 @@ from trytond.i18n import gettext
 from .exceptions import (
     NeedLoginCredentials, ServerAuthenticationError,
     ThalamusConnectionError, ThalamusConnectionOK,
-    NoInstitution)
+    NoInstitution, InstitutionHaveNoCode)
 
 __all__ = [
     'FederationNodeConfig', 'FederationQueue', 'FederationObject',
@@ -226,16 +226,19 @@ class FederationQueue(ModelSQL, ModelView):
         HealthInst = Pool().get('gnuhealth.institution')
         institution = get_institution()
 
-        if (institution):
-            # Get the institution code associated to the ID
-            institution_code = HealthInst(institution).code
+        # Get the institution code associated to the ID
+        institution_code = HealthInst(institution).code
 
+        if (institution_code):
+            return institution_code
+        elif (institution):
+            raise InstitutionHaveNoCode(
+                gettext('health_federation.msg_institution_have_no_code'))
         else:
             raise NoInstitution(
-                gettext('health_federation.msg_no_institution')
-            )
+                gettext('health_federation.msg_no_institution'))
 
-        return institution_code
+        return ''
 
     @classmethod
     def send_record(cls, record):
