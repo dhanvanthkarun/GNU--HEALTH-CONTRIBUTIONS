@@ -692,7 +692,7 @@ class PregnancyResult(ModelSQL, ModelView):
         'party.party', 'Newborn',
         domain=[
             ('is_person', '=', True),
-            ('dob', '=', Eval('dob')),
+            ('dob', '=', Eval('dob', None)),
             ],
         depends=['pregnancy', 'dob'])
 

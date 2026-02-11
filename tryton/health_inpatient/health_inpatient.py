@@ -472,10 +472,9 @@ class PatientData(ModelSQL, ModelView):
         _, operator, value = clause
 
         # Validate operator and value
-        if operator not in ['=', '!=']:
-            raise ValueError('Wrong operator: %s' % operator)
-        if value is not True and value is not False:
-            raise ValueError('Wrong value: %s' % value)
+        if (operator not in ['=', '!=']
+                or (value is not True and value is not False)):
+            return []
 
         # Find hospitalized patient ids
         j = pat.join(table, condition=pat.id == table.patient)
