@@ -2,8 +2,8 @@
 #                         School of Engineering
 #                         <saludpublica@ingenieria.uner.edu.ar>
 # SPDX-FileCopyrightText: 2020 Mario Puntin <mario@silix.com.ar>
-# SPDX-FileCopyrightText: 2020-2024 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2020-2024 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2020-2026 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2020-2026 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 ########################################################################

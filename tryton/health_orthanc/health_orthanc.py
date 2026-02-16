@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2019-2022 Chris Zimmerman <chris@teffalump.com>
-# SPDX-FileCopyrightText: 2021-2025 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2021-2026 Luis Falcón <falcon@gnuhealth.org>
 # SPDX-FileCopyrightText: 2023 Patryk Rosik <p.rosik@stud.uni-hannover.de>
-# SPDX-FileCopyrightText: 2023-2025 Feng Shu <tumashu@163.com>
-# SPDX-FileCopyrightText: 2024-2025 Wei Zhao <wei.zhao@uclouvain.be>
-# SPDX-FileCopyrightText: 2021-2025 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2023-2026 Feng Shu <tumashu@163.com>
+# SPDX-FileCopyrightText: 2024-2026 Wei Zhao <wei.zhao@uclouvain.be>
+# SPDX-FileCopyrightText: 2021-2026 GNU Solidario <health@gnusolidario.org>
 
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
