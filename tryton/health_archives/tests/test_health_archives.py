@@ -11,8 +11,6 @@
 #                       HEALTH ARCHIVES package                         #
 #                test_health_archives.py unittest file                  #
 #########################################################################
-import unittest
-import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
 
@@ -24,10 +22,3 @@ class HealthArchivesTestCase(ModuleTestCase):
 
 
 del ModuleTestCase
-
-
-def suite():
-    suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        HealthArchivesTestCase))
-    return suite

@@ -11,7 +11,3 @@
 #                           HEALTH ARCHIVES package                     #
 #                      __init__.py  test initialization                 #
 #########################################################################
-from .test_health_archives import suite
-
-
-__all__ = ['suite']
