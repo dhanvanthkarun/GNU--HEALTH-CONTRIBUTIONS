@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
-SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+SPDX-FileCopyrightText: 2008-2026 Luis Falcón <falcon@gnuhealth.org>
+SPDX-FileCopyrightText: 2011-2026 GNU Solidario <health@gnusolidario.org>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
@@ -426,6 +426,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field name="perm_delete" eval="False"/>
         </record>
 
+        <record model="ir.model.access" id="access_health_procedures_config">
+            <field name="model" search="[('model', '=', 'gnuhealth.procedures.config')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
 
         <record model="ir.model.access" id="access_health_directions">
             <field name="model" search="[('model', '=', 'gnuhealth.directions')]"/>

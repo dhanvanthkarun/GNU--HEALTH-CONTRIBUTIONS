@@ -1,3 +1,114 @@
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Mon Mar 16 18:03:47 2026 +0000
+
+    Update packages version numbers for patchser 5.0.6
+
+commit afceac46e5a84ec64480bd7a0de21b49e0b96d1f
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Tue Mar 3 15:29:33 2026 +0000
+
+    Task #175 . Remove suite from tests in packages
+
+commit 13d7f9b290aeb6a2c0431530c33850013b0caab8
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Tue Mar 3 12:20:59 2026 +0000
+
+    Task #175 Remove suite from tests. Update health_archives
+
+commit 3e16eb410b38df40c18ab88eedbd91c29a5de8f4
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Mon Feb 16 11:42:10 2026 +0000
+
+    Update headers date
+
+commit 23203b9f9140ec905b3edab2d1e8a40f07eb8503
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Wed Feb 11 20:34:33 2026 +0000
+
+    Update health, health_gyneco and health_inpatient versions
+
+commit 108145a41071f1eb40b808f3d60b6b10b59e31c4
+Merge: e8723b1d7 c663f9f3c
+Author: Luis Falcon <meanmicio@noreply.codeberg.org>
+Date:   Wed Feb 11 21:16:04 2026 +0100
+
+    Merge pull request 'Run test by CI' (#174) from ced/his:health-tests into patchset/5.0.6
+    
+    Reviewed-on: https://codeberg.org/gnuhealth/his/pulls/174
+    Reviewed-by: Luis Falcon <meanmicio@noreply.codeberg.org>
+
+commit c663f9f3c92dc2bc5c6ff46fa2413a71cff7242d
+Author: Cédric Krier <ced@b2ck.com>
+Date:   Mon Feb 9 14:54:24 2026 +0100
+
+    Do not raise exception in patient status searcher
+
+commit 71f74735846942e69461d637acaf8fc0160af0dd
+Author: Cédric Krier <ced@b2ck.com>
+Date:   Mon Feb 9 14:44:20 2026 +0100
+
+    Use None as default value when evaluating date of birth
+
+commit 9797b13e5aafed7f391d305738bae74b1e434fb7
+Author: Cédric Krier <ced@b2ck.com>
+Date:   Wed Aug 6 08:31:01 2025 +0200
+
+    Test health module with Woodpecker CI
+
+commit 9737f019074f2b9bf2bf0a16e9d881212051ccc8
+Author: Cédric Krier <ced@b2ck.com>
+Date:   Wed Aug 6 00:53:16 2025 +0200
+
+    Add default access rights for Medical Procedures Config
+
+commit 0e791907d9e2700fd73c451b3d1d01bf85244a1a
+Author: Cédric Krier <ced@b2ck.com>
+Date:   Wed Aug 6 00:50:22 2025 +0200
+
+    Remove suite from health tests
+    
+    Since Tryton 6.4 there are no more suite in test_tryton.
+
+commit e8723b1d740553e055dfc33291df86b06415d135 (tag: 5.0.5, origin/main, origin/HEAD, main)
+Merge: c6c8d5594 d0f1c8fb2
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Mon Dec 15 18:00:35 2025 +0000
+
+    Merge branch 'patchset/5.0.5'
+
+commit d0f1c8fb2490f030234151b20dfc7152fbac5cd0 (origin/patchset/5.0.5, patchset/5.0.5)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sun Dec 14 20:08:30 2025 +0000
+
+    health_calendar: Fix issue #166. raceback when creating an event related to the appointment without comments
+
+commit 8517485c9e22aca9da4a93ef73dd742ebccbcaf9
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sun Dec 14 16:47:16 2025 +0000
+
+    Task #165. Update health packages python-requires < 3.15
+
+commit c6c8d55943c971a8438f36b8e432e86f6652d4cd (tag: 5.0.4)
+Merge: e62502519 fa03d1823
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sat Dec 13 20:14:38 2025 +0000
+
+    Merge branch 'patchset/5.0.4'
+
+commit fa03d1823b42a1224c9e637b9f4dd1638a95b4f7 (origin/patchset/5.0.4, patchset/5.0.4)
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sat Dec 13 20:13:09 2025 +0000
+
+    Update version number in health_calendar 5.0.2 and global patchset bundle 5.0.4
+
+commit e62502519de1fe6bcfefc1e8499644cd5b0f4f33
+Merge: 004dca723 97da33831
+Author: Luis Falcon <falcon@gnuhealth.org>
+Date:   Sat Dec 13 19:56:33 2025 +0000
+
+    Merge branch 'patchset/5.0.4'
+
+
 97da33831: Revert "[SKIP CI] Backport po files from devel branch." Tue Dec 2 20:21:56 2025 +0800 Feng Shu
 5bbd80c38: health_calendar: Fix issue #164 - AttributeError when creating work schedule Tue Dec 2 11:13:26 2025 +0000 Luis Falcon
 

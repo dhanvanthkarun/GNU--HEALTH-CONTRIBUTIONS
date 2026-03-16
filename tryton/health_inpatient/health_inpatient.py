@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2008-2026 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2026 GNU Solidario <health@gnusolidario.org>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -472,10 +472,9 @@ class PatientData(ModelSQL, ModelView):
         _, operator, value = clause
 
         # Validate operator and value
-        if operator not in ['=', '!=']:
-            raise ValueError('Wrong operator: %s' % operator)
-        if value is not True and value is not False:
-            raise ValueError('Wrong value: %s' % value)
+        if (operator not in ['=', '!=']
+                or (value is not True and value is not False)):
+            return []
 
         # Find hospitalized patient ids
         j = pat.join(table, condition=pat.id == table.patient)

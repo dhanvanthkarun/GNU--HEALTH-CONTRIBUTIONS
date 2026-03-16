@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2011-2026 GNU Solidario <health@gnusolidario.org>
 # SPDX-FileCopyrightText: 2023 ITARA <info@itaraong.com>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later

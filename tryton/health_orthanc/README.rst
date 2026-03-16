@@ -1,9 +1,9 @@
-.. SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
+.. SPDX-FileCopyrightText: 2011-2026 GNU Solidario <health@gnusolidario.org>
 .. SPDX-FileCopyrightText: 2019-2022 Chris Zimmerman <chris@teffalump.com>
-.. SPDX-FileCopyrightText: 2021-2025 Luis Falcón <falcon@gnuhealth.org>
+.. SPDX-FileCopyrightText: 2021-2026 Luis Falcón <falcon@gnuhealth.org>
 .. SPDX-FileCopyrightText: 2023 Patryk Rosik <p.rosik@stud.uni-hannover.de>
-.. SPDX-FileCopyrightText: 2023-2025 Feng Shu <tumashu@163.com>
-.. SPDX-FileCopyrightText: 2024-2025 - Wei Zhao <wei.zhao@uclouvain.be>
+.. SPDX-FileCopyrightText: 2023-2026 Feng Shu <tumashu@163.com>
+.. SPDX-FileCopyrightText: 2024-2026 - Wei Zhao <wei.zhao@uclouvain.be>
 
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
@@ -428,8 +428,8 @@ License
 
 GNU Health is licensed under GPL v3+::
 
- Copyright (C) 2008-2025 Luis Falcon <falcon@gnuhealth.org>
- Copyright (C) 2011-2025 GNU Solidario <health@gnusolidario.org>
+ Copyright (C) 2008-2026 Luis Falcon <falcon@gnuhealth.org>
+ Copyright (C) 2011-2026 GNU Solidario <health@gnusolidario.org>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

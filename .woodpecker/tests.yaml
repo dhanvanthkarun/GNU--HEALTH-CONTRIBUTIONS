@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2024 Gerald Wiese
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# woodpecker syntax: https://woodpecker-ci.org/docs/usage/workflow-syntax
+
+matrix:
+  PYTHON_VERSION:
+    - 3.10
+  MODULE:
+    - health
+
+steps:
+  - name: his-tests-sqlite
+    image: python:${PYTHON_VERSION}
+    environment:
+      DB_CACHE: /tmp/cache
+    commands:
+      - pip install tryton/health*
+      - python -m unittest discover -vv trytond.modules.${MODULE}
+    when:
+      - path: 'tryton/${MODULE}/*'

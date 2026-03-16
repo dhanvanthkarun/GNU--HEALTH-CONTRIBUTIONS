@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2008-2025 Luis Falcón <falcon@gnuhealth.org>
-# SPDX-FileCopyrightText: 2011-2025 GNU Solidario <health@gnusolidario.org>
-# SPDX-FileCopyrightText: 2023-2025 Feng Shu (tumashu)
+# SPDX-FileCopyrightText: 2008-2026 Luis Falcón <falcon@gnuhealth.org>
+# SPDX-FileCopyrightText: 2011-2026 GNU Solidario <health@gnusolidario.org>
+# SPDX-FileCopyrightText: 2023-2026 Feng Shu (tumashu)
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
