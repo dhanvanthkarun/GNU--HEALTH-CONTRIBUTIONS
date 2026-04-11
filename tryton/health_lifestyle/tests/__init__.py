@@ -2,8 +2,3 @@
 # SPDX-FileCopyrightText: 2011-2026 GNU Solidario <health@gnusolidario.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-
-from .test_health_lifestyle import suite
-
-
-__all__ = ['suite']
