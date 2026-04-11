@@ -15,7 +15,7 @@ from datetime import datetime
 from trytond.model import ModelView, fields
 from trytond.rpc import RPC
 from trytond.pool import PoolMeta
-from trytond.pyson import Eval, Not, Bool
+from trytond.pyson import Eval, Not, Bool, Equal
 import hashlib
 import json
 from trytond.modules.health.core import get_health_professional
@@ -62,6 +62,11 @@ class LabTest(metaclass=PoolMeta):
     @classmethod
     def __setup__(cls):
         super(LabTest, cls).__setup__()
+        # Show the sign / validate button when the lab test is done.
+        cls._buttons.update({
+            'sign_document': {
+                'invisible': Not(Equal(Eval('state'), 'done'))}})
+
         ''' Allow calling the set_signature method via RPC '''
         cls.__rpc__.update({
             'set_signature': RPC(readonly=False),
