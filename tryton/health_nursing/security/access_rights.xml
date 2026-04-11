@@ -16,6 +16,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <!-- BEGIN OF AMBULATORY CARE ACCESS RIGHTS -->
 
+       <record model="ir.model.access" id="access_ambulatory_care_procedure">
+            <field name="model" search="[('model', '=', 'gnuhealth.ambulatory_care_procedure')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
        <record model="ir.model.access" id="access_ambulatory_care_procedure_nursing">
             <field name="model" search="[('model', '=', 'gnuhealth.ambulatory_care_procedure')]"/>
             <field name="group" ref="health.group_health_nursing"/>
