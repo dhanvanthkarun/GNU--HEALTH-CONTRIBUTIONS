@@ -535,6 +535,14 @@ class Party(metaclass=PoolMeta):
              "person is a relative but will not be part of the "
              "health system.")
 
+    organ_donor = fields.Boolean(
+        'Organ donor',
+        help="The person is registered as an organ donor")
+
+    blood_donor = fields.Boolean(
+        'Blood donor',
+        help="The person is a blood donor")
+
     def get_mother(self, name):
         if (self.birth_certificate and self.birth_certificate.mother):
             return self.birth_certificate.mother.id

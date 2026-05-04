@@ -26,6 +26,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <field name="deceased"/>
         <field name="code" tree_invisible="1"/>
         <field name="homeless" tree_invisible="1"/>
+        <field name="organ_donor" tree_invisible="1"/>
+        <field name="blood_donor" tree_invisible="1"/>
     </xpath>
 
     <xpath expr="/tree/field[@name=&quot;tax_identifier&quot;]" position="replace_attributes">

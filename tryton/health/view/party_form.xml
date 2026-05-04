@@ -80,6 +80,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <field colspan="3" name="insurance"/>
                         
             <newline/>
+            <group string="Donor status" colspan="3">
+                <label name="organ_donor"/>
+                <field name="organ_donor"/>
+                <label name="blood_donor"/>
+                <field name="blood_donor"/>
+            </group>
+            <newline/>
             <group id="party_footer" colspan="3" col="14">
                 <label name="internal_user"/>
                 <field name="internal_user"/>
